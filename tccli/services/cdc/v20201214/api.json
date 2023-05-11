@@ -1706,7 +1706,6 @@
       "document": "DescribeDedicatedClusterTypes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模糊匹配专用集群配置名称",
           "example": "\"my-type\"",
           "member": "string",
@@ -1715,7 +1714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "待查询的专用集群配置id列表",
           "example": "[\"dctype-lkm17jbu\"]",
           "member": "string",
@@ -1724,7 +1722,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1733,7 +1730,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1742,7 +1738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否只查询计算规格类型",
           "example": "true",
           "member": "bool",
@@ -1761,7 +1756,6 @@
           "example": "无",
           "member": "DedicatedClusterType",
           "name": "DedicatedClusterTypeSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1770,7 +1764,6 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

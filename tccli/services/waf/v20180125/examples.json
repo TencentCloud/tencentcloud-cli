@@ -92,9 +92,9 @@
     ],
     "DeleteDomainWhiteRules": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainWhiteRules\n<公共请求参数>\n\n{\n    \"Ids\": [\n        111,\n        222\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
+        "document": "删除域名规则白名单",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainWhiteRules\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Ids\": [\n        111,\n        222\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\",\n        \"Data\": \"abc\"\n    }\n}",
         "title": "删除域名规则白名单"
       }
     ],
@@ -348,7 +348,7 @@
     ],
     "ModifyDomainWhiteRule": [
       {
-        "document": "",
+        "document": "关闭白名单规则",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Id\": 111,\n    \"Rules\": [\n        2\n    ],\n    \"Url\": \"/aa\",\n    \"Function\": \"suffix\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
         "title": "更改某一条规则"
@@ -404,7 +404,7 @@
     ],
     "SwitchDomainRules": [
       {
-        "document": "",
+        "document": "切换域名的规则开关",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDomainRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Ids\": [\n        1,\n        2,\n        3\n    ],\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-efg\"\n    }\n}",
         "title": "切换域名的规则开关"

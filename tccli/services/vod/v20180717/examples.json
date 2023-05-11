@@ -562,7 +562,7 @@
     ],
     "DescribeCDNStatDetails": [
       {
-        "document": "",
+        "document": "查询域名123.vod2.com中国大陆的流量数据。",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNStatDetails\n&DomainNames.0=123.vod2.myqcloud.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&Area=Chinese Mainland\n&Metric=Traffic\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInterval\": 1440,\n        \"Data\": [\n            {\n                \"Time\": \"2018-12-01T00:00:00+08:00\",\n                \"Value\": 1000000\n            },\n            {\n                \"Time\": \"2018-12-02T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-03T00:00:00+08:00\",\n                \"Value\": 1500000\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "查询域名123.vod2.com中国大陆的流量数据。"

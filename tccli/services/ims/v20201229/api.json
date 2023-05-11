@@ -696,7 +696,6 @@
       "document": "实体检测结果明细，当检测场景为实体、广告台标、二维码时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。",
       "members": [
         {
-          "default": "",
           "document": "该参数用于返回识别对象的ID以方便识别和区分。",
           "example": "无",
           "member": "uint64",
@@ -706,7 +705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该参数用于返回命中的实体标签。",
           "example": "无",
           "member": "string",
@@ -716,7 +714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。",
           "example": "无",
           "member": "string",
@@ -726,7 +723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。",
           "example": "无",
           "member": "uint64",
@@ -736,7 +732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。",
           "example": "无",
           "member": "Location",
@@ -746,7 +741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该参数用于返回命中的实体二级标签。",
           "example": "无",
           "member": "string",
@@ -754,6 +748,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "该参数用于返回命中的人脸id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

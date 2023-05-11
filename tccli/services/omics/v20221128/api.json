@@ -1,5 +1,26 @@
 {
   "actions": {
+    "CreateEnvironment": {
+      "document": "创建组学平台计算环境。",
+      "input": "CreateEnvironmentRequest",
+      "name": "创建环境",
+      "output": "CreateEnvironmentResponse",
+      "status": "online"
+    },
+    "DeleteEnvironment": {
+      "document": "删除环境。",
+      "input": "DeleteEnvironmentRequest",
+      "name": "删除环境",
+      "output": "DeleteEnvironmentResponse",
+      "status": "online"
+    },
+    "DescribeEnvironments": {
+      "document": "查询环境列表。",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "查询环境列表",
+      "output": "DescribeEnvironmentsResponse",
+      "status": "online"
+    },
     "DescribeRunGroups": {
       "document": "查询任务批次列表。",
       "input": "DescribeRunGroupsRequest",
@@ -50,6 +71,219 @@
     "serviceShortName": "omics"
   },
   "objects": {
+    "CVMOption": {
+      "document": "云服务器配置。",
+      "members": [
+        {
+          "document": "云服务器可用区。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云服务器实例规格。",
+          "example": "SA3.MEDIUM8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ClusterOption": {
+      "document": "计算集群配置。",
+      "members": [
+        {
+          "document": "计算集群可用区。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计算集群类型，取值范围：\n- KUBERNETES",
+          "example": "KUBERNETES",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateEnvironmentRequest": {
+      "document": "CreateEnvironment请求参数结构体",
+      "members": [
+        {
+          "document": "环境名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "环境配置信息。",
+          "example": "无",
+          "member": "EnvironmentConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "环境描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentResponse": {
+      "document": "CreateEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "工作流UUID。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowUuid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DatabaseOption": {
+      "document": "数据库配置。",
+      "members": [
+        {
+          "document": "数据库可用区。",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteEnvironmentRequest": {
+      "document": "DeleteEnvironment请求参数结构体",
+      "members": [
+        {
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentResponse": {
+      "document": "DeleteEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "工作流UUID。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowUuid",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "过滤器，支持过滤字段：\n- EnvironmentId：环境ID\n- Name：名称\n- Status：环境状态",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境详情列表。",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environments",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRunGroupsRequest": {
       "document": "DescribeRunGroups请求参数结构体",
       "members": [
@@ -181,6 +415,162 @@
         }
       ],
       "type": "object"
+    },
+    "Environment": {
+      "document": "组学平台环境详情。",
+      "members": [
+        {
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境描述信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境类型，取值范围：\n- KUBERNETES：Kubernetes容器集群\n- HPC：HPC高性能计算集群",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境状态，取值范围：\n- INITIALIZING：创建中\n- INITIALIZATION_ERROR：创建失败\n- RUNNING：运行中\n- ERROR：异常\n- DELETING：正在删除\n- DELETE_ERROR：删除失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境是否可用。环境需要可用才能投递计算任务。",
+          "example": "无",
+          "member": "bool",
+          "name": "Available",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云资源ID。",
+          "example": "无",
+          "member": "ResourceIds",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上个工作流UUID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastWorkflowUuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvironmentConfig": {
+      "document": "环境配置。",
+      "members": [
+        {
+          "document": "私有网络配置。",
+          "example": "无",
+          "member": "VPCOption",
+          "name": "VPCOption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计算集群配置。",
+          "example": "无",
+          "member": "ClusterOption",
+          "name": "ClusterOption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据库配置。",
+          "example": "无",
+          "member": "DatabaseOption",
+          "name": "DatabaseOption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存储配置。",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云服务器配置。",
+          "example": "无",
+          "member": "CVMOption",
+          "name": "CVMOption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "ExecutionTime": {
       "document": "执行时间。",
@@ -396,6 +786,84 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceIds": {
+      "document": "云资源ID。",
+      "members": [
+        {
+          "document": "私有网络ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VPCId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "安全组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "TDSQL-C Mysql版数据库ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TDSQLCId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件存储ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFSId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件存储类型：取值范围：\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFSStorageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云服务器ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CVMId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "弹性容器集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EKSId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Run": {
       "document": "任务。",
@@ -1045,6 +1513,24 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "输出归档COS路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinalWorkflowOutputsDir",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否使用相对目录归档输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseRelativeOutputPaths",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1072,6 +1558,72 @@
         }
       ],
       "usage": "out"
+    },
+    "StorageOption": {
+      "document": "文件存储配置。",
+      "members": [
+        {
+          "document": "文件存储类型，取值范围：\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件存储可用区。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件系统容量，turbo系列必填，单位为GiB。 \n- turbo标准型起售40TiB，即40960GiB；扩容步长20TiB，即20480 GiB。\n- turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，即10240 GiB。",
+          "example": "40960",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "VPCOption": {
+      "document": "私有网络配置。",
+      "members": [
+        {
+          "document": "子网可用区。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "SubnetZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络CIDR。",
+          "example": "10.8.0.0/16",
+          "member": "string",
+          "name": "VPCCIDRBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网CIDR。",
+          "example": "10.8.16.0/20",
+          "member": "string",
+          "name": "SubnetCIDRBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

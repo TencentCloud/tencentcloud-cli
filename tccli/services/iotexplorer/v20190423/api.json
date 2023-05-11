@@ -4321,7 +4321,6 @@
       "document": "设备的用户",
       "members": [
         {
-          "default": "",
           "document": "用户ID",
           "example": "userId",
           "member": "string",
@@ -4331,7 +4330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户角色 1所有者，0：其他分享者",
           "example": "0",
           "member": "int64",
@@ -4339,6 +4337,24 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "家庭ID，所有者带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f_1234567",
+          "member": "string",
+          "name": "FamilyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "家庭名称，所有者带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "家庭名称",
+          "member": "string",
+          "name": "FamilyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5263,7 +5279,6 @@
       "document": "GetFamilyDeviceUserList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "productID",
           "member": "string",
@@ -5272,7 +5287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备名称",
           "example": "DeviceName",
           "member": "string",
@@ -5291,7 +5305,6 @@
           "example": "无",
           "member": "DeviceUser",
           "name": "UserList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

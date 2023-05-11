@@ -115,6 +115,24 @@ Output:
                 "Suggestion": "Block"
             }
         ],
+        "RecognitionResults": [
+            {
+                "Label": "Scene",
+                "Tags": [
+                    {
+                        "Name": "MedicalImage",
+                        "Score": 30,
+                        "Location": {
+                            "X": 0,
+                            "Y": 0,
+                            "Width": 0,
+                            "Height": 0,
+                            "Rotate": 0
+                        }
+                    }
+                ]
+            }
+        ],
         "Extra": ""
     }
 }

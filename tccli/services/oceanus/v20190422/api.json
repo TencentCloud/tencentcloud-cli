@@ -681,12 +681,149 @@
     },
     "CopyJobItem": {
       "document": "复制作业单条明细",
-      "members": [],
+      "members": [
+        {
+          "document": "需要复制的作业serial id",
+          "example": "cql-pqx9zh30",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标集群的cluster serial id",
+          "example": "cluster-l0elpxde",
+          "member": "string",
+          "name": "TargetClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "需要复制的作业名称",
+          "example": "job1",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新作业的名称",
+          "example": "job2",
+          "member": "string",
+          "name": "TargetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新作业的目录id",
+          "example": "folder-2ue9i8ny",
+          "member": "string",
+          "name": "TargetFolderId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "源作业类型",
+          "example": "1",
+          "member": "int64",
+          "name": "JobType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "CopyJobResult": {
       "document": "复制作业单条明细结果",
-      "members": [],
+      "members": [
+        {
+          "document": "原作业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-pqx9zh30",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原作业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "job1",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "新作业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "job2",
+          "member": "string",
+          "name": "TargetJobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "新作业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-pqx9zh30",
+          "member": "string",
+          "name": "TargetJobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败时候的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "失败",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "0 成功  -1 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "结果",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "集群1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-l0elpxde",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "作业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "CopyJobsRequest": {

@@ -220,7 +220,6 @@
       "document": "BatchSendEmail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照\n发信人 &lt;邮件地址&gt; 的方式填写，例如：\n腾讯云团队 &lt;noreply@mail.qcloud.com&gt;",
           "example": "abc@ef.com",
           "member": "string",
@@ -229,7 +228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "收件人列表ID",
           "example": "123",
           "member": "uint64",
@@ -238,7 +236,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "邮件主题",
           "example": "邮件主题",
           "member": "string",
@@ -247,7 +244,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送",
           "example": "1",
           "member": "uint64",
@@ -256,7 +252,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。",
           "example": "abc@ef.com",
           "member": "string",
@@ -265,7 +260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "使用模板发送时，填写的模板相关参数",
           "example": "无",
           "member": "Template",
@@ -274,7 +268,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "已废弃",
           "example": "无",
           "member": "Simple",
@@ -283,7 +276,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "需要发送附件时，填写附件相关参数（暂未支持）",
           "example": "无",
           "member": "Attachment",
@@ -292,7 +284,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "周期发送任务的必要参数",
           "example": "无",
           "member": "CycleEmailParam",
@@ -301,7 +292,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "定时发送任务的必要参数",
           "example": "无",
           "member": "TimedEmailParam",
@@ -310,8 +300,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "退订选项 1: 加入退订链接 0: 不加入退订链接",
+          "document": "退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语",
           "example": "1",
           "member": "string",
           "name": "Unsubscribe",
@@ -319,7 +308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面",
           "example": "0",
           "member": "uint64",
@@ -338,7 +326,6 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1624,7 +1611,6 @@
       "document": "SendEmail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com\n如需填写发件人说明，请按照如下方式： \n别名 <邮箱地址>",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
@@ -1633,7 +1619,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
           "example": "无",
           "member": "string",
@@ -1642,7 +1627,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "邮件主题",
           "example": "YourTestSubject",
           "member": "string",
@@ -1651,7 +1635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
@@ -1660,7 +1643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项",
           "example": "无",
           "member": "Template",
@@ -1669,7 +1651,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "已废弃",
           "example": "无",
           "member": "Simple",
@@ -1678,7 +1659,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误",
           "example": "无",
           "member": "Attachment",
@@ -1687,8 +1667,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "退订选项 1: 加入退订链接 0: 不加入退订链接",
+          "document": "退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语",
           "example": "1",
           "member": "string",
           "name": "Unsubscribe",
@@ -1696,7 +1675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道",
           "example": "1",
           "member": "uint64",
@@ -1715,7 +1693,6 @@
           "example": "qcloud-ses-messageid",
           "member": "string",
           "name": "MessageId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

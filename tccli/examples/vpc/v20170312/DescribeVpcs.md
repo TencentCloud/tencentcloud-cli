@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
     --Limit 2 \
-    --Filters.0.Values 192.168.0.0 10.8.0.0 \
+    --Filters.0.Values 192.168.0.0 10.0.0.0 \
     --Filters.0.Name cidr-block \
     --Filters.1.Values false \
     --Filters.1.Name is-default \

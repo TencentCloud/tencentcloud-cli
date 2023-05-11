@@ -1995,6 +1995,14 @@
           "type": "object"
         },
         {
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
           "document": "机构信息，暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -4378,10 +4386,28 @@
       "document": "签署链接信息",
       "members": [
         {
-          "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "SignUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人类型 1-个人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApproverType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ApproverName",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4396,21 +4422,12 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
-          "name": "ApproverName",
+          "name": "LongUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "签署人类型 1-个人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "ApproverType",
-          "required": false,
-          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4649,6 +4666,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "签署完前端跳转的url，暂未使用",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

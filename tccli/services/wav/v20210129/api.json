@@ -3543,7 +3543,6 @@
       "document": "QueryExternalContactDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "外部联系人的userid，注意不是企业成员的帐号",
           "example": "woAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
           "member": "string",
@@ -3552,7 +3551,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
@@ -3561,7 +3559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值",
           "example": "100",
           "member": "uint64",
@@ -3580,7 +3577,6 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3589,7 +3585,6 @@
           "example": "无",
           "member": "ExternalContact",
           "name": "Customer",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3598,7 +3593,6 @@
           "example": "无",
           "member": "FollowUser",
           "name": "FollowUser",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

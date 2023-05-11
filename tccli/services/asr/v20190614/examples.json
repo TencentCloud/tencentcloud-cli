@@ -136,6 +136,14 @@
         "title": "查询自学习模型列表"
       }
     ],
+    "GetModelInfo": [
+      {
+        "document": "通过模型id获取模型信息",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModelInfo\n<公共请求参数>\n\n{\n    \"ModelId\": \"5a15aa3ae4c611eda0d56c92bf48cdf2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ModelName\": \"test\",\n            \"DictName\": \"c6824a6d-05ec-431c-95c9\",\n            \"ModelId\": \"5a15aa3ae4c611eda0d56c92bf48cdf2\",\n            \"ModelType\": \"8k\",\n            \"ServiceType\": \"\",\n            \"ModelState\": 1,\n            \"AtUpdated\": \"2023-04-27 14:40:09\",\n            \"TagInfos\": null\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过模型id获取模型信息"
+      }
+    ],
     "ModifyCustomization": [
       {
         "document": "",

@@ -96,6 +96,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeInitNodeScripts": [
+      {
+        "document": "查询节点初始化脚本信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInitNodeScripts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InitNodeScriptSet\": [\n            {\n                \"ScriptPath\": \"cos://test-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\",\n                \"Timeout\": 30\n            }\n        ],\n        \"RequestId\": \"a40ac3ec-f0ac-4eee-8af8-ef2d93f37982\"\n    }\n}",
+        "title": "查询节点初始化脚本信息"
+      }
+    ],
     "DescribeNodes": [
       {
         "document": "查询指定集群节点概览信息，集群ID为hpc-ggaqjyax。",

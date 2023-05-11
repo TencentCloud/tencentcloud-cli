@@ -315,6 +315,13 @@
       "output": "DeleteFileConfigResponse",
       "status": "online"
     },
+    "DeleteGatewayApi": {
+      "document": "批量删除API",
+      "input": "DeleteGatewayApiRequest",
+      "name": "批量删除API",
+      "output": "DeleteGatewayApiResponse",
+      "status": "online"
+    },
     "DeleteGroup": {
       "document": "删除容器部署组",
       "input": "DeleteGroupRequest",
@@ -8456,6 +8463,47 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayApiRequest": {
+      "document": "DeleteGatewayApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api ID 数组",
+          "member": "string",
+          "name": "ApiList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatewayApiResponse": {
+      "document": "DeleteGatewayApi返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

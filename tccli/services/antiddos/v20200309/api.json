@@ -8329,7 +8329,6 @@
       "document": "L4规则回源列表",
       "members": [
         {
-          "default": "",
           "document": "回源IP或域名",
           "example": "无",
           "member": "string",
@@ -8339,8 +8338,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "权重值，取值[0,100]",
+          "document": "权重值，取值[0,100]，暂不支持",
           "example": "无",
           "member": "uint64",
           "name": "Weight",
@@ -8349,7 +8347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "8000\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -8359,7 +8356,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备份源站，1: 备份源站，0: 普通源站\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",

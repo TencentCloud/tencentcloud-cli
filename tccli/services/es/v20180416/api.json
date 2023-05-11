@@ -3643,8 +3643,8 @@
       "document": "ES集群日志详细信息",
       "members": [
         {
-          "default": "",
           "document": "日志时间",
+          "example": "无",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -3652,8 +3652,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志级别",
+          "example": "无",
           "member": "string",
           "name": "Level",
           "required": true,
@@ -3661,8 +3661,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群节点ip",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -3670,11 +3670,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志内容",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群节点ID",
+          "example": "无",
+          "member": "string",
+          "name": "NodeID",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3775,8 +3784,8 @@
       "document": "Kibana视图数据",
       "members": [
         {
-          "default": "",
           "document": "Kibana节点IP",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -3784,8 +3793,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点总磁盘大小",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -3793,8 +3802,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘使用率",
+          "example": "无",
           "member": "float",
           "name": "DiskUsage",
           "required": true,
@@ -3802,8 +3811,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点内存大小",
+          "example": "无",
           "member": "int64",
           "name": "MemSize",
           "required": true,
@@ -3811,8 +3820,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存使用率",
+          "example": "无",
           "member": "float",
           "name": "MemUsage",
           "required": true,
@@ -3820,8 +3829,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点cpu个数",
+          "example": "无",
           "member": "int64",
           "name": "CpuNum",
           "required": true,
@@ -3829,8 +3838,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cpu使用率",
+          "example": "无",
           "member": "float",
           "name": "CpuUsage",
           "required": true,
@@ -3838,11 +3847,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ts-0noqayxu-az6-hot-03222010-0",
+          "example": "无",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

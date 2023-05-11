@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChannelBatchCancelFlows": {
-      "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
+      "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；\n\n**满足撤销条件的合同会发起异步撤销流程，不满足撤销条件的合同返回失败原因。**\n\n**合同撤销成功后，会通过合同状态为 CANCEL 的回调消息通知调用方 [具体可参考回调消息](https://qian.tencent.com/developers/scenes/partner/callback_data_types#-%E5%90%88%E5%90%8C%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5---flowstatuschange)**\n\n**注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人**",
       "input": "ChannelBatchCancelFlowsRequest",
       "name": "根据签署流程id批量撤销合同",
       "output": "ChannelBatchCancelFlowsResponse",
@@ -4265,7 +4265,7 @@
       "document": "签署人签署链接信息",
       "members": [
         {
-          "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
+          "document": "签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
           "example": "xx",
           "member": "string",
           "name": "SignUrl",
@@ -4274,10 +4274,10 @@
           "value_allowed_null": false
         },
         {
-          "document": "签署人手机号",
-          "example": "xx",
+          "document": "签署人类型 PERSON-个人",
+          "example": "PERSON",
           "member": "string",
-          "name": "Mobile",
+          "name": "ApproverType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4292,13 +4292,22 @@
           "value_allowed_null": false
         },
         {
-          "document": "签署人类型 PERSON-个人",
-          "example": "PERSON",
+          "document": "签署人手机号",
+          "example": "xx",
           "member": "string",
-          "name": "ApproverType",
+          "name": "Mobile",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LongUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

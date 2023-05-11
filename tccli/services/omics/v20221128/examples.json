@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateEnvironment": [
+      {
+        "document": "创建环境。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n\n{\n    \"Name\": \"omics env\",\n    \"Description\": \"env description\",\n    \"Config\": {\n        \"VPCOption\": {\n            \"SubnetZone\": \"ap-guangzhou-6\",\n            \"VPCCIDRBlock\": \"10.8.0.0/16\",\n            \"SubnetCIDRBlock\": \"10.8.16.0/20\"\n        },\n        \"ClusterOption\": {\n            \"Zone\": \"ap-guangzhou-6\",\n            \"Type\": \"KUBERNETES\"\n        },\n        \"DatabaseOption\": {\n            \"Zone\": \"ap-guangzhou-4\"\n        },\n        \"StorageOption\": {\n            \"StorageType\": \"SD\",\n            \"Zone\": \"ap-guangzhou-6\"\n        },\n        \"CVMOption\": {\n            \"Zone\": \"ap-guangzhou-6\",\n            \"InstanceType\": \"SA3.MEDIUM8\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"946e07f8-f487-46ab-b486-65e362b4a38b\",\n        \"EnvironmentId\": \"env-lljckw12\",\n        \"WorkflowUuid\": \"bc5b790b-407e-42c7-b488-a252fee1dcc7\"\n    }\n}",
+        "title": "创建环境"
+      }
+    ],
+    "DeleteEnvironment": [
+      {
+        "document": "删除环境。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-lljckw12\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1de0885-6294-4176-9358-dc505fbfa42d\",\n        \"WorkflowUuid\": \"bc5b790b-407e-42c7-b488-a252fee1dcc7\"\n    }\n}",
+        "title": "删除环境"
+      }
+    ],
+    "DescribeEnvironments": [
+      {
+        "document": "查询环境列表。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Environments\": [\n            {\n                \"Available\": true,\n                \"CreationTime\": \"2022-12-14T16:14:49+08:00\",\n                \"Description\": \"test description\",\n                \"EnvironmentId\": \"env-lljckw12\",\n                \"LastWorkflowUuid\": \"94922fcd-107e-4220-9a0f-cc3cd84a9a27\",\n                \"Message\": \"\",\n                \"Name\": \"test\",\n                \"Region\": \"ap-guangzhou\",\n                \"ResourceIds\": {\n                    \"CFSId\": \"cfs-iwee8gk3\",\n                    \"CFSStorageType\": \"SD\",\n                    \"CVMId\": \"ins-jcbptifa\",\n                    \"EKSId\": \"cls-9j9zh13o\",\n                    \"SecurityGroupId\": \"sg-gzsfk3r5\",\n                    \"SubnetId\": \"subnet-qdkfn4xe\",\n                    \"TDSQLCId\": \"cynosdbmysql-kzwghvxj\",\n                    \"VPCId\": \"vpc-8yhq1v63\"\n                },\n                \"Status\": \"RUNNING\",\n                \"Type\": \"KUBERNETES\"\n            }\n        ],\n        \"RequestId\": \"1bc7ec7d-5fa9-42af-ac6d-1ef56f3bf625\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询环境列表"
+      }
+    ],
     "DescribeRunGroups": [
       {
         "document": "查询任务批次列表。",

@@ -2,7 +2,7 @@
   "actions": {
     "BatchSendEmail": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSendEmail\n<公共请求参数>\n\n{\n    \"Attachments\": [\n        {\n            \"Content\": \"附件内容\",\n            \"FileName\": \"文件名\"\n        }\n    ],\n    \"TimedParam\": {\n        \"BeginTime\": \"2021-09-10 11:10:11\"\n    },\n    \"FromEmailAddress\": \"abc@bbc.com\",\n    \"ReplyToAddresses\": \"abc@bbc.com\",\n    \"Simple\": {\n        \"Text\": \"text\",\n        \"Html\": \"html\"\n    },\n    \"ReceiverId\": 123,\n    \"Template\": {\n        \"TemplateData\": \"{\\\"name\\\":\\\"123\\\"}\",\n        \"TemplateID\": 1\n    },\n    \"CycleParam\": {\n        \"IntervalTime\": 1,\n        \"BeginTime\": \"2021-09-10 11:10:11\"\n    },\n    \"Subject\": \"邮件主题\",\n    \"TaskType\": 1,\n    \"ADLocation\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TaskId\": 123\n    }\n}",
         "title": "新增批量发送任务"
@@ -190,19 +190,19 @@
     ],
     "SendEmail": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
         "title": "发送纯文本邮件"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Html\": \"PGh0bWw+PGRpdj5IZWxsb1dvcmxkPC9kaXY+PC9odG1sPg==\",\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
         "title": "发送富文本邮件"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Template\": {\n        \"TemplateID\": \"100091\",\n        \"TemplateData\": \"{\\\"code\\\":\\\"1234\\\"}\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
         "title": "发送模板邮件"

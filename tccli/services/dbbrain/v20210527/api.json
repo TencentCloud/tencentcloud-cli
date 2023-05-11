@@ -248,7 +248,7 @@
     "DescribeSlowLogTopSqls": {
       "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
       "input": "DescribeSlowLogTopSqlsRequest",
-      "name": "获取慢SQL模版列表",
+      "name": "获取慢SQL模板列表",
       "output": "DescribeSlowLogTopSqlsResponse",
       "status": "online"
     },
@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DescribeSlowLogs": {
-      "document": "获取指定时间内某个sql模版的慢日志明细",
+      "document": "获取指定时间内某个sql模板的慢日志明细",
       "input": "DescribeSlowLogsRequest",
       "name": "获取SQL模板在指定时间段内的详细信息",
       "output": "DescribeSlowLogsResponse",
@@ -1459,7 +1459,6 @@
       "document": "DeleteSqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -1468,7 +1467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
           "example": "cauth",
           "member": "string",
@@ -1477,13 +1475,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "限流任务ID列表。",
           "example": "1234",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3374,7 +3379,7 @@
           "type": "string"
         },
         {
-          "document": "sql模版的md5值",
+          "document": "sql模板的md5值",
           "example": "2693831786114179882",
           "member": "string",
           "name": "Md5",
@@ -3438,7 +3443,7 @@
           "type": "list"
         },
         {
-          "document": "ip",
+          "document": "IP",
           "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "Ip",
@@ -3488,7 +3493,6 @@
       "document": "DescribeSqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -3497,7 +3501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID列表，用于筛选任务列表。",
           "example": "1234",
           "member": "int64",
@@ -3506,7 +3509,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "任务状态列表，用于筛选任务列表，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。",
           "example": "RUNNING",
           "member": "string",
@@ -3515,7 +3517,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -3524,13 +3525,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3543,7 +3551,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3552,7 +3559,6 @@
           "example": "无",
           "member": "SQLFilter",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4927,7 +4933,6 @@
       "document": "KillMySqlThreads请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-test1",
           "member": "string",
@@ -4936,7 +4941,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "kill会话任务的阶段，取值包括：\"Prepare\"-准备阶段，\"Commit\"-提交阶段。",
           "example": "Commit",
           "member": "string",
@@ -4945,7 +4949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要kill的sql会话ID列表，此参数用于Prepare阶段。",
           "example": "[\"4714056\"]",
           "member": "int64",
@@ -4954,7 +4957,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "执行ID，此参数用于Commit阶段。",
           "example": "ItNrO0i3lvE3",
           "member": "string",
@@ -4963,13 +4965,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "默认是ture, 记录下kill的记录，为了加快kill，可设置为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RecordHistory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4982,7 +4991,6 @@
           "example": "[536284]",
           "member": "int64",
           "name": "Threads",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4991,7 +4999,6 @@
           "example": "\"AEnnKexGijsX\"",
           "member": "string",
           "name": "SqlExecId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

@@ -139,6 +139,8 @@ include tccli/services/cpdp/v20190820/api.json
 include tccli/services/cpdp/v20190820/examples.json
 include tccli/services/cr/v20180321/api.json
 include tccli/services/cr/v20180321/examples.json
+include tccli/services/csip/v20221121/api.json
+include tccli/services/csip/v20221121/examples.json
 include tccli/services/cvm/v20170312/api.json
 include tccli/services/cvm/v20170312/examples.json
 include tccli/services/cwp/v20180228/api.json

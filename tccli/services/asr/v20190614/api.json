@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateRecTask": {
-      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n• 支持中文普通话、英语、粤语、日语、越南语、马来语、印度尼西亚语、菲律宾语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式。\n• 支持语音 URL 和本地语音文件两种请求方式。语音 URL 的音频时长不能长于5小时，文件大小不超过1GB。本地语音文件调用不能大于5MB。\n• 提交录音文件识别请求后，在3小时内完成识别（大多数情况下1小时音频约3分钟以内完成识别，半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天。\n• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n•   生成字幕场景可设置参数ResTextFormat为3，解析ResultDetail结构生成字幕，可参考 [生成字幕最佳实践](https://cloud.tencent.com/document/product/1093/84291)。\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n• 支持中文普通话、英语、粤语、日语、越南语、马来语、印度尼西亚语、菲律宾语、葡萄牙语、土耳其语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式。\n• 支持语音 URL 和本地语音文件两种请求方式。语音 URL 的音频时长不能长于5小时，文件大小不超过1GB。本地语音文件调用不能大于5MB。\n• 提交录音文件识别请求后，在3小时内完成识别（大多数情况下1小时音频约3分钟以内完成识别，半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天。\n• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n•   生成字幕场景可设置参数ResTextFormat为3，解析ResultDetail结构生成字幕，可参考 [生成字幕最佳实践](https://cloud.tencent.com/document/product/1093/84291)。\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "CreateRecTaskRequest",
       "name": "录音文件识别请求",
       "output": "CreateRecTaskResponse",
@@ -98,6 +98,13 @@
       "output": "GetCustomizationListResponse",
       "status": "online"
     },
+    "GetModelInfo": {
+      "document": "通过自学习模型id获取自学习模型详细信息",
+      "input": "GetModelInfoRequest",
+      "name": "获取自学习模型信息",
+      "output": "GetModelInfoResponse",
+      "status": "online"
+    },
     "ModifyCustomization": {
       "document": "用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。",
       "input": "ModifyCustomizationRequest",
@@ -113,7 +120,7 @@
       "status": "online"
     },
     "SentenceRecognition": {
-      "document": "本接口用于对60秒之内的短音频文件进行识别。<br>•   支持中文普通话、英语、粤语、日语、越南语、马来语、印度尼西亚语、菲律宾语、泰语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s，音频文件大小不能超过3MB。<br>•   音频格式支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。<br>•   默认接口请求频率限制：30次/秒，如您有提高请求频率限制的需求，请[前往购买](https://buy.cloud.tencent.com/asr)。",
+      "document": "本接口用于对60秒之内的短音频文件进行识别。<br>•   支持中文普通话、英语、粤语、日语、越南语、马来语、印度尼西亚语、菲律宾语、泰语、葡萄牙语、土耳其语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s，音频文件大小不能超过3MB。<br>•   音频格式支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。<br>•   默认接口请求频率限制：30次/秒，如您有提高请求频率限制的需求，请[前往购买](https://buy.cloud.tencent.com/asr)。",
       "input": "SentenceRecognitionRequest",
       "name": "一句话识别",
       "output": "SentenceRecognitionResponse",
@@ -268,7 +275,7 @@
       "document": "CreateAsyncRecognitionTask请求参数结构体",
       "members": [
         {
-          "document": "引擎模型类型。\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_id：16k 印度尼西亚语；\n• 16k_fil：16k 菲律宾语；",
+          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineType",
@@ -445,7 +452,7 @@
       "document": "CreateRecTask请求参数结构体",
       "members": [
         {
-          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_vi：16k 越南语；\n• 16k_ms：16k 马来语；\n• 16k_id：16k 印度尼西亚语；\n• 16k_fil：16k 菲律宾语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；\n• 16k_zh-PY 中英粤;\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
+          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY：中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -1015,6 +1022,40 @@
       ],
       "type": "object"
     },
+    "GetModelInfoRequest": {
+      "document": "GetModelInfo请求参数结构体",
+      "members": [
+        {
+          "document": "模型id",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelInfoResponse": {
+      "document": "GetModelInfo返回参数结构体",
+      "members": [
+        {
+          "document": "模型信息",
+          "example": "无",
+          "member": "Model",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HotWord": {
       "document": "热词的词和权重",
       "members": [
@@ -1325,7 +1366,7 @@
       "document": "SentenceRecognition请求参数结构体",
       "members": [
         {
-          "document": "引擎模型类型。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY 中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY：中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_en",
           "member": "string",
           "name": "EngSerViceType",
@@ -1459,6 +1500,14 @@
           "name": "ReinforceHotword",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "临时热词：用于提升识别准确率，临时热词规则：“热词|权重”，热词不超过30个字符（最多10个汉字），权重1-10，最多传入128个热词。举例：\"腾讯云|10,语音识别|5,ASR|10\"。\n“临时热词”和“热词id”的区别：热词id需要先在控制台或通过接口创建热词表，得到热词表id后才可以使用热词功能，本字段可以在每次请求时直接传入热词使用，但每次请求后云端不会保留相关的热词数据，需要客户自行维护相关数据",
+          "example": "无",
+          "member": "string",
+          "name": "HotwordList",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

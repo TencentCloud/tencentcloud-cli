@@ -1,14 +1,14 @@
 **Example 1: 分配IPv6子网段**
 
-
+申请IPv6子网
 
 Input: 
 
 ```
 tccli vpc AssignIpv6SubnetCidrBlock --cli-unfold-argument  \
-    --VpcId vpc-rkxd3pgh \
-    --Ipv6SubnetCidrBlocks.0.SubnetId subnet-3s5bhzb0 \
-    --Ipv6SubnetCidrBlocks.0.Ipv6CidrBlock 3402:4e00:20:1202::/64
+    --VpcId vpc-q26u781x \
+    --Ipv6SubnetCidrBlocks.0.SubnetId subnet-8uwg949c \
+    --Ipv6SubnetCidrBlocks.0.Ipv6CidrBlock 2001::85b:3c51:f5ff:ffdb
 ```
 
 Output: 
@@ -17,15 +17,11 @@ Output:
     "Response": {
         "Ipv6SubnetCidrBlockSet": [
             {
-                "SubnetId": "subnet-ewhv1m9e",
-                "Ipv6CidrBlock": "3402:4e00:20:1201::/64"
-            },
-            {
-                "SubnetId": "subnet-3s5bhzb0",
-                "Ipv6CidrBlock": "3402:4e00:20:1202::/64"
+                "SubnetId": "subnet-8uwg949c",
+                "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffdb"
             }
         ],
-        "RequestId": "75221557-b667-440a-8cfe-ccd1bde2a234"
+        "RequestId": "d681727c-6291-4409-9ab6-6ecbb493243c"
     }
 }
 ```

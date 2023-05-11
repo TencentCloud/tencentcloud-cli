@@ -11125,6 +11125,14 @@
           "name": "AlarmTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "document": "告警来源表ID",
+          "example": "115920",
+          "member": "int64",
+          "name": "TableId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18210,6 +18218,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "已销毁订单数",
+          "example": "0",
+          "member": "uint64",
+          "name": "DestroyOrderNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -19857,7 +19874,6 @@
       "document": "DescribeProtectDirList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页条数 最大100条",
           "example": "10",
           "member": "uint64",
@@ -19866,7 +19882,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "1",
           "member": "uint64",
@@ -19875,7 +19890,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "DirName 网站名称\nDirPath 网站防护目录地址",
           "example": "[]",
           "member": "AssetFilters",
@@ -19884,7 +19898,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "asc：升序/desc：降序",
           "example": "asc",
           "member": "string",
@@ -19893,7 +19906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序字段",
           "example": "xxx",
           "member": "string",
@@ -19912,7 +19924,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19921,7 +19932,6 @@
           "example": "[]",
           "member": "ProtectDirInfo",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26775,7 +26785,7 @@
           "example": "1",
           "member": "Place",
           "name": "Places",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -26785,7 +26795,7 @@
           "example": "1",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26795,7 +26805,7 @@
           "example": "1",
           "member": "string",
           "name": "SrcIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26805,7 +26815,7 @@
           "example": "1",
           "member": "string",
           "name": "Locale",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26815,7 +26825,7 @@
           "example": "1",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26825,7 +26835,7 @@
           "example": "1",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26835,7 +26845,7 @@
           "example": "1",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26845,7 +26855,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26855,7 +26865,7 @@
           "example": "1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26865,7 +26875,7 @@
           "example": "1",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26875,7 +26885,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26885,7 +26895,7 @@
           "example": "1",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26895,7 +26905,7 @@
           "example": "1",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26905,6 +26915,16 @@
           "example": "1",
           "member": "string",
           "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登陆地",
+          "example": "1",
+          "member": "string",
+          "name": "Locations",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -29622,8 +29642,8 @@
       "document": "防护目录列表集",
       "members": [
         {
-          "default": "",
           "document": "网站名称",
+          "example": "无",
           "member": "string",
           "name": "DirName",
           "required": true,
@@ -29631,8 +29651,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网站防护目录地址",
+          "example": "无",
           "member": "string",
           "name": "DirPath",
           "required": true,
@@ -29640,8 +29660,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联服务器数",
+          "example": "无",
           "member": "uint64",
           "name": "RelatedServerNum",
           "required": true,
@@ -29649,8 +29669,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护服务器数",
+          "example": "无",
           "member": "uint64",
           "name": "ProtectServerNum",
           "required": true,
@@ -29658,8 +29678,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "未防护服务器数",
+          "example": "无",
           "member": "uint64",
           "name": "NoProtectServerNum",
           "required": true,
@@ -29667,8 +29687,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "唯一ID",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -29676,8 +29696,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护状态",
+          "example": "无",
           "member": "uint64",
           "name": "ProtectStatus",
           "required": true,
@@ -29685,8 +29705,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护异常",
+          "example": "无",
           "member": "uint64",
           "name": "ProtectException",
           "required": true,
@@ -29694,13 +29714,49 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动恢复开关 (Filters 过滤Quuid 时 返回) 默认0",
+          "example": "无",
           "member": "uint64",
           "name": "AutoRestoreSwitchStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "首次开启防护时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FirstProtectTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近开启防护时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestProtectTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "防护文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProtectFileType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "防护文件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProtectFilesCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -29928,6 +29984,15 @@
           "name": "MachineExtraInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机器实例uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

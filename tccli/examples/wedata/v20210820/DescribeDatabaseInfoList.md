@@ -17,6 +17,14 @@ Output:
 ```
 {
     "Response": {
+        "DatabaseInfo": [
+            {
+                "DatabaseId": null,
+                "DatabaseName": "",
+                "OriginDatabaseName": "test",
+                "OriginSchemaName": null
+            }
+        ],
         "RequestId": "21cf31f1-f8fd-4ecd-9217-594bba69d8ab"
     }
 }

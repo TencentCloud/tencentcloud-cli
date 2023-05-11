@@ -609,6 +609,13 @@
       "output": "DescribeLiveWatermarksResponse",
       "status": "online"
     },
+    "DescribeLiveXP2PDetailInfoList": {
+      "document": "P2P流数据查询接口，用来获取流量、卡播和起播信息。",
+      "input": "DescribeLiveXP2PDetailInfoListRequest",
+      "name": "P2P流数据查询",
+      "output": "DescribeLiveXP2PDetailInfoListResponse",
+      "status": "online"
+    },
     "DescribeLogDownloadList": {
       "document": "批量获取日志URL。",
       "input": "DescribeLogDownloadListRequest",
@@ -7189,6 +7196,69 @@
           "document": "水印信息列表。",
           "member": "WatermarkInfo",
           "name": "WatermarkList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveXP2PDetailInfoListRequest": {
+      "document": "DescribeLiveXP2PDetailInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "utc分钟粒度查询时间，查询某一分钟的用量数据，格式为：yyyy-mm-ddTHH:MM:00Z，参考https://cloud.tencent.com/document/product/266/11732#I，\n例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。\n\n支持最近六个月的查询。",
+          "example": "2006-01-02T15:02:00Z",
+          "member": "string",
+          "name": "QueryTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型数组，分直播live和点播vod，不传默认查全部。",
+          "example": "[\"live\",\"vod\"]",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询流数组，不传默认查所有流。",
+          "example": "[\"streamname\"]",
+          "member": "string",
+          "name": "StreamNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。",
+          "example": "[\"AppId\"]",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveXP2PDetailInfoListResponse": {
+      "document": "DescribeLiveXP2PDetailInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "P2P流统计信息。",
+          "example": "无",
+          "member": "XP2PDetailInfo",
+          "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14407,6 +14477,122 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "XP2PDetailInfo": {
+      "document": "央视P2P流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CDN流量。",
+          "example": "2825",
+          "member": "int64",
+          "name": "CdnBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "P2P流量。",
+          "example": "4785",
+          "member": "int64",
+          "name": "P2pBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡播人数。",
+          "example": "23",
+          "member": "int64",
+          "name": "StuckPeople",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡播次数。",
+          "example": "75",
+          "member": "int64",
+          "name": "StuckTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在线人数。",
+          "example": "28",
+          "member": "int64",
+          "name": "OnlinePeople",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起播请求次数",
+          "example": "66",
+          "member": "int64",
+          "name": "Request",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起播成功次数",
+          "example": "21",
+          "member": "int64",
+          "name": "RequestSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。",
+          "example": "2022-08-03T16:00:00Z",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，分live和vod两种。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7852921",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AppId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "appidtest",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

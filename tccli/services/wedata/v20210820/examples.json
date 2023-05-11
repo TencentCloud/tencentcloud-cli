@@ -500,7 +500,7 @@
       {
         "document": "获取数据库信息",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseInfoList\n<公共请求参数>\n\n{\n    \"ConnectionType\": \"rpc\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cdlq-34sfds\"\n            ],\n            \"Name\": \"datasourceId\"\n        },\n        {\n            \"Values\": [\n                \"hive\"\n            ],\n            \"Name\": \"type\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21cf31f1-f8fd-4ecd-9217-594bba69d8ab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DatabaseInfo\": [\n            {\n                \"DatabaseId\": null,\n                \"DatabaseName\": \"\",\n                \"OriginDatabaseName\": \"test\",\n                \"OriginSchemaName\": null\n            }\n        ],\n        \"RequestId\": \"21cf31f1-f8fd-4ecd-9217-594bba69d8ab\"\n    }\n}",
         "title": "获取数据库信息"
       }
     ],

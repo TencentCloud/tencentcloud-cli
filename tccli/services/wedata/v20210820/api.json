@@ -7269,6 +7269,14 @@
       "document": "DescribeDatabaseInfoList返回参数结构体",
       "members": [
         {
+          "document": "数据库列表",
+          "example": "无",
+          "member": "DatabaseInfo",
+          "name": "DatabaseInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

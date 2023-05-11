@@ -56,6 +56,14 @@
         "title": "创建云硬盘备份点"
       }
     ],
+    "CreateDisks": [
+      {
+        "document": "创建云硬盘",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisks\n<公共请求参数>\n\n{\n    \"DiskCount\": 1,\n    \"DiskChargePrepaid\": {\n        \"Period\": 1,\n        \"TimeUnit\": \"m\"\n    },\n    \"DiskName\": \"test\",\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskSize\": 20,\n    \"Zone\": \"ap-hongkong-2\",\n    \"DiskBackupQuota\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"lhdisk-2q0cs4oe\"\n        ],\n        \"RequestId\": \"69765fd3-56a6-4633-8afd-72ca7805226b\"\n    }\n}",
+        "title": "创建云硬盘"
+      }
+    ],
     "CreateFirewallRules": [
       {
         "document": "",
@@ -454,6 +462,14 @@
         "title": "续费实例询价-成功返回"
       }
     ],
+    "IsolateDisks": [
+      {
+        "document": "退还云硬盘",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-ovav4qmi\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e43cdee7-5dc8-4d3c-9c46-56718971b193\"\n    }\n}",
+        "title": "退还云硬盘"
+      }
+    ],
     "IsolateInstances": [
       {
         "document": "退还实例",
@@ -556,6 +572,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=RebootInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4225fd9d-38cb-4cc7-b7b0-7332809ddca7\"\n    }\n}",
         "title": "重启实例"
+      }
+    ],
+    "RenewDisks": [
+      {
+        "document": "续费云硬盘",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-ovav4qmi\"\n    ],\n    \"RenewDiskChargePrepaid\": {\n        \"CurInstanceDeadline\": \"2023-09-09 23:59:59\"\n    },\n    \"AutoVoucher\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c139e106-cdb2-4923-8f1e-ea1dc4fe3a47\"\n    }\n}",
+        "title": "续费云硬盘"
       }
     ],
     "RenewInstances": [

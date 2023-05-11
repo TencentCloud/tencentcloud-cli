@@ -1,11 +1,17 @@
 **Example 1: 查询专有集群配置列表**
 
-
+查询专用集群订单配置列表。
 
 Input: 
 
 ```
-tccli cdc DescribeDedicatedClusterTypes --cli-unfold-argument ```
+tccli cdc DescribeDedicatedClusterTypes --cli-unfold-argument  \
+    --Name abc \
+    --DedicatedClusterTypeIds abc \
+    --Offset 0 \
+    --Limit 10 \
+    --IsCompute True
+```
 
 Output: 
 ```

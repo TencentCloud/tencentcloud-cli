@@ -1,15 +1,15 @@
 **Example 1: 查询所有已挂载的数据盘**
 
-
+用于查询所有已挂载的数据盘
 
 Input: 
 
 ```
 tccli cbs DescribeDisks --cli-unfold-argument  \
-    --Filters.0.Name disk-usage \
-    --Filters.0.Values DATA_DISK \
-    --Filters.1.Name disk-state \
-    --Filters.1.Values ATTACHED
+    --Filters.0.Values ATTACHED \
+    --Filters.0.Name disk-state \
+    --Filters.1.Values DATA_DISK \
+    --Filters.1.Name disk-usage
 ```
 
 Output: 
@@ -52,14 +52,18 @@ Output:
                 "ThroughputPerformance": 1,
                 "Migrating": true,
                 "InstanceIdList": [
-                    "xx"
+                    "ins-test1234"
                 ],
                 "Shareable": true,
                 "MigratePercent": 100,
                 "SnapshotSize": 100,
                 "SnapshotCount": 0,
                 "BackupDisk": true,
-                "AttachMode": "PF"
+                "AttachMode": "PF",
+                "DiskBackupQuota": 1,
+                "DiskBackupCount": 1,
+                "DeleteSnapshot": 0,
+                "InstanceType": "CVM"
             }
         ]
     }

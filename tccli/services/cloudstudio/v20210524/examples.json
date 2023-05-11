@@ -18,7 +18,7 @@
     ],
     "CreateWorkspaceByTemplate": [
       {
-        "document": "",
+        "document": "通过模板 ID 创建工作空间",
         "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceByTemplate\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"TemplateId\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkspaceId\": 26,\n            \"SpaceKey\": \"tfyiyw\"\n        },\n        \"RequestId\": \"26881c75-375d-48ad-9a24-7270176e4fab\"\n    }\n}",
         "title": "CreateWorkspaceByTemplate"

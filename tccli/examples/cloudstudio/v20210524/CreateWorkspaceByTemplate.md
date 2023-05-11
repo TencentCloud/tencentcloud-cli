@@ -1,6 +1,6 @@
 **Example 1: CreateWorkspaceByTemplate**
 
-
+通过模板 ID 创建工作空间
 
 Input: 
 

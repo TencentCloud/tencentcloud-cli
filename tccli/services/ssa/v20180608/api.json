@@ -219,11 +219,34 @@
       ],
       "usage": "out"
     },
+    "AlertListAggregations": {
+      "document": "空Aggregations结构体",
+      "members": [
+        {
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AlertListData": {
       "document": "告警列表响应数据",
       "members": [
         {
-          "default": "",
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -233,13 +256,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "返回列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "AlertType",
           "name": "AlertList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "聚合参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlertListAggregations",
+          "name": "Aggregations",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -249,7 +280,6 @@
       "document": "告警字段",
       "members": [
         {
-          "default": "",
           "document": "标准时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -259,7 +289,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -269,7 +298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -279,7 +307,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[”xx”]",
           "member": "string",
@@ -289,7 +316,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -299,7 +325,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "告警级别  0:未知 1:低危 2:中危 3:高危 4:严重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -309,7 +334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -319,7 +343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -329,7 +352,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "攻击字段1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -339,7 +361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "攻击字段2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -349,7 +370,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关注点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "ConcernInfo",
@@ -359,7 +379,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "1：已防御，0,2：仅检测(0:告警类 1:拦截类 2:放行类 )\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -369,7 +388,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "0/空：未知，1：未成功，2：成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -379,7 +397,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "//调查状态  0/空：未启用，1：调查中，2：完成调查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -389,7 +406,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "//关联事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -399,7 +415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "//处置状态  0：未关闭，1：已关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -409,7 +424,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
@@ -419,7 +433,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "恶意实体\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -429,7 +442,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "受害者实体\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -439,7 +451,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
@@ -449,7 +460,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "告警子类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”xx”",
           "member": "string",
@@ -459,7 +469,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "攻击技术名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
@@ -469,7 +478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[”xx”]",
           "member": "string",
@@ -479,7 +487,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "攻击战术名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
@@ -489,13 +496,75 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产子网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
           "name": "VictimAssetSub",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "VictimAssetVpc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "Timestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[”xx”]",
+          "member": "string",
+          "name": "AssetGroupName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产项目名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "AssetProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失陷资产内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[”xx”]",
+          "member": "string",
+          "name": "VictimAssetContent",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误报告状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "WrongReportStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误报告Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "WrongReportConditionId",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -790,8 +859,8 @@
       "document": "资产详情信息",
       "members": [
         {
-          "default": "",
           "document": "资产类型",
+          "example": "无",
           "member": "string",
           "name": "AssetType",
           "required": true,
@@ -799,8 +868,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名字",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -808,8 +877,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -817,8 +886,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "所属网络",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -826,8 +895,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机类型",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -835,8 +904,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机状态",
+          "example": "无",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -844,8 +913,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP-公网",
+          "example": "无",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -853,8 +922,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "引擎版本",
+          "example": "无",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
@@ -862,8 +931,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标识",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -871,8 +940,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签",
+          "example": "无",
           "member": "Tag",
           "name": "Tag",
           "required": true,
@@ -880,8 +949,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内网IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -889,8 +958,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -898,8 +967,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "负载均衡示例的vip列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LoadBalancerVips",
           "required": true,
@@ -907,8 +976,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Uin",
           "required": true,
@@ -916,8 +985,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreationDate",
           "required": true,
@@ -925,8 +994,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "访问域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -934,8 +1003,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产唯一id",
+          "example": "无",
           "member": "string",
           "name": "AssetUniqid",
           "required": true,
@@ -943,8 +1012,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -952,8 +1021,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "配置硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -961,8 +1030,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "配置硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -970,8 +1039,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘/证书状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetStatus",
           "required": true,
@@ -979,8 +1048,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "证书类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertType",
           "required": true,
@@ -988,8 +1057,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -997,8 +1066,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertEndTime",
           "required": true,
@@ -1006,8 +1075,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "nosql引擎/版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ProductType",
           "required": true,
@@ -1015,8 +1084,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主机IP-内网",
+          "example": "无",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": true,
@@ -1024,8 +1093,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
           "required": true,
@@ -1033,8 +1102,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1042,8 +1111,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口服务数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Port",
           "required": true,
@@ -1051,8 +1120,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "配置风险数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RiskConfig",
           "required": true,
@@ -1060,8 +1129,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "相关待处理事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Event",
           "required": true,
@@ -1069,8 +1138,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "相关待处理漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Vul",
           "required": true,
@@ -1078,8 +1147,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SsaAssetDiscoverTime",
           "required": true,
@@ -1087,8 +1156,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetSubnetId",
           "required": true,
@@ -1096,8 +1165,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetSubnetName",
           "required": true,
@@ -1105,8 +1174,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetVpcName",
           "required": true,
@@ -1114,8 +1183,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ClusterType",
           "required": true,
@@ -1123,8 +1192,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NameSpace",
           "required": true,
@@ -1132,8 +1201,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetCreateTime",
           "required": true,
@@ -1141,8 +1210,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "负载均衡网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
@@ -1150,8 +1219,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ipv6信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AssetIpv6",
           "required": true,
@@ -1159,8 +1228,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ssh风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SSHRisk",
           "required": true,
@@ -1168,8 +1237,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "rdp风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RDPRisk",
           "required": true,
@@ -1177,8 +1246,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "安全事件风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "EventRisk",
           "required": true,
@@ -1186,12 +1255,66 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "漏洞数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "AssetVulNum",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AssetEventNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cspm风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AssetCspmRiskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaAssetDeleteTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "费用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetRegionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetVpcid",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1769,7 +1892,6 @@
       "document": "关注点类型",
       "members": [
         {
-          "default": "",
           "document": "关注点类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1779,7 +1901,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实体类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1789,7 +1910,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关注点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -1799,7 +1919,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最近数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1809,7 +1928,240 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "document": "IP国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "IpCountry",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "IP省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "IpProvince",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "置信度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Confidence",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "IpIsp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否基础设施\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "IpInfrastructure",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "威胁类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ThreatType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "威胁团伙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Groups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态威胁情报接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "恶意标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VictimAssetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VictimAssetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "注册者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainRegistrant",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "注册机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainRegisteredInstitution",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainRegistrationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "病毒名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VirusName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Pid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProcPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProcUser",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已防御\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DefendedCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "仅检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DetectedCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "可疑关注点字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -1819,7 +2171,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可疑关注点字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -1829,7 +2180,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可疑关注点字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -1839,7 +2189,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可疑关注点字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -1849,7 +2198,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可疑关注点字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
           "member": "string",
@@ -4253,7 +4601,6 @@
       "document": "测绘记录",
       "members": [
         {
-          "default": "",
           "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4263,7 +4610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4273,7 +4619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4283,7 +4628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4293,7 +4637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4303,7 +4646,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4313,7 +4655,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4323,7 +4664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4333,7 +4673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进程\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4343,7 +4682,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4353,7 +4691,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "测绘时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4363,7 +4700,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处置建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4373,7 +4709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处置建议详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4383,7 +4718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4393,7 +4727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4403,7 +4736,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "测绘状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4413,7 +4745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4423,13 +4754,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "安全防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SecurityStatus",
           "name": "SecurityStatus",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "处置建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DisposalRecommendation",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "测绘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MappingType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5382,20 +5730,20 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "document": "数据库标识",
+          "example": "-",
           "member": "int64",
           "name": "Fid",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "标签名称",
+          "document": "标签名称字段",
+          "example": "-",
           "member": "string",
           "name": "Fname",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

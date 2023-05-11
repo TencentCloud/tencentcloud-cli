@@ -448,6 +448,14 @@
         "title": "查看路由信息"
       }
     ],
+    "DescribeTaskStatus": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTaskStatus\r\n&FlowId=123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": 0\n        },\n        \"RequestId\": \"ca7d6645-e33b-436c-8c83-b2a1229a57fa\"\n    }\n}",
+        "title": "查询任务状态"
+      }
+    ],
     "DescribeTopic": [
       {
         "document": "",

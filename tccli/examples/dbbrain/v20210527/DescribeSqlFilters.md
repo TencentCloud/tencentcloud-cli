@@ -1,12 +1,16 @@
-**Example 1: DescribeSqlFilters**
+**Example 1: 查询实例SQL限流任务列表**
 
-
+查询实例SQL限流任务列表
 
 Input: 
 
 ```
 tccli dbbrain DescribeSqlFilters --cli-unfold-argument  \
-    --InstanceId cdb-test
+    --Product mysql \
+    --InstanceId cdb-test \
+    --Statuses RUNNING \
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 

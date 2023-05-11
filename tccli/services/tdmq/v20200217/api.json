@@ -98,11 +98,25 @@
       "output": "CreateEnvironmentRoleResponse",
       "status": "online"
     },
+    "CreateRabbitMQUser": {
+      "document": "创建RabbitMQ的用户",
+      "input": "CreateRabbitMQUserRequest",
+      "name": "创建RabbitMQ的用户",
+      "output": "CreateRabbitMQUserResponse",
+      "status": "online"
+    },
     "CreateRabbitMQVipInstance": {
       "document": "创建RabbitMQ专享版实例",
       "input": "CreateRabbitMQVipInstanceRequest",
       "name": "创建RabbitMQ专享版实例",
       "output": "CreateRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
+    "CreateRabbitMQVirtualHost": {
+      "document": "创建RabbitMQ的vhost",
+      "input": "CreateRabbitMQVirtualHostRequest",
+      "name": "创建RabbitMQ的vhost",
+      "output": "CreateRabbitMQVirtualHostResponse",
       "status": "online"
     },
     "CreateRocketMQCluster": {
@@ -3614,6 +3628,88 @@
       ],
       "type": "object"
     },
+    "CreateRabbitMQUserRequest": {
+      "document": "CreateRabbitMQUser请求参数结构体",
+      "members": [
+        {
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "密码，登录时使用",
+          "example": "abc123",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
+          "example": "monitoring",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "该用户的最大连接数，不填写则不限制",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnections",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "该用户的最大channel数，不填写则不限制",
+          "example": "2000",
+          "member": "int64",
+          "name": "MaxChannels",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQUserResponse": {
+      "document": "CreateRabbitMQUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRabbitMQVipInstanceRequest": {
       "document": "CreateRabbitMQVipInstance请求参数结构体",
       "members": [
@@ -3718,6 +3814,69 @@
           "name": "InstanceId",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVirtualHostRequest": {
+      "document": "CreateRabbitMQVirtualHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息轨迹开关,true打开,false关闭,默认关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "TraceFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVirtualHostResponse": {
+      "document": "CreateRabbitMQVirtualHost返回参数结构体",
+      "members": [
+        {
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8004,7 +8163,6 @@
       "document": "DescribeTopics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境（命名空间）名称。",
           "example": "test1",
           "member": "string",
@@ -8013,7 +8171,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "Pulsar 集群的ID",
+          "example": "cluster1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
           "document": "主题名模糊匹配。",
           "example": "topic1",
           "member": "string",
@@ -8022,7 +8187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "起始下标，不填默认为0。",
           "example": "0",
           "member": "uint64",
@@ -8031,7 +8195,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "20",
           "member": "uint64",
@@ -8040,7 +8203,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "topic类型描述：\n0：非持久非分区主题类型；\n1：非持久分区主题类型；\n2：持久非分区主题类型；\n3：持久分区主题类型；",
           "example": "1",
           "member": "uint64",
@@ -8049,16 +8211,6 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "Pulsar 集群的ID",
-          "example": "cluster1",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "* TopicName\n按照主题名字查询，精确查询。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
@@ -8067,7 +8219,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "创建来源：\n1：用户创建\n2：系统创建",
           "example": "1",
           "member": "uint64",
@@ -8086,7 +8237,6 @@
           "example": "无",
           "member": "Topic",
           "name": "TopicSets",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8095,7 +8245,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

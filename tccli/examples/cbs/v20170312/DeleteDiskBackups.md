@@ -1,6 +1,6 @@
 **Example 1: 删除云硬盘备份点**
 
-
+删除备份点ID为dbp-xxxxxxxx的备份点。
 
 Input: 
 

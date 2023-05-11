@@ -1,12 +1,20 @@
 **Example 1: 获取环境下主题列表**
 
-
+获取环境下主题列表
 
 Input: 
 
 ```
 tccli tdmq DescribeTopics --cli-unfold-argument  \
-    --EnvironmentId test1
+    --EnvironmentId abc \
+    --TopicName abc \
+    --Offset 1 \
+    --Limit 1 \
+    --TopicType 1 \
+    --ClusterId abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --TopicCreator 1
 ```
 
 Output: 
@@ -14,44 +22,44 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "abc",
         "TopicSets": [
             {
                 "PulsarTopicType": 0,
                 "TopicType": 1,
-                "ProducerCount": "xx",
-                "ConsumerLimit": "xx",
-                "ConsumerCount": "xx",
-                "LastLedgerCreatedTimestamp": "xx",
-                "MsgThroughputIn": "xx",
+                "ProducerCount": "abc",
+                "ConsumerLimit": "abc",
+                "ConsumerCount": "abc",
+                "LastLedgerCreatedTimestamp": "14578964532",
+                "MsgThroughputIn": "abc",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "AverageMsgSize": "xx",
+                "AverageMsgSize": "abc",
                 "Partitions": 1,
-                "Remark": "xx",
-                "LastConfirmedEntry": "xx",
-                "TotalSize": "xx",
-                "NumberOfEntries": "xx",
-                "MsgRateOut": "xx",
-                "ProducerLimit": "xx",
-                "EnvironmentId": "xx",
-                "TopicName": "xx",
-                "MsgRateIn": "xx",
-                "MsgThroughputOut": "xx",
+                "Remark": "abc",
+                "LastConfirmedEntry": "abc",
+                "TotalSize": "1",
+                "NumberOfEntries": "abc",
+                "MsgRateOut": "abc",
+                "ProducerLimit": "abc",
+                "EnvironmentId": "abc",
+                "TopicName": "abc",
+                "MsgRateIn": "abc",
+                "MsgThroughputOut": "abc",
                 "SubTopicSets": [
                     {
                         "TopicType": 1,
-                        "ProducerCount": "xx",
-                        "LastConfirmedEntry": "xx",
-                        "TotalSize": "xx",
-                        "NumberOfEntries": "xx",
-                        "ConsumerCount": "xx",
-                        "MsgRateOut": "xx",
-                        "AverageMsgSize": "xx",
-                        "MsgThroughputIn": "xx",
-                        "MsgRateIn": "xx",
+                        "ProducerCount": "1",
+                        "LastConfirmedEntry": "abc",
+                        "TotalSize": "1",
+                        "NumberOfEntries": "abc",
+                        "ConsumerCount": "1",
+                        "MsgRateOut": "abc",
+                        "AverageMsgSize": "1",
+                        "MsgThroughputIn": "abc",
+                        "MsgRateIn": "abc",
                         "Partitions": 0,
-                        "LastLedgerCreatedTimestamp": "xx",
-                        "MsgThroughputOut": "xx"
+                        "LastLedgerCreatedTimestamp": "124567885324",
+                        "MsgThroughputOut": "abc"
                     }
                 ],
                 "CreateTime": "2020-09-22 00:00:00"

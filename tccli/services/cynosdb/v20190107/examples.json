@@ -264,6 +264,14 @@
         "title": "查询实例详情"
       }
     ],
+    "DescribeInstanceErrorLogs": [
+      {
+        "document": "查询错误日志",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceErrorLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-xxxxxxxx\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"StartTime\": \"2019-07-04 16:45:32\",\n    \"EndTime\": \"2019-07-04 16:55:32\",\n    \"OrderBy\": \"Timestatmp\",\n    \"OrderByType\": \"DESC\",\n    \"LogLevels\": [\n        \"error\"\n    ],\n    \"KeyWords\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ErrorLogs\": [\n            {\n                \"Timestamp\": 0,\n                \"Level\": \"error\",\n                \"Content\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询错误日志"
+      }
+    ],
     "DescribeInstanceSlowQueries": [
       {
         "document": "",
@@ -350,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-xxx\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-xxxxxxxx\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-ajr1jzgj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "安全组批量绑定云资源"
+      }
+    ],
+    "ExportInstanceErrorLogs": [
+      {
+        "document": "导出错误日志",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportInstanceErrorLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-xxxxxxxx\",\n    \"StartTime\": \"2019-07-04 16:45:32\",\n    \"EndTime\": \"2019-07-04 16:55:32\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"LogLevels\": [\n        \"error\"\n    ],\n    \"KeyWords\": [\n        \"abc\"\n    ],\n    \"FileType\": \"csv\",\n    \"OrderBy\": \"Timestamp\",\n    \"OrderByType\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLogItems\": [\n            {\n                \"Timestamp\": \"2019-07-04 16:45:32\",\n                \"Level\": \"error\",\n                \"Content\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "导出错误日志"
       }
     ],
     "ExportInstanceSlowQueries": [
@@ -526,6 +542,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6990cckk\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
         "title": "开通审计"
+      }
+    ],
+    "OpenReadOnlyInstanceExclusiveAccess": [
+      {
+        "document": "任何场景",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenReadOnlyInstanceExclusiveAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwertyui\",\n    \"InstanceId\": \"cynosdbmysql-ins-asdfghjk\",\n    \"VpcId\": \"vpc-asdfghjk\",\n    \"SubnetId\": \"subnet-qwertyui\",\n    \"Port\": 3306,\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"12345\",\n        \"RequestId\": \"123123123123123\"\n    }\n}",
+        "title": "ex:"
       }
     ],
     "PauseServerless": [

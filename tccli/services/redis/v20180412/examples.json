@@ -50,8 +50,8 @@
     ],
     "ChangeReplicaToMaster": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeReplicaToMaster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"GroupId\": 301524\n}",
+        "document": "多AZ、单AZ场景下的副本提主",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeReplicaToMaster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5****\",\n    \"GroupId\": 301524\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
         "title": "请求示例"
       }
@@ -296,9 +296,9 @@
     ],
     "DescribeInstanceNodeInfo": [
       {
-        "document": "",
+        "document": "查询节点信息",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceNodeInfo\n&InstanceId=crs-asdasdas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\",\n        \"ProxyCount\": 10,\n        \"RedisCount\": 10,\n        \"TendisCount\": 5,\n        \"Proxy\": [\n            {\n                \"NodeId\": \"6abb7c308ed3d65930599d6f3d978971864cec77\"\n            }\n        ],\n        \"Redis\": [\n            {\n                \"ClusterId\": 0,\n                \"NodeId\": \"0f2ce0f969c4f43bc338bc1d6f60597d654bb3e4\",\n                \"NodeRole\": \"slave\"\n            }\n        ],\n        \"Tendis\": [\n            {\n                \"NodeId\": \"54dc6b83093359783abd2f0b07da61d3\",\n                \"NodeRole\": \"master\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProxyCount\": 0,\n        \"Proxy\": [\n            {\n                \"NodeId\": \"abc\",\n                \"ZoneId\": 0\n            }\n        ],\n        \"RedisCount\": 0,\n        \"Redis\": [\n            {\n                \"NodeId\": \"abc\",\n                \"NodeRole\": \"abc\",\n                \"ClusterId\": 0,\n                \"ZoneId\": 0\n            }\n        ],\n        \"TendisCount\": 0,\n        \"Tendis\": [\n            {\n                \"NodeId\": \"abc\",\n                \"NodeRole\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -440,10 +440,10 @@
     ],
     "DescribeTaskList": [
       {
-        "document": "",
+        "document": "查询实例的任务详情",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-opcazbrb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a7fb07-8e21-4827-88dd-fee57f38e8cd\",\n        \"Tasks\": [\n            {\n                \"EndTime\": \"2019-11-15 14:25:46\",\n                \"InstanceId\": \"crs-opcazbrb\",\n                \"InstanceName\": \"multidbccbugfix11153\",\n                \"Progress\": 1,\n                \"ProjectId\": 0,\n                \"Result\": 2,\n                \"StartTime\": \"2019-11-15 14:25:37\",\n                \"TaskId\": 42372,\n                \"TaskType\": \"037\"\n            },\n            {\n                \"EndTime\": \"2019-11-15 14:25:25\",\n                \"InstanceId\": \"crs-opcazbrb\",\n                \"InstanceName\": \"multidbccbugfix11153\",\n                \"Progress\": 1,\n                \"ProjectId\": 0,\n                \"Result\": 2,\n                \"StartTime\": \"2019-11-15 14:25:16\",\n                \"TaskId\": 42371,\n                \"TaskType\": \"037\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
-        "title": "请求示例"
+        "title": "示例"
       }
     ],
     "DescribeTendisSlowLog": [

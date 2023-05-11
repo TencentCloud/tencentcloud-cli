@@ -114,8 +114,8 @@
     ],
     "DeleteSqlFilters": [
       {
-        "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DeleteSqlFilters\n&InstanceId=cdb-test\n&SessionToken=cAuth\n&FilterIds.0=1234\n&<公共请求参数>",
+        "document": "删除实例SQL限流任务",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSqlFilters\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"InstanceId\": \"cdb-hxuthiy6\",\n    \"FilterIds\": [\n        1089146\n    ],\n    \"SessionToken\": \"xxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\"\n    }\n}",
         "title": "删除实例SQL限流任务"
       }
@@ -285,7 +285,7 @@
         "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSlowLogTopSqls\n&InstanceId=test\n&SortBy=QueryTime\n&OrderBy=ASC\n&Limit=10\n&Offset=0\n&StartTime=2019-01-01 00:00:00\n&EndTime=2019-01-01 01:00:00\n&SchemaList.0.Schema=dbName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"QueryTimeMin\": 0.0,\n                \"LockTimeMin\": 0.0,\n                \"QueryTimeMax\": 14.086705,\n                \"QueryTimeRatio\": 0.0,\n                \"RowsSentRatio\": 0.0,\n                \"RowsSentMax\": 0,\n                \"RowsExaminedMin\": 0,\n                \"RowsSentMin\": 0,\n                \"SqlText\": \"select * from user\",\n                \"Schema\": \"test\",\n                \"LockTimeMax\": 0.0,\n                \"LockTimeRatio\": 0.0,\n                \"ExecTimes\": 2,\n                \"LockTimeAvg\": 0.0,\n                \"RowsExamined\": 0,\n                \"RowsSentAvg\": 0.0,\n                \"QueryTime\": 28.17341,\n                \"RowsExaminedAvg\": 0.0,\n                \"RowsExaminedMax\": 0,\n                \"RowsSent\": 0,\n                \"RowsExaminedRatio\": 0.0,\n                \"QueryTimeAvg\": 0.0,\n                \"SqlTemplate\": \"select * from user where name=?\",\n                \"LockTime\": 0.0,\n                \"Md5\": \"2323847233\"\n            }\n        ]\n    }\n}",
-        "title": "获取慢SQL模版列表 "
+        "title": "获取慢SQL模板列表 "
       }
     ],
     "DescribeSlowLogUserHostStats": [
@@ -306,10 +306,10 @@
     ],
     "DescribeSqlFilters": [
       {
-        "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSqlFilters\n&InstanceId=cdb-test\n&<公共请求参数>",
+        "document": "查询实例SQL限流任务列表",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlFilters\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"InstanceId\": \"cdb-test\",\n    \"Statuses\": [\n        \"RUNNING\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Id\": 1234,\n                \"ExpireTime\": \"2020-04-20T10:10:00+08:00\",\n                \"CurrentTime\": \"2020-04-20T10:05:00+08:00\",\n                \"CreateTime\": \"2020-04-20T10:00:00+08:00\",\n                \"Status\": \"RUNNING\",\n                \"MaxConcurrency\": 10,\n                \"CurrentConcurrency\": 5,\n                \"RejectedSqlCount\": 1000,\n                \"SqlType\": \"SELECT\",\n                \"OriginRule\": \"xxxx\",\n                \"OriginKeys\": \"k1,k2\"\n            }\n        ],\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\",\n        \"TotalCount\": 339\n    }\n}",
-        "title": "DescribeSqlFilters"
+        "title": "查询实例SQL限流任务列表"
       }
     ],
     "DescribeSqlTemplate": [
@@ -370,7 +370,7 @@
       {
         "document": "Stage为\"commit\"阶段",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillMySqlThreads\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-8jawylhf\",\n    \"SqlExecId\": \"2e2e2\",\n    \"Stage\": \"Commit\",\n    \"Product\": \"mysql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SqlExecId\": \"xx\",\n        \"Threads\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SqlExecId\": \"ewfscd\",\n        \"Threads\": [\n            0\n        ],\n        \"RequestId\": \"sscrft\"\n    }\n}",
         "title": "根据会话ID中断当前会话"
       }
     ],

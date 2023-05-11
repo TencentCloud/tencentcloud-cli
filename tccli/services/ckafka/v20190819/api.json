@@ -371,6 +371,13 @@
       "output": "DescribeRouteResponse",
       "status": "online"
     },
+    "DescribeTaskStatus": {
+      "document": "查询任务状态",
+      "input": "DescribeTaskStatusRequest",
+      "name": "查询任务状态",
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
+    },
     "DescribeTopic": {
       "document": "接口请求域名：https://ckafka.tencentcloudapi.com\n本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表",
       "input": "DescribeTopicRequest",
@@ -7035,6 +7042,39 @@
           "member": "RouteResponse",
           "name": "Result",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务唯一标记",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "member": "TaskStatusResponse",
+          "name": "Result",
           "type": "object",
           "value_allowed_null": false
         },
@@ -14157,6 +14197,30 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskStatusResponse": {
+      "document": "任务状态返回对象",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态:\n0 成功\n1 失败\n2 进行中",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Output",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TdwParam": {
       "document": "Tdw类型入参",

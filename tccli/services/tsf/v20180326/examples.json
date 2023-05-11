@@ -360,6 +360,14 @@
         "title": "删除文件配置项"
       }
     ],
+    "DeleteGatewayApi": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteGatewayApi\r\n&GroupId=grp-5yk7oor1\r\n&ApiIdList.0=api-d5970cd2\r\n&ApiIdList.1=api-d5970cd3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "批量删除API"
+      }
+    ],
     "DeleteGroup": [
       {
         "document": "",

@@ -24,14 +24,6 @@
         "title": "创建加固资源"
       }
     ],
-    "CreateScanInstances": [
-      {
-        "document": "通过该接口提交要扫描的app信息（示例中的AppUrl和CallbackUrl仅示例，实际无法使用，请用实际可用的url进行替换）",
-        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanInstances\n<公共请求参数>\n\n{\n    \"ScanInfo\": {\n        \"ScanTypes\": [\n            \"VULSCAN\",\n            \"ADSCAN\"\n        ],\n        \"CallbackUrl\": \"http://example.com/cb\"\n    },\n    \"AppInfos\": [\n        {\n            \"AppMd5\": \"dd5b29a800246d7089febf228286d901\",\n            \"AppUrl\": \"http://example.com/1.apk\",\n            \"AppSize\": \"1024\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1,\n        \"ItemId\": \"shgugu-hiw72-334kd\",\n        \"AppMd5s\": [\n            \"sashiuashiah\",\n            \"hugugusaw76712\"\n        ],\n        \"LimitTime\": 0,\n        \"LimitCount\": 0\n    }\n}",
-        "title": "提交一个app进行扫描"
-      }
-    ],
     "CreateShieldInstance": [
       {
         "document": "通过该接口提交要加固的app信息（示例中的AppUrl和CallbackUrl仅示例，实际无法使用，请用实际可用的url进行替换）",
@@ -46,14 +38,6 @@
         "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateShieldPlanInstance\n<公共请求参数>\n\n{\n    \"PlanName\": \"xx\",\n    \"ResourceId\": \"xx\",\n    \"PlanInfo\": {\n        \"Dex\": \"1\",\n        \"SoType\": [\n            \"xx\"\n        ],\n        \"AntiLogLeak\": \"0\",\n        \"ApkSizeOpt\": \"1\",\n        \"SoInfo\": {\n            \"SoFileNames\": [\n                \"xx\"\n            ]\n        },\n        \"AntiQemuRoot\": \"0\",\n        \"AntiVMP\": \"0\",\n        \"Db\": \"0\",\n        \"SeperateDex\": \"0\",\n        \"AntiScreenshot\": \"0\",\n        \"So\": \"1\",\n        \"AntiRepack\": \"1\",\n        \"AntiAssets\": \"0\",\n        \"DexSig\": \"1\",\n        \"Bugly\": \"0\",\n        \"AntiSSL\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1,\n        \"PlanId\": 1\n    }\n}",
         "title": "新增加固策略"
-      }
-    ],
-    "DeleteScanInstances": [
-      {
-        "document": "通过传入AppSid集合删除1个或者多个扫描实例",
-        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScanInstances\n<公共请求参数>\n\n{\n    \"AppSids\": [\n        \"xyuu-csu-ee78236l\",\n        \"hhussxu-hui2677-kk\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1\n    }\n}",
-        "title": "根据AppSid对扫描实例进行删除"
       }
     ],
     "DeleteShieldInstances": [
@@ -78,22 +62,6 @@
         "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceInstances\n<公共请求参数>\n\n{\n    \"Pids\": [\n        \"12750\"\n    ],\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"xx\",\n                \"Pid\": 1,\n                \"ExpireTime\": 1,\n                \"IsBind\": 1,\n                \"ResourceName\": \"xx\",\n                \"BindInfo\": {\n                    \"AppPkgName\": \"xx\",\n                    \"AppIconUrl\": \"xx\",\n                    \"AppName\": \"xx\"\n                },\n                \"CreateTime\": 1\n            }\n        ]\n    }\n}",
         "title": "获取某个用户的加固资源信息"
-      }
-    ],
-    "DescribeScanInstances": [
-      {
-        "document": "根据提交实例的包名和名称进行筛选，并返回最新的20条记录",
-        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanInstances\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Filters\": [\n        {\n            \"Name\": \"AppPkgName\",\n            \"Value\": \"com.tencent.mm\"\n        },\n        {\n            \"Name\": \"AppName\",\n            \"Value\": \"wechat\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ScanSet\": [\n            {\n                \"ItemId\": \"xx\",\n                \"AppMd5\": \"xx\",\n                \"AppName\": \"xx\",\n                \"ScanCode\": 1,\n                \"AppVersion\": \"xx\",\n                \"TaskStatus\": 1,\n                \"AppSid\": \"xx\",\n                \"TaskTime\": 1,\n                \"VulCount\": 1,\n                \"AppSize\": 1,\n                \"AppPkgName\": \"xx\",\n                \"AppIconUrl\": \"xx\",\n                \"SafeType\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询扫描实例列表"
-      }
-    ],
-    "DescribeScanResults": [
-      {
-        "document": "通过唯一标识获取加固的结果，唯一标识ItemId通过请求扫描接口返回",
-        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanResults\n<公共请求参数>\n\n{\n    \"ItemId\": \"1shi2e-2387hjgus\",\n    \"AppMd5s\": [\n        \"dd5b29a800246d7089febf228286d901\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fdbd2b2-2867-4758-b450-5bac2d37440f\",\n        \"ScanSet\": [\n            {\n                \"AdInfo\": {\n                    \"Banners\": [],\n                    \"BoutiqueRecommands\": [],\n                    \"FloatWindowses\": [],\n                    \"IntegralWalls\": [],\n                    \"NotifyBars\": [],\n                    \"Spots\": []\n                },\n                \"AppDetailInfo\": {\n                    \"AppIconUrl\": \"http://ms-shield-1251001047.cos.ap-guangzhou.myqcloud.com/legu_icon/1255750086/a9d5f689b518beccc54a6f4286d18bcd?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDmQtAxYTAB2iBS8s2DCzazCD2g7OUq4Zw%26q-sign-time%3D1524646732%3B1524647092%26q-key-time%3D1524646732%3B1524647092%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da8553d5e3c61c2a44f16e9949b409b94d553d3e0%00\",\n                    \"AppMd5\": \"bc80057cf4323db8579e011f8a5f1402\",\n                    \"AppName\": \"\",\n                    \"AppPkgName\": \"\",\n                    \"AppSize\": 484980,\n                    \"AppVersion\": \"\",\n                    \"FileName\": \"testname\"\n                },\n                \"PermissionInfo\": {\n                    \"PermissionList\": [\n                        {\n                            \"Permission\": \"android.permission.READ_EXTERNAL_STORAGE\"\n                        },\n                        {\n                            \"Permission\": \"android.permission.WRITE_EXTERNAL_STORAGE\"\n                        },\n                        {\n                            \"Permission\": \"android.permission.INTERNET\"\n                        }\n                    ]\n                },\n                \"SensitiveInfo\": {\n                    \"SensitiveList\": [\n                        {\n                            \"FilePath\": \"0000bbd2fdef20ad2fa7caef1a9f1e762532f78c/resources.arsc\",\n                            \"FileSha\": \"3513b0e608e075f2e1beb49ba32d59b3e44d7622\",\n                            \"WordList\": [\n                                \"手槍\"\n                            ]\n                        }\n                    ]\n                },\n                \"StatusCode\": 0,\n                \"StatusDesc\": \"\",\n                \"StatusRef\": \"\",\n                \"TaskStatus\": 1,\n                \"TaskTime\": 1546511829,\n                \"VirusInfo\": {\n                    \"SafeType\": 1,\n                    \"VirusDesc\": \"\",\n                    \"VirusName\": \"\"\n                },\n                \"VulInfo\": {\n                    \"VulFileScore\": 0,\n                    \"VulList\": [\n                        {\n                            \"RiskLevel\": 1,\n                            \"VulCode\": \"<com.unity3d.player.UnityPlayer: void <init>(android.content.ContextWrapper)>\",\n                            \"VulDesc\": \"在android中使用Broadcast接收广播的过程中，当receiver没有进行合适的配置时，可能导致攻击者构造广播发送给被攻击recevier。导致被攻击应用接受到错误信息，从而导致进一步的危害。\",\n                            \"VulFilepath\": \"classes.dex\",\n                            \"VulId\": \"22\",\n                            \"VulName\": \"Broadcast Receiver组件暴露风险（含动态注册）\",\n                            \"VulSolution\": \"1.如果应用的Receiver组件不必要导出，或者组件配置了intent filter标签，建议在AndroidManifest.xml文件中设置组件的“android:exported”属性为false\\n2.如果组件必须要提供给外部应用使用，建议对组件进行权限控制\",\n                            \"VulSrcType\": 1\n                        },\n                        {\n                            \"RiskLevel\": 2,\n                            \"VulCode\": \"debuggable option do not disable in AndroidManifest\",\n                            \"VulDesc\": \"在AndroidManifest.xml中配置debuggable=true导致程序可以被调试，有数据泄漏的风险\",\n                            \"VulFilepath\": \"AndroidManifest.xml\",\n                            \"VulId\": \"1\",\n                            \"VulName\": \"调试标志未关闭漏洞\",\n                            \"VulSolution\": \"在AndroidManifest.xml配置debuggable=false\",\n                            \"VulSrcType\": 0\n                        },\n                        {\n                            \"RiskLevel\": 2,\n                            \"VulCode\": \"allowBackUp option do not disable in AndroidManifest\",\n                            \"VulDesc\": \"在AndroidManifest.xml若将allowBackUp属性设为true，用户即可通过adb buckup命令备份文件数据并通过adb restore命令将备份文件导入\",\n                            \"VulFilepath\": \"AndroidManifest.xml\",\n                            \"VulId\": \"2\",\n                            \"VulName\": \"allowBackUp文件备份漏洞\",\n                            \"VulSolution\": \"在应用正式发布之前将AndroidManifest.xml文件中的allowBackUp属性值设置为false\",\n                            \"VulSrcType\": 0\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询扫描结果"
       }
     ],
     "DescribeShieldInstances": [

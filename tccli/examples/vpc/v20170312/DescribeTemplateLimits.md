@@ -1,13 +1,11 @@
 **Example 1: 查询参数模板配额列表**
 
-
+查询参数模板配额列表
 
 Input: 
 
 ```
-tccli vpc DescribeTemplateLimits --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeTemplateLimits --cli-unfold-argument ```
 
 Output: 
 ```

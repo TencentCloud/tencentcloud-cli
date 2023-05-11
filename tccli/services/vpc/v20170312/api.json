@@ -547,7 +547,7 @@
       "status": "online"
     },
     "DeleteFlowLog": {
-      "document": "本接口（DeleteFlowLog）用于删除流日志",
+      "document": "本接口（DeleteFlowLog）用于删除流日志。",
       "input": "DeleteFlowLogRequest",
       "name": "删除流日志",
       "output": "DeleteFlowLogResponse",
@@ -911,7 +911,7 @@
       "status": "online"
     },
     "DescribeFlowLog": {
-      "document": "本接口（DescribeFlowLog）用于查询流日志实例信息",
+      "document": "本接口（DescribeFlowLog）用于查询流日志实例信息。",
       "input": "DescribeFlowLogRequest",
       "name": "查询流日志实例信息",
       "output": "DescribeFlowLogResponse",
@@ -1667,7 +1667,7 @@
       "status": "online"
     },
     "ModifyFlowLogAttribute": {
-      "document": "本接口（ModifyFlowLogAttribute）用于修改流日志属性",
+      "document": "本接口（ModifyFlowLogAttribute）用于修改流日志属性。",
       "input": "ModifyFlowLogAttributeRequest",
       "name": "修改流日志属性",
       "output": "ModifyFlowLogAttributeResponse",
@@ -3176,16 +3176,16 @@
       "document": "AssignIpv6SubnetCidrBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。",
+          "example": "\"vpc-xxxx\"",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "分配 `IPv6` 子网段列表。",
+          "example": "{ \"SubnetId\": \"subnet-xxxx\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\" }",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,
@@ -3199,6 +3199,7 @@
       "members": [
         {
           "document": "分配 `IPv6` 子网段列表。",
+          "example": "[{ \"SubnetId\": \"subnet-oy2v3j92\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\", \"ISPType\": \"BGP\"} ]",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlockSet",
           "type": "list",
@@ -3275,8 +3276,8 @@
       "document": "VPC辅助CIDR信息。",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3284,8 +3285,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "辅助CIDR。形如：`172.16.0.0/16`",
+          "example": "无",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -3293,8 +3294,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。",
+          "example": "无",
           "member": "int64",
           "name": "AssistantType",
           "required": true,
@@ -3302,8 +3303,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
           "required": true,
@@ -3664,7 +3665,6 @@
       "document": "AttachClassicLinkVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID",
           "example": "vpc-gjui0b5t",
           "member": "string",
@@ -3673,9 +3673,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM实例ID",
-          "example": "[\"ins-0x5msjda\\n\"]",
+          "example": "[\"ins-0x5msjda\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4824,8 +4823,8 @@
       "document": "CheckDefaultSubnet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -4839,6 +4838,7 @@
       "members": [
         {
           "document": "检查结果。true为可以创建默认子网，false为不可以创建默认子网。",
+          "example": "True",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -5151,7 +5151,6 @@
       "document": "CreateAddressTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "IP地址模板名称。",
           "example": "TestName",
           "member": "string",
@@ -5160,7 +5159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "地址信息，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。",
           "example": "[\"192.168.1.0\\/24\\r\\n\",\"192.168.2.0\\/24\\r\\n\"]",
           "member": "string",
@@ -5169,7 +5167,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "地址信息，支持携带备注，支持 IP、CIDR、IP 范围。Addresses与AddressesExtra必填其一。",
           "example": "无",
           "member": "AddressInfo",
@@ -5188,7 +5185,6 @@
           "example": "无",
           "member": "AddressTemplate",
           "name": "AddressTemplate",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6936,7 +6932,7 @@
         },
         {
           "document": "支持单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。",
-          "example": "[\"TCP:8080\\r\\n\",\"UDP:99\\r\\n\"]",
+          "example": "[\"TCP:8080\",\"UDP:99\"]",
           "member": "string",
           "name": "Services",
           "required": false,
@@ -8639,7 +8635,6 @@
       "document": "DeleteDhcpIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`DhcpIp`的`ID`，是`DhcpIp`的唯一标识。",
           "example": "dhcpip-12345678",
           "member": "string",
@@ -8728,8 +8723,7 @@
       "document": "DeleteFlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "流日志唯一ID",
+          "document": "流日志唯一ID。",
           "example": "fl-xxxxxx",
           "member": "string",
           "name": "FlowLogId",
@@ -8737,7 +8731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私用网络ID或者统一ID，建议使用统一ID，删除云联网流日志时，可不填，其他流日志类型必填。",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -9428,7 +9421,6 @@
       "document": "DeleteVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-3ptx9s8b",
           "member": "string",
@@ -9857,7 +9849,6 @@
       "document": "DescribeAssistantCidr请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`数组。形如：[`vpc-6v2ht8q5`]",
           "example": "vpc-6v2ht8q5",
           "member": "string",
@@ -9866,7 +9857,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
           "example": "无",
           "member": "Filter",
@@ -9875,7 +9865,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -9884,7 +9873,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -9903,7 +9891,6 @@
           "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9912,7 +9899,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11100,16 +11086,16 @@
       "document": "DescribeFlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "私用网络ID或者统一ID，建议使用统一ID",
+          "document": "私用网络ID或者统一ID，建议使用统一ID。",
+          "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志唯一ID",
+          "document": "流日志唯一ID。",
+          "example": "fl-xxxxxx",
           "member": "string",
           "name": "FlowLogId",
           "required": true,
@@ -11122,7 +11108,8 @@
       "document": "DescribeFlowLog返回参数结构体",
       "members": [
         {
-          "document": "流日志信息",
+          "document": "流日志信息。",
+          "example": "无",
           "member": "FlowLog",
           "name": "FlowLog",
           "type": "list",
@@ -12359,7 +12346,6 @@
       "document": "DescribeNetworkAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>",
           "example": "vpc-qw123456",
           "member": "Filter",
@@ -12368,7 +12354,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。",
           "example": "[acl-12345678]",
           "member": "string",
@@ -12377,7 +12362,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -12386,7 +12370,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最小值为1，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -12405,7 +12388,6 @@
           "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12414,7 +12396,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13512,6 +13493,7 @@
       "members": [
         {
           "document": "参数模板配额对象。",
+          "example": "无",
           "member": "TemplateLimit",
           "name": "TemplateLimit",
           "type": "object",
@@ -14016,7 +13998,6 @@
       "document": "DescribeVpcPrivateIpAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。",
           "example": "vpc-rkxd3pgh",
           "member": "string",
@@ -14025,7 +14006,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内网`IP`地址列表，批量查询单次请求最多支持`10`个。",
           "example": "[\"10.4.2.2\\n\",\"10.4.2.3\\n\",\"10.4.2.17\\n\"]",
           "member": "string",
@@ -14044,7 +14024,6 @@
           "example": "无",
           "member": "VpcPrivateIpAddress",
           "name": "VpcPrivateIpAddressSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14724,7 +14703,6 @@
       "document": "DetachClassicLinkVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-gjui0b5t",
           "member": "string",
@@ -14733,9 +14711,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM实例ID查询。形如：ins-r8hr2upy。",
-          "example": "[\"ins-0x5msjda\\n\"]",
+          "example": "[\"ins-0x5msjda\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -16282,7 +16259,6 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "tag-key",
           "member": "string",
@@ -16292,8 +16268,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。当值类型为布尔类型时，可直接取值为字符串\"TRUE\"或 \"FALSE\"。",
           "example": "[\"TagKeyA\", \"TagKeyB\"]",
           "member": "string",
           "name": "Values",
@@ -18521,6 +18496,7 @@
         {
           "default": "",
           "document": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。",
+          "example": "dhcpip-9o233uri",
           "member": "string",
           "name": "DhcpIpId",
           "required": true,
@@ -18529,6 +18505,7 @@
         {
           "default": "",
           "document": "`DhcpIp`名称，可任意命名，但不得超过60个字符。",
+          "example": "new name",
           "member": "string",
           "name": "DhcpIpName",
           "required": true,
@@ -18603,8 +18580,7 @@
       "document": "ModifyFlowLogAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "流日志唯一ID",
+          "document": "流日志唯一ID。",
           "example": "fl-xxxxxx",
           "member": "string",
           "name": "FlowLogId",
@@ -18612,7 +18588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。",
           "example": "vpc-xxxxx",
           "member": "string",
@@ -18621,8 +18596,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志实例名字",
+          "document": "流日志实例名字。",
           "example": "xxxxx",
           "member": "string",
           "name": "FlowLogName",
@@ -18630,8 +18604,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志实例描述",
+          "document": "流日志实例描述。",
           "example": "无",
           "member": "string",
           "name": "FlowLogDescription",
@@ -19603,24 +19576,24 @@
       "document": "ModifyServiceTemplateGroupAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "协议端口模板集合实例ID，例如：ppmg-ei8hfd9a。",
+          "example": "ppmg-p4oaqawq",
           "member": "string",
           "name": "ServiceTemplateGroupId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "协议端口模板集合名称。",
+          "example": "TEST",
           "member": "string",
           "name": "ServiceTemplateGroupName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "协议端口模板实例ID，例如：ppm-4dw6agho。",
+          "example": "['ppm-529nwwj8']",
           "member": "string",
           "name": "ServiceTemplateIds",
           "required": false,
@@ -20590,7 +20563,6 @@
       "document": "网络探测对象。",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-12345678`",
           "example": "无",
           "member": "string",
@@ -20600,7 +20572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`VPC`实例名称。",
           "example": "无",
           "member": "string",
@@ -20610,7 +20581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网实例ID。形如：subnet-12345678。",
           "example": "无",
           "member": "string",
@@ -20620,7 +20590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网实例名称。",
           "example": "无",
           "member": "string",
@@ -20630,7 +20599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络探测实例ID。形如：netd-12345678。",
           "example": "无",
           "member": "string",
@@ -20640,7 +20608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络探测名称，最大长度不能超过60个字节。",
           "example": "无",
           "member": "string",
@@ -20650,7 +20617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "探测目的IPv4地址数组，最多两个。",
           "example": "无",
           "member": "string",
@@ -20660,7 +20626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统自动分配的探测源IPv4数组。长度为2。",
           "example": "无",
           "member": "string",
@@ -20670,7 +20635,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；\nCCN：云联网网关；\nNONEXTHOP：无下一跳；",
           "example": "无",
           "member": "string",
@@ -20680,7 +20644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
           "example": "无",
           "member": "string",
@@ -20690,7 +20653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一跳网关名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -20700,7 +20662,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "网络探测描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -20710,7 +20671,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime",
@@ -22849,7 +22809,6 @@
       "document": "路由策略对象",
       "members": [
         {
-          "default": "",
           "document": "目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。",
           "example": "-",
           "member": "string",
@@ -22859,7 +22818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：本地网关。",
           "example": "-",
           "member": "string",
@@ -22869,8 +22827,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。",
+          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。\n特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。",
           "example": "-",
           "member": "string",
           "name": "GatewayId",
@@ -22879,7 +22836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。\n该字段在删除时必填，其他字段无需填写。",
           "example": "-",
           "member": "uint64",
@@ -22889,7 +22845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由策略描述。",
           "example": "-",
           "member": "string",
@@ -22899,7 +22854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否启用",
           "example": "-",
           "member": "bool",
@@ -22909,7 +22863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由类型，目前我们支持的类型有：\nUSER：用户路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和操作 USER 类型的路由。",
           "example": "-",
           "member": "string",
@@ -22919,7 +22872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "-",
           "member": "string",
@@ -22929,7 +22881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。",
           "example": "-",
           "member": "string",
@@ -22939,7 +22890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由唯一策略ID。",
           "example": "-",
           "member": "string",
@@ -22949,7 +22899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由策略是否发布到云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
           "member": "bool",
@@ -22959,7 +22908,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "路由策略创建时间",
           "example": "2021-03-02 14:41:15",
           "member": "datetime",
@@ -24862,16 +24810,16 @@
       "document": "UnassignIpv6SubnetCidrBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。",
+          "example": "vpc-q26u781x",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "`IPv6` 子网段列表。",
+          "example": "[{'SubnetId': 'subnet-8uwg949c'}]",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,

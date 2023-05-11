@@ -2,7 +2,7 @@
   "actions": {
     "ApplyDiskBackup": [
       {
-        "document": "",
+        "document": "回滚备份点到原云硬盘",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyDiskBackup\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\",\n    \"DiskBackupId\": \"dbp-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d41fd68-372a-4c90-81c6-a6f982328058\"\n    }\n}",
         "title": "回滚备份点到原云硬盘"
@@ -34,7 +34,7 @@
     ],
     "CopySnapshotCrossRegions": [
       {
-        "document": "",
+        "document": "将快照从广州复制到北京",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopySnapshotCrossRegions\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snap-ckgjwkqh\",\n    \"DestinationRegions\": [\n        \"ap-beijing\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SnapshotCopyResultSet\": [\n            {\n                \"SnapshotId\": \"snap-d012rm6t\",\n                \"DestinationRegion\": \"ap-beijing\",\n                \"Code\": \"Success\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"98f0b5f0-7d84-4d11-9819-ee7804e524a4\"\n    }\n}",
         "title": "将快照从广州复制到北京"
@@ -43,7 +43,7 @@
     "CreateAutoSnapshotPolicy": [
       {
         "document": "创建一个定期快照策略，绑定该定期快照策略的云盘会在每周5的0点创建快照。",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyName\": \"backup_data_friday\",\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                \"4\"\n            ],\n            \"Hour\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyName\": \"backup_data_friday\",\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                4\n            ],\n            \"Hour\": [\n                0\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicyId\": \"asp-1lebc9r3\",\n        \"NextTriggerTime\": \"2018-08-08 16:00:00\",\n        \"RequestId\": \"88d95732-c4e9-bd97-4a23-5a1f978d3b72\"\n    }\n}",
         "title": "创建定期快照策略"
       }
@@ -94,7 +94,7 @@
     ],
     "DeleteDiskBackups": [
       {
-        "document": "",
+        "document": "删除备份点ID为dbp-xxxxxxxx的备份点。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDiskBackups\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"dbp-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a79a4333-ac8e-426c-8cfe-2923c4010d64\"\n    }\n}",
         "title": "删除云硬盘备份点"
@@ -102,8 +102,8 @@
     ],
     "DeleteSnapshots": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteSnapshots\n&SnapshotIds.0=snap-gybrif0z\n&<公共请求参数>",
+        "document": "删除指定快照",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSnapshots\n<公共请求参数>\n\n{\n    \"SnapshotIds\": [\n        \"snap-cgrmci8t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4770576-d9eb-4689-0866-5a1f8200a722\"\n    }\n}",
         "title": "删除快照"
       }
@@ -111,7 +111,7 @@
     "DescribeAutoSnapshotPolicies": [
       {
         "document": "查询状态为NORMAL的定期快照策略",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeAutoSnapshotPolicies\r\n&Filters.0.Name=auto-snapshot-policy-state\r\n&Filters.0.Values.0=NORMAL\r\n&Limit=3\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoSnapshotPolicies\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"auto-snapshot-policy-state\",\n            \"Values\": [\n                \"NORMAL\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"DiskIdSet\": [],\n                \"IsActivated\": true,\n                \"AdvancedRetentionPolicy\": null,\n                \"IsCopyToRemote\": 0,\n                \"IsPermanent\": false,\n                \"AutoSnapshotPolicyState\": \"NORMAL\",\n                \"Tags\": [],\n                \"NextTriggerTime\": \"2023-03-03 07:00:00\",\n                \"AutoSnapshotPolicyName\": \"default-policy\",\n                \"AutoSnapshotPolicyId\": \"asp-3stvwfxx\",\n                \"CopyFromAccountUin\": null,\n                \"InstanceIdSet\": [],\n                \"RetentionAmount\": 0,\n                \"RetentionDays\": 15,\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            6,\n                            5\n                        ],\n                        \"Hour\": [\n                            7\n                        ]\n                    }\n                ],\n                \"RetentionMonths\": 0,\n                \"CreateTime\": \"2022-05-16 14:00:48\",\n                \"CopyToAccountUin\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9c112e22-96c6-4300-831e-5d52c8d361fc\"\n    }\n}",
         "title": "查询状态为NORMAL的定期快照策略"
       }
@@ -151,22 +151,22 @@
     "DescribeDiskStoragePool": [
       {
         "document": "部分用户(金融)对cbs集群有独享需求，该接口用来查询用户所拥有的独享集群。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskStoragePool\n&Filters.0.Name=cdc-id\n&Filters.0.Values.0=cdc-6brr1cvj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DiskStoragePoolSet\": [],\n        \"CdcSet\": [\n            {\n                \"CageId\": \"xx\",\n                \"CdcState\": \"NORMAL\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"CdcName\": \"untitled\",\n                \"CdcResource\": {\n                    \"DiskAavilable\": 1,\n                    \"DiskTotal\": 10\n                },\n                \"CdcId\": \"cdc-xxx\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskNumber\": 135,\n                \"ExpiredTime\": \"2022-02-25 15:59:15\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskStoragePool\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"cdc-id\",\n            \"Values\": [\n                \"cdc-6brr1cvj\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"2ed78bbb-c62b-4a93-8a97-a614ed9ef7e0\",\n        \"DiskStoragePoolSet\": [],\n        \"CdcSet\": [\n            {\n                \"CageId\": \"cdc-6brr1cvj\",\n                \"CdcState\": \"NORMAL\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"CdcName\": \"untitled\",\n                \"CdcResource\": {\n                    \"DiskAavilable\": 1,\n                    \"DiskTotal\": 10\n                },\n                \"CdcId\": \"cdc-xxx\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskNumber\": 135,\n                \"ExpiredTime\": \"2022-02-25 15:59:15\",\n                \"CreatedTime\": \"2022-01-25T15:59:15+00:00\"\n            }\n        ]\n    }\n}",
         "title": "指定独享集群ID查询集群详情。"
       }
     ],
     "DescribeDisks": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDisks\n&Filters.0.Name=disk-usage\n&Filters.0.Values.0=DATA_DISK\n&Filters.1.Name=disk-state\n&Filters.1.Values.0=ATTACHED\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"e2386a23-48c1-4c18-9a36-4e7354f333b2\",\n        \"DiskSet\": [\n            {\n                \"DeleteWithInstance\": false,\n                \"Encrypt\": false,\n                \"DiskType\": \"CLOUD_BASIC\",\n                \"AutoRenewFlagError\": false,\n                \"Rollbacking\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"DiskName\": \"test\",\n                \"Tags\": [],\n                \"InstanceId\": \"\",\n                \"DifferDaysOfDeadline\": 1,\n                \"DiskId\": \"disk-b94t5dzt\",\n                \"DiskState\": \"ATTACHED\",\n                \"Placement\": {\n                    \"ProjectId\": 0,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"IsReturnable\": false,\n                \"DeadlineTime\": \"2018-10-26 10:55:43\",\n                \"Attached\": true,\n                \"DiskSize\": 10,\n                \"DiskUsage\": \"DATA_DISK\",\n                \"Portable\": true,\n                \"DiskChargeType\": \"PREPAID\",\n                \"SnapshotAbility\": true,\n                \"DeadlineError\": false,\n                \"RollbackPercent\": 100,\n                \"AutoSnapshotPolicyIds\": null,\n                \"ReturnFailCode\": 3,\n                \"CreateTime\": \"2018-09-26 17:36:07\",\n                \"ThroughputPerformance\": 1,\n                \"Migrating\": true,\n                \"InstanceIdList\": [\n                    \"xx\"\n                ],\n                \"Shareable\": true,\n                \"MigratePercent\": 100,\n                \"SnapshotSize\": 100,\n                \"SnapshotCount\": 0,\n                \"BackupDisk\": true,\n                \"AttachMode\": \"PF\"\n            }\n        ]\n    }\n}",
+        "document": "用于查询所有已挂载的数据盘",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ATTACHED\"\n            ],\n            \"Name\": \"disk-state\"\n        },\n        {\n            \"Values\": [\n                \"DATA_DISK\"\n            ],\n            \"Name\": \"disk-usage\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"e2386a23-48c1-4c18-9a36-4e7354f333b2\",\n        \"DiskSet\": [\n            {\n                \"DeleteWithInstance\": false,\n                \"Encrypt\": false,\n                \"DiskType\": \"CLOUD_BASIC\",\n                \"AutoRenewFlagError\": false,\n                \"Rollbacking\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"DiskName\": \"test\",\n                \"Tags\": [],\n                \"InstanceId\": \"\",\n                \"DifferDaysOfDeadline\": 1,\n                \"DiskId\": \"disk-b94t5dzt\",\n                \"DiskState\": \"ATTACHED\",\n                \"Placement\": {\n                    \"ProjectId\": 0,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"IsReturnable\": false,\n                \"DeadlineTime\": \"2018-10-26 10:55:43\",\n                \"Attached\": true,\n                \"DiskSize\": 10,\n                \"DiskUsage\": \"DATA_DISK\",\n                \"Portable\": true,\n                \"DiskChargeType\": \"PREPAID\",\n                \"SnapshotAbility\": true,\n                \"DeadlineError\": false,\n                \"RollbackPercent\": 100,\n                \"AutoSnapshotPolicyIds\": null,\n                \"ReturnFailCode\": 3,\n                \"CreateTime\": \"2018-09-26 17:36:07\",\n                \"ThroughputPerformance\": 1,\n                \"Migrating\": true,\n                \"InstanceIdList\": [\n                    \"ins-test1234\"\n                ],\n                \"Shareable\": true,\n                \"MigratePercent\": 100,\n                \"SnapshotSize\": 100,\n                \"SnapshotCount\": 0,\n                \"BackupDisk\": true,\n                \"AttachMode\": \"PF\",\n                \"DiskBackupQuota\": 1,\n                \"DiskBackupCount\": 1,\n                \"DeleteSnapshot\": 0,\n                \"InstanceType\": \"CVM\"\n            }\n        ]\n    }\n}",
         "title": "查询所有已挂载的数据盘"
       }
     ],
     "DescribeInstancesDiskNum": [
       {
-        "document": "",
+        "document": "查询多个实例挂载的云硬盘数量",
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\n&InstanceIds.0=ins-9w5d2buw\n&InstanceIds.1=ins-jw0vit58\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AttachDetail\": [\n            {\n                \"InstanceId\": \"ins-9w5d2buw\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 10\n            },\n            {\n                \"InstanceId\": \"ins-jw0vit58\",\n                \"AttachedDiskCount\": 2,\n                \"MaxAttachCount\": 10\n            }\n        ],\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
         "title": "查询多个实例挂载的云硬盘数量"
@@ -198,7 +198,7 @@
     ],
     "DetachDisks": [
       {
-        "document": "",
+        "document": "用于卸载单块云盘",
         "input": "https://cbs.tencentcloudapi.com/?Action=DetachDisks\n&DiskIds.0=disk-lzrg2pwi\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\n    }\n}",
         "title": "卸载单块云硬盘"
@@ -214,7 +214,7 @@
     ],
     "InitializeDisks": [
       {
-        "document": "",
+        "document": "将云硬盘ID为disk-ixya2wzy的云盘重新初始化为刚创建时的状态。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitializeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-ixya2wzy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\n    }\n}",
         "title": "重新初始化云硬盘"
@@ -280,16 +280,10 @@
         "title": "修改定期快照策略属性"
       },
       {
-        "document": "",
+        "document": "启用自动快照策略",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoSnapshotPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-01928374\",\n    \"IsActivated\": \"true\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"88a4815c-4a09-4948-b0c9-fa6fdefe8e4a\"\n    }\n}",
-        "title": "示例请求"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoSnapshotPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-01928374\",\n    \"IsActivated\": \"true\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88a4815c-4a09-4948-b0c9-fa6fdefe8e4a\"\n    }\n}",
-        "title": "示例请求2"
+        "title": "启用自动快照策略"
       }
     ],
     "ModifyDiskAttributes": [
@@ -302,7 +296,7 @@
     ],
     "ModifyDiskBackupQuota": [
       {
-        "document": "",
+        "document": "调整云硬盘备份点配额",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskBackupQuota\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\",\n    \"DiskBackupQuota\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d41fd68-372a-4c90-81c6-a6f982328058\"\n    }\n}",
         "title": "调整云硬盘备份点配额"
@@ -318,10 +312,10 @@
     ],
     "ModifyDisksChargeType": [
       {
-        "document": "本示例用于切换一个云盘的计费模式（将包年包月的云盘转换为按量计费模式）。",
+        "document": "本示例用于切换一个云硬盘的计费模式（将包年包月的云硬盘转换为按量计费模式）。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDisksChargeType\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-jwk0zvrg\"\n    ],\n    \"DiskChargePrepaid\": {\n        \"Period\": \"1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
-        "title": "切换云盘的计费模式"
+        "title": "切换云硬盘的计费模式"
       }
     ],
     "ModifyDisksRenewFlag": [
@@ -342,29 +336,29 @@
     ],
     "ModifySnapshotsSharePermission": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifySnapshotsSharePermission\r\n&AccountIds.0=123456789\r\n&Permission=SHARE\r\n&SnapshotIds.0=snap-cgrmci8t\r\n&SnapshotIds.1=snap-124p95lf\r\n&<公共请求参数>",
-        "output": "{\r\n    \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\"\r\n}",
+        "document": "将指定快照共享给另一个用户",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotsSharePermission\n<公共请求参数>\n\n{\n    \"AccountIds\": [\n        \"123456789\"\n    ],\n    \"Permission\": \"SHARE\",\n    \"SnapshotIds\": [\n        \"snap-cgrmci8t\",\n        \"snap-124p95lf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\"\n    }\n}",
         "title": "将快照共享给用户"
       }
     ],
     "RenewDisk": [
       {
-        "document": "",
+        "document": "给云硬盘续费一个月，并设置自动续费标识",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
-        "title": "给云盘续费一个月，并设置自动续费标识"
+        "title": "给云硬盘续费一个月，并设置自动续费标识"
       },
       {
-        "document": "实例当前到期时间为：2018-03-30 20:15:03，需续费一个月，调用本接口续费实例挂载的预付费云盘，使云盘与实例的到期时间对齐，并设置云盘为自动续费。",
+        "document": "实例当前到期时间为：2018-03-30 20:15:03，需续费一个月，调用本接口续费实例挂载的预付费云硬盘，使云硬盘与实例的到期时间对齐，并设置云硬盘为自动续费。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"CurInstanceDeadline\": \"2018-03-30 20:15:03\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
-        "title": "续费实例时，需续费挂载的预付费云盘，使云盘与实例的到期时间对齐。"
+        "title": "续费实例时，需续费挂载的预付费云硬盘，使云硬盘与实例的到期时间对齐。"
       }
     ],
     "ResizeDisk": [
       {
-        "document": "",
+        "document": "将云硬盘扩容到200G",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"DiskSize\": \"200\",\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adefc06d-2cf1-29f6-24a6-5a1f81b5c0ac\"\n    }\n}",
         "title": "将云硬盘扩容到200G"

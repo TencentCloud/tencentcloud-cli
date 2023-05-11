@@ -124,12 +124,28 @@
         "title": "创建环境角色关系映射"
       }
     ],
+    "CreateRabbitMQUser": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"User\": \"test_user\"\n    }\n}",
+        "title": "创建RabbitMQ用户"
+      }
+    ],
     "CreateRabbitMQVipInstance": [
       {
         "document": "创建RabbitMQ专享版实例",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        190001\n    ],\n    \"NodeSpec\": \"rabbit-vip-basic-2\",\n    \"NodeNum\": 1,\n    \"StorageSize\": 100,\n    \"VpcId\": \"vpc-xxx\",\n    \"SubnetId\": \"subnet-xxx\",\n    \"ClusterName\": \"ApiCreate\",\n    \"EnableCreateDefaultHaMirrorQueue\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sadasfdsfs\",\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-aegnagjg\"\n    }\n}",
         "title": "创建RabbitMQ专享版实例"
+      }
+    ],
+    "CreateRabbitMQVirtualHost": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"VirtualHost\": \"testVhost\"\n    }\n}",
+        "title": "创建RabbitMQ的vhost"
       }
     ],
     "CreateRocketMQCluster": [
@@ -646,9 +662,9 @@
     ],
     "DescribeTopics": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"TopicSets\": [\n            {\n                \"PulsarTopicType\": 0,\n                \"TopicType\": 1,\n                \"ProducerCount\": \"xx\",\n                \"ConsumerLimit\": \"xx\",\n                \"ConsumerCount\": \"xx\",\n                \"LastLedgerCreatedTimestamp\": \"xx\",\n                \"MsgThroughputIn\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"AverageMsgSize\": \"xx\",\n                \"Partitions\": 1,\n                \"Remark\": \"xx\",\n                \"LastConfirmedEntry\": \"xx\",\n                \"TotalSize\": \"xx\",\n                \"NumberOfEntries\": \"xx\",\n                \"MsgRateOut\": \"xx\",\n                \"ProducerLimit\": \"xx\",\n                \"EnvironmentId\": \"xx\",\n                \"TopicName\": \"xx\",\n                \"MsgRateIn\": \"xx\",\n                \"MsgThroughputOut\": \"xx\",\n                \"SubTopicSets\": [\n                    {\n                        \"TopicType\": 1,\n                        \"ProducerCount\": \"xx\",\n                        \"LastConfirmedEntry\": \"xx\",\n                        \"TotalSize\": \"xx\",\n                        \"NumberOfEntries\": \"xx\",\n                        \"ConsumerCount\": \"xx\",\n                        \"MsgRateOut\": \"xx\",\n                        \"AverageMsgSize\": \"xx\",\n                        \"MsgThroughputIn\": \"xx\",\n                        \"MsgRateIn\": \"xx\",\n                        \"Partitions\": 0,\n                        \"LastLedgerCreatedTimestamp\": \"xx\",\n                        \"MsgThroughputOut\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
+        "document": "获取环境下主题列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"TopicType\": 1,\n    \"ClusterId\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"TopicCreator\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\",\n        \"TopicSets\": [\n            {\n                \"PulsarTopicType\": 0,\n                \"TopicType\": 1,\n                \"ProducerCount\": \"abc\",\n                \"ConsumerLimit\": \"abc\",\n                \"ConsumerCount\": \"abc\",\n                \"LastLedgerCreatedTimestamp\": \"14578964532\",\n                \"MsgThroughputIn\": \"abc\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"AverageMsgSize\": \"abc\",\n                \"Partitions\": 1,\n                \"Remark\": \"abc\",\n                \"LastConfirmedEntry\": \"abc\",\n                \"TotalSize\": \"1\",\n                \"NumberOfEntries\": \"abc\",\n                \"MsgRateOut\": \"abc\",\n                \"ProducerLimit\": \"abc\",\n                \"EnvironmentId\": \"abc\",\n                \"TopicName\": \"abc\",\n                \"MsgRateIn\": \"abc\",\n                \"MsgThroughputOut\": \"abc\",\n                \"SubTopicSets\": [\n                    {\n                        \"TopicType\": 1,\n                        \"ProducerCount\": \"1\",\n                        \"LastConfirmedEntry\": \"abc\",\n                        \"TotalSize\": \"1\",\n                        \"NumberOfEntries\": \"abc\",\n                        \"ConsumerCount\": \"1\",\n                        \"MsgRateOut\": \"abc\",\n                        \"AverageMsgSize\": \"1\",\n                        \"MsgThroughputIn\": \"abc\",\n                        \"MsgRateIn\": \"abc\",\n                        \"Partitions\": 0,\n                        \"LastLedgerCreatedTimestamp\": \"124567885324\",\n                        \"MsgThroughputOut\": \"abc\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "获取环境下主题列表"
       }
     ],

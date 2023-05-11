@@ -64,11 +64,11 @@
       "status": "online"
     },
     "DescribePurgeQuota": {
-      "document": "查询刷新接口的用量配额。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41956\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
+      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n查询刷新接口的用量配额。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41956\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribePurgeQuotaRequest",
       "name": "查询刷新用量配额",
       "output": "DescribePurgeQuotaResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePurgeTasks": {
       "document": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/37873\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",

@@ -2618,7 +2618,6 @@
           "example": "10",
           "member": "int64",
           "name": "GroupQuota",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2627,7 +2626,6 @@
           "example": "25",
           "member": "int64",
           "name": "CurrentNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2636,7 +2634,6 @@
           "example": "50",
           "member": "int64",
           "name": "CvmInHostGroupQuota",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2645,7 +2642,6 @@
           "example": "20",
           "member": "int64",
           "name": "CvmInSwGroupQuota",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2654,7 +2650,6 @@
           "example": "30",
           "member": "int64",
           "name": "CvmInRackGroupQuota",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4174,7 +4169,6 @@
       "document": "容灾组信息",
       "members": [
         {
-          "default": "",
           "document": "分散置放群组id。",
           "example": "\"xxx\"",
           "member": "string",
@@ -4184,7 +4178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分散置放群组名称，长度1-60个字符。",
           "example": "\"xxx\"",
           "member": "string",
@@ -4194,7 +4187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架",
           "example": "\"HOST\"",
           "member": "string",
@@ -4204,7 +4196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分散置放群组内最大容纳云服务器数量。",
           "example": "50",
           "member": "int64",
@@ -4214,7 +4205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分散置放群组内云服务器当前数量。",
           "example": "2",
           "member": "int64",
@@ -4224,7 +4214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分散置放群组内，云服务器id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxx\"",
           "member": "string",
@@ -4234,10 +4223,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分散置放群组创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"2021-01-04 21:40:02\"",
-          "member": "datetime",
+          "example": "\"2021-04-27T08:49:34Z\"",
+          "member": "datetime_iso",
           "name": "CreateTime",
           "required": true,
           "type": "string",
@@ -4527,7 +4515,6 @@
       "document": "专用宿主机实例详细信息",
       "members": [
         {
-          "default": "",
           "document": "专用宿主机实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
           "member": "Placement",
@@ -4537,7 +4524,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例ID",
           "example": "无",
           "member": "string",
@@ -4547,7 +4533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例类型",
           "example": "无",
           "member": "string",
@@ -4557,7 +4542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例名称",
           "example": "无",
           "member": "string",
@@ -4567,7 +4551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例付费模式",
           "example": "无",
           "member": "string",
@@ -4577,7 +4560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例自动续费标记",
           "example": "无",
           "member": "string",
@@ -4587,7 +4569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例创建时间",
           "example": "无",
           "member": "datetime_iso",
@@ -4597,7 +4578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例过期时间",
           "example": "无",
           "member": "datetime_iso",
@@ -4607,7 +4587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例上已创建云子机的实例id列表",
           "example": "无",
           "member": "string",
@@ -4617,7 +4596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例状态",
           "example": "无",
           "member": "string",
@@ -4627,7 +4605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例IP",
           "example": "无",
           "member": "string",
@@ -4637,7 +4614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机实例资源信息",
           "example": "无",
           "member": "HostResource",
@@ -4647,7 +4623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6401,8 +6376,8 @@
       "document": "描述实例的状态。状态类型详见[实例状态表](/document/api/213/15753#InstanceStatus)",
       "members": [
         {
-          "default": "",
           "document": "实例`ID`。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -6410,8 +6385,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>",
+          "example": "无",
           "member": "string",
           "name": "InstanceState",
           "required": false,
@@ -6756,8 +6731,8 @@
       "document": "描述了实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等",
       "members": [
         {
-          "default": "",
           "document": "网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：非带宽包用户默认与子机付费类型保持一致。",
+          "example": "无",
           "member": "string",
           "name": "InternetChargeType",
           "required": false,
@@ -6765,8 +6740,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/12523)。",
+          "example": "无",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -6774,8 +6749,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。该参数仅在RunInstances接口中作为入参使用。",
+          "example": "无",
           "member": "bool",
           "name": "PublicIpAssigned",
           "required": false,
@@ -6783,8 +6758,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "带宽包ID。可通过[`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。该参数仅在RunInstances接口中作为入参使用。",
+          "example": "无",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
@@ -7049,7 +7024,6 @@
       "document": "描述密钥对信息",
       "members": [
         {
-          "default": "",
           "document": "密钥对的`ID`，是密钥对的唯一标识。",
           "example": "skey-q29u65hu",
           "member": "string",
@@ -7059,7 +7033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥对名称。",
           "example": "test",
           "member": "string",
@@ -7069,7 +7042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥对所属的项目`ID`。",
           "example": "0",
           "member": "int64",
@@ -7079,7 +7051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥对描述信息。",
           "example": "test",
           "member": "string",
@@ -7089,7 +7060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥对的纯文本公钥。",
           "example": "xxx",
           "member": "string",
@@ -7099,7 +7069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。",
           "example": "xxx",
           "member": "string",
@@ -7109,7 +7078,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥关联的实例`ID`列表。",
           "example": "[]",
           "member": "string",
@@ -7119,7 +7087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
@@ -7129,7 +7096,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -10339,8 +10305,8 @@
       "document": "镜像分享信息结构",
       "members": [
         {
-          "default": "",
           "document": "镜像分享时间",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -10348,8 +10314,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像分享的账户ID",
+          "example": "无",
           "member": "string",
           "name": "AccountId",
           "required": true,

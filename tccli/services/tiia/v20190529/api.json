@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DescribeGroups": {
-      "document": "查询所有的图库信息。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
+      "document": "查询所有的图库信息。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。",
       "input": "DescribeGroupsRequest",
       "name": "查询图片库",
       "output": "DescribeGroupsResponse",
@@ -1029,7 +1029,6 @@
       "document": "DescribeGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "起始序号，默认值为0。",
           "example": "0",
           "member": "int64",
@@ -1038,7 +1037,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认值为10，最大值为100。",
           "example": "1",
           "member": "int64",
@@ -1047,7 +1045,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "图库ID，如果不为空，则返回指定库信息。",
           "example": "test_group",
           "member": "string",
@@ -1066,7 +1063,6 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "Groups",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1597,16 +1593,14 @@
       "document": "DetectMisbehavior请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
-          "example": "https://test.jpg",
+          "example": "http://www.test.com/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "example": "无",
           "member": "string",
@@ -1625,7 +1619,6 @@
           "example": "0.5",
           "member": "float",
           "name": "Confidence",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1634,7 +1627,6 @@
           "example": "赌博",
           "member": "string",
           "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2471,16 +2463,14 @@
       "document": "RecognizeCarPro请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
-          "example": "https://xx/a.jpg",
+          "example": "http://www.test.com/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**\n支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。",
           "example": "无",
           "member": "string",
@@ -2499,7 +2489,6 @@
           "example": "无",
           "member": "Coord",
           "name": "CarCoords",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2508,7 +2497,6 @@
           "example": "无",
           "member": "CarTagItem",
           "name": "CarTags",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

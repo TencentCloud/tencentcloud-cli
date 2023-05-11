@@ -231,6 +231,13 @@
       "output": "DescribeInstanceDetailResponse",
       "status": "online"
     },
+    "DescribeInstanceErrorLogs": {
+      "document": "查询实例错误日志列表",
+      "input": "DescribeInstanceErrorLogsRequest",
+      "name": "查询错误日志列表",
+      "output": "DescribeInstanceErrorLogsResponse",
+      "status": "online"
+    },
     "DescribeInstanceSlowQueries": {
       "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。",
       "input": "DescribeInstanceSlowQueriesRequest",
@@ -306,6 +313,13 @@
       "input": "DisassociateSecurityGroupsRequest",
       "name": "安全组批量解绑云资源",
       "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
+    },
+    "ExportInstanceErrorLogs": {
+      "document": "此接口（ExportInstanceErrorLogs）用于导出实例错误日志。",
+      "input": "ExportInstanceErrorLogsRequest",
+      "name": "导出实例错误日志",
+      "output": "ExportInstanceErrorLogsResponse",
       "status": "online"
     },
     "ExportInstanceSlowQueries": {
@@ -460,6 +474,13 @@
       "input": "OpenAuditServiceRequest",
       "name": "实例开通审计服务",
       "output": "OpenAuditServiceResponse",
+      "status": "online"
+    },
+    "OpenReadOnlyInstanceExclusiveAccess": {
+      "document": "开通只读实例独有访问接入组",
+      "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
+      "name": "开通只读实例独有访问接入组",
+      "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
       "status": "online"
     },
     "PauseServerless": {
@@ -3411,6 +3432,39 @@
       ],
       "usage": "out"
     },
+    "CynosdbErrorLogItem": {
+      "document": "实例错误日志返回类型",
+      "members": [
+        {
+          "document": "日志时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CynosdbInstance": {
       "document": "实例信息",
       "members": [
@@ -5893,6 +5947,112 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceErrorLogsRequest": {
+      "document": "DescribeInstanceErrorLogs请求参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "cynosdbmysql-ins-4senc2fm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "日志条数限制",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "日志条数偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "开始时间",
+          "example": "2022-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "结束时间",
+          "example": "2022-02-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "排序字段，有Timestamp枚举值",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "排序类型，有ASC,DESC枚举值",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "日志等级，有error、warning、note三种，支持多个等级同时搜索",
+          "example": "无",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "关键字，支持模糊搜索",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWords",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceErrorLogsResponse": {
+      "document": "DescribeInstanceErrorLogs返回参数结构体",
+      "members": [
+        {
+          "document": "日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CynosdbErrorLogItem",
+          "name": "ErrorLogs",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceSlowQueriesRequest": {
       "document": "DescribeInstanceSlowQueries请求参数结构体",
       "members": [
@@ -6667,6 +6827,145 @@
     "DisassociateSecurityGroupsResponse": {
       "document": "DisassociateSecurityGroups返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ErrorLogItemExport": {
+      "document": "错误日志导出格式",
+      "members": [
+        {
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-04-17 00:00:00",
+          "member": "string",
+          "name": "Timestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志等级，可选值note, warning，error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "note",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExportInstanceErrorLogsRequest": {
+      "document": "ExportInstanceErrorLogs请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "日志最早时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "日志最晚时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "限制条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "日志等级",
+          "example": "无",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "关键字",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "文件类型，可选值：csv, original",
+          "example": "csv",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "可选值Timestamp",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "ASC或DESC",
+          "example": "排序类型",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportInstanceErrorLogsResponse": {
+      "document": "ExportInstanceErrorLogs返回参数结构体",
+      "members": [
+        {
+          "document": "错误日志导出内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorLogItemExport",
+          "name": "ErrorLogItems",
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8282,7 +8581,6 @@
       "document": "网络信息",
       "members": [
         {
-          "default": "",
           "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
@@ -8292,7 +8590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "内网端口号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
           "member": "int64",
@@ -8302,7 +8599,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
@@ -8312,7 +8608,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网端口号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
           "member": "int64",
@@ -8322,7 +8617,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "网络类型（ro-只读,rw/ha-读写）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rw",
           "member": "string",
@@ -8332,7 +8626,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8342,7 +8635,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8352,7 +8644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8362,7 +8653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8372,12 +8662,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "WanStatus",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8662,6 +8960,80 @@
     "OpenAuditServiceResponse": {
       "document": "OpenAuditService返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenReadOnlyInstanceExclusiveAccessRequest": {
+      "document": "OpenReadOnlyInstanceExclusiveAccess请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "cynosdbmysql-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "需要开通独有访问的只读实例ID",
+          "example": "cynosdbmysql-ins-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "指定的vpc ID",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "指定的子网ID",
+          "example": "subnet-12345678",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "端口",
+          "example": "1234",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "安全组",
+          "example": "[SecurityGroupIds1,SecurityGroupIds2]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenReadOnlyInstanceExclusiveAccessResponse": {
+      "document": "OpenReadOnlyInstanceExclusiveAccess返回参数结构体",
+      "members": [
+        {
+          "document": "开通流程ID",
+          "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

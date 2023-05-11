@@ -34,6 +34,7 @@ Output:
                     "Component": "OpenSSH",
                     "Protocol": "TCP",
                     "DisposalRecommendations": "限制访问",
+                    "DisposalRecommendation": 2,
                     "SecurityStatus": [
                         {},
                         {}

@@ -15,11 +15,11 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "2ed78bbb-c62b-4a93-8a97-a614ed9ef7e0",
         "DiskStoragePoolSet": [],
         "CdcSet": [
             {
-                "CageId": "xx",
+                "CageId": "cdc-6brr1cvj",
                 "CdcState": "NORMAL",
                 "Zone": "ap-chongqing-1",
                 "CdcName": "untitled",
@@ -30,7 +30,8 @@ Output:
                 "CdcId": "cdc-xxx",
                 "DiskType": "CLOUD_SSD",
                 "DiskNumber": 135,
-                "ExpiredTime": "2022-02-25 15:59:15"
+                "ExpiredTime": "2022-02-25 15:59:15",
+                "CreatedTime": "2022-01-25T15:59:15+00:00"
             }
         ]
     }

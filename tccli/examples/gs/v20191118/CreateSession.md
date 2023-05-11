@@ -16,10 +16,10 @@ Output:
 ```
 {
     "Response": {
-        "RoleNumber": "xx",
-        "ServerSession": "xx",
-        "Role": "xx",
-        "RequestId": "xx"
+        "RoleNumber": "1",
+        "ServerSession": "abc",
+        "Role": "Player",
+        "RequestId": "req123"
     }
 }
 ```

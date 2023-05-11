@@ -126,11 +126,11 @@
           "type": "string"
         },
         {
-          "document": "客户端session信息，从SDK请求中获得",
+          "document": "客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空",
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
           "name": "ClientSession",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -138,6 +138,22 @@
           "example": "RunWithoutClient",
           "member": "string",
           "name": "RunMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "【多人互动】房主用户ID，在多人互动模式下为必填字段。\n如果该用户是房主，HostUserId需要和UserId保持一致；\n如果该用户非房主，HostUserId需要填写房主的HostUserId。",
+          "example": "host_user_id",
+          "member": "string",
+          "name": "HostUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "【多人互动】角色。\nPlayer：玩家（可通过键鼠等操作应用）\nViewer：观察者（只能观看，无法操作）",
+          "example": "Player",
+          "member": "string",
+          "name": "Role",
           "required": false,
           "type": "string"
         }

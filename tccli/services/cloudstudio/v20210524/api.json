@@ -362,7 +362,6 @@
       "document": "CreateWorkspaceByTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -371,13 +370,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
           "type": "int"
+        },
+        {
+          "document": "工作空间名称",
+          "example": "workspace_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -390,7 +396,6 @@
           "example": "无",
           "member": "WorkspaceInfo",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1796,7 +1801,6 @@
       "document": "工作空间信息",
       "members": [
         {
-          "default": "",
           "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -1806,12 +1810,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "工作空间标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "SpaceKey",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "工作空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "workspace_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
