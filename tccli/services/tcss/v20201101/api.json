@@ -31276,7 +31276,6 @@
       "document": "网络集群资产审计返回结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
           "example": "cls-jvrv0kf2",
           "member": "string",
@@ -31286,7 +31285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群名字",
           "example": "tke_test",
           "member": "string",
@@ -31296,7 +31294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群区域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -31306,7 +31303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "动作",
           "example": "add",
           "member": "string",
@@ -31316,7 +31312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作人",
           "example": "Running",
           "member": "string",
@@ -31326,7 +31321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "策略名",
           "example": "test",
           "member": "string",
@@ -31336,7 +31330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作时间",
           "example": "2022-09-21",
           "member": "string",
@@ -31346,7 +31339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作人appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10023234334",
           "member": "int64",
@@ -31356,7 +31348,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作人uin",
           "example": "10023234334",
           "member": "string",
@@ -31364,6 +31355,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "324",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

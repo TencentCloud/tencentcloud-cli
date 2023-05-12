@@ -40,6 +40,22 @@
         "title": "查询任务列表"
       }
     ],
+    "DescribeTables": [
+      {
+        "document": "查询表格。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"test\"\n            ]\n        },\n        {\n            \"Name\": \"TableId\",\n            \"Values\": [\n                \"tab-cold-purple-barnacle-251091\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8baa213d-e5c5-4e38-a3a4-562e71b5210b\",\n        \"Tables\": [\n            {\n                \"Columns\": [\n                    {\n                        \"DataType\": \"String\",\n                        \"Header\": \"runId\"\n                    },\n                    {\n                        \"DataType\": \"File\",\n                        \"Header\": \"fileName\"\n                    }\n                ],\n                \"CreateTime\": \"2023-03-16 16:44:24\",\n                \"Creator\": \"100029430413\",\n                \"Description\": \"cloudapi_test\",\n                \"Name\": \"cloudapi_test_1\",\n                \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n                \"TableId\": \"tab-cold-purple-barnacle-251091\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询表格"
+      }
+    ],
+    "DescribeTablesRows": [
+      {
+        "document": "查询表格行数据。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTablesRows\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"TableId\": \"tab-cold-purple-barnacle-251091\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"Tr\",\n            \"Values\": [\n                \".txt\"\n            ]\n        },\n        {\n            \"Name\": \"TableRowUuid\",\n            \"Values\": [\n                \"d3154292-9305-42cb-99ab-a0fc1f5112ac\",\n                \"41363765-71e4-42ad-bbf8-bed9e70cd85e\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"288e5644-82c2-445f-b852-198bd6242b0c\",\n        \"Rows\": [\n            {\n                \"Content\": [\n                    \"10\",\n                    \"cos://gene-1252949230/batch_base_test/input/10.txt\"\n                ],\n                \"TableRowUuid\": \"41363765-71e4-42ad-bbf8-bed9e70cd85e\"\n            },\n            {\n                \"Content\": [\n                    \"11\",\n                    \"cos://gene-1252949230/batch_base_test/input/11.txt\"\n                ],\n                \"TableRowUuid\": \"d3154292-9305-42cb-99ab-a0fc1f5112ac\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询表格行数据"
+      }
+    ],
     "GetRunCalls": [
       {
         "document": "查询作业详情。",
@@ -68,6 +84,14 @@
         "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportTableFile\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"Name\": \"test_table\",\n    \"Description\": \"测试表格\",\n    \"CosUri\": \"cos://bucket/test.csv\",\n    \"DataType\": [\n        \"String\",\n        \"File\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TableId\": \"tab-fancy-saffron-slug-701244\",\n        \"RequestId\": \"50d781c7-eab9-4339-93ed-c312a2452d9d\"\n    }\n}",
         "title": "导入表格文件"
+      }
+    ],
+    "RetryRuns": [
+      {
+        "document": "重试任务。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRuns\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"RunUuids\": [\n        \"0118f2ed-43b0-433c-b21c-472fe2bc1766\",\n        \"a273a6f0-ca66-474d-ba04-80f6c73463e9\",\n        \"fc9680c8-35e7-4e82-a5aa-9c506bef6829\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46520c37-4d28-49e1-a738-01f64ae1b06b\"\n    }\n}",
+        "title": "重试任务"
       }
     ],
     "RunApplication": [

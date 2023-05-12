@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+查询指定实例的慢日志记录
 
 Input: 
 
 ```
 tccli redis DescribeProxySlowLog --cli-unfold-argument  \
-    --InstanceId crs-asdasdas \
+    --InstanceId crs-asda**** \
     --BeginTime '2019-09-08 12:12:41' \
     --EndTime '2019-09-09 12:12:41'
 ```

@@ -1,6 +1,6 @@
 **Example 1: 获取证书信息**
 
-
+获取证书信息
 
 Input: 
 
@@ -13,53 +13,106 @@ Output:
 ```
 {
     "Response": {
-        "From": "trustasia",
-        "SubjectAltName": [],
-        "VulnerabilityReport": null,
-        "StatusName": "已通过",
-        "CertificateExtra": {
-            "OriginCertificateId": null,
-            "ReplacedBy": null,
-            "ReplacedFor": "a8xHcaIs",
-            "DomainNumber": null
-        },
-        "RenewAble": false,
+        "OwnerUin": "abc",
+        "ProjectId": "abc",
+        "From": "abc",
+        "CertificateType": "abc",
+        "PackageType": "abc",
+        "ProductZhName": "abc",
+        "Domain": "abc",
+        "Alias": "abc",
         "Status": 1,
+        "StatusMsg": "abc",
+        "VerifyType": "abc",
+        "VulnerabilityStatus": "abc",
+        "CertBeginTime": "abc",
+        "CertEndTime": "abc",
+        "ValidityPeriod": "abc",
+        "InsertTime": "abc",
+        "OrderId": "abc",
+        "CertificateExtra": {
+            "DomainNumber": "abc",
+            "OriginCertificateId": "abc",
+            "ReplacedBy": "abc",
+            "ReplacedFor": "abc",
+            "RenewOrder": "abc",
+            "SMCert": 0
+        },
+        "DvAuthDetail": {
+            "DvAuthKey": "abc",
+            "DvAuthValue": "abc",
+            "DvAuthDomain": "abc",
+            "DvAuthPath": "abc",
+            "DvAuthKeySubDomain": "abc",
+            "DvAuths": [
+                {
+                    "DvAuthKey": "abc",
+                    "DvAuthValue": "abc",
+                    "DvAuthDomain": "abc",
+                    "DvAuthPath": "abc",
+                    "DvAuthSubDomain": "abc",
+                    "DvAuthVerifyType": "abc"
+                }
+            ]
+        },
+        "VulnerabilityReport": "abc",
+        "CertificateId": "abc",
+        "PackageTypeName": "abc",
+        "StatusName": "abc",
+        "SubjectAltName": [
+            "abc"
+        ],
+        "IsVip": true,
+        "IsWildcard": true,
         "IsDv": true,
-        "CertBeginTime": "2020-01-14 16:00:00",
-        "IsVulnerability": false,
-        "DvAuthDetail": null,
-        "VerifyType": "DNS",
-        "StatusMsg": null,
-        "ProjectId": "0",
-        "OwnerUin": "20548499",
-        "ProductZhName": "TrustAsia TLS RSA CA",
-        "CertEndTime": "2020-02-12 16:00:00",
-        "PackageType": "2",
-        "RequestId": "6209102a-0f05-411d-a05c-c841431cb636",
-        "InsertTime": "2020-01-14 10:54:47",
-        "CertificateType": "SVR",
-        "IsVip": false,
-        "ValidityPeriod": "0",
-        "OrderId": "TBD8NHC9J_01",
-        "Domain": "wgc.red",
-        "CertificateId": "a90XEOtj",
-        "Alias": "a8xHcaIs的重颁发订单",
-        "SubmittedData": null,
-        "IsWildcard": false,
-        "PackageTypeName": "TrustAsia TLS RSA CA",
-        "VulnerabilityStatus": "INACTIVE",
+        "IsVulnerability": true,
+        "RenewAble": true,
+        "SubmittedData": {
+            "CsrType": "abc",
+            "CsrContent": "abc",
+            "CertificateDomain": "abc",
+            "DomainList": [
+                "abc"
+            ],
+            "KeyPassword": "abc",
+            "OrganizationName": "abc",
+            "OrganizationDivision": "abc",
+            "OrganizationAddress": "abc",
+            "OrganizationCountry": "abc",
+            "OrganizationCity": "abc",
+            "OrganizationRegion": "abc",
+            "PostalCode": "abc",
+            "PhoneAreaCode": "abc",
+            "PhoneNumber": "abc",
+            "AdminFirstName": "abc",
+            "AdminLastName": "abc",
+            "AdminPhoneNum": "abc",
+            "AdminEmail": "abc",
+            "AdminPosition": "abc",
+            "ContactFirstName": "abc",
+            "ContactLastName": "abc",
+            "ContactNumber": "abc",
+            "ContactEmail": "abc",
+            "ContactPosition": "abc",
+            "VerifyType": "abc"
+        },
         "Deployable": true,
         "Tags": [
             {
-                "TagKey": "责任人",
-                "TagValue": "yaxinliu"
-            },
-            {
-                "TagKey": "部门",
-                "TagValue": "IT部"
+                "TagKey": "abc",
+                "TagValue": "abc"
             }
-        ]
+        ],
+        "CAEncryptAlgorithms": [
+            "abc"
+        ],
+        "CACommonNames": [
+            "abc"
+        ],
+        "CAEndTimes": [
+            "abc"
+        ],
+        "RequestId": "abc"
     }
 }
 ```

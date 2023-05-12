@@ -1,12 +1,12 @@
-**Example 1: 查询实例安全组信息**
+**Example 1: 请求示例**
 
-
+查询安全组
 
 Input: 
 
 ```
 tccli redis DescribeInstanceSecurityGroup --cli-unfold-argument  \
-    --InstanceIds crs-f2ho5rsz
+    --InstanceIds crs-f2ho****
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "InstanceSecurityGroupsDetail": [
             {
-                "InstanceId": "crs-f2ho5rsz",
+                "InstanceId": "crs-f2ho****",
                 "SecurityGroupDetails": [
                     {
                         "CreateTime": "2018-01-30 15:58:00",

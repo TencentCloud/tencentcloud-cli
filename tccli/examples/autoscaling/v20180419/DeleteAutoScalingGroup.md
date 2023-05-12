@@ -1,6 +1,6 @@
 **Example 1: 删除指定伸缩组**
 
-
+删除伸缩组asg-nvnlpbb8
 
 Input: 
 

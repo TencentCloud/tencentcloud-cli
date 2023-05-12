@@ -1,13 +1,11 @@
 **Example 1: 查询用户安全组配额**
 
-
+查询用户安全组配额
 
 Input: 
 
 ```
-tccli vpc DescribeSecurityGroupLimits --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeSecurityGroupLimits --cli-unfold-argument ```
 
 Output: 
 ```

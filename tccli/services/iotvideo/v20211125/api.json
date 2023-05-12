@@ -6291,7 +6291,6 @@
       "document": "设备详细信息",
       "members": [
         {
-          "default": "",
           "document": "设备名",
           "example": "video_00001",
           "member": "string",
@@ -6301,7 +6300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备是否在线，0不在线，1在线，2获取失败，3未激活",
           "example": "0",
           "member": "uint64",
@@ -6311,7 +6309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备最后上线时间",
           "example": "1625543955",
           "member": "uint64",
@@ -6321,7 +6318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备密钥",
           "example": "Cdakt7OGTs8689DT1qv0w==",
           "member": "string",
@@ -6331,7 +6327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备启用状态 0为停用 1为可用",
           "example": "1",
           "member": "uint64",
@@ -6341,7 +6336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备过期时间",
           "example": "1657024030",
           "member": "uint64",
@@ -6349,6 +6343,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LogLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

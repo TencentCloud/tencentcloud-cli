@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+手动备份
 
 Input: 
 
 ```
 tccli redis ManualBackupInstance --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
+    --InstanceId crs-5a4p**** \
     --Remark xxxx
 ```
 

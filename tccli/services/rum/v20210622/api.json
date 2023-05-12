@@ -7499,7 +7499,6 @@
       "document": "Rum 项目信息",
       "members": [
         {
-          "default": "",
           "document": "项目名",
           "example": "测试项目",
           "member": "string",
@@ -7509,7 +7508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者 id",
           "example": "123456",
           "member": "string",
@@ -7519,7 +7517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例 id",
           "example": "tam-123",
           "member": "string",
@@ -7529,7 +7526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目类型",
           "example": "log",
           "member": "string",
@@ -7539,7 +7535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2020-04-26 00:00:00",
           "member": "datetime",
@@ -7549,7 +7544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://github.com/xxx/yyy",
           "member": "string",
@@ -7559,7 +7553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "项目网址地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://cloud.tencent.com/index.html",
           "member": "string",
@@ -7569,7 +7562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "项目采样频率",
           "example": "12",
           "member": "string",
@@ -7579,7 +7571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目唯一key（长度 12 位）",
           "example": "hjkysfkey12",
           "member": "string",
@@ -7589,7 +7580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启url聚类",
           "example": "1",
           "member": "int64",
@@ -7599,7 +7589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名",
           "example": "tamIns",
           "member": "string",
@@ -7609,7 +7598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目 ID",
           "example": "1",
           "member": "int64",
@@ -7619,7 +7607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例 key",
           "example": "tam-key",
           "member": "string",
@@ -7629,7 +7616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "这是一个项目描述",
           "member": "string",
@@ -7639,7 +7625,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否星标  1:是 0:否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7649,13 +7634,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "ProjectStatus",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志接入点，用户忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUM_LOG_1",
+          "member": "string",
+          "name": "AccessPoint",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

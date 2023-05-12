@@ -1569,7 +1569,7 @@
       "status": "online"
     },
     "MigratePrivateIpAddress": {
-      "document": " 本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "MigratePrivateIpAddressRequest",
       "name": "弹性网卡内网IP迁移",
       "output": "MigratePrivateIpAddressResponse",
@@ -12746,6 +12746,7 @@
       "members": [
         {
           "document": "用户安全组配额限制。",
+          "example": "无",
           "member": "SecurityGroupLimitSet",
           "name": "SecurityGroupLimitSet",
           "type": "object",
@@ -14040,8 +14041,8 @@
       "document": "DescribeVpcResourceDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
+          "example": "['vpc-q26u781x', 'vpc-1yfqkcw1']",
           "member": "string",
           "name": "VpcIds",
           "required": true,
@@ -14055,6 +14056,7 @@
       "members": [
         {
           "document": "资源对象列表。",
+          "example": "无",
           "member": "ResourceDashboard",
           "name": "ResourceDashboardSet",
           "type": "list",
@@ -17897,7 +17899,6 @@
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "--",
           "member": "string",
@@ -17906,7 +17907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。",
           "example": "--",
           "member": "string",
@@ -17915,7 +17915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "待迁移的目的CVM实例ID。",
           "example": "--",
           "member": "string",
@@ -17924,7 +17923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网卡绑定类型：0 标准型 1 扩展型。",
           "example": "0",
           "member": "uint64",
@@ -17951,7 +17949,6 @@
       "document": "MigratePrivateIpAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-m6dyj722",
           "member": "string",
@@ -17960,7 +17957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "待迁移的目的弹性网卡实例ID。",
           "example": "eni-m6dyj72l",
           "member": "string",
@@ -17969,7 +17965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "迁移的内网IP地址，例如：10.0.0.6。",
           "example": "10.0.0.6",
           "member": "string",
@@ -23238,8 +23233,8 @@
       "document": "用户安全组配额限制。",
       "members": [
         {
-          "default": "",
           "document": "每个项目每个地域可创建安全组数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupLimit",
           "required": true,
@@ -23247,8 +23242,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全组下的最大规则数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupPolicyLimit",
           "required": true,
@@ -23256,8 +23251,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全组下嵌套安全组规则数",
+          "example": "无",
           "member": "uint64",
           "name": "ReferedSecurityGroupLimit",
           "required": true,
@@ -23265,8 +23260,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "单安全组关联实例数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupInstanceLimit",
           "required": true,
@@ -23274,11 +23269,38 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例关联安全组数",
+          "example": "无",
           "member": "uint64",
           "name": "InstanceSecurityGroupLimit",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全组展开后的规则数限制",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupExtendedPolicyLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被引用的安全组关联CVM、ENI的实例配额",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupReferedCvmAndEniLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被引用的安全组关联数据库、LB等服务实例配额",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupReferedSvcLimit",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -23325,7 +23347,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "网段或IP(互斥)。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。",
           "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
@@ -23394,31 +23416,34 @@
       "document": "安全组规则集合",
       "members": [
         {
-          "default": "",
-          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。",
+          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Version",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "出站规则。",
+          "document": "出站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Egress",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "入站规则。",
+          "document": "入站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Ingress",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SecurityPolicyDatabase": {
       "document": "SecurityPolicyDatabase策略",

@@ -399,6 +399,13 @@
       "output": "DescribeBindingPolicyObjectListResponse",
       "status": "online"
     },
+    "DescribeClusterAgentCreatingProgress": {
+      "document": "获取prom实例中集群详细的关联状态",
+      "input": "DescribeClusterAgentCreatingProgressRequest",
+      "name": "获取集群绑定进度",
+      "output": "DescribeClusterAgentCreatingProgressResponse",
+      "status": "online"
+    },
     "DescribeConditionsTemplateList": {
       "document": "获取条件模板列表",
       "input": "DescribeConditionsTemplateListRequest",
@@ -7040,6 +7047,23 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAgentCreatingProgressRequest": {
+      "document": "DescribeClusterAgentCreatingProgress请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeClusterAgentCreatingProgressResponse": {
+      "document": "DescribeClusterAgentCreatingProgress返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

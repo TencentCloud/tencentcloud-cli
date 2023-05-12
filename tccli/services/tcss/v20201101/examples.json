@@ -5,7 +5,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAndPublishNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"CustomPolicy\": [\n        {\n            \"Peer\": \"xx\",\n            \"Direction\": \"xx\",\n            \"Ports\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"FromPolicyRule\": 0,\n    \"Namespace\": \"xx\",\n    \"ToPolicyRule\": 0,\n    \"PodSelector\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
-        "title": "容器网络创建网络策略添加并发布任务务示例"
+        "title": "容器网络创建网络策略添加并发布任务示例"
       }
     ],
     "AddAndPublishNetworkFirewallPolicyYamlDetail": [

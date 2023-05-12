@@ -162,14 +162,14 @@
       "status": "online"
     },
     "DescribeDBSecurityGroups": {
-      "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
+      "document": "本接口（DescribeDBSecurityGroups）用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组详情",
       "output": "DescribeDBSecurityGroupsResponse",
       "status": "online"
     },
     "DescribeInstanceAccount": {
-      "document": "查看实例子账号信息",
+      "document": "本接口（DescribeInstanceAccount）用于查看实例子账号信息。",
       "input": "DescribeInstanceAccountRequest",
       "name": "查看实例子账号信息",
       "output": "DescribeInstanceAccountResponse",
@@ -267,14 +267,14 @@
       "status": "online"
     },
     "DescribeInstanceParams": {
-      "document": "查询实例参数列表",
+      "document": "本接口（DescribeInstanceParams）用于查询实例参数列表。",
       "input": "DescribeInstanceParamsRequest",
       "name": "查询实例的参数列表",
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
     "DescribeInstanceSecurityGroup": {
-      "document": "查询实例安全组信息",
+      "document": "本接口（DescribeInstanceSecurityGroup）用于查询实例安全组信息。",
       "input": "DescribeInstanceSecurityGroupRequest",
       "name": "查询实例安全组信息",
       "output": "DescribeInstanceSecurityGroupResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "DescribeInstanceZoneInfo": {
-      "document": "查询Redis节点详细信息",
+      "document": "本接口（DescribeInstanceZoneInfo）用于查询 Redis 节点详细信息。",
       "input": "DescribeInstanceZoneInfoRequest",
       "name": "查询Redis节点详细信息",
       "output": "DescribeInstanceZoneInfoResponse",
@@ -456,7 +456,7 @@
       "status": "online"
     },
     "ManualBackupInstance": {
-      "document": "手动备份Redis实例",
+      "document": "本接口（ManualBackupInstance）用于手动备份Redis实例。",
       "input": "ManualBackupInstanceRequest",
       "name": "手动备份Redis实例",
       "output": "ManualBackupInstanceResponse",
@@ -656,8 +656,8 @@
       "document": "子账号信息",
       "members": [
         {
-          "default": "",
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -665,8 +665,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "账号名称（如果是主账号，名称为root）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -674,8 +674,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "账号描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -683,8 +683,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "读写策略：r-只读，w-只写，rw-读写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "读写权限策略。\n- r：只读。\n- w：只写。\n- rw：读写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Privilege",
           "required": true,
@@ -692,8 +692,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "路由策略：master-主节点，replication-从节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读路由策略。\n- master：主节点。\n- replication：从节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReadonlyPolicy",
           "required": true,
@@ -701,8 +701,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "子账号状态：1-账号变更中，2-账号有效，-4-账号已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号状态.\n- 1：账号变更中。\n- 2：账号有效。\n- 4：账号已删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -2587,7 +2587,6 @@
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据库引擎名称，本接口取值：redis。",
           "example": "crs-eb2w7dto",
           "member": "string",
@@ -2596,8 +2595,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
           "example": "redis",
           "member": "string",
           "name": "InstanceId",
@@ -2615,25 +2613,22 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "安全组生效内网地址。",
+          "document": "实例内网IPv4地址。",
           "example": "10.10.0.1",
           "member": "string",
           "name": "VIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "安全组生效内网端口。",
+          "document": "内网端口。",
           "example": "6379",
           "member": "string",
           "name": "VPort",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2650,8 +2645,7 @@
       "document": "DescribeInstanceAccount请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -2659,8 +2653,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "分页大小",
+          "document": "分页大小。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2668,8 +2661,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "分页偏移量",
+          "document": "分页偏移量。取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2683,20 +2675,18 @@
       "document": "DescribeInstanceAccount返回参数结构体",
       "members": [
         {
-          "document": "账号详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Account",
           "name": "Accounts",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "账号个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3517,8 +3507,7 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例Id",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -3532,47 +3521,42 @@
       "document": "DescribeInstanceParams返回参数结构体",
       "members": [
         {
-          "document": "实例参数个数",
+          "document": "参数列表总数量。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "实例枚举类型参数",
+          "document": "实例枚举类型参数。",
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实例整型参数",
+          "document": "实例整型参数。",
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实例字符型参数",
+          "document": "实例字符型参数。",
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实例多选项型参数",
+          "document": "实例多选项型参数。",
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3589,8 +3573,7 @@
       "document": "DescribeInstanceSecurityGroup请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例列表",
+          "document": "实例 ID 列表。例如;[\"crs-f2ho5rsz\\n\"]",
           "example": "[\"crs-f2ho5rsz\\n\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3604,11 +3587,10 @@
       "document": "DescribeInstanceSecurityGroup返回参数结构体",
       "members": [
         {
-          "document": "实例安全组信息",
+          "document": "实例安全组信息。",
           "example": "无",
           "member": "InstanceSecurityGroupDetail",
           "name": "InstanceSecurityGroupsDetail",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3675,8 +3657,7 @@
       "document": "DescribeInstanceZoneInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例Id，如：crs-6ubhgouj",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-6tl7uxxd",
           "member": "string",
           "name": "InstanceId",
@@ -3690,20 +3671,18 @@
       "document": "DescribeInstanceZoneInfo返回参数结构体",
       "members": [
         {
-          "document": "实例节点组的个数",
+          "document": "实例节点组的个数。",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "实例节点组列表",
+          "document": "实例节点组列表。",
           "example": "无",
           "member": "ReplicaGroup",
           "name": "ReplicaGroups",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4299,8 +4278,7 @@
       "document": "DescribeProxySlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例Id",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
           "example": "crs-nujgp1vw",
           "member": "string",
           "name": "InstanceId",
@@ -4308,8 +4286,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "开始时间",
+          "document": "慢查询的开始时间。",
           "example": "2021-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
@@ -4317,8 +4294,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间",
+          "document": "慢查询的结束时间。",
           "example": "2021-02-23 11:08:01",
           "member": "string",
           "name": "EndTime",
@@ -4326,8 +4302,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "慢查询阈值（单位：毫秒）",
+          "document": "慢查询阈值，单位：毫秒。",
           "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
@@ -4335,8 +4310,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "页面大小",
+          "document": "分页大小。默认为 20，取值范围[20,1000]。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -4344,8 +4318,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "偏移量，取Limit整数倍",
+          "document": "偏移量，取Limit整数倍。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4359,20 +4332,18 @@
       "document": "DescribeProxySlowLog返回参数结构体",
       "members": [
         {
-          "document": "慢查询总数",
+          "document": "慢查询总数。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "慢查询详情",
+          "document": "慢查询详情。",
           "example": "无",
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4553,7 +4524,7 @@
           "type": "int"
         },
         {
-          "document": "每个页面展示的慢查询条数，默认值为20。",
+          "document": "每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5733,8 +5704,8 @@
       "document": "实例枚举类型参数描述",
       "members": [
         {
-          "default": "",
-          "document": "参数名",
+          "document": "参数名称。",
+          "example": "无",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -5742,8 +5713,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数类型：enum",
+          "document": "参数类型，例如：Enum。",
+          "example": "无",
           "member": "string",
           "name": "ValueType",
           "required": true,
@@ -5751,8 +5722,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改后是否需要重启：true，false",
+          "document": "参数值修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "example": "无",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
@@ -5760,8 +5731,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数默认值",
+          "document": "参数默认值。",
+          "example": "无",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
@@ -5769,8 +5740,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "当前运行参数值",
+          "document": "参数当前运行值。",
+          "example": "无",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
@@ -5778,8 +5749,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
+          "example": "无",
           "member": "string",
           "name": "Tips",
           "required": true,
@@ -5787,8 +5758,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数可取值",
+          "document": "参数可取的值。",
+          "example": "无",
           "member": "string",
           "name": "EnumValue",
           "required": true,
@@ -5796,8 +5767,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数状态, 1: 修改中， 2：修改完成",
+          "document": "参数修改状态。\n- 1: 修改中。\n- 2：修改完成。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5907,8 +5878,8 @@
       "document": "实例多选项类型参数描述",
       "members": [
         {
-          "default": "",
-          "document": "参数名",
+          "document": "参数名称。",
+          "example": "无",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -5916,8 +5887,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数类型：multi",
+          "document": "参数类型。例如：multi。",
+          "example": "无",
           "member": "string",
           "name": "ValueType",
           "required": true,
@@ -5925,8 +5896,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改后是否需要重启：true，false",
+          "document": "参数修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "example": "无",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
@@ -5934,8 +5905,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数默认值",
+          "document": "参数默认值。",
+          "example": "无",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
@@ -5943,8 +5914,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "当前运行参数值",
+          "document": "当前运行参数值。",
+          "example": "无",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
@@ -5952,8 +5923,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
+          "example": "无",
           "member": "string",
           "name": "Tips",
           "required": true,
@@ -5961,8 +5932,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
+          "example": "无",
           "member": "string",
           "name": "EnumValue",
           "required": true,
@@ -5970,8 +5941,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数状态, 1: 修改中， 2：修改完成",
+          "document": "参数修改的状态。\n- 1：修改中。\n- 2：修改完成。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -6137,8 +6108,8 @@
       "document": "实例安全组信息",
       "members": [
         {
-          "default": "",
-          "document": "实例Id",
+          "document": "实例 ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6146,8 +6117,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组信息",
+          "document": "安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。",
+          "example": "无",
           "member": "SecurityGroupDetail",
           "name": "SecurityGroupDetails",
           "required": true,
@@ -6746,8 +6717,8 @@
       "document": "实例字符型参数描述",
       "members": [
         {
-          "default": "",
-          "document": "参数名",
+          "document": "参数名称。",
+          "example": "无",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -6755,8 +6726,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数类型：text",
+          "document": "参数类型。例如：text。",
+          "example": "无",
           "member": "string",
           "name": "ValueType",
           "required": true,
@@ -6764,8 +6735,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改后是否需要重启：true，false",
+          "document": "参数修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "example": "无",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
@@ -6773,8 +6744,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数默认值",
+          "document": "参数默认值。",
+          "example": "无",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
@@ -6782,8 +6753,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "当前运行参数值",
+          "document": "参数当前运行值。",
+          "example": "无",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
@@ -6791,8 +6762,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
+          "example": "无",
           "member": "string",
           "name": "Tips",
           "required": true,
@@ -6800,8 +6771,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数可取值",
+          "document": "参数可取值。",
+          "example": "无",
           "member": "string",
           "name": "TextValue",
           "required": true,
@@ -6809,8 +6780,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数状态, 1: 修改中， 2：修改完成",
+          "document": "参数修改状态。\n- 1: 修改中。\n- 2：修改完成。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -7060,8 +7031,7 @@
       "document": "ManualBackupInstance请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "待操作的实例ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -7069,8 +7039,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "备份的备注信息",
+          "document": "手动备份任务的备注信息。",
           "example": "xxxx",
           "member": "string",
           "name": "Remark",
@@ -7078,8 +7047,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "保存天数。0代表指定默认保留时间",
+          "document": "备份数据的保存天数。\n- 单位：天；默认值为7天；取值范围：[0.1825]。如果超过 7天，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。\n- 如果不配置该参数，默认与自动备份的保留时间一致。\n- 如果未设置自动备份，默认为7天。",
           "example": "7",
           "member": "int64",
           "name": "StorageDays",
@@ -7097,7 +7065,6 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8569,8 +8536,7 @@
       "document": "Redis节点的运行信息",
       "members": [
         {
-          "default": "",
-          "document": "节点key的个数",
+          "document": "Redis 节点上 Key 的个数。",
           "example": "1",
           "member": "int64",
           "name": "Keys",
@@ -8579,8 +8545,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点slot分布",
+          "document": "Redis 节点 Slot 分布范围。例如：0-5460。",
           "example": "0-5460",
           "member": "string",
           "name": "Slot",
@@ -8589,8 +8554,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点的序列ID",
+          "document": "节点的序列 ID。",
           "example": "b69eda124a34c1b713e81f7cb947161b06214328",
           "member": "string",
           "name": "NodeId",
@@ -8599,8 +8563,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点的状态",
+          "document": "节点的状态。",
           "example": "Normal",
           "member": "string",
           "name": "Status",
@@ -8609,8 +8572,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点角色",
+          "document": "节点角色。",
           "example": "master",
           "member": "string",
           "name": "Role",
@@ -8914,11 +8876,11 @@
       "type": "object"
     },
     "ReplicaGroup": {
-      "document": "实例节点信息",
+      "document": "实例节点组信息",
       "members": [
         {
-          "default": "",
-          "document": "节点组ID",
+          "document": "节点组 ID。",
+          "example": "无",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -8926,8 +8888,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点组的名称，主节点为空",
+          "document": "节点组的名称，主节点为空。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -8935,8 +8897,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点的可用区ID，比如ap-guangzhou-1",
+          "example": "无",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -8944,8 +8906,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点组类型，master为主节点，replica为副本节点",
+          "example": "无",
           "member": "string",
           "name": "Role",
           "required": true,
@@ -8953,8 +8915,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点组节点列表",
+          "example": "无",
           "member": "RedisNode",
           "name": "RedisNodes",
           "required": true,
@@ -9169,8 +9131,8 @@
       "document": "安全组详情",
       "members": [
         {
-          "default": "",
-          "document": "项目Id",
+          "document": "项目ID。",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -9178,8 +9140,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "创建时间",
+          "document": "创建安全组的时间。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -9187,8 +9149,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组Id",
+          "document": "安全组 ID。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -9196,8 +9158,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组名称",
+          "document": "安全组名称。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupName",
           "required": true,
@@ -9205,8 +9167,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组标记",
+          "document": "安全组标记。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupRemark",
           "required": true,
@@ -9214,8 +9176,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组入站规则",
+          "document": "安全组入站规则，即控制访问数据库的来源。",
+          "example": "无",
           "member": "SecurityGroupsInboundAndOutbound",
           "name": "InboundRule",
           "required": true,
@@ -9223,8 +9185,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "安全组出站规则",
+          "document": "安全组出站规则。",
+          "example": "无",
           "member": "SecurityGroupsInboundAndOutbound",
           "name": "OutboundRule",
           "required": true,
@@ -9238,8 +9200,8 @@
       "document": "安全组出入规则",
       "members": [
         {
-          "default": "",
-          "document": "执行动作",
+          "document": "标识出入数据库的IP与端口是否被允许。",
+          "example": "无",
           "member": "string",
           "name": "Action",
           "required": true,
@@ -9247,8 +9209,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "IP地址",
+          "document": "出入数据库的IP地址",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -9256,8 +9218,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "端口号",
+          "document": "端口号。",
+          "example": "无",
           "member": "string",
           "name": "Port",
           "required": true,
@@ -9265,8 +9227,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "协议类型",
+          "document": "协议类型。",
+          "example": "无",
           "member": "string",
           "name": "Proto",
           "required": true,

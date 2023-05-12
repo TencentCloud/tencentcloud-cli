@@ -168,7 +168,7 @@
     ],
     "DeleteAutoScalingGroup": [
       {
-        "document": "",
+        "document": "删除伸缩组asg-nvnlpbb8",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-nvnlpbb8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b12066f8-1a4d-4a08-a0e0-d4b8a7f88568\"\n    }\n}",
         "title": "删除指定伸缩组"

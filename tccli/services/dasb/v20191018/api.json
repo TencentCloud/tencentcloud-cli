@@ -1163,7 +1163,6 @@
       "document": "CreateAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限名称，最大32字符，不能包含空白字符",
           "example": "acl1",
           "member": "string",
@@ -1172,7 +1171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启磁盘映射",
           "example": "true",
           "member": "bool",
@@ -1181,7 +1179,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否允许任意账号登录",
           "example": "false",
           "member": "bool",
@@ -1190,7 +1187,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文件上行",
           "example": "true",
           "member": "bool",
@@ -1199,7 +1195,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文件下行",
           "example": "true",
           "member": "bool",
@@ -1208,7 +1203,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文本（含图片）上行",
           "example": "true",
           "member": "bool",
@@ -1217,7 +1211,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文本（含图片）下行",
           "example": "true",
           "member": "bool",
@@ -1226,7 +1219,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启 SFTP 文件上传",
           "example": "true",
           "member": "bool",
@@ -1235,7 +1227,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "文件传输上传大小限制（预留参数，目前暂未使用）",
           "example": "0",
           "member": "uint64",
@@ -1244,7 +1235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否开启 SFTP 文件下载",
           "example": "true",
           "member": "bool",
@@ -1253,7 +1243,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "文件传输下载大小限制（预留参数，目前暂未使用）",
           "example": "0",
           "member": "uint64",
@@ -1262,7 +1251,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "关联的用户ID集合",
           "example": "[1]",
           "member": "uint64",
@@ -1271,7 +1259,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的用户组ID",
           "example": "[1]",
           "member": "uint64",
@@ -1280,7 +1267,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的资产ID集合",
           "example": "[1]",
           "member": "uint64",
@@ -1289,7 +1275,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的资产组ID",
           "example": "[1]",
           "member": "uint64",
@@ -1298,7 +1283,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的账号",
           "example": "[]",
           "member": "string",
@@ -1307,7 +1291,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的高危命令模板ID",
           "example": "[1]",
           "member": "uint64",
@@ -1316,7 +1299,14 @@
           "type": "list"
         },
         {
-          "default": "",
+          "document": "关联高危DB模版ID",
+          "example": "[]",
+          "member": "string",
+          "name": "ACTemplateIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
           "document": "是否开启rdp磁盘映射文件上传",
           "example": "true",
           "member": "bool",
@@ -1325,7 +1315,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启rdp磁盘映射文件下载",
           "example": "true",
           "member": "bool",
@@ -1334,7 +1323,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启rz sz文件上传",
           "example": "true",
           "member": "bool",
@@ -1343,7 +1331,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启rz sz文件下载",
           "example": "true",
           "member": "bool",
@@ -1352,7 +1339,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
@@ -1361,7 +1347,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -1370,7 +1355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -1379,7 +1363,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问权限所属部门的ID",
           "example": "1.2.3",
           "member": "string",
@@ -1398,7 +1381,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3828,7 +3810,6 @@
       "document": "ModifyAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "访问权限名称，最大32字符，不能包含空白字符",
           "example": "xx",
           "member": "string",
@@ -3837,7 +3818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启磁盘映射",
           "example": "true",
           "member": "bool",
@@ -3846,7 +3826,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否允许任意账号登录",
           "example": "false",
           "member": "bool",
@@ -3855,7 +3834,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "访问权限ID",
           "example": "1",
           "member": "uint64",
@@ -3864,7 +3842,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文件上行",
           "example": "true",
           "member": "bool",
@@ -3873,7 +3850,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文件下行",
           "example": "true",
           "member": "bool",
@@ -3882,7 +3858,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文本（含图片）上行",
           "example": "true",
           "member": "bool",
@@ -3891,7 +3866,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启剪贴板文本（含图片）下行",
           "example": "true",
           "member": "bool",
@@ -3900,7 +3874,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启文件传输上传",
           "example": "true",
           "member": "bool",
@@ -3909,7 +3882,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "文件传输上传大小限制（预留参数，目前暂未使用）",
           "example": "1",
           "member": "uint64",
@@ -3918,7 +3890,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否开启文件传输下载",
           "example": "true",
           "member": "bool",
@@ -3927,7 +3898,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "文件传输下载大小限制（预留参数，目前暂未使用）",
           "example": "1",
           "member": "uint64",
@@ -3936,7 +3906,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "关联的用户ID",
           "example": "[1]",
           "member": "uint64",
@@ -3945,7 +3914,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的用户组ID",
           "example": "[1]",
           "member": "uint64",
@@ -3954,7 +3922,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的资产ID",
           "example": "[1]",
           "member": "uint64",
@@ -3963,7 +3930,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的资产组ID",
           "example": "[1]",
           "member": "uint64",
@@ -3972,7 +3938,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的账号",
           "example": "[\"admin\"]",
           "member": "string",
@@ -3981,7 +3946,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "关联的高危命令模板ID",
           "example": "[1]",
           "member": "uint64",
@@ -3990,7 +3954,14 @@
           "type": "list"
         },
         {
-          "default": "",
+          "document": "关联高危DB模版ID",
+          "example": "[\"abc\"]",
+          "member": "string",
+          "name": "ACTemplateIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
           "document": "是否开启 RDP 磁盘映射文件上传",
           "example": "true",
           "member": "bool",
@@ -3999,7 +3970,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启 RDP 磁盘映射文件下载",
           "example": "true",
           "member": "bool",
@@ -4008,7 +3978,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启rz sz文件上传",
           "example": "true",
           "member": "bool",
@@ -4017,7 +3986,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启rz sz文件下载",
           "example": "true",
           "member": "bool",
@@ -4026,7 +3994,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
@@ -4035,7 +4002,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -4044,7 +4010,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -4053,7 +4018,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限所属部门的ID，如：1.2.3",
           "example": "1.2.3",
           "member": "string",

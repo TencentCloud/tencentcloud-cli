@@ -8,7 +8,7 @@
       "status": "online"
     },
     "DescribeBillDetail": {
-      "document": "查询账单明细数据",
+      "document": "查询账单明细数据。\n注意事项：\n1.在请求接口时，由于网络不稳定或其它异常，可能会导致请求失败。如果您遇到这种情况，我们建议您在接口请求失败时，手动发起重试操作，这样可以更好地确保您的接口请求能够成功执行。\n2.对于账单明细数据量级很大（例如每月账单明细量级超过20w）的客户，通过 API 调用账单数据效率较低，建议您开通账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)",
       "input": "DescribeBillDetailRequest",
       "name": "查询账单明细数据",
       "output": "DescribeBillDetailResponse",
@@ -505,7 +505,6 @@
       "document": "账单明细组件对象",
       "members": [
         {
-          "default": "",
           "document": "组件类型:资源组件类型的名称，如内存、硬盘等",
           "example": "内存",
           "member": "string",
@@ -515,7 +514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件名称:资源组件的名称，如云数据库MySQL-内存等",
           "example": "高效云系统盘",
           "member": "string",
@@ -525,7 +523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件刊例价:资源组件的原始价格，保持原始粒度",
           "example": "0.35000000",
           "member": "string",
@@ -535,7 +532,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件指定价",
           "example": "0.00000000",
           "member": "string",
@@ -545,7 +541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "价格单位",
           "example": "元/GB/月",
           "member": "string",
@@ -555,7 +550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件用量",
           "example": "50.00000000",
           "member": "string",
@@ -565,7 +559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件用量单位",
           "example": "GB",
           "member": "string",
@@ -575,7 +568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "使用时长",
           "example": "1.00000000",
           "member": "string",
@@ -585,7 +577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "时长单位",
           "example": "月",
           "member": "string",
@@ -595,7 +586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件原价",
           "example": "17.50000000",
           "member": "string",
@@ -605,8 +595,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "折扣率",
+          "document": "折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）",
           "example": "0.00000000",
           "member": "string",
           "name": "Discount",
@@ -615,7 +604,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "优惠类型",
           "example": "折扣",
           "member": "string",
@@ -625,7 +613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "优惠后总价",
           "example": "0.00000000",
           "member": "string",
@@ -635,7 +622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "代金券支付金额",
           "example": "0.00000000",
           "member": "string",
@@ -645,7 +631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "现金支付金额",
           "example": "0.00000000",
           "member": "string",
@@ -655,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "赠送账户支付金额",
           "example": "0.00000000",
           "member": "string",
@@ -665,7 +649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sv_cvm_rootdisk_cbspremium",
           "member": "string",
@@ -675,7 +658,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "组件名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v_cvm_rootdisk",
           "member": "string",
@@ -685,8 +667,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "合同价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件单价\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "ContractPrice",
@@ -695,7 +676,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RI",
           "member": "string",
@@ -705,7 +685,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
@@ -715,8 +694,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "按组件原价的口径换算的预留实例抵扣金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "OriginalCostWithRI",
@@ -725,8 +703,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "SPDeductionRate",
@@ -735,8 +712,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "节省计划抵扣的SP包面值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节省计划抵扣金额，节省计划抵扣的SP包面值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "SPDeduction",
@@ -745,8 +721,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "按组件原价的口径换算的节省计划抵扣金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "OriginalCostWithSP",
@@ -755,8 +730,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00000000",
           "member": "string",
           "name": "BlendedDiscount",
@@ -2863,8 +2837,8 @@
       "document": "DescribeBillDetail请求参数结构体",
       "members": [
         {
-          "document": "偏移量",
-          "example": "0",
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2887,7 +2861,7 @@
           "type": "string"
         },
         {
-          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。",
           "example": "2018-07",
           "member": "string",
           "name": "Month",
@@ -2895,7 +2869,7 @@
           "type": "string"
         },
         {
-          "document": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。(不支持跨月查询)",
+          "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。(不支持跨月查询)",
           "example": "2018-11-0100:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -2903,7 +2877,7 @@
           "type": "string"
         },
         {
-          "document": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。（不支持跨月查询）",
+          "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取18个月内的数据。（不支持跨月查询）",
           "example": "2018-11-0123:59:59",
           "member": "string",
           "name": "EndTime",
@@ -2965,6 +2939,14 @@
           "name": "BusinessCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "上一次请求返回的上下文信息，翻页查询Month>=2023-05的月份的数据可加快查询速度，数据量10万级别以上的用户建议使用，查询速度可提升2~10倍",
+          "example": "UEEJBfSsteS7dZgAaEEziWS40d4sn4urG7",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2981,11 +2963,19 @@
           "value_allowed_null": false
         },
         {
-          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总记录数，24小时缓存一次，可能比实际总记录数少\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11841",
           "member": "uint64",
           "name": "Total",
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UEEJBfSsteS7dZgAaEEziWS40d4sn4urG7",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
           "value_allowed_null": true
         },
         {

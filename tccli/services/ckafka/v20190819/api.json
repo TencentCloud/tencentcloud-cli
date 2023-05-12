@@ -399,6 +399,13 @@
       "output": "DescribeTopicDetailResponse",
       "status": "online"
     },
+    "DescribeTopicFlowRanking": {
+      "document": "获取Topic流量排行，消费者流量排行\n",
+      "input": "DescribeTopicFlowRankingRequest",
+      "name": "Topic 流量排行",
+      "output": "DescribeTopicFlowRankingResponse",
+      "status": "online"
+    },
     "DescribeTopicProduceConnection": {
       "document": "查询topic 生产端连接信息",
       "input": "DescribeTopicProduceConnectionRequest",
@@ -2212,6 +2219,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerGroupSpeed": {
+      "document": "消费者组消费速度排行",
+      "members": [
+        {
+          "default": "",
+          "document": "消费者组名称",
+          "example": "grp-gsg1",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费速度 Count/Minute",
+          "example": "1235",
+          "member": "uint64",
+          "name": "Speed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7190,6 +7223,69 @@
           "document": "返回的主题详情实体",
           "example": "无",
           "member": "TopicDetailResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicFlowRankingRequest": {
+      "document": "DescribeTopicFlowRanking请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ckafka-gt2ty",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排行类别(PRO-Topic生产流量/CON-Topic消费流量)",
+          "example": "PRO/CON",
+          "member": "string",
+          "name": "RankingType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排行起始日期",
+          "example": "2021-05-13T07:23:11+08:00",
+          "member": "datetime_iso",
+          "name": "BeginDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排行结束日期",
+          "example": "2021-05-14T07:23:11+08:00",
+          "member": "datetime_iso",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicFlowRankingResponse": {
+      "document": "DescribeTopicFlowRanking返回参数结构体",
+      "members": [
+        {
+          "document": "流量排行",
+          "example": "无",
+          "member": "TopicFlowRankingResult",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -14619,6 +14715,108 @@
       ],
       "usage": "out"
     },
+    "TopicFlowRanking": {
+      "document": "topic 流量排行",
+      "members": [
+        {
+          "default": "",
+          "document": "主题Id",
+          "example": "topic-tsvs23is1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "tpcj-deg",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "example": "2",
+          "member": "uint64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic 流量",
+          "example": "35.23",
+          "member": "string",
+          "name": "TopicTraffic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic 消息堆积",
+          "example": "9235266",
+          "member": "uint64",
+          "name": "MessageHeap",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicFlowRankingResult": {
+      "document": "topic 生产消息数据，消费者数据",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic 流量数组",
+          "example": "无",
+          "member": "TopicFlowRanking",
+          "name": "TopicFlow",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费者组消费速度排行速度",
+          "example": "无",
+          "member": "ConsumerGroupSpeed",
+          "name": "ConsumeSpeed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic 消息堆积/占用磁盘排行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "五",
+          "member": "TopicMessageHeapRanking",
+          "name": "TopicMessageHeap",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TopicInSyncReplicaInfo": {
       "document": "topic副本及详细信息",
       "members": [
@@ -14727,6 +14925,72 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicMessageHeapRanking": {
+      "document": "topic消息堆积、占用磁盘排行",
+      "members": [
+        {
+          "default": "",
+          "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-tvksy21",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-ab",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Topic 流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.12",
+          "member": "string",
+          "name": "TopicTraffic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic消息堆积/占用磁盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "949006",
+          "member": "uint64",
+          "name": "MessageHeap",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

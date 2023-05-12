@@ -1768,7 +1768,7 @@
       "document": "Bot扩展处置方式，多处置动作组合。",
       "members": [
         {
-          "document": "处置动作，取值有：\n<li>monitor：观察；</li>\n<li>trans：放行；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>random：随机，按照ExtendActions分配处置动作和比例；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
+          "document": "处置动作，取值有：\n<li>monitor：观察；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>random：随机，按照ExtendActions分配处置动作和比例；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
           "example": "monitor",
           "member": "string",
           "name": "Action",
@@ -1943,7 +1943,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "处置动作，取值有：\n<li>drop：拦截；</li>\n<li>monitor：观察；</li>\n<li>trans：放行；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
+          "document": "处置动作，取值有：\n<li>drop：拦截；</li>\n<li>monitor：观察；</li>\n<li>trans：放行；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>random：随机处置；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
           "example": "drop",
           "member": "string",
           "name": "Action",
@@ -4002,7 +4002,7 @@
       "document": "DescribeAccelerationDomains请求参数结构体",
       "members": [
         {
-          "document": "加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。",
+          "document": "加速域名所属站点ID。",
           "example": "zone-20hyebgyfsko",
           "member": "string",
           "name": "ZoneId",

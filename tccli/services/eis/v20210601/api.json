@@ -304,7 +304,32 @@
     },
     "ListDeployableRuntimesMCRequest": {
       "document": "ListDeployableRuntimesMC请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "应用id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "实例id",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "版本类型 0-pro 1-lite",
+          "example": "0",
+          "member": "int64",
+          "name": "PlanType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListDeployableRuntimesMCResponse": {
@@ -315,7 +340,6 @@
           "example": "无",
           "member": "AbstractRuntimeMC",
           "name": "Runtimes",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

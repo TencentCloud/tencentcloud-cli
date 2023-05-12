@@ -101,7 +101,7 @@
       },
       {
         "document": "按个数自动分配IPv6地址",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIpv6Addresses\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-5u5biujl\",\n    \"Ipv6AddressCount\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIpv6Addresses\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-5u5biujl\",\n    \"Ipv6AddressCount\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Ipv6AddressSet\": [\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            },\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f559\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\n    }\n}",
         "title": "按个数自动分配IPv6地址"
       }
@@ -1502,8 +1502,8 @@
     ],
     "DescribeSecurityGroupLimits": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroupLimits\r\n&Version=2017-03-12\r\n&<公共请求参数>",
+        "document": "查询用户安全组配额",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroupLimits\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SecurityGroupLimitSet\": {\n            \"SecurityGroupLimit\": 50,\n            \"SecurityGroupPolicyLimit\": 100,\n            \"SecurityGroupInstanceLimit\": 2000,\n            \"InstanceSecurityGroupLimit\": 2000,\n            \"ReferedSecurityGroupLimit\": 10\n        },\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "查询用户安全组配额"
       }
@@ -1596,7 +1596,7 @@
       {
         "document": "查询绑定了标签的子网列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnets\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"shanghai\"\n            ],\n            \"Name\": \"tag:city\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"NetworkAclId\": \"\",\n                \"RouteTableId\": \"rtb-n0yr460a\",\n                \"VpcId\": \"vpc-n0yr460a\",\n                \"EnableBroadcast\": false,\n                \"Zone\": \"ap-guangzhou\",\n                \"Ipv6CidrBlock\": \"xx\",\n                \"AvailableIpAddressCount\": 1,\n                \"IsRemoteVpcSnat\": false,\n                \"SubnetName\": \"子网2\",\n                \"TotalIpAddressCount\": 1,\n                \"IsCdcSubnet\": 0,\n                \"CdcId\": \"cluster-1234dert\",\n                \"TagSet\": [\n                    {\n                        \"Value\": \"gt\",\n                        \"Key\": \"ku\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-05-25 20:09:07\",\n                \"SubnetId\": \"subnet-bthucmmy\",\n                \"CidrBlock\": \"10.0.0.0/16\",\n                \"IsDefault\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"NetworkAclId\": \"\",\n                \"RouteTableId\": \"rtb-n0yr460a\",\n                \"VpcId\": \"vpc-n0yr460a\",\n                \"EnableBroadcast\": false,\n                \"Zone\": \"ap-guangzhou\",\n                \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffda\",\n                \"AvailableIpAddressCount\": 1,\n                \"IsRemoteVpcSnat\": false,\n                \"SubnetName\": \"子网2\",\n                \"TotalIpAddressCount\": 1,\n                \"IsCdcSubnet\": 0,\n                \"CdcId\": \"cluster-1234dert\",\n                \"TagSet\": [\n                    {\n                        \"Value\": \"gt\",\n                        \"Key\": \"ku\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-05-25 20:09:07\",\n                \"SubnetId\": \"subnet-bthucmmy\",\n                \"CidrBlock\": \"10.0.0.0/16\",\n                \"IsDefault\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
         "title": "查询绑定了标签的子网列表"
       }
     ],
@@ -1708,7 +1708,7 @@
     ],
     "DescribeVpcResourceDashboard": [
       {
-        "document": "",
+        "document": "查看VPC资源信息",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcResourceDashboard\n&VpcIds.0=vpc-0akbol5v\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResourceDashboardSet\": [\n            {\n                \"VpcId\": \"vpc-0akbol5v\",\n                \"SubnetId\": \"\",\n                \"Classiclink\": 0,\n                \"Nat\": 2,\n                \"Vpngw\": 1,\n                \"Dcg\": 1,\n                \"Pcx\": 1,\n                \"FlowLog\": 0,\n                \"NetworkDetect\": 0,\n                \"NetworkACL\": 0,\n                \"Ip\": 157,\n                \"CVM\": 49,\n                \"LB\": 1,\n                \"CDB\": 88,\n                \"Cmem\": 0,\n                \"CTSDB\": 0,\n                \"MariaDB\": 0,\n                \"SQLServer\": 0,\n                \"Postgres\": 0,\n                \"NAS\": 0,\n                \"Greenplumn\": 0,\n                \"Ckafka\": 2,\n                \"Grocery\": 0,\n                \"HSM\": 17,\n                \"Tcaplus\": 0,\n                \"Cnas\": 0,\n                \"TiDB\": 0,\n                \"Emr\": 0,\n                \"SEAL\": 0,\n                \"CFS\": 0,\n                \"Oracle\": 0,\n                \"ElasticSearch\": 0,\n                \"TBaaS\": 0,\n                \"Itop\": 0,\n                \"DBAudit\": 0,\n                \"CynosDBPostgres\": 0,\n                \"Redis\": 0,\n                \"MongoDB\": 0,\n                \"DCDB\": 0,\n                \"CynosDBMySQL\": 0,\n                \"Subnet\": 1,\n                \"RouteTable\": 1\n            }\n        ],\n        \"RequestId\": \"0fee1673-de33-4f0c-9ce4-037cbcf2d7b2\"\n    }\n}",
         "title": "查看VPC资源信息"
@@ -2104,7 +2104,7 @@
     ],
     "MigrateNetworkInterface": [
       {
-        "document": "",
+        "document": "弹性网卡迁移",
         "input": "https://vpc.tencentcloudapi.com/?Action=MigrateNetworkInterface\n&NetworkInterfaceId=eni-afo43z61\n&SourceInstanceId=ins-r8hr2upy\n&DestinationInstanceId=ins-s2hr8upy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡迁移"
@@ -2112,7 +2112,7 @@
     ],
     "MigratePrivateIpAddress": [
       {
-        "document": "",
+        "document": "弹性网卡内网IP迁移",
         "input": "https://vpc.tencentcloudapi.com/?Action=MigratePrivateIpAddress\n&SourceNetworkInterfaceId=eni-afo43z61\n&DestinationNetworkInterfaceId=eni-g0n2axhd\n&PrivateIpAddress=172.16.33.109\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡内网IP迁移"

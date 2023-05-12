@@ -35,6 +35,20 @@
       "output": "DescribeRunsResponse",
       "status": "online"
     },
+    "DescribeTables": {
+      "document": "查询表格。",
+      "input": "DescribeTablesRequest",
+      "name": "查询表格",
+      "output": "DescribeTablesResponse",
+      "status": "online"
+    },
+    "DescribeTablesRows": {
+      "document": "查询表格行数据。",
+      "input": "DescribeTablesRowsRequest",
+      "name": "查询表格行数据",
+      "output": "DescribeTablesRowsResponse",
+      "status": "online"
+    },
     "GetRunCalls": {
       "document": "查询作业详情。",
       "input": "GetRunCallsRequest",
@@ -54,6 +68,13 @@
       "input": "ImportTableFileRequest",
       "name": "导入表格文件",
       "output": "ImportTableFileResponse",
+      "status": "online"
+    },
+    "RetryRuns": {
+      "document": "重试任务。",
+      "input": "RetryRunsRequest",
+      "name": "重试任务",
+      "output": "RetryRunsResponse",
       "status": "online"
     },
     "RunApplication": {
@@ -404,6 +425,146 @@
           "example": "无",
           "member": "Run",
           "name": "Runs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesRequest": {
+      "document": "DescribeTables请求参数结构体",
+      "members": [
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "过滤器，支持过滤字段：\n- Name：表格名称\n- TableId：表格ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesResponse": {
+      "document": "DescribeTables返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格列表。",
+          "example": "无",
+          "member": "Table",
+          "name": "Tables",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesRowsRequest": {
+      "document": "DescribeTablesRows请求参数结构体",
+      "members": [
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "表格ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "过滤器，支持过滤字段：\n- Tr：表格数据，支持模糊查询\n- TableRowUuid：表格行UUID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesRowsResponse": {
+      "document": "DescribeTablesRows返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格行列表。",
+          "example": "无",
+          "member": "TableRow",
+          "name": "Rows",
           "type": "list",
           "value_allowed_null": false
         },
@@ -864,6 +1025,40 @@
         }
       ],
       "usage": "out"
+    },
+    "RetryRunsRequest": {
+      "document": "RetryRuns请求参数结构体",
+      "members": [
+        {
+          "document": "关联项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务UUID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunUuids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryRunsResponse": {
+      "document": "RetryRuns返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Run": {
       "document": "任务。",
@@ -1591,6 +1786,123 @@
         }
       ],
       "usage": "in"
+    },
+    "Table": {
+      "document": "表格。",
+      "members": [
+        {
+          "document": "表格ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关联项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableColumn",
+          "name": "Columns",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableColumn": {
+      "document": "表格列。",
+      "members": [
+        {
+          "document": "列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Header",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "列数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableRow": {
+      "document": "表格行。",
+      "members": [
+        {
+          "document": "表格行UUID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableRowUuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格行内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VPCOption": {
       "document": "私有网络配置。",

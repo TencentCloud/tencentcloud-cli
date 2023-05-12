@@ -459,7 +459,6 @@
       "document": "CreateSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。",
           "example": "test_secret",
           "member": "string",
@@ -468,16 +467,14 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
+          "document": "凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "test create secret",
           "member": "string",
@@ -486,7 +483,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
           "member": "string",
@@ -495,7 +491,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "凭据类型，默认为自定义凭据。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SecretType",
+          "required": false,
+          "type": "int"
+        },
+        {
           "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。",
           "example": "无",
           "member": "string",
@@ -504,7 +507,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，，最大支持4096字节。",
           "example": "test",
           "member": "string",
@@ -513,7 +515,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "JSON 格式字符串，用于指定特定凭据类型的额外配置。",
+          "example": "{}",
+          "member": "string",
+          "name": "AdditionalConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -532,7 +541,6 @@
           "example": "test_secret",
           "member": "string",
           "name": "SecretName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -541,7 +549,6 @@
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -550,7 +557,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TagCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -559,7 +565,6 @@
           "example": "无",
           "member": "string",
           "name": "TagMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -846,7 +851,6 @@
       "document": "DescribeSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "指定需要获取凭据详细信息的凭据名称。",
           "example": "test",
           "member": "string",
@@ -865,7 +869,6 @@
           "example": "test",
           "member": "string",
           "name": "SecretName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -874,7 +877,6 @@
           "example": "description",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -883,7 +885,6 @@
           "example": "13437ab9-e002-11e9-9936-5254006d0810",
           "member": "string",
           "name": "KmsKeyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -892,7 +893,6 @@
           "example": "3350000000",
           "member": "uint64",
           "name": "CreateUin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -901,7 +901,6 @@
           "example": "Disabled",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -910,7 +909,6 @@
           "example": "1",
           "member": "uint64",
           "name": "DeleteTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -919,7 +917,6 @@
           "example": "1574160561",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -928,7 +925,6 @@
           "example": "1",
           "member": "int64",
           "name": "SecretType",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -937,7 +933,6 @@
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -946,7 +941,6 @@
           "example": "cdb-xxxxxxx",
           "member": "string",
           "name": "ResourceID",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -955,7 +949,6 @@
           "example": "True",
           "member": "bool",
           "name": "RotationStatus",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -964,7 +957,6 @@
           "example": "1",
           "member": "int64",
           "name": "RotationFrequency",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -973,7 +965,6 @@
           "example": "无",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -982,7 +973,6 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectID",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -991,7 +981,6 @@
           "example": "无",
           "member": "string",
           "name": "AssociatedInstanceIDs",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1000,8 +989,15 @@
           "example": "12345",
           "member": "uint64",
           "name": "TargetUin",
-          "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "凭据额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalConfig",
+          "type": "string",
           "value_allowed_null": true
         },
         {

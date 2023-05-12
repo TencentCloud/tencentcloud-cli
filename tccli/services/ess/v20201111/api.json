@@ -28,6 +28,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateChannelSubOrganizationModifyQrCode": {
+      "document": "生成子客编辑企业信息二维码",
+      "input": "CreateChannelSubOrganizationModifyQrCodeRequest",
+      "name": "生成子客编辑企业信息二维码",
+      "output": "CreateChannelSubOrganizationModifyQrCodeResponse",
+      "status": "online"
+    },
     "CreateConvertTaskApi": {
       "document": "上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。",
       "input": "CreateConvertTaskApiRequest",
@@ -1222,6 +1229,56 @@
           "member": "string",
           "name": "UrlExpireOn",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelSubOrganizationModifyQrCodeRequest": {
+      "document": "CreateChannelSubOrganizationModifyQrCode请求参数结构体",
+      "members": [
+        {
+          "document": "操作人",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "应用编号",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelSubOrganizationModifyQrCodeResponse": {
+      "document": "CreateChannelSubOrganizationModifyQrCode返回参数结构体",
+      "members": [
+        {
+          "document": "二维码下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "二维码失效时间 unix 时间戳 精确到秒",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -952,8 +952,8 @@
       "document": "公司信息",
       "members": [
         {
-          "default": "",
           "document": "公司名称",
+          "example": "无",
           "member": "string",
           "name": "CompanyName",
           "required": true,
@@ -961,8 +961,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司ID",
+          "example": "无",
           "member": "int64",
           "name": "CompanyId",
           "required": true,
@@ -970,8 +970,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司所在国家",
+          "example": "无",
           "member": "string",
           "name": "CompanyCountry",
           "required": true,
@@ -979,8 +979,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司所在省份",
+          "example": "无",
           "member": "string",
           "name": "CompanyProvince",
           "required": true,
@@ -988,8 +988,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司所在城市",
+          "example": "无",
           "member": "string",
           "name": "CompanyCity",
           "required": true,
@@ -997,8 +997,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司所在详细地址",
+          "example": "无",
           "member": "string",
           "name": "CompanyAddress",
           "required": true,
@@ -1006,13 +1006,31 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "公司电话",
+          "example": "无",
           "member": "string",
           "name": "CompanyPhone",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1659,7 +1677,6 @@
       "document": "DescribeCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书 ID。",
           "example": "无",
           "member": "string",
@@ -1678,7 +1695,6 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1687,7 +1703,6 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1696,7 +1711,6 @@
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1705,7 +1719,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1714,7 +1727,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1723,7 +1735,6 @@
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1732,7 +1743,6 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1741,7 +1751,6 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1750,7 +1759,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1759,7 +1767,6 @@
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1768,7 +1775,6 @@
           "example": "无",
           "member": "string",
           "name": "VerifyType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1777,7 +1783,6 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1786,7 +1791,6 @@
           "example": "无",
           "member": "string",
           "name": "CertBeginTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1795,7 +1799,6 @@
           "example": "无",
           "member": "string",
           "name": "CertEndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1804,7 +1807,6 @@
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1813,7 +1815,6 @@
           "example": "无",
           "member": "string",
           "name": "InsertTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1822,7 +1823,6 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1831,7 +1831,6 @@
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1840,7 +1839,6 @@
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1849,7 +1847,6 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityReport",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1858,7 +1855,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1867,7 +1863,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageTypeName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1876,7 +1871,6 @@
           "example": "无",
           "member": "string",
           "name": "StatusName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1885,7 +1879,6 @@
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1894,7 +1887,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsVip",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1903,7 +1895,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1912,7 +1903,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsDv",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1921,7 +1911,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1930,7 +1919,6 @@
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1939,7 +1927,6 @@
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1948,7 +1935,6 @@
           "example": "无",
           "member": "bool",
           "name": "Deployable",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1957,7 +1943,30 @@
           "example": "无",
           "member": "Tags",
           "name": "Tags",
-          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CA证书的所有加密方式\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CAEncryptAlgorithms",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CA证书的所有通用名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CACommonNames",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CA证书所有的到期时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CAEndTimes",
           "type": "list",
           "value_allowed_null": true
         },
@@ -2845,7 +2854,6 @@
       "document": "管理人信息",
       "members": [
         {
-          "default": "",
           "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
           "example": "无",
           "member": "string",
@@ -2855,7 +2863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人姓名",
           "example": "无",
           "member": "string",
@@ -2865,7 +2872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人姓名",
           "example": "无",
           "member": "string",
@@ -2875,7 +2881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人职位",
           "example": "无",
           "member": "string",
@@ -2885,7 +2890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人电话",
           "example": "无",
           "member": "string",
@@ -2895,7 +2899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人邮箱",
           "example": "无",
           "member": "string",
@@ -2905,7 +2908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人所属部门",
           "example": "无",
           "member": "string",
@@ -2915,7 +2917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2925,7 +2926,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "管理人域名数量",
           "example": "无",
           "member": "int64",
@@ -2935,7 +2935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人证书数量",
           "example": "无",
           "member": "int64",
@@ -2945,7 +2944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "管理人ID",
           "example": "无",
           "member": "int64",
@@ -2955,7 +2953,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "审核有效到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2965,7 +2962,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最近一次提交审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2975,7 +2971,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2985,7 +2980,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "具体审核状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManagerStatusInfo",
@@ -3556,16 +3550,16 @@
       "document": "RevokeCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书 ID。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "吊销证书原因。",
+          "example": "无",
           "member": "string",
           "name": "Reason",
           "required": false,
@@ -3579,6 +3573,7 @@
       "members": [
         {
           "document": "吊销证书域名验证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RevokeDomainValidateAuths",
           "name": "RevokeDomainValidateAuths",
           "type": "list",
