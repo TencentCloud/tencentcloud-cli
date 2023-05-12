@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+查询指定实例的节点信息
 
 Input: 
 
 ```
 tccli redis DescribeInstanceZoneInfo --cli-unfold-argument  \
-    --InstanceId crs-6tl7uxxd
+    --InstanceId crs-6tl7****
 ```
 
 Output: 

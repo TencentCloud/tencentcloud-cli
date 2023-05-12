@@ -2254,6 +2254,13 @@
       "output": "GetCcnRegionBandwidthLimitsResponse",
       "status": "online"
     },
+    "GetTradeBillingAuth": {
+      "document": "预付费下单屏蔽余额支付场景-获取AUTH",
+      "input": "GetTradeBillingAuthRequest",
+      "name": "预付费下单屏蔽余额支付场景-获取AUTH",
+      "output": "GetTradeBillingAuthResponse",
+      "status": "online"
+    },
     "HaVipAssociateAddressIp": {
       "document": "本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "HaVipAssociateAddressIpRequest",
@@ -2325,7 +2332,7 @@
       "status": "online"
     },
     "MigratePrivateIpAddress": {
-      "document": " 本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "MigratePrivateIpAddressRequest",
       "name": "弹性网卡内网IP迁移",
       "output": "MigratePrivateIpAddressResponse",
@@ -4706,20 +4713,22 @@
       "document": "AssignIpv6SubnetCidrBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。",
+          "example": "\"vpc-xxxx\"",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "分配 `IPv6` 子网段列表。",
+          "example": "{ \"SubnetId\": \"subnet-xxxx\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\" }",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4729,10 +4738,12 @@
       "members": [
         {
           "document": "分配 `IPv6` 子网段列表。",
+          "example": "[{ \"SubnetId\": \"subnet-oy2v3j92\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\", \"ISPType\": \"BGP\"} ]",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlockSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4810,40 +4821,54 @@
       "document": "VPC辅助CIDR信息。",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "辅助CIDR。形如：`172.16.0.0/16`",
+          "example": "无",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "辅助CIDR类型（0：普通辅助CIDR，1：容器辅助CIDR），默认都是0。",
+          "example": "无",
           "member": "int64",
           "name": "AssistantType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -6633,12 +6658,13 @@
       "document": "CheckDefaultSubnet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6648,10 +6674,12 @@
       "members": [
         {
           "document": "检查结果。true为可以创建默认子网，false为不可以创建默认子网。",
+          "example": "True",
           "member": "bool",
           "name": "Result",
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13246,13 +13274,13 @@
       "document": "DeleteVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-3ptx9s8b",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13726,7 +13754,6 @@
       "document": "DescribeAssistantCidr请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`数组。形如：[`vpc-6v2ht8q5`]",
           "example": "vpc-6v2ht8q5",
           "member": "string",
@@ -13736,7 +13763,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
           "example": "无",
           "member": "Filter",
@@ -13746,7 +13772,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -13756,7 +13781,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -13776,7 +13800,6 @@
           "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -13786,7 +13809,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -18974,7 +18996,6 @@
       "document": "DescribeNetworkAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定NetworkAclIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-12345678。</li>\n<li>network-acl-id - String - （过滤条件）网络ACL实例ID，形如：acl-12345678。</li>\n<li>network-acl-name - String - （过滤条件）网络ACL实例名称。</li>",
           "example": "vpc-qw123456",
           "member": "Filter",
@@ -18984,7 +19005,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络ACL实例ID数组。形如：[acl-12345678]。每次请求的实例的上限为100。参数不支持同时指定NetworkAclIds和Filters。",
           "example": "[acl-12345678]",
           "member": "string",
@@ -18994,7 +19014,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -19004,7 +19023,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最小值为1，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -19024,7 +19042,6 @@
           "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -19034,7 +19051,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -19845,10 +19861,12 @@
       "members": [
         {
           "document": "用户安全组配额限制。",
+          "example": "无",
           "member": "SecurityGroupLimitSet",
           "name": "SecurityGroupLimitSet",
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23555,22 +23573,22 @@
       "document": "DescribeVpcPrivateIpAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。",
           "example": "vpc-rkxd3pgh",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "内网`IP`地址列表，批量查询单次请求最多支持`10`个。",
           "example": "[\"10.4.2.2\\n\",\"10.4.2.3\\n\",\"10.4.2.17\\n\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23583,9 +23601,9 @@
           "example": "无",
           "member": "VpcPrivateIpAddress",
           "name": "VpcPrivateIpAddressSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23600,12 +23618,13 @@
       "document": "DescribeVpcResourceDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
+          "example": "['vpc-q26u781x', 'vpc-1yfqkcw1']",
           "member": "string",
           "name": "VpcIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23615,10 +23634,12 @@
       "members": [
         {
           "document": "资源对象列表。",
+          "example": "无",
           "member": "ResourceDashboard",
           "name": "ResourceDashboardSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -29129,6 +29150,88 @@
       ],
       "type": "object"
     },
+    "GetTradeBillingAuth": {
+      "document": "预付费下单屏蔽余额支付场景-AUTH对象",
+      "members": [
+        {
+          "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.0",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "密钥KEY。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "签名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Signature",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "每次签名随机字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Nonce",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GetTradeBillingAuthRequest": {
+      "document": "GetTradeBillingAuth请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTradeBillingAuthResponse": {
+      "document": "GetTradeBillingAuth返回参数结构体",
+      "members": [
+        {
+          "document": "AUTH对象。",
+          "example": "无",
+          "member": "GetTradeBillingAuth",
+          "name": "Auth",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HaVip": {
       "document": "描述 HAVIP 信息",
       "members": [
@@ -30444,40 +30547,40 @@
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "--",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。",
           "example": "--",
           "member": "string",
           "name": "SourceInstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "待迁移的目的CVM实例ID。",
           "example": "--",
           "member": "string",
           "name": "DestinationInstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡绑定类型：0 标准型 1 扩展型。",
           "example": "0",
           "member": "uint64",
           "name": "AttachType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -30498,31 +30601,31 @@
       "document": "MigratePrivateIpAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-m6dyj722",
           "member": "string",
           "name": "SourceNetworkInterfaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "待迁移的目的弹性网卡实例ID。",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "DestinationNetworkInterfaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "迁移的内网IP地址，例如：10.0.0.6。",
           "example": "10.0.0.6",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -36279,7 +36382,6 @@
       "document": "路由策略对象",
       "members": [
         {
-          "default": "",
           "document": "目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。",
           "example": "-",
           "member": "string",
@@ -36290,7 +36392,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：本地网关。",
           "example": "-",
           "member": "string",
@@ -36301,8 +36402,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。",
+          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。\n特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。",
           "example": "-",
           "member": "string",
           "name": "GatewayId",
@@ -36312,7 +36412,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略。\n该字段在删除时必填，其他字段无需填写。",
           "example": "-",
           "member": "uint64",
@@ -36323,7 +36422,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由策略描述。",
           "example": "-",
           "member": "string",
@@ -36334,7 +36432,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否启用",
           "example": "-",
           "member": "bool",
@@ -36345,7 +36442,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由类型，目前我们支持的类型有：\nUSER：用户路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和操作 USER 类型的路由。",
           "example": "-",
           "member": "string",
@@ -36356,7 +36452,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "-",
           "member": "string",
@@ -36367,7 +36462,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。",
           "example": "-",
           "member": "string",
@@ -36378,7 +36472,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由唯一策略ID。",
           "example": "-",
           "member": "string",
@@ -36389,7 +36482,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由策略是否发布到云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
           "member": "bool",
@@ -36400,7 +36492,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由策略创建时间",
           "example": "2021-03-02 14:41:15",
           "member": "datetime",
@@ -36771,49 +36862,84 @@
       "document": "用户安全组配额限制。",
       "members": [
         {
-          "default": "",
           "document": "每个项目每个地域可创建安全组数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组下的最大规则数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupPolicyLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组下嵌套安全组规则数",
+          "example": "无",
           "member": "uint64",
           "name": "ReferedSecurityGroupLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "单安全组关联实例数",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupInstanceLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例关联安全组数",
+          "example": "无",
           "member": "uint64",
           "name": "InstanceSecurityGroupLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "安全组展开后的规则数限制",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupExtendedPolicyLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "被引用的安全组关联CVM、ENI的实例配额",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupReferedCvmAndEniLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "被引用的安全组关联数据库、LB等服务实例配额",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupReferedSvcLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -36862,7 +36988,7 @@
           "visibility": 1
         },
         {
-          "document": "网段或IP(互斥)。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。",
           "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
@@ -36938,31 +37064,37 @@
       "document": "安全组规则集合",
       "members": [
         {
-          "default": "",
-          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。",
+          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Version",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "出站规则。",
+          "document": "出站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Egress",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "入站规则。",
+          "document": "入站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Ingress",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SecurityPolicyDatabase": {
       "document": "SecurityPolicyDatabase策略",
@@ -38845,20 +38977,22 @@
       "document": "UnassignIpv6SubnetCidrBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。",
+          "example": "vpc-q26u781x",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "`IPv6` 子网段列表。",
+          "example": "[{'SubnetId': 'subnet-8uwg949c'}]",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -77,7 +77,7 @@ Output:
                 "VpcId": "vpc-n0yr460a",
                 "EnableBroadcast": false,
                 "Zone": "ap-guangzhou",
-                "Ipv6CidrBlock": "xx",
+                "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffda",
                 "AvailableIpAddressCount": 1,
                 "IsRemoteVpcSnat": false,
                 "SubnetName": "子网2",

@@ -4,7 +4,7 @@
       {
         "document": "锁定实例后，创建会话，以连接实例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"GameRegion\": \"字符串型\",\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"ClientSession\": \"字符串型\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"xx\",\n        \"ServerSession\": \"xx\",\n        \"Role\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"1\",\n        \"ServerSession\": \"abc\",\n        \"Role\": \"Player\",\n        \"RequestId\": \"req123\"\n    }\n}",
         "title": "CreateSession示例"
       }
     ],

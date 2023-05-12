@@ -42,9 +42,9 @@
     ],
     "CreateAcl": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"xx\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "新建访问权限",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"abc\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"abc\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"31jshapqhxmajh12knskal2\"\n    }\n}",
         "title": "新建访问权限"
       }
     ],
@@ -317,8 +317,8 @@
     "ModifyAcl": [
       {
         "document": "修改访问权限",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"xx\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"xx\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"abc\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"aaa\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd12321aax\"\n    }\n}",
         "title": "修改访问权限"
       }
     ],

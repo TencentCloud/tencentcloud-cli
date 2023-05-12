@@ -308,7 +308,6 @@
       "document": "描述用户创建的集群信息",
       "members": [
         {
-          "default": "",
           "document": "集群 ID",
           "example": "cluster-xxxx",
           "member": "string",
@@ -319,7 +318,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "-",
           "member": "string",
@@ -330,7 +328,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -341,7 +338,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户 AppID",
           "example": "12314214",
           "member": "uint64",
@@ -352,7 +348,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "主账号 UIN",
           "example": "12314214",
           "member": "string",
@@ -363,7 +358,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建者 UIN",
           "example": "12314214",
           "member": "string",
@@ -374,7 +368,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群状态, 1 未初始化,，3 初始化中，2 运行中",
           "example": "1",
           "member": "int64",
@@ -385,7 +378,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "描述",
           "example": "test",
           "member": "string",
@@ -396,7 +388,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群创建时间",
           "example": "2020-01-21 00:00:10",
           "member": "string",
@@ -407,7 +398,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最后一次操作集群的时间",
           "example": "2020-01-21 01:00:10",
           "member": "string",
@@ -418,7 +408,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CU 数量",
           "example": "12",
           "member": "uint64",
@@ -429,7 +418,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CU 内存规格",
           "example": "4",
           "member": "uint64",
@@ -440,7 +428,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -451,7 +438,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态描述",
           "example": "1",
           "member": "string",
@@ -462,7 +448,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络",
           "example": "[]",
           "member": "CCN",
@@ -473,7 +458,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络",
           "example": "2",
           "member": "uint64",
@@ -484,7 +468,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "空闲 CU",
           "example": "2",
           "member": "int64",
@@ -495,7 +478,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -506,7 +488,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群隔离时间; 没隔离时间，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
@@ -517,7 +498,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群过期时间; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
@@ -528,7 +508,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "距离过期还有多少秒; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
@@ -539,7 +518,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -550,7 +528,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的默认 COS 存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-12314214",
           "member": "string",
@@ -561,7 +538,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的CLS 日志集 LogSet\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
@@ -572,7 +548,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的CLS 日志主题 TopicId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
@@ -583,7 +558,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的CLS 日志集  名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "日志集名字",
           "member": "string",
@@ -594,7 +568,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的CLS 日志主题  名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "日志主题名字",
           "member": "string",
@@ -605,7 +578,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "ClusterVersion",
@@ -616,7 +588,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "细粒度资源下的空闲CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
@@ -627,7 +598,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群的默认日志采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -638,7 +608,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "取值：0-没有设置，1-已设置，2-不允许设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -649,7 +618,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "WorkSpaceClusterItem",
@@ -660,7 +628,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
           "member": "float",
@@ -671,7 +638,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "0 后付费,1 预付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -682,7 +648,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0 / 1",
           "member": "int64",
@@ -691,8 +656,23 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "session集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterSession",
+          "name": "ClusterSessions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
+      "usage": "out"
+    },
+    "ClusterSession": {
+      "document": "session集群信息",
+      "members": [],
       "usage": "out"
     },
     "ClusterVersion": {
@@ -3241,25 +3221,27 @@
       "document": "系统配置属性",
       "members": [
         {
-          "default": "",
           "document": "系统配置的Key",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "系统配置的Value",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RefJobStatusCountItem": {
       "document": "依赖作业分状态计数信息",
@@ -4356,7 +4338,6 @@
       "document": "空间和集群绑定关系",
       "members": [
         {
-          "default": "",
           "document": "集群 ID",
           "example": "1234",
           "member": "int64",
@@ -4367,7 +4348,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群 SerialId",
           "example": "cluster-xxxx",
           "member": "string",
@@ -4378,7 +4358,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "MyCluster",
           "member": "string",
@@ -4389,7 +4368,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "工作空间 SerialId",
           "example": "spc-xxx",
           "member": "string",
@@ -4400,7 +4378,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "工作空间名称",
           "example": "Myspace",
           "member": "string",
@@ -4411,7 +4388,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定状态  2 绑定 1  解除绑定",
           "example": "1",
           "member": "int64",
@@ -4422,7 +4398,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -4433,7 +4408,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID string类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",

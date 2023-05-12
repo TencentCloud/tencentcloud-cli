@@ -486,6 +486,14 @@
         "title": "获取已绑定对象列表"
       }
     ],
+    "DescribeClusterAgentCreatingProgress": [
+      {
+        "document": "获取状态",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAgentCreatingProgress\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取状态"
+      }
+    ],
     "DescribeConditionsTemplateList": [
       {
         "document": "",

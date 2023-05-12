@@ -1,12 +1,12 @@
 **Example 1: 查询实例参数列表**
 
-
+查询指定实例的参数信息
 
 Input: 
 
 ```
 tccli redis DescribeInstanceParams --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p
+    --InstanceId crs-5a4p****
 ```
 
 Output: 
@@ -15,11 +15,52 @@ Output:
     "Response": {
         "InstanceEnumParam": [
             {
-                "CurrentValue": "volatile-ttl",
+                "CurrentValue": "yes",
+                "DefaultValue": "yes",
+                "EnumValue": [
+                    "yes",
+                    "no"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "lazyfree-lazy-eviction",
+                "Status": 2,
+                "Tips": "lazyfree switch on eviction",
+                "ValueType": "enum"
+            },
+            {
+                "CurrentValue": "yes",
+                "DefaultValue": "yes",
+                "EnumValue": [
+                    "yes",
+                    "no"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "lazyfree-lazy-expire",
+                "Status": 2,
+                "Tips": "lazyfree switch on expire",
+                "ValueType": "enum"
+            },
+            {
+                "CurrentValue": "yes",
+                "DefaultValue": "yes",
+                "EnumValue": [
+                    "yes",
+                    "no"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "lazyfree-lazy-server-del",
+                "Status": 2,
+                "Tips": "lazyfree switch on server implicit deletion",
+                "ValueType": "enum"
+            },
+            {
+                "CurrentValue": "noeviction",
                 "DefaultValue": "noeviction",
                 "EnumValue": [
                     "volatile-lru",
+                    "volatile-lfu",
                     "allkeys-lru",
+                    "allkeys-lfu",
                     "volatile-random",
                     "allkeys-random",
                     "volatile-ttl",
@@ -27,131 +68,157 @@ Output:
                 ],
                 "NeedRestart": "false",
                 "ParamName": "maxmemory-policy",
-                "Tips": "当系统到达设定的最大内存值后选择内存交换的策略",
-                "ValueType": "enum",
-                "Status": 2
+                "Status": 2,
+                "Tips": "How Redis will select what to remove when maxmemory is reached",
+                "ValueType": "enum"
+            },
+            {
+                "CurrentValue": "yes",
+                "DefaultValue": "yes",
+                "EnumValue": [
+                    "yes",
+                    "no"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "replica-lazy-flush",
+                "Status": 2,
+                "Tips": "lazyfree switch on full resynchronization",
+                "ValueType": "enum"
+            },
+            {
+                "CurrentValue": "no",
+                "DefaultValue": "no",
+                "EnumValue": [
+                    "yes",
+                    "no"
+                ],
+                "NeedRestart": "false",
+                "ParamName": "sentineauth",
+                "Status": 2,
+                "Tips": "Executing a sentinel order eliminates the password",
+                "ValueType": "enum"
             }
         ],
         "InstanceIntegerParam": [
             {
-                "CurrentValue": "15001",
+                "CurrentValue": "15000",
                 "DefaultValue": "15000",
                 "Max": "120000",
                 "Min": "15000",
                 "NeedRestart": "false",
                 "ParamName": "cluster-node-timeout",
-                "Tips": "集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Cluster node timeout is the amount of milliseconds a node must be unreachable for it to be considered in failure state",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "511",
+                "CurrentValue": "512",
                 "DefaultValue": "512",
                 "Max": "10000",
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-entries",
-                "Tips": "当哈希元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Hashes are encoded using a memory efficient data structure when they have a small number of entries",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "61",
+                "CurrentValue": "64",
                 "DefaultValue": "64",
                 "Max": "10000",
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "hash-max-ziplist-value",
-                "Tips": "当哈希中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Hashes are encoded using a memory efficient data structure when the biggest entry does not exceed a given threshold",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "511",
+                "CurrentValue": "10",
+                "DefaultValue": "10",
+                "Max": "500",
+                "Min": "1",
+                "NeedRestart": "false",
+                "ParamName": "hz",
+                "Status": 2,
+                "Tips": "The frequency at which Redis background tasks are performed. A higher value results in higher CPU consumption but smaller latency. We recommend that you do not specify a value larger than 100.",
+                "Unit": "",
+                "ValueType": "integer"
+            },
+            {
+                "CurrentValue": "500",
+                "DefaultValue": "500",
+                "Max": "1000",
+                "Min": "10",
+                "NeedRestart": "false",
+                "ParamName": "proxy-slowlog-log-slower-than",
+                "Status": 2,
+                "Tips": "the commands over this time will in proxy",
+                "Unit": "ms",
+                "ValueType": "integer"
+            },
+            {
+                "CurrentValue": "512",
                 "DefaultValue": "512",
                 "Max": "10000",
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "set-max-intset-entries",
-                "Tips": "当集合中的元素全部是64位有符号十进制整数并且未超过设定阈值，则编码为整数集合存储",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "When a set is composed of just strings that happen to be integers in radix 10 in the range of 64 bit signed integers.",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "10001",
-                "DefaultValue": "10000",
-                "Max": "1000000",
-                "Min": "-1",
+                "CurrentValue": "10",
+                "DefaultValue": "10",
+                "Max": "1000",
+                "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "slowlog-log-slower-than",
-                "Tips": "超过指定时间的命令将会被记录，负数表示关闭该功能，零值表示强制记录所有命令的执行记录",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Over this time the command is recorded in us.a negative number disables the slow log,a value of zero forces the logging of every command",
+                "Unit": "ms",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "4",
-                "DefaultValue": "0",
-                "Max": "7200",
-                "Min": "0",
+                "CurrentValue": "31536000",
+                "DefaultValue": "31536000",
+                "Max": "2147483647",
+                "Min": "60",
                 "NeedRestart": "false",
                 "ParamName": "timeout",
-                "Tips": "客户端空闲指定时长后关闭连接，零值表示关闭该功能",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Close the connection after a client is idle for N seconds",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "121",
+                "CurrentValue": "128",
                 "DefaultValue": "128",
                 "Max": "10000",
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-entries",
-                "Tips": "当有序集合元素数量没有超过指定数目，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
+                "Tips": "Sorted sets are encoded using a memory efficient data structure when they have a small number of entries.",
+                "Unit": "",
+                "ValueType": "integer"
             },
             {
-                "CurrentValue": "61",
+                "CurrentValue": "64",
                 "DefaultValue": "64",
                 "Max": "10000",
                 "Min": "1",
                 "NeedRestart": "false",
                 "ParamName": "zset-max-ziplist-value",
-                "Tips": "当有序集合中最大项没有超过指定阈值，则编码为内存利用率更高的数据结构存储",
-                "ValueType": "integer",
                 "Status": 2,
-                "Unit": ""
-            }
-        ],
-        "InstanceTextParam": [
-            {
-                "CurrentValue": "\"eK\"",
-                "DefaultValue": "\"\"",
-                "NeedRestart": "false",
-                "ParamName": "notify-keyspace-events",
-                "TextValue": [
-                    "K",
-                    "E",
-                    "g",
-                    "$",
-                    "l",
-                    "s",
-                    "h",
-                    "z",
-                    "x",
-                    "e",
-                    "A"
-                ],
-                "Tips": "改变系统已设定客户端的键空间通知方式",
-                "ValueType": "text",
-                "Status": 2
+                "Tips": "Sorted sets are encoded using a memory efficient data structure when the biggest entry does not exceed a given threshold.",
+                "Unit": "",
+                "ValueType": "integer"
             }
         ],
         "InstanceMultiParam": [
@@ -165,7 +232,37 @@ Output:
                     "hgetall",
                     "eval",
                     "evalsha",
-                    "script"
+                    "script",
+                    "scan",
+                    "psetex",
+                    "set",
+                    "hmset",
+                    "hset",
+                    "lpush",
+                    "rpush",
+                    "sadd",
+                    "zadd",
+                    "del",
+                    "mget",
+                    "mset",
+                    "bitop",
+                    "exists",
+                    "msetnx",
+                    "blpop",
+                    "brpop",
+                    "rpoplpush",
+                    "brpoplpush",
+                    "smove",
+                    "sunion",
+                    "sinter",
+                    "sdiff",
+                    "sunionstore",
+                    "sinterstore",
+                    "sdiffstore",
+                    "zunionstore",
+                    "zinterstore",
+                    "pfmerge",
+                    "pfcount"
                 ],
                 "NeedRestart": "false",
                 "ParamName": "disable-command-list",
@@ -174,8 +271,32 @@ Output:
                 "ValueType": "multi"
             }
         ],
-        "RequestId": "e546784b-709c-401d-aba6-73037eb4e522",
-        "TotalCount": 10
+        "InstanceTextParam": [
+            {
+                "CurrentValue": "\"\"",
+                "DefaultValue": "\"\"",
+                "NeedRestart": "false",
+                "ParamName": "notify-keyspace-events",
+                "Status": 2,
+                "TextValue": [
+                    "K",
+                    "E",
+                    "g",
+                    "$",
+                    "l",
+                    "s",
+                    "h",
+                    "z",
+                    "x",
+                    "e",
+                    "A"
+                ],
+                "Tips": "Changes in key space notification to registered clients",
+                "ValueType": "text"
+            }
+        ],
+        "RequestId": "a4abf600-2813-4c5b-a3f8-fc4268efd151",
+        "TotalCount": 18
     }
 }
 ```

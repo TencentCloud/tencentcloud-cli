@@ -246,9 +246,9 @@
       "status": "online"
     },
     "ModifyDisksChargeType": {
-      "document": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n",
+      "document": "本接口 (ModifyDisksChargeType) 用于切换云硬盘的计费模式。\n\n非弹性云硬盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云硬盘一起转换。\n默认接口请求频率限制：10次/秒。",
       "input": "ModifyDisksChargeTypeRequest",
-      "name": "修改弹性云盘计费模式",
+      "name": "修改弹性云硬盘计费模式",
       "output": "ModifyDisksChargeTypeResponse",
       "status": "online"
     },
@@ -1279,12 +1279,12 @@
       "document": "CreateDisks返回参数结构体",
       "members": [
         {
-          "document": "创建的云硬盘ID列表。",
+          "document": "创建的云硬盘ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"disk-lzrg2pwi\"]",
           "member": "string",
           "name": "DiskIdSet",
           "type": "list",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -3879,8 +3879,7 @@
       "document": "ModifyDisksChargeType请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。",
+          "document": "一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。",
           "example": "[\"disk-jwk0zvrg\\r\\n\"]",
           "member": "string",
           "name": "DiskIds",
@@ -3889,7 +3888,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "DiskChargePrepaid",
@@ -3899,7 +3897,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "设置为后付费模式",
           "example": "True",
           "member": "bool",
@@ -4017,28 +4014,31 @@
       "document": "ModifySnapshotsSharePermission请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
-          "member": "string",
-          "name": "AccountIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "操作，包括 SHARE，CANCEL。其中SHARE代表分享操作，CANCEL代表取消分享操作。",
-          "member": "string",
-          "name": "Permission",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。",
+          "example": "[\"snap-j1ytqxx7\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
+          "example": "[\"100001122000\"]",
+          "member": "string",
+          "name": "AccountIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "操作，包括 SHARE，CANCEL。其中SHARE代表分享操作，CANCEL代表取消分享操作。",
+          "example": "SHARE",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4383,8 +4383,7 @@
       "document": "RenewDisk请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的续费时长。<br>在云盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时云盘会按对齐到实例续费后的到期时间来续费。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云硬盘的续费时长。<br>在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时云硬盘会按对齐到实例续费后的到期时间来续费。",
           "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
@@ -4393,7 +4392,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
           "example": "disk-jwk0zvrg",
           "member": "string",
@@ -4403,7 +4401,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云硬盘备份点配额，目前仅允许设置最多一个备份点。随续费处理只允许升配。",
           "example": "1",
           "member": "uint64",

@@ -1,6 +1,6 @@
 **Example 1: 示例1 查询网络ACL列表**
 
-
+查询网络ACL列表
 
 Input: 
 
@@ -14,6 +14,7 @@ Output:
         "TotalCount": 1,
         "NetworkAclSet": [
             {
+                "TagSet": [],
                 "NetworkAclId": "acl-kmxukyv6",
                 "VpcId": "vpc-9it989fn",
                 "NetworkAclType": "TRIPLE",
@@ -41,7 +42,7 @@ Output:
                         "SubnetName": "子网1",
                         "TotalIpAddressCount": 1,
                         "IsCdcSubnet": 0,
-                        "CdcId": "xx",
+                        "CdcId": "cluster-gbo27yc4",
                         "TagSet": [
                             {
                                 "Value": "og",
@@ -76,7 +77,7 @@ Output:
 
 **Example 2: 示例2 根据条件查询网络ACL列表**
 
-
+根据条件查询网络ACL列表
 
 Input: 
 
@@ -94,27 +95,19 @@ Output:
         "TotalCount": 1,
         "NetworkAclSet": [
             {
+                "TagSet": [],
                 "NetworkAclId": "",
-                "VpcId": "xx",
+                "VpcId": "vpc-kj123456",
                 "NetworkAclType": "TRIPLE",
                 "IngressEntries": [
                     {
-                        "Protocol": "xx",
-                        "Description": "xx",
-                        "Ipv6CidrBlock": "xx",
-                        "ModifyTime": "xx",
-                        "Action": "xx",
-                        "CidrBlock": "xx",
-                        "Port": "xx"
-                    },
-                    {
-                        "Protocol": "xx",
-                        "Description": "xx",
-                        "Ipv6CidrBlock": "xx",
-                        "ModifyTime": "xx",
-                        "Action": "xx",
-                        "CidrBlock": "xx",
-                        "Port": "xx"
+                        "Protocol": "all",
+                        "Description": "测试1",
+                        "Ipv6CidrBlock": "::/0",
+                        "ModifyTime": "2020-01-21 14:26:22",
+                        "Action": "Drop",
+                        "CidrBlock": "0.0.0.0/0",
+                        "Port": "80"
                     }
                 ],
                 "SubnetSet": [
@@ -127,7 +120,7 @@ Output:
                         "Ipv6CidrBlock": "::/0",
                         "AvailableIpAddressCount": 1,
                         "IsCdcSubnet": 0,
-                        "CdcId": "xx",
+                        "CdcId": "cluster-gbo27yc4",
                         "IsRemoteVpcSnat": true,
                         "SubnetName": "测试01",
                         "TotalIpAddressCount": 1,

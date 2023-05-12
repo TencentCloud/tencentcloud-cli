@@ -312,10 +312,10 @@
     ],
     "ModifyDisksChargeType": [
       {
-        "document": "本示例用于切换一个云盘的计费模式（将包年包月的云盘转换为按量计费模式）。",
+        "document": "本示例用于切换一个云硬盘的计费模式（将包年包月的云硬盘转换为按量计费模式）。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDisksChargeType\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-jwk0zvrg\"\n    ],\n    \"DiskChargePrepaid\": {\n        \"Period\": \"1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
-        "title": "切换云盘的计费模式"
+        "title": "切换云硬盘的计费模式"
       }
     ],
     "ModifyDisksRenewFlag": [
@@ -336,24 +336,24 @@
     ],
     "ModifySnapshotsSharePermission": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifySnapshotsSharePermission\r\n&AccountIds.0=123456789\r\n&Permission=SHARE\r\n&SnapshotIds.0=snap-cgrmci8t\r\n&SnapshotIds.1=snap-124p95lf\r\n&<公共请求参数>",
-        "output": "{\r\n    \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\"\r\n}",
+        "document": "将指定快照共享给另一个用户",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotsSharePermission\n<公共请求参数>\n\n{\n    \"AccountIds\": [\n        \"123456789\"\n    ],\n    \"Permission\": \"SHARE\",\n    \"SnapshotIds\": [\n        \"snap-cgrmci8t\",\n        \"snap-124p95lf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\"\n    }\n}",
         "title": "将快照共享给用户"
       }
     ],
     "RenewDisk": [
       {
-        "document": "",
+        "document": "给云硬盘续费一个月，并设置自动续费标识",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
-        "title": "给云盘续费一个月，并设置自动续费标识"
+        "title": "给云硬盘续费一个月，并设置自动续费标识"
       },
       {
-        "document": "实例当前到期时间为：2018-03-30 20:15:03，需续费一个月，调用本接口续费实例挂载的预付费云盘，使云盘与实例的到期时间对齐，并设置云盘为自动续费。",
+        "document": "实例当前到期时间为：2018-03-30 20:15:03，需续费一个月，调用本接口续费实例挂载的预付费云硬盘，使云硬盘与实例的到期时间对齐，并设置云硬盘为自动续费。",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"CurInstanceDeadline\": \"2018-03-30 20:15:03\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
-        "title": "续费实例时，需续费挂载的预付费云盘，使云盘与实例的到期时间对齐。"
+        "title": "续费实例时，需续费挂载的预付费云硬盘，使云硬盘与实例的到期时间对齐。"
       }
     ],
     "ResizeDisk": [

@@ -20,8 +20,8 @@
       {
         "document": "返回用户可用的运行时列表，发布应用时返回的运行时环境，仅shared和standalone运行时，无sandbox运行时，并且只有running状态的",
         "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeployableRuntimesMC\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtimes\": [\n            {\n                \"DisplayName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Type\": 2,\n                \"RuntimeId\": 123,\n                \"Area\": \"zz\",\n                \"Addr\": \"ipaas.tianjin.com\"\n            }\n        ]\n    }\n}",
-        "title": "获取可部署运行时列表"
+        "output": "{\n    \"Response\": {\n        \"Runtimes\": [\n            {\n                \"RuntimeId\": 0,\n                \"DisplayName\": \"abc\",\n                \"Type\": 0,\n                \"Zone\": \"abc\",\n                \"Area\": \"abc\",\n                \"Addr\": \"abc\",\n                \"Status\": 0,\n                \"ExpiredAt\": 0,\n                \"RuntimeClass\": 0,\n                \"Deployed\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取可运行时列表"
       }
     ],
     "ListRuntimeDeployedInstancesMC": [

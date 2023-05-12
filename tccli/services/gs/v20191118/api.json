@@ -77,7 +77,7 @@
           "visibility": 1
         },
         {
-          "document": "游戏ID",
+          "document": "【已废弃】只在TrylockWorker时生效",
           "example": "game-abcd1234",
           "member": "string",
           "name": "GameId",

@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+查询指定实例的账号信息
 
 Input: 
 
@@ -17,18 +17,19 @@ Output:
     "Response": {
         "Accounts": [
             {
-                "InstanceId": "crs-fdjfkldf",
-                "AccountName": "test",
-                "Remark": "test",
+                "AccountName": "root",
+                "InstanceId": "crs-mufy7q15",
                 "Privilege": "rw",
                 "ReadonlyPolicy": [
-                    "master"
+                    "master",
+                    "replication"
                 ],
+                "Remark": "default",
                 "Status": 2
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db"
+        "RequestId": "b97a9706-dee2-4d5c-8f2d-84873bc79629",
+        "TotalCount": 1
     }
 }
 ```

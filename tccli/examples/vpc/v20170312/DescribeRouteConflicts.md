@@ -23,7 +23,7 @@ Output:
                         "RouteId": 20662,
                         "DestinationCidrBlock": "192.168.0.0/24",
                         "GatewayId": "135",
-                        "GatewayType": 11,
+                        "GatewayType": "11",
                         "RouteDescription": ""
                     }
                 ]
@@ -36,7 +36,7 @@ Output:
                         "RouteId": 20661,
                         "DestinationCidrBlock": "10.11.0.0/24",
                         "GatewayId": "135",
-                        "GatewayType": 11,
+                        "GatewayType": "11",
                         "RouteDescription": ""
                     }
                 ]

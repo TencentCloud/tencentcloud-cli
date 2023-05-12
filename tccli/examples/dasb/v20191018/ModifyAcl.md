@@ -10,12 +10,12 @@ tccli dasb ModifyAcl --cli-unfold-argument  \
     --MaxFileDownSize 1 \
     --CmdTemplateIdSet 1 \
     --AllowFileDown True \
-    --Name xx \
+    --Name abc \
     --UserGroupIdSet 1 \
     --DeviceGroupIdSet 1 \
     --AllowDiskRedirect True \
     --AllowClipFileUp True \
-    --AccountSet xx \
+    --AccountSet aaa \
     --AllowAnyAccount True \
     --AllowClipFileDown True \
     --DeviceIdSet 1 \
@@ -30,7 +30,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abcd12321aax"
     }
 }
 ```

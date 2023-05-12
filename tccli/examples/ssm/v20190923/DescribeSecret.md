@@ -1,6 +1,6 @@
 **Example 1: 获取凭据详情信息**
 
-
+获取凭据详情信息
 
 Input: 
 
@@ -13,25 +13,26 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "Description": "xx",
+        "Status": "Enabled",
+        "Description": "hello",
         "CreateUin": 1,
-        "ResourceID": "xx",
-        "ProductName": "xx",
+        "ResourceID": "inst-1",
+        "ProductName": "redis",
         "RotationStatus": true,
-        "KmsKeyId": "xx",
-        "RequestId": "xx",
+        "KmsKeyId": "abc-ddd",
+        "RequestId": "abc-hhm",
         "SecretType": 0,
-        "SecretName": "xx",
+        "SecretName": "secret-a",
         "RotationFrequency": 1,
         "DeleteTime": 1,
         "CreateTime": 1,
-        "ResourceName": "xxx",
+        "ResourceName": "db-user1",
         "ProjectID": 1,
         "AssociatedInstanceIDs": [
-            "xxx"
+            "inst-1"
         ],
-        "TargetUin": 12345
+        "TargetUin": 12345,
+        "AdditionalConfig": "{}"
     }
 }
 ```

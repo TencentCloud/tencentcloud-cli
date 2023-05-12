@@ -327,7 +327,35 @@
     },
     "ListDeployableRuntimesMCRequest": {
       "document": "ListDeployableRuntimesMC请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "应用id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "实例id",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "版本类型 0-pro 1-lite",
+          "example": "0",
+          "member": "int64",
+          "name": "PlanType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "ListDeployableRuntimesMCResponse": {
@@ -338,9 +366,9 @@
           "example": "无",
           "member": "AbstractRuntimeMC",
           "name": "Runtimes",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

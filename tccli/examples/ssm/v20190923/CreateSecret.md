@@ -1,6 +1,6 @@
 **Example 1: 创建新的凭据信息**
 
-
+创建自定义凭据。
 
 Input: 
 
@@ -20,7 +20,7 @@ Output:
         "SecretName": "test_secret",
         "VersionId": "v1.0",
         "TagCode": 1,
-        "TagMsg": "xx"
+        "TagMsg": "success"
     }
 }
 ```

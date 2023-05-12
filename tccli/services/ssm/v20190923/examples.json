@@ -18,9 +18,9 @@
     ],
     "CreateSecret": [
       {
-        "document": "",
+        "document": "创建自定义凭据。",
         "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecret\n<公共请求参数>\n\n{\n    \"VersionId\": \"v1.0\",\n    \"SecretString\": \"test\",\n    \"Description\": \"test create secret\",\n    \"SecretName\": \"test_secret\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"TagCode\": 1,\n        \"TagMsg\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"TagCode\": 1,\n        \"TagMsg\": \"success\"\n    }\n}",
         "title": "创建新的凭据信息"
       }
     ],
@@ -66,9 +66,9 @@
     ],
     "DescribeSecret": [
       {
-        "document": "",
+        "document": "获取凭据详情信息",
         "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"xx\",\n        \"ProductName\": \"xx\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecretType\": 0,\n        \"SecretName\": \"xx\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"xxx\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"xxx\"\n        ],\n        \"TargetUin\": 12345\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Enabled\",\n        \"Description\": \"hello\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"inst-1\",\n        \"ProductName\": \"redis\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"abc-ddd\",\n        \"RequestId\": \"abc-hhm\",\n        \"SecretType\": 0,\n        \"SecretName\": \"secret-a\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"db-user1\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"inst-1\"\n        ],\n        \"TargetUin\": 12345,\n        \"AdditionalConfig\": \"{}\"\n    }\n}",
         "title": "获取凭据详情信息"
       }
     ],

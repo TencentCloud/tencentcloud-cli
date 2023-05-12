@@ -1015,67 +1015,94 @@
       "document": "公司信息",
       "members": [
         {
-          "default": "",
           "document": "公司名称",
+          "example": "无",
           "member": "string",
           "name": "CompanyName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司ID",
+          "example": "无",
           "member": "int64",
           "name": "CompanyId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司所在国家",
+          "example": "无",
           "member": "string",
           "name": "CompanyCountry",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司所在省份",
+          "example": "无",
           "member": "string",
           "name": "CompanyProvince",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司所在城市",
+          "example": "无",
           "member": "string",
           "name": "CompanyCity",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司所在详细地址",
+          "example": "无",
           "member": "string",
           "name": "CompanyAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公司电话",
+          "example": "无",
           "member": "string",
           "name": "CompanyPhone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1770,13 +1797,13 @@
       "document": "DescribeCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书 ID。",
           "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1789,288 +1816,315 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书来源：trustasia = 亚洲诚信，upload = 用户上传。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CertificateType",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书颁发者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Alias",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "VerifyType",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "漏洞扫描状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CertBeginTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CertEndTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书有效期：单位(月)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "InsertTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "订单 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OrderId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "漏洞扫描评估报告。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "VulnerabilityReport",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageTypeName",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "状态描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StatusName",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsVip",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsDv",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "提交的资料信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "Deployable",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "CA证书的所有加密方式\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CAEncryptAlgorithms",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "CA证书的所有通用名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CACommonNames",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "CA证书所有的到期时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CAEndTimes",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2982,154 +3036,154 @@
       "document": "管理人信息",
       "members": [
         {
-          "default": "",
           "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
           "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人姓名",
           "example": "无",
           "member": "string",
           "name": "ManagerFirstName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人姓名",
           "example": "无",
           "member": "string",
           "name": "ManagerLastName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人职位",
           "example": "无",
           "member": "string",
           "name": "ManagerPosition",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人电话",
           "example": "无",
           "member": "string",
           "name": "ManagerPhone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人邮箱",
           "example": "无",
           "member": "string",
           "name": "ManagerMail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人所属部门",
           "example": "无",
           "member": "string",
           "name": "ManagerDepartment",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人域名数量",
           "example": "无",
           "member": "int64",
           "name": "DomainCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人证书数量",
           "example": "无",
           "member": "int64",
           "name": "CertCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "管理人ID",
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "审核有效到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最近一次提交审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubmitAuditTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "VerifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "具体审核状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ManagerStatusInfo",
           "name": "StatusInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3699,20 +3753,22 @@
       "document": "RevokeCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书 ID。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "吊销证书原因。",
+          "example": "无",
           "member": "string",
           "name": "Reason",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3722,10 +3778,12 @@
       "members": [
         {
           "document": "吊销证书域名验证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RevokeDomainValidateAuths",
           "name": "RevokeDomainValidateAuths",
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
