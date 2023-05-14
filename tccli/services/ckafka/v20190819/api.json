@@ -15363,7 +15363,6 @@
       "document": "SendMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "DataHub接入ID",
           "example": "datahubId",
           "member": "string",
@@ -15373,7 +15372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "发送消息内容(单次请求最多500条)",
           "example": "无",
           "member": "BatchContent",
@@ -15393,7 +15391,6 @@
           "example": "无",
           "member": "string",
           "name": "MessageId",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

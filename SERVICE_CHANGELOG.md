@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 18 次发布
+### 第 55 次发布
 
-发布时间：2023-05-12 01:05:36
+发布时间：2023-05-15 01:08:49
 
 本次发布包含了以下内容：
 
@@ -12,43 +12,37 @@
 
 修改接口：
 
-* [DescribeBillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19182)
+* [DescribeRollbackRangeTime](http://document.tencentcloudapi.woa.com/document/product/236/18726)
 
-	* 新增入参：Context
+	* 新增入参：IsRemoteZone, BackupRegion
 
-	* 新增出参：Context
-
-
-
-
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
-
-### 第 61 次发布
-
-发布时间：2023-05-12 01:13:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeTopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/77772)
-
-新增数据结构：
-
-* [ConsumerGroupSpeed](http://document.tencentcloudapi.woa.com/document/product/597/40861#ConsumerGroupSpeed)
-* [TopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRanking)
-* [TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult)
-* [TopicMessageHeapRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicMessageHeapRanking)
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 60 次发布
+### 第 61 次发布
 
-发布时间：2023-05-12 01:18:37
+发布时间：2023-05-15 01:20:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
+
+	* 新增成员：AttackLevel, FixNoNeedRestart, Method
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 47 次发布
+
+发布时间：2023-05-15 01:25:41
 
 本次发布包含了以下内容：
 
@@ -56,48 +50,29 @@
 
 修改接口：
 
-* [DescribeEmergencyVulList](http://document.tencentcloudapi.woa.com/document/product/296/60903)
+* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
 
-	* 新增入参：HotspotAttack
+	* 新增入参：UpsertKeys
 
 
 修改数据结构：
 
-* [EmergencyVul](http://document.tencentcloudapi.woa.com/document/product/296/19867#EmergencyVul)
+* [DataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataGovernPolicy)
 
-	* 新增成员：Method, AttackLevel, DefenseState
+	* 新增成员：RuleType, GovernEngine
 
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
 
-
-
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
-
-### 第 10 次发布
-
-发布时间：2023-05-12 01:21:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74801)
-
-	* 新增入参：ACTemplateIdSet
-
-* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74798)
-
-	* 新增入参：ACTemplateIdSet
+	* 新增成员：DbGovernPolicyIsDisable
 
 
 
 
 ## 数据连接器(eis) 版本：2021-06-01
 
-### 第 6 次发布
+### 第 7 次发布
 
-发布时间：2023-05-12 01:27:49
+发布时间：2023-05-15 01:30:38
 
 本次发布包含了以下内容：
 
@@ -105,9 +80,9 @@
 
 修改接口：
 
-* [ListDeployableRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57965)
+* [ListRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57963)
 
-	* 新增入参：ProjectId, InstanceId, PlanType
+	* 新增入参：PlanType
 
 
 
@@ -116,77 +91,11 @@
 
 
 
-## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 9 次发布
+### 第 53 次发布
 
-发布时间：2023-05-12 01:33:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#DeviceInfo)
-
-	* 新增成员：LogLevel
-
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2020-12-15
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2019-11-26
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 56 次发布
-
-发布时间：2023-05-12 01:38:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeClusterAgentCreatingProgress](http://document.tencentcloudapi.woa.com/document/product/248/77773)
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 24 次发布
-
-发布时间：2023-05-12 01:41:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
-
-修改数据结构：
-
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
-
-	* 新增成员：ClusterSessions
-
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
-### 第 24 次发布
-
-发布时间：2023-05-12 01:45:48
+发布时间：2023-05-15 01:31:44
 
 本次发布包含了以下内容：
 
@@ -194,18 +103,22 @@
 
 修改数据结构：
 
-* [RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumProject)
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
 
-	* 新增成员：AccessPoint
-
-
+	* 新增成员：CcInfos
 
 
-## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 24 次发布
 
-发布时间：2023-05-12 01:48:31
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 32 次发布
+
+发布时间：2023-05-15 01:47:57
 
 本次发布包含了以下内容：
 
@@ -213,50 +126,25 @@
 
 修改接口：
 
-* [DescribeCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41674)
+* [CreateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/18589)
 
-	* 新增出参：CAEncryptAlgorithms, CACommonNames, CAEndTimes
+	* 新增入参：Description
 
 
 修改数据结构：
 
-* [CompanyInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#CompanyInfo)
+* [Trigger](http://document.tencentcloudapi.woa.com/document/product/583/17244#Trigger)
 
-	* 新增成员：IdType, IdNumber
-
-
-
-
-## 凭据管理系统(ssm) 版本：2019-09-23
-
-### 第 8 次发布
-
-发布时间：2023-05-12 01:48:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40529)
-
-	* 新增入参：SecretType, AdditionalConfig
-
-	* <font color="#dd0000">**修改入参**：</font>VersionId
-
-* [DescribeSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40526)
-
-	* 新增出参：AdditionalConfig
+	* 新增成员：Description
 
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
+## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 85 次发布
+### 第 22 次发布
 
-发布时间：2023-05-12 01:59:32
+发布时间：2023-05-15 01:55:23
 
 本次发布包含了以下内容：
 
@@ -264,9 +152,32 @@
 
 修改数据结构：
 
-* [SecurityGroupLimitSet](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupLimitSet)
+* [BatchTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchTaskDetail)
 
-	* 新增成员：SecurityGroupExtendedPolicyLimit, SecurityGroupReferedCvmAndEniLimit, SecurityGroupReferedSvcLimit
+	* 新增成员：ModelInferenceCodeInfo
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 2 次发布
+
+发布时间：2023-05-15 02:05:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：Version
 
 
 
@@ -7101,6 +7012,21 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 55 次发布
+
+发布时间：2023-05-15 01:08:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRollbackRangeTime](http://document.tencentcloudapi.woa.com/document/product/236/18726)
+
+	* 新增入参：IsRemoteZone, BackupRegion
+
+
 ### 第 54 次发布
 
 发布时间：2023-05-08 01:10:16
@@ -10850,14 +10776,14 @@
 
 新增接口：
 
-* [[DescribeTopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/77772)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/77772)
 
 新增数据结构：
 
-* [[ConsumerGroupSpeed](http://document.tencentcloudapi.woa.com/document/product/597/40861#ConsumerGroupSpeed)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[ConsumerGroupSpeed](http://document.tencentcloudapi.woa.com/document/product/597/40861#ConsumerGroupSpeed))
-* [[TopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRanking)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[TopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRanking))
-* [[TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult))
-* [[TopicMessageHeapRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicMessageHeapRanking)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[TopicMessageHeapRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicMessageHeapRanking))
+* [ConsumerGroupSpeed](http://document.tencentcloudapi.woa.com/document/product/597/40861#ConsumerGroupSpeed)
+* [TopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRanking)
+* [TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult)
+* [TopicMessageHeapRanking](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicMessageHeapRanking)
 
 ### 第 60 次发布
 
@@ -17167,6 +17093,21 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 61 次发布
+
+发布时间：2023-05-15 01:20:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
+
+	* 新增成员：AttackLevel, FixNoNeedRestart, Method
+
+
 ### 第 60 次发布
 
 发布时间：2023-05-12 01:18:37
@@ -21562,6 +21503,32 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 47 次发布
+
+发布时间：2023-05-15 01:25:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
+
+	* 新增入参：UpsertKeys
+
+
+修改数据结构：
+
+* [DataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataGovernPolicy)
+
+	* 新增成员：RuleType, GovernEngine
+
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
+
+	* 新增成员：DbGovernPolicyIsDisable
+
+
 ### 第 46 次发布
 
 发布时间：2023-04-27 01:19:14
@@ -24702,6 +24669,21 @@
 
 ## 数据连接器(eis) 版本：2021-06-01
 
+### 第 7 次发布
+
+发布时间：2023-05-15 01:30:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57963)
+
+	* 新增入参：PlanType
+
+
 ### 第 6 次发布
 
 发布时间：2023-05-12 01:27:49
@@ -26238,6 +26220,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 53 次发布
+
+发布时间：2023-05-15 01:31:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：CcInfos
+
 
 ### 第 52 次发布
 
@@ -34835,7 +34832,7 @@
 
 新增接口：
 
-* [[DescribeClusterAgentCreatingProgress](http://document.tencentcloudapi.woa.com/document/product/248/77773)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterAgentCreatingProgress](http://document.tencentcloudapi.woa.com/document/product/248/77773)
 
 ### 第 55 次发布
 
@@ -37906,7 +37903,7 @@
 
 新增数据结构：
 
-* [[ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession))
+* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
 
 修改数据结构：
 
@@ -42670,6 +42667,28 @@
 
 
 ## 云函数(scf) 版本：2018-04-16
+
+### 第 32 次发布
+
+发布时间：2023-05-15 01:47:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/18589)
+
+	* 新增入参：Description
+
+
+修改数据结构：
+
+* [Trigger](http://document.tencentcloudapi.woa.com/document/product/583/17244#Trigger)
+
+	* 新增成员：Description
+
 
 ### 第 31 次发布
 
@@ -50672,6 +50691,21 @@
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 22 次发布
+
+发布时间：2023-05-15 01:55:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchTaskDetail)
+
+	* 新增成员：ModelInferenceCodeInfo
+
 
 ### 第 21 次发布
 
@@ -61559,6 +61593,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 2 次发布
+
+发布时间：2023-05-15 02:05:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：Version
+
 
 ### 第 1 次发布
 

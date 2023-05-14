@@ -23958,7 +23958,6 @@
       "document": "DescribeVulList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -23968,7 +23967,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -23978,8 +23976,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>\n<li>Labels- string- 是否必填：否 - 标签搜索</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>\n<li>Labels- string- 是否必填：否 - 标签搜索</li>\n<li>IsSupportAutoFix- string- 是否必填：否 - 是否支持自动修复 0:不支持 1:支持</li>\n<li>CvssScore- string- 是否必填：否 - CvssScore大于多少</li>\n<li>AttackLevel- string- 是否必填：否 - 攻击热度大于多少</li>\n\n",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -23988,7 +23985,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可选排序字段 Level，LastTime，HostCount",
           "example": "无",
           "member": "string",
@@ -23998,7 +23994,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序顺序：desc  默认asc",
           "example": "无",
           "member": "string",
@@ -24018,7 +24013,6 @@
           "example": "[]",
           "member": "VulInfoList",
           "name": "VulInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -24028,7 +24022,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -24038,7 +24031,6 @@
           "example": "23",
           "member": "uint64",
           "name": "FollowVulCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -35593,7 +35585,6 @@
       "document": "主机安全-漏洞管理-漏洞列表",
       "members": [
         {
-          "default": "",
           "document": "漏洞包含的事件id串，多个用“,”分割",
           "example": "1",
           "member": "string",
@@ -35604,7 +35595,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞名",
           "example": "git注入",
           "member": "string",
@@ -35615,7 +35605,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败",
           "example": "1",
           "member": "uint64",
@@ -35626,7 +35615,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞id",
           "example": "1",
           "member": "uint64",
@@ -35637,7 +35625,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞披露事件",
           "example": "2021-03-16 16:21:51",
           "member": "string",
@@ -35648,7 +35635,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最后检测时间",
           "example": "2021-03-16 16:21:51",
           "member": "string",
@@ -35659,7 +35645,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "影响主机数",
           "example": "2",
           "member": "uint64",
@@ -35670,7 +35655,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞等级 1:低 2:中 3:高 4:严重",
           "example": "1",
           "member": "uint64",
@@ -35681,7 +35665,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -35692,7 +35675,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "漏洞描述",
           "member": "string",
@@ -35703,7 +35685,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "废弃字段",
           "member": "string",
@@ -35714,7 +35695,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "废弃字段",
           "member": "string",
@@ -35725,7 +35705,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "废弃字段",
           "member": "string",
@@ -35736,7 +35715,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "聚合后事件状态串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1,2",
           "member": "string",
@@ -35747,7 +35725,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVE-2021-3156",
           "member": "string",
@@ -35758,7 +35735,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9",
           "member": "float",
@@ -35769,7 +35745,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞标签 多个逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "标签1,标签2",
           "member": "string",
@@ -35780,7 +35755,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否能自动修复且包含能自动修复的主机， 0=否  1=是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -35791,7 +35765,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最后扫描任务的id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "uint64",
@@ -35802,7 +35775,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否支持防御， 0:不支持 1:支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -35813,7 +35785,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已防御的攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "uint64",
@@ -35824,7 +35795,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "首次出现时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-30 19:17:28",
           "member": "string",
@@ -35835,12 +35805,41 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "VulCategory",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "攻击热度级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AttackLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "漏洞修复后是否需要重启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "FixNoNeedRestart",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "检测方式0 - 版本比对, 1 - POC验证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Method",
+          "required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

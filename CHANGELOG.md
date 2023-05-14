@@ -1,3 +1,187 @@
+# Release 3.0.761.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 55 次发布
+
+发布时间：2023-05-15 01:08:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRollbackRangeTime](http://document.tencentcloudapi.woa.com/document/product/236/18726)
+
+	* 新增入参：IsRemoteZone, BackupRegion
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 61 次发布
+
+发布时间：2023-05-15 01:20:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
+
+	* 新增成员：AttackLevel, FixNoNeedRestart, Method
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 47 次发布
+
+发布时间：2023-05-15 01:25:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
+
+	* 新增入参：UpsertKeys
+
+
+修改数据结构：
+
+* [DataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataGovernPolicy)
+
+	* 新增成员：RuleType, GovernEngine
+
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
+
+	* 新增成员：DbGovernPolicyIsDisable
+
+
+
+
+## 数据连接器(eis) 版本：2021-06-01
+
+### 第 7 次发布
+
+发布时间：2023-05-15 01:30:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57963)
+
+	* 新增入参：PlanType
+
+
+
+
+## 数据连接器(eis) 版本：2020-07-15
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 53 次发布
+
+发布时间：2023-05-15 01:31:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：CcInfos
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 32 次发布
+
+发布时间：2023-05-15 01:47:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/18589)
+
+	* 新增入参：Description
+
+
+修改数据结构：
+
+* [Trigger](http://document.tencentcloudapi.woa.com/document/product/583/17244#Trigger)
+
+	* 新增成员：Description
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 22 次发布
+
+发布时间：2023-05-15 01:55:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchTaskDetail)
+
+	* 新增成员：ModelInferenceCodeInfo
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 2 次发布
+
+发布时间：2023-05-15 02:05:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：Version
+
+
+
+
 # Release 3.0.760.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -4761,7 +4761,6 @@
       "document": "数据治理规则",
       "members": [
         {
-          "default": "",
           "document": "数据排布治理项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RewriteDataInfo",
@@ -4772,7 +4771,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "快照过期治理项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExpiredSnapshotsInfo",
@@ -4783,7 +4781,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "移除孤立文件治理项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoveOrphanFilesInfo",
@@ -4794,7 +4791,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "合并元数据Manifests治理项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MergeManifestsInfo",
@@ -4805,15 +4801,34 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "是否集成库规则：default（默认继承）、none（不继承）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "InheritDataBase",
           "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "治理规则类型，Customize: 自定义；Intelligence: 智能治理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Customize",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "治理引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataEngine-",
+          "member": "string",
+          "name": "GovernEngine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -8214,7 +8229,6 @@
       "document": "GenerateCreateMangedTableSql请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "表基本信息",
           "example": "无",
           "member": "TableBaseInfo",
@@ -8224,7 +8238,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "表字段信息",
           "example": "无",
           "member": "TColumn",
@@ -8234,7 +8247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "表分区信息",
           "example": "无",
           "member": "TPartition",
@@ -8244,11 +8256,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "表属性信息",
           "example": "无",
           "member": "Property",
           "name": "Properties",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "V2 upsert表 upsert键",
+          "example": "[\"col1\",col2\"\"]",
+          "member": "string",
+          "name": "UpsertKeys",
           "required": false,
           "type": "list",
           "visibility": 1
@@ -8264,7 +8284,6 @@
           "example": "无",
           "member": "Execution",
           "name": "Execution",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -11128,7 +11147,6 @@
       "document": "数据表配置信息",
       "members": [
         {
-          "default": "",
           "document": "该数据表所属数据库名字",
           "example": "database1",
           "member": "string",
@@ -11139,7 +11157,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据表名字",
           "example": "table",
           "member": "string",
@@ -11150,7 +11167,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该数据表所属数据源名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CosDataCatalog",
           "member": "string",
@@ -11161,7 +11177,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该数据表备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -11172,7 +11187,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "具体类型，表or视图\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "table",
           "member": "string",
@@ -11183,7 +11197,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据格式类型，hive，iceberg等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hive",
           "member": "string",
@@ -11194,7 +11207,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "建表用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -11205,7 +11217,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "建表用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100019878767",
           "member": "string",
@@ -11216,13 +11227,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataGovernPolicy",
           "name": "GovernPolicy",
           "required": false,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "库数据治理是否关闭，关闭：true，开启：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fasle",
+          "member": "string",
+          "name": "DbGovernPolicyIsDisable",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }

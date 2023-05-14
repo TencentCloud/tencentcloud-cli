@@ -6068,84 +6068,94 @@
       "document": "数据源对象",
       "members": [
         {
-          "default": "",
           "document": "若数据源列表为绑定数据库，则为db名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "DatabaseNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "desc",
+          "example": "Desc",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源ID",
           "example": "1",
           "member": "uint64",
           "name": "ID",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源引擎的实例ID，如CDB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid",
           "member": "string",
           "name": "Instance",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源名称，在相同SpaceName下，数据源名称不能为空",
           "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源引擎所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "beijing",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源所属的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "数据源版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

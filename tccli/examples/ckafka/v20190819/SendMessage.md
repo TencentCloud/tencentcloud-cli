@@ -1,6 +1,6 @@
 **Example 1: DataHubHTTP 发送消息**
 
-
+HTTP协议接入点
 
 Input: 
 

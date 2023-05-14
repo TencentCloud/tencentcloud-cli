@@ -689,7 +689,7 @@
           "visibility": 1
         },
         {
-          "document": "预付费专用资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ResourceGroupId",
@@ -699,7 +699,7 @@
           "visibility": 1
         },
         {
-          "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource_group",
           "member": "string",
           "name": "ResourceGroupName",
@@ -947,6 +947,16 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "模型推理代码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelInferenceCodeInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1016,7 +1026,6 @@
       "document": "出参类型",
       "members": [
         {
-          "default": "",
           "document": "跑批任务ID",
           "example": "JOB-123",
           "member": "string",
@@ -1027,7 +1036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "跑批任务名称",
           "example": "test",
           "member": "string",
@@ -1038,7 +1046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "ModelInfo",
@@ -1049,7 +1056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像信息",
           "example": "[]",
           "member": "ImageInfo",
@@ -1060,7 +1066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费模式",
           "example": "PREPAID",
           "member": "string",
@@ -1071,7 +1076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
           "example": "NOT_BILLING",
           "member": "string",
@@ -1082,8 +1086,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResourceGroupId",
@@ -1093,7 +1096,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源配置",
           "example": "无",
           "member": "ResourceConfigInfo",
@@ -1104,7 +1106,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -1115,7 +1116,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态",
           "example": "无",
           "member": "string",
@@ -1126,7 +1126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -1137,7 +1136,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -1148,7 +1146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1159,7 +1156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1170,7 +1166,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1181,7 +1176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出",
           "example": "[]",
           "member": "DataConfig",
@@ -1192,8 +1186,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResourceGroupName",
@@ -1203,7 +1196,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "失败原因",
           "example": "无",
           "member": "string",
@@ -1214,8 +1206,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "计费金额信息，eg：2.00元/小时 (for后付费)",
+          "document": "计费金额信息，eg：2.00元/小时 (for 按量计费)",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -1495,7 +1486,6 @@
       "document": "CreateBatchTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
           "example": "test",
           "member": "string",
@@ -1505,8 +1495,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费",
+          "document": "计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
@@ -1515,7 +1504,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源配置",
           "example": "无",
           "member": "ResourceConfigInfo",
@@ -1525,7 +1513,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "结果输出",
           "example": "[]",
           "member": "DataConfig",
@@ -1535,7 +1522,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否上报日志",
           "example": "false",
           "member": "bool",
@@ -1545,7 +1531,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "工作类型 1:单次 2:周期",
           "example": "1",
           "member": "uint64",
@@ -1555,7 +1540,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务周期描述",
           "example": "无",
           "member": "CronInfo",
@@ -1565,8 +1549,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "预付费专用资源组",
+          "document": "包年包月资源组ID",
           "example": "1",
           "member": "string",
           "name": "ResourceGroupId",
@@ -1575,7 +1558,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签配置",
           "example": "[]",
           "member": "Tag",
@@ -1585,7 +1567,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务对应的模型信息，有模型文件时需要填写",
           "example": "无",
           "member": "ModelInfo",
@@ -1595,7 +1576,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义镜像信息",
           "example": "无",
           "member": "ImageInfo",
@@ -1605,7 +1585,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "代码包",
           "example": "无",
           "member": "CosPathInfo",
@@ -1615,7 +1594,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "启动命令",
           "example": "sh start.sh",
           "member": "string",
@@ -1625,7 +1603,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据配置",
           "example": "[]",
           "member": "DataConfig",
@@ -1635,7 +1612,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志配置",
           "example": "无",
           "member": "LogConfig",
@@ -1645,7 +1621,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC Id",
           "example": "vpc-fgb3u1kx",
           "member": "string",
@@ -1655,7 +1630,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网Id",
           "example": "subnet-jhzi2m3j",
           "member": "string",
@@ -1665,7 +1639,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "备注",
           "example": "无",
           "member": "string",
@@ -1675,7 +1648,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务执行结果回调URL，仅支持http和https。回调格式&内容详见: [TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)",
           "example": "http://www.qq.com",
           "member": "string",
@@ -1695,7 +1667,6 @@
           "example": "123123",
           "member": "string",
           "name": "BatchTaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3983,8 +3954,7 @@
       "document": "DescribeBatchTasks请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
+          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
           "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
           "member": "Filter",
           "name": "Filters",
@@ -3993,7 +3963,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
           "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
           "member": "TagFilter",
@@ -4003,7 +3972,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "example": "1",
           "member": "uint64",
@@ -4013,7 +3981,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大为50",
           "example": "10",
           "member": "uint64",
@@ -4023,7 +3990,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC",
           "example": "DESC",
           "member": "string",
@@ -4033,7 +3999,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
           "example": "CreateTime",
           "member": "string",
@@ -4053,7 +4018,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4063,7 +4027,6 @@
           "example": "无",
           "member": "BatchTaskSetItem",
           "name": "BatchTaskSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
