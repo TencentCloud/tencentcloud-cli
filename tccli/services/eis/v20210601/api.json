@@ -473,11 +473,18 @@
       "document": "ListRuntimesMC请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
           "member": "int64",
           "name": "RuntimeClass",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "计划类型：0-pro 1-lite",
+          "example": "0",
+          "member": "int64",
+          "name": "PlanType",
           "required": false,
           "type": "int"
         }
@@ -492,7 +499,6 @@
           "example": "无",
           "member": "RuntimeMC",
           "name": "Runtimes",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

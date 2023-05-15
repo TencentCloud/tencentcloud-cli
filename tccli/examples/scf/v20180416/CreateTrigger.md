@@ -21,6 +21,7 @@ Output:
             "AvailableStatus": "Available",
             "BindStatus": "on",
             "CustomArgument": "",
+            "Description": "",
             "Enable": 0,
             "ModTime": "2021-08-31 21:45:32",
             "Qualifier": "$DEFAULT",

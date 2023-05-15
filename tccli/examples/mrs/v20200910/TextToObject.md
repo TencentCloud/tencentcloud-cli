@@ -35,1435 +35,1486 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1caf2d7c-0c5a-4353-bf76-71dbf7f514be",
         "Template": {
             "PatientInfo": {
-                "Name": "",
-                "Sex": "女",
-                "Age": "35岁",
-                "Phone": "",
-                "Address": "",
-                "IdCard": "",
-                "HealthCardNo": "",
-                "SocialSecurityCardNo": "",
-                "BedNo": "",
-                "Birthday": "",
-                "Ethnicity": "",
-                "Married": "",
-                "Profession": "",
-                "EducationBackground": "",
-                "Nationality": "",
-                "BirthPlace": "",
-                "MedicalInsuranceType": ""
+                "Name": "abc",
+                "Sex": "abc",
+                "Age": "abc",
+                "Phone": "abc",
+                "Address": "abc",
+                "IdCard": "abc",
+                "HealthCardNo": "abc",
+                "SocialSecurityCardNo": "abc",
+                "Birthday": "abc",
+                "Ethnicity": "abc",
+                "Married": "abc",
+                "Profession": "abc",
+                "EducationBackground": "abc",
+                "Nationality": "abc",
+                "BirthPlace": "abc",
+                "MedicalInsuranceType": "abc",
+                "AgeNorm": "abc",
+                "Nation": "abc",
+                "MarriedCode": "abc",
+                "ProfessionCode": "abc",
+                "MedicalInsuranceTypeCode": "abc",
+                "BedNo": "abc"
             },
             "ReportInfo": {
-                "Hospital": "",
-                "DepartmentName": "乳腺专科超声号",
-                "BillingTime": "",
-                "ReportTime": "2020-07-0 19:02:37",
-                "InspectTime": "",
-                "CheckNum": "",
-                "ImageNum": "",
-                "RadiationNum": "",
-                "TestNum": "",
-                "OutpatientNum": "n检查部位",
-                "PathologyNum": "",
-                "InHospitalNum": "",
-                "SampleNum": "",
-                "SampleType": "",
-                "MedicalRecordNum": "",
-                "ReportName": "超声检查报告",
-                "UltraNum": "n姓名",
-                "Diagnose": ""
+                "Hospital": "abc",
+                "DepartmentName": "abc",
+                "BillingTime": "abc",
+                "ReportTime": "abc",
+                "InspectTime": "abc",
+                "CheckNum": "abc",
+                "ImageNum": "abc",
+                "RadiationNum": "abc",
+                "TestNum": "abc",
+                "OutpatientNum": "abc",
+                "PathologyNum": "abc",
+                "InHospitalNum": "abc",
+                "SampleNum": "abc",
+                "SampleType": "abc",
+                "MedicalRecordNum": "abc",
+                "ReportName": "abc",
+                "UltraNum": "abc",
+                "Diagnose": "abc",
+                "CheckItem": "abc",
+                "CheckMethod": "abc",
+                "DiagnoseTime": "abc",
+                "HealthCheckupNum": "abc",
+                "OtherTime": "abc",
+                "PrintTime": "abc",
+                "Times": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ]
             },
             "Check": {
                 "Desc": {
-                    "Text": "[甲状腺]右侧叶42*19*19MM，左侧叶42*18*14M，峡部厚1.6MM;峡部大小正常，形态规则，内部回声均匀;CDFI显示腺体内部血流分布正常。甲状腺右侧叶内见数枚低回声结节，较大者约13*11MM，边界清，形态规则，内部回声尚均匀，CDFI显示内见条状血流信号。 甲状腺左侧叶内见数枚囊性结节，较大者约2.2*1.4MM，边界清，透声可。 [颈部]两侧颈部各区未见明显异常团块回声，CDFI未见明显异常血流信号。",
+                    "Text": "abc",
                     "Organ": [
                         {
                             "Part": {
                                 "Index": [
-                                    0,
-                                    5
+                                    0
                                 ],
                                 "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "右叶",
-                                    "Tissue": "峡部",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
+                                    "Part": "abc",
+                                    "PartDirection": "abc",
+                                    "Tissue": "abc",
+                                    "TissueDirection": "abc",
+                                    "Upper": "abc",
+                                    "PartDetail": {
+                                        "MainDir": "abc",
+                                        "Part": "abc",
+                                        "SecondaryDir": "abc",
+                                        "Type": "abc"
+                                    }
                                 },
-                                "Src": "右侧叶",
-                                "Value": "右叶甲状腺",
-                                "Name": "部位"
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Name": "abc",
+                                "ValueBrief": "abc"
                             },
                             "Size": [
                                 {
                                     "Index": [
-                                        0,
-                                        8
+                                        0
                                     ],
                                     "NormSize": {
                                         "Number": [
-                                            "42.0",
-                                            "19.0",
-                                            "19.0"
+                                            "abc"
                                         ],
-                                        "Type": "大小",
-                                        "Unit": "MM"
+                                        "Type": "abc",
+                                        "Unit": "abc",
+                                        "Impl": "abc"
                                     },
-                                    "Src": "42*19*19MM",
-                                    "Value": "大小42.0*19.0*19.0MM"
-                                },
-                                {
-                                    "Index": [
-                                        0,
-                                        22
-                                    ],
-                                    "NormSize": {
-                                        "Number": [
-                                            "42.0",
-                                            "18.0",
-                                            "14.0"
-                                        ],
-                                        "Type": "大小",
-                                        "Unit": "MM"
-                                    },
-                                    "Src": "42*18*14M",
-                                    "Value": "大小42.0*18.0*14.0MM"
-                                },
-                                {
-                                    "Index": [
-                                        0,
-                                        32
-                                    ],
-                                    "NormSize": {
-                                        "Number": [
-                                            "1.6"
-                                        ],
-                                        "Type": "厚",
-                                        "Unit": "MM"
-                                    },
-                                    "Src": "峡部厚1.6MM",
-                                    "Value": "厚1.6MM"
+                                    "Src": "abc",
+                                    "Value": "abc",
+                                    "Name": "abc"
                                 }
                             ],
-                            "Index": [
-                                0,
-                                5
-                            ],
                             "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
                                 "Index": [
-                                    0,
-                                    32
+                                    0
                                 ],
-                                "NormSize": {
-                                    "Number": [
-                                        "1.6"
-                                    ],
-                                    "Type": "厚",
-                                    "Unit": "MM"
-                                },
-                                "Src": "峡部厚1.6MM",
-                                "Value": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Src": "右侧叶42*19*19MM，左侧叶42*18*14M，峡部厚1.6MM;"
-                        },
-                        {
-                            "Part": {
-                                "Index": [
-                                    0,
-                                    41
-                                ],
-                                "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "",
-                                    "Tissue": "峡部",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
-                                },
-                                "Src": "峡部",
-                                "Value": "甲状腺峡部",
-                                "Name": "部位"
-                            },
-                            "Size": null,
-                            "Index": [
-                                0,
-                                41
-                            ],
-                            "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
+                                "Positive": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Type": "abc",
+                                "Name": "abc",
+                                "Size": [
+                                    {
+                                        "Index": [
+                                            0
+                                        ],
+                                        "NormSize": {
+                                            "Number": [
+                                                "abc"
+                                            ],
+                                            "Type": "abc",
+                                            "Unit": "abc",
+                                            "Impl": "abc"
+                                        },
+                                        "Src": "abc",
+                                        "Value": "abc",
+                                        "Name": "abc"
+                                    }
+                                ]
                             },
                             "Edge": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
+                                "Index": [
+                                    0
+                                ],
+                                "Positive": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Type": "abc",
+                                "Name": "abc",
+                                "Size": [
+                                    {
+                                        "Index": [
+                                            0
+                                        ],
+                                        "NormSize": {
+                                            "Number": [
+                                                "abc"
+                                            ],
+                                            "Type": "abc",
+                                            "Unit": "abc",
+                                            "Impl": "abc"
+                                        },
+                                        "Src": "abc",
+                                        "Value": "abc",
+                                        "Name": "abc"
+                                    }
+                                ]
                             },
                             "InnerEcho": {
                                 "Index": [
-                                    0,
-                                    48
+                                    0
                                 ],
-                                "Positive": "",
-                                "Src": "形态规则",
-                                "Value": "形态规则",
-                                "Type": "",
-                                "Name": "形态"
+                                "Positive": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Type": "abc",
+                                "Name": "abc"
                             },
-                            "Gland": {
-                                "Index": [
-                                    0,
-                                    60
-                                ],
-                                "Positive": "",
-                                "Src": "CDFI显示腺体内部血流分布正常",
-                                "Value": "腺体正常",
-                                "Type": "",
-                                "Name": "腺体"
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Thickness": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": [
-                                    0,
-                                    60
-                                ],
-                                "Positive": "",
-                                "Src": "CDFI显示腺体内部血流分布正常",
-                                "Value": "血流信号正常",
-                                "Type": "",
-                                "Name": "CDFI"
-                            },
-                            "SymDesc": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SizeStatus": {
-                                "Index": [
-                                    0,
-                                    41
-                                ],
-                                "Positive": "",
-                                "Src": "峡部大小正常",
-                                "Value": "大小正常",
-                                "Type": "",
-                                "Name": "大小状态"
-                            },
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": [
-                                    0,
-                                    53
-                                ],
-                                "Positive": "",
-                                "Src": "内部回声均匀",
-                                "Value": "均匀",
-                                "Type": "",
-                                "Name": "内部回声分布"
-                            },
-                            "Src": "峡部大小正常，形态规则，内部回声均匀;CDFI显示腺体内部血流分布正常。"
-                        },
-                        {
-                            "Part": {
-                                "Index": [
-                                    0,
-                                    177
-                                ],
-                                "NormPart": {
-                                    "Part": "颈部",
-                                    "PartDirection": "",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": ""
-                                },
-                                "Src": "颈部",
-                                "Value": "颈部",
-                                "Name": "部位"
-                            },
-                            "Size": null,
+                            "Src": "abc",
                             "Index": [
-                                0,
-                                176
+                                0
                             ],
-                            "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Edge": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Gland": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Thickness": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": [
-                                    0,
-                                    197
-                                ],
-                                "Positive": "",
-                                "Src": "CDFI未见明显异常血流信号",
-                                "Value": "未见异常血流信号",
-                                "Type": "",
-                                "Name": "CDFI"
-                            },
-                            "SymDesc": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SizeStatus": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Src": "[颈部]                ，CDFI未见明显异常血流信号。"
+                            "Coords": [
+                                {
+                                    "Points": [
+                                        {
+                                            "X": 0,
+                                            "Y": 0
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "Tuber": [
                         {
-                            "Type": {
-                                "Index": [
-                                    0,
-                                    87
-                                ],
-                                "Positive": "有",
-                                "Src": "低回声结节",
-                                "Value": "低回声",
-                                "Type": "",
-                                "Name": "类型"
-                            },
                             "Part": {
                                 "Index": [
-                                    0,
-                                    77
+                                    0
                                 ],
                                 "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "右叶",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
+                                    "Part": "abc",
+                                    "PartDirection": "abc",
+                                    "Tissue": "abc",
+                                    "TissueDirection": "abc",
+                                    "Upper": "abc",
+                                    "PartDetail": {
+                                        "MainDir": "abc",
+                                        "Part": "abc",
+                                        "SecondaryDir": "abc",
+                                        "Type": "abc"
+                                    }
                                 },
-                                "Src": "甲状腺右侧叶内",
-                                "Value": "右叶甲状腺",
-                                "Name": "部位"
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Name": "abc",
+                                "ValueBrief": "abc"
                             },
-                            "Size": [
+                            "Multiple": {
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Count": 0,
+                                "Name": "abc"
+                            },
+                            "AspectRatio": {
+                                "Index": [
+                                    0
+                                ],
+                                "Number": "abc",
+                                "Relation": "abc",
+                                "Src": "abc",
+                                "Value": "abc"
+                            },
+                            "Elastic": {
+                                "Index": [
+                                    0
+                                ],
+                                "Score": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Name": "abc"
+                            },
+                            "Index": [
+                                0
+                            ],
+                            "Src": "abc",
+                            "Coords": [
                                 {
-                                    "Index": [
-                                        0,
-                                        93
-                                    ],
-                                    "NormSize": {
-                                        "Number": [
-                                            "13.0",
-                                            "11.0"
-                                        ],
-                                        "Type": "大小",
-                                        "Unit": "MM"
-                                    },
-                                    "Src": "较大者约13*11MM",
-                                    "Value": "大小13.0*11.0MM"
+                                    "Points": [
+                                        {
+                                            "X": 0,
+                                            "Y": 0
+                                        }
+                                    ]
                                 }
-                            ],
-                            "Multiple": {
-                                "Index": [
-                                    0,
-                                    77
-                                ],
-                                "Src": "甲状腺右侧叶内见数枚低回声结节",
-                                "Value": "多发",
-                                "Count": 0,
-                                "Name": "多发"
-                            },
-                            "AspectRatio": {
-                                "Index": null,
-                                "Number": "",
-                                "Relation": "",
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Edge": {
-                                "Index": [
-                                    0,
-                                    105
-                                ],
-                                "Positive": "",
-                                "Src": "边界清",
-                                "Value": "边界清晰",
-                                "Type": "",
-                                "Name": "边界"
-                            },
-                            "InnerEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "RearEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Elastic": {
-                                "Index": null,
-                                "Score": "",
-                                "Src": "",
-                                "Value": "",
-                                "Name": ""
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": [
-                                    0,
-                                    109
-                                ],
-                                "Positive": "",
-                                "Src": "形态规则",
-                                "Value": "形态规则",
-                                "Type": "",
-                                "Name": "形态"
-                            },
-                            "SkinMedulla": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Trend": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Calcification": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Enhancement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphEnlargement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphDoor": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Activity": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Operation": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": [
-                                    0,
-                                    122
-                                ],
-                                "Positive": "",
-                                "Src": "CDFI显示内见条状血流信号",
-                                "Value": "条状血流",
-                                "Type": "",
-                                "Name": "CDFI"
-                            },
-                            "Index": [
-                                0,
-                                77
-                            ],
-                            "SizeStatus": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": [
-                                    0,
-                                    114
-                                ],
-                                "Positive": "",
-                                "Src": "内部回声尚均匀",
-                                "Value": "均匀",
-                                "Type": "",
-                                "Name": "内部回声分布"
-                            },
-                            "InnerEchoType": null,
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Src": "甲状腺右侧叶内见数枚低回声结节，较大者约13*11MM，边界清，形态规则，内部回声尚均匀，CDFI显示内见条状血流信号。"
-                        },
+                            ]
+                        }
+                    ],
+                    "Coords": [
                         {
-                            "Type": {
-                                "Index": [
-                                    0,
-                                    148
-                                ],
-                                "Positive": "有",
-                                "Src": "囊性结节",
-                                "Value": "囊性结节",
-                                "Type": "",
-                                "Name": "类型"
-                            },
-                            "Part": {
-                                "Index": [
-                                    0,
-                                    138
-                                ],
-                                "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "左叶",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
-                                },
-                                "Src": "甲状腺左侧叶内",
-                                "Value": "左叶甲状腺",
-                                "Name": "部位"
-                            },
-                            "Size": [
+                            "Points": [
                                 {
-                                    "Index": [
-                                        0,
-                                        153
-                                    ],
-                                    "NormSize": {
-                                        "Number": [
-                                            "2.2",
-                                            "1.4"
-                                        ],
-                                        "Type": "大小",
-                                        "Unit": "MM"
-                                    },
-                                    "Src": "较大者约2.2*1.4MM",
-                                    "Value": "大小2.2*1.4MM"
+                                    "X": 0,
+                                    "Y": 0
                                 }
-                            ],
-                            "Multiple": {
-                                "Index": [
-                                    0,
-                                    138
-                                ],
-                                "Src": "甲状腺左侧叶内见数枚囊性结节",
-                                "Value": "多发",
-                                "Count": 0,
-                                "Name": "多发"
-                            },
-                            "AspectRatio": {
-                                "Index": null,
-                                "Number": "",
-                                "Relation": "",
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Edge": {
-                                "Index": [
-                                    0,
-                                    167
-                                ],
-                                "Positive": "",
-                                "Src": "边界清",
-                                "Value": "边界清晰",
-                                "Type": "",
-                                "Name": "边界"
-                            },
-                            "InnerEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "RearEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Elastic": {
-                                "Index": null,
-                                "Score": "",
-                                "Src": "",
-                                "Value": "",
-                                "Name": ""
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SkinMedulla": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Trend": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Calcification": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Enhancement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphEnlargement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphDoor": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Activity": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Operation": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Index": [
-                                0,
-                                138
-                            ],
-                            "SizeStatus": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEchoType": null,
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Src": "甲状腺左侧叶内见数枚囊性结节，较大者约2.2*1.4MM，边界清，透声可。"
-                        },
-                        {
-                            "Type": {
-                                "Index": [
-                                    0,
-                                    192
-                                ],
-                                "Positive": "无",
-                                "Src": "团块回声",
-                                "Value": "回声",
-                                "Type": "",
-                                "Name": "类型"
-                            },
-                            "Part": {
-                                "Index": [
-                                    0,
-                                    180
-                                ],
-                                "NormPart": {
-                                    "Part": "颈部",
-                                    "PartDirection": "两侧",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": ""
-                                },
-                                "Src": "两侧颈部",
-                                "Value": "两侧颈部",
-                                "Name": "部位"
-                            },
-                            "Size": null,
-                            "Multiple": {
-                                "Index": null,
-                                "Src": "",
-                                "Value": "",
-                                "Count": 0,
-                                "Name": ""
-                            },
-                            "AspectRatio": {
-                                "Index": null,
-                                "Number": "",
-                                "Relation": "",
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Edge": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "RearEcho": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Elastic": {
-                                "Index": null,
-                                "Score": "",
-                                "Src": "",
-                                "Value": "",
-                                "Name": ""
-                            },
-                            "Shape": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "ShapeAttr": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "SkinMedulla": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Trend": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Calcification": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Envelope": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Enhancement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphEnlargement": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "LymphDoor": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Activity": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Operation": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "CDFI": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Index": [
-                                0,
-                                176
-                            ],
-                            "SizeStatus": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "InnerEchoDistribution": {
-                                "Index": [
-                                    0,
-                                    180
-                                ],
-                                "Positive": "",
-                                "Src": "两侧颈部各区未见明显异常团块回声",
-                                "Value": "未见异常",
-                                "Type": "",
-                                "Name": "内部回声分布"
-                            },
-                            "InnerEchoType": null,
-                            "Outline": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Structure": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Density": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Vas": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Cysticwall": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "Capsule": {
-                                "Index": null,
-                                "Positive": "",
-                                "Src": "",
-                                "Value": "",
-                                "Type": "",
-                                "Name": ""
-                            },
-                            "IsthmusThicknese": {
-                                "Index": null,
-                                "NormSize": null,
-                                "Src": "",
-                                "Value": ""
-                            },
-                            "Src": "两侧颈部各区未见明显异常团块回声，"
+                            ]
                         }
                     ]
                 },
                 "Summary": {
                     "Symptom": [
                         {
-                            "Grade": {
-                                "Index": [
-                                    0,
-                                    13
-                                ],
-                                "Positive": "",
-                                "Src": "TI-RADS-US分类3类",
-                                "Value": "TI-RADS:3",
-                                "Type": "TI-RADS",
-                                "Name": "分级"
-                            },
                             "Part": {
                                 "Index": [
-                                    0,
-                                    1
+                                    0
                                 ],
                                 "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "右叶",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
+                                    "Part": "abc",
+                                    "PartDirection": "abc",
+                                    "Tissue": "abc",
+                                    "TissueDirection": "abc",
+                                    "Upper": "abc",
+                                    "PartDetail": {
+                                        "MainDir": "abc",
+                                        "Part": "abc",
+                                        "SecondaryDir": "abc",
+                                        "Type": "abc"
+                                    }
                                 },
-                                "Src": "甲状腺右侧叶",
-                                "Value": "右叶甲状腺",
-                                "Name": "部位"
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Name": "abc",
+                                "ValueBrief": "abc"
                             },
                             "Index": [
-                                0,
-                                1
+                                0
                             ],
-                            "Symptom": {
-                                "Index": [
-                                    0,
-                                    7
-                                ],
-                                "Positive": "",
-                                "Src": "低回声结节",
-                                "Value": "低回声",
-                                "Type": "标准值",
-                                "Name": "病变"
-                            },
-                            "Attrs": null,
-                            "Src": "甲状腺右侧叶低回声结节，TI-RADS-US分类3类"
-                        },
-                        {
-                            "Grade": {
-                                "Index": [
-                                    0,
-                                    41
-                                ],
-                                "Positive": "",
-                                "Src": "TI-RADS-US分类2类",
-                                "Value": "TI-RADS:2",
-                                "Type": "TI-RADS",
-                                "Name": "分级"
-                            },
-                            "Part": {
-                                "Index": [
-                                    0,
-                                    30
-                                ],
-                                "NormPart": {
-                                    "Part": "甲状腺",
-                                    "PartDirection": "左叶",
-                                    "Tissue": "",
-                                    "TissueDirection": "",
-                                    "Upper": "甲状腺"
-                                },
-                                "Src": "甲状腺左侧叶",
-                                "Value": "左叶甲状腺",
-                                "Name": "部位"
-                            },
-                            "Index": [
-                                0,
-                                30
-                            ],
-                            "Symptom": {
-                                "Index": [
-                                    0,
-                                    36
-                                ],
-                                "Positive": "",
-                                "Src": "囊性结节",
-                                "Value": "囊性结节",
-                                "Type": "标准值",
-                                "Name": "病变"
-                            },
-                            "Attrs": [
-                                {
-                                    "Index": [
-                                        0,
-                                        36
-                                    ],
-                                    "Positive": "",
-                                    "Src": "囊性",
-                                    "Value": "囊性",
-                                    "Type": "",
-                                    "Name": "属性"
-                                }
-                            ],
-                            "Src": "甲状腺左侧叶囊性结节，TI-RADS-US分类2类"
+                            "Src": "abc"
                         }
                     ],
-                    "Text": "、甲状腺右侧叶低回声结节，TI-RADS-US分类3类\n2、甲状腺左侧叶囊性结节，TI-RADS-US分类2类"
+                    "Text": "abc"
                 }
             },
-            "Pathology": null,
-            "MedDoc": null,
-            "DiagCert": null,
-            "FirstPage": null,
-            "Indicator": null,
-            "ReportType": "check",
-            "MedicalRecordInfo": null,
-            "Hospitalization": null,
-            "Surgery": null,
-            "Electrocardiogram": null,
-            "Endoscopy": null,
-            "Prescription": null,
-            "OcrResult": "xx",
-            "OcrText": "xx",
-            "VaccineCertificate": null
-        }
+            "Pathology": {
+                "DescText": "abc",
+                "HistologyLevel": {
+                    "Grade": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc"
+                },
+                "HistologyType": {
+                    "Infiltration": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Type": "abc"
+                },
+                "IHC": [
+                    {
+                        "Index": [
+                            0
+                        ],
+                        "Src": "abc",
+                        "Name": "abc",
+                        "Value": {
+                            "Grade": "abc",
+                            "Percent": [
+                                0
+                            ],
+                            "Positive": "abc"
+                        }
+                    }
+                ],
+                "Invasive": [
+                    {
+                        "Index": [
+                            0
+                        ],
+                        "Positive": "abc",
+                        "Src": "abc"
+                    }
+                ],
+                "LymphNodes": [
+                    {
+                        "Src": "abc",
+                        "Index": [
+                            0
+                        ],
+                        "Total": 0,
+                        "TransferNum": 0
+                    }
+                ],
+                "ReportText": "abc",
+                "SummaryText": "abc"
+            },
+            "MedDoc": {
+                "Advice": {
+                    "Text": "abc"
+                },
+                "Diagnosis": [
+                    {
+                        "Text": "abc",
+                        "Type": "abc",
+                        "Value": [
+                            "abc"
+                        ]
+                    }
+                ],
+                "DiseaseMedicalHistory": {
+                    "MainDiseaseHistory": "abc",
+                    "AllergyHistory": "abc",
+                    "InfectHistory": "abc",
+                    "OperationHistory": "abc",
+                    "TransfusionHistory": "abc"
+                },
+                "PersonalMedicalHistory": {
+                    "BirthPlace": "abc",
+                    "LivePlace": "abc",
+                    "Job": "abc",
+                    "SmokeHistory": "abc",
+                    "AlcoholicHistory": "abc"
+                },
+                "ObstericalMedicalHistory": {
+                    "MarriageHistory": "abc",
+                    "FertilityHistory": "abc"
+                },
+                "FamilyMedicalHistory": {
+                    "RelativeHistory": "abc",
+                    "RelativeCancerHistory": "abc",
+                    "GeneticHistory": "abc"
+                },
+                "MenstrualMedicalHistory": {
+                    "LastMenstrualPeriod": "abc",
+                    "MenstrualFlow": "abc",
+                    "MenarcheAge": "abc",
+                    "MenstruationOrNot": "abc",
+                    "MenstrualCycles": "abc",
+                    "MenstrualPeriod": "abc"
+                },
+                "TreatmentRecord": {
+                    "DmissionCondition": "abc",
+                    "ChiefComplaint": "abc",
+                    "DiseasePresent": "abc",
+                    "SymptomsAndSigns": "abc",
+                    "AuxiliaryExamination": "abc",
+                    "BodyExamination": "abc",
+                    "SpecialistExamination": "abc",
+                    "MentalExamination": "abc",
+                    "CheckRecord": "abc",
+                    "InspectResult": "abc",
+                    "IncisionHealing": "abc",
+                    "TreatmentSuggestion": "abc",
+                    "FollowUpRequirements": "abc",
+                    "CheckAndTreatmentProcess": "abc",
+                    "SurgeryCondition": "abc",
+                    "ConditionChanges": "abc",
+                    "DischargeCondition": "abc",
+                    "PTNM": "abc",
+                    "PTNMM": "abc",
+                    "PTNMN": "abc",
+                    "PTNMT": "abc",
+                    "ECOG": "abc",
+                    "NRS": "abc",
+                    "KPS": "abc",
+                    "DeathDate": "abc",
+                    "RelapseDate": "abc",
+                    "ObservationDays": "abc"
+                }
+            },
+            "DiagCert": {
+                "Advice": {
+                    "Text": "abc"
+                },
+                "Diagnosis": [
+                    {
+                        "Text": "abc",
+                        "Type": "abc",
+                        "Value": [
+                            "abc"
+                        ]
+                    }
+                ]
+            },
+            "FirstPage": {
+                "DischargeDiagnosis": [
+                    {
+                        "TableIndex": 0
+                    }
+                ],
+                "DamagePoi": {
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Value": "abc",
+                    "Name": "abc",
+                    "Code": "abc"
+                },
+                "Fp2NdItems": [
+                    {
+                        "Code": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc",
+                            "Alias": "abc"
+                        },
+                        "Name": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc",
+                            "Alias": "abc"
+                        },
+                        "StartTime": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc",
+                            "Alias": "abc"
+                        }
+                    }
+                ]
+            },
+            "Indicator": {
+                "Indicators": [
+                    {
+                        "Code": "abc",
+                        "Scode": "abc",
+                        "Name": "abc",
+                        "Sname": "abc",
+                        "Result": "abc",
+                        "Unit": "abc",
+                        "Range": "abc",
+                        "Arrow": "abc",
+                        "Normal": true,
+                        "ItemString": "abc",
+                        "Id": 0,
+                        "Coords": {
+                            "X": 0,
+                            "Y": 0,
+                            "Width": 0,
+                            "Height": 0
+                        },
+                        "InferNormal": "abc"
+                    }
+                ]
+            },
+            "ReportType": "abc",
+            "MedicalRecordInfo": {
+                "DiagnosisTime": "abc",
+                "DiagnosisDepartmentName": "abc",
+                "DiagnosisDoctorName": "abc",
+                "ClinicalDiagnosis": "abc",
+                "MainNarration": "abc",
+                "PhysicalExamination": "abc",
+                "InspectionFindings": "abc",
+                "TreatmentOpinion": "abc"
+            },
+            "Hospitalization": {
+                "AdmissionTime": "abc",
+                "DischargeTime": "abc",
+                "AdmissionDays": "abc",
+                "AdmissionDignosis": "abc",
+                "AdmissionCondition": "abc",
+                "DiagnosisTreatment": "abc",
+                "DischargeDiagnosis": "abc",
+                "DischargeInstruction": "abc"
+            },
+            "Surgery": {
+                "SurgeryHistory": {
+                    "SurgeryName": {
+                        "Name": "abc",
+                        "Value": "abc"
+                    },
+                    "SurgeryDate": {
+                        "Name": "abc",
+                        "Value": "abc"
+                    },
+                    "PreoperativePathology": {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                },
+                "OtherInfo": {}
+            },
+            "Electrocardiogram": {
+                "EcgDescription": {
+                    "HeartRate": {
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Unit": "abc",
+                        "Src": "abc"
+                    },
+                    "AuricularRate": {
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Unit": "abc",
+                        "Src": "abc"
+                    },
+                    "VentricularRate": {
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Unit": "abc",
+                        "Src": "abc"
+                    }
+                },
+                "EcgDiagnosis": {
+                    "Name": "abc",
+                    "Value": [
+                        "abc"
+                    ]
+                }
+            },
+            "Endoscopy": {
+                "BiopsyPart": {
+                    "Value": "abc",
+                    "Src": "abc"
+                },
+                "Desc": {
+                    "Text": "abc",
+                    "Organ": [
+                        {
+                            "Index": [
+                                0
+                            ],
+                            "Src": "abc",
+                            "PartAlias": "abc"
+                        }
+                    ]
+                },
+                "Summary": {
+                    "Symptom": [
+                        {
+                            "Index": [
+                                0
+                            ],
+                            "Src": "abc"
+                        }
+                    ],
+                    "Text": "abc"
+                }
+            },
+            "Prescription": {
+                "MedicineList": [
+                    {
+                        "Name": "abc",
+                        "TradeName": "abc",
+                        "Firm": "abc",
+                        "Category": "abc",
+                        "Specification": "abc",
+                        "MinQuantity": "abc",
+                        "DosageUnit": "abc",
+                        "PackingUnit": "abc"
+                    }
+                ]
+            },
+            "VaccineCertificate": {
+                "VaccineList": [
+                    {
+                        "Id": "abc",
+                        "Vaccine": "abc",
+                        "Dose": "abc",
+                        "Date": "abc",
+                        "LotNumber": "abc",
+                        "Manufacturer": "abc",
+                        "Clinic": "abc",
+                        "Site": "abc",
+                        "Provider": "abc",
+                        "Lot": "abc"
+                    }
+                ]
+            },
+            "OcrText": "abc",
+            "OcrResult": "abc",
+            "ReportTypeDesc": "abc",
+            "PathologyV2": {
+                "PathologicalReportType": {
+                    "Name": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Value": "abc"
+                },
+                "Desc": {
+                    "Text": {
+                        "Name": "abc",
+                        "Index": [
+                            0
+                        ],
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "Infos": [
+                        {
+                            "HistologyLevel": {
+                                "Name": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Value": "abc"
+                            },
+                            "HistologyType": {
+                                "Infiltration": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Type": "abc",
+                                "Name": "abc"
+                            },
+                            "Invasive": [
+                                {
+                                    "Index": [
+                                        0
+                                    ],
+                                    "Positive": "abc",
+                                    "Src": "abc"
+                                }
+                            ],
+                            "PTNM": {
+                                "Name": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Value": "abc",
+                                "PT": "abc",
+                                "PN": "abc",
+                                "PM": "abc"
+                            },
+                            "InfiltrationDepth": {
+                                "Name": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Value": "abc"
+                            }
+                        }
+                    ]
+                },
+                "Summary": {
+                    "Infos": [
+                        {
+                            "HistologyType": {
+                                "Infiltration": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Type": "abc",
+                                "Name": "abc"
+                            },
+                            "Invasive": [
+                                {
+                                    "Index": [
+                                        0
+                                    ],
+                                    "Positive": "abc",
+                                    "Src": "abc"
+                                }
+                            ],
+                            "PTNM": {
+                                "Name": "abc",
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Value": "abc",
+                                "PT": "abc",
+                                "PN": "abc",
+                                "PM": "abc"
+                            }
+                        }
+                    ]
+                },
+                "ReportText": "abc",
+                "LymphTotal": [
+                    {
+                        "Name": "abc",
+                        "TransferNum": "abc",
+                        "Total": "abc",
+                        "Src": "abc",
+                        "Index": [
+                            0
+                        ]
+                    }
+                ],
+                "LymphNodes": [
+                    {
+                        "Name": "abc",
+                        "Index": [
+                            0
+                        ],
+                        "Src": "abc",
+                        "Total": 0,
+                        "TransferNum": 0,
+                        "Sizes": [
+                            0
+                        ]
+                    }
+                ],
+                "Ihc": [
+                    {
+                        "Index": [
+                            0
+                        ],
+                        "Src": "abc",
+                        "Name": "abc",
+                        "Value": {
+                            "Grade": "abc",
+                            "Percent": [
+                                0
+                            ],
+                            "Positive": "abc"
+                        }
+                    }
+                ],
+                "Precancer": {
+                    "Name": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Value": "abc"
+                },
+                "Malignant": {
+                    "Name": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Value": "abc"
+                },
+                "Benigntumor": {
+                    "Name": "abc",
+                    "Index": [
+                        0
+                    ],
+                    "Src": "abc",
+                    "Value": "abc"
+                },
+                "Molecular": [
+                    {
+                        "Index": [
+                            0
+                        ],
+                        "Src": "abc",
+                        "Name": "abc",
+                        "Value": {
+                            "Exon": "abc",
+                            "Position": "abc",
+                            "Type": "abc",
+                            "Positive": "abc",
+                            "Src": "abc"
+                        }
+                    }
+                ]
+            },
+            "C14": {
+                "Indicators": [
+                    {
+                        "Code": "abc",
+                        "Scode": "abc",
+                        "Name": "abc",
+                        "Sname": "abc",
+                        "Result": "abc",
+                        "Unit": "abc",
+                        "Range": "abc",
+                        "Arrow": "abc",
+                        "Normal": true,
+                        "ItemString": "abc",
+                        "Id": 0,
+                        "Coords": {
+                            "X": 0,
+                            "Y": 0,
+                            "Width": 0,
+                            "Height": 0
+                        },
+                        "InferNormal": "abc"
+                    }
+                ]
+            },
+            "Exame": {
+                "OverView": [
+                    {}
+                ],
+                "Abnormality": [
+                    {}
+                ]
+            },
+            "MedDocV2": {
+                "DiseaseHistory": {
+                    "MainDiseaseHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "State": true,
+                        "Value": "abc",
+                        "Neglist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        },
+                        "Poslist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "AllergyHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "State": true,
+                        "Value": "abc",
+                        "Neglist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        },
+                        "Poslist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "InfectHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "State": true,
+                        "Value": "abc",
+                        "Neglist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        },
+                        "Poslist": {
+                            "Name": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "SurgeryHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Surgerylist": [
+                            {
+                                "Time": "abc",
+                                "TimeType": "abc",
+                                "Name": [
+                                    "abc"
+                                ],
+                                "Part": "abc"
+                            }
+                        ]
+                    },
+                    "TransfusionHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "State": true,
+                        "Value": "abc"
+                    }
+                },
+                "PersonalHistory": {
+                    "BirthPlace": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "LivePlace": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "Job": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "SmokeHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "TimeUnit": "abc",
+                        "TimeNorm": "abc",
+                        "Amount": "abc",
+                        "QuitState": true,
+                        "State": true,
+                        "Value": "abc"
+                    },
+                    "AlcoholicHistory": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "TimeUnit": "abc",
+                        "TimeNorm": "abc",
+                        "Amount": "abc",
+                        "QuitState": true,
+                        "State": true,
+                        "Value": "abc"
+                    },
+                    "MenstrualHistory": {
+                        "LastMenstrualPeriod": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Type": "abc",
+                            "Timestamp": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "MenstrualFlow": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc"
+                        },
+                        "MenarcheAge": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Type": "abc",
+                            "Timestamp": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "MenstruationOrNot": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "TimeType": "abc",
+                            "Timestamp": "abc",
+                            "Value": "abc"
+                        },
+                        "MenstrualCycles": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Type": "abc",
+                            "Timestamp": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "MenstrualPeriod": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Type": "abc",
+                            "Timestamp": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "ObstericalHistory": {
+                        "MarriageHistory": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "State": "abc",
+                            "Norm": "abc",
+                            "TimeType": "abc",
+                            "Timestamp": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "FertilityHistory": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "State": "abc",
+                            "Norm": "abc",
+                            "Value": "abc",
+                            "PregCount": "abc",
+                            "ProduCount": "abc"
+                        }
+                    },
+                    "FamilyHistory": {
+                        "RelativeHistory": {
+                            "Name": "abc",
+                            "Detail": [
+                                {
+                                    "Name": "abc",
+                                    "Relation": "abc",
+                                    "TimeOfDeath": "abc",
+                                    "TimeType": "abc"
+                                }
+                            ],
+                            "Src": "abc",
+                            "Value": "abc"
+                        },
+                        "RelativeCancerHistory": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "RelativeCancerList": "abc",
+                            "Value": "abc"
+                        },
+                        "GeneticHistory": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "GeneticList": "abc",
+                            "Value": "abc"
+                        }
+                    }
+                },
+                "DrugHistory": {
+                    "Name": "abc",
+                    "Src": "abc",
+                    "DrugList": [
+                        {
+                            "CommonName": "abc",
+                            "TradeName": "abc",
+                            "Dosage": {
+                                "Value": "abc",
+                                "SingleMeasurement": "abc",
+                                "Frequency": "abc",
+                                "DrugDeliveryRoute": "abc"
+                            },
+                            "Value": "abc"
+                        }
+                    ],
+                    "Value": "abc"
+                },
+                "TreatmentRecord": {
+                    "Immunohistochemistry": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": [
+                            {
+                                "Index": [
+                                    0
+                                ],
+                                "Src": "abc",
+                                "Name": "abc",
+                                "Value": {
+                                    "Grade": "abc",
+                                    "Percent": [
+                                        0
+                                    ],
+                                    "Positive": "abc"
+                                }
+                            }
+                        ]
+                    },
+                    "ChiefComplaint": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Detail": [
+                            {
+                                "DiseaseName": "abc",
+                                "Part": "abc",
+                                "Time": "abc",
+                                "TimeType": "abc"
+                            }
+                        ]
+                    },
+                    "AdmissionCondition": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "BodyExamination": {
+                        "BodyTemperature": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "Pulse": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "Breathe": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Unit": "abc",
+                            "Value": "abc"
+                        },
+                        "BloodPressure": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Norm": "abc",
+                            "Unit": "abc",
+                            "Value": "abc",
+                            "NormDiastolic": "abc",
+                            "NormSystolic": "abc"
+                        }
+                    },
+                    "AdmissionDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Norm": "abc",
+                        "Value": "abc"
+                    },
+                    "AdmissionTraditionalDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Norm": "abc",
+                        "Value": "abc"
+                    },
+                    "AdmissionModernDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Norm": "abc",
+                        "Value": "abc"
+                    },
+                    "PathologicalDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Detail": [
+                            {
+                                "Part": "abc",
+                                "HistologicalType": "abc",
+                                "HistologicalGrade": "abc"
+                            }
+                        ],
+                        "Value": "abc"
+                    },
+                    "DiseasePresent": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Norm": "abc"
+                    },
+                    "SymptomsAndSigns": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Norm": "abc"
+                    },
+                    "AuxiliaryExamination": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Norm": "abc"
+                    },
+                    "SurgeryCondition": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "SurgeryList": [
+                            {
+                                "Time": "abc",
+                                "TimeType": "abc",
+                                "Name": [
+                                    "abc"
+                                ],
+                                "Part": "abc"
+                            }
+                        ],
+                        "Value": "abc"
+                    },
+                    "DischargeDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Norm": "abc",
+                        "Value": "abc"
+                    },
+                    "DischargeModernDiagnosis": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Norm": "abc",
+                        "Value": "abc"
+                    },
+                    "DischargeCondition": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc",
+                        "Norm": "abc"
+                    },
+                    "PTNM": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "PTNMM": "abc",
+                        "PTNMN": "abc",
+                        "PTNMT": "abc"
+                    },
+                    "Cancerstaging": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    },
+                    "DeathDate": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Type": "abc",
+                        "Norm": "abc",
+                        "Unit": "abc",
+                        "Timestamp": "abc",
+                        "Value": "abc"
+                    },
+                    "RelapseDate": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "DiseaseName": "abc",
+                        "Type": "abc",
+                        "Norm": "abc",
+                        "Unit": "abc",
+                        "Timestamp": "abc",
+                        "Value": "abc"
+                    },
+                    "ObservationDays": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Type": "abc",
+                        "Norm": "abc",
+                        "Unit": "abc",
+                        "Timestamp": "abc",
+                        "Value": "abc"
+                    },
+                    "IncisionHealingText": "abc",
+                    "AuxiliaryExaminationText": "abc",
+                    "SpecialExamText": "abc",
+                    "OutpatientDiagnosisText": "abc",
+                    "AdmissionConditionText": "abc",
+                    "CheckAndTreatmentProcessText": "abc",
+                    "SymptomsAndSignsText": "abc",
+                    "DischargeInstructionsText": "abc",
+                    "AdmissionDiagnosisText": "abc",
+                    "SurgeryConditionText": "abc",
+                    "PathologicalDiagnosisText": "abc",
+                    "DischargeConditionText": "abc",
+                    "CheckRecordText": "abc",
+                    "ChiefComplaintText": "abc",
+                    "DischargeDiagnosisText": "abc"
+                },
+                "ParagraphBlock": {
+                    "IncisionHealingText": "abc",
+                    "AuxiliaryExaminationText": "abc",
+                    "SpecialExamText": "abc",
+                    "OutpatientDiagnosisText": "abc",
+                    "AdmissionConditionText": "abc",
+                    "CheckAndTreatmentProcessText": "abc",
+                    "SymptomsAndSignsText": "abc",
+                    "DischargeInstructionsText": "abc",
+                    "AdmissionDiagnosisText": "abc",
+                    "SurgeryConditionText": "abc",
+                    "PathologicalDiagnosisText": "abc",
+                    "DischargeConditionText": "abc",
+                    "CheckRecordText": "abc",
+                    "ChiefComplaintText": "abc",
+                    "DischargeDiagnosisText": "abc",
+                    "MainDiseaseHistoryText": "abc",
+                    "DiseasePresentText": "abc",
+                    "PersonalHistoryText": "abc",
+                    "MenstruallHistoryText": "abc",
+                    "ObstericalHistoryText": "abc",
+                    "FamilyHistoryText": "abc",
+                    "AllergyHistoryText": "abc",
+                    "DiseaseHistoryText": "abc",
+                    "OtherDiagnosisText": "abc",
+                    "BodyExaminationText": "abc",
+                    "SpecialistExaminationText": "abc",
+                    "TreatmentResultText": "abc"
+                }
+            },
+            "IndicatorV3": {
+                "TableIndictors": [
+                    {
+                        "Indicators": [
+                            {
+                                "Normal": true,
+                                "Id": 0,
+                                "Order": 0,
+                                "InferNormal": "abc"
+                            }
+                        ]
+                    }
+                ],
+                "Version": "abc"
+            },
+            "Covid": {
+                "CovidItems": [
+                    {}
+                ],
+                "Version": "abc"
+            },
+            "Maternity": {
+                "Desc": {
+                    "Fetus": [
+                        {
+                            "BPD": {
+                                "Name": "abc",
+                                "Value": "abc",
+                                "Nums": [
+                                    {
+                                        "Num": "abc",
+                                        "Unit": "abc"
+                                    }
+                                ],
+                                "Src": "abc"
+                            },
+                            "APTD": {
+                                "Name": "abc",
+                                "Value": "abc",
+                                "Nums": [
+                                    {
+                                        "Num": "abc",
+                                        "Unit": "abc"
+                                    }
+                                ],
+                                "Src": "abc"
+                            },
+                            "TTD": {
+                                "Name": "abc",
+                                "Value": "abc",
+                                "Nums": [
+                                    {
+                                        "Num": "abc",
+                                        "Unit": "abc"
+                                    }
+                                ],
+                                "Src": "abc"
+                            },
+                            "Src": "abc"
+                        }
+                    ],
+                    "Text": "abc"
+                },
+                "Summary": {
+                    "Fetus": [
+                        {
+                            "Src": "abc"
+                        }
+                    ],
+                    "Text": "abc"
+                },
+                "OcrText": "abc"
+            },
+            "Eye": {
+                "EyeItems": {
+                    "Left": {
+                        "Sph": [
+                            {
+                                "Name": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Order": 0
+                            }
+                        ],
+                        "Cyl": [
+                            {
+                                "Name": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Order": 0
+                            }
+                        ],
+                        "Ax": [
+                            {
+                                "Name": "abc",
+                                "Src": "abc",
+                                "Value": "abc",
+                                "Order": 0
+                            }
+                        ],
+                        "Se": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "Right": {
+                        "Se": {
+                            "Name": "abc",
+                            "Src": "abc",
+                            "Value": "abc"
+                        }
+                    },
+                    "Pd": {
+                        "Name": "abc",
+                        "Src": "abc",
+                        "Value": "abc"
+                    }
+                },
+                "Version": "abc"
+            },
+            "BirthCert": {
+                "NeonatalInfo": {
+                    "NeonatalName": "abc",
+                    "NeonatalGender": "abc",
+                    "BirthLength": "abc",
+                    "BirthWeight": "abc",
+                    "GestationalAge": "abc",
+                    "BirthTime": "abc",
+                    "BirthPlace": "abc",
+                    "MedicalInstitutions": "abc"
+                },
+                "MotherInfo": {
+                    "Name": "abc",
+                    "Age": "abc",
+                    "IdCard": "abc",
+                    "Ethnicity": "abc",
+                    "Nationality": "abc",
+                    "Address": "abc"
+                },
+                "FatherInfo": {
+                    "Name": "abc",
+                    "Age": "abc",
+                    "IdCard": "abc",
+                    "Ethnicity": "abc",
+                    "Nationality": "abc",
+                    "Address": "abc"
+                },
+                "IssueInfo": {
+                    "CertNumber": "abc",
+                    "IssuedAuthority": "abc",
+                    "IssuedDate": "abc"
+                }
+            },
+            "Timeline": {
+                "Timeline": [
+                    {
+                        "Type": "abc",
+                        "Src": "abc",
+                        "SubType": "abc",
+                        "Time": "abc",
+                        "Value": "abc",
+                        "Rectangle": {
+                            "X": 0,
+                            "Y": 0,
+                            "W": 0,
+                            "H": 0
+                        },
+                        "Place": "abc",
+                        "EndTime": "abc"
+                    }
+                ]
+            }
+        },
+        "RequestId": "abc"
     }
 }
 ```

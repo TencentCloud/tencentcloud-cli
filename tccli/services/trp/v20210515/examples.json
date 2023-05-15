@@ -258,9 +258,9 @@
     ],
     "DescribeTmpToken": [
       {
-        "document": "",
+        "document": "查询临时Token，用于上传",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTmpToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询临时Token"
       }
     ],

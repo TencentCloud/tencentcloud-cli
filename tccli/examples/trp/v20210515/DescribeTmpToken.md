@@ -1,6 +1,6 @@
 **Example 1: 查询临时Token**
 
-
+查询临时Token，用于上传
 
 Input: 
 
@@ -11,8 +11,8 @@ Output:
 ```
 {
     "Response": {
-        "Token": "xx",
-        "RequestId": "xx"
+        "Token": "abc",
+        "RequestId": "abc"
     }
 }
 ```

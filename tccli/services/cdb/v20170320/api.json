@@ -9866,10 +9866,29 @@
         {
           "default": "",
           "document": "实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "[\"cdb-fix44sxh\\r\\n\",\"cdb-bdf7h3j1\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "克隆实例与源实例是否在同一可用区，是:\"false\"，否:\"true\"",
+          "example": "false",
+          "member": "string",
+          "name": "IsRemoteZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例：\"ap-guangzhou\"",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BackupRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9879,15 +9898,19 @@
       "members": [
         {
           "document": "符合查询条件的实例总数。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的参数信息。",
+          "example": "无",
           "member": "InstanceRollbackRangeTime",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

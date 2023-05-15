@@ -1,14 +1,13 @@
 **Example 1: 重置VPN通道**
 
-
+本接口（ResetVpnConnection）用于重置VPN通道。
 
 Input: 
 
 ```
 tccli vpc ResetVpnConnection --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --VpnGatewayId vpngw-p4lmqawn \
-    --VpnConnectionId vpnx-5p7vkch8
+    --VpnGatewayId vpngw-kjllnkew \
+    --VpnConnectionId vpnx-f29e6u0z
 ```
 
 Output: 

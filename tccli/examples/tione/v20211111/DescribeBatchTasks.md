@@ -1,21 +1,21 @@
 **Example 1: 跑批任务列表**
 
-
+批量预测任务列表信息
 
 Input: 
 
 ```
 tccli tione DescribeBatchTasks --cli-unfold-argument  \
-    --Filters.0.Fuzzy True \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
-    --Limit 1 \
-    --OrderField xx \
+    --Filters.0.Fuzzy True \
+    --TagFilters.0.TagKey abc \
+    --TagFilters.0.TagValues abc \
     --Offset 1 \
-    --Order xx
+    --Limit 1 \
+    --Order abc \
+    --OrderField abc
 ```
 
 Output: 
@@ -25,75 +25,91 @@ Output:
         "TotalCount": 1,
         "BatchTaskSet": [
             {
-                "Status": "xx",
-                "UpdateTime": "xx",
-                "EndTime": "xx",
+                "BatchTaskId": "abc",
+                "BatchTaskName": "abc",
                 "ModelInfo": {
+                    "ModelId": "abc",
+                    "ModelName": "abc",
+                    "ModelVersionId": "abc",
+                    "ModelVersion": "abc",
+                    "ModelSource": "abc",
                     "CosPathInfo": {
+                        "Bucket": "abc",
+                        "Region": "abc",
                         "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
+                            "abc"
+                        ]
                     },
-                    "AlgorithmFramework": "xx",
-                    "ModelVersion": "xx",
-                    "ModelSource": "xx",
-                    "ModelType": "xx",
-                    "ModelName": "xx",
-                    "ModelVersionId": "xx",
-                    "ModelId": "xx"
+                    "AlgorithmFramework": "abc",
+                    "ModelType": "abc"
                 },
-                "BillingInfo": "xx",
                 "ImageInfo": {
-                    "ImageUrl": "xx",
-                    "RegistryRegion": "xx",
-                    "RegistryId": "xx",
-                    "ImageType": "xx"
+                    "ImageType": "abc",
+                    "ImageUrl": "abc",
+                    "RegistryRegion": "abc",
+                    "RegistryId": "abc"
                 },
-                "BatchTaskName": "xx",
-                "Outputs": [
-                    {
-                        "DataSetSource": {
-                            "Id": "xx"
-                        },
-                        "CFSSource": {
-                            "Path": "xx",
-                            "Id": "xx"
-                        },
-                        "DataSourceType": "xx",
-                        "HDFSSource": {
-                            "Path": "xx",
-                            "Id": "xx"
-                        },
-                        "COSSource": {
-                            "Paths": [
-                                "xx"
-                            ],
-                            "Region": "xx",
-                            "Bucket": "xx"
-                        },
-                        "MappingPath": "xx"
+                "ChargeType": "abc",
+                "ChargeStatus": "abc",
+                "ResourceGroupId": "abc",
+                "ResourceConfigInfo": {
+                    "Role": "abc",
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "GpuType": "abc",
+                    "Gpu": 1,
+                    "InstanceType": "abc",
+                    "InstanceNum": 1,
+                    "InstanceTypeAlias": "abc",
+                    "RDMAConfig": {
+                        "Enable": true
                     }
-                ],
+                },
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
                 ],
-                "ResourceGroupName": "xx",
+                "Status": "abc",
                 "RuntimeInSeconds": 1,
-                "ResourceGroupId": "xx",
-                "BatchTaskId": "xx",
-                "ChargeType": "xx",
-                "StartTime": "xx",
-                "CreateTime": "xx",
-                "ChargeStatus": "xx",
-                "FailureReason": "xx"
+                "CreateTime": "abc",
+                "StartTime": "abc",
+                "EndTime": "abc",
+                "UpdateTime": "abc",
+                "Outputs": [
+                    {
+                        "MappingPath": "abc",
+                        "DataSourceType": "abc",
+                        "DataSetSource": {
+                            "Id": "abc"
+                        },
+                        "COSSource": {
+                            "Bucket": "abc",
+                            "Region": "abc",
+                            "Paths": [
+                                "abc"
+                            ]
+                        },
+                        "CFSSource": {
+                            "Id": "abc",
+                            "Path": "abc"
+                        },
+                        "HDFSSource": {
+                            "Id": "abc",
+                            "Path": "abc"
+                        },
+                        "GooseFSSource": {
+                            "Id": "abc"
+                        }
+                    }
+                ],
+                "ResourceGroupName": "abc",
+                "FailureReason": "abc",
+                "BillingInfo": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

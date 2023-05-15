@@ -715,7 +715,7 @@
       "status": "online"
     },
     "DeleteVpnConnection": {
-      "document": "本接口(DeleteVpnConnection)用于删除VPN通道。",
+      "document": "本接口（DeleteVpnConnection）用于删除VPN通道。",
       "input": "DeleteVpnConnectionRequest",
       "name": "删除VPN通道",
       "output": "DeleteVpnConnectionResponse",
@@ -1268,7 +1268,7 @@
       "status": "online"
     },
     "DescribeVpnConnections": {
-      "document": " 本接口（DescribeVpnConnections）查询VPN通道列表。",
+      "document": "本接口（DescribeVpnConnections）用于查询VPN通道列表。",
       "input": "DescribeVpnConnectionsRequest",
       "name": "查询VPN通道列表",
       "output": "DescribeVpnConnectionsResponse",
@@ -2024,14 +2024,14 @@
       "status": "online"
     },
     "ResetVpnConnection": {
-      "document": "本接口(ResetVpnConnection)用于重置VPN通道。",
+      "document": "本接口（ResetVpnConnection）用于重置VPN通道。",
       "input": "ResetVpnConnectionRequest",
       "name": "重置VPN通道",
       "output": "ResetVpnConnectionResponse",
       "status": "online"
     },
     "ResetVpnGatewayInternetMaxBandwidth": {
-      "document": "本接口（ResetVpnGatewayInternetMaxBandwidth）调整VPN网关带宽上限。目前支持升级配置，如果是包年包月VPN网关需要在有效期内。",
+      "document": "本接口（ResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限。VPN网关带宽目前仅支持部分带宽范围内升降配，如【5,100】Mbps和【200,1000】Mbps，在各自带宽范围内可提升配额，跨范围提升配额和降配暂不支持，如果是包年包月VPN网关需要在有效期内。",
       "input": "ResetVpnGatewayInternetMaxBandwidthRequest",
       "name": "调整VPN网关带宽上限",
       "output": "ResetVpnGatewayInternetMaxBandwidthResponse",
@@ -5529,7 +5529,6 @@
       "document": "CreateCustomerGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
           "example": "test-cgw",
           "member": "string",
@@ -5538,7 +5537,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对端网关公网IP。",
           "example": "58.211.1.12",
           "member": "string",
@@ -5547,7 +5545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "example": "无",
           "member": "Tag",
@@ -5566,7 +5563,6 @@
           "example": "无",
           "member": "CustomerGateway",
           "name": "CustomerGateway",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9447,16 +9443,16 @@
       "document": "DeleteVpnConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-xxx",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。",
+          "example": "vpnx-f49l6u0z",
           "member": "string",
           "name": "VpnConnectionId",
           "required": true,
@@ -14195,32 +14191,32 @@
       "document": "DescribeVpnConnections请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。",
+          "example": "vpnx-f49l6u0z",
           "member": "string",
           "name": "VpnConnectionIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>",
+          "example": "null",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14234,6 +14230,7 @@
       "members": [
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -14241,6 +14238,7 @@
         },
         {
           "document": "VPN通道实例。",
+          "example": "[       {         \"CreatedTime\": \"2022-05-12 12:50:06\",         \"CustomerGatewayId\": \"cgw-972gvd00\",         \"DpdAction\": \"clear\",         \"DpdEnable\": 1,         \"DpdTimeout\": \"30\",         \"EnableHealthCheck\": false,         \"EncryptProto\": \"IKE\",         \"HealthCheckLocalIp\": \"\",         \"HealthCheckRemoteIp\": \"\",         \"HealthCheckStatus\": \"\",         \"IKEOptionsSpecification\": {           \"DhGroupName\": \"GROUP1\",           \"ExchangeMode\": \"MAIN\",           \"IKESaLifetimeSeconds\": 86400,           \"IKEVersion\": \"IKEV1\",           \"LocalAddress\": \"33.113.108.46\",           \"LocalFqdnName\": \"\",           \"LocalIdentity\": \"ADDRESS\",           \"PropoAuthenAlgorithm\": \"MD5\",           \"PropoEncryAlgorithm\": \"3DES-CBC\",           \"RemoteAddress\": \"1.2.3.4\",           \"RemoteFqdnName\": \"\",           \"RemoteIdentity\": \"ADDRESS\"         },         \"IPSECOptionsSpecification\": {           \"EncryptAlgorithm\": \"AES-CBC-128\",           \"IPSECSaLifetimeSeconds\": 3600,           \"IPSECSaLifetimeTraffic\": 1843200,           \"IntegrityAlgorith\": \"MD5\",           \"PfsDhGroup\": \"NULL\"         },         \"NegotiationType\": \"flowTrigger\",         \"NetStatus\": \"UNAVAILABLE\",         \"PreShareKey\": \"123\",         \"RouteType\": \"StaticRoute\",         \"SecurityPolicyDatabaseSet\": [           {             \"LocalCidrBlock\": \"0.0.0.0/0\",             \"RemoteCidrBlock\": [               \"0.0.0.0/0\"             ]           }         ],         \"State\": \"AVAILABLE\",         \"TagSet\": [],         \"VpcId\": \"vpc-ejaaeaja\",         \"VpnConnectionId\": \"vpnx-1rwdb4qz\",         \"VpnConnectionName\": \"test-conn\",         \"VpnGatewayId\": \"vpngw-f61esawc\",         \"VpnProto\": \"IPSEC\"       }     ]",
           "member": "VpnConnection",
           "name": "VpnConnectionSet",
           "type": "list",
@@ -20065,24 +20063,24 @@
       "document": "ModifyVpnGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-edvft32x",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN网关名称，最大长度不能超过60个字节。",
+          "example": "test-vpn",
           "member": "string",
           "name": "VpnGatewayName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -22202,16 +22200,16 @@
       "document": "ResetVpnConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-kjllnkew",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。",
+          "example": "vpnx-f29e6u0z",
           "member": "string",
           "name": "VpnConnectionId",
           "required": true,
@@ -22236,16 +22234,16 @@
       "document": "ResetVpnGatewayInternetMaxBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-ajclakqw",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
+          "document": "新规格公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：Mbps。VPN网关带宽目前仅支持部分带宽范围内升降配，如【5,100】Mbps和【200,1000】Mbps，在各自带宽范围内可提升配额，跨范围提升配额和降配暂不支持。",
+          "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,

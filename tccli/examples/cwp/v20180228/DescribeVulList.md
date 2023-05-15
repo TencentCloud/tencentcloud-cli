@@ -14,26 +14,38 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234",
-        "TotalCount": 1,
-        "FollowVulCount": 0,
         "VulInfoList": [
             {
-                "Ids": "1748",
-                "Name": "Linux帐户口令生存期策略",
-                "Status": 0,
-                "VulId": 100392,
-                "PublishTime": "2019-09-02 00:00:00",
-                "LastTime": "2020-06-29 03:04:15",
+                "Ids": "abc",
+                "Name": "abc",
+                "Status": 1,
+                "VulId": 1,
+                "PublishTime": "abc",
+                "LastTime": "abc",
                 "HostCount": 1,
-                "Level": 2,
-                "From": 0,
-                "Descript": "口令老化（Password aging）是一种增强的系统口令生命期认证机制，能够确保用户的口令定期更换，提高系统安全性。",
-                "PublishTimeWisteria": "",
-                "NameWisteria": "",
-                "DescriptWisteria": ""
+                "Level": 1,
+                "From": 1,
+                "Descript": "abc",
+                "PublishTimeWisteria": "abc",
+                "NameWisteria": "abc",
+                "DescriptWisteria": "abc",
+                "StatusStr": "abc",
+                "CveId": "abc",
+                "CvssScore": 0,
+                "Labels": "abc",
+                "FixSwitch": 1,
+                "TaskId": 1,
+                "IsSupportDefense": 1,
+                "DefenseAttackCount": 1,
+                "FirstAppearTime": "abc",
+                "VulCategory": 1,
+                "AttackLevel": 1,
+                "FixNoNeedRestart": true
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "FollowVulCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

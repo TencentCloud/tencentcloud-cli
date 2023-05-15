@@ -1217,7 +1217,6 @@
       "document": "CreateTrigger请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "新建触发器绑定的函数名称",
           "example": "FunctionName",
           "member": "string",
@@ -1226,7 +1225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新建触发器名称。如果是定时触发器，名称支持英文字母、数字、连接符和下划线，最长100个字符；如果是cos触发器，需要是对应cos存储桶适用于XML API的访问域名(例如:5401-5ff414-12345.cos.ap-shanghai.myqcloud.com);如果是其他触发器，见具体触发器绑定参数的说明",
           "example": "TriggerName",
           "member": "string",
@@ -1235,7 +1233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。",
           "example": "timer",
           "member": "string",
@@ -1244,7 +1241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发器对应的参数，可见具体[触发器描述说明](https://cloud.tencent.com/document/product/583/39901)",
           "example": "*/2****",
           "member": "string",
@@ -1253,7 +1249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "函数的命名空间",
           "example": "default",
           "member": "string",
@@ -1262,7 +1257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。",
           "example": "$DEFAULT",
           "member": "string",
@@ -1271,7 +1265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发器的初始是能状态 OPEN表示开启 CLOSE表示关闭",
           "example": "1",
           "member": "string",
@@ -1280,11 +1273,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户自定义参数，仅支持timer触发器",
           "example": "CustomArgument",
           "member": "string",
           "name": "CustomArgument",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "触发器描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
@@ -1299,7 +1299,6 @@
           "example": "{ \t\"AddTime\": \"2021-06-09 16:07:18\", \t\"AvailableStatus\": \"Availa",
           "member": "Trigger",
           "name": "TriggerInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5397,8 +5396,8 @@
       "document": "触发器类型",
       "members": [
         {
-          "default": "",
           "document": "触发器最后修改时间",
+          "example": "无",
           "member": "datetime",
           "name": "ModTime",
           "required": true,
@@ -5406,8 +5405,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器类型",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5415,8 +5414,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器详细配置",
+          "example": "无",
           "member": "string",
           "name": "TriggerDesc",
           "required": true,
@@ -5424,8 +5423,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器名称",
+          "example": "无",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -5433,8 +5432,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "AddTime",
           "required": true,
@@ -5442,8 +5441,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "使能开关",
+          "example": "无",
           "member": "int64",
           "name": "Enable",
           "required": true,
@@ -5451,8 +5450,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户自定义参数",
+          "example": "无",
           "member": "string",
           "name": "CustomArgument",
           "required": true,
@@ -5460,8 +5459,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器状态",
+          "example": "无",
           "member": "string",
           "name": "AvailableStatus",
           "required": true,
@@ -5469,8 +5468,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器最小资源ID",
+          "example": "无",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -5478,8 +5477,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器和云函数绑定状态",
+          "example": "无",
           "member": "string",
           "name": "BindStatus",
           "required": true,
@@ -5487,8 +5486,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建",
+          "example": "无",
           "member": "string",
           "name": "TriggerAttribute",
           "required": true,
@@ -5496,11 +5495,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器绑定的别名或版本",
+          "example": "无",
           "member": "string",
           "name": "Qualifier",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "触发器描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

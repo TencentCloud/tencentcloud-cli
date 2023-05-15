@@ -3181,7 +3181,6 @@
       "document": "DescribeTmpToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3200,7 +3199,6 @@
           "example": "AbXtx",
           "member": "string",
           "name": "Token",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

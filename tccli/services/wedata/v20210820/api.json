@@ -5818,9 +5818,8 @@
       "document": "数据源对象",
       "members": [
         {
-          "default": "",
           "document": "若数据源列表为绑定数据库，则为db名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "DatabaseNames",
           "required": true,
@@ -5828,9 +5827,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "desc",
+          "example": "Desc",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5838,7 +5836,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源ID",
           "example": "1",
           "member": "uint64",
@@ -5848,7 +5845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源引擎的实例ID，如CDB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid",
           "member": "string",
@@ -5858,7 +5854,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源名称，在相同SpaceName下，数据源名称不能为空",
           "example": "test",
           "member": "string",
@@ -5868,7 +5863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源引擎所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "beijing",
           "member": "string",
@@ -5878,7 +5872,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
@@ -5888,12 +5881,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源所属的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ClusterId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据源版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

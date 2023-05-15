@@ -1,14 +1,14 @@
 **Example 1: 修改VPN网关属性**
 
-
+修改VPN网关属性
 
 Input: 
 
 ```
 tccli vpc ModifyVpnGatewayAttribute --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --VpnGatewayId vpngw-9jj97wyn \
-    --VpnGatewayName new_name
+    --VpnGatewayId vpngw-edvft32x \
+    --VpnGatewayName test-vpn \
+    --InstanceChargeType POSTPAID_BY_HOUR
 ```
 
 Output: 
