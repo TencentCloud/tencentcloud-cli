@@ -3293,6 +3293,58 @@ def doDescribeVpcAndSubnetInternal(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteVpnConnection(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteVpnConnectionRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteVpnConnection(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCcnRoutes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -11925,7 +11977,7 @@ def doCreateFlowLog(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVpnConnection(args, parsed_globals):
+def doDescribeUsedIpAddress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -11954,11 +12006,11 @@ def doDeleteVpnConnection(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpnConnectionRequest()
+    model = models.DescribeUsedIpAddressRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVpnConnection(model)
+        rsp = client.DescribeUsedIpAddress(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -17645,7 +17697,7 @@ def doEnableVpcEndPointConnect(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVpcEndPointServiceWhiteList(args, parsed_globals):
+def doDeletePolicyFromVmInternal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -17674,11 +17726,11 @@ def doModifyVpcEndPointServiceWhiteList(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpcEndPointServiceWhiteListRequest()
+    model = models.DeletePolicyFromVmInternalRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyVpcEndPointServiceWhiteList(model)
+        rsp = client.DeletePolicyFromVmInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -17749,7 +17801,7 @@ def doCreateAndAttachNetworkInterface(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeletePolicyFromVmInternal(args, parsed_globals):
+def doModifyVpcEndPointServiceWhiteList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -17778,11 +17830,11 @@ def doDeletePolicyFromVmInternal(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeletePolicyFromVmInternalRequest()
+    model = models.ModifyVpcEndPointServiceWhiteListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeletePolicyFromVmInternal(model)
+        rsp = client.ModifyVpcEndPointServiceWhiteList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -22451,6 +22503,7 @@ ACTION_MAP = {
     "ModifySvcLocationInternal": doModifySvcLocationInternal,
     "DescribeTrafficPackages": doDescribeTrafficPackages,
     "DescribeVpcAndSubnetInternal": doDescribeVpcAndSubnetInternal,
+    "DeleteVpnConnection": doDeleteVpnConnection,
     "DescribeCcnRoutes": doDescribeCcnRoutes,
     "ReplaceDirectConnectGatewayCcnRoutes": doReplaceDirectConnectGatewayCcnRoutes,
     "GetCcnRegionBandwidthLimits": doGetCcnRegionBandwidthLimits,
@@ -22617,7 +22670,7 @@ ACTION_MAP = {
     "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
     "EnableSnapshotPolicies": doEnableSnapshotPolicies,
     "CreateFlowLog": doCreateFlowLog,
-    "DeleteVpnConnection": doDeleteVpnConnection,
+    "DescribeUsedIpAddress": doDescribeUsedIpAddress,
     "CreateUSGInternal": doCreateUSGInternal,
     "DescribeCustomerGatewayVendors": doDescribeCustomerGatewayVendors,
     "DeleteLocalGateway": doDeleteLocalGateway,
@@ -22727,9 +22780,9 @@ ACTION_MAP = {
     "DisassociateVpcEndPointSecurityGroups": doDisassociateVpcEndPointSecurityGroups,
     "CloneSecurityGroup": doCloneSecurityGroup,
     "EnableVpcEndPointConnect": doEnableVpcEndPointConnect,
-    "ModifyVpcEndPointServiceWhiteList": doModifyVpcEndPointServiceWhiteList,
-    "CreateAndAttachNetworkInterface": doCreateAndAttachNetworkInterface,
     "DeletePolicyFromVmInternal": doDeletePolicyFromVmInternal,
+    "CreateAndAttachNetworkInterface": doCreateAndAttachNetworkInterface,
+    "ModifyVpcEndPointServiceWhiteList": doModifyVpcEndPointServiceWhiteList,
     "DescribeNatGateways": doDescribeNatGateways,
     "DescribeVpngwListDetailInternal": doDescribeVpngwListDetailInternal,
     "DescribeVpcs": doDescribeVpcs,

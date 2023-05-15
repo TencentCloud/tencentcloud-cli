@@ -4970,7 +4970,6 @@
       "document": "UnbindAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要解绑的定期快照策略ID。",
           "example": "asp-mrsrn243",
           "member": "string",
@@ -4980,7 +4979,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "要解绑定期快照策略的云盘ID列表。",
           "example": "[\"disk-dw0bbzws\\r\\n\"]",
           "member": "string",

@@ -1,10 +1,29 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 55 次发布
+### 第 24 次发布
 
-发布时间：2023-05-15 01:08:49
+发布时间：2023-05-16 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecurityGroupListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupListData)
+
+	* 新增成员：Uuid, Region, AssetGroupNameIn, AssetGroupNameOut, ParameterName
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 49 次发布
+
+发布时间：2023-05-16 01:21:46
 
 本次发布包含了以下内容：
 
@@ -12,18 +31,20 @@
 
 修改接口：
 
-* [DescribeRollbackRangeTime](http://document.tencentcloudapi.woa.com/document/product/236/18726)
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/213/15728)
 
-	* 新增入参：IsRemoteZone, BackupRegion
+	* 新增入参：NextToken, MaxResults
+
+	* 新增出参：NextToken
 
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 61 次发布
+### 第 62 次发布
 
-发布时间：2023-05-15 01:20:32
+发布时间：2023-05-16 01:22:42
 
 本次发布包含了以下内容：
 
@@ -31,120 +52,54 @@
 
 修改数据结构：
 
-* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
+* [LicenseBindTaskDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#LicenseBindTaskDetail)
 
-	* 新增成员：AttackLevel, FixNoNeedRestart, Method
+	* 新增成员：FixMessage, MachineExtraInfo
 
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 47 次发布
+### 第 48 次发布
 
-发布时间：2023-05-15 01:25:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
-
-	* 新增入参：UpsertKeys
-
-
-修改数据结构：
-
-* [DataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataGovernPolicy)
-
-	* 新增成员：RuleType, GovernEngine
-
-* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
-
-	* 新增成员：DbGovernPolicyIsDisable
-
-
-
-
-## 数据连接器(eis) 版本：2021-06-01
-
-### 第 7 次发布
-
-发布时间：2023-05-15 01:30:38
+发布时间：2023-05-16 01:35:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [ListRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57963)
-
-	* 新增入参：PlanType
+* [CheckRegionCHDFSEnable](http://document.tencentcloudapi.woa.com/document/product/1342/77774)
 
 
 
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-## 数据连接器(eis) 版本：2020-07-15
+### 第 46 次发布
 
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 53 次发布
-
-发布时间：2023-05-15 01:31:44
+发布时间：2023-05-16 02:03:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+* [DescribeRocketMQMsg](http://document.tencentcloudapi.woa.com/document/product/1179/77775)
 
-	* 新增成员：CcInfos
+新增数据结构：
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 32 次发布
-
-发布时间：2023-05-15 01:47:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/18589)
-
-	* 新增入参：Description
-
-
-修改数据结构：
-
-* [Trigger](http://document.tencentcloudapi.woa.com/document/product/583/17244#Trigger)
-
-	* 新增成员：Description
-
+* [RocketMQMessageTrack](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQMessageTrack)
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 22 次发布
+### 第 23 次发布
 
-发布时间：2023-05-15 01:55:23
+发布时间：2023-05-16 02:05:13
 
 本次发布包含了以下内容：
 
@@ -152,9 +107,9 @@
 
 修改数据结构：
 
-* [BatchTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchTaskDetail)
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
 
-	* 新增成员：ModelInferenceCodeInfo
+	* 新增成员：PipelineArgs
 
 
 
@@ -163,11 +118,45 @@
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 2 次发布
 
-发布时间：2023-05-15 02:05:01
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 68 次发布
+
+发布时间：2023-05-16 02:06:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterInspectionResultsOverview](http://document.tencentcloudapi.woa.com/document/product/457/77779)
+* [ListClusterInspectionResults](http://document.tencentcloudapi.woa.com/document/product/457/77778)
+* [ListClusterInspectionResultsItems](http://document.tencentcloudapi.woa.com/document/product/457/77777)
+
+新增数据结构：
+
+* [KubeJarvisStateCatalogue](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateCatalogue)
+* [KubeJarvisStateDiagnostic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnostic)
+* [KubeJarvisStateDiagnosticOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnosticOverview)
+* [KubeJarvisStateInspectionOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionOverview)
+* [KubeJarvisStateInspectionResult](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResult)
+* [KubeJarvisStateInspectionResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResultsItem)
+* [KubeJarvisStateResultObjInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultObjInfo)
+* [KubeJarvisStateResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultsItem)
+* [KubeJarvisStateStatistic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateStatistic)
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 24 次发布
+
+发布时间：2023-05-16 02:13:44
 
 本次发布包含了以下内容：
 
@@ -175,9 +164,43 @@
 
 修改数据结构：
 
-* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+* [EnvInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EnvInfo)
 
-	* 新增成员：Version
+	* 新增成员：EnableConfigIntranet
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 86 次发布
+
+发布时间：2023-05-16 02:16:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUsedIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/77780)
+
+修改接口：
+
+* [DeleteRoutes](http://document.tencentcloudapi.woa.com/document/product/215/16725)
+
+	* <font color="#dd0000">**修改入参**：</font>Routes
+
+
+新增数据结构：
+
+* [IpAddressStates](http://document.tencentcloudapi.woa.com/document/product/215/15824#IpAddressStates)
+
+修改数据结构：
+
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo)
+
+	* 新增成员：IsEnableMulticast
 
 
 
@@ -2740,7 +2763,7 @@
 
 
 
-## 应用性能观测(apm) 版本：2021-06-22
+## 应用性能监控(apm) 版本：2021-06-22
 
 ### 第 4 次发布
 
@@ -9854,6 +9877,21 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 24 次发布
+
+发布时间：2023-05-16 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecurityGroupListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupListData)
+
+	* 新增成员：Uuid, Region, AssetGroupNameIn, AssetGroupNameOut, ParameterName
+
+
 ### 第 23 次发布
 
 发布时间：2023-04-28 01:11:16
@@ -16117,6 +16155,23 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 49 次发布
+
+发布时间：2023-05-16 01:21:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/213/15728)
+
+	* 新增入参：NextToken, MaxResults
+
+	* 新增出参：NextToken
+
+
 ### 第 48 次发布
 
 发布时间：2023-05-09 01:14:15
@@ -17092,6 +17147,21 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 62 次发布
+
+发布时间：2023-05-16 01:22:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LicenseBindTaskDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#LicenseBindTaskDetail)
+
+	* 新增成员：FixMessage, MachineExtraInfo
+
 
 ### 第 61 次发布
 
@@ -21502,6 +21572,18 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 48 次发布
+
+发布时间：2023-05-16 01:35:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckRegionCHDFSEnable](http://document.tencentcloudapi.woa.com/document/product/1342/77774)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 47 次发布
 
@@ -48308,6 +48390,22 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 46 次发布
+
+发布时间：2023-05-16 02:03:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRocketMQMsg](http://document.tencentcloudapi.woa.com/document/product/1179/77775)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RocketMQMessageTrack](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQMessageTrack)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[RocketMQMessageTrack](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQMessageTrack))
+
 ### 第 45 次发布
 
 发布时间：2023-05-11 01:53:32
@@ -50692,6 +50790,21 @@
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
+### 第 23 次发布
+
+发布时间：2023-05-16 02:05:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
+
+	* 新增成员：PipelineArgs
+
+
 ### 第 22 次发布
 
 发布时间：2023-05-15 01:55:23
@@ -51616,6 +51729,32 @@
 
 
 ## 容器服务(tke) 版本：2018-05-25
+
+### 第 68 次发布
+
+发布时间：2023-05-16 02:06:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeClusterInspectionResultsOverview](http://document.tencentcloudapi.woa.com/document/product/457/77779)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ListClusterInspectionResults](http://document.tencentcloudapi.woa.com/document/product/457/77778)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ListClusterInspectionResultsItems](http://document.tencentcloudapi.woa.com/document/product/457/77777)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[KubeJarvisStateCatalogue](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateCatalogue)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateCatalogue](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateCatalogue))
+* [[KubeJarvisStateDiagnostic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnostic)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateDiagnostic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnostic))
+* [[KubeJarvisStateDiagnosticOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnosticOverview)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateDiagnosticOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateDiagnosticOverview))
+* [[KubeJarvisStateInspectionOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionOverview)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateInspectionOverview](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionOverview))
+* [[KubeJarvisStateInspectionResult](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResult)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateInspectionResult](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResult))
+* [[KubeJarvisStateInspectionResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResultsItem)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateInspectionResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateInspectionResultsItem))
+* [[KubeJarvisStateResultObjInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultObjInfo)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateResultObjInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultObjInfo))
+* [[KubeJarvisStateResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultsItem)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateResultsItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateResultsItem))
+* [[KubeJarvisStateStatistic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateStatistic)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[KubeJarvisStateStatistic](http://document.tencentcloudapi.woa.com/document/product/457/31866#KubeJarvisStateStatistic))
 
 ### 第 67 次发布
 
@@ -54103,6 +54242,21 @@
 
 
 ## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 24 次发布
+
+发布时间：2023-05-16 02:13:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EnvInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EnvInfo)
+
+	* 新增成员：EnableConfigIntranet
+
 
 ### 第 23 次发布
 
@@ -58146,6 +58300,36 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 86 次发布
+
+发布时间：2023-05-16 02:16:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUsedIpAddress](http://document.tencentcloudapi.woa.com/document/product/215/77780)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DeleteRoutes](http://document.tencentcloudapi.woa.com/document/product/215/16725)
+
+	* <font color="#dd0000">**修改入参**：</font>Routes
+
+
+新增数据结构：
+
+* [[IpAddressStates](http://document.tencentcloudapi.woa.com/document/product/215/15824#IpAddressStates)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[IpAddressStates](http://document.tencentcloudapi.woa.com/document/product/215/15824#IpAddressStates))
+
+修改数据结构：
+
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo)
+
+	* 新增成员：IsEnableMulticast
+
 
 ### 第 85 次发布
 

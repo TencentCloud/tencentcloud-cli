@@ -689,7 +689,7 @@
           "visibility": 1
         },
         {
-          "document": "包年包月资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ResourceGroupId",
@@ -929,7 +929,7 @@
           "visibility": 1
         },
         {
-          "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费金额信息，eg：2.00元/小时 (for 按量计费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -6492,6 +6492,16 @@
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "Stable Diffusion 模型优化参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{”safety_checker“:null}",
+          "member": "string",
+          "name": "PipelineArgs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

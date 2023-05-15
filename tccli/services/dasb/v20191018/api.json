@@ -1367,7 +1367,7 @@
           "visibility": 1
         },
         {
-          "document": "关联高危DB模版ID",
+          "document": "关联高危DB模板ID",
           "example": "[]",
           "member": "string",
           "name": "ACTemplateIdSet",
@@ -4220,7 +4220,7 @@
           "visibility": 1
         },
         {
-          "document": "关联高危DB模版ID",
+          "document": "关联高危DB模板ID",
           "example": "[\"abc\"]",
           "member": "string",
           "name": "ACTemplateIdSet",

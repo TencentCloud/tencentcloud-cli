@@ -84,6 +84,13 @@
       "output": "CheckLockMetaDataResponse",
       "status": "online"
     },
+    "CheckRegionCHDFSEnable": {
+      "document": "此接口（CheckRegionCHDFSEnable）用于检查当前地域是否支持元数据加速桶能力",
+      "input": "CheckRegionCHDFSEnableRequest",
+      "name": "检查当前地域是否支持元数据加速桶能力",
+      "output": "CheckRegionCHDFSEnableResponse",
+      "status": "online"
+    },
     "CreateDMSDatabase": {
       "document": "DMS元数据创建库",
       "input": "CreateDMSDatabaseRequest",
@@ -1522,6 +1529,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckRegionCHDFSEnableRequest": {
+      "document": "CheckRegionCHDFSEnable请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckRegionCHDFSEnableResponse": {
+      "document": "CheckRegionCHDFSEnable返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

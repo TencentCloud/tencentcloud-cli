@@ -1,6 +1,6 @@
 **Example 1: 释放IPv6地址**
 
-
+释放IPv6地址
 
 Input: 
 

@@ -532,6 +532,13 @@
       "output": "DescribeRocketMQGroupsResponse",
       "status": "online"
     },
+    "DescribeRocketMQMsg": {
+      "document": "rocketmq消息详情",
+      "input": "DescribeRocketMQMsgRequest",
+      "name": "rocketmq消息详情",
+      "output": "DescribeRocketMQMsgResponse",
+      "status": "online"
+    },
     "DescribeRocketMQNamespaces": {
       "document": "获取RocketMQ命名空间列表",
       "input": "DescribeRocketMQNamespacesRequest",
@@ -8143,6 +8150,141 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQMsgRequest": {
+      "document": "DescribeRocketMQMsg请求参数结构体",
+      "members": [
+        {
+          "document": "集群id",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "主题，查询死信时传groupId",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "pulsar消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "PulsarMsgId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "查询死信时该值为true，只对Rocketmq有效",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDlqMsg",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQMsgResponse": {
+      "document": "DescribeRocketMQMsg返回参数结构体",
+      "members": [
+        {
+          "document": "消息体",
+          "example": "xxx",
+          "member": "string",
+          "name": "Body",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "详情参数",
+          "example": "{\"xxx\":\"aaa\"}",
+          "member": "string",
+          "name": "Properties",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "生产时间",
+          "example": " 2021-11-23 21:21:26",
+          "member": "string",
+          "name": "ProduceTime",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "生产者地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProducerAddr",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "消费组消费情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "RocketMQMessageTrack",
+          "name": "MessageTracks",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "详情页展示的topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic",
+          "member": "string",
+          "name": "ShowTopicName",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQNamespacesRequest": {
       "document": "DescribeRocketMQNamespaces请求参数结构体",
       "members": [
@@ -13045,6 +13187,56 @@
           "name": "MaxQueuesPerTopic",
           "required": false,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQMessageTrack": {
+      "document": "Rocketmq消息消费track信息",
+      "members": [
+        {
+          "default": "",
+          "document": "消费者组",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "消费状态",
+          "example": "CONSUMED",
+          "member": "string",
+          "name": "ConsumeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "消息track类型",
+          "example": "CONSUMED",
+          "member": "string",
+          "name": "TrackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ExceptionDesc",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }

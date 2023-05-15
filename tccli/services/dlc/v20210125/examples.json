@@ -96,6 +96,14 @@
         "title": "元数据锁检查"
       }
     ],
+    "CheckRegionCHDFSEnable": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRegionCHDFSEnable\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcce3508-d813-47af-a973-eafb4557f7e3\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDMSDatabase": [
       {
         "document": "",

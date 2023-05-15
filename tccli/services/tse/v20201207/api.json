@@ -1458,7 +1458,6 @@
       "document": "环境具体信息",
       "members": [
         {
-          "default": "",
           "document": "环境名称",
           "example": "pro",
           "member": "string",
@@ -1469,7 +1468,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境对应的网络信息",
           "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxxx\"}]",
           "member": "VpcInfo",
@@ -1480,7 +1478,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云硬盘容量",
           "example": "50",
           "member": "int64",
@@ -1491,7 +1488,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行状态",
           "example": "running",
           "member": "string",
@@ -1502,7 +1498,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Admin service 访问地址",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -1513,7 +1508,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Config service访问地址",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -1524,7 +1518,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启config-server公网",
           "example": "false",
           "member": "bool",
@@ -1535,7 +1528,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "config-server公网访问地址",
           "example": "xx.xx.xx.xx",
           "member": "string",
@@ -1546,7 +1538,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "规格ID",
           "example": "spec-xx",
           "member": "string",
@@ -1557,7 +1548,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境的节点数",
           "example": "3",
           "member": "int64",
@@ -1568,7 +1558,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境运行的节点数",
           "example": "3",
           "member": "int64",
@@ -1579,7 +1568,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境别名",
           "example": "pro",
           "member": "string",
@@ -1590,7 +1578,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境描述",
           "example": "test",
           "member": "string",
@@ -1601,7 +1588,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "客户端带宽",
           "example": "5",
           "member": "uint64",
@@ -1609,6 +1595,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "客户端内网开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConfigIntranet",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
