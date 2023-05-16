@@ -176,7 +176,7 @@
     ],
     "IsolateSyncJob": [
       {
-        "document": "",
+        "document": "隔离一个正在计费的同步任务",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-kl5qyyf4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"df239e4f-7359-473b-a073-144ab9964350\"\n    }\n}",
         "title": "隔离一个同步任务"

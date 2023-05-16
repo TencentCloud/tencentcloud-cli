@@ -2,7 +2,7 @@
   "actions": {
     "BeautifyPic": [
       {
-        "document": "",
+        "document": "人脸美颜请求",
         "input": "POST / HTTP/1.1\nHost: fmu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeautifyPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\",\n    \"RspImgType\": \"url\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResultUrl\": \"result.jpg\",\n        \"ResultImage\": \"\",\n        \"RequestId\": \"1a2e88a4-3614-48a0-96b9-d09bf6de2fe4\"\n    }\n}",
         "title": "人脸美颜请求示例"

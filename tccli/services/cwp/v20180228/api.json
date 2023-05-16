@@ -26511,7 +26511,6 @@
       "document": "授权绑定任务详情",
       "members": [
         {
-          "default": "",
           "document": "云服务器UUID",
           "example": "''",
           "member": "string",
@@ -26521,7 +26520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息",
           "example": "''",
           "member": "string",
@@ -26531,7 +26529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0 执行中, 1 成功,2失败",
           "example": "0",
           "member": "uint64",
@@ -26539,6 +26536,24 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "修复建议",
+          "example": "''",
+          "member": "string",
+          "name": "FixMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

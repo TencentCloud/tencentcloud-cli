@@ -612,6 +612,14 @@
         "title": "查询订阅组列表"
       }
     ],
+    "DescribeRocketMQMsg": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMsg\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"PulsarMsgId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"QueryDlqMsg\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Body\": \"xx\",\n        \"MsgId\": \"xx\",\n        \"ProduceTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Properties\": \"xx\",\n        \"ProducerAddr\": \"xx\",\n        \"ShowTopicName\": \"xx\",\n        \"MessageTracks\": []\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeRocketMQNamespaces": [
       {
         "document": "",

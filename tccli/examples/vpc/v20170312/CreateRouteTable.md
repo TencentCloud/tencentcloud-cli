@@ -1,12 +1,11 @@
 **Example 1: 创建路由表**
 
-
+创建路由表
 
 Input: 
 
 ```
 tccli vpc CreateRouteTable --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --RouteTableName TestRouteTable \
     --VpcId vpc-2at5y1pn \
     --Tags.0.Key city \
@@ -25,6 +24,12 @@ Output:
             "AssociationSet": [],
             "RouteSet": [],
             "Main": false,
+            "LocalCidrForCcn": [
+                {
+                    "Cidr": "xx",
+                    "PublishedToVbc": true
+                }
+            ],
             "TagSet": [
                 {
                     "Key": "city",

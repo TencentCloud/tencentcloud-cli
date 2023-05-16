@@ -351,7 +351,7 @@
       "status": "online"
     },
     "CreateRoutes": {
-      "document": "本接口(CreateRoutes)用于创建路由策略。\n* 向指定路由表批量新增路由策略。",
+      "document": "本接口（CreateRoutes）用于创建路由策略。\n* 向指定路由表批量新增路由策略。",
       "input": "CreateRoutesRequest",
       "name": "创建路由策略",
       "output": "CreateRoutesResponse",
@@ -1195,6 +1195,13 @@
       "input": "DescribeTrafficPackagesRequest",
       "name": "查询共享流量包",
       "output": "DescribeTrafficPackagesResponse",
+      "status": "online"
+    },
+    "DescribeUsedIpAddress": {
+      "document": "本接口(DescribeUsedIpAddress)用于查询Subnet或者Vpc内的ip的使用情况，\n如被ip被占用，返回占用ip的资源类别与id；如未被占用，返回空值",
+      "input": "DescribeUsedIpAddressRequest",
+      "name": "查看子网或者vpc内IP使用情况",
+      "output": "DescribeUsedIpAddressResponse",
       "status": "online"
     },
     "DescribeVpcEndPoint": {
@@ -3699,7 +3706,6 @@
       "document": "AttachNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-m6dyj72l",
           "member": "string",
@@ -3708,7 +3714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM实例ID。形如：ins-r8hr2upy。",
           "example": "ins-r8hr2upy",
           "member": "string",
@@ -3717,7 +3722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网卡的挂载类型：0 标准型，1扩展型，默认值0。",
           "example": "0",
           "member": "uint64",
@@ -6624,24 +6628,24 @@
       "document": "CreateRouteTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-2at5y1pn",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由表名称，最大长度不能超过60个字节。",
+          "example": "TestRouteTable",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6655,6 +6659,7 @@
       "members": [
         {
           "document": "路由表对象。",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTable",
           "type": "object",
@@ -6673,7 +6678,6 @@
       "document": "CreateRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "路由表实例ID。",
           "example": "rtb-n0yejvje",
           "member": "string",
@@ -6682,7 +6686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由策略对象。",
           "example": "无",
           "member": "Route",
@@ -6701,7 +6704,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6710,7 +6712,6 @@
           "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9036,7 +9037,6 @@
       "document": "DeleteNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-m6dyj72l",
           "member": "string",
@@ -9089,19 +9089,19 @@
       "document": "DeleteRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "路由表实例ID。",
+          "example": "rtb-xxx",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -9112,6 +9112,7 @@
       "members": [
         {
           "document": "已删除的路由策略详情。",
+          "example": "无",
           "member": "Route",
           "name": "RouteSet",
           "type": "list",
@@ -13635,6 +13636,80 @@
       ],
       "type": "object"
     },
+    "DescribeUsedIpAddressRequest": {
+      "document": "DescribeUsedIpAddress请求参数结构体",
+      "members": [
+        {
+          "document": "VPC实例ID。",
+          "example": "vpc-a26u781x",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "子网实例ID。",
+          "example": "subnet-amqye6ew",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "查询是否占用的ip列表",
+          "example": "[\"192.168.2.10\", \"10.0.1.10\"]",
+          "member": "string",
+          "name": "IpAddresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "请求对象个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsedIpAddressResponse": {
+      "document": "DescribeUsedIpAddress返回参数结构体",
+      "members": [
+        {
+          "document": "占用ip地址的资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpAddressStates",
+          "name": "IpAddressStates",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回占用资源的个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcEndPointRequest": {
       "document": "DescribeVpcEndPoint请求参数结构体",
       "members": [
@@ -14737,7 +14812,6 @@
       "document": "DetachNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-afo43z61",
           "member": "string",
@@ -14746,7 +14820,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM实例ID。形如：ins-r8hr2upy。",
           "example": "ins-ins-r8hr2upy",
           "member": "string",
@@ -17471,6 +17544,62 @@
       ],
       "usage": "out"
     },
+    "IpAddressStates": {
+      "document": "占用ip的资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网实例ID。",
+          "example": "subnet-j4oluywm",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址。",
+          "example": "172.16.0.16",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "ENI",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "eni-bjekqff1",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IpField": {
       "document": "IP在线查询的字段信息",
       "members": [
@@ -19367,16 +19496,16 @@
       "document": "ModifyPrivateIpAddressesAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定的内网IP信息。",
+          "example": "[{'PrivateIpAddress': '172.16.32.11','Description': 'new-desc--------' }]",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": true,
@@ -21349,20 +21478,22 @@
       "document": "价格",
       "members": [
         {
-          "default": "",
           "document": "实例价格。",
+          "example": "null",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "网络价格。",
+          "document": "带宽价格。",
+          "example": "null",
           "member": "ItemPrice",
           "name": "BandwidthPrice",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21939,7 +22070,6 @@
       "document": "ReplaceRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "rtb-azd4dt1c",
           "member": "string",
@@ -21948,7 +22078,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由策略对象。需要指定路由策略ID（RouteId）。",
           "example": "无",
           "member": "Route",
@@ -21967,7 +22096,6 @@
           "example": "无",
           "member": "Route",
           "name": "OldRouteSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -21976,7 +22104,6 @@
           "example": "无",
           "member": "Route",
           "name": "NewRouteSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22158,24 +22285,24 @@
       "document": "ResetRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-n0yejvje",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由表名称，最大长度不能超过60个字节。",
+          "example": "TEST",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由策略。",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -24763,7 +24890,6 @@
       "document": "UnassignIpv6Addresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
           "example": "eni-9c8zkfev",
           "member": "string",
@@ -24772,7 +24898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定的`IPv6`地址列表，单次最多指定10个。",
           "example": "无",
           "member": "Ipv6Address",
@@ -24867,7 +24992,6 @@
       "document": "UnassignPrivateIpAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-afo43z61",
           "member": "string",
@@ -24876,7 +25000,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
           "example": "无",
           "member": "PrivateIpAddressSpecification",
@@ -24885,7 +25008,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。",
           "example": "ins-3456tghy",
           "member": "string",

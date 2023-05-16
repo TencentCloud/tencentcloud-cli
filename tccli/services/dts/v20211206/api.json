@@ -3848,7 +3848,6 @@
       "document": "IsolateSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "同步任务id",
           "example": "sync-werwfs23",
           "member": "string",

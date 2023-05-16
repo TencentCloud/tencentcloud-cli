@@ -3605,7 +3605,7 @@ def doCheckNetDetectState(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpcs(args, parsed_globals):
+def doDeleteVpnGatewaySslClient(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3634,11 +3634,11 @@ def doDescribeVpcs(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcsRequest()
+    model = models.DeleteVpnGatewaySslClientRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeVpcs(model)
+        rsp = client.DeleteVpnGatewaySslClient(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5477,7 +5477,7 @@ def doDisableSnapshotPolicies(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVpnGatewaySslClient(args, parsed_globals):
+def doDescribeVpcs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5506,11 +5506,11 @@ def doDeleteVpnGatewaySslClient(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpnGatewaySslClientRequest()
+    model = models.DescribeVpcsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVpnGatewaySslClient(model)
+        rsp = client.DescribeVpcs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8215,6 +8215,58 @@ def doCreateIp6Translators(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateIp6Translators(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeUsedIpAddress(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUsedIpAddressRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeUsedIpAddress(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -15853,7 +15905,7 @@ ACTION_MAP = {
     "GenerateVpnConnectionDefaultHealthCheckIp": doGenerateVpnConnectionDefaultHealthCheckIp,
     "DescribeTemplateLimits": doDescribeTemplateLimits,
     "CheckNetDetectState": doCheckNetDetectState,
-    "DescribeVpcs": doDescribeVpcs,
+    "DeleteVpnGatewaySslClient": doDeleteVpnGatewaySslClient,
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": doInquiryPriceResetVpnGatewayInternetMaxBandwidth,
     "DeleteDirectConnectGatewayCcnRoutes": doDeleteDirectConnectGatewayCcnRoutes,
     "DescribeNetworkAccountType": doDescribeNetworkAccountType,
@@ -15889,7 +15941,7 @@ ACTION_MAP = {
     "UnlockCcnBandwidths": doUnlockCcnBandwidths,
     "ModifyVpcAttribute": doModifyVpcAttribute,
     "DisableSnapshotPolicies": doDisableSnapshotPolicies,
-    "DeleteVpnGatewaySslClient": doDeleteVpnGatewaySslClient,
+    "DescribeVpcs": doDescribeVpcs,
     "AttachCcnInstances": doAttachCcnInstances,
     "AssociateAddress": doAssociateAddress,
     "DeleteCustomerGateway": doDeleteCustomerGateway,
@@ -15942,6 +15994,7 @@ ACTION_MAP = {
     "DescribeCcnRoutes": doDescribeCcnRoutes,
     "CreateVpcEndPointService": doCreateVpcEndPointService,
     "CreateIp6Translators": doCreateIp6Translators,
+    "DescribeUsedIpAddress": doDescribeUsedIpAddress,
     "CreateSecurityGroupWithPolicies": doCreateSecurityGroupWithPolicies,
     "CreateAssistantCidr": doCreateAssistantCidr,
     "ResetNatGatewayConnection": doResetNatGatewayConnection,

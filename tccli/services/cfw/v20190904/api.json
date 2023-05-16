@@ -7191,7 +7191,6 @@
       "document": "安全组列表数据",
       "members": [
         {
-          "default": "",
           "document": "执行顺序",
           "example": "1",
           "member": "uint64",
@@ -7201,7 +7200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问源",
           "example": "ipm-dyodhpby",
           "member": "string",
@@ -7211,7 +7209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资源组",
           "example": "7",
           "member": "uint64",
@@ -7221,7 +7218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问目的",
           "example": "subnet-fmo10koi",
           "member": "string",
@@ -7231,7 +7227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100:资源组",
           "example": "2",
           "member": "uint64",
@@ -7241,7 +7236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议",
           "example": "ANY",
           "member": "string",
@@ -7251,7 +7245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目的端口",
           "example": "-1/-1",
           "member": "string",
@@ -7261,7 +7254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "策略, 1：阻断，2：放行",
           "example": "2",
           "member": "uint64",
@@ -7271,7 +7263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述",
           "example": "test",
           "member": "string",
@@ -7281,7 +7272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "单/双向下发，0:单向下发，1：双向下发",
           "example": "0",
           "member": "uint64",
@@ -7291,7 +7281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID",
           "example": "1",
           "member": "uint64",
@@ -7301,7 +7290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开关开启，0：未开启，1：开启",
           "example": "1",
           "member": "uint64",
@@ -7311,7 +7299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是正常规则，0：正常，1：异常",
           "example": "1",
           "member": "uint64",
@@ -7321,7 +7308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-8xuf8kf5",
           "member": "string",
@@ -7331,7 +7317,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-fmo10koi",
           "member": "string",
@@ -7341,7 +7326,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "InstanceName",
           "member": "string",
@@ -7351,7 +7335,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网IP，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PublicIp",
           "member": "string",
@@ -7361,7 +7344,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "内网IP，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PrivateIp",
           "member": "string",
@@ -7371,7 +7353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "掩码地址，多个以英文逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Cidr",
           "member": "string",
@@ -7381,7 +7362,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口协议类型参数模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ppmg-jz17vpis",
           "member": "string",
@@ -7391,7 +7371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "生成双向下发规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BothWayInfo",
           "member": "SecurityGroupBothWayInfo",
@@ -7401,7 +7380,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "方向，0：出站，1：入站，默认1",
           "example": "0",
           "member": "uint64",
@@ -7411,7 +7389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否使用端口协议模板，0：否，1：是",
           "example": "1",
           "member": "uint64",
@@ -7419,6 +7396,51 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetGroupNameIn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资产分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetGroupNameOut",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParameterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

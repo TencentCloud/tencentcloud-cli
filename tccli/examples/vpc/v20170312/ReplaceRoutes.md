@@ -1,6 +1,6 @@
 **Example 1: 替换路由策略**
 
-
+替换路由策略
 
 Input: 
 
@@ -11,7 +11,14 @@ tccli vpc ReplaceRoutes --cli-unfold-argument  \
     --Routes.0.DestinationCidrBlock 192.168.0.0/16 \
     --Routes.0.GatewayType NORMAL_CVM \
     --Routes.0.GatewayId 172.16.16.37 \
-    --Routes.0.RouteDescription leo-test-CVM-route
+    --Routes.0.RouteDescription abc \
+    --Routes.0.Enabled True \
+    --Routes.0.RouteType abc \
+    --Routes.0.RouteTableId abc \
+    --Routes.0.DestinationIpv6CidrBlock abc \
+    --Routes.0.RouteItemId abc \
+    --Routes.0.PublishedToVbc True \
+    --Routes.0.CreatedTime 2020-09-22 00:00:00
 ```
 
 Output: 
@@ -23,7 +30,7 @@ Output:
                 "DestinationCidrBlock": "172.16.16.37/22",
                 "RouteTableId": "rtb-n0yejvje",
                 "RouteDescription": "",
-                "GatewayType": "PEERCONNECTION",
+                "GatewayType": "NORMAL_CVM",
                 "GatewayId": "pcx-n9vkqrtm"
             }
         ],

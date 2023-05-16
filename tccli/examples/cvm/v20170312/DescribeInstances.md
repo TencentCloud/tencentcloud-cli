@@ -56,7 +56,7 @@ Output:
                 "InstanceType": "S2.SMALL2",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "CdcId": null,
+                    "CdcId": "cdc-xxxxxxxx",
                     "DiskId": "disk-czsodtl1",
                     "DiskType": "CLOUD_SSD"
                 },
@@ -79,7 +79,7 @@ Output:
                     {
                         "DeleteWithInstance": true,
                         "Encrypt": true,
-                        "CdcId": null,
+                        "CdcId": "cdc-xxxxxxxx",
                         "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
                         "KmsKeyId": null,
@@ -102,7 +102,6 @@ Output:
                 "InternetAccessible": {
                     "PublicIpAssigned": true,
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "BandwidthPackageId": null,
                     "InternetMaxBandwidthOut": 1
                 },
                 "HpcClusterId": "",
@@ -170,7 +169,6 @@ Output:
                 "IsolatedSource": "NOTISOLATED",
                 "Placement": {
                     "ProjectId": 1174660,
-                    "HostId": null,
                     "Zone": "ap-guangzhou-2"
                 },
                 "PrivateIpAddresses": [
@@ -241,7 +239,7 @@ Output:
                 ],
                 "RestrictState": "PROTECTIVELY_ISOLATED",
                 "ExpiredTime": "2020-09-22T00:00:00+00:00",
-                "DisasterRecoverGroupId": "xx",
+                "DisasterRecoverGroupId": "ps-xxxxxxxx",
                 "Memory": 1,
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "CPU": 1,
@@ -263,7 +261,7 @@ Output:
                 "InstanceType": "S2.SMALL2",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "CdcId": null,
+                    "CdcId": "cdc-xxxxxxxx",
                     "DiskId": "disk-czsodtl1",
                     "DiskType": "CLOUD_SSD"
                 },
@@ -286,7 +284,7 @@ Output:
                     {
                         "DeleteWithInstance": true,
                         "Encrypt": true,
-                        "CdcId": null,
+                        "CdcId": "cdc-xxxxxxxx",
                         "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
                         "KmsKeyId": null,
@@ -309,7 +307,6 @@ Output:
                 "InternetAccessible": {
                     "PublicIpAssigned": true,
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "BandwidthPackageId": null,
                     "InternetMaxBandwidthOut": 1
                 },
                 "HpcClusterId": "",

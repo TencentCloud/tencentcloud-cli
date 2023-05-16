@@ -709,7 +709,6 @@
       "document": "展示标签列表",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "example": "test",
           "member": "string",
@@ -719,7 +718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
           "example": "mytest",
           "member": "string",
@@ -729,13 +727,12 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Task": {
       "document": "任务",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "example": "1",
           "member": "int64",
@@ -745,7 +742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务标题",
           "example": "任务标题",
           "member": "string",
@@ -755,7 +751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务描述",
           "example": "任务描述",
           "member": "string",
@@ -765,7 +760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "自定义标签",
           "member": "string",
@@ -775,7 +769,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -785,7 +778,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务结束状态，表明任务以何种状态结束: 0 -- 尚未结束，1 -- 成功，2-- 失败，3--终止",
           "example": "0",
           "member": "int64",
@@ -795,7 +787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "string",
@@ -805,7 +796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务创建时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -815,7 +805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务更新时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -825,7 +814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务动作组",
           "example": "无",
           "member": "TaskGroup",
@@ -835,7 +823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -845,7 +832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -855,7 +841,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否符合预期。1：符合预期，2：不符合预期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是否符合预期",
           "member": "int64",
@@ -865,7 +850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "演习记录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "演习记录",
           "member": "string",
@@ -875,7 +859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务模式。1:手工执行，2:自动执行",
           "example": "1",
           "member": "int64",
@@ -885,7 +868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动暂停时长。单位分钟",
           "example": "60",
           "member": "int64",
@@ -895,7 +877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "演练创建者Uin",
           "example": "6000000000",
           "member": "string",
@@ -905,7 +886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域ID",
           "example": "1",
           "member": "int64",
@@ -915,7 +895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监控指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskMonitor",
@@ -925,7 +904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribePolicy",
@@ -935,13 +913,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagWithDescribe",
           "name": "Tags",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关联的演练计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskPlanId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关联的演练计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskPlanTitle",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1017,7 +1012,6 @@
       "document": "任务分组",
       "members": [
         {
-          "default": "",
           "document": "任务动作ID",
           "example": "1",
           "member": "int64",
@@ -1027,7 +1021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分组标题",
           "example": "1",
           "member": "string",
@@ -1037,7 +1030,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1047,7 +1039,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务分组顺序",
           "example": "1",
           "member": "int64",
@@ -1057,7 +1048,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对象类型ID",
           "example": "1",
           "member": "int64",
@@ -1067,7 +1057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务分组创建时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -1077,7 +1066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务分组更新时间",
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
@@ -1087,7 +1075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "动作分组动作列表",
           "example": "无",
           "member": "TaskGroupAction",
@@ -1097,7 +1084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例列表",
           "example": "[]",
           "member": "string",
@@ -1107,7 +1093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行模式。1 --- 顺序执行，2 --- 阶段执行",
           "example": "1",
           "member": "int64",

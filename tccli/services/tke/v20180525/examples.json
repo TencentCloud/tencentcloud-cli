@@ -608,6 +608,14 @@
         "title": "获取集群访问地址"
       }
     ],
+    "DescribeClusterInspectionResultsOverview": [
+      {
+        "document": "ClusterIds为空，默认查询所有集群",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInspectionResultsOverview\n<公共请求参数>\n\n{\n    \"ClusterIds\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"kubejarvis-test-case1\",\n        \"Diagnostics\": [\n            {\n                \"Catalogues\": [\n                    {},\n                    {}\n                ],\n                \"Statistics\": [\n                    {},\n                    {},\n                    {},\n                    {}\n                ]\n            },\n            {\n                \"Catalogues\": [\n                    {},\n                    {}\n                ],\n                \"Statistics\": []\n            }\n        ],\n        \"Statistics\": [\n            {},\n            {},\n            {},\n            {}\n        ],\n        \"InspectionOverview\": [\n            {\n                \"ClusterId\": \"cls-dsafas\",\n                \"Statistics\": [\n                    {}\n                ],\n                \"Diagnostics\": [\n                    {\n                        \"Catalogues\": [\n                            {},\n                            {}\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询集群巡检报告概览"
+      }
+    ],
     "DescribeClusterInstances": [
       {
         "document": "查询集群实例信息",
@@ -1260,6 +1268,28 @@
         "input": "https://tke.tencentcloudapi.com/?Action=InstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "安装日志插件"
+      }
+    ],
+    "ListClusterInspectionResults": [
+      {
+        "document": "获取集群巡检诊断结果，不隐藏结果",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClusterInspectionResults\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cls-dsff\"\n    ],\n    \"Hide\": [\n        \"\"\n    ],\n    \"Name\": \"default-123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InspectionResults\": [\n            {\n                \"ClusterId\": \"cls-dsff\",\n                \"Diagnostics\": [\n                    {\n                        \"Catalogues\": [\n                            {},\n                            {}\n                        ],\n                        \"Desc\": \"check master capacity\",\n                        \"EndTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                        \"Name\": \"master-capacity-update\",\n                        \"Results\": [\n                            {\n                                \"Desc\": \"Master Capacity Check\",\n                                \"Level\": \"failed\",\n                                \"ObjInfo\": [\n                                    {}\n                                ],\n                                \"ObjName\": \"pod-dsafasf\",\n                                \"Proposal\": \"\",\n                                \"Title\": \"Master Capacity Check\"\n                            }\n                        ],\n                        \"StartTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                        \"Statistics\": [],\n                        \"Type\": \"master-capacity\"\n                    }\n                ],\n                \"EndTime\": \"2022-11-11 06:31:23 +0000 UTC\",\n                \"StartTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                \"Statistics\": [\n                    {},\n                    {},\n                    {},\n                    {}\n                ]\n            }\n        ],\n        \"RequestId\": \"kubejarvis-test-case1\"\n    }\n}",
+        "title": "获取集群巡检诊断结果示例1"
+      },
+      {
+        "document": "获取集群巡检诊断结果，隐藏结果",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClusterInspectionResults\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cls-dsff\"\n    ],\n    \"Hide\": [\n        \"results\"\n    ],\n    \"Name\": \"default-123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InspectionResults\": [\n            {\n                \"ClusterId\": \"cls-dsff\",\n                \"Diagnostics\": [\n                    {\n                        \"Catalogues\": [\n                            {},\n                            {}\n                        ],\n                        \"Desc\": \"check master capacity\",\n                        \"EndTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                        \"Name\": \"master-capacity-update\",\n                        \"Results\": null,\n                        \"StartTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                        \"Statistics\": [],\n                        \"Type\": \"master-capacity\"\n                    }\n                ],\n                \"EndTime\": \"2022-11-11 06:31:23 +0000 UTC\",\n                \"StartTime\": \"2022-11-11 06:41:23 +0000 UTC\",\n                \"Statistics\": [\n                    {},\n                    {},\n                    {},\n                    {}\n                ]\n            }\n        ],\n        \"RequestId\": \"kubejarvis-test-case2\"\n    }\n}",
+        "title": "获取集群巡检诊断结果示例2"
+      }
+    ],
+    "ListClusterInspectionResultsItems": [
+      {
+        "document": "获取巡检结果历史",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClusterInspectionResultsItems\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-54n6gepo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InspectionResultsItems\": [\n            {\n                \"Name\": \"test\",\n                \"Statistics\": [\n                    {},\n                    {},\n                    {},\n                    {}\n                ]\n            },\n            {\n                \"Name\": \"test2\",\n                \"Statistics\": [\n                    {},\n                    {},\n                    {},\n                    {}\n                ]\n            }\n        ],\n        \"RequestId\": \"kubejarvis-test-case1\"\n    }\n}",
+        "title": "获取巡检结果历史"
       }
     ],
     "ModifyClusterAsGroupAttribute": [

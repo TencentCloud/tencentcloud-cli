@@ -294,6 +294,13 @@
       "output": "GetWatermarkResponse",
       "status": "online"
     },
+    "KickUserFromRoom": {
+      "document": "从房间里面踢出用户",
+      "input": "KickUserFromRoomRequest",
+      "name": "踢出房间用户",
+      "output": "KickUserFromRoomResponse",
+      "status": "online"
+    },
     "LoginOriginId": {
       "document": "使用源账号登录，源账号为注册时填入的originId",
       "input": "LoginOriginIdRequest",
@@ -3164,7 +3171,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束",
+          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束\nCamera0n: 摄像头打开\nCamera0ff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
           "example": "RoomStart",
           "member": "string",
           "name": "EventType",
@@ -3522,6 +3529,64 @@
         }
       ],
       "usage": "out"
+    },
+    "KickUserFromRoomRequest": {
+      "document": "KickUserFromRoom请求参数结构体",
+      "members": [
+        {
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "低代码平台的SdkAppId。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "需要踢出成员Id",
+          "example": "dfgsadffg",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "踢出类型：\n1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。\n2：永久踢出",
+          "example": "1",
+          "member": "uint64",
+          "name": "KickType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "污点时间(单位秒)，KickType = 1时生效，默认为0",
+          "example": "10",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "KickUserFromRoomResponse": {
+      "document": "KickUserFromRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LoginOriginIdRequest": {
       "document": "LoginOriginId请求参数结构体",

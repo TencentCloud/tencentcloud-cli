@@ -5143,7 +5143,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "绑定的桶所在 AWS 区域。",
+          "document": "绑定的桶所在 AWS 区域，目前支持：  \nus-east-1  \neu-west-3",
           "example": "无",
           "member": "string",
           "name": "S3Region",
@@ -18991,7 +18991,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "S3 bucket 对应的区域。",
+          "document": "S3 bucket 对应的区域，目前支持：  \nus-east-1  \neu-west-3\n",
           "example": "ap-southeast-1",
           "member": "string",
           "name": "S3Region",

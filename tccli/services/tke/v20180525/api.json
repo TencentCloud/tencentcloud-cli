@@ -511,6 +511,13 @@
       "output": "DescribeClusterEndpointsResponse",
       "status": "online"
     },
+    "DescribeClusterInspectionResultsOverview": {
+      "document": "查询用户单个Region下的所有集群巡检结果概览信息",
+      "input": "DescribeClusterInspectionResultsOverviewRequest",
+      "name": "查询集群巡检结果概览信息",
+      "output": "DescribeClusterInspectionResultsOverviewResponse",
+      "status": "online"
+    },
     "DescribeClusterInstances": {
       "document": "查询集群下节点实例信息",
       "input": "DescribeClusterInstancesRequest",
@@ -1076,6 +1083,20 @@
       "input": "InstallLogAgentRequest",
       "name": "安装日志采集组件",
       "output": "InstallLogAgentResponse",
+      "status": "online"
+    },
+    "ListClusterInspectionResults": {
+      "document": "查询指定集群的巡检结果信息",
+      "input": "ListClusterInspectionResultsRequest",
+      "name": "查询指定集群的巡检结果信息",
+      "output": "ListClusterInspectionResultsResponse",
+      "status": "online"
+    },
+    "ListClusterInspectionResultsItems": {
+      "document": "查询集群巡检结果历史列表",
+      "input": "ListClusterInspectionResultsItemsRequest",
+      "name": "查询集群巡检结果历史列表",
+      "output": "ListClusterInspectionResultsItemsResponse",
       "status": "online"
     },
     "ModifyClusterAsGroupAttribute": {
@@ -7791,6 +7812,64 @@
           "member": "string",
           "name": "SecurityGroup",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInspectionResultsOverviewRequest": {
+      "document": "DescribeClusterInspectionResultsOverview请求参数结构体",
+      "members": [
+        {
+          "document": "Array of String\t目标集群列表，为空查询用户所有集群\n",
+          "example": "[\"cls-abc\", \"cls-def\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "聚合字段信息，概览结果按照 GroupBy 信息聚合后返回，可选参数：\ncatalogue.first：按一级分类聚合\ncatalogue.second：按二级分类聚合",
+          "example": "catalogue.second",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInspectionResultsOverviewResponse": {
+      "document": "DescribeClusterInspectionResultsOverview返回参数结构体",
+      "members": [
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果概览\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateDiagnosticOverview",
+          "name": "Diagnostics",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群诊断结果概览\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateInspectionOverview",
+          "name": "InspectionOverview",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -14758,6 +14837,375 @@
       ],
       "usage": "out"
     },
+    "KubeJarvisStateCatalogue": {
+      "document": "集群巡检诊断的默认目录类型",
+      "members": [
+        {
+          "document": "目录级别，支持参数：\nfirst：一级目录\nsecond：二级目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "first",
+          "member": "string",
+          "name": "CatalogueLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目录名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "quota",
+          "member": "string",
+          "name": "CatalogueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateDiagnostic": {
+      "document": "集群巡检诊断结果",
+      "members": [
+        {
+          "document": "诊断开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateCatalogue",
+          "name": "Catalogues",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateResultsItem",
+          "name": "Results",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateDiagnosticOverview": {
+      "document": "集群巡检诊断概览",
+      "members": [
+        {
+          "document": "诊断目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateCatalogue",
+          "name": "Catalogues",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateInspectionOverview": {
+      "document": "集群巡检检查结果概览",
+      "members": [
+        {
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-dsffsd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateDiagnosticOverview",
+          "name": "Diagnostics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateInspectionResult": {
+      "document": "集群巡检检查结果",
+      "members": [
+        {
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateDiagnostic",
+          "name": "Diagnostics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询巡检报告相关报错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateInspectionResultsItem": {
+      "document": "集群巡检结果历史列表",
+      "members": [
+        {
+          "document": "巡检结果名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateStatistic",
+          "name": "Statistics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateResultObjInfo": {
+      "document": "集群巡检诊断对象信息",
+      "members": [
+        {
+          "document": "对象属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name",
+          "member": "string",
+          "name": "PropertyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对象属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pod-test",
+          "member": "string",
+          "name": "PropertyValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateResultsItem": {
+      "document": "集群巡检诊断结果详情信息",
+      "members": [
+        {
+          "document": "诊断结果级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "failed",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断对象名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pod-xxx",
+          "member": "string",
+          "name": "ObjName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateResultObjInfo",
+          "name": "ObjInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断项标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Master Capacity Check",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Master Capacity Check",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Proposal",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断建议文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProposalDocUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断建议文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProposalDocName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KubeJarvisStateStatistic": {
+      "document": "集群巡检统计结果",
+      "members": [
+        {
+          "document": "诊断结果的健康水平\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "good",
+          "member": "string",
+          "name": "HealthyLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断结果的统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Label": {
       "document": "k8s中标签，一般以数组的方式存在",
       "members": [
@@ -14781,6 +15229,106 @@
         }
       ],
       "usage": "both"
+    },
+    "ListClusterInspectionResultsItemsRequest": {
+      "document": "ListClusterInspectionResultsItems请求参数结构体",
+      "members": [
+        {
+          "document": "目标集群ID",
+          "example": "cls-abc",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询历史结果的开始时间，Unix时间戳",
+          "example": "1699682423",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "查询历史结果的结束时间，默认当前距离开始时间3天，Unix时间戳",
+          "example": "1699682424",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListClusterInspectionResultsItemsResponse": {
+      "document": "ListClusterInspectionResultsItems返回参数结构体",
+      "members": [
+        {
+          "document": "巡检结果历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateInspectionResultsItem",
+          "name": "InspectionResultsItems",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListClusterInspectionResultsRequest": {
+      "document": "ListClusterInspectionResults请求参数结构体",
+      "members": [
+        {
+          "document": "目标集群列表，为空查询用户所有集群\n",
+          "example": "[\"cls-dsfef\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "隐藏的字段信息，为了减少无效的字段返回，隐藏字段不会在返回值中返回。可选值：results\n",
+          "example": "[\"results\"]",
+          "member": "string",
+          "name": "Hide",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "指定查询结果的报告名称，默认查询最新的每个集群只查询最新的一条",
+          "example": "default-123456",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListClusterInspectionResultsResponse": {
+      "document": "ListClusterInspectionResults返回参数结构体",
+      "members": [
+        {
+          "document": "集群诊断结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KubeJarvisStateInspectionResult",
+          "name": "InspectionResults",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LivenessOrReadinessProbe": {
       "document": "健康探针",
