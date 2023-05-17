@@ -12,15 +12,15 @@
       {
         "document": "创建新企业安全组规则",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddEnterpriseSecurityGroupRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": \"1\",\n            \"Protocol\": \"TCP\",\n            \"SourceType\": \"net\",\n            \"SourceContent\": \"192.168.0.1\",\n            \"DestType\": \"net\",\n            \"DestContent\": \"192.168.0.2\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"80\",\n            \"Description\": \"规则详情\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"Rules\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"DestContent\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Description\": \"abc\",\n                \"RuleUuid\": 0,\n                \"Sequence\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建新企业安全组规则"
       }
     ],
     "AddNatAcRule": [
       {
-        "document": "添加nat访问控制规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNatAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"xx\",\n            \"SourceType\": \"xx\",\n            \"TargetContent\": \"xx\",\n            \"TargetType\": \"xx\",\n            \"Protocol\": \"xx\",\n            \"RuleAction\": \"xx\",\n            \"Port\": \"xx\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"xx\",\n            \"Description\": \"xx\"\n        }\n    ],\n    \"From\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "添加nat防火墙访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNatAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\"\n        }\n    ],\n    \"From\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "添加nat访问控制规则"
       }
     ],
@@ -191,8 +191,8 @@
     "DescribeEnterpriseSecurityGroupRule": [
       {
         "document": "查询新企业安全组规则",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"Enable\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Description\": \"xx\",\n    \"PageNo\": \"xx\",\n    \"SourceContent\": \"xx\",\n    \"ServiceTemplateId\": \"xx\",\n    \"PageSize\": \"xx\",\n    \"DestContent\": \"xx\",\n    \"RuleAction\": \"xx\",\n    \"Port\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Id\": \"xxx-xxx\",\n                \"OrderIndex\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": \"xx\",\n                \"SourceContent\": \"xx\",\n                \"DestType\": \"xx\",\n                \"ServiceTemplateId\": \"xx\",\n                \"DestContent\": \"xx\",\n                \"RuleAction\": \"xx\",\n                \"Port\": \"xx\",\n                \"Enable\": \"true\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"TotalCount\": \"xx\",\n        \"PageSize\": \"xx\",\n        \"PageNo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"SourceContent\": \"abc\",\n    \"DestContent\": \"abc\",\n    \"Description\": \"abc\",\n    \"RuleAction\": \"abc\",\n    \"Enable\": \"abc\",\n    \"Port\": \"abc\",\n    \"Protocol\": \"abc\",\n    \"ServiceTemplateId\": \"abc\",\n    \"PageNo\": \"abc\",\n    \"PageSize\": \"abc\",\n    \"RuleUuid\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"PageNo\": \"abc\",\n        \"PageSize\": \"abc\",\n        \"Rules\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"SourceType\": \"abc\",\n                \"DestContent\": \"abc\",\n                \"DestType\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Port\": \"abc\",\n                \"ServiceTemplateId\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Description\": \"abc\",\n                \"OrderIndex\": \"abc\",\n                \"Id\": \"abc\",\n                \"Enable\": \"abc\"\n            }\n        ],\n        \"TotalCount\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询新企业安全组规则"
       }
     ],
@@ -531,7 +531,7 @@
     "ModifyStorageSetting": [
       {
         "document": "用于修改日志存储天数，或者清空日志；\n修改日志存储天数StorageAction需要传入storagetime，StorageDay只能是特定的几个值，详情参考控制台下拉框；\n清空日志StorageAction需要传入storagecount，StorageDay不传；",
-        "input": "{\n  \"StorageDay\": 90,\n  \"StorageAction\": \"storagetime\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStorageSetting\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5b034d5-da48-47a6-9d7c-5fb4a3cb7ea1\"\n    }\n}",
         "title": "ModifyStorageSetting"
       }

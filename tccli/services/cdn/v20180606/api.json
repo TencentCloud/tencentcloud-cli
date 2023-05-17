@@ -1627,7 +1627,6 @@
       "document": "scdn 的自定义 cc 规则",
       "members": [
         {
-          "default": "",
           "document": "规则名称",
           "example": "无",
           "member": "string",
@@ -1637,7 +1636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "探测时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -1647,7 +1645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "限频阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -1657,7 +1654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "IP 惩罚开关，可选on|off\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1667,7 +1663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "IP 惩罚时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -1677,7 +1672,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "执行动作，intercept|redirect\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1687,7 +1681,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "动作为 redirect 时，重定向的url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1697,7 +1690,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "七层限频具体配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScdnSevenLayerRules",
@@ -1707,8 +1699,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "是否开启改规则 on 开启，off关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义cc规则配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -11822,7 +11813,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nthird_party: 第三方存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "OriginType",
@@ -11921,7 +11912,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "对象存储回源厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:\naws_s3: AWS S3\nali_oss: 阿里云 OSS\nhw_obs: 华为 OBS\nqiniu_kodo: 七牛云 kodo\nothers: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存储，如腾讯云金融专区COS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hw-oss",
           "member": "string",
           "name": "OriginCompany",
@@ -12955,7 +12946,7 @@
       "document": "组成CacheKey的一部分",
       "members": [
         {
-          "document": "on | off CacheKey是否由QueryString组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheKey是否由QueryString组成配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Switch",
@@ -12973,7 +12964,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用/排除部分url参数，取值有：\nincludeAll：包含所有\nexcludeAll：排除所有\nincludeCustom：自定义包含\nexcludeCustom：自定义排除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Action",
@@ -13879,7 +13870,6 @@
       "document": "scdn 的自定义 cc 规则",
       "members": [
         {
-          "default": "",
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页",
           "example": "无",
           "member": "string",
@@ -13889,7 +13879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则值",
           "example": "无",
           "member": "string",
@@ -13899,7 +13888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则限频",
           "example": "无",
           "member": "uint64",
@@ -13909,7 +13897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "探测时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -13919,7 +13906,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "限频阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -13929,8 +13915,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "IP 惩罚开关，可选on|off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 惩罚配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PunishmentSwitch",
@@ -13939,7 +13924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "IP 惩罚时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -13949,7 +13933,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "执行动作，intercept|redirect\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -13959,7 +13942,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "动作为 redirect 时，重定向的url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -13975,8 +13957,7 @@
       "document": "cc的配置类型",
       "members": [
         {
-          "default": "",
-          "document": "on | off",
+          "document": "scdn cc配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -13985,7 +13966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义 cc 防护规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ScdnCCRules",
@@ -13995,7 +13975,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "增强自定义 cc 防护规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "AdvancedCCRules",
@@ -14005,7 +13984,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "增强自定义 cc 防护规则， 全局\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedCCRules",
@@ -14021,8 +13999,8 @@
       "document": "ddos配置类型",
       "members": [
         {
-          "default": "",
-          "document": "on|off",
+          "document": "Scdn ddos配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14651,8 +14629,7 @@
       "document": "waf配置类型",
       "members": [
         {
-          "default": "",
-          "document": "on|off",
+          "document": "Scdn waf配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -14661,7 +14638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "intercept|observe，默认intercept\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "intercept",
           "member": "string",
@@ -14671,7 +14647,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重定向的错误页面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "见子类型",
           "member": "ScdnErrorPage",
@@ -14681,8 +14656,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "webshell拦截开关，on|off，默认off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "webshell拦截配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "WebShellSwitch",
@@ -14691,7 +14665,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "类型拦截规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "见子类型",
           "member": "ScdnWafRule",
@@ -14701,7 +14674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "waf规则等级，可取100|200|300\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -14711,8 +14683,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "waf子规则开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "waf子规则配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "见子类型",
           "member": "WafSubRuleStatus",
           "name": "SubRuleSwitch",
@@ -14751,8 +14722,8 @@
       "document": "作为CacheKey的一部分",
       "members": [
         {
-          "default": "",
-          "document": "on | off 是否使用scheme作为cache key的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "scheme作为cache key配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14874,8 +14845,8 @@
       "document": "scdn相关的配置",
       "members": [
         {
-          "default": "",
-          "document": "on|off",
+          "document": "scdn 安全配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14889,8 +14860,8 @@
       "document": "SEO 搜索引擎优化配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
-          "document": "SEO 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SEO 搜索引擎优化配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14987,11 +14958,10 @@
       "usage": "both"
     },
     "ShareCname": {
-      "document": "ShareCname配置",
+      "document": "ShareCname配置\nShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.",
       "members": [
         {
-          "default": "",
-          "document": "ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.\n\n* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.",
+          "document": "ShareCname 配置开关, 取值有：\non：开启，使用共享CNAME\noff：关闭，使用默认CNAME\n",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -15000,7 +14970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设置共享CNAME.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mycname-12345.shared.cdn.dnsv1.com",
           "member": "string",
@@ -15220,7 +15189,6 @@
       "document": "累计用量封顶的配置",
       "members": [
         {
-          "default": "",
           "document": "封顶类型，累计用量total，瞬时用量moment\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "total",
           "member": "string",
@@ -15230,7 +15198,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动解封时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
@@ -15240,7 +15207,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带宽、流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000000",
           "member": "uint64",
@@ -15250,7 +15216,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RESOLVE_DNS_TO_ORIGIN",
           "member": "string",
@@ -15260,7 +15225,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "触发提醒阈值百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "uint64",
@@ -15270,8 +15234,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "提醒开关 on/off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "累计用量封顶告警配置，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "AlertSwitch",
@@ -15280,7 +15243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "指标类型，流量flux或带宽bandwidth\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "flux",
           "member": "string",
@@ -15290,7 +15252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "检测周期，单位分钟，60或1440\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
@@ -15300,8 +15261,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "是否开启该选项，on/off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "累计用量封顶配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -15316,8 +15276,8 @@
       "document": "状态码缓存过期配置，默认情况下会对 404 状态码缓存 10 秒",
       "members": [
         {
-          "default": "",
-          "document": "状态码缓存过期配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态码缓存过期配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -15325,8 +15285,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态码缓存过期规则明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StatusCodeCacheRule",
           "name": "CacheRules",
           "required": false,
@@ -15675,8 +15635,8 @@
       "document": "图片优化-TpgAdapter配置",
       "members": [
         {
-          "default": "",
-          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片优化-TpgAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -16521,8 +16481,7 @@
       "document": "访问URL重写配置",
       "members": [
         {
-          "default": "",
-          "document": "访问URL重写配置开关\non：开启\noff：关闭",
+          "document": "访问URL重写配置开关，取值有：\non：开启\noff：关闭",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -16531,7 +16490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问URL重写规则，当Switch为on时必填，规则数量最大为10个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UrlRedirectRule",
@@ -16603,8 +16561,8 @@
       "document": "UserAgent黑白名单配置",
       "members": [
         {
-          "default": "",
-          "document": "开关，on或off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "UserAgent黑白名单配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -16612,8 +16570,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "UA黑白名单生效规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserAgentFilterRule",
           "name": "FilterRules",
           "required": false,
@@ -16711,8 +16669,8 @@
       "document": "视频拖拽配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
-          "document": "视频拖拽开关\non：开启\noff：关闭",
+          "document": "视频拖拽配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -16786,8 +16744,7 @@
       "document": "Waf子规则开关状态",
       "members": [
         {
-          "default": "",
-          "document": "子规则状态，on|off",
+          "document": "Waf子规则开关状态配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -16796,7 +16753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则id列表",
           "example": "[1,2]",
           "member": "int64",
@@ -16809,11 +16765,10 @@
       "usage": "both"
     },
     "WebSocket": {
-      "document": "WebSocket配置",
+      "document": "WebSocket配置\nWebSocket 为ECDN产品功能，如需使用请通过ECDN域名配置.",
       "members": [
         {
-          "default": "",
-          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.\n\n* WebSocket 为ECDN产品功能，如需使用请通过ECDN域名配置.",
+          "document": "WebSocket 超时配置开关，取值有：\non：开启，可以调整超时时间\noff：关闭，平台仍支持WebSocket连接，此时超时时间默认为15秒\n",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -16822,7 +16777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设置超时时间，单位为秒，最大超时时间300秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -16838,8 +16792,8 @@
       "document": "图片优化-WebpAdapter配置",
       "members": [
         {
-          "default": "",
-          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片优化-WebpAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,

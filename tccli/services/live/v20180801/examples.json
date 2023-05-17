@@ -362,9 +362,9 @@
     ],
     "DescribeBillBandwidthAndFluxList": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeBillBandwidthAndFluxList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-02-0100:00:00\n&EndTime=2019-02-0100:10:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"P95PeakBandwidth\": 117042.495,\n        \"P95PeakBandwidthTime\": \"2019-02-01 00:00:00\",\n        \"DataInfoList\": [\n            {\n                \"Bandwidth\": 117042.495,\n                \"Flux\": 4389093.551,\n                \"Time\": \"2019-02-01 00:00:00\",\n                \"PeakTime\": \"2019-02-01 00:00:00\"\n            },\n            {\n                \"Bandwidth\": 110364.995,\n                \"Flux\": 4138687.32,\n                \"Time\": \"2019-02-01 00:05:00\",\n                \"PeakTime\": \"2019-02-01 00:05:00\"\n            },\n            {\n                \"Bandwidth\": 99380.978,\n                \"Flux\": 3726786.679,\n                \"Time\": \"2019-02-01 00:10:00\",\n                \"PeakTime\": \"2019-02-01 00:10:00\"\n            }\n        ],\n        \"PeakBandwidth\": 117042.495,\n        \"PeakBandwidthTime\": \"2019-02-01 00:00:00\",\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\",\n        \"SumFlux\": 12254567.55\n    }\n}",
+        "document": "直播播放带宽和流量数据查询。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillBandwidthAndFluxList\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-02-01T00:10:00+08:00\",\n    \"StartTime\": \"2019-02-01T00:00:00+08:00\",\n    \"PlayDomains\": [\n        \"5000.playdomain.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"P95PeakBandwidth\": 117042.495,\n        \"P95PeakBandwidthTime\": \"2019-02-01T00:00:00+08:00\",\n        \"DataInfoList\": [\n            {\n                \"Bandwidth\": 117042.495,\n                \"Flux\": 4389093.551,\n                \"Time\": \"2019-02-01T00:00:00+08:00\",\n                \"PeakTime\": \"2019-02-01T00:00:00+08:00\"\n            },\n            {\n                \"Bandwidth\": 110364.995,\n                \"Flux\": 4138687.32,\n                \"Time\": \"2019-02-01T00:05:00+08:00\",\n                \"PeakTime\": \"2019-02-01T00:05:00+08:00\"\n            },\n            {\n                \"Bandwidth\": 99380.978,\n                \"Flux\": 3726786.679,\n                \"Time\": \"2019-02-01T00:10:00+08:00\",\n                \"PeakTime\": \"2019-02-01T00:10:00+08:00\"\n            }\n        ],\n        \"PeakBandwidth\": 117042.495,\n        \"PeakBandwidthTime\": \"2019-02-01 00:00:00+08:00\",\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\",\n        \"SumFlux\": 12254567.55\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -378,17 +378,17 @@
     ],
     "DescribeConcurrentRecordStreamNum": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeConcurrentRecordStreamNum\n&LiveType=NormalLive\n&MainlandOrOversea=Mainland\n&PushDomains.0=5000.livepush.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 01:00\",\n                \"Num\": 100\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "document": "查询并发录制路数，对慢直播和普通直播适用。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentRecordStreamNum\n<公共请求参数>\n\n{\n    \"PushDomains\": [\n        \"5000.livepush.com\"\n    ],\n    \"EndTime\": \"2019-03-01 T12:00:00+08:00\",\n    \"StartTime\": \"2019-03-01T00:00:00+08:00\",\n    \"LiveType\": \"NormalLive\",\n    \"MainlandOrOversea\": \"Mainland\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T01:00:00+08:00\",\n                \"Num\": 100\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeDeliverBandwidthList": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeDeliverBandwidthList\n&StartTime=2020-01-07 21:10:00\n&EndTime=2020-01-07 21:15:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Bandwidth\": 45927.6,\n                \"Time\": \"2020-05-01 00:00:00\"\n            },\n            {\n                \"Bandwidth\": 44494.84,\n                \"Time\": \"2020-05-01 00:05:00\"\n            },\n            {\n                \"Bandwidth\": 43061.09,\n                \"Time\": \"2020-05-01 00:10:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
+        "document": "查询直播转推计费带宽。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeliverBandwidthList\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-01-07T21:15:00+08:00\",\n    \"StartTime\": \"2020-01-07T21:10:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Bandwidth\": 45927.6,\n                \"Time\": \"2020-05-01T00:00:00+08:00\"\n            },\n            {\n                \"Bandwidth\": 44494.84,\n                \"Time\": \"2020-05-01T00:05:00+08:00\"\n            },\n            {\n                \"Bandwidth\": 43061.09,\n                \"Time\": \"2020-05-01T00:10:00+08:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -690,9 +690,9 @@
     ],
     "DescribeLiveTranscodeTotalInfo": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTranscodeTotalInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-01 12:00:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Duration\": 100,\n                \"ModuleCodec\": \"\",\n                \"Resolution\": \"540*480\"\n            }\n        ],\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
+        "document": "查询转码总量数据。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTranscodeTotalInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-01T12:00:00+08:00\",\n    \"StartTime\": \"2019-03-01T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Duration\": 100,\n                \"ModuleCodec\": \"\",\n                \"Resolution\": \"540*480\"\n            }\n        ],\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -794,7 +794,7 @@
     ],
     "DescribeScreenShotSheetNumList": [
       {
-        "document": "",
+        "document": "查询直播增值业务--截图的张数。",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeScreenShotSheetNumList\n&StartTime=2019-11-07T16:00:00Z\n&EndTime=2019-11-09T15:59:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Num\": 39623970,\n                \"Time\": \"2019-11-07T16:00:00Z\"\n            },\n            {\n                \"Num\": 41876427,\n                \"Time\": \"2019-11-08T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\"\n    }\n}",
         "title": "请求示例"
@@ -866,9 +866,9 @@
     ],
     "DescribeUploadStreamNums": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUploadStreamNums\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-10-12 00:00:00\",\n    \"EndTime\": \"2020-10-12 01:01:05\",\n    \"Granularity\": 5,\n    \"Domains\": [\n        \"test.com\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Num\": 2557,\n                \"Time\": \"2020-10-12 00:00:00\"\n            },\n            {\n                \"Num\": 2544,\n                \"Time\": \"2020-10-12 00:05:00\"\n            },\n            {\n                \"Num\": 2516,\n                \"Time\": \"2020-10-12 00:10:00\"\n            },\n            {\n                \"Num\": 2542,\n                \"Time\": \"2020-10-12 00:15:00\"\n            },\n            {\n                \"Num\": 2546,\n                \"Time\": \"2020-10-12 00:20:00\"\n            },\n            {\n                \"Num\": 2565,\n                \"Time\": \"2020-10-12 00:25:00\"\n            },\n            {\n                \"Num\": 2557,\n                \"Time\": \"2020-10-12 00:30:00\"\n            },\n            {\n                \"Num\": 2558,\n                \"Time\": \"2020-10-12 00:35:00\"\n            },\n            {\n                \"Num\": 2545,\n                \"Time\": \"2020-10-12 00:40:00\"\n            },\n            {\n                \"Num\": 2567,\n                \"Time\": \"2020-10-12 00:45:00\"\n            },\n            {\n                \"Num\": 2584,\n                \"Time\": \"2020-10-12 00:50:00\"\n            },\n            {\n                \"Num\": 2585,\n                \"Time\": \"2020-10-12 00:55:00\"\n            },\n            {\n                \"Num\": 2566,\n                \"Time\": \"2020-10-12 01:00:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
+        "document": "直播上行路数查询。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUploadStreamNums\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-10-12T00:00:00+08:00\",\n    \"EndTime\": \"2020-10-12T01:01:05+08:00\",\n    \"Granularity\": 5,\n    \"Domains\": [\n        \"test.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Num\": 2557,\n                \"Time\": \"2020-10-12T00:00:00+08:00\"\n            },\n            {\n                \"Num\": 2544,\n                \"Time\": \"2020-10-12T00:05:00+08:00\"\n            },\n            {\n                \"Num\": 2516,\n                \"Time\": \"2020-10-12T00:10:00+08:00\"\n            },\n            {\n                \"Num\": 2542,\n                \"Time\": \"2020-10-12T00:15:00+08:00\"\n            },\n            {\n                \"Num\": 2546,\n                \"Time\": \"2020-10-12T00:20:00+08:00\"\n            },\n            {\n                \"Num\": 2565,\n                \"Time\": \"2020-10-12T00:25:00+08:00\"\n            },\n            {\n                \"Num\": 2557,\n                \"Time\": \"2020-10-12T00:30:00+08:00\"\n            },\n            {\n                \"Num\": 2558,\n                \"Time\": \"2020-10-12T00:35:00+08:00\"\n            },\n            {\n                \"Num\": 2545,\n                \"Time\": \"2020-10-12T00:40:00+08:00\"\n            },\n            {\n                \"Num\": 2567,\n                \"Time\": \"2020-10-12T00:45:00+08:00\"\n            },\n            {\n                \"Num\": 2584,\n                \"Time\": \"2020-10-12T00:50:00+08:00\"\n            },\n            {\n                \"Num\": 2585,\n                \"Time\": \"2020-10-12T00:55:00+08:00\"\n            },\n            {\n                \"Num\": 2566,\n                \"Time\": \"2020-10-12T01:00:00+08:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
         "title": "请求示例"
       }
     ],

@@ -744,7 +744,6 @@
       "document": "告警对象",
       "members": [
         {
-          "default": "",
           "document": "日志主题ID。",
           "example": "380fe1f1-0c7b-4b0d-xxxx-d514959db1bb",
           "member": "string",
@@ -754,7 +753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "查询语句。",
           "example": "code:200 | select count(*) as success_counts",
           "member": "string",
@@ -764,7 +762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警对象序号；从1开始递增。",
           "example": "1",
           "member": "int64",
@@ -774,7 +771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
           "example": "-5",
           "member": "int64",
@@ -784,7 +780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
           "example": "0",
           "member": "int64",
@@ -794,13 +789,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志集ID。",
           "example": "1c012db7-2cfd-4418-xxxx-7342c7a42516",
           "member": "string",
           "name": "LogsetId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

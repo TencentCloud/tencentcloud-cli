@@ -622,7 +622,7 @@
           "type": "list"
         },
         {
-          "document": "撤销理由",
+          "document": "撤销理由,不超过200个字符",
           "example": "无",
           "member": "string",
           "name": "CancelMessage",

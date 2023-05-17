@@ -709,6 +709,39 @@
       ],
       "usage": "out"
     },
+    "CalleeAttribute": {
+      "document": "被叫属性",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "document": "被叫号码",
+          "example": "008613012345678",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "随路数据",
+          "example": "xxx",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "参数",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "CarrierPrivilegeNumberApplicant": {
       "document": "运营商白名单号码申请单",
       "members": [
@@ -867,6 +900,22 @@
           "example": "无",
           "member": "Variable",
           "name": "Variables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "UUI",
+          "example": "无",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "被叫属性",
+          "example": "无",
+          "member": "CalleeAttribute",
+          "name": "CalleeAttributes",
           "required": false,
           "type": "list"
         }

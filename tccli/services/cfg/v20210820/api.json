@@ -251,7 +251,6 @@
       "document": "DescribeTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页Limit",
           "example": "10",
           "member": "int64",
@@ -260,7 +259,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页Offset",
           "example": "0",
           "member": "int64",
@@ -269,7 +267,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "演练名称",
           "example": "\"1\"",
           "member": "string",
@@ -278,7 +275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签键",
           "example": "\"1\"",
           "member": "string",
@@ -287,8 +283,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "状态",
+          "document": "任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)",
           "example": "1",
           "member": "int64",
           "name": "TaskStatus",
@@ -296,7 +291,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始时间，固定格式%Y-%m-%d %H:%M:%S",
           "example": "\"1\"",
           "member": "string",
@@ -305,7 +299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，固定格式%Y-%m-%d %H:%M:%S",
           "example": "\"1\"",
           "member": "string",
@@ -314,7 +307,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签对",
           "example": "无",
           "member": "TagWithDescribe",
@@ -333,7 +325,6 @@
           "example": "无",
           "member": "TaskListItem",
           "name": "TaskList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -342,7 +333,6 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

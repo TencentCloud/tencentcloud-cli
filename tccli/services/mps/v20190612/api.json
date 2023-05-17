@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DescribeTaskDetail": {
-      "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。",
+      "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务详情",
       "output": "DescribeTaskDetailResponse",
@@ -1359,7 +1359,6 @@
       "document": "智能分析结果",
       "members": [
         {
-          "default": "",
           "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>",
           "example": "Classification",
           "member": "string",
@@ -1369,7 +1368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskClassificationResult",
@@ -1379,7 +1377,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskCoverResult",
@@ -1389,7 +1386,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskTagResult",
@@ -1399,7 +1395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskFrameTagResult",
@@ -1409,7 +1404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskHighlightResult",
@@ -2108,7 +2102,6 @@
       "document": "智能识别结果。",
       "members": [
         {
-          "default": "",
           "document": "任务的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>",
           "example": "FaceRecognition",
           "member": "string",
@@ -2118,7 +2111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "人脸识别结果，当 Type 为 \n FaceRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskFaceResult",
@@ -2128,7 +2120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "语音关键词识别结果，当 Type 为\n AsrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResult",
@@ -2138,7 +2129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "语音全文识别结果，当 Type 为\n AsrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResult",
@@ -2148,7 +2138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "文本关键词识别结果，当 Type 为\n OcrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResult",
@@ -2158,7 +2147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "文本全文识别结果，当 Type 为\n OcrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResult",
@@ -2168,8 +2156,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "翻译结果，当 Type 为\n TransTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "翻译结果，当 Type 为\n\nTransTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionTaskTransTextResult",
           "name": "TransTextTask",
@@ -10274,7 +10261,6 @@
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "视频处理任务的任务 ID。",
           "example": "235303****-WorkflowTask-80108cc3380155d98b2e3573a48a******",
           "member": "string",
@@ -10293,7 +10279,6 @@
           "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10302,7 +10287,6 @@
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10311,7 +10295,6 @@
           "example": "2019-07-16T06:21:27Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10320,7 +10303,6 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10329,7 +10311,6 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10338,7 +10319,6 @@
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10347,7 +10327,6 @@
           "example": "无",
           "member": "WorkflowTask",
           "name": "WorkflowTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10356,7 +10335,6 @@
           "example": "无",
           "member": "LiveStreamProcessTask",
           "name": "LiveStreamProcessTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10365,7 +10343,6 @@
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10374,7 +10351,6 @@
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10383,7 +10359,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "SessionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10392,7 +10367,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10401,7 +10375,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "ExtInfo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10410,7 +10383,6 @@
           "example": "无",
           "member": "ScheduleTask",
           "name": "ScheduleTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11100,8 +11072,8 @@
       "document": "编辑视频任务的输出",
       "members": [
         {
-          "default": "",
           "document": "编辑后文件的目标存储。",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "required": true,
@@ -11109,13 +11081,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "编辑后的视频文件路径。",
+          "example": "/xx.mp4",
           "member": "string",
           "name": "Path",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "编辑后的视频文件元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12309,8 +12290,8 @@
       "document": "智能精彩集锦片段列表。",
       "members": [
         {
-          "default": "",
           "document": "置信度。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -12318,8 +12299,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片段起始时间偏移。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
           "required": true,
@@ -12327,8 +12308,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片段结束时间偏移。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
           "required": true,
@@ -13987,7 +13968,6 @@
       "document": "点播文件音频流信息",
       "members": [
         {
-          "default": "",
           "document": "音频流的码率，单位：bps。",
           "example": "8000",
           "member": "int64",
@@ -13997,7 +13977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频流的采样率，单位：hz。",
           "example": "8000",
           "member": "int64",
@@ -14007,7 +13986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频流的编码格式，例如 aac。",
           "example": "aac",
           "member": "string",
@@ -14017,13 +13995,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频声道数，例如 2。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Channel",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音频Codecs。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp4a.40.2",
+          "member": "string",
+          "name": "Codecs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音频响度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Loudness",
+          "required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -14550,7 +14545,6 @@
       "document": "对视频转自适应码流任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "NULL",
           "member": "string",
@@ -14560,7 +14554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "NULL",
           "member": "string",
@@ -14570,7 +14563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "NULL",
           "member": "int64",
@@ -14580,7 +14572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "NULL",
           "member": "string",
@@ -14590,7 +14581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频转自适应码流任务的输入。",
           "example": "NULL",
           "member": "AdaptiveDynamicStreamingTaskInput",
@@ -14600,13 +14590,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频转自适应码流任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AdaptiveDynamicStreamingInfoItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14616,7 +14623,6 @@
       "document": "转动图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "NULL",
           "member": "string",
@@ -14626,7 +14632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "NULL",
           "member": "string",
@@ -14636,7 +14641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "NULL",
           "member": "int64",
@@ -14646,7 +14650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "NULL",
           "member": "string",
@@ -14656,7 +14659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转动图任务的输入。",
           "example": "NULL",
           "member": "AnimatedGraphicTaskInput",
@@ -14666,13 +14668,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转动图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaAnimatedGraphicsItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14682,7 +14701,6 @@
       "document": "对视频截雪碧图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "NULL",
           "member": "string",
@@ -14692,7 +14710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "NULL",
           "member": "string",
@@ -14702,7 +14719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "NULL",
           "member": "int64",
@@ -14712,7 +14728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "NULL",
           "member": "string",
@@ -14722,7 +14737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频截雪碧图任务的输入。",
           "example": "NULL",
           "member": "ImageSpriteTaskInput",
@@ -14732,13 +14746,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频截雪碧图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaImageSpriteItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14883,7 +14914,6 @@
       "document": "对视频做采样截图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "NULL",
           "member": "string",
@@ -14893,7 +14923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "NULL",
           "member": "string",
@@ -14903,7 +14932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "NULL",
           "member": "int64",
@@ -14913,7 +14941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "NULL",
           "member": "string",
@@ -14923,7 +14950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频做采样截图任务输入。",
           "example": "NULL",
           "member": "SampleSnapshotTaskInput",
@@ -14933,13 +14959,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频做采样截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaSampleSnapshotItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14949,7 +14992,6 @@
       "document": "对视频按指定时间点截图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "NULL",
           "member": "string",
@@ -14959,7 +15001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "NULL",
           "member": "string",
@@ -14969,7 +15010,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "NULL",
           "member": "int64",
@@ -14979,7 +15019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "NULL",
           "member": "string",
@@ -14989,7 +15028,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频按指定时间点截图任务输入。",
           "example": "NULL",
           "member": "SnapshotByTimeOffsetTaskInput",
@@ -14999,13 +15037,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对视频按指定时间点截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaSnapshotByTimeOffsetItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -15327,7 +15382,6 @@
       "document": "点播文件视频流信息",
       "members": [
         {
-          "default": "",
           "document": "视频流的码率，单位：bps。",
           "example": "100000",
           "member": "int64",
@@ -15337,7 +15391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流的高度，单位：px。",
           "example": "1920",
           "member": "int64",
@@ -15347,7 +15400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流的宽度，单位：px。",
           "example": "1080",
           "member": "int64",
@@ -15357,7 +15409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流的编码格式，例如 h264。",
           "example": "h264",
           "member": "string",
@@ -15367,7 +15418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帧率，单位：hz。",
           "example": "30",
           "member": "int64",
@@ -15377,7 +15427,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bt470bg",
           "member": "string",
@@ -15387,7 +15436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gbr",
           "member": "string",
@@ -15397,7 +15445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bt709",
           "member": "string",
@@ -15407,12 +15454,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "HDR类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sdr",
           "member": "string",
           "name": "HdrType",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频Codecs。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "avc1.ffe100",
+          "member": "string",
+          "name": "Codecs",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -19327,7 +19382,6 @@
       "document": "编排视频分析任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19337,7 +19391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19347,7 +19400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19357,7 +19409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"xx\"",
           "member": "string",
@@ -19367,7 +19418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分析任务的输入。",
           "example": "NULL",
           "member": "AiAnalysisTaskInput",
@@ -19377,13 +19427,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分析任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiAnalysisResult",
           "name": "Output",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -19459,7 +19526,6 @@
       "document": "编排视频识别任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19469,7 +19535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19479,7 +19544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19489,7 +19553,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"xx\"",
           "member": "string",
@@ -19499,7 +19562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "识别任务的输入。",
           "example": "NULL",
           "member": "AiRecognitionTaskInput",
@@ -19509,13 +19571,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "识别任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiRecognitionResult",
           "name": "Output",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -19525,7 +19604,6 @@
       "document": "编排视频审核任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19535,7 +19613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19545,7 +19622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19555,7 +19631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"xx\"",
           "member": "string",
@@ -19565,7 +19640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "审核任务的输入。",
           "example": "NULL",
           "member": "AiContentReviewTaskInput",
@@ -19575,13 +19649,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "审核任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiContentReviewResult",
           "name": "Output",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -20202,8 +20293,8 @@
       "document": "极速高清参数配置。",
       "members": [
         {
-          "default": "",
-          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100。</li>\n不填代表不启用极速高清。",
+          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100（视频极速高清）。</li>\n<li>TEHD-200：极速高清-200（音频极速高清）。</li>\n不填代表不启用极速高清。",
+          "example": "TEHD-100",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -20211,8 +20302,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
+          "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
           "required": false,
@@ -20226,8 +20317,8 @@
       "document": "极速高清参数配置。",
       "members": [
         {
-          "default": "",
-          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100。</li>\n不填代表不修改。",
+          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100（视频极速高清）。</li>\n<li>TEHD-200：极速高清-200（音频极速高清）。</li>\n不填代表不修改。",
+          "example": "TEHD-100",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -20235,8 +20326,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频码率上限，不填代表不修改。",
+          "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
           "required": false,
@@ -20757,7 +20848,6 @@
       "document": "转码任务输入参数类型",
       "members": [
         {
-          "default": "",
           "document": "视频转码模板 ID。",
           "example": "20",
           "member": "uint64",
@@ -20767,7 +20857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频转码自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "RawTranscodeParameter",
@@ -20777,7 +20866,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频转码自定义参数，当 Definition 不填 0 时有效。\n当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。\n该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "OverrideTranscodeParameter",
@@ -20787,7 +20875,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "WatermarkInput",
@@ -20797,7 +20884,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "马赛克列表，最大可支持 10 张。",
           "example": "null",
           "member": "MosaicInput",
@@ -20807,7 +20893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
           "example": "null",
           "member": "float",
@@ -20817,7 +20902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
           "example": "null",
           "member": "float",
@@ -20827,7 +20911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "TaskOutputStorage",
@@ -20837,7 +20920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转码后主文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_transcode_{definition}.{format}`。",
           "example": "null",
           "member": "string",
@@ -20847,7 +20929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后分片文件的输出路径（转码 HLS 时 ts 的路径），只能为相对路径。如果不填，则默认为：`{inputName}_transcode_{definition}_{number}.{format}`。",
           "example": "null",
           "member": "string",
@@ -20857,7 +20938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "NumberFormat",
@@ -20867,7 +20947,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "片头片尾参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{   \"HeadSet\": [     {       \"Type\": \"URL\",       \"UrlInputInfo\"",
           "member": "HeadTailParameter",

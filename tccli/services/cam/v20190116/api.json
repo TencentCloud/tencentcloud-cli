@@ -1880,12 +1880,19 @@
       "document": "CreateUserSAMLConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "SAML元数据文档，需要base64 encode",
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadataDocument",
           "required": true,
+          "type": "string"
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2723,7 +2730,6 @@
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadata",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2732,8 +2738,15 @@
           "example": "11",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6650,7 +6663,6 @@
       "document": "UpdateUserSAMLConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "修改的操作类型:enable:启用,disable:禁用,updateSAML:修改元数据文档",
           "example": "enable",
           "member": "string",
@@ -6659,11 +6671,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "元数据文档，需要base64 encode，仅当Operate为updateSAML时需要此参数",
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadataDocument",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
           "required": false,
           "type": "string"
         }

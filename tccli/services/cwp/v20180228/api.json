@@ -938,6 +938,20 @@
       "output": "DescribeLicenseListResponse",
       "status": "online"
     },
+    "DescribeLogStorageConfig": {
+      "document": "获取日志存储配置",
+      "input": "DescribeLogStorageConfigRequest",
+      "name": "获取日志存储配置",
+      "output": "DescribeLogStorageConfigResponse",
+      "status": "online"
+    },
+    "DescribeLogStorageRecord": {
+      "document": "获取日志存储量记录",
+      "input": "DescribeLogStorageRecordRequest",
+      "name": "获取日志存储量记录",
+      "output": "DescribeLogStorageRecordResponse",
+      "status": "online"
+    },
     "DescribeLogStorageStatistic": {
       "document": "获取日志检索容量使用统计",
       "input": "DescribeLogStorageStatisticRequest",
@@ -1734,6 +1748,13 @@
       "input": "ModifyLicenseUnBindsRequest",
       "name": "授权批量解绑",
       "output": "ModifyLicenseUnBindsResponse",
+      "status": "online"
+    },
+    "ModifyLogStorageConfig": {
+      "document": "修改日志存储配置",
+      "input": "ModifyLogStorageConfigRequest",
+      "name": "修改日志存储配置",
+      "output": "ModifyLogStorageConfigResponse",
       "status": "online"
     },
     "ModifyMachineRemark": {
@@ -18307,6 +18328,72 @@
       ],
       "type": "object"
     },
+    "DescribeLogStorageConfigRequest": {
+      "document": "DescribeLogStorageConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLogStorageConfigResponse": {
+      "document": "DescribeLogStorageConfig返回参数结构体",
+      "members": [
+        {
+          "document": "存储类型，string数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\\\"malware\\\",\\\"risk_process\\\",\\\"hostlogin\\\",\\\"bruteattack\\\",\\\"risk_dns\\\",\\\"bash\\\",\\\"privilege_escalation\\\",\\\"reverse_shell\\\",\\\"emergency_vul\\\",\\\"Web-CMS_vul\\\",\\\"application_vul\\\",\\\"linux_app_vul\\\",\\\"windows_sys_vul\\\",\\\"baseline\\\",\\\"java_shell\\\",\\\"file_tamper\\\",\\\"attack_logs\\\",\\\"tamper_protect_exceptions\\\",\\\"tamper_protect_logs\\\",\\\"agent_offline\\\",\\\"agent_uninstall\\\"]",
+          "member": "string",
+          "name": "Type",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志存储天数，3640表示不限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3640",
+          "member": "int64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本月Period的修改次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PeriodModifyCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogStorageRecordRequest": {
+      "document": "DescribeLogStorageRecord请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLogStorageRecordResponse": {
+      "document": "DescribeLogStorageRecord返回参数结构体",
+      "members": [
+        {
+          "document": "存储量记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogStorageRecord",
+          "name": "Records",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogStorageStatisticRequest": {
       "document": "DescribeLogStorageStatistic请求参数结构体",
       "members": [],
@@ -26796,6 +26883,39 @@
       ],
       "usage": "out"
     },
+    "LogStorageRecord": {
+      "document": "日志存储量记录",
+      "members": [
+        {
+          "document": "年月份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "202304",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存储量，字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总量，字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "InquireSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LoginWhiteCombinedInfo": {
       "document": "异地登录合并后白名单",
       "members": [
@@ -28504,6 +28624,48 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogStorageConfigRequest": {
+      "document": "ModifyLogStorageConfig请求参数结构体",
+      "members": [
+        {
+          "document": "是否修改有效期",
+          "example": "true",
+          "member": "bool",
+          "name": "IsModifyPeriod",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "document": "存储类型，string数组",
+          "example": "[\\\"malware\\\",\\\"risk_process\\\",\\\"hostlogin\\\",\\\"bruteattack\\\",\\\"risk_dns\\\",\\\"bash\\\",\\\"privilege_escalation\\\",\\\"reverse_shell\\\",\\\"emergency_vul\\\",\\\"Web-CMS_vul\\\",\\\"application_vul\\\",\\\"linux_app_vul\\\",\\\"windows_sys_vul\\\",\\\"baseline\\\",\\\"java_shell\\\",\\\"file_tamper\\\",\\\"attack_logs\\\",\\\"tamper_protect_exceptions\\\",\\\"tamper_protect_logs\\\",\\\"agent_offline\\\",\\\"agent_uninstall\\\"]",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "日志存储天数，3640表示不限",
+          "example": "3640",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogStorageConfigResponse": {
+      "document": "ModifyLogStorageConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

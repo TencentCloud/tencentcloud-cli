@@ -736,7 +736,7 @@
       "status": "online"
     },
     "DescribeUploadStreamNums": {
-      "document": "直播上行路数查询",
+      "document": "直播上行路数查询。",
       "input": "DescribeUploadStreamNumsRequest",
       "name": "直播上行路数查询",
       "output": "DescribeUploadStreamNumsResponse",
@@ -1209,7 +1209,8 @@
       "members": [
         {
           "default": "",
-          "document": "返回格式：\nyyyy-mm-dd HH:MM:SS\n根据粒度会有不同程度的缩减。",
+          "document": "返回格式：\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n根据粒度会有不同程度的缩减。",
+          "example": "2022-11-06T16:50:00+08:00",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -1219,6 +1220,7 @@
         {
           "default": "",
           "document": "带宽。",
+          "example": "0.01",
           "member": "float",
           "name": "Bandwidth",
           "required": true,
@@ -1316,7 +1318,8 @@
       "members": [
         {
           "default": "",
-          "document": "时间点，格式: yyyy-mm-dd HH:MM:SS。",
+          "document": "时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2022-11-14T16:40:00+08:00",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -1326,6 +1329,7 @@
         {
           "default": "",
           "document": "带宽，单位是 Mbps。",
+          "example": "0.1",
           "member": "float",
           "name": "Bandwidth",
           "required": true,
@@ -1335,6 +1339,7 @@
         {
           "default": "",
           "document": "流量，单位是 MB。",
+          "example": "0.1",
           "member": "float",
           "name": "Flux",
           "required": true,
@@ -1343,7 +1348,8 @@
         },
         {
           "default": "",
-          "document": "峰值时间点，格式: yyyy-mm-dd HH:MM:SS，原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。",
+          "document": "峰值时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n原始数据为5分钟粒度，如果查询小时和天粒度数据，则返回对应粒度内的带宽峰值时间点。",
+          "example": "2022-11-14T16:40:00+08:00",
           "member": "string",
           "name": "PeakTime",
           "required": true,
@@ -1618,7 +1624,8 @@
       "members": [
         {
           "default": "",
-          "document": "时间点，格式: yyyy-mm-dd HH:MM:SS。",
+          "document": "时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2019-01-08T10:00:00Z",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -1628,6 +1635,7 @@
         {
           "default": "",
           "document": "带宽，单位: Mbps。",
+          "example": "0.1",
           "member": "float",
           "name": "Bandwidth",
           "required": true,
@@ -1637,6 +1645,7 @@
         {
           "default": "",
           "document": "流量，单位: MB。",
+          "example": "0.1",
           "member": "float",
           "name": "Flux",
           "required": true,
@@ -1646,6 +1655,7 @@
         {
           "default": "",
           "document": "新增请求数。",
+          "example": "1",
           "member": "uint64",
           "name": "Request",
           "required": true,
@@ -1655,6 +1665,7 @@
         {
           "default": "",
           "document": "并发连接数。",
+          "example": "1",
           "member": "uint64",
           "name": "Online",
           "required": true,
@@ -4582,25 +4593,22 @@
       "document": "DescribeBillBandwidthAndFluxList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
-          "example": "2019-02-0100:00:00",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。支持最近3年的数据查询",
-          "example": "2019-02-0100:10:00",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n起始和结束时间跨度不支持超过31天。支持最近3年的数据查询",
+          "example": "2019-02-01T00:10:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "直播播放域名，若不填，表示总体数据。",
           "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
@@ -4609,7 +4617,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。\n注：LEB（快直播）只支持国内+国外数据查询。",
           "example": "Mainland",
           "member": "string",
@@ -4618,7 +4625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n60：1小时粒度（跨度不支持超过一个月），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
           "example": "5",
           "member": "uint64",
@@ -4627,7 +4633,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
           "example": "LEB",
           "member": "string",
@@ -4636,7 +4641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "大区，映射表如下：\nChina Mainland 中国大陆\nAsia Pacific I 亚太一区\nAsia Pacific II 亚太二区\nAsia Pacific III 亚太三区\nEurope 欧洲\nNorth America 北美\nSouth America 南美\nMiddle East 中东\nAfrica 非洲。",
           "example": "[\"China Mainland\"]",
           "member": "string",
@@ -4651,11 +4655,10 @@
       "document": "DescribeBillBandwidthAndFluxList返回参数结构体",
       "members": [
         {
-          "document": "峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。",
-          "example": "2019-02-01 00:00:00",
+          "document": "峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "PeakBandwidthTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4664,16 +4667,14 @@
           "example": "117042.495",
           "member": "float",
           "name": "PeakBandwidth",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "document": "95峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。",
-          "example": "2019-02-01 00:00:00",
+          "document": "95峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "P95PeakBandwidthTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4682,7 +4683,6 @@
           "example": "117042.495",
           "member": "float",
           "name": "P95PeakBandwidth",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4691,7 +4691,6 @@
           "example": "12254567.55",
           "member": "float",
           "name": "SumFlux",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4700,7 +4699,6 @@
           "example": "无",
           "member": "BillDataInfo",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4843,7 +4841,6 @@
       "document": "DescribeConcurrentRecordStreamNum请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "直播类型，SlowLive：慢直播。\nNormalLive：普通直播。",
           "example": "NormalLive",
           "member": "string",
@@ -4852,25 +4849,22 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "起始时间，格式：yyyy-mm-dd HH:MM:SS。\n可以查询最近180天的数据。",
-          "example": "2019-03-01 00:00:00",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n可以查询最近180天的数据。",
+          "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间，格式：yyyy-mm-dd HH:MM:SS。\n时间跨度最大支持31天。",
-          "example": "2019-03-01 12:00:00",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n时间跨度最大支持31天。",
+          "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。",
           "example": "Mainland",
           "member": "string",
@@ -4879,7 +4873,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "推流域名列表，不填表示总体数据。",
           "example": "[\"5000.livepush.com\\r\\n\"]",
           "member": "string",
@@ -4898,7 +4891,6 @@
           "example": "无",
           "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4915,8 +4907,7 @@
       "document": "DescribeDeliverBandwidthList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "起始时间，格式为%Y-%m-%d %H:%M:%S。",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2020-01-07 21:10:00",
           "member": "string",
           "name": "StartTime",
@@ -4924,8 +4915,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间，格式为%Y-%m-%d %H:%M:%S，支持最近三个月的数据查询，时间跨度最大是1个月。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n支持最近三个月的数据查询，时间跨度最大是1个月。",
           "example": "2020-01-07 21:15:00",
           "member": "string",
           "name": "EndTime",
@@ -4943,7 +4933,6 @@
           "example": "无",
           "member": "BandwidthInfo",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7056,8 +7045,7 @@
       "document": "DescribeLiveTranscodeTotalInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "开始时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7065,8 +7053,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7074,7 +7061,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "推流域名列表，若不填，表示查询所有域名总体数据。\n指定域名时返回1小时粒度数据。",
           "example": "[\"test.com\"]",
           "member": "string",
@@ -7083,7 +7069,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "可选值：\nMainland：查询中国大陆（境内）数据，\nOversea：则查询国际/港澳台（境外）数据，\n默认：查询全球地区（境内+境外）的数据。",
           "example": "Mainland",
           "member": "string",
@@ -7102,7 +7087,6 @@
           "example": "无",
           "member": "TranscodeTotalInfo",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8169,8 +8153,7 @@
       "document": "DescribeScreenShotSheetNumList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "utc起始时间，格式为yyyy-mm-ddTHH:MM:SSZ",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2019-11-07T16:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -8178,8 +8161,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "utc结束时间，格式为yyyy-mm-ddTHH:MM:SSZ，支持查询最近1年数据。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n支持查询最近1年的数据。",
           "example": "2019-11-09T15:59:00Z",
           "member": "string",
           "name": "EndTime",
@@ -8187,7 +8169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。",
           "example": "Mainland",
           "member": "string",
@@ -8196,7 +8177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "推流域名（支持查询2019年11 月1日之后的域名维度数据）。",
           "example": "[\"push.live.com\"]",
           "member": "string",
@@ -8205,7 +8185,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。",
           "example": "Minute",
           "member": "string",
@@ -8224,7 +8203,6 @@
           "example": "无",
           "member": "TimeValue",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8971,25 +8949,22 @@
       "document": "DescribeUploadStreamNums请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
-          "example": "2020-10-12 00:00:00",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "example": "2020-10-12T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。支持最近31天的数据查询",
-          "example": "2020-10-12 01:01:05",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n起始和结束时间跨度不支持超过31天。支持最近31天的数据查询",
+          "example": "2020-10-12T01:01:05+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "直播域名，若不填，表示总体数据。",
           "example": "[\"test.com\"]",
           "member": "string",
@@ -8998,7 +8973,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
           "example": "5",
           "member": "uint64",
@@ -9017,7 +8991,6 @@
           "example": "无",
           "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14240,7 +14213,8 @@
       "members": [
         {
           "default": "",
-          "document": "时间点，北京时间，\n示例：2019-03-01 00:00:00。",
+          "document": "时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2022-11-14T14:04:59+08:00",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -14250,6 +14224,7 @@
         {
           "default": "",
           "document": "转码时长，单位：分钟。",
+          "example": "1",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -14259,6 +14234,7 @@
         {
           "default": "",
           "document": "编码方式，带模块，\n示例：\nliveprocessor_H264 =》直播转码-H264，\nliveprocessor_H265 =》 直播转码-H265，\ntopspeed_H264 =》极速高清-H264，\ntopspeed_H265 =》极速高清-H265。",
+          "example": "liveprocessor_H264",
           "member": "string",
           "name": "ModuleCodec",
           "required": true,
@@ -14268,6 +14244,7 @@
         {
           "default": "",
           "document": "分辨率，\n示例：540*480。",
+          "example": "720P",
           "member": "string",
           "name": "Resolution",
           "required": true,

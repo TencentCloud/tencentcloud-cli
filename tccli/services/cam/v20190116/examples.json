@@ -122,7 +122,7 @@
     ],
     "CreateUserSAMLConfig": [
       {
-        "document": "",
+        "document": "创建用户SAML配置",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSAMLConfig\n<公共请求参数>\n\n{\n    \"SAMLMetadataDocument\": \"metadataDocumentDemo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建用户SAML配置"
@@ -274,9 +274,9 @@
     ],
     "DescribeUserSAMLConfig": [
       {
-        "document": "",
+        "document": "查询用户SAML配置",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSAMLConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"\",\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"\",\n        \"Status\": 0,\n        \"AuxiliaryDomain\": \"xx.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询用户SAML配置"
       }
     ],
@@ -694,7 +694,7 @@
     ],
     "UpdateUserSAMLConfig": [
       {
-        "document": "",
+        "document": "修改用户SAML配置",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserSAMLConfig\n<公共请求参数>\n\n{\n    \"Operate\": \"updateSAML\",\n    \"SAMLMetadataDocument\": \"metadataDocumentDemo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改用户SAML配置"

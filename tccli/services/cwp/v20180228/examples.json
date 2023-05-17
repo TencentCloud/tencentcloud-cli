@@ -1096,6 +1096,22 @@
         "title": "示例"
       }
     ],
+    "DescribeLogStorageConfig": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStorageConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Type\": [\n            \"abc\"\n        ],\n        \"Period\": 0,\n        \"PeriodModifyCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLogStorageRecord": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStorageRecord\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Month\": \"abc\",\n                \"UsedSize\": 1,\n                \"InquireSize\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeLogStorageStatistic": [
       {
         "document": "",
@@ -2017,6 +2033,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicenseUnBinds\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxx-xxxx-xx-xxx\",\n    \"LicenseType\": 0,\n    \"IsAll\": true,\n    \"QuuidList\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11d268f-1601-4f63-9131-0382537b9e55\",\n        \"ErrMsg\": []\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyLogStorageConfig": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogStorageConfig\n<公共请求参数>\n\n{\n    \"Type\": [\n        \"abc\"\n    ],\n    \"Period\": 0,\n    \"IsModifyPeriod\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],

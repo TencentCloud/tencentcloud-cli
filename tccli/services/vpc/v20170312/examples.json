@@ -916,6 +916,14 @@
         "title": "添加协议端口组模板成员"
       }
     ],
+    "DeleteTrafficPackages": [
+      {
+        "document": "删除共享流量包",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTrafficPackages\n&TrafficPackageIds.0=tfp-c9gcdb0t\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5957a632-12b2-4051-b103-ecd77145ecbd\"\n    }\n}",
+        "title": "删除流量包"
+      }
+    ],
     "DeleteVpc": [
       {
         "document": "删除VPC",
@@ -1584,6 +1592,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSnapshotPolicies\n&Offset=0\n&Limit=2\n&Filters.0.Name=snapshot-policy-id\n&Filters.0.Values.0=sspolicy-g6jwvm35\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SnapshotPolicySet\": [\n            {\n                \"SnapshotPolicyId\": \"sspolicy-g6jwvm35\",\n                \"SnapshotPolicyName\": \"test2\",\n                \"KeepTime\": 180,\n                \"CosRegion\": \"ap-guangzhou\",\n                \"CosBucket\": \"test1-251197522\",\n                \"CreateTime\": \"2021-10-08 16:09:46\",\n                \"Enable\": true,\n                \"BackupType\": \"operate\",\n                \"CreateNewCos\": false\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
         "title": "查询快照策略"
+      }
+    ],
+    "DescribeSubnetResourceDashboard": [
+      {
+        "document": "查看Subnet资源信息",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSubnetResourceDashboard\r\n&SubnetIds.0=subnet-12345678\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResourceStatisticsSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"Ip\": 14,\n                \"ResourceStatisticsItemSet\": [\n                    {\n                        \"ResourceType\": \"NetworkDetect\",\n                        \"ResourceName\": \"NetworkDetect\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"LoadBanlancer\",\n                        \"ResourceName\": \"LoadBanlancer\",\n                        \"ResourceCount\": 2\n                    },\n                    {\n                        \"ResourceType\": \"MySQL\",\n                        \"ResourceName\": \"MySQL\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"Memcached\",\n                        \"ResourceName\": \"Memcached\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"CTSDB\",\n                        \"ResourceName\": \"CTSDB\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"TDSQL\",\n                        \"ResourceName\": \"TDSQL\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"SQL Server\",\n                        \"ResourceName\": \"SQL Server\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"PostgreSQL\",\n                        \"ResourceName\": \"PostgreSQL\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"NAS\",\n                        \"ResourceName\": \"NAS\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Snova\",\n                        \"ResourceName\": \"Snova\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Ckafka\",\n                        \"ResourceName\": \"Ckafka\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"Grocery\",\n                        \"ResourceName\": \"Grocery\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Cloudhsm\",\n                        \"ResourceName\": \"Cloudhsm\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"MongoDB\",\n                        \"ResourceName\": \"MongoDB\",\n                        \"ResourceCount\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0fee1673-de33-4f0c-9ce4-037cbcf2d7b2\"\n    }\n}",
+        "title": "查看Subnet资源信息"
       }
     ],
     "DescribeSubnets": [

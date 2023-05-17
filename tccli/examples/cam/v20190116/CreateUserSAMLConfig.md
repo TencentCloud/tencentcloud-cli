@@ -1,6 +1,6 @@
 **Example 1: 创建用户SAML配置**
 
-
+创建用户SAML配置
 
 Input: 
 

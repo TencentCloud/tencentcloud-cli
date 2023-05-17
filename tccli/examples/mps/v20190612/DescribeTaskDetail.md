@@ -1,6 +1,6 @@
 **Example 1: 获取任务详情**
 
-
+查询任务结果
 
 Input: 
 
@@ -65,6 +65,8 @@ Output:
                         "Status": "SUCCESS",
                         "ErrCode": 0,
                         "Message": "SUCCESS",
+                        "ErrCodeExt": "SUCCESS",
+                        "Progress": 100,
                         "Input": {
                             "Definition": 210,
                             "WatermarkSet": [],
@@ -124,7 +126,11 @@ Output:
                     "SampleSnapshotTask": null,
                     "ImageSpriteTask": null
                 }
-            ]
+            ],
+            "AiAnalysisResultSet": [],
+            "AiRecognitionResultSet": [],
+            "AiContentReviewResultSet": [],
+            "AiQualityControlTaskResult": null
         },
         "TaskNotifyConfig": null,
         "EditMediaTask": null,

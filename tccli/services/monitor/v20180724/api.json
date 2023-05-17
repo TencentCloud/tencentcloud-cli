@@ -3,7 +3,7 @@
     "BindPrometheusManagedGrafana": {
       "document": "绑定 Grafana 可视化服务实例",
       "input": "BindPrometheusManagedGrafanaRequest",
-      "name": "绑定 Grafana 可视化服务实例",
+      "name": "绑定 Grafana 可视化实例",
       "output": "BindPrometheusManagedGrafanaResponse",
       "status": "online"
     },
@@ -2221,7 +2221,6 @@
       "document": "BindPrometheusManagedGrafana请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Prometheus 实例 ID",
           "example": "prom-ads2xxd",
           "member": "string",
@@ -2230,7 +2229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Grafana 可视化服务实例 ID",
           "example": "grafana-adf2adf",
           "member": "string",

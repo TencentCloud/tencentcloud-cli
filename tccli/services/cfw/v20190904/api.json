@@ -15,9 +15,9 @@
       "status": "online"
     },
     "AddNatAcRule": {
-      "document": "添加nat访问控制规则",
+      "document": "添加nat访问控制规则(地域必填)",
       "input": "AddNatAcRuleRequest",
-      "name": "添加nat访问控制规则",
+      "name": "添加nat访问控制规则(地域必填)",
       "output": "AddNatAcRuleResponse",
       "status": "online"
     },
@@ -768,7 +768,6 @@
       "document": "AddEnterpriseSecurityGroupRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "创建规则数据",
           "example": "无",
           "member": "SecurityGroupRule",
@@ -777,7 +776,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后",
           "example": "1",
           "member": "uint64",
@@ -786,7 +784,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。",
           "example": "123e4567-e89b-12d3-a456-426655440000",
           "member": "string",
@@ -795,7 +792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否延迟下发，1则延迟下发，否则立即下发",
           "example": "1",
           "member": "uint64",
@@ -814,9 +810,16 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "规则uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityGroupSimplifyRule",
+          "name": "Rules",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1242,9 +1245,8 @@
       "document": "通用的列表检索过滤选项",
       "members": [
         {
-          "default": "",
           "document": "检索的键值",
-          "example": "SrcIP",
+          "example": "src_ip",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1252,8 +1254,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "检索的值",
+          "document": "检索的值，各检索值间为OR关系",
           "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "Values",
@@ -1262,8 +1263,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "枚举类型，代表name与values之间的匹配关系\nenum FilterOperatorType {\n    //INVALID\n    FILTER_OPERATOR_TYPE_INVALID = 0;\n    //等于\n    FILTER_OPERATOR_TYPE_EQUAL = 1;\n    //大于\n    FILTER_OPERATOR_TYPE_GREATER = 2;\n    //小于\n    FILTER_OPERATOR_TYPE_LESS = 3;\n    //大于等于\n    FILTER_OPERATOR_TYPE_GREATER_EQ = 4;\n    //小于等于\n    FILTER_OPERATOR_TYPE_LESS_EQ = 5;\n    //不等于\n    FILTER_OPERATOR_TYPE_NO_EQ = 6;\n    //in，数组中包含\n    FILTER_OPERATOR_TYPE_IN = 7;\n    //not in\n    FILTER_OPERATOR_TYPE_NOT_IN = 8;\n    //模糊匹配\n    FILTER_OPERATOR_TYPE_FUZZINESS = 9;\n    //存在\n    FILTER_OPERATOR_TYPE_EXIST = 10;\n    //不存在\n    FILTER_OPERATOR_TYPE_NOT_EXIST = 11;\n    //正则\n    FILTER_OPERATOR_TYPE_REGULAR = 12;\n}",
+          "document": "枚举类型，代表Name与Values之间的匹配关系\nenum FilterOperatorType {\n    //等于\n    FILTER_OPERATOR_TYPE_EQUAL = 1;\n    //大于\n    FILTER_OPERATOR_TYPE_GREATER = 2;\n    //小于\n    FILTER_OPERATOR_TYPE_LESS = 3;\n    //大于等于\n    FILTER_OPERATOR_TYPE_GREATER_EQ = 4;\n    //小于等于\n    FILTER_OPERATOR_TYPE_LESS_EQ = 5;\n    //不等于\n    FILTER_OPERATOR_TYPE_NO_EQ = 6;\n    //not in\n    FILTER_OPERATOR_TYPE_NOT_IN = 8;\n    //模糊匹配\n    FILTER_OPERATOR_TYPE_FUZZINESS = 9;\n}",
           "example": "1",
           "member": "int64",
           "name": "OperatorType",
@@ -3177,7 +3177,6 @@
       "document": "DescribeEnterpriseSecurityGroupRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页查询时，显示的当前页的页码。\n\n默认值为1。",
           "example": "1",
           "member": "string",
@@ -3186,7 +3185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页查询时，显示的每页数据的最大条数。\n\n可设置值最大为50。",
           "example": "10",
           "member": "string",
@@ -3195,7 +3193,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n支持通配",
           "example": "1.1.1.1",
           "member": "string",
@@ -3204,7 +3201,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n支持通配",
           "example": "1.1.1.1",
           "member": "string",
@@ -3213,7 +3209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则描述，支持通配",
           "example": "这是一个规则描述",
           "member": "string",
@@ -3222,7 +3217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问控制策略中设置的流量通过云防火墙的方式。取值：\naccept：放行\ndrop：拒绝",
           "example": "accept",
           "member": "string",
@@ -3231,7 +3225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否启用规则，默认为启用，取值：\ntrue为启用，false为不启用",
           "example": "true",
           "member": "string",
@@ -3240,7 +3233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "访问控制策略的端口。取值：\n-1/-1：全部端口\n80：80端口",
           "example": "-1/-1",
           "member": "string",
@@ -3249,7 +3241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "协议；TCP/UDP/ICMP/ANY",
           "example": "ANY",
           "member": "string",
@@ -3258,13 +3249,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥",
           "example": "ppmg-jz17vpis",
           "member": "string",
           "name": "ServiceTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "规则的uuid",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3277,7 +3275,6 @@
           "example": "1",
           "member": "string",
           "name": "PageNo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3286,7 +3283,6 @@
           "example": "10",
           "member": "string",
           "name": "PageSize",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3295,7 +3291,6 @@
           "example": "无",
           "member": "SecurityGroupRule",
           "name": "Rules",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3304,7 +3299,6 @@
           "example": "100",
           "member": "string",
           "name": "TotalCount",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7596,6 +7590,66 @@
         }
       ],
       "usage": "both"
+    },
+    "SecurityGroupSimplifyRule": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ipm-dyodhpby",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-fmo10koi",
+          "member": "string",
+          "name": "DestContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "协议；TCP/UDP/ICMP/ANY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ANY",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则对应的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Sequence",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SequenceData": {
       "document": "执行顺序对象",

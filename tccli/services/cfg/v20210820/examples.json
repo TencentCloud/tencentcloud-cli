@@ -40,13 +40,13 @@
     ],
     "DescribeTaskList": [
       {
-        "document": "",
+        "document": "查询演练列表",
         "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"TaskTag\": [\n        \"飞扬\"\n    ],\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"47e12dca-fa37-49b4-86e1-d7d3d7674640\",\n        \"TaskList\": [\n            {\n                \"TaskId\": 2,\n                \"TaskTitle\": \"广州二区-关机\",\n                \"TaskDescription\": \"广州一区-关机\",\n                \"TaskTag\": \"飞扬\",\n                \"TaskStatus\": 1002,\n                \"TaskCreateTime\": \"2021-08-14 00:37:34\",\n                \"TaskUpdateTime\": \"2021-09-18 19:18:28\",\n                \"TaskPreCheckStatus\": 0,\n                \"TaskPreCheckSuccess\": false\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "查询演练列表"
       },
       {
-        "document": "",
+        "document": "查询演练列表(含预检状态信息)",
         "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"597dbef8-fcf3-46c2-9561-f87694052606\",\n        \"TaskList\": [\n            {\n                \"TaskId\": 3077,\n                \"TaskTitle\": \"演练预检测试\",\n                \"TaskDescription\": \"演练预检测试\",\n                \"TaskTag\": \"\",\n                \"TaskStatus\": 1001,\n                \"TaskCreateTime\": \"2022-09-19 12:57:22\",\n                \"TaskUpdateTime\": \"2022-09-19 12:57:22\",\n                \"TaskPreCheckStatus\": 2,\n                \"TaskPreCheckSuccess\": false\n            },\n            {\n                \"TaskId\": 3076,\n                \"TaskTitle\": \"【公有云】Mongo节点故障\",\n                \"TaskDescription\": \"【公有云】Mongo节点故障\",\n                \"TaskTag\": \"\",\n                \"TaskStatus\": 1003,\n                \"TaskCreateTime\": \"2022-09-19 11:09:50\",\n                \"TaskUpdateTime\": \"2022-09-19 12:17:49\",\n                \"TaskPreCheckStatus\": 0,\n                \"TaskPreCheckSuccess\": false\n            }\n        ],\n        \"Total\": 2450\n    }\n}",
         "title": "查询演练列表(含预检状态信息)"

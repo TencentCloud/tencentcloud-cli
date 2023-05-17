@@ -280,6 +280,13 @@
       "output": "DescribeBackupDatabasesResponse",
       "status": "online"
     },
+    "DescribeBackupDecryptionKey": {
+      "document": "本接口(DescribeBackupDecryptionKey)用于查询备份文件解密密钥。",
+      "input": "DescribeBackupDecryptionKeyRequest",
+      "name": "查询备份文件解密密钥",
+      "output": "DescribeBackupDecryptionKeyResponse",
+      "status": "online"
+    },
     "DescribeBackupDownloadRestriction": {
       "document": "该接口用户查询当前地域用户设置的默认备份下载来源限制。",
       "input": "DescribeBackupDownloadRestrictionRequest",
@@ -6713,6 +6720,51 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDecryptionKeyRequest": {
+      "document": "DescribeBackupDecryptionKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-XXXX",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例的备份ID，可通过DescribeBackups接口查询备份的ID。",
+          "example": "12345",
+          "member": "int64",
+          "name": "BackupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDecryptionKeyResponse": {
+      "document": "DescribeBackupDecryptionKey返回参数结构体",
+      "members": [
+        {
+          "document": "备份文件解密密钥。",
+          "example": "XXXX",
+          "member": "string",
+          "name": "DecryptionKey",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -14284,7 +14336,6 @@
       "document": "参数模板信息",
       "members": [
         {
-          "default": "",
           "document": "参数模板ID",
           "example": "1",
           "member": "int64",
@@ -14294,7 +14345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数模板名称",
           "example": "test",
           "member": "string",
@@ -14304,7 +14354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数模板描述",
           "example": "test",
           "member": "string",
@@ -14314,7 +14363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例引擎版本",
           "example": "5.7",
           "member": "string",
@@ -14324,7 +14372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数模板类型",
           "example": "HIGH_STABILITY",
           "member": "string",
@@ -14332,6 +14379,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "参数模板引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
