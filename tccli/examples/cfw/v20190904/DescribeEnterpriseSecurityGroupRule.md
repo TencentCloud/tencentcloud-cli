@@ -6,42 +6,43 @@ Input:
 
 ```
 tccli cfw DescribeEnterpriseSecurityGroupRule --cli-unfold-argument  \
-    --Enable xx \
-    --Protocol xx \
-    --Description xx \
-    --PageNo xx \
-    --SourceContent xx \
-    --ServiceTemplateId xx \
-    --PageSize xx \
-    --DestContent xx \
-    --RuleAction xx \
-    --Port xx
+    --SourceContent abc \
+    --DestContent abc \
+    --Description abc \
+    --RuleAction abc \
+    --Enable abc \
+    --Port abc \
+    --Protocol abc \
+    --ServiceTemplateId abc \
+    --PageNo abc \
+    --PageSize abc \
+    --RuleUuid 0
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "PageNo": "abc",
+        "PageSize": "abc",
         "Rules": [
             {
-                "Id": "xxx-xxx",
-                "OrderIndex": "xx",
-                "Protocol": "xx",
-                "SourceType": "xx",
-                "SourceContent": "xx",
-                "DestType": "xx",
-                "ServiceTemplateId": "xx",
-                "DestContent": "xx",
-                "RuleAction": "xx",
-                "Port": "xx",
-                "Enable": "true",
-                "Description": "xx"
+                "SourceContent": "abc",
+                "SourceType": "abc",
+                "DestContent": "abc",
+                "DestType": "abc",
+                "Protocol": "abc",
+                "Port": "abc",
+                "ServiceTemplateId": "abc",
+                "RuleAction": "abc",
+                "Description": "abc",
+                "OrderIndex": "abc",
+                "Id": "abc",
+                "Enable": "abc"
             }
         ],
-        "TotalCount": "xx",
-        "PageSize": "xx",
-        "PageNo": "xx",
-        "RequestId": "xx"
+        "TotalCount": "abc",
+        "RequestId": "abc"
     }
 }
 ```

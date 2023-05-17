@@ -21,8 +21,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "",
-        "Status": 0
+        "Status": 1,
+        "Rules": [
+            {
+                "SourceContent": "abc",
+                "DestContent": "abc",
+                "Protocol": "abc",
+                "Description": "abc",
+                "RuleUuid": 0,
+                "Sequence": 0
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

@@ -2,7 +2,7 @@
   "actions": {
     "BindPrometheusManagedGrafana": [
       {
-        "document": "",
+        "document": "绑定 Grafana 可视化服务",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindPrometheusManagedGrafana\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-dafxx32\",\n    \"GrafanaId\": \"grafana-sf2fswer\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "绑定 Grafana 可视化服务"

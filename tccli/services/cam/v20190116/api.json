@@ -2154,13 +2154,22 @@
       "document": "CreateUserSAMLConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "SAML元数据文档，需要base64 encode",
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadataDocument",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3015,18 +3024,27 @@
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadata",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "状态：0:未设置，1:已开启，2:已禁用",
           "example": "11",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7607,22 +7625,31 @@
       "document": "UpdateUserSAMLConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "修改的操作类型:enable:启用,disable:禁用,updateSAML:修改元数据文档",
           "example": "enable",
           "member": "string",
           "name": "Operate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "元数据文档，需要base64 encode，仅当Operate为updateSAML时需要此参数",
           "example": "metadataDocumentDemo",
           "member": "string",
           "name": "SAMLMetadataDocument",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "辅助域名",
+          "example": "xx.com",
+          "member": "string",
+          "name": "AuxiliaryDomain",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -1318,6 +1318,14 @@
         "title": "添加协议端口组模板成员"
       }
     ],
+    "DeleteTrafficPackages": [
+      {
+        "document": "删除共享流量包",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTrafficPackages\n&TrafficPackageIds.0=tfp-c9gcdb0t\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5957a632-12b2-4051-b103-ecd77145ecbd\"\n    }\n}",
+        "title": "删除流量包"
+      }
+    ],
     "DeleteUSGInternal": [
       {
         "document": "",
@@ -2318,6 +2326,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnetListInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\",\n    \"UniqueVpcId\": [\n        \"vpc-7zayowkt\"\n    ],\n    \"Limit\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 3,\n        \"SubnetSet\": [\n            {\n                \"DefaultFlag\": 0,\n                \"VpcId\": 16769060,\n                \"CdcFlag\": 0,\n                \"SubnetId\": 2007467,\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"Owner\": \"251197522\",\n                \"Subnet\": \"10.0.0.0\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Min\": 167772160,\n                \"UniqueCdcId\": \"\",\n                \"ZoneId\": 100001,\n                \"IntMask\": 24,\n                \"DhcpFlag\": 0,\n                \"Type\": 0,\n                \"Max\": 167772415,\n                \"GatewayIp\": \"0.0.0.0\",\n                \"CreateTime\": \"2021-05-10 15:40:12\",\n                \"RemoteVpcSnatFlag\": 0,\n                \"Name\": \"test\",\n                \"BroadcastFlag\": 0,\n                \"Mask\": \"255.255.255.0\",\n                \"SyncAclToTgwFlag\": 0,\n                \"LocalZoneFlag\": 0\n            }\n        ],\n        \"RequestId\": \"3f8bc2b6-3ae1-4265-89ff-038396edc068\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeSubnetResourceDashboard": [
+      {
+        "document": "查看Subnet资源信息",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSubnetResourceDashboard\r\n&SubnetIds.0=subnet-12345678\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResourceStatisticsSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"Ip\": 14,\n                \"ResourceStatisticsItemSet\": [\n                    {\n                        \"ResourceType\": \"NetworkDetect\",\n                        \"ResourceName\": \"NetworkDetect\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"LoadBanlancer\",\n                        \"ResourceName\": \"LoadBanlancer\",\n                        \"ResourceCount\": 2\n                    },\n                    {\n                        \"ResourceType\": \"MySQL\",\n                        \"ResourceName\": \"MySQL\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"Memcached\",\n                        \"ResourceName\": \"Memcached\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"CTSDB\",\n                        \"ResourceName\": \"CTSDB\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"TDSQL\",\n                        \"ResourceName\": \"TDSQL\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"SQL Server\",\n                        \"ResourceName\": \"SQL Server\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"PostgreSQL\",\n                        \"ResourceName\": \"PostgreSQL\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"NAS\",\n                        \"ResourceName\": \"NAS\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Snova\",\n                        \"ResourceName\": \"Snova\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Ckafka\",\n                        \"ResourceName\": \"Ckafka\",\n                        \"ResourceCount\": 1\n                    },\n                    {\n                        \"ResourceType\": \"Grocery\",\n                        \"ResourceName\": \"Grocery\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"Cloudhsm\",\n                        \"ResourceName\": \"Cloudhsm\",\n                        \"ResourceCount\": 0\n                    },\n                    {\n                        \"ResourceType\": \"MongoDB\",\n                        \"ResourceName\": \"MongoDB\",\n                        \"ResourceCount\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0fee1673-de33-4f0c-9ce4-037cbcf2d7b2\"\n    }\n}",
+        "title": "查看Subnet资源信息"
       }
     ],
     "DescribeSubnets": [

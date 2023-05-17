@@ -1,3 +1,214 @@
+# Release 3.0.763.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 20 次发布
+
+发布时间：2023-05-17 01:09:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62664)
+
+	* 新增入参：AuxiliaryDomain
+
+* [DescribeUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62663)
+
+	* 新增出参：AuxiliaryDomain
+
+* [UpdateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62662)
+
+	* 新增入参：AuxiliaryDomain
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 35 次发布
+
+发布时间：2023-05-17 01:11:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
+
+	* 新增入参：UUI, CalleeAttributes
+
+
+新增数据结构：
+
+* [CalleeAttribute](http://document.tencentcloudapi.woa.com/document/product/679/47715#CalleeAttribute)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 56 次发布
+
+发布时间：2023-05-17 01:11:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)
+
+修改数据结构：
+
+* [ParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParamTemplateInfo)
+
+	* 新增成员：EngineType
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 25 次发布
+
+发布时间：2023-05-17 01:13:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
+
+	* 新增出参：Rules
+
+* [DescribeEnterpriseSecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/64233)
+
+	* 新增入参：RuleUuid
+
+
+新增数据结构：
+
+* [SecurityGroupSimplifyRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupSimplifyRule)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 63 次发布
+
+发布时间：2023-05-17 01:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77784)
+* [DescribeLogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/77783)
+* [ModifyLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77782)
+
+新增数据结构：
+
+* [LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 27 次发布
+
+发布时间：2023-05-17 01:34:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/862/37614)
+
+	* 新增入参：NeedHybridCloudUrl, ChannelInfo
+
+
+修改数据结构：
+
+* [EditMediaTaskOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#EditMediaTaskOutput)
+
+	* 新增成员：MetaData
+
+* [MediaAudioStreamItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAudioStreamItem)
+
+	* 新增成员：Codecs, Loudness
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：BeginProcessTime, FinishTime, Progress
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：BeginProcessTime, FinishTime, Progress
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaVideoStreamItem)
+
+	* 新增成员：Codecs
+
+* [ScheduleAnalysisTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleAnalysisTaskResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [ScheduleRecognitionTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleRecognitionTaskResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [ScheduleReviewTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleReviewTaskResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [TranscodeTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranscodeTaskInput)
+
+	* 新增成员：ChannelExtPara
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 87 次发布
+
+发布时间：2023-05-17 01:48:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/77785)
+* [DescribeSubnetResourceDashboard](http://document.tencentcloudapi.woa.com/document/product/215/77786)
+
+
+
 # Release 3.0.762.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

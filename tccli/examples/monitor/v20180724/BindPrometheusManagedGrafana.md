@@ -1,6 +1,6 @@
 **Example 1: 绑定 Grafana 可视化服务**
 
-
+绑定 Grafana 可视化服务
 
 Input: 
 
