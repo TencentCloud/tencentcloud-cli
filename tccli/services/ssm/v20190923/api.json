@@ -188,6 +188,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
           "example": "test_name",
           "member": "string",
@@ -197,6 +198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户账号名前缀，由用户自行指定，长度限定在8个字符以内，\n可选字符集包括：\n数字字符：[0, 9]，\n小写字符：[a, z]，\n大写字符：[A, Z]，\n特殊字符(全英文符号)：下划线(_)，\n前缀必须以大写或小写字母开头。",
           "example": "test_prefix",
           "member": "string",
@@ -206,6 +208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭据所绑定的云产品名称，如Mysql，可以通过DescribeSupportedProducts接口获取所支持的云产品名称。",
           "example": "Mysql",
           "member": "string",
@@ -215,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云产品实例ID。",
           "example": "cdb-xxxxxxxx",
           "member": "string",
@@ -224,6 +228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号的域名，IP形式，支持填入%。",
           "example": "[\"%\",\"192.168.0.%\"]",
           "member": "string",
@@ -233,6 +238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "将凭据与云产品实例绑定时，需要授予的权限列表。",
           "example": "无",
           "member": "ProductPrivilegeUnit",
@@ -242,6 +248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "无",
           "member": "string",
@@ -251,6 +258,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
           "member": "string",
@@ -260,6 +268,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表。",
           "example": "无",
           "member": "Tag",
@@ -269,6 +278,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义的开始轮转时间，格式：2006-01-02 15:04:05。\n当EnableRotation为True时，此参数必填。",
           "example": "2006-01-02 15:04:05",
           "member": "string",
@@ -278,6 +288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启轮转\nTrue -- 开启\nFalse -- 不开启\n如果不指定，默认为False。",
           "example": "True",
           "member": "bool",
@@ -287,6 +298,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "轮转周期，以天为单位，默认为1天。",
           "example": "1",
           "member": "int64",
@@ -301,6 +313,7 @@
       "document": "CreateProductSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的凭据名称。",
           "example": "无",
           "member": "string",
@@ -310,6 +323,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -319,6 +333,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签操作的返回信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -328,6 +343,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建云产品凭据异步任务ID号。",
           "example": "1",
           "member": "int64",
@@ -350,6 +366,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
           "example": "无",
           "member": "string",
@@ -359,6 +376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对创建后所属的项目ID。",
           "example": "无",
           "member": "int64",
@@ -368,6 +386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "无",
           "member": "string",
@@ -377,6 +396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
           "member": "string",
@@ -386,6 +406,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表。",
           "example": "无",
           "member": "Tag",
@@ -395,6 +416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。",
           "example": "无",
           "member": "string",
@@ -409,6 +431,7 @@
       "document": "CreateSSHKeyPairSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的凭据名称。",
           "example": "无",
           "member": "string",
@@ -418,6 +441,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建的SSH密钥ID。",
           "example": "无",
           "member": "string",
@@ -427,6 +451,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建的SSH密钥名称。",
           "example": "无",
           "member": "string",
@@ -436,6 +461,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -445,6 +471,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签操作的返回信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -466,6 +493,7 @@
       "document": "CreateSecret请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。",
           "example": "test_secret",
           "member": "string",
@@ -475,6 +503,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。",
           "example": "v1.0",
           "member": "string",
@@ -484,6 +513,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "test create secret",
           "member": "string",
@@ -493,6 +523,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
           "member": "string",
@@ -502,6 +533,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据类型，默认为自定义凭据。",
           "example": "0",
           "member": "uint64",
@@ -511,6 +543,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。",
           "example": "无",
           "member": "string",
@@ -520,6 +553,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，，最大支持4096字节。",
           "example": "test",
           "member": "string",
@@ -529,6 +563,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "JSON 格式字符串，用于指定特定凭据类型的额外配置。",
           "example": "{}",
           "member": "string",
@@ -538,6 +573,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -553,6 +589,7 @@
       "document": "CreateSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "新创建的凭据名称。",
           "example": "test_secret",
           "member": "string",
@@ -562,6 +599,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "新创建的凭据版本。",
           "example": "v1.0",
           "member": "string",
@@ -571,6 +609,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -580,6 +619,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -602,6 +642,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要删除的凭据名称。",
           "example": "testName",
           "member": "string",
@@ -611,6 +652,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。\n当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。",
           "example": "1",
           "member": "uint64",
@@ -620,6 +662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，取值：\nTrue -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。\nFalse --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。",
           "example": "False",
           "member": "bool",
@@ -634,6 +677,7 @@
       "document": "DeleteSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定删除的凭据名称。",
           "example": "test",
           "member": "string",
@@ -643,6 +687,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭据删除的日期，unix时间戳。",
           "example": "1574247268",
           "member": "int64",
@@ -665,6 +710,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定凭据名称。",
           "example": "test",
           "member": "string",
@@ -674,6 +720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定该名称下需要删除的凭据的版本号。",
           "example": "v1.0",
           "member": "string",
@@ -688,6 +735,7 @@
       "document": "DeleteSecretVersion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -697,6 +745,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭据版本号。",
           "example": "v1.0",
           "member": "string",
@@ -719,6 +768,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异步任务ID号。",
           "example": "1",
           "member": "int64",
@@ -733,6 +783,7 @@
       "document": "DescribeAsyncRequestInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "0:处理中，1:处理成功，2:处理失败",
           "example": "1",
           "member": "int64",
@@ -742,6 +793,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务描述信息。",
           "example": "无",
           "member": "string",
@@ -764,6 +816,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要获取凭据轮转详细信息的凭据名称。",
           "example": "无",
           "member": "string",
@@ -778,6 +831,7 @@
       "document": "DescribeRotationDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "否允许轮转，true表示开启轮转，false表示禁止轮转。",
           "example": "False",
           "member": "bool",
@@ -787,6 +841,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "轮转的频率，以天为单位，默认为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -796,6 +851,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最近一次轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-02 15:04:05",
           "member": "string",
@@ -805,6 +861,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "下一次开始轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-02 15:04:05",
           "member": "string",
@@ -827,6 +884,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要获取凭据轮转历史的凭据名称。",
           "example": "无",
           "member": "string",
@@ -841,6 +899,7 @@
       "document": "DescribeRotationHistory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "版本号列表。",
           "example": "无",
           "member": "string",
@@ -850,6 +909,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "版本号个数，可以给用户展示的版本号个数上限为10个。",
           "example": "1",
           "member": "int64",
@@ -871,6 +931,7 @@
       "document": "DescribeSecret请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定需要获取凭据详细信息的凭据名称。",
           "example": "test",
           "member": "string",
@@ -886,6 +947,7 @@
       "document": "DescribeSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -895,6 +957,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据描述信息。",
           "example": "description",
           "member": "string",
@@ -904,6 +967,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用于加密的KMS CMK ID。",
           "example": "13437ab9-e002-11e9-9936-5254006d0810",
           "member": "string",
@@ -913,6 +977,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建者UIN。",
           "example": "3350000000",
           "member": "uint64",
@@ -922,6 +987,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。",
           "example": "Disabled",
           "member": "string",
@@ -931,6 +997,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "删除日期，uinx 时间戳，非计划删除状态的凭据为0。",
           "example": "1",
           "member": "uint64",
@@ -940,6 +1007,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建日期。",
           "example": "1574160561",
           "member": "uint64",
@@ -949,6 +1017,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -958,6 +1027,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云产品名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Mysql",
           "member": "string",
@@ -967,6 +1037,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云产品实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb-xxxxxxx",
           "member": "string",
@@ -976,6 +1047,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启轮转：True -- 开启轮转；False -- 关闭轮转。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
           "member": "bool",
@@ -985,6 +1057,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "轮转周期，默认以天为单位。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -994,6 +1067,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1003,6 +1077,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1012,6 +1087,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1021,6 +1097,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "uint64",
@@ -1030,6 +1107,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1056,6 +1134,7 @@
       "document": "DescribeSupportedProducts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "支持的产品列表。",
           "example": "[\"Mysql\"]",
           "member": "string",
@@ -1065,6 +1144,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "支持的产品个数",
           "example": "1",
           "member": "int64",
@@ -1087,6 +1167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定停用的凭据名称。",
           "example": "test",
           "member": "string",
@@ -1101,6 +1182,7 @@
       "document": "DisableSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "停用的凭据名称。",
           "example": "test",
           "member": "string",
@@ -1123,6 +1205,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定启用凭据的名称。",
           "example": "test",
           "member": "string",
@@ -1137,6 +1220,7 @@
       "document": "EnableSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "启用的凭据名称。",
           "example": "test",
           "member": "string",
@@ -1163,6 +1247,7 @@
       "document": "GetRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "region列表。",
           "example": "[\"ap-guangzhou\",\"ap-hongkong\"]",
           "member": "string",
@@ -1185,6 +1270,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭据名称，此凭据只能为SSH密钥对凭据类型。",
           "example": "无",
           "member": "string",
@@ -1194,6 +1280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对ID，是云服务器中密钥对的唯一标识。",
           "example": "无",
           "member": "string",
@@ -1208,6 +1295,7 @@
       "document": "GetSSHKeyPairValue返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "SSH密钥对ID。",
           "example": "无",
           "member": "string",
@@ -1217,6 +1305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公钥明文，使用base64编码。",
           "example": "无",
           "member": "string",
@@ -1226,6 +1315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私钥明文，使用base64编码",
           "example": "无",
           "member": "string",
@@ -1235,6 +1325,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "此密钥对所属的项目ID。",
           "example": "无",
           "member": "int64",
@@ -1244,6 +1335,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SSH密钥对的描述信息。\n用户可以在CVM侧控制台对密钥对的描述信息进行修改。",
           "example": "无",
           "member": "string",
@@ -1253,6 +1345,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SSH密钥对的名称。\n用户可以在CVM侧控制台对密钥对的名称进行修改。",
           "example": "无",
           "member": "string",
@@ -1275,6 +1368,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定凭据的名称。",
           "example": "test_secret",
           "member": "string",
@@ -1284,6 +1378,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
           "example": "v1.0",
           "member": "string",
@@ -1293,6 +1388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求来源客户端信息。",
           "example": "无",
           "member": "string",
@@ -1307,6 +1403,7 @@
       "document": "GetSecretValueInternal返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据的名称。",
           "example": "test_secret",
           "member": "string",
@@ -1316,6 +1413,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该凭据对应的版本号。",
           "example": "v1.0",
           "member": "string",
@@ -1325,6 +1423,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。\nSecretBinary和SecretString只有一个不为空。",
           "example": "test",
           "member": "string",
@@ -1334,6 +1433,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。\nSecretBinary和SecretString只有一个不为空。",
           "example": "test",
           "member": "string",
@@ -1343,6 +1443,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "下一次轮转的Unix时间戳。",
           "example": "654321",
           "member": "int64",
@@ -1365,6 +1466,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定凭据的名称。",
           "example": "test_secret",
           "member": "string",
@@ -1375,6 +1477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
           "example": "v1.0",
           "member": "string",
@@ -1390,6 +1493,7 @@
       "document": "GetSecretValue返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据的名称。",
           "example": "test_secret",
           "member": "string",
@@ -1400,6 +1504,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "该凭据对应的版本号。",
           "example": "v1.0",
           "member": "string",
@@ -1410,6 +1515,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。\nSecretBinary和SecretString只有一个不为空。",
           "example": "test",
           "member": "string",
@@ -1420,6 +1526,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。\nSecretBinary和SecretString只有一个不为空。",
           "example": "test",
           "member": "string",
@@ -1447,6 +1554,7 @@
       "document": "GetServiceStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "true表示服务已开通，false 表示服务尚未开通。",
           "example": "1",
           "member": "bool",
@@ -1456,6 +1564,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放。",
           "example": "1",
           "member": "int64",
@@ -1465,6 +1574,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "true表示用户已经可以使用密钥安全托管功能，\nfalse表示用户暂时不能使用密钥安全托管功能。",
           "example": "true",
           "member": "bool",
@@ -1487,6 +1597,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -1501,6 +1612,7 @@
       "document": "ListSecretVersionIds返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -1510,6 +1622,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VersionId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VersionInfo",
@@ -1532,6 +1645,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询列表的起始位置，以0开始，不设置默认为0。",
           "example": "0",
           "member": "uint64",
@@ -1541,6 +1655,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单次查询返回的最大数量，0或不设置则使用默认值 20。",
           "example": "2",
           "member": "uint64",
@@ -1550,6 +1665,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。",
           "example": "0",
           "member": "uint64",
@@ -1559,6 +1675,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据凭据状态进行过滤。\n默认为0表示查询全部。\n1 --  表示查询Enabled 凭据列表。\n2 --  表示查询Disabled 凭据列表。\n3 --  表示查询PendingDelete 凭据列表。\n4 --  表示PendingCreate。\n5 --  表示CreateFailed。\n其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效",
           "example": "0",
           "member": "uint64",
@@ -1568,6 +1685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据凭据名称进行过滤，为空表示不过滤。",
           "example": "testName",
           "member": "string",
@@ -1577,6 +1695,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签过滤条件。",
           "example": "无",
           "member": "TagFilter",
@@ -1586,6 +1705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0  -- 表示用户自定义凭据，默认为0。\n1  -- 表示用户云产品凭据。\n2 -- 表示SSH密钥对凭据。\n3 -- 表示云API密钥对凭据。",
           "example": "1",
           "member": "uint64",
@@ -1595,6 +1715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "此参数仅在SecretType参数值为1时生效，\n当SecretType值为1时：\n如果ProductName值为空，则表示查询所有类型的云产品凭据\n如果ProductName值为Mysql，则表示查询Mysql数据库凭据\n如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据",
           "example": "Mysql",
           "member": "string",
@@ -1609,6 +1730,7 @@
       "document": "ListSecrets返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "根据State和SearchSecretName 筛选的凭据总数。",
           "example": "8",
           "member": "uint64",
@@ -1618,6 +1740,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回凭据信息列表。",
           "example": "无",
           "member": "SecretMetadata",
@@ -1640,6 +1763,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限名称，当前可选：\nGlobalPrivileges\nDatabasePrivileges\nTablePrivileges\nColumnPrivileges\n\n当权限为DatabasePrivileges时，必须通过参数Database指定数据库名；\n\n当权限为TablePrivileges时，必须通过参数Database和TableName指定数据库名以及数据库中的表名；\n\n当权限为ColumnPrivileges时，必须通过参数Database、TableName和CoulmnName指定数据库、数据库中的表名以及表中的列名。",
           "example": "GlobalPrivileges",
           "member": "string",
@@ -1650,6 +1774,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限列表。\n对于Mysql产品来说，可选权限值为：\n\n1. GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n2. DatabasePrivileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n3. TablePrivileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n4. ColumnPrivileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。",
           "example": "无",
           "member": "string",
@@ -1660,6 +1785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当PrivilegeName为DatabasePrivileges时这个值才有效。",
           "example": "无",
           "member": "string",
@@ -1670,6 +1796,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当PrivilegeName为TablePrivileges时这个值才有效，并且此时需要填充Database显式指明所在的数据库实例。",
           "example": "无",
           "member": "string",
@@ -1680,6 +1807,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当PrivilegeName为ColumnPrivileges时这个值才生效，并且此时必须填充：\nDatabase - 显式指明所在的数据库实例。\nTableName - 显式指明所在表",
           "example": "无",
           "member": "string",
@@ -1696,6 +1824,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要增加版本的凭据名称。",
           "example": "test",
           "member": "string",
@@ -1705,6 +1834,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
           "example": "v2.0",
           "member": "string",
@@ -1714,6 +1844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二进制凭据信息，使用base64编码。\nSecretBinary 和 SecretString 必须且只能设置一个。",
           "example": "test",
           "member": "string",
@@ -1723,6 +1854,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。",
           "example": "test v2",
           "member": "string",
@@ -1737,6 +1869,7 @@
       "document": "PutSecretValue返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -1746,6 +1879,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "新增加的版本号。",
           "example": "v2.0",
           "member": "string",
@@ -1768,6 +1902,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要恢复的凭据名称。",
           "example": "test",
           "member": "string",
@@ -1782,6 +1917,7 @@
       "document": "RestoreSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -1804,6 +1940,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要轮转的凭据名。",
           "example": "无",
           "member": "string",
@@ -1818,6 +1955,7 @@
       "document": "RotateProductSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当凭据类型为云产品凭据时（即SecretType为1，如MySQL、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。",
           "example": "1",
           "member": "int64",
@@ -1839,6 +1977,7 @@
       "document": "凭据的基础信息",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称",
           "example": "testName",
           "member": "string",
@@ -1849,6 +1988,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据的描述信息",
           "example": "test",
           "member": "string",
@@ -1859,6 +1999,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用于加密凭据的KMS KeyId",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -1869,6 +2010,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建者UIN",
           "example": "12345",
           "member": "uint64",
@@ -1879,6 +2021,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed",
           "example": "Initializing",
           "member": "string",
@@ -1889,6 +2032,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据删除日期，对于status为PendingDelete 的有效，unix时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1899,6 +2043,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭据创建时间，unix时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1909,6 +2054,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥",
           "example": "DEFAULT",
           "member": "string",
@@ -1919,6 +2065,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "1:--开启轮转；0--禁止轮转\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Enabled",
           "member": "int64",
@@ -1929,6 +2076,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "下一次轮转开始时间，uinx 时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1574160561",
           "member": "uint64",
@@ -1939,6 +2087,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "0 -- 用户自定义凭据；\n1 -- 云产品凭据；\n2 -- SSH密钥对凭据；\n3 -- 云API密钥对凭据；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CloudProduct",
           "member": "int64",
@@ -1949,6 +2098,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
@@ -1959,6 +2109,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1969,6 +2120,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1979,6 +2131,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1989,6 +2142,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -1999,6 +2153,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "轮转的频率，以天作为单位，在轮转开启状态下生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "int64",
@@ -2009,6 +2164,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云产品凭据对应的云产品实例 ID 号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "skey-a1b2c3d4",
           "member": "string",
@@ -2019,6 +2175,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用户指定的轮转开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-12-28 15:07:11",
           "member": "string",
@@ -2036,6 +2193,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2045,6 +2203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2060,6 +2219,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2069,6 +2229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2084,6 +2245,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要更新描述信息的凭据名。",
           "example": "test",
           "member": "string",
@@ -2093,6 +2255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新的描述信息，最大长度2048个字节。",
           "example": "new desc",
           "member": "string",
@@ -2107,6 +2270,7 @@
       "document": "UpdateDescription返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -2129,6 +2293,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云产品凭据名称。",
           "example": "无",
           "member": "string",
@@ -2138,6 +2303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启轮转。\ntrue -- 开启轮转；\nfalse -- 禁止轮转。",
           "example": "True",
           "member": "bool",
@@ -2147,6 +2313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "轮转周期，以天为单位，最小为30天，最大为365天。",
           "example": "30",
           "member": "int64",
@@ -2156,6 +2323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户设置的期望开始轮转时间，格式为：2006-01-02 15:04:05。\n当EnableRotation为true时，如果不填RotationBeginTime，则默认填充为当前时间。",
           "example": "2006-01-02 15:04:05",
           "member": "string",
@@ -2183,6 +2351,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要更新凭据内容的名称。",
           "example": "test",
           "member": "string",
@@ -2192,6 +2361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要更新凭据内容的版本号。",
           "example": "v1.0",
           "member": "string",
@@ -2201,6 +2371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。\nSecretBinary 和 SecretString 只能一个不为空。",
           "example": "test",
           "member": "string",
@@ -2210,6 +2381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。",
           "example": "new value",
           "member": "string",
@@ -2224,6 +2396,7 @@
       "document": "UpdateSecret返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭据名称。",
           "example": "test",
           "member": "string",
@@ -2233,6 +2406,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭据版本号。",
           "example": "v2.0",
           "member": "string",
@@ -2255,6 +2429,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "版本号。",
           "member": "string",
           "name": "VersionId",
@@ -2264,6 +2439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间，unix时间戳。",
           "member": "uint64",
           "name": "CreateTime",

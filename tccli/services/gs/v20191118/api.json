@@ -68,6 +68,7 @@
       "document": "CreateSession请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
@@ -77,6 +78,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】只在TrylockWorker时生效",
           "example": "game-abcd1234",
           "member": "string",
@@ -86,6 +88,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】只在TrylockWorker时生效",
           "example": "ap-guangzhou",
           "member": "string",
@@ -95,6 +98,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "游戏参数",
           "example": "StartFor=1",
           "member": "string",
@@ -104,6 +108,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空",
           "example": "xxx",
           "member": "string",
@@ -113,6 +118,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "分辨率,，可设置为1080p或720p或1920x1080格式",
           "example": "1080p",
           "member": "string",
@@ -122,6 +128,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "背景图url，格式为png或jpeg，宽高1920*1080",
           "example": "http://ip:port/test.png",
           "member": "string",
@@ -131,6 +138,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】",
           "example": "1",
           "member": "uint64",
@@ -140,6 +148,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】",
           "example": "2",
           "member": "uint64",
@@ -149,6 +158,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "单位Mbps，动态调整最大码率建议值，会按实际情况调整",
           "example": "4",
           "member": "uint64",
@@ -158,6 +168,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "单位Mbps，动态调整最小码率建议值，会按实际情况调整",
           "example": "2",
           "member": "uint64",
@@ -167,6 +178,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "帧率，可设置为30、45、60、90、120、144",
           "example": "60",
           "member": "uint64",
@@ -176,6 +188,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
@@ -185,6 +198,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】优化项，便于客户灰度开启新的优化项，默认为0",
           "example": "0",
           "member": "uint64",
@@ -194,6 +208,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【互动云游】游戏主机用户ID",
           "example": "xxx",
           "member": "string",
@@ -203,6 +218,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
           "example": "Player",
           "member": "string",
@@ -212,6 +228,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "游戏相关参数",
           "example": "{}",
           "member": "string",
@@ -221,6 +238,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云端运行模式。\nRunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行\n默认值（空）：要求必须有客户端连接才会保持云端 App 运行。",
           "example": "RunWithoutClient",
           "member": "string",
@@ -236,6 +254,7 @@
       "document": "CreateSession返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "服务端session信息，返回给JSSDK",
           "example": "xxx",
           "member": "string",
@@ -245,6 +264,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【已废弃】",
           "example": "xx",
           "member": "string",
@@ -254,6 +274,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
           "example": "Player",
           "member": "string",
@@ -275,6 +296,7 @@
       "document": "DescribeInstancesCount请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "游戏ID",
           "example": "game-abcd1234",
           "member": "string",
@@ -284,6 +306,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例分组ID",
           "example": "cgg-1234abcd",
           "member": "string",
@@ -293,6 +316,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "游戏区域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -302,6 +326,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "游戏类型。\nMOBILE：手游\nPC：默认值，端游",
           "example": "MOBILE",
           "member": "string",
@@ -317,6 +342,7 @@
       "document": "DescribeInstancesCount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的实例总数",
           "example": "590",
           "member": "uint64",
@@ -326,6 +352,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户的实例运行数",
           "example": "480",
           "member": "uint64",
@@ -348,6 +375,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "游戏用户ID",
           "example": "1621578692",
           "member": "string",
@@ -358,6 +386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏ID",
           "example": "game-a7l8c3ab",
           "member": "string",
@@ -386,6 +415,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
           "member": "string",
@@ -396,6 +426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推流地址，仅支持rtmp协议",
           "example": "rtmp://live.stream.com/publish",
           "member": "string",
@@ -424,6 +455,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
@@ -434,6 +466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "【多人游戏】游戏主机用户ID",
           "example": "无",
           "member": "string",
@@ -462,6 +495,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
           "member": "string",
@@ -490,6 +524,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "游戏用户ID",
           "example": "161394323449",
           "member": "string",
@@ -500,6 +535,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏ID",
           "example": "game-av2bl5r5",
           "member": "string",
@@ -510,6 +546,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏存档Url",
           "example": "http://archive.cdn.com/user123.zip",
           "member": "string",
@@ -520,6 +557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏相关参数",
           "example": "{\\\"ArchiveEnv\\\":\\\"tcg\\\",\\\"ArchiveCategoryId\\\":\\\"393\\\",\\\"ArchiveG",
           "member": "string",
@@ -548,6 +586,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
@@ -558,6 +597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏ID",
           "example": "game-abcd1234",
           "member": "string",
@@ -568,6 +608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
           "example": "ap-guangzhou",
           "member": "string",
@@ -578,6 +619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "【废弃】资源池编号",
           "example": "1",
           "member": "uint64",
@@ -588,6 +630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
@@ -598,6 +641,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分组ID",
           "example": "cgg-1234abcd",
           "member": "string",

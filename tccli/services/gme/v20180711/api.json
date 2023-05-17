@@ -209,6 +209,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据唯一ID",
           "example": "abcd",
           "member": "string",
@@ -219,6 +220,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg",
           "example": "https://xxx.com/yy.wav",
           "member": "string",
@@ -235,6 +237,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据唯一ID",
           "example": "abcd",
           "member": "string",
@@ -245,6 +248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据文件的url",
           "example": "https://xxx.com/yyy.wav",
           "member": "string",
@@ -255,6 +259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态，0: 已创建，1:运行中，2:正常结束，3:异常结束，4:运行超时",
           "example": "2",
           "member": "uint64",
@@ -265,6 +270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务结果：0: 成年，1:未成年，100:未知",
           "example": "1",
           "member": "uint64",
@@ -281,6 +287,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实时语音统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"MainLandPcu\":0,\"MainLandDuration\":0,\"OverseaPcu\":0,\"OverseaDur",
           "member": "RealTimeSpeechStatisticsItem",
@@ -292,6 +299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音消息统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Dau\":1018}",
           "member": "VoiceMessageStatisticsItem",
@@ -303,6 +311,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音过滤统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Duration\" : 18000}",
           "member": "VoiceFilterStatisticsItem",
@@ -314,6 +323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "统计时间",
           "example": "2022-10-01",
           "member": "date",
@@ -325,6 +335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录音转文本用量统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
           "member": "AudioTextStatisticsItem",
@@ -336,6 +347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流式转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
           "member": "StreamTextStatisticsItem",
@@ -347,6 +359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
           "member": "OverseaTextStatisticsItem",
@@ -358,6 +371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时语音转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
           "member": "RealtimeTextStatisticsItem",
@@ -375,6 +389,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "member": "uint64",
           "name": "BizId",
@@ -384,6 +399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Dau统计项数目",
           "member": "uint64",
           "name": "DauDataNum",
@@ -393,6 +409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区Dau统计数据，单位人",
           "member": "StatisticsItem",
           "name": "DauDataMainland",
@@ -402,6 +419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区Dau统计数据，单位人",
           "member": "StatisticsItem",
           "name": "DauDataOversea",
@@ -411,6 +429,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆和海外地区Dau统计数据汇总，单位人",
           "member": "StatisticsItem",
           "name": "DauDataSum",
@@ -420,6 +439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时语音时长统计项数目",
           "member": "uint64",
           "name": "DurationDataNum",
@@ -429,6 +449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区实时语音时长统计数据，单位分钟",
           "member": "StatisticsItem",
           "name": "DurationDataMainland",
@@ -438,6 +459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区实时语音时长统计数据，单位分钟",
           "member": "StatisticsItem",
           "name": "DurationDataOversea",
@@ -447,6 +469,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆和海外地区实时语音时长统计数据汇总，单位分钟",
           "member": "StatisticsItem",
           "name": "DurationDataSum",
@@ -456,6 +479,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Pcu统计项数目",
           "member": "uint64",
           "name": "PcuDataNum",
@@ -465,6 +489,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区Pcu统计数据，单位人",
           "member": "StatisticsItem",
           "name": "PcuDataMainland",
@@ -474,6 +499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区Pcu统计数据，单位人",
           "member": "StatisticsItem",
           "name": "PcuDataOversea",
@@ -483,6 +509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆和海外地区Pcu统计数据汇总，单位人",
           "member": "StatisticsItem",
           "name": "PcuDataSum",
@@ -498,6 +525,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务开关状态",
           "example": "[]",
           "member": "ServiceStatus",
@@ -509,6 +537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID(AppID)",
           "example": "1",
           "member": "uint64",
@@ -520,6 +549,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "xx",
           "member": "string",
@@ -531,6 +561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID，默认为0",
           "example": "1",
           "member": "uint64",
@@ -542,6 +573,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用状态，返回0表示正常，1表示关闭，2表示欠费停服，3表示欠费回收",
           "example": "1",
           "member": "uint64",
@@ -553,6 +585,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间，Unix时间戳格式",
           "example": "1",
           "member": "uint64",
@@ -564,6 +597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用类型，无需关注此数值",
           "example": "1",
           "member": "uint64",
@@ -580,6 +614,7 @@
       "document": "语音转文本配置数据",
       "members": [
         {
+          "disabled": false,
           "document": "语音转文本服务开关，取值：open/close",
           "example": "open",
           "member": "string",
@@ -597,6 +632,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
           "member": "float",
@@ -613,6 +649,7 @@
       "document": "CreateAgeDetectTask请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用id",
           "example": "123456",
           "member": "int64",
@@ -622,6 +659,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：\n<li>DataId：数据的唯一ID</li>\n<li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>",
           "example": "无",
           "member": "AgeDetectTask",
@@ -631,6 +669,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "任务结束时gme后台会自动触发回调",
           "example": "https://xxx.com/callback",
           "member": "string",
@@ -646,6 +685,7 @@
       "document": "CreateAgeDetectTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "本次任务提交后唯一id，用于获取任务运行结果",
           "example": "xxx-yyy-zzz",
           "member": "string",
@@ -667,6 +707,7 @@
       "document": "CreateApp请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称",
           "example": "simple_gme_application",
           "member": "string",
@@ -676,6 +717,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "腾讯云项目ID，默认为0，表示默认项目",
           "example": "0",
           "member": "uint64",
@@ -685,6 +727,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要支持的引擎列表，默认全选。\n取值：android/ios/unity/cocos/unreal/windows",
           "example": "无",
           "member": "string",
@@ -694,6 +737,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "服务区域列表，默认全选。\n取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东",
           "example": "无",
           "member": "string",
@@ -703,6 +747,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实时语音服务配置数据",
           "example": "无",
           "member": "RealtimeSpeechConf",
@@ -712,6 +757,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音消息服务配置数据",
           "example": "无",
           "member": "VoiceMessageConf",
@@ -721,6 +767,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音分析服务配置数据",
           "example": "无",
           "member": "VoiceFilterConf",
@@ -730,6 +777,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音转文本配置数据",
           "example": "无",
           "member": "AsrConf",
@@ -739,6 +787,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要添加的标签列表",
           "example": "无",
           "member": "Tag",
@@ -754,6 +803,7 @@
       "document": "CreateApp的输出参数",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID，由后台自动生成。",
           "example": "123456",
           "member": "uint64",
@@ -764,6 +814,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用名称，透传输入参数的AppName",
           "example": "abcd",
           "member": "string",
@@ -774,6 +825,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "项目ID，透传输入的ProjectId",
           "example": "0",
           "member": "uint64",
@@ -784,6 +836,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用密钥，GME SDK初始化时使用",
           "example": "sdsd",
           "member": "string",
@@ -794,6 +847,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "服务创建时间戳",
           "example": "123456",
           "member": "uint64",
@@ -804,6 +858,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实时语音服务配置数据",
           "example": "{}",
           "member": "RealtimeSpeechConf",
@@ -814,6 +869,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音消息服务配置数据",
           "example": "{}",
           "member": "VoiceMessageConf",
@@ -824,6 +880,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音分析服务配置数据",
           "example": "{}",
           "member": "VoiceFilterConf",
@@ -834,6 +891,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音转文本服务配置数据",
           "example": "{}",
           "member": "AsrConf",
@@ -850,6 +908,7 @@
       "document": "CreateApp返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建应用返回数据",
           "example": "无",
           "member": "CreateAppResp",
@@ -871,6 +930,7 @@
       "document": "CreateCustomization请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -880,6 +940,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "abc",
           "member": "string",
@@ -889,6 +950,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "模型名称，名称长度不超过36，默认为BizId。",
           "example": "ModelName",
           "member": "string",
@@ -904,6 +966,7 @@
       "document": "CreateCustomization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "模型ID",
           "example": "abc",
           "member": "string",
@@ -925,6 +988,7 @@
       "document": "CreateScanUser请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
           "member": "uint64",
@@ -934,6 +998,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要新增送检的用户号。示例：1234",
           "example": "1",
           "member": "uint64",
@@ -949,6 +1014,7 @@
       "document": "CreateScanUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果码",
           "example": "0",
           "member": "int64",
@@ -970,6 +1036,7 @@
       "document": "语音消息转文本热句模型配置",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "123",
           "member": "int64",
@@ -980,6 +1047,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "模型ID",
           "example": "123",
           "member": "string",
@@ -990,6 +1058,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2训练失败, 3上线中, 4下线中",
           "example": "1",
           "member": "int64",
@@ -1000,6 +1069,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "模型名称",
           "example": "ModelName",
           "member": "string",
@@ -1010,6 +1080,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "https://file.myqcloud.com/keywords_template.txt",
           "member": "string",
@@ -1020,6 +1091,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "更新时间，11位时间戳",
           "example": "1667465928843",
           "member": "int64",
@@ -1036,6 +1108,7 @@
       "document": "DeleteCustomization请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "删除的模型ID",
           "example": "abc",
           "member": "string",
@@ -1045,6 +1118,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -1060,6 +1134,7 @@
       "document": "DeleteCustomization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值。0为成功，非0为失败。",
           "example": "0",
           "member": "int64",
@@ -1082,6 +1157,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "错误码，0-剔除成功 其他-剔除失败",
           "member": "int64",
           "name": "Code",
@@ -1091,6 +1167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误描述",
           "member": "string",
           "name": "ErrorMsg",
@@ -1105,6 +1182,7 @@
       "document": "DeleteRoomMember请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要操作的房间id",
           "example": "100",
           "member": "string",
@@ -1114,6 +1192,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "剔除类型 1-删除房间 2-剔除用户",
           "example": "2",
           "member": "uint64",
@@ -1123,6 +1202,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用id",
           "example": "140014556",
           "member": "uint64",
@@ -1132,6 +1212,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "要剔除的用户列表",
           "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "string",
@@ -1147,6 +1228,7 @@
       "document": "DeleteRoomMember返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "剔除房间或成员的操作结果",
           "example": "无",
           "member": "DeleteResult",
@@ -1168,6 +1250,7 @@
       "document": "DeleteScanUser请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
           "member": "uint64",
@@ -1177,6 +1260,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要删除送检的用户号。示例：1234",
           "example": "1",
           "member": "uint64",
@@ -1192,6 +1276,7 @@
       "document": "DeleteScanUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果码",
           "example": "0",
           "member": "int64",
@@ -1213,6 +1298,7 @@
       "document": "DescribeAgeDetectTask请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用id",
           "example": "123456",
           "member": "int64",
@@ -1222,6 +1308,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "[创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid",
           "example": "6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b",
           "member": "string",
@@ -1237,6 +1324,7 @@
       "document": "DescribeAgeDetectTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "xxx-yyy-zzz",
           "member": "string",
@@ -1246,6 +1334,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "语音检测返回。Results 字段是 JSON 数组，每一个元素包含：\nDataId： 请求中对应的 DataId。\nUrl ：该请求中对应的 Url。\nStatus ：子任务状态，0:已创建，1:运行中，2:已完成，3:任务异常，4:任务超时。\nAge ：子任务完成后的结果，0:成年人，1:未成年人，100:未知结果。",
           "example": "无",
           "member": "AgeDetectTaskResult",
@@ -1267,6 +1356,7 @@
       "document": "DescribeAppStatistics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "GME应用ID",
           "example": "140000001",
           "member": "uint64",
@@ -1276,6 +1366,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
           "example": "2019-08-01",
           "member": "date",
@@ -1285,6 +1376,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
           "example": "2019-08-03",
           "member": "date",
@@ -1294,6 +1386,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText",
           "example": "[\"RealTimeSpeech\\r\\n\",\"VoiceMessage\\r\\n\"]",
           "member": "string",
@@ -1310,6 +1403,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用用量统计数据",
           "example": "[]",
           "member": "AppStatisticsItem",
@@ -1325,6 +1419,7 @@
       "document": "DescribeAppStatistics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用用量统计数据",
           "example": "无",
           "member": "DescribeAppStatisticsResp",
@@ -1347,6 +1442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "140000001",
           "member": "uint64",
@@ -1356,6 +1452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据开始时间，格式为 年-月-日，如: 2018-07-13",
           "example": "2018-07-13",
           "member": "date",
@@ -1365,6 +1462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据结束时间，格式为 年-月-日，如: 2018-07-13",
           "example": "2018-08-13",
           "member": "date",
@@ -1379,6 +1477,7 @@
       "document": "DescribeApplicationData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用统计数据",
           "example": "[]",
           "member": "ApplicationDataStatistics",
@@ -1400,6 +1499,7 @@
       "document": "DescribeApplicationList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project",
           "example": "0",
           "member": "int64",
@@ -1409,6 +1509,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "页码ID，0表示第一页，以此后推。默认填0",
           "example": "0",
           "member": "uint64",
@@ -1418,6 +1519,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "每页展示应用数量。默认填200",
           "example": "10",
           "member": "uint64",
@@ -1427,6 +1529,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用",
           "example": "测试",
           "member": "string",
@@ -1436,6 +1539,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -1445,6 +1549,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "查找过滤关键字列表",
           "example": "无",
           "member": "Filter",
@@ -1460,6 +1565,7 @@
       "document": "DescribeApplicationList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取应用列表返回",
           "example": "无",
           "member": "ApplicationList",
@@ -1469,6 +1575,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用总数",
           "example": "9",
           "member": "uint64",
@@ -1490,6 +1597,7 @@
       "document": "DescribeRealtimeScanConfig请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -1505,6 +1613,7 @@
       "document": "DescribeRealtimeScanConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果码，0正常，非0失败",
           "example": "0",
           "member": "int64",
@@ -1514,6 +1623,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -1523,6 +1633,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "送检类型，0: 全量送审，1: 自定义送审",
           "example": "0",
           "member": "int64",
@@ -1532,6 +1643,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用户号正则表达式",
           "example": "[\"0\"]",
           "member": "string",
@@ -1541,6 +1653,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间号正则表达式",
           "example": "[\"0\"]",
           "member": "string",
@@ -1550,6 +1663,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用户号字符串，逗号分隔，示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -1559,6 +1673,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间号字符串，逗号分隔，示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -1581,6 +1696,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "进行中的任务taskid（StartRecord接口返回）。",
           "example": "446192236330927912",
           "member": "uint64",
@@ -1591,6 +1707,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
@@ -1606,6 +1723,7 @@
       "document": "DescribeRecordInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "录制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordInfo",
@@ -1616,6 +1734,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
           "example": "1",
           "member": "uint64",
@@ -1626,6 +1745,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "7743",
           "member": "string",
@@ -1648,6 +1768,7 @@
       "document": "DescribeRoomInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "123456",
           "member": "uint64",
@@ -1657,6 +1778,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
           "example": "[1234, 2345]",
           "member": "uint64",
@@ -1666,6 +1788,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
           "example": "[\"1234\", \"2345\"]",
           "member": "string",
@@ -1681,6 +1804,7 @@
       "document": "DescribeRoomInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作结果, 0成功, 非0失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1690,6 +1814,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RoomUser",
@@ -1712,6 +1837,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务返回码",
           "example": "0",
           "member": "int64",
@@ -1723,6 +1849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据唯一 ID",
           "example": "1234",
           "member": "string",
@@ -1734,6 +1861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测完成的时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1745,6 +1873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否违规",
           "example": "false",
           "member": "bool",
@@ -1756,6 +1885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为流",
           "example": "false",
           "member": "bool",
@@ -1767,6 +1897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务返回描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -1778,6 +1909,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测结果，Code 为 0 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "ScanPiece",
@@ -1789,6 +1921,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提交检测的时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1800,6 +1933,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音检测场景，对应请求时的 Scene",
           "example": "[\"default\"]",
           "member": "string",
@@ -1811,6 +1945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音检测任务 ID，由后台分配",
           "example": "abcdefgh",
           "member": "string",
@@ -1822,6 +1957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件或接流地址",
           "example": "http://xx.mp3",
           "member": "string",
@@ -1833,6 +1969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测任务执行结果状态，分别为：\n<li>Start: 任务开始</li>\n<li>Success: 成功结束</li>\n<li>Error: 异常</li>",
           "example": "Success",
           "member": "string",
@@ -1844,6 +1981,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提交检测的应用 ID",
           "example": "140011111",
           "member": "uint64",
@@ -1860,6 +1998,7 @@
       "document": "DescribeScanResultList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "1400000000",
           "member": "uint64",
@@ -1869,6 +2008,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "查询的任务 ID 列表，任务 ID 列表最多支持 100 个。",
           "example": "[\"xxx\\r\\n\"]",
           "member": "string",
@@ -1878,6 +2018,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果",
           "example": "20",
           "member": "uint64",
@@ -1893,6 +2034,7 @@
       "document": "DescribeScanResultList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要查询的语音检测任务的结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeScanResult",
@@ -1915,6 +2057,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
@@ -1925,6 +2068,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID。",
           "example": "9832",
           "member": "string",
@@ -1940,6 +2084,7 @@
       "document": "DescribeTaskInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "进行中的任务taskid（StartRecord接口返回）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "446192236330927912",
           "member": "uint64",
@@ -1950,6 +2095,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1960,6 +2106,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "指定订阅流白名单或者黑名单。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubscribeRecordUserIds",
@@ -1982,6 +2129,7 @@
       "document": "DescribeUserInAndOutTime请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "1400440313",
           "member": "int64",
@@ -1991,6 +2139,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间ID",
           "example": "12675079",
           "member": "int64",
@@ -2000,6 +2149,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用户ID",
           "example": "112675079",
           "member": "int64",
@@ -2009,6 +2159,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "字符串类型用户ID",
           "example": "112675079",
           "member": "string",
@@ -2018,6 +2169,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "字符串类型房间ID",
           "example": "12675079",
           "member": "string",
@@ -2033,6 +2185,7 @@
       "document": "DescribeUserInAndOutTime返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户在房间得进出时间列表",
           "example": "无",
           "member": "InOutTimeInfo",
@@ -2042,6 +2195,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "用户在房间中总时长",
           "example": "2615453",
           "member": "int64",
@@ -2064,6 +2218,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要过滤的字段名, 比如\"AppName\"",
           "member": "string",
           "name": "Name",
@@ -2073,6 +2228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "多个关键字",
           "member": "string",
           "name": "Values",
@@ -2087,6 +2243,7 @@
       "document": "GetCustomizationList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -2102,6 +2259,7 @@
       "document": "GetCustomizationList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "语音消息转文本热句模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomizationConfigs",
@@ -2123,6 +2281,7 @@
       "document": "房间内的事件",
       "members": [
         {
+          "disabled": false,
           "document": "进入房间时间",
           "example": "无",
           "member": "int64",
@@ -2133,6 +2292,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "退出房间时间",
           "example": "无",
           "member": "int64",
@@ -2150,6 +2310,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID，创建应用后由后台生成并返回。",
           "example": "140000001",
           "member": "uint64",
@@ -2159,6 +2320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用状态，取值：open/close",
           "example": "close",
           "member": "string",
@@ -2174,6 +2336,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "GME应用ID",
           "example": "123456",
           "member": "uint64",
@@ -2184,6 +2347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用状态，取值：open/close",
           "example": "open",
           "member": "string",
@@ -2199,6 +2363,7 @@
       "document": "ModifyAppStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "修改应用开关状态返回数据",
           "example": "无",
           "member": "ModifyAppStatusResp",
@@ -2220,6 +2385,7 @@
       "document": "ModifyCustomization请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "123",
           "member": "int64",
@@ -2229,6 +2395,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "abc",
           "member": "string",
@@ -2238,6 +2405,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "修改的模型ID",
           "example": "abc",
           "member": "string",
@@ -2253,6 +2421,7 @@
       "document": "ModifyCustomization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值。0为成功，非0为失败。",
           "example": "0",
           "member": "int64",
@@ -2262,6 +2431,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "模型ID",
           "example": "123",
           "member": "string",
@@ -2283,6 +2453,7 @@
       "document": "ModifyCustomizationState请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "模型ID",
           "example": "abc",
           "member": "string",
@@ -2292,6 +2463,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "想要变换的模型状态，-1代表下线，1代表上线",
           "example": "1",
           "member": "int64",
@@ -2301,6 +2473,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -2316,6 +2489,7 @@
       "document": "ModifyCustomizationState返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "模型ID",
           "example": "abc",
           "member": "string",
@@ -2325,6 +2499,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "返回值。0为成功，非0为失败。",
           "example": "0",
           "member": "int64",
@@ -2347,6 +2522,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "进行中的任务taskid（StartRecord接口返回）。",
           "example": "446192236330927912",
           "member": "uint64",
@@ -2357,6 +2533,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
           "example": "1",
           "member": "uint64",
@@ -2367,6 +2544,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
@@ -2377,6 +2555,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定订阅流白名单或者黑名单。",
           "example": "无",
           "member": "SubscribeRecordUserIds",
@@ -2404,6 +2583,7 @@
       "document": "ModifyUserMicStatus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。",
           "example": "0",
           "member": "int64",
@@ -2413,6 +2593,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实时语音房间号。",
           "example": "11",
           "member": "string",
@@ -2422,6 +2603,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要操作的房间内用户以及该用户的目标麦克风状态。",
           "example": "无",
           "member": "UserMicStatus",
@@ -2437,6 +2619,7 @@
       "document": "ModifyUserMicStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果：0为成功，非0为失败。",
           "example": "0",
           "member": "int64",
@@ -2446,6 +2629,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "错误信息。",
           "example": "123",
           "member": "string",
@@ -2468,6 +2652,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
           "member": "float",
@@ -2485,6 +2670,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区DAU",
           "member": "uint64",
           "name": "MainLandDau",
@@ -2494,6 +2680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区PCU",
           "member": "uint64",
           "name": "MainLandPcu",
@@ -2503,6 +2690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大陆地区总使用时长，单位为min",
           "member": "uint64",
           "name": "MainLandDuration",
@@ -2512,6 +2700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区DAU",
           "member": "uint64",
           "name": "OverseaDau",
@@ -2521,6 +2710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区PCU",
           "member": "uint64",
           "name": "OverseaPcu",
@@ -2530,6 +2720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "海外地区总使用时长，单位为min",
           "member": "uint64",
           "name": "OverseaDuration",
@@ -2544,6 +2735,7 @@
       "document": "实时语音配置数据",
       "members": [
         {
+          "disabled": false,
           "document": "实时语音服务开关，取值：open/close",
           "example": "open",
           "member": "string",
@@ -2554,6 +2746,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实时语音音质类型，取值：high-高音质 ordinary-普通音质",
           "example": "high",
           "member": "string",
@@ -2571,6 +2764,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
           "member": "float",
@@ -2588,6 +2782,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID（当混流模式时，取值为0）。",
           "example": "6787",
           "member": "string",
@@ -2599,6 +2794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制文件名。",
           "example": "/3400352518_2314_447947346201176660_9081",
           "member": "string",
@@ -2610,6 +2806,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制开始时间（unix时间戳如：1234567868）。",
           "example": "1234567868",
           "member": "uint64",
@@ -2621,6 +2818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制状态：2代表正在录制  10代表等待转码  11代表正在转码  12正在上传  13代表上传完成  14代表通知用户完成。",
           "example": "2",
           "member": "uint64",
@@ -2637,6 +2835,7 @@
       "document": "房间内用户信息",
       "members": [
         {
+          "disabled": false,
           "document": "房间id",
           "example": "1234",
           "member": "uint64",
@@ -2647,6 +2846,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间里用户uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[123456]",
           "member": "uint64",
@@ -2657,6 +2857,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "字符串房间id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1234\"",
           "member": "string",
@@ -2667,6 +2868,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "房间里用户字符串uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1234\"]",
           "member": "string",
@@ -2684,6 +2886,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "违规场景，参照<a href=\"https://cloud.tencent.com/document/product/607/37622#Label_Value\">Label</a>定义",
           "member": "string",
           "name": "Label",
@@ -2693,6 +2896,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该场景下概率[0.00,100.00],分值越大违规概率越高",
           "member": "string",
           "name": "Rate",
@@ -2702,6 +2906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违规关键字",
           "member": "string",
           "name": "KeyWord",
@@ -2711,6 +2916,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键字在音频的开始时间，从0开始的偏移量，单位为毫秒",
           "member": "uint64",
           "name": "StartTime",
@@ -2720,6 +2926,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒",
           "member": "uint64",
           "name": "EndTime",
@@ -2735,6 +2942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流检测时返回，音频转存地址，保留30min\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2746,6 +2954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否违规",
           "example": "false",
           "member": "bool",
@@ -2757,6 +2966,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违规主要类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
@@ -2768,6 +2978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音检测详情",
           "example": "无",
           "member": "ScanDetail",
@@ -2779,6 +2990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "gme实时语音房间ID，透传任务传入时的RoomId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "string",
@@ -2790,6 +3002,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "gme实时语音用户ID，透传任务传入时的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "string",
@@ -2801,6 +3014,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2812,6 +3026,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流检测时分片在流中的偏移时间，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2823,6 +3038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流检测时分片时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2834,6 +3050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片开始检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2851,6 +3068,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "1400000000",
           "member": "uint64",
@@ -2861,6 +3079,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href=\"#Label_Value\">具体取值见上述 Label 说明。</a>",
           "example": "[\"default\\n\"]",
           "member": "string",
@@ -2871,6 +3090,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为直播流。值为 false 时表示普通语音文件检测；为 true 时表示语音流检测。",
           "example": "false",
           "member": "bool",
@@ -2881,6 +3101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音检测任务列表，列表最多支持100个检测任务。结构体中包含：\n<li>DataId：数据的唯一ID</li>\n<li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>",
           "example": "无",
           "member": "Task",
@@ -2891,6 +3112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异步检测结果回调地址，具体见上述<a href=\"#Callback_Declare\">回调相关说明</a>。（说明：该字段为空时，必须通过接口(查询语音检测结果)获取检测结果）。",
           "example": "https://0.0.0.0/user_callback",
           "member": "string",
@@ -2901,6 +3123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语种，不传默认中文",
           "example": "jp",
           "member": "string",
@@ -2916,6 +3139,7 @@
       "document": "ScanVoice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "语音检测返回。Data 字段是 JSON 数组，每一个元素包含：<li>DataId： 请求中对应的 DataId。</li>\n<li>TaskID ：该检测任务的 ID，用于轮询语音检测结果。</li>",
           "example": "无",
           "member": "ScanVoiceResult",
@@ -2939,6 +3163,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据ID",
           "member": "string",
           "name": "DataId",
@@ -2948,6 +3173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "member": "string",
           "name": "TaskId",
@@ -2968,6 +3194,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实时语音服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
@@ -2979,6 +3206,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音消息服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
@@ -2990,6 +3218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音内容安全服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
@@ -3001,6 +3230,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音录制服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
@@ -3012,6 +3242,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语音转文本服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
@@ -3029,6 +3260,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
@@ -3039,6 +3271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID。",
           "example": "1987",
           "member": "string",
@@ -3049,6 +3282,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
           "example": "1",
           "member": "uint64",
@@ -3059,6 +3293,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定订阅流白名单或者黑名单（不传默认订阅房间内所有音频流）。",
           "example": "无",
           "member": "SubscribeRecordUserIds",
@@ -3074,6 +3309,7 @@
       "document": "StartRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务taskid。",
           "example": "446192236330927912",
           "member": "uint64",
@@ -3097,6 +3333,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日期，格式为年-月-日，如2018-07-13",
           "member": "date",
           "name": "StatDate",
@@ -3106,6 +3343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "统计值",
           "member": "uint64",
           "name": "Data",
@@ -3121,6 +3359,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务开关状态， 0-正常，1-关闭",
           "member": "uint64",
           "name": "Status",
@@ -3136,6 +3375,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID。",
           "example": "446192236330927912",
           "member": "uint64",
@@ -3146,6 +3386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
@@ -3174,6 +3415,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
           "member": "float",
@@ -3191,6 +3433,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数",
           "example": "无",
           "member": "string",
@@ -3202,6 +3445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数。",
           "example": "无",
           "member": "string",
@@ -3219,6 +3463,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TagKey",
@@ -3228,6 +3473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TagValue",
@@ -3243,6 +3489,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据的唯一ID",
           "member": "string",
           "name": "DataId",
@@ -3252,6 +3499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据文件的url，为 urlencode 编码，流式则为拉流地址",
           "member": "string",
           "name": "Url",
@@ -3261,6 +3509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "gme实时语音房间ID，通过gme实时语音进行语音分析时输入",
           "member": "string",
           "name": "RoomId",
@@ -3270,6 +3519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "gme实时语音用户ID，通过gme实时语音进行语音分析时输入",
           "member": "string",
           "name": "OpenId",
@@ -3284,6 +3534,7 @@
       "document": "UpdateScanRooms请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -3293,6 +3544,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要送检的所有房间号。多个房间号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -3302,6 +3554,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "符合此正则表达式规则的房间号将被送检。示例：[\"^6.*\"] 表示所有以6开头的房间号将被送检",
           "example": "[\"1\"]",
           "member": "string",
@@ -3317,6 +3570,7 @@
       "document": "UpdateScanRooms返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3338,6 +3592,7 @@
       "document": "UpdateScanUsers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -3347,6 +3602,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "需要送检的所有用户号。多个用户号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -3356,6 +3612,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "符合此正则表达式规则的用户号将被送检。示例：[\"^6.*\"] 表示所有以6开头的用户号将被送检",
           "example": "[\"1\"]",
           "member": "string",
@@ -3371,6 +3628,7 @@
       "document": "UpdateScanUsers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回结果码",
           "example": "0",
           "member": "int64",
@@ -3393,6 +3651,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开麦状态。1表示关闭麦克风，2表示打开麦克风。",
           "example": "1",
           "member": "int64",
@@ -3404,6 +3663,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）",
           "example": "9798",
           "member": "int64",
@@ -3415,6 +3675,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）",
           "example": "jelly",
           "member": "string",
@@ -3431,6 +3692,7 @@
       "document": "语音过滤服务配置数据",
       "members": [
         {
+          "disabled": false,
           "document": "语音过滤服务开关，取值：open/close",
           "example": "无",
           "member": "string",
@@ -3441,6 +3703,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "场景配置信息，如开关状态，回调地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SceneInfo",
@@ -3458,6 +3721,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "语音过滤总时长，单位为min",
           "example": "100",
           "member": "uint64",
@@ -3475,6 +3739,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "离线语音服务开关，取值：open/close",
           "member": "string",
           "name": "Status",
@@ -3484,6 +3749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文",
           "member": "string",
           "name": "Language",
@@ -3499,6 +3765,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "离线语音DAU",
           "member": "uint64",
           "name": "Dau",

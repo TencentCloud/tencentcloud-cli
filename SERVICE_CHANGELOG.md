@@ -1,83 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
-
-### 第 20 次发布
-
-发布时间：2023-05-17 01:09:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62664)
-
-	* 新增入参：AuxiliaryDomain
-
-* [DescribeUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62663)
-
-	* 新增出参：AuxiliaryDomain
-
-* [UpdateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/62662)
-
-	* 新增入参：AuxiliaryDomain
-
-
-
-
-## 云呼叫中心(ccc) 版本：2020-02-10
-
-### 第 35 次发布
-
-发布时间：2023-05-17 01:11:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
-
-	* 新增入参：UUI, CalleeAttributes
-
-
-新增数据结构：
-
-* [CalleeAttribute](http://document.tencentcloudapi.woa.com/document/product/679/47715#CalleeAttribute)
-
-
-
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 56 次发布
+### 第 57 次发布
 
-发布时间：2023-05-17 01:11:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)
-
-修改数据结构：
-
-* [ParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParamTemplateInfo)
-
-	* 新增成员：EngineType
-
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 25 次发布
-
-发布时间：2023-05-17 01:13:14
+发布时间：2023-05-18 01:11:07
 
 本次发布包含了以下内容：
 
@@ -85,48 +12,37 @@
 
 修改接口：
 
-* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
+* [DescribeParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/32660)
 
-	* 新增出参：Rules
-
-* [DescribeEnterpriseSecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/64233)
-
-	* 新增入参：RuleUuid
-
-
-新增数据结构：
-
-* [SecurityGroupSimplifyRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupSimplifyRule)
+	* 新增出参：EngineType
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
 
-### 第 63 次发布
+## 域名注册(domain) 版本：2018-08-08
 
-发布时间：2023-05-17 01:18:47
+### 第 14 次发布
+
+发布时间：2023-05-18 01:21:57
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77784)
-* [DescribeLogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/77783)
-* [ModifyLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77782)
+* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#CertificateInfo)
 
-新增数据结构：
-
-* [LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord)
+	* 新增成员：OriginImgUrl
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
 
-### 第 27 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2023-05-17 01:34:18
+### 第 54 次发布
+
+发布时间：2023-05-18 01:24:31
 
 本次发布包含了以下内容：
 
@@ -134,78 +50,47 @@
 
 修改接口：
 
-* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/862/37614)
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
 
-	* 新增入参：NeedHybridCloudUrl, ChannelInfo
+	* 新增入参：AutoSignScene
 
 
 修改数据结构：
 
-* [EditMediaTaskOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#EditMediaTaskOutput)
+* [FlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowInfo)
 
-	* 新增成员：MetaData
-
-* [MediaAudioStreamItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAudioStreamItem)
-
-	* 新增成员：Codecs, Loudness
-
-* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskAdaptiveDynamicStreamingResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskAnimatedGraphicResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskImageSpriteResult)
-
-	* 新增成员：BeginProcessTime, FinishTime, Progress
-
-* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSampleSnapshotResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSnapshotByTimeOffsetResult)
-
-	* 新增成员：BeginProcessTime, FinishTime, Progress
-
-* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaVideoStreamItem)
-
-	* 新增成员：Codecs
-
-* [ScheduleAnalysisTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleAnalysisTaskResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [ScheduleRecognitionTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleRecognitionTaskResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [ScheduleReviewTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleReviewTaskResult)
-
-	* 新增成员：BeginProcessTime, FinishTime
-
-* [TranscodeTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranscodeTaskInput)
-
-	* 新增成员：ChannelExtPara
+	* 新增成员：AutoSignScene
 
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-### 第 87 次发布
 
-发布时间：2023-05-17 01:48:09
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 53 次发布
+
+发布时间：2023-05-18 01:33:40
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DeleteTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/77785)
-* [DescribeSubnetResourceDashboard](http://document.tencentcloudapi.woa.com/document/product/215/77786)
+* [WaybillOCR](http://document.tencentcloudapi.woa.com/document/product/866/34934)
+
+	* 新增入参：EnableAddressAnalysis
+
+
+修改数据结构：
+
+* [TextWaybill](http://document.tencentcloudapi.woa.com/document/product/866/33527#TextWaybill)
+
+	* 新增成员：RecAddrDetail, SenderAddrDetail
+
 
 
 
@@ -6434,7 +6319,7 @@
 
 新增数据结构：
 
-* [[CalleeAttribute](http://document.tencentcloudapi.woa.com/document/product/679/47715#CalleeAttribute)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[CalleeAttribute](http://document.tencentcloudapi.woa.com/document/product/679/47715#CalleeAttribute))
+* [CalleeAttribute](http://document.tencentcloudapi.woa.com/document/product/679/47715#CalleeAttribute)
 
 ### 第 34 次发布
 
@@ -7081,6 +6966,21 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 57 次发布
+
+发布时间：2023-05-18 01:11:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/32660)
+
+	* 新增出参：EngineType
+
+
 ### 第 56 次发布
 
 发布时间：2023-05-17 01:11:26
@@ -7091,7 +6991,7 @@
 
 新增接口：
 
-* [[DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)
 
 修改数据结构：
 
@@ -9963,7 +9863,7 @@
 
 新增数据结构：
 
-* [[SecurityGroupSimplifyRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupSimplifyRule)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[SecurityGroupSimplifyRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupSimplifyRule))
+* [SecurityGroupSimplifyRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupSimplifyRule)
 
 ### 第 24 次发布
 
@@ -17246,13 +17146,13 @@
 
 新增接口：
 
-* [[DescribeLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77784)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/77783)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77782)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77784)
+* [DescribeLogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/77783)
+* [ModifyLogStorageConfig](http://document.tencentcloudapi.woa.com/document/product/296/77782)
 
 新增数据结构：
 
-* [[LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord))
+* [LogStorageRecord](http://document.tencentcloudapi.woa.com/document/product/296/19867#LogStorageRecord)
 
 ### 第 62 次发布
 
@@ -23241,6 +23141,21 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 14 次发布
+
+发布时间：2023-05-18 01:21:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#CertificateInfo)
+
+	* 新增成员：OriginImgUrl
+
+
 ### 第 13 次发布
 
 发布时间：2023-04-19 01:18:07
@@ -26408,6 +26323,28 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 54 次发布
+
+发布时间：2023-05-18 01:24:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增入参：AutoSignScene
+
+
+修改数据结构：
+
+* [FlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowInfo)
+
+	* 新增成员：AutoSignScene
+
 
 ### 第 53 次发布
 
@@ -38669,6 +38606,28 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 53 次发布
+
+发布时间：2023-05-18 01:33:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [WaybillOCR](http://document.tencentcloudapi.woa.com/document/product/866/34934)
+
+	* 新增入参：EnableAddressAnalysis
+
+
+修改数据结构：
+
+* [TextWaybill](http://document.tencentcloudapi.woa.com/document/product/866/33527#TextWaybill)
+
+	* 新增成员：RecAddrDetail, SenderAddrDetail
+
 
 ### 第 52 次发布
 
@@ -58483,8 +58442,8 @@
 
 新增接口：
 
-* [[DeleteTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/77785)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSubnetResourceDashboard](http://document.tencentcloudapi.woa.com/document/product/215/77786)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/77785)
+* [DescribeSubnetResourceDashboard](http://document.tencentcloudapi.woa.com/document/product/215/77786)
 
 ### 第 86 次发布
 

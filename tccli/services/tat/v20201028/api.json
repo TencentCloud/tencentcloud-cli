@@ -145,6 +145,7 @@
       "document": "自动化助手客户端信息",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID。",
           "example": "无",
           "member": "string",
@@ -155,6 +156,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Agent 版本号。",
           "example": "无",
           "member": "string",
@@ -165,6 +167,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "上次心跳时间",
           "example": "无",
           "member": "datetime_iso",
@@ -175,6 +178,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Agent状态，取值范围：\n<li> Online：在线\n<li> Offline：离线",
           "example": "无",
           "member": "string",
@@ -185,6 +189,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Agent运行环境，取值范围：\n<li> Linux：Linux实例\n<li> Windows：Windows实例",
           "example": "无",
           "member": "string",
@@ -195,6 +200,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Agent 支持的功能列表。",
           "example": "[\"NEW_FEATURE\"]",
           "member": "string",
@@ -212,6 +218,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动ID",
           "example": "无 ",
           "member": "string",
@@ -221,6 +228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表，上限100。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
           "example": "无",
           "member": "string",
@@ -248,6 +256,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID。",
           "example": "cmd-aaaaaaaa",
           "member": "string",
@@ -258,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令名称。",
           "example": "cmdname",
           "member": "string",
@@ -268,6 +278,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令描述。",
           "example": "the cmd",
           "member": "string",
@@ -278,6 +289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码后的命令内容。",
           "example": "bHMgMTIzCmVjaG8ge3tifX0ge3tjfX0=",
           "member": "string",
@@ -288,6 +300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令类型。",
           "example": "SHELL",
           "member": "string",
@@ -298,6 +311,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行路径。",
           "example": "/",
           "member": "string",
@@ -308,6 +322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令超时时间。",
           "example": "123",
           "member": "uint64",
@@ -318,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -328,6 +344,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令更新时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -338,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否启用自定义参数功能。",
           "example": "false",
           "member": "bool",
@@ -348,6 +366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义参数的默认取值。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -358,6 +377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令的结构化描述。公共命令有值，用户命令为空字符串。",
           "example": "{\\\"cmd_description\\\":{\\\"en\\\":\\\"cmd1\\\",\\\"zh-cn\\\":\\\"cmd1\\\",\\\"name-",
           "member": "string",
@@ -368,6 +388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令创建者。TAT 代表公共命令，USER 代表个人命令。",
           "example": "TAT",
           "member": "string",
@@ -378,6 +399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令关联的标签列表。",
           "example": "无",
           "member": "Tag",
@@ -388,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在实例上执行命令的用户名。",
           "example": "root",
           "member": "string",
@@ -398,6 +421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志上传的cos bucket 地址。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -408,6 +432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志在cos bucket中的目录。",
           "example": "aa/bb/cc",
           "member": "string",
@@ -423,6 +448,7 @@
       "document": "命令执行详情。",
       "members": [
         {
+          "disabled": false,
           "document": "Base64 编码后的执行命令。",
           "example": "无",
           "member": "string",
@@ -433,6 +459,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "命令类型。",
           "example": "SHELL",
           "member": "string",
@@ -443,6 +470,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "超时时间。",
           "example": "60",
           "member": "uint64",
@@ -453,6 +481,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "执行路径。",
           "example": "/root",
           "member": "string",
@@ -463,6 +492,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "执行用户。",
           "example": "root",
           "member": "string",
@@ -473,6 +503,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "保存输出的 COS Bucket 链接。",
           "example": "https://<名称>-<AppId>.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -483,6 +514,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "保存输出的文件名称前缀。",
           "example": "agent",
           "member": "string",
@@ -500,6 +532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
           "example": "无",
           "member": "string",
@@ -510,6 +543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
           "example": "无",
           "member": "string",
@@ -520,6 +554,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令描述。不超过120字符。",
           "example": "无",
           "member": "string",
@@ -530,6 +565,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。",
           "example": "无",
           "member": "string",
@@ -540,6 +576,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行路径，对于 SHELL 命令默认为 /root，对于 POWERSHELL 命令默认为 C:\\Program Files\\qcloud\\tat_agent\\workdir。",
           "example": "无",
           "member": "string",
@@ -550,6 +587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
           "example": "无",
           "member": "uint64",
@@ -560,6 +598,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n默认值：false。",
           "example": "false",
           "member": "bool",
@@ -570,6 +609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -580,6 +620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "为命令关联的标签，列表长度不超过10。",
           "example": "无",
           "member": "Tag",
@@ -590,6 +631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在 Linux 实例中以 root 用户执行命令；在Windows 实例中以 System 用户执行命令。",
           "example": "root",
           "member": "string",
@@ -600,6 +642,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -610,6 +653,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称",
           "example": "aa/bb/cc",
           "member": "string",
@@ -625,6 +669,7 @@
       "document": "CreateCommand返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "命令ID。",
           "example": "无",
           "member": "string",
@@ -648,6 +693,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行器名称。",
           "example": "invoker-test",
           "member": "string",
@@ -658,6 +704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
           "example": "SCHEDULE",
           "member": "string",
@@ -668,6 +715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "远程命令ID。",
           "example": "cmd-k4ypdij0",
           "member": "string",
@@ -678,6 +726,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发器关联的实例ID。列表上限 100。",
           "example": "[\"ins-yx05ky8j\"]",
           "member": "string",
@@ -688,6 +737,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行用户。",
           "example": "root",
           "member": "string",
@@ -698,6 +748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令自定义参数。",
           "example": "{\"var\": \"A\"}",
           "member": "string",
@@ -708,6 +759,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "周期执行器设置，当创建周期执行器时，必须指定此参数。",
           "example": "无",
           "member": "ScheduleSettings",
@@ -723,6 +775,7 @@
       "document": "CreateInvoker返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "执行器ID。",
           "example": "ivk-b7s3qa5l",
           "member": "string",
@@ -746,6 +799,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待删除的命令ID。",
           "example": "cmd-7efujjs6",
           "member": "string",
@@ -773,6 +827,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待删除的执行器ID。",
           "example": "ivk-b7s3qa5l",
           "member": "string",
@@ -800,6 +855,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的实例ID列表。",
           "example": "[\"lhins-ar5wyn4x\"]",
           "member": "string",
@@ -809,6 +865,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件。<br> <li> agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。<br> <li> environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
@@ -818,6 +875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "10",
           "member": "uint64",
@@ -827,6 +885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -841,6 +900,7 @@
       "document": "DescribeAutomationAgentStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Agent 信息列表。",
           "example": "无",
           "member": "AutomationAgentInfo",
@@ -850,6 +910,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的 Agent 总数。",
           "example": "1",
           "member": "uint64",
@@ -872,6 +933,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID列表，每次请求的上限为100。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
           "example": "无",
           "member": "string",
@@ -881,6 +943,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件。\n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。\n<li> command-name - String - 是否必填：否 -（过滤条件）按照命令名称过滤。\n<li> command-type - String - 是否必填：否 -（过滤条件）按照命令类型过滤，取值为 SHELL 或 POWERSHELL。\n<li> created-by - String - 是否必填：否 -（过滤条件）按照命令创建者过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例4</li>\n\n每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
@@ -890,6 +953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "10",
           "member": "uint64",
@@ -899,6 +963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -913,6 +978,7 @@
       "document": "DescribeCommands返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的命令总数。",
           "example": "1",
           "member": "uint64",
@@ -922,6 +988,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "命令详情列表。",
           "example": "无",
           "member": "Command",
@@ -944,6 +1011,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationTaskIds` 和 `Filters`。",
           "example": "无",
           "member": "string",
@@ -953,6 +1021,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
@@ -962,6 +1031,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "10",
           "member": "uint64",
@@ -971,6 +1041,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -980,6 +1051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否隐藏输出，取值范围：<br><li>True：隐藏输出 <br><li>False：不隐藏 <br>默认为 True。",
           "example": "false",
           "member": "bool",
@@ -994,6 +1066,7 @@
       "document": "DescribeInvocationTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的执行任务总数。",
           "example": "3",
           "member": "uint64",
@@ -1003,6 +1076,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "执行任务列表。",
           "example": "无",
           "member": "InvocationTask",
@@ -1025,6 +1099,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationIds` 和 `Filters`。",
           "example": "无",
           "member": "string",
@@ -1035,6 +1110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> \n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。 \n<li> command-created-by - String - 是否必填：否 -（过滤条件）按照执行的命令类型过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。\n<li> instance-kind - String - 是否必填：否 -（过滤条件）按照运行实例类型过滤，取值为 CVM 或 LIGHTHOUSE，CVM 代表实例为云服务器， LIGHTHOUSE 代表实例为轻量应用服务器。\n<br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
@@ -1045,6 +1121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "10",
           "member": "uint64",
@@ -1055,6 +1132,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -1070,6 +1148,7 @@
       "document": "DescribeInvocations返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的执行活动总数。",
           "example": "1",
           "member": "uint64",
@@ -1080,6 +1159,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "执行活动列表。",
           "example": "无",
           "member": "Invocation",
@@ -1103,6 +1183,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行器ID列表。列表上限 100。",
           "example": "[\"ivk-b7s3qa5l\"]",
           "member": "string",
@@ -1112,6 +1193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -1121,6 +1203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -1135,6 +1218,7 @@
       "document": "DescribeInvokerRecords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的历史记录数量。",
           "example": "10",
           "member": "uint64",
@@ -1144,6 +1228,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "执行器执行历史记录。",
           "example": "无",
           "member": "InvokerRecord",
@@ -1166,6 +1251,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行器ID列表。",
           "example": "[\"ivk-b7s3qa5l\"]",
           "member": "string",
@@ -1175,6 +1261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件：\n\n<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。\n<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。\n<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。",
           "example": "无",
           "member": "Filter",
@@ -1184,6 +1271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -1193,6 +1281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -1207,6 +1296,7 @@
       "document": "DescribeInvokers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "满足条件的执行器数量。",
           "example": "10",
           "member": "uint64",
@@ -1216,6 +1306,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "执行器信息。",
           "example": "无",
           "member": "Invoker",
@@ -1242,6 +1333,7 @@
       "document": "DescribeRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "地域数量",
           "example": "1",
           "member": "uint64",
@@ -1251,6 +1343,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "地域信息列表",
           "example": "无",
           "member": "RegionInfo",
@@ -1273,6 +1366,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待停止的执行器ID。",
           "example": "ivk-b7s3qa5l",
           "member": "string",
@@ -1300,6 +1394,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待启用的执行器ID。",
           "example": "ivk-b7s3qa5l",
           "member": "string",
@@ -1327,6 +1422,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤的字段。",
           "member": "string",
           "name": "Name",
@@ -1336,6 +1432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段的过滤值。",
           "member": "string",
           "name": "Values",
@@ -1351,6 +1448,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动ID。",
           "example": "无",
           "member": "string",
@@ -1361,6 +1459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID。",
           "example": "无",
           "member": "string",
@@ -1371,6 +1470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> PARTIAL_FAILED：命令部分失败",
           "example": "无",
           "member": "string",
@@ -1381,6 +1481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务信息列表。",
           "example": "无",
           "member": "InvocationTaskBasicInfo",
@@ -1391,6 +1492,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动描述。",
           "example": "无",
           "member": "string",
@@ -1401,6 +1503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动开始时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1411,6 +1514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动结束时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1421,6 +1525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1431,6 +1536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动更新时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1441,6 +1547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义参数取值。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -1451,6 +1558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义参数的默认取值。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -1461,6 +1569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。",
           "example": "CVM",
           "member": "string",
@@ -1471,6 +1580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在实例上执行命令时使用的用户名。",
           "example": "root",
           "member": "string",
@@ -1481,6 +1591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调用来源。",
           "example": "USER",
           "member": "string",
@@ -1491,6 +1602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "base64编码的命令内容",
           "example": "cHdk",
           "member": "string",
@@ -1501,6 +1613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令类型",
           "example": "SHELL",
           "member": "string",
@@ -1511,6 +1624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行命令过期时间， 单位秒",
           "example": "60",
           "member": "uint64",
@@ -1521,6 +1635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行命令的工作路径",
           "example": "/root",
           "member": "string",
@@ -1531,6 +1646,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志上传的cos bucket 地址。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -1541,6 +1657,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志在cos bucket中的目录。",
           "example": "aa/bb/cc",
           "member": "string",
@@ -1557,6 +1674,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行活动ID。",
           "example": "无",
           "member": "string",
@@ -1567,6 +1685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务ID。",
           "example": "无",
           "member": "string",
@@ -1577,6 +1696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID。",
           "example": "无",
           "member": "string",
@@ -1587,6 +1707,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> START_FAILED：命令启动失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令执行失败，执行完退出码不为 0\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时\n<li> CANCELLING：取消中\n<li> CANCELLED：已取消（命令启动前就被取消）\n<li> TERMINATED：已中止（命令执行期间被取消）",
           "example": "无",
           "member": "string",
@@ -1597,6 +1718,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "无",
           "member": "string",
@@ -1607,6 +1729,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行结果。",
           "example": "无",
           "member": "TaskResult",
@@ -1617,6 +1740,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务开始时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1627,6 +1751,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务结束时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1637,6 +1762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1647,6 +1773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1657,6 +1784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务所执行的命令详情。",
           "example": "无",
           "member": "CommandDocument",
@@ -1667,6 +1795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务失败时的错误信息。",
           "example": "working_directory not exists",
           "member": "string",
@@ -1677,6 +1806,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调用来源。",
           "example": "USER",
           "member": "string",
@@ -1693,6 +1823,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务ID。",
           "example": "invt-aaaabbbb",
           "member": "string",
@@ -1703,6 +1834,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> START_FAILED：命令启动失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令执行失败，执行完退出码不为 0\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时\n<li> CANCELLING：取消中\n<li> CANCELLED：已取消（命令启动前就被取消）\n<li> TERMINATED：已中止（命令执行期间被取消）",
           "example": "TERMINATED",
           "member": "string",
@@ -1713,6 +1845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "ins-aaaabbbb",
           "member": "string",
@@ -1729,6 +1862,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待触发的命令ID。",
           "example": "cmd-ffxdx79i",
           "member": "string",
@@ -1739,6 +1873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待执行命令的实例ID列表，上限100。",
           "example": "[\"lhins-ar5wyn40\"]",
           "member": "string",
@@ -1749,6 +1884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -1759,6 +1895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。若不填，默认以 Command 配置的 Username 执行。",
           "example": "root",
           "member": "string",
@@ -1769,6 +1906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行路径, 默认以Command配置的WorkingDirectory执行。",
           "example": "/root",
           "member": "string",
@@ -1779,6 +1917,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。",
           "example": "60",
           "member": "uint64",
@@ -1789,6 +1928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -1799,6 +1939,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
           "example": "aa/bb/cc",
           "member": "string",
@@ -1814,6 +1955,7 @@
       "document": "InvokeCommand返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "执行活动ID。",
           "example": "inv-8xgjrytm",
           "member": "string",
@@ -1837,6 +1979,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行器ID。",
           "example": "ivk-27yagap9",
           "member": "string",
@@ -1847,6 +1990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器名称。",
           "example": "invoker-test",
           "member": "string",
@@ -1857,6 +2001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器类型。",
           "example": "SCHEDULE",
           "member": "string",
@@ -1867,6 +2012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID。",
           "example": "cmd-m7uma92n",
           "member": "string",
@@ -1877,6 +2023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名。",
           "example": "root",
           "member": "string",
@@ -1887,6 +2034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义参数。",
           "example": "{\"var\": 1}",
           "member": "string",
@@ -1897,6 +2045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表。",
           "example": "[\"ins-yx05ky8j\"]",
           "member": "string",
@@ -1907,6 +2056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器是否启用。",
           "example": "true",
           "member": "bool",
@@ -1917,6 +2067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器周期计划。周期执行器会返回此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleSettings",
@@ -1927,6 +2078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。",
           "example": "2021-08-30T06:42:02Z",
           "member": "datetime_iso",
@@ -1937,6 +2089,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间。",
           "example": "2021-08-30T06:42:02Z",
           "member": "datetime_iso",
@@ -1953,6 +2106,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行器ID。",
           "example": "ivk-b7s3qa5l",
           "member": "string",
@@ -1963,6 +2117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行时间。",
           "example": "2021-10-30T00:00:00Z",
           "member": "datetime_iso",
@@ -1973,6 +2128,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行原因。",
           "example": "start an invocation at scheduled time.",
           "member": "string",
@@ -1983,6 +2139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行ID。",
           "example": "inv-4ybg8gmj",
           "member": "string",
@@ -1993,6 +2150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发结果。",
           "example": "SUCCESS",
           "member": "string",
@@ -2009,6 +2167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命令ID。",
           "example": "cmd-7efujjs6",
           "member": "string",
@@ -2018,6 +2177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
           "example": "无",
           "member": "string",
@@ -2027,6 +2187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令描述。不超过120字符。",
           "example": "无",
           "member": "string",
@@ -2036,6 +2197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
           "example": "无",
           "member": "string",
@@ -2045,6 +2207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。",
           "example": "无",
           "member": "string",
@@ -2054,6 +2217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行路径。",
           "example": "无",
           "member": "string",
@@ -2063,6 +2227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令超时时间。取值范围[1, 86400]。",
           "example": "无",
           "member": "uint64",
@@ -2072,6 +2237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\n采取整体全覆盖式修改，即修改时必须提供所有新默认值。\n必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -2081,6 +2247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。",
           "example": "root",
           "member": "string",
@@ -2090,6 +2257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -2099,6 +2267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
           "example": "aa/bb/cc",
           "member": "string",
@@ -2126,6 +2295,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的执行器ID。",
           "example": "ivk-n0t6rxtv",
           "member": "string",
@@ -2135,6 +2305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的执行器名称。",
           "example": "invoker-test",
           "member": "string",
@@ -2144,6 +2315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
           "example": "SCHEDULE",
           "member": "string",
@@ -2153,6 +2325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的命令ID。",
           "example": "cmd-m7uma92n",
           "member": "string",
@@ -2162,6 +2335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的用户名。",
           "example": "root",
           "member": "string",
@@ -2171,6 +2345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的自定义参数。",
           "example": "{\"var\": \"A\"}",
           "member": "string",
@@ -2180,6 +2355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的实例ID列表。列表长度上限100。",
           "example": "[\"ins-yx05ky8j\"]",
           "member": "string",
@@ -2189,6 +2365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的周期执行器设置。",
           "example": "无",
           "member": "ScheduleSettings",
@@ -2216,6 +2393,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "本次预览采用的自定义参数。字段类型为 json encoded string，如：{\\\"varA\\\": \\\"222\\\"}。\nkey 为自定义参数名称，value 为该参数的取值。kv 均为字符串型。\n自定义参数最多 20 个。\n自定义参数名称需符合以下规范：字符数目上限 64，可选范围【a-zA-Z0-9-_】。\n如果将预览的 CommandId 设置过 DefaultParameters，本参数可以为空。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -2226,6 +2404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要进行替换预览的命令，如果有设置过 DefaultParameters，会与 Parameters 进行叠加，后者覆盖前者。\nCommandId 与 Content，必须且只能提供一个。",
           "example": "cmd-abcdefgh",
           "member": "string",
@@ -2236,6 +2415,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要预览的命令内容，经 Base64 编码，长度不可超过 64KB。\nCommandId 与 Content，必须且只能提供一个。",
           "example": "bHMge3thfX0KZWNobyB7e2J9fQ==",
           "member": "string",
@@ -2251,6 +2431,7 @@
       "document": "PreviewReplacedCommandContent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义参数替换后的，经Base64编码的命令内容。",
           "example": "无",
           "member": "string",
@@ -2274,6 +2455,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域名称，例如，ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2284,6 +2466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域描述，例如: 广州",
           "example": "广州",
           "member": "string",
@@ -2294,6 +2477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域是否可用状态，AVAILABLE 代表可用",
           "example": "AVAILABLE",
           "member": "string",
@@ -2310,6 +2494,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
           "example": "无",
           "member": "string",
@@ -2320,6 +2505,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待执行命令的实例ID列表，上限100。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
           "example": "无",
           "member": "string",
@@ -2330,6 +2516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
           "example": "无",
           "member": "string",
@@ -2340,6 +2527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令描述。不超过120字符。",
           "example": "无",
           "member": "string",
@@ -2350,6 +2538,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。",
           "example": "无",
           "member": "string",
@@ -2360,6 +2549,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行路径，对于 SHELL 命令默认为 /root，对于 POWERSHELL 命令默认为 C:\\Program Files\\qcloud\\tat_agent\\workdir。",
           "example": "无",
           "member": "string",
@@ -2370,6 +2560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
           "example": "无",
           "member": "uint64",
@@ -2380,6 +2571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否保存命令，取值范围：\n<li> True：保存\n<li> False：不保存\n默认为 False。",
           "example": "无",
           "member": "bool",
@@ -2390,6 +2582,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n默认值：false。",
           "example": "false",
           "member": "bool",
@@ -2400,6 +2593,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果 Parameters 未提供，将使用这里的默认值进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -2410,6 +2604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Command 的自定义参数。字段类型为json encoded string。如：{\\\"varA\\\": \\\"222\\\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 DefaultParameters 进行替换。\n自定义参数最多20个。\n自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
@@ -2420,6 +2615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果保存命令，可为命令设置标签。列表长度不超过10。",
           "example": "无",
           "member": "Tag",
@@ -2430,6 +2626,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在 CVM 或 Lighthouse 实例中执行命令的用户名称。\n使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在 Linux 实例中以 root 用户执行命令；在Windows 实例中以 System 用户执行命令。",
           "example": "root",
           "member": "string",
@@ -2440,6 +2637,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -2450,6 +2648,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
           "example": "aa/bb/cc",
           "member": "string",
@@ -2465,6 +2664,7 @@
       "document": "RunCommand返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "命令ID。",
           "example": "无",
           "member": "string",
@@ -2475,6 +2675,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "执行活动ID。",
           "example": "无",
           "member": "string",
@@ -2498,6 +2699,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行策略：\n<br><li>ONCE：单次执行\n<br><li>RECURRENCE：周期执行",
           "example": "ONCE",
           "member": "string",
@@ -2508,6 +2710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发 Crontab 表达式。Policy 为 RECURRENCE 时，需要指定此字段。Crontab 按北京时间解析。",
           "example": "0 0 1 * *",
           "member": "string",
@@ -2518,6 +2721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。",
           "example": "2021-09-01T00:00:00+08:00",
           "member": "datetime_iso",
@@ -2534,6 +2738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键。",
           "example": "tag-key",
           "member": "string",
@@ -2544,6 +2749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值。",
           "example": "tag-value",
           "member": "string",
@@ -2560,6 +2766,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行ExitCode。",
           "example": "0",
           "member": "int64",
@@ -2570,6 +2777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码后的命令输出。最大长度24KB。",
           "example": "aGVsbG8sd29ybGQ=",
           "member": "string",
@@ -2580,6 +2788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行开始时间。",
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
@@ -2590,6 +2799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令执行结束时间。",
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
@@ -2600,6 +2810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令最终输出被截断的字节数。",
           "example": "100",
           "member": "uint64",
@@ -2610,6 +2821,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志在cos中的地址",
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
@@ -2620,6 +2832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志上传cos的错误信息。",
           "example": "无",
           "member": "string",

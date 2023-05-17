@@ -1,3 +1,99 @@
+# Release 3.0.764.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 57 次发布
+
+发布时间：2023-05-18 01:11:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/32660)
+
+	* 新增出参：EngineType
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 14 次发布
+
+发布时间：2023-05-18 01:21:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#CertificateInfo)
+
+	* 新增成员：OriginImgUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 54 次发布
+
+发布时间：2023-05-18 01:24:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增入参：AutoSignScene
+
+
+修改数据结构：
+
+* [FlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowInfo)
+
+	* 新增成员：AutoSignScene
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 53 次发布
+
+发布时间：2023-05-18 01:33:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [WaybillOCR](http://document.tencentcloudapi.woa.com/document/product/866/34934)
+
+	* 新增入参：EnableAddressAnalysis
+
+
+修改数据结构：
+
+* [TextWaybill](http://document.tencentcloudapi.woa.com/document/product/866/33527#TextWaybill)
+
+	* 新增成员：RecAddrDetail, SenderAddrDetail
+
+
+
+
 # Release 3.0.763.1
 
 ## 访问管理(cam) 版本：2019-01-16

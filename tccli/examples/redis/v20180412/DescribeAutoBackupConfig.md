@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+查询指定实例的自动备份规则
 
 Input: 
 
 ```
 tccli redis DescribeAutoBackupConfig --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p
+    --InstanceId crs-5a4p****
 ```
 
 Output: 

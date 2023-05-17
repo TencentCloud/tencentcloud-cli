@@ -223,6 +223,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "SaaS账号唯一ID。",
           "example": "132****1234",
           "member": "string",
@@ -232,6 +233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平台。coding：coding；腾讯会议：meeting。",
           "example": "co**ng",
           "member": "string",
@@ -259,6 +261,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白名单键",
           "example": "whiteKey",
           "member": "string",
@@ -268,6 +271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白名单值,最多1000个",
           "example": "[\"123456\\n\"]",
           "member": "string",
@@ -312,6 +316,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要绑定的云账号uin",
           "example": "123",
           "member": "int64",
@@ -322,6 +327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号类型。目前支持：wx_open，la，wx_biz",
           "example": "wx_open",
           "member": "string",
@@ -332,6 +338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号相关数据",
           "example": "无",
           "member": "TCBRegisterData",
@@ -360,6 +367,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号名",
           "member": "string",
           "name": "Account",
@@ -368,6 +376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号类型。手机：phone；邮箱：mail；微信： wechat；QQ： qq；公众号：wechatMp",
           "member": "string",
           "name": "Type",
@@ -376,6 +385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号平台。coding：coding",
           "member": "string",
           "name": "Platform",
@@ -389,6 +399,7 @@
       "document": "CheckAccountExists返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号是否存在。true表示存在，false表示不存在。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "Exist",
@@ -409,6 +420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白名单键",
           "example": "whiteKey",
           "member": "string",
@@ -419,6 +431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白名单值,最多1000个",
           "example": "[\"123456\\n\"]",
           "member": "string",
@@ -451,6 +464,7 @@
       "document": "DescribeBasicAuthForSaaS返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "主账号 uin",
           "example": "10001",
           "member": "int64",
@@ -461,6 +475,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "账号类型。0：个人，1：企业",
           "example": "1",
           "member": "int64",
@@ -471,6 +486,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "账号名称（个人姓名或企业名称）",
           "example": "张三",
           "member": "string",
@@ -481,6 +497,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "手机号码",
           "example": "13712345678",
           "member": "string",
@@ -491,6 +508,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "国际代码",
           "example": "86",
           "member": "string",
@@ -501,6 +519,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "证件号码。证件类型身份证：身份账号号。 证件类型公司营业执照：统一身份信用代码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "91xxxxxxxxxx504XW",
           "member": "string",
@@ -524,6 +543,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询Uin，最多50个",
           "example": "[1224555,14234234]",
           "member": "int64",
@@ -534,6 +554,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制个数,最多100个",
           "example": "10",
           "member": "int64",
@@ -544,6 +565,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "int64",
@@ -559,6 +581,7 @@
       "document": "DescribeIpByUin返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "IP信息列表",
           "example": "无",
           "member": "IPInfo",
@@ -569,6 +592,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "数据总数量",
           "example": "10",
           "member": "int64",
@@ -596,6 +620,7 @@
       "document": "DescribeNickname返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "昵称",
           "member": "string",
           "name": "Nickname",
@@ -603,6 +628,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "展示昵称",
           "member": "string",
           "name": "DisplayName",
@@ -627,6 +653,7 @@
       "document": "DescribeSensitiveInfoHashValue返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "哈希算法(如：md5)。",
           "member": "string",
           "name": "HashAlgorithm",
@@ -634,6 +661,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "哈希salt。",
           "member": "string",
           "name": "Salt",
@@ -641,6 +669,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否存在安全手机（0：不存在，1：存在）。",
           "member": "int64",
           "name": "HasSecurePhone",
@@ -648,6 +677,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否存在实名信息（0：不存在，1：存在）。",
           "member": "int64",
           "name": "HasAuthInfo",
@@ -655,6 +685,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全手机哈希值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SecurePhoneHashValue",
@@ -662,6 +693,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实名认证名称哈希值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AuthNameHashValue",
@@ -682,6 +714,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "公众号username",
           "example": "无",
           "member": "string",
@@ -692,6 +725,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "TCB账号类型(wx_open, la, wx_biz)",
           "example": "无",
           "member": "string",
@@ -707,6 +741,7 @@
       "document": "DescribeTCBBinding返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "username绑定的云账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
@@ -717,6 +752,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "账号绑定类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -727,6 +763,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "当前账号指定绑定类型的username\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -754,6 +791,7 @@
       "document": "DescribeUserTrade返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "UIN",
           "member": "uint64",
           "name": "Uin",
@@ -761,6 +799,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "审核状态(0：未提交审核; 1：审核中; 2：审核不通过; 3：审核通过)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "CheckStatus",
@@ -768,6 +807,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "认证级别(1级、2级、3级)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "AuthLevel",
@@ -775,6 +815,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "拒绝原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RejectReason",
@@ -782,6 +823,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已经领取扶持（0：未领取；1：已领取）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "GetSupport",
@@ -789,6 +831,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "套餐领取时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "SupportTime",
@@ -796,6 +839,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "扶持套餐（对应package id字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "SupportPkg",
@@ -803,6 +847,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "行业名\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TradeName",
@@ -810,6 +855,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "一级行业\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TradeOne",
@@ -817,6 +863,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "二级行业\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TradeTwo",
@@ -824,6 +871,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "AddTime",
@@ -831,6 +879,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "CheckTime",
@@ -838,6 +887,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "拒绝类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "RejectType",
@@ -845,6 +895,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "UpdateTime",
@@ -852,6 +903,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "审核人\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Checker",
@@ -859,6 +911,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上一次审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "PassTime",
@@ -866,6 +919,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "套餐ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PkgIds",
@@ -886,6 +940,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Name",
@@ -895,6 +950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Id标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IdCard",
@@ -904,6 +960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Token\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Token",
@@ -919,6 +976,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -928,6 +986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "FaceIdData",
           "name": "Data",
@@ -943,6 +1002,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的uin",
           "example": "123",
           "member": "uint64",
@@ -958,6 +1018,7 @@
       "document": "GetAppIdByUin返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号appid",
           "example": "123",
           "member": "uint64",
@@ -981,6 +1042,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的账号uin",
           "example": "123",
           "member": "uint64",
@@ -996,6 +1058,7 @@
       "document": "GetAreaByUin返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "1: 国内站，2：国际站",
           "example": "1",
           "member": "int64",
@@ -1006,6 +1069,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "国家名",
           "example": "CN",
           "member": "string",
@@ -1016,6 +1080,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "国家代码",
           "example": "86",
           "member": "string",
@@ -1039,6 +1104,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "认证账户UIN",
           "member": "uint64",
           "name": "AuthUin",
@@ -1052,6 +1118,7 @@
       "document": "GetAuthNonSensitiveInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实名认证通过时间",
           "member": "string",
           "name": "PassTime",
@@ -1076,6 +1143,7 @@
       "document": "GetAuthStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实名状态:0，未提交审核，1审核中，2审核失败，3通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Status",
@@ -1083,6 +1151,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "姓名",
           "member": "string",
           "name": "Name",
@@ -1103,6 +1172,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户端UA",
           "example": "chrome",
           "member": "string",
@@ -1112,6 +1182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接口名",
           "example": "getInfo",
           "member": "string",
@@ -1121,6 +1192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登陆的skey",
           "example": "LpZhb4CdVm5*HP9w1vji6xn3u4QIg3i*4czhRfifHI0",
           "member": "string",
@@ -1130,6 +1202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端IP",
           "example": "0.0.0.0",
           "member": "string",
@@ -1139,6 +1212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主账号",
           "example": "1000023434",
           "member": "uint64",
@@ -1153,6 +1227,7 @@
       "document": "GetBackUpValidate返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "人脸校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FaceIdValidInfo",
@@ -1162,6 +1237,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "手机校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PhoneValidInfo",
@@ -1171,6 +1247,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "微信校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WeChatValidInfo",
@@ -1180,6 +1257,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TokenValidInfo",
@@ -1189,6 +1267,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "软Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StokenValidInfo",
@@ -1198,6 +1277,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "邮箱校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MailValidInfo",
@@ -1220,6 +1300,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "微信公众号username",
           "example": "gh_7180000000",
           "member": "string",
@@ -1230,6 +1311,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信公众号appid",
           "example": "wx5c07f2xxxxxx",
           "member": "string",
@@ -1240,6 +1322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否刷新access_token。0：不刷新，1：刷新",
           "example": "0",
           "member": "int64",
@@ -1255,6 +1338,7 @@
       "document": "GetMediaPlatformAccessToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "微信公众号appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1265,6 +1349,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "微信公众号username\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1275,6 +1360,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "微信公众号access_token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1285,6 +1371,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "微信公众号func_scope\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1308,6 +1395,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号uin",
           "example": "123",
           "member": "int64",
@@ -1323,6 +1411,7 @@
       "document": "GetSiteProperties返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "1：国际站；0：非国际站",
           "example": "是否是国际站账号",
           "member": "int64",
@@ -1346,6 +1435,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "语言版本",
           "member": "string",
           "name": "Lang",
@@ -1359,6 +1449,7 @@
       "document": "GetTradeConfigList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "行业列表",
           "member": "TradeOneNode",
           "name": "TradeList",
@@ -1379,6 +1470,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号appid",
           "example": "123",
           "member": "int64",
@@ -1394,6 +1486,7 @@
       "document": "GetUinByAppId返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号uin",
           "example": "123",
           "member": "int64",
@@ -1404,6 +1497,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "账号appid",
           "example": "123",
           "member": "int64",
@@ -1414,6 +1508,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "账号注册完成时间",
           "example": "2022-12-15 15:35:40",
           "member": "string",
@@ -1437,6 +1532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "IP地址",
           "example": "127.0.0.1",
           "member": "string",
@@ -1448,6 +1544,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间",
           "example": "2022-12-12 12:00:00",
           "member": "string",
@@ -1459,6 +1556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP类型",
           "example": "login/register",
           "member": "string",
@@ -1470,6 +1568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户uin",
           "example": "12344555",
           "member": "int64",
@@ -1487,6 +1586,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "微信小程序tmp_code",
           "example": "无",
           "member": "string",
@@ -1497,6 +1597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否需要返回sts token",
           "example": "1",
           "member": "int64",
@@ -1507,6 +1608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "sts token是否使用v3版本",
           "example": "1",
           "member": "int64",
@@ -1517,6 +1619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户IP。如果需要返回 sts token，该参数必填",
           "example": "无",
           "member": "string",
@@ -1532,6 +1635,7 @@
       "document": "LoginViaTCB返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "登录token或者sts token",
           "example": "无",
           "member": "string",
@@ -1542,6 +1646,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "临时密钥id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1552,6 +1657,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "临时密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1562,6 +1668,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "密钥过期时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1585,6 +1692,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -1600,6 +1708,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级行业",
           "member": "string",
           "name": "TradeOne",
@@ -1608,6 +1717,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级行业",
           "member": "string",
           "name": "TradeTwo",
@@ -1634,6 +1744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PhoneNumber",
@@ -1643,6 +1754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "国码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CountryCode",
@@ -1658,6 +1770,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -1667,6 +1780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "电话相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PhoneData",
           "name": "Data",
@@ -1682,6 +1796,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号类型。目前支持：la, wx_open, wx_biz",
           "example": "la",
           "member": "string",
@@ -1692,6 +1807,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号注册信息",
           "example": "无",
           "member": "TCBRegisterData",
@@ -1707,6 +1823,7 @@
       "document": "RegisterAccountForTCB返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
@@ -1717,6 +1834,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "0: 新建账号，1：绑定存量账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1740,6 +1858,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户端浏览器UA。",
           "example": "chrome",
           "member": "string",
@@ -1749,6 +1868,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端IP。",
           "example": "1.1.1.1",
           "member": "string",
@@ -1758,6 +1878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属国家简称。 参考http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951000762171",
           "example": "CN",
           "member": "string",
@@ -1767,6 +1888,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所有国家区号。",
           "example": "86",
           "member": "string",
@@ -1776,6 +1898,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "注册类型。手机：phone；邮件：email；微信：wechat；QQ：qq。",
           "example": "phone",
           "member": "string",
@@ -1785,6 +1908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语言，中文：zh；英文：en。",
           "example": "zh",
           "member": "string",
@@ -1794,6 +1918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域，1中国版，2国际版。",
           "example": "1",
           "member": "uint64",
@@ -1803,6 +1928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "注册来源，接入时统一分配。",
           "example": "co****g",
           "member": "string",
@@ -1812,6 +1938,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接入级别，接入时协定，1代表level1，依次类推。具体级别参考：http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951001599427",
           "example": "3",
           "member": "uint64",
@@ -1821,6 +1948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全手机，发送敏感短信信息。",
           "example": "132****9791",
           "member": "string",
@@ -1830,6 +1958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机验证码。",
           "example": "42***43",
           "member": "string",
@@ -1839,6 +1968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全邮箱，发送敏感邮件信息。",
           "example": "test@qq.com",
           "member": "string",
@@ -1848,6 +1978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱验证码。",
           "example": "343423",
           "member": "string",
@@ -1857,6 +1988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户密码，手机和邮箱注册用户必填。",
           "example": "1234***abcd",
           "member": "string",
@@ -1866,6 +1998,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信和QQ用户必填，扫码调用登录接口返回的。",
           "example": "dfdf",
           "member": "string",
@@ -1875,6 +2008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名，不填默认为注册账号名。接入级别为level2时，验证用户名的合法性。",
           "example": "adf",
           "member": "string",
@@ -1884,6 +2018,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业名称。SaaS注册，此字段传空，要求和TradeOne，TradeTwo一起传递。",
           "example": "finance",
           "member": "string",
@@ -1893,6 +2028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业一级分类。可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
           "example": "finance",
           "member": "string",
@@ -1902,6 +2038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业二级分类，可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
           "example": "finance",
           "member": "string",
@@ -1916,6 +2053,7 @@
       "document": "RegisterCloudForSaaS返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户Uin。",
           "example": "300000000001",
           "member": "uint64",
@@ -1925,6 +2063,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户登录Key。",
           "example": "d5c50bdcdb2****7b479b4f17bf5461e",
           "member": "string",
@@ -1934,6 +2073,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "登录Key的有效期。",
           "example": "1596875744",
           "member": "uint64",
@@ -1956,6 +2096,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号类型。0：个人，1：企业",
           "example": "1",
           "member": "int64",
@@ -1966,6 +2107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号名称（个人姓名或者企业名称）",
           "example": "张三",
           "member": "string",
@@ -1976,6 +2118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接入时申请的Platform",
           "example": "meeting",
           "member": "string",
@@ -1986,6 +2129,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证件号码。证件类型身份证：身份账号号。 证件类型公司营业执照：统一身份信用代码。",
           "example": "91xxxxxxxxxx504XW",
           "member": "string",
@@ -2014,6 +2158,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱号",
           "member": "string",
           "name": "Email",
@@ -2022,6 +2167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户ip",
           "member": "string",
           "name": "ClientIP",
@@ -2030,6 +2176,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发送语言，中文：zh；英文： en",
           "member": "string",
           "name": "Lang",
@@ -2038,6 +2185,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码AppId",
           "member": "string",
           "name": "CaptchaAppId",
@@ -2046,6 +2194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码客户端验证回调的票据",
           "member": "string",
           "name": "Ticket",
@@ -2054,6 +2203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码客户端验证回调的随机串",
           "member": "string",
           "name": "Random",
@@ -2080,6 +2230,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "所在国家电话区号",
           "example": "86",
           "member": "string",
@@ -2089,6 +2240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机号码",
           "example": "13211111111",
           "member": "string",
@@ -2098,6 +2250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发送语言，中文：zh；英文： en",
           "example": "zh",
           "member": "string",
@@ -2107,6 +2260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户ip",
           "example": "192.168.1.1",
           "member": "string",
@@ -2116,6 +2270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码AppId",
           "example": "121",
           "member": "string",
@@ -2125,6 +2280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码客户端验证回调的票据",
           "example": "12",
           "member": "string",
@@ -2134,6 +2290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "滑动验证码客户端验证回调的随机串",
           "example": "12",
           "member": "string",
@@ -2143,6 +2300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "没有特需要求默认不传。",
           "example": "12",
           "member": "int64",
@@ -2170,6 +2328,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Type",
@@ -2179,6 +2338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联合Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "UionId",
@@ -2194,6 +2354,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -2203,6 +2364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StokenData",
           "name": "Data",
@@ -2218,6 +2380,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实名认证身份ID。个人实名为身份号码，企业实名为企业社会信用代码",
           "example": "无",
           "member": "string",
@@ -2229,6 +2392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实名认证名称",
           "example": "无",
           "member": "string",
@@ -2240,6 +2404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实名认证类型。0：个人实名，1：企业实名",
           "example": "0",
           "member": "int64",
@@ -2257,6 +2422,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "微信公众号username",
           "example": "无",
           "member": "string",
@@ -2268,6 +2434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信公账号appid",
           "example": "无",
           "member": "string",
@@ -2279,6 +2446,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "昵称",
           "example": "无",
           "member": "string",
@@ -2290,6 +2458,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实名认证信息",
           "example": "无",
           "member": "TCBAuthInfo",
@@ -2301,6 +2470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱地址",
           "example": "无",
           "member": "string",
@@ -2312,6 +2482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机号码",
           "example": "无",
           "member": "string",
@@ -2323,6 +2494,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "国家代码",
           "example": "86",
           "member": "string",
@@ -2340,6 +2512,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "token sn\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tokensn",
@@ -2355,6 +2528,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -2364,6 +2538,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "TokenData",
           "name": "Data",
@@ -2379,6 +2554,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级行业信息",
           "member": "string",
           "name": "ID",
@@ -2388,6 +2564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业名称",
           "member": "string",
           "name": "Name",
@@ -2397,6 +2574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否展示",
           "member": "string",
           "name": "Display",
@@ -2406,6 +2584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级行业列表",
           "member": "TradeTwoNode",
           "name": "Children",
@@ -2421,6 +2600,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "行业名称",
           "member": "string",
           "name": "Name",
@@ -2430,6 +2610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Display属性",
           "member": "string",
           "name": "Display",
@@ -2439,6 +2620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级行业信息",
           "member": "string",
           "name": "ID",
@@ -2448,6 +2630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业信息",
           "member": "string",
           "name": "Trade",
@@ -2463,6 +2646,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCB账号类型，目前只支持wx_open",
           "example": "wx_open",
           "member": "string",
@@ -2478,6 +2662,7 @@
       "document": "UnbindTCBAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2501,6 +2686,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "老手机号区号。",
           "example": "86",
           "member": "string",
@@ -2510,6 +2696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "老手机号。",
           "example": "123",
           "member": "string",
@@ -2519,6 +2706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新手机号区号。",
           "example": "86",
           "member": "string",
@@ -2528,6 +2716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新手机号。",
           "example": "456",
           "member": "string",
@@ -2537,6 +2726,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "校验Code。",
           "example": "adf",
           "member": "string",
@@ -2546,6 +2736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新手机号验证码。",
           "example": "1232",
           "member": "string",
@@ -2555,6 +2746,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平台。",
           "example": "test",
           "member": "string",
@@ -2582,6 +2774,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "微信临时code\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tmpcode",
@@ -2591,6 +2784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "NickName",
@@ -2600,6 +2794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有openId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "HasOpenId",
@@ -2615,6 +2810,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "能否校验",
           "member": "uint64",
           "name": "CanAuth",
@@ -2624,6 +2820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "WeChatData",
           "name": "Data",

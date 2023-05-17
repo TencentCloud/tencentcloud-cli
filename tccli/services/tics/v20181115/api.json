@@ -41,6 +41,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的域名",
           "member": "string",
           "name": "Key",
@@ -49,6 +50,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "member": "uint64",
           "name": "Option",
@@ -62,6 +64,7 @@
       "document": "DescribeDomainInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否有数据，0代表有数据，1代表没有数据",
           "member": "uint64",
           "name": "ReturnCode",
@@ -69,6 +72,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "判定结果，如：black、white、grey",
           "member": "string",
           "name": "Result",
@@ -76,6 +80,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "置信度，取值0-100",
           "member": "uint64",
           "name": "Confidence",
@@ -83,6 +88,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
           "member": "string",
           "name": "ThreatTypes",
@@ -90,6 +96,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "恶意标签，对应的团伙，家族等信息。",
           "member": "TagType",
           "name": "Tags",
@@ -97,6 +104,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "对应的历史上的威胁情报事件",
           "member": "IntelligenceType",
           "name": "Intelligences",
@@ -104,6 +112,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "情报相关的上下文",
           "member": "string",
           "name": "Context",
@@ -124,6 +133,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询文件的MD5",
           "member": "string",
           "name": "Key",
@@ -132,6 +142,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "member": "uint64",
           "name": "Option",
@@ -145,6 +156,7 @@
       "document": "DescribeFileInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否有数据，0代表有数据，1代表没有数据",
           "member": "uint64",
           "name": "ReturnCode",
@@ -152,6 +164,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "判定结果，如：black、white、grey",
           "member": "string",
           "name": "Result",
@@ -159,6 +172,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "置信度，取值0-100",
           "member": "uint64",
           "name": "Confidence",
@@ -166,6 +180,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文件类型，文件hash\n（md5,sha1,sha256）,文件大小等等文件\n基础信息",
           "member": "FileInfoType",
           "name": "FileInfo",
@@ -173,6 +188,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "恶意标签，对应的团伙，家族等信息。",
           "member": "TagType",
           "name": "Tags",
@@ -180,6 +196,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "对应的历史上的威胁情报事件",
           "member": "IntelligenceType",
           "name": "Intelligences",
@@ -187,6 +204,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "情报相关的上下文",
           "member": "string",
           "name": "Context",
@@ -207,6 +225,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的IP",
           "member": "string",
           "name": "Key",
@@ -215,6 +234,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "member": "uint64",
           "name": "Option",
@@ -228,6 +248,7 @@
       "document": "DescribeIpInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否有数据，0代表有数据，1代表没有数据",
           "member": "uint64",
           "name": "ReturnCode",
@@ -235,6 +256,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "判定结果，如：black、white、grey",
           "member": "string",
           "name": "Result",
@@ -242,6 +264,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "置信度，取值0-100",
           "member": "uint64",
           "name": "Confidence",
@@ -249,6 +272,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
           "member": "string",
           "name": "ThreatTypes",
@@ -256,6 +280,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "恶意标签，对应的团伙，家族等信息。",
           "member": "TagType",
           "name": "Tags",
@@ -263,6 +288,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "对应的历史上的威胁情报事件",
           "member": "IntelligenceType",
           "name": "Intelligences",
@@ -270,6 +296,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "情报相关的上下文",
           "member": "string",
           "name": "Context",
@@ -290,6 +317,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询对象，域名或IP",
           "member": "string",
           "name": "Key",
@@ -298,6 +326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询类型，当前取值为domain或ip",
           "member": "string",
           "name": "Type",
@@ -306,6 +335,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "member": "uint64",
           "name": "Option",
@@ -319,6 +349,7 @@
       "document": "DescribeThreatInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否有数据，0代表有数据，1代表没有数据",
           "member": "uint64",
           "name": "ReturnCode",
@@ -326,6 +357,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "判定结果，如：black、white、grey",
           "member": "string",
           "name": "Result",
@@ -333,6 +365,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "置信度，取值0-100",
           "member": "uint64",
           "name": "Confidence",
@@ -340,6 +373,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
           "member": "string",
           "name": "ThreatTypes",
@@ -347,6 +381,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "恶意标签，对应的团伙，家族等信息。",
           "member": "string",
           "name": "Tags",
@@ -354,6 +389,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前状态\nactive = 活跃\nsinkholed = sinkholed\ninactive = 不活跃\nunknown = 未知\nexpired = 过期",
           "member": "string",
           "name": "Status",
@@ -361,6 +397,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "情报相关的上下文，参数option=1 的时候提供\n每个数据默认为3 条",
           "member": "string",
           "name": "Context",
@@ -381,6 +418,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "判定渠道",
           "member": "string",
           "name": "DetectId",
@@ -390,6 +428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测优先级",
           "member": "string",
           "name": "DetectPriority",
@@ -399,6 +438,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎优先级",
           "member": "string",
           "name": "EnginePriority",
@@ -408,6 +448,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "样本是否存在",
           "member": "string",
           "name": "FileExist",
@@ -417,6 +458,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件上传",
           "member": "string",
           "name": "FileForceUpload",
@@ -426,6 +468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件大小",
           "member": "string",
           "name": "FileSize",
@@ -435,6 +478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件上传时间",
           "member": "string",
           "name": "FileupTime",
@@ -444,6 +488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "病毒文件全名",
           "member": "string",
           "name": "FullVirusName",
@@ -453,6 +498,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IDC位置",
           "member": "string",
           "name": "IdcPosition",
@@ -462,6 +508,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件md5值",
           "member": "string",
           "name": "Md5Type",
@@ -471,6 +518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "PE结构是否存在",
           "member": "string",
           "name": "PeExist",
@@ -480,6 +528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "PE结构上传",
           "member": "string",
           "name": "PeForceUpload",
@@ -489,6 +538,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全性等级",
           "member": "string",
           "name": "SafeLevel",
@@ -498,6 +548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扫描时间",
           "member": "string",
           "name": "ScanModiTime",
@@ -507,6 +558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子判定渠道",
           "member": "string",
           "name": "SubdetectId",
@@ -516,6 +568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "病毒名",
           "member": "string",
           "name": "UserDefName",
@@ -525,6 +578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "病毒类型",
           "member": "string",
           "name": "VirusType",
@@ -534,6 +588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白名单分数",
           "member": "string",
           "name": "WhiteScore",
@@ -549,6 +604,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "来源",
           "member": "string",
           "name": "Source",
@@ -558,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标记",
           "member": "string",
           "name": "Stamp",
@@ -567,6 +624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间",
           "member": "uint64",
           "name": "Time",
@@ -582,6 +640,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签",
           "member": "string",
           "name": "Tag",
@@ -591,6 +650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签对应的中文解释",
           "member": "string",
           "name": "Desc",

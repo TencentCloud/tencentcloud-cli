@@ -69,6 +69,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动ID，活动唯一标识",
           "example": "10000",
           "member": "uint64",
@@ -79,6 +80,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "活动名称",
           "example": "测试活动",
           "member": "string",
@@ -89,6 +91,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "活动开始时间",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -99,6 +102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "活动结束时间",
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
@@ -109,6 +113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "活动页面URL",
           "example": "https://cloud.tencent.com/act/season",
           "member": "string",
@@ -119,6 +124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "活动状态 0-开启 1-关闭 3-已过期",
           "example": "1",
           "member": "uint64",
@@ -134,6 +140,7 @@
       "document": "AddActivityWhitelistUin请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "活动ID",
           "example": "12345",
           "member": "int64",
@@ -143,6 +150,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "用户UIN",
           "example": "100013140416",
           "member": "string",
@@ -152,6 +160,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "野鹤白名单KEY值",
           "example": "WHITELIST_KEY",
           "member": "string",
@@ -180,6 +189,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
@@ -190,6 +200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流水号列表",
           "example": "无",
           "member": "uint64",
@@ -200,6 +211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下单结果，下单失败信息",
           "example": "无",
           "member": "string",
@@ -228,6 +240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
@@ -238,6 +251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流水号列表",
           "example": "无",
           "member": "uint64",
@@ -248,6 +262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下单结果，大订单号和子订单号",
           "example": "{\"big_deal_no\": \"\", \"deal_names\": []}",
           "member": "string",
@@ -276,6 +291,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "example": "12345",
           "member": "uint64",
@@ -287,6 +303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品数量",
           "example": "1",
           "member": "uint64",
@@ -298,6 +315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品下单参数",
           "example": "{}",
           "member": "string",
@@ -314,6 +332,7 @@
       "document": "DescribeActivityInfoByPageURL请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "活动链接",
           "example": "https://cloud.tencent.com/act/pro/2023spring",
           "member": "string",
@@ -329,6 +348,7 @@
       "document": "DescribeActivityInfoByPageURL返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "ActivityNonSensitiveInfo",
@@ -351,6 +371,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动ID，活动唯一标识",
           "example": "10000",
           "member": "uint64",
@@ -365,6 +386,7 @@
       "document": "DescribeActivityNonSensitiveInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "活动非敏感信息",
           "example": "无",
           "member": "ActivityNonSensitiveInfo",
@@ -387,6 +409,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "member": "uint64",
           "name": "GoodsId",
@@ -400,6 +423,7 @@
       "document": "DescribeCvmRenewInstanceDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CVM的实例信息",
           "member": "InstanceDetail",
           "name": "InstanceDetail",
@@ -420,6 +444,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "AddTimeStamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AddTimeStamp",
@@ -429,6 +454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Alias\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Alias",
@@ -438,6 +464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "AppId",
@@ -447,6 +474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ApplicationRole\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ApplicationRole",
@@ -456,6 +484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AutoRenewFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -465,6 +494,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Bandwidth\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Bandwidth",
@@ -474,6 +504,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "BillId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BillId",
@@ -483,6 +514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Cpu\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Cpu",
@@ -492,6 +524,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CustomId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "CustomId",
@@ -501,6 +534,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CvmPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "CvmPayMode",
@@ -510,6 +544,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Deadline\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Deadline",
@@ -519,6 +554,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceAssetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceAssetId",
@@ -528,6 +564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceClass\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceClass",
@@ -537,6 +574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceClassFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "DeviceClassFlag",
@@ -546,6 +584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "DeviceId",
@@ -555,6 +594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceImageId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "DeviceImageId",
@@ -564,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceLanIp\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceLanIp",
@@ -573,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DeviceWanIp\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceWanIp",
@@ -582,6 +624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Disk\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Disk",
@@ -591,6 +634,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DiskType\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "DiskType",
@@ -600,6 +644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ErrorCode\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ErrorCode",
@@ -609,6 +654,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ErrorKey\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ErrorKey",
@@ -618,6 +664,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Fpga\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Fpga",
@@ -627,6 +674,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Gpu\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Gpu",
@@ -636,6 +684,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "HypervisorUpdateFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "HypervisorUpdateFlag",
@@ -645,6 +694,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IdcName\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IdcName",
@@ -654,6 +704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IsSafeIsolated\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "IsSafeIsolated",
@@ -663,6 +714,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IsVpcGateway\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "IsVpcGateway",
@@ -672,6 +724,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IsolateTime\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IsolateTime",
@@ -681,6 +734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IspName\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IspName",
@@ -690,6 +744,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ItemId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ItemId",
@@ -699,6 +754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "LastOperation\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LastOperation",
@@ -708,6 +764,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "LatestOperation\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LatestOperation",
@@ -717,6 +774,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "LatestOperationState\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LatestOperationState",
@@ -726,6 +784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "LocalEthDev\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LocalEthDev",
@@ -735,6 +794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Mem\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Mem",
@@ -744,6 +804,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "NetworkPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "NetworkPayMode",
@@ -753,6 +814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OsName\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OsName",
@@ -762,6 +824,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ProjectId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ProjectId",
@@ -771,6 +834,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RecycleFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "RecycleFlag",
@@ -780,6 +844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "RegionId",
@@ -789,6 +854,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RootSize\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "RootSize",
@@ -798,6 +864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RootType\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "RootType",
@@ -807,6 +874,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Runflag\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Runflag",
@@ -816,6 +884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SafeIsolatedInfo\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SafeIsolatedInfo",
@@ -825,6 +894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "State\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "State",
@@ -834,6 +904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Status\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Status",
@@ -843,6 +914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "SubnetId",
@@ -852,6 +924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SwapSize\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "SwapSize",
@@ -861,6 +934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "TmpDeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "TmpDeviceId",
@@ -870,6 +944,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "UHostId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "UHostId",
@@ -879,6 +954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "UInstanceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "UInstanceId",
@@ -888,6 +964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "UpdateTimestamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "UpdateTimestamp",
@@ -897,6 +974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Uuid",
@@ -906,6 +984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "VpcId",
@@ -915,6 +994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ZoneId",
@@ -924,6 +1004,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ZoneName\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ZoneName",
@@ -939,6 +1020,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源位链接",
           "example": "https://cloud.tencent.com/act/pro/jensen-test-0119-1?from=16702",
           "member": "string",
@@ -950,6 +1032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "同步结果，ok成功，error失败",
           "example": "ok",
           "member": "string",
@@ -967,6 +1050,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "野鹤产品编码",
           "example": "cvm",
           "member": "string",
@@ -978,6 +1062,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "野鹤产品名称",
           "example": "云服务器",
           "member": "string",
@@ -989,6 +1074,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品介绍页链接",
           "example": "https://cloud.tencent.com/product/cvm",
           "member": "string",
@@ -1000,6 +1086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源位链接",
           "example": "https://cloud.tencent.com/act/pro/overseas?from=16702",
           "member": "string",
@@ -1011,6 +1098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属模块",
           "example": "banner",
           "member": "string",
@@ -1022,6 +1110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源位标题",
           "example": "云服务器全球购",
           "member": "string",
@@ -1033,6 +1122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "负责人，多个用英文逗号,隔开",
           "example": "xxx,xxx",
           "member": "string",
@@ -1044,6 +1134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发布状态，0待配置，1已发布",
           "example": "1",
           "member": "uint64",
@@ -1055,6 +1146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发布时间",
           "example": "yyyy-MM-dd HH:mm:ss",
           "member": "string",
@@ -1066,6 +1158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作人",
           "example": "xxx",
           "member": "string",
@@ -1083,6 +1176,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源位数据",
           "example": "无",
           "member": "ProductIntroPageResourceData",
@@ -1098,6 +1192,7 @@
       "document": "SyncProductIntroPageData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果列表",
           "example": "无",
           "member": "ProductIntroPageDataSyncResult",
@@ -1121,6 +1216,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
@@ -1131,6 +1227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品参数列表",
           "example": "无",
           "member": "DeductQuotaGoodsParam",
@@ -1141,6 +1238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "幂等ID，防止短时间重复请求",
           "example": "de1e08f3-2512-40ef-a080-3f59c81f64f3",
           "member": "string",
@@ -1156,6 +1254,7 @@
       "document": "TryDeductActivityGoodsQuota返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "流水号，用于订单取消、发货失败等返还资格，需要填到goodsDetail中，与入参列表顺序保持一致",
           "example": "无",
           "member": "uint64",

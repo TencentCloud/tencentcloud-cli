@@ -76,6 +76,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Key值定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
           "member": "string",
@@ -87,6 +88,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Value值定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0",
           "member": "float",
@@ -104,6 +106,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Key值定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
           "member": "string",
@@ -114,6 +117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Value值定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -130,6 +134,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Agent下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://agent.tapm.tencentyun.com/DownloadAgent",
           "member": "string",
@@ -140,6 +145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Collector上报地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.xxx.xx:8080",
           "member": "string",
@@ -150,6 +156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Token信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "14dac76ca10f4610f727ca68528758b43980251387493706d18988fa7d0621b7",
           "member": "string",
@@ -160,6 +167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网上报地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.xxx.xx:8080",
           "member": "string",
@@ -170,6 +178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自研VPC上报地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.xxx.xx:8080",
           "member": "string",
@@ -180,6 +189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网上报地址(Private Link上报地址)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.xxx.xx:8080",
           "member": "string",
@@ -196,6 +206,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "昨日同比指标值，已弃用，不建议使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -207,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Compare值结果数组，推荐使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "APMKVItem",
@@ -218,6 +230,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0",
           "member": "float",
@@ -229,6 +242,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标所对应的单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms",
           "member": "string",
@@ -240,6 +254,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求数",
           "example": "req_count",
           "member": "string",
@@ -251,6 +266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "同环比上周期具体数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "APMKV",
@@ -267,6 +283,7 @@
       "document": "apm实例信息",
       "members": [
         {
+          "disabled": false,
           "document": "存储使用量(MB)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "float",
@@ -277,6 +294,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试Demo",
           "member": "string",
@@ -287,6 +305,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例所属tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmTag",
@@ -297,6 +316,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "52Dpv13GR",
           "member": "string",
@@ -307,6 +327,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建人Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12543625",
           "member": "string",
@@ -317,6 +338,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "该实例已上报的服务端应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -327,6 +349,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "日均上报Span数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -337,6 +360,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "AppId信息",
           "example": "12653698",
           "member": "int64",
@@ -347,6 +371,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Trace数据保存时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "604800",
           "member": "int64",
@@ -357,6 +382,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -367,6 +393,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -377,6 +404,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -387,6 +415,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例上报额度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500000",
           "member": "int64",
@@ -397,6 +426,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例是否开通计费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -407,6 +437,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "错误率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -417,6 +448,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "采样率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -427,6 +459,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启错误采样 0  关 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -437,6 +470,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "慢调用保存阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
           "member": "int64",
@@ -447,6 +481,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "cls日志所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -457,6 +492,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "日志来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLS",
           "member": "string",
@@ -467,6 +503,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "日志功能开关 0 关 | 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -477,6 +514,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxxx",
           "member": "string",
@@ -487,6 +525,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "该实例已上报的客户端应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -497,6 +536,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "该实例已上报的总应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -507,6 +547,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "CLS日志集 | ES集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -517,6 +558,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Metric数据保存时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -534,6 +576,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "field数组",
           "example": "无",
           "member": "ApmField",
@@ -545,6 +588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "tag数组",
           "example": "无",
           "member": "ApmTag",
@@ -562,6 +606,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "维度Key(列名，标签Key)",
           "example": "region",
           "member": "string",
@@ -572,6 +617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度值（标签值）",
           "example": "ap-guangzhou",
           "member": "string",
@@ -588,6 +634,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例名",
           "example": "云监控-测试",
           "member": "string",
@@ -598,6 +645,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例描述信息",
           "example": "无",
           "member": "string",
@@ -608,6 +656,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Trace数据保存时长",
           "example": "604800",
           "member": "int64",
@@ -618,6 +667,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "ApmTag",
@@ -628,6 +678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例上报额度值",
           "example": "100000000",
           "member": "uint64",
@@ -643,6 +694,7 @@
       "document": "CreateApmInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Lcmm7a3kl",
           "member": "string",
@@ -666,6 +718,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "jYm6_leMg",
           "member": "string",
@@ -676,6 +729,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接入方式",
           "example": "Skywalking",
           "member": "string",
@@ -686,6 +740,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境",
           "example": "外网",
           "member": "string",
@@ -696,6 +751,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语言",
           "example": "Golang",
           "member": "string",
@@ -706,6 +762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上报方式",
           "example": "http",
           "member": "string",
@@ -721,6 +778,7 @@
       "document": "DescribeApmAgent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Agent信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmAgentInfo",
@@ -744,6 +802,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Tag列表",
           "example": "无",
           "member": "ApmTag",
@@ -754,6 +813,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索实例名",
           "example": "云监控-测试",
           "member": "string",
@@ -764,6 +824,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤实例ID",
           "example": "无",
           "member": "string",
@@ -774,6 +835,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否查询官方demo实例",
           "example": "无",
           "member": "int64",
@@ -789,6 +851,7 @@
       "document": "DescribeApmInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "apm实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmInstanceDetail",
@@ -812,6 +875,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "排序",
           "example": "{}",
           "member": "OrderBy",
@@ -821,6 +885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "span查询开始时间戳（单位:秒）",
           "example": "1617123538",
           "member": "int64",
@@ -830,6 +895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "span查询结束时间戳（单位:秒）",
           "example": "1617123538",
           "member": "int64",
@@ -839,6 +905,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名",
           "example": "52Dpv13GR",
           "member": "string",
@@ -848,6 +915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通用过滤参数",
           "example": "{}",
           "member": "Filter",
@@ -857,6 +925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "paas业务特有名称",
           "example": "tdmq",
           "member": "string",
@@ -871,6 +940,7 @@
       "document": "DescribeApmPAASDeduplicateSpanList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -880,6 +950,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Span分页列表",
           "example": "{}",
           "member": "Span",
@@ -902,6 +973,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要过滤的维度信息：\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。",
           "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
           "member": "GeneralFilter",
@@ -912,6 +984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的指标，不可自定义输入。\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。",
           "example": "\"service_request_count\"、“service_duration”",
           "member": "string",
@@ -922,6 +995,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务系统ID",
           "example": "apm-ylTJfTSbn",
           "member": "string",
@@ -932,6 +1006,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。",
           "example": "service_metric",
           "member": "string",
@@ -942,6 +1017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合维度：\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。\nruntime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。",
           "example": "\"service.name\"、\"span.kind\"",
           "member": "string",
@@ -952,6 +1028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
           "example": "1617123538",
           "member": "int64",
@@ -962,6 +1039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
           "example": "1617123538",
           "member": "int64",
@@ -972,6 +1050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。",
           "example": "60",
           "member": "int64",
@@ -982,6 +1061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对查询指标进行排序：\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。\nasc:对查询指标进行升序排序\ndesc：对查询指标进行降序排序",
           "example": "\"OrderBy\": { \t\"Key\": \"sql_duration_avg\",         \"Value\": \"desc\"",
           "member": "OrderBy",
@@ -992,6 +1072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。",
           "example": "5",
           "member": "int64",
@@ -1007,6 +1088,7 @@
       "document": "DescribeGeneralMetricData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Line",
@@ -1030,6 +1112,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件",
           "example": "无",
           "member": "Filter",
@@ -1040,6 +1123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标列表",
           "example": "无",
           "member": "QueryMetricItem",
@@ -1050,6 +1134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合维度",
           "example": "无",
           "member": "string",
@@ -1060,6 +1145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序",
           "example": "无",
           "member": "OrderBy",
@@ -1070,6 +1156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "52Dpv13GR",
           "member": "string",
@@ -1080,6 +1167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小",
           "example": "10",
           "member": "uint64",
@@ -1090,6 +1178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间",
           "example": "1618361193",
           "member": "uint64",
@@ -1100,6 +1189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页起始点",
           "example": "1",
           "member": "int64",
@@ -1110,6 +1200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间",
           "example": "1618361193",
           "member": "uint64",
@@ -1120,6 +1211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务名称（默认值：taw）",
           "example": "taw",
           "member": "string",
@@ -1130,6 +1222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码",
           "example": "1",
           "member": "int64",
@@ -1140,6 +1233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页长",
           "example": "10",
           "member": "int64",
@@ -1155,6 +1249,7 @@
       "document": "DescribeMetricRecords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmMetricRecord",
@@ -1165,6 +1260,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "查询指标结果集条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1188,6 +1284,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件",
           "example": "无",
           "member": "Filter",
@@ -1198,6 +1295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标列表",
           "example": "无",
           "member": "QueryMetricItem",
@@ -1208,6 +1306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合维度",
           "example": "无",
           "member": "string",
@@ -1218,6 +1317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序",
           "example": "无",
           "member": "OrderBy",
@@ -1228,6 +1328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "52Dpv13GR",
           "member": "string",
@@ -1238,6 +1339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小",
           "example": "10",
           "member": "int64",
@@ -1248,6 +1350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间",
           "example": "1618361193",
           "member": "uint64",
@@ -1258,6 +1361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页起始点",
           "example": "1",
           "member": "int64",
@@ -1268,6 +1372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间",
           "example": "1618361193",
           "member": "uint64",
@@ -1283,6 +1388,7 @@
       "document": "DescribeServiceOverview返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmMetricRecord",
@@ -1306,6 +1412,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤方式（=, !=, in）",
           "example": "=",
           "member": "string",
@@ -1316,6 +1423,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤维度名",
           "example": "serviceName",
           "member": "string",
@@ -1326,6 +1434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤值，in过滤方式用逗号分割多个值",
           "example": "sso-api",
           "member": "string",
@@ -1342,6 +1451,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤维度名",
           "example": "serviceName",
           "member": "string",
@@ -1353,6 +1463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤值",
           "example": "sso-api",
           "member": "string",
@@ -1370,6 +1481,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指标名",
           "example": "qps",
           "member": "string",
@@ -1380,6 +1492,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标中文名",
           "example": "吞吐量",
           "member": "string",
@@ -1390,6 +1503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间序列",
           "example": "[1617124595, 1617124596, 1617124597]",
           "member": "int64",
@@ -1400,6 +1514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据序列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1.0, 2.0, 3.0]",
           "member": "float",
@@ -1410,6 +1525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmTag",
@@ -1426,6 +1542,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "6Dxp7Nd0B",
           "member": "string",
@@ -1436,6 +1553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名",
           "example": "云监控-测试",
           "member": "string",
@@ -1446,6 +1564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "ApmTag",
@@ -1456,6 +1575,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例详情",
           "example": "无",
           "member": "string",
@@ -1466,6 +1586,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Trace数据保存时长",
           "example": "604800",
           "member": "int64",
@@ -1476,6 +1597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启计费",
           "example": "true",
           "member": "bool",
@@ -1486,6 +1608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例上报额度",
           "example": "10000000",
           "member": "uint64",
@@ -1496,6 +1619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误率阈值",
           "example": "11",
           "member": "int64",
@@ -1506,6 +1630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采样率",
           "example": "11",
           "member": "int64",
@@ -1516,6 +1641,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启错误采样 0 关 1 开",
           "example": "10",
           "member": "int64",
@@ -1526,6 +1652,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢请求阈值",
           "example": "500",
           "member": "int64",
@@ -1536,6 +1663,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启日志功能 0 关 1 开",
           "example": "0",
           "member": "int64",
@@ -1546,6 +1674,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1556,6 +1685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CLS日志主题ID | ES 索引名",
           "example": "xxxxx",
           "member": "string",
@@ -1566,6 +1696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CLS日志集 | ES集群ID",
           "example": "xxxxx",
           "member": "string",
@@ -1576,6 +1707,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CLS | ES",
           "example": "CLS",
           "member": "string",
@@ -1604,6 +1736,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要排序的字段",
           "example": "traceID",
           "member": "string",
@@ -1614,6 +1747,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "顺序排序/倒序排序",
           "example": "asc",
           "member": "string",
@@ -1630,6 +1764,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指标名",
           "example": "request_count",
           "member": "string",
@@ -1640,6 +1775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "同比，已弃用，不建议使用",
           "example": "YearOnYear",
           "member": "string",
@@ -1650,6 +1786,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "同比，支持多种同比方式",
           "example": "无",
           "member": "string",
@@ -1666,6 +1803,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Trace Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7a23429a8f7d6685",
           "member": "string",
@@ -1676,6 +1814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "SpanLog",
@@ -1686,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "SpanTag",
@@ -1696,6 +1836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上报应用服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "SpanProcess",
@@ -1706,6 +1847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产生时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621843224175",
           "member": "int64",
@@ -1716,6 +1858,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Span名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "span_foo3",
           "member": "string",
@@ -1726,6 +1869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "SpanReference",
@@ -1736,6 +1880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产生时间戳(微秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621843224175963",
           "member": "int64",
@@ -1746,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "持续耗时(微妙)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500098",
           "member": "int64",
@@ -1756,6 +1902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Span Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7a23429a8f7d6685",
           "member": "string",
@@ -1766,6 +1913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产生时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621843224175",
           "member": "int64",
@@ -1782,6 +1930,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志时间戳",
           "example": "1621843224175",
           "member": "int64",
@@ -1792,6 +1941,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签",
           "example": "tags[]",
           "member": "SpanTag",
@@ -1808,6 +1958,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用服务名称",
           "example": "broker-gz-test",
           "member": "string",
@@ -1818,6 +1969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Tags 标签数组",
           "example": "tags[]",
           "member": "SpanTag",
@@ -1834,6 +1986,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "关联关系类型",
           "example": "CHILD_OF",
           "member": "string",
@@ -1844,6 +1997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Span ID",
           "example": "7a23429a8f7d6685",
           "member": "string",
@@ -1854,6 +2008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Trace ID",
           "example": "7a23429a8f7d6685",
           "member": "string",
@@ -1870,6 +2025,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签类型",
           "example": "string",
           "member": "string",
@@ -1880,6 +2036,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "status.code\"",
           "member": "string",
@@ -1890,6 +2047,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -1906,6 +2064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "6Dxp7Nd0B",
           "member": "string",

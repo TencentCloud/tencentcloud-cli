@@ -104,6 +104,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主任务id",
           "example": "Mr595vgwutc0",
           "member": "string",
@@ -113,6 +114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子任务信息数组",
           "example": "无",
           "member": "CreateStructureTaskInfo",
@@ -127,6 +129,7 @@
       "document": "AddSubStructureTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "增量子任务id数组",
           "example": "无",
           "member": "string",
@@ -149,6 +152,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "报告类型",
           "example": "AdmissionReport",
           "member": "string",
@@ -159,6 +163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件列表",
           "example": "[\"xxxx/xx.jpg\", \"xxxx/xx.jpg\"]",
           "member": "string",
@@ -175,6 +180,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级分类",
           "example": "检查报告",
           "member": "string",
@@ -185,6 +191,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级分类",
           "example": "超声检查",
           "member": "string",
@@ -195,6 +202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级分类",
           "example": "超声检查",
           "member": "string",
@@ -205,6 +213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级分类序号",
           "example": "12",
           "member": "uint64",
@@ -215,6 +224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级分类序号",
           "example": "345",
           "member": "uint64",
@@ -225,6 +235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级分类序号",
           "example": "345",
           "member": "uint64",
@@ -241,6 +252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "短文准确率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "94",
           "member": "string",
@@ -251,6 +263,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "短文召回率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "91",
           "member": "string",
@@ -261,6 +274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长文结构化准确率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "97",
           "member": "string",
@@ -271,6 +285,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长文结构化召回率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "93",
           "member": "string",
@@ -281,6 +296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长文提取准确率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "93",
           "member": "string",
@@ -291,6 +307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长文提取召回率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "91",
           "member": "string",
@@ -307,6 +324,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可",
           "example": "[\"original_upload_dir/100000013512_e75d5c6e-7b90-4ff6-b890-483\"]",
           "member": "string",
@@ -317,6 +335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户号",
           "example": "C0001",
           "member": "string",
@@ -327,6 +346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户姓名",
           "example": "测试客户",
           "member": "string",
@@ -337,6 +357,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列",
           "example": "[\"9xkKYHNKWDxxxxx\"]",
           "member": "string",
@@ -353,6 +374,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
           "example": "Structured",
           "member": "string",
@@ -362,6 +384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息",
           "example": "无",
           "member": "CreateAutoClassifyStructureTaskInfo",
@@ -371,6 +394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保单号",
           "example": "p0001",
           "member": "string",
@@ -380,6 +404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "核保触发方式\nAuto 自动\nManual 手动",
           "example": "Auto",
           "member": "string",
@@ -389,6 +414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
           "example": "[\"CriticalDiseaseInsurance\"]",
           "member": "string",
@@ -398,6 +424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调地址，接收Post请求传送结果",
           "example": "无",
           "member": "string",
@@ -412,6 +439,7 @@
       "document": "CreateAutoClassifyStructureTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的主任务号，用于查询结果",
           "example": "46313288149458944",
           "member": "string",
@@ -434,6 +462,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)",
           "example": "HealthReport",
           "member": "string",
@@ -444,6 +473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可",
           "example": "[\"original_upload_dir/100000013512_e75d5c6e-7b90-4ff6-b890-483\"]",
           "member": "string",
@@ -454,6 +484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户号",
           "example": "C0001",
           "member": "string",
@@ -464,6 +495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户姓名",
           "example": "测试客户",
           "member": "string",
@@ -474,6 +506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列",
           "example": "[\"9xkKYHNKWDxxxxx\"]",
           "member": "string",
@@ -484,6 +517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告年份",
           "example": "2021",
           "member": "string",
@@ -500,6 +534,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
           "example": "Structured",
           "member": "string",
@@ -510,6 +545,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息",
           "example": "[{         \"TaskType\": \"HealthReport\",         \"CustomerId\": \"04",
           "member": "CreateStructureTaskInfo",
@@ -520,6 +556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保单号",
           "example": "p0001",
           "member": "string",
@@ -530,6 +567,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "核保触发方式\nAuto 自动\nManual 手动",
           "example": "Auto",
           "member": "string",
@@ -540,6 +578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
           "example": "[\"CriticalDiseaseInsurance\"]",
           "member": "string",
@@ -550,6 +589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调地址，接收Post请求传送结果",
           "example": "无",
           "member": "string",
@@ -565,6 +605,7 @@
       "document": "CreateStructureTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的主任务号，用于查询结果",
           "example": "46313288149458944",
           "member": "string",
@@ -588,6 +629,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主任务ID数组，",
           "example": "[\"Mkjwdfso\"]",
           "member": "string",
@@ -597,6 +639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调地址，可不传（提供轮询机制）。",
           "example": "http://xxx.com/a/b/c",
           "member": "string",
@@ -611,6 +654,7 @@
       "document": "CreateUnderwriteTaskById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "核保任务ID数据",
           "example": "[\"Ukjwssdfsos\"]",
           "member": "string",
@@ -633,6 +677,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "核保任务ID",
           "example": "u-task-1",
           "member": "string",
@@ -647,6 +692,7 @@
       "document": "DescribeMachineUnderwrite返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "腾讯云主账号ID",
           "example": "100000000123",
           "member": "string",
@@ -656,6 +702,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "操作人子账户ID",
           "example": "100000000123",
           "member": "string",
@@ -665,6 +712,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "保单ID",
           "example": "id-123456",
           "member": "string",
@@ -674,6 +722,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主任务ID",
           "example": "Malksjdkjl234",
           "member": "string",
@@ -683,6 +732,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "核保任务ID",
           "example": "U23slkd",
           "member": "string",
@@ -692,6 +742,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
           "example": "0",
           "member": "uint64",
@@ -701,6 +752,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器核保结果",
           "example": "无",
           "member": "MachineUnderwriteOutput",
@@ -723,6 +775,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件二进制数据",
           "example": "无",
           "member": "binary",
@@ -738,6 +791,7 @@
       "document": "DescribeQualityScore返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "质量分",
           "example": "1",
           "member": "float",
@@ -761,6 +815,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
           "example": "Structured",
           "member": "string",
@@ -771,6 +826,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件地址数组",
           "example": "[\"xxxx/xx.jpg\", \"xxxx/xx.jpg\"]",
           "member": "string",
@@ -786,6 +842,7 @@
       "document": "DescribeReportClassify返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "报告分类结果",
           "example": "无",
           "member": "ClassifiedReports",
@@ -809,6 +866,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主任务号",
           "example": "fybnnac89vk",
           "member": "string",
@@ -818,6 +876,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子任务号",
           "example": "fybnnac89vl",
           "member": "string",
@@ -832,6 +891,7 @@
       "document": "DescribeStructCompareData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "保单号",
           "example": "100001",
           "member": "string",
@@ -841,6 +901,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主任务号",
           "example": "fybnnac89vk",
           "member": "string",
@@ -850,6 +911,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "客户号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100001",
           "member": "string",
@@ -859,6 +921,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "客户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
           "member": "string",
@@ -868,6 +931,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "复核时间",
           "example": "2020-12-19 18:43:37",
           "member": "string",
@@ -877,6 +941,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "算法识别结果",
           "example": "{...}",
           "member": "string",
@@ -886,6 +951,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人工复核结果",
           "example": "{...}",
           "member": "string",
@@ -895,6 +961,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "结构化对比指标数据",
           "example": "无",
           "member": "CompareMetricsData",
@@ -904,6 +971,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "新增项",
           "example": "{...}",
           "member": "string",
@@ -913,6 +981,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改项",
           "example": "{...}",
           "member": "string",
@@ -922,6 +991,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "子任务号",
           "example": "fybnnac89vl",
           "member": "string",
@@ -931,6 +1001,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "所有的子任务",
           "example": "无",
           "member": "ReviewDataTaskInfo",
@@ -940,6 +1011,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务类型",
           "example": "BUltrasoundReport",
           "member": "string",
@@ -962,6 +1034,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主任务号",
           "example": "fybnnac89vk",
           "member": "string",
@@ -971,6 +1044,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子任务号",
           "example": "fybnnac89vl",
           "member": "string",
@@ -985,6 +1059,7 @@
       "document": "DescribeStructureDifference返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "主任务号",
           "example": "fybnnac89vk",
           "member": "string",
@@ -994,6 +1069,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1003,6 +1079,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "差异的结果数组",
           "example": "无",
           "member": "PerStructDifference",
@@ -1025,6 +1102,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建任务时返回的主任务ID",
           "example": "Sjepg20lk7i9",
           "member": "string",
@@ -1040,6 +1118,7 @@
       "document": "DescribeStructureResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
           "example": "无",
           "member": "uint64",
@@ -1050,6 +1129,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "结构化结果",
           "example": "无",
           "member": "StructureResultObject",
@@ -1060,6 +1140,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "主任务ID",
           "example": "无",
           "member": "string",
@@ -1083,6 +1164,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "结构化任务ID",
           "example": "46313288149458944",
           "member": "string",
@@ -1098,6 +1180,7 @@
       "document": "DescribeStructureTaskResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
           "example": "0",
           "member": "uint64",
@@ -1108,6 +1191,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": " [{ \t\t\t\"Quality\": 0.9244373, \t\t\t\"StructureResult\": \"\\\"{\\\\\\\"objec",
           "member": "ResultObject",
@@ -1131,6 +1215,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "u-task-1",
           "member": "string",
@@ -1145,6 +1230,7 @@
       "document": "DescribeUnderwriteTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "腾讯云主账号ID",
           "example": "100000000123",
           "member": "string",
@@ -1154,6 +1240,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "操作人子账户ID",
           "example": "100000000123",
           "member": "string",
@@ -1163,6 +1250,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "保单ID",
           "example": "id-123456",
           "member": "string",
@@ -1172,6 +1260,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主任务ID",
           "example": "Malksjdkjl234",
           "member": "string",
@@ -1181,6 +1270,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "核保任务ID",
           "example": "U23slkd",
           "member": "string",
@@ -1190,6 +1280,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
           "example": "0",
           "member": "uint64",
@@ -1199,6 +1290,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "核保结果",
           "example": "无",
           "member": "UnderwriteOutput",
@@ -1221,6 +1313,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "险种:CriticalDiseaseInsurance(重疾险);LifeInsurance(寿险);AccidentInsurance(意外险);MedicalInsurance(医疗险)",
           "example": "CriticalDiseaseInsurance",
           "member": "string",
@@ -1231,6 +1324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应险种的机器核保结果",
           "example": "无",
           "member": "MachinePredict",
@@ -1247,6 +1341,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "位置信息",
           "example": "[{\"x\"=1,\"y\" =1}]",
           "member": "Point",
@@ -1264,6 +1359,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "核保引擎名称",
           "example": "AI决策",
           "member": "string",
@@ -1274,6 +1370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "核保结论：加费、承保、拒保、延期、除外、加费+除外",
           "example": "拒保",
           "member": "string",
@@ -1284,6 +1381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AI决策树解释",
           "example": "无",
           "member": "UnderwriteItem",
@@ -1294,6 +1392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "疾病指标",
           "example": "无",
           "member": "UnderwriteItem",
@@ -1304,6 +1403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检查异常",
           "example": "无",
           "member": "UnderwriteItem",
@@ -1320,6 +1420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户号",
           "example": "123",
           "member": "string",
@@ -1330,6 +1431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户姓名",
           "example": "xxx",
           "member": "string",
@@ -1340,6 +1442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "各个险种的结果",
           "example": "无",
           "member": "InsuranceResult",
@@ -1356,6 +1459,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "原文字段",
           "example": "“”",
           "member": "string",
@@ -1367,6 +1471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别结果",
           "example": "“”",
           "member": "string",
@@ -1378,6 +1483,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "置信度",
           "example": "0",
           "member": "float",
@@ -1389,6 +1495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "位置信息",
           "example": "{}",
           "member": "Location",
@@ -1400,6 +1507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段名",
           "example": "“”",
           "member": "string",
@@ -1417,6 +1525,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "子任务ID",
           "example": "dsflnnlau",
           "member": "string",
@@ -1427,6 +1536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)",
           "example": "HealthReport",
           "member": "string",
@@ -1437,6 +1547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改的项",
           "example": "无",
           "member": "StructureModifyItem",
@@ -1447,6 +1558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新增的项",
           "example": "无",
           "member": "StructureOneItem",
@@ -1457,6 +1569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "删除的项",
           "example": "无",
           "member": "StructureOneItem",
@@ -1473,6 +1586,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "x坐标",
           "example": "1",
           "member": "int64",
@@ -1484,6 +1598,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "y坐标",
           "example": "1",
           "member": "int64",
@@ -1495,6 +1610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码",
           "example": "1",
           "member": "int64",
@@ -1512,6 +1628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片质量分",
           "example": "0.87",
           "member": "float",
@@ -1522,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议",
           "example": "{...}",
           "member": "string",
@@ -1532,6 +1650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告分类信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClassifyInfo",
@@ -1548,6 +1667,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主任务号",
           "example": "fybnnac89vk",
           "member": "string",
@@ -1558,6 +1678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子任务号",
           "example": "fybnnac89vl",
           "member": "string",
@@ -1568,6 +1689,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务名",
           "example": "体检报告",
           "member": "string",
@@ -1578,6 +1700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)",
           "example": "HealthReport",
           "member": "string",
@@ -1594,6 +1717,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "修改的字段的路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "detailInfo/summary/syms/attrs/性质",
           "member": "string",
@@ -1604,6 +1728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器结果的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100cm",
           "member": "string",
@@ -1614,6 +1739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人工结果的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "120cm",
           "member": "string",
@@ -1630,6 +1756,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新字段的路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "detailInfo/summary/syms/attrs/性质",
           "member": "string",
@@ -1640,6 +1767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10cm",
           "member": "string",
@@ -1656,6 +1784,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "0表示正常返回；1代表结果未生成；2代表任务执行失败",
           "example": "0",
           "member": "uint64",
@@ -1667,6 +1796,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告类型:HealthReport(体检报告); BUltraReport(B超报告);MedCheckReport(检查报告);LaboratoryReport(检验报告); PathologyReport(病理报告);AdmissionReport(入院记录);DischargeReport(出院记录); DischargeSummary(出院小结);DiagnosisReport(诊断证明); MedicalRecordFront(病案首页);OperationReport(手术记录);OutpatientMedicalRecord(门诊病历)",
           "example": "HealthReport",
           "member": "string",
@@ -1678,6 +1808,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结构化结果",
           "example": "无",
           "member": "string",
@@ -1689,6 +1820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子任务ID",
           "example": "无",
           "member": "string",
@@ -1700,6 +1832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务文件列表",
           "example": "无",
           "member": "string",
@@ -1711,6 +1844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结构化字段结果数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "OcrRecognise",
@@ -1728,6 +1862,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "类型",
           "example": "CriticalDiseaseInsurance",
           "member": "string",
@@ -1738,6 +1873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结论",
           "example": "Accept",
           "member": "string",
@@ -1748,6 +1884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "解释",
           "example": "\"{}\"",
           "member": "string",
@@ -1764,6 +1901,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "字段名",
           "example": "心率",
           "member": "string",
@@ -1774,6 +1912,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结果",
           "example": "80",
           "member": "string",
@@ -1784,6 +1923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险值或者说明",
           "example": "+0",
           "member": "string",
@@ -1794,6 +1934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参考范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1-2",
           "member": "string",
@@ -1804,6 +1945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
@@ -1814,6 +1956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "healthReport",
           "member": "string",
@@ -1824,6 +1967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检查项目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "血糖",
           "member": "string",
@@ -1834,6 +1978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1844,6 +1989,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空腹血葡萄糖",
           "member": "string",
@@ -1854,6 +2000,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "阴阳性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "+",
           "member": "string",
@@ -1870,6 +2017,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户ID",
           "example": "user123",
           "member": "string",
@@ -1880,6 +2028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户姓名",
           "example": "xingming",
           "member": "string",
@@ -1890,6 +2039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结果",
           "example": "无",
           "member": "InsuranceResult",
@@ -1900,6 +2050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "复核时间",
           "example": "1970-01-01 00:00:00",
           "member": "string",
@@ -1910,6 +2061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人工复核结果",
           "example": "无",
           "member": "UnderwriteConclusion",
@@ -1926,6 +2078,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件的字节内容。File与FileURL有一个不为空即可，若FileURL参数也存在，会只取File的内容。",
           "example": "无",
           "member": "binary",
@@ -1935,6 +2088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件的URL地址。File与FileURL不能同时为空，若File参数也存在，会只取File的内容。",
           "example": "https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/s",
           "member": "string",
@@ -1949,6 +2103,7 @@
       "document": "UploadMedicalFile返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件存储的key，可以用来创建结构化任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6540556601/original_upload_dir/6540556601_syon08sl1pojv099a0.png",
           "member": "string",

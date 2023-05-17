@@ -146,6 +146,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "父节点ID。可以调用DescribeOrganizationNodes获取",
           "example": "1234",
           "member": "uint64",
@@ -156,6 +157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-",
           "example": "test",
           "member": "string",
@@ -166,6 +168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注。",
           "example": "test",
           "member": "string",
@@ -181,6 +184,7 @@
       "document": "AddOrganizationNode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点ID。",
           "example": "1001",
           "member": "int64",
@@ -204,6 +208,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "互信主体关系ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -215,6 +220,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "互信主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "腾讯云",
           "member": "string",
@@ -226,6 +232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主体管理员\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MemberMainInfo",
@@ -243,6 +250,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin。",
           "example": "1000001",
           "member": "int64",
@@ -253,6 +261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID。可以调用DescribeOrganizationMemberPolicies获取",
           "example": "10",
           "member": "int64",
@@ -263,6 +272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织管理员子账号Uin列表。最大5个",
           "example": "无",
           "member": "int64",
@@ -291,6 +301,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin。",
           "example": "1000001",
           "member": "int64",
@@ -301,6 +312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID。",
           "example": "10",
           "member": "int64",
@@ -311,6 +323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织子账号Uin。",
           "example": "1000002",
           "member": "int64",
@@ -339,6 +352,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品简称",
           "example": "cvm",
           "member": "string",
@@ -349,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin",
           "example": "100000006533",
           "member": "int64",
@@ -377,6 +392,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin。",
           "example": "1000001",
           "member": "int64",
@@ -387,6 +403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-",
           "example": "test",
           "member": "string",
@@ -397,6 +414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取",
           "example": "11",
           "member": "int64",
@@ -407,6 +425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述。",
           "example": "test",
           "member": "string",
@@ -422,6 +441,7 @@
       "document": "CreateOrganizationMemberPolicy返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -445,6 +465,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
           "example": "testAccount",
           "member": "string",
@@ -455,6 +476,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关系策略。取值：Financial",
           "example": "Finical",
           "member": "string",
@@ -465,6 +487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须",
           "example": "无",
           "member": "uint64",
@@ -475,6 +498,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取",
           "example": "1001",
           "member": "int64",
@@ -485,6 +509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
           "example": "test",
           "member": "string",
@@ -495,6 +520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注。",
           "example": "test",
           "member": "string",
@@ -505,6 +531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员创建记录ID。创建异常重试时需要",
           "example": "12344",
           "member": "int64",
@@ -515,6 +542,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代付者Uin。成员代付费时需要",
           "example": "\"\"",
           "member": "string",
@@ -525,6 +553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持",
           "example": "[1]",
           "member": "uint64",
@@ -535,6 +564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取",
           "example": "0",
           "member": "int64",
@@ -550,6 +580,7 @@
       "document": "CreateOrganizationMember返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100019119",
           "member": "int64",
@@ -573,6 +604,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被删除成员的UIN列表。",
           "example": "无",
           "member": "int64",
@@ -601,6 +633,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID列表。",
           "example": "无",
           "member": "int64",
@@ -628,6 +661,7 @@
       "document": "DescribeOrganizationAuthNode请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "偏移量。",
           "example": "1",
           "member": "uint64",
@@ -637,6 +671,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "限制数目。最大50",
           "example": "10",
           "member": "uint64",
@@ -646,6 +681,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "互信主体名称。",
           "example": "\"\"",
           "member": "string",
@@ -655,6 +691,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员Uin。查询成员uin对应的主体",
           "example": "无",
           "member": "uint64",
@@ -670,6 +707,7 @@
       "document": "DescribeOrganizationAuthNode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -679,6 +717,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "条目详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AuthNode",
@@ -701,6 +740,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量。",
           "example": "0",
           "member": "int64",
@@ -711,6 +751,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目。",
           "example": "10",
           "member": "int64",
@@ -721,6 +762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin。",
           "example": "1000001",
           "member": "int64",
@@ -731,6 +773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID。",
           "example": "11",
           "member": "int64",
@@ -746,6 +789,7 @@
       "document": "DescribeOrganizationMemberAuthAccounts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgMemberAuthAccount",
@@ -756,6 +800,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "总数目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -778,6 +823,7 @@
       "document": "DescribeOrganizationMemberAuthIdentities请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "偏移量。取值是limit的整数倍，默认值 : 0",
           "example": "0",
           "member": "int64",
@@ -787,6 +833,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "限制数目。取值范围：1~50，默认值：10",
           "example": "10",
           "member": "int64",
@@ -796,6 +843,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "组织成员Uin。",
           "example": "11111111111",
           "member": "int64",
@@ -811,6 +859,7 @@
       "document": "DescribeOrganizationMemberAuthIdentities返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "授权身份列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgMemberAuthIdentity",
@@ -820,6 +869,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -842,6 +892,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量。",
           "example": "0",
           "member": "int64",
@@ -852,6 +903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目。最大50",
           "example": "10",
           "member": "int64",
@@ -862,6 +914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员Uin。",
           "example": "1000001",
           "member": "int64",
@@ -872,6 +925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索关键字。可用于策略名或描述搜索",
           "example": "test",
           "member": "string",
@@ -887,6 +941,7 @@
       "document": "DescribeOrganizationMemberPolicies返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgMemberPolicy",
@@ -897,6 +952,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -919,6 +975,7 @@
       "document": "DescribeOrganizationMembers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "偏移量。取值是limit的整数倍，默认值 : 0",
           "example": "0",
           "member": "uint64",
@@ -928,6 +985,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "限制数目。取值范围：1~50，默认值：10",
           "example": "10",
           "member": "uint64",
@@ -937,6 +995,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "国际站：en，国内站：zh",
           "example": "en",
           "member": "string",
@@ -946,6 +1005,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员名称或者成员ID搜索。",
           "example": "test",
           "member": "string",
@@ -955,6 +1015,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "主体名称搜索。",
           "example": "\"\"",
           "member": "string",
@@ -964,6 +1025,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可信服务产品简称。可信服务管理员查询时必须指定",
           "example": "\"\"",
           "member": "string",
@@ -979,6 +1041,7 @@
       "document": "DescribeOrganizationMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成员列表。",
           "example": "无",
           "member": "OrgMember",
@@ -988,6 +1051,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "总数目。",
           "example": "1",
           "member": "uint64",
@@ -1010,6 +1074,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目。最大50",
           "example": "10",
           "member": "int64",
@@ -1020,6 +1085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量。",
           "example": "0",
           "member": "int64",
@@ -1035,6 +1101,7 @@
       "document": "DescribeOrganizationNodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1045,6 +1112,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "列表详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgNode",
@@ -1068,6 +1136,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "不传默认获取前一天数据。格式：yyyy-mm-dd，示例：2021-06-10。\n数据按天统计，当天可以获取前一天之前的数据。",
           "example": "2021-06-09",
           "member": "string",
@@ -1082,6 +1151,7 @@
       "document": "DescribeOrganizationOverView返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成员总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1091,6 +1161,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "节点总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1100,6 +1171,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "子账号总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1109,6 +1181,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "角色总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1131,6 +1204,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "国际站：en，国内站：zh",
           "example": "en",
           "member": "string",
@@ -1141,6 +1215,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可信服务产品简称。查询是否该可信服务管理员时必须指定",
           "example": "test",
           "member": "string",
@@ -1156,6 +1231,7 @@
       "document": "DescribeOrganization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业组织ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
           "member": "int64",
@@ -1166,6 +1242,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建者UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10001",
           "member": "int64",
@@ -1176,6 +1253,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建者昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1186,6 +1264,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "企业组织类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1196,6 +1275,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否组织管理员。是：true ，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1206,6 +1286,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "策略类型。财务管理：Financial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Finical",
           "member": "string",
@@ -1216,6 +1297,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "财务策略",
           "member": "string",
@@ -1226,6 +1308,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员财务权限列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgPermission",
@@ -1236,6 +1319,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "组织根节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -1246,6 +1330,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "组织创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:00:00",
           "member": "string",
@@ -1256,6 +1341,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员加入时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:00:00",
           "member": "string",
@@ -1266,6 +1352,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员是否允许退出。允许：Allow，不允许：Denied\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Allow",
           "member": "string",
@@ -1276,6 +1363,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "代付者Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1286,6 +1374,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "代付者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1296,6 +1385,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否可信服务管理员。是：true，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1306,6 +1396,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否实名主体管理员。是：true，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1329,6 +1420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID",
           "example": "1",
           "member": "uint64",
@@ -1339,6 +1431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "example": "AdministratorAccess",
           "member": "string",
@@ -1355,6 +1448,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量。",
           "example": "1",
           "member": "uint64",
@@ -1365,6 +1459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目。最大50",
           "example": "10",
           "member": "uint64",
@@ -1375,6 +1470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称搜索关键字。",
           "example": "test",
           "member": "string",
@@ -1385,6 +1481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID搜索。",
           "example": "1",
           "member": "uint64",
@@ -1400,6 +1497,7 @@
       "document": "ListOrganizationIdentity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1410,6 +1508,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "条目详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgIdentity",
@@ -1433,6 +1532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1443,6 +1543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1459,6 +1560,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000006533",
           "member": "int64",
@@ -1469,6 +1571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员名称j\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testa",
           "member": "string",
@@ -1485,6 +1588,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织节点ID。",
           "example": "123",
           "member": "int64",
@@ -1495,6 +1599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员UIN列表。",
           "example": "无",
           "member": "int64",
@@ -1523,6 +1628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1533,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1543,6 +1650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1553,6 +1661,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IdentityPolicy",
@@ -1563,6 +1672,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份类型。 1-预设、 2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1573,6 +1683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1588,6 +1699,7 @@
       "document": "企业组织成员",
       "members": [
         {
+          "disabled": false,
           "document": "成员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000001",
           "member": "int64",
@@ -1598,6 +1710,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tt",
           "member": "string",
@@ -1608,6 +1721,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员类型，邀请：Invite， 创建：Create\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Invite",
           "member": "string",
@@ -1618,6 +1732,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "关系策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Finical",
           "member": "string",
@@ -1628,6 +1743,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "关系策略名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "财务管理",
           "member": "string",
@@ -1638,6 +1754,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "关系策略权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgPermission",
@@ -1648,6 +1765,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "所属节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1002",
           "member": "int64",
@@ -1658,6 +1776,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "所属节点名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Root",
           "member": "string",
@@ -1668,6 +1787,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tt",
           "member": "string",
@@ -1678,6 +1798,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:22",
           "member": "string",
@@ -1688,6 +1809,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:22",
           "member": "string",
@@ -1698,6 +1820,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否允许成员退出。允许：Allow，不允许：Denied。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Allow",
           "member": "string",
@@ -1708,6 +1831,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "代付者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1718,6 +1842,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "代付者名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1728,6 +1853,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "管理身份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MemberIdentity",
@@ -1738,6 +1864,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Unbound",
           "member": "string",
@@ -1748,6 +1875,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "成员权限状态 已确认：Confirmed ，待确认：UnConfirmed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Confirmed",
           "member": "string",
@@ -1758,6 +1886,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实名名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1775,6 +1904,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织子账号Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000001",
           "member": "int64",
@@ -1785,6 +1915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
           "member": "int64",
@@ -1795,6 +1926,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1805,6 +1937,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "int64",
@@ -1815,6 +1948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test1",
           "member": "string",
@@ -1825,6 +1959,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "策略管理",
           "member": "string",
@@ -1835,6 +1970,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1845,6 +1981,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1855,6 +1992,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1870,6 +2008,7 @@
       "document": "组织成员可授权的身份",
       "members": [
         {
+          "disabled": false,
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
           "member": "int64",
@@ -1880,6 +2019,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "身份的角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1890,6 +2030,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "身份的角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1900,6 +2041,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1910,6 +2052,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1920,6 +2063,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1930,6 +2074,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "身份类型。取值： 1-预设  2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1947,6 +2092,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1957,6 +2103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1967,6 +2114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1977,6 +2125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1987,6 +2136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1997,6 +2147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2007,6 +2158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -2017,6 +2169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -2033,6 +2186,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1001",
           "member": "int64",
@@ -2043,6 +2197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2053,6 +2208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -2063,6 +2219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2073,6 +2230,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:11",
           "member": "string",
@@ -2083,6 +2241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:11",
           "member": "string",
@@ -2099,6 +2258,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限Id",
           "example": "1",
           "member": "uint64",
@@ -2109,6 +2269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限名",
           "example": "允许主账号对子账号合并出账单",
           "member": "string",
@@ -2125,6 +2286,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID。",
           "example": "1001",
           "member": "uint64",
@@ -2135,6 +2297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-",
           "example": "test",
           "member": "string",
@@ -2145,6 +2308,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注。",
           "example": "test",
           "member": "string",

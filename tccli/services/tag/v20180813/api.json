@@ -265,6 +265,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目名称",
           "member": "string",
           "name": "ProjectName",
@@ -273,6 +274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目描述",
           "member": "string",
           "name": "Info",
@@ -286,6 +288,7 @@
       "document": "AddProject返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目Id",
           "member": "uint64",
           "name": "ProjectId",
@@ -293,6 +296,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为新项目",
           "member": "int64",
           "name": "IsNew",
@@ -313,6 +317,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "testTagKey",
           "member": "string",
@@ -323,6 +328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "testTagValue",
           "member": "string",
@@ -333,6 +339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -360,6 +367,7 @@
       "document": "AttachResourceProject请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目ID",
           "example": "10001",
           "member": "uint64",
@@ -369,6 +377,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -397,6 +406,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
@@ -405,6 +415,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
           "member": "string",
           "name": "ResourceIds",
@@ -413,6 +424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -421,6 +433,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -429,6 +442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
@@ -437,6 +451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
@@ -463,6 +478,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "testTagKey",
           "member": "string",
@@ -472,6 +488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "testTagValue",
           "member": "string",
@@ -499,6 +516,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表。\nN取值范围：0~9",
           "example": "无",
           "member": "Tag",
@@ -526,6 +544,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -534,6 +553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "member": "string",
           "name": "Resource",
@@ -560,6 +580,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要删除的标签键",
           "example": "testTagKey",
           "member": "string",
@@ -569,6 +590,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要删除的标签值",
           "example": "testTagValue",
           "member": "string",
@@ -596,6 +618,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表。\nN取值范围：0~9",
           "example": "无",
           "member": "Tag",
@@ -624,6 +647,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "传1拉取所有项目（包括隐藏项目），传0拉取显示项目",
           "example": "1",
           "member": "uint64",
@@ -634,6 +658,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页条数，固定值1000。",
           "example": "1000",
           "member": "uint64",
@@ -644,6 +669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量。",
           "example": "0",
           "member": "uint64",
@@ -659,6 +685,7 @@
       "document": "DescribeProjects返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据总条数",
           "example": "1000",
           "member": "uint64",
@@ -669,6 +696,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "项目列表",
           "example": "无",
           "member": "Project",
@@ -692,6 +720,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "member": "string",
           "name": "ServiceType",
@@ -700,6 +729,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "member": "string",
           "name": "ResourcePrefix",
@@ -708,6 +738,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID数组，大小不超过50",
           "member": "string",
           "name": "ResourceIds",
@@ -716,6 +747,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域",
           "member": "string",
           "name": "ResourceRegion",
@@ -724,6 +756,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -732,6 +765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -745,6 +779,7 @@
       "document": "DescribeResourceTagsByResourceIds返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -752,6 +787,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -759,6 +795,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -766,6 +803,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "TagResource",
           "name": "Tags",
@@ -786,6 +824,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "member": "string",
           "name": "ServiceType",
@@ -794,6 +833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "member": "string",
           "name": "ResourcePrefix",
@@ -802,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标记",
           "member": "string",
           "name": "ResourceIds",
@@ -810,6 +851,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域",
           "member": "string",
           "name": "ResourceRegion",
@@ -818,6 +860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -826,6 +869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -839,6 +883,7 @@
       "document": "DescribeResourceTagsByResourceIdsSeq返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -846,6 +891,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -853,6 +899,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -860,6 +907,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "TagResource",
           "name": "Tags",
@@ -880,6 +928,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "member": "string",
           "name": "ServiceType",
@@ -888,6 +937,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "member": "string",
           "name": "ResourcePrefix",
@@ -896,6 +946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源地域",
           "member": "string",
           "name": "ResourceRegion",
@@ -904,6 +955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标识",
           "member": "string",
           "name": "ResourceIds",
@@ -912,6 +964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源标签键",
           "member": "string",
           "name": "TagKeys",
@@ -920,6 +973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 400",
           "member": "uint64",
           "name": "Limit",
@@ -928,6 +982,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -941,6 +996,7 @@
       "document": "DescribeResourceTagsByTagKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -948,6 +1004,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -955,6 +1012,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -962,6 +1020,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源标签",
           "member": "ResourceIdTag",
           "name": "Rows",
@@ -982,6 +1041,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建者uin",
           "member": "uint64",
           "name": "CreateUin",
@@ -990,6 +1050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域",
           "member": "string",
           "name": "ResourceRegion",
@@ -998,6 +1059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "member": "string",
           "name": "ServiceType",
@@ -1006,6 +1068,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "member": "string",
           "name": "ResourcePrefix",
@@ -1014,6 +1077,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）",
           "member": "string",
           "name": "ResourceId",
@@ -1022,6 +1086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1030,6 +1095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1038,6 +1104,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填",
           "member": "uint64",
           "name": "CosResourceId",
@@ -1051,6 +1118,7 @@
       "document": "DescribeResourceTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1058,6 +1126,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1065,6 +1134,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Limit",
@@ -1072,6 +1142,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "资源标签",
           "member": "TagResource",
           "name": "Rows",
@@ -1092,6 +1163,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签过滤数组",
           "example": "无",
           "member": "TagFilter",
@@ -1101,6 +1173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建标签者uin",
           "example": "1",
           "member": "uint64",
@@ -1110,6 +1183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "example": "0",
           "member": "uint64",
@@ -1119,6 +1193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "example": "10",
           "member": "uint64",
@@ -1128,6 +1203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "example": "instance",
           "member": "string",
@@ -1137,6 +1213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标记",
           "example": "ins-1234",
           "member": "string",
@@ -1146,6 +1223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域",
           "example": "ap-beijing",
           "member": "string",
@@ -1155,6 +1233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "example": "cvm",
           "member": "string",
@@ -1169,6 +1248,7 @@
       "document": "DescribeResourcesByTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "example": "1",
           "member": "uint64",
@@ -1178,6 +1258,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "example": "0",
           "member": "uint64",
@@ -1187,6 +1268,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "uint64",
@@ -1196,6 +1278,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "资源标签",
           "example": "无",
           "member": "ResourceTag",
@@ -1218,6 +1301,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签过滤数组",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -1226,6 +1310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建标签者uin",
           "member": "uint64",
           "name": "CreateUin",
@@ -1234,6 +1319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1242,6 +1328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1250,6 +1337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀",
           "member": "string",
           "name": "ResourcePrefix",
@@ -1258,6 +1346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标记",
           "member": "string",
           "name": "ResourceId",
@@ -1266,6 +1355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域",
           "member": "string",
           "name": "ResourceRegion",
@@ -1274,6 +1364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型",
           "member": "string",
           "name": "ServiceType",
@@ -1287,6 +1378,7 @@
       "document": "DescribeResourcesByTagsUnion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1294,6 +1386,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1301,6 +1394,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -1308,6 +1402,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源标签",
           "member": "ResourceTag",
           "name": "Rows",
@@ -1328,6 +1423,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
           "member": "uint64",
           "name": "CreateUin",
@@ -1336,6 +1432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1344,6 +1441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1352,6 +1450,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否展现项目",
           "member": "uint64",
           "name": "ShowProject",
@@ -1365,6 +1464,7 @@
       "document": "DescribeTagKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1372,6 +1472,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1379,6 +1480,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -1386,6 +1488,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "string",
           "name": "Tags",
@@ -1406,6 +1509,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键列表",
           "member": "string",
           "name": "TagKeys",
@@ -1414,6 +1518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
           "member": "uint64",
           "name": "CreateUin",
@@ -1422,6 +1527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1430,6 +1536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1443,6 +1550,7 @@
       "document": "DescribeTagValues返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1450,6 +1558,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1457,6 +1566,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -1464,6 +1574,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "Tag",
           "name": "Tags",
@@ -1484,6 +1595,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键列表",
           "member": "string",
           "name": "TagKeys",
@@ -1492,6 +1604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
           "member": "uint64",
           "name": "CreateUin",
@@ -1500,6 +1613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1508,6 +1622,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1521,6 +1636,7 @@
       "document": "DescribeTagValuesSeq返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1528,6 +1644,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1535,6 +1652,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -1542,6 +1660,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "Tag",
           "name": "Tags",
@@ -1562,6 +1681,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
           "example": "testTagKey",
           "member": "string",
@@ -1571,6 +1691,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
           "example": "testTagValue",
           "member": "string",
@@ -1580,6 +1701,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "example": "0",
           "member": "uint64",
@@ -1589,6 +1711,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "example": "15",
           "member": "uint64",
@@ -1598,6 +1721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
           "example": "121",
           "member": "uint64",
@@ -1607,6 +1731,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
           "example": "Key",
           "member": "string",
@@ -1616,6 +1741,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否展现项目标签",
           "example": "1",
           "member": "uint64",
@@ -1630,6 +1756,7 @@
       "document": "DescribeTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "example": "1",
           "member": "uint64",
@@ -1639,6 +1766,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "example": "0",
           "member": "uint64",
@@ -1648,6 +1776,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "example": "15",
           "member": "uint64",
@@ -1657,6 +1786,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "TagWithDelete",
@@ -1679,6 +1809,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
           "member": "string",
           "name": "TagKey",
@@ -1687,6 +1818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
           "member": "string",
           "name": "TagValue",
@@ -1695,6 +1827,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
           "member": "uint64",
           "name": "Offset",
@@ -1703,6 +1836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小，默认为 15",
           "member": "uint64",
           "name": "Limit",
@@ -1711,6 +1845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
           "member": "uint64",
           "name": "CreateUin",
@@ -1719,6 +1854,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
           "member": "string",
           "name": "TagKeys",
@@ -1727,6 +1863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否展现项目标签",
           "member": "uint64",
           "name": "ShowProject",
@@ -1740,6 +1877,7 @@
       "document": "DescribeTagsSeq返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "结果总数",
           "member": "uint64",
           "name": "TotalCount",
@@ -1747,6 +1885,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据位移偏量",
           "member": "uint64",
           "name": "Offset",
@@ -1754,6 +1893,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每页大小",
           "member": "uint64",
           "name": "Limit",
@@ -1761,6 +1901,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "member": "TagWithDelete",
           "name": "Tags",
@@ -1780,6 +1921,7 @@
       "document": "DetachResourceProject请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目ID",
           "example": "10001",
           "member": "string",
@@ -1789,6 +1931,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -1817,6 +1960,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
@@ -1825,6 +1969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
           "member": "string",
           "name": "ResourceIds",
@@ -1833,6 +1978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要解绑的标签键",
           "member": "string",
           "name": "TagKey",
@@ -1841,6 +1987,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
@@ -1849,6 +1996,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
@@ -1875,6 +2023,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "失败的资源六段式",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -1885,6 +2034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误码",
           "example": "InvalidParameterValue.TagKeyDuplicate",
           "member": "string",
@@ -1895,6 +2045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误信息",
           "example": "TagKeyDuplicate",
           "member": "string",
@@ -1911,6 +2062,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\n如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。\nN取值范围：0~9",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -1920,6 +2072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键和标签值。\n指定多个标签，会查询同时绑定了该多个标签的资源。\nN取值范围：0~5。\n每个TagFilters中的TagValue最多支持10个",
           "example": "无",
           "member": "TagFilter",
@@ -1929,6 +2082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -1938,6 +2092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每一页返回的数据最大条数，最大200。\n缺省值：50。",
           "example": "50",
           "member": "uint64",
@@ -1952,6 +2107,7 @@
       "document": "GetResources返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取的下一页的Token值",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -1961,6 +2117,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源及关联的标签(键和值)列表",
           "example": "无",
           "member": "ResourceTagMapping",
@@ -1983,6 +2140,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
           "example": "无",
           "member": "string",
@@ -1993,6 +2151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
           "example": "50",
           "member": "uint64",
@@ -2008,6 +2167,7 @@
       "document": "GetTagKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取的下一页的Token值",
           "example": "无",
           "member": "string",
@@ -2018,6 +2178,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签键信息。",
           "example": "无",
           "member": "string",
@@ -2041,6 +2202,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键。\n返回所有标签键列表对应的标签值。\n最大长度：20",
           "example": "无",
           "member": "string",
@@ -2050,6 +2212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -2059,6 +2222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
           "example": "50",
           "member": "uint64",
@@ -2073,6 +2237,7 @@
       "document": "GetTagValues返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取的下一页的Token值",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -2082,6 +2247,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表。",
           "example": "无",
           "member": "Tag",
@@ -2104,6 +2270,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -2113,6 +2280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
           "example": "50",
           "member": "uint64",
@@ -2122,6 +2290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键。\n返回所有标签键列表对应的标签。\n最大长度：20",
           "example": "无",
           "member": "string",
@@ -2136,6 +2305,7 @@
       "document": "GetTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取的下一页的Token值",
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
@@ -2145,6 +2315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签列表。",
           "example": "无",
           "member": "Tag",
@@ -2167,6 +2338,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -2177,6 +2349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要增加或修改的标签集合。如果Resource描述的资源未关联输入的标签键，则增加关联；若已关联，则将该资源关联的键对应的标签值修改为输入值。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
           "example": "无",
           "member": "Tag",
@@ -2187,6 +2360,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要解关联的标签集合。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
           "example": "无",
           "member": "TagKeyObject",
@@ -2215,6 +2389,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属业务名称（资源六段式中的第三段）",
           "member": "string",
           "name": "ServiceType",
@@ -2223,6 +2398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
           "member": "string",
           "name": "ResourceIds",
@@ -2231,6 +2407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2239,6 +2416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2247,6 +2425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
           "member": "string",
           "name": "ResourceRegion",
@@ -2255,6 +2434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
           "member": "string",
           "name": "ResourcePrefix",
@@ -2281,6 +2461,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "example": "1",
           "member": "uint64",
@@ -2292,6 +2473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目名称",
           "example": "project_1",
           "member": "string",
@@ -2303,6 +2485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建人uin",
           "example": "1",
           "member": "uint64",
@@ -2314,6 +2497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目描述",
           "example": "info",
           "member": "string",
@@ -2325,6 +2509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2022-08-03 00:00:00",
           "member": "string",
@@ -2342,6 +2527,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceId",
@@ -2351,6 +2537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "TagKeyValues",
@@ -2366,6 +2553,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceRegion",
@@ -2375,6 +2563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServiceType",
@@ -2384,6 +2573,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourcePrefix",
@@ -2393,6 +2583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceId",
@@ -2402,6 +2593,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "Tags",
@@ -2417,6 +2609,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源六段式。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -2427,6 +2620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源关联的标签列表",
           "example": "无",
           "member": "Tag",
@@ -2443,6 +2637,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源类型。例如：qcs::{serviceType}:{region}::{$resourcePrefix}/*",
           "example": "qcs::cvm:ap-guangzhou::instance/*",
           "member": "string",
@@ -2454,6 +2649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "申请配额，比如qcs::cvm:ap-guangzhou::instance/*对应的quotas是3，则在对应打标签请求中应该有3个cvm:instance:ap-guangzhou的资源，也就是说给几个资源打标签就传入几。",
           "example": "3",
           "member": "uint64",
@@ -2471,6 +2667,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2480,6 +2677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2495,6 +2693,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2504,6 +2703,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值数组 多个值的话是或的关系",
           "member": "string",
           "name": "TagValue",
@@ -2519,6 +2719,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2534,6 +2735,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2543,6 +2745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2552,6 +2755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID",
           "member": "string",
           "name": "ResourceId",
@@ -2561,6 +2765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键MD5值",
           "member": "string",
           "name": "TagKeyMd5",
@@ -2570,6 +2775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值MD5值",
           "member": "string",
           "name": "TagValueMd5",
@@ -2579,6 +2785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServiceType",
@@ -2593,6 +2800,7 @@
       "document": "TagResourcesAllocateQuotas请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "资源配额列表。\nN取值范围：0~9\n",
           "example": "无",
           "member": "ResourceTypeQuotas",
@@ -2602,6 +2810,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "标签键和标签值列表。\nN取值范围：0~50",
           "example": "无",
           "member": "Tag",
@@ -2611,6 +2820,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "配额未使用过期时间。秒时间戳，最长48小时(距请求时)",
           "example": "1650441201",
           "member": "uint64",
@@ -2620,6 +2830,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "是否dryRun模式。\n缺省值：false。\ndryRun模式如果传入true仅校验配额是否足够，不进行配额预分配（实际扣减）。",
           "example": "false",
           "member": "bool",
@@ -2647,6 +2858,7 @@
       "document": "TagResourcesDeallocateQuotas请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "资源配额列表。",
           "example": "无",
           "member": "ResourceTypeQuotas",
@@ -2656,6 +2868,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "标签键和标签值列表。\nN取值范围：0~49",
           "example": "无",
           "member": "Tag",
@@ -2683,6 +2896,7 @@
       "document": "TagResources请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。\nN取值范围：0~9",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -2692,6 +2906,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "标签键和标签值。\n如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。\n同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。\n如果标签不存在会为您自动创建标签。\nN取值范围：0~9",
           "example": "无",
           "member": "Tag",
@@ -2707,6 +2922,7 @@
       "document": "TagResources返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "失败资源信息。\n创建并绑定标签成功时，返回的FailedResources为空。\n创建并绑定标签失败或部分失败时，返回的FailedResources会显示失败资源的详细信息。",
           "example": "无",
           "member": "FailedResource",
@@ -2729,6 +2945,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2738,6 +2955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2747,6 +2965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否可以删除",
           "member": "uint64",
           "name": "CanDelete",
@@ -2762,6 +2981,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。\nN取值范围：0~9",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -2772,6 +2992,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键。\n取值范围：0~9",
           "example": "无",
           "member": "string",
@@ -2787,6 +3008,7 @@
       "document": "UnTagResources返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "失败资源信息。\n解绑标签成功时，返回的FailedResources为空。\n解绑标签失败或部分失败时，返回的FailedResources会显示失败资源的详细信息。",
           "example": "无",
           "member": "FailedResource",
@@ -2810,6 +3032,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "member": "uint64",
           "name": "ProjectId",
@@ -2818,6 +3041,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目名称",
           "member": "string",
           "name": "ProjectName",
@@ -2826,6 +3050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "禁用项目，1，禁用，0，启用",
           "member": "int64",
           "name": "Disable",
@@ -2834,6 +3059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Info",
@@ -2859,6 +3085,7 @@
       "document": "UpdateResourceProject请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目ID",
           "example": "10001",
           "member": "uint64",
@@ -2868,6 +3095,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
@@ -2896,6 +3124,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源关联的标签键",
           "example": "testTagKey",
           "member": "string",
@@ -2906,6 +3135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后的标签值",
           "example": "testTagValue",
           "member": "string",
@@ -2916,6 +3146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",

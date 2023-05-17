@@ -76,6 +76,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加密后的fairplay方案申请时使用的私钥。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对私钥文件中的字段进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Pem",
@@ -84,6 +85,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加密后的fairplay方案申请返回的ask数据。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对Ask字符串进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Ask",
@@ -92,6 +94,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的解密密钥。\nopenssl在生成rsa时，可能会需要设置加密密钥，请记住设置的密钥。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "PemDecryptKey",
@@ -100,6 +103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "委托者Id,适用于托管自身证书的客户。普通客户无需填该字段。",
           "member": "uint64",
           "name": "BailorId",
@@ -108,6 +112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的优先级，优先级数值越高，优先级越高。\n该值可以不传，后台将自动分配一个优先级。",
           "member": "uint64",
           "name": "Priority",
@@ -121,6 +126,7 @@
       "document": "AddFairPlayPem返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -128,6 +134,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "私钥的优先级，优先级数值越高，优先级越高。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Priority",
@@ -148,6 +155,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。",
           "member": "string",
           "name": "DrmType",
@@ -156,6 +164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置的加密密钥列表。",
           "member": "KeyParam",
           "name": "Keys",
@@ -164,6 +173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个加密内容的唯一标识。",
           "member": "string",
           "name": "ContentId",
@@ -172,6 +182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内容类型。接口取值VodVideo,LiveVideo。",
           "member": "string",
           "name": "ContentType",
@@ -198,6 +209,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。",
           "member": "string",
           "name": "DrmType",
@@ -206,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码的终端设备License Request数据。",
           "member": "string",
           "name": "LicenseRequest",
@@ -214,6 +227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内容类型，接口取值：VodVideo,LiveVideo。",
           "member": "string",
           "name": "ContentType",
@@ -222,6 +236,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权播放的Track列表。\n该值为空时，默认授权所有track播放。",
           "member": "string",
           "name": "Tracks",
@@ -230,6 +245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放策略参数。",
           "member": "PlaybackPolicy",
           "name": "PlaybackPolicy",
@@ -243,6 +259,7 @@
       "document": "CreateLicense返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Base64 编码的许可证二进制数据。",
           "member": "string",
           "name": "License",
@@ -250,6 +267,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加密内容的内容ID",
           "member": "string",
           "name": "ContentId",
@@ -270,6 +288,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "委托者Id,适用于托管自身证书的客户。普通客户无需填该字段。",
           "member": "uint64",
           "name": "BailorId",
@@ -278,6 +297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要删除的pem id。\n当未传入该值时，将删除所有的私钥。",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -304,6 +324,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。",
           "member": "string",
           "name": "DrmType",
@@ -312,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码的Rsa公钥，用来加密出参中的SessionKey。\n如果该参数为空，则出参中SessionKey为明文。",
           "member": "string",
           "name": "RsaPublicKey",
@@ -320,6 +342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个加密内容的唯一标识。",
           "member": "string",
           "name": "ContentId",
@@ -328,6 +351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内容类型。接口取值VodVideo,LiveVideo。",
           "member": "string",
           "name": "ContentType",
@@ -341,6 +365,7 @@
       "document": "DescribeAllKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "加密密钥列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Key",
           "name": "Keys",
@@ -348,6 +373,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用来加密密钥。\n如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。\n如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SessionKey",
@@ -355,6 +381,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "内容ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ContentId",
@@ -375,6 +402,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "委托者Id,适用于托管自身证书的客户。普通客户无需填该字段。",
           "member": "uint64",
           "name": "BailorId",
@@ -383,6 +411,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的pem id。\n当该值未填入时，将返回所有的私钥信息。",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -396,6 +425,7 @@
       "document": "DescribeFairPlayPem返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该账户下，所有设置的FairPlay私钥摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "FairPlayPemDigestInfo",
           "name": "FairPlayPems",
@@ -416,6 +446,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用的DRM方案类型，接口取值WIDEVINE、FAIRPLAY、NORMALAES。",
           "member": "string",
           "name": "DrmType",
@@ -424,6 +455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加密的track列表，接口取值VIDEO、AUDIO。",
           "member": "string",
           "name": "Tracks",
@@ -432,6 +464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内容类型。接口取值VodVideo,LiveVideo",
           "member": "string",
           "name": "ContentType",
@@ -440,6 +473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Base64编码的Rsa公钥，用来加密出参中的SessionKey。\n如果该参数为空，则出参中SessionKey为明文。",
           "member": "string",
           "name": "RsaPublicKey",
@@ -448,6 +482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个加密内容的唯一标识。\n如果该参数为空，则后台自动生成",
           "member": "string",
           "name": "ContentId",
@@ -461,6 +496,7 @@
       "document": "DescribeKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "加密密钥列表",
           "member": "Key",
           "name": "Keys",
@@ -468,6 +504,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用来加密密钥。\n如果入参中带有RsaPublicKey，则SessionKey为使用Rsa公钥加密后的二进制数据，Base64编码字符串。\n如果入参中没有RsaPublicKey，则SessionKey为原始数据的字符串形式。",
           "member": "string",
           "name": "SessionKey",
@@ -475,6 +512,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "内容ID",
           "member": "string",
           "name": "ContentId",
@@ -482,6 +520,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Widevine方案的Pssh数据，Base64编码。\nFairplay方案无该值。",
           "member": "string",
           "name": "Pssh",
@@ -502,6 +541,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输出的桶名称。",
           "member": "string",
           "name": "BucketName",
@@ -511,6 +551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输出的对象名称。",
           "member": "string",
           "name": "ObjectName",
@@ -520,6 +561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输出对象参数。",
           "member": "DrmOutputPara",
           "name": "Para",
@@ -535,6 +577,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "内容类型。例:video，audio，mpd，m3u8",
           "member": "string",
           "name": "Type",
@@ -544,6 +587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "语言,例: en, zh-cn",
           "member": "string",
           "name": "Language",
@@ -559,6 +603,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入的桶名称。",
           "member": "string",
           "name": "BucketName",
@@ -568,6 +613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输入对象名称。",
           "member": "string",
           "name": "ObjectName",
@@ -583,6 +629,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "fairplay 私钥pem id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -592,6 +639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Priority",
@@ -601,6 +649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的md5 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Md5Pem",
@@ -610,6 +659,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ASK的md5信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Md5Ask",
@@ -619,6 +669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥解密密钥的md5值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Md5PemDecryptKey",
@@ -634,6 +685,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。",
           "member": "string",
           "name": "Track",
@@ -643,6 +695,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥ID。",
           "member": "string",
           "name": "KeyId",
@@ -652,6 +705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。",
           "member": "string",
           "name": "Key",
@@ -661,6 +715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。",
           "member": "string",
           "name": "Iv",
@@ -670,6 +725,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该key生成时的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "InsertTimestamp",
@@ -685,6 +741,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加密track类型。取值范围：\nSD、HD、UHD1、UHD2、AUDIO",
           "member": "string",
           "name": "Track",
@@ -694,6 +751,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Key",
@@ -703,6 +761,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥ID。",
           "member": "string",
           "name": "KeyId",
@@ -712,6 +771,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Iv",
@@ -727,6 +787,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加密后的fairplay方案申请时使用的私钥。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对私钥文件中的字段进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Pem",
@@ -735,6 +796,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加密后的fairplay方案申请返回的ask数据。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对Ask字符串进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "Ask",
@@ -743,6 +805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要修改的私钥id",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -751,6 +814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的解密密钥。\nopenssl在生成rsa时，可能会需要设置加密密钥，请记住设置的密钥。\n请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
           "member": "string",
           "name": "PemDecryptKey",
@@ -759,6 +823,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "委托者Id,适用于托管自身证书的客户。普通客户无需填该字段。",
           "member": "uint64",
           "name": "BailorId",
@@ -767,6 +832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥的优先级，优先级数值越高，优先级越高。\n该值可以不传，后台将自动分配一个优先级。",
           "member": "uint64",
           "name": "Priority",
@@ -780,6 +846,7 @@
       "document": "ModifyFairPlayPem返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设置私钥后，后台返回的pem id，用来唯一标识一个私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "FairPlayPemId",
@@ -787,6 +854,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "私钥的优先级，优先级数值越高，优先级越高。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Priority",
@@ -807,6 +875,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "播放许可证的有效期",
           "member": "uint64",
           "name": "LicenseDurationSeconds",
@@ -816,6 +885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始播放后，允许最长播放时间",
           "member": "uint64",
           "name": "PlaybackDurationSeconds",
@@ -831,6 +901,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cos的end point。",
           "member": "string",
           "name": "CosEndPoint",
@@ -839,6 +910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos api密钥id。",
           "member": "string",
           "name": "CosSecretId",
@@ -847,6 +919,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos api密钥。",
           "member": "string",
           "name": "CosSecretKey",
@@ -855,6 +928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用的DRM方案类型，接口取值WIDEVINE,FAIRPLAY",
           "member": "string",
           "name": "DrmType",
@@ -863,6 +937,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储在COS上的原始内容信息",
           "member": "DrmSourceObject",
           "name": "SourceObject",
@@ -871,6 +946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加密后的内容存储到COS的对象",
           "member": "DrmOutputObject",
           "name": "OutputObjects",

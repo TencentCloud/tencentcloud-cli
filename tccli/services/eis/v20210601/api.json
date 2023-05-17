@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "环境id",
           "example": "12",
           "member": "int64",
@@ -59,6 +60,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-2",
           "member": "string",
@@ -70,6 +72,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private",
           "example": "2",
           "member": "int64",
@@ -81,6 +84,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
           "member": "string",
@@ -92,6 +96,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等（同Zone）",
           "example": "tianjin",
           "member": "string",
@@ -103,6 +108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境应用listener地址后缀",
           "example": "ipaas.tianjin.com",
           "member": "string",
@@ -114,6 +120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境状态",
           "example": "1",
           "member": "int64",
@@ -125,6 +132,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境过期时间",
           "example": "1624354153",
           "member": "int64",
@@ -136,6 +144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
           "member": "int64",
@@ -147,6 +156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否已在当前环境发布\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -164,6 +174,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "环境id",
           "example": "12",
           "member": "int64",
@@ -174,6 +185,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境地域",
           "example": "tinajin",
           "member": "string",
@@ -184,6 +196,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
           "member": "int64",
@@ -199,6 +212,7 @@
       "document": "GetRuntimeMC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "运行时详情",
           "example": "无",
           "member": "RuntimeMC",
@@ -222,6 +236,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "运行时id",
           "example": "12",
           "member": "int64",
@@ -232,6 +247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间",
           "example": "1622615532",
           "member": "int64",
@@ -242,6 +258,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间",
           "example": "1622615532",
           "member": "int64",
@@ -252,6 +269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标类型：0:CPU, 1:MemUsageBytes, 2:K8sWorkloadNetworkReceiveBytesBw, 3:K8sWorkloadNetworkTransmitBytesBw",
           "example": "2",
           "member": "int64",
@@ -262,6 +280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否返回百分比数值，仅支持CPU，Memory",
           "example": "true",
           "member": "bool",
@@ -272,6 +291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采样粒度：60(s), 300(s), 3600(s), 86400(s)",
           "example": "300",
           "member": "int64",
@@ -282,6 +302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
           "member": "int64",
@@ -297,6 +318,7 @@
       "document": "GetRuntimeResourceMonitorMetricMC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指标名称，K8sWorkloadCpuCoreUsed，K8sWorkloadMemUsageBytes，K8sWorkloadNetworkReceiveBytesBw，K8sWorkloadNetworkTransmitBytesBw",
           "example": "无",
           "member": "string",
@@ -307,6 +329,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "metric数值列表",
           "example": "无",
           "member": "MetricValueMC",
@@ -329,6 +352,7 @@
       "document": "ListDeployableRuntimesMC请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用id",
           "example": "1",
           "member": "int64",
@@ -338,6 +362,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例id",
           "example": "1",
           "member": "int64",
@@ -347,6 +372,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "版本类型 0-pro 1-lite",
           "example": "0",
           "member": "int64",
@@ -362,6 +388,7 @@
       "document": "ListDeployableRuntimesMC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "运行时列表",
           "example": "无",
           "member": "AbstractRuntimeMC",
@@ -384,6 +411,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "运行时id",
           "example": "12",
           "member": "int64",
@@ -394,6 +422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大请求数量",
           "example": "20",
           "member": "int64",
@@ -404,6 +433,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求偏移量",
           "example": "21",
           "member": "int64",
@@ -414,6 +444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序类型：1:创建时间排序, 2:更新时间排序（默认）",
           "example": "1",
           "member": "int64",
@@ -424,6 +455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序方式：asc，desc（默认）",
           "example": "desc",
           "member": "string",
@@ -434,6 +466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运行时地域",
           "example": "tianjin",
           "member": "string",
@@ -444,6 +477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1:3.0版本新控制台传1；否则传0",
           "example": "1",
           "member": "int64",
@@ -454,6 +488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "-1:不按项目筛选，获取所有\n>=0: 按项目id筛选",
           "example": "1",
           "member": "int64",
@@ -464,6 +499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "-2: 不按状态筛选，获取所有\n0: 运行中\n2: 已停止",
           "example": "0",
           "member": "int64",
@@ -479,6 +515,7 @@
       "document": "ListRuntimeDeployedInstancesMC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "运行时所部属的应用实例列表",
           "example": "无",
           "member": "RuntimeDeployedInstanceMC",
@@ -489,6 +526,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "满足条件的记录总数，用于分页器",
           "example": "102",
           "member": "int64",
@@ -511,6 +549,7 @@
       "document": "ListRuntimesMC请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
           "member": "int64",
@@ -520,6 +559,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "计划类型：0-pro 1-lite",
           "example": "0",
           "member": "int64",
@@ -535,6 +575,7 @@
       "document": "ListRuntimesMC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "运行时列表",
           "example": "无",
           "member": "RuntimeMC",
@@ -557,6 +598,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11111",
           "member": "int64",
@@ -567,6 +609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应的value值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"123\"",
           "member": "string",
@@ -583,6 +626,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目id",
           "example": "1",
           "member": "int64",
@@ -594,6 +638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目名称",
           "example": "我的项目",
           "member": "string",
@@ -605,6 +650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用id",
           "example": "2",
           "member": "int64",
@@ -616,6 +662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "邮件系统",
           "member": "string",
@@ -627,6 +674,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例id",
           "example": "3",
           "member": "int64",
@@ -638,6 +686,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例版本",
           "example": "1",
           "member": "int64",
@@ -649,6 +698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例创建时间",
           "example": "1619656971",
           "member": "int64",
@@ -660,6 +710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例部署状态. 0:running, 1:deleting",
           "example": "0",
           "member": "int64",
@@ -671,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例部署创建时间",
           "example": "1624354153",
           "member": "int64",
@@ -682,6 +734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用实例部署更新时间",
           "example": "1624354153",
           "member": "int64",
@@ -693,6 +746,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用",
           "example": "1",
           "member": "int64",
@@ -704,6 +758,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用版本：0:旧版 1:3.0新控制台",
           "example": "1",
           "member": "int64",
@@ -721,6 +776,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "扩展组件类型：0:cdc",
           "example": "0",
           "member": "int64",
@@ -732,6 +788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署规格vcore数",
           "example": "1",
           "member": "float",
@@ -743,6 +800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本数",
           "example": "2",
           "member": "int64",
@@ -754,6 +812,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩展组件名称",
           "example": "cdc",
           "member": "string",
@@ -765,6 +824,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态 1:未启用 2:已启用",
           "example": "1",
           "member": "int64",
@@ -776,6 +836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "1624354153",
           "member": "int64",
@@ -787,6 +848,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "1624354153",
           "member": "int64",
@@ -804,6 +866,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "环境id",
           "example": "123",
           "member": "int64",
@@ -815,6 +878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主账号uin",
           "example": "12345",
           "member": "string",
@@ -826,6 +890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-测试1",
           "member": "string",
@@ -837,6 +902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
           "member": "string",
@@ -848,6 +914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial",
           "example": "2",
           "member": "int64",
@@ -859,6 +926,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运行时状态：1:running, 2:deleting, 3:creating, 4:scaling, 5:unavailable, 6:deleted, 7:errored",
           "example": "0",
           "member": "int64",
@@ -870,6 +938,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境创建时间",
           "example": "1624354153",
           "member": "int64",
@@ -881,6 +950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境更新时间",
           "example": "1624354153",
           "member": "int64",
@@ -892,6 +962,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited",
           "example": "2",
           "member": "int64",
@@ -903,6 +974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境资源配置，worker副本数",
           "example": "3",
           "member": "int64",
@@ -914,6 +986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "正在运行的应用实例数量",
           "example": "2",
           "member": "int64",
@@ -925,6 +998,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已使用cpu核数",
           "example": "0.2",
           "member": "float",
@@ -936,6 +1010,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cpu核数上限",
           "example": "1",
           "member": "float",
@@ -947,6 +1022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已使用内存 MB",
           "example": "2055",
           "member": "float",
@@ -958,6 +1034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存上限 MB",
           "example": "4096",
           "member": "float",
@@ -969,6 +1046,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624354153",
           "member": "int64",
@@ -980,6 +1058,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -991,6 +1070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源限制类型：0:无限制，1:有限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1002,6 +1082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1013,6 +1094,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩展组件列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuntimeExtensionMC",
@@ -1024,6 +1106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1035,6 +1118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1046,6 +1130,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已使用出带宽 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -1057,6 +1142,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "出带宽上限 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",

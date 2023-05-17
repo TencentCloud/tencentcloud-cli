@@ -97,6 +97,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "环境名称",
           "example": "prod",
           "member": "string",
@@ -108,6 +109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境内引擎的节点规格 ID\n-1C2G\n-2C4G\n兼容原spec-xxxxxx形式的规格ID",
           "example": "1C2G",
           "member": "string",
@@ -119,6 +121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境内引擎的节点数量",
           "example": "3",
           "member": "int64",
@@ -130,6 +133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置存储空间大小，以GB为单位",
           "example": "50",
           "member": "int64",
@@ -141,6 +145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -152,6 +157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -163,6 +169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境描述",
           "example": "test",
           "member": "string",
@@ -180,6 +187,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的kubernetes集群ID",
           "example": "cls-xxxxxx",
           "member": "string",
@@ -190,6 +198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的kubernetes的集群类型，分tke和eks两种\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eks",
           "member": "string",
@@ -200,6 +209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务同步模式，all为全量同步，demand为按需同步\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demand",
           "member": "string",
@@ -215,6 +225,7 @@
       "document": "云原生API网关节点信息。",
       "members": [
         {
+          "disabled": false,
           "document": "云原生网关节点 id",
           "example": "kong-0",
           "member": "string",
@@ -225,6 +236,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "节点 ip",
           "example": "无",
           "member": "string",
@@ -235,6 +247,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Zone id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -245,6 +258,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Zone\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -255,6 +269,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -265,6 +280,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "分组名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -275,6 +291,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -291,6 +308,7 @@
       "document": "CreateEngine请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "引擎类型。参考值：\n- zookeeper\n- nacos\n- consul\n- apollo\n- eureka\n- polaris",
           "example": "zookeeper",
           "member": "string",
@@ -300,6 +318,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的开源版本。每种引擎支持的开源版本不同，请参考产品文档或者控制台购买页",
           "example": "3.5.9",
           "member": "string",
@@ -309,6 +328,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的产品版本。参考值：\n- STANDARD： 标准版\n\n引擎各版本及可选择的规格、节点数说明：\napollo - STANDARD版本\n规格列表：1C2G、2C4G、4C8G、8C16G、16C32G\n节点数：1，2，3，4，5\n\neureka - STANDARD版本\n规格列表：1C2G、2C4G、4C8G、8C16G、16C32G\n节点数：3，4，5\n\npolarismesh - STANDARD版本\n规格列表：NUM50、NUM100、NUM200、NUM500、NUM1000、NUM5000、NUM10000、NUM50000\n\n兼容原spec-xxxxxx形式的规格ID",
           "example": "STANDARD",
           "member": "string",
@@ -318,6 +338,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎所在地域。参考值说明：\n中国区 参考值：\n- ap-guangzhou：广州\n- ap-beijing：北京\n- ap-chengdu：成都\n- ap-chongqing：重庆\n- ap-nanjing：南京\n- ap-shanghai：上海\n- ap-hongkong：香港\n- ap-taipei：台北\n亚太区 参考值：\n- ap-jakarta：雅加达\n- ap-singapore：新加坡\n北美区 参考值\n- na-toronto：多伦多\n金融专区 参考值\n- ap-beijing-fsi：北京金融\n- ap-shanghai-fsi：上海金融\n- ap-shenzhen-fsi：深圳金融",
           "example": "ap-beijing",
           "member": "string",
@@ -327,6 +348,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎名称。参考值：\n- eurek-test",
           "example": "qzone-photo-prod",
           "member": "string",
@@ -336,6 +358,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "付费类型。参考值：\n- 0：后付费\n- 1：预付费（接口暂不支持创建预付费实例）",
           "example": "0",
           "member": "int64",
@@ -345,6 +368,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的节点规格 ID。参见EngineProductVersion字段说明",
           "example": "1C2G",
           "member": "string",
@@ -354,6 +378,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的节点数量。参见EngineProductVersion字段说明",
           "example": "3",
           "member": "int64",
@@ -363,6 +388,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- vpc-conz6aix",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -372,6 +398,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- subnet-ahde9me9",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -381,6 +408,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Apollo 环境配置参数列表。参数说明：\n如果创建Apollo类型，此参数为必填的环境信息列表，最多可选4个环境。环境信息参数说明：\n- Name：环境名。参考值：prod, dev, fat, uat\n- EngineResourceSpec：环境内引擎的节点规格ID。参见EngineProductVersion参数说明\n- EngineNodeNum：环境内引擎的节点数量。参见EngineProductVersion参数说明，其中prod环境支持的节点数为2，3，4，5\n- StorageCapacity：配置存储空间大小，以GB为单位，步长为5.参考值：35\n- VpcId：VPC ID。参考值：vpc-conz6aix\n- SubnetId：子网 ID。参考值：subnet-ahde9me9",
           "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
           "member": "ApolloEnvParam",
@@ -390,6 +418,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的标签列表。用户自定义的key/value形式，无参考值",
           "example": "[{\"key\":\"value\"}]",
           "member": "InstanceTagInfo",
@@ -399,6 +428,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的初始帐号信息。可设置参数：\n- Name：控制台初始用户名\n- Password：控制台初始密码\n- Token：引擎接口的管理员 Token",
           "example": "{\"Name\":\"nacos\",\"Password\":\"xxxxxx\",\"Token\":\"xxxxxx\"}",
           "member": "EngineAdmin",
@@ -408,6 +438,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "预付费时长，以月为单位",
           "example": "1",
           "member": "int64",
@@ -417,6 +448,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "自动续费标记，仅预付费使用。参考值：\n- 0：不自动续费\n- 1：自动续费",
           "example": "0",
           "member": "int64",
@@ -426,6 +458,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "跨地域部署的引擎地域配置详情",
           "example": "[{\"EngineRegion\":\"ap-guangzhou\",\"Replica\":2,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]},{\"EngineRegion\":\"ap-beijing\",\"Replica\":1,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]}]",
           "member": "EngineRegionInfo",
@@ -441,6 +474,7 @@
       "document": "CreateEngine返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID",
           "example": "task-123456",
           "member": "string",
@@ -450,6 +484,7 @@
           "visibility": 2
         },
         {
+          "disabled": false,
           "document": "引擎实例 ID",
           "example": "ins-12345678",
           "member": "string",
@@ -472,6 +507,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "引擎实例 ID",
           "example": "ins-12345678",
           "member": "string",
@@ -487,6 +523,7 @@
       "document": "DeleteEngine返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务执行ID",
           "example": "task-12345678",
           "member": "string",
@@ -510,6 +547,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云原生API网关实例ID。",
           "example": "gateway-xxxxxx",
           "member": "string",
@@ -520,6 +558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例分组id",
           "example": "group-xxx2345s",
           "member": "string",
@@ -530,6 +569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "翻页获取多少个",
           "example": "100",
           "member": "int64",
@@ -540,6 +580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "翻页从第几个开始获取",
           "example": "0",
           "member": "int64",
@@ -555,6 +596,7 @@
       "document": "DescribeCloudNativeAPIGatewayNodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "获取云原生网关节点列表结果。",
           "example": "无",
           "member": "DescribeCloudNativeAPIGatewayNodesResult",
@@ -578,6 +620,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "获取云原生API网关节点列表响应结果。",
           "example": "1",
           "member": "int64",
@@ -589,6 +632,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云原生API网关节点列表。",
           "example": "无",
           "member": "CloudNativeAPIGatewayNode",
@@ -606,6 +650,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户凭证",
           "example": "10000",
           "member": "string",
@@ -621,6 +666,7 @@
       "document": "DescribeCredential返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭证key",
           "example": "xxxxx",
           "member": "string",
@@ -631,6 +677,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "凭证ID",
           "example": "xxxxxx",
           "member": "string",
@@ -641,6 +688,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "临时token",
           "example": "xxxx-xxxx-xxxxx",
           "member": "string",
@@ -651,6 +699,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "失效时间，单位秒",
           "example": "120",
           "member": "int64",
@@ -673,6 +722,7 @@
       "document": "DescribeEngineClbAccessAddress请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "引擎实例Id",
           "example": "sre-12345678",
           "member": "string",
@@ -682,6 +732,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "部署地域",
           "example": "ap-beijing",
           "member": "string",
@@ -697,6 +748,7 @@
       "document": "DescribeEngineClbAccessAddress返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户端内网CLB访问地址",
           "example": "10.1.8.15:8080",
           "member": "string",
@@ -706,6 +758,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "控制台内网CLB访问地址",
           "example": "10.0.0.1:8080",
           "member": "string",
@@ -715,6 +768,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "apollo多环境公网ip",
           "example": "无",
           "member": "EnvAddressInfo",
@@ -724,6 +778,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "监控数据上报内网CLB地址",
           "example": "10.0.0.1",
           "member": "string",
@@ -733,6 +788,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "北极星限流服务实例CLB地址",
           "example": "无",
           "member": "PolarisLimiterAddress",
@@ -742,6 +798,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端内网是否已开启",
           "example": "true",
           "member": "bool",
@@ -764,6 +821,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "引擎部署地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -775,6 +833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎在该地域的副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -786,6 +845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎在该地域的规格id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spec-xxx",
           "member": "string",
@@ -797,6 +857,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcInfo",
@@ -808,6 +869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开公网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -825,6 +887,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "引擎实例ID",
           "example": "ins-12345678",
           "member": "string",
@@ -834,6 +897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本列表Limit",
           "example": "1",
           "member": "uint64",
@@ -843,6 +907,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本列表Offset",
           "example": "1",
           "member": "uint64",
@@ -857,6 +922,7 @@
       "document": "DescribeNacosReplicas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "引擎实例副本信息",
           "example": "无",
           "member": "NacosReplica",
@@ -866,6 +932,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "副本个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -888,6 +955,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例id",
           "example": "ins-df344df5",
           "member": "string",
@@ -897,6 +965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的列表个数",
           "example": "20",
           "member": "uint64",
@@ -906,6 +975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的列表起始偏移量",
           "example": "1",
           "member": "uint64",
@@ -920,6 +990,7 @@
       "document": "DescribeNacosServerInterfaces返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "接口总个数",
           "example": "20",
           "member": "uint64",
@@ -929,6 +1000,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "接口列表",
           "example": "无",
           "member": "NacosServerInterface",
@@ -951,6 +1023,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "注册引擎实例Id",
           "example": "sre-12345678",
           "member": "string",
@@ -961,6 +1034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -971,6 +1045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网ID",
           "example": "subnet-xxxxx",
           "member": "string",
@@ -981,6 +1056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎其他组件名称（pushgateway、polaris-limiter）",
           "example": "pushgateway",
           "member": "string",
@@ -991,6 +1067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署地域",
           "example": "ap-beijing",
           "member": "string",
@@ -1006,6 +1083,7 @@
       "document": "DescribeSREInstanceAccessAddress返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "内网访问地址",
           "example": "10.1.8.15",
           "member": "string",
@@ -1016,6 +1094,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "公网访问地址",
           "example": "10.0.0.1",
           "member": "string",
@@ -1026,6 +1105,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "apollo多环境公网ip",
           "example": "无",
           "member": "EnvAddressInfo",
@@ -1036,6 +1116,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1",
           "member": "string",
@@ -1046,6 +1127,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1",
           "member": "string",
@@ -1056,6 +1138,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1066,6 +1149,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "控制台公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1076,6 +1160,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "北极星限流server节点接入IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PolarisLimiterAddress",
@@ -1099,6 +1184,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "请求过滤参数",
           "example": "无",
           "member": "Filter",
@@ -1109,6 +1195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "翻页单页查询限制数量[0,1000], 默认值0",
           "example": "10",
           "member": "int64",
@@ -1119,6 +1206,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "翻页单页偏移量，默认值0",
           "example": "0",
           "member": "int64",
@@ -1129,6 +1217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询类型",
           "example": "config",
           "member": "string",
@@ -1139,6 +1228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调用方来源",
           "example": "无",
           "member": "string",
@@ -1154,6 +1244,7 @@
       "document": "DescribeSREInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数量",
           "example": "0",
           "member": "int64",
@@ -1164,6 +1255,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例记录",
           "example": "无",
           "member": "SREInstance",
@@ -1187,6 +1279,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "注册引擎实例ID",
           "example": "ers-12345678",
           "member": "string",
@@ -1196,6 +1289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本列表Limit",
           "example": "1",
           "member": "uint64",
@@ -1205,6 +1299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本列表Offset",
           "example": "1",
           "member": "uint64",
@@ -1219,6 +1314,7 @@
       "document": "DescribeZookeeperReplicas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "注册引擎实例副本信息",
           "example": "无",
           "member": "ZookeeperReplica",
@@ -1228,6 +1324,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "副本个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1250,6 +1347,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例id",
           "example": "ins-df344df5",
           "member": "string",
@@ -1260,6 +1358,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的列表个数",
           "example": "20",
           "member": "uint64",
@@ -1270,6 +1369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的列表起始偏移量",
           "example": "1",
           "member": "uint64",
@@ -1285,6 +1385,7 @@
       "document": "DescribeZookeeperServerInterfaces返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "接口总个数",
           "example": "20",
           "member": "uint64",
@@ -1295,6 +1396,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "接口列表",
           "example": "无",
           "member": "ZookeeperServerInterface",
@@ -1318,6 +1420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "控制台初始用户名",
           "example": "nacos",
           "member": "string",
@@ -1329,6 +1432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "控制台初始密码",
           "example": "xxxxxx",
           "member": "string",
@@ -1340,6 +1444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎接口的管理员 Token",
           "example": "xxxxxx",
           "member": "string",
@@ -1356,6 +1461,7 @@
       "document": "引擎地域配置详情",
       "members": [
         {
+          "disabled": false,
           "document": "引擎节点所在地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1366,6 +1472,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "此地域节点分配数量",
           "example": "2",
           "member": "int64",
@@ -1376,6 +1483,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "集群网络信息",
           "example": "[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]",
           "member": "VpcInfo",
@@ -1392,6 +1500,7 @@
       "document": "多环境网络信息",
       "members": [
         {
+          "disabled": false,
           "document": "环境名",
           "example": "dev",
           "member": "string",
@@ -1402,6 +1511,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启config公网",
           "example": "true",
           "member": "bool",
@@ -1412,6 +1522,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "config公网ip",
           "example": "10.0.0.1",
           "member": "string",
@@ -1422,6 +1533,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "config内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1:8080",
           "member": "string",
@@ -1432,6 +1544,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启config内网clb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1442,6 +1555,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1458,6 +1572,7 @@
       "document": "环境具体信息",
       "members": [
         {
+          "disabled": false,
           "document": "环境名称",
           "example": "pro",
           "member": "string",
@@ -1468,6 +1583,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境对应的网络信息",
           "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxxx\"}]",
           "member": "VpcInfo",
@@ -1478,6 +1594,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云硬盘容量",
           "example": "50",
           "member": "int64",
@@ -1488,6 +1605,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "运行状态",
           "example": "running",
           "member": "string",
@@ -1498,6 +1616,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Admin service 访问地址",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -1508,6 +1627,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Config service访问地址",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -1518,6 +1638,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启config-server公网",
           "example": "false",
           "member": "bool",
@@ -1528,6 +1649,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "config-server公网访问地址",
           "example": "xx.xx.xx.xx",
           "member": "string",
@@ -1538,6 +1660,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "规格ID",
           "example": "spec-xx",
           "member": "string",
@@ -1548,6 +1671,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境的节点数",
           "example": "3",
           "member": "int64",
@@ -1558,6 +1682,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境运行的节点数",
           "example": "3",
           "member": "int64",
@@ -1568,6 +1693,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境别名",
           "example": "pro",
           "member": "string",
@@ -1578,6 +1704,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境描述",
           "example": "test",
           "member": "string",
@@ -1588,6 +1715,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端带宽",
           "example": "5",
           "member": "uint64",
@@ -1598,6 +1726,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "客户端内网开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1615,6 +1744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数名",
           "member": "string",
           "name": "Name",
@@ -1624,6 +1754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数值",
           "member": "string",
           "name": "Values",
@@ -1639,6 +1770,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "key",
           "member": "string",
@@ -1650,6 +1782,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "value",
           "member": "string",
@@ -1667,6 +1800,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "键",
           "example": "type",
           "member": "string",
@@ -1677,6 +1811,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "值",
           "example": "dev",
           "member": "string",
@@ -1692,6 +1827,7 @@
       "document": "Nacos副本信息",
       "members": [
         {
+          "disabled": false,
           "document": "名称",
           "example": "xxxx",
           "member": "string",
@@ -1702,6 +1838,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "角色",
           "example": "leader",
           "member": "string",
@@ -1712,6 +1849,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "状态",
           "example": "running",
           "member": "string",
@@ -1722,6 +1860,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxx",
           "member": "string",
@@ -1732,6 +1871,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -1742,6 +1882,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -1752,6 +1893,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "VPC ID\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxx\t",
           "member": "string",
@@ -1769,6 +1911,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GET:/nacos/v1/config",
           "member": "string",
@@ -1785,6 +1928,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "VPC接入IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
@@ -1801,6 +1945,7 @@
       "document": "微服务注册引擎实例",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "inst-12345678",
           "member": "string",
@@ -1811,6 +1956,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "名称",
           "example": "test",
           "member": "string",
@@ -1821,6 +1967,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "版本号",
           "example": "1.8.6",
           "member": "string",
@@ -1831,6 +1978,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "状态, 枚举值:creating/create_fail/running/updating/update_fail/restarting/restart_fail/destroying/destroy_fail",
           "example": "creating",
           "member": "string",
@@ -1841,6 +1989,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "规格ID",
           "example": "spec-12345678",
           "member": "string",
@@ -1851,6 +2000,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "副本数",
           "example": "3",
           "member": "int64",
@@ -1861,6 +2011,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "类型",
           "example": "consul",
           "member": "string",
@@ -1871,6 +2022,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "Vpc iD",
           "example": "vpc-12345678",
           "member": "string",
@@ -1881,6 +2033,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"subnet-12345678\"]",
           "member": "string",
@@ -1891,6 +2044,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "是否开启持久化存储\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1901,6 +2055,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "数据存储方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -1911,6 +2066,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "云硬盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1921,6 +2077,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "计费方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POSTPAID",
           "member": "string",
@@ -1931,6 +2088,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "EKS集群的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-1234567",
           "member": "string",
@@ -1941,6 +2099,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -1951,6 +2110,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "环境配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
           "member": "EnvInfo",
@@ -1961,6 +2121,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎所在的区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
@@ -1971,6 +2132,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "注册引擎是否开启公网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1981,6 +2143,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "私有网络列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "VpcInfo",
@@ -1991,6 +2154,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "服务治理相关信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceGovernanceInfo",
@@ -2001,6 +2165,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"type\",\"Value\":\"nacos\"}]",
           "member": "KVPair",
@@ -2011,6 +2176,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎实例是否开启控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2021,6 +2187,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎实例是否开启控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2031,6 +2198,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎实例是否展示参数配置页面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2041,6 +2209,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎实例控制台默认密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nacosxx",
           "member": "string",
@@ -2051,6 +2220,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "交易付费类型，0后付费/1预付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2061,6 +2231,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2071,6 +2242,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "预付费到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -2081,6 +2253,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "隔离开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -2091,6 +2264,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "实例地域相关的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInstanceRegionInfo",
@@ -2101,6 +2275,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "所在EKS环境，分为common和yunti\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "common",
           "member": "string",
@@ -2111,6 +2286,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎的产品版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STANDARD",
           "member": "string",
@@ -2121,6 +2297,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "引擎实例是否开启客户端内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2138,6 +2315,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "引擎所在的地域",
           "example": "ap-beijing",
           "member": "string",
@@ -2149,6 +2327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务治理引擎绑定的kubernetes集群信息",
           "example": "无",
           "member": "BoundK8SInfo",
@@ -2160,6 +2339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务治理引擎绑定的网络信息",
           "example": "无",
           "member": "VpcInfo",
@@ -2171,6 +2351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前实例鉴权是否开启",
           "example": "true",
           "member": "bool",
@@ -2182,6 +2363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该实例支持的功能，鉴权就是 Auth",
           "example": "[\"Auth\"]",
           "member": "string",
@@ -2193,6 +2375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主账户名默认为 polaris，该值为主账户的默认密码",
           "example": "主账户密码",
           "member": "string",
@@ -2204,6 +2387,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务治理pushgateway引擎绑定的网络信息",
           "example": "无",
           "member": "VpcInfo",
@@ -2215,6 +2399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务治理限流server引擎绑定的网络信息",
           "example": "无",
           "member": "VpcInfo",
@@ -2232,6 +2417,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "引擎ID",
           "example": "ins-389a8c12",
           "member": "string",
@@ -2242,6 +2428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "引擎类型",
           "example": "eureka",
           "member": "string",
@@ -2252,6 +2439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启客户端公网访问，true开 false关",
           "example": "true",
           "member": "bool",
@@ -2279,6 +2467,7 @@
       "document": "私有网络信息",
       "members": [
         {
+          "disabled": false,
           "document": "Vpc Id",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -2289,6 +2478,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "子网ID",
           "example": "subnet-xxxxxxxx",
           "member": "string",
@@ -2299,6 +2489,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -2315,6 +2506,7 @@
       "document": "Zookeeper副本信息",
       "members": [
         {
+          "disabled": false,
           "document": "名称",
           "example": "zk-xxxxx",
           "member": "string",
@@ -2325,6 +2517,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "角色",
           "example": "leading",
           "member": "string",
@@ -2335,6 +2528,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "状态",
           "example": "Running",
           "member": "string",
@@ -2345,6 +2539,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxx",
           "member": "string",
@@ -2355,6 +2550,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
           "member": "string",
@@ -2365,6 +2561,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300001",
           "member": "string",
@@ -2375,6 +2572,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zookeeper-0",
           "member": "string",
@@ -2385,6 +2583,7 @@
           "visibility": 1
         },
         {
+          "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxx",
           "member": "string",
@@ -2402,6 +2601,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "getChildren",
           "member": "string",

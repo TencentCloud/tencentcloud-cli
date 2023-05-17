@@ -132,6 +132,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -141,6 +142,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位名称",
           "member": "string",
           "name": "ZoneName",
@@ -150,6 +152,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "铺位编码",
           "member": "string",
           "name": "BunkCodes",
@@ -165,6 +168,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -174,6 +178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -183,6 +188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "楼层ID",
           "member": "int64",
           "name": "FloorId",
@@ -192,6 +198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -201,6 +208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头IP",
           "member": "string",
           "name": "CameraIp",
@@ -210,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头Mac",
           "member": "string",
           "name": "CameraMac",
@@ -219,6 +228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头类型:\n1: 码流机\n2: AI相机",
           "member": "int64",
           "name": "CameraType",
@@ -228,6 +238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头功能:\n1: 人脸\n2: 人体",
           "member": "int64",
           "name": "CameraFeature",
@@ -237,6 +248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头是否启用:\n0: 下线\n1: 启用",
           "member": "int64",
           "name": "CameraState",
@@ -246,6 +258,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -255,6 +268,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
           "member": "int64",
           "name": "ZoneType",
@@ -264,6 +278,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置",
           "member": "Config",
           "name": "Config",
@@ -273,6 +288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宽",
           "member": "int64",
           "name": "Width",
@@ -282,6 +298,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "高",
           "member": "int64",
           "name": "Height",
@@ -297,6 +314,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "相机ID",
           "member": "uint64",
           "name": "CameraId",
@@ -306,6 +324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相机状态:\n10: 初始化\n11: 未知状态\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 状态正常",
           "member": "uint64",
           "name": "State",
@@ -321,6 +340,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -330,6 +350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头名称",
           "member": "string",
           "name": "CameraName",
@@ -339,6 +360,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头功能:\n1: 人脸\n2: 人体",
           "member": "int64",
           "name": "CameraFeature",
@@ -348,6 +370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头IP",
           "member": "string",
           "name": "CameraIp",
@@ -357,6 +380,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头状态:\n0: 异常 (不再使用)\n1: 正常 (不再使用)\n10: 初始化\n11: 未知状态 (因服务内部错误产生)\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 正常",
           "member": "int64",
           "name": "CameraState",
@@ -366,6 +390,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位列表",
           "member": "BunkZone",
           "name": "Zones",
@@ -375,6 +400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "像素:\n130W(1280*960)\n200W(1920*1080)\n400W(2560*1440)",
           "member": "string",
           "name": "Pixel",
@@ -384,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相机Rtsp地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RTSP",
@@ -399,6 +426,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头厂商:\nH: 海康\nD: 大华\nY: 英飞拓\nL: 联纵",
           "member": "string",
           "name": "CameraProducer",
@@ -408,6 +436,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "rtsp 地址",
           "member": "string",
           "name": "RTSP",
@@ -417,6 +446,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头帧率",
           "member": "int64",
           "name": "Fps",
@@ -426,6 +456,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "解码帧率",
           "member": "int64",
           "name": "DecodeFps",
@@ -435,6 +466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否做客流计算:\n0: 否\n1: 是",
           "member": "int64",
           "name": "PassengerFlow",
@@ -444,6 +476,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否打开人脸曝光:\n0: 关闭\n1: 开启",
           "member": "int64",
           "name": "FaceExpose",
@@ -453,6 +486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "门线标注",
           "member": "Point",
           "name": "MallArea",
@@ -462,6 +496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "店门标注",
           "member": "Point",
           "name": "ShopArea",
@@ -471,6 +506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测区标注",
           "member": "Polygon",
           "name": "TrackAreas",
@@ -480,6 +516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位列表（品类区）",
           "member": "ZoneArea",
           "name": "Zones",
@@ -495,6 +532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -504,6 +542,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -513,6 +552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相机ID",
           "member": "uint64",
           "name": "CameraId",
@@ -522,6 +562,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳,ms,默认为告警请求到达时间",
           "member": "int64",
           "name": "CaptureTime",
@@ -531,6 +572,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片base64编码",
           "member": "string",
           "name": "Image",
@@ -540,6 +582,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "移动告警",
           "member": "CreateCameraAlertsMoveAlert",
           "name": "MoveAlert",
@@ -549,6 +592,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "遮挡告警",
           "member": "CreateCameraAlertsCoverAlert",
           "name": "CoverAlert",
@@ -564,6 +608,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否遮挡",
           "member": "bool",
           "name": "Cover",
@@ -573,6 +618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否移动置信度",
           "member": "float",
           "name": "CoverConfidence",
@@ -588,6 +634,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否移动",
           "member": "bool",
           "name": "Move",
@@ -597,6 +644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否移动置信度",
           "member": "float",
           "name": "MoveConfidence",
@@ -612,6 +660,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "告警信息列表",
           "member": "CreateCameraAlertAlert",
           "name": "Alerts",
@@ -638,6 +687,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -646,6 +696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -654,6 +705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "场内所有相机的状态值",
           "member": "CameraState",
           "name": "CameraStates",
@@ -680,6 +732,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "原始抓拍报文",
           "member": "string",
           "name": "Data",
@@ -693,6 +746,7 @@
       "document": "CreateCapture返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "原始应答报文\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RspData",
@@ -713,6 +767,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -721,6 +776,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -729,6 +785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -737,6 +794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -745,6 +803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳，毫秒",
           "member": "uint64",
           "name": "CaptureTime",
@@ -753,6 +812,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态: \n1: 侵占\n2: 消失\n3: 即侵占又消失",
           "member": "int64",
           "name": "State",
@@ -761,6 +821,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片base64字符串",
           "member": "string",
           "name": "Image",
@@ -769,6 +830,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警列表",
           "member": "MultiBizWarning",
           "name": "Warnings",
@@ -795,6 +857,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -803,6 +866,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "进程监控信息列表",
           "member": "ProgramStateItem",
           "name": "ProgramStateItems",
@@ -811,6 +875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商场ID",
           "member": "uint64",
           "name": "MallId",
@@ -837,6 +902,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -845,6 +911,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务器监控信息列表",
           "member": "ServerStateItem",
           "name": "ServerStateItems",
@@ -853,6 +920,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商场ID",
           "member": "uint64",
           "name": "MallId",
@@ -861,6 +929,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务器监控信息上报时间戳，单位毫秒",
           "member": "uint64",
           "name": "ReportTime",
@@ -887,6 +956,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -895,6 +965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -903,6 +974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -911,6 +983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -919,6 +992,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消警动作:\n1: 误报\n2: 正报合规\n3: 正报不合规，整改完成",
           "member": "int64",
           "name": "ActionType",
@@ -927,6 +1001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片base64字符串",
           "member": "string",
           "name": "Image",
@@ -953,6 +1028,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -961,6 +1037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -969,6 +1046,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "member": "uint64",
           "name": "TaskId",
@@ -995,6 +1073,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1003,6 +1082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1016,6 +1096,7 @@
       "document": "DescribeCameras返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "摄像头列表",
           "member": "CameraZones",
           "name": "Cameras",
@@ -1036,6 +1117,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "会话ID",
           "member": "string",
           "name": "SessionId",
@@ -1044,6 +1126,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头签名",
           "member": "string",
           "name": "CameraSign",
@@ -1052,6 +1135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头app id",
           "member": "string",
           "name": "CameraAppId",
@@ -1060,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头时间戳，毫秒",
           "member": "int64",
           "name": "CameraTimestamp",
@@ -1068,6 +1153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "MAC地址，字母大写",
           "member": "string",
           "name": "ServerMac",
@@ -1076,6 +1162,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1084,6 +1171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1097,6 +1185,7 @@
       "document": "DescribeConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "会话ID",
           "member": "string",
           "name": "SessionId",
@@ -1104,6 +1193,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "配置版本号",
           "member": "int64",
           "name": "Version",
@@ -1111,6 +1201,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "摄像头列表",
           "member": "CameraConfig",
           "name": "Cameras",
@@ -1131,6 +1222,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1139,6 +1231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1147,6 +1240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -1160,6 +1254,7 @@
       "document": "DescribeImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "cos 临时 url，异步上传图片，client需要轮询",
           "member": "string",
           "name": "ImageUrl",
@@ -1180,6 +1275,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1188,6 +1284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1196,6 +1293,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -1204,6 +1302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -1217,6 +1316,7 @@
       "document": "DescribeMultiBizBaseImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "cos 临时 url",
           "member": "string",
           "name": "ImageUrl",
@@ -1237,6 +1337,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1245,6 +1346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1253,6 +1355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型:\n1: 底图拉取",
           "member": "int64",
           "name": "TaskType",
@@ -1266,6 +1369,7 @@
       "document": "DescribeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务列表",
           "member": "Task",
           "name": "Tasks",
@@ -1286,6 +1390,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1294,6 +1399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1307,6 +1413,7 @@
       "document": "DescribeZones返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "点位列表",
           "member": "ZoneConfig",
           "name": "Zones",
@@ -1327,6 +1434,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "硬盘名字",
           "member": "string",
           "name": "DiskName",
@@ -1336,6 +1444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "硬盘使用率",
           "member": "float",
           "name": "Usage",
@@ -1351,6 +1460,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1359,6 +1469,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1367,6 +1478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -1375,6 +1487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -1383,6 +1496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "监控区域",
           "member": "Polygon",
           "name": "MonitoringAreas",
@@ -1409,6 +1523,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "编号",
           "member": "int64",
           "name": "Id",
@@ -1418,6 +1533,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "监控区域",
           "member": "Point",
           "name": "MonitoringArea",
@@ -1427,6 +1543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警列表",
           "member": "MultiBizWarningInfo",
           "name": "WarningInfos",
@@ -1442,6 +1559,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "告警类型：\n0: 无变化\n1: 侵占\n2: 消失",
           "member": "int64",
           "name": "WarningType",
@@ -1451,6 +1569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警侵占或消失面积",
           "member": "float",
           "name": "WarningAreaSize",
@@ -1460,6 +1579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警侵占或消失坐标",
           "member": "Point",
           "name": "WarningLocation",
@@ -1469,6 +1589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警侵占或消失轮廓",
           "member": "Point",
           "name": "WarningAreaContour",
@@ -1484,6 +1605,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "X坐标",
           "member": "int64",
           "name": "X",
@@ -1493,6 +1615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Y坐标",
           "member": "int64",
           "name": "Y",
@@ -1508,6 +1631,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标注列表",
           "member": "Point",
           "name": "Points",
@@ -1523,6 +1647,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务器IP",
           "member": "string",
           "name": "ServerIp",
@@ -1532,6 +1657,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "进程名字",
           "member": "string",
           "name": "ProgramName",
@@ -1541,6 +1667,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在线个数",
           "member": "uint64",
           "name": "OnlineCount",
@@ -1550,6 +1677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "离线个数",
           "member": "uint64",
           "name": "OfflineCount",
@@ -1559,6 +1687,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上报状态:\n1: 正常上报\n2: 异常上报\n注：此处异常上报是指本次上报由于场内服务内部原因导致上报数据不可信等。此时离线个数重置为1，在线个数重置为0",
           "member": "int64",
           "name": "State",
@@ -1574,6 +1703,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1582,6 +1712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1590,6 +1721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务上报当前的服务能力信息",
           "member": "ServiceRegisterInfo",
           "name": "ServiceRegisterInfos",
@@ -1598,6 +1730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务内网Ip",
           "member": "string",
           "name": "ServerIp",
@@ -1606,6 +1739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上报服务所在服务器的唯一ID",
           "member": "string",
           "name": "ServerNodeId",
@@ -1614,6 +1748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上报时间戳, 单位毫秒",
           "member": "int64",
           "name": "ReportTime",
@@ -1640,6 +1775,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1648,6 +1784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1656,6 +1793,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片base64字符串",
           "member": "string",
           "name": "Image",
@@ -1664,6 +1802,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳，毫秒",
           "member": "uint64",
           "name": "ImageTime",
@@ -1677,6 +1816,7 @@
       "document": "SearchImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "face id",
           "member": "string",
           "name": "FaceId",
@@ -1684,6 +1824,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "搜索结果列表",
           "member": "SearchResult",
           "name": "Results",
@@ -1704,6 +1845,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片base64数据",
           "member": "string",
           "name": "Image",
@@ -1713,6 +1855,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份ID",
           "member": "string",
           "name": "PersonId",
@@ -1722,6 +1865,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相似度",
           "member": "float",
           "name": "Similarity",
@@ -1737,6 +1881,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务器状态\n1: 在线\n2: 离线\n3: 重启",
           "member": "int64",
           "name": "ServerState",
@@ -1746,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务器IP",
           "member": "string",
           "name": "ServerIp",
@@ -1755,6 +1901,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "硬盘监控信息列表",
           "member": "DiskInfo",
           "name": "DiskInfos",
@@ -1770,6 +1917,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "当前服务的回调地址",
           "member": "string",
           "name": "CgiUrl",
@@ -1779,6 +1927,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前服务类型:\n1: 多经服务\n2: 相机误报警确认\n3: 底图更新",
           "member": "uint64",
           "name": "ServiceType",
@@ -1794,6 +1943,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "member": "uint64",
           "name": "TaskId",
@@ -1803,6 +1953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集团编码",
           "member": "string",
           "name": "GroupCode",
@@ -1812,6 +1963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广场ID",
           "member": "uint64",
           "name": "MallId",
@@ -1821,6 +1973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务内容",
           "member": "TaskContent",
           "name": "TaskContent",
@@ -1830,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型:\n1: 底图拉取",
           "member": "int64",
           "name": "TaskType",
@@ -1845,6 +1999,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头ID",
           "member": "uint64",
           "name": "CameraId",
@@ -1854,6 +2009,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "rtsp 地址",
           "member": "string",
           "name": "RTSP",
@@ -1863,6 +2019,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片上传地址",
           "member": "string",
           "name": "Url",
@@ -1878,6 +2035,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -1887,6 +2045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "店门标注",
           "member": "Point",
           "name": "ShopArea",
@@ -1902,6 +2061,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "点位ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -1911,6 +2071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位名称",
           "member": "string",
           "name": "ZoneName",
@@ -1920,6 +2081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
           "member": "int64",
           "name": "ZoneType",
@@ -1929,6 +2091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "铺位编码",
           "member": "string",
           "name": "BunkCodes",
@@ -1938,6 +2101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "楼层名称",
           "member": "string",
           "name": "FloorName",
@@ -1947,6 +2111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "楼层ID",
           "member": "int64",
           "name": "FloorId",
@@ -1956,6 +2121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定数",
           "member": "int64",
           "name": "BindNum",
@@ -1965,6 +2131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调试数",
           "member": "int64",
           "name": "DebugNum",
@@ -1974,6 +2141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下发状态:\n1: 不可下发\n2: 可下发\n3: 已下发",
           "member": "int64",
           "name": "State",

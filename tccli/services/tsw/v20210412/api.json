@@ -68,6 +68,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命名空间",
           "example": "tsw_site",
           "member": "string",
@@ -82,6 +83,7 @@
       "document": "DescribeToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "token",
           "example": "token",
           "member": "string",

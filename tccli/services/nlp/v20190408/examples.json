@@ -249,7 +249,7 @@
     "TextWriting": [
       {
         "document": "对中文文本进行续写。",
-        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:TextWriting\n<公共请求参数>\n\n{\n    \"Text\": \"今天天气不错\",\n    \"SourceLang\": \"此事还得从这说起，\",\n    \"Number\": 2,\n    \"Domain\": \"general\",\n    \"Style\": \"xuanhuan_wuxia\"\n}",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:TextWriting\n<公共请求参数>\n\n{\n    \"Text\": \"今天天气不错\",\n    \"SourceLang\": \"zh\",\n    \"Number\": 2,\n    \"Domain\": \"general\",\n    \"Style\": \"xuanhuan_wuxia\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40abc589-8603-458b-82a7-fe174e799085\",\n        \"WritingList\": [\n            {\n                \"PrefixText\": \"此事还得从这说起，\",\n                \"TargetText\": \"此事还得从这说起，他一路行来，不知不觉已到了洛阳城，这一日，他来到一处客栈，打听一下萧月生的消息。“师父，他来了！”江南云忽然开口，声音清脆悦耳，仿\"\n            },\n            {\n                \"PrefixText\": \"此事还得从这说起，\",\n                \"TargetText\": \"此事还得从这说起，那日在山东大会上，萧月生一眼看出，这个赵小四是武林中人，心中不由一动，觉得此人极有可能是华山派的弟子。“师父，他的轻功如何？”江南\"\n            }\n        ]\n    }\n}",
         "title": "文本续写调用示例"
       }
