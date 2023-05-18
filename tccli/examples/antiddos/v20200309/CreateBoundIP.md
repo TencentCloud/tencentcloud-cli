@@ -1,28 +1,38 @@
-**Example 1: 绑定IP到高防包实例**
+**Example 1: 绑定资产到高防包**
 
-
+绑定资产到高防包
 
 Input: 
 
 ```
 tccli antiddos CreateBoundIP --cli-unfold-argument  \
-    --Business bgp \
-    --Id bgp-000000xe \
-    --BoundDevList.0.Ip 1.1.1.1 \
-    --BoundDevList.0.BizType public \
-    --BoundDevList.0.DeviceType cvm \
-    --BoundDevList.0.InstanceId ins-f2f9ssbo
+    --BoundDevList.0.BizType abc \
+    --BoundDevList.0.Ip abc \
+    --BoundDevList.0.InstanceId abc \
+    --BoundDevList.0.DeviceType abc \
+    --BoundDevList.0.IspCode 1 \
+    --BoundDevList.0.Domain abc \
+    --Business abc \
+    --Id abc \
+    --UnBoundDevList.0.BizType abc \
+    --UnBoundDevList.0.Ip abc \
+    --UnBoundDevList.0.InstanceId abc \
+    --UnBoundDevList.0.DeviceType abc \
+    --UnBoundDevList.0.IspCode 1 \
+    --UnBoundDevList.0.Domain abc \
+    --CopyPolicy abc \
+    --FilterRegion abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "Success": {
-            "Code": "Success",
-            "Message": "Success"
-        }
+            "Message": "abc",
+            "Code": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

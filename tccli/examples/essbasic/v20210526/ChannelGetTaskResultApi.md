@@ -22,7 +22,7 @@ Output:
         "TaskId": "2022*********4589282",
         "TaskMessage": "任务处理完成",
         "TaskStatus": 8,
-        "PreviewUrl": "https://xxxxx"
+        "PreviewUrl": ""
     }
 }
 ```

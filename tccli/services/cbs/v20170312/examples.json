@@ -126,7 +126,7 @@
     ],
     "DescribeDiskBackups": [
       {
-        "document": "",
+        "document": "查询备份点列表",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskBackups\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskBackupSet\": [\n            {\n                \"DiskBackupName\": \"11111\",\n                \"Encrypt\": false,\n                \"Percent\": 100,\n                \"DiskBackupId\": \"dbp-xxxxxxxx\",\n                \"DiskSize\": 100,\n                \"DiskBackupState\": \"NORMAL\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"CreateTime\": \"2022-04-02T17:44:55+00:00\",\n                \"DiskId\": \"disk-xxxxxxxx\"\n            }\n        ],\n        \"RequestId\": \"6cd062f5-aa65-4477-a253-1ab41ab963fd\"\n    }\n}",
         "title": "查询备份点列表"

@@ -7,6 +7,13 @@
       "output": "AcceptAttachCcnInstancesResponse",
       "status": "online"
     },
+    "AcceptVpcPeeringConnection": {
+      "document": "本接口（AcceptVpcPeeringConnection）用于接受对等连接请求。",
+      "input": "AcceptVpcPeeringConnectionRequest",
+      "name": "接受对等连接",
+      "output": "AcceptVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "AddBandwidthPackageResources": {
       "document": "接口用于添加带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等",
       "input": "AddBandwidthPackageResourcesRequest",
@@ -644,6 +651,13 @@
       "output": "CreateVpcEndPointServiceWhiteListResponse",
       "status": "online"
     },
+    "CreateVpcPeeringConnection": {
+      "document": "本接口（CreateVpcPeeringConnection）用于创建私有网络对等连接。",
+      "input": "CreateVpcPeeringConnectionRequest",
+      "name": "创建私有网络对等连接",
+      "output": "CreateVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "CreateVpnConnection": {
       "document": "本接口（CreateVpnConnection）用于创建VPN通道。\n>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。\n>",
       "input": "CreateVpnConnectionRequest",
@@ -1071,6 +1085,13 @@
       "output": "DeleteVpcEndPointServiceWhiteListResponse",
       "status": "online"
     },
+    "DeleteVpcPeeringConnection": {
+      "document": "本接口（DeleteVpcPeeringConnection）用于删除私有网络对等连接。",
+      "input": "DeleteVpcPeeringConnectionRequest",
+      "name": "删除私有网络对等连接",
+      "output": "DeleteVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "DeleteVpnConnection": {
       "document": "本接口（DeleteVpnConnection）用于删除VPN通道。",
       "input": "DeleteVpnConnectionRequest",
@@ -1093,7 +1114,7 @@
       "status": "online"
     },
     "DeleteVpnGatewaySslClient": {
-      "document": "删除SSL-VPN-CLIENT",
+      "document": "本接口（DeleteVpnGatewaySslClient）用于删除SSL-VPN-CLIENT。",
       "input": "DeleteVpnGatewaySslClientRequest",
       "name": "删除SSL-VPN-CLIENT",
       "output": "DeleteVpnGatewaySslClientResponse",
@@ -1981,6 +2002,13 @@
       "output": "DescribeVpcPeerInternalResponse",
       "status": "online"
     },
+    "DescribeVpcPeeringConnections": {
+      "document": "查询私有网络对等连接。",
+      "input": "DescribeVpcPeeringConnectionsRequest",
+      "name": "查询私有网络对等连接",
+      "output": "DescribeVpcPeeringConnectionsResponse",
+      "status": "online"
+    },
     "DescribeVpcPrivateIpAddresses": {
       "document": "本接口（DescribeVpcPrivateIpAddresses）用于查询VPC内网IP信息。<br />\n只能查询已使用的IP信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。",
       "input": "DescribeVpcPrivateIpAddressesRequest",
@@ -2206,7 +2234,7 @@
       "status": "online"
     },
     "DownloadVpnGatewaySslClientCert": {
-      "document": "下载SSL-VPN-CLIENT 客户端证书",
+      "document": "本接口（DownloadVpnGatewaySslClientCert）用于下载SSL-VPN-CLIENT 客户端证书。",
       "input": "DownloadVpnGatewaySslClientCertRequest",
       "name": "下载SSL-VPN-CLIENT 客户端证书",
       "output": "DownloadVpnGatewaySslClientCertResponse",
@@ -2255,7 +2283,7 @@
       "status": "online"
     },
     "EnableVpnGatewaySslClientCert": {
-      "document": "启用SSL-VPN-CLIENT 证书",
+      "document": "本接口（EnableVpnGatewaySslClientCert）用于启用SSL-VPN-CLIENT 证书。",
       "input": "EnableVpnGatewaySslClientCertRequest",
       "name": "启用SSL-VPN-CLIENT 证书",
       "output": "EnableVpnGatewaySslClientCertResponse",
@@ -3097,6 +3125,23 @@
     },
     "AcceptAttachCcnInstancesResponse": {
       "document": "AcceptAttachCcnInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptVpcPeeringConnectionRequest": {
+      "document": "AcceptVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AcceptVpcPeeringConnectionResponse": {
+      "document": "AcceptVpcPeeringConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10982,6 +11027,23 @@
       ],
       "type": "object"
     },
+    "CreateVpcPeeringConnectionRequest": {
+      "document": "CreateVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateVpcPeeringConnectionResponse": {
+      "document": "CreateVpcPeeringConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateVpcRequest": {
       "document": "CreateVpc请求参数结构体",
       "members": [
@@ -11458,24 +11520,34 @@
       "document": "CreateVpnGatewaySslClient请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SSL-VPN-SERVER 实例ID。",
           "example": "vpngwSslServer-123456",
           "member": "string",
           "name": "SslVpnServerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "name",
-          "example": "cleint-name",
+          "document": "SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。",
+          "example": "client-name",
           "member": "string",
           "name": "SslVpnClientName",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。",
+          "example": "[\"client-name-01\", \"client-name-02\"]",
+          "member": "string",
+          "name": "SslVpnClientNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11489,19 +11561,19 @@
           "example": "无",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "SSL-VPN client 唯一ID",
-          "example": "vpnc-xxxxx",
+          "example": "vpnc-f5yln4n3",
           "member": "string",
           "name": "SslVpnClientId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14099,6 +14171,23 @@
       ],
       "type": "object"
     },
+    "DeleteVpcPeeringConnectionRequest": {
+      "document": "DeleteVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteVpcPeeringConnectionResponse": {
+      "document": "DeleteVpcPeeringConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteVpcRequest": {
       "document": "DeleteVpc请求参数结构体",
       "members": [
@@ -14234,14 +14323,24 @@
       "document": "DeleteVpnGatewaySslClient请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT 实例ID。",
-          "example": "vpngwSslClient-123456",
+          "document": "SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。",
+          "example": "vpnc-123456",
           "member": "string",
           "name": "SslVpnClientId",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。",
+          "example": "[\"vpnc-123456\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14255,9 +14354,9 @@
           "example": "无",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25365,6 +25464,84 @@
       ],
       "type": "object"
     },
+    "DescribeVpcPeeringConnectionsRequest": {
+      "document": "DescribeVpcPeeringConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "对等连接唯一ID数组。",
+          "example": "[\"pcx-test1234\"]",
+          "member": "string",
+          "name": "PeeringConnectionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件，参数不支持同时指定PeeringConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>state String - （过滤条件）对等连接状态，可选值有：PENDING，投放中；ACTIVE，使用中；EXPIRED，已过期；REJECTED，拒绝。</li>\n<li>peering-connection-name - String - （过滤条件）对等连接名称。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序字段，可选值有：CreatedTime，PeeringConnectionName。",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序方式：DESC，降序；ASC，升序。",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPeeringConnectionsResponse": {
+      "document": "DescribeVpcPeeringConnections返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcPrivateIpAddressesRequest": {
       "document": "DescribeVpcPrivateIpAddresses请求参数结构体",
       "members": [
@@ -29828,14 +30005,24 @@
       "document": "DisableVpnGatewaySslClientCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT 实例ID。",
-          "example": "vpngwSslClient-123456",
+          "document": "SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。",
+          "example": "vpngc-123456",
           "member": "string",
           "name": "SslVpnClientId",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID列表。批量禁用时使用。不可和SslVpnClientId同时使用。",
+          "example": "[\"vpngc-123456\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -29849,9 +30036,9 @@
           "example": "1234",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -30260,20 +30447,18 @@
       "document": "DownloadVpnGatewaySslClientCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT 实例ID。",
+          "document": "SSL-VPN-CLIENT 实例ID。不可以和SslVpnClientIds同时使用。",
           "example": "vpnc-123456",
           "member": "string",
           "name": "SslVpnClientId",
-          "required": true,
+          "required": false,
           "type": "string",
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SAML-TOKEN",
+          "document": "SAML Token（SAML令牌）。",
           "example": "无",
           "member": "string",
           "name": "SamlToken",
@@ -30282,14 +30467,23 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "VPN门户网站使用。默认Flase",
+          "document": "VPN门户网站使用。默认False",
           "example": "无",
           "member": "bool",
           "name": "IsVpnPortal",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID列表。批量下载时使用。不可以和SslVpnClientId同时使用。",
+          "example": "[\"vpnc-123456\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -30300,33 +30494,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "SSL-VPN 客户端配置。",
           "example": "无",
           "member": "string",
           "name": "SslClientConfigsSet",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "SSL-VPN client配置",
+          "document": "SSL-VPN 客户端配置。",
           "example": "无",
           "member": "SslClientConfig",
           "name": "SslClientConfig",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "是否鉴权成功 只有传入SamlToken 才生效",
+          "document": "是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。",
           "example": "1",
           "member": "uint64",
           "name": "Authenticated",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -30562,14 +30753,24 @@
       "document": "EnableVpnGatewaySslClientCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT 实例ID。",
-          "example": "vpngwSslClient-123456",
+          "document": "SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。",
+          "example": "vpnc-123456",
           "member": "string",
           "name": "SslVpnClientId",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID列表。批量启用时使用。不可和SslVpnClientId同时使用。",
+          "example": "[\"vpnc-123456\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -30583,9 +30784,9 @@
           "example": "1234",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -37331,7 +37532,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "document": "IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -41164,48 +41365,59 @@
       "document": "DownloadVpnGatewaySslClientCert 使用",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端配置",
-          "example": "xxxxx",
+          "example": "无",
           "member": "string",
           "name": "SslVpnClientConfiguration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更证书",
-          "example": "xxxxx",
+          "example": "无",
           "member": "string",
           "name": "SslVpnRootCert",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端密钥",
-          "example": "xxxxx",
+          "example": "无",
           "member": "string",
           "name": "SslVpnKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端证书",
-          "example": "xxxxx",
+          "example": "无",
           "member": "string",
           "name": "SslVpnCert",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SslVpnClientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
