@@ -26,6 +26,7 @@
       "document": "DescribeMaterialList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "活动Id",
           "example": "string",
           "member": "string",
@@ -34,6 +35,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "素材Id",
           "example": "string",
           "member": "string",
@@ -42,6 +44,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "每次拉取条数",
           "example": "1",
           "member": "int64",
@@ -50,6 +53,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "偏移量",
           "example": "1",
           "member": "int64",
@@ -64,6 +68,7 @@
       "document": "DescribeMaterialList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "素材列表数据",
           "example": "无",
           "member": "PublicMaterialInfos",
@@ -72,6 +77,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "素材条数",
           "example": "1",
           "member": "int64",
@@ -93,6 +99,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的横坐标",
           "example": "1",
           "member": "int64",
@@ -103,6 +110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的纵坐标",
           "example": "1",
           "member": "int64",
@@ -113,6 +121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的宽度",
           "example": "1",
           "member": "int64",
@@ -123,6 +132,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的高度",
           "example": "1",
           "member": "int64",
@@ -139,6 +149,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框左上角横坐标。",
           "example": "1",
           "member": "int64",
@@ -149,6 +160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "example": "1",
           "member": "int64",
@@ -159,6 +171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框宽度。",
           "example": "1",
           "member": "int64",
@@ -169,6 +182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框高度。",
           "example": "1",
           "member": "int64",
@@ -185,6 +199,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "300029",
           "member": "string",
@@ -194,6 +209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "qc_300029_453345_1",
           "member": "string",
@@ -203,6 +219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
           "member": "string",
@@ -212,6 +229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
           "member": "MergeInfo",
@@ -221,6 +239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
           "member": "int64",
@@ -230,6 +249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
           "member": "int64",
@@ -239,6 +259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "为融合结果图添加合成标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了人脸融合技术，是AI合成的图片。",
           "example": "1",
           "member": "int64",
@@ -248,6 +269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标识内容设置。\n默认在融合结果图右下角添加“本图片为AI合成图片”字样，您可根据自身需要替换为其他的Logo图片。",
           "example": "{}",
           "member": "LogoParam",
@@ -262,6 +284,7 @@
       "document": "FuseFace返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
           "example": "string",
           "member": "string",
@@ -284,6 +307,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
           "example": "{}",
           "member": "FaceRect",
@@ -294,6 +318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标识图片Url地址",
           "example": "string",
           "member": "string",
@@ -304,6 +329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标识图片base64",
           "example": "string",
           "member": "string",
@@ -319,6 +345,7 @@
       "document": "人脸信息",
       "members": [
         {
+          "disabled": false,
           "document": "人脸序号",
           "example": "string",
           "member": "string",
@@ -328,6 +355,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人脸框信息",
           "example": "{}",
           "member": "FaceInfo",
@@ -344,6 +372,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入图片base64",
           "example": "string",
           "member": "string",
@@ -354,6 +383,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输入图片url",
           "example": "string",
           "member": "string",
@@ -364,6 +394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上传的图片人脸位置信息（人脸框）",
           "example": "{}",
           "member": "FaceRect",
@@ -374,6 +405,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
           "example": "string",
           "member": "string",
@@ -390,6 +422,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "素材Id",
           "example": "string",
           "member": "string",
@@ -400,6 +433,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材状态",
           "example": "1",
           "member": "int64",
@@ -410,6 +444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "string",
           "member": "string",
@@ -420,6 +455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "string",
           "member": "string",
@@ -430,6 +466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸信息",
           "example": "string",
           "member": "MaterialFaces",
@@ -440,6 +477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材名",
           "example": "string",
           "member": "string",

@@ -40,6 +40,7 @@
       "document": "CreateVRSTask请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "唯一请求 ID",
           "example": "无",
           "member": "string",
@@ -48,6 +49,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "音色名称",
           "example": "无",
           "member": "string",
@@ -56,6 +58,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "音频采样率：\n\n16000：16k",
           "example": "无",
           "member": "int64",
@@ -64,6 +67,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "音色性别:\n\n1-male\n\n2-female",
           "example": "无",
           "member": "int64",
@@ -72,6 +76,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "语言类型：\n\n1-中文",
           "example": "无",
           "member": "int64",
@@ -80,6 +85,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
           "example": "无",
           "member": "string",
@@ -88,6 +94,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "音频ID集合",
           "example": "无",
           "member": "string",
@@ -96,6 +103,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。\n回调采用POST请求方式，Content-Type为application/x-www-form-urlencoded，回调数据格式如下:callback_body=checksum=&data={\"TaskId\":\"xxxxxxxxxxxxxx\",\"Status\":2,\"StatusStr\":\"success\",\"VoiceType\":xxxxx,\"ErrorMsg\":\"\"}",
           "example": "无",
           "member": "string",
@@ -110,6 +118,7 @@
       "document": "声音复刻任务创建响应",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
           "member": "string",
@@ -125,6 +134,7 @@
       "document": "CreateVRSTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建任务结果",
           "example": "无",
           "member": "CreateVRSTaskRespData",
@@ -145,6 +155,7 @@
       "document": "DescribeVRSTaskStatus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "无",
           "member": "string",
@@ -159,6 +170,7 @@
       "document": "任务结果",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -168,6 +180,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -177,6 +190,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -186,6 +200,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音色id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -195,6 +210,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "失败原因说明。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -210,6 +226,7 @@
       "document": "DescribeVRSTaskStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "声音复刻任务结果",
           "example": "无",
           "member": "DescribeVRSTaskStatusRespData",
@@ -230,6 +247,7 @@
       "document": "DetectEnvAndSoundQuality请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "标注文本信息 ID",
           "example": "无",
           "member": "string",
@@ -238,6 +256,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(\"input.aac\", mode=\"rb\").read()), encoding='utf-8') )。",
           "example": "无",
           "member": "string",
@@ -246,6 +265,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
           "example": "无",
           "member": "string",
@@ -254,6 +274,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "1:环境检测 2:音质检测",
           "example": "无",
           "member": "int64",
@@ -262,6 +283,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "音频采样率：\n\n16000：16k（默认）",
           "example": "无",
           "member": "int64",
@@ -276,6 +298,7 @@
       "document": "DetectEnvAndSoundQuality返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "检测结果",
           "example": "无",
           "member": "DetectionEnvAndSoundQualityRespData",
@@ -296,6 +319,7 @@
       "document": "环境检测和音频检测响应",
       "members": [
         {
+          "disabled": false,
           "document": "音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708",
           "member": "string",
@@ -305,6 +329,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "检测code \n\n0 表示当前语音通过\n-1 表示检测失败，需要重试\n-2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）\n-3 表示语音中噪声较大，不通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -314,6 +339,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
           "member": "string",
@@ -323,6 +349,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Words",
@@ -343,6 +370,7 @@
       "document": "GetTrainingText返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文本列表",
           "example": "无",
           "member": "TrainingTexts",
@@ -363,6 +391,7 @@
       "document": "训练文本",
       "members": [
         {
+          "disabled": false,
           "document": "文本ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00001",
           "member": "string",
@@ -372,6 +401,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -387,6 +417,7 @@
       "document": "训练文本列表",
       "members": [
         {
+          "disabled": false,
           "document": "训练文本列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TrainingText",
@@ -402,6 +433,7 @@
       "document": "音频检测提示信息：\n1.检测字是否存在多读、 少读、 错读等\n2.检测准确度和流畅度",
       "members": [
         {
+          "disabled": false,
           "document": "准确度 (<75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -411,6 +443,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "流畅度 (<0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -420,6 +453,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "tag: \n0: match  匹配\n1: insert   多读\n2: delete  少读\n3: replace 错读\n4: oov  待评估字不在发音评估的词库\n5: unknown 未知错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -429,6 +463,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",

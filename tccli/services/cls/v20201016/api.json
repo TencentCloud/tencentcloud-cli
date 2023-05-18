@@ -475,6 +475,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -484,6 +485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器组类型\n目前type支持 ip 和 label",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -511,6 +513,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "键",
           "example": "k",
           "member": "string",
@@ -521,6 +524,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "值",
           "example": "v",
           "member": "string",
@@ -536,6 +540,7 @@
       "document": "告警策略描述",
       "members": [
         {
+          "disabled": false,
           "document": "告警策略名称。",
           "example": "test",
           "member": "string",
@@ -545,6 +550,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTargetInfo",
@@ -554,6 +560,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -563,6 +570,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "触发条件。",
           "example": "无",
           "member": "string",
@@ -572,6 +580,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -581,6 +590,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警重复的周期。单位是min。取值范围是0~1440。",
           "example": "20",
           "member": "int64",
@@ -590,6 +600,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "关联的告警通知模板列表。",
           "example": "无",
           "member": "string",
@@ -599,6 +610,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "开启状态。",
           "example": "true",
           "member": "bool",
@@ -608,6 +620,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警策略ID。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -617,6 +630,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间。",
           "example": "无",
           "member": "string",
@@ -626,6 +640,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最近更新时间。",
           "example": "无",
           "member": "string",
@@ -635,6 +650,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义通知模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "message tpl test {{.TopicName}}, raw result: {{.RawResults}}",
           "member": "string",
@@ -644,6 +660,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "自定义回调模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallBackInfo",
@@ -653,6 +670,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "多维分析设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -669,6 +687,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "告警通知模板名称。",
           "example": "告警通知模板名称",
           "member": "string",
@@ -679,6 +698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
@@ -689,6 +709,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeReceiver",
@@ -699,6 +720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebCallback",
@@ -709,6 +731,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "notice-xxx-xxx-xx-xx",
           "member": "string",
@@ -719,6 +742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
@@ -729,6 +753,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
@@ -744,6 +769,7 @@
       "document": "告警对象",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题ID。",
           "example": "380fe1f1-0c7b-4b0d-xxxx-d514959db1bb",
           "member": "string",
@@ -753,6 +779,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询语句。",
           "example": "code:200 | select count(*) as success_counts",
           "member": "string",
@@ -762,6 +789,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警对象序号；从1开始递增。",
           "example": "1",
           "member": "int64",
@@ -771,6 +799,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
           "example": "-5",
           "member": "int64",
@@ -780,6 +809,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
           "example": "0",
           "member": "int64",
@@ -789,6 +819,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志集ID。",
           "example": "1c012db7-2cfd-4418-xxxx-7342c7a42516",
           "member": "string",
@@ -798,6 +829,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "1",
           "member": "uint64",
@@ -814,6 +846,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志集ID。",
           "example": "eff86344-6a51-479a-xxxx-779aabd40a3e",
           "member": "string",
@@ -824,6 +857,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志集名称。",
           "example": "LogsetDemo",
           "member": "string",
@@ -834,6 +868,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID。",
           "example": "016f6eac-4c21-4857-xxxx-4adf3be7d56c",
           "member": "string",
@@ -844,6 +879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题名称。",
           "example": "TopicDemo",
           "member": "string",
@@ -854,6 +890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询语句。",
           "example": "\"jndi:ldap://\" OR \"jndi:rmi\" OR \"javax.naming.CommunicationExcep",
           "member": "string",
@@ -864,6 +901,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警对象序号。",
           "example": "1",
           "member": "int64",
@@ -874,6 +912,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
           "example": "-240",
           "member": "int64",
@@ -884,6 +923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
           "example": "0",
           "member": "int64",
@@ -899,6 +939,7 @@
       "document": "告警通知渠道组详情",
       "members": [
         {
+          "disabled": false,
           "document": "通知渠道组名称",
           "example": "shicao_test",
           "member": "string",
@@ -908,6 +949,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "通知渠道组ID",
           "example": "无",
           "member": "string",
@@ -923,6 +965,7 @@
       "document": "告警历史详情",
       "members": [
         {
+          "disabled": false,
           "document": "告警历史ID",
           "example": "7cfbe19f-99af-42ca-8f9f-b59d1f9c6157",
           "member": "string",
@@ -932,6 +975,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警策略ID",
           "example": "alarm-8211a509-xxxx-43dd-9ec0-6a6e7bc92552",
           "member": "string",
@@ -941,6 +985,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警策略名称",
           "example": "日志错误数超限",
           "member": "string",
@@ -950,6 +995,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "监控对象ID",
           "example": "0bf009c5-53f3-4f60-xxxx-341d732ed5b9",
           "member": "string",
@@ -959,6 +1005,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "监控对象名称",
           "example": "Nginx请求日志",
           "member": "string",
@@ -968,6 +1015,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "监控对象所属地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -977,6 +1025,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "触发条件",
           "example": "$1.d > 300",
           "member": "string",
@@ -986,6 +1035,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "持续周期，持续满足触发条件TriggerCount个周期后，再进行告警",
           "example": "1",
           "member": "int64",
@@ -995,6 +1045,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警通知发送频率，单位为分钟",
           "example": "15",
           "member": "int64",
@@ -1004,6 +1055,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "通知渠道组",
           "example": "无",
           "member": "AlertHistoryNotice",
@@ -1013,6 +1065,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警持续时间，单位为分钟",
           "example": "60",
           "member": "int64",
@@ -1022,6 +1075,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警状态，0代表未恢复，1代表已恢复，2代表已失效",
           "example": "1",
           "member": "int64",
@@ -1031,6 +1085,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警发生时间，毫秒级Unix时间戳",
           "example": "1619359718000",
           "member": "uint64",
@@ -1040,6 +1095,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警分组触发时对应的分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"$1.count\",\"Value\":\"100\"}]",
           "member": "GroupTriggerConditionInfo",
@@ -1049,6 +1105,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1058,6 +1115,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "监控对象类型。\n0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1073,6 +1131,7 @@
       "document": "多维分析的分析维度",
       "members": [
         {
+          "disabled": false,
           "document": "分析名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "status 502 pv",
           "member": "string",
@@ -1082,6 +1141,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分析类型：query，field ，original\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "query",
           "member": "string",
@@ -1091,6 +1151,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分析内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*|select count(1) as pv where status = 502",
           "member": "string",
@@ -1100,6 +1161,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmAnalysisConfig",
@@ -1116,6 +1178,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置ID",
           "example": "xxxxxxxxxx",
           "member": "string",
@@ -1125,6 +1188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "xxx-xxx-xxxxxx",
           "member": "string",
@@ -1152,6 +1216,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "回调时的Body",
           "example": "无",
           "member": "string",
@@ -1162,6 +1227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调时的Headers\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1178,6 +1244,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 Vip",
           "example": "“10.123.123.123”",
           "member": "string",
@@ -1188,6 +1255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 Vport",
           "example": "“8888”",
           "member": "string",
@@ -1198,6 +1266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 InstanceId",
           "example": "“xxxxxx”",
           "member": "string",
@@ -1208,6 +1277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 InstanceName",
           "example": "\"myname\"",
           "member": "string",
@@ -1218,6 +1288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 TopicId",
           "example": "\"xxxxxxxx\"",
           "member": "string",
@@ -1228,6 +1299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka 的 TopicName",
           "example": "\"xxxxxxxx\"",
           "member": "string",
@@ -1244,6 +1316,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CLS对应的topic标识",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -1271,6 +1344,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "列的名字",
           "example": "_col0",
           "member": "string",
@@ -1281,6 +1355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "列的属性",
           "example": "json",
           "member": "string",
@@ -1297,6 +1372,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "压缩格式，支持gzip、lzop、snappy和none不压缩",
           "example": "none",
           "member": "string",
@@ -1312,6 +1388,7 @@
       "document": "特殊采集规则配置信息",
       "members": [
         {
+          "disabled": false,
           "document": "采集规则扩展配置ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1321,6 +1398,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "采集规则名称",
           "example": "tb-xxx1",
           "member": "string",
@@ -1330,6 +1408,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1339,6 +1418,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "类型：container_stdout、container_file、host_file",
           "example": "container_stdout",
           "member": "string",
@@ -1348,6 +1428,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "节点文件配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HostFileInfo",
@@ -1357,6 +1438,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "容器文件路径信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerFileInfo",
@@ -1366,6 +1448,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "容器标准输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerStdoutInfo",
@@ -1375,6 +1458,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1384,6 +1468,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "minimalist_log",
           "member": "string",
@@ -1393,6 +1478,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -1402,6 +1488,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "采集黑名单路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -1411,6 +1498,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "更新时间",
           "example": "2020-02-16 17:01:50",
           "member": "string",
@@ -1420,6 +1508,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2020-02-16 17:01:50",
           "member": "string",
@@ -1429,6 +1518,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1438,6 +1528,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "机器组ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1447,6 +1538,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自建采集配置标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "label_k8s",
           "member": "string",
@@ -1456,6 +1548,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1465,6 +1558,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1474,6 +1568,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志主题name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -1490,6 +1585,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则配置ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -1500,6 +1596,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1510,6 +1607,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1520,6 +1618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/test/log.test",
           "member": "string",
@@ -1530,6 +1629,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "json_log",
           "member": "string",
@@ -1540,6 +1640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -1550,6 +1651,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集黑名单路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -1560,6 +1662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置所属日志主题ID即TopicId",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -1570,6 +1673,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime",
@@ -1580,6 +1684,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "无",
           "member": "datetime",
@@ -1590,6 +1695,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1606,6 +1712,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否投递 TAG 信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1616,6 +1723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
           "member": "string",
@@ -1626,6 +1734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1636,6 +1745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1652,6 +1762,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "namespace可以多个，用分隔号分割,例如A,B",
           "example": "kube-system",
           "member": "string",
@@ -1662,6 +1773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器名称",
           "example": "container1",
           "member": "string",
@@ -1672,6 +1784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件夹",
           "example": "/var/log/tmep",
           "member": "string",
@@ -1682,6 +1795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志名称",
           "example": "*.log",
           "member": "string",
@@ -1692,6 +1806,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
@@ -1702,6 +1817,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerWorkLoadInfo",
@@ -1712,6 +1828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
@@ -1722,6 +1839,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
@@ -1738,6 +1856,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否所有容器",
           "example": "true / false",
           "member": "bool",
@@ -1748,6 +1867,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "container为空表所有的，不为空采集指定的容器\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1758,6 +1878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
@@ -1768,6 +1889,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
@@ -1778,6 +1900,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerWorkLoadInfo",
@@ -1788,6 +1911,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
@@ -1798,6 +1922,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
@@ -1814,6 +1939,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "工作负载的类型",
           "example": "daemonset",
           "member": "string",
@@ -1824,6 +1950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作负载的名称",
           "example": "tke-log-agent",
           "member": "string",
@@ -1834,6 +1961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1844,6 +1972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
@@ -1860,6 +1989,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "内容格式，支持json、csv",
           "example": "json",
           "member": "string",
@@ -1870,6 +2000,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "csv格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CsvInfo",
@@ -1880,6 +2011,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "json格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "JsonInfo",
@@ -1890,6 +2022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "parquet格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParquetInfo",
@@ -1905,6 +2038,7 @@
       "document": "cos导入配置信息",
       "members": [
         {
+          "disabled": false,
           "document": "COS导入配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
@@ -1914,6 +2048,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
@@ -1923,6 +2058,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
@@ -1932,6 +2068,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "COS导入任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx任务导入",
           "member": "string",
@@ -1941,6 +2078,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "COS存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket1",
           "member": "string",
@@ -1950,6 +2088,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "COS存储桶所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1959,6 +2098,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "COS文件所在文件夹的前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/test",
           "member": "string",
@@ -1968,6 +2108,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；\n默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "minimalist_log",
           "member": "string",
@@ -1977,6 +2118,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1986,6 +2128,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否启用:   0： 未启用  ， 1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1995,6 +2138,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 14:40:22",
           "member": "string",
@@ -2004,6 +2148,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 14:40:22",
           "member": "string",
@@ -2013,6 +2158,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "进度条百分值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2022,6 +2168,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gzip",
           "member": "string",
@@ -2031,6 +2178,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "见： ExtractRuleInfo 结构描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -2047,6 +2195,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
@@ -2056,6 +2205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
@@ -2065,6 +2215,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知接收对象。",
           "example": "无",
           "member": "NoticeReceiver",
@@ -2074,6 +2225,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接口回调信息（包括企业微信）。",
           "example": "无",
           "member": "WebCallback",
@@ -2088,6 +2240,7 @@
       "document": "CreateAlarmNotice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警模板ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -2109,6 +2262,7 @@
       "document": "CreateAlarm请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警策略名称",
           "example": "test",
           "member": "string",
@@ -2117,6 +2271,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTarget",
@@ -2125,6 +2280,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -2133,6 +2289,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "触发条件。",
           "example": "$1.count > 10",
           "member": "string",
@@ -2141,6 +2298,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -2149,6 +2307,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
           "example": "0",
           "member": "int64",
@@ -2157,6 +2316,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "关联的告警通知模板列表。",
           "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
           "member": "string",
@@ -2165,6 +2325,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否开启告警策略。默认值为true",
           "example": "true",
           "member": "bool",
@@ -2173,6 +2334,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "用户自定义告警内容",
           "example": "\"\"",
           "member": "string",
@@ -2181,6 +2343,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户自定义回调",
           "example": "无",
           "member": "CallBackInfo",
@@ -2189,6 +2352,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "多维分析",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -2203,6 +2367,7 @@
       "document": "CreateAlarm返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警策略ID。",
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
@@ -2223,6 +2388,7 @@
       "document": "CreateConfigExtra请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
           "example": "table-xxx1",
           "member": "string",
@@ -2231,6 +2397,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题id",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -2239,6 +2406,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "类型：container_stdout、container_file、host_file",
           "example": "container_stdout",
           "member": "string",
@@ -2247,6 +2415,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
@@ -2255,6 +2424,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "采集配置标",
           "example": "label_k8s",
           "member": "string",
@@ -2263,6 +2433,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志集id",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2271,6 +2442,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志集name",
           "example": "xxxxx",
           "member": "string",
@@ -2279,6 +2451,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题名称",
           "example": "xxxxx",
           "member": "string",
@@ -2287,6 +2460,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "节点文件配置信息",
           "example": "无",
           "member": "HostFileInfo",
@@ -2295,6 +2469,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "容器文件路径信息",
           "example": "无",
           "member": "ContainerFileInfo",
@@ -2303,6 +2478,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "容器标准输出信息",
           "example": "无",
           "member": "ContainerStdoutInfo",
@@ -2311,6 +2487,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "日志格式化方式",
           "example": "无",
           "member": "string",
@@ -2319,6 +2496,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -2327,6 +2505,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "采集黑名单路径列表",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -2335,6 +2514,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
@@ -2343,6 +2523,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "绑定的机器组id",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2351,6 +2532,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "绑定的机器组id列表",
           "example": "[\"11\",\"22\"]",
           "member": "string",
@@ -2365,6 +2547,7 @@
       "document": "CreateConfigExtra返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置扩展信息ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -2386,6 +2569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置名称",
           "example": "testname",
           "member": "string",
@@ -2395,6 +2579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置所属日志主题ID即TopicId",
           "example": "xxxxxx-xxx-xxxxxx",
           "member": "string",
@@ -2404,6 +2589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志采集路径,包含文件名",
           "example": "/data/nginx/log/**/access.log",
           "member": "string",
@@ -2413,6 +2599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "delimiter_log",
           "member": "string",
@@ -2422,6 +2609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -2431,6 +2619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集黑名单路径列表",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -2440,6 +2629,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
@@ -2454,6 +2644,7 @@
       "document": "CreateConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -2476,6 +2667,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务绑定的日志主题 ID",
           "example": "\"xxx-xxx-xxx-xxx\"",
           "member": "string",
@@ -2485,6 +2677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否投递日志的元数据信息，默认为 true",
           "example": "false",
           "member": "bool",
@@ -2494,6 +2687,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果需要投递元数据信息，元数据信息的描述",
           "example": "无",
           "member": "ConsumerContent",
@@ -2503,6 +2697,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CKafka的描述",
           "example": "无",
           "member": "Ckafka",
@@ -2512,6 +2707,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
           "example": "0",
           "member": "int64",
@@ -2538,6 +2734,7 @@
       "document": "CreateCosRecharge请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题 ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -2546,6 +2743,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -2554,6 +2752,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递任务名称",
           "example": "cos导入",
           "member": "string",
@@ -2562,6 +2761,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "COS存储桶",
           "example": "bucket1",
           "member": "string",
@@ -2570,6 +2770,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "COS存储桶所在地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2578,6 +2779,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "COS文件所在文件夹的前缀",
           "example": "var/xxx",
           "member": "string",
@@ -2586,6 +2788,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；\n默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
@@ -2594,6 +2797,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空",
           "example": "gzip",
           "member": "string",
@@ -2602,6 +2806,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -2629,6 +2834,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
@@ -2638,6 +2844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出数量,  最大值5000万",
           "example": "100",
           "member": "uint64",
@@ -2647,6 +2854,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出检索语句，不支持<a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>",
           "example": "status:200",
           "member": "string",
@@ -2656,6 +2864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出起始时间，毫秒时间戳",
           "example": "1607499107000",
           "member": "int64",
@@ -2665,6 +2874,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出结束时间，毫秒时间戳",
           "example": "1607499207000",
           "member": "int64",
@@ -2674,6 +2884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出时间排序。desc，asc，默认为desc",
           "example": "desc",
           "member": "string",
@@ -2683,6 +2894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出数据格式。json，csv，默认为json",
           "example": "json",
           "member": "string",
@@ -2697,6 +2909,7 @@
       "document": "CreateExport返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志导出ID。",
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
@@ -2719,6 +2932,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "3edc8551-111b-473b-9fc4-ed66e20dfa8a",
           "member": "string",
@@ -2728,6 +2942,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "索引规则",
           "example": "无",
           "member": "RuleInfo",
@@ -2737,6 +2952,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否生效，默认为true",
           "example": "true",
           "member": "bool",
@@ -2746,6 +2962,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true\n* false:不包含\n* true:包含",
           "example": "true",
           "member": "bool",
@@ -2755,6 +2972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
           "example": "0",
           "member": "uint64",
@@ -2781,6 +2999,7 @@
       "document": "CreateLogset请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志集名字，不能重名",
           "example": "testname",
           "member": "string",
@@ -2789,6 +3008,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对",
           "example": "无",
           "member": "Tag",
@@ -2803,6 +3023,7 @@
       "document": "CreateLogset返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
@@ -2823,6 +3044,7 @@
       "document": "CreateMachineGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器组名字，不能重复",
           "example": "testgroup",
           "member": "string",
@@ -2831,6 +3053,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -2839,6 +3062,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的机器组。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
@@ -2847,6 +3071,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否开启机器组自动更新",
           "example": "true",
           "member": "bool",
@@ -2855,6 +3080,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -2863,6 +3089,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -2871,6 +3098,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
           "member": "bool",
@@ -2879,6 +3107,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
           "member": "MetaTagInfo",
@@ -2893,6 +3122,7 @@
       "document": "CreateMachineGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2913,6 +3143,7 @@
       "document": "CreateShipper请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的投递规则所属的日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2921,6 +3152,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "创建的投递规则投递的bucket",
           "example": "bucketName-appid",
           "member": "string",
@@ -2929,6 +3161,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "创建的投递规则投递目录的前缀",
           "example": "无",
           "member": "string",
@@ -2937,6 +3170,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -2945,6 +3179,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
           "example": "60",
           "member": "uint64",
@@ -2953,6 +3188,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
           "example": "256",
           "member": "uint64",
@@ -2961,6 +3197,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -2969,6 +3206,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "%Y%m%d",
           "member": "string",
@@ -2977,6 +3215,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递日志的压缩配置",
           "example": "无",
           "member": "CompressInfo",
@@ -2985,6 +3224,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "投递日志的内容格式配置",
           "example": "无",
           "member": "ContentInfo",
@@ -2993,6 +3233,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
           "example": "0",
           "member": "uint64",
@@ -3001,6 +3242,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递数据范围的开始时间点，不能超出日志主题的生命周期起点。如果用户不填写，默认为用户新建投递任务的时间。",
           "example": "0",
           "member": "int64",
@@ -3009,6 +3251,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递数据范围的结束时间点，不能填写未来时间。如果用户不填写，默认为持续投递，即无限。",
           "example": "0",
           "member": "int64",
@@ -3023,6 +3266,7 @@
       "document": "CreateShipper返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "投递任务ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -3043,6 +3287,7 @@
       "document": "CreateTopic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -3051,6 +3296,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题名称",
           "example": "testname",
           "member": "string",
@@ -3059,6 +3305,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题分区个数。默认创建1个，最大支持创建10个分区。",
           "example": "1",
           "member": "int64",
@@ -3067,6 +3314,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
@@ -3075,6 +3323,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否开启自动分裂，默认值为true",
           "example": "true",
           "member": "bool",
@@ -3083,6 +3332,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "开启自动分裂后，每个主题能够允许的最大分区数，默认值为50",
           "example": "50",
           "member": "int64",
@@ -3091,6 +3341,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。",
           "example": "hot",
           "member": "string",
@@ -3099,6 +3350,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600天。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
@@ -3107,6 +3359,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "日志主题描述",
           "example": "xx部门xx任务topic",
           "member": "string",
@@ -3115,6 +3368,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
           "example": "7",
           "member": "uint64",
@@ -3123,6 +3377,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "webtracking开关； false: 关闭 true： 开启",
           "example": "false",
           "member": "bool",
@@ -3137,6 +3392,7 @@
       "document": "CreateTopic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -3158,6 +3414,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "csv首行是否打印key",
           "example": "true",
           "member": "bool",
@@ -3168,6 +3425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每列key的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3178,6 +3436,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "各字段间的分隔符",
           "example": "无",
           "member": "string",
@@ -3188,6 +3447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串",
           "example": "无",
           "member": "string",
@@ -3198,6 +3458,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对于上面指定的不存在字段使用该内容填充",
           "example": "无",
           "member": "string",
@@ -3214,6 +3475,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "通知渠道组ID",
           "example": "notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
@@ -3241,6 +3503,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "告警策略ID。",
           "example": "5944e926-ae21-4fa1-8af6-e1539b577482",
           "member": "string",
@@ -3268,6 +3531,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则扩展配置ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -3295,6 +3559,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "xxx-xxx-xxxxxx",
           "member": "string",
@@ -3304,6 +3569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置ID",
           "example": "xxxxxxxxxx",
           "member": "string",
@@ -3331,6 +3597,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则配置ID",
           "example": "xxxxxxxxxx",
           "member": "string",
@@ -3358,6 +3625,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务绑定的日志主题 ID",
           "example": "\"xxx-xxx-xxx-xxx\"",
           "member": "string",
@@ -3385,6 +3653,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出ID",
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
@@ -3412,6 +3681,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
@@ -3439,6 +3709,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志集ID",
           "example": "eb6eafd9-1656-4d60-b3c2-0a5bf91c9b0d",
           "member": "string",
@@ -3466,6 +3737,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -3475,6 +3747,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器组类型\n目前type支持 ip 和 label",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -3502,6 +3775,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -3529,6 +3803,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -3556,6 +3831,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
           "member": "string",
@@ -3583,6 +3859,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -3592,6 +3869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "1",
           "member": "int64",
@@ -3601,6 +3879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "1",
           "member": "int64",
@@ -3615,6 +3894,7 @@
       "document": "DescribeAlarmNotices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警通知模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmNotice",
@@ -3624,6 +3904,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "符合条件的告警通知模板总数。",
           "example": "0",
           "member": "int64",
@@ -3645,6 +3926,7 @@
       "document": "DescribeAlarms请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "name\n- 按照【告警策略名称】进行过滤。\n- 类型：String\n- 必选：否\n\nalarmId\n- 按照【告警策略ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【监控对象的日志主题ID】进行过滤。\n- 类型：String\n- 必选：否\n\nenable\n- 按照【启用状态】进行过滤。\n- 类型：String\n- 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -3653,6 +3935,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "1",
           "member": "int64",
@@ -3661,6 +3944,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "1",
           "member": "int64",
@@ -3675,6 +3959,7 @@
       "document": "DescribeAlarms返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警策略列表。",
           "example": "无",
           "member": "AlarmInfo",
@@ -3683,6 +3968,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合查询条件的告警策略数目。",
           "example": "0",
           "member": "int64",
@@ -3703,6 +3989,7 @@
       "document": "DescribeAlertRecordHistory请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询时间范围启始时间，毫秒级unix时间戳",
           "example": "1619063300000",
           "member": "uint64",
@@ -3711,6 +3998,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "查询时间范围结束时间，毫秒级unix时间戳",
           "example": "1619581700000",
           "member": "uint64",
@@ -3719,6 +4007,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "0",
           "member": "int64",
@@ -3727,6 +4016,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页限制数目，最大值100。",
           "example": "10",
           "member": "int64",
@@ -3735,6 +4025,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "- alertId：按照告警策略ID进行过滤。类型：String 必选：否\n- topicId：按照监控对象ID进行过滤。类型：String 必选：否\n- status：按照告警状态进行过滤。类型：String 必选：否，0代表未恢复，1代表已恢复，2代表已失效\n- alarmLevel：按照告警等级进行过滤。类型：String 必选：否，0代表警告，1代表提醒，2代表紧急\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
@@ -3749,6 +4040,7 @@
       "document": "DescribeAlertRecordHistory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警历史总数",
           "example": "1",
           "member": "int64",
@@ -3757,6 +4049,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警历史详情",
           "example": "无",
           "member": "AlertHistoryRecord",
@@ -3778,6 +4071,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "支持的key： topicId,name, configExtraId, machineGroupId",
           "example": "无",
           "member": "Filter",
@@ -3787,6 +4081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "uint64",
@@ -3796,6 +4091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "uint64",
@@ -3810,6 +4106,7 @@
       "document": "DescribeConfigExtras返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConfigExtraInfo",
@@ -3819,6 +4116,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过滤到的总数目",
           "example": "1",
           "member": "uint64",
@@ -3841,6 +4139,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置ID",
           "example": "xxxxxxxxxx",
           "member": "string",
@@ -3855,6 +4154,7 @@
       "document": "DescribeConfigMachineGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集规则配置绑定的机器组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MachineGroupInfo",
@@ -3876,6 +4176,7 @@
       "document": "DescribeConfigs请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "configName\n- 按照【采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n\nconfigId\n- 按照【采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -3884,6 +4185,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -3892,6 +4194,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "int64",
@@ -3906,6 +4209,7 @@
       "document": "DescribeConfigs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConfigInfo",
@@ -3914,6 +4218,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过滤到的总数目",
           "example": "1",
           "member": "int64",
@@ -3935,6 +4240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务绑定的日志主题 ID",
           "example": "\"xxx-xxx-xxx-xxx\"",
           "member": "string",
@@ -3949,6 +4255,7 @@
       "document": "DescribeConsumer返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "投递任务是否生效",
           "example": "true",
           "member": "bool",
@@ -3958,6 +4265,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否投递日志的元数据信息",
           "example": "true",
           "member": "bool",
@@ -3967,6 +4275,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "如果需要投递元数据信息，元数据信息的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConsumerContent",
@@ -3976,6 +4285,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "CKafka的描述",
           "example": "无",
           "member": "Ckafka",
@@ -3985,6 +4295,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4006,6 +4317,7 @@
       "document": "DescribeCosRecharges请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题 ID",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -4014,6 +4326,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。",
           "example": "1",
           "member": "uint64",
@@ -4022,6 +4335,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否启用:   0： 未启用  ， 1：启用",
           "example": "1",
           "member": "uint64",
@@ -4036,6 +4350,7 @@
       "document": "DescribeCosRecharges返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "见: CosRechargeInfo 结构描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosRechargeInfo",
@@ -4057,6 +4372,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
@@ -4066,6 +4382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -4075,6 +4392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100",
           "example": "5",
           "member": "int64",
@@ -4089,6 +4407,7 @@
       "document": "DescribeExports返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志导出列表",
           "example": "[]",
           "member": "ExportInfo",
@@ -4098,6 +4417,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数目",
           "example": "1",
           "member": "int64",
@@ -4120,6 +4440,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
@@ -4134,6 +4455,7 @@
       "document": "DescribeIndex返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
@@ -4143,6 +4465,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否生效",
           "example": "true",
           "member": "bool",
@@ -4152,6 +4475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "RuleInfo",
@@ -4161,6 +4485,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "索引修改时间，初始值为索引创建时间。",
           "example": "2021-01-13 21:00:08 ",
           "member": "string",
@@ -4170,6 +4495,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引\n* false:不包含\n* true:包含\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -4179,6 +4505,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -4201,6 +4528,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
@@ -4210,6 +4538,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
@@ -4219,6 +4548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志包序号",
           "example": "528C1318606EFEB8-1A7",
           "member": "string",
@@ -4228,6 +4558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志包内一条日志的序号",
           "example": "65536",
           "member": "int64",
@@ -4237,6 +4568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上文日志条数,  默认值10",
           "example": "10",
           "member": "int64",
@@ -4246,6 +4578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下文日志条数,  默认值10",
           "example": "10",
           "member": "int64",
@@ -4260,6 +4593,7 @@
       "document": "DescribeLogContext返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志上下文信息集合",
           "example": "无",
           "member": "LogContextInfo",
@@ -4269,6 +4603,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上文日志是否已经返回",
           "example": "true",
           "member": "bool",
@@ -4278,6 +4613,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "下文日志是否已经返回",
           "example": "true",
           "member": "bool",
@@ -4300,6 +4636,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1608794855000",
           "member": "int64",
@@ -4309,6 +4646,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1608794855000",
           "member": "int64",
@@ -4318,6 +4656,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询语句",
           "example": "http_status:200",
           "member": "string",
@@ -4327,6 +4666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
@@ -4336,6 +4676,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200",
           "example": "10",
           "member": "int64",
@@ -4350,6 +4691,7 @@
       "document": "DescribeLogHistogram返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "统计周期： 单位ms",
           "example": "10",
           "member": "int64",
@@ -4359,6 +4701,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "命中关键字的日志总条数",
           "example": "12",
           "member": "int64",
@@ -4368,6 +4711,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "周期内统计结果详情",
           "example": "无",
           "member": "HistogramInfo",
@@ -4389,6 +4733,7 @@
       "document": "DescribeLogsets请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -4397,6 +4742,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -4405,6 +4751,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "1",
           "member": "int64",
@@ -4419,6 +4766,7 @@
       "document": "DescribeLogsets返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分页的总数目",
           "example": "1",
           "member": "int64",
@@ -4427,6 +4775,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志集列表",
           "example": "无",
           "member": "LogsetInfo",
@@ -4448,6 +4797,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组ID",
           "example": "xxxxx-xxx-xxxxx",
           "member": "string",
@@ -4462,6 +4812,7 @@
       "document": "DescribeMachineGroupConfigs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集规则配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConfigInfo",
@@ -4483,6 +4834,7 @@
       "document": "DescribeMachineGroups请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "machineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -4491,6 +4843,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -4499,6 +4852,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "int64",
@@ -4513,6 +4867,7 @@
       "document": "DescribeMachineGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MachineGroupInfo",
@@ -4521,6 +4876,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分页的总数目",
           "example": "10",
           "member": "int64",
@@ -4542,6 +4898,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询的机器组ID",
           "example": "ae0d14a7-94e1-461e-8f5d-7d66a0d56d35  ",
           "member": "string",
@@ -4556,6 +4913,7 @@
       "document": "DescribeMachines返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器状态信息组",
           "example": "0 ",
           "member": "MachineInfo",
@@ -4565,6 +4923,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组是否开启自动升级功能",
           "example": "0",
           "member": "int64",
@@ -4574,6 +4933,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组自动升级功能预设开始时间",
           "example": "00:00:00 ",
           "member": "string",
@@ -4583,6 +4943,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组自动升级功能预设结束时间",
           "example": "01:00:00 ",
           "member": "string",
@@ -4592,6 +4953,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前用户可用最新的Loglistener版本",
           "example": "2.2.0",
           "member": "string",
@@ -4601,6 +4963,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启服务日志",
           "example": "true",
           "member": "bool",
@@ -4623,6 +4986,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "cabcd0a8-4a54-11eb-b378-0242ac130002",
           "member": "string",
@@ -4637,6 +5001,7 @@
       "document": "DescribePartitions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分区列表",
           "example": "无",
           "member": "PartitionInfo",
@@ -4659,6 +5024,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -4668,6 +5034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的开始时间戳，支持最近3天的查询， 毫秒",
           "example": "978653222",
           "member": "int64",
@@ -4677,6 +5044,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的结束时间戳， 毫秒",
           "example": "978653222",
           "member": "int64",
@@ -4691,6 +5059,7 @@
       "document": "DescribeShipperTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "投递任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ShipperTaskInfo",
@@ -4712,6 +5081,7 @@
       "document": "DescribeShippers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "- shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否\n- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否\n- topicId：按照【日志主题】进行过滤。类型：String。必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -4720,6 +5090,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "uint64",
@@ -4728,6 +5099,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "uint64",
@@ -4742,6 +5114,7 @@
       "document": "DescribeShippers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "投递规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ShipperInfo",
@@ -4750,6 +5123,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "本次查询获取到的总数",
           "example": "1",
           "member": "uint64",
@@ -4770,6 +5144,7 @@
       "document": "DescribeTopics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "<br><li> topicName按照【日志主题名称】进行过滤。类型：String必选：否<br><li> logsetName按照【日志集名称】进行过滤。类型：String必选：否<br><li> topicId按照【日志主题ID】进行过滤。类型：String必选：否<br><li> logsetId按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String必选：否<br><li> tagKey按照【标签键】进行过滤。类型：String必选：否<br><li> tag:tagKey按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String必选：否<br><li> storageType按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
@@ -4778,6 +5153,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "10",
           "member": "int64",
@@ -4786,6 +5162,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "30",
           "member": "int64",
@@ -4800,6 +5177,7 @@
       "document": "DescribeTopics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题列表",
           "example": "无",
           "member": "TopicInfo",
@@ -4808,6 +5186,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数目",
           "example": "1",
           "member": "int64",
@@ -4828,6 +5207,7 @@
       "document": "动态更新索引配置",
       "members": [
         {
+          "disabled": false,
           "document": "动态索引配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -4844,6 +5224,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "类型，选填File或Path",
           "member": "string",
           "name": "Type",
@@ -4853,6 +5234,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type对应的具体内容",
           "member": "string",
           "name": "Value",
@@ -4868,6 +5250,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
@@ -4878,6 +5261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出任务ID",
           "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
@@ -4888,6 +5272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出查询语句",
           "example": "status:200",
           "member": "string",
@@ -4898,6 +5283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出文件名",
           "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
           "member": "string",
@@ -4908,6 +5294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件大小",
           "example": "0",
           "member": "uint64",
@@ -4918,6 +5305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出时间排序",
           "example": "desc",
           "member": "string",
@@ -4928,6 +5316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出格式",
           "example": "json",
           "member": "string",
@@ -4938,6 +5327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出数量",
           "example": "100",
           "member": "uint64",
@@ -4948,6 +5338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
           "example": "Expired",
           "member": "string",
@@ -4958,6 +5349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出起始时间",
           "example": "1607499207000",
           "member": "int64",
@@ -4968,6 +5360,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出结束时间",
           "example": "1607499208000",
           "member": "int64",
@@ -4978,6 +5371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出路径",
           "example": "\"\"",
           "member": "string",
@@ -4988,6 +5382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出创建时间",
           "example": "2020-08-08 12:12:12",
           "member": "string",
@@ -5003,6 +5398,7 @@
       "document": "日志提取规则",
       "members": [
         {
+          "disabled": false,
           "document": "时间字段的key名字，time_key和time_format必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5012,6 +5408,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "YYDDWW",
           "member": "string",
@@ -5021,6 +5418,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分隔符类型日志的分隔符，只有log_type为delimiter_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ",",
           "member": "string",
@@ -5030,6 +5428,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "整条日志匹配规则，只有log_type为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
@@ -5039,6 +5438,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "行首匹配规则，只有log_type为multiline_log或fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
@@ -5048,6 +5448,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5057,6 +5458,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "需要过滤日志的key，及其对应的regex\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyRegexInfo",
@@ -5066,6 +5468,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "解析失败日志是否上传，true表示上传，false表示不上传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5075,6 +5478,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "失败日志的key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testlog",
           "member": "string",
@@ -5084,6 +5488,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "增量采集模式下的回溯数据量，默认-1（全量采集）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
@@ -5093,6 +5498,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否为Gbk编码.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5102,6 +5508,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否为标准json.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5111,6 +5518,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "syslog传输协议，取值为tcp或者udp。\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
@@ -5120,6 +5528,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:9000",
           "member": "string",
@@ -5129,6 +5538,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RFC3164",
           "member": "string",
@@ -5138,6 +5548,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，",
           "example": "0",
           "member": "int64",
@@ -5147,6 +5558,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "采集配置路径正则表达式，MetadataType为1时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5156,6 +5568,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户自定义元数据信息，MetadataType为2时必填",
           "example": "无",
           "member": "MetaTagInfo",
@@ -5172,6 +5585,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤的字段。",
           "member": "string",
           "name": "Key",
@@ -5181,6 +5595,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤的值。",
           "member": "string",
           "name": "Values",
@@ -5196,6 +5611,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤规则Key",
           "example": "testKey",
           "member": "string",
@@ -5206,6 +5622,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤规则",
           "example": "/w",
           "member": "string",
@@ -5216,6 +5633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤规则Value",
           "example": "testValue",
           "member": "string",
@@ -5231,6 +5649,7 @@
       "document": "全文索引配置",
       "members": [
         {
+          "disabled": false,
           "document": "是否大小写敏感",
           "example": "false",
           "member": "bool",
@@ -5240,6 +5659,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "全文索引的分词符，其中的每个字符代表一个分词符；\n仅支持英文符号、\\n\\t\\r及转义符\\；\n注意：\\n\\t\\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\\n\\t\\r被重复转义",
           "example": "xxx",
           "member": "string",
@@ -5249,6 +5669,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -5264,6 +5685,7 @@
       "document": "GetAlarmLog请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1676614187496",
           "member": "int64",
@@ -5272,6 +5694,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1676617787496",
           "member": "int64",
@@ -5280,6 +5703,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "查询语句，语句长度最大为1024",
           "example": "alert_id:notice-c0960eb3-6454-4eef-xxxx-8feb766a9fbd",
           "member": "string",
@@ -5288,6 +5712,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "单次查询返回的日志条数，最大值为1000",
           "example": "100",
           "member": "int64",
@@ -5296,6 +5721,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
           "example": "context",
           "member": "string",
@@ -5304,6 +5730,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "asc",
           "member": "string",
@@ -5312,6 +5739,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效",
           "example": "false",
           "member": "bool",
@@ -5326,6 +5754,7 @@
       "document": "GetAlarmLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "加载后续内容的Context",
           "example": "xx",
           "member": "string",
@@ -5334,6 +5763,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志查询结果是否全部返回",
           "example": "false",
           "member": "bool",
@@ -5342,6 +5772,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回的是否为分析结果",
           "example": "1",
           "member": "bool",
@@ -5350,6 +5781,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"time\",\"pv\",\"uv\"]",
           "member": "string",
@@ -5358,6 +5790,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
@@ -5366,6 +5799,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
@@ -5374,6 +5808,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "新的日志分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
@@ -5382,6 +5817,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志分析的列属性; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Column",
@@ -5402,6 +5838,7 @@
       "document": "分组触发条件",
       "members": [
         {
+          "disabled": false,
           "document": "分组触发字段名称",
           "example": "$1.count",
           "member": "string",
@@ -5411,6 +5848,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分组触发字段值",
           "example": "100",
           "member": "string",
@@ -5427,6 +5865,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计周期内的日志条数",
           "example": "15",
           "member": "int64",
@@ -5437,6 +5876,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按 period 取整后的 unix timestamp： 单位毫秒",
           "example": "2021-04-25 14:25:00.000",
           "member": "int64",
@@ -5453,6 +5893,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件夹",
           "example": "/xxx/xxx",
           "member": "string",
@@ -5463,6 +5904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件名",
           "example": "**.log",
           "member": "string",
@@ -5473,6 +5915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "metadata信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\",\"key2=value2\"]",
           "member": "string",
@@ -5488,6 +5931,7 @@
       "document": "JSON类型描述",
       "members": [
         {
+          "disabled": false,
           "document": "启用标志",
           "example": "true",
           "member": "bool",
@@ -5497,6 +5941,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5506,6 +5951,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递Json格式，0：字符串方式投递；1:以结构化方式投递\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -5522,6 +5968,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤日志的key",
           "member": "string",
           "name": "Key",
@@ -5531,6 +5978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "key对应的过滤规则regex",
           "member": "string",
           "name": "Regex",
@@ -5546,6 +5994,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要配置键值或者元字段索引的字段名称，仅支持字母、数字、下划线和-./@，且不能以下划线开头\n\n注意：\n1，元字段（tag）的Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀\n2，键值索引（KeyValue）及元字段索引（Tag）中的Key总数不能超过300\n3，Key的层级不能超过10层，例如a.b.c.d.e.f.g.h.j.k\n4，不允许同时包含json父子级字段，例如a及a.b",
           "example": "无",
           "member": "string",
@@ -5556,6 +6005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段的索引描述信息",
           "example": "无",
           "member": "ValueInfo",
@@ -5571,6 +6021,7 @@
       "document": "日志上下文信息",
       "members": [
         {
+          "disabled": false,
           "document": "日志来源设备",
           "example": "100.105.60.255",
           "member": "string",
@@ -5580,6 +6031,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "采集路径",
           "example": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
           "member": "string",
@@ -5589,6 +6041,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志内容",
           "example": "{\"__TAG__\":{\"full_name\":\"[N][腾讯云CLS_互联网] - [现网运营][上海园区] - [CGI3.",
           "member": "string",
@@ -5598,6 +6051,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志包序号",
           "example": "528C1318606EFEB8-1A0",
           "member": "string",
@@ -5607,6 +6061,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志包内一条日志的序号",
           "example": "196609",
           "member": "int64",
@@ -5616,6 +6071,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志时间戳",
           "example": "2021-04-25 14:25:00.000",
           "member": "int64",
@@ -5625,6 +6081,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hostName-1",
           "member": "string",
@@ -5634,6 +6091,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"content\":\"test\"}",
           "member": "string",
@@ -5643,6 +6101,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志创建索引异常原因(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
           "member": "string",
@@ -5658,6 +6117,7 @@
       "document": "日志结果信息",
       "members": [
         {
+          "disabled": false,
           "document": "日志时间，单位ms",
           "example": "1619162953000",
           "member": "int64",
@@ -5667,6 +6127,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
@@ -5676,6 +6137,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题名称",
           "example": "test",
           "member": "string",
@@ -5685,6 +6147,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志来源IP",
           "example": "10.0.0.1",
           "member": "string",
@@ -5694,6 +6157,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志文件名称",
           "example": "/test/access.log",
           "member": "string",
@@ -5703,6 +6167,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志上报请求包的ID",
           "example": "0",
           "member": "string",
@@ -5712,6 +6177,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求包内日志的ID",
           "example": "0",
           "member": "string",
@@ -5721,6 +6187,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"content\":\"test\"}",
           "member": "string",
@@ -5730,6 +6197,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hostName-1",
           "member": "string",
@@ -5739,6 +6207,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"content\":\"test\"}",
           "member": "string",
@@ -5748,6 +6217,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志创建索引异常原因(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
           "member": "string",
@@ -5764,6 +6234,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志Key",
           "member": "string",
           "name": "Key",
@@ -5773,6 +6244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志Value",
           "member": "string",
           "name": "Value",
@@ -5788,6 +6260,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分析结果返回的KV数据对",
           "member": "LogItem",
           "name": "Data",
@@ -5802,6 +6275,7 @@
       "document": "日志集相关信息",
       "members": [
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
@@ -5811,6 +6285,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志集名称",
           "example": "test",
           "member": "string",
@@ -5820,6 +6295,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-01 08:00:00",
           "member": "string",
@@ -5829,6 +6305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TCB",
           "member": "string",
@@ -5838,6 +6315,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -5847,6 +6325,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集下日志主题的数目",
           "example": "10",
           "member": "int64",
@@ -5856,6 +6335,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "若AssumerName非空，则表示创建该日志集的服务方角色",
           "example": "TCB_QcsRole",
           "member": "string",
@@ -5871,6 +6351,7 @@
       "document": "机器组信息",
       "members": [
         {
+          "disabled": false,
           "document": "机器组ID",
           "example": "559d015f-fac7-43cd-ad6e-3c4523fe8767",
           "member": "string",
@@ -5880,6 +6361,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组名称",
           "example": "test",
           "member": "string",
@@ -5889,6 +6371,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组类型",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -5898,6 +6381,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-03-05 00:40:22",
           "member": "string",
@@ -5907,6 +6391,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器组绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -5916,6 +6401,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否开启机器组自动更新\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"true\"",
           "member": "string",
@@ -5925,6 +6411,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "升级开始时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -5934,6 +6421,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "升级结束时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -5943,6 +6431,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5952,6 +6441,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
           "member": "MetaTagInfo",
@@ -5968,6 +6458,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器组类型，ip表示该机器组Values中存的是采集机器的IP地址，label表示该机器组Values中存储的是机器的标签",
           "member": "string",
           "name": "Type",
@@ -5977,6 +6468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器描述列表",
           "member": "string",
           "name": "Values",
@@ -5992,6 +6484,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器的IP",
           "example": "10.0.0.1",
           "member": "string",
@@ -6002,6 +6495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器状态，0:异常，1:正常",
           "example": "0",
           "member": "uint64",
@@ -6012,6 +6506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器离线时间，空为正常，异常返回具体时间",
           "example": "2021-01-12 20:14:10 ",
           "member": "string",
@@ -6022,6 +6517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器是否开启自动升级。0:关闭，1:开启",
           "example": "0",
           "member": "int64",
@@ -6032,6 +6528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器当前版本号。",
           "example": "2.1.0",
           "member": "string",
@@ -6042,6 +6539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器升级功能状态。",
           "example": "0",
           "member": "int64",
@@ -6052,6 +6550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器升级结果标识。",
           "example": "0",
           "member": "int64",
@@ -6062,6 +6561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器升级结果信息。",
           "example": "OK",
           "member": "string",
@@ -6078,6 +6578,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
           "member": "string",
@@ -6087,6 +6588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合并的PartitionId",
           "example": "2",
           "member": "int64",
@@ -6101,6 +6603,7 @@
       "document": "MergePartition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "合并结果集",
           "example": "无",
           "member": "PartitionInfo",
@@ -6122,6 +6625,7 @@
       "document": "元数据信息",
       "members": [
         {
+          "disabled": false,
           "document": "元数据key",
           "example": "test",
           "member": "string",
@@ -6131,6 +6635,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "元数据value",
           "example": "test",
           "member": "string",
@@ -6147,6 +6652,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "通知渠道组ID。",
           "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
@@ -6156,6 +6662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
@@ -6165,6 +6672,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
@@ -6174,6 +6682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知接收对象。",
           "example": "无",
           "member": "NoticeReceiver",
@@ -6183,6 +6692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接口回调信息（包括企业微信）。",
           "example": "无",
           "member": "WebCallback",
@@ -6209,6 +6719,7 @@
       "document": "ModifyAlarm请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警策略ID。",
           "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
           "member": "string",
@@ -6217,6 +6728,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "告警策略名称",
           "example": "test",
           "member": "string",
@@ -6225,6 +6737,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -6233,6 +6746,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "触发条件。",
           "example": "$1.source='10.0.0.1'",
           "member": "string",
@@ -6241,6 +6755,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -6249,6 +6764,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
           "example": "0",
           "member": "int64",
@@ -6257,6 +6773,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "关联的告警通知模板列表。",
           "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
           "member": "string",
@@ -6265,6 +6782,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTarget",
@@ -6273,6 +6791,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否开启告警策略。",
           "example": "true",
           "member": "bool",
@@ -6281,6 +6800,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "用户自定义告警内容",
           "example": "\"\"",
           "member": "string",
@@ -6289,6 +6809,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户自定义回调",
           "example": "无",
           "member": "CallBackInfo",
@@ -6297,6 +6818,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "多维分析",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -6323,6 +6845,7 @@
       "document": "ModifyConfigExtra请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "采集配置扩展信息id",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -6331,6 +6854,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
           "example": "table-xxx1",
           "member": "string",
@@ -6339,6 +6863,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题id",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -6347,6 +6872,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "节点文件配置信息",
           "example": "无",
           "member": "HostFileInfo",
@@ -6355,6 +6881,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "容器文件路径信息",
           "example": "无",
           "member": "ContainerFileInfo",
@@ -6363,6 +6890,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "容器标准输出信息",
           "example": "无",
           "member": "ContainerStdoutInfo",
@@ -6371,6 +6899,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
@@ -6379,6 +6908,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志格式化方式",
           "example": "无",
           "member": "string",
@@ -6387,6 +6917,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -6395,6 +6926,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "采集黑名单路径列表",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -6403,6 +6935,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
@@ -6411,6 +6944,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "类型：container_stdout、container_file、host_file",
           "example": "container_stdout",
           "member": "string",
@@ -6419,6 +6953,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "机器组ID",
           "example": "xxxxx-925b-4cb1-b386-12740a189961",
           "member": "string",
@@ -6427,6 +6962,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "自建采集配置标",
           "example": "label_k8s",
           "member": "string",
@@ -6435,6 +6971,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "xxxxx-925b-4cb1-b386-12740a189961",
           "member": "string",
@@ -6443,6 +6980,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志集name",
           "example": "xxxxx-925b-4cb1-b386-12740a189961",
           "member": "string",
@@ -6451,6 +6989,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题name",
           "example": "xxxxx-925b-4cb1-b386-12740a189961",
           "member": "string",
@@ -6478,6 +7017,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则配置ID",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -6487,6 +7027,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集规则配置名称",
           "example": "testname",
           "member": "string",
@@ -6496,6 +7037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志采集路径，包含文件名",
           "example": "/data/nginx/log/access.log",
           "member": "string",
@@ -6505,6 +7047,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "delimiter_log",
           "member": "string",
@@ -6514,6 +7057,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -6523,6 +7067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集黑名单路径列表",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -6532,6 +7077,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "采集配置关联的日志主题（TopicId）",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -6541,6 +7087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义解析字符串，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
@@ -6568,6 +7115,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务绑定的日志主题 ID",
           "example": "\"xxx-xxx-xxx-xxx\"",
           "member": "string",
@@ -6577,6 +7125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务是否生效，默认不生效",
           "example": "false",
           "member": "bool",
@@ -6586,6 +7135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否投递日志的元数据信息，默认为 false",
           "example": "false",
           "member": "bool",
@@ -6595,6 +7145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果需要投递元数据信息，元数据信息的描述",
           "example": "无",
           "member": "ConsumerContent",
@@ -6604,6 +7155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CKafka的描述",
           "example": "无",
           "member": "Ckafka",
@@ -6613,6 +7165,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
           "example": "0",
           "member": "int64",
@@ -6639,6 +7192,7 @@
       "document": "ModifyCosRecharge请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "COS导入配置ID",
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
@@ -6647,6 +7201,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题Id",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -6655,6 +7210,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "COS导入任务名称",
           "example": "导入任务1",
           "member": "string",
@@ -6663,6 +7219,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否启用:   0： 未启用  ， 1：启用",
           "example": "1",
           "member": "uint64",
@@ -6690,6 +7247,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
@@ -6699,6 +7257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认不生效",
           "example": "true",
           "member": "bool",
@@ -6708,6 +7267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "索引规则",
           "example": "无",
           "member": "RuleInfo",
@@ -6717,6 +7277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true\n* false:不包含\n* true:包含",
           "example": "false",
           "member": "bool",
@@ -6726,6 +7287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
           "example": "0",
           "member": "uint64",
@@ -6753,6 +7315,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志集ID",
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
@@ -6762,6 +7325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志集名称",
           "example": "changename",
           "member": "string",
@@ -6771,6 +7335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。",
           "example": "无",
           "member": "Tag",
@@ -6797,6 +7362,7 @@
       "document": "ModifyMachineGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -6805,6 +7371,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "机器组名称",
           "example": "testname",
           "member": "string",
@@ -6813,6 +7380,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "机器组类型",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -6821,6 +7389,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -6829,6 +7398,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否开启机器组自动更新",
           "example": "true",
           "member": "bool",
@@ -6837,6 +7407,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -6845,6 +7416,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -6853,6 +7425,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
           "member": "bool",
@@ -6861,6 +7434,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
           "member": "MetaTagInfo",
@@ -6887,6 +7461,7 @@
       "document": "ModifyShipper请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -6895,6 +7470,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递规则投递的新的bucket",
           "example": "bucketName-appid",
           "member": "string",
@@ -6903,6 +7479,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递规则投递的新的目录前缀",
           "example": "无",
           "member": "string",
@@ -6911,6 +7488,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递规则的开关状态",
           "example": "true",
           "member": "bool",
@@ -6919,6 +7497,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -6927,6 +7506,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
           "example": "300",
           "member": "uint64",
@@ -6935,6 +7515,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
           "example": "256",
           "member": "uint64",
@@ -6943,6 +7524,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -6951,6 +7533,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "%Y%m%d",
           "member": "string",
@@ -6959,6 +7542,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "投递日志的压缩配置",
           "example": "无",
           "member": "CompressInfo",
@@ -6967,6 +7551,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "投递日志的内容格式配置",
           "example": "无",
           "member": "ContentInfo",
@@ -6975,6 +7560,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
           "example": "0",
           "member": "uint64",
@@ -7001,6 +7587,7 @@
       "document": "ModifyTopic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -7009,6 +7596,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "日志主题名称",
           "example": "testname",
           "member": "string",
@@ -7017,6 +7605,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。",
           "example": "无",
           "member": "Tag",
@@ -7025,6 +7614,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "该日志主题是否开始采集",
           "example": "true",
           "member": "bool",
@@ -7033,6 +7623,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否开启自动分裂",
           "example": "true",
           "member": "bool",
@@ -7041,6 +7632,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "若开启最大分裂，该主题能够能够允许的最大分区数",
           "example": "50",
           "member": "int64",
@@ -7049,6 +7641,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
@@ -7057,6 +7650,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "日志主题描述",
           "example": "xx部门xx业务topic",
           "member": "string",
@@ -7065,6 +7659,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
           "example": "1",
           "member": "uint64",
@@ -7073,6 +7668,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "webtracking开关； false: 关闭 true: 开启",
           "example": "false",
           "member": "bool",
@@ -7100,6 +7696,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可选值：\n<br><li> Period - 周期执行\n<br><li> Fixed - 定期执行",
           "member": "string",
           "name": "Type",
@@ -7109,6 +7706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。",
           "member": "int64",
           "name": "Time",
@@ -7124,6 +7722,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "接受者类型。可选值：\n<br><li> Uin - 用户ID\n<br><li> Group - 用户组ID\n暂不支持其余接收者类型。",
           "example": "Group",
           "member": "string",
@@ -7134,6 +7733,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接收者。",
           "example": "[0]",
           "member": "int64",
@@ -7144,6 +7744,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知接收渠道。\n<br><li> Email - 邮件\n<br><li> Sms - 短信\n<br><li> WeChat - 微信\n<br><li> Phone - 电话",
           "example": "['Sms']",
           "member": "string",
@@ -7154,6 +7755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "允许接收信息的开始时间。",
           "example": "10:04:05",
           "member": "string",
@@ -7164,6 +7766,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "允许接收信息的结束时间。",
           "example": "20:04:05",
           "member": "string",
@@ -7174,6 +7777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "位序",
           "example": "1",
           "member": "int64",
@@ -7189,6 +7793,7 @@
       "document": "OpenKafkaConsumer请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CLS控制台创建的TopicId",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7197,6 +7802,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
           "example": "1",
           "member": "int64",
@@ -7211,6 +7817,7 @@
       "document": "OpenKafkaConsumer返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待消费TopicId",
           "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7232,6 +7839,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "ParquetKeyInfo数组",
           "example": "无",
           "member": "ParquetKeyInfo",
@@ -7248,6 +7856,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "键值名称",
           "example": "content",
           "member": "string",
@@ -7258,6 +7867,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据类型，目前支持6种类型：string、boolean、int32、int64、float、double",
           "example": "string",
           "member": "string",
@@ -7268,6 +7878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "解析失败赋值信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -7284,6 +7895,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分区ID",
           "member": "int64",
           "name": "PartitionId",
@@ -7293,6 +7905,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区的状态（readwrite或者是readonly）",
           "member": "string",
           "name": "Status",
@@ -7302,6 +7915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区哈希键起始key",
           "member": "string",
           "name": "InclusiveBeginKey",
@@ -7311,6 +7925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区哈希键结束key",
           "member": "string",
           "name": "ExclusiveEndKey",
@@ -7320,6 +7935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -7329,6 +7945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只读分区数据停止写入时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LastWriteTime",
@@ -7344,6 +7961,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7353,6 +7971,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7379,6 +7998,7 @@
       "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数",
       "members": [
         {
+          "disabled": false,
           "document": "全文索引配置, 如果为空时代表未开启全文索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "FullTextInfo",
@@ -7388,6 +8008,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "键值索引配置，如果为空时代表未开启键值索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleKeyValueInfo",
@@ -7397,6 +8018,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "元字段索引配置，如果为空时代表未开启元字段索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleTagInfo",
@@ -7406,6 +8028,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "动态索引配置，如果为空时代表未开启动态段索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DynamicIndex",
@@ -7422,6 +8045,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否大小写敏感",
           "example": "false",
           "member": "bool",
@@ -7432,6 +8056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要建立索引的键值对信息",
           "example": "空",
           "member": "KeyValueInfo",
@@ -7448,6 +8073,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否大小写敏感",
           "example": "无",
           "member": "bool",
@@ -7458,6 +8084,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "元字段索引配置中的字段信息",
           "example": "无",
           "member": "KeyValueInfo",
@@ -7473,6 +8100,7 @@
       "document": "SearchLog请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
           "example": "1608794854000",
           "member": "int64",
@@ -7481,6 +8109,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
           "example": "1608794855000",
           "member": "int64",
@@ -7489,6 +8118,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句\n使用*或空字符串可查询所有日志",
           "example": "http_status:200",
           "member": "string",
@@ -7497,6 +8127,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "要检索分析的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
@@ -7505,6 +8136,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "100",
           "member": "int64",
@@ -7513,6 +8145,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
@@ -7521,6 +8154,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
           "example": "asc",
           "member": "string",
@@ -7529,6 +8163,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效\n为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效\n两种返回方式在编码格式上有少量区别，建议使用true",
           "example": "false",
           "member": "bool",
@@ -7537,6 +8172,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。\n0：自动采样;\n0～1：按指定采样率采样，例如0.02;\n1：不采样，即精确分析\n默认值为1",
           "example": "0.1",
           "member": "float",
@@ -7545,6 +8181,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "1",
           "member": "uint64",
@@ -7559,6 +8196,7 @@
       "document": "SearchLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时",
           "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
@@ -7567,6 +8205,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志\n注意：仅当检索分析语句(Query)不包含SQL时有效",
           "example": "1",
           "member": "bool",
@@ -7575,6 +8214,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回的是否为统计分析（即SQL）结果",
           "example": "false",
           "member": "bool",
@@ -7583,6 +8223,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "匹配检索条件的原始日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
@@ -7591,6 +8232,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
@@ -7599,6 +8241,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志统计分析结果\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
@@ -7607,6 +8250,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
@@ -7615,6 +8259,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志统计分析结果的列属性\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Column",
@@ -7623,6 +8268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.1",
           "member": "float",
@@ -7643,6 +8289,7 @@
       "document": "投递规则",
       "members": [
         {
+          "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7652,6 +8299,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7661,6 +8309,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递的bucket地址",
           "example": "无",
           "member": "string",
@@ -7670,6 +8319,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递的前缀目录",
           "example": "无",
           "member": "string",
@@ -7679,6 +8329,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -7688,6 +8339,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递的时间间隔，单位 秒",
           "example": "300",
           "member": "uint64",
@@ -7697,6 +8349,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递的文件的最大值，单位 MB",
           "example": "256",
           "member": "uint64",
@@ -7706,6 +8359,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否生效",
           "example": "true",
           "member": "bool",
@@ -7715,6 +8369,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递日志的过滤规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -7724,6 +8379,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "无",
           "member": "string",
@@ -7733,6 +8389,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递日志的压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompressInfo",
@@ -7742,6 +8399,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递日志的内容格式配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContentInfo",
@@ -7751,6 +8409,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递日志的创建时间",
           "example": "无",
           "member": "string",
@@ -7760,6 +8419,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -7769,6 +8429,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递数据范围的开始时间点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1670642281",
           "member": "int64",
@@ -7778,6 +8439,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "投递数据范围的结束时间点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -7787,6 +8449,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.6",
           "member": "float",
@@ -7796,6 +8459,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23",
           "member": "int64",
@@ -7805,6 +8469,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "历史任务状态：\n0：实时任务\n1：任务准备中\n2：任务运行中\n3：任务运行异常\n4：任务运行结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7821,6 +8486,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "投递任务ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7831,6 +8497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "投递信息ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7841,6 +8508,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7851,6 +8519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本批投递的日志的开始时间戳，毫秒",
           "example": "978653222",
           "member": "int64",
@@ -7861,6 +8530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本批投递的日志的结束时间戳， 毫秒",
           "example": "978653222",
           "member": "int64",
@@ -7871,6 +8541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本次投递任务的开始时间戳， 毫秒",
           "example": "978653222",
           "member": "int64",
@@ -7881,6 +8552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本次投递任务的结束时间戳， 毫秒",
           "example": "978653222",
           "member": "int64",
@@ -7891,6 +8563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本次投递的结果，\"success\",\"running\",\"failed\"",
           "example": "success",
           "member": "string",
@@ -7901,6 +8574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结果的详细信息",
           "example": "success",
           "member": "string",
@@ -7917,6 +8591,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志主题ID",
           "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
           "member": "string",
@@ -7926,6 +8601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待分裂分区ID",
           "example": "1",
           "member": "int64",
@@ -7935,6 +8611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区切分的哈希key的位置，只在Number=2时有意义",
           "example": "key",
           "member": "string",
@@ -7944,6 +8621,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分区分裂个数(可选)，默认等于2",
           "example": "2",
           "member": "int64",
@@ -7958,6 +8636,7 @@
       "document": "SplitPartition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分裂结果集",
           "example": "无",
           "member": "PartitionInfo",
@@ -7979,6 +8658,7 @@
       "document": "创建资源实例时同时绑定的标签对说明",
       "members": [
         {
+          "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7988,6 +8668,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8003,6 +8684,7 @@
       "document": "日志主题信息",
       "members": [
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8012,6 +8694,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8021,6 +8704,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题名称",
           "example": "test",
           "member": "string",
@@ -8030,6 +8714,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主题分区个数",
           "example": "1",
           "member": "int64",
@@ -8039,6 +8724,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启索引",
           "example": "true",
           "member": "bool",
@@ -8048,6 +8734,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -8057,6 +8744,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -8066,6 +8754,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日主主题是否开启采集",
           "example": "true",
           "member": "bool",
@@ -8075,6 +8764,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -8084,6 +8774,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该主题是否开启自动分裂\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8093,6 +8784,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "若开启自动分裂的话，该主题能够允许的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
@@ -8102,6 +8794,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hot",
           "member": "string",
@@ -8111,6 +8804,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -8120,6 +8814,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TKE-Audio",
           "member": "string",
@@ -8129,6 +8824,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx部门xx业务topic",
           "member": "string",
@@ -8138,6 +8834,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开启日志沉降，热存储的生命周期， hotPeriod < Period。\n热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -8153,6 +8850,7 @@
       "document": "UploadLog请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "主题id",
           "example": "f6c4fa6f-367a-4f14-8289-1ff6f77ed975",
           "member": "string",
@@ -8161,6 +8859,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "根据 hashkey 写入相应范围的主题分区",
           "example": "0fffffffffffffffffffffffffffffff",
           "member": "string",
@@ -8169,6 +8868,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "压缩方法",
           "example": "lz4",
           "member": "string",
@@ -8195,6 +8895,7 @@
       "document": "需要开启键值索引的字段的索引描述信息",
       "members": [
         {
+          "disabled": false,
           "document": "字段类型，目前支持的类型有：long、text、double",
           "example": "long",
           "member": "string",
@@ -8204,6 +8905,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "字段的分词符，其中的每个字符代表一个分词符；\n仅支持英文符号、\\n\\t\\r及转义符\\；\nlong及double类型字段需为空；\n注意：\\n\\t\\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\\n\\t\\r被重复转义",
           "example": ".*",
           "member": "string",
@@ -8213,6 +8915,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "字段是否开启分析功能",
           "example": "true",
           "member": "bool",
@@ -8222,6 +8925,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否包含中文，long及double类型字段需为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -8238,6 +8942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "回调地址。",
           "example": "无",
           "member": "string",
@@ -8248,6 +8953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调的类型。可选值：\n<li> WeCom\n<li> Http",
           "example": "WeCom",
           "member": "string",
@@ -8258,6 +8964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调方法。可选值：\n<li> POST\n<li> PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POST",
           "member": "string",
@@ -8268,6 +8975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求头。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求头。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8278,6 +8986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求内容。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8288,6 +8997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "序号",
           "example": "1",
           "member": "int64",

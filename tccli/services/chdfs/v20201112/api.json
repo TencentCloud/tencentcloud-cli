@@ -216,6 +216,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -225,6 +226,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组名称",
           "member": "string",
           "name": "AccessGroupName",
@@ -234,6 +236,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组描述",
           "member": "string",
           "name": "Description",
@@ -243,6 +246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -252,6 +256,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
           "member": "uint64",
           "name": "VpcType",
@@ -261,6 +266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC网络ID",
           "member": "string",
           "name": "VpcId",
@@ -276,6 +282,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限规则ID",
           "member": "uint64",
           "name": "AccessRuleId",
@@ -285,6 +292,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限规则地址（网段或IP）",
           "member": "string",
           "name": "Address",
@@ -294,6 +302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限规则访问模式（1：只读；2：读写）",
           "member": "uint64",
           "name": "AccessMode",
@@ -303,6 +312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "优先级（取值范围1~100，值越小优先级越高）",
           "member": "uint64",
           "name": "Priority",
@@ -312,6 +322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -327,6 +338,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
@@ -336,6 +348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID列表",
           "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
           "member": "string",
@@ -362,6 +375,7 @@
       "document": "CreateAccessGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限组名称",
           "example": "test",
           "member": "string",
@@ -370,6 +384,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
           "example": "1",
           "member": "uint64",
@@ -378,6 +393,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "VPC网络ID",
           "example": "vpc-967aipkx",
           "member": "string",
@@ -386,6 +402,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "权限组描述，默认为空字符串",
           "example": "test",
           "member": "string",
@@ -400,6 +417,7 @@
       "document": "CreateAccessGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限组",
           "example": "无",
           "member": "AccessGroup",
@@ -421,6 +439,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "多个权限规则，上限为10",
           "example": "无",
           "member": "AccessRule",
@@ -430,6 +449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-jwmfdcul",
           "member": "string",
@@ -444,6 +464,7 @@
       "document": "CreateAccessRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccessRule",
@@ -465,6 +486,7 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件系统名称",
           "example": "test",
           "member": "string",
@@ -473,6 +495,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
           "example": "1073741824",
           "member": "uint64",
@@ -481,6 +504,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否校验POSIX ACL",
           "example": "true",
           "member": "bool",
@@ -489,6 +513,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "文件系统描述，默认为空字符串",
           "example": "test",
           "member": "string",
@@ -497,6 +522,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "超级用户名列表，默认为空数组",
           "example": "[\"hadoop\"]",
           "member": "string",
@@ -505,6 +531,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "根目录Inode用户名，默认为hadoop",
           "example": "hadoop",
           "member": "string",
@@ -513,6 +540,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "根目录Inode组名，默认为supergroup",
           "example": "supergroup",
           "member": "string",
@@ -521,6 +549,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否打开Ranger地址校验",
           "example": "false",
           "member": "bool",
@@ -529,6 +558,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "Ranger地址列表，默认为空数组",
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
@@ -537,6 +567,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "多个资源标签，可以为空数组",
           "example": "无",
           "member": "Tag",
@@ -551,6 +582,7 @@
       "document": "CreateFileSystem返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件系统",
           "example": "无",
           "member": "FileSystem",
@@ -572,6 +604,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -581,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "多个生命周期规则，上限为10",
           "example": "无",
           "member": "LifeCycleRule",
@@ -608,6 +642,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点名称",
           "example": "test",
           "member": "string",
@@ -617,6 +652,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mnvilzmdd",
           "member": "string",
@@ -626,6 +662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点状态（1：打开；2：关闭）",
           "example": "1",
           "member": "uint64",
@@ -640,6 +677,7 @@
       "document": "CreateMountPoint返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "挂载点",
           "example": "无",
           "member": "MountPoint",
@@ -662,6 +700,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -671,6 +710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "多个回热任务，上限为10",
           "example": "无",
           "member": "RestoreTask",
@@ -698,6 +738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
           "member": "string",
@@ -725,6 +766,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "多个权限规则ID，上限为10",
           "example": "[13001, 13002]",
           "member": "uint64",
@@ -752,6 +794,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -779,6 +822,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "多个生命周期规则ID，上限为10",
           "example": "[1, 2]",
           "member": "uint64",
@@ -806,6 +850,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-fj7A",
           "member": "string",
@@ -833,6 +878,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
           "member": "string",
@@ -847,6 +893,7 @@
       "document": "DescribeAccessGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限组",
           "example": "无",
           "member": "AccessGroup",
@@ -869,6 +916,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "VPC网络ID\n备注：入参只能指定VpcId和OwnerUin的其中一个",
           "example": "vpc-967aipkx",
           "member": "string",
@@ -878,6 +926,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属者Uin",
           "example": "100000",
           "member": "uint64",
@@ -892,6 +941,7 @@
       "document": "DescribeAccessGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限组列表",
           "example": "无",
           "member": "AccessGroup",
@@ -914,6 +964,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-jwmfdcul",
           "member": "string",
@@ -928,6 +979,7 @@
       "document": "DescribeAccessRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "权限规则列表",
           "example": "无",
           "member": "AccessRule",
@@ -950,6 +1002,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -964,6 +1017,7 @@
       "document": "DescribeFileSystem返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件系统",
           "example": "无",
           "member": "FileSystem",
@@ -973,6 +1027,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文件系统已使用容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -982,6 +1037,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已使用COS归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -991,6 +1047,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已使用COS标准存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1000,6 +1057,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已使用COS低频存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1009,6 +1067,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已使用COS深度归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1018,6 +1077,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "已使用COS智能分层存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1044,6 +1104,7 @@
       "document": "DescribeFileSystems返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件系统列表",
           "example": "无",
           "member": "FileSystem",
@@ -1066,6 +1127,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1080,6 +1142,7 @@
       "document": "DescribeLifeCycleRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "生命周期规则列表",
           "example": "无",
           "member": "LifeCycleRule",
@@ -1102,6 +1165,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
@@ -1116,6 +1180,7 @@
       "document": "DescribeMountPoint返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "挂载点",
           "example": "无",
           "member": "MountPoint",
@@ -1138,6 +1203,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID\n备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1147,6 +1213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-fmfpk1hk",
           "member": "string",
@@ -1156,6 +1223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属者Uin",
           "example": "100000",
           "member": "uint64",
@@ -1170,6 +1238,7 @@
       "document": "DescribeMountPoints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "挂载点列表",
           "example": "无",
           "member": "MountPoint",
@@ -1192,6 +1261,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1206,6 +1276,7 @@
       "document": "DescribeResourceTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "资源标签列表",
           "example": "无",
           "member": "Tag",
@@ -1228,6 +1299,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1242,6 +1314,7 @@
       "document": "DescribeRestoreTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "回热任务列表",
           "example": "无",
           "member": "RestoreTask",
@@ -1264,6 +1337,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
@@ -1273,6 +1347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID列表",
           "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
           "member": "string",
@@ -1300,6 +1375,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源所属用户AppId",
           "example": "1000000",
           "member": "uint64",
@@ -1310,6 +1386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统名称",
           "example": "test",
           "member": "string",
@@ -1320,6 +1397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统描述",
           "example": "test",
           "member": "string",
@@ -1330,6 +1408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1340,6 +1419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1350,6 +1430,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "1629099694",
           "member": "datetime_iso",
@@ -1360,6 +1441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统块大小（byte）",
           "example": "4194304",
           "member": "uint64",
@@ -1370,6 +1452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统容量（byte）",
           "example": "1073741824",
           "member": "uint64",
@@ -1380,6 +1463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统状态（1：创建中；2：创建成功；3：创建失败）",
           "example": "2",
           "member": "uint64",
@@ -1390,6 +1474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "超级用户名列表",
           "example": "[\"hadoop\"]",
           "member": "string",
@@ -1400,6 +1485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "POSIX权限控制",
           "example": "true",
           "member": "bool",
@@ -1410,6 +1496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否打开Ranger地址校验\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1420,6 +1507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ranger地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
@@ -1436,6 +1524,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "生命周期规则ID",
           "example": "1",
           "member": "uint64",
@@ -1446,6 +1535,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生命周期规则名称",
           "example": "test",
           "member": "string",
@@ -1456,6 +1546,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生命周期规则路径（目录或文件）",
           "example": "/test",
           "member": "string",
@@ -1466,6 +1557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生命周期规则转换列表",
           "example": "无",
           "member": "Transition",
@@ -1476,6 +1568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生命周期规则状态（1：打开；2：关闭）",
           "example": "1",
           "member": "uint64",
@@ -1486,6 +1579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
@@ -1502,6 +1596,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
           "member": "string",
@@ -1511,6 +1606,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组名称",
           "example": "test",
           "member": "string",
@@ -1520,6 +1616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限组描述",
           "example": "test",
           "member": "string",
@@ -1547,6 +1644,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "多个权限规则，上限为10",
           "example": "无",
           "member": "AccessRule",
@@ -1574,6 +1672,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
@@ -1583,6 +1682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统名称",
           "example": "test",
           "member": "string",
@@ -1592,6 +1692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统描述",
           "example": "test",
           "member": "string",
@@ -1601,6 +1702,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍\n注意：修改的文件系统容量不能小于当前使用量",
           "example": "1073741824",
           "member": "uint64",
@@ -1610,6 +1712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "超级用户名列表，可以为空数组",
           "example": "[\"hadoop\"]",
           "member": "string",
@@ -1619,6 +1722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否校验POSIX ACL",
           "example": "true",
           "member": "bool",
@@ -1628,6 +1732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否打开Ranger地址校验",
           "example": "false",
           "member": "bool",
@@ -1637,6 +1742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ranger地址列表，可以为空数组",
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
@@ -1664,6 +1770,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "多个生命周期规则，上限为10",
           "example": "无",
           "member": "LifeCycleRule",
@@ -1691,6 +1798,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
@@ -1700,6 +1808,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点名称",
           "example": "test",
           "member": "string",
@@ -1709,6 +1818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点状态",
           "example": "2",
           "member": "uint64",
@@ -1736,6 +1846,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "example": "f1mhaqkciq0",
           "member": "string",
@@ -1745,6 +1856,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "多个资源标签，可以为空数组",
           "example": "无",
           "member": "Tag",
@@ -1772,6 +1884,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点ID",
           "member": "string",
           "name": "MountPointId",
@@ -1781,6 +1894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点名称",
           "member": "string",
           "name": "MountPointName",
@@ -1790,6 +1904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1799,6 +1914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "挂载点状态（1：打开；2：关闭）",
           "member": "uint64",
           "name": "Status",
@@ -1808,6 +1924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1817,6 +1934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的权限组ID列表",
           "member": "string",
           "name": "AccessGroupIds",
@@ -1832,6 +1950,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "回热任务ID",
           "example": "1",
           "member": "uint64",
@@ -1842,6 +1961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回热任务文件路径",
           "example": "/test/file0",
           "member": "string",
@@ -1852,6 +1972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）",
           "example": "1",
           "member": "uint64",
@@ -1862,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定恢复出的临时副本的有效时长（单位天）",
           "example": "7",
           "member": "uint64",
@@ -1872,6 +1994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
           "example": "1",
           "member": "uint64",
@@ -1882,6 +2005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
@@ -1898,6 +2022,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "Key",
@@ -1907,6 +2032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "Value",
@@ -1922,6 +2048,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "触发时间（单位天）",
           "example": "7",
           "member": "uint64",
@@ -1932,6 +2059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）",
           "example": "1",
           "member": "uint64",

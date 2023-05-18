@@ -55,6 +55,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -64,6 +65,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户AppId",
           "member": "string",
           "name": "AppId",
@@ -73,6 +75,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户Uin",
           "member": "string",
           "name": "Uin",
@@ -82,6 +85,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "member": "uint64",
           "name": "ProjectId",
@@ -91,6 +95,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费标识",
           "member": "uint64",
           "name": "RenewFlag",
@@ -100,6 +105,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属地域",
           "member": "string",
           "name": "Region",
@@ -109,6 +115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式（数据安全审计只支持预付费：1）",
           "member": "uint64",
           "name": "PayMode",
@@ -118,6 +125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期",
           "member": "uint64",
           "name": "Status",
@@ -127,6 +135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss",
           "member": "string",
           "name": "IsolatedTimestamp",
@@ -136,6 +145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例创建时间，格式： yyyy-mm-dd HH:ii:ss",
           "member": "string",
           "name": "CreateTime",
@@ -145,6 +155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例过期时间，格式：yyyy-mm-dd HH:ii:ss",
           "member": "string",
           "name": "ExpireTime",
@@ -154,6 +165,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceName",
@@ -163,6 +175,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PublicIp",
@@ -172,6 +185,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例私网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PrivateIp",
@@ -181,6 +195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型（版本）",
           "member": "string",
           "name": "InstanceType",
@@ -190,6 +205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Pdomain",
@@ -205,6 +221,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规格描述",
           "member": "string",
           "name": "InstanceVersionName",
@@ -214,6 +231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格名称",
           "member": "string",
           "name": "InstanceVersionKey",
@@ -223,6 +241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大吞吐量",
           "member": "uint64",
           "name": "Qps",
@@ -232,6 +251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大实例数",
           "member": "uint64",
           "name": "MaxInstances",
@@ -241,6 +261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "入库速率（每小时）",
           "member": "uint64",
           "name": "InsertSpeed",
@@ -250,6 +271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大在线存储量，单位：条",
           "member": "uint64",
           "name": "OnlineStorageCapacity",
@@ -259,6 +281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大归档存储量，单位：条",
           "member": "uint64",
           "name": "ArchivingStorageCapacity",
@@ -278,6 +301,7 @@
       "document": "DescribeDasbImageIds返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "基础镜像ID",
           "member": "string",
           "name": "BaseImageId",
@@ -285,6 +309,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "AI镜像ID",
           "member": "string",
           "name": "AiImageId",
@@ -309,6 +334,7 @@
       "document": "DescribeDbauditInstanceType返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据安全审计产品规格信息列表",
           "member": "DbauditTypesInfo",
           "name": "DbauditTypesSet",
@@ -329,6 +355,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询条件地域",
           "member": "string",
           "name": "SearchRegion",
@@ -337,6 +364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目，默认10， 最大50",
           "member": "uint64",
           "name": "Limit",
@@ -345,6 +373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认1",
           "member": "uint64",
           "name": "Offset",
@@ -358,6 +387,7 @@
       "document": "DescribeDbauditInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总实例数",
           "member": "uint64",
           "name": "TotalCount",
@@ -365,6 +395,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据安全审计实例信息列表",
           "member": "CdsAuditInstance",
           "name": "CdsAuditInstanceSet",
@@ -389,6 +420,7 @@
       "document": "DescribeDbauditUsedRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可售卖地域信息列表",
           "member": "RegionInfo",
           "name": "RegionSet",
@@ -409,6 +441,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版",
           "member": "string",
           "name": "InstanceVersion",
@@ -417,6 +450,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "询价类型： renew，续费；newbuy，新购",
           "member": "string",
           "name": "InquiryType",
@@ -425,6 +459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）",
           "member": "uint64",
           "name": "TimeSpan",
@@ -433,6 +468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时长单位，y：年；m：月",
           "member": "string",
           "name": "TimeUnit",
@@ -441,6 +477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例所在地域",
           "member": "string",
           "name": "ServiceRegion",
@@ -454,6 +491,7 @@
       "document": "InquiryPriceDbauditInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总价，单位：元",
           "member": "float",
           "name": "TotalPrice",
@@ -461,6 +499,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "真实价钱，预支费用的折扣价，单位：元",
           "member": "float",
           "name": "RealTotalCost",
@@ -481,6 +520,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "1453498545",
           "member": "string",
@@ -490,6 +530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费",
           "example": "1",
           "member": "int64",
@@ -517,6 +558,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域ID",
           "member": "int64",
           "name": "RegionId",
@@ -526,6 +568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域名称",
           "member": "string",
           "name": "Region",
@@ -535,6 +578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域描述",
           "member": "string",
           "name": "RegionName",
@@ -544,6 +588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域可用状态",
           "member": "int64",
           "name": "RegionState",

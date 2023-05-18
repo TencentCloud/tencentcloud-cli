@@ -188,6 +188,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -197,6 +198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物图片地址",
           "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example.jpg",
           "member": "string",
@@ -206,6 +208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片数据base64之后的结果",
           "example": "无",
           "member": "string",
@@ -220,6 +223,7 @@
       "document": "AddCustomPersonImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -229,6 +233,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义人脸图片信息",
           "example": "无",
           "member": "PersonImageInfo",
@@ -251,6 +256,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "出现信息，取值范围为[1，3]",
           "example": "1",
           "member": "int64",
@@ -261,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术",
           "example": "50",
           "member": "int64",
@@ -277,6 +284,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在音频文本结果中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextAppearInfo",
@@ -287,6 +295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在可视文本结果中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextAppearInfo",
@@ -297,6 +306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在视频信息中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoAppearInfo",
@@ -313,6 +323,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "音频识别文本结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioInfo",
@@ -323,6 +334,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频识别标签数据",
           "example": "无",
           "member": "MultiLevelTag",
@@ -339,6 +351,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "ASR提取的文字信息",
           "example": "\"欢迎收看新闻30分\"",
           "member": "string",
@@ -349,6 +362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ASR起始时间戳，从0开始",
           "example": "0.52",
           "member": "float",
@@ -359,6 +373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ASR结束时间戳，从0开始",
           "example": "0.92",
           "member": "float",
@@ -369,6 +384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ASR提取的音频标签",
           "example": "\"导语\"",
           "member": "string",
@@ -385,6 +401,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频文件大小，单位为Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
@@ -395,6 +412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
@@ -405,6 +423,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频时长，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.00",
           "member": "float",
@@ -415,6 +434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频采样率，单位为khz\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "44.1",
           "member": "float",
@@ -425,6 +445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频码率，单位为kbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "128",
           "member": "int64",
@@ -435,6 +456,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mp3",
           "member": "string",
@@ -451,6 +473,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人物分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "演员",
           "member": "string",
@@ -461,6 +484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "符合特定分类的人物信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PersonInfo",
@@ -477,6 +501,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义一级类型",
           "example": "娱乐明星",
           "member": "string",
@@ -486,6 +511,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义二级类型",
           "example": "张三",
           "member": "string",
@@ -500,6 +526,7 @@
       "document": "CreateCustomCategory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义分类信息ID",
           "example": "\"123\"",
           "member": "string",
@@ -522,6 +549,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸图片COS存储桶Host地址",
           "example": "bk0-1234.cos.ap-shanghai.myqcloud.com",
           "member": "string",
@@ -549,6 +577,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物姓名",
           "example": "张三",
           "member": "string",
@@ -558,6 +587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物简要信息(仅用于标记，不支持检索)",
           "example": "一线娱乐明星",
           "member": "string",
@@ -567,6 +597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义分类ID，如不存在接口会报错",
           "example": "\"123\"",
           "member": "string",
@@ -576,6 +607,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物图片URL，可支持任意地址，推荐使用COS",
           "example": "http://b0-123.cos.ap-shanghai.myqcloud.com/hello.jpg",
           "member": "string",
@@ -585,6 +617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原始图片base64编码后的数据",
           "example": "无",
           "member": "string",
@@ -599,6 +632,7 @@
       "document": "CreateCustomPerson返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -608,6 +642,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义人脸信息",
           "example": "无",
           "member": "PersonImageInfo",
@@ -647,6 +682,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件ID，最长32B",
           "example": "\"media-12345678\"",
           "member": "string",
@@ -656,6 +692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资素材先验知识，相关限制参考MediaPreknownInfo",
           "example": "无",
           "member": "MediaPreknownInfo",
@@ -665,6 +702,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务名称，最长100个中文字符",
           "example": "\"新闻30分\"",
           "member": "string",
@@ -674,6 +712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否上传转码后的视频，仅设置true时上传，默认为false",
           "example": "false",
           "member": "bool",
@@ -683,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义标签，可用于查询",
           "example": "tag",
           "member": "string",
@@ -692,6 +732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务分析完成的回调地址，该设置优先级高于控制台全局的设置；",
           "example": "http;//xxx",
           "member": "string",
@@ -706,6 +747,7 @@
       "document": "CreateTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "智能标签视频分析任务ID",
           "example": "\"56789\"",
           "member": "string",
@@ -728,6 +770,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义分类ID",
           "example": "\"123\"",
           "member": "string",
@@ -738,6 +781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级自定义类型",
           "example": "娱乐明星",
           "member": "string",
@@ -748,6 +792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级自定义类型",
           "example": "张三",
           "member": "string",
@@ -764,6 +809,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的人物姓名",
           "example": "张三",
           "member": "string",
@@ -774,6 +820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待过滤的自定义类型Id数组",
           "example": "[\"123\", \"456\"]",
           "member": "string",
@@ -784,6 +831,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待过滤的自定义人物Id数组",
           "example": "[\"person-a1\", \"person-a2\"]",
           "member": "string",
@@ -794,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级自定义人物类型数组",
           "example": "[\"喜剧明星\", \"话剧明星\"]",
           "member": "string",
@@ -810,6 +859,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -820,6 +870,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物姓名",
           "example": "张三",
           "member": "string",
@@ -830,6 +881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物简介信息",
           "example": "著名喜剧明星",
           "member": "string",
@@ -840,6 +892,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级自定义人物类型",
           "example": "娱乐明星",
           "member": "string",
@@ -850,6 +903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级自定义人物类型",
           "example": "喜剧演员",
           "member": "string",
@@ -860,6 +914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物图片信息",
           "example": "无",
           "member": "PersonImageInfo",
@@ -870,6 +925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物创建时间",
           "example": "2022-01-25 10:35:47",
           "member": "string",
@@ -886,6 +942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节目粒度结构化结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ShowInfo",
@@ -902,6 +959,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义分类ID",
           "example": "\"123\"",
           "member": "string",
@@ -916,6 +974,7 @@
       "document": "DeleteCustomCategory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "123",
           "example": "无",
           "member": "string",
@@ -938,6 +997,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -947,6 +1007,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人脸图片Id",
           "example": "image-a1b2c3",
           "member": "string",
@@ -961,6 +1022,7 @@
       "document": "DeleteCustomPersonImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -970,6 +1032,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "已删除的人物图片Id",
           "example": "image-a1b2c3",
           "member": "string",
@@ -992,6 +1055,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待删除的自定义人物ID",
           "example": "person-a1b2c3",
           "member": "string",
@@ -1006,6 +1070,7 @@
       "document": "DeleteCustomPerson返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "已删除的自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -1028,6 +1093,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件在系统中的ID",
           "example": "\"123456\"",
           "member": "string",
@@ -1055,6 +1121,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务Id",
           "example": "task-abcdef",
           "member": "string",
@@ -1086,6 +1153,7 @@
       "document": "DescribeCustomCategories返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物类型数组",
           "example": "无",
           "member": "CustomCategory",
@@ -1112,6 +1180,7 @@
       "document": "DescribeCustomGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物库所包含的人物个数",
           "example": "100",
           "member": "int64",
@@ -1121,6 +1190,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义人物库图片后续所在的存储桶",
           "example": "Bucket0",
           "member": "string",
@@ -1143,6 +1213,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -1157,6 +1228,7 @@
       "document": "DescribeCustomPersonDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义人物信息",
           "example": "无",
           "member": "CustomPersonInfo",
@@ -1166,6 +1238,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "出现该自定义人物的所有分析人物Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"task-123\"]",
           "member": "string",
@@ -1188,6 +1261,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页序号，从1开始",
           "example": "1",
           "member": "int64",
@@ -1197,6 +1271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页数据行数，最多50",
           "example": "50",
           "member": "int64",
@@ -1206,6 +1281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序信息，默认倒序",
           "example": "无",
           "member": "SortBy",
@@ -1215,6 +1291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物过滤条件",
           "example": "无",
           "member": "CustomPersonFilter",
@@ -1229,6 +1306,7 @@
       "document": "DescribeCustomPersons返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "满足过滤条件的自定义人物数量",
           "example": "123",
           "member": "int64",
@@ -1238,6 +1316,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义人物信息",
           "example": "无",
           "member": "CustomPersonInfo",
@@ -1260,6 +1339,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "导入媒资返回的媒资ID，最长32B",
           "example": "\"123456\"",
           "member": "string",
@@ -1274,6 +1354,7 @@
       "document": "DescribeMedia返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "媒资信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaInfo",
@@ -1296,6 +1377,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页序号，从1开始",
           "example": "1",
           "member": "int64",
@@ -1305,6 +1387,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每个分页所包含的元素数量，最大为50",
           "example": "15",
           "member": "int64",
@@ -1314,6 +1397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "列举过滤条件，相关限制相见MediaFilter",
           "example": "无",
           "member": "MediaFilter",
@@ -1323,6 +1407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回结果排序信息，By字段只支持CreateTime",
           "example": "无",
           "member": "SortBy",
@@ -1337,6 +1422,7 @@
       "document": "DescribeMedias返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "满足过滤条件的媒资视频总数量",
           "example": "100",
           "member": "int64",
@@ -1346,6 +1432,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "满足过滤条件的媒资信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaInfo",
@@ -1368,6 +1455,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建任务返回的TaskId",
           "example": "\"task-12345678\"",
           "member": "string",
@@ -1382,6 +1470,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务信息，不包含任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskInfo",
@@ -1391,6 +1480,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "视频任务结果数据，只在视频任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Data",
@@ -1400,6 +1490,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "图片任务结果数据，只在图片任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageData",
@@ -1409,6 +1500,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音频任务结果数据，只在音频任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioData",
@@ -1418,6 +1510,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文本任务结果数据，只在文本任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextData",
@@ -1440,6 +1533,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CreateTask返回的任务ID，最长32B",
           "example": "\"task-12345678\"",
           "member": "string",
@@ -1454,6 +1548,7 @@
       "document": "DescribeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务信息，详情参见TaskInfo的定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskInfo",
@@ -1476,6 +1571,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页序号，从1开始",
           "example": "1",
           "member": "int64",
@@ -1485,6 +1581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每个分页所包含的元素数量，最大为50",
           "example": "15",
           "member": "int64",
@@ -1494,6 +1591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务过滤条件，相关限制参见TaskFilter",
           "example": "无",
           "member": "TaskFilter",
@@ -1503,6 +1601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回结果排序信息，By字段只支持CreateTimeStamp",
           "example": "无",
           "member": "SortBy",
@@ -1517,6 +1616,7 @@
       "document": "DescribeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "满足过滤条件的任务总数量",
           "example": "1",
           "member": "int64",
@@ -1526,6 +1626,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "满足过滤条件的任务数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskInfo",
@@ -1548,6 +1649,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的可视文本识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageOcr",
@@ -1558,6 +1660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的帧标签识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelTag",
@@ -1568,6 +1671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的层级人物识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelPersonInfo",
@@ -1578,6 +1682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的台标识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageLogo",
@@ -1588,6 +1693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的来源信息识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageLogo",
@@ -1604,6 +1710,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片中出现的Logo识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“山东卫视”",
           "member": "string",
@@ -1614,6 +1721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Logo在图片中出现的位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Rectf",
@@ -1630,6 +1738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件大小，单位为Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
@@ -1640,6 +1749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
@@ -1650,6 +1760,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1920",
           "member": "int64",
@@ -1660,6 +1771,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1080",
           "member": "int64",
@@ -1670,6 +1782,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jpg",
           "member": "string",
@@ -1686,6 +1799,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片中可视文本识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“欢迎收看测试新闻”",
           "member": "string",
@@ -1696,6 +1810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可视文本在图片中的位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Rectf",
@@ -1712,6 +1827,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB",
           "example": "cos://bucket/object.mp4",
           "member": "string",
@@ -1721,6 +1837,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B",
           "example": "9207adf18198dd5b165aae0bdd8f709d",
           "member": "string",
@@ -1730,6 +1847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待分析视频的名称，指定后可支持筛选，最多64B",
           "example": "新闻30分",
           "member": "string",
@@ -1739,6 +1857,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。\n推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败",
           "example": "https://bucket/path/",
           "member": "string",
@@ -1748,6 +1867,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义标签，可用于查询",
           "example": "tag",
           "member": "string",
@@ -1757,6 +1877,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；",
           "example": "http;//xxx",
           "member": "string",
@@ -1766,6 +1887,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n默认为2(视频)",
           "example": "2",
           "member": "int64",
@@ -1780,6 +1902,7 @@
       "document": "ImportMedia返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "媒资文件在系统中的ID",
           "example": "\"123456\"",
           "member": "string",
@@ -1802,6 +1925,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级标签名",
           "example": "\"地点\"",
           "member": "string",
@@ -1812,6 +1936,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "L2Tag",
@@ -1822,6 +1947,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级标签出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppearIndexPair",
@@ -1832,6 +1958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级标签首次出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1848,6 +1975,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "二级标签名",
           "example": "\"地点\"",
           "member": "string",
@@ -1858,6 +1986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "从属于此二级标签的三级标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "L3Tag",
@@ -1868,6 +1997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级标签出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppearIndexPair",
@@ -1878,6 +2008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级标签首次出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1894,6 +2025,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "三级标签名",
           "example": "\"成都\"",
           "member": "string",
@@ -1904,6 +2036,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级标签出现信息索引数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppearIndexPair",
@@ -1914,6 +2047,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级标签首次出现信息，可选值为[1,3]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1930,6 +2064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资名称过滤条件",
           "example": "[\"新闻30分\",\"朝闻天下\"]",
           "member": "string",
@@ -1940,6 +2075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资状态数组，媒资状态可选值参见MediaInfo",
           "example": "[1,2]",
           "member": "int64",
@@ -1950,6 +2086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资ID数组",
           "example": "[\"123\",\"456\"]",
           "member": "string",
@@ -1960,6 +2097,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资自定义标签数组",
           "example": "[\"tag1\"]",
           "member": "string",
@@ -1970,6 +2108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)",
           "example": "2",
           "member": "int64",
@@ -1986,6 +2125,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资ID",
           "example": "“123456”",
           "member": "string",
@@ -1996,6 +2136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"新闻30分\"",
           "member": "string",
@@ -2006,6 +2147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"http://example-bucket/example-key.mp4\"",
           "member": "string",
@@ -2016,6 +2158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资状态，取值参看上方表格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -2026,6 +2169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "若状态为失败，表示失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"下载失败\"",
           "member": "string",
@@ -2036,6 +2180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频元信息，仅在MediaType=VIDEO时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetadata",
@@ -2046,6 +2191,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "导入视频进度，取值范围为[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30.0",
           "member": "float",
@@ -2056,6 +2202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"tag\"",
           "member": "string",
@@ -2066,6 +2213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资导入完成后的回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"http://callback.com/callback\"",
           "member": "string",
@@ -2076,6 +2224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2086,6 +2235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频元信息，仅在MediaType=Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioMetadata",
@@ -2096,6 +2246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资图片文件元信息，仅在MediaType=Image时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageMetadata",
@@ -2106,6 +2257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文本文件元信息，仅在MediaType=Text时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextMetadata",
@@ -2122,6 +2274,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频文件大小，单位为字节",
           "example": "340000",
           "member": "int64",
@@ -2132,6 +2285,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频文件MD5",
           "example": "\"d228d21b68688c14dcb7275b806398fc\"",
           "member": "string",
@@ -2142,6 +2296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频时长，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.00",
           "member": "float",
@@ -2152,6 +2307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频总帧数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
           "member": "int64",
@@ -2162,6 +2318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频宽度，单位为像素\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1920",
           "member": "int64",
@@ -2172,6 +2329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频高度，单位为像素\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1080",
           "member": "int64",
@@ -2182,6 +2340,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频帧率，单位为Hz\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "25",
           "member": "float",
@@ -2192,6 +2351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资视频比特率，单位为kbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5000",
           "member": "int64",
@@ -2208,6 +2368,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件类型，参见MediaPreknownInfo结构体定义",
           "example": "1",
           "member": "int64",
@@ -2218,6 +2379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资素材一级类型，参见MediaPreknownInfo结构体定义",
           "example": "1",
           "member": "int64",
@@ -2228,6 +2390,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资素材二级类型，参见MediaPreknownInfo结构体定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2238,6 +2401,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资音频类型，参见MediaPreknownInfo结构体定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2254,6 +2418,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务分析完成后回调地址",
           "example": "http://xxxx.com",
           "member": "string",
@@ -2263,6 +2428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒体导入完成后回调地址",
           "example": "http://xxxx.com",
           "member": "string",
@@ -2290,6 +2456,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级分类名称(分类信息参见自定义人物类型)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "明星",
           "member": "string",
@@ -2300,6 +2467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已分类人物信息数组(所有分类类型为二级分类)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClassifiedPersonInfo",
@@ -2310,6 +2478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测结果来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2326,6 +2495,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "树状标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "L1Tag",
@@ -2336,6 +2506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签在识别结果中的定位信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppearInfo",
@@ -2352,6 +2523,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸图片ID",
           "example": "\"941d96ae-52d9-4401-be6a-fcf1bab6a214\"",
           "member": "string",
@@ -2362,6 +2534,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内",
           "example": "无",
           "member": "string",
@@ -2372,6 +2545,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人脸图片处理错误码",
           "example": "OK",
           "member": "string",
@@ -2382,6 +2556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人脸图片处理错误信息",
           "example": "OK",
           "member": "string",
@@ -2398,6 +2573,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "公众人物姓名",
           "example": "陈好",
           "member": "string",
@@ -2408,6 +2584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公众人物职务",
           "example": "演员",
           "member": "string",
@@ -2418,6 +2595,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "首次出现模态，可选值为[1,3]，详细参见AppearIndex定义",
           "example": "1",
           "member": "int64",
@@ -2428,6 +2606,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人物出现信息",
           "example": "无",
           "member": "AppearInfo",
@@ -2438,6 +2617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸在图片中的位置，仅在图片标签任务有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Rectf",
@@ -2458,6 +2638,7 @@
       "document": "QueryCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务分析完成后回调地址",
           "example": "http://xxxx",
           "member": "string",
@@ -2467,6 +2648,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "媒体导入完成后回调地址",
           "example": "http://xxxx",
           "member": "string",
@@ -2489,6 +2671,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "矩形框左上角水平座标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
@@ -2499,6 +2682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "矩形框左上角竖直座标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
@@ -2509,6 +2693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "矩形框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "float",
@@ -2519,6 +2704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "矩形框长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "float",
@@ -2535,6 +2721,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节目日期(只在新闻有效)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-01",
           "member": "string",
@@ -2545,6 +2732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "台标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "东方卫视",
           "member": "string",
@@ -2555,6 +2743,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节目名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "东方新闻",
           "member": "string",
@@ -2565,6 +2754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "来源信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "东方卫视",
           "member": "string",
@@ -2575,6 +2765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节目封面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example-key",
           "member": "string",
@@ -2585,6 +2776,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节目内容概要列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"全运会召开\",”神舟飞船升空\"]",
           "member": "string",
@@ -2595,6 +2787,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节目片段标题列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"中国共产党第十九届中央委员会第五次全体会议在京召开\"]",
           "member": "string",
@@ -2605,6 +2798,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioInfo",
@@ -2615,6 +2809,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可视文字识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextInfo",
@@ -2625,6 +2820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已分类人物信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClassifiedPersonInfo",
@@ -2635,6 +2831,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文本标签列表，包含标签内容和出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelTag",
@@ -2645,6 +2842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帧标签列表，包括人物信息，场景信息等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelTag",
@@ -2655,6 +2853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example-key",
           "member": "string",
@@ -2665,6 +2864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资分类信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"会议\"]",
           "member": "string",
@@ -2675,6 +2875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "概要标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"全运会\"]",
           "member": "string",
@@ -2685,6 +2886,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "未知人物信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UnknownPerson",
@@ -2695,6 +2897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "树状已分类人物信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelPersonInfo",
@@ -2711,6 +2914,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "排序字段，默认为CreateTime",
           "example": "CreateTime",
           "member": "string",
@@ -2721,6 +2925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "true表示降序，false表示升序",
           "example": "true",
           "member": "bool",
@@ -2737,6 +2942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件类型",
           "example": "[2]",
           "member": "int64",
@@ -2747,6 +2953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待筛选的任务状态列表",
           "example": "[1,2,3]",
           "member": "int64",
@@ -2757,6 +2964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待筛选的任务名称数组",
           "example": "[\"xx新闻\",\"yy新闻\"]",
           "member": "string",
@@ -2767,6 +2975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "TaskId数组",
           "example": "[\"xyzabcd\", \"xyz1234\"]",
           "member": "string",
@@ -2777,6 +2986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件名数组",
           "example": "[\"xx新闻\"]",
           "member": "string",
@@ -2787,6 +2997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资语言类型",
           "example": "[1,2]",
           "member": "int64",
@@ -2797,6 +3008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资素材一级类型",
           "example": "[1,3]",
           "member": "int64",
@@ -2807,6 +3019,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资自定义标签数组",
           "example": "[\"tag1\"]",
           "member": "string",
@@ -2823,6 +3036,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "“34567”",
           "member": "string",
@@ -2833,6 +3047,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述任务名称，指定后可根据名称筛选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"本地新闻\"",
           "member": "string",
@@ -2843,6 +3058,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件ID",
           "example": "\"media-12345678\"",
           "member": "string",
@@ -2853,6 +3069,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行状态",
           "example": "1",
           "member": "int64",
@@ -2863,6 +3080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务进度，范围为[0，100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "75",
           "member": "float",
@@ -2873,6 +3091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "int64",
@@ -2883,6 +3102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
@@ -2893,6 +3113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2006-01-02T15:04:05Z07:00",
           "member": "string",
@@ -2903,6 +3124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"分析失败\"",
           "member": "string",
@@ -2913,6 +3135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行时指定的先验知识",
           "example": "无",
           "member": "MediaPreknownInfo",
@@ -2923,6 +3146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"test-video\"",
           "member": "string",
@@ -2933,6 +3157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"tag\"",
           "member": "string",
@@ -2943,6 +3168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务分析完成后的后调地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"http://callback.com/callback\"",
           "member": "string",
@@ -2953,6 +3179,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioMetadata",
@@ -2963,6 +3190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageMetadata",
@@ -2973,6 +3201,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务对应的媒资文件元信息，仅在MediaType为Text时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextMetadata",
@@ -2983,6 +3212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务对应的媒资文件元信息，仅在MediaType为Video时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetadata",
@@ -2999,6 +3229,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文本结果数组中的下标",
           "example": "1",
           "member": "int64",
@@ -3009,6 +3240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在文本中出现的起始偏移量(包含)",
           "example": "10",
           "member": "int64",
@@ -3019,6 +3251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在文本中出现的结束偏移量(不包含)",
           "example": "13",
           "member": "int64",
@@ -3035,6 +3268,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文本内容信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“欢迎收看测试新闻”",
           "member": "string",
@@ -3045,6 +3279,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文本概要信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“欢迎”",
           "member": "string",
@@ -3055,6 +3290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文本标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiLevelTag",
@@ -3071,6 +3307,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "OCR提取的内容",
           "example": "\"深圳湾公园启用\"",
           "member": "string",
@@ -3081,6 +3318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR起始时间戳，从0开始",
           "example": "0.52",
           "member": "float",
@@ -3091,6 +3329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR结束时间戳，从0开始",
           "example": "1.52",
           "member": "float",
@@ -3101,6 +3340,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR标签信息",
           "example": "\"新闻\"",
           "member": "string",
@@ -3117,6 +3357,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文本文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
           "member": "int64",
@@ -3127,6 +3368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文本文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
           "member": "string",
@@ -3137,6 +3379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文本文件字符数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -3147,6 +3390,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "媒资文本文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "txt",
           "member": "string",
@@ -3163,6 +3407,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视觉出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoAppearInfo",
@@ -3173,6 +3418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是",
           "member": "bool",
@@ -3189,6 +3435,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义人物类型Id",
           "example": "\"123456\"",
           "member": "string",
@@ -3198,6 +3445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级自定义人物类型",
           "example": "公众人物",
           "member": "string",
@@ -3207,6 +3455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级自定义人物类型",
           "example": "娱乐明星",
           "member": "string",
@@ -3221,6 +3470,7 @@
       "document": "UpdateCustomCategory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成功更新的自定义人物类型Id",
           "example": "\"123456\"",
           "member": "string",
@@ -3243,6 +3493,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待更新的自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -3252,6 +3503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新后的自定义人物名称，如为空则不更新",
           "example": "李四",
           "member": "string",
@@ -3261,6 +3513,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新后的自定义人物简介，如为空则不更新",
           "example": "喜剧明星",
           "member": "string",
@@ -3270,6 +3523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新后的分类信息，如为空则不更新",
           "example": "自定义分类Id",
           "member": "string",
@@ -3284,6 +3538,7 @@
       "document": "UpdateCustomPerson返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成功更新的自定义人物Id",
           "example": "person-a1b2c3",
           "member": "string",
@@ -3306,6 +3561,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视觉信息起始时间戳，从0开始",
           "example": "0.52",
           "member": "float",
@@ -3316,6 +3572,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视觉信息终止时间戳，从0开始\n关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)",
           "example": "1.52",
           "member": "float",
@@ -3326,6 +3583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词在视觉信息中的封面图片",
           "example": "cos://bucket/cover0.jpg",
           "member": "string",

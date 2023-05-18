@@ -167,6 +167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则名称",
           "example": "xxx",
           "member": "string",
@@ -176,6 +177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则类型：用量类(101 当月|102有效期内)、位置类(201行政区|202移动距离)、网络质量类(301网络盲点)",
           "example": "101",
           "member": "int64",
@@ -185,6 +187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活",
           "example": "true",
           "member": "bool",
@@ -194,6 +197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发动作：1 邮件 2 API请求 3 微信 4 停卡 5 地图标识为盲点",
           "example": "1",
           "member": "int64",
@@ -203,6 +207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱",
           "example": "xxx",
           "member": "string",
@@ -212,6 +217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推送的API地址",
           "example": "xxx",
           "member": "string",
@@ -221,6 +227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量阈值",
           "example": "1",
           "member": "int64",
@@ -230,6 +237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行政区类型：1. 省份 2. 城市 3. 区",
           "example": "1",
           "member": "int64",
@@ -239,6 +247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "心跳移动距离阈值",
           "example": "1",
           "member": "int64",
@@ -248,6 +257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信号强度阈值",
           "example": "1",
           "member": "int64",
@@ -257,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "盲点时间阈值，天",
           "example": "1",
           "member": "int64",
@@ -266,6 +277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID集合",
           "example": "1",
           "member": "int64",
@@ -275,6 +287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资费计划",
           "example": "1",
           "member": "string",
@@ -302,6 +315,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "example": "xxx",
           "member": "string",
@@ -311,6 +325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动执行",
           "example": "1",
           "member": "int64",
@@ -320,6 +335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "心跳上报间隔(s)",
           "example": "3600",
           "member": "int64",
@@ -329,6 +345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启弱信号检测",
           "example": "1",
           "member": "int64",
@@ -338,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "弱信号阈值（-dbm）",
           "example": "-10",
           "member": "int64",
@@ -347,6 +365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启时延切换",
           "example": "1",
           "member": "int64",
@@ -356,6 +375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络时延阈值（ms）",
           "example": "50",
           "member": "int64",
@@ -365,6 +385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启假信号检测",
           "example": "1",
           "member": "int64",
@@ -374,6 +395,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "假信号检测IP字符串，用逗号分隔",
           "example": "www.baidu.com,144.144.144.144",
           "member": "string",
@@ -383,6 +405,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "假信号检测间隔（s）",
           "example": "60",
           "member": "int64",
@@ -392,6 +415,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启网络制式检测",
           "example": "1",
           "member": "int64",
@@ -401,6 +425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络回落制式 1 2G、 2 3G 、 3 2/3G",
           "example": "3",
           "member": "int64",
@@ -410,6 +435,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启移动检测",
           "example": "1",
           "member": "int64",
@@ -419,6 +445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启最优先运营商",
           "example": "1",
           "member": "int64",
@@ -428,6 +455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商",
           "example": "1",
           "member": "int64",
@@ -437,6 +465,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启最不优先运营商",
           "example": "1",
           "member": "int64",
@@ -446,6 +475,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最不优先运营商 1 移动、 2 联通、 3 电信",
           "example": "1",
           "member": "int64",
@@ -455,6 +485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最优先信号选取策略",
           "example": "1",
           "member": "int64",
@@ -482,6 +513,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "example": "xxx",
           "member": "string",
@@ -491,6 +523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "xxx",
           "member": "string",
@@ -518,6 +551,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "10010***10",
           "member": "int64",
@@ -545,6 +579,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -572,6 +607,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID",
           "example": "10010***10",
           "member": "int64",
@@ -598,6 +634,7 @@
       "document": "DescribeLink请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云兔卡ID",
           "example": "1000001",
           "member": "int64",
@@ -606,6 +643,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "具体的账号",
           "example": "xxxxx",
           "member": "string",
@@ -620,6 +658,7 @@
       "document": "DescribeLink返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云兔连接详细信息",
           "example": "无",
           "member": "LinkDetailInfo",
@@ -640,6 +679,7 @@
       "document": "DescribeLinks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云兔卡ID",
           "example": "10010***10",
           "member": "int64",
@@ -648,6 +688,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "运营商ICCID",
           "example": "84792**736",
           "member": "string",
@@ -656,6 +697,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设备码",
           "example": "****",
           "member": "string",
@@ -664,6 +706,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "卡片状态",
           "example": "1",
           "member": "uint64",
@@ -672,6 +715,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "运营商 1移动 2联通 3电信",
           "example": "1",
           "member": "uint64",
@@ -680,6 +724,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "标签ID",
           "example": "100101",
           "member": "uint64",
@@ -688,6 +733,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "策略ID",
           "example": "100101",
           "member": "uint64",
@@ -696,6 +742,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "设备在线状态 0 未激活 1 在线 2 离线",
           "example": "0",
           "member": "int64",
@@ -704,6 +751,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "标签ID 集合",
           "example": "无",
           "member": "int64",
@@ -712,6 +760,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "翻页大小, 默认翻页大小为10，最大数量为500",
           "example": "10",
           "member": "int64",
@@ -720,6 +769,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "翻页起始",
           "example": "0",
           "member": "int64",
@@ -734,6 +784,7 @@
       "document": "DescribeLinks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云兔连接响应信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LinkInfos",
@@ -754,6 +805,7 @@
       "document": "DescribeOrders请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "子订单ID",
           "example": "xxxxx",
           "member": "string",
@@ -762,6 +814,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "审批状态 0全部 1通过 2驳回 3待审核",
           "example": "xxxxx",
           "member": "int64",
@@ -770,6 +823,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "翻页大小",
           "example": "10",
           "member": "uint64",
@@ -778,6 +832,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "翻页偏移",
           "example": "1",
           "member": "uint64",
@@ -786,6 +841,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "开始时间,例如2022-06-30 00:00:00",
           "example": "2022-06-30 00:00:00",
           "member": "string",
@@ -794,6 +850,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "结束时间,例如2022-06-30 00:00:00",
           "example": "2022-06-30 00:00:00",
           "member": "string",
@@ -808,6 +865,7 @@
       "document": "DescribeOrders返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单列表",
           "example": "  无",
           "member": "Orders",
@@ -829,6 +887,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "10010***10",
           "member": "int64",
@@ -843,6 +902,7 @@
       "document": "DescribeRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略信息",
           "example": "无",
           "member": "RuleDetail",
@@ -864,6 +924,7 @@
       "document": "DescribeRules请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "10010***10",
           "member": "int64",
@@ -872,6 +933,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "[10101]",
           "member": "int64",
@@ -880,6 +942,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "名称",
           "example": "xxx",
           "member": "string",
@@ -888,6 +951,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "类型",
           "example": "101",
           "member": "int64",
@@ -896,6 +960,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否激活",
           "example": "1",
           "member": "int64",
@@ -904,6 +969,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "翻页大小",
           "example": "100",
           "member": "int64",
@@ -912,6 +978,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "翻页偏移",
           "example": "0",
           "member": "int64",
@@ -926,6 +993,7 @@
       "document": "DescribeRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自动化规则列表集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleInfos",
@@ -947,6 +1015,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -961,6 +1030,7 @@
       "document": "DescribeTactic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略信息",
           "example": "无",
           "member": "Tactic",
@@ -983,6 +1053,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -992,6 +1063,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "example": "xxxx",
           "member": "string",
@@ -1006,6 +1078,7 @@
       "document": "DescribeTactics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略集合信息",
           "example": "无",
           "member": "TacticInfos",
@@ -1028,6 +1101,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签名称",
           "example": "xxx",
           "member": "string",
@@ -1042,6 +1116,7 @@
       "document": "DescribeTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "列表",
           "example": "无",
           "member": "TagInfos",
@@ -1063,6 +1138,7 @@
       "document": "设备上报信息",
       "members": [
         {
+          "disabled": false,
           "document": "移动设备ID",
           "example": "8679******451",
           "member": "string",
@@ -1072,6 +1148,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "经度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "108.79345",
           "member": "string",
@@ -1081,6 +1158,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "维度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "37.2561",
           "member": "string",
@@ -1090,6 +1168,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商基站ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "784***27",
           "member": "string",
@@ -1099,6 +1178,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "小区CellID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3691",
           "member": "string",
@@ -1108,6 +1188,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "当前上报运营商ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8761***742",
           "member": "string",
@@ -1117,6 +1198,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "信号强度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-10",
           "member": "int64",
@@ -1126,6 +1208,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商: 1 移动 2 联通 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1135,6 +1218,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "当前设备策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000101",
           "member": "int64",
@@ -1144,6 +1228,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "心跳间隔,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "360000",
           "member": "int64",
@@ -1153,6 +1238,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网络延迟,单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
@@ -1162,6 +1248,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "高级日志启停状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1171,6 +1258,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "H26",
           "member": "string",
@@ -1180,6 +1268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3115",
           "member": "string",
@@ -1189,6 +1278,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1.0.1",
           "member": "string",
@@ -1198,6 +1288,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备刷新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:41+08:00",
           "member": "string",
@@ -1207,6 +1298,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网络环境: 0 正常 1 弱网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1216,6 +1308,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "每月第一次上报心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:41+08:00",
           "member": "string",
@@ -1231,6 +1324,7 @@
       "document": "云兔连接详细信息",
       "members": [
         {
+          "disabled": false,
           "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10010***10",
           "member": "int64",
@@ -1240,6 +1334,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1249,6 +1344,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1258,6 +1354,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1267,6 +1364,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
@@ -1276,6 +1374,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1285,6 +1384,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1294,6 +1394,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1303,6 +1404,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10010***10",
           "member": "int64",
@@ -1312,6 +1414,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1321,6 +1424,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1330,6 +1434,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -1339,6 +1444,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1348,6 +1454,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeviceReport",
@@ -1357,6 +1464,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -1366,6 +1474,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商ICCID信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TeleOperatorCard",
@@ -1375,6 +1484,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "云兔实际卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1111111",
           "member": "string",
@@ -1390,6 +1500,7 @@
       "document": "云兔连接基本信息",
       "members": [
         {
+          "disabled": false,
           "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10010***10",
           "member": "int64",
@@ -1399,6 +1510,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1408,6 +1520,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1417,6 +1530,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1426,6 +1540,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
@@ -1435,6 +1550,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1444,6 +1560,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1453,6 +1570,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1462,6 +1580,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10010***10",
           "member": "int64",
@@ -1471,6 +1590,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1480,6 +1600,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -1489,6 +1610,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -1498,6 +1620,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1507,6 +1630,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeviceReport",
@@ -1522,6 +1646,7 @@
       "document": "云兔连接信息集合",
       "members": [
         {
+          "disabled": false,
           "document": "总量",
           "example": "100",
           "member": "int64",
@@ -1531,6 +1656,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "云兔连接列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LinkInfo",
@@ -1547,6 +1673,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云兔ID",
           "example": "10010***10",
           "member": "int64",
@@ -1556,6 +1683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活高级日志 0 关闭 1激活",
           "example": "1",
           "member": "int64",
@@ -1582,6 +1710,7 @@
       "document": "ModifyLinkTactic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云兔ID",
           "example": "10010***10",
           "member": "int64",
@@ -1590,6 +1719,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -1617,6 +1747,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云兔ID",
           "example": "10010***10",
           "member": "int64",
@@ -1626,6 +1757,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运营商 1 移动 2 联通 3 电信",
           "example": "1",
           "member": "int64",
@@ -1653,6 +1785,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则名称",
           "example": "xxx",
           "member": "string",
@@ -1662,6 +1795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则类型：用量类(101 当月|102有效期内)、位置类(201行政区|202移动距离)、网络质量类(301网络盲点)",
           "example": "101",
           "member": "int64",
@@ -1671,6 +1805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活",
           "example": "true",
           "member": "bool",
@@ -1680,6 +1815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发动作：1 邮件 2 API请求 3 微信 4 停卡 5 地图标识为盲点",
           "example": "1",
           "member": "int64",
@@ -1689,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "10010***10",
           "member": "int64",
@@ -1698,6 +1835,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱",
           "example": "xxx",
           "member": "string",
@@ -1707,6 +1845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推送的API地址",
           "example": "xxx",
           "member": "string",
@@ -1716,6 +1855,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量阈值",
           "example": "1",
           "member": "int64",
@@ -1725,6 +1865,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行政区类型：1. 省份 2. 城市 3. 区",
           "example": "1",
           "member": "int64",
@@ -1734,6 +1875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "心跳移动距离阈值",
           "example": "1",
           "member": "int64",
@@ -1743,6 +1885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信号强度阈值",
           "example": "1",
           "member": "int64",
@@ -1752,6 +1895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID集合",
           "example": "1",
           "member": "int64",
@@ -1761,6 +1905,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资费计划",
           "example": "xxx",
           "member": "string",
@@ -1770,6 +1915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "具体的账号",
           "example": "xxxxx",
           "member": "string",
@@ -1797,6 +1943,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自动化规则ID",
           "example": "xxx",
           "member": "uint64",
@@ -1806,6 +1953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活",
           "example": "xxx",
           "member": "bool",
@@ -1832,6 +1980,7 @@
       "document": "ModifyTactic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略名称",
           "example": "xxx",
           "member": "string",
@@ -1840,6 +1989,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否自动执行",
           "example": "1",
           "member": "int64",
@@ -1848,6 +1998,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "心跳上报间隔(s)",
           "example": "3600",
           "member": "int64",
@@ -1856,6 +2007,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启弱信号检测",
           "example": "1",
           "member": "int64",
@@ -1864,6 +2016,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "弱信号阈值（-dbm）",
           "example": "-10",
           "member": "int64",
@@ -1872,6 +2025,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启时延切换",
           "example": "1",
           "member": "int64",
@@ -1880,6 +2034,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "网络时延阈值（ms）",
           "example": "50",
           "member": "int64",
@@ -1888,6 +2043,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启假信号检测",
           "example": "1",
           "member": "int64",
@@ -1896,6 +2052,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "假信号检测间隔（s）",
           "example": "60",
           "member": "int64",
@@ -1904,6 +2061,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启网络制式检测",
           "example": "1",
           "member": "int64",
@@ -1912,6 +2070,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "网络回落制式 1 2G、 2 3G 、 3 2/3G",
           "example": "3",
           "member": "int64",
@@ -1920,6 +2079,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启移动检测",
           "example": "1",
           "member": "int64",
@@ -1928,6 +2088,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -1936,6 +2097,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启最优先运营商",
           "example": "1",
           "member": "int64",
@@ -1944,6 +2106,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商",
           "example": "1",
           "member": "int64",
@@ -1952,6 +2115,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否开启最不优先运营商",
           "example": "1",
           "member": "int64",
@@ -1960,6 +2124,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "最不优先运营商 1 移动、 2 联通、 3 电信",
           "example": "1",
           "member": "int64",
@@ -1968,6 +2133,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否最优先信号选取策略",
           "example": "1",
           "member": "int64",
@@ -1976,6 +2142,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "假信号检测IP字符串，用逗号分隔",
           "example": "www.baidu.com,144.144.144.144",
           "member": "string",
@@ -2003,6 +2170,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "example": "xxx",
           "member": "string",
@@ -2012,6 +2180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID",
           "example": "10010***10",
           "member": "int64",
@@ -2021,6 +2190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "xxx",
           "member": "string",
@@ -2048,6 +2218,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "子订单ID",
           "example": "xxxxx",
           "member": "string",
@@ -2058,6 +2229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2068,6 +2240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单账户",
           "example": "1111111",
           "member": "string",
@@ -2078,6 +2251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "int64",
@@ -2088,6 +2262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行业代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2098,6 +2273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2108,6 +2284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2118,6 +2295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2128,6 +2306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "卡片规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2138,6 +2317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户订单备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2148,6 +2328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2158,6 +2339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "审批状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2168,6 +2350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发货状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2178,6 +2361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "审批备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2188,6 +2372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "退费订单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2204,6 +2389,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总数",
           "example": "1",
           "member": "int64",
@@ -2214,6 +2400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrderInfo",
@@ -2230,6 +2417,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云兔ID",
           "example": "10010***10",
           "member": "int64",
@@ -2239,6 +2427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "具体的账号",
           "example": "xxxxx",
           "member": "string",
@@ -2266,6 +2455,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则名称",
           "example": "xxx",
           "member": "string",
@@ -2276,6 +2466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "xxx",
           "member": "int64",
@@ -2286,6 +2477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2296,6 +2488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2306,6 +2499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2316,6 +2510,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "int64",
@@ -2326,6 +2521,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -2336,6 +2532,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2346,6 +2543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -2356,6 +2554,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -2366,6 +2565,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -2376,6 +2576,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2386,6 +2587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -2396,6 +2598,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-10",
           "member": "int64",
@@ -2406,6 +2609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2416,6 +2620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -2426,6 +2631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的资费计划\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
           "member": "string",
@@ -2442,6 +2648,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则名称",
           "example": "xxx",
           "member": "string",
@@ -2452,6 +2659,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "xxx",
           "member": "int64",
@@ -2462,6 +2670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2472,6 +2681,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2482,6 +2692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2492,6 +2703,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "int64",
@@ -2502,6 +2714,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -2512,6 +2725,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2522,6 +2736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -2532,6 +2747,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -2542,6 +2758,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -2552,6 +2769,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2562,6 +2780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -2572,6 +2791,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-10",
           "member": "int64",
@@ -2582,6 +2802,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2592,6 +2813,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[10001]",
           "member": "int64",
@@ -2602,6 +2824,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资费信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2618,6 +2841,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总量",
           "example": "100",
           "member": "int64",
@@ -2628,6 +2852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Rule",
@@ -2644,6 +2869,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略ID",
           "example": "10010***10",
           "member": "int64",
@@ -2654,6 +2880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2664,6 +2891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动执行策略",
           "example": "1",
           "member": "int64",
@@ -2674,6 +2902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备上报信息间隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3600",
           "member": "int64",
@@ -2684,6 +2913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启弱信号检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2694,6 +2924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "弱信号阈值（-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-10",
           "member": "int64",
@@ -2704,6 +2935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "忘了时延切换\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2714,6 +2946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时延阈值（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
@@ -2724,6 +2957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启假信号检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2734,6 +2968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "假信号检测IP字符串，用逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.baidu.com",
           "member": "string",
@@ -2744,6 +2979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "假信号检测间隔（s）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -2754,6 +2990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启网络制式检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2764,6 +3001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络回落制式 1: 2G、 2: 3G 、 3: 2/3G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -2774,6 +3012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启移动检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2784,6 +3023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "example": "xxx",
           "member": "string",
@@ -2794,6 +3034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启最优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2804,6 +3045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2814,6 +3056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启最不优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2824,6 +3067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最不优先运营商 1 移动、 2 联通、 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2834,6 +3078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启最优先信号选取策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2850,6 +3095,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总量",
           "example": "100",
           "member": "int64",
@@ -2860,6 +3106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tactic",
@@ -2876,6 +3123,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签名称",
           "example": "tag1",
           "member": "string",
@@ -2886,6 +3134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID",
           "example": "10002",
           "member": "int64",
@@ -2896,6 +3145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -2906,6 +3156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:47:59+08:00",
           "member": "string",
@@ -2916,6 +3167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:48:02+08:00",
           "member": "string",
@@ -2932,6 +3184,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总量",
           "example": "100",
           "member": "int64",
@@ -2942,6 +3195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -2958,6 +3212,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开户时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2968,6 +3223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-09T15:44:44+08:00",
           "member": "string",
@@ -2978,6 +3234,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运营商ICCID",
           "example": "898************672",
           "member": "string",
@@ -2988,6 +3245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云兔卡ID",
           "example": "12345678901",
           "member": "int64",
@@ -2998,6 +3256,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "180*********9431",
           "member": "string",
@@ -3008,6 +3267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "移动用户识别码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "871**************012",
           "member": "string",
@@ -3018,6 +3278,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运营商: 1 移动 2 联通 3 电信",
           "example": "3",
           "member": "int64",

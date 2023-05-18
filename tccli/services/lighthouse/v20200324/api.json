@@ -337,7 +337,7 @@
       "status": "online"
     },
     "DetachCcn": {
-      "document": "本接口 (AttachCcn) 用于解除与云联网的关联。",
+      "document": "本接口 (DetachCcn) 用于解除与云联网的关联。",
       "input": "DetachCcnRequest",
       "name": "解关联云联网",
       "output": "DetachCcnResponse",
@@ -572,6 +572,7 @@
       "document": "ApplyDiskBackup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID，可通过[DescribeDisks](https://cloud.tencent.com/document/api/1207/66093)接口查询。",
           "example": "lhdisk-qtovvuzq",
           "member": "string",
@@ -580,6 +581,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。",
           "example": "lhbak-ounanbtt ",
           "member": "string",
@@ -607,6 +609,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-k31c771o",
           "member": "string",
@@ -616,6 +619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "快照 ID。",
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
@@ -643,6 +647,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对 ID 列表。每次请求批量密钥对的上限为 100。",
           "example": "[\"lhkp-f7rjie1q\\n\"]",
           "member": "string",
@@ -652,6 +657,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -679,6 +685,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云联网实例ID。",
           "example": "ccn-f49l6u0z",
           "member": "string",
@@ -706,6 +713,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "\"lhins-anxwfvxh\"",
           "member": "string",
@@ -716,6 +724,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例已挂载弹性云盘数量",
           "example": "1",
           "member": "int64",
@@ -726,6 +735,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可挂载弹性云盘数量",
           "example": "5",
           "member": "int64",
@@ -741,6 +751,7 @@
       "document": "AttachDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-5vmz00i3\"]",
           "member": "string",
@@ -749,6 +760,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "实例ID。",
           "example": "lhins-qg08np8l",
           "member": "string",
@@ -757,6 +769,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -784,6 +797,7 @@
       "members": [
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "待挂载的实例ID。指定的实例必须处于“运行中”状态。",
           "example": "lhins-xxxxxx",
           "member": "string",
@@ -793,6 +807,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。",
           "example": "/data/disk",
           "member": "string",
@@ -802,6 +817,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。",
           "example": "ext4",
           "member": "string",
@@ -816,6 +832,7 @@
       "document": "描述了镜像信息。",
       "members": [
         {
+          "disabled": false,
           "document": "镜像 ID  ，是 Blueprint 的唯一标识。",
           "example": "lhbp-5exe07sc",
           "member": "string",
@@ -825,6 +842,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像对外展示标题。",
           "example": "Discuz! Q",
           "member": "string",
@@ -834,6 +852,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像对外展示版本。",
           "example": "1.0.0",
           "member": "string",
@@ -843,6 +862,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "discuzq",
           "member": "string",
@@ -852,6 +872,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "操作系统名称。",
           "example": "CentOS 7.6 64bit",
           "member": "string",
@@ -861,6 +882,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "操作系统平台。",
           "example": "CENTOS",
           "member": "string",
@@ -870,6 +892,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
           "example": "LINUX_UNIX",
           "member": "string",
@@ -879,6 +902,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像类型，如 APP_OS、PURE_OS、PRIVATE。",
           "example": "APP_OS",
           "member": "string",
@@ -888,6 +912,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像图片 URL。",
           "example": "无",
           "member": "string",
@@ -897,6 +922,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像所需系统盘大小，单位 GB。",
           "example": "20",
           "member": "int64",
@@ -906,6 +932,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像状态。",
           "example": "NORMAL",
           "member": "string",
@@ -915,6 +942,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-02T09:16:16Z",
           "member": "datetime_iso",
@@ -924,6 +952,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "镜像名称。",
           "example": "discuzq",
           "member": "string",
@@ -933,6 +962,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像是否支持自动化助手。",
           "example": "true",
           "member": "bool",
@@ -942,6 +972,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像所需内存大小, 单位: GB",
           "example": "1",
           "member": "int64",
@@ -951,6 +982,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "img-cs2rrmp0",
           "member": "string",
@@ -960,6 +992,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "官方网站Url。",
           "example": "\"\"",
           "member": "string",
@@ -969,6 +1002,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "指导文章Url。",
           "example": "\"\"",
           "member": "string",
@@ -978,6 +1012,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像关联使用场景Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
@@ -987,6 +1022,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Docker版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.10.5",
           "member": "string",
@@ -1003,6 +1039,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "镜像信息。",
           "member": "Blueprint",
           "name": "Blueprint",
@@ -1012,6 +1049,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件列表。",
           "member": "Software",
           "name": "SoftwareSet",
@@ -1021,6 +1059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "member": "string",
           "name": "InstanceId",
@@ -1035,6 +1074,7 @@
       "document": "BlueprintPrice\t自定义镜像的价格参数。",
       "members": [
         {
+          "disabled": false,
           "document": "镜像单价，原价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -1044,6 +1084,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像总价，原价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -1053,6 +1094,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折扣。",
           "example": "100",
           "member": "float",
@@ -1062,6 +1104,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像折扣后总价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -1077,6 +1120,7 @@
       "document": "套餐信息。",
       "members": [
         {
+          "disabled": false,
           "document": "套餐 ID。",
           "example": "bundle_gen_01",
           "member": "string",
@@ -1086,6 +1130,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "内存大小，单位 GB。",
           "example": "1",
           "member": "int64",
@@ -1095,6 +1140,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -1104,6 +1150,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "系统盘大小。",
           "example": "40",
           "member": "int64",
@@ -1113,6 +1160,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每月网络流量，单位 Gb。",
           "example": "300",
           "member": "int64",
@@ -1122,6 +1170,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否支持 Linux/Unix 平台。",
           "example": "true",
           "member": "bool",
@@ -1131,6 +1180,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否支持 Windows 平台。",
           "example": "true",
           "member": "bool",
@@ -1140,6 +1190,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "套餐当前单位价格信息。",
           "example": " {           \"InstancePrice\": {             \"OriginalBundlePrice",
           "member": "Price",
@@ -1149,6 +1200,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CPU 核数。",
           "example": "1",
           "member": "int64",
@@ -1158,6 +1210,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "峰值带宽，单位 Mbps。",
           "example": "3",
           "member": "uint64",
@@ -1167,6 +1220,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "网络计费类型。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
@@ -1176,6 +1230,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "套餐售卖状态,取值:‘AVAILABLE’(可用) , ‘SOLD_OUT’(售罄)",
           "example": "SOLD_OUT",
           "member": "string",
@@ -1185,6 +1240,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "套餐类型。\n取值范围：\n<li>STARTER_BUNDLE：入门型</li>\n<li>GENERAL_BUNDLE：通用型</li>\n<li>ENTERPRISE_BUNDLE：企业型</li>\n<li>STORAGE_BUNDLE：存储型</li>\n<li>EXCLUSIVE_BUNDLE：专属型</li>\n<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>\n<li>CAREFREE_BUNDLE：无忧型</li>\n<li>BEFAST_BUNDLE：蜂驰型 </li>",
           "example": "GENERAL_BUNDLE",
           "member": "string",
@@ -1194,6 +1250,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "套餐类型描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "通用型",
           "member": "string",
@@ -1203,6 +1260,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "套餐展示标签.\n取值范围:\n\"ACTIVITY\": 活动套餐,\n\"NORMAL\": 普通套餐\n\"CAREFREE\": 无忧套餐",
           "example": "NORMAL",
           "member": "string",
@@ -1219,6 +1277,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云联网ID。",
           "example": "ccn-f49l6u0z",
           "member": "string",
@@ -1229,6 +1288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联实例CIDR。",
           "example": " [\"10.0.0.0/16\"]",
           "member": "string",
@@ -1239,6 +1299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联实例状态：\n\n•  PENDING：申请中\n•  ACTIVE：已连接\n•  EXPIRED：已过期\n•  REJECTED：已拒绝\n•  DELETED：已删除\n•  FAILED：失败的（2小时后将异步强制解关联）\n•  ATTACHING：关联中\n•  DETACHING：解关联中\n•  DETACHFAILED：解关联失败（2小时后将异步强制解关联）",
           "example": "PENDING",
           "member": "string",
@@ -1249,6 +1310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-05-08 17:21:05",
           "member": "datetime",
@@ -1259,6 +1321,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "Lighthouse attach ccn instance",
           "member": "string",
@@ -1275,6 +1338,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "环境变量Key",
           "example": "K1",
           "member": "string",
@@ -1285,6 +1349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境变量值",
           "example": "V1",
           "member": "string",
@@ -1300,6 +1365,7 @@
       "document": "CreateBlueprint请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "镜像名称。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
@@ -1308,6 +1374,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "镜像描述。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
@@ -1316,6 +1383,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "需要制作镜像的实例ID。",
           "example": "lhins-aaaabbbb",
           "member": "string",
@@ -1324,6 +1392,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否执行强制关机以制作镜像。\n取值范围：\nTrue：表示关机之后制作镜像\nFalse：表示开机状态制作镜像\n默认取值：True\n开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
           "example": "True",
           "member": "bool",
@@ -1338,6 +1407,7 @@
       "document": "CreateBlueprint返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义镜像ID。",
           "example": "lhbp-xkeh87da",
           "member": "string",
@@ -1358,6 +1428,7 @@
       "document": "CreateDiskBackup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘 ID。当前只支持数据盘创建备份点。",
           "example": "lhdisk-p1zflrif",
           "member": "string",
@@ -1366,6 +1437,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘备份点名称，最大长度90。",
           "example": "disk-backup-01",
           "member": "string",
@@ -1380,6 +1452,7 @@
       "document": "CreateDiskBackup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份点ID。",
           "example": "lhbak-g7w4rd71",
           "member": "string",
@@ -1400,6 +1473,7 @@
       "document": "CreateDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可用区。可通过[DescribeZones](https://cloud.tencent.com/document/product/1207/57513)返回值中的Zone获取。",
           "example": "ap-hongkong-2",
           "member": "string",
@@ -1408,6 +1482,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘大小, 单位: GB。",
           "example": "20",
           "member": "int64",
@@ -1416,6 +1491,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "云硬盘介质类型。取值: \"CLOUD_PREMIUM\"(高性能云盘), \"CLOUD_SSD\"(SSD云硬盘)。",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -1424,6 +1500,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "DiskChargePrepaid",
@@ -1432,6 +1509,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "云硬盘名称。最大长度60。",
           "example": "test",
           "member": "string",
@@ -1440,6 +1518,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘个数。取值范围: [1, 30]。默认值: 1。",
           "example": "1",
           "member": "int64",
@@ -1448,6 +1527,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
           "example": "1",
           "member": "int64",
@@ -1456,6 +1536,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
           "member": "bool",
@@ -1464,6 +1545,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "自动挂载并初始化数据盘。",
           "example": "无",
           "member": "AutoMountConfiguration",
@@ -1478,6 +1560,7 @@
       "document": "CreateDisks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当通过本接口来创建云硬盘时会返回该参数，表示一个或多个云硬盘ID。返回云硬盘ID列表并不代表云硬盘创建成功。\n\n可根据 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询返回的DiskSet中对应云硬盘的ID的状态来判断创建是否完成；如果云硬盘状态由“PENDING”变为“UNATTACHED”或“ATTACHED”，则为创建成功。",
           "example": "无",
           "member": "string",
@@ -1499,6 +1582,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-aglzynfg",
           "member": "string",
@@ -1508,6 +1592,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则列表。",
           "example": "无",
           "member": "FirewallRule",
@@ -1517,6 +1602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "无",
           "member": "uint64",
@@ -1543,6 +1629,7 @@
       "document": "CreateInstanceSnapshot请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "需要创建快照的实例 ID。",
           "example": "lhins-k31c771o",
           "member": "string",
@@ -1551,6 +1638,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "快照名称，最长为 60 个字符。",
           "example": "snap_20200903",
           "member": "string",
@@ -1565,6 +1653,7 @@
       "document": "CreateInstanceSnapshot返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "快照 ID。",
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
@@ -1585,6 +1674,7 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
           "example": "bundle_gen_03",
           "member": "string",
@@ -1593,6 +1683,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
           "example": "lhbp-g0tn7djh",
           "member": "string",
@@ -1601,6 +1692,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -1609,6 +1701,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "实例显示名称。",
           "example": "mylighthouse",
           "member": "string",
@@ -1617,6 +1710,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
           "example": "1",
           "member": "uint64",
@@ -1625,6 +1719,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "可用区列表。默认为随机可用区",
           "example": "[\"ap-beijing-1\"]",
           "member": "string",
@@ -1633,6 +1728,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "false",
           "member": "bool",
@@ -1641,6 +1737,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "无",
           "member": "string",
@@ -1649,6 +1746,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
           "example": "无",
           "member": "LoginConfiguration",
@@ -1657,6 +1755,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "要创建的容器配置列表。",
           "example": "无",
           "member": "DockerContainerConfiguration",
@@ -1665,6 +1764,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
           "member": "bool",
@@ -1679,6 +1779,7 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例ID。返回实例ID列表并不代表实例创建成功。\n\n可根据 DescribeInstances 接口查询返回的InstancesSet中对应实例的ID的状态来判断创建是否完成；如果实例状态由“启动中”变为“运行中”，则为创建成功。",
           "example": "无",
           "member": "string",
@@ -1700,6 +1801,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。",
           "example": "test_create_1",
           "member": "string",
@@ -1714,6 +1816,7 @@
       "document": "CreateKeyPair返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥对信息。",
           "example": "无",
           "member": "KeyPair",
@@ -1736,6 +1839,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID。",
           "example": "lhdisk-f3vgfci1",
           "member": "string",
@@ -1746,6 +1850,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘单价。",
           "example": "0.8",
           "member": "float",
@@ -1756,6 +1861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘总价。",
           "example": "0.8",
           "member": "float",
@@ -1766,6 +1872,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "折扣。",
           "example": "0.5",
           "member": "float",
@@ -1776,6 +1883,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "折后总价。",
           "example": "0.4",
           "member": "float",
@@ -1786,6 +1894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据盘挂载的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lhins-abcdef",
           "member": "string",
@@ -1801,6 +1910,7 @@
       "document": "DeleteBlueprints请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "镜像ID列表。镜像ID，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
@@ -1827,6 +1937,7 @@
       "document": "DeleteDiskBackups请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘备份点ID列表，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。",
           "example": "[\"lhbak-ounanbtt\\n\"]",
           "member": "string",
@@ -1854,6 +1965,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-aglzynfg",
           "member": "string",
@@ -1863,6 +1975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则列表。",
           "example": "无",
           "member": "FirewallRule",
@@ -1872,6 +1985,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "1",
           "member": "uint64",
@@ -1899,6 +2013,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 10。",
           "example": "[\"lhkp-1234abcd\\r\\n\"]",
           "member": "string",
@@ -1926,6 +2041,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要删除的快照 ID 列表，可通过 DescribeSnapshots 查询。",
           "example": "[\"lhsnap-nv6aqcv6\\n\"]",
           "member": "string",
@@ -1953,6 +2069,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "限制操作名。",
           "member": "string",
           "name": "Action",
@@ -1962,6 +2079,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制操作消息码。",
           "member": "string",
           "name": "Code",
@@ -1971,6 +2089,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制操作消息。",
           "member": "string",
           "name": "Message",
@@ -1986,6 +2105,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景ID列表。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
@@ -1995,6 +2115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -2004,6 +2125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -2018,6 +2140,7 @@
       "document": "DescribeAllScenes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "使用场景详细信息列表。",
           "example": "无",
           "member": "SceneInfo",
@@ -2027,6 +2150,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "使用场景详细信息总数量。",
           "example": "1",
           "member": "int64",
@@ -2049,6 +2173,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表，当前最多支持 1 个。",
           "example": "[\"lhins-f4s49nap\\r\\n\"]",
           "member": "string",
@@ -2063,6 +2188,7 @@
       "document": "DescribeBlueprintInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的镜像实例数量。",
           "example": "1",
           "member": "int64",
@@ -2072,6 +2198,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像实例列表信息。",
           "example": "无",
           "member": "BlueprintInstance",
@@ -2093,6 +2220,7 @@
       "document": "DescribeBlueprints请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "镜像 ID 列表。",
           "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
@@ -2101,6 +2229,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -2109,6 +2238,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "1",
           "member": "int64",
@@ -2117,6 +2247,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds 和 Filters 。",
           "example": " [         {             \"Name\": \"blueprint-type\",             \"",
           "member": "Filter",
@@ -2131,6 +2262,7 @@
       "document": "DescribeBlueprints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的镜像数量。",
           "example": "1",
           "member": "int64",
@@ -2139,6 +2271,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像详细信息列表。",
           "example": " [             {                 \"BlueprintId\": \"lhbp-5e8807sc\",",
           "member": "Blueprint",
@@ -2159,6 +2292,7 @@
       "document": "DescribeBundleDiscount请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "套餐 ID。",
           "example": "bundle_bw_small1_1",
           "member": "string",
@@ -2173,6 +2307,7 @@
       "document": "DescribeBundleDiscount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "币种：CNY人民币，USD 美元。",
           "example": "CNY",
           "member": "string",
@@ -2181,6 +2316,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
           "example": "无",
           "member": "DiscountDetail",
@@ -2201,6 +2337,7 @@
       "document": "DescribeBundles请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "套餐 ID 列表。",
           "example": "bundle_ntp_small1_500",
           "member": "string",
@@ -2209,6 +2346,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -2217,6 +2355,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -2225,6 +2364,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2233,6 +2373,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "可用区列表。默认为全部可用区。",
           "example": "无",
           "member": "string",
@@ -2247,6 +2388,7 @@
       "document": "DescribeBundles返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "套餐详细信息列表。",
           "example": "无",
           "member": "Bundle",
@@ -2255,6 +2397,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合要求的套餐总数，用于分页展示。",
           "example": "2",
           "member": "int64",
@@ -2280,6 +2423,7 @@
       "document": "DescribeCcnAttachedInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云联网关联的实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CcnAttachedInstance",
@@ -2302,6 +2446,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点 ID 列表, 可通过 DescribeDiskBackups 接口查询。",
           "example": "[\"lhbak-nuen5foj\\n\"] ",
           "member": "string",
@@ -2316,6 +2461,7 @@
       "document": "DescribeDiskBackupsDeniedActions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘备份点操作限制列表详细信息。",
           "example": "无",
           "member": "DiskBackupDeniedActions",
@@ -2337,6 +2483,7 @@
       "document": "DescribeDiskBackups请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。",
           "example": "[\"lhbak-nuen5foj\"]",
           "member": "string",
@@ -2345,6 +2492,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup)下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2353,6 +2501,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -2361,6 +2510,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "1",
           "member": "int64",
@@ -2375,6 +2525,7 @@
       "document": "DescribeDiskBackups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘备份点的数量。",
           "example": "1",
           "member": "int64",
@@ -2383,6 +2534,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "云硬盘备份点信息列表。",
           "example": "无",
           "member": "DiskBackup",
@@ -2404,6 +2556,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤器列表。\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
@@ -2418,6 +2571,7 @@
       "document": "DescribeDiskConfigs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘配置列表。",
           "example": "无",
           "member": "DiskConfig",
@@ -2439,6 +2593,7 @@
       "document": "DescribeDiskDiscount请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘类型, 取值: \"CLOUD_PREMIUM\"。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -2447,6 +2602,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云硬盘大小。",
           "example": "50",
           "member": "int64",
@@ -2455,6 +2611,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
           "example": "1",
           "member": "int64",
@@ -2469,6 +2626,7 @@
       "document": "DescribeDiskDiscount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "币种：CNY人民币，USD 美元。",
           "example": "CNY",
           "member": "string",
@@ -2477,6 +2635,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
           "example": "无",
           "member": "DiscountDetail",
@@ -2498,6 +2657,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
@@ -2512,6 +2672,7 @@
       "document": "DescribeDisksDeniedActions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘操作限制列表详细信息。",
           "example": "无",
           "member": "DiskDeniedActions",
@@ -2533,6 +2694,7 @@
       "document": "DescribeDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
@@ -2541,6 +2703,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2549,6 +2712,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "100",
           "member": "int64",
@@ -2557,6 +2721,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -2565,6 +2730,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "云硬盘列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据云硬盘的创建时间排序。 \"EXPIRED_TIME\"：依据云硬盘的到期时间排序。\"DISK_SIZE\"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。",
           "example": "CREATED_FIELD",
           "member": "string",
@@ -2573,6 +2739,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "输出云硬盘列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列。",
           "example": "ASC",
           "member": "string",
@@ -2587,6 +2754,7 @@
       "document": "DescribeDisks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘信息列表。",
           "example": "无",
           "member": "Disk",
@@ -2595,6 +2763,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的云硬盘信息数量。",
           "example": "10",
           "member": "int64",
@@ -2616,6 +2785,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
@@ -2625,6 +2795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
@@ -2634,6 +2805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -2648,6 +2820,7 @@
       "document": "DescribeDisksReturnable返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可退还云硬盘详细信息列表。",
           "example": "无",
           "member": "DiskReturnable",
@@ -2657,6 +2830,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的云硬盘数量。",
           "example": "1",
           "member": "int64",
@@ -2679,6 +2853,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-aglzynfg",
           "member": "string",
@@ -2688,6 +2863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -2697,6 +2873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -2711,6 +2888,7 @@
       "document": "DescribeFirewallRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的防火墙规则数量。",
           "example": "7",
           "member": "int64",
@@ -2720,6 +2898,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "防火墙规则详细信息列表。",
           "example": "无",
           "member": "FirewallRuleInfo",
@@ -2729,6 +2908,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "防火墙版本号。",
           "example": "1",
           "member": "uint64",
@@ -2755,6 +2935,7 @@
       "document": "DescribeFirewallRulesTemplate返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的防火墙规则数量。",
           "example": "9",
           "member": "int64",
@@ -2764,6 +2945,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "防火墙规则详细信息列表。",
           "example": "无",
           "member": "FirewallRuleInfo",
@@ -2786,6 +2968,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘\n- FIREWALL_RULE 防火墙规则",
           "example": "[\"GENERAL_BUNDLE_INSTANCE\\n\"]",
           "member": "string",
@@ -2800,6 +2983,7 @@
       "document": "DescribeGeneralResourceQuotas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "通用资源配额详细信息列表。",
           "example": "无",
           "member": "GeneralResourceQuota",
@@ -2822,6 +3006,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "lhins-j4liwha8",
           "member": "string",
@@ -2836,6 +3021,7 @@
       "document": "DescribeInstanceLoginKeyPairAttribute返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否允许使用默认密钥对登录，YES：允许登录 NO：禁止登录。",
           "example": "NO",
           "member": "string",
@@ -2858,6 +3044,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-ruy9d2tw",
           "member": "string",
@@ -2872,6 +3059,7 @@
       "document": "DescribeInstanceVncUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例的管理终端地址。",
           "example": "wss%3A%2F%2Fusevnc.qcloud.com%3A443%2Fvnc%3Fs%3D",
           "member": "string",
@@ -2894,6 +3082,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -2908,6 +3097,7 @@
       "document": "DescribeInstancesDeniedActions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例操作限制列表详细信息。",
           "example": "无",
           "member": "InstanceDeniedActions",
@@ -2930,6 +3120,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表。",
           "example": "[\"lhins-anxwfvxh\"]",
           "member": "string",
@@ -2944,6 +3135,7 @@
       "document": "DescribeInstancesDiskNum返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "挂载信息列表",
           "example": "无",
           "member": "AttachDetail",
@@ -2953,6 +3145,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "挂载信息数量",
           "example": "1",
           "member": "int64",
@@ -2974,6 +3167,7 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
           "example": "无",
           "member": "string",
@@ -2982,6 +3176,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n<li>tag-key</li>按照【标签键】进行过滤。\n类型：String\n必选：否\n<li>tag-value</li>按照【标签值】进行过滤。\n类型：String\n必选：否\n<li> tag:tag-key</li>按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2990,6 +3185,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -2998,6 +3194,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "1",
           "member": "int64",
@@ -3012,6 +3209,7 @@
       "document": "DescribeInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的实例数量。",
           "example": "1",
           "member": "int64",
@@ -3020,6 +3218,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例详细信息列表。",
           "example": "无",
           "member": "Instance",
@@ -3041,6 +3240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-xusdke45\\n\"]",
           "member": "string",
@@ -3050,6 +3250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3059,6 +3260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -3073,6 +3275,7 @@
       "document": "DescribeInstancesReturnable返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的实例数量。",
           "example": "2",
           "member": "int64",
@@ -3082,6 +3285,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "可退还实例详细信息列表。",
           "example": "无",
           "member": "InstanceReturnable",
@@ -3104,6 +3308,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "无",
           "member": "string",
@@ -3113,6 +3318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3122,6 +3328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "2",
           "member": "int64",
@@ -3136,6 +3343,7 @@
       "document": "DescribeInstancesTrafficPackages返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的实例流量包详情数量。",
           "example": "2",
           "member": "int64",
@@ -3145,6 +3353,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例流量包详情列表。",
           "example": "无",
           "member": "InstanceTrafficPackage",
@@ -3167,6 +3376,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对 ID 列表。",
           "example": "[\"lhkp-omd12oc1\\r\\n\"]",
           "member": "string",
@@ -3176,6 +3386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3185,6 +3396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -3194,6 +3406,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤器列表。\n<li>key-id</li>按照【密钥对ID】进行过滤。\n类型：String\n必选：否\n<li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。",
           "example": "[{\"Name\":\"key-name\",\"Values\":[\"k1\"]}]",
           "member": "Filter",
@@ -3208,6 +3421,7 @@
       "document": "DescribeKeyPairs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的密钥对数量。",
           "example": "1",
           "member": "int64",
@@ -3217,6 +3431,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥对详细信息列表。",
           "example": "无",
           "member": "KeyPair",
@@ -3239,6 +3454,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-f4s3n38h",
           "member": "string",
@@ -3248,6 +3464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
           "example": "无",
           "member": "Filter",
@@ -3257,6 +3474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -3266,6 +3484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -3280,6 +3499,7 @@
       "document": "DescribeModifyInstanceBundles返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的套餐数量。",
           "example": "3",
           "member": "int64",
@@ -3289,6 +3509,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "变更套餐详细信息。",
           "example": "无",
           "member": "ModifyBundle",
@@ -3315,6 +3536,7 @@
       "document": "DescribeRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "地域数量。",
           "example": "4",
           "member": "int64",
@@ -3324,6 +3546,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "地域信息列表。",
           "example": "无",
           "member": "RegionInfo",
@@ -3346,6 +3569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "lhins-383nzmm1",
           "member": "string",
@@ -3355,6 +3579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -3364,6 +3589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -3373,6 +3599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
           "example": "无",
           "member": "Filter",
@@ -3387,6 +3614,7 @@
       "document": "DescribeResetInstanceBlueprints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的镜像数量。",
           "example": "2",
           "member": "int64",
@@ -3396,6 +3624,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像重置信息列表",
           "example": "无",
           "member": "ResetInstanceBlueprint",
@@ -3418,6 +3647,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景ID列表。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
@@ -3427,6 +3657,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3436,6 +3667,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -3450,6 +3682,7 @@
       "document": "DescribeScenes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "使用场景列表。",
           "example": "无",
           "member": "Scene",
@@ -3459,6 +3692,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "使用场景总数量。",
           "example": "1",
           "member": "int64",
@@ -3481,6 +3715,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "快照 ID 列表, 可通过 DescribeSnapshots 查询。",
           "example": "[\"lhsnap-nv6aqcv6\\n\"]",
           "member": "string",
@@ -3495,6 +3730,7 @@
       "document": "DescribeSnapshotsDeniedActions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "快照操作限制列表详细信息。",
           "example": "无",
           "member": "SnapshotDeniedActions",
@@ -3517,6 +3753,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要查询快照的 ID 列表。\n参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
@@ -3526,6 +3763,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -3535,6 +3773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3544,6 +3783,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "1",
           "member": "int64",
@@ -3558,6 +3798,7 @@
       "document": "DescribeSnapshots返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "快照的数量。",
           "example": "1",
           "member": "int64",
@@ -3567,6 +3808,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "快照的详情列表。",
           "example": "无",
           "member": "Snapshot",
@@ -3589,6 +3831,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区列表排序的依据字段。取值范围：\n<li>ZONE：依据可用区排序。\n<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。\n默认按可用区排序。",
           "example": "\"ZONE\"",
           "member": "string",
@@ -3598,6 +3841,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输出可用区列表的排列顺序。取值范围：\n<li>ASC：升序排列。 \n<li>DESC：降序排列。\n默认按升序排列。",
           "example": "\"DESC\"",
           "member": "string",
@@ -3612,6 +3856,7 @@
       "document": "DescribeZones返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可用区数量",
           "example": "1",
           "member": "int64",
@@ -3621,6 +3866,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "可用区详细信息列表",
           "example": "无",
           "member": "ZoneInfo",
@@ -3642,7 +3888,7 @@
       "document": "DetachCcn请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "云联网实例ID。",
           "example": "ccn-f49l6u0z",
           "member": "string",
@@ -3670,6 +3916,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
@@ -3697,6 +3944,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表云硬盘备份点配额收费项。</li>",
           "example": "DiskSpace",
           "member": "string",
@@ -3707,6 +3955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘计费项维度单价。",
           "example": "1.1",
           "member": "float",
@@ -3717,6 +3966,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘计费项维度总价。",
           "example": "2.2",
           "member": "float",
@@ -3727,6 +3977,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘在计费项维度折扣。",
           "example": "0.8",
           "member": "float",
@@ -3737,6 +3988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘在计费项维度折后总价。",
           "example": "2.1",
           "member": "float",
@@ -3753,6 +4005,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对 ID 列表。每次请求批量密钥对的上限为 100。",
           "example": "[\"lhkp-f7rjie1q\\n\"]",
           "member": "string",
@@ -3762,6 +4015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -3788,6 +4042,7 @@
       "document": "套餐折扣详情（仅用于控制台调用询价相关接口返回）。",
       "members": [
         {
+          "disabled": false,
           "document": "计费时长。",
           "example": "无",
           "member": "int64",
@@ -3797,6 +4052,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计费单元。",
           "example": "无",
           "member": "string",
@@ -3806,6 +4062,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总价。",
           "example": "无",
           "member": "float",
@@ -3815,6 +4072,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折后总价。",
           "example": "无",
           "member": "float",
@@ -3824,6 +4082,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折扣。",
           "example": "无",
           "member": "float",
@@ -3833,6 +4092,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "具体折扣详情。",
           "example": "无",
           "member": "PolicyDetail",
@@ -3848,6 +4108,7 @@
       "document": "磁盘信息",
       "members": [
         {
+          "disabled": false,
           "document": "磁盘ID",
           "example": "lhdisk-p1zflrif",
           "member": "string",
@@ -3857,6 +4118,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "lhins-anxwfvxh",
           "member": "string",
@@ -3866,6 +4128,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -3875,6 +4138,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘名称",
           "example": "disk-name",
           "member": "string",
@@ -3884,6 +4148,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘类型",
           "example": "DATA_DISK",
           "member": "string",
@@ -3893,6 +4158,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘介质类型",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -3902,6 +4168,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘付费类型",
           "example": "PREPAID",
           "member": "string",
@@ -3911,6 +4178,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘大小",
           "example": "20",
           "member": "int64",
@@ -3920,6 +4188,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "续费标识",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
@@ -3929,6 +4198,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：未挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
@@ -3938,6 +4208,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘挂载状态",
           "example": "False",
           "member": "bool",
@@ -3947,6 +4218,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否随实例释放",
           "example": "False",
           "member": "bool",
@@ -3956,6 +4228,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上一次操作",
           "example": "CreateDisks",
           "member": "string",
@@ -3965,6 +4238,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上一次操作状态",
           "example": "SUCCESS",
           "member": "string",
@@ -3974,6 +4248,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上一次请求ID",
           "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
           "member": "string",
@@ -3983,6 +4258,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
@@ -3992,6 +4268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
@@ -4001,6 +4278,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
@@ -4010,6 +4288,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "云硬盘的已有备份点数量。",
           "example": "1",
           "member": "int64",
@@ -4019,6 +4298,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "云硬盘的备份点配额数量。",
           "example": "1",
           "member": "int64",
@@ -4035,6 +4315,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点ID。",
           "example": "lhbak-nuen5foj",
           "member": "string",
@@ -4045,6 +4326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>",
           "example": "DATA_DISK",
           "member": "string",
@@ -4055,6 +4337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建此云硬盘备份点的云硬盘 ID。",
           "example": "lhdisk-nbebddz8",
           "member": "string",
@@ -4065,6 +4348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建此云硬盘备份点的云硬盘大小，单位 GB。",
           "example": "200",
           "member": "int64",
@@ -4075,6 +4359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点名称，用户自定义的云硬盘备份点别名。",
           "example": "lhdisk-nbebddz8-data-disk-062",
           "member": "string",
@@ -4085,6 +4370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点的状态。取值范围：\n<li>NORMAL：正常。 </li>\n<li>CREATING：创建中。</li>\n<li>ROLLBACKING：回滚中。</li>\n<li>DELETING：删除中。</li>",
           "example": "NORMAL",
           "member": "string",
@@ -4095,6 +4381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。",
           "example": "90",
           "member": "int64",
@@ -4105,6 +4392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上一次操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ApplyDiskBackup",
           "member": "string",
@@ -4115,6 +4403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上一次操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
@@ -4125,6 +4414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上一次请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4135,6 +4425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "无",
           "member": "datetime_iso",
@@ -4151,6 +4442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点ID。",
           "example": "DiskBackupId",
           "member": "string",
@@ -4161,6 +4453,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作限制列表。",
           "example": "无",
           "member": "DeniedAction",
@@ -4176,6 +4469,7 @@
       "document": "云硬盘包年包月相关参数设置",
       "members": [
         {
+          "disabled": false,
           "document": "新购周期。",
           "example": "1",
           "member": "int64",
@@ -4185,6 +4479,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费。\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。\nDISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -4194,6 +4489,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "新购单位. 默认值: \"m\"。",
           "example": "m",
           "member": "string",
@@ -4210,6 +4506,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -4220,6 +4517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘类型。",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -4230,6 +4528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘可售卖状态。",
           "example": "AVAILABLE",
           "member": "string",
@@ -4240,6 +4539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大云硬盘大小。",
           "example": "1000",
           "member": "int64",
@@ -4250,6 +4550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小云硬盘大小。",
           "example": "10",
           "member": "int64",
@@ -4260,6 +4561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘步长。",
           "example": "10",
           "member": "int64",
@@ -4276,6 +4578,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID。",
           "example": "lhdisk-eobj8huv",
           "member": "string",
@@ -4286,6 +4589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作限制列表。",
           "example": "无",
           "member": "DeniedAction",
@@ -4302,6 +4606,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘单价。",
           "example": "1.1",
           "member": "float",
@@ -4312,6 +4617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘总价。",
           "example": "2.2",
           "member": "float",
@@ -4322,6 +4628,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "折扣。",
           "example": "0.8",
           "member": "float",
@@ -4332,6 +4639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "折后总价。",
           "example": "2.1",
           "member": "float",
@@ -4342,6 +4650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计费项目明细列表。",
           "example": "无",
           "member": "DetailPrice",
@@ -4358,6 +4667,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID。",
           "example": "lhdisk-eobj8huv",
           "member": "string",
@@ -4368,6 +4678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘是否可退还。",
           "example": "true",
           "member": "bool",
@@ -4378,6 +4689,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘退还失败错误码。",
           "example": "0",
           "member": "int64",
@@ -4388,6 +4700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘退还失败错误信息。",
           "example": "无",
           "member": "string",
@@ -4404,6 +4717,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "容器镜像地址",
           "example": "nginx",
           "member": "string",
@@ -4414,6 +4728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器名称",
           "example": "Container1",
           "member": "string",
@@ -4424,6 +4739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环境变量列表",
           "example": "[{\"Key\":\"Key1\",\"Value\":\"Value1\"}]",
           "member": "ContainerEnv",
@@ -4434,6 +4750,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器端口主机端口映射列表",
           "example": "[{\"ContainerPort\":80,\"HostPort\":8081}]",
           "member": "DockerContainerPublishPort",
@@ -4444,6 +4761,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器加载本地卷列表",
           "example": "[{\"ContainerPath\":\"/data/nginx\",\"HostPath\":\"/data/nginx\"}]",
           "member": "DockerContainerVolume",
@@ -4454,6 +4772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运行的命令",
           "example": "ls -l",
           "member": "string",
@@ -4470,6 +4789,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主机端口",
           "example": "80",
           "member": "int64",
@@ -4480,6 +4800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "容器端口",
           "example": "80",
           "member": "int64",
@@ -4490,6 +4811,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对外绑定IP，默认0.0.0.0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0",
           "member": "string",
@@ -4500,6 +4822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "协议，默认tcp，支持tcp/udp/sctp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
@@ -4516,6 +4839,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "容器路径",
           "example": "/data/container",
           "member": "string",
@@ -4526,6 +4850,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主机路径",
           "example": "/data/host",
           "member": "string",
@@ -4542,6 +4867,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤的字段。",
           "example": "bundle-id",
           "member": "string",
@@ -4552,6 +4878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段的过滤值。",
           "example": "['bundle_ntp_small2_100']",
           "member": "string",
@@ -4568,6 +4895,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "协议，取值：TCP，UDP，ICMP，ALL。",
           "example": "TCP",
           "member": "string",
@@ -4578,6 +4906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
           "example": "80",
           "member": "string",
@@ -4588,6 +4917,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
           "example": "0.0.0.0/0",
           "member": "string",
@@ -4598,6 +4928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
           "example": "ACCEPT",
           "member": "string",
@@ -4608,6 +4939,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则描述。",
           "example": "''",
           "member": "string",
@@ -4624,6 +4956,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。",
           "example": "HTTP(80)",
           "member": "string",
@@ -4634,6 +4967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "协议，取值：TCP，UDP，ICMP，ALL。",
           "example": "TCP",
           "member": "string",
@@ -4644,6 +4978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
           "example": "80",
           "member": "string",
@@ -4654,6 +4989,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
           "example": "0.0.0.0/0",
           "member": "string",
@@ -4664,6 +5000,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
           "example": "ACCEPT",
           "member": "string",
@@ -4674,6 +5011,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则描述。",
           "example": "''",
           "member": "string",
@@ -4690,6 +5028,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源名称。",
           "member": "string",
           "name": "ResourceName",
@@ -4699,6 +5038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源当前可用数量。",
           "member": "int64",
           "name": "ResourceQuotaAvailable",
@@ -4708,6 +5048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源总数量。",
           "member": "int64",
           "name": "ResourceQuotaTotal",
@@ -4723,6 +5064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过 25 个字符。",
           "example": "test_import",
           "member": "string",
@@ -4732,6 +5074,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对的公钥内容， OpenSSH RSA 格式。",
           "example": "<公钥内容>",
           "member": "string",
@@ -4746,6 +5089,7 @@
       "document": "ImportKeyPair返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥对 ID。",
           "example": "lhkp-2xsmy15f",
           "member": "string",
@@ -4768,6 +5112,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义镜像的个数。默认值为1。",
           "example": "1",
           "member": "int64",
@@ -4782,6 +5127,7 @@
       "document": "InquirePriceCreateBlueprint返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义镜像的价格参数。",
           "example": "{              ",
           "member": "BlueprintPrice",
@@ -4804,6 +5150,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘大小, 单位: GB。",
           "example": "30",
           "member": "int64",
@@ -4813,6 +5160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘介质类型。取值: \"CLOUD_PREMIUM\"(高性能云盘), \"CLOUD_SSD\"(SSD云硬盘)。",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -4822,6 +5170,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新购云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "DiskChargePrepaid",
@@ -4831,6 +5180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘个数, 默认值: 1。",
           "example": "1",
           "member": "int64",
@@ -4840,6 +5190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
           "example": "1",
           "member": "int64",
@@ -4854,6 +5205,7 @@
       "document": "InquirePriceCreateDisks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘价格。",
           "example": "无",
           "member": "DiskPrice",
@@ -4875,6 +5227,7 @@
       "document": "InquirePriceCreateInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例的套餐 ID。",
           "example": "bundle_ntp_small1_500",
           "member": "string",
@@ -4883,6 +5236,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -4891,6 +5245,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "创建数量，默认为 1。",
           "example": "2",
           "member": "int64",
@@ -4899,6 +5254,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-aaaabbbb",
           "member": "string",
@@ -4913,6 +5269,7 @@
       "document": "InquirePriceCreateInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "询价信息。",
           "example": "无",
           "member": "Price",
@@ -4934,6 +5291,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
@@ -4943,6 +5301,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "RenewDiskChargePrepaid",
@@ -4957,6 +5316,7 @@
       "document": "InquirePriceRenewDisks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘价格。",
           "example": "无",
           "member": "DiskPrice",
@@ -4978,6 +5338,7 @@
       "document": "InquirePriceRenewInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。",
           "example": "[\"lhins-11110001\\r\\n\"]",
           "member": "string",
@@ -4986,6 +5347,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -4994,6 +5356,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "是否续费数据盘。默认值: false, 即不续费。",
           "example": "false",
           "member": "bool",
@@ -5002,6 +5365,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "数据盘是否对齐实例到期时间。默认值: false, 即不对齐。",
           "example": "false",
           "member": "bool",
@@ -5016,6 +5380,7 @@
       "document": "InquirePriceRenewInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "询价信息。默认为列表中第一个实例的价格信息。",
           "example": "无",
           "member": "Price",
@@ -5024,6 +5389,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据盘价格信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataDiskPrice",
@@ -5032,6 +5398,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "待续费实例价格列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstancePriceDetail",
@@ -5040,6 +5407,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总计价格。",
           "example": "无",
           "member": "TotalPrice",
@@ -5061,6 +5429,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "无",
           "member": "string",
@@ -5071,6 +5440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐 ID。",
           "example": "无",
           "member": "string",
@@ -5081,6 +5451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像 ID。",
           "example": "无",
           "member": "string",
@@ -5091,6 +5462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的 CPU 核数，单位：核。",
           "example": "无",
           "member": "int64",
@@ -5101,6 +5473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存容量，单位：GB 。",
           "example": "无",
           "member": "int64",
@@ -5111,6 +5484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "无",
           "member": "string",
@@ -5121,6 +5495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例计费模式。取值范围： \nPREPAID：表示预付费，即包年包月。",
           "example": "无",
           "member": "string",
@@ -5131,6 +5506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例系统盘信息。",
           "example": "无",
           "member": "SystemDisk",
@@ -5141,6 +5517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例主网卡的内网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5151,6 +5528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例主网卡的公网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5161,6 +5539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例带宽信息。",
           "example": "无",
           "member": "InternetAccessible",
@@ -5171,6 +5550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标识。取值范围： \nNOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  \nNOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。",
           "example": "无",
           "member": "string",
@@ -5181,6 +5561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例登录设置。",
           "example": "无",
           "member": "LoginSettings",
@@ -5191,6 +5572,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li><li>ENTER_RESCUE_MODE：表示进入救援模式中</li><li>RESCUE_MODE：表示救援模式</li><li>EXIT_RESCUE_MODE：表示退出救援模式中</li>",
           "example": "无",
           "member": "string",
@@ -5201,6 +5583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例全局唯一 ID。",
           "example": "无",
           "member": "string",
@@ -5211,6 +5594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5221,6 +5605,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5231,6 +5616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5241,6 +5627,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
@@ -5251,6 +5638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
@@ -5261,6 +5649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
@@ -5271,6 +5660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
           "example": "无",
           "member": "string",
@@ -5281,6 +5671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作系统平台。",
           "example": "无",
           "member": "string",
@@ -5291,6 +5682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作系统名称。",
           "example": "无",
           "member": "string",
@@ -5301,6 +5693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区。",
           "example": "无",
           "member": "string",
@@ -5311,6 +5704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例绑定的标签列表。",
           "example": "无",
           "member": "Tag",
@@ -5321,6 +5715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例封禁状态。取值范围：\n<li>NORMAL实例正常。</li><li>NETWORK_RESTRICT：网络封禁。</li>",
           "example": "NETWORK_RESTRICT",
           "member": "string",
@@ -5336,6 +5731,7 @@
       "document": "描述了实例的计费模式",
       "members": [
         {
+          "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "无",
           "member": "int64",
@@ -5345,6 +5741,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "无",
           "member": "string",
@@ -5361,6 +5758,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceId",
@@ -5370,6 +5768,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作限制列表。",
           "member": "DeniedAction",
           "name": "DeniedActions",
@@ -5384,6 +5783,7 @@
       "document": "关于Lighthouse Instance实例的价格信息",
       "members": [
         {
+          "disabled": false,
           "document": "套餐单价原价。",
           "example": "无",
           "member": "float",
@@ -5393,6 +5793,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "原价。",
           "example": "无",
           "member": "float",
@@ -5402,6 +5803,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折扣。",
           "example": "无",
           "member": "float",
@@ -5411,6 +5813,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "折后价。",
           "example": "无",
           "member": "float",
@@ -5420,6 +5823,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "价格货币单位。取值范围CNY:人民币。USD:美元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CNY",
           "member": "string",
@@ -5435,6 +5839,7 @@
       "document": "实例价格详细信息",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lhins-xxxxxx",
           "member": "string",
@@ -5444,6 +5849,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "询价信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstancePrice",
@@ -5453,6 +5859,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiscountDetail",
@@ -5469,6 +5876,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "member": "string",
           "name": "InstanceId",
@@ -5478,6 +5886,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例是否可退还。",
           "member": "bool",
           "name": "IsReturnable",
@@ -5487,6 +5896,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例退还失败错误码。",
           "member": "int64",
           "name": "ReturnFailCode",
@@ -5496,6 +5906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例退还失败错误信息。",
           "member": "string",
           "name": "ReturnFailMessage",
@@ -5511,6 +5922,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "member": "string",
           "name": "InstanceId",
@@ -5520,6 +5932,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包详情列表。",
           "member": "TrafficPackage",
           "name": "TrafficPackageSet",
@@ -5535,6 +5948,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络计费类型，取值范围：\n<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>\n<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>",
           "example": "BANDWIDTH_PREPAID",
           "member": "string",
@@ -5545,6 +5959,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公网出带宽上限，单位：Mbps。",
           "example": "20",
           "member": "int64",
@@ -5555,6 +5970,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否分配公网 IP。",
           "example": "true",
           "member": "bool",
@@ -5570,6 +5986,7 @@
       "document": "IsolateDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。",
           "example": "无",
           "member": "string",
@@ -5596,6 +6013,7 @@
       "document": "IsolateInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。",
           "example": "[\"lhins-7ofik5q9\"]",
           "member": "string",
@@ -5604,6 +6022,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否退还挂载的数据盘。取值范围：\nTRUE：表示退还实例同时退还其挂载的数据盘。\nFALSE：表示退还实例同时不再退还其挂载的数据盘。\n默认取值：TRUE。",
           "example": "true",
           "member": "bool",
@@ -5631,6 +6050,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对 ID ，是密钥对的唯一标识。",
           "member": "string",
           "name": "KeyId",
@@ -5640,6 +6060,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对名称。",
           "member": "string",
           "name": "KeyName",
@@ -5649,6 +6070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对的纯文本公钥。",
           "member": "string",
           "name": "PublicKey",
@@ -5658,6 +6080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对关联的实例 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AssociatedInstanceIds",
@@ -5667,6 +6090,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -5676,6 +6100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥对私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PrivateKey",
@@ -5691,6 +6116,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "<li>\"YES\"代表选择自动生成密码，这时不指定Password字段。</li>\n<li>\"NO\"代表选择自定义密码，这时要指定Password字段。</li>",
           "example": "NO",
           "member": "string",
@@ -5701,6 +6127,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例登录密码。具体按照操作系统的复杂度要求。\nWINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符\n<li>小写字母：[a-z]</li>\n<li>大写字母：[A-Z]</li>\n<li>数字： 0-9</li>\n<li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>",
           "example": " HelloTgHd123_&*",
           "member": "string",
@@ -5717,6 +6144,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。",
           "member": "string",
           "name": "KeyIds",
@@ -5731,6 +6159,7 @@
       "document": "ModifyBlueprintAttribute请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-aaaabbbb",
           "member": "string",
@@ -5739,6 +6168,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置新的镜像名称。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
@@ -5747,6 +6177,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置新的镜像描述。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
@@ -5774,6 +6205,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "更改实例套餐后需要补的差价。",
           "example": "{}",
           "member": "Price",
@@ -5784,6 +6216,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "变更套餐状态。取值：\n<li>SOLD_OUT：套餐售罄</li>\n<li>AVAILABLE：支持套餐变更</li>\n<li>UNAVAILABLE：暂不支持套餐变更</li>",
           "example": "AVAILABLE",
           "member": "string",
@@ -5794,6 +6227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐信息。",
           "example": "{}",
           "member": "Bundle",
@@ -5804,6 +6238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -5820,6 +6255,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点ID列表。",
           "example": "[\"lhbak-l1ghx97r\"]",
           "member": "string",
@@ -5829,6 +6265,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘备份点名称，最大长度90。",
           "example": "disk-backup-name",
           "member": "string",
@@ -5856,6 +6293,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
@@ -5865,6 +6303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘名称。",
           "example": "disk-name",
           "member": "string",
@@ -5892,6 +6331,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
@@ -5901,6 +6341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -5928,6 +6369,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-12345678",
           "member": "string",
@@ -5937,6 +6379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则。",
           "example": "无",
           "member": "FirewallRule",
@@ -5946,6 +6389,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "1",
           "member": "uint64",
@@ -5973,6 +6417,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-12345678",
           "member": "string",
@@ -5982,6 +6427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙规则列表。",
           "example": "无",
           "member": "FirewallRule",
@@ -5991,6 +6437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "1",
           "member": "uint64",
@@ -6017,6 +6464,7 @@
       "document": "ModifyInstancesAttribute请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
@@ -6025,6 +6473,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "实例名称。可任意命名，但不得超过 60 个字符。",
           "example": "test",
           "member": "string",
@@ -6051,6 +6500,7 @@
       "document": "ModifyInstancesBundle请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。",
           "example": "[“lhins-123456”]",
           "member": "string",
@@ -6059,6 +6509,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
           "example": "“bundle_ent_01”",
           "member": "string",
@@ -6067,6 +6518,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否自动抵扣代金券。取值范围：\ntrue：表示自动抵扣代金券\nfalse：表示不自动抵扣代金券\n默认取值：false。",
           "example": "false",
           "member": "bool",
@@ -6094,6 +6546,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
           "example": "[\"lhins-ruy9d2tw\\r\\n\"]",
           "member": "string",
@@ -6103,6 +6556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否允许使用默认密钥对登录，YES：允许登录；NO：禁止登录",
           "example": "NO",
           "member": "string",
@@ -6129,6 +6583,7 @@
       "document": "ModifyInstancesRenewFlag请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -6137,6 +6592,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -6164,6 +6620,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "快照 ID, 可通过 DescribeSnapshots 查询。",
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
@@ -6173,6 +6630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新的快照名称，最长为 60 个字符。",
           "example": "snap_20200903",
           "member": "string",
@@ -6199,6 +6657,7 @@
       "document": "折扣详情信息。",
       "members": [
         {
+          "disabled": false,
           "document": "用户折扣。",
           "example": "无",
           "member": "float",
@@ -6208,6 +6667,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公共折扣。",
           "example": "无",
           "member": "float",
@@ -6217,6 +6677,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最终折扣。",
           "example": "无",
           "member": "float",
@@ -6226,6 +6687,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "活动折扣。取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -6235,6 +6697,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "折扣类型。\nuser：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6251,6 +6714,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例价格。",
           "example": "无",
           "member": "InstancePrice",
@@ -6267,6 +6731,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
@@ -6294,6 +6759,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域名称，例如，ap-guangzhou。",
           "example": "ap-beijing",
           "member": "string",
@@ -6304,6 +6770,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域描述，例如，华南地区(广州)。",
           "example": "北京",
           "member": "string",
@@ -6314,6 +6781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域是否可用状态，取值仅为AVAILABLE。",
           "example": "AVAILABLE",
           "member": "string",
@@ -6324,6 +6792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否中国大陆地域",
           "example": "true",
           "member": "bool",
@@ -6339,6 +6808,7 @@
       "document": "续费云硬盘包年包月相关参数设置",
       "members": [
         {
+          "disabled": false,
           "document": "续费周期。",
           "example": "1",
           "member": "int64",
@@ -6348,6 +6818,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -6357,6 +6828,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "周期单位。取值范围：“m”(月)。默认值: \"m\"。",
           "example": "m",
           "member": "string",
@@ -6366,6 +6838,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。",
           "example": "2018-01-01 00:00:00",
           "member": "string",
@@ -6381,6 +6854,7 @@
       "document": "RenewDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求续费数据盘数量总计上限为50。",
           "example": "[“lhdisk-xxxxxx”]",
           "member": "string",
@@ -6389,6 +6863,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "续费云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "RenewDiskChargePrepaid",
@@ -6397,6 +6872,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "true",
           "member": "bool",
@@ -6424,6 +6900,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
           "example": "[\"lhins-7ofik5q9\"]",
           "member": "string",
@@ -6433,6 +6910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -6442,6 +6920,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否续费弹性数据盘。取值范围：\nTRUE：表示续费实例同时续费其挂载的数据盘\nFALSE：表示续费实例同时不再续费其挂载的数据盘\n默认取值：TRUE。",
           "example": "true",
           "member": "bool",
@@ -6451,6 +6930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动抵扣代金券。取值范围：\nTRUE：表示自动抵扣代金券\nFALSE：表示不自动抵扣代金券\n默认取值：FALSE。",
           "example": "false",
           "member": "bool",
@@ -6478,6 +6958,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "云联网实例ID。",
           "example": "ccn-f49l6u0z",
           "member": "string",
@@ -6505,6 +6986,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "镜像详细信息",
           "member": "Blueprint",
           "name": "BlueprintInfo",
@@ -6514,6 +6996,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例镜像是否可重置为目标镜像",
           "member": "bool",
           "name": "IsResettable",
@@ -6523,6 +7006,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "不可重置信息.当镜像可重置时为\"\"",
           "member": "string",
           "name": "NonResettableMessage",
@@ -6538,6 +7022,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-ruy9d2tw",
           "member": "string",
@@ -6547,6 +7032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-5e8807lo",
           "member": "string",
@@ -6574,6 +7060,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
           "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
@@ -6583,6 +7070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n`LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/</li>\n`WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。",
           "example": "xxxxxxxxxxx",
           "member": "string",
@@ -6592,6 +7080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待重置密码的实例操作系统用户名。不得超过 64 个字符。",
           "example": "root",
           "member": "string",
@@ -6619,6 +7108,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景Id",
           "example": "\"lhsc-123456\"",
           "member": "string",
@@ -6629,6 +7119,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景展示名称",
           "example": "\"\"",
           "member": "string",
@@ -6639,6 +7130,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景描述",
           "example": "\"\"",
           "member": "string",
@@ -6655,6 +7147,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景Id。",
           "example": "\"lhsc-123456\"",
           "member": "string",
@@ -6665,6 +7158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景展示名称。",
           "example": "\"\"",
           "member": "string",
@@ -6675,6 +7169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用场景描述信息。",
           "example": "\"\"",
           "member": "string",
@@ -6690,6 +7185,7 @@
       "document": "描述了快照相关信息。",
       "members": [
         {
+          "disabled": false,
           "document": "快照 ID。",
           "example": "无",
           "member": "string",
@@ -6699,6 +7195,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建此快照的磁盘类型。取值：<li>SYSTEM_DISK：系统盘</li>",
           "example": "无",
           "member": "string",
@@ -6708,6 +7205,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建此快照的磁盘 ID。",
           "example": "无",
           "member": "string",
@@ -6717,6 +7215,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建此快照的磁盘大小，单位 GB。",
           "example": "无",
           "member": "int64",
@@ -6726,6 +7225,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "快照名称，用户自定义的快照别名。",
           "example": "无",
           "member": "string",
@@ -6735,6 +7235,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "快照的状态。取值范围：\n<li>NORMAL：正常 </li>\n<li>CREATING：创建中</li>\n<li>ROLLBACKING：回滚中。</li>",
           "example": "无",
           "member": "string",
@@ -6744,6 +7245,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建或回滚快照进度百分比，成功后此字段取值为 100。",
           "example": "无",
           "member": "int64",
@@ -6753,6 +7255,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6762,6 +7265,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6771,6 +7275,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6780,6 +7285,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "快照的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
@@ -6796,6 +7302,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "快照 ID。",
           "member": "string",
           "name": "SnapshotId",
@@ -6805,6 +7312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作限制列表。",
           "member": "DeniedAction",
           "name": "DeniedActions",
@@ -6820,6 +7328,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "软件名称。",
           "member": "string",
           "name": "Name",
@@ -6829,6 +7338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件版本。",
           "member": "string",
           "name": "Version",
@@ -6838,6 +7348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件图片 URL。",
           "member": "string",
           "name": "ImageUrl",
@@ -6847,6 +7358,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件安装目录。",
           "member": "string",
           "name": "InstallDir",
@@ -6856,6 +7368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件详情列表。",
           "member": "SoftwareDetail",
           "name": "DetailSet",
@@ -6871,6 +7384,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "详情唯一键。",
           "member": "string",
           "name": "Key",
@@ -6880,6 +7394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "详情标题。",
           "member": "string",
           "name": "Title",
@@ -6889,6 +7404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "详情值。",
           "member": "string",
           "name": "Value",
@@ -6904,6 +7420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
@@ -6931,6 +7448,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
@@ -6958,6 +7476,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
           "member": "string",
           "name": "DiskType",
@@ -6967,6 +7486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "系统盘大小，单位：GB。",
           "member": "int64",
           "name": "DiskSize",
@@ -6976,6 +7496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "系统盘ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DiskId",
@@ -6991,6 +7512,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "xxx",
           "member": "string",
@@ -7001,6 +7523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "xxx",
           "member": "string",
@@ -7016,6 +7539,7 @@
       "document": "TerminateDisks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
@@ -7042,6 +7566,7 @@
       "document": "TerminateInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -7068,6 +7593,7 @@
       "document": "总计价格信息",
       "members": [
         {
+          "disabled": false,
           "document": "原始总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0",
           "member": "float",
@@ -7077,6 +7603,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "折扣总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9.0",
           "member": "float",
@@ -7093,6 +7620,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流量包ID。",
           "member": "string",
           "name": "TrafficPackageId",
@@ -7102,6 +7630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期内已使用流量，单位字节。",
           "member": "int64",
           "name": "TrafficUsed",
@@ -7111,6 +7640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期内的总流量，单位字节。",
           "member": "int64",
           "name": "TrafficPackageTotal",
@@ -7120,6 +7650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期内的剩余流量，单位字节。",
           "member": "int64",
           "name": "TrafficPackageRemaining",
@@ -7129,6 +7660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期内超出流量包额度的流量，单位字节。",
           "member": "int64",
           "name": "TrafficOverflow",
@@ -7138,6 +7670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期开始时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -7147,6 +7680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包生效周期结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -7156,6 +7690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime_iso",
           "name": "Deadline",
@@ -7165,6 +7700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包状态：\n<li>NETWORK_NORMAL：正常</li>\n<li>OVERDUE_NETWORK_DISABLED：欠费断网</li>",
           "member": "string",
           "name": "Status",
@@ -7180,6 +7716,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -7190,6 +7727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区中文名称",
           "example": "广州一区",
           "member": "string",
@@ -7200,6 +7738,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例购买页可用区展示标签",
           "example": "NORMAL",
           "member": "string",

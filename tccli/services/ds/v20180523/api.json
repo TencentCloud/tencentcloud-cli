@@ -97,6 +97,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名VerifyCode",
           "member": "string",
           "name": "Module",
@@ -105,6 +106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名CheckVcode",
           "member": "string",
           "name": "Operation",
@@ -113,6 +115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号ID",
           "member": "string",
           "name": "AccountResId",
@@ -121,6 +124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同ID",
           "member": "string",
           "name": "ContractResId",
@@ -129,6 +133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "验证码",
           "member": "string",
           "name": "VerifyCode",
@@ -155,6 +160,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名ContractMng",
           "member": "string",
           "name": "Module",
@@ -163,6 +169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名CreateContractByUpload",
           "member": "string",
           "name": "Operation",
@@ -171,6 +178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签署人信息",
           "member": "SignInfo",
           "name": "SignInfos",
@@ -179,6 +187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同上传链接地址",
           "member": "string",
           "name": "ContractFile",
@@ -187,6 +196,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同名称",
           "member": "string",
           "name": "ContractName",
@@ -195,6 +205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Remarks",
@@ -203,6 +214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同发起方腾讯云帐号ID（由平台自动填写）",
           "member": "string",
           "name": "Initiator",
@@ -211,6 +223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同长时间未签署的过期时间",
           "member": "string",
           "name": "ExpireTime",
@@ -224,6 +237,7 @@
       "document": "CreateContractByUpload返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "member": "int64",
           "name": "TaskId",
@@ -244,6 +258,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名AccountMng",
           "member": "string",
           "name": "Module",
@@ -252,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名CreateEnterpriseAccount",
           "member": "string",
           "name": "Operation",
@@ -260,6 +276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业用户名称",
           "member": "string",
           "name": "Name",
@@ -268,6 +285,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业用户证件类型，8代表营业执照，详情请见常见问题",
           "member": "int64",
           "name": "IdentType",
@@ -276,6 +294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业用户营业执照号码",
           "member": "string",
           "name": "IdentNo",
@@ -284,6 +303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业联系人手机号",
           "member": "string",
           "name": "MobilePhone",
@@ -292,6 +312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "经办人姓名",
           "member": "string",
           "name": "TransactorName",
@@ -300,6 +321,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "经办人证件类型，0代表身份证",
           "member": "int64",
           "name": "TransactorIdentType",
@@ -308,6 +330,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "经办人证件号码",
           "member": "string",
           "name": "TransactorIdentNo",
@@ -316,6 +339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "经办人手机号",
           "member": "string",
           "name": "TransactorPhone",
@@ -324,6 +348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业联系人邮箱",
           "member": "string",
           "name": "Email",
@@ -337,6 +362,7 @@
       "document": "CreateEnterpriseAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "帐号ID",
           "member": "string",
           "name": "AccountResId",
@@ -357,6 +383,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名AccountMng",
           "member": "string",
           "name": "Module",
@@ -365,6 +392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名CreatePersonalAccount",
           "member": "string",
           "name": "Operation",
@@ -373,6 +401,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "个人用户姓名",
           "member": "string",
           "name": "Name",
@@ -381,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "个人用户证件类型，0代表身份证，详情请见常见问题",
           "member": "int64",
           "name": "IdentType",
@@ -389,6 +419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "个人用户证件号码",
           "member": "string",
           "name": "IdentNo",
@@ -397,6 +428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "个人用户手机号",
           "member": "string",
           "name": "MobilePhone",
@@ -410,6 +442,7 @@
       "document": "CreatePersonalAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账号ID",
           "member": "string",
           "name": "AccountResId",
@@ -430,6 +463,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名SealMng",
           "member": "string",
           "name": "Module",
@@ -438,6 +472,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名CreateSeal",
           "member": "string",
           "name": "Operation",
@@ -446,6 +481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号ID",
           "member": "string",
           "name": "AccountResId",
@@ -454,6 +490,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章链接，图片必须为png格式",
           "member": "string",
           "name": "ImgUrl",
@@ -462,6 +499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片数据，base64编码",
           "member": "string",
           "name": "ImgData",
@@ -475,6 +513,7 @@
       "document": "CreateSeal返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealResId",
@@ -495,6 +534,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名AccountMng",
           "member": "string",
           "name": "Module",
@@ -503,6 +543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名DeleteAccount",
           "member": "string",
           "name": "Operation",
@@ -511,6 +552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号ID列表",
           "member": "string",
           "name": "AccountList",
@@ -524,6 +566,7 @@
       "document": "DeleteAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "删除成功帐号ID列表",
           "member": "string",
           "name": "DelSuccessList",
@@ -531,6 +574,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "删除失败帐号ID列表",
           "member": "string",
           "name": "DelFailedList",
@@ -551,6 +595,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名SealMng",
           "member": "string",
           "name": "Module",
@@ -559,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名DeleteSeal",
           "member": "string",
           "name": "Operation",
@@ -567,6 +613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号ID",
           "member": "string",
           "name": "AccountResId",
@@ -575,6 +622,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealResId",
@@ -588,6 +636,7 @@
       "document": "DeleteSeal返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealResId",
@@ -608,6 +657,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名CommonMng",
           "member": "string",
           "name": "Module",
@@ -616,6 +666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名DescribeTaskStatus",
           "member": "string",
           "name": "Operation",
@@ -624,6 +675,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "member": "uint64",
           "name": "TaskId",
@@ -637,6 +689,7 @@
       "document": "DescribeTaskStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务结果",
           "member": "string",
           "name": "TaskResult",
@@ -644,6 +697,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务类型，010代表合同上传结果，020代表合同下载结果",
           "member": "string",
           "name": "TaskType",
@@ -664,6 +718,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名ContractMng",
           "member": "string",
           "name": "Module",
@@ -672,6 +727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名DownloadContract",
           "member": "string",
           "name": "Operation",
@@ -680,6 +736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同ID",
           "member": "string",
           "name": "ContractResId",
@@ -693,6 +750,7 @@
       "document": "DownloadContract返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "member": "int64",
           "name": "TaskId",
@@ -713,6 +771,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名VerifyCode",
           "member": "string",
           "name": "Module",
@@ -721,6 +780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名SendVcode",
           "member": "string",
           "name": "Operation",
@@ -729,6 +789,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同ID",
           "member": "string",
           "name": "ContractResId",
@@ -737,6 +798,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号ID",
           "member": "string",
           "name": "AccountResId",
@@ -763,6 +825,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名ContractMng",
           "member": "string",
           "name": "Module",
@@ -771,6 +834,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名SignContractByCoordinate",
           "member": "string",
           "name": "Operation",
@@ -779,6 +843,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同ID",
           "member": "string",
           "name": "ContractResId",
@@ -787,6 +852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐户ID",
           "member": "string",
           "name": "AccountResId",
@@ -795,6 +861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界",
           "member": "SignLocation",
           "name": "SignLocations",
@@ -803,6 +870,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权时间（由平台自动填充）",
           "member": "string",
           "name": "AuthorizationTime",
@@ -811,6 +879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权IP地址（由平台自动填充）",
           "member": "string",
           "name": "Position",
@@ -819,6 +888,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealResId",
@@ -827,6 +897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "member": "int64",
           "name": "CertType",
@@ -835,6 +906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名图片，base64编码",
           "member": "string",
           "name": "ImageData",
@@ -861,6 +933,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模块名ContractMng",
           "member": "string",
           "name": "Module",
@@ -869,6 +942,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作名SignContractByKeyword",
           "member": "string",
           "name": "Operation",
@@ -877,6 +951,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合同ID",
           "member": "string",
           "name": "ContractResId",
@@ -885,6 +960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账户ID",
           "member": "string",
           "name": "AccountResId",
@@ -893,6 +969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签署关键字，偏移坐标原点为关键字中心",
           "member": "SignKeyword",
           "name": "SignKeyword",
@@ -901,6 +978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权时间（由平台自动填充）",
           "member": "string",
           "name": "AuthorizationTime",
@@ -909,6 +987,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权IP地址（由平台自动填充）",
           "member": "string",
           "name": "Position",
@@ -917,6 +996,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealResId",
@@ -925,6 +1005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "member": "int64",
           "name": "CertType",
@@ -933,6 +1014,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名图片，base64编码",
           "member": "string",
           "name": "ImageData",
@@ -959,6 +1041,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账户ID",
           "member": "string",
           "name": "AccountResId",
@@ -968,6 +1051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权时间（上传合同可不传该参数）",
           "member": "string",
           "name": "AuthorizationTime",
@@ -977,6 +1061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授权IP地址（上传合同可不传该参数）",
           "member": "string",
           "name": "Location",
@@ -986,6 +1071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章ID",
           "member": "string",
           "name": "SealId",
@@ -995,6 +1081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名图片，优先级比SealId高",
           "member": "string",
           "name": "ImageData",
@@ -1004,6 +1091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "member": "int64",
           "name": "CertType",
@@ -1013,6 +1101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名域的标签值",
           "member": "string",
           "name": "SignLocation",
@@ -1028,6 +1117,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "关键字",
           "member": "string",
           "name": "Keyword",
@@ -1037,6 +1127,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "X轴偏移坐标",
           "member": "string",
           "name": "OffsetCoordX",
@@ -1046,6 +1137,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Y轴偏移坐标",
           "member": "string",
           "name": "OffsetCoordY",
@@ -1055,6 +1147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章图片宽度",
           "member": "string",
           "name": "ImageWidth",
@@ -1064,6 +1157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签章图片高度",
           "member": "string",
           "name": "ImageHeight",
@@ -1079,6 +1173,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "签名域页数",
           "member": "string",
           "name": "SignOnPage",
@@ -1088,6 +1183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名域左下角X轴坐标轴",
           "member": "string",
           "name": "SignLocationLBX",
@@ -1097,6 +1193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名域左下角Y轴坐标轴",
           "member": "string",
           "name": "SignLocationLBY",
@@ -1106,6 +1203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名域右上角X轴坐标轴",
           "member": "string",
           "name": "SignLocationRUX",
@@ -1115,6 +1213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名域右上角Y轴坐标轴",
           "member": "string",
           "name": "SignLocationRUY",

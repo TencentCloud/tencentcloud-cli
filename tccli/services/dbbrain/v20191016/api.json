@@ -202,6 +202,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以\"_\"开头，且联系人名保持唯一。",
           "example": "张三",
           "member": "string",
@@ -211,6 +212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮箱地址，大小写字母、数字及下划线组成， 不能以\"_\"开头。",
           "example": "test@qq.com",
           "member": "string",
@@ -220,6 +222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，固定值：\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -234,6 +237,7 @@
       "document": "AddUserContact返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "添加成功的联系人id。",
           "example": "1",
           "member": "int64",
@@ -256,6 +260,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联系人id。",
           "member": "int64",
           "name": "Id",
@@ -265,6 +270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人姓名。",
           "member": "string",
           "name": "Name",
@@ -274,6 +280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人绑定的邮箱。",
           "member": "string",
           "name": "Mail",
@@ -289,6 +296,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "member": "string",
           "name": "InstanceId",
@@ -297,6 +305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，如“2020-11-08T14:00:00+08:00”。",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -305,6 +314,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，如“2020-11-09T14:00:00+08:00”。",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -313,6 +323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否发送邮件: 0 - 否，1 - 是。",
           "member": "int64",
           "name": "SendMailFlag",
@@ -321,6 +332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接收邮件的联系人ID数组。",
           "member": "int64",
           "name": "ContactPerson",
@@ -329,6 +341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接收邮件的联系组ID数组。",
           "member": "int64",
           "name": "ContactGroup",
@@ -337,6 +350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认值为\"mysql\"。",
           "member": "string",
           "name": "Product",
@@ -350,6 +364,7 @@
       "document": "CreateDBDiagReportTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -370,6 +385,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -379,6 +395,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康报告相应的任务ID，可通过DescribeDBDiagReportTasks查询。",
           "example": "63452",
           "member": "int64",
@@ -388,6 +405,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -402,6 +420,7 @@
       "document": "CreateDBDiagReportUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "健康报告浏览地址。",
           "example": "https://dbbrain-sh-1256569818.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
@@ -411,6 +430,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "健康报告浏览地址到期时间戳（秒）。",
           "example": "1618890295",
           "member": "int64",
@@ -433,6 +453,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邮件配置内容。",
           "example": "-",
           "member": "ProfileInfo",
@@ -442,6 +463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。",
           "example": "Instance",
           "member": "string",
@@ -451,6 +473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
           "example": "test",
           "member": "string",
@@ -460,6 +483,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
           "example": "scheduler_mail_configuration",
           "member": "string",
@@ -469,6 +493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
           "example": "mysql",
           "member": "string",
@@ -478,6 +503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置绑定的实例ID，当配置级别为\"Instance\"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。",
           "example": "[\"cdb-test\"]",
           "member": "string",
@@ -505,6 +531,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "取值范围1-7，分别代表周一至周日。",
           "example": "[1,2,3]",
           "member": "int64",
@@ -514,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮件配置内容。",
           "example": "-",
           "member": "ProfileInfo",
@@ -523,6 +551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置名称，需要保持唯一性，定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
           "example": "scheduler_cdb-test",
           "member": "string",
@@ -532,6 +561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置订阅的实例ID。",
           "example": "cdb-123456",
           "member": "string",
@@ -541,6 +571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -568,6 +599,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "安全审计组Id。",
           "example": "sag-01z37k3f",
           "member": "string",
@@ -577,6 +609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "导出日志开始时间，例如2020-12-28 00:00:00。",
           "example": "2020-12-28 00:00:00",
           "member": "datetime_iso",
@@ -586,6 +619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "导出日志结束时间，例如2020-12-28 01:00:00。",
           "example": "2020-12-28 01:00:00",
           "member": "datetime_iso",
@@ -595,6 +629,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
           "example": "mysql",
           "member": "string",
@@ -604,6 +639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志风险等级列表，支持值包括：0 无风险；1 低风险；2 中风险；3 高风险。",
           "example": "[1,2,3]",
           "member": "int64",
@@ -618,6 +654,7 @@
       "document": "CreateSecurityAuditLogExportTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志导出任务Id。",
           "example": "1",
           "member": "uint64",
@@ -640,6 +677,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "安全审计组Id。",
           "example": "sag-01z37k3f",
           "member": "string",
@@ -649,6 +687,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。",
           "example": "[1]",
           "member": "uint64",
@@ -658,6 +697,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值： \"mysql\" - 云数据库 MySQL。",
           "example": "mysql",
           "member": "string",
@@ -685,6 +725,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，固定值：mysql。",
           "example": "mysql",
           "member": "string",
@@ -694,6 +735,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人名数组，支持模糊搜索。",
           "example": "zhangsan",
           "member": "string",
@@ -708,6 +750,7 @@
       "document": "DescribeAllUserContact返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "联系人的总数量。",
           "example": "1",
           "member": "int64",
@@ -717,6 +760,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "联系人的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "ContactItem",
@@ -739,6 +783,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，固定值：mysql。",
           "example": "mysql",
           "member": "string",
@@ -748,6 +793,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系组名称数组，支持模糊搜索。",
           "example": "group1",
           "member": "string",
@@ -762,6 +808,7 @@
       "document": "DescribeAllUserGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "组总数。",
           "example": "1",
           "member": "int64",
@@ -771,6 +818,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "GroupItem",
@@ -793,6 +841,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "example": "test",
           "member": "string",
@@ -802,6 +851,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。",
           "example": "5",
           "member": "int64",
@@ -811,6 +861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -825,6 +876,7 @@
       "document": "DescribeDBDiagEvent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "诊断项。",
           "example": "健康巡检",
           "member": "string",
@@ -834,6 +886,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断类型。",
           "example": "数据库快照",
           "member": "string",
@@ -843,6 +896,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件 ID 。",
           "example": "5",
           "member": "int64",
@@ -852,6 +906,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件详情。",
           "example": "[]",
           "member": "string",
@@ -861,6 +916,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "概要。",
           "example": "数据库健康检查，发现1个问题",
           "member": "string",
@@ -870,6 +926,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断出的问题。",
           "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"事务快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Innodb状态快照\"}}]",
           "member": "string",
@@ -879,6 +936,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
           "example": "4",
           "member": "int64",
@@ -888,6 +946,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "开始时间",
           "example": "2019-11-06 12:05:40",
           "member": "datetime",
@@ -897,6 +956,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "建议。",
           "example": "[]",
           "member": "string",
@@ -906,6 +966,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -915,6 +976,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束时间。",
           "example": "2019-11-06 12:05:50",
           "member": "datetime",
@@ -937,6 +999,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "member": "string",
           "name": "InstanceId",
@@ -945,6 +1008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，如“2019-09-10 12:13:14”。",
           "member": "datetime",
           "name": "StartTime",
@@ -953,6 +1017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，如“2019-09-11 12:13:14”，结束时间与开始时间的间隔最大可为2天。",
           "member": "datetime",
           "name": "EndTime",
@@ -961,6 +1026,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "member": "string",
           "name": "Product",
@@ -974,6 +1040,7 @@
       "document": "DescribeDBDiagHistory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件描述。",
           "member": "DiagHistoryEventItem",
           "name": "Events",
@@ -994,6 +1061,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime_iso",
@@ -1003,6 +1071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime_iso",
@@ -1012,6 +1081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID数组，用于筛选指定实例的任务列表。",
           "example": "[\"cdb-c1nl9rpv\"]",
           "member": "string",
@@ -1021,6 +1091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
           "example": "[\"DAILY_INSPECTION\"]",
           "member": "string",
@@ -1030,6 +1101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告的健康等级，支持的取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\" - 危险；\"HIGH_RISK\" - 高危。",
           "example": "[\"HEALTH\"]",
           "member": "string",
@@ -1039,6 +1111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的状态，支持的取值包括：\"created\" - 新建；\"chosen\" - 待执行； \"running\" - 执行中；\"failed\" - 失败；\"finished\" - 已完成。",
           "example": "[\"finished\"]",
           "member": "string",
@@ -1048,6 +1121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认0。",
           "example": "0",
           "member": "int64",
@@ -1057,6 +1131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认20。",
           "example": "20",
           "member": "int64",
@@ -1066,6 +1141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1080,6 +1156,7 @@
       "document": "DescribeDBDiagReportTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总数目。",
           "example": "1",
           "member": "int64",
@@ -1089,6 +1166,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务列表。",
           "example": "-",
           "member": "HealthReportTask",
@@ -1111,6 +1189,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "member": "string",
           "name": "InstanceId",
@@ -1119,6 +1198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间段天数，截止日期为当日，默认为7天。",
           "member": "int64",
           "name": "RangeDays",
@@ -1127,6 +1207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "member": "string",
           "name": "Product",
@@ -1140,6 +1221,7 @@
       "document": "DescribeDBSpaceStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "磁盘增长量(MB)。",
           "member": "int64",
           "name": "Growth",
@@ -1147,6 +1229,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘剩余(MB)。",
           "member": "int64",
           "name": "Remain",
@@ -1154,6 +1237,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "磁盘总量(MB)。",
           "member": "int64",
           "name": "Total",
@@ -1161,6 +1245,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "预计可用天数。",
           "member": "int64",
           "name": "AvailableDays",
@@ -1181,6 +1266,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否是DBbrain支持的实例，固定传 true。",
           "example": "true",
           "member": "bool",
@@ -1190,6 +1276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1199,6 +1286,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页参数，偏移量。",
           "example": "0",
           "member": "int64",
@@ -1208,6 +1296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页参数，分页值。",
           "example": "50",
           "member": "int64",
@@ -1217,6 +1306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据实例名称条件查询。",
           "example": "[\"cdb-测试\"]",
           "member": "string",
@@ -1226,6 +1316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据实例ID条件查询。",
           "example": "[\"cdb-test\"]",
           "member": "string",
@@ -1235,6 +1326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据地域条件查询。",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
@@ -1249,6 +1341,7 @@
       "document": "DescribeDiagDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例总数。",
           "example": "100",
           "member": "int64",
@@ -1258,6 +1351,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "全实例巡检状态：0：开启全实例巡检；1：未开启全实例巡检。",
           "example": "1",
           "member": "int64",
@@ -1267,6 +1361,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例相关信息。",
           "example": "-",
           "member": "InstanceInfo",
@@ -1289,6 +1384,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要获取健康得分的实例ID。",
           "example": "cdb-test123",
           "member": "string",
@@ -1298,6 +1394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "获取健康得分的时间。",
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
@@ -1307,6 +1404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1321,6 +1419,7 @@
       "document": "DescribeHealthScore返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "健康得分以及异常扣分项。",
           "example": "-",
           "member": "HealthScoreInfo",
@@ -1343,6 +1442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
           "example": "scheduler_mail_configuration",
           "member": "string",
@@ -1352,6 +1452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1361,6 +1462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量。",
           "example": "0",
           "member": "int64",
@@ -1370,6 +1472,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页单位，最大支持50。",
           "example": "20",
           "member": "int64",
@@ -1379,6 +1482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据邮件配置名称查询，定期发送的邮件配置名称遵循：\"scheduler_\"+{instanceId}的规则。",
           "example": "scheduler_cdb-of66x11l",
           "member": "string",
@@ -1393,6 +1497,7 @@
       "document": "DescribeMailProfile返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "邮件配置详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "UserProfile",
@@ -1402,6 +1507,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "邮件模版总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1424,6 +1530,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "安全审计组Id。",
           "example": "sag-01z37k3f",
           "member": "string",
@@ -1433,6 +1540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异步任务Id。",
           "example": "1",
           "member": "uint64",
@@ -1442,6 +1550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
           "example": "mysql",
           "member": "string",
@@ -1456,6 +1565,7 @@
       "document": "DescribeSecurityAuditLogDownloadUrls返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "导出结果的COS链接列表。当结果集很大时，可能会切分为多个url下载。",
           "example": "[\"https://xxx\"]",
           "member": "string",
@@ -1478,6 +1588,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "安全审计组Id。",
           "example": "sag-01z37k3f",
           "member": "string",
@@ -1487,6 +1598,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
           "example": "mysql",
           "member": "string",
@@ -1496,6 +1608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志导出任务Id列表。",
           "example": "[1]",
           "member": "uint64",
@@ -1505,6 +1618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认0。",
           "example": "0",
           "member": "uint64",
@@ -1514,6 +1628,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认20。",
           "example": "10",
           "member": "uint64",
@@ -1528,6 +1643,7 @@
       "document": "DescribeSecurityAuditLogExportTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "安全审计日志导出任务列表。",
           "example": "无",
           "member": "SecLogExportTaskInfo",
@@ -1537,6 +1653,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全审计日志导出任务总数。",
           "example": "1",
           "member": "uint64",
@@ -1559,6 +1676,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "member": "string",
           "name": "InstanceId",
@@ -1567,6 +1685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，如“2019-09-10 12:13:14”。",
           "member": "datetime",
           "name": "StartTime",
@@ -1575,6 +1694,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，如“2019-09-10 12:13:14”，结束时间与开始时间的间隔最大可为7天。",
           "member": "datetime",
           "name": "EndTime",
@@ -1583,6 +1703,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "member": "string",
           "name": "Product",
@@ -1596,6 +1717,7 @@
       "document": "DescribeSlowLogTimeSeriesStats返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "柱间单位时间间隔，单位为秒。",
           "member": "int64",
           "name": "Period",
@@ -1603,6 +1725,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "单位时间间隔内慢日志数量统计。",
           "member": "TimeSlice",
           "name": "TimeSeries",
@@ -1610,6 +1733,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "单位时间间隔内的实例 cpu 利用率监控数据。",
           "member": "MonitorMetricSeriesData",
           "name": "SeriesData",
@@ -1630,6 +1754,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "member": "string",
           "name": "InstanceId",
@@ -1638,6 +1763,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，如“2019-09-10 12:13:14”。",
           "member": "datetime",
           "name": "StartTime",
@@ -1646,6 +1772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。",
           "member": "datetime",
           "name": "EndTime",
@@ -1654,6 +1781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。",
           "member": "string",
           "name": "SortBy",
@@ -1662,6 +1790,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序方式，支持ASC（升序）以及DESC（降序）。",
           "member": "string",
           "name": "OrderBy",
@@ -1670,6 +1799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "member": "int64",
           "name": "Limit",
@@ -1678,6 +1808,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "member": "int64",
           "name": "Offset",
@@ -1686,6 +1817,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称数组。",
           "member": "SchemaItem",
           "name": "SchemaList",
@@ -1694,6 +1826,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "member": "string",
           "name": "Product",
@@ -1707,6 +1840,7 @@
       "document": "DescribeSlowLogTopSqls返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的记录总数。",
           "member": "int64",
           "name": "TotalCount",
@@ -1714,6 +1848,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢日志 top sql 列表",
           "member": "SlowLogTopSqlItem",
           "name": "Rows",
@@ -1734,6 +1869,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -1743,6 +1879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询范围的开始时间，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime_iso",
@@ -1752,6 +1889,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询范围的结束时间，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime_iso",
@@ -1761,6 +1899,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1775,6 +1914,7 @@
       "document": "DescribeSlowLogUserHostStats返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "来源地址数目。",
           "example": "1",
           "member": "int64",
@@ -1784,6 +1924,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "各来源地址的慢日志占比详情列表。",
           "example": "-",
           "member": "SlowLogHost",
@@ -1806,6 +1947,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -1815,6 +1957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的Top库数量，最大值为100，默认为20。",
           "example": "100",
           "member": "int64",
@@ -1824,6 +1967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
           "example": "TableRows",
           "member": "string",
@@ -1833,6 +1977,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始日期，如“2021-01-01”，最早为当日的前第29天，默认为截止日期的前第6天。",
           "example": "2021-01-01",
           "member": "date",
@@ -1842,6 +1987,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截止日期，如“2021-01-01”，最早为当日的前第29天，默认为当日。",
           "example": "2021-01-01",
           "member": "date",
@@ -1851,6 +1997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1865,6 +2012,7 @@
       "document": "DescribeTopSpaceSchemaTimeSeries返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的Top库空间统计信息的时序数据列表。",
           "example": "无",
           "member": "SchemaSpaceTimeSeries",
@@ -1887,6 +2035,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -1896,6 +2045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的Top库数量，最大值为100，默认为20。",
           "example": "100",
           "member": "int64",
@@ -1905,6 +2055,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
           "example": "TableRows",
           "member": "string",
@@ -1914,6 +2065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -1928,6 +2080,7 @@
       "document": "DescribeTopSpaceSchemas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的Top库空间统计信息列表。",
           "example": "无",
           "member": "SchemaSpaceData",
@@ -1937,6 +2090,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "采集库空间数据的时间戳（秒）。",
           "example": "1603819881",
           "member": "int64",
@@ -1959,6 +2113,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "example": "cdb-test",
           "member": "string",
@@ -1968,6 +2123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的Top表数量，最大值为100，默认为20。",
           "example": "2",
           "member": "int64",
@@ -1977,6 +2133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。",
           "example": "TableRows",
           "member": "string",
@@ -1986,6 +2143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始日期，如“2021-01-01”，最早为当日的前第29天，默认为截止日期的前第6天。",
           "example": "2020-01-01",
           "member": "date",
@@ -1995,6 +2153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截止日期，如“2021-01-01”，最早为当日的前第29天，默认为当日。",
           "example": "2020-01-01",
           "member": "date",
@@ -2004,6 +2163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -2018,6 +2178,7 @@
       "document": "DescribeTopSpaceTableTimeSeries返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的Top表空间统计信息的时序数据列表。",
           "example": "无",
           "member": "TableSpaceTimeSeries",
@@ -2040,6 +2201,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。",
           "example": "cdb-test",
           "member": "string",
@@ -2049,6 +2211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的Top表数量，最大值为100，默认为20。",
           "example": "2",
           "member": "int64",
@@ -2058,6 +2221,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
           "example": "TableRows",
           "member": "string",
@@ -2067,6 +2231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
@@ -2081,6 +2246,7 @@
       "document": "DescribeTopSpaceTables返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的Top表空间统计信息列表。",
           "example": "无",
           "member": "TableSpaceData",
@@ -2090,6 +2256,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "采集表空间数据的时间戳（秒）。",
           "example": "1603819881",
           "member": "int64",
@@ -2112,6 +2279,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -2121,6 +2289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SQL语句。",
           "example": "select * from t1",
           "member": "string",
@@ -2130,6 +2299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库名。",
           "example": "test",
           "member": "string",
@@ -2144,6 +2314,7 @@
       "document": "DescribeUserSqlAdvice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "SQL优化建议，可解析为JSON数组。",
           "example": "PossibleKeys",
           "member": "string",
@@ -2153,6 +2324,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SQL优化建议备注，可解析为String数组。",
           "example": "SQL解析不通过",
           "member": "string",
@@ -2162,6 +2334,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SQL语句。",
           "example": "select * from t1",
           "member": "string",
@@ -2171,6 +2344,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "库名。",
           "example": "test",
           "member": "string",
@@ -2180,6 +2354,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "相关表的DDL信息，可解析为JSON数组。",
           "example": "TableDDL",
           "member": "string",
@@ -2189,6 +2364,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SQL执行计划，可解析为JSON。",
           "example": "Before",
           "member": "string",
@@ -2198,6 +2374,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SQL优化后的成本节约详情，可解析为JSON。",
           "example": "After",
           "member": "string",
@@ -2220,6 +2397,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "诊断类型。",
           "member": "string",
           "name": "DiagType",
@@ -2229,6 +2407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间。",
           "member": "datetime",
           "name": "EndTime",
@@ -2238,6 +2417,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间。",
           "member": "datetime",
           "name": "StartTime",
@@ -2247,6 +2427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件 ID 。",
           "member": "int64",
           "name": "EventId",
@@ -2256,6 +2437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
           "member": "int64",
           "name": "Severity",
@@ -2265,6 +2447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "概要。",
           "member": "string",
           "name": "Outline",
@@ -2274,6 +2457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诊断项。",
           "member": "string",
           "name": "DiagItem",
@@ -2283,6 +2467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceId",
@@ -2292,6 +2477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Metric",
@@ -2301,6 +2487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Region",
@@ -2316,6 +2503,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件 ID 。",
           "example": "123456",
           "member": "int64",
@@ -2326,6 +2514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诊断类型。",
           "example": "复制",
           "member": "string",
@@ -2336,6 +2525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间。",
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
@@ -2346,6 +2536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间。",
           "example": "2019-01-01T12:00:00+08:00",
           "member": "datetime_iso",
@@ -2356,6 +2547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "概要。",
           "example": "复制IO线程中断",
           "member": "string",
@@ -2366,6 +2558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
           "example": "1",
           "member": "int64",
@@ -2376,6 +2569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分。",
           "example": "5",
           "member": "int64",
@@ -2386,6 +2580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段。",
           "example": "slave_io_running",
           "member": "string",
@@ -2396,6 +2591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "告警数目。",
           "example": "1",
           "member": "int64",
@@ -2412,6 +2608,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组id。",
           "member": "int64",
           "name": "Id",
@@ -2421,6 +2618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组名称。",
           "member": "string",
           "name": "Name",
@@ -2430,6 +2628,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组成员数量。",
           "member": "int64",
           "name": "MemberCount",
@@ -2445,6 +2644,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异步任务请求 ID。",
           "example": "63452",
           "member": "int64",
@@ -2455,6 +2655,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
           "example": "DAILY_INSPECTION",
           "member": "string",
@@ -2465,6 +2666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务完成进度，单位%。",
           "example": "100",
           "member": "int64",
@@ -2475,6 +2677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
@@ -2485,6 +2688,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务开始执行时间。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
@@ -2495,6 +2699,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务完成执行时间。",
           "example": "2019-09-10 12:13:14",
           "member": "datetime",
@@ -2505,6 +2710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务所属实例的基础信息。",
           "example": "-",
           "member": "InstanceBasicInfo",
@@ -2515,6 +2721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康报告中的健康信息。",
           "example": "-",
           "member": "HealthStatus",
@@ -2531,6 +2738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异常详情。",
           "example": "-",
           "member": "IssueTypeInfo",
@@ -2541,6 +2749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常事件总数。",
           "example": "3",
           "member": "int64",
@@ -2551,6 +2760,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康得分。",
           "example": "100",
           "member": "int64",
@@ -2561,6 +2771,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康等级, 如：\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"。",
           "example": "RISK",
           "member": "string",
@@ -2577,6 +2788,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "健康分数，满分100。",
           "example": "100",
           "member": "int64",
@@ -2587,6 +2799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康等级，取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\"- 危险；\"HIGH_RISK\" - 高危。",
           "example": "HEALTH",
           "member": "string",
@@ -2597,6 +2810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总扣分分数。",
           "example": "0",
           "member": "int64",
@@ -2607,6 +2821,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "ScoreDetail",
@@ -2623,6 +2838,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -2633,6 +2849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "test",
           "member": "string",
@@ -2643,6 +2860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内网IP。",
           "example": "127.0.0.1",
           "member": "string",
@@ -2653,6 +2871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内网Port。",
           "example": "3600",
           "member": "int64",
@@ -2663,6 +2882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例产品。",
           "example": "MySQL",
           "member": "string",
@@ -2673,6 +2893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例引擎版本。",
           "example": "5.6",
           "member": "string",
@@ -2689,6 +2910,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库巡检开关, Yes/No。",
           "example": "Yes",
           "member": "string",
@@ -2699,6 +2921,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例概览开关，Yes/No。",
           "example": "Yes",
           "member": "string",
@@ -2715,6 +2938,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cdb-test",
           "member": "string",
@@ -2725,6 +2949,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "cdb-测试",
           "member": "string",
@@ -2735,6 +2960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例所属地域。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2745,6 +2971,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康得分。",
           "example": "100",
           "member": "int64",
@@ -2755,6 +2982,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属产品。",
           "example": "MySql",
           "member": "string",
@@ -2765,6 +2993,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常事件数量。",
           "example": "0",
           "member": "int64",
@@ -2775,6 +3004,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型：1:MASTER；2:DR，3：RO，4:SDR。",
           "example": "1",
           "member": "int64",
@@ -2785,6 +3015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "核心数。",
           "example": "1",
           "member": "int64",
@@ -2795,6 +3026,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存，单位MB。",
           "example": "4000",
           "member": "int64",
@@ -2805,6 +3037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "硬盘存储，单位GB。",
           "example": "50",
           "member": "int64",
@@ -2815,6 +3048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库版本。",
           "example": "5.6",
           "member": "string",
@@ -2825,6 +3059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网地址。",
           "example": "127.0.0.1",
           "member": "string",
@@ -2835,6 +3070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网端口。",
           "example": "3306",
           "member": "int64",
@@ -2845,6 +3081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接入来源。",
           "example": "TENCENT_CLOUD",
           "member": "string",
@@ -2855,6 +3092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分组ID。",
           "example": "test-group",
           "member": "string",
@@ -2865,6 +3103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分组组名。",
           "example": "test-group-name",
           "member": "string",
@@ -2875,6 +3114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态：0：发货中；1：运行正常；4：销毁中；5：隔离中。",
           "example": "1",
           "member": "int64",
@@ -2885,6 +3125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网统一ID。",
           "example": "subnet-igztest",
           "member": "string",
@@ -2895,6 +3136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cdb类型。",
           "example": "CUSTOM",
           "member": "string",
@@ -2905,6 +3147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cdb实例初始化标志：0：未初始化；1：已初始化。",
           "example": "1",
           "member": "int64",
@@ -2915,6 +3158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态。",
           "example": "0",
           "member": "int64",
@@ -2925,6 +3169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络统一ID。",
           "example": "vpc-fstest",
           "member": "string",
@@ -2935,6 +3180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例巡检/概览的状态。",
           "example": "-",
           "member": "InstanceConfs",
@@ -2945,6 +3191,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源到期时间。",
           "example": "2021-02-25 16:33:26",
           "member": "datetime",
@@ -2955,6 +3202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否是DBbrain支持的实例。",
           "example": "true",
           "member": "bool",
@@ -2965,6 +3213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例安全审计日志开启状态：ON： 安全审计开启；OFF： 未开启安全审计。",
           "example": "OFF",
           "member": "string",
@@ -2975,6 +3224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例审计日志开启状态，ALL_AUDIT： 开启全审计；RULE_AUDIT： 开启规则审计；UNBOUND： 未开启审计。",
           "example": "UNBOUND",
           "member": "string",
@@ -2985,6 +3235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例审计日志运行状态：normal： 运行中； paused： 欠费暂停。",
           "example": "normal",
           "member": "string",
@@ -3001,6 +3252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。",
           "example": "AVAILABILITY",
           "member": "string",
@@ -3011,6 +3263,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常事件。",
           "example": "-",
           "member": "EventInfo",
@@ -3021,6 +3274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常事件总数。",
           "example": "1",
           "member": "int64",
@@ -3037,6 +3291,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启邮件发送: 0, 否; 1, 是。",
           "example": "1",
           "member": "int64",
@@ -3047,6 +3302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域配置, 如[\"ap-guangzhou\", \"ap-shanghai\"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
@@ -3057,6 +3313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发送指定的健康等级的报告, 如[\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"]。",
           "example": "[\"HEALTH\"]",
           "member": "string",
@@ -3067,6 +3324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人id, 联系人/联系组不能都为空。",
           "example": "[1,2]",
           "member": "int64",
@@ -3077,6 +3335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系组id, 联系人/联系组不能都为空。",
           "example": "[1,2]",
           "member": "int64",
@@ -3093,6 +3352,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "巡检开关。",
           "member": "InstanceConfs",
           "name": "InstanceConfs",
@@ -3101,6 +3361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生效实例地域，取值为\"All\"，代表全地域。",
           "member": "string",
           "name": "Regions",
@@ -3109,6 +3370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
           "member": "string",
           "name": "Product",
@@ -3117,6 +3379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定更改巡检状态的实例ID。",
           "member": "string",
           "name": "InstanceIds",
@@ -3143,6 +3406,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指标名称。",
           "member": "string",
           "name": "Metric",
@@ -3152,6 +3416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标单位。",
           "member": "string",
           "name": "Unit",
@@ -3161,6 +3426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "Values",
@@ -3176,6 +3442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "监控指标。",
           "member": "MonitorFloatMetric",
           "name": "Series",
@@ -3185,6 +3452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "监控指标对应的时间戳。",
           "member": "int64",
           "name": "Timestamp",
@@ -3200,6 +3468,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指标名称。",
           "member": "string",
           "name": "Metric",
@@ -3209,6 +3478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标单位。",
           "member": "string",
           "name": "Unit",
@@ -3218,6 +3488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Values",
@@ -3233,6 +3504,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "监控指标。",
           "member": "MonitorMetric",
           "name": "Series",
@@ -3242,6 +3514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "监控指标对应的时间戳。",
           "member": "int64",
           "name": "Timestamp",
@@ -3257,6 +3530,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "语言, 如\"zh\"。",
           "member": "string",
           "name": "Language",
@@ -3266,6 +3540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邮件模板的内容。",
           "member": "MailConfiguration",
           "name": "MailConfiguration",
@@ -3281,6 +3556,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称",
           "member": "string",
           "name": "Schema",
@@ -3296,6 +3572,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "库名。",
           "example": "test",
           "member": "string",
@@ -3306,6 +3583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据空间（MB）。",
           "example": "2.2",
           "member": "float",
@@ -3316,6 +3594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "索引空间（MB）。",
           "example": "1.0",
           "member": "float",
@@ -3326,6 +3605,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "碎片空间（MB）。",
           "example": "0",
           "member": "float",
@@ -3336,6 +3616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总使用空间（MB）。",
           "example": "3.2",
           "member": "float",
@@ -3346,6 +3627,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "碎片率（%）。",
           "example": "0",
           "member": "float",
@@ -3356,6 +3638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行数。",
           "example": "10",
           "member": "int64",
@@ -3366,6 +3649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库中所有表对应的独立物理文件大小加和（MB）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.2",
           "member": "float",
@@ -3382,6 +3666,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "库名",
           "example": "test",
           "member": "string",
@@ -3392,6 +3677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单位时间间隔内的空间指标数据。",
           "example": "无",
           "member": "MonitorMetricSeriesData",
@@ -3408,6 +3694,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "扣分项分类，取值包括：可用性、可维护性、性能及可靠性。",
           "example": "性能",
           "member": "string",
@@ -3418,6 +3705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分总分。",
           "example": "-20",
           "member": "int64",
@@ -3428,6 +3716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分总分上限。",
           "example": "-30",
           "member": "int64",
@@ -3438,6 +3727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分项列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "ScoreItem",
@@ -3454,6 +3744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异常诊断项名称。",
           "example": "慢SQL",
           "member": "string",
@@ -3464,6 +3755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诊断项分类，取值包括：可用性、可维护性、性能及可靠性。",
           "example": "性能",
           "member": "string",
@@ -3474,6 +3766,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "健康等级，取值包括：信息、提示、告警、严重、致命。",
           "example": "严重",
           "member": "string",
@@ -3484,6 +3777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该异常诊断项出现次数。",
           "example": "2",
           "member": "int64",
@@ -3494,6 +3788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扣分分数。",
           "example": "-30",
           "member": "int64",
@@ -3510,6 +3805,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异步任务Id。",
           "example": "1",
           "member": "uint64",
@@ -3520,6 +3816,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
@@ -3530,6 +3827,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-06-06 13:00:02",
           "member": "datetime",
@@ -3540,6 +3838,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间。",
           "example": "2019-06-06 12:50:02",
           "member": "datetime",
@@ -3550,6 +3849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态。",
           "example": "finished",
           "member": "string",
@@ -3560,6 +3860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行进度。",
           "example": "100",
           "member": "uint64",
@@ -3570,6 +3871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "导出日志开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-06-06 12:00:00",
           "member": "datetime",
@@ -3580,6 +3882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "导出日志结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
@@ -3590,6 +3893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件总大小，单位KB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -3600,6 +3904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2,3]",
           "member": "uint64",
@@ -3616,6 +3921,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "来源地址。",
           "example": "127.0.0.1",
           "member": "string",
@@ -3626,6 +3932,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该来源地址的慢日志数目占总数目的比例，单位%。",
           "example": "50.0",
           "member": "float",
@@ -3636,6 +3943,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该来源地址的慢日志数目。",
           "example": "30",
           "member": "int64",
@@ -3652,6 +3960,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "sql总锁等待时间",
           "example": "0.00008",
           "member": "float",
@@ -3662,6 +3971,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大锁等待时间",
           "example": "0.000096",
           "member": "float",
@@ -3672,6 +3982,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小锁等待时间",
           "example": "0.000041",
           "member": "float",
@@ -3682,6 +3993,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总扫描行数",
           "example": "584832",
           "member": "int64",
@@ -3692,6 +4004,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大扫描行数",
           "example": "101782",
           "member": "int64",
@@ -3702,6 +4015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小扫描行数",
           "example": "584832",
           "member": "int64",
@@ -3712,6 +4026,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总耗时",
           "example": "0.513363",
           "member": "float",
@@ -3722,6 +4037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大执行时间",
           "example": "0.765213",
           "member": "float",
@@ -3732,6 +4048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小执行时间",
           "example": "0.629921",
           "member": "float",
@@ -3742,6 +4059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总返回行数",
           "example": "292416",
           "member": "int64",
@@ -3752,6 +4070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大返回行数",
           "example": "292416",
           "member": "int64",
@@ -3762,6 +4081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小返回行数",
           "example": "292416",
           "member": "int64",
@@ -3772,6 +4092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行次数",
           "example": "37",
           "member": "int64",
@@ -3782,6 +4103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "sql模板",
           "example": "select * from t;",
           "member": "string",
@@ -3792,6 +4114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "带参数SQL（随机）",
           "example": "SELECT * FROM t;",
           "member": "string",
@@ -3802,6 +4125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名",
           "example": "test_center",
           "member": "string",
@@ -3812,6 +4136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总耗时占比",
           "example": "2.44",
           "member": "float",
@@ -3822,6 +4147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "sql总锁等待时间占比",
           "example": "1.92",
           "member": "float",
@@ -3832,6 +4158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总扫描行数占比",
           "example": "2.3",
           "member": "float",
@@ -3842,6 +4169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总返回行数占比",
           "example": "18.67",
           "member": "float",
@@ -3852,6 +4180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均执行时间",
           "example": "0.513363",
           "member": "float",
@@ -3862,6 +4191,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均返回行数",
           "example": "26518.0",
           "member": "float",
@@ -3872,6 +4202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均锁等待时间",
           "example": "0.000096",
           "member": "float",
@@ -3882,6 +4213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均扫描行数",
           "example": "584832.0",
           "member": "float",
@@ -3898,6 +4230,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "表名。",
           "member": "string",
           "name": "TableName",
@@ -3907,6 +4240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库名。",
           "member": "string",
           "name": "TableSchema",
@@ -3916,6 +4250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库表的存储引擎。",
           "member": "string",
           "name": "Engine",
@@ -3925,6 +4260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据空间（MB）。",
           "member": "float",
           "name": "DataLength",
@@ -3934,6 +4270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "索引空间（MB）。",
           "member": "float",
           "name": "IndexLength",
@@ -3943,6 +4280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "碎片空间（MB）。",
           "member": "float",
           "name": "DataFree",
@@ -3952,6 +4290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总使用空间（MB）。",
           "member": "float",
           "name": "TotalLength",
@@ -3961,6 +4300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "碎片率（%）。",
           "member": "float",
           "name": "FragRatio",
@@ -3970,6 +4310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行数。",
           "member": "int64",
           "name": "TableRows",
@@ -3979,6 +4320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "表对应的独立物理文件大小（MB）。",
           "member": "float",
           "name": "PhysicalFileSize",
@@ -3994,6 +4336,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "表名。",
           "member": "string",
           "name": "TableName",
@@ -4003,6 +4346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库名。",
           "member": "string",
           "name": "TableSchema",
@@ -4012,6 +4356,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库表的存储引擎。",
           "member": "string",
           "name": "Engine",
@@ -4021,6 +4366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单位时间间隔内的空间指标数据。",
           "member": "MonitorFloatMetricSeriesData",
           "name": "SeriesData",
@@ -4036,6 +4382,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总数",
           "member": "int64",
           "name": "Count",
@@ -4045,6 +4392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "统计开始时间",
           "member": "int64",
           "name": "Timestamp",
@@ -4060,6 +4408,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "配置的id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -4070,6 +4419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dbScan_mail_configuration",
           "member": "string",
@@ -4080,6 +4430,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置级别，\"User\"或\"Instance\"。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "User",
           "member": "string",
@@ -4090,6 +4441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -4100,6 +4452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置详情。",
           "example": "-",
           "member": "ProfileInfo",

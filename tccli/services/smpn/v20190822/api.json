@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "member": "string",
           "name": "PhoneNumber",
@@ -63,6 +64,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
           "member": "int64",
           "name": "TagType",
@@ -72,6 +74,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标记次数",
           "member": "int64",
           "name": "TagCount",
@@ -87,6 +90,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业号码认证请求内容",
           "member": "EPARequest",
           "name": "RequestData",
@@ -95,6 +99,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于计费的资源ID",
           "member": "string",
           "name": "ResourceId",
@@ -108,6 +113,7 @@
       "document": "CreateSmpnEpa返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业号码认证回应内容",
           "member": "EPAResponse",
           "name": "ResponseData",
@@ -128,6 +134,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户用于计费的资源Id",
           "member": "string",
           "name": "ResourceId",
@@ -136,6 +143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "终端骚扰保护请求",
           "member": "CHPRequest",
           "name": "RequestData",
@@ -149,6 +157,7 @@
       "document": "DescribeSmpnChp返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "终端骚扰保护回应",
           "member": "CHPResponse",
           "name": "ResponseData",
@@ -169,6 +178,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "虚假号码识别请求内容",
           "member": "FNRRequest",
           "name": "RequestData",
@@ -177,6 +187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于计费的资源ID",
           "member": "string",
           "name": "ResourceId",
@@ -190,6 +201,7 @@
       "document": "DescribeSmpnFnr返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "虚假号码识别回应内容",
           "member": "FNRResponse",
           "name": "ResponseData",
@@ -210,6 +222,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "号码营销监控请求内容",
           "member": "MHMRequest",
           "name": "RequestData",
@@ -218,6 +231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于计费的资源ID",
           "member": "string",
           "name": "ResourceId",
@@ -231,6 +245,7 @@
       "document": "DescribeSmpnMhm返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "号码营销监控回应内容",
           "member": "MHMResponse",
           "name": "ResponseData",
@@ -251,6 +266,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标记等级请求内容",
           "member": "MRLRequest",
           "name": "RequestData",
@@ -259,6 +275,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于计费的资源ID",
           "member": "string",
           "name": "ResourceId",
@@ -272,6 +289,7 @@
       "document": "DescribeSmpnMrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "恶意标记等级回应内容",
           "member": "MRLResponse",
           "name": "ResponseData",
@@ -292,6 +310,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "member": "string",
           "name": "PhoneNumber",
@@ -301,6 +320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "黄页名称",
           "member": "string",
           "name": "Name",
@@ -316,6 +336,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "0成功 其他失败",
           "member": "int64",
           "name": "RetCode",
@@ -331,6 +352,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "member": "string",
           "name": "PhoneNumber",
@@ -346,6 +368,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "虚假号码描述",
           "member": "int64",
           "name": "Status",
@@ -361,6 +384,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "member": "string",
           "name": "PhoneNumber",
@@ -376,6 +400,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
           "member": "int64",
           "name": "TagType",
@@ -385,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标记次数",
           "member": "int64",
           "name": "TagCount",
@@ -400,6 +426,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "member": "string",
           "name": "PhoneNumber",
@@ -415,6 +442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "骚扰电话恶意标记等级",
           "member": "int64",
           "name": "DisturbLevel",
@@ -424,6 +452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房产中介恶意标记等级",
           "member": "int64",
           "name": "HouseAgentLevel",
@@ -433,6 +462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保险理财恶意标记等级",
           "member": "int64",
           "name": "InsuranceLevel",
@@ -442,6 +472,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广告推销恶意标记等级",
           "member": "int64",
           "name": "SalesLevel",
@@ -451,6 +482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诈骗电话恶意标记等级",
           "member": "int64",
           "name": "CheatLevel",

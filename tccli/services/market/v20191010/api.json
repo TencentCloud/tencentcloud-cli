@@ -27,6 +27,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务商uin",
           "example": "12345678",
           "member": "string",
@@ -36,6 +37,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务商实例ID",
           "example": "1054492229",
           "member": "string",
@@ -45,6 +47,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云市场实例ID",
           "example": "market-g9sjptwqi",
           "member": "string",
@@ -54,6 +57,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例总流量",
           "example": "2000",
           "member": "string",
@@ -63,6 +67,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "剩余流量",
           "example": "200",
           "member": "string",
@@ -72,6 +77,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量单位",
           "example": "Mb",
           "member": "string",
@@ -86,6 +92,7 @@
       "document": "FlowProductRemind返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否成功",
           "example": "true",
           "member": "string",
@@ -95,6 +102,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "流水号",
           "example": "7c0b5ac4-47a6-448b-b486-18d9774e3264",
           "member": "string",
@@ -104,6 +112,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -126,6 +135,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用于查询实例的Id",
           "example": "\"123456789\"",
           "member": "string",
@@ -140,6 +150,7 @@
       "document": "GetUsagePlanUsageAmount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "最大调用量",
           "example": "1000",
           "member": "int64",
@@ -149,6 +160,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "已经调用量",
           "example": "500",
           "member": "int64",
@@ -158,6 +170,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "剩余调用量",
           "example": "500",
           "member": "int64",

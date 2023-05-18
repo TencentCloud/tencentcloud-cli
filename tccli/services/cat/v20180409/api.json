@@ -90,6 +90,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "批量任务名-地址",
           "example": "无",
           "member": "ProbeTaskBasicConfiguration",
@@ -99,6 +100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型",
           "example": "1",
           "member": "int64",
@@ -108,6 +110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测节点",
           "example": "[\"10001\"]",
           "member": "string",
@@ -117,6 +120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测间隔",
           "example": "30",
           "member": "int64",
@@ -126,6 +130,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测参数",
           "example": "{}",
           "member": "string",
@@ -135,6 +140,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -144,6 +150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "定时任务cron表达式",
           "example": "* 0-5 * * *",
           "member": "string",
@@ -153,6 +160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源标签值",
           "example": "[{\"TagKey\":\"a\", \"TagValue\": \"a1\"}]",
           "member": "Tag",
@@ -162,6 +170,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "测试类型，包含定时测试与即时测试",
           "example": "1",
           "member": "uint64",
@@ -171,6 +180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "插件类型",
           "example": "CDN",
           "member": "string",
@@ -180,6 +190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端ID",
           "example": "3198058",
           "member": "string",
@@ -194,6 +205,7 @@
       "document": "CreateProbeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID列表",
           "example": "[\"task-fsz5tuvy\"]",
           "member": "string",
@@ -216,6 +228,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "[\"task-xx\"]",
           "member": "string",
@@ -230,6 +243,7 @@
       "document": "DeleteProbeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总量",
           "example": "1",
           "member": "int64",
@@ -239,6 +253,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -248,6 +263,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TaskResult",
@@ -269,6 +285,7 @@
       "document": "DescribeDetailedSingleProbeData请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "开始时间戳（毫秒级）",
           "example": "1000000000",
           "member": "uint64",
@@ -277,6 +294,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间戳（毫秒级）",
           "example": "1000000000",
           "member": "uint64",
@@ -285,6 +303,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务类型\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_MediaStream：音视频体验",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
@@ -293,6 +312,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待排序字段\n可以填写 ProbeTime 拨测时间排序\n也可填写SelectedFields 中的选中字段",
           "example": "ProbeTime",
           "member": "string",
@@ -301,6 +321,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "true表示升序",
           "example": "true",
           "member": "bool",
@@ -309,6 +330,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "选中字段",
           "example": "[ProbeTime]",
           "member": "string",
@@ -317,6 +339,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "起始取数位置",
           "example": "0",
           "member": "int64",
@@ -325,6 +348,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "取数数量",
           "example": "10",
           "member": "int64",
@@ -333,6 +357,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "[task_fasdfds]",
           "member": "string",
@@ -341,6 +366,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "拨测点运营商\n\t\n这里实际按拨测结果中的运营商来填写即可\n\n电信：中国电信\n移动：中国移动\n联通：中国联通",
           "example": "[电信]",
           "member": "string",
@@ -349,6 +375,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "拨测点地区\n\t\n这里实际按拨测结果中的地区来填写即可\n\n国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海\n\n境外一般是国家名，如澳大利亚、新加坡",
           "example": "[上海]",
           "member": "string",
@@ -357,6 +384,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "错误类型",
           "example": "[正常]",
           "member": "string",
@@ -365,6 +393,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "城市\n这里实际按拨测结果中的城市来填写即可\n\n示例：\n\n深圳市\n武汉市\n首尔\n多伦多",
           "example": "[深圳市]",
           "member": "string",
@@ -379,6 +408,7 @@
       "document": "DescribeDetailedSingleProbeData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "单次详情数据",
           "example": "无",
           "member": "DetailedSingleDataDefine",
@@ -387,6 +417,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的数据总数",
           "example": "10000",
           "member": "int64",
@@ -407,6 +438,7 @@
       "document": "DescribeNodes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -415,6 +447,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外</li>",
           "example": "1",
           "member": "int64",
@@ -423,6 +456,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否IPv6",
           "example": "false",
           "member": "bool",
@@ -431,6 +465,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "名字模糊搜索",
           "example": "沈阳",
           "member": "string",
@@ -439,6 +474,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -447,6 +483,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务类型\n<li>1 = 页面性能</li>\n<li>2 = 文件上传</li>\n<li>3 = 文件下载</li>\n<li>4 = 端口性能</li>\n<li>5 = 网络质量</li>\n<li>6 = 音视频体验</li>",
           "example": "1",
           "member": "int64",
@@ -461,6 +498,7 @@
       "document": "DescribeNodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefineExt",
@@ -481,6 +519,7 @@
       "document": "DescribeProbeMetricData请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分析任务类型，支持以下几种类型：\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_UploadDownload：文件传输\nAnalyzeTaskType_MediaStream：音视频体验",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
@@ -489,6 +528,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "指标类型，指标查询默认传gauge",
           "example": "gauge",
           "member": "string",
@@ -497,6 +537,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如：\"avg(ping_time)\"代表整体时延(ms)",
           "example": "avg(ping_time)",
           "member": "string",
@@ -505,6 +546,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "过滤条件可以传单个过滤条件也可以拼接多个参数",
           "example": "host = '123' and time >= now()-30m",
           "member": "string",
@@ -513,6 +555,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "聚合时间, 1m、1d、30d 等等",
           "example": "time(1m),  operator",
           "member": "string",
@@ -521,6 +564,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "多条件过滤，支持多个过滤条件组合查询\n例如：[\"\"host\" = 'www.test.com'\", \"time >= now()-1h\"]",
           "example": "\"\"host\" = 'https://test.com'\", \"time >= now()-1h\"]",
           "member": "string",
@@ -535,6 +579,7 @@
       "document": "DescribeProbeMetricData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回指标 JSON 序列化后的字符串,具体如下所示：\n\"[{\\\"name\\\":\\\"task_navigate_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(first_screen_time) / 1000\\\"],\\\"values\\\":[[1641571200,6.756600000000001]],\\\"tags\\\":null}]\"",
           "example": "\"\"",
           "member": "string",
@@ -555,6 +600,7 @@
       "document": "DescribeProbeNodes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -563,6 +609,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 海外 </li>",
           "example": "1",
           "member": "int64",
@@ -571,6 +618,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否IPv6",
           "example": "false",
           "member": "bool",
@@ -579,6 +627,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "名字模糊搜索",
           "example": "沈阳",
           "member": "string",
@@ -587,6 +636,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -601,6 +651,7 @@
       "document": "DescribeProbeNodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefine",
@@ -622,6 +673,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID  列表",
           "example": "[\"task-xx\"]",
           "member": "string",
@@ -631,6 +683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务名",
           "example": "probe",
           "member": "string",
@@ -640,6 +693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测目标",
           "example": "http://www.qq.com",
           "member": "string",
@@ -649,6 +703,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态列表\n<li>1 = 创建中</li>\n<li> 2 = 运行中 </li>\n<li> 3 = 运行异常 </li>\n<li> 4 = 暂停中 </li>\n<li> 5 = 暂停异常 </li>\n<li> 6 = 任务暂停 </li>\n<li> 7 = 任务删除中 </li>\n<li> 8 = 任务删除异常 </li>\n<li> 9 = 任务删除</li>\n<li> 10 = 定时任务暂停中 </li>",
           "example": "[1,2]",
           "member": "int64",
@@ -658,6 +713,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0",
           "example": "1",
           "member": "int64",
@@ -667,6 +723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "10",
           "member": "int64",
@@ -676,6 +733,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -685,6 +743,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单状态\n<li>1 = 正常</li>\n<li> 2 = 欠费 </li>",
           "example": "1",
           "member": "int64",
@@ -694,6 +753,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测类型\n<li>1 = 页面浏览</li>\n<li> 2 =文件上传 </li>\n<li> 3 = 文件下载</li>\n<li> 4 = 端口性能 </li>\n<li> 5 = 网络质量 </li>\n<li> 6 =流媒体 </li>\n\n即使拨测只支持页面浏览，网络质量，文件下载",
           "example": "[1,2,3]",
           "member": "int64",
@@ -703,6 +763,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型",
           "example": "[1,2,3]",
           "member": "int64",
@@ -712,6 +773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序的列",
           "example": "task_category",
           "member": "string",
@@ -721,6 +783,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否正序",
           "example": "true",
           "member": "bool",
@@ -730,6 +793,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源标签值",
           "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
           "member": "KeyValuePair",
@@ -744,6 +808,7 @@
       "document": "DescribeProbeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "ProbeTask",
@@ -753,6 +818,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务总数",
           "example": "3",
           "member": "int64",
@@ -775,6 +841,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "拨测时间戳",
           "example": "1000000000",
           "member": "uint64",
@@ -785,6 +852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "储存所有string类型字段",
           "example": "[{...}, {...}]",
           "member": "Label",
@@ -795,6 +863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "储存所有float类型字段",
           "example": "[{...},{...}]",
           "member": "Field",
@@ -811,6 +880,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义字段编号",
           "example": "1",
           "member": "uint64",
@@ -821,6 +891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义字段名称/说明",
           "example": "probeTime",
           "member": "string",
@@ -831,6 +902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段值",
           "example": "10000000000",
           "member": "float",
@@ -846,6 +918,7 @@
       "document": "健值对",
       "members": [
         {
+          "disabled": false,
           "document": "健",
           "example": "Name",
           "member": "string",
@@ -855,6 +928,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "值",
           "example": "zhangsan",
           "member": "string",
@@ -871,6 +945,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义字段编号",
           "example": "1",
           "member": "uint64",
@@ -881,6 +956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义字段名称/说明",
           "example": "probeIP",
           "member": "string",
@@ -891,6 +967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字段值",
           "example": "0.0.0.0",
           "member": "string",
@@ -907,6 +984,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点名称",
           "example": "中国电信-北京 IDC",
           "member": "string",
@@ -917,6 +995,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点代码",
           "example": "10001",
           "member": "string",
@@ -927,6 +1006,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -937,6 +1017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络服务商",
           "example": "中国移动",
           "member": "string",
@@ -947,6 +1028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区域",
           "example": "福建",
           "member": "string",
@@ -957,6 +1039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "城市",
           "example": "宁德市",
           "member": "string",
@@ -967,6 +1050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -977,6 +1061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -987,6 +1072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "base",
           "member": "string",
@@ -997,6 +1083,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点状态：1-运行,2-下线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1013,6 +1100,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点名称",
           "example": "中国电信-北京 IDC",
           "member": "string",
@@ -1023,6 +1111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点代码",
           "example": "10001",
           "member": "string",
@@ -1033,6 +1122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -1043,6 +1133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络服务商",
           "example": "中国移动",
           "member": "string",
@@ -1053,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区域",
           "example": "福建",
           "member": "string",
@@ -1063,6 +1155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "城市",
           "example": "宁德市",
           "member": "string",
@@ -1073,6 +1166,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1083,6 +1177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1093,6 +1188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "base",
           "member": "string",
@@ -1103,6 +1199,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点支持的任务类型。1: 页面性能 2: 文件上传 3: 文件下载 4: 端口性能 5: 网络质量 6: 音视频体验\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1, 2, 3]",
           "member": "int64",
@@ -1118,6 +1215,7 @@
       "document": "拨测任务",
       "members": [
         {
+          "disabled": false,
           "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "probe",
           "member": "string",
@@ -1127,6 +1225,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务 ID",
           "example": "task-xx",
           "member": "string",
@@ -1136,6 +1235,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "拨测类型\n<li>1 = 页面浏览</li>\n<li> 2 =文件上传 </li>\n<li> 3 = 文件下载</li>\n<li> 4 = 端口性能 </li>\n<li> 5 = 网络质量 </li>\n<li> 6 =流媒体 </li>\n\n即时拨测只支持页面浏览，网络质量，文件下载",
           "example": "1",
           "member": "int64",
@@ -1145,6 +1245,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "拨测节点列表",
           "example": "[\"10000\"]",
           "member": "string",
@@ -1154,6 +1255,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "拨测间隔",
           "example": "30",
           "member": "int64",
@@ -1163,6 +1265,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "拨测参数",
           "example": "{}",
           "member": "string",
@@ -1172,6 +1275,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务状态\n<li>1 = 创建中</li>\n<li> 2 = 运行中 </li>\n<li> 3 = 运行异常 </li>\n<li> 4 = 暂停中 </li>\n<li> 5 = 暂停异常 </li>\n<li> 6 = 任务暂停 </li>\n<li> 7 = 任务删除中 </li>\n<li> 8 = 任务删除异常 </li>\n<li> 9 = 任务删除</li>\n<li> 10 = 定时任务暂停中 </li>",
           "example": "1",
           "member": "int64",
@@ -1181,6 +1285,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "目标地址",
           "example": "http://www.qq.com",
           "member": "string",
@@ -1190,6 +1295,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -1199,6 +1305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单状态\n<li>1 = 正常</li>\n<li> 2 = 欠费 </li>",
           "example": "1",
           "member": "int64",
@@ -1208,6 +1315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -1217,6 +1325,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "\"2020\"",
           "member": "string",
@@ -1226,6 +1335,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "定时任务cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "* 0-5 * * *",
           "member": "string",
@@ -1235,6 +1345,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "定时任务启动状态\n<li>1 = 定时任务表达式生效</li>\n<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1244,6 +1355,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务当前绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
           "member": "KeyValuePair",
@@ -1260,6 +1372,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "拨测任务名称",
           "example": "probe-task1",
           "member": "string",
@@ -1270,6 +1383,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测目标地址",
           "example": "www.baidu.com",
           "member": "string",
@@ -1286,6 +1400,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "[\"task-xx\"]",
           "member": "string",
@@ -1300,6 +1415,7 @@
       "document": "ResumeProbeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总量",
           "example": "1",
           "member": "int64",
@@ -1309,6 +1425,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1318,6 +1435,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TaskResult",
@@ -1340,6 +1458,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "[\"task-xx\"]",
           "member": "string",
@@ -1354,6 +1473,7 @@
       "document": "SuspendProbeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总量",
           "example": "1",
           "member": "int64",
@@ -1363,6 +1483,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1372,6 +1493,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TaskResult",
@@ -1394,6 +1516,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "key",
           "example": "k",
           "member": "string",
@@ -1404,6 +1527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "value",
           "example": "v",
           "member": "string",
@@ -1420,6 +1544,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "task-xx",
           "member": "string",
@@ -1430,6 +1555,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1440,6 +1566,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "错误信息",
           "member": "string",
@@ -1456,6 +1583,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "task-xx",
           "member": "string",
@@ -1465,6 +1593,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务名",
           "example": "test",
           "member": "string",
@@ -1492,6 +1621,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "example": "task-xx",
           "member": "string",
@@ -1501,6 +1631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测节点",
           "example": "[\"10001\"]",
           "member": "string",
@@ -1510,6 +1641,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测间隔",
           "example": "30",
           "member": "int64",
@@ -1519,6 +1651,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拨测参数",
           "example": "{}",
           "member": "string",
@@ -1528,6 +1661,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "定时任务cron表达式",
           "example": "* 0-5 * * *",
           "member": "string",
@@ -1537,6 +1671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费套餐id\n需要与taskId对应",
           "example": "[\"presub-xx\"]",
           "member": "string",

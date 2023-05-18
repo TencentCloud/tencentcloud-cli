@@ -104,6 +104,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "app的名称",
           "member": "string",
           "name": "AppName",
@@ -113,6 +114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的包名",
           "member": "string",
           "name": "AppPkgName",
@@ -122,6 +124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的版本号",
           "member": "string",
           "name": "AppVersion",
@@ -131,6 +134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的大小",
           "member": "uint64",
           "name": "AppSize",
@@ -140,6 +144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的md5",
           "member": "string",
           "name": "AppMd5",
@@ -149,6 +154,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的图标url",
           "member": "string",
           "name": "AppIconUrl",
@@ -158,6 +164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的文件名称",
           "member": "string",
           "name": "FileName",
@@ -173,6 +180,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "app的url，必须保证不用权限校验就可以下载",
           "member": "string",
           "name": "AppUrl",
@@ -182,6 +190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的md5，需要正确传递",
           "member": "string",
           "name": "AppMd5",
@@ -191,6 +200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的大小",
           "member": "uint64",
           "name": "AppSize",
@@ -200,6 +210,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的文件名",
           "member": "string",
           "name": "FileName",
@@ -209,6 +220,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的包名，需要正确的传递此字段",
           "member": "string",
           "name": "AppPkgName",
@@ -218,6 +230,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的版本号",
           "member": "string",
           "name": "AppVersion",
@@ -227,6 +240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的图标url",
           "member": "string",
           "name": "AppIconUrl",
@@ -236,6 +250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的名称",
           "member": "string",
           "name": "AppName",
@@ -251,6 +266,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一标识",
           "member": "string",
           "name": "ItemId",
@@ -260,6 +276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的名称",
           "member": "string",
           "name": "AppName",
@@ -269,6 +286,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的包名",
           "member": "string",
           "name": "AppPkgName",
@@ -278,6 +296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的版本号",
           "member": "string",
           "name": "AppVersion",
@@ -287,6 +306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的md5",
           "member": "string",
           "name": "AppMd5",
@@ -296,6 +316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的大小",
           "member": "uint64",
           "name": "AppSize",
@@ -305,6 +326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固服务版本",
           "member": "string",
           "name": "ServiceEdition",
@@ -314,6 +336,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固结果返回码",
           "member": "uint64",
           "name": "ShieldCode",
@@ -323,6 +346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后的APP下载地址",
           "member": "string",
           "name": "AppUrl",
@@ -332,6 +356,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "member": "uint64",
           "name": "TaskStatus",
@@ -341,6 +366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求的客户端ip",
           "member": "string",
           "name": "ClientIp",
@@ -350,6 +376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提交加固时间",
           "member": "uint64",
           "name": "TaskTime",
@@ -359,6 +386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的图标url",
           "member": "string",
           "name": "AppIconUrl",
@@ -368,6 +396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后app的md5",
           "member": "string",
           "name": "ShieldMd5",
@@ -377,6 +406,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后app的大小",
           "member": "uint64",
           "name": "ShieldSize",
@@ -392,6 +422,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "app的icon的url",
           "member": "string",
           "name": "AppIconUrl",
@@ -401,6 +432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的名称",
           "member": "string",
           "name": "AppName",
@@ -410,6 +442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的包名",
           "member": "string",
           "name": "AppPkgName",
@@ -425,6 +458,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源id，全局唯一",
           "example": "hsihi12923-ioio",
           "member": "string",
@@ -434,6 +468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的icon的url",
           "example": "http://q.com/1.png",
           "member": "string",
@@ -443,6 +478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的名称",
           "example": "微信",
           "member": "string",
@@ -452,6 +488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "app的包名",
           "example": "com.tencent.mm",
           "member": "string",
@@ -466,6 +503,7 @@
       "document": "CreateBindInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "1",
           "member": "uint64",
@@ -488,6 +526,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -497,6 +536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥有效时间，默认为1小时。",
           "example": "1111",
           "member": "uint64",
@@ -511,6 +551,7 @@
       "document": "CreateCosSecKeyInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "COS密钥对应的AppId",
           "example": "123456",
           "member": "uint64",
@@ -520,6 +561,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "COS密钥对应的存储桶名",
           "example": "ms-shield",
           "member": "string",
@@ -529,6 +571,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "存储桶对应的地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -538,6 +581,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥过期时间",
           "example": "3600",
           "member": "uint64",
@@ -547,6 +591,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥ID信息",
           "example": "XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
           "member": "string",
@@ -556,6 +601,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥KEY信息",
           "example": "55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz",
           "member": "string",
@@ -565,6 +611,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥TOCKEN信息",
           "example": "13606435fd46b2765dd01aa4eaf356dfca88817030001",
           "member": "string",
@@ -574,6 +621,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥可访问的文件前缀人。例如：CosPrefix=test/123/666，则该密钥只能操作test/123/666为前缀的文件，例如test/123/666/1.txt",
           "example": "pctool/123456789/1542613158",
           "member": "string",
@@ -596,6 +644,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源类型id。13624：加固专业版。",
           "member": "uint64",
           "name": "Pid",
@@ -604,6 +653,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间单位，取值为d，m，y，分别表示天，月，年。",
           "member": "string",
           "name": "TimeUnit",
@@ -612,6 +662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间数量。",
           "member": "uint64",
           "name": "TimeSpan",
@@ -620,6 +671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源数量。",
           "member": "uint64",
           "name": "ResourceNum",
@@ -633,6 +685,7 @@
       "document": "CreateResourceInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "新创建的资源列表。",
           "member": "string",
           "name": "ResourceSet",
@@ -653,6 +706,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待加固的应用信息",
           "example": "无",
           "member": "AppInfo",
@@ -662,6 +716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固服务信息",
           "example": "无",
           "member": "ServiceInfo",
@@ -676,6 +731,7 @@
       "document": "CreateShieldInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "1",
           "member": "uint64",
@@ -685,6 +741,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务唯一标识",
           "example": "shgugu-hiw72-334kd",
           "member": "string",
@@ -707,6 +764,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源id",
           "example": "127500-shi",
           "member": "string",
@@ -716,6 +774,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "example": "默认加固策略",
           "member": "string",
@@ -725,6 +784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略具体信息",
           "example": "无",
           "member": "PlanInfo",
@@ -739,6 +799,7 @@
       "document": "CreateShieldPlanInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略id",
           "example": "1",
           "member": "uint64",
@@ -748,6 +809,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "1",
           "member": "uint64",
@@ -770,6 +832,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一标识ItemId的列表",
           "example": "satea",
           "member": "string",
@@ -784,6 +847,7 @@
       "document": "DeleteShieldInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "5975134874",
           "member": "uint64",
@@ -806,6 +870,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "软件包的下载链接",
           "example": "\"https://xxx.xxx.xx\"",
           "member": "string",
@@ -815,6 +880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。",
           "example": "\"2751xxxxxd1d203d6621ea28a0axxxxx\"",
           "member": "string",
@@ -829,6 +895,7 @@
       "document": "DescribeApkDetectionResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "响应结果，ok表示正常，error表示错误",
           "example": "\"ok\"",
           "member": "string",
@@ -838,6 +905,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Result为error错误时的原因说明",
           "example": "\"\"",
           "member": "string",
@@ -847,6 +915,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "APK检测结果数组",
           "example": "无",
           "member": "ResultListItem",
@@ -869,6 +938,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤",
           "example": "无",
           "member": "Filter",
@@ -878,6 +948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
           "member": "uint64",
@@ -887,6 +958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数量限制，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -896,6 +968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。",
           "example": "[\"12750\\r\\n\"]",
           "member": "uint64",
@@ -905,6 +978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。",
           "example": "CreateTime",
           "member": "string",
@@ -914,6 +988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "desc",
           "member": "string",
@@ -928,6 +1003,7 @@
       "document": "DescribeResourceInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合要求的资源数量",
           "example": "10",
           "member": "uint64",
@@ -937,6 +1013,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合要求的资源数组",
           "example": "无",
           "member": "ResourceInfo",
@@ -959,6 +1036,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "支持通过app名称，app包名，加固的服务版本，提交的渠道进行筛选。",
           "example": "无",
           "member": "Filter",
@@ -968,6 +1046,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -977,6 +1056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数量限制，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -986,6 +1066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可以提供ItemId数组来查询一个或者多个结果。注意不可以同时指定ItemIds和Filters。",
           "example": "无",
           "member": "string",
@@ -995,6 +1076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按某个字段排序，目前仅支持TaskTime排序。",
           "example": "\"TaskTime\"",
           "member": "string",
@@ -1004,6 +1086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "\"desc\"",
           "member": "string",
@@ -1018,6 +1101,7 @@
       "document": "DescribeShieldInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合要求的app数量",
           "example": "10",
           "member": "uint64",
@@ -1027,6 +1111,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "一个关于app详细信息的结构体，主要包括app的基本信息和加固信息。",
           "example": "无",
           "member": "AppSetInfo",
@@ -1049,6 +1134,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源id",
           "example": "jsihsih-xx",
           "member": "string",
@@ -1058,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务类别id",
           "example": "123",
           "member": "uint64",
@@ -1072,6 +1159,7 @@
       "document": "DescribeShieldPlanInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "绑定资源信息",
           "example": "无",
           "member": "BindInfo",
@@ -1081,6 +1169,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加固策略信息",
           "example": "无",
           "member": "ShieldPlanInfo",
@@ -1090,6 +1179,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加固资源信息",
           "example": "无",
           "member": "ResourceServiceInfo",
@@ -1112,6 +1202,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一标识",
           "example": "1shi2e-2387hjgus",
           "member": "string",
@@ -1126,6 +1217,7 @@
       "document": "DescribeShieldResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "0",
           "member": "uint64",
@@ -1135,6 +1227,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "app加固前的详细信息",
           "example": "无",
           "member": "AppDetailInfo",
@@ -1144,6 +1237,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "app加固后的详细信息",
           "example": "无",
           "member": "ShieldInfo",
@@ -1153,6 +1247,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "状态描述",
           "example": "\"\"",
           "member": "string",
@@ -1162,6 +1257,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "状态指引",
           "example": "\"\"",
           "member": "string",
@@ -1184,6 +1280,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询的网址",
           "example": "\"http://123.com\"",
           "member": "string",
@@ -1198,6 +1295,7 @@
       "document": "DescribeUrlDetectionResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "[查询结果]查询结果；枚举值：0 查询成功，否则查询失败",
           "example": "0",
           "member": "int64",
@@ -1207,6 +1305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[固定信息]响应协议版本号",
           "example": "1",
           "member": "int64",
@@ -1216,6 +1315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[查询结果]url恶意状态\n枚举值：\n0-1：未知，访问暂无风险。\n2 ：\t风险网址，具体的恶意类型定义参考恶意大类EvilClass字段。\n3-4：安全，访问无风险。\n\n注意：查询结果EvilClass字段在Urltype=2时，才有意义。",
           "example": "1",
           "member": "int64",
@@ -1225,6 +1325,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[查询结果]url恶意类型大类:{\n    \"1\": \"社工欺诈（仿冒、账号钓鱼、中奖诈骗）\",\n    \"2\": \"信息诈骗（虚假充值、虚假兼职、虚假金融投资、虚假信用卡代办、网络赌博诈骗）\",\n    \"3\": \"虚假销售（男女保健美容减肥产品、电子产品、虚假广告、违法销售）\",\n    \"4\": \"恶意文件（病毒文件，木马文件，恶意apk文件的下载链接以及站点，挂马网站）\",\n    \"5\": \"博彩网站（博彩网站，在线赌博网站）\",\n    \"6\": \"色情网站（涉嫌传播色情内容，提供色情服务的网站）\"\n  }",
           "example": "1",
           "member": "int64",
@@ -1234,6 +1335,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "1",
           "member": "int64",
@@ -1243,6 +1345,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "1",
           "member": "int64",
@@ -1252,6 +1355,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[查询详情]url检出时间；时间戳",
           "example": "111",
           "member": "int64",
@@ -1261,6 +1365,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "\"\"",
           "member": "string",
@@ -1270,6 +1375,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "\"\"",
           "member": "string",
@@ -1279,6 +1385,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[查询结果]url恶意状态说明；为UrlType字段值对应的说明",
           "example": "\"\"",
           "member": "string",
@@ -1288,6 +1395,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "[查询结果]url恶意大类说明；为EvilClass字段值对应的说明",
           "example": "\"\"",
           "member": "string",
@@ -1297,6 +1405,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "\"\"",
           "member": "string",
@@ -1306,6 +1415,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该字段暂为空",
           "example": "\"\"",
           "member": "string",
@@ -1332,6 +1442,7 @@
       "document": "DescribeUserBaseInfoInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户uin信息",
           "member": "uint64",
           "name": "UserUin",
@@ -1339,6 +1450,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户APPID信息",
           "member": "uint64",
           "name": "UserAppid",
@@ -1346,6 +1458,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "系统时间戳",
           "member": "uint64",
           "name": "TimeStamp",
@@ -1366,6 +1479,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤的字段",
           "member": "string",
           "name": "Name",
@@ -1375,6 +1489,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要过滤字段的值",
           "member": "string",
           "name": "Value",
@@ -1390,6 +1505,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "非广告类型",
           "example": "\"\"",
           "member": "string",
@@ -1400,6 +1516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "非广告插件名称",
           "example": "\"\"",
           "member": "string",
@@ -1410,6 +1527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "非广告插件描述",
           "example": "\"\"",
           "member": "string",
@@ -1426,6 +1544,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "默认策略，1为默认，0为非默认",
           "member": "uint64",
           "name": "IsDefault",
@@ -1435,6 +1554,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略id",
           "member": "uint64",
           "name": "PlanId",
@@ -1444,6 +1564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略名称",
           "member": "string",
           "name": "PlanName",
@@ -1453,6 +1574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略信息",
           "member": "PlanInfo",
           "name": "PlanInfo",
@@ -1468,6 +1590,7 @@
       "members": [
         {
           "default": "1",
+          "disabled": false,
           "document": "apk大小优化，0关闭，1开启",
           "member": "uint64",
           "name": "ApkSizeOpt",
@@ -1477,6 +1600,7 @@
         },
         {
           "default": "1",
+          "disabled": false,
           "document": "Dex加固，0关闭，1开启",
           "member": "uint64",
           "name": "Dex",
@@ -1486,6 +1610,7 @@
         },
         {
           "default": "1",
+          "disabled": false,
           "document": "So加固，0关闭，1开启",
           "member": "uint64",
           "name": "So",
@@ -1495,6 +1620,7 @@
         },
         {
           "default": "1",
+          "disabled": false,
           "document": "数据收集，0关闭，1开启",
           "member": "uint64",
           "name": "Bugly",
@@ -1504,6 +1630,7 @@
         },
         {
           "default": "1",
+          "disabled": false,
           "document": "防止重打包，0关闭，1开启",
           "member": "uint64",
           "name": "AntiRepack",
@@ -1513,6 +1640,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "Dex分离，0关闭，1开启",
           "member": "uint64",
           "name": "SeperateDex",
@@ -1522,6 +1650,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "内存保护，0关闭，1开启",
           "member": "uint64",
           "name": "Db",
@@ -1531,6 +1660,7 @@
         },
         {
           "default": "1",
+          "disabled": false,
           "document": "Dex签名校验，0关闭，1开启",
           "member": "uint64",
           "name": "DexSig",
@@ -1540,6 +1670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "So文件信息",
           "member": "SoInfo",
           "name": "SoInfo",
@@ -1549,6 +1680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vmp，0关闭，1开启",
           "member": "uint64",
           "name": "AntiVMP",
@@ -1558,6 +1690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保护so的强度，",
           "member": "string",
           "name": "SoType",
@@ -1567,6 +1700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防日志泄漏，0关闭，1开启",
           "member": "uint64",
           "name": "AntiLogLeak",
@@ -1576,6 +1710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "root检测，0关闭，1开启",
           "member": "uint64",
           "name": "AntiQemuRoot",
@@ -1585,6 +1720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源防篡改，0关闭，1开启",
           "member": "uint64",
           "name": "AntiAssets",
@@ -1594,6 +1730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "防止截屏，0关闭，1开启",
           "member": "uint64",
           "name": "AntiScreenshot",
@@ -1603,6 +1740,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SSL证书防窃取，0关闭，1开启",
           "member": "uint64",
           "name": "AntiSSL",
@@ -1618,6 +1756,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数字类型，分别为 1-通知栏广告，2-积分墙广告，3-banner广告，4- 悬浮窗图标广告，5-精品推荐列表广告, 6-插播广告",
           "example": "\"1\"",
           "member": "string",
@@ -1628,6 +1767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广告插件名称",
           "example": "\"\"",
           "member": "string",
@@ -1638,6 +1778,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广告插件描述",
           "example": "\"\"",
           "member": "string",
@@ -1654,6 +1795,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户购买的资源id，全局唯一",
           "member": "string",
           "name": "ResourceId",
@@ -1663,6 +1805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736",
           "member": "uint64",
           "name": "Pid",
@@ -1672,6 +1815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时间戳",
           "member": "uint64",
           "name": "CreateTime",
@@ -1681,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间戳",
           "member": "uint64",
           "name": "ExpireTime",
@@ -1690,6 +1835,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0-未绑定，1-已绑定",
           "member": "int64",
           "name": "IsBind",
@@ -1699,6 +1845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户绑定app的基本信息",
           "member": "BindInfo",
           "name": "BindInfo",
@@ -1708,6 +1855,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源名称，如应用加固，漏洞扫描",
           "member": "string",
           "name": "ResourceName",
@@ -1723,6 +1871,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间戳",
           "member": "uint64",
           "name": "CreateTime",
@@ -1732,6 +1881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间戳",
           "member": "uint64",
           "name": "ExpireTime",
@@ -1741,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源名称，如应用加固，源码混淆",
           "member": "string",
           "name": "ResourceName",
@@ -1756,6 +1907,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "banner广告软件标记，分别为-1-不确定，0-否，1-是",
           "example": "\"1\"",
           "member": "string",
@@ -1766,6 +1918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "精品推荐列表广告标记，分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
           "member": "string",
@@ -1776,6 +1929,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "悬浮窗图标广告标记,分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
           "member": "string",
@@ -1786,6 +1940,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "积分墙广告软件标记，分别为 -1 -不确定，0-否，1-是",
           "example": "\"\"",
           "member": "string",
@@ -1796,6 +1951,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安装包的md5",
           "example": "\"\"",
           "member": "string",
@@ -1806,6 +1962,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知栏广告软件标记，分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
           "member": "string",
@@ -1816,6 +1973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1表示官方，0表示非官方",
           "example": "\"1\"",
           "member": "string",
@@ -1826,6 +1984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "广告插件结果列表",
           "example": "无",
           "member": "PluginListItem",
@@ -1836,6 +1995,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "非广告插件结果列表(SDK、风险插件等)",
           "example": "无",
           "member": "OptPluginListItem",
@@ -1846,6 +2006,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数字类型，分别为0-未知， 1-安全软件，2-风险软件，3-病毒软件",
           "example": "\"1\"",
           "member": "string",
@@ -1856,6 +2017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Session id，合作方可以用来区分回调数据，需要唯一。",
           "example": "\"\"",
           "member": "string",
@@ -1866,6 +2028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安装包名称",
           "example": "\"\"",
           "member": "string",
@@ -1876,6 +2039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "插播广告软件标记，取值：-1 不确定，0否， 1 是",
           "example": "\"-1\"",
           "member": "string",
@@ -1886,6 +2050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "病毒名称，utf8编码",
           "example": "\"\"",
           "member": "string",
@@ -1896,6 +2061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "病毒描述，utf8编码",
           "example": "\"\"",
           "member": "string",
@@ -1906,6 +2072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二次打包状态：0-表示默认；1-表示二次",
           "example": "\"\"",
           "member": "string",
@@ -1916,6 +2083,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用错误码：0、1-表示正常；                  \n\n2表示System Error(engine analysis error).\n\n3表示App analysis error, please confirm it.\n\n4表示App have not cert, please confirm it.\n\n5表示App size is zero, please confirm it.\n\n6表示App have not package name, please confirm it.\n\n7表示App build time is empty, please confirm it.\n\n8表示App have not valid cert, please confirm it.\n\n99表示Other error.\n\n1000表示App downloadlink download fail, please confirm it.\n\n1001表示APP md5 different between real md5, please confirm it.\n\n1002表示App md5 uncollect, please offer downloadlink.",
           "example": "\"0\"",
           "member": "string",
@@ -1926,6 +2094,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应errno的错误信息描述",
           "example": "\"\"",
           "member": "string",
@@ -1942,6 +2111,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务版本，基础版basic，专业版professional，企业版enterprise。",
           "member": "string",
           "name": "ServiceEdition",
@@ -1951,6 +2121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务处理完成后的反向通知回调地址，如果不需要通知请传递空字符串。通知为POST请求，post包体数据示例{\"Response\":{\"ItemId\":\"4cdad8fb86f036b06bccb3f58971c306\",\"ShieldCode\":0,\"ShieldMd5\":\"78701576793c4a5f04e1c9660de0aa0b\",\"ShieldSize\":11997354,\"TaskStatus\":1,\"TaskTime\":1539148141}}，调用方需要返回如下信息，{\"Result\":\"ok\",\"Reason\":\"xxxxx\"}，如果Result字段值不等于ok会继续回调。",
           "member": "string",
           "name": "CallbackUrl",
@@ -1960,6 +2131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提交来源 YYB-应用宝 RDM-rdm MC-控制台 MAC_TOOL-mac工具 WIN_TOOL-window工具。",
           "member": "string",
           "name": "SubmitSource",
@@ -1969,6 +2141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固策略编号，如果不传则使用系统默认加固策略。如果指定的plan不存在会返回错误。",
           "member": "uint64",
           "name": "PlanId",
@@ -1984,6 +2157,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加固结果的返回码",
           "member": "uint64",
           "name": "ShieldCode",
@@ -1993,6 +2167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后app的大小",
           "member": "uint64",
           "name": "ShieldSize",
@@ -2002,6 +2177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后app的md5",
           "member": "string",
           "name": "ShieldMd5",
@@ -2011,6 +2187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固后的APP下载地址，该地址有效期为20分钟，请及时下载",
           "member": "string",
           "name": "AppUrl",
@@ -2020,6 +2197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固的提交时间",
           "member": "uint64",
           "name": "TaskTime",
@@ -2029,6 +2207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一标识",
           "member": "string",
           "name": "ItemId",
@@ -2038,6 +2217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固版本，basic基础版，professional专业版，enterprise企业版",
           "member": "string",
           "name": "ServiceEdition",
@@ -2053,6 +2233,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加固策略数量",
           "member": "uint64",
           "name": "TotalCount",
@@ -2062,6 +2243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加固策略具体信息数组",
           "member": "PlanDetailInfo",
           "name": "PlanSet",
@@ -2077,6 +2259,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "so文件列表",
           "member": "string",
           "name": "SoFileNames",

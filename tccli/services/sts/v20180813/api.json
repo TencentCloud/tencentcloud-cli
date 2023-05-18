@@ -55,6 +55,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥ID",
           "member": "string",
           "name": "SecretId",
@@ -64,6 +65,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间(时间戳)",
           "member": "uint64",
           "name": "CreateTime",
@@ -73,6 +75,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态(2:有效, 3:禁用, 4:已删除)",
           "member": "uint64",
           "name": "Status",
@@ -88,6 +91,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n普通角色：\nqcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName\n服务角色：\nqcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName",
           "example": "qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919",
           "member": "string",
@@ -97,6 +101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "临时会话名称，由用户自定义名称。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\\w+=,.@_-]*",
           "example": "cts",
           "member": "string",
@@ -106,6 +111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "example": "test",
           "member": "uint64",
@@ -115,6 +121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n3、策略中不能包含 principal 元素。",
           "example": "无",
           "member": "string",
@@ -124,6 +131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:\\/-]*",
           "example": "role-1232",
           "member": "string",
@@ -133,6 +141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。",
           "example": "无",
           "member": "Tag",
@@ -142,6 +151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调用者身份uin",
           "example": "1000001",
           "member": "string",
@@ -156,6 +166,7 @@
       "document": "AssumeRole返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "临时安全证书",
           "example": "无",
           "member": "Credentials",
@@ -165,6 +176,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
           "example": "1543914376",
           "member": "int64",
@@ -174,6 +186,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "证书无效的时间，以 iso8601 格式的 UTC 时间表示",
           "example": "2018-12-04T09:06:16Z",
           "member": "string",
@@ -196,6 +209,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "base64 编码的 SAML 断言信息",
           "member": "string",
           "name": "SAMLAssertion",
@@ -204,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扮演者访问描述名",
           "member": "string",
           "name": "PrincipalArn",
@@ -212,6 +227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "角色访问描述名",
           "member": "string",
           "name": "RoleArn",
@@ -220,6 +236,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话名称",
           "member": "string",
           "name": "RoleSessionName",
@@ -228,6 +245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "member": "uint64",
           "name": "DurationSeconds",
@@ -241,6 +259,7 @@
       "document": "AssumeRoleWithSAML返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "对象里面包含 Token，TmpSecretId，TmpSecretKey 三元组",
           "member": "Credentials",
           "name": "Credentials",
@@ -248,6 +267,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
           "member": "uint64",
           "name": "ExpiredTime",
@@ -255,6 +275,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "证书无效的时间，以 ISO8601 格式的 UTC 时间表示",
           "member": "string",
           "name": "Expiration",
@@ -275,6 +296,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "身份提供商名称",
           "example": "OIDC",
           "member": "string",
@@ -284,6 +306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IdP签发的OIDC令牌",
           "example": "XXXXX",
           "member": "string",
@@ -293,6 +316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "角色访问描述名",
           "example": "qcs::cam::uin/798950673:roleName/OneLogin-Role",
           "member": "string",
@@ -302,6 +326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话名称",
           "example": "XXXXX",
           "member": "string",
@@ -311,6 +336,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "example": "3600",
           "member": "int64",
@@ -325,6 +351,7 @@
       "document": "AssumeRoleWithWebIdentity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "临时密钥过期时间(时间戳)",
           "example": "123456789",
           "member": "uint64",
@@ -334,6 +361,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "临时密钥过期时间",
           "example": "2010-12-10",
           "member": "string",
@@ -343,6 +371,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "临时密钥",
           "example": "无",
           "member": "Credentials",
@@ -365,6 +394,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
           "member": "string",
           "name": "Token",
@@ -374,6 +404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "临时证书密钥ID。最长不超过1024字节。",
           "member": "string",
           "name": "TmpSecretId",
@@ -383,6 +414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "临时证书密钥Key。最长不超过1024字节。",
           "member": "string",
           "name": "TmpSecretKey",
@@ -402,6 +434,7 @@
       "document": "GetCallerIdentity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当前调用者ARN。",
           "member": "string",
           "name": "Arn",
@@ -409,6 +442,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前调用者所属主账号Uin。",
           "member": "string",
           "name": "AccountId",
@@ -416,6 +450,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "身份标识。\n1. 调用者是云账号时，返回的是当前账号Uin\n2. 调用者是角色时，返回的是roleId:roleSessionName\n3. 调用者是联合身份时，返回的是uin:federatedUserName",
           "member": "string",
           "name": "UserId",
@@ -423,6 +458,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥所属账号Uin。\n1. 调用者是云账号，返回的当前账号Uin\n2, 调用者是角色，返回的申请角色密钥的账号Uin",
           "member": "string",
           "name": "PrincipalId",
@@ -430,6 +466,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "身份类型。",
           "member": "string",
           "name": "Type",
@@ -450,6 +487,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "您可以自定义调用方英文名称，由字母组成。",
           "member": "string",
           "name": "Name",
@@ -458,6 +496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "授予该临时证书权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
           "member": "string",
           "name": "Policy",
@@ -466,6 +505,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认1800秒，主账号最长可设定有效期为7200秒，子账号最长可设定有效期为129600秒。",
           "member": "uint64",
           "name": "DurationSeconds",
@@ -479,6 +519,7 @@
       "document": "GetFederationToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "临时证书",
           "member": "Credentials",
           "name": "Credentials",
@@ -486,6 +527,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "临时证书有效的时间，返回 Unix 时间戳，精确到秒",
           "member": "uint64",
           "name": "ExpiredTime",
@@ -493,6 +535,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Expiration",
@@ -513,6 +556,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的账号(不填默认查当前账号)",
           "member": "uint64",
           "name": "TargetUin",
@@ -526,6 +570,7 @@
       "document": "QueryApiKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥ID列表",
           "member": "ApiKey",
           "name": "IdKeys",
@@ -546,6 +591,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键，最长128个字符，区分大小写。",
           "example": "department",
           "member": "string",
@@ -556,6 +602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值，最长256个字符，区分大小写。",
           "example": "engineering",
           "member": "string",

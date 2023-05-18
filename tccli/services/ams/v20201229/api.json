@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -58,6 +59,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -68,6 +70,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -78,6 +81,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -88,6 +92,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -98,6 +103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频片段存储的链接地址，该地址有效期为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -108,6 +114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频文件的时长，单位为秒。",
           "example": "无",
           "member": "string",
@@ -118,6 +125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。",
           "example": "无",
           "member": "string",
@@ -128,6 +136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。",
           "example": "无",
           "member": "AudioResultDetailTextResult",
@@ -138,6 +147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。",
           "example": "无",
           "member": "AudioResultDetailMoanResult",
@@ -148,6 +158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。",
           "example": "无",
           "member": "AudioResultDetailLanguageResult",
@@ -158,6 +169,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -168,6 +180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecognitionResult",
@@ -184,6 +197,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对应的语言种类信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -194,6 +208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -204,6 +219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -214,6 +230,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -224,6 +241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "*内测中，敬请期待*\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -240,6 +258,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -250,6 +269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。",
           "example": "无",
           "member": "int64",
@@ -260,6 +280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。",
           "example": "无",
           "member": "float",
@@ -270,6 +291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。",
           "example": "无",
           "member": "float",
@@ -280,6 +302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "*内测中，敬请期待*",
           "example": "无",
           "member": "string",
@@ -290,6 +313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -300,6 +324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
           "example": "Pass",
           "member": "string",
@@ -316,6 +341,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果需要检测的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -326,6 +352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -336,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -346,6 +374,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -362,6 +391,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -372,6 +402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回ASR识别出的文本内容命中的关键词信息，用于标注内容违规的具体原因（如：加我微信）。该参数可能会有多个返回值，代表命中的多个关键词；若返回值为空，Score不为空，则代表识别结果所对应的恶意标签（Label）来自于语义模型判断的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -382,6 +413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -392,6 +424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -402,6 +435,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -412,6 +446,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -422,6 +457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。",
           "example": "无",
           "member": "int64",
@@ -432,6 +468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -448,6 +485,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -458,6 +496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频片段的具体审核结果，详细内容敬请参考AudioResult数据结构的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioResult",
@@ -474,6 +513,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于标识腾讯云对象存储的存储桶名称,关于文件桶的详细信息敬请参考 [腾讯云存储相关说明](https://cloud.tencent.com/document/product/436/44352)。",
           "example": "无",
           "member": "string",
@@ -484,6 +524,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于标识腾讯云对象存储的托管机房的分布地区，对象存储 COS 的数据存放在这些地域的存储桶中。",
           "example": "无",
           "member": "string",
@@ -494,6 +535,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于标识腾讯云对象存储的对象Key,对象z作为基本单元被存放在存储桶中；用户可以通过腾讯云控制台、API、SDK 等多种方式管理对象。有关对象的详细描述敬请参阅相应 [产品文档](https://cloud.tencent.com/document/product/436/13324)。",
           "example": "无",
           "member": "string",
@@ -510,6 +552,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。",
           "example": "task-audio-XwxJtbkKXWgCt8AZ",
           "member": "string",
@@ -537,6 +580,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Biztype为策略的具体的编号，用于接口调度，在内容安全控制台中可配置。不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；调用时不传入Biztype代表采用默认的识别策略。",
           "example": "audio_test_0001",
           "member": "string",
@@ -546,6 +590,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据标识，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
           "example": "5c10e038-35ff-4114-88ab-53a0aaea5dd7",
           "member": "string",
@@ -555,6 +600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。",
           "example": "mp3",
           "member": "string",
@@ -564,6 +610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件名称，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
           "example": "file_name",
           "member": "string",
@@ -573,6 +620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据Base64编码，短音频同步接口仅传入可音频内容；\n支持范围：文件大小不能超过5M，时长不可超过60s；\n支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。",
           "example": "1",
           "member": "string",
@@ -582,6 +630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频资源访问链接，与FileContent参数必须二选一输入；\n支持范围及格式：同FileContent；",
           "example": "1",
           "member": "string",
@@ -596,6 +645,7 @@
       "document": "CreateAudioModerationSyncTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "请求接口时传入的数据标识",
           "example": "1",
           "member": "string",
@@ -605,6 +655,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文件名称，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -614,6 +665,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Biztype为策略的具体的编号，用于接口调度，在内容安全控制台中可配置。不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；调用时不传入Biztype代表采用默认的识别策略。",
           "example": "1",
           "member": "string",
@@ -623,6 +675,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "智能审核服务对于内容违规类型的等级，可选值：\nPass 建议通过；\nReveiw 建议复审；\nBlock 建议屏蔽；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -632,6 +685,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "智能审核服务对于内容违规类型的判断，详见返回值列表\n如：Label：Porn（色情）；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -641,6 +695,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音频文本，备注：这里的文本最大只返回前1000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -650,6 +705,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音频中对话内容审核结果；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextResult",
@@ -659,6 +715,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音频中低俗内容审核结果；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MoanResult",
@@ -668,6 +725,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -677,6 +735,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioResultDetailLanguageResult",
@@ -686,6 +745,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "音频中说话人识别返回结果；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "AudioResultDetailSpeakerResult",
@@ -695,6 +755,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecognitionResult",
@@ -704,6 +765,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "识别音频时长，单位为毫秒；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "string",
@@ -726,6 +788,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示输入的音频审核任务信息，具体输入内容请参见TaskInput数据结构的详细描述。<br> 备注：最多同时可创建**10个任务**。",
           "example": "[]",
           "member": "TaskInput",
@@ -735,6 +798,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
           "example": "default",
           "member": "string",
@@ -744,6 +808,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示输入的音频审核类型，取值为：**AUDIO**（点播音频）和 **LIVE_AUDIO**（直播音频），默认值为AUDIO。",
           "example": "AUDIO",
           "member": "string",
@@ -753,6 +818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可选参数，该字段表示回调签名的key信息，用于保证数据的安全性。 签名方法为在返回的HTTP头部添加 X-Signature 的字段，值为： seed + body 的 SHA256 编码和Hex字符串，在收到回调数据后，可以根据返回的body，用 **sha256(seed + body)**, 计算出 `X-Signature` 进行验证。<br>具体使用实例可参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53263)。",
           "example": "seed",
           "member": "string",
@@ -762,6 +828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可选参数，该字段表示接受审核信息回调的地址，格式为URL链接默认格式。配置成功后，审核过程中产生的违规音频片段将通过此接口发送。回调返回内容格式请参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53257#.E7.A4.BA.E4.BE.8B2-.E5.9B.9E.E8.B0.83.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)",
           "example": "https://example.com/url",
           "member": "string",
@@ -776,6 +843,7 @@
       "document": "CreateAudioModerationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该字段用于返回任务创建的结果，具体输出内容请参见TaskResult数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TaskResult",
@@ -798,6 +866,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。\n<br>备注：查询接口单次最大查询量为**20条每次**。",
           "example": "w-audio-YBJzazmYs4vO27p2",
           "member": "string",
@@ -807,6 +876,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。",
           "example": "false",
           "member": "bool",
@@ -821,6 +891,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该字段用于返回创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "w-audio-YBJzazmYs4vO27p2",
           "member": "string",
@@ -830,6 +901,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时在Tasks参数内传入的数据ID参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "azmYs4vO27p2",
           "member": "string",
@@ -839,6 +911,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
@@ -848,6 +921,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名称",
           "member": "string",
@@ -857,6 +931,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回所查询内容的任务状态。\n<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FINISH",
           "member": "string",
@@ -866,6 +941,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUDIO",
           "member": "string",
@@ -875,6 +951,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Pass",
           "member": "string",
@@ -884,6 +961,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "TaskLabel",
@@ -893,6 +971,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "InputInfo",
@@ -902,6 +981,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "the text",
           "member": "string",
@@ -911,6 +991,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "AudioSegments",
@@ -920,6 +1001,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "当任务状态为Error时，该字段用于返回对应错误的类型；任务状态非Error时，默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "URL_ERROR",
           "member": "string",
@@ -929,6 +1011,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "the url is request is 404",
           "member": "string",
@@ -938,6 +1021,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
@@ -947,6 +1031,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
@@ -956,6 +1041,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的标签。如果未命中恶意，返回Normal，如果命中恶意，则返回Labels中优先级最高的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
@@ -978,6 +1064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。",
           "example": "无",
           "member": "int64",
@@ -987,6 +1074,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。",
           "example": "无",
           "member": "TaskFilter",
@@ -996,6 +1084,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。",
           "example": "无",
           "member": "string",
@@ -1005,6 +1094,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
           "example": "无",
           "member": "datetime_iso",
@@ -1014,6 +1104,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
           "example": "无",
           "member": "datetime_iso",
@@ -1028,6 +1119,7 @@
       "document": "DescribeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该字段用于返回当前查询的任务总量，格式为int字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1037,6 +1129,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskData",
@@ -1046,6 +1139,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4765-48dXwxJtbkKXW8d3eb",
           "member": "string",
@@ -1068,6 +1162,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1078,6 +1173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1088,6 +1184,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BucketInfo",
@@ -1104,6 +1201,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。",
           "example": "无",
           "member": "string",
@@ -1114,6 +1212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。",
           "example": "无",
           "member": "int64",
@@ -1124,6 +1223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "*内测中，敬请期待*",
           "example": "无",
           "member": "int64",
@@ -1134,6 +1234,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "*内测中，敬请期待*",
           "example": "无",
           "member": "int64",
@@ -1144,6 +1245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "*内测中，敬请期待*",
           "example": "无",
           "member": "string",
@@ -1160,6 +1262,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1170,6 +1273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。\n（如：Moan 99，则该样本属于呻吟/娇喘的置信度非常高。）",
           "example": "1",
           "member": "int64",
@@ -1180,6 +1284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "1",
           "member": "string",
@@ -1190,6 +1295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违规事件开始时间，单位为秒（s）；",
           "example": "1",
           "member": "float",
@@ -1200,6 +1306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违规事件结束时间，单位为秒（s）；",
           "example": "1",
           "member": "float",
@@ -1210,6 +1317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1226,6 +1334,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可能的取值有：Teenager 、Gender\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1236,6 +1345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "Tag",
@@ -1252,6 +1362,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。",
           "example": "无",
           "member": "string",
@@ -1262,6 +1373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一",
           "example": "无",
           "member": "string",
@@ -1272,6 +1384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。",
           "example": "无",
           "member": "BucketInfo",
@@ -1288,6 +1401,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "根据Label字段确定具体名称：\n当Label 为Teenager 时 Name可能取值有：Teenager \n当Label 为Gender 时 Name可能取值有：Male 、Female\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1298,6 +1412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1308,6 +1423,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别开始偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "float",
@@ -1318,6 +1434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别结束偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "float",
@@ -1334,6 +1451,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1344,6 +1462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。",
           "example": "无",
           "member": "string",
@@ -1354,6 +1473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回所查询内容的任务状态。\n<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。",
           "example": "无",
           "member": "string",
@@ -1364,6 +1484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1374,6 +1495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1384,6 +1506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1394,6 +1517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1404,6 +1528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输入信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaInfo",
@@ -1414,6 +1539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskLabel",
@@ -1424,6 +1550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。",
           "example": "无",
           "member": "string",
@@ -1434,6 +1561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1450,6 +1578,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于传入任务对应的业务类型供筛选器进行筛选。Biztype为策略的具体的编号，用于接口调度，在内容安全控制台中可配置。不同Biztype关联不同的业务场景与审核策略，调用前请确认正确的Biztype。Biztype仅为**数字、字母与下划线的组合**，长度为3-32个字符。<br>备注：在不传入该参数时筛选器默认不筛选业务类型。",
           "example": "无",
           "member": "string",
@@ -1460,6 +1589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于传入音频审核对应的任务类型供筛选器进行筛选，取值为：**VIDEO**（点播视频审核），**AUDIO**（点播音频审核）， **LIVE_VIDEO**（直播视频审核）, **LIVE_AUDIO**（直播音频审核）。<br>备注：在不传入该参数时筛选器默认不筛选任务类型。",
           "example": "无",
           "member": "string",
@@ -1470,6 +1600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于传入音频审核对应的建议操作供筛选器进行筛选，取值为：**Block**：建议屏蔽，**Review**：建议人工复审，**Pass**：建议通过。<br>备注：在不传入该参数时筛选器默认不筛选建议操作。",
           "example": "无",
           "member": "string",
@@ -1480,6 +1611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于传入审核任务的任务状态供筛选器进行筛选，取值为：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。<br>备注：在不传入该参数时筛选器默认不筛选任务状态。",
           "example": "无",
           "member": "string",
@@ -1496,6 +1628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。",
           "example": "无",
           "member": "string",
@@ -1506,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。",
           "example": "无",
           "member": "string",
@@ -1516,6 +1650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。",
           "example": "无",
           "member": "StorageInfo",
@@ -1532,6 +1667,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1542,6 +1678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签对应的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1552,6 +1689,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1562,6 +1700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1578,6 +1717,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1588,6 +1728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1598,6 +1739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1608,6 +1750,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "**仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1624,6 +1767,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。\n\n如音频中无复杂类型「TextResults」的返回则代表改音频中无相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
@@ -1634,6 +1778,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命中的关键词，为空则代表该违规内容出自于模型的判断；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1644,6 +1789,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命中关键词库的库标识；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1654,6 +1800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命中关键词库的名字；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1664,6 +1811,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。\n（如：Porn 99，则该样本属于色情的置信度非常高。）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1674,6 +1822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1684,6 +1833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库的类型，自定义词库相关的信息可登录控制台中查看；\n\n1：自定义黑白库；\n\n2：自定义库；",
           "example": "1",
           "member": "int64",
@@ -1694,6 +1844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",

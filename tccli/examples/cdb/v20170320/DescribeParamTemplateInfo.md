@@ -1,6 +1,6 @@
 **Example 1: 查询参数模板详情**
 
-
+该接口用于查询参数模板详细详情。
 
 Input: 
 
@@ -20,6 +20,7 @@ Output:
         "TotalCount": 72,
         "TemplateType": "HIGH_STABILITY",
         "RequestId": "92131c95-aa65-44db-8c3c-e8cd67883b58",
+        "EngineType": "InnoDB",
         "Items": [
             {
                 "CurrentValue": "1",

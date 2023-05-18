@@ -392,7 +392,7 @@
     ],
     "DetachCcn": [
       {
-        "document": "",
+        "document": "解关联云联网",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-pf78xmcp\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c947389-ed9f-4c7a-ba68-4b118a4ac11a\"\n    }\n}",
         "title": "解关联云联网"

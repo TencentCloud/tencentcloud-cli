@@ -454,6 +454,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -463,6 +464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名",
           "member": "string",
           "name": "AppName",
@@ -472,6 +474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -481,6 +484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表",
           "member": "Tag",
           "name": "TagList",
@@ -513,6 +517,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用SdkAppId",
           "example": "12345678",
           "member": "int64",
@@ -523,6 +528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID",
           "example": "userid",
           "member": "string",
@@ -533,6 +539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID对应的签名",
           "example": "usersig",
           "member": "string",
@@ -549,6 +556,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "混流画布宽高配置",
           "member": "LayoutParams",
           "name": "LayoutParams",
@@ -558,6 +566,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "背景颜色，默认为黑色，格式为RGB格式，如红色为\"#FF0000\"",
           "member": "string",
           "name": "BackgroundColor",
@@ -573,6 +582,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启拼接功能\n在开启了视频拼接功能的情况下，实时录制服务会把同一个用户因为暂停导致的多段视频拼接成一个视频",
           "member": "bool",
           "name": "Enabled",
@@ -582,6 +592,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频拼接时使用的垫片图片下载地址，不填默认用全黑的图片进行视频垫片",
           "member": "string",
           "name": "Image",
@@ -597,6 +608,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -605,6 +617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App名字",
           "member": "string",
           "name": "AppName",
@@ -613,6 +626,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建IM应用需要的SKey",
           "member": "string",
           "name": "SKey",
@@ -621,6 +635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建IM应用需要的TinyId",
           "member": "string",
           "name": "TinyId",
@@ -629,6 +644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要绑定的标签列表",
           "member": "Tag",
           "name": "TagList",
@@ -642,6 +658,7 @@
       "document": "CreateApplication返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的AppId",
           "member": "int64",
           "name": "AppId",
@@ -649,6 +666,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "App名字",
           "member": "string",
           "name": "AppName",
@@ -656,6 +674,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -676,6 +695,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -684,6 +704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制任务对应的房间号",
           "member": "int64",
           "name": "RoomId",
@@ -692,6 +713,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制任务对应的群组Id",
           "member": "string",
           "name": "GroupId",
@@ -700,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "混流参数配置\n目前课后录制暂未支持自定义混流布局Custom参数",
           "member": "MixStream",
           "name": "MixStream",
@@ -708,6 +731,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板参数配置",
           "member": "Whiteboard",
           "name": "Whiteboard",
@@ -733,6 +757,7 @@
       "document": "CreatePPTCheckTask请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -741,6 +766,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "经过URL编码后的PPT文件地址。URL 编码会将字符转换为可通过因特网传输的格式，例如文档地址为http://example.com/测试.pptx，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pptx。为了提高URL解析的成功率，请对URL进行编码。",
           "example": "http://example.com/%E6%B5%8B%E8%AF%95.pptx",
           "member": "string",
@@ -749,6 +775,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否对不支持元素开启自动处理的功能。默认不开启。\n\n在开启自动处理的情况下，会自动进行如下处理：\n1. 墨迹：移除不支持的墨迹（比如使用WPS画的）\n2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页\n3. 已损坏音视频：移除PPT上对损坏音视频的引用",
           "example": "true",
           "member": "bool",
@@ -763,6 +790,7 @@
       "document": "CreatePPTCheckTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "检测任务的唯一标识Id，用于查询该任务的进度以及检测结果",
           "example": "g6ls63ps49vteb8bk1mb",
           "member": "string",
@@ -784,6 +812,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板相关参数",
           "example": "无",
           "member": "SnapshotWhiteboard",
@@ -793,6 +822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板房间 `SdkAppId`",
           "example": "1400124720",
           "member": "uint64",
@@ -802,6 +832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板房间号",
           "example": "1234",
           "member": "uint64",
@@ -811,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板板书生成结果通知回调地址",
           "example": "http://xxx",
           "member": "string",
@@ -820,6 +852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板板书文件 `COS` 存储参数， 不填默认存储在公共存储桶，公共存储桶的数据仅保存3天",
           "example": "无",
           "member": "SnapshotCOS",
@@ -829,6 +862,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板板书生成模式，默认为 `AllMarks`。取值说明如下：\n\n`AllMarks` - 全量模式，即对于客户端每一次调用 `addSnapshotMark` 接口打上的白板板书生成标志全部都会生成对应的白板板书图片。\n\n`LatestMarksOnly` - 单页去重模式，即对于客户端在同一页白板上多次调用 `addSnapshotMark` 打上的白板板书生成标志仅保留最新一次标志来生成对应白板页的白板板书图片。\n\n（**注意：`LatestMarksOnly` 模式只有客户端使用v2.6.8及以上版本的白板SDK调用 `addSnapshotMark` 时才生效，否则即使在调用本API是指定了 `LatestMarksOnly` 模式，服务后台会使用默认的 `AllMarks` 模式生成白板板书**）",
           "example": "AllMarks",
           "member": "string",
@@ -843,6 +877,7 @@
       "document": "CreateSnapshotTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白板板书生成任务ID，只有任务创建成功的时候才会返回此字段",
           "example": "d1806f20-25b8-4c30-8176-c0832bf84e02",
           "member": "string",
@@ -865,6 +900,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -874,6 +910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。",
           "example": "https://path/to/document.ppt",
           "member": "string",
@@ -883,6 +920,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为静态PPT，默认为False；\n如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；",
           "example": "False",
           "member": "bool",
@@ -892,6 +930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率\n\n转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率\n\n示例：1280x720，注意分辨率宽高中间为英文字母\"xyz\"的\"x\"",
           "example": "960x540",
           "member": "string",
@@ -901,6 +940,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution",
           "example": "960x540",
           "member": "string",
@@ -910,6 +950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：\n\nzip： 生成`.zip`压缩包\ntar.gz： 生成`.tar.gz`压缩包",
           "example": "zip",
           "member": "string",
@@ -919,6 +960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内部参数",
           "example": "空 ",
           "member": "string",
@@ -928,6 +970,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>\n- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>\n- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码\n<br/>\n注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB",
           "example": "空",
           "member": "string",
@@ -937,6 +980,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。\n分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。\n\n示例：1280x720，注意分辨率宽高中间为英文字母\"xyz\"的\"x\"",
           "example": "960x540",
           "member": "string",
@@ -946,6 +990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否对不支持元素开启自动处理的功能。默认不开启。\n\n在开启自动处理的情况下，会自动进行如下处理：\n1. 墨迹：移除不支持的墨迹（比如使用WPS画的）\n2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页\n3. 已损坏音视频：移除PPT上对损坏音视频的引用",
           "example": "true",
           "member": "bool",
@@ -960,6 +1005,7 @@
       "document": "CreateTranscode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档转码任务的唯一标识Id，用于查询该任务的进度以及转码结果",
           "example": "g6ls63ps49vteb8bk1mb",
           "member": "string",
@@ -982,6 +1028,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "录制任务的TaskId",
           "member": "string",
           "name": "OnlineRecordTaskId",
@@ -990,6 +1037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -998,6 +1046,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频生成的白板参数，例如白板宽高等。\n\n此参数与开始录制接口提供的Whiteboard参数互斥，在本接口与开始录制接口都提供了Whiteboard参数时，优先使用本接口指定的Whiteboard参数进行视频生成，否则使用开始录制接口提供的Whiteboard参数进行视频生成。",
           "member": "Whiteboard",
           "name": "Whiteboard",
@@ -1006,6 +1055,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频拼接参数\n\n此参数与开始录制接口提供的Concat参数互斥，在本接口与开始录制接口都提供了Concat参数时，优先使用本接口指定的Concat参数进行视频拼接，否则使用开始录制接口提供的Concat参数进行视频拼接。",
           "member": "Concat",
           "name": "Concat",
@@ -1014,6 +1064,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频生成混流参数\n\n此参数与开始录制接口提供的MixStream参数互斥，在本接口与开始录制接口都提供了MixStream参数时，优先使用本接口指定的MixStream参数进行视频混流，否则使用开始录制接口提供的MixStream参数进行视频拼混流。",
           "member": "MixStream",
           "name": "MixStream",
@@ -1022,6 +1073,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频生成控制参数，用于更精细地指定需要生成哪些流，某一路流是否禁用音频，是否只录制小画面等\n\n此参数与开始录制接口提供的RecordControl参数互斥，在本接口与开始录制接口都提供了RecordControl参数时，优先使用本接口指定的RecordControl参数进行视频生成控制，否则使用开始录制接口提供的RecordControl参数进行视频拼生成控制。",
           "member": "RecordControl",
           "name": "RecordControl",
@@ -1030,6 +1082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内部参数",
           "member": "string",
           "name": "ExtraData",
@@ -1043,6 +1096,7 @@
       "document": "CreateVideoGenerationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "视频生成的任务Id",
           "member": "string",
           "name": "TaskId",
@@ -1063,6 +1117,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "混流画布参数",
           "member": "Canvas",
           "name": "Canvas",
@@ -1072,6 +1127,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流布局参数，每路流的布局不能超出画布区域",
           "member": "StreamLayout",
           "name": "InputStreamList",
@@ -1087,6 +1143,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间\n按月格式yyyy-mm\n按天格式yyyy-mm-dd\n按分钟格式 yyyy-mm-dd HH:MM:SS",
           "member": "string",
           "name": "Time",
@@ -1096,6 +1153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "画图所需要的值",
           "member": "int64",
           "name": "Value",
@@ -1105,6 +1163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "各个具体指标的详情",
           "member": "Detail",
           "name": "Details",
@@ -1120,6 +1179,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig",
           "member": "string",
           "name": "Service",
@@ -1128,6 +1188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "JSON格式的请求参数",
           "member": "string",
           "name": "Data",
@@ -1141,6 +1202,7 @@
       "document": "DescribeAPIService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Json格式的响应数据",
           "member": "string",
           "name": "ResponseData",
@@ -1165,6 +1227,7 @@
       "document": "DescribeApplicationInfos返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用列表",
           "example": "无",
           "member": "ApplicationItem",
@@ -1174,6 +1237,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否包含所有的应用，0-不包含，1-包含",
           "example": "1",
           "member": "int64",
@@ -1196,6 +1260,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用量开始时间（包括该时间点）",
           "example": "2019-10-01 00:00:00",
           "member": "datetime",
@@ -1205,6 +1270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量结束时间（不包括该时间点）",
           "example": "2019-12-31 00:00:00",
           "member": "datetime",
@@ -1214,6 +1280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板子产品名",
           "example": "sp_tiw_ric",
           "member": "string",
@@ -1223,6 +1290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间跨度单位\n- MONTHLY：月\n- DAILY：天\n- MINUTELY：分钟",
           "example": "DAILY",
           "member": "string",
@@ -1232,6 +1300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1241,6 +1310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "true: 返回加权求和后的用量数据\nfalse: 返回原始用量数据",
           "example": "1",
           "member": "bool",
@@ -1255,6 +1325,7 @@
       "document": "DescribeApplicationUsage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "画图所需的用量数据",
           "example": "无",
           "member": "DataItem",
@@ -1277,6 +1348,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1286,6 +1358,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询日志的白板房间号",
           "example": "10000",
           "member": "string",
@@ -1295,6 +1368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询日志的用户ID",
           "example": "tic_web",
           "member": "string",
@@ -1304,6 +1378,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
           "example": "[1614519034000,1614691834999]",
           "member": "int64",
@@ -1313,6 +1388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等",
           "example": "5m",
           "member": "string",
@@ -1322,6 +1398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额外的查询条件",
           "example": "action: addData",
           "member": "string",
@@ -1331,6 +1408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否按时间升序排列",
           "example": "false",
           "member": "bool",
@@ -1340,6 +1418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于递归拉取的上下文Key，在上一次请求中返回",
           "example": "空",
           "member": "string",
@@ -1354,6 +1433,7 @@
       "document": "DescribeBoardSDKLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总共能查到日志条数",
           "example": "65",
           "member": "int64",
@@ -1363,6 +1443,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志详细内容",
           "example": "[]",
           "member": "string",
@@ -1372,6 +1453,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "按时间段聚合后每个时间段的日志条数",
           "example": "[]",
           "member": "string",
@@ -1381,6 +1463,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用于递归拉取的上下文Key，下一次请求的时候带上",
           "example": "空",
           "member": "string",
@@ -1420,6 +1503,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -1446,6 +1530,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -1454,6 +1539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "课后录制任务的Id",
           "member": "string",
           "name": "TaskId",
@@ -1480,6 +1566,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1494,6 +1581,7 @@
       "document": "DescribeOnlineRecordCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实时录制事件回调地址，如果未设置回调地址，该字段为空字符串",
           "example": "https://example.com/online/callback",
           "member": "string",
@@ -1503,6 +1591,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实时录制回调鉴权密钥",
           "example": "6vg9G7Fd",
           "member": "string",
@@ -1525,6 +1614,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1534,6 +1624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制任务Id",
           "example": "ghucnligqtgtvk2624mb",
           "member": "string",
@@ -1548,6 +1639,7 @@
       "document": "DescribeOnlineRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "录制结束原因，\n- AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止录制\n- USER_CALL: 主动调用了停止录制接口\n- EXCEPTION: 录制异常结束\n- FORCE_STOP: 强制停止录制，一般是因为暂停超过90分钟或者录制总时长超过24小时。",
           "example": "USER_CALL",
           "member": "string",
@@ -1557,6 +1649,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "需要查询结果的录制任务Id",
           "example": "ghucnligqtgtvk2624mb",
           "member": "string",
@@ -1566,6 +1659,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制任务状态\n- PREPARED: 表示录制正在准备中（进房/启动录制服务等操作）\n- RECORDING: 表示录制已开始\n- PAUSED: 表示录制已暂停\n- STOPPED: 表示录制已停止，正在处理并上传视频\n- FINISHED: 表示视频处理并上传完成，成功生成录制结果",
           "example": "FINISHED",
           "member": "string",
@@ -1575,6 +1669,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间号",
           "example": "880528",
           "member": "int64",
@@ -1584,6 +1679,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白板的群组 Id",
           "example": "880528",
           "member": "string",
@@ -1593,6 +1689,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制用户Id",
           "example": "tic_record_user_880528_test-01",
           "member": "string",
@@ -1602,6 +1699,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际开始录制时间，Unix 时间戳，单位秒",
           "example": "1568949369",
           "member": "int64",
@@ -1611,6 +1709,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际停止录制时间，Unix 时间戳，单位秒",
           "example": "1568949392",
           "member": "int64",
@@ -1620,6 +1719,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "回放视频总时长（单位：毫秒）",
           "example": "18317",
           "member": "int64",
@@ -1629,6 +1729,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制过程中出现异常的次数",
           "example": "0",
           "member": "int64",
@@ -1638,6 +1739,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "拼接视频中被忽略的时间段，只有开启视频拼接功能的时候，这个参数才是有效的",
           "example": "无",
           "member": "OmittedDuration",
@@ -1647,6 +1749,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制视频列表",
           "example": "无",
           "member": "VideoInfo",
@@ -1656,6 +1759,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "回放URL，需配合信令播放器使用。此字段仅适用于`视频生成模式`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://replayurl",
           "member": "string",
@@ -1665,6 +1769,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "视频流在录制过程中断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Interrupt",
@@ -1686,6 +1791,7 @@
       "document": "DescribePPTCheckCallback请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1700,6 +1806,7 @@
       "document": "DescribePPTCheckCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "回调地址",
           "example": "https://example.com/transcode/callback",
           "member": "string",
@@ -1708,6 +1815,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "回调鉴权密钥",
           "example": "6vg9G7Fd",
           "member": "string",
@@ -1728,6 +1836,7 @@
       "document": "DescribePPTCheck请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1736,6 +1845,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务的唯一标识Id",
           "example": "g0jb42ps49vtebjshilb",
           "member": "string",
@@ -1750,6 +1860,7 @@
       "document": "DescribePPTCheck返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务的唯一标识Id",
           "example": "0agdnligqtgtvkm65emb",
           "member": "string",
@@ -1758,6 +1869,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "PPT文件是否正常",
           "example": "false",
           "member": "bool",
@@ -1766,6 +1878,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修复后的PPT URL，只有创建任务时参数AutoHandleUnsupportedElement=true，才返回此参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxx/xxx/测试_fixed.ppt",
           "member": "string",
@@ -1774,6 +1887,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "错误PPT页面列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PPTErrSlide",
@@ -1782,6 +1896,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务的当前状态 - QUEUED: 正在排队等待 - PROCESSING: 执行中 - FINISHED: 执行完成\t",
           "example": "FINISHED",
           "member": "string",
@@ -1790,6 +1905,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前进度,取值范围为0~100",
           "example": "100",
           "member": "int64",
@@ -1811,6 +1927,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间",
           "member": "datetime",
           "name": "BeginTime",
@@ -1819,6 +1936,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -1845,6 +1963,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1854,6 +1973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，Unix时间戳，单位秒，时间跨度不能超过7天",
           "example": "1614691834",
           "member": "int64",
@@ -1863,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，Unix时间戳，单位秒，时间跨度不能超过7天",
           "example": "1614691834",
           "member": "int64",
@@ -1872,6 +1993,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的指标，目前支持以下值\n  - image_load_total_count: 图片加载总数（单位，次）\n  - image_load_fail_count: 图片加载失败数量（单位，次）\n  - image_load_success_rate: 图片加载成功率（百分比）\n  - ppt_load_total_count: PPT加载总数（单位，次）\n  - ppt_load_fail_count: PPT加载失败总数（单位，次）\n  - ppt_load_success_rate: PPT加载成功率（单位，百分比）\n  - verify_sdk_total_count: 白板鉴权总次数（单位，次）\n  - verify_sdk_fail_count: 白板鉴权失败次数（单位，次）\n  - verify_sdk_success_rate: 白板鉴权成功率（单位，百分比）\n  - verify_sdk_in_one_second_rate: 白板鉴权秒开率（单位，百分比）\n  - verify_sdk_cost_avg: 白板鉴权耗时平均时间（单位，毫秒）",
           "example": "image_load_success_rate",
           "member": "string",
@@ -1881,6 +2003,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聚合的时间维度，目前只支持1小时，输入值为\"1h\"",
           "example": "1h",
           "member": "string",
@@ -1895,6 +2018,7 @@
       "document": "DescribeQualityMetrics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "输入的查询指标",
           "example": "image_load_success_rate",
           "member": "string",
@@ -1904,6 +2028,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "时间序列",
           "example": "无",
           "member": "TimeValue",
@@ -1930,6 +2055,7 @@
       "document": "DescribeRecordSearch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "录制任务搜索结果集合",
           "example": "无",
           "member": "RecordTaskSearchResult",
@@ -1939,6 +2065,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制总任务数",
           "example": "151",
           "member": "int64",
@@ -1961,6 +2088,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -1970,6 +2098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
           "example": "[1614519034000,1614691834999]",
           "member": "int64",
@@ -1979,6 +2108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额外的查询条件",
           "example": "action: addData",
           "member": "string",
@@ -1988,6 +2118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回最大的数据条数，默认1000",
           "example": "1000",
           "member": "int64",
@@ -2002,6 +2133,7 @@
       "document": "DescribeRoomList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白板房间列表",
           "example": "[]",
           "member": "RoomListItem",
@@ -2023,6 +2155,7 @@
       "document": "DescribeRunningTasks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用的SdkAppID",
           "example": "1400000001",
           "member": "int64",
@@ -2031,6 +2164,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指定需要获取的任务类型。\n有效取值如下：\n- TranscodeH5: 动态转码任务，文档转HTML5页面\n- TranscodeJPG: 静态转码任务，文档转图片\n- WhiteboardPush: 白板推流任务\n- OnlineRecord: 实时录制任务",
           "example": "WhiteboardPush",
           "member": "string",
@@ -2039,6 +2173,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "分页获取时的任务偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -2047,6 +2182,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每次获取任务列表时最大获取任务数，默认值为100。\n有效取值范围：[1, 500]",
           "example": "100",
           "member": "int64",
@@ -2061,6 +2197,7 @@
       "document": "DescribeRunningTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当前正在执行中的任务总数",
           "example": "1",
           "member": "int64",
@@ -2069,6 +2206,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务信息列表",
           "example": "无",
           "member": "RunningTaskItem",
@@ -2090,6 +2228,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询任务ID",
           "example": "f2e1728c-6e87-4481-abe1-cde8542a5a10",
           "member": "string",
@@ -2099,6 +2238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务SdkAppId",
           "example": "1400124720",
           "member": "uint64",
@@ -2113,6 +2253,7 @@
       "document": "DescribeSnapshotTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f2e1728c-6e87-4481-abe1-cde8542a5a10",
           "member": "string",
@@ -2122,6 +2263,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态\nRunning - 任务执行中\nFinished - 任务已结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Finished",
           "member": "string",
@@ -2131,6 +2273,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务创建时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1620982173",
           "member": "uint64",
@@ -2140,6 +2283,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务完成时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621082195",
           "member": "uint64",
@@ -2149,6 +2293,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SnapshotResult",
@@ -2171,6 +2316,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "互动白板应用SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2180,6 +2326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的子产品用量，支持传入以下值\n- sp_tiw_board: 互动白板时长，单位为分钟\n- sp_tiw_dt: 动态转码页数，单位页\n- sp_tiw_st: 静态转码页数，单位页\n- sp_tiw_ric: 实时录制时长，单位分钟\n\n注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数",
           "example": "sp_tiw_board",
           "member": "string",
@@ -2189,6 +2336,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，格式YYYY-MM-DD，查询结果里包括该天数据",
           "example": "2021-10-01",
           "member": "date",
@@ -2198,6 +2346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。",
           "example": "2021-10-31",
           "member": "date",
@@ -2212,6 +2361,7 @@
       "document": "DescribeTIWDailyUsage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定区间指定产品的用量汇总",
           "example": "无",
           "member": "UsageDataItem",
@@ -2234,6 +2384,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "互动白板应用SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2243,6 +2394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的子产品用量，支持传入以下值\n- sp_tiw_board: 互动白板时长，单位为分钟\n- sp_tiw_ric: 实时录制时长，单位分钟",
           "example": "sp_tiw_board",
           "member": "string",
@@ -2252,6 +2404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，格式YYYY-MM-DD，查询结果里包括该天数据",
           "example": "2021-10-01",
           "member": "date",
@@ -2261,6 +2414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。",
           "example": "2021-10-31",
           "member": "date",
@@ -2270,6 +2424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的房间ID列表，不填默认查询全部房间",
           "example": "无",
           "member": "uint64",
@@ -2279,6 +2434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询偏移量，默认为0",
           "example": "0",
           "member": "uint64",
@@ -2288,6 +2444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每次查询返回条目限制，默认为20",
           "example": "20",
           "member": "uint64",
@@ -2302,6 +2459,7 @@
       "document": "DescribeTIWRoomDailyUsage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定区间指定产品的房间用量列表",
           "example": "无",
           "member": "RoomUsageDataItem",
@@ -2311,6 +2469,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用量列表总数",
           "example": "10",
           "member": "uint64",
@@ -2333,6 +2492,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2347,6 +2507,7 @@
       "document": "DescribeTranscodeCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档转码回调地址",
           "example": "https://example.com/transcode/callback",
           "member": "string",
@@ -2356,6 +2517,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档转码回调鉴权密钥",
           "example": "6vg9G7Fd",
           "member": "string",
@@ -2377,6 +2539,7 @@
       "document": "DescribeTranscode请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2385,6 +2548,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "文档转码任务的唯一标识Id",
           "example": "g0jb42ps49vtebjshilb",
           "member": "string",
@@ -2399,6 +2563,7 @@
       "document": "DescribeTranscode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档的总页数",
           "example": "1",
           "member": "int64",
@@ -2407,6 +2572,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码的当前进度,取值范围为0~100",
           "example": "100",
           "member": "int64",
@@ -2415,6 +2581,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档的分辨率",
           "example": "793x1122",
           "member": "string",
@@ -2423,6 +2590,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码完成后结果的URL\n动态转码：PPT转动态H5的链接\n静态转码：文档每一页的图片URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/`，那么文档第1页的图片URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推",
           "example": "https://transcode-result/0agdnligqtgtvkm65emb/index.html",
           "member": "string",
@@ -2431,6 +2599,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成",
           "example": "FINISHED",
           "member": "string",
@@ -2439,6 +2608,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码任务的唯一标识Id",
           "example": "0agdnligqtgtvkm65emb",
           "member": "string",
@@ -2447,6 +2617,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档的文件名",
           "example": "59378.docx",
           "member": "string",
@@ -2455,6 +2626,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "缩略图URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/ `，那么动态PPT第1页的缩略图URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推\n\n如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串",
           "example": "https://transcode-thumbnal/0agdnligqtgtvkm65emb/",
           "member": "string",
@@ -2463,6 +2635,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "动态转码缩略图生成分辨率",
           "example": "793x1122",
           "member": "string",
@@ -2471,6 +2644,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码压缩文件下载的URL，如果发起文档转码请求参数中`CompressFileType`为空或者不是支持的压缩格式，该参数为空字符串",
           "example": "无",
           "member": "string",
@@ -2479,6 +2653,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源清单文件下载URL(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2487,6 +2662,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档制作方式(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "office",
           "member": "string",
@@ -2512,6 +2688,7 @@
       "document": "DescribeTranscodeSearch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "转码任务搜索结果集合",
           "example": "无",
           "member": "TranscodeTaskSearchResult",
@@ -2521,6 +2698,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码总任务数",
           "example": "1340",
           "member": "int64",
@@ -2543,6 +2721,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "统计时间段的开始时间",
           "member": "datetime",
           "name": "BeginTime",
@@ -2551,6 +2730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "统计时间段的结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -2559,6 +2739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要获取用量的子产品列表",
           "member": "string",
           "name": "SubProducts",
@@ -2567,6 +2748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "true: 返回加权后的数据\nfalse: 返回原始数据",
           "member": "bool",
           "name": "IsWeighted",
@@ -2593,6 +2775,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2602,6 +2785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询用户列表的白板房间号",
           "example": "10000",
           "member": "string",
@@ -2611,6 +2795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
           "example": "[1614519034000,1614691834999]",
           "member": "int64",
@@ -2620,6 +2805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额外的查询条件",
           "example": "action: addData",
           "member": "string",
@@ -2629,6 +2815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回最大的数据条数，默认1000",
           "example": "1000",
           "member": "int64",
@@ -2643,6 +2830,7 @@
       "document": "DescribeUserList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间内的用户列表",
           "example": "[]",
           "member": "UserListItem",
@@ -2686,6 +2874,7 @@
       "document": "DescribeUserStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的AppId",
           "member": "int64",
           "name": "AppId",
@@ -2693,6 +2882,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开通过白板（试用或正式）\n\n0: 从未开通过白板服务\n1: 已经开通过白板服务",
           "member": "int64",
           "name": "IsTiwUser",
@@ -2700,6 +2890,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开通过互动课堂（试用或正式）",
           "member": "int64",
           "name": "IsSaaSUser",
@@ -2707,6 +2898,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否使用白板的课后录制",
           "member": "int64",
           "name": "IsTiwOfflineRecordUser",
@@ -2714,6 +2906,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户是否实名认证",
           "member": "int64",
           "name": "IsAuthenticated",
@@ -2734,6 +2927,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -2747,6 +2941,7 @@
       "document": "DescribeVideoGenerationTaskCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "录制视频生成回调地址",
           "member": "string",
           "name": "Callback",
@@ -2754,6 +2949,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制视频生成回调鉴权密钥",
           "member": "string",
           "name": "CallbackKey",
@@ -2774,6 +2970,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -2782,6 +2979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制视频生成的任务Id",
           "member": "string",
           "name": "TaskId",
@@ -2795,6 +2993,7 @@
       "document": "DescribeVideoGenerationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务对应的群组Id",
           "member": "string",
           "name": "GroupId",
@@ -2802,6 +3001,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务对应的房间号",
           "member": "int64",
           "name": "RoomId",
@@ -2809,6 +3009,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务的Id",
           "member": "string",
           "name": "TaskId",
@@ -2816,6 +3017,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "已废弃",
           "member": "int64",
           "name": "Progress",
@@ -2823,6 +3025,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制视频生成任务状态\n- QUEUED: 正在排队\n- PROCESSING: 正在生成视频\n- FINISHED: 生成视频结束（成功完成或失败结束，可以通过错误码和错误信息进一步判断）",
           "member": "string",
           "name": "Status",
@@ -2830,6 +3033,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "回放视频总时长,单位：毫秒",
           "member": "int64",
           "name": "TotalTime",
@@ -2837,6 +3041,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "已废弃，请使用`VideoInfoList`参数",
           "member": "VideoInfo",
           "name": "VideoInfos",
@@ -2844,6 +3049,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录制视频生成视频列表",
           "member": "VideoInfo",
           "name": "VideoInfoList",
@@ -2863,6 +3069,7 @@
       "document": "DescribeWarningCallback请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2877,6 +3084,7 @@
       "document": "DescribeWarningCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "告警事件回调地址，如果未设置回调地址，该字段为空字符串",
           "example": "https://example.com/online/callback",
           "member": "string",
@@ -2885,6 +3093,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "告警回调鉴权密钥",
           "example": "6vg9G7Fd",
           "member": "string",
@@ -2906,6 +3115,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2915,6 +3125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
           "example": "[\"transcode\",\"recording\"]",
           "member": "string",
@@ -2924,6 +3135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询配置的SdkAppId列表",
           "example": "[0]",
           "member": "int64",
@@ -2938,6 +3150,7 @@
       "document": "DescribeWhiteboardApplicationConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400127140",
           "member": "int64",
@@ -2947,6 +3160,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白板应用任务相关配置",
           "example": "无",
           "member": "WhiteboardApplicationConfig",
@@ -2969,6 +3183,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -2977,6 +3192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
           "member": "string",
           "name": "TaskType",
@@ -3003,6 +3219,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -3017,6 +3234,7 @@
       "document": "DescribeWhiteboardPushCallback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白板推流事件回调地址，如果未设置回调地址，该字段为空字符串",
           "example": "https://example.com/online/callback",
           "member": "string",
@@ -3026,6 +3244,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白板推流回调鉴权密钥",
           "example": "6vg9G7Fd",
           "member": "string",
@@ -3048,6 +3267,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -3057,6 +3277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流任务Id",
           "example": "ghucnligqtgtvk2624mb",
           "member": "string",
@@ -3071,6 +3292,7 @@
       "document": "DescribeWhiteboardPush返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "推流结束原因，\n- AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止推流\n- USER_CALL: 主动调用了停止推流接口\n- EXCEPTION: 推流异常结束",
           "example": "USER_CALL",
           "member": "string",
@@ -3079,6 +3301,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "需要查询结果的白板推流任务Id",
           "example": "ghucnligqtgtvk2624mb",
           "member": "string",
@@ -3087,6 +3310,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "推流任务状态\n- PREPARED: 表示推流正在准备中（进房/启动推流服务等操作）\n- PUSHING: 表示推流已开始\n- STOPPED: 表示推流已停止",
           "example": "STOPPED",
           "member": "string",
@@ -3095,6 +3319,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间号",
           "example": "12345",
           "member": "int64",
@@ -3103,6 +3328,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白板的群组 Id",
           "example": "12345",
           "member": "string",
@@ -3111,6 +3337,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "推流用户Id",
           "example": "tic_push_user_12345_abcde",
           "member": "string",
@@ -3119,6 +3346,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际开始推流时间，Unix 时间戳，单位秒",
           "example": "1611128339",
           "member": "int64",
@@ -3127,6 +3355,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际停止推流时间，Unix 时间戳，单位秒",
           "example": "1611128339",
           "member": "int64",
@@ -3135,6 +3364,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "推流过程中出现异常的次数",
           "example": "0",
           "member": "int64",
@@ -3143,6 +3373,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。",
           "example": "0",
           "member": "int64",
@@ -3151,6 +3382,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份推流任务结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "string",
@@ -3176,6 +3408,7 @@
       "document": "DescribeWhiteboardPushSearch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "推流任务搜索结果集合",
           "example": "无",
           "member": "WhiteboardPushTaskSearchResult",
@@ -3185,6 +3418,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "推流总任务数",
           "example": "1",
           "member": "int64",
@@ -3207,6 +3441,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用量指标",
           "member": "string",
           "name": "TagName",
@@ -3216,6 +3451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量权重",
           "member": "float",
           "name": "Weight",
@@ -3225,6 +3461,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量的值",
           "member": "float",
           "name": "Value",
@@ -3240,6 +3477,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tiw_user_634",
           "member": "string",
@@ -3250,6 +3488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频流断流次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -3266,6 +3505,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流画面宽，取值范围[2,3000]",
           "member": "int64",
           "name": "Width",
@@ -3275,6 +3515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流画面高，取值范围[2,3000]",
           "member": "int64",
           "name": "Height",
@@ -3284,6 +3525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前画面左上角顶点相对于Canvas左上角顶点的x轴偏移量，默认为0，取值范围[0,3000]",
           "member": "int64",
           "name": "X",
@@ -3293,6 +3535,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前画面左上角顶点相对于Canvas左上角顶点的y轴偏移量，默认为0， 取值范围[0,3000]",
           "member": "int64",
           "name": "Y",
@@ -3302,6 +3545,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "画面z轴位置，默认为0\nz轴确定了重叠画面的遮盖顺序，z轴值大的画面处于顶层",
           "member": "int64",
           "name": "ZOrder",
@@ -3317,6 +3561,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启混流",
           "member": "bool",
           "name": "Enabled",
@@ -3326,6 +3571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否禁用音频混流",
           "member": "bool",
           "name": "DisableAudio",
@@ -3335,6 +3581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内置混流布局模板ID, 取值 [1, 2], 区别见内置混流布局模板样式示例说明\n在没有填Custom字段时候，ModelId是必填的",
           "member": "int64",
           "name": "ModelId",
@@ -3344,6 +3591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "老师用户ID\n此字段只有在ModelId填了的情况下生效\n填写TeacherId的效果是把指定为TeacherId的用户视频流显示在内置模板的第一个小画面中",
           "member": "string",
           "name": "TeacherId",
@@ -3353,6 +3601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义混流布局参数\n当此字段存在时，ModelId 及 TeacherId 字段将被忽略",
           "member": "CustomLayout",
           "name": "Custom",
@@ -3368,6 +3617,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -3376,6 +3626,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App名字",
           "member": "string",
           "name": "AppName",
@@ -3402,6 +3653,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源Id，从DescribeUserResources接口中获取Level=1的正式月功能费的SubProduct，一般为sp_tiw_package",
           "member": "string",
           "name": "SubProduct",
@@ -3410,6 +3662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源Id，从DescribeUserResources接口中获取Level=1的正式月功能费资源Id",
           "member": "string",
           "name": "ResourceId",
@@ -3418,6 +3671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续 费，需要设置为0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3444,6 +3698,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -3453,6 +3708,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用任务相关配置",
           "example": "无",
           "member": "WhiteboardApplicationConfig",
@@ -3480,6 +3736,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -3488,6 +3745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
           "member": "string",
           "name": "TaskType",
@@ -3496,6 +3754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "COS存储桶名字",
           "member": "string",
           "name": "BucketName",
@@ -3504,6 +3763,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "COS存储桶地域",
           "member": "string",
           "name": "BucketLocation",
@@ -3512,6 +3772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储桶里资源前缀",
           "member": "string",
           "name": "BucketPrefix",
@@ -3520,6 +3781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回Url域名",
           "member": "string",
           "name": "ResultDomain",
@@ -3546,6 +3808,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "录制暂停时间戳对应的视频播放时间(单位: 毫秒)",
           "member": "int64",
           "name": "VideoTime",
@@ -3555,6 +3818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制暂停时间戳(单位: 毫秒)",
           "member": "int64",
           "name": "PauseTime",
@@ -3564,6 +3828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制恢复时间戳(单位: 毫秒)",
           "member": "int64",
           "name": "ResumeTime",
@@ -3578,6 +3843,7 @@
       "document": "PPT错误元素",
       "members": [
         {
+          "disabled": false,
           "document": "元素名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Ink 1",
           "member": "string",
@@ -3587,6 +3853,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3596,6 +3863,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wps墨迹",
           "member": "string",
@@ -3611,6 +3879,7 @@
       "document": "PPT错误页面列表",
       "members": [
         {
+          "disabled": false,
           "document": "异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "幻灯片1",
           "member": "string",
@@ -3620,6 +3889,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "错误元素列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PPTErr",
@@ -3636,6 +3906,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -3644,6 +3915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制任务 Id",
           "member": "string",
           "name": "TaskId",
@@ -3670,6 +3942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否开启录制控制参数，只有设置为true的时候，录制控制参数才生效。",
           "member": "bool",
           "name": "Enabled",
@@ -3679,6 +3952,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否禁用录制的全局控制参数。一般与`StreamControls`参数配合使用。\n\ntrue - 所有流都不录制。\nfalse - 所有流都录制。默认为false。\n\n这里的设置对所有流都生效，如果同时在 `StreamControls` 列表中针对指定流设置了控制参数，则优先采用`StreamControls`中设置的控制参数。",
           "member": "bool",
           "name": "DisableRecord",
@@ -3688,6 +3962,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否禁用所有流的音频录制的全局控制参数。一般与`StreamControls`参数配合使用。\n\ntrue - 所有流的录制都不对音频进行录制。\nfalse - 所有流的录制都需要对音频进行录制。默认为false。\n\n这里的设置对所有流都生效，如果同时在 `StreamControls` 列表中针对指定流设置了控制参数，则优先采用`StreamControls`中设置的控制参数。",
           "member": "bool",
           "name": "DisableAudio",
@@ -3697,6 +3972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否所有流都只录制小画面的全局控制参数。一般与`StreamControls`参数配合使用。\n\ntrue - 所有流都只录制小画面。设置为true时，请确保上行端在推流的时候同时上行了小画面，否则录制视频可能是黑屏。\nfalse - 所有流都录制大画面，默认为false。\n\n这里的设置对所有流都生效，如果同时在 `StreamControls` 列表中针对指定流设置了控制参数，则优先采用`StreamControls`中设置的控制参数。",
           "member": "bool",
           "name": "PullSmallVideo",
@@ -3706,6 +3982,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "针对具体流指定控制参数，如果列表为空，则所有流采用全局配置的控制参数进行录制。列表不为空，则列表中指定的流将优先按此列表指定的控制参数进行录制。",
           "member": "StreamControl",
           "name": "StreamControls",
@@ -3721,6 +3998,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "AUTO - 自动停止录制， USER_CALL - 用户主动调用停止录制",
           "member": "string",
           "name": "FinishReason",
@@ -3730,6 +4008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常数",
           "member": "int64",
           "name": "ExceptionCnt",
@@ -3739,6 +4018,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间号",
           "member": "int64",
           "name": "RoomId",
@@ -3748,6 +4028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分组",
           "member": "string",
           "name": "GroupId",
@@ -3757,6 +4038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制真实开始时间",
           "member": "int64",
           "name": "RecordStartTime",
@@ -3766,6 +4048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制结束时间",
           "member": "int64",
           "name": "RecordStopTime",
@@ -3775,6 +4058,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制总时长",
           "member": "int64",
           "name": "TotalTime",
@@ -3784,6 +4068,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频信息列表",
           "member": "VideoInfo",
           "name": "VideoInfos",
@@ -3793,6 +4078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被忽略的视频时间段",
           "member": "OmittedDuration",
           "name": "OmittedDurations",
@@ -3802,6 +4088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "详情",
           "member": "string",
           "name": "Details",
@@ -3811,6 +4098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务失败错误码",
           "member": "int64",
           "name": "ErrorCode",
@@ -3820,6 +4108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误信息",
           "member": "string",
           "name": "ErrorMsg",
@@ -3835,6 +4124,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一ID",
           "member": "string",
           "name": "TaskId",
@@ -3844,6 +4134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制任务状态\n- PAUSED: 录制已暂停\n- PREPARED: 录制在准备阶段\n- RECORDING: 正在录制\n- STOPPED：录制已停止\n- FINISHED: 录制已结束",
           "member": "string",
           "name": "Status",
@@ -3853,6 +4144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制房间号",
           "member": "int64",
           "name": "RoomId",
@@ -3862,6 +4154,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -3871,6 +4164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -3880,6 +4174,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制结果",
           "member": "RecordTaskResult",
           "name": "Result",
@@ -3895,6 +4190,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -3903,6 +4199,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恢复录制的实时录制任务 Id",
           "member": "string",
           "name": "TaskId",
@@ -3929,6 +4226,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID",
           "example": "100000",
           "member": "string",
@@ -3939,6 +4237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒",
           "example": "1614519034000",
           "member": "int64",
@@ -3949,6 +4248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒",
           "example": "1614519034000",
           "member": "int64",
@@ -3959,6 +4259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间里成员数",
           "example": "100",
           "member": "int64",
@@ -3975,6 +4276,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日期，格式为YYYY-MM-DD",
           "example": "2021-10-01",
           "member": "string",
@@ -3985,6 +4287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用SDKAppID",
           "example": "1400000001",
           "member": "int64",
@@ -3995,6 +4298,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "互动白板子产品，请求参数传入的一致\n- sp_tiw_board: 互动白板时长\n- sp_tiw_ric: 实时录制时长",
           "example": "sp_tiw_board",
           "member": "string",
@@ -4005,6 +4309,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量值\n- 白板时长、实时录制时长单位为分钟",
           "example": "100000",
           "member": "float",
@@ -4015,6 +4320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "互动白板房间号",
           "example": "12345",
           "member": "uint64",
@@ -4030,6 +4336,7 @@
       "document": "正在运行的任务列表项",
       "members": [
         {
+          "disabled": false,
           "document": "应用SdkAppID",
           "example": "1400000001",
           "member": "int64",
@@ -4039,6 +4346,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "0agdnligqtgtvkm65emb",
           "member": "string",
@@ -4048,6 +4356,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务类型\n- TranscodeH5: 动态转码任务，文档转HTML5页面\n- TranscodeJPG: 静态转码任务，文档转图片\n- WhiteboardPush: 白板推流任务\n- OnlineRecord: 实时录制任务",
           "example": "WhiteboardPush",
           "member": "string",
@@ -4057,6 +4366,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务创建时间",
           "example": "2023-03-14 15:00:00",
           "member": "string",
@@ -4066,6 +4376,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务取消时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-14 20:00:00",
           "member": "string",
@@ -4075,6 +4386,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态\n- QUEUED: 任务正在排队等待执行中\n- PROCESSING: 任务正在执行中 \n- FINISHED: 任务已完成",
           "example": "QUEUED",
           "member": "string",
@@ -4084,6 +4396,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务当前进度",
           "example": "50",
           "member": "int64",
@@ -4093,6 +4406,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码任务中转码文件的原始URL\n此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.pptx",
           "member": "string",
@@ -4102,6 +4416,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间号\n\n当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "int64",
@@ -4118,6 +4433,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4126,6 +4442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "课后录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头",
           "member": "string",
           "name": "Callback",
@@ -4152,6 +4469,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4160,6 +4478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置实时录制回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥。回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
           "member": "string",
           "name": "CallbackKey",
@@ -4186,6 +4505,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4195,6 +4515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",
           "example": "https://example.com/online/callback",
           "member": "string",
@@ -4221,6 +4542,7 @@
       "document": "SetPPTCheckCallbackKey请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4229,6 +4551,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "设置回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257\t",
           "example": "无",
           "member": "string",
@@ -4255,6 +4578,7 @@
       "document": "SetPPTCheckCallback请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId\t",
           "example": "1400000001",
           "member": "int64",
@@ -4263,6 +4587,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。 回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260#c9cbe05f-fe1a-4410-b4dc-40cc301c7b81\t",
           "example": "https://example.com/transcode/callback",
           "member": "string",
@@ -4290,6 +4615,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4298,6 +4624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置文档转码回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
           "member": "string",
           "name": "CallbackKey",
@@ -4324,6 +4651,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4333,6 +4661,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档转码进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。\n回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
           "example": "https://example.com/transcode/callback",
           "member": "string",
@@ -4360,6 +4689,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4368,6 +4698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置视频生成回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥",
           "member": "string",
           "name": "CallbackKey",
@@ -4394,6 +4725,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4402,6 +4734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "课后录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头",
           "member": "string",
           "name": "Callback",
@@ -4427,6 +4760,7 @@
       "document": "SetWarningCallback请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4435,6 +4769,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。\n回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112",
           "example": "https://example.com/transcode/callback",
           "member": "string",
@@ -4443,6 +4778,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置告警回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
           "example": "123456",
           "member": "string",
@@ -4470,6 +4806,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -4478,6 +4815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置白板推流回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥。回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
           "member": "string",
           "name": "CallbackKey",
@@ -4504,6 +4842,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4513,6 +4852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
           "example": "https://example.com/online/callback",
           "member": "string",
@@ -4540,6 +4880,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cos所在腾讯云帐号uin",
           "example": "100006912345",
           "member": "uint64",
@@ -4550,6 +4891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos所在地区",
           "example": "ap-guangzhou",
           "member": "string",
@@ -4560,6 +4902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos存储桶名称",
           "example": "examplebucket-1250000000",
           "member": "string",
@@ -4570,6 +4913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "板书文件存储根目录",
           "example": "snapshot",
           "member": "string",
@@ -4580,6 +4924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CDN加速域名",
           "example": "xxxx.file.qcloud.com",
           "member": "string",
@@ -4596,6 +4941,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "InternalErr",
           "member": "string",
@@ -4606,6 +4952,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务执行错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "redis connect failed",
           "member": "string",
@@ -4616,6 +4963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "快照生成图片总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "uint64",
@@ -4626,6 +4974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "快照图片链接列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4642,6 +4991,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白板宽度大小，默认为1280，有效取值范围[0，2560]",
           "example": "1280",
           "member": "uint64",
@@ -4652,6 +5002,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板高度大小，默认为720，有效取值范围[0，2560]",
           "example": "960",
           "member": "uint64",
@@ -4662,6 +5013,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板初始化参数的JSON转义字符串，透传到白板 SDK",
           "example": "{\\\"ratio\\\":\\\"4:3\\\"}",
           "member": "string",
@@ -4678,6 +5030,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4687,6 +5040,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要录制的房间号，取值范围: (1, 4294967295)",
           "example": "12345",
           "member": "int64",
@@ -4696,6 +5050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于录制服务进房的用户ID，最大长度不能大于60个字节，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
           "example": "tic_record_user_880528_1258",
           "member": "string",
@@ -4705,6 +5060,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "与RecordUserId对应的签名",
           "example": "eJwtjb0OgjAAhN*lK4a0tcVC4iDGkIg-g7K4NEiLViLUUsFgfHcRmS733eXuDY6b",
           "member": "string",
@@ -4714,6 +5070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "（已废弃，设置无效）白板的 IM 群组 Id，默认同房间号",
           "example": "12345",
           "member": "string",
@@ -4723,6 +5080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制视频拼接参数",
           "example": "无",
           "member": "Concat",
@@ -4732,6 +5090,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制白板参数，例如白板宽高等",
           "example": "无",
           "member": "Whiteboard",
@@ -4741,6 +5100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制混流参数\n特别说明：\n1. 混流功能需要根据额外开通， 请联系腾讯云互动白板客服人员\n2. 使用混流功能，必须提供 Extras 参数，且 Extras 参数中必须包含 \"MIX_STREAM\"",
           "example": "无",
           "member": "MixStream",
@@ -4750,6 +5110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用到的高级功能列表\n可以选值列表：\nMIX_STREAM - 混流功能",
           "example": "[\"MixStream\"]",
           "member": "string",
@@ -4759,6 +5120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否需要在结果回调中返回各路流的纯音频录制文件，文件格式为mp3",
           "example": "false",
           "member": "bool",
@@ -4768,6 +5130,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制控制参数，用于更精细地指定需要录制哪些流，某一路流是否禁用音频，是否只录制小画面等",
           "example": "无",
           "member": "RecordControl",
@@ -4777,6 +5140,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "录制模式\n\nREALTIME_MODE - 实时录制模式（默认）\nVIDEO_GENERATION_MODE - 视频生成模式（内测中，需邮件申请开通）",
           "example": "REALTIME_MODE",
           "member": "string",
@@ -4786,6 +5150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "聊天群组ID，此字段仅适用于`视频生成模式`\n\n在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。",
           "example": "12345",
           "member": "string",
@@ -4795,6 +5160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动停止录制超时时间，单位秒，取值范围[300, 86400], 默认值为300秒。\n\n当超过设定时间房间内没有音视频上行且没有白板操作的时候，录制服务会自动停止当前录制任务。",
           "example": "300",
           "member": "int64",
@@ -4804,6 +5170,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内部参数，可忽略",
           "example": "无",
           "member": "string",
@@ -4818,6 +5185,7 @@
       "document": "StartOnlineRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "录制任务Id",
           "example": "0c69baivvc3lp8t4f80b",
           "member": "string",
@@ -4839,6 +5207,7 @@
       "document": "StartWhiteboardPush请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -4847,6 +5216,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "需要推流的白板房间号，取值范围: (1, 4294967295)。\n\n1. 白板推流默认以RoomId的字符串表达形式作为IM群组的GroupID（比如RoomId为1234，则IM群组的GroupID为\"1234\"）加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。\n2. 在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。",
           "example": "12345",
           "member": "int64",
@@ -4855,6 +5225,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景帐号互踢，影响正常推流。",
           "example": "tic_push_12345_xxx",
           "member": "string",
@@ -4863,6 +5234,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "与PushUserId对应的IM签名(usersig)。",
           "example": "eJwtjb0OgjAAhN*lK4a0tcVC4iDGkIg-g7K4NEiLViLUUsFgfHcRmS733eXuDY6b",
           "member": "string",
@@ -4871,6 +5243,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "白板参数，例如白板宽高、背景颜色等",
           "example": "无",
           "member": "Whiteboard",
@@ -4879,6 +5252,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "自动停止推流超时时间，单位秒，取值范围[300, 259200], 默认值为1800秒。\n\n当白板超过设定时间没有操作的时候，白板推流服务会自动停止白板推流。",
           "example": "300",
           "member": "int64",
@@ -4887,6 +5261,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "对主白板推流任务进行操作时，是否同时同步操作备份任务",
           "example": "false",
           "member": "bool",
@@ -4895,6 +5270,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "备份白板推流相关参数。\n\n指定了备份参数的情况下，白板推流服务会在房间内新增一路白板画面视频流，即同一个房间内会有两路白板画面推流。",
           "example": "无",
           "member": "WhiteboardPushBackupParam",
@@ -4903,6 +5279,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。",
           "example": "无",
           "member": "string",
@@ -4911,6 +5288,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "白板推流视频帧率，取值范围[0, 30]，默认20fps",
           "example": "15",
           "member": "int64",
@@ -4919,6 +5297,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "白板推流码率， 取值范围[0, 2000]，默认1200kbps。\n\n这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。",
           "example": "1200",
           "member": "int64",
@@ -4927,6 +5306,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。\n\n默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。\n\n如果实时音视频的云端录制模式选择为 `全局自动录制` 模式，可忽略此参数。",
           "example": "false",
           "member": "bool",
@@ -4935,6 +5315,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 \"userdefinerecordid\" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。\n\n限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。\n\n此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。\n\n默认RecordId生成规则如下：\nurlencode(SdkAppID_RoomID_PushUserID)\n\n例如：\nSdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1\n那么：RecordId = 12345678_12345_push_user_1",
           "example": "12345678_12345_push_user_1",
           "member": "string",
@@ -4943,6 +5324,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。\n\n默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。\n\n如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。",
           "example": "false",
           "member": "bool",
@@ -4951,6 +5333,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。\n\n限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。\n\n此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。\n\n默认StreamID生成规则如下：\nurlencode(SdkAppID_RoomID_PushUserID_main)\n\n例如：\nSdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1\n那么：StreamID = 12345678_12345_push_user_1_main",
           "example": "12345678_12345_push_user_1_main",
           "member": "string",
@@ -4959,6 +5342,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "内部参数，不需要关注此参数",
           "example": "无",
           "member": "string",
@@ -4967,6 +5351,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。\n\n当指定了TRTCRoomIdStr的情况下，此字段将被忽略。",
           "example": "12345",
           "member": "int64",
@@ -4975,6 +5360,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "TRTC字符串类型房间号。\n\n在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。",
           "example": "wbpush-12345",
           "member": "string",
@@ -4983,6 +5369,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "IM鉴权信息参数，用于IM鉴权。\n当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。",
           "example": "无",
           "member": "AuthParam",
@@ -4991,6 +5378,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "TRTC鉴权信息参数，用于TRTC进房推流鉴权。\n当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。",
           "example": "无",
           "member": "AuthParam",
@@ -4999,6 +5387,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "内测参数，需要提前申请白名单进行体验。\n\n指定白板推流时推流用户进TRTC房间的进房模式。默认为 TRTCAppSceneVideoCall\n\nTRTCAppSceneVideoCall - 视频通话场景，即绝大多数时间都是两人或两人以上视频通话的场景，内部编码器和网络协议优化侧重流畅性，降低通话延迟和卡顿率。\nTRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶尔有多人视频互动的场景，内部编码器和网络协议优化侧重性能和兼容性，性能和清晰度表现更佳。",
           "example": "TRTCAppSceneVideoCall",
           "member": "string",
@@ -5013,6 +5402,7 @@
       "document": "StartWhiteboardPush返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "推流任务Id",
           "example": "0c69baivvc3lp8t4f80b",
           "member": "string",
@@ -5021,6 +5411,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份任务结果参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5042,6 +5433,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -5050,6 +5442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要停止录制的任务 Id",
           "member": "string",
           "name": "TaskId",
@@ -5076,6 +5469,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "客户的SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -5084,6 +5478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要停止的白板推流任务 Id",
           "member": "string",
           "name": "TaskId",
@@ -5097,6 +5492,7 @@
       "document": "StopWhiteboardPush返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份任务相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Backup",
@@ -5117,6 +5513,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视频流ID\n视频流ID的取值含义如下：\n1. tic_record_user - 表示白板视频流\n2. tic_substream - 表示辅路视频流\n3. 特定用户ID - 表示指定用户的视频流\n\n在实际录制过程中，视频流ID的匹配规则为前缀匹配，只要真实流ID的前缀与指定的流ID一致就认为匹配成功。",
           "member": "string",
           "name": "StreamId",
@@ -5126,6 +5523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否对此路流开启录制。\n\ntrue - 表示不对这路流进行录制，录制结果将不包含这路流的视频。\nfalse - 表示需要对这路流进行录制，录制结果会包含这路流的视频。\n\n默认为 false。",
           "member": "bool",
           "name": "DisableRecord",
@@ -5135,6 +5533,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置是否禁用这路流的音频录制。\n\ntrue - 表示不对这路流的音频进行录制，录制结果里这路流的视频将会没有声音。\nfalse - 录制视频会保留音频，如果设置为true，则录制视频会丢弃这路流的音频。\n\n默认为 false。",
           "member": "bool",
           "name": "DisableAudio",
@@ -5144,6 +5543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置当前流录制视频是否只录制小画面。\n\ntrue - 录制小画面。设置为true时，请确保上行端同时上行了小画面，否则录制视频可能是黑屏。\nfalse - 录制大画面。\n\n默认为 false。",
           "member": "bool",
           "name": "PullSmallVideo",
@@ -5159,6 +5559,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流布局配置参数",
           "member": "LayoutParams",
           "name": "LayoutParams",
@@ -5168,6 +5569,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频流ID\n流ID的取值含义如下：\n1. tic_record_user - 表示当前画面用于显示白板视频流\n2. tic_substream - 表示当前画面用于显示辅路视频流\n3. 特定用户ID - 表示当前画面用于显示指定用户的视频流\n4. 不填 - 表示当前画面用于备选，当有新的视频流加入时，会从这些备选的空位中选择一个没有被占用的位置来显示新的视频流画面",
           "member": "string",
           "name": "InputStreamId",
@@ -5177,6 +5579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "背景颜色，默认为黑色，格式为RGB格式，如红色为\"#FF0000\"",
           "member": "string",
           "name": "BackgroundColor",
@@ -5186,6 +5589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频画面填充模式。\n\n0 - 自适应模式，对视频画面进行等比例缩放，在指定区域内显示完整的画面。此模式可能存在黑边。\n1 - 全屏模式，对视频画面进行等比例缩放，让画面填充满整个指定区域。此模式不会存在黑边，但会将超出区域的那一部分画面裁剪掉。",
           "member": "int64",
           "name": "FillMode",
@@ -5201,6 +5605,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -5210,6 +5615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -5225,6 +5631,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Unix时间戳，单位秒",
           "example": "1617883200",
           "member": "uint64",
@@ -5235,6 +5642,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询指标对应当前时间的值",
           "example": "100",
           "member": "float",
@@ -5251,6 +5659,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "转码结果地址",
           "member": "string",
           "name": "ResultUrl",
@@ -5260,6 +5669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分辨率",
           "member": "string",
           "name": "Resolution",
@@ -5269,6 +5679,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标题（一般为文件名）",
           "member": "string",
           "name": "Title",
@@ -5278,6 +5689,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码页数",
           "member": "int64",
           "name": "Pages",
@@ -5287,6 +5699,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "缩略图URL前缀，比如，该URL前缀为http://example.com/g0jb42ps49vtebjshilb/，那么动态PPT第1页的缩略图URL为\nhttp://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推\n\n如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串",
           "member": "string",
           "name": "ThumbnailUrl",
@@ -5296,6 +5709,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "动态转码缩略图生成分辨率",
           "member": "string",
           "name": "ThumbnailResolution",
@@ -5305,6 +5719,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串",
           "member": "string",
           "name": "CompressFileUrl",
@@ -5314,6 +5729,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务失败错误码",
           "member": "int64",
           "name": "ErrorCode",
@@ -5323,6 +5739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务失败错误信息",
           "member": "string",
           "name": "ErrorMsg",
@@ -5338,6 +5755,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -5347,6 +5765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一ID",
           "member": "string",
           "name": "TaskId",
@@ -5356,6 +5775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成",
           "member": "string",
           "name": "Status",
@@ -5365,6 +5785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码文件原始名称",
           "member": "string",
           "name": "OriginalFilename",
@@ -5374,6 +5795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -5383,6 +5805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码任务结果",
           "member": "TranscodeTaskResult",
           "name": "Result",
@@ -5392,6 +5815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否静态转码",
           "member": "bool",
           "name": "IsStatic",
@@ -5407,6 +5831,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日期，格式为YYYY-MM-DD",
           "example": "2021-10-01",
           "member": "string",
@@ -5417,6 +5842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板应用SDKAppID",
           "example": "1400000001",
           "member": "int64",
@@ -5427,6 +5853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "互动白板子产品，请求参数传入的一致\n- sp_tiw_board: 互动白板时长\n- sp_tiw_dt: 动态转码页数\n- sp_tiw_st: 静态转码页数\n- sp_tiw_ric: 实时录制时长",
           "example": "sp_tiw_board",
           "member": "string",
@@ -5437,6 +5864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用量值\n- 静态转码、动态转码单位为页\n- 白板时长、实时录制时长单位为分钟",
           "example": "100000",
           "member": "float",
@@ -5453,6 +5881,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "房间内的用户ID",
           "example": "100000",
           "member": "string",
@@ -5463,6 +5892,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒",
           "example": "1614519034000",
           "member": "int64",
@@ -5473,6 +5903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒",
           "example": "1614519034000",
           "member": "int64",
@@ -5489,6 +5920,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视频开始播放的时间（单位：毫秒）",
           "member": "int64",
           "name": "VideoPlayTime",
@@ -5498,6 +5930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频大小（字节）",
           "member": "int64",
           "name": "VideoSize",
@@ -5507,6 +5940,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频格式",
           "member": "string",
           "name": "VideoFormat",
@@ -5516,6 +5950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频播放时长（单位：毫秒）",
           "member": "int64",
           "name": "VideoDuration",
@@ -5525,6 +5960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频文件URL",
           "member": "string",
           "name": "VideoUrl",
@@ -5534,6 +5970,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频文件Id",
           "member": "string",
           "name": "VideoId",
@@ -5543,6 +5980,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频流类型 \n- 0：摄像头视频 \n- 1：屏幕分享视频\n- 2：白板视频 \n- 3：混流视频\n- 4：纯音频（mp3)",
           "member": "int64",
           "name": "VideoType",
@@ -5552,6 +5990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "摄像头/屏幕分享视频所属用户的 Id（白板视频为空、混流视频tic_mixstream_房间号_混流布局类型、辅路视频tic_substream_用户Id）",
           "member": "string",
           "name": "UserId",
@@ -5561,6 +6000,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频分辨率的宽",
           "member": "int64",
           "name": "Width",
@@ -5570,6 +6010,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频分辨率的高",
           "member": "int64",
           "name": "Height",
@@ -5585,6 +6026,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制结果里白板视频宽，取值必须大于等于2，默认为1280",
           "example": "1280",
           "member": "int64",
@@ -5595,6 +6037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实时录制结果里白板视频高，取值必须大于等于2，默认为960",
           "example": "960",
           "member": "int64",
@@ -5605,6 +6048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板初始化参数，透传到白板 SDK",
           "example": "无",
           "member": "string",
@@ -5621,6 +6065,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型\n\nrecording: 实时录制\ntranscode: 文档转码",
           "member": "string",
           "name": "TaskType",
@@ -5630,6 +6075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储桶名字",
           "member": "string",
           "name": "BucketName",
@@ -5639,6 +6085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储桶地域",
           "member": "string",
           "name": "BucketLocation",
@@ -5648,6 +6095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源在存储桶中的前缀",
           "member": "string",
           "name": "BucketPrefix",
@@ -5657,6 +6105,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标CDN域名",
           "member": "string",
           "name": "ResultDomain",
@@ -5666,6 +6115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调地址",
           "member": "string",
           "name": "Callback",
@@ -5675,6 +6125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "回调鉴权密钥",
           "member": "string",
           "name": "CallbackKey",
@@ -5684,6 +6135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置的应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -5693,6 +6145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IM管理员UserId",
           "member": "string",
           "name": "AdminUserId",
@@ -5702,6 +6155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IM管理员UserSig",
           "member": "string",
           "name": "AdminUserSig",
@@ -5717,6 +6171,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用于白板推流服务进房的用户ID，\n该ID必须是一个单独的未在SDK中使用的ID，白板推流服务将使用这个用户ID进入房间进行白板推流，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常推流。",
           "member": "string",
           "name": "PushUserId",
@@ -5726,6 +6181,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "与PushUserId对应的签名",
           "member": "string",
           "name": "PushUserSig",
@@ -5741,6 +6197,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "AUTO - 自动停止推流， USER_CALL - 用户主动调用停止推流",
           "member": "string",
           "name": "FinishReason",
@@ -5750,6 +6207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异常数",
           "member": "int64",
           "name": "ExceptionCnt",
@@ -5759,6 +6217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间号",
           "member": "int64",
           "name": "RoomId",
@@ -5768,6 +6227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IM群组ID",
           "member": "string",
           "name": "GroupId",
@@ -5777,6 +6237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推流真实开始时间",
           "member": "int64",
           "name": "PushStartTime",
@@ -5786,6 +6247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推流结束时间",
           "member": "int64",
           "name": "PushStopTime",
@@ -5795,6 +6257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。",
           "member": "int64",
           "name": "IMSyncTime",
@@ -5804,6 +6267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务失败错误码",
           "member": "int64",
           "name": "ErrorCode",
@@ -5813,6 +6277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误信息",
           "member": "string",
           "name": "ErrorMsg",
@@ -5828,6 +6293,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务唯一ID",
           "member": "string",
           "name": "TaskId",
@@ -5837,6 +6303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流任务状态\n- PREPARED: 推流在准备阶段\n- PUSHING: 正在推流\n- STOPPED：推流已停止",
           "member": "string",
           "name": "Status",
@@ -5846,6 +6313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流房间号",
           "member": "int64",
           "name": "RoomId",
@@ -5855,6 +6323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -5864,6 +6333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户应用SdkAppId",
           "member": "int64",
           "name": "SdkAppId",
@@ -5873,6 +6343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流结果",
           "member": "WhiteboardPushResult",
           "name": "Result",
@@ -5882,6 +6353,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白板推流用户ID",
           "member": "string",
           "name": "PushUserId",

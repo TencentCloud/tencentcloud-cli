@@ -475,6 +475,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账户的名称",
           "example": "test",
           "member": "string",
@@ -485,6 +486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账户的域名",
           "example": "%",
           "member": "string",
@@ -501,6 +503,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待升级的实例ID列表。形如：[\"dcdbt-ow728lmc\"]，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "[]",
           "member": "string",
@@ -515,6 +518,7 @@
       "document": "ActiveHourDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "解隔离成功的实例id列表",
           "example": "[\"tdsqlshard-cq3ndzu7\"]",
           "member": "string",
@@ -524,6 +528,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解隔离失败的实例id列表",
           "example": "[]",
           "member": "string",
@@ -546,6 +551,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新增分片的数量",
           "example": "1",
           "member": "int64",
@@ -556,6 +562,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存大小，单位 GB",
           "example": "2",
           "member": "int64",
@@ -566,6 +573,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片存储大小，单位 GB",
           "example": "10",
           "member": "int64",
@@ -582,6 +590,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称，本接口取值：dcdb。",
           "example": "dcdb",
           "member": "string",
@@ -591,6 +600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要绑定的安全组ID，类似sg-efil73jd。",
           "example": "sg-xxxxxx",
           "member": "string",
@@ -600,6 +610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被绑定的实例ID，类似tdsqlshard-lesecurk，支持指定多个实例。",
           "example": "[\"tdsql-xxxxxx\\n\"]",
           "member": "string",
@@ -627,6 +638,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DB节点ID",
           "member": "string",
           "name": "NodeId",
@@ -636,6 +648,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DB节点角色，取值为master或者slave",
           "member": "string",
           "name": "Role",
@@ -645,6 +658,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点所属分片的分片ID",
           "member": "string",
           "name": "ShardId",
@@ -660,6 +674,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "灾备实例ID",
           "example": "tdsql-2rn9lmpx",
           "member": "string",
@@ -674,6 +689,7 @@
       "document": "CancelDcnJob返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "流程ID",
           "example": "11211",
           "member": "int64",
@@ -696,6 +712,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "dcdbt-ovulpcjf",
           "member": "string",
@@ -705,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源用户账户名",
           "example": "testuser1",
           "member": "string",
@@ -714,6 +732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源用户HOST",
           "example": "172.17.%",
           "member": "string",
@@ -723,6 +742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的用户账户名",
           "example": "testuser1",
           "member": "string",
@@ -732,6 +752,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的用户HOST",
           "example": "172.20.%",
           "member": "string",
@@ -741,6 +762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的用户账户描述",
           "example": "testclone",
           "member": "string",
@@ -755,6 +777,7 @@
       "document": "CloneAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务流程ID",
           "example": "4127",
           "member": "int64",
@@ -777,6 +800,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待关闭外网访问的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-avw0207d",
           "member": "string",
@@ -786,6 +810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否IPv6，默认0",
           "example": "无",
           "member": "int64",
@@ -800,6 +825,7 @@
       "document": "CloseDBExtranetAccess返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
           "example": "3024",
           "member": "int64",
@@ -822,6 +848,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名",
           "example": "test",
           "member": "string",
@@ -832,6 +859,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库表名",
           "example": "test",
           "member": "string",
@@ -842,6 +870,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库列名",
           "example": "test",
           "member": "string",
@@ -852,6 +881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限信息",
           "example": "[]",
           "member": "string",
@@ -868,6 +898,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型为section时的最小值",
           "member": "string",
           "name": "Min",
@@ -877,6 +908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型为section时的最大值",
           "member": "string",
           "name": "Max",
@@ -892,6 +924,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -901,6 +934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源用户名",
           "example": "testuser1",
           "member": "string",
@@ -910,6 +944,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源用户允许的访问 host",
           "example": "172.17.%",
           "member": "string",
@@ -919,6 +954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的用户名",
           "example": "testuser2",
           "member": "string",
@@ -928,6 +964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的用户允许的访问 host",
           "example": "%",
           "member": "string",
@@ -937,6 +974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源账号的 ReadOnly 属性",
           "example": "无",
           "member": "string",
@@ -946,6 +984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目的账号的 ReadOnly 属性",
           "example": "无",
           "member": "string",
@@ -973,6 +1012,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -982,6 +1022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AccountName",
           "example": "testuser1",
           "member": "string",
@@ -991,6 +1032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可以登录的主机，与mysql 账号的 host 格式一致，可以支持通配符，例如 %，10.%，10.20.%。",
           "example": "172.17.%",
           "member": "string",
@@ -1000,6 +1042,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。",
           "example": "1234qweri#",
           "member": "string",
@@ -1009,6 +1052,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否创建为只读账号，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败，3：只从备机读取。",
           "example": "0",
           "member": "int64",
@@ -1018,6 +1062,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符",
           "example": "测试帐号",
           "member": "string",
@@ -1027,6 +1072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果备机延迟超过本参数设置值，系统将认为备机发生故障\n建议该参数值大于10。当ReadOnly选择1、2时该参数生效。",
           "example": "15",
           "member": "int64",
@@ -1036,6 +1082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
           "example": "0",
           "member": "int64",
@@ -1045,6 +1092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。",
           "example": "0",
           "member": "uint64",
@@ -1059,6 +1107,7 @@
       "document": "CreateAccount返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID，透传入参。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -1068,6 +1117,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户名，透传入参。",
           "example": "testuser1",
           "member": "string",
@@ -1077,6 +1127,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "允许访问的 host，透传入参。",
           "example": "172.17.%",
           "member": "string",
@@ -1086,6 +1137,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "透传入参。",
           "example": "0",
           "member": "int64",
@@ -1107,6 +1159,7 @@
       "document": "CreateDCDBInstance请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。\n注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。",
           "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-2\"]",
           "member": "string",
@@ -1115,6 +1168,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "欲购买的时长，单位：月。",
           "example": "1",
           "member": "int64",
@@ -1123,6 +1177,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1131,6 +1186,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "10",
           "member": "int64",
@@ -1139,6 +1195,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "单个分片节点个数，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "3",
           "member": "int64",
@@ -1147,6 +1204,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
           "example": "2",
           "member": "int64",
@@ -1155,6 +1213,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "欲购买实例的数量",
           "example": "1",
           "member": "int64",
@@ -1163,6 +1222,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
           "example": "无",
           "member": "int64",
@@ -1171,6 +1231,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "虚拟私有网络 ID，不传或传空表示创建为基础网络",
           "example": "无",
           "member": "string",
@@ -1179,6 +1240,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "虚拟私有网络子网 ID，VpcId不为空时必填",
           "example": "无",
           "member": "string",
@@ -1187,6 +1249,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
           "example": "5.7",
           "member": "string",
@@ -1195,6 +1258,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否自动使用代金券进行支付，默认不使用。",
           "example": "true",
           "member": "bool",
@@ -1203,6 +1267,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
           "member": "string",
@@ -1211,6 +1276,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "安全组id",
           "example": "无",
           "member": "string",
@@ -1219,6 +1285,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
           "example": "无",
           "member": "string",
@@ -1227,6 +1294,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否支持IPv6",
           "example": "无",
           "member": "int64",
@@ -1235,6 +1303,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1243,6 +1312,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1251,6 +1321,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "DCN源地域",
           "example": "无",
           "member": "string",
@@ -1259,6 +1330,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "DCN源实例ID",
           "example": "无",
           "member": "string",
@@ -1267,6 +1339,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0",
           "example": "0",
           "member": "int64",
@@ -1275,6 +1348,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数",
           "example": "无",
           "member": "string",
@@ -1289,6 +1363,7 @@
       "document": "CreateDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
           "example": "20181103110163",
           "member": "string",
@@ -1297,6 +1372,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"dcdbt-avw0207d\"]",
           "member": "string",
@@ -1317,6 +1393,7 @@
       "document": "CreateHourDCDBInstance请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1325,6 +1402,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "10",
           "member": "int64",
@@ -1333,6 +1411,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "单个分片节点个数，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1341,6 +1420,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
           "example": "2",
           "member": "int64",
@@ -1349,6 +1429,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "欲购买实例的数量",
           "example": "1",
           "member": "int64",
@@ -1357,6 +1438,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
           "example": "0",
           "member": "int64",
@@ -1365,6 +1447,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "虚拟私有网络 ID，不传或传空表示创建为基础网络",
           "example": "0",
           "member": "string",
@@ -1373,6 +1456,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "虚拟私有网络子网 ID，VpcId不为空时必填",
           "example": "0",
           "member": "string",
@@ -1381,6 +1465,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "分片cpu大小，单位：核，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "0",
           "member": "int64",
@@ -1389,6 +1474,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
           "example": "5.7",
           "member": "string",
@@ -1397,6 +1483,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
@@ -1405,6 +1492,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "安全组id",
           "example": "sg-12345",
           "member": "string",
@@ -1413,6 +1501,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
           "example": "实例名称",
           "member": "string",
@@ -1421,6 +1510,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否支持IPv6",
           "example": "0",
           "member": "int64",
@@ -1429,6 +1519,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1437,6 +1528,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "DCN源地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1445,6 +1537,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "DCN源实例ID",
           "example": "tdsqlshard-123",
           "member": "string",
@@ -1453,6 +1546,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1461,6 +1555,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "需要回档的源实例ID",
           "example": "无",
           "member": "string",
@@ -1469,6 +1564,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "回档时间",
           "example": "无",
           "member": "string",
@@ -1477,6 +1573,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数",
           "example": "无",
           "member": "string",
@@ -1491,6 +1588,7 @@
       "document": "CreateHourDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。",
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
@@ -1499,6 +1597,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "流程id，可以根据流程id查询创建进度",
           "example": "1122",
           "member": "int64",
@@ -1507,6 +1606,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
           "example": "20200409111543",
           "member": "string",
@@ -1528,6 +1628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "example": "无",
           "member": "string",
@@ -1538,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）",
           "example": "无",
           "member": "string",
@@ -1548,6 +1650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户备注信息",
           "example": "无",
           "member": "string",
@@ -1558,6 +1661,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "无",
           "member": "datetime",
@@ -1568,6 +1672,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后更新时间",
           "example": "无",
           "member": "datetime",
@@ -1578,6 +1683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
           "example": "无",
           "member": "int64",
@@ -1588,6 +1694,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果备机延迟超过本参数设置值，系统将认为备机发生故障\n建议该参数值大于10。当ReadOnly选择1、2时该参数生效。",
           "example": "无",
           "member": "int64",
@@ -1598,6 +1705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
           "example": "无",
           "member": "int64",
@@ -1614,6 +1722,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名称",
           "member": "string",
           "name": "Param",
@@ -1623,6 +1732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数值",
           "member": "string",
           "name": "Value",
@@ -1638,6 +1748,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "暂无",
           "member": "string",
@@ -1648,6 +1759,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "example": "暂无",
           "member": "string",
@@ -1658,6 +1770,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "暂无",
           "member": "int64",
@@ -1668,6 +1781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "example": "暂无",
           "member": "int64",
@@ -1678,6 +1792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "暂无",
           "member": "string",
@@ -1688,6 +1803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "暂无",
           "member": "string",
@@ -1698,6 +1814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC数字ID",
           "example": "暂无",
           "member": "int64",
@@ -1708,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Subnet数字ID",
           "example": "暂无",
           "member": "int64",
@@ -1718,6 +1836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态中文描述",
           "example": "暂无",
           "member": "string",
@@ -1728,6 +1847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态：0 创建中，1 流程处理中， 2 运行中，3 实例未初始化，-1 实例已隔离，4 实例初始化中，5 实例删除中，6 实例重启中，7 数据迁移中",
           "example": "暂无",
           "member": "int64",
@@ -1738,6 +1858,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网IP",
           "example": "暂无",
           "member": "string",
@@ -1748,6 +1869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网端口",
           "example": "暂无",
           "member": "int64",
@@ -1758,6 +1880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "暂无",
           "member": "datetime",
@@ -1768,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标志",
           "example": "暂无",
           "member": "int64",
@@ -1778,6 +1902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存大小，单位 GB",
           "example": "暂无",
           "member": "int64",
@@ -1788,6 +1913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储大小，单位 GB",
           "example": "暂无",
           "member": "int64",
@@ -1798,6 +1924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片个数",
           "example": "暂无",
           "member": "int64",
@@ -1808,6 +1935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间",
           "example": "暂无",
           "member": "datetime",
@@ -1818,6 +1946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隔离时间",
           "example": "暂无",
           "member": "datetime",
@@ -1828,6 +1957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号ID",
           "example": "暂无",
           "member": "string",
@@ -1838,6 +1968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片详情",
           "example": "暂无",
           "member": "ShardInfo",
@@ -1848,6 +1979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数，2 为一主一从， 3 为一主二从",
           "example": "暂无",
           "member": "int64",
@@ -1858,6 +1990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "临时实例标记，0 为非临时实例",
           "example": "暂无",
           "member": "int64",
@@ -1868,6 +2001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "独享集群ID，为空表示非独享集群实例",
           "example": "暂无",
           "member": "string",
@@ -1878,6 +2012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字符串型的私有网络ID",
           "example": "暂无",
           "member": "string",
@@ -1888,6 +2023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字符串型的私有网络子网ID",
           "example": "暂无",
           "member": "string",
@@ -1898,6 +2034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数字实例ID（过时字段，请勿依赖该值）",
           "example": "暂无",
           "member": "uint64",
@@ -1908,6 +2045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网访问的域名，公网可解析",
           "example": "暂无",
           "member": "string",
@@ -1918,6 +2056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网 IP 地址，公网可访问",
           "example": "暂无",
           "member": "string",
@@ -1928,6 +2067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网端口",
           "example": "暂无",
           "member": "int64",
@@ -1938,6 +2078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品类型 ID（过时字段，请勿依赖该值）",
           "example": "暂无",
           "member": "int64",
@@ -1948,6 +2089,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例最后更新时间，格式为 2006-01-02 15:04:05",
           "example": "暂无",
           "member": "datetime",
@@ -1958,6 +2100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎",
           "example": "暂无",
           "member": "string",
@@ -1968,6 +2111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎版本",
           "example": "暂无",
           "member": "string",
@@ -1978,6 +2122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式",
           "example": "暂无",
           "member": "string",
@@ -1988,6 +2133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例处于异步任务状态时，表示异步任务流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "int64",
@@ -1998,6 +2144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中",
           "example": "暂无",
           "member": "int64",
@@ -2008,6 +2155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该实例是否支持审计。1-支持；0-不支持",
           "example": "暂无",
           "member": "uint64",
@@ -2018,6 +2166,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Cpu核数",
           "example": "暂无",
           "member": "uint64",
@@ -2028,6 +2177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例IPv6标志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "uint64",
@@ -2038,6 +2188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "string",
@@ -2048,6 +2199,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "string",
@@ -2058,6 +2210,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网IPv6端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "uint64",
@@ -2068,6 +2221,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "外网IPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "uint64",
@@ -2078,6 +2232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "int64",
@@ -2088,6 +2243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "int64",
@@ -2098,6 +2254,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "int64",
@@ -2108,6 +2265,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "int64",
@@ -2118,6 +2276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "ResourceTag",
@@ -2128,6 +2287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "暂无",
           "member": "string",
@@ -2144,6 +2304,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "所属实例Id",
           "member": "string",
           "name": "InstanceId",
@@ -2153,6 +2314,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片SQL透传Id，用于将sql透传到指定分片执行",
           "member": "string",
           "name": "ShardSerialId",
@@ -2162,6 +2324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "全局唯一的分片Id",
           "member": "string",
           "name": "ShardInstanceId",
@@ -2171,6 +2334,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态：0 创建中，1 流程处理中， 2 运行中，3 分片未初始化",
           "member": "int64",
           "name": "Status",
@@ -2180,6 +2344,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态中文描述",
           "member": "string",
           "name": "StatusDesc",
@@ -2189,6 +2354,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -2198,6 +2364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字符串格式的私有网络Id",
           "member": "string",
           "name": "VpcId",
@@ -2207,6 +2374,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字符串格式的私有网络子网Id",
           "member": "string",
           "name": "SubnetId",
@@ -2216,6 +2384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "member": "int64",
           "name": "ProjectId",
@@ -2225,6 +2394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "member": "string",
           "name": "Region",
@@ -2234,6 +2404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区",
           "member": "string",
           "name": "Zone",
@@ -2243,6 +2414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存大小，单位 GB",
           "member": "int64",
           "name": "Memory",
@@ -2252,6 +2424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储大小，单位 GB",
           "member": "int64",
           "name": "Storage",
@@ -2261,6 +2434,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间",
           "member": "datetime",
           "name": "PeriodEndTime",
@@ -2270,6 +2444,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数，2 为一主一从， 3 为一主二从",
           "member": "int64",
           "name": "NodeCount",
@@ -2279,6 +2454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储使用率，单位为 %",
           "member": "float",
           "name": "StorageUsage",
@@ -2288,6 +2464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存使用率，单位为 %",
           "member": "float",
           "name": "MemoryUsage",
@@ -2297,6 +2474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数字分片Id（过时字段，请勿依赖该值）",
           "member": "int64",
           "name": "ShardId",
@@ -2306,6 +2484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品ProductID",
           "member": "int64",
           "name": "Pid",
@@ -2315,6 +2494,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Proxy版本",
           "member": "string",
           "name": "ProxyVersion",
@@ -2324,6 +2504,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Paymode",
@@ -2333,6 +2514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片的主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ShardMasterZone",
@@ -2342,6 +2524,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片的从可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ShardSlaveZones",
@@ -2351,6 +2534,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CPU核数",
           "member": "int64",
           "name": "Cpu",
@@ -2360,6 +2544,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63",
           "member": "string",
           "name": "Range",
@@ -2375,6 +2560,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称",
           "member": "string",
           "name": "DbName",
@@ -2390,6 +2576,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "函数名称",
           "member": "string",
           "name": "Func",
@@ -2405,6 +2592,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权限信息",
           "example": "[]",
           "member": "string",
@@ -2415,6 +2603,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名",
           "example": "test",
           "member": "string",
@@ -2431,6 +2620,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "存储过程名称",
           "member": "string",
           "name": "Proc",
@@ -2446,6 +2636,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "表名",
           "member": "string",
           "name": "Table",
@@ -2461,6 +2652,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视图名称",
           "member": "string",
           "name": "View",
@@ -2476,6 +2668,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "暂无",
           "member": "string",
@@ -2486,6 +2679,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "example": "暂无",
           "member": "string",
@@ -2496,6 +2690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例地域",
           "example": "暂无",
           "member": "string",
@@ -2506,6 +2701,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例可用区",
           "example": "暂无",
           "member": "string",
@@ -2516,6 +2712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例IP地址",
           "example": "暂无",
           "member": "string",
@@ -2526,6 +2723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例IPv6地址",
           "example": "暂无",
           "member": "string",
@@ -2536,6 +2734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例端口",
           "example": "暂无",
           "member": "int64",
@@ -2546,6 +2745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态",
           "example": "暂无",
           "member": "int64",
@@ -2556,6 +2756,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态描述",
           "example": "暂无",
           "member": "string",
@@ -2566,6 +2767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例DCN标志，1-主，2-备",
           "example": "暂无",
           "member": "int64",
@@ -2576,6 +2778,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例DCN状态，0-无，1-创建中，2-同步中，3-已断开",
           "example": "暂无",
           "member": "int64",
@@ -2586,6 +2789,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例CPU核数",
           "example": "暂无",
           "member": "int64",
@@ -2596,6 +2800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存大小，单位 GB",
           "example": "暂无",
           "member": "int64",
@@ -2606,6 +2811,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例存储大小，单位 GB",
           "example": "暂无",
           "member": "int64",
@@ -2616,6 +2822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式",
           "example": "暂无",
           "member": "int64",
@@ -2626,6 +2833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例创建时间，格式为 2006-01-02 15:04:05",
           "example": "暂无",
           "member": "string",
@@ -2636,6 +2844,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例到期时间，格式为 2006-01-02 15:04:05",
           "example": "暂无",
           "member": "string",
@@ -2646,6 +2855,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）",
           "example": "暂无",
           "member": "int64",
@@ -2656,6 +2866,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启了 kms",
           "example": "暂无",
           "member": "int64",
@@ -2672,6 +2883,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "订单号",
           "example": "20221108006001219915661",
           "member": "string",
@@ -2682,6 +2894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属账号",
           "example": "3078115006",
           "member": "string",
@@ -2692,6 +2905,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品数量",
           "example": "1",
           "member": "int64",
@@ -2702,6 +2916,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联的流程 Id，可用于查询流程执行状态",
           "example": "68000008",
           "member": "int64",
@@ -2712,6 +2927,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"tdsqlshard-c06stiq3\"]",
           "member": "string",
@@ -2722,6 +2938,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式，0后付费/1预付费",
           "example": "0",
           "member": "int64",
@@ -2738,6 +2955,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -2747,6 +2965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "example": "testuser1",
           "member": "string",
@@ -2756,6 +2975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户允许的访问 host",
           "example": "172.17.%",
           "member": "string",
@@ -2783,6 +3003,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -2792,6 +3013,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录用户名。",
           "example": "testuser1",
           "member": "string",
@@ -2801,6 +3023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
           "example": "172.17.%",
           "member": "string",
@@ -2810,6 +3033,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名。如果为 \\*，表示查询全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数",
           "example": "*",
           "member": "string",
@@ -2819,6 +3043,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示查询该数据库权限（即db.\\*），此时忽略 Object 参数",
           "example": "*",
           "member": "string",
@@ -2828,6 +3053,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
           "example": "*",
           "member": "string",
@@ -2837,6 +3063,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当 Type=table 时，ColName 为 \\* 表示查询表的权限，如果为具体字段名，表示查询对应字段的权限",
           "example": "*",
           "member": "string",
@@ -2851,6 +3078,7 @@
       "document": "DescribeAccountPrivileges返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -2860,6 +3088,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "权限列表。",
           "example": "[\"SELECT\",\"UPDATE\"]",
           "member": "string",
@@ -2869,6 +3098,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据库账号用户名",
           "example": "testuser1",
           "member": "string",
@@ -2878,6 +3108,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据库账号Host",
           "example": "172.17.%",
           "member": "string",
@@ -2900,6 +3131,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -2914,6 +3146,7 @@
       "document": "DescribeAccounts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID，透传入参。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -2923,6 +3156,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例用户列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DBAccount",
@@ -2945,6 +3179,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "按实例ID查询",
           "example": "tdsqlshard-xxx",
           "member": "string",
@@ -2954,6 +3189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按分片ID查询",
           "example": "shard-xxxx",
           "member": "string",
@@ -2963,6 +3199,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份类型，Data:数据备份，Binlog:Binlog备份，Errlog:错误日志，Slowlog:慢日志",
           "example": "Binlog",
           "member": "string",
@@ -2972,6 +3209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按开始时间查询",
           "example": "2022-05-10 12:00:00",
           "member": "string",
@@ -2981,6 +3219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按结束时间查询",
           "example": "2022-05-10 12:00:00",
           "member": "string",
@@ -2990,6 +3229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页参数",
           "example": "10",
           "member": "int64",
@@ -2999,6 +3239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页参数",
           "example": "0",
           "member": "int64",
@@ -3008,6 +3249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序参数，可选值：Time,Size",
           "example": "Time",
           "member": "string",
@@ -3017,6 +3259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序参数，可选值：DESC,ASC",
           "example": "DESC",
           "member": "string",
@@ -3031,6 +3274,7 @@
       "document": "DescribeBackupFiles返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份文件列表",
           "example": "无",
           "member": "InstanceBackupFileItem",
@@ -3040,6 +3284,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总条目数",
           "example": "无",
           "member": "int64",
@@ -3062,6 +3307,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-2t4cf98d",
           "member": "string",
@@ -3071,6 +3317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片 ID，形如：shard-7noic7tv",
           "example": "shard-gdqcdn39",
           "member": "string",
@@ -3080,6 +3327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求日志类型，取值只能为1、2、3或者4。1-binlog，2-冷备，3-errlog，4-slowlog。",
           "example": "1",
           "member": "int64",
@@ -3094,6 +3342,7 @@
       "document": "DescribeDBLogFiles返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-2t4cf98d",
           "member": "string",
@@ -3103,6 +3352,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求日志类型。1-binlog，2-冷备，3-errlog，4-slowlog。",
           "example": "1",
           "member": "uint64",
@@ -3112,6 +3362,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求日志总数",
           "example": "1",
           "member": "uint64",
@@ -3121,6 +3372,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志文件列表",
           "example": "无",
           "member": "LogFileInfo",
@@ -3130,6 +3382,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "如果是VPC网络的实例，做用本前缀加上URI为下载地址",
           "example": "http://169.254.0.27:8083",
           "member": "string",
@@ -3139,6 +3392,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "如果是普通网络的实例，做用本前缀加上URI为下载地址",
           "example": "http://10.66.255.253:8083",
           "member": "string",
@@ -3148,6 +3402,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分片 ID，形如：shard-7noic7tv",
           "example": "shard-gdqcdn39",
           "member": "string",
@@ -3170,6 +3425,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-ige1a5k3",
           "member": "string",
@@ -3184,6 +3440,7 @@
       "document": "DescribeDBParameters返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-ige1a5k3",
           "member": "string",
@@ -3193,6 +3450,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求DB的当前参数值",
           "example": "无",
           "member": "ParamDesc",
@@ -3215,6 +3473,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称，本接口取值：dcdb。",
           "example": "dcdb",
           "member": "string",
@@ -3224,6 +3483,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "tdsqlshard-eb2w7dto",
           "member": "string",
@@ -3238,6 +3498,7 @@
       "document": "DescribeDBSecurityGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "安全组详情。",
           "example": "无",
           "member": "SecurityGroup",
@@ -3247,6 +3508,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例VIP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3256,6 +3518,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3278,6 +3541,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-hw0qj6m1",
           "example": "tdsql-xxx",
           "member": "string",
@@ -3287,6 +3551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "从结果的第几条数据开始返回",
           "example": "0",
           "member": "uint64",
@@ -3296,6 +3561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的结果条数",
           "example": "20",
           "member": "uint64",
@@ -3305,6 +3571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的起始时间，形如2016-07-23 14:55:20",
           "example": "2016-07-23 14:55:20",
           "member": "datetime",
@@ -3314,6 +3581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的分片ID，形如shard-53ima8ln",
           "example": "shard-xxx",
           "member": "string",
@@ -3323,6 +3591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的结束时间，形如2016-08-22 14:55:20。如果不填，那么查询结束时间就是当前时间",
           "example": "2016-08-22 14:55:20",
           "member": "datetime",
@@ -3332,6 +3601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要查询的具体数据库名称",
           "example": "dbname",
           "member": "string",
@@ -3341,6 +3611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序指标，取值为query_time_sum或者query_count。不填默认按照query_time_sum排序",
           "example": "query_count",
           "member": "string",
@@ -3350,6 +3621,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序类型，desc（降序）或者asc（升序）。不填默认desc排序",
           "example": "desc",
           "member": "string",
@@ -3359,6 +3631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否查询从机的慢查询，0-主机; 1-从机。不填默认查询主机慢查询",
           "example": "0",
           "member": "int64",
@@ -3373,6 +3646,7 @@
       "document": "DescribeDBSlowLogs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "所有语句锁时间总和",
           "example": "1",
           "member": "float",
@@ -3382,6 +3656,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "所有语句查询总次数",
           "example": "1",
           "member": "int64",
@@ -3391,6 +3666,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总记录数",
           "example": "1",
           "member": "int64",
@@ -3400,6 +3676,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "所有语句查询时间总和",
           "example": "1",
           "member": "float",
@@ -3409,6 +3686,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢查询日志数据",
           "example": "无",
           "member": "SlowLogData",
@@ -3431,6 +3709,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待修改同步模式的实例ID。形如：dcdbt-ow728lmc。",
           "example": "dcdbt-avw0207d",
           "member": "string",
@@ -3445,6 +3724,7 @@
       "document": "DescribeDBSyncMode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
           "example": "0",
           "member": "int64",
@@ -3454,6 +3734,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否有修改流程在执行中：1 是， 0 否。",
           "example": "1",
           "member": "int64",
@@ -3463,6 +3744,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前复制方式，0 异步，1 同步",
           "example": "0",
           "member": "int64",
@@ -3484,6 +3766,7 @@
       "document": "DescribeDCDBInstanceDetail请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID，形如dcdbt-7oaxtcb7",
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
@@ -3498,6 +3781,7 @@
       "document": "DescribeDCDBInstanceDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID，形如dcdbt-7oaxtcb7",
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
@@ -3506,6 +3790,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例名称",
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
@@ -3514,6 +3799,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例状态。0-实例创建中；1-异步任务处理中；2-运行中；3-实例未初始化；-1-实例已隔离",
           "example": "2",
           "member": "int64",
@@ -3522,6 +3808,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例目前运行状态描述",
           "example": "运行中",
           "member": "string",
@@ -3530,6 +3817,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例内网IP地址",
           "example": "172.16.0.39",
           "member": "string",
@@ -3538,6 +3826,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例内网端口",
           "example": "3306",
           "member": "int64",
@@ -3546,6 +3835,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例节点数。值为2时表示一主一从，值为3时表示一主二从",
           "example": "2",
           "member": "int64",
@@ -3554,6 +3844,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例所在地域名称，形如ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -3562,6 +3853,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例私有网络ID，形如vpc-r9jr0de3",
           "example": "vpc-4x1eyoyv",
           "member": "string",
@@ -3570,6 +3862,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例私有网络子网ID，形如subnet-6rqs61o2",
           "example": "subnet-58oypmoq",
           "member": "string",
@@ -3578,6 +3871,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中",
           "example": "0",
           "member": "int64",
@@ -3586,6 +3880,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "外网访问的域名，公网可解析",
           "example": "无",
           "member": "string",
@@ -3594,6 +3889,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "外网IP地址，公网可访问",
           "example": "无",
           "member": "string",
@@ -3602,6 +3898,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "外网访问端口",
           "example": "0",
           "member": "int64",
@@ -3610,6 +3907,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例所属项目ID",
           "example": "0",
           "member": "int64",
@@ -3618,6 +3916,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例自动续费标志。0-正常续费；1-自动续费；2-到期不续费",
           "example": "0",
           "member": "int64",
@@ -3626,6 +3925,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "独享集群ID",
           "example": "dbdc-odgvdv66",
           "member": "string",
@@ -3634,6 +3934,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "付费模式。prepaid-预付费；postpaid-按量计费",
           "example": "prepaid",
           "member": "string",
@@ -3642,6 +3943,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例创建时间，格式为 2006-01-02 15:04:05",
           "example": "2020-04-08 13:59:39",
           "member": "datetime",
@@ -3650,6 +3952,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例到期时间，格式为 2006-01-02 15:04:05",
           "example": "2020-05-08 13:59:39",
           "member": "datetime",
@@ -3658,6 +3961,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据库版本信息",
           "example": "5.7.17",
           "member": "string",
@@ -3666,6 +3970,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例是否支持审计。0-不支持；1-支持",
           "example": "1",
           "member": "int64",
@@ -3674,6 +3979,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例是否支持数据加密。0-不支持；1-支持",
           "example": "0",
           "member": "int64",
@@ -3682,6 +3988,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例母机机器型号",
           "example": "SH02D",
           "member": "string",
@@ -3690,6 +3997,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例内存大小，单位 GB，各个分片的内存大小的和",
           "example": "12",
           "member": "int64",
@@ -3698,6 +4006,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例磁盘存储大小，单位 GB，各个分片的磁盘大小的和",
           "example": "40",
           "member": "int64",
@@ -3706,6 +4015,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例存储空间使用率，计算方式为：各个分片已经使用的磁盘大小的和/各个分片的磁盘大小的和。",
           "example": "0.001",
           "member": "float",
@@ -3714,6 +4024,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志存储空间大小，单位GB",
           "example": "16",
           "member": "int64",
@@ -3722,6 +4033,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品类型ID",
           "example": "11128",
           "member": "int64",
@@ -3730,6 +4042,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主DB可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -3738,6 +4051,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "从DB可用区",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
@@ -3746,6 +4060,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分片信息",
           "example": "无",
           "member": "ShardBriefInfo",
@@ -3754,6 +4069,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "内网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3762,6 +4078,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例Cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -3770,6 +4087,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例QPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4000",
           "member": "int64",
@@ -3778,6 +4096,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "DB引擎\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Mysql",
           "member": "string",
@@ -3786,6 +4105,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否支持IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3794,6 +4114,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "外网IPv6地址，公网可访问\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3802,6 +4123,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3810,6 +4132,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "外网IPv6端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3818,6 +4141,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签信息",
           "example": "无",
           "member": "ResourceTag",
@@ -3826,6 +4150,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3834,6 +4159,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3842,6 +4168,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3850,6 +4177,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -3858,6 +4186,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例是否支持设置用户连接数限制，内核为10.1暂不支持。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -3866,6 +4195,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "对外显示的数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.7",
           "member": "string",
@@ -3874,6 +4204,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "加密状态, 0-未开启，1-已开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3882,6 +4213,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3890,6 +4222,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "VPC就近访问\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3911,6 +4244,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsqlshard-8upuqubt",
           "member": "string",
@@ -3920,6 +4254,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单次最多返回多少条，取值范围为(0-100]，默认为100",
           "example": "100",
           "member": "uint64",
@@ -3929,6 +4264,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数据的偏移值，默认为0",
           "example": "0",
           "member": "uint64",
@@ -3943,6 +4279,7 @@
       "document": "DescribeDCDBInstanceNodeInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "节点总个数",
           "example": "4",
           "member": "uint64",
@@ -3952,6 +4289,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "节点信息",
           "example": "无",
           "member": "BriefNodeInfo",
@@ -3974,6 +4312,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "按照一个或者多个实例 ID 查询。实例 ID 形如：dcdbt-2t4cf98d",
           "example": "[\"dcdbt-52s53yyh\\n\"]",
           "member": "string",
@@ -3983,6 +4322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索的字段名，当前支持的值有：instancename、vip、all。传 instancename 表示按实例名进行搜索；传 vip 表示按内网IP进行搜索；传 all 将会按实例ID、实例名和内网IP进行搜索。",
           "example": "无",
           "member": "string",
@@ -3992,6 +4332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索的关键字，支持模糊搜索。多个关键字使用换行符（'\\n'）分割。",
           "example": "无",
           "member": "string",
@@ -4001,6 +4342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按项目 ID 查询",
           "example": "无",
           "member": "int64",
@@ -4010,6 +4352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否根据 VPC 网络来搜索",
           "example": "无",
           "member": "bool",
@@ -4019,6 +4362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络 ID， IsFilterVpc 为 1 时有效",
           "example": "无",
           "member": "string",
@@ -4028,6 +4372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络的子网 ID， IsFilterVpc 为 1 时有效",
           "example": "无",
           "member": "string",
@@ -4037,6 +4382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序字段， projectId， createtime， instancename 三者之一",
           "example": "无",
           "member": "string",
@@ -4046,6 +4392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序类型， desc 或者 asc",
           "example": "无",
           "member": "string",
@@ -4055,6 +4402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0",
           "example": "无",
           "member": "int64",
@@ -4064,6 +4412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 10，最大值为 100。",
           "example": "无",
           "member": "int64",
@@ -4073,6 +4422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1非独享集群，2独享集群， 0全部",
           "example": "无",
           "member": "int64",
@@ -4082,6 +4432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标识是否使用ExclusterType字段, false不使用，true使用",
           "example": "无",
           "member": "bool",
@@ -4091,6 +4442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "独享集群ID",
           "example": "无",
           "member": "string",
@@ -4100,6 +4452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按标签key查询",
           "example": "无",
           "member": "string",
@@ -4109,6 +4462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔",
           "example": "无",
           "member": "string",
@@ -4118,6 +4472,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按实例状态筛选",
           "example": "无",
           "member": "int64",
@@ -4127,6 +4482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排除实例状态",
           "example": "无",
           "member": "int64",
@@ -4141,6 +4497,7 @@
       "document": "DescribeDCDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的实例数量",
           "example": "1",
           "member": "int64",
@@ -4150,6 +4507,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例详细信息列表",
           "example": "无",
           "member": "DCDBInstanceInfo",
@@ -4172,6 +4530,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "欲新购实例的可用区ID。",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -4181,6 +4540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "欲购买实例的数量，目前支持购买1-10个实例",
           "example": "1",
           "member": "int64",
@@ -4190,6 +4550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "欲购买的时长，单位：月。",
           "example": "1",
           "member": "int64",
@@ -4199,6 +4560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单个分片节点个数大小，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "3",
           "member": "int64",
@@ -4208,6 +4570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -4217,6 +4580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "10",
           "member": "int64",
@@ -4226,6 +4590,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
           "example": "2",
           "member": "int64",
@@ -4235,6 +4600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费类型。postpaid：按量付费   prepaid：预付费",
           "example": "prepaid",
           "member": "string",
@@ -4244,6 +4610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
           "example": "pent",
           "member": "string",
@@ -4258,6 +4625,7 @@
       "document": "DescribeDCDBPrice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "42240",
           "member": "int64",
@@ -4267,6 +4635,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "42240",
           "member": "int64",
@@ -4289,6 +4658,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdvt-fdpjf5zh",
           "member": "string",
@@ -4298,6 +4668,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费时长，单位：月。不传则默认为1个月。",
           "example": "1",
           "member": "int64",
@@ -4307,6 +4678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
           "example": "pent",
           "member": "string",
@@ -4321,6 +4693,7 @@
       "document": "DescribeDCDBRenewalPrice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "42240",
           "member": "int64",
@@ -4330,6 +4703,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "42240",
           "member": "int64",
@@ -4356,6 +4730,7 @@
       "document": "DescribeDCDBSaleInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可售卖地域信息列表",
           "example": "无",
           "member": "RegionInfo",
@@ -4378,6 +4753,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-ovulpcjf",
           "member": "string",
@@ -4387,6 +4763,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID列表。",
           "example": "[]",
           "member": "string",
@@ -4396,6 +4773,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为 0",
           "example": "0",
           "member": "int64",
@@ -4405,6 +4783,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -4414,6 +4793,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序字段， 目前仅支持 createtime",
           "example": "createtime",
           "member": "string",
@@ -4423,6 +4803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序类型， desc 或者 asc",
           "example": "desc",
           "member": "string",
@@ -4437,6 +4818,7 @@
       "document": "DescribeDCDBShards返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的分片数量",
           "example": "2",
           "member": "int64",
@@ -4446,6 +4828,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分片信息列表",
           "example": "无",
           "member": "DCDBShardInfo",
@@ -4455,6 +4838,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "灾备标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4477,6 +4861,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -4486,6 +4871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
           "example": "ADD",
           "member": "string",
@@ -4495,6 +4881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新增分片配置，当UpgradeType为ADD时生效。",
           "example": "无",
           "member": "AddShardConfig",
@@ -4504,6 +4891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
           "example": "无",
           "member": "ExpandShardConfig",
@@ -4513,6 +4901,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
           "example": "无",
           "member": "SplitShardConfig",
@@ -4522,6 +4911,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
           "example": "pent",
           "member": "string",
@@ -4536,6 +4926,7 @@
       "document": "DescribeDCDBUpgradePrice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "7020",
           "member": "int64",
@@ -4545,6 +4936,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "7020",
           "member": "int64",
@@ -4554,6 +4946,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "变配明细计算公式",
           "example": "变配订单金额：退款3.45 元[1、退费3.45 元=变配差价3.45 元*现金比例100 %，>代金券不可退；2、变配差价3.",
           "member": "string",
@@ -4576,6 +4969,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4585,6 +4979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
           "example": "test",
           "member": "string",
@@ -4599,6 +4994,7 @@
       "document": "DescribeDatabaseObjects返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "透传入参。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4608,6 +5004,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据库名称。",
           "example": "test",
           "member": "string",
@@ -4617,6 +5014,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "表列表。",
           "example": "无",
           "member": "DatabaseTable",
@@ -4626,6 +5024,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "视图列表。",
           "example": "无",
           "member": "DatabaseView",
@@ -4635,6 +5034,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "存储过程列表。",
           "example": "无",
           "member": "DatabaseProcedure",
@@ -4644,6 +5044,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "函数列表。",
           "example": "无",
           "member": "DatabaseFunction",
@@ -4666,6 +5067,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4675,6 +5077,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
           "example": "test",
           "member": "string",
@@ -4684,6 +5087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
           "example": "persons",
           "member": "string",
@@ -4698,6 +5102,7 @@
       "document": "DescribeDatabaseTable返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例名称。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4707,6 +5112,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据库名称。",
           "example": "test",
           "member": "string",
@@ -4716,6 +5122,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "表名称。",
           "example": "persons",
           "member": "string",
@@ -4725,6 +5132,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "列信息。",
           "example": "无",
           "member": "TableColumn",
@@ -4747,6 +5155,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4761,6 +5170,7 @@
       "document": "DescribeDatabases返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该实例上的数据库列表。",
           "example": "无",
           "member": "Database",
@@ -4770,6 +5180,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "透传入参。",
           "example": "dcdbt-52s53yyh",
           "member": "string",
@@ -4792,6 +5203,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-2rn9lmpx",
           "member": "string",
@@ -4806,6 +5218,7 @@
       "document": "DescribeDcnDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "DCN同步详情",
           "example": "无",
           "member": "DcnDetailItem",
@@ -4828,6 +5241,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "dbdc-1234abcd",
           "member": "string",
@@ -4837,6 +5251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例分片ID",
           "example": "shard-xxxx",
           "member": "string",
@@ -4846,6 +5261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "不带签名的文件路径",
           "example": "/cos_backup/xxx",
           "member": "string",
@@ -4860,6 +5276,7 @@
       "document": "DescribeFileDownloadUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "带签名的下载连接",
           "example": "http://cos.domain/xxx",
           "member": "string",
@@ -4882,6 +5299,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异步请求接口返回的任务流程号。",
           "example": "无",
           "member": "int64",
@@ -4896,6 +5314,7 @@
       "document": "DescribeFlow返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "流程状态，0：成功，1：失败，2：运行中",
           "example": "无",
           "member": "int64",
@@ -4918,6 +5337,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。",
           "example": "[\"20181103110163\\r\\n\"]",
           "member": "string",
@@ -4932,6 +5352,7 @@
       "document": "DescribeOrders返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的订单数量。",
           "example": "1",
           "member": "uint64",
@@ -4941,6 +5362,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单信息列表。",
           "example": "无",
           "member": "Deal",
@@ -4963,6 +5385,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称，本接口取值：dcdb。",
           "example": "dcdb",
           "member": "string",
@@ -4972,6 +5395,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID。",
           "example": "11954",
           "member": "int64",
@@ -4986,6 +5410,7 @@
       "document": "DescribeProjectSecurityGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "安全组详情。",
           "example": "无",
           "member": "SecurityGroup",
@@ -4995,6 +5420,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全组个数。",
           "example": "无",
           "member": "uint64",
@@ -5021,6 +5447,7 @@
       "document": "DescribeProjects返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目列表",
           "example": "无",
           "member": "Project",
@@ -5047,6 +5474,7 @@
       "document": "DescribeShardSpec返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "按机型分类的可售卖规格列表",
           "example": "无",
           "member": "SpecConfig",
@@ -5069,6 +5497,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-ovulpcjf",
           "member": "string",
@@ -5078,6 +5507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "SQL日志偏移。",
           "example": "0",
           "member": "uint64",
@@ -5087,6 +5517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "拉取数量（0-10000，为0时拉取总数信息）。",
           "example": "0",
           "member": "uint64",
@@ -5101,6 +5532,7 @@
       "document": "DescribeSqlLogs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当前消息队列中的sql日志条目数。",
           "example": "63",
           "member": "uint64",
@@ -5110,6 +5542,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "消息队列中的sql日志起始偏移。",
           "example": "0",
           "member": "uint64",
@@ -5119,6 +5552,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "消息队列中的sql日志结束偏移。",
           "example": "63",
           "member": "uint64",
@@ -5128,6 +5562,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回的第一条sql日志的偏移。",
           "example": "0",
           "member": "uint64",
@@ -5137,6 +5572,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回的sql日志数量。",
           "example": "0",
           "member": "uint64",
@@ -5146,6 +5582,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Sql日志列表。",
           "example": "无",
           "member": "SqlLogItem",
@@ -5168,6 +5605,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务的状态列表。0-任务启动中；1-任务运行中；2-任务成功；3-任务失败",
           "example": "无",
           "member": "int64",
@@ -5177,6 +5615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "无",
           "member": "string",
@@ -5186,6 +5625,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型列表，当前支持的任务类型有：0-回档任务；1-创建实例任务；2-扩容任务；3-迁移任务；4-删除实例任务；5-重启任务",
           "example": "无",
           "member": "int64",
@@ -5195,6 +5635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的创建时间",
           "example": "无",
           "member": "string",
@@ -5204,6 +5645,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务的结束时间",
           "example": "无",
           "member": "string",
@@ -5213,6 +5655,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID的数组",
           "example": "无",
           "member": "int64",
@@ -5222,6 +5665,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每次最多返回多少条任务，取值范围为(0,100]，不传的话默认值为20",
           "example": "20",
           "member": "int64",
@@ -5231,6 +5675,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回任务默认是按照创建时间降序排列，从偏移值Offset处开始返回",
           "example": "0",
           "member": "int64",
@@ -5245,6 +5690,7 @@
       "document": "DescribeUserTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总数",
           "example": "6",
           "member": "int64",
@@ -5254,6 +5700,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务列表",
           "example": "无",
           "member": "UserTaskInfo",
@@ -5276,6 +5723,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "tdsqlshard-f35wr6wj",
           "member": "string",
@@ -5290,6 +5738,7 @@
       "document": "DestroyDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，与入参InstanceId一致。",
           "example": "tdsqlshard-f35wr6wj",
           "member": "string",
@@ -5299,6 +5748,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/557/56485)。",
           "example": "100",
           "member": "int64",
@@ -5321,6 +5771,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "tdsqlshard-avw0207d",
           "member": "string",
@@ -5335,6 +5786,7 @@
       "document": "DestroyHourDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/557/56485)。",
           "example": "100",
           "member": "int64",
@@ -5344,6 +5796,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例 ID，与入参InstanceId一致。",
           "example": "tdsqlshard-avw0207d",
           "member": "string",
@@ -5366,6 +5819,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称，本接口取值：dcdb。",
           "example": "dcdb",
           "member": "string",
@@ -5375,6 +5829,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组Id。",
           "example": "sg-xxxxxx",
           "member": "string",
@@ -5384,6 +5839,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表，一个或者多个实例Id组成的数组。",
           "example": "[\"tdsql-xxxxxx\\n\"]",
           "member": "string",
@@ -5411,6 +5867,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID数组",
           "example": "[\"shard-xxxx\"]",
           "member": "string",
@@ -5421,6 +5878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存大小，单位 GB",
           "example": "2",
           "member": "int64",
@@ -5431,6 +5889,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片存储大小，单位 GB",
           "example": "10",
           "member": "int64",
@@ -5441,6 +5900,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片节点数",
           "example": "2",
           "member": "int64",
@@ -5457,6 +5917,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-avw0207d",
           "member": "string",
@@ -5484,6 +5945,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-ow728lmc",
           "member": "string",
@@ -5493,6 +5955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录用户名。",
           "example": "user",
           "member": "string",
@@ -5502,6 +5965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
           "example": "10.%",
           "member": "string",
@@ -5511,6 +5975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名。如果为 \\*，表示查询全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数",
           "example": "*",
           "member": "string",
@@ -5520,6 +5985,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES，REPLICATION CLIENT，REPLICATION SLAVE\n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER  \n字段权限： INSERT，REFERENCES，SELECT，UPDATE",
           "example": "[\"SELECT\",\"INSERT\"]",
           "member": "string",
@@ -5529,6 +5995,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型,可以填入 table 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示设置该数据库权限（即db.\\*），此时忽略 Object 参数",
           "example": "*",
           "member": "string",
@@ -5538,6 +6005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
           "example": "无",
           "member": "string",
@@ -5547,6 +6015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当 Type=table 时，ColName 为 \\* 表示对表授权，如果为具体字段名，表示对字段授权",
           "example": "无",
           "member": "string",
@@ -5574,6 +6043,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待初始化的实例ID列表，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "[\"dcdbt-fdpjf5zh\\r\\n\",\"dcdbt-avw0207d\\r\\n\"]",
           "member": "string",
@@ -5583,6 +6053,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。",
           "example": "无",
           "member": "DBParamValue",
@@ -5597,6 +6068,7 @@
       "document": "InitDCDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
           "example": "[3340,3341]",
           "member": "uint64",
@@ -5606,6 +6078,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "透传入参。",
           "example": "[\"dcdbt-fdpjf5zh\",\"dcdbt-avw0207d\"]",
           "member": "string",
@@ -5628,6 +6101,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsqlshard-xxx",
           "member": "string",
@@ -5638,6 +6112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "example": "tdsqlshard-xxx",
           "member": "string",
@@ -5648,6 +6123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态",
           "example": "2",
           "member": "int64",
@@ -5658,6 +6134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID",
           "example": "shard-xxx",
           "member": "string",
@@ -5668,6 +6145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件路径",
           "example": "/backup/xxx.lz4",
           "member": "string",
@@ -5678,6 +6156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件名",
           "example": "xxx.lz4",
           "member": "string",
@@ -5688,6 +6167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件大小",
           "example": "1",
           "member": "int64",
@@ -5698,6 +6178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份类型，Data:数据备份，Binlog:Binlog备份，Errlog:错误日志，Slowlog:慢日志",
           "example": "Binlog",
           "member": "string",
@@ -5708,6 +6189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手动备份，0:否，1:是",
           "example": "0",
           "member": "int64",
@@ -5718,6 +6200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份开始时间",
           "example": "2022-05-10 12:00:00",
           "member": "string",
@@ -5728,6 +6211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份结束时间",
           "example": "2022-05-10 12:00:00",
           "member": "string",
@@ -5744,6 +6228,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 Id，形如：dcdbt-ow728lmc。",
           "example": "tdsql-xxx",
           "member": "string",
@@ -5771,6 +6256,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例uuid列表",
           "example": "[]",
           "member": "string",
@@ -5785,6 +6271,7 @@
       "document": "IsolateHourDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "隔离成功的实例id列表",
           "example": "[]",
           "member": "string",
@@ -5794,6 +6281,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "隔离失败的实例id列表",
           "example": "[]",
           "member": "string",
@@ -5816,6 +6304,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsqlshard-2gk4nxyz",
           "member": "string",
@@ -5825,6 +6314,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话ID列表",
           "example": "[1111,2222]",
           "member": "int64",
@@ -5834,6 +6324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID，与ShardSerialId设置一个",
           "example": "shard-ljilb4st",
           "member": "string",
@@ -5843,6 +6334,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片序列ID，与ShardId设置一个",
           "example": "set_1468379419_1",
           "member": "string",
@@ -5857,6 +6349,7 @@
       "document": "KillSession返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "11",
           "member": "int64",
@@ -5879,6 +6372,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Log最后修改时间",
           "member": "uint64",
           "name": "Mtime",
@@ -5888,6 +6382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件长度",
           "member": "uint64",
           "name": "Length",
@@ -5897,6 +6392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下载Log时用到的统一资源标识符",
           "member": "string",
           "name": "Uri",
@@ -5906,6 +6402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件名",
           "member": "string",
           "name": "FileName",
@@ -5921,6 +6418,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -5930,6 +6428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录用户名。",
           "example": "testuser1",
           "member": "string",
@@ -5939,6 +6438,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
           "example": "172.17.%",
           "member": "string",
@@ -5948,6 +6448,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新的账号备注，长度 0~256。",
           "example": "用于测试的账号",
           "member": "string",
@@ -5975,6 +6476,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：tdsql-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "无",
           "member": "string",
@@ -5984,6 +6486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库的账号，包括用户名和域名。",
           "example": "无",
           "member": "Account",
@@ -5993,6 +6496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，该字段传空数组。",
           "example": "无",
           "member": "string",
@@ -6002,6 +6506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
           "member": "DatabasePrivilege",
@@ -6011,6 +6516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库中表的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
           "member": "TablePrivilege",
@@ -6020,6 +6526,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
           "member": "ColumnPrivilege",
@@ -6029,6 +6536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库视图的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
           "member": "ViewPrivileges",
@@ -6043,6 +6551,7 @@
       "document": "ModifyAccountPrivileges返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/237/16177)。",
           "example": "无",
           "member": "int64",
@@ -6064,6 +6573,7 @@
       "document": "ModifyDBEncryptAttributes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例Id，形如：tdsqlshard-ow728lmc。",
           "example": "tdsqlshard-xxx",
           "member": "string",
@@ -6072,6 +6582,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。",
           "example": "0",
           "member": "int64",
@@ -6099,6 +6610,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，形如tdsql-hdaprz0v",
           "example": "tdsql-xxx",
           "member": "string",
@@ -6108,6 +6620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "example": "test-name",
           "member": "string",
@@ -6122,6 +6635,7 @@
       "document": "ModifyDBInstanceName返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-xxx",
           "member": "string",
@@ -6144,6 +6658,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称，本接口取值：dcdb。",
           "example": "dcdb",
           "member": "string",
@@ -6153,6 +6668,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "tdsqlshard-eb2w7dto",
           "member": "string",
@@ -6162,6 +6678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
@@ -6189,6 +6706,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待修改的实例ID列表。实例 ID 形如：dcdbt-ow728lmc。",
           "example": "[\"dcdbt-fdpjf5zh\\r\\n\"]",
           "member": "string",
@@ -6198,6 +6716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。",
           "example": "0",
           "member": "int64",
@@ -6225,6 +6744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-ige1a5k3",
           "member": "string",
@@ -6234,6 +6754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数列表，每一个元素是Param和Value的组合",
           "example": "无",
           "member": "DBParamValue",
@@ -6248,6 +6769,7 @@
       "document": "ModifyDBParameters返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-ige1a5k3",
           "member": "string",
@@ -6257,6 +6779,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "各参数修改结果",
           "example": "无",
           "member": "ParamModifyResult",
@@ -6279,6 +6802,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待修改同步模式的实例ID。形如：dcdbt-ow728lmc。",
           "example": "dcdbt-avw0207d",
           "member": "string",
@@ -6288,6 +6812,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
           "example": "0",
           "member": "int64",
@@ -6302,6 +6827,7 @@
       "document": "ModifyDBSyncMode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务Id，可通过 DescribeFlow 查询任务状态。",
           "example": "3521",
           "member": "int64",
@@ -6324,6 +6850,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-jv8z8fhl",
           "member": "string",
@@ -6333,6 +6860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "希望转到的VPC网络的VpcId",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -6342,6 +6870,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "希望转到的VPC网络的子网ID",
           "example": "subnet-xxxxx",
           "member": "string",
@@ -6351,6 +6880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果需要指定VIP，填上该字段",
           "example": "10.0.0.1",
           "member": "string",
@@ -6360,6 +6890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "如果需要指定VIPv6，填上该字段",
           "example": "2001:0000: 1F 1F :0000:0000:0100: 11A 0:ADDF",
           "member": "string",
@@ -6369,6 +6900,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。",
           "example": "168",
           "member": "uint64",
@@ -6383,6 +6915,7 @@
       "document": "ModifyInstanceNetwork返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID，根据此FlowId通过DescribeFlow接口查询任务进行状态",
           "example": "1122",
           "member": "int64",
@@ -6405,6 +6938,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-jv8z8fhl",
           "member": "string",
@@ -6414,6 +6948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例VIP",
           "example": "10.0.0.2",
           "member": "string",
@@ -6423,6 +6958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IPv6标志",
           "example": "无",
           "member": "uint64",
@@ -6432,6 +6968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。",
           "example": "164",
           "member": "uint64",
@@ -6446,6 +6983,7 @@
       "document": "ModifyInstanceVip返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务流程ID",
           "example": "1122",
           "member": "int64",
@@ -6468,6 +7006,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "tdsql-xxx",
           "member": "string",
@@ -6477,6 +7016,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例VPORT",
           "example": "3307",
           "member": "uint64",
@@ -6504,6 +7044,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "无",
           "member": "string",
@@ -6513,6 +7054,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RS就近模式, 0-无策略, 1-可用区就近访问。",
           "example": "无",
           "member": "int64",
@@ -6540,6 +7082,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DB节点ID",
           "member": "string",
           "name": "NodeId",
@@ -6549,6 +7092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DB节点角色，取值为master或者slave",
           "member": "string",
           "name": "Role",
@@ -6564,6 +7108,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待开放外网访问的实例ID。形如：dcdbt-ow728lmc。",
           "example": "dcdbt-avw0207d",
           "member": "string",
@@ -6573,6 +7118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否IPv6，默认0",
           "example": "0",
           "member": "int64",
@@ -6587,6 +7133,7 @@
       "document": "OpenDBExtranetAccess返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
           "example": "3023",
           "member": "int64",
@@ -6609,6 +7156,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型,如枚举enum，区间section",
           "member": "string",
           "name": "Type",
@@ -6618,6 +7166,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型为enum时的可选值列表",
           "member": "string",
           "name": "Enum",
@@ -6627,6 +7176,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型为section时的范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ConstraintRange",
           "name": "Range",
@@ -6636,6 +7186,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "约束类型为string时的可选值列表",
           "member": "string",
           "name": "String",
@@ -6651,6 +7202,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名字",
           "example": "long_query_time",
           "member": "string",
@@ -6661,6 +7213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前参数值",
           "example": "1",
           "member": "string",
@@ -6671,6 +7224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置过的值，参数生效后，该值和value一样。未设置过就不返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
@@ -6681,6 +7235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "系统默认值",
           "example": "1",
           "member": "string",
@@ -6691,6 +7246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数限制",
           "example": "无",
           "member": "ParamConstraint",
@@ -6701,6 +7257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有设置过值，false:没有设置过值，true:有设置过值。",
           "example": "true",
           "member": "bool",
@@ -6711,6 +7268,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否需要重启生效，false:不需要重启，\ntrue:需要重启",
           "example": "false",
           "member": "bool",
@@ -6727,6 +7285,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "修改参数名字",
           "member": "string",
           "name": "Param",
@@ -6736,6 +7295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法",
           "member": "int64",
           "name": "Code",
@@ -6751,6 +7311,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "member": "int64",
           "name": "ProjectId",
@@ -6760,6 +7321,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源拥有者（主账号）uin",
           "member": "int64",
           "name": "OwnerUin",
@@ -6769,6 +7331,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用Id",
           "member": "int64",
           "name": "AppId",
@@ -6778,6 +7341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目名称",
           "member": "string",
           "name": "Name",
@@ -6787,6 +7351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者uin",
           "member": "int64",
           "name": "CreatorUin",
@@ -6796,6 +7361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "来源平台",
           "member": "string",
           "name": "SrcPlat",
@@ -6805,6 +7371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "来源AppId",
           "member": "int64",
           "name": "SrcAppId",
@@ -6814,6 +7381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目状态,0正常，-1关闭。默认项目为3",
           "member": "int64",
           "name": "Status",
@@ -6823,6 +7391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -6832,6 +7401,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否默认项目，1 是，0 不是",
           "member": "int64",
           "name": "IsDefault",
@@ -6841,6 +7411,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述信息",
           "member": "string",
           "name": "Info",
@@ -6856,6 +7427,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域英文ID",
           "member": "string",
           "name": "Region",
@@ -6865,6 +7437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域数字ID",
           "member": "int64",
           "name": "RegionId",
@@ -6874,6 +7447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域中文名",
           "member": "string",
           "name": "RegionName",
@@ -6883,6 +7457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区列表",
           "member": "ZonesInfo",
           "name": "ZoneList",
@@ -6892,6 +7467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可选择的主可用区和从可用区",
           "member": "ShardZoneChooseInfo",
           "name": "AvailableChoice",
@@ -6907,6 +7483,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-avw0207d",
           "member": "string",
@@ -6916,6 +7493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费时长，单位：月。",
           "example": "1",
           "member": "int64",
@@ -6925,6 +7503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动使用代金券进行支付，默认不使用。",
           "example": "false",
           "member": "bool",
@@ -6934,6 +7513,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
           "member": "string",
@@ -6948,6 +7528,7 @@
       "document": "RenewDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
           "example": "20171103110253",
           "member": "string",
@@ -6970,6 +7551,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -6979,6 +7561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录用户名。",
           "example": "testuser1",
           "member": "string",
@@ -6988,6 +7571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
           "example": "172.17.%",
           "member": "string",
@@ -6997,6 +7581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新密码，由字母、数字或常见符号组成，不能包含分号、单引号和双引号，长度为6~32位。",
           "example": "abcd8765_.",
           "member": "string",
@@ -7023,6 +7608,7 @@
       "document": "标签对象，包含tagKey & tagValue",
       "members": [
         {
+          "disabled": false,
           "document": "标签键key",
           "example": "无",
           "member": "string",
@@ -7032,6 +7618,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签值value",
           "example": "无",
           "member": "string",
@@ -7048,6 +7635,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "member": "int64",
           "name": "ProjectId",
@@ -7057,6 +7645,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
           "member": "string",
           "name": "CreateTime",
@@ -7066,6 +7655,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组ID",
           "member": "string",
           "name": "SecurityGroupId",
@@ -7075,6 +7665,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组名称",
           "member": "string",
           "name": "SecurityGroupName",
@@ -7084,6 +7675,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组备注",
           "member": "string",
           "name": "SecurityGroupRemark",
@@ -7093,6 +7685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "入站规则",
           "member": "SecurityGroupBound",
           "name": "Inbound",
@@ -7102,6 +7695,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "出站规则",
           "member": "SecurityGroupBound",
           "name": "Outbound",
@@ -7117,6 +7711,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "来源 IP 或 IP 段，例如192.168.0.0/16",
           "example": "无",
           "member": "string",
@@ -7127,6 +7722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略，ACCEPT 或者 DROP",
           "example": "无",
           "member": "string",
@@ -7137,6 +7733,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口",
           "example": "无",
           "member": "string",
@@ -7147,6 +7744,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络协议，支持 UDP、TCP 等",
           "example": "无",
           "member": "string",
@@ -7163,6 +7761,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片SerialId",
           "example": "set_1612751240_1",
           "member": "string",
@@ -7173,6 +7772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID，形如shard-7vg1o339",
           "example": "shard-lbt0utcz",
           "member": "string",
@@ -7183,6 +7783,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片运行状态",
           "example": "2",
           "member": "int64",
@@ -7193,6 +7794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片运行状态描述",
           "example": "运行中",
           "member": "string",
@@ -7203,6 +7805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片创建时间",
           "example": "2021-02-08 10:25:08",
           "member": "datetime",
@@ -7213,6 +7816,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存大小，单位GB",
           "example": "2",
           "member": "int64",
@@ -7223,6 +7827,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片磁盘大小，单位GB",
           "example": "10",
           "member": "int64",
@@ -7233,6 +7838,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片日志磁盘空间大小，单位GB",
           "example": "8",
           "member": "int64",
@@ -7243,6 +7849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片节点个数",
           "example": "3",
           "member": "int64",
@@ -7253,6 +7860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片磁盘空间使用率",
           "example": "0.007",
           "member": "float",
@@ -7263,6 +7871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片Proxy版本信息",
           "example": "1.14.63-M-V2R667D003",
           "member": "string",
@@ -7273,6 +7882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片主DB可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -7283,6 +7893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片从DB可用区",
           "example": "[\"ap-guangzhou-1\", \"ap-guangzhou-2\"]",
           "member": "string",
@@ -7293,6 +7904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片Cpu核数",
           "example": "1",
           "member": "int64",
@@ -7303,6 +7915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DB节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "NodeInfo",
@@ -7319,6 +7932,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID",
           "member": "string",
           "name": "ShardInstanceId",
@@ -7328,6 +7942,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片Set ID",
           "member": "string",
           "name": "ShardSerialId",
@@ -7337,6 +7952,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态：0 创建中，1 流程处理中， 2 运行中，3 分片未初始化，-2 分片已删除",
           "member": "int64",
           "name": "Status",
@@ -7346,6 +7962,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "string",
           "name": "Createtime",
@@ -7355,6 +7972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存大小，单位 GB",
           "member": "int64",
           "name": "Memory",
@@ -7364,6 +7982,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储大小，单位 GB",
           "member": "int64",
           "name": "Storage",
@@ -7373,6 +7992,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片数字ID",
           "member": "int64",
           "name": "ShardId",
@@ -7382,6 +8002,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数，2 为一主一从， 3 为一主二从",
           "member": "int64",
           "name": "NodeCount",
@@ -7391,6 +8012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品类型 Id（过时字段，请勿依赖该值）",
           "member": "int64",
           "name": "Pid",
@@ -7400,6 +8022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Cpu核数",
           "member": "uint64",
           "name": "Cpu",
@@ -7415,6 +8038,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主可用区",
           "member": "ZonesInfo",
           "name": "MasterZone",
@@ -7424,6 +8048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可选的从可用区",
           "member": "ZonesInfo",
           "name": "SlaveZones",
@@ -7439,6 +8064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "语句校验和，用于查询详情",
           "example": "无",
           "member": "string",
@@ -7449,6 +8075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称",
           "example": "无",
           "member": "string",
@@ -7459,6 +8086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "抽象的SQL语句",
           "example": "无",
           "member": "string",
@@ -7469,6 +8097,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均的锁时间",
           "example": "无",
           "member": "string",
@@ -7479,6 +8108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大锁时间",
           "example": "无",
           "member": "string",
@@ -7489,6 +8119,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小锁时间",
           "example": "无",
           "member": "string",
@@ -7499,6 +8130,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "锁时间总和",
           "example": "无",
           "member": "string",
@@ -7509,6 +8141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询次数",
           "example": "无",
           "member": "string",
@@ -7519,6 +8152,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均查询时间",
           "example": "无",
           "member": "string",
@@ -7529,6 +8163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大查询时间",
           "example": "无",
           "member": "string",
@@ -7539,6 +8174,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小查询时间",
           "example": "无",
           "member": "string",
@@ -7549,6 +8185,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间总和",
           "example": "无",
           "member": "string",
@@ -7559,6 +8196,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扫描行数",
           "example": "无",
           "member": "string",
@@ -7569,6 +8207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发送行数",
           "example": "无",
           "member": "string",
@@ -7579,6 +8218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后执行时间",
           "example": "无",
           "member": "string",
@@ -7589,6 +8229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "首次执行时间",
           "example": "无",
           "member": "string",
@@ -7599,6 +8240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "帐号",
           "example": "无",
           "member": "string",
@@ -7609,6 +8251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7619,6 +8262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账户的域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "%",
           "member": "string",
@@ -7635,6 +8279,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规格机型",
           "member": "string",
           "name": "Machine",
@@ -7644,6 +8289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格列表",
           "member": "SpecConfigInfo",
           "name": "SpecConfigInfos",
@@ -7659,6 +8305,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点个数，2 表示一主一从，3 表示一主二从",
           "member": "uint64",
           "name": "NodeCount",
@@ -7668,6 +8315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存大小，单位 GB",
           "member": "int64",
           "name": "Memory",
@@ -7677,6 +8325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据盘规格最小值，单位 GB",
           "member": "int64",
           "name": "MinStorage",
@@ -7686,6 +8335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据盘规格最大值，单位 GB",
           "member": "int64",
           "name": "MaxStorage",
@@ -7695,6 +8345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推荐的使用场景",
           "member": "string",
           "name": "SuitInfo",
@@ -7704,6 +8355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品类型 Id",
           "member": "int64",
           "name": "Pid",
@@ -7713,6 +8365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大 Qps 值",
           "member": "int64",
           "name": "Qps",
@@ -7722,6 +8375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CPU核数",
           "member": "int64",
           "name": "Cpu",
@@ -7737,6 +8391,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID数组",
           "example": "[\"shard-xxxx\"]",
           "member": "string",
@@ -7747,6 +8402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据切分比例，固定50%",
           "example": "50",
           "member": "int64",
@@ -7757,6 +8413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存大小，单位 GB",
           "example": "2",
           "member": "int64",
@@ -7767,6 +8424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片存储大小，单位 GB",
           "example": "10",
           "member": "int64",
@@ -7783,6 +8441,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "本条日志在消息队列中的偏移量。",
           "member": "uint64",
           "name": "Offset",
@@ -7792,6 +8451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行本条sql的用户。",
           "member": "string",
           "name": "User",
@@ -7801,6 +8461,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行本条sql的客户端IP+端口。",
           "member": "string",
           "name": "Client",
@@ -7810,6 +8471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名称。",
           "member": "string",
           "name": "DbName",
@@ -7819,6 +8481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行的sql语句。",
           "member": "string",
           "name": "Sql",
@@ -7828,6 +8491,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的数据行数。",
           "member": "uint64",
           "name": "SelectRowNum",
@@ -7837,6 +8501,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "影响行数。",
           "member": "uint64",
           "name": "AffectRowNum",
@@ -7846,6 +8511,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Sql执行时间戳。",
           "member": "uint64",
           "name": "Timestamp",
@@ -7855,6 +8521,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Sql耗时，单位为毫秒。",
           "member": "uint64",
           "name": "TimeCostMs",
@@ -7864,6 +8531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Sql返回码，0为成功。",
           "member": "uint64",
           "name": "ResultCode",
@@ -7879,6 +8547,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例Id，形如 tdsql-ow728lmc。",
           "example": "无",
           "member": "string",
@@ -7888,6 +8557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切换的目标区域，会自动选择该可用区中延迟最低的节点。",
           "example": "无",
           "member": "string",
@@ -7902,6 +8572,7 @@
       "document": "SwitchDBInstanceHA返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步流程Id",
           "example": "无",
           "member": "uint64",
@@ -7924,6 +8595,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "列名称",
           "member": "string",
           "name": "Col",
@@ -7933,6 +8605,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "列类型",
           "member": "string",
           "name": "Type",
@@ -7948,6 +8621,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名",
           "example": "test",
           "member": "string",
@@ -7958,6 +8632,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库表名",
           "example": "test",
           "member": "string",
@@ -7968,6 +8643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限信息",
           "example": "['SELECT']",
           "member": "string",
@@ -7984,6 +8660,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 Id，形如：dcdbt-ow728lmc。",
           "example": "tdsql-xxx",
           "member": "string",
@@ -7998,6 +8675,7 @@
       "document": "TerminateDedicatedDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步流程Id",
           "example": "11",
           "member": "int64",
@@ -8020,6 +8698,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
@@ -8029,6 +8708,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
           "example": "ADD",
           "member": "string",
@@ -8038,6 +8718,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新增分片配置，当UpgradeType为ADD时生效。",
           "example": "无",
           "member": "AddShardConfig",
@@ -8047,6 +8728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
           "example": "无",
           "member": "ExpandShardConfig",
@@ -8056,6 +8738,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
           "example": "无",
           "member": "SplitShardConfig",
@@ -8065,6 +8748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动使用代金券进行支付，默认不使用。",
           "example": "false",
           "member": "bool",
@@ -8074,6 +8758,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "[]",
           "member": "string",
@@ -8083,6 +8768,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
           "example": "[]",
           "member": "string",
@@ -8097,6 +8783,7 @@
       "document": "UpgradeDCDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
           "example": "20180103110035",
           "member": "string",
@@ -8119,6 +8806,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
           "example": "dcdbt-ow728lmc",
           "member": "string",
@@ -8128,6 +8816,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
           "example": "EXPAND",
           "member": "string",
@@ -8137,6 +8826,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新增分片配置，当UpgradeType为ADD时生效。",
           "example": "无",
           "member": "AddShardConfig",
@@ -8146,6 +8836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
           "example": "无",
           "member": "ExpandShardConfig",
@@ -8155,6 +8846,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
           "example": "无",
           "member": "SplitShardConfig",
@@ -8164,6 +8856,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切换开始时间，格式如: \"2019-12-12 07:00:00\"。开始时间必须在当前时间一个小时以后，3天以内。",
           "example": "2019-12-12 07:00:00",
           "member": "datetime",
@@ -8173,6 +8866,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切换结束时间,  格式如: \"2019-12-12 07:15:00\"，结束时间必须大于开始时间。",
           "example": "2019-12-12 07:15:00",
           "member": "datetime",
@@ -8182,6 +8876,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动重试。 0：不自动重试  1：自动重试",
           "example": "1",
           "member": "int64",
@@ -8191,6 +8886,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
           "example": "[]",
           "member": "string",
@@ -8218,6 +8914,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "member": "int64",
           "name": "Id",
@@ -8227,6 +8924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户账户ID",
           "member": "int64",
           "name": "AppId",
@@ -8236,6 +8934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态，0-任务初始化中；1-任务运行中；2-任务成功；3-任务失败",
           "member": "int64",
           "name": "Status",
@@ -8245,6 +8944,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型，0-实例回档；1-实例创建；2-实例扩容；3-实例迁移；4-实例删除；5-实例重启",
           "member": "int64",
           "name": "UserTaskType",
@@ -8254,6 +8954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -8263,6 +8964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -8272,6 +8974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务错误信息",
           "member": "string",
           "name": "ErrMsg",
@@ -8281,6 +8984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端参数",
           "member": "string",
           "name": "InputData",
@@ -8290,6 +8994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -8299,6 +9004,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -8308,6 +9014,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域ID",
           "member": "int64",
           "name": "RegionId",
@@ -8323,6 +9030,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库名",
           "example": "test",
           "member": "string",
@@ -8333,6 +9041,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据库视图名",
           "example": "test",
           "member": "string",
@@ -8343,6 +9052,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限信息",
           "example": "[]",
           "member": "string",
@@ -8359,6 +9069,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区英文ID",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -8369,6 +9080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区数字ID",
           "example": "100001",
           "member": "int64",
@@ -8379,6 +9091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区中文名",
           "example": "广州一区",
           "member": "string",
@@ -8389,6 +9102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否在售",
           "example": "true",
           "member": "bool",

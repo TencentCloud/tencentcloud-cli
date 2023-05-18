@@ -280,6 +280,14 @@
         "title": "创建工作流"
       }
     ],
+    "CreateUnitNamespaces": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateUnitNamespaces\n&GatewayInstanceId=gw-ins-afsfas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "title": "批量创建单元化命名空间"
+      }
+    ],
     "CreateUnitRule": [
       {
         "document": "",

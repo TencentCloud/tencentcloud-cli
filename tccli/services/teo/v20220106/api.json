@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Zone ID",
           "example": "8afj24jzg9",
           "member": "string",
@@ -57,6 +58,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
@@ -66,6 +68,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否对url进行encode\n若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）",
           "example": "true",
           "member": "bool",
@@ -75,6 +78,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "附带的http头部信息",
           "example": "无",
           "member": "Header",
@@ -89,6 +93,7 @@
       "document": "CreatePrefetchTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "jkqj4hahfkaf",
           "member": "string",
@@ -98,6 +103,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "失败的任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "FailReason",
@@ -120,6 +126,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Zone ID",
           "example": "8afj24jzg9",
           "member": "string",
@@ -129,6 +136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型，当前支持的类型：\n- purge_url：URL\n- purge_prefix：前缀\n- purge_host：Hostname\n- purge_all：全部缓存",
           "example": "purge_url",
           "member": "string",
@@ -138,6 +146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要刷新的资源列表，每个元素格式依据Type而定\n1) Type = purge_host 时\n形如：www.example.com 或 foo.bar.example.com\n2) Type = purge_prefix 时\n形如：http://www.example.com/example\n3) Type = purge_url 时\n形如：https://www.example.com/example.jpg\n4）Type = purge_all 时\nTargets可为空，不需要填写",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
@@ -147,6 +156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "若有编码转换，仅清除编码转换后匹配的资源\n若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）",
           "example": "true",
           "member": "bool",
@@ -161,6 +171,7 @@
       "document": "CreatePurgeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
           "example": "jkqj4hahfkaf",
           "member": "string",
@@ -170,6 +181,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "失败的任务列表及原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "FailReason",
@@ -192,6 +204,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "ajjvjaf924",
           "member": "string",
@@ -201,6 +214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询起始时间",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
@@ -210,6 +224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询结束时间",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
@@ -219,6 +234,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询起始偏移量",
           "example": "7",
           "member": "int64",
@@ -228,6 +244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询最大返回的结果条数",
           "example": "100",
           "member": "int64",
@@ -237,6 +254,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的状态\n允许的值为：processing、success、failed、timeout、invalid",
           "example": "processing",
           "member": "string",
@@ -246,6 +264,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "zone id",
           "example": "jalfj2n42",
           "member": "string",
@@ -255,6 +274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的域名列表",
           "example": "[\"www.qq.com\"]",
           "member": "string",
@@ -264,6 +284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的资源",
           "example": "http://www.qq.com/1.txt",
           "member": "string",
@@ -278,6 +299,7 @@
       "document": "DescribePrefetchTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该查询条件总共条目数",
           "example": "100",
           "member": "uint64",
@@ -287,6 +309,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务结果列表",
           "example": "无",
           "member": "Task",
@@ -309,6 +332,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "ajjvjaf924",
           "member": "string",
@@ -318,6 +342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型",
           "example": "purge_url",
           "member": "string",
@@ -327,6 +352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询起始时间",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
@@ -336,6 +362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询结束时间",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
@@ -345,6 +372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询起始偏移量",
           "example": "7",
           "member": "int64",
@@ -354,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询最大返回的结果条数",
           "example": "100",
           "member": "int64",
@@ -363,6 +392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的状态\n允许的值为：processing、success、failed、timeout、invalid",
           "example": "processing",
           "member": "string",
@@ -372,6 +402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "zone id",
           "example": "jalfj2n42",
           "member": "string",
@@ -381,6 +412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询的域名列表",
           "example": "[\"www.qq.com\"]",
           "member": "string",
@@ -390,6 +422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询内容",
           "example": "http://www.qq.com/1.txt",
           "member": "string",
@@ -404,6 +437,7 @@
       "document": "DescribePurgeTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该查询条件总共条目数",
           "example": "100",
           "member": "uint64",
@@ -413,6 +447,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务结果列表",
           "example": "无",
           "member": "Task",
@@ -435,6 +470,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页查询偏移量。默认值：0，最小值：0。",
           "example": "0",
           "member": "int64",
@@ -444,6 +480,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页查询限制数目。默认值：1000，最大值：1000。",
           "example": "1000",
           "member": "int64",
@@ -453,6 +490,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询条件过滤器，复杂类型。",
           "example": "无",
           "member": "ZoneFilter",
@@ -467,6 +505,7 @@
       "document": "DescribeZones返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合条件的站点个数。",
           "example": "10",
           "member": "int64",
@@ -476,6 +515,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "站点详细信息列表。",
           "example": "无",
           "member": "Zone",
@@ -498,6 +538,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "失败原因",
           "example": "domain not valid",
           "member": "string",
@@ -508,6 +549,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处理失败的资源列表。\n该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
@@ -524,6 +566,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "HTTP头部",
           "example": "User-Agent",
           "member": "string",
@@ -534,6 +577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "HTTP头部值",
           "example": "TencentEdgeOne",
           "member": "string",
@@ -550,6 +594,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源 ID。",
           "example": "edgeone-xxx",
           "member": "string",
@@ -560,6 +605,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费模式，取值有：\n<li>0：后付费。</li>",
           "example": "0",
           "member": "int64",
@@ -570,6 +616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -580,6 +627,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生效时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -590,6 +638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "失效时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -600,6 +649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐状态，取值有：\n<li>normal：正常；</li>\n<li>isolated：隔离；</li>\n<li>destroyed：销毁。</li>",
           "example": "normal",
           "member": "string",
@@ -610,6 +660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "询价参数。",
           "example": "无",
           "member": "Sv",
@@ -620,6 +671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动续费，取值有：\n<li>0：默认状态；</li>\n<li>1：自动续费；</li>\n<li>2：不自动续费。</li>",
           "example": "1",
           "member": "int64",
@@ -630,6 +682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐关联资源 ID。",
           "example": "edgeone-xxx",
           "member": "string",
@@ -640,6 +693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域，取值有：\n<li>mainland：国内；</li>\n<li>overseas：海外。</li>",
           "example": "mainland",
           "member": "string",
@@ -656,6 +710,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "询价参数键。",
           "example": "sv_xxx",
           "member": "string",
@@ -666,6 +721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "询价参数值。",
           "example": "1",
           "member": "string",
@@ -682,6 +738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -692,6 +749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -708,6 +766,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "20g9wz8m9mgx",
           "member": "string",
@@ -718,6 +777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态",
           "example": "状态",
           "member": "string",
@@ -728,6 +788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源",
           "example": "http://www.qq.com",
           "member": "string",
@@ -738,6 +799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型",
           "example": "purge_url",
           "member": "string",
@@ -748,6 +810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "example": "2022-02-09T02:28:43Z",
           "member": "datetime_iso",
@@ -758,6 +821,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务完成时间",
           "example": "2022-02-09T02:28:43Z",
           "member": "datetime_iso",
@@ -774,6 +838,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "站点ID。",
           "example": "zone-27q0p0bali16",
           "member": "string",
@@ -784,6 +849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点名称。",
           "example": "example.com",
           "member": "string",
@@ -794,6 +860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点当前使用的 NS 列表。",
           "example": "[\"ns1.example.com.\",\"ns2.example.com.\"]",
           "member": "string",
@@ -804,6 +871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "腾讯云分配的 NS 列表。",
           "example": "[\"ns1.teodns.com.\",\"\"ns2.teodns.com.\"]",
           "member": "string",
@@ -814,6 +882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点状态，取值有：\n<li> active：NS 已切换； </li>\n<li> pending：NS 未切换；</li>\n<li> moved：NS 已切走；</li>\n<li> deactivated：被封禁。 </li>",
           "example": "active",
           "member": "string",
@@ -824,6 +893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点接入方式，取值有\n<li> full：NS 接入； </li>\n<li> partial：CNAME 接入。</li>",
           "example": "full",
           "member": "string",
@@ -834,6 +904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点是否关闭。",
           "example": "false",
           "member": "bool",
@@ -844,6 +915,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启cname加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
           "example": "无",
           "member": "string",
@@ -854,6 +926,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cname 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
           "example": "finished",
           "member": "string",
@@ -864,6 +937,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源标签列表。",
           "example": "无",
           "member": "Tag",
@@ -874,6 +948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计费资源列表。",
           "example": "无",
           "member": "Resource",
@@ -884,6 +959,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -894,6 +970,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点修改时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -904,6 +981,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点接入地域，取值为：\n<li> global：全球；</li>\n<li> mainland：中国大陆；</li>\n<li> overseas：境外区域。</li>",
           "example": "overseas",
           "member": "string",
@@ -920,6 +998,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤字段名，支持的列表如下：\n<li> name：站点名；</li>\n<li> status：站点状态；</li>\n<li> tagKey：标签键；</li>\n<li> tagValue: 标签值。</li>",
           "example": "name",
           "member": "string",
@@ -930,6 +1009,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤字段值。",
           "example": "[\"test.com\"]",
           "member": "string",
@@ -940,6 +1020,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。",
           "example": "false",
           "member": "bool",

@@ -279,6 +279,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
@@ -288,6 +289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要绑定的安全组 ID，类似sg-efil7***。",
           "example": "sg-ajr1jzgj",
           "member": "string",
@@ -297,6 +299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：kee-c1nl9***，支持指定多个实例。",
           "example": "[\"kee-eb2w7dto\"]",
           "member": "string",
@@ -324,6 +327,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "备份开始时间。",
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
@@ -334,6 +338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份 ID。",
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
@@ -344,6 +349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li></ul>",
           "example": "\"1\"",
           "member": "string",
@@ -354,6 +360,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份的备注信息.",
           "example": "\"\"",
           "member": "string",
@@ -364,6 +371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份状态。  <ul><li>1：备份任务被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li> <li>-1：备份已过期。</li><li>3：备份正在被导出。</li> <li>4：备份导出成功。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -374,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份是否被锁定。<ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>",
           "example": "0",
           "member": "int64",
@@ -390,6 +399,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "备份开始时间。",
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
@@ -400,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份结束时间。",
           "example": "\"2022-03-24 12:52:20\"",
           "member": "string",
@@ -410,6 +421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份 ID。",
           "example": "\"999b6b89c60\"",
           "member": "string",
@@ -420,6 +432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件名。",
           "example": "\"test\"",
           "member": "string",
@@ -430,6 +443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件大小，单位：Byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "106924",
           "member": "int64",
@@ -446,6 +460,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -455,6 +470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本节点 ID。",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
@@ -469,6 +485,7 @@
       "document": "ChangeInstanceMaster返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务 ID。",
           "example": "16783",
           "member": "int64",
@@ -491,6 +508,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -505,6 +523,7 @@
       "document": "CleanUpInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "10856",
           "member": "int64",
@@ -527,6 +546,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubhg****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -536,6 +556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例访问密码。\n实例为免密访问，则无需设置该参数。",
           "example": "zy456987",
           "member": "string",
@@ -550,6 +571,7 @@
       "document": "ClearInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "10856",
           "member": "int64",
@@ -572,6 +594,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。",
           "example": "kee-7iw94215",
           "member": "string",
@@ -581,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本次备份的备注信息。",
           "example": "xxx",
           "member": "string",
@@ -590,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件保存天数。0代表指定默认保留时间",
           "example": "7",
           "member": "int64",
@@ -604,6 +629,7 @@
       "document": "CreateBackupManually返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "6954227",
           "member": "int64",
@@ -625,6 +651,7 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "产品版本。\n14：当前仅支持混合存储版。",
           "example": "14",
           "member": "uint64",
@@ -633,6 +660,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "私有网络唯一ID。\n请登录控制台在私有网络列表查询，如：vpc-azlk3***。",
           "example": "vpc-azlk31bs",
           "member": "string",
@@ -641,6 +669,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "私有网络所属子网唯一ID。\n请登录控制台在私有网络列表查询，如：subnet-8abje***。",
           "example": "subnet-8abjechk",
           "member": "string",
@@ -649,6 +678,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -657,6 +687,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。",
           "example": "1",
           "member": "uint64",
@@ -665,6 +696,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。",
           "example": "1",
           "member": "uint64",
@@ -673,6 +705,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。",
           "example": "3",
           "member": "int64",
@@ -681,6 +714,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。",
           "example": "1",
           "member": "int64",
@@ -689,6 +723,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "计算cpu核心数。",
           "example": "2",
           "member": "int64",
@@ -697,6 +732,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例内存容量，单位：GB。\nKeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
           "example": "8",
           "member": "int64",
@@ -705,6 +741,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></u>",
           "example": "100006",
           "member": "uint64",
@@ -713,6 +750,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></u>",
           "example": "ap-guangzhou-6",
           "member": "string",
@@ -721,6 +759,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "创建实例的名称。\n仅支持长度小于60的中文、英文或者数字，短划线\"-\"、下划线\"_\"。",
           "example": "myInstance",
           "member": "string",
@@ -729,6 +768,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>",
           "example": "false",
           "member": "bool",
@@ -737,6 +777,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>\n<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以\"/\"开头。</li></ul></li></ul>",
           "example": "123456MyP@ssword",
           "member": "string",
@@ -745,6 +786,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "自定义端口。默认为6379，范围[1024,65535]。",
           "example": "6378",
           "member": "uint64",
@@ -753,6 +795,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "0",
           "member": "uint64",
@@ -761,6 +804,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "给实例设置安全组 ID 数组。",
           "example": "[\"sg-bmadczm1\"]",
           "member": "string",
@@ -769,6 +813,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "给实例绑定标签。",
           "example": "无",
           "member": "ResourceTag",
@@ -777,6 +822,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "混合存储版，单分片持久化内存容量，单位：GB。\nKeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
           "example": "16",
           "member": "int64",
@@ -785,6 +831,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每个分片硬盘的容量。单位：GB。\n每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。",
           "example": "100",
           "member": "int64",
@@ -793,6 +840,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。",
           "example": "0",
           "member": "int64",
@@ -807,6 +855,7 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "交易 ID。",
           "example": "199878234",
           "member": "string",
@@ -815,6 +864,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例 ID 。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -836,6 +886,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-rzx9zsz1",
           "member": "string",
@@ -850,6 +901,7 @@
       "document": "DescribeAutoBackupConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自动备份的周期。包括：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
@@ -859,6 +911,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自动备份时间段。",
           "example": "05:00-06:00",
           "member": "string",
@@ -868,6 +921,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "全量备份文件保存天数。",
           "example": "7",
           "member": "int64",
@@ -877,6 +931,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "增量备份文件保存天数。",
           "example": "3",
           "member": "int64",
@@ -898,6 +953,7 @@
       "document": "DescribeConnectionConfig请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -912,6 +968,7 @@
       "document": "DescribeConnectionConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "单分片入流量带宽限制，单位：MB。",
           "example": "96",
           "member": "int64",
@@ -920,6 +977,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "单分片出流量带宽限制，单位：MB。",
           "example": "96",
           "member": "int64",
@@ -928,6 +986,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "单分片连接数限制。",
           "example": "10000",
           "member": "int64",
@@ -949,6 +1008,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
@@ -958,6 +1018,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：kee-c1nl9***。",
           "example": "kee-c1nl9rpv",
           "member": "string",
@@ -972,6 +1033,7 @@
       "document": "DescribeDBSecurityGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "安全组规则。",
           "example": "无",
           "member": "SecurityGroup",
@@ -981,6 +1043,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全组生效内网地址。",
           "example": "10.10.0.1",
           "member": "string",
@@ -990,6 +1053,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全组生效内网端口。",
           "example": "6379",
           "member": "string",
@@ -1012,6 +1076,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。",
           "example": "kee-7iw94215",
           "member": "string",
@@ -1021,6 +1086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出的备份列表大小，即每页输出的备份文件的数量，默认值20，取值范围为[1,100]。",
           "example": "10",
           "member": "int64",
@@ -1030,6 +1096,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份列表分页偏移量，取Limit整数倍。\n计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。",
           "example": "0",
           "member": "int64",
@@ -1039,6 +1106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询备份文件的开始时间，格式如：2017-02-08 16:46:34。查询实例在 [BeginTime, EndTime] 时间段内的备份列表。",
           "example": "2022-02-08 16:46:34",
           "member": "string",
@@ -1048,6 +1116,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询备份文件的结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内的备份列表。",
           "example": "2022-02-08 20:46:34",
           "member": "string",
@@ -1057,6 +1126,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份任务状态。<ul><li>1：备份在流程中。</li><li>2：备份正常。</li><li>3：备份转RDB文件处理中。</li><li>4：已完成RDB转换。</li><li>-1：备份已过期。</li><li>-2：备份已删除。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -1071,6 +1141,7 @@
       "document": "DescribeInstanceBackups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份文件总数。",
           "example": "10",
           "member": "int64",
@@ -1080,6 +1151,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "废弃字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BinlogInfo",
@@ -1089,6 +1161,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例备份信息列表。",
           "example": "无",
           "member": "BackupInfo",
@@ -1111,6 +1184,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-1jg409h5",
           "member": "string",
@@ -1120,6 +1194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出备份列表大小，默认大小20。",
           "example": "100",
           "member": "int64",
@@ -1129,6 +1204,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，取Limit整数倍。",
           "example": "0",
           "member": "int64",
@@ -1138,6 +1214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
           "example": "2022-02-08 16:46:34",
           "member": "string",
@@ -1147,6 +1224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
           "example": "2022-02-08 20:46:34",
           "member": "string",
@@ -1161,6 +1239,7 @@
       "document": "DescribeInstanceBinlogs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份总数",
           "example": "10",
           "member": "int64",
@@ -1170,6 +1249,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例的备份信息数组",
           "example": "无",
           "member": "BinlogInfo",
@@ -1191,6 +1271,7 @@
       "document": "DescribeInstanceDealDetail请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。",
           "example": "[\"8159037\"]\t",
           "member": "string",
@@ -1205,6 +1286,7 @@
       "document": "DescribeInstanceDealDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单详细信息",
           "example": "无",
           "member": "TradeDealDetail",
@@ -1226,6 +1308,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1235,6 +1318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出的节点信息大小。默认为 20。",
           "example": "100",
           "member": "int64",
@@ -1244,6 +1328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
@@ -1258,6 +1343,7 @@
       "document": "DescribeInstanceNodeInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Proxy 节点数量。",
           "example": "10",
           "member": "int64",
@@ -1267,6 +1353,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Proxy 节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ProxyNodeInfo",
@@ -1276,6 +1363,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Redis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。",
           "example": "10",
           "member": "int64",
@@ -1285,6 +1373,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Redis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RedisNodeInfo",
@@ -1294,6 +1383,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Tendis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。",
           "example": "10",
           "member": "int64",
@@ -1303,6 +1393,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Tendis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceNodeInfo",
@@ -1312,6 +1403,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "KeewiDB 节点数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1321,6 +1413,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "KeewiDB 节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceNodeInfo",
@@ -1343,6 +1436,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1352,6 +1446,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出的参数列表大小。默认为 20，最多输出100条。",
           "example": "100",
           "member": "uint64",
@@ -1361,6 +1456,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
@@ -1375,6 +1471,7 @@
       "document": "DescribeInstanceParamRecords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "修改历史记录总数。",
           "example": "10",
           "member": "int64",
@@ -1384,6 +1481,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改历史记录信息。",
           "example": "无",
           "member": "InstanceParamHistory",
@@ -1406,6 +1504,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1420,6 +1519,7 @@
       "document": "DescribeInstanceParams返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例参数总数量。",
           "example": "10",
           "member": "int64",
@@ -1429,6 +1529,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例枚举类型参数数组。",
           "example": "无",
           "member": "InstanceEnumParam",
@@ -1438,6 +1539,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例整型参数数组。",
           "example": "无",
           "member": "InstanceIntegerParam",
@@ -1447,6 +1549,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例字符型参数数组。",
           "example": "无",
           "member": "InstanceTextParam",
@@ -1456,6 +1559,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例多选项型参数数组。",
           "example": "无",
           "member": "InstanceMultiParam",
@@ -1478,6 +1582,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1492,6 +1597,7 @@
       "document": "DescribeInstanceReplicas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例所有节点数量，包括主节点、副本节点。",
           "example": "10",
           "member": "int64",
@@ -1501,6 +1607,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例节点信息。",
           "example": "无",
           "member": "ReplicaGroup",
@@ -1523,6 +1630,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。",
           "example": "100",
           "member": "uint64",
@@ -1532,6 +1640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，取Limit整数倍。\n计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。",
           "example": "0",
           "member": "uint64",
@@ -1541,6 +1650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1550,6 +1660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>",
           "example": "createtime",
           "member": "string",
@@ -1559,6 +1670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -1568,6 +1680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525",
           "example": "无",
           "member": "string",
@@ -1577,6 +1690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：56854",
           "example": "无",
           "member": "string",
@@ -1586,6 +1700,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID 组成的数组，数组下标从0开始",
           "example": "无",
           "member": "int64",
@@ -1595,6 +1710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查找关键字，可输入实例的ID或者实例名称。",
           "example": "无",
           "member": "string",
@@ -1604,6 +1720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "无",
           "member": "string",
@@ -1613,6 +1730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk",
           "example": "无",
           "member": "string",
@@ -1622,6 +1740,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2",
           "example": "无",
           "member": "string",
@@ -1631,6 +1750,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -1640,6 +1760,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "无",
           "member": "int64",
@@ -1649,6 +1770,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>",
           "example": "无",
           "member": "string",
@@ -1658,6 +1780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -1667,6 +1790,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索关键词：支持实例 ID、实例名称、私有网络IP地址。",
           "example": "无",
           "member": "string",
@@ -1676,6 +1800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "int64",
@@ -1685,6 +1810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "string",
@@ -1694,6 +1820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
           "example": "无",
           "member": "InstanceTagInfo",
@@ -1703,6 +1830,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
           "example": "无",
           "member": "string",
@@ -1717,6 +1845,7 @@
       "document": "DescribeInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例数",
           "example": "1",
           "member": "int64",
@@ -1726,6 +1855,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例详细信息列表",
           "example": "无",
           "member": "InstanceInfo",
@@ -1748,6 +1878,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubhg***。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1762,6 +1893,7 @@
       "document": "DescribeMaintenanceWindow返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "维护时间窗起始时间，如：03:00。",
           "example": "03:00",
           "member": "string",
@@ -1771,6 +1903,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "维护时间窗结束时间，如：06:00。",
           "example": "06:00",
           "member": "string",
@@ -1797,6 +1930,7 @@
       "document": "DescribeProductInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "地域售卖信息",
           "example": "无",
           "member": "RegionConf",
@@ -1819,6 +1953,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称。该产品固定为 keewidb。",
           "example": "keewidb",
           "member": "string",
@@ -1828,6 +1963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目 ID。\n登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。",
           "example": "11954",
           "member": "uint64",
@@ -1837,6 +1973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
@@ -1846,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页安全组的数量限制。默认为 20，最多输出100条。",
           "example": "20",
           "member": "uint64",
@@ -1855,6 +1993,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索关键词，支持根据安全组 ID 或者安全组名称搜索。",
           "example": "无",
           "member": "string",
@@ -1869,6 +2008,7 @@
       "document": "DescribeProjectSecurityGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "安全组规则。",
           "example": "无",
           "member": "SecurityGroup",
@@ -1878,6 +2018,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的安全组总数量。",
           "example": "1",
           "member": "int64",
@@ -1900,6 +2041,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubhgouj",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -1909,6 +2051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
@@ -1918,6 +2061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
@@ -1927,6 +2071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>",
           "example": "100",
           "member": "int64",
@@ -1936,6 +2081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。",
           "example": "10",
           "member": "int64",
@@ -1945,6 +2091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
@@ -1959,6 +2106,7 @@
       "document": "DescribeProxySlowLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "慢查询总数。",
           "example": "10",
           "member": "int64",
@@ -1968,6 +2116,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢查询详情。",
           "example": "无",
           "member": "InstanceProxySlowlogDetail",
@@ -1990,6 +2139,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID。",
           "example": "155684",
           "member": "uint64",
@@ -2004,6 +2154,7 @@
       "document": "DescribeTaskInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务状态。<ul><li>preparing：待执行。</li><li>running：执行中。</li><li>succeed：成功。</li><li>failed：失败。</li><li>error：执行出错。</li></ul>",
           "example": "succeed",
           "member": "string",
@@ -2013,6 +2164,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务开始时间。",
           "example": "2018-11-01 17:25:14",
           "member": "string",
@@ -2022,6 +2174,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务类型。",
           "example": "实例清空流程",
           "member": "string",
@@ -2031,6 +2184,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例的ID。",
           "example": "kee-09u2u96z",
           "member": "string",
@@ -2040,6 +2194,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务信息，错误时显示错误信息。执行中与成功则为空值。",
           "example": "ok",
           "member": "string",
@@ -2062,6 +2217,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -2071,6 +2227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "实例1",
           "member": "string",
@@ -2080,6 +2237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页输出的任务列表大小。默认为 20，最多输出100条。",
           "example": "100",
           "member": "int64",
@@ -2089,6 +2247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
@@ -2098,6 +2257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID。",
           "example": "无",
           "member": "int64",
@@ -2107,6 +2267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。",
           "example": "无",
           "member": "string",
@@ -2116,6 +2277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
@@ -2125,6 +2287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "终止时间。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
@@ -2134,6 +2297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态。",
           "example": "[0.1.2]",
           "member": "int64",
@@ -2148,6 +2312,7 @@
       "document": "DescribeTaskList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务总数。",
           "example": "1",
           "member": "int64",
@@ -2157,6 +2322,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务详细信息列表。",
           "example": "无",
           "member": "TaskInfoDetail",
@@ -2179,6 +2345,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -2188,6 +2355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
@@ -2197,6 +2365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
@@ -2206,6 +2375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>",
           "example": "10",
           "member": "int64",
@@ -2215,6 +2385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50。默认为 20。",
           "example": "10",
           "member": "int64",
@@ -2224,6 +2395,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
@@ -2238,6 +2410,7 @@
       "document": "DescribeTendisSlowLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "慢查询详情。",
           "example": "无",
           "member": "TendisSlowLogDetail",
@@ -2247,6 +2420,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢查询总数。",
           "example": "10",
           "member": "int64",
@@ -2269,6 +2443,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -2283,6 +2458,7 @@
       "document": "DestroyPostpaidInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "6954227",
           "member": "int64",
@@ -2305,6 +2481,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -2319,6 +2496,7 @@
       "document": "DestroyPrepaidInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "交易ID。",
           "example": "6977675",
           "member": "string",
@@ -2341,6 +2519,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
@@ -2350,6 +2529,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要绑定的安全组 ID，类似sg-efil****。",
           "example": "sg-ajr1jzgj",
           "member": "string",
@@ -2359,6 +2539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，格式如：kee-c1nl****，支持指定多个实例。",
           "example": "[\"kee-eb2w7dto\"]",
           "member": "string",
@@ -2386,6 +2567,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
           "example": "无",
           "member": "string",
@@ -2396,6 +2578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地址组id代表的地址集合。",
           "example": "无",
           "member": "string",
@@ -2406,6 +2589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
           "example": "无",
           "member": "string",
@@ -2416,6 +2600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述。",
           "example": "无",
           "member": "string",
@@ -2426,6 +2611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
           "example": "无",
           "member": "string",
@@ -2436,6 +2622,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口。",
           "example": "无",
           "member": "string",
@@ -2446,6 +2633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
           "example": "无",
           "member": "string",
@@ -2456,6 +2644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组id代表的地址集合。",
           "example": "无",
           "member": "string",
@@ -2472,6 +2661,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名",
           "example": "无",
           "member": "string",
@@ -2482,6 +2672,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数类型：enum",
           "example": "无",
           "member": "string",
@@ -2492,6 +2683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
           "member": "string",
@@ -2502,6 +2694,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数默认值",
           "example": "无",
           "member": "string",
@@ -2512,6 +2705,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
           "member": "string",
@@ -2522,6 +2716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数说明",
           "example": "无",
           "member": "string",
@@ -2532,6 +2727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数可取值",
           "example": "无",
           "member": "string",
@@ -2542,6 +2738,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
           "member": "int64",
@@ -2557,6 +2754,7 @@
       "document": "实例详细信息",
       "members": [
         {
+          "disabled": false,
           "document": "实例名称。",
           "example": "实例1",
           "member": "string",
@@ -2566,6 +2764,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7asi981q",
           "member": "string",
@@ -2575,6 +2774,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户的Appid。",
           "example": "12345",
           "member": "int64",
@@ -2584,6 +2784,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "项目 ID。",
           "example": "12",
           "member": "int64",
@@ -2593,6 +2794,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li>8：北京。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2602,6 +2804,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "可用区 ID。",
           "example": "100001",
           "member": "int64",
@@ -2611,6 +2814,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VPC 网络 ID， 如：75101。该参数当前暂保留，可忽略。",
           "example": "75101",
           "member": "int64",
@@ -2620,6 +2824,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例当前状态。<ul><li>0：待初始化。</li><li>1：实例在流程中。</li><li>2：实例运行中。</li><li>-2：实例已隔离。</li><li>-3：实例待删除。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -2629,6 +2834,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VPC 网络下子网 ID， 如：46315。该参数当前暂保留，可忽略。",
           "example": "10",
           "member": "int64",
@@ -2638,6 +2844,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例 VIP。",
           "example": "10.20.3.1",
           "member": "string",
@@ -2647,6 +2854,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例端口号。",
           "example": "6379",
           "member": "int64",
@@ -2656,6 +2864,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例创建时间。",
           "example": "2022-01-15 10:20:00",
           "member": "string",
@@ -2665,6 +2874,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例持久内存总容量大小，单位：MB。",
           "example": "1451",
           "member": "float",
@@ -2674,6 +2884,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
           "example": "14",
           "member": "int64",
@@ -2683,6 +2894,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例是否设置自动续费标识。<ul><li>1：设置自动续费。</li><li>0：未设置自动续费。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2692,6 +2904,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例到期时间。",
           "example": "2022-02-15 10:20:00",
           "member": "string",
@@ -2701,6 +2914,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "存储引擎。",
           "example": "无",
           "member": "string",
@@ -2710,6 +2924,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品类型。<ul><li>standalone ：标准版。</li><li>cluster ：集群版。</li></ul>",
           "example": "cluster",
           "member": "string",
@@ -2719,6 +2934,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VPC 网络 ID， 如：vpc-fk33jsf4****。",
           "example": "vpc-fk33jsf43kgv",
           "member": "string",
@@ -2728,6 +2944,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VPC 网络下子网 ID，如：subnet-fd3j6l3****。",
           "example": "subnet-fd3j6l35mm0",
           "member": "string",
@@ -2737,6 +2954,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2746,6 +2964,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例运行状态描述：如”实例运行中“。",
           "example": "实例运行中",
           "member": "string",
@@ -2755,6 +2974,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计划下线时间。",
           "example": "2022-02-15 10:20:00",
           "member": "string",
@@ -2764,6 +2984,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "流程中的实例，返回子状态。",
           "example": "0",
           "member": "int64",
@@ -2773,6 +2994,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "反亲和性标签",
           "example": "无",
           "member": "string",
@@ -2782,6 +3004,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分片大小。",
           "example": "4096",
           "member": "int64",
@@ -2791,6 +3014,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分片数量。",
           "example": "3",
           "member": "int64",
@@ -2800,6 +3024,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "副本数量。",
           "example": "1",
           "member": "int64",
@@ -2809,6 +3034,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计费 ID。",
           "example": "102638",
           "member": "int64",
@@ -2818,6 +3044,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "隔离时间。",
           "example": "0000-00-00 00:00:00",
           "member": "string",
@@ -2827,6 +3054,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "从节点读取权重。",
           "example": "1",
           "member": "int64",
@@ -2836,6 +3064,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例关联的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceTagInfo",
@@ -2845,6 +3074,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Default",
           "member": "string",
@@ -2854,6 +3084,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否为免密实例；<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2863,6 +3094,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "客户端连接数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30000",
           "member": "int64",
@@ -2872,6 +3104,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "DTS状态（内部参数，用户可忽略）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2881,6 +3114,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分片带宽上限，单位 MB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1800",
           "member": "int64",
@@ -2890,6 +3124,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "免密实例标识（内部参数，用户可忽略）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2899,6 +3134,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例只读标识（内部参数，用户可忽略）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2908,6 +3144,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2917,6 +3154,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2926,6 +3164,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例的磁盘容量大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400",
           "member": "int64",
@@ -2935,6 +3174,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5s",
           "member": "string",
@@ -2944,6 +3184,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "客户端最大连接数可设置的最小值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -2953,6 +3194,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "客户端最大连接数可设置的最大值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
@@ -2962,6 +3204,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例的节点详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeInfo",
@@ -2971,6 +3214,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例所在的地域信息，比如ap-guangzhou。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2980,6 +3224,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例内存容量，单位：GB。KeeWiDB 内存容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
@@ -2989,6 +3234,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "单分片磁盘大小，单位：MB",
           "example": "143360",
           "member": "int64",
@@ -2998,6 +3244,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "3",
           "example": "磁盘分片数",
           "member": "int64",
@@ -3007,6 +3254,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "1",
           "example": "磁盘副本数",
           "member": "int64",
@@ -3023,6 +3271,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名",
           "example": "无",
           "member": "string",
@@ -3033,6 +3282,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数类型：integer",
           "example": "无",
           "member": "string",
@@ -3043,6 +3293,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
           "member": "string",
@@ -3053,6 +3304,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数默认值",
           "example": "无",
           "member": "string",
@@ -3063,6 +3315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
           "member": "string",
@@ -3073,6 +3326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数说明",
           "example": "无",
           "member": "string",
@@ -3083,6 +3337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数最小值",
           "example": "无",
           "member": "string",
@@ -3093,6 +3348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数最大值",
           "example": "无",
           "member": "string",
@@ -3103,6 +3359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
           "member": "int64",
@@ -3113,6 +3370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3129,6 +3387,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名",
           "example": "无",
           "member": "string",
@@ -3139,6 +3398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数类型：multi",
           "example": "无",
           "member": "string",
@@ -3149,6 +3409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
           "member": "string",
@@ -3159,6 +3420,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数默认值",
           "example": "无",
           "member": "string",
@@ -3169,6 +3431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
           "member": "string",
@@ -3179,6 +3442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数说明",
           "example": "无",
           "member": "string",
@@ -3189,6 +3453,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数说明",
           "example": "无",
           "member": "string",
@@ -3199,6 +3464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
           "member": "int64",
@@ -3215,6 +3481,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
@@ -3225,6 +3492,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点角色",
           "example": "master",
           "member": "string",
@@ -3241,6 +3509,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设置参数的名字",
           "example": "无",
           "member": "string",
@@ -3251,6 +3520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置参数的值",
           "example": "无",
           "member": "string",
@@ -3267,6 +3537,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名称",
           "example": "无",
           "member": "string",
@@ -3277,6 +3548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改前值",
           "example": "无",
           "member": "string",
@@ -3287,6 +3559,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后值",
           "example": "无",
           "member": "string",
@@ -3297,6 +3570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败",
           "example": "无",
           "member": "int64",
@@ -3307,6 +3581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "无",
           "member": "string",
@@ -3323,6 +3598,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "慢查询耗时",
           "example": "无",
           "member": "int64",
@@ -3333,6 +3609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客户端地址",
           "example": "无",
           "member": "string",
@@ -3343,6 +3620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令",
           "example": "无",
           "member": "string",
@@ -3353,6 +3631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "详细命令行信息",
           "example": "无",
           "member": "string",
@@ -3363,6 +3642,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行时间",
           "example": "无",
           "member": "string",
@@ -3379,6 +3659,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "key1",
           "member": "string",
@@ -3389,6 +3670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "value1",
           "member": "string",
@@ -3405,6 +3687,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名",
           "example": "无",
           "member": "string",
@@ -3415,6 +3698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数类型：text",
           "example": "无",
           "member": "string",
@@ -3425,6 +3709,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
           "member": "string",
@@ -3435,6 +3720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数默认值",
           "example": "无",
           "member": "string",
@@ -3445,6 +3731,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
           "member": "string",
@@ -3455,6 +3742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数说明",
           "example": "无",
           "member": "string",
@@ -3465,6 +3753,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数可取值",
           "example": "无",
           "member": "string",
@@ -3475,6 +3764,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
           "member": "int64",
@@ -3491,6 +3781,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点的序列ID。",
           "example": "b69eda124a34c1b713e81f7cb947161b06214328",
           "member": "string",
@@ -3501,6 +3792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点的状态。",
           "example": "Normal",
           "member": "string",
@@ -3511,6 +3803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点角色。",
           "example": "master",
           "member": "string",
@@ -3527,6 +3820,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7iw94215",
           "member": "string",
@@ -3536,6 +3830,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份周期。可设置为 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改、",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
@@ -3545,6 +3840,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份任务执行时间段。\n可设置的格式为一个整点到下一个整点。例如：00:00-01:00、01:00-02:00、21:00-22:00、23:00-00:00等。",
           "example": "01:00-02:00",
           "member": "string",
@@ -3559,6 +3855,7 @@
       "document": "ModifyAutoBackupConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "增量备份文件保存天数。",
           "example": "3",
           "member": "int64",
@@ -3568,6 +3865,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "全量备份文件保存天数。",
           "example": "7",
           "member": "int64",
@@ -3577,6 +3875,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份时间段。",
           "example": "01:00-02:00",
           "member": "string",
@@ -3586,6 +3885,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份周期。Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
@@ -3608,6 +3908,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -3617,6 +3918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单分片附加带宽，取值范围[0,512]，单位：MB。\n<ul><li>开启副本只读时，实例总带宽  = 单分片附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 单分片附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>",
           "example": "5",
           "member": "int64",
@@ -3626,6 +3928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单分片的总连接数。\n<ul>默认为10000，整个实例的最大连接数为单个分片的最大连接数 x 分片数量。标准架构分片数量为1。\n<li>关闭副本只读：每个分片的最大连接数的取值范围为[10000,40000]。</li><li>开启副本只读：每个分片的最大连接数的取值范围为 [10000,10000 x (副本数 + 3)]。</li></ul>",
           "example": "20000",
           "member": "int64",
@@ -3640,6 +3943,7 @@
       "document": "ModifyConnectionConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "95027",
           "member": "int64",
@@ -3662,6 +3966,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
@@ -3671,6 +3976,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要修改的安全组ID列表，一个或者多个安全组 ID 组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
@@ -3680,6 +3986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：kee-c1nl****。",
           "example": "kee-eb2w7dto",
           "member": "string",
@@ -3707,6 +4014,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -3716,6 +4024,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例修改的参数列表。",
           "example": "无",
           "member": "InstanceParam",
@@ -3730,6 +4039,7 @@
       "document": "ModifyInstanceParams返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "修改是否成功。<ul><li>true：修改成功。</li><li>false：修改失败。</li></ul>",
           "example": "true",
           "member": "bool",
@@ -3739,6 +4049,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务 ID。",
           "example": "327",
           "member": "int64",
@@ -3761,6 +4072,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "修改实例操作。<ul><li>rename：表示实例重命名。</li><li>modifyProject：修改实例所属项目。</li><li>modifyAutoRenew：修改实例续费模式。</li></ul>",
           "example": "rename",
           "member": "string",
@@ -3770,6 +4082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID 数组。",
           "example": "[\"kee-r3nqjq3n\",\"kee-9bvd9b8v\"]",
           "member": "string",
@@ -3779,6 +4092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的新名称。",
           "example": "[\"newname1\",\"newname2\"]",
           "member": "string",
@@ -3788,6 +4102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例新的项目 ID。",
           "example": "10035",
           "member": "int64",
@@ -3797,6 +4112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "包年包月计费的续费模式。<b>InstanceIds</b>数组和<b>AutoRenews</b>数组中的修改值对应。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "[1,0]",
           "member": "int64",
@@ -3824,6 +4140,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -3833,6 +4150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维护时间窗起始时间，如：03:00。",
           "example": "03:00",
           "member": "string",
@@ -3842,6 +4160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维护时间窗结束时间，如：06:00。",
           "example": "06:00",
           "member": "string",
@@ -3856,6 +4175,7 @@
       "document": "ModifyMaintenanceWindow返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "执行结果。<ul><li>success：修改成功。 </li> <li>failed：修改失败。</li></ul>",
           "example": "success",
           "member": "string",
@@ -3878,6 +4198,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
@@ -3887,6 +4208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作类型。<ul><li>changeVip：修改实例私有网络。</li><li>changeVpc：修改实例私有网络所属子网。</li><li>changeBaseToVpc：基础网络转为私有网络。</li></ul>",
           "example": "changeVip",
           "member": "string",
@@ -3896,6 +4218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后的 VIP 地址。\n当参数<b>Operation</b>为<b>changeVip</b>时，需设置实例修改后的 VIP 地址。该参数不配置，则自动分配。",
           "example": "10.1.1.2",
           "member": "string",
@@ -3905,6 +4228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后的私有网络 ID。\n当参数<b>Operation</b>为<b>changeVip</b>或者为<b>changeBaseToVpc</b>时，务必设置实例修改后的私有网络 ID。",
           "example": "vpc-hu6khgap",
           "member": "string",
@@ -3914,6 +4238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改后的所属子网 ID。\n当参数<b>Operation</b>为<b>changeVpc</b>或者为<b>changeBaseToVpc</b>时，务必设置实例修改后的子网 ID。",
           "example": "subnet-6mt7lir6",
           "member": "string",
@@ -3923,6 +4248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原 VIP 保留时长。\n单位：天。取值范围：0、1、2、3、7、15。",
           "example": "7",
           "member": "int64",
@@ -3937,6 +4263,7 @@
       "document": "ModifyNetworkConfig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "执行状态。<ul><li>true：执行成功。</li><li>false：执行失败。</li></ul>",
           "example": "true",
           "member": "bool",
@@ -3946,6 +4273,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改后的子网 ID。",
           "example": "subnet-6mt7lir6",
           "member": "string",
@@ -3955,6 +4283,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改后的私有网络 ID。",
           "example": "vpc-hu6khgap",
           "member": "string",
@@ -3964,6 +4293,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改后的 VIP 地址。",
           "example": "10.2.3.8",
           "member": "string",
@@ -3986,6 +4316,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点类型，0 为主节点，1 为副本节点",
           "example": "1",
           "member": "int64",
@@ -3996,6 +4327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主节点或者副本节点的ID，创建时不需要传递此参数。",
           "example": "1",
           "member": "int64",
@@ -4006,6 +4338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主节点或者副本节点的可用区ID",
           "example": "100001",
           "member": "uint64",
@@ -4016,6 +4349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主节点或者副本节点的可用区名称",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -4032,6 +4366,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
           "example": "无",
           "member": "string",
@@ -4042,6 +4377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地址组id代表的地址集合。",
           "example": "无",
           "member": "string",
@@ -4052,6 +4388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
           "example": "无",
           "member": "string",
@@ -4062,6 +4399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述。",
           "example": "无",
           "member": "string",
@@ -4072,6 +4410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
           "example": "无",
           "member": "string",
@@ -4082,6 +4421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口。",
           "example": "无",
           "member": "string",
@@ -4092,6 +4432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
           "example": "无",
           "member": "string",
@@ -4102,6 +4443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组id代表的地址集合。",
           "example": "无",
           "member": "string",
@@ -4118,6 +4460,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品类型，13-KeewiDB标准架构，14-KeewiDB集群架构",
           "example": "14",
           "member": "int64",
@@ -4128,6 +4471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "KeewiDB标准架构，KeewiDB集群架构",
           "example": "KeewiDB集群架构",
           "member": "string",
@@ -4138,6 +4482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时的最小数量",
           "example": "1",
           "member": "int64",
@@ -4148,6 +4493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时的最大数量",
           "example": "5",
           "member": "int64",
@@ -4158,6 +4504,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品是否售罄",
           "example": "false",
           "member": "bool",
@@ -4168,6 +4515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品引擎，keewidb",
           "example": "keewidb",
           "member": "string",
@@ -4178,6 +4526,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "兼容版本，Redis-2.8，Redis-3.2，Redis-4.0",
           "example": "Redis-4.0",
           "member": "string",
@@ -4188,6 +4537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本数量",
           "example": "[\"1\"]",
           "member": "string",
@@ -4198,6 +4548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的计费模式，1-包年包月，0-按量计费",
           "example": "\"1\"",
           "member": "string",
@@ -4214,6 +4565,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4230,6 +4582,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
@@ -4240,6 +4593,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点角色",
           "example": "master",
           "member": "string",
@@ -4250,6 +4604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID",
           "example": "1",
           "member": "int64",
@@ -4260,6 +4615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区ID",
           "example": "100002",
           "member": "int64",
@@ -4276,6 +4632,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域ID",
           "example": "ap-guangzhou",
           "member": "string",
@@ -4286,6 +4643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域名称",
           "example": "广州",
           "member": "string",
@@ -4296,6 +4654,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域简称",
           "example": "GZ",
           "member": "string",
@@ -4306,6 +4665,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域所在大区名称",
           "example": "华南地区",
           "member": "string",
@@ -4316,6 +4676,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区信息",
           "example": "[]",
           "member": "ZoneCapacityConf",
@@ -4331,6 +4692,7 @@
       "document": "RenewInstance请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -4339,6 +4701,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "购买时长。单位：月。取值为 [1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。",
           "example": "1",
           "member": "uint64",
@@ -4353,6 +4716,7 @@
       "document": "RenewInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "交易 ID。",
           "example": "6977675",
           "member": "string",
@@ -4374,6 +4738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点 ID。",
           "example": "无",
           "member": "int64",
@@ -4384,6 +4749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点组的名称，主节点为空。",
           "example": "无",
           "member": "string",
@@ -4394,6 +4760,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点的可用区ID，比如ap-guangzhou-1。",
           "example": "无",
           "member": "string",
@@ -4404,6 +4771,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>",
           "example": "无",
           "member": "string",
@@ -4414,6 +4782,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点组节点列表。",
           "example": "无",
           "member": "KeeWiDBNode",
@@ -4430,6 +4799,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-5a4py64p",
           "member": "string",
@@ -4439,6 +4809,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置新密码。<ul><li>当参数<b>NoAuth</b>设置为<b>true</b>，切换为免密实例时，可不设置该参数。</li><li>密码复杂度要求：<ul><li>长度8 - 30位, 推荐使用12位以上的密码。</li><li>不能以\"/\"开头。</li>\n<li>至少包含以下两项：<ul><li>小写字母a - z</li><li>大写字母A - Z</li><li>数字0 - 9</li><li>()~!@#$%^&*-+=_|{}[]:;<>,.?/</li></ul></li></ul></li></ul>",
           "example": "zy456987",
           "member": "string",
@@ -4448,6 +4819,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标识实例是否切换免密认证。<ul><li>false：由免密码认证方式切换为密码认证实例。默认为false。</li><li>true：由密码认证方式切换为免密码认证的方式。</li></ul>",
           "example": "true",
           "member": "bool",
@@ -4462,6 +4834,7 @@
       "document": "ResetPassword返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务 ID。\n<b>说明：</b>修改密码时的任务ID，如果切换免密访问或者非免密码实例，则无需关注此返回值。",
           "example": "16657",
           "member": "int64",
@@ -4484,6 +4857,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签 Key。",
           "example": "key1",
           "member": "string",
@@ -4494,6 +4868,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签 Value。",
           "example": "value1",
           "member": "string",
@@ -4510,6 +4885,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss。",
           "example": "无",
           "member": "string",
@@ -4520,6 +4896,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID。",
           "example": "无",
           "member": "uint64",
@@ -4530,6 +4907,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组ID。",
           "example": "无",
           "member": "string",
@@ -4540,6 +4918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组名称。",
           "example": "无",
           "member": "string",
@@ -4550,6 +4929,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组备注。",
           "example": "无",
           "member": "string",
@@ -4560,6 +4940,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "出站规则。",
           "example": "无",
           "member": "Outbound",
@@ -4570,6 +4951,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "入站规则。",
           "example": "无",
           "member": "Inbound",
@@ -4586,6 +4968,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -4612,6 +4995,7 @@
       "document": "任务信息详情",
       "members": [
         {
+          "disabled": false,
           "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16481",
           "member": "int64",
@@ -4621,6 +5005,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-03-12 15:06:23",
           "member": "string",
@@ -4630,6 +5015,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4639,6 +5025,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "实例1",
           "member": "string",
@@ -4648,6 +5035,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kee-4hyqewjs",
           "member": "string",
@@ -4657,6 +5045,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4666,6 +5055,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "float",
@@ -4675,6 +5065,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-03-12 15:08:23",
           "member": "string",
@@ -4684,6 +5075,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4693,6 +5085,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "操作者用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10112432xxx",
           "member": "string",
@@ -4709,6 +5102,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行时间",
           "example": "无",
           "member": "string",
@@ -4719,6 +5113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢查询耗时（毫秒）",
           "example": "无",
           "member": "int64",
@@ -4729,6 +5124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命令",
           "example": "无",
           "member": "string",
@@ -4739,6 +5135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "详细命令行信息",
           "example": "无",
           "member": "string",
@@ -4749,6 +5146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID",
           "example": "无",
           "member": "string",
@@ -4764,6 +5162,7 @@
       "document": "订单交易信息",
       "members": [
         {
+          "disabled": false,
           "document": "订单号ID，调用云API时使用此ID\t",
           "example": "无",
           "member": "string",
@@ -4773,6 +5172,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "长订单ID，反馈订单问题给官方客服使用此ID\t",
           "example": "无",
           "member": "string",
@@ -4782,6 +5182,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "可用区id",
           "example": "100002",
           "member": "int64",
@@ -4791,6 +5192,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单关联的实例数",
           "example": "1",
           "member": "int64",
@@ -4800,6 +5202,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建用户uin",
           "example": "无",
           "member": "string",
@@ -4809,6 +5212,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单创建时间",
           "example": "无",
           "member": "string",
@@ -4818,6 +5222,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单超时时间",
           "example": "无",
           "member": "string",
@@ -4827,6 +5232,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单完成时间",
           "example": "无",
           "member": "string",
@@ -4836,6 +5242,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单状态 1：未支付 2:已支付，未发货 3:发货中 4:发货成功 5:发货失败 6:已退款 7:已关闭订单 8:订单过期 9:订单已失效 10:产品已失效 11:代付拒绝 12:支付中",
           "example": "4",
           "member": "int64",
@@ -4845,6 +5252,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单状态描述",
           "example": "无",
           "member": "string",
@@ -4854,6 +5262,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单实际总价，单位：分",
           "example": "无",
           "member": "float",
@@ -4863,6 +5272,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例ID",
           "example": "无",
           "member": "string",
@@ -4878,6 +5288,7 @@
       "document": "UpgradeInstance请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。",
           "example": "kee-hi6dg0ro",
           "member": "string",
@@ -4886,6 +5297,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "配置变更后，每个分片持久化内存容量，单位：GB。\n<ul><li>KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。</li><li>变更实例内存、持久化内存与磁盘、变更实例的分片数量，每次只能变更一项。</li></ul>",
           "example": "16",
           "member": "int64",
@@ -4894,6 +5306,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "CPU 核数。",
           "example": "1",
           "member": "int64",
@@ -4902,6 +5315,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例内存容量，单位：GB。\n<ul><li>KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。</li><li>变更实例内存、持久化内存与磁盘、变更实例的分片数量，每次只能变更一项。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -4910,6 +5324,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "配置变更后，分片数量。\n<ul><li>增加后分片的数量务必为增加之前数量的整数倍。分片数量支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</li><li>变更实例内存、持久化内存与磁盘、变更实例的分片数量，每次只能变更一项。</li></ul>",
           "example": "5",
           "member": "int64",
@@ -4918,6 +5333,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "配置变更后，每个分片硬盘的容量。单位：GB。\n<ul><li>每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。</li><li>变更实例内存、持久化内存与磁盘、变更实例的分片数量，每次只能变更一项。</li></ul>",
           "example": "100",
           "member": "int64",
@@ -4932,6 +5348,7 @@
       "document": "UpgradeInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "交易ID。",
           "example": "301310691",
           "member": "string",
@@ -4953,6 +5370,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区ID",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -4963,6 +5381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区名称",
           "example": "广州三区",
           "member": "string",
@@ -4973,6 +5392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区是否售罄",
           "example": "false",
           "member": "bool",
@@ -4983,6 +5403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为默认可用区",
           "example": "false",
           "member": "bool",
@@ -4993,6 +5414,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络类型：basenet -- 基础网络；vpcnet -- VPC网络",
           "example": "[\"vpcnet\"]",
           "member": "string",
@@ -5003,6 +5425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品规格等信息",
           "example": "[]",
           "member": "ProductConf",
@@ -5013,6 +5436,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Int类型可用区ID",
           "example": "100003",
           "member": "int64",

@@ -41,6 +41,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "维度名字",
           "member": "string",
           "name": "Name",
@@ -50,6 +51,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度得分",
           "member": "float",
           "name": "Score",
@@ -59,6 +61,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度分数占比",
           "member": "float",
           "name": "Percentage",
@@ -74,6 +77,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "作文内容",
           "member": "string",
           "name": "Content",
@@ -83,6 +87,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "CorrectData",
           "name": "CorrectData",
@@ -92,6 +97,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务 id，用于查询接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TaskId",
@@ -101,6 +107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图像识别唯一标识，一次识别一个 SessionId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SessionId",
@@ -116,6 +123,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总得分",
           "member": "float",
           "name": "Score",
@@ -125,6 +133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "各项得分详情",
           "member": "ScoreCategory",
           "name": "ScoreCat",
@@ -134,6 +143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "综合评价",
           "member": "string",
           "name": "Comment",
@@ -143,6 +153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "句子点评",
           "member": "SentenceCom",
           "name": "SentenceComments",
@@ -158,6 +169,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片的url链接或base64数据。每张图片数据作为数组的一个元素，数组个数与图片个数保持一致。存放类别依据InputType而定，url与base64编码不能混合使用。",
           "member": "string",
           "name": "Image",
@@ -166,6 +178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输出图片类型，0 表示 Image 字段是图片所在的 url，1 表示 Image 字段是 base64 编码后的图像数据。",
           "member": "int64",
           "name": "InputType",
@@ -174,6 +187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数。",
           "member": "string",
           "name": "EccAppid",
@@ -182,6 +196,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图像识别唯一标识，一次识别一个 SessionId，使用识别功能时 SessionId 可用于使用文本批改接口，此时按图像批改价格收费；如使用文本批改接口时没有传入 SessionId，则需要收取文本批改的费用。",
           "member": "string",
           "name": "SessionId",
@@ -190,6 +205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型，0：“多图像识别”，只返回识别结果；1：“多图像批改”，同时返回识别结果与批改结果。默认为 0。",
           "member": "int64",
           "name": "ServerType",
@@ -198,6 +214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文题目，可选参数",
           "member": "string",
           "name": "Title",
@@ -206,6 +223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "年级标准， 默认以 cet4 为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及 cet4 和 cet6 分别表示 英语4级和6级。",
           "member": "string",
           "name": "Grade",
@@ -214,6 +232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文提纲，可选参数，作文的写作要求。",
           "member": "string",
           "name": "Requirement",
@@ -222,6 +241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
           "member": "string",
           "name": "ModelTitle",
@@ -230,6 +250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文内容，可选参数，同上，范文的正文部分。",
           "member": "string",
           "name": "ModelContent",
@@ -238,6 +259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
           "member": "int64",
           "name": "IsAsync",
@@ -251,6 +273,7 @@
       "document": "CorrectMultiImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "接口返回数据",
           "member": "CompostionContext",
           "name": "Data",
@@ -271,6 +294,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务 ID",
           "member": "string",
           "name": "TaskId",
@@ -279,6 +303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
           "member": "string",
           "name": "EccAppid",
@@ -292,6 +317,7 @@
       "document": "DescribeTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "作文识别文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Content",
@@ -299,6 +325,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "整体的批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "CorrectData",
           "name": "CorrectData",
@@ -306,6 +333,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务状态，“Progressing”: 处理中（此时无结果返回）、“Finished”: 处理完成",
           "member": "string",
           "name": "Status",
@@ -326,6 +354,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "作文文本，必填",
           "member": "string",
           "name": "Content",
@@ -334,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文题目，可选参数",
           "member": "string",
           "name": "Title",
@@ -342,6 +372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "年级标准， 默认以cet4为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及cet4和cet6 分别表示 英语4级和6级。",
           "member": "string",
           "name": "Grade",
@@ -350,6 +381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文提纲，可选参数，作文的写作要求。",
           "member": "string",
           "name": "Requirement",
@@ -358,6 +390,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
           "member": "string",
           "name": "ModelTitle",
@@ -366,6 +399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文内容，可选参数，同上，范文的正文部分。",
           "member": "string",
           "name": "ModelContent",
@@ -374,6 +408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
           "member": "string",
           "name": "EccAppid",
@@ -382,6 +417,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异步模式标识，0：同步模式，1：异步模式，默认为同步模式",
           "member": "int64",
           "name": "IsAsync",
@@ -390,6 +426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图像识别唯一标识，一次识别一个 SessionId。当传入此前识别接口使用过的 SessionId，则本次批改按图像批改价格收费；如使用了识别接口且本次没有传入 SessionId，则需要加取文本批改的费用；如果直接使用文本批改接口，则只收取文本批改的费用",
           "member": "string",
           "name": "SessionId",
@@ -403,6 +440,7 @@
       "document": "ECC返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "整体的批改结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "CorrectData",
           "name": "Data",
@@ -410,6 +448,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务 id，用于查询接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TaskId",
@@ -430,6 +469,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片所在的url或base64编码后的图像数据，依据InputType而定",
           "member": "string",
           "name": "Image",
@@ -438,6 +478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输出图片类型，0 表示 Image 字段是图片所在的 url，1 表示 Image 字段是 base64 编码后的图像数据",
           "member": "int64",
           "name": "InputType",
@@ -446,6 +487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数（暂时无需传入）。",
           "member": "string",
           "name": "EccAppid",
@@ -454,6 +496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图像识别唯一标识，一次识别一个 SessionId，使用识别功能时 SessionId 可用于使用文本批改接口，此时按图像批改价格收费；如使用文本批改接口时没有传入 SessionId，则需要收取文本批改的费用",
           "member": "string",
           "name": "SessionId",
@@ -462,6 +505,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型，0：“图像识别”，只返回识别结果，1：“图像批改”，同时返回识别结果与批改结果。默认为 0",
           "member": "int64",
           "name": "ServerType",
@@ -470,6 +514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文题目，可选参数",
           "member": "string",
           "name": "Title",
@@ -478,6 +523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "年级标准， 默认以 cet4 为标准，取值与意义如下：elementary 小学，grade7 grade8 grade9分别对应初一，初二，初三。 grade10 grade11 grade12 分别对应高一，高二，高三，以及 cet4 和 cet6 分别表示 英语4级和6级。",
           "member": "string",
           "name": "Grade",
@@ -486,6 +532,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作文提纲，可选参数，作文的写作要求。",
           "member": "string",
           "name": "Requirement",
@@ -494,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文标题，可选参数，本接口可以依据提供的范文对作文进行评分。",
           "member": "string",
           "name": "ModelTitle",
@@ -502,6 +550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "范文内容，可选参数，同上，范文的正文部分。",
           "member": "string",
           "name": "ModelContent",
@@ -510,6 +559,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
           "member": "int64",
           "name": "IsAsync",
@@ -523,6 +573,7 @@
       "document": "EHOCR返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "接口返回数据",
           "member": "CompostionContext",
           "name": "Data",
@@ -543,6 +594,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "维度单词坐标",
           "member": "int64",
           "name": "Coordinate",
@@ -558,6 +610,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "词汇维度",
           "member": "Aspect",
           "name": "Words",
@@ -567,6 +620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "句子维度",
           "member": "Aspect",
           "name": "Sentences",
@@ -576,6 +630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "篇章结构维度",
           "member": "Aspect",
           "name": "Structure",
@@ -585,6 +640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内容维度",
           "member": "Aspect",
           "name": "Content",
@@ -594,6 +650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度得分",
           "member": "float",
           "name": "Score",
@@ -603,6 +660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度分数占比",
           "member": "float",
           "name": "Percentage",
@@ -618,6 +676,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "句子错误纠正信息",
           "member": "SentenceSuggest",
           "name": "Suggestions",
@@ -627,6 +686,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "句子信息",
           "member": "SentenceItem",
           "name": "Sentence",
@@ -642,6 +702,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "英语句子",
           "member": "string",
           "name": "Sentence",
@@ -651,6 +712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "段落id",
           "member": "int64",
           "name": "ParaID",
@@ -660,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "句子id",
           "member": "int64",
           "name": "SentenceID",
@@ -675,6 +738,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "类型",
           "member": "string",
           "name": "Type",
@@ -684,6 +748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误类型",
           "member": "string",
           "name": "ErrorType",
@@ -693,6 +758,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原始单词",
           "member": "string",
           "name": "Origin",
@@ -702,6 +768,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "替换成 的单词",
           "member": "string",
           "name": "Replace",
@@ -711,6 +778,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "提示信息",
           "member": "string",
           "name": "Message",
@@ -720,6 +788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度单词位置，在句子的第几个到第几个单词之间",
           "member": "int64",
           "name": "ErrorPosition",
@@ -729,6 +798,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维度单词坐标，错误单词在图片中的坐标，只有传图片时正常返回，传文字时返回[ ]",
           "member": "ErrorCoordinate",
           "name": "ErrorCoordinates",

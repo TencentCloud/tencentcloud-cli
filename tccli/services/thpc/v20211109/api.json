@@ -41,6 +41,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
@@ -50,6 +51,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "弹性伸缩启动配置ID。",
           "example": "asc-jhf9c1gi",
           "member": "string",
@@ -59,6 +61,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "弹性伸缩组ID。",
           "example": "asg-aesc6pcq",
           "member": "string",
@@ -68,6 +71,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "队列名称。",
           "example": "all.q",
           "member": "string",
@@ -77,6 +81,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
           "example": "120",
           "member": "int64",
@@ -86,6 +91,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
           "example": "300",
           "member": "int64",
@@ -95,6 +101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启自动扩容，默认值true。",
           "example": "无",
           "member": "bool",
@@ -104,6 +111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启自动缩容，默认值true。",
           "example": "无",
           "member": "bool",
@@ -113,6 +121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
           "example": "无",
           "member": "bool",
@@ -140,6 +149,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统本地挂载路径",
           "example": "/data",
           "member": "string",
@@ -150,6 +160,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统远程挂载ip及路径",
           "example": "172.0.0.1:/",
           "member": "string",
@@ -160,6 +171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统协议类型，默认值NFS 3.0。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
           "example": "NFS 3.0",
           "member": "string",
@@ -170,6 +182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
           "example": "SD",
           "member": "string",
@@ -186,6 +199,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群ID。",
           "example": "hpc-2mv1i3d8",
           "member": "string",
@@ -196,6 +210,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群状态。取值范围：<br><li>PENDING：创建中<br><li>INITING：初始化中<br><li>INIT_FAILED：初始化失败<br><li>RUNNING：运行中<br><li>TERMINATING：销毁中",
           "example": "RUNNING",
           "member": "string",
@@ -206,6 +221,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群名称。",
           "example": "无",
           "member": "string",
@@ -216,6 +232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群位置信息。",
           "example": "无",
           "member": "Placement",
@@ -226,6 +243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -236,6 +254,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群调度器。",
           "example": "SGE",
           "member": "string",
@@ -246,6 +265,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计算节点数量。",
           "example": "1",
           "member": "int64",
@@ -256,6 +276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计算节点概览。",
           "example": "无",
           "member": "ComputeNodeOverview",
@@ -266,6 +287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "管控节点数量。",
           "example": "1",
           "member": "int64",
@@ -276,6 +298,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "管控节点概览。",
           "example": "无",
           "member": "ManagerNodeOverview",
@@ -286,6 +309,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录节点概览。",
           "example": "无",
           "member": "LoginNodeOverview",
@@ -296,6 +320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "登录节点数量。",
           "example": "1",
           "member": "int64",
@@ -312,6 +337,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -322,6 +348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -332,6 +359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
           "member": "string",
@@ -342,6 +370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
           "member": "SystemDisk",
@@ -352,6 +381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
           "member": "DataDisk",
@@ -362,6 +392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
           "member": "InternetAccessible",
@@ -372,6 +403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
           "example": "未命名",
           "member": "string",
@@ -388,6 +420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "计算节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-jfhc307q",
           "member": "string",
@@ -404,6 +437,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群中实例所在的位置。",
           "example": "无",
           "member": "Placement",
@@ -413,6 +447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定管理节点。",
           "example": "无",
           "member": "ManagerNode",
@@ -422,6 +457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定管理节点的数量。默认取值：1。取值范围：1～2。",
           "example": "无",
           "member": "int64",
@@ -431,6 +467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定计算节点。",
           "example": "无",
           "member": "ComputeNode",
@@ -440,6 +477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定计算节点的数量。默认取值：0。",
           "example": "无",
           "member": "int64",
@@ -449,6 +487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。",
           "example": "SGE",
           "member": "string",
@@ -458,6 +497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像。",
           "example": "无",
           "member": "string",
@@ -467,6 +507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络相关信息配置。",
           "example": "无",
           "member": "VirtualPrivateCloud",
@@ -476,6 +517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群登录设置。",
           "example": "无",
           "member": "LoginSettings",
@@ -485,6 +527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
           "example": "无",
           "member": "string",
@@ -494,6 +537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "无",
           "member": "string",
@@ -503,6 +547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "无",
           "member": "bool",
@@ -512,6 +557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名字服务类型。默认值：NIS\n<li>NIS：NIS域名字服务。",
           "example": "NIS",
           "member": "string",
@@ -521,6 +567,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群显示名称。",
           "example": "无",
           "member": "string",
@@ -530,6 +577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群存储选项",
           "example": "无",
           "member": "StorageOption",
@@ -539,6 +587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已废弃。\n指定登录节点。",
           "example": "无",
           "member": "LoginNode",
@@ -548,6 +597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已废弃。\n指定登录节点的数量。默认取值：0。取值范围：0～10。",
           "example": "无",
           "member": "int64",
@@ -557,6 +607,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建集群时同时绑定的标签对说明。",
           "example": "无",
           "member": "Tag",
@@ -571,6 +622,7 @@
       "document": "CreateCluster返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hpc-5lyv94lq",
           "member": "string",
@@ -593,6 +645,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "0",
           "member": "int64",
@@ -603,6 +656,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。",
           "example": "LOCAL_BASIC",
           "member": "string",
@@ -619,6 +673,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
@@ -646,6 +701,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群ID列表。通过该参数可以指定需要查询信息的集群列表。<br>如果您不指定该参数，则返回Limit数量以内的集群信息。",
           "example": "无",
           "member": "string",
@@ -655,6 +711,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -664,6 +721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -678,6 +736,7 @@
       "document": "DescribeClusters返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "集群概览信息列表。",
           "example": "无",
           "member": "ClusterOverview",
@@ -687,6 +746,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "集群数量。",
           "example": "1",
           "member": "int64",
@@ -709,6 +769,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统本地挂载路径",
           "example": "/data",
           "member": "string",
@@ -719,6 +780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统远程挂载路径",
           "example": "/data/goosefs-fuse",
           "member": "string",
@@ -729,6 +791,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文件系统master的ip和端口",
           "example": "无",
           "member": "string",
@@ -745,6 +808,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "1",
           "member": "int64",
@@ -755,6 +819,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -771,6 +836,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络计费类型。取值范围：\nBANDWIDTH_PREPAID：预付费按带宽结算\nTRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\nBANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费\nBANDWIDTH_PACKAGE：带宽包用户\n默认取值：非带宽包用户默认与子机付费类型保持一致。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
@@ -781,6 +847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。",
           "example": "0",
           "member": "int64",
@@ -797,6 +864,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -807,6 +875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -817,6 +886,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
           "member": "string",
@@ -827,6 +897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
           "member": "SystemDisk",
@@ -837,6 +908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
           "member": "DataDisk",
@@ -847,6 +919,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
           "member": "InternetAccessible",
@@ -857,6 +930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
           "example": "未命名",
           "member": "string",
@@ -873,6 +947,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "登录节点ID。",
           "example": "ins-jfhc307q",
           "member": "string",
@@ -889,6 +964,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
           "example": "无",
           "member": "string",
@@ -905,6 +981,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -915,6 +992,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -925,6 +1003,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
           "member": "string",
@@ -935,6 +1014,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
           "member": "SystemDisk",
@@ -945,6 +1025,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
           "member": "DataDisk",
@@ -955,6 +1036,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
           "member": "InternetAccessible",
@@ -965,6 +1047,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n</li><li>购买多个节点，如果指定模式串`{R:x}`，表示生成数字[`[x, x+n-1]`，其中`n`表示购买节点的数量，例如`server_{R:3}`，购买1个时，节点显示名称为`server_3`；购买2个时，节点显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。\n购买多个节点，如果不指定模式串，则在节点显示名称添加后缀`1、2...n`，其中`n`表示购买节点的数量，例如`server_`，购买2个时，节点显示名称分别为`server_1`，`server_2`。</li><li>\n最多支持60个字符（包含模式串）。",
           "example": "未命名",
           "member": "string",
@@ -981,6 +1064,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "管控节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-jfhc307q",
           "member": "string",
@@ -997,6 +1081,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "无",
           "member": "string",
@@ -1013,6 +1098,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群挂载CFS文件系统选项",
           "example": "无",
           "member": "CFSOption",
@@ -1023,6 +1109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群挂在GooseFS文件系统选项",
           "example": "无",
           "member": "GooseFSOption",
@@ -1039,6 +1126,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "系统盘类型。系统盘类型限制详见存储概述。取值范围：\nLOCAL_BASIC：本地硬盘\nLOCAL_SSD：本地SSD硬盘\nCLOUD_BASIC：普通云硬盘\nCLOUD_SSD：SSD云硬盘\nCLOUD_PREMIUM：高性能云硬盘\n\n默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_BASIC",
           "member": "string",
@@ -1049,6 +1137,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "系统盘大小，单位：GB。默认值为 50",
           "example": "50",
           "member": "int64",
@@ -1065,6 +1154,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "无",
           "member": "string",
@@ -1075,6 +1165,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "无",
           "member": "string",
@@ -1091,6 +1182,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "无",
           "member": "string",
@@ -1101,6 +1193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "无",
           "member": "string",

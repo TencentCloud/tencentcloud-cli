@@ -349,6 +349,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID",
           "example": "1",
           "member": "uint64",
@@ -358,6 +359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
           "member": "string",
@@ -385,6 +387,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权威机构ID",
           "example": "11",
           "member": "uint64",
@@ -395,6 +398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Did的ID",
           "example": "5587",
           "member": "uint64",
@@ -405,6 +409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID具体信息",
           "example": "did:tdid:1:0x27f6403f908c7fa81006eaf71b4ae4be97c69c3d",
           "member": "string",
@@ -415,6 +420,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构名称",
           "example": "test",
           "member": "string",
@@ -425,6 +431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权威认证 1:已认证，2:未认证",
           "example": "2",
           "member": "uint64",
@@ -435,6 +442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID服务ID",
           "example": "1",
           "member": "uint64",
@@ -445,6 +453,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "5",
           "member": "uint64",
@@ -455,6 +464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "test",
           "member": "string",
@@ -465,6 +475,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-07-13 17:02:33",
           "member": "string",
@@ -475,6 +486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "认证时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -485,6 +497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-07-13T17:02:33+08:00",
           "member": "string",
@@ -495,6 +508,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-07-13T17:02:33+08:00",
           "member": "string",
@@ -505,6 +519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -515,6 +530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -525,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约名称",
           "example": "test",
           "member": "string",
@@ -535,6 +552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "链上标签",
           "example": "test",
           "member": "string",
@@ -551,6 +569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络索引id",
           "example": "1",
           "member": "uint64",
@@ -561,6 +580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络名称",
           "example": "test",
           "member": "string",
@@ -571,6 +591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构数量",
           "example": "2",
           "member": "uint64",
@@ -581,6 +602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟id",
           "example": "1",
           "member": "uint64",
@@ -591,6 +613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-08-07 15:40:46",
           "member": "string",
@@ -601,6 +624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "example": "2021-09-07 15:53:55",
           "member": "string",
@@ -611,6 +635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络状态",
           "example": "1",
           "member": "uint64",
@@ -621,6 +646,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源 id",
           "example": "tbaas-6s0ih1k0rg",
           "member": "string",
@@ -631,6 +657,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群id",
           "example": "bcos-03z30qbg1c",
           "member": "string",
@@ -641,6 +668,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织名称",
           "example": "test",
           "member": "string",
@@ -651,6 +679,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构id",
           "example": "1",
           "member": "uint64",
@@ -661,6 +690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "续费状态",
           "example": "1",
           "member": "uint64",
@@ -671,6 +701,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络模式",
           "example": "1",
           "member": "uint64",
@@ -681,6 +712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建节点数",
           "example": "1",
           "member": "uint64",
@@ -691,6 +723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总群组数量",
           "example": "3",
           "member": "uint64",
@@ -707,6 +740,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "did具体信息",
           "example": "test",
           "member": "string",
@@ -734,6 +768,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -743,6 +778,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -752,6 +788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "did服务机构名称",
           "example": "test",
           "member": "string",
@@ -766,6 +803,7 @@
       "document": "CheckChain返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "1为盟主，0为非盟主",
           "example": "1",
           "member": "int64",
@@ -775,6 +813,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "链ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -784,6 +823,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用名称",
           "example": "test",
           "member": "string",
@@ -806,6 +846,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "1",
           "member": "uint64",
@@ -820,6 +861,7 @@
       "document": "CheckDidDeploy返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "服务信息",
           "example": "无",
           "member": "Task",
@@ -842,6 +884,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联盟id",
           "example": "1",
           "member": "uint64",
@@ -852,6 +895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟名称",
           "example": "test",
           "member": "string",
@@ -868,6 +912,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名",
           "example": "22",
           "member": "string",
@@ -878,6 +923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约状态 true:已启用 false:未启用",
           "example": "true",
           "member": "bool",
@@ -888,6 +934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约CNS地址",
           "example": "0x0dd4aef95b3801c6b7bb1cee8c214a99b2aaf31896998f614032fb5ef750df",
           "member": "string",
@@ -898,6 +945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约CNS地址脱敏",
           "example": "0x0dd4...50dfe1",
           "member": "string",
@@ -908,6 +956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署机构DID",
           "example": "0x79cd098cab63e0503f9ed87dd869cd970e88cb02",
           "member": "string",
@@ -918,6 +967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署机构名称",
           "example": "test",
           "member": "string",
@@ -928,6 +978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署群组",
           "example": "group-1",
           "member": "string",
@@ -938,6 +989,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署时间",
           "example": "2021-04-12 16:46:11",
           "member": "string",
@@ -954,6 +1006,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模板名称",
           "example": "test",
           "member": "string",
@@ -964,6 +1017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名次",
           "example": "10",
           "member": "int64",
@@ -974,6 +1028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "颁发量",
           "example": "10",
           "member": "int64",
@@ -984,6 +1039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "test",
           "member": "string",
@@ -994,6 +1050,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -1010,6 +1067,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "ID信息",
           "example": "1",
           "member": "uint64",
@@ -1020,6 +1078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模版名称",
           "example": "test",
           "member": "string",
@@ -1030,6 +1089,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1040,6 +1100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1050,6 +1111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务ID",
           "example": "1",
           "member": "uint64",
@@ -1060,6 +1122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约应用ID",
           "example": "1",
           "member": "uint64",
@@ -1070,6 +1133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证模板ID",
           "example": "3000009",
           "member": "uint64",
@@ -1080,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板类型，1: 系统模板，2: 用户模板，3:普通模板",
           "example": "1",
           "member": "uint64",
@@ -1090,6 +1155,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证模版描述",
           "example": "test",
           "member": "string",
@@ -1100,6 +1166,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证模板Json",
           "example": "test",
           "member": "string",
@@ -1110,6 +1177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "test",
           "member": "string",
@@ -1120,6 +1188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "test",
           "member": "string",
@@ -1130,6 +1199,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者DID",
           "example": "test",
           "member": "string",
@@ -1140,6 +1210,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "test",
           "member": "string",
@@ -1156,6 +1227,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数集合，详见示例",
           "example": "无",
           "member": "FunctionArg",
@@ -1165,6 +1237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数集合，详见示例",
           "example": "无",
           "member": "TransactionArg",
@@ -1174,6 +1247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本",
           "example": "1.0.0",
           "member": "string",
@@ -1183,6 +1257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否未签名",
           "example": "true",
           "member": "bool",
@@ -1197,6 +1272,7 @@
       "document": "CreateCredential返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Credential的具体信息",
           "example": "c",
           "member": "string",
@@ -1219,6 +1295,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联盟名称",
           "example": "bigbang",
           "member": "string",
@@ -1228,6 +1305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟ID",
           "example": "1",
           "member": "int64",
@@ -1237,6 +1315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -1246,6 +1325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构名称",
           "example": "盟主",
           "member": "string",
@@ -1255,6 +1335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "测试应用",
           "member": "string",
@@ -1264,6 +1345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1273,6 +1355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组名称",
           "example": "test",
           "member": "string",
@@ -1287,6 +1370,7 @@
       "document": "CreateDidService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "服务信息",
           "example": "无",
           "member": "Task",
@@ -1309,6 +1393,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签名称",
           "example": "test1a152",
           "member": "string",
@@ -1318,6 +1403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络Id",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1327,6 +1413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1354,6 +1441,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数集合",
           "example": "1",
           "member": "VerifyFunctionArg",
@@ -1363,6 +1451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批露策略id",
           "example": "2000000",
           "member": "uint64",
@@ -1377,6 +1466,7 @@
       "document": "CreateSelectiveCredential返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭证字符串",
           "example": "{}",
           "member": "string",
@@ -1399,6 +1489,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1408,6 +1499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1417,6 +1509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私钥",
           "example": "test",
           "member": "string",
@@ -1431,6 +1524,7 @@
       "document": "CreateTDidByPrivateKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "did的具体信息",
           "example": "did:tdid:1:0x6dcc17846844ff22046a3cc5ae51941defe0d02c",
           "member": "string",
@@ -1453,6 +1547,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1462,6 +1557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1471,6 +1567,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "身份公钥",
           "example": "test1",
           "member": "string",
@@ -1480,6 +1577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加密公钥",
           "example": "test",
           "member": "string",
@@ -1494,6 +1592,7 @@
       "document": "CreateTDidByPublicKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "did具体信息",
           "example": "did:tdid:1:0x4b5edc27dd8a20ebaae6d427f3142b24fbf687ff",
           "member": "string",
@@ -1516,6 +1615,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1525,6 +1625,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -1534,6 +1635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "部署机构为1，否则为0",
           "example": "0",
           "member": "uint64",
@@ -1548,6 +1650,7 @@
       "document": "CreateTDid返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "TDID",
           "example": "did:tdid:1:0xdab41eb32082044366f1b5712504d0b623b095c1",
           "member": "string",
@@ -1570,6 +1673,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭证唯一id",
           "example": "a",
           "member": "string",
@@ -1580,6 +1684,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证状态（0：吊销；1：有效）",
           "example": "1",
           "member": "uint64",
@@ -1590,6 +1695,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证颁发者Did",
           "example": "a",
           "member": "string",
@@ -1600,6 +1706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证摘要\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a",
           "member": "string",
@@ -1610,6 +1717,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证签名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a",
           "member": "string",
@@ -1620,6 +1728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1636,6 +1745,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "test",
           "member": "string",
@@ -1645,6 +1755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -1654,6 +1765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1668,6 +1780,7 @@
       "document": "DeployByName返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "哈希值",
           "example": "0xf9738549a9be10bf5fa15c9d32d113ba6b64f1f97c6dc8c962b07b84a08af1",
           "member": "string",
@@ -1690,6 +1803,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "链ID",
           "example": "590",
           "member": "uint64",
@@ -1700,6 +1814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "链名称",
           "example": "DCDC",
           "member": "string",
@@ -1710,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织数量",
           "example": "2",
           "member": "uint64",
@@ -1720,6 +1836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟ID",
           "example": "661",
           "member": "uint64",
@@ -1730,6 +1847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-08-06 20:43:05",
           "member": "string",
@@ -1740,6 +1858,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "example": "2021-09-06 20:57:20",
           "member": "string",
@@ -1750,6 +1869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络状态",
           "example": "1",
           "member": "uint64",
@@ -1760,6 +1880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID",
           "example": "tbaas-ijfnnzqhg6",
           "member": "string",
@@ -1770,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-8o0v0fpj12",
           "member": "string",
@@ -1780,6 +1902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟名称",
           "example": "test",
           "member": "string",
@@ -1790,6 +1913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织ID",
           "example": "301",
           "member": "uint64",
@@ -1800,6 +1924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费",
           "example": "1",
           "member": "uint64",
@@ -1810,6 +1935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络节点总数",
           "example": "5",
           "member": "uint64",
@@ -1820,6 +1946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本机构节点数",
           "example": "4",
           "member": "uint64",
@@ -1830,6 +1957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总群组数",
           "example": "1",
           "member": "uint64",
@@ -1840,6 +1968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID总数",
           "example": "5",
           "member": "uint64",
@@ -1856,6 +1985,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务ID",
           "example": "1",
           "member": "uint64",
@@ -1866,6 +1996,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -1876,6 +2007,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "a",
           "member": "string",
@@ -1886,6 +2018,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "did号码",
           "example": "test",
           "member": "string",
@@ -1896,6 +2029,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "test",
           "member": "string",
@@ -1906,6 +2040,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权威机构认证状态 1未注册 2 未认证 3 已认证",
           "example": "1",
           "member": "int64",
@@ -1916,6 +2051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID标签名称",
           "example": "test",
           "member": "string",
@@ -1926,6 +2062,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID创建时间",
           "example": "1622620908",
           "member": "string",
@@ -1936,6 +2073,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -1946,6 +2084,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟名称",
           "example": "test",
           "member": "string",
@@ -1956,6 +2095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DID标签id",
           "example": "1",
           "member": "uint64",
@@ -1972,6 +2112,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DID服务索引",
           "example": "1",
           "member": "uint64",
@@ -1982,6 +2123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "251005745",
           "member": "uint64",
@@ -1992,6 +2134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号唯一标识",
           "example": "1298334110",
           "member": "string",
@@ -2002,6 +2145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟id",
           "example": "1",
           "member": "int64",
@@ -2012,6 +2156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联盟名称",
           "example": "test",
           "member": "string",
@@ -2022,6 +2167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -2032,6 +2178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -2042,6 +2189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "链ID",
           "example": "test",
           "member": "string",
@@ -2052,6 +2200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1为盟主，0为非盟主",
           "example": "1",
           "member": "uint64",
@@ -2062,6 +2211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构DID",
           "example": "test",
           "member": "string",
@@ -2072,6 +2222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机构名称",
           "example": "test",
           "member": "string",
@@ -2082,6 +2233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端点",
           "example": "\"http://127.0.0.1:6001\"",
           "member": "string",
@@ -2092,6 +2244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成时间",
           "example": "test",
           "member": "string",
@@ -2102,6 +2255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "test",
           "member": "string",
@@ -2112,6 +2266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组名称",
           "example": "test",
           "member": "string",
@@ -2128,6 +2283,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Cpt索引",
           "example": "1",
           "member": "uint64",
@@ -2155,6 +2311,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "合约CNS地址",
           "example": "0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ff",
           "member": "string",
@@ -2182,6 +2339,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CPT ID",
           "example": "1",
           "member": "uint64",
@@ -2192,6 +2350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签发者 did",
           "example": "1",
           "member": "string",
@@ -2202,6 +2361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "example": "1",
           "member": "string",
@@ -2212,6 +2372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "声明",
           "example": "1",
           "member": "string",
@@ -2228,6 +2389,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "1",
           "member": "string",
@@ -2242,6 +2404,7 @@
       "document": "GetAgencyTDid返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "固定前缀",
           "example": "did:tdid",
           "member": "string",
@@ -2251,6 +2414,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "did详情",
           "example": "无",
           "member": "Identity",
@@ -2273,6 +2437,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "页码，从1开始",
           "example": "1",
           "member": "int64",
@@ -2282,6 +2447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小",
           "example": "10",
           "member": "int64",
@@ -2291,6 +2457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Did信息",
           "example": "test",
           "member": "string",
@@ -2300,6 +2467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权威认证 1:已认证，2:未认证",
           "example": "1",
           "member": "int64",
@@ -2314,6 +2482,7 @@
       "document": "GetAuthoritiesList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据集合",
           "example": "无",
           "member": "Authority",
@@ -2323,6 +2492,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数",
           "example": "3",
           "member": "int64",
@@ -2345,6 +2515,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
           "member": "string",
@@ -2359,6 +2530,7 @@
       "document": "GetAuthorityIssuer返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "名称",
           "example": "test",
           "member": "string",
@@ -2368,6 +2540,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链网络id",
           "example": "s",
           "member": "string",
@@ -2377,6 +2550,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链群组id",
           "example": "1",
           "member": "uint64",
@@ -2386,6 +2560,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "权威机构did",
           "example": "a",
           "member": "string",
@@ -2395,6 +2570,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机构备注信息",
           "example": "a",
           "member": "string",
@@ -2404,6 +2580,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "注册时间",
           "example": "2022-02-28 17:58:32",
           "member": "string",
@@ -2413,6 +2590,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "认证时间",
           "example": "2022-02-28 17:58:32",
           "member": "string",
@@ -2435,6 +2613,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联盟id",
           "example": "1",
           "member": "uint64",
@@ -2449,6 +2628,7 @@
       "document": "GetConsortiumClusterList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "网络列表",
           "example": "无",
           "member": "BcosClusterItem",
@@ -2475,6 +2655,7 @@
       "document": "GetConsortiumList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "联盟列表",
           "example": "无",
           "member": "ConsortiumItem",
@@ -2497,6 +2678,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Cpt索引",
           "example": "1",
           "member": "uint64",
@@ -2511,6 +2693,7 @@
       "document": "GetCptInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CptJsonData的具体信息",
           "example": "test",
           "member": "string",
@@ -2533,6 +2716,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "起始位置",
           "example": "0",
           "member": "uint64",
@@ -2542,6 +2726,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "example": "10",
           "member": "uint64",
@@ -2551,6 +2736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板类型，0: 所有模板，1: 系统模板，2: 用户模板，3:普通模板",
           "example": "3",
           "member": "uint64",
@@ -2565,6 +2751,7 @@
       "document": "GetCptList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "cpt数据集合",
           "example": "无",
           "member": "CptListData",
@@ -2574,6 +2761,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭证模板总数",
           "example": "1",
           "member": "uint64",
@@ -2596,6 +2784,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2605,6 +2794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2614,6 +2804,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -2628,6 +2819,7 @@
       "document": "GetCredentialCptRank返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Rank集合",
           "example": "无",
           "member": "CptIssueRank",
@@ -2650,6 +2842,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2659,6 +2852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2668,6 +2862,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -2682,6 +2877,7 @@
       "document": "GetCredentialIssueRank返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Rank集合",
           "example": "无",
           "member": "CptIssueRank",
@@ -2704,6 +2900,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2713,6 +2910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -2722,6 +2920,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -2736,6 +2935,7 @@
       "document": "GetCredentialIssueTrend返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Trend集合",
           "example": "无",
           "member": "Trend",
@@ -2758,6 +2958,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭证id",
           "example": "a",
           "member": "string",
@@ -2772,6 +2973,7 @@
       "document": "GetCredentialStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭证状态信息",
           "example": "无",
           "member": "CredentialStatus",
@@ -2794,6 +2996,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "1",
           "member": "string",
@@ -2808,6 +3011,7 @@
       "document": "GetDataPanel返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "区块链网络数量",
           "example": "1",
           "member": "int64",
@@ -2817,6 +3021,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链网络名称",
           "example": "test",
           "member": "string",
@@ -2826,6 +3031,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前区块高度",
           "example": "1",
           "member": "int64",
@@ -2835,6 +3041,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链网络类型",
           "example": "1",
           "member": "int64",
@@ -2844,6 +3051,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "did数量",
           "example": "2",
           "member": "int64",
@@ -2853,6 +3061,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭证模版数量",
           "example": "4",
           "member": "int64",
@@ -2862,6 +3071,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "已认证权威机构数量",
           "example": "5",
           "member": "int64",
@@ -2871,6 +3081,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "颁发凭证数量",
           "example": "1",
           "member": "int64",
@@ -2880,6 +3091,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "本周新增DID数量",
           "example": "4",
           "member": "int64",
@@ -2889,6 +3101,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "BCOS网络类型数量",
           "example": "5",
           "member": "int64",
@@ -2898,6 +3111,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Fabric网络类型数量",
           "example": "4",
           "member": "int64",
@@ -2907,6 +3121,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "长安链网络类型数量",
           "example": "2",
           "member": "int64",
@@ -2929,6 +3144,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "合约CNS地址",
           "example": "test",
           "member": "string",
@@ -2943,6 +3159,7 @@
       "document": "GetDeployInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "合约CNS地址",
           "example": "test",
           "member": "string",
@@ -2952,6 +3169,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "合约主群组ID",
           "example": "test",
           "member": "string",
@@ -2961,6 +3179,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "部署机构DID",
           "example": "test",
           "member": "string",
@@ -2970,6 +3189,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "TDID SDK版本",
           "example": "test",
           "member": "string",
@@ -2979,6 +3199,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "TDID 合约版本",
           "example": "test",
           "member": "string",
@@ -2988,6 +3209,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链节点版本",
           "example": "test",
           "member": "string",
@@ -2997,6 +3219,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链节点IP",
           "example": "test",
           "member": "string",
@@ -3006,6 +3229,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "DID合约地址",
           "example": "test",
           "member": "string",
@@ -3015,6 +3239,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CPT合约地址",
           "example": "test",
           "member": "string",
@@ -3024,6 +3249,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Authority Issuer地址",
           "example": "test",
           "member": "string",
@@ -3033,6 +3259,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Evidence合约地址",
           "example": "test",
           "member": "string",
@@ -3042,6 +3269,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Specific Issuer合约地址",
           "example": "test",
           "member": "string",
@@ -3051,6 +3279,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "链ID",
           "example": "test",
           "member": "string",
@@ -3073,6 +3302,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -3082,6 +3312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -3091,6 +3322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始位置",
           "example": "0",
           "member": "uint64",
@@ -3100,6 +3332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "example": "10",
           "member": "uint64",
@@ -3114,6 +3347,7 @@
       "document": "GetDeployList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "合约总数",
           "example": "3",
           "member": "uint64",
@@ -3123,6 +3357,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "合约部署列表",
           "example": "无",
           "member": "Contract",
@@ -3145,6 +3380,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DID网络ID",
           "example": "1",
           "member": "string",
@@ -3159,6 +3395,7 @@
       "document": "GetDidClusterDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "网络ID",
           "example": "无",
           "member": "string",
@@ -3168,6 +3405,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组织名称",
           "example": "无",
           "member": "string",
@@ -3177,6 +3415,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "区块链组织名称",
           "example": "无",
           "member": "string",
@@ -3203,6 +3442,7 @@
       "document": "GetDidClusterList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "DID网络列表",
           "example": "aaa",
           "member": "DidCluster",
@@ -3225,6 +3465,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DID号码的具体信息",
           "example": "test",
           "member": "string",
@@ -3239,6 +3480,7 @@
       "document": "GetDidDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "DID名称",
           "example": "did:weid:1:0xc89a0423e25bea56c9f3c33098a41b100795946b",
           "member": "string",
@@ -3248,6 +3490,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备注",
           "example": "无",
           "member": "string",
@@ -3257,6 +3500,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公钥",
           "example": "6584791555786563316509885238222269581668944990935472251441138953",
           "member": "string",
@@ -3266,6 +3510,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "权威认证",
           "example": "0",
           "member": "int64",
@@ -3275,6 +3520,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "联盟ID",
           "example": "1",
           "member": "int64",
@@ -3284,6 +3530,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "联盟名称",
           "example": "test",
           "member": "string",
@@ -3293,6 +3540,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -3302,6 +3550,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -3311,6 +3560,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "bcos资源ID",
           "example": "1tbaas-k0j8i7lqc4",
           "member": "string",
@@ -3320,6 +3570,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-06-29 16:27:26",
           "member": "string",
@@ -3342,6 +3593,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
           "member": "string",
@@ -3356,6 +3608,7 @@
       "document": "GetDidDocument返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "名称",
           "example": "test",
           "member": "string",
@@ -3365,6 +3618,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "DID文档",
           "example": "s",
           "member": "string",
@@ -3387,6 +3641,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小",
           "example": "10",
           "member": "int64",
@@ -3396,6 +3651,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码，从1开始",
           "example": "1",
           "member": "int64",
@@ -3405,6 +3661,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Did信息",
           "example": "test",
           "member": "string",
@@ -3414,6 +3671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -3423,6 +3681,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -3437,6 +3696,7 @@
       "document": "GetDidList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据列表",
           "example": "无",
           "member": "DidData",
@@ -3446,6 +3706,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据总条数",
           "example": "10",
           "member": "int64",
@@ -3468,6 +3729,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -3477,6 +3739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间（支持到天 2021-4-23）",
           "example": "test",
           "member": "string",
@@ -3486,6 +3749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -3500,6 +3764,7 @@
       "document": "GetDidRegisterTrend返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Trend集合",
           "example": "无",
           "member": "Trend",
@@ -3522,6 +3787,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "DID服务ID",
           "example": "1",
           "member": "uint64",
@@ -3536,6 +3802,7 @@
       "document": "GetDidServiceDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "did服务信息",
           "example": "无",
           "member": "DidServiceInfo",
@@ -3558,6 +3825,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "1: 以网络维度输出, 0: 以服务维度输出",
           "example": "1",
           "member": "uint64",
@@ -3572,6 +3840,7 @@
       "document": "GetDidServiceList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "DID服务列表",
           "example": "aaa",
           "member": "DidServiceInfo",
@@ -3594,6 +3863,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "0为未部署DID服务的群组，1为已部署DID服务的群组",
           "example": "0",
           "member": "int64",
@@ -3603,6 +3873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -3617,6 +3888,7 @@
       "document": "GetGroupList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组数据集合",
           "example": "无",
           "member": "Group",
@@ -3639,6 +3911,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页大小",
           "example": "10",
           "member": "int64",
@@ -3648,6 +3921,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码，从1开始",
           "example": "1",
           "member": "int64",
@@ -3657,6 +3931,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -3666,6 +3941,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -3680,6 +3956,7 @@
       "document": "GetLabelList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据集合",
           "example": "无",
           "member": "Label",
@@ -3689,6 +3966,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总条数",
           "example": "10",
           "member": "int64",
@@ -3711,6 +3989,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "起始位置",
           "example": "0",
           "member": "int64",
@@ -3720,6 +3999,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "example": "10",
           "member": "int64",
@@ -3734,6 +4014,7 @@
       "document": "GetPolicyList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "策略Policy管理列表",
           "example": "无",
           "member": "Policy",
@@ -3743,6 +4024,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数",
           "example": "3",
           "member": "int64",
@@ -3765,6 +4047,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "did的具体号码",
           "example": "test",
           "member": "string",
@@ -3779,6 +4062,7 @@
       "document": "GetPublicKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "DID的具体信息",
           "example": "test",
           "member": "string",
@@ -3788,6 +4072,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公钥",
           "example": "test",
           "member": "string",
@@ -3810,6 +4095,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "2",
           "member": "uint64",
@@ -3820,6 +4106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点数量",
           "example": "4",
           "member": "uint64",
@@ -3830,6 +4117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属机构节点数量",
           "example": "4",
           "member": "uint64",
@@ -3840,6 +4128,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组描述",
           "example": "qtadescriptionjkbdcqzgwohei",
           "member": "string",
@@ -3850,6 +4139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参与角色，盟主或非盟主",
           "example": "1为盟主，0为非盟主",
           "member": "uint64",
@@ -3860,6 +4150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "链id",
           "example": "bc104-1",
           "member": "string",
@@ -3876,6 +4167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账户标识符",
           "example": "test",
           "member": "string",
@@ -3886,6 +4178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "链ID",
           "example": "1",
           "member": "string",
@@ -3896,6 +4189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "完整tdid",
           "example": "test",
           "member": "string",
@@ -3906,6 +4200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -3916,6 +4211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组名称",
           "example": "1",
           "member": "string",
@@ -3932,6 +4228,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签ID",
           "example": "78",
           "member": "uint64",
@@ -3942,6 +4239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签名称",
           "example": "test",
           "member": "string",
@@ -3952,6 +4250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "did数量",
           "example": "10",
           "member": "int64",
@@ -3962,6 +4261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者did",
           "example": "test",
           "member": "string",
@@ -3972,6 +4272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -3982,6 +4283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-07-20 18:35:56",
           "member": "string",
@@ -3992,6 +4294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "int64",
@@ -4008,6 +4311,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "披露策略索引",
           "example": "1",
           "member": "uint64",
@@ -4018,6 +4322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "披露策略名称",
           "example": "test",
           "member": "string",
@@ -4028,6 +4333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "test",
           "member": "string",
@@ -4038,6 +4344,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -4048,6 +4355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务ID",
           "example": "1",
           "member": "uint64",
@@ -4058,6 +4366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合约应用ID",
           "example": "1",
           "member": "uint64",
@@ -4068,6 +4377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "披露策略ID",
           "example": "100000",
           "member": "uint64",
@@ -4078,6 +4388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "凭证模板ID",
           "example": "3000005",
           "member": "uint64",
@@ -4088,6 +4399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "策略Json",
           "example": "test",
           "member": "string",
@@ -4098,6 +4410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成时间",
           "example": "test",
           "member": "string",
@@ -4108,6 +4421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "test",
           "member": "string",
@@ -4118,6 +4432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者DID",
           "example": "test",
           "member": "string",
@@ -4128,6 +4443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "test",
           "member": "string",
@@ -4138,6 +4454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板索引",
           "example": "1",
           "member": "uint64",
@@ -4154,6 +4471,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "1",
           "member": "int64",
@@ -4164,6 +4482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建着did",
           "example": "1",
           "member": "string",
@@ -4174,6 +4493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "salt值",
           "example": "1",
           "member": "string",
@@ -4184,6 +4504,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名",
           "example": "1",
           "member": "string",
@@ -4194,6 +4515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "type类型",
           "example": "1",
           "member": "string",
@@ -4210,6 +4532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "policy索引",
           "example": "1",
           "member": "int64",
@@ -4224,6 +4547,7 @@
       "document": "QueryPolicy返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "披露策略索引",
           "example": "1",
           "member": "uint64",
@@ -4233,6 +4557,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "披露策略ID",
           "example": "1",
           "member": "uint64",
@@ -4242,6 +4567,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭证模板ID",
           "example": "1",
           "member": "uint64",
@@ -4251,6 +4577,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "披露策略的具体信息",
           "example": "test",
           "member": "string",
@@ -4273,6 +4600,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "did具体信息",
           "example": "test",
           "member": "string",
@@ -4300,6 +4628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Cpt索引",
           "example": "11",
           "member": "uint64",
@@ -4309,6 +4638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "披露策略",
           "example": "test",
           "member": "string",
@@ -4323,6 +4653,7 @@
       "document": "RegisterClaimPolicy返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "披露策略索引",
           "example": "1",
           "member": "uint64",
@@ -4332,6 +4663,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "披露策略ID",
           "example": "300000",
           "member": "uint64",
@@ -4354,6 +4686,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -4363,6 +4696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -4372,6 +4706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CptJson的具体信息",
           "example": "test",
           "member": "string",
@@ -4381,6 +4716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cptId 不填默认自增",
           "example": "1",
           "member": "uint64",
@@ -4395,6 +4731,7 @@
       "document": "RegisterCpt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "凭证模板索引",
           "example": "1",
           "member": "uint64",
@@ -4404,6 +4741,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "凭证模板id",
           "example": "11",
           "member": "uint64",
@@ -4426,6 +4764,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
           "member": "string",
@@ -4435,6 +4774,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权威机构名称",
           "example": "aaa",
           "member": "string",
@@ -4444,6 +4784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "mark 一下",
           "member": "string",
@@ -4471,6 +4812,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "合约CNS地址",
           "example": "0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ff",
           "member": "string",
@@ -4498,6 +4840,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭证状态",
           "example": "test1a152",
           "member": "CredentialStatus",
@@ -4525,6 +4868,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "1",
           "member": "uint64",
@@ -4535,6 +4879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -4545,6 +4890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
           "member": "string",
@@ -4555,6 +4901,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "群组ID",
           "example": "1",
           "member": "uint64",
@@ -4565,6 +4912,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务ID",
           "example": "1",
           "member": "uint64",
@@ -4575,6 +4923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0: 部署中，1:部署成功，其他失败",
           "example": "0",
           "member": "uint64",
@@ -4585,6 +4934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误码",
           "example": "200",
           "member": "string",
@@ -4595,6 +4945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误提示",
           "example": "test",
           "member": "string",
@@ -4605,6 +4956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成时间",
           "example": "test",
           "member": "string",
@@ -4615,6 +4967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "test",
           "member": "string",
@@ -4631,6 +4984,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "凭证did",
           "example": "1",
           "member": "string",
@@ -4647,6 +5001,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间点",
           "example": "test",
           "member": "string",
@@ -4657,6 +5012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数量",
           "example": "test",
           "member": "int64",
@@ -4673,6 +5029,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数集合",
           "example": "1",
           "member": "VerifyFunctionArg",
@@ -4687,6 +5044,7 @@
       "document": "VerifyCredential返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否验证成功",
           "example": "True",
           "member": "bool",
@@ -4696,6 +5054,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "验证返回码",
           "example": "0",
           "member": "uint64",
@@ -4705,6 +5064,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "验证消息",
           "example": "success",
           "member": "string",
@@ -4727,6 +5087,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CPT ID",
           "example": "1",
           "member": "uint64",
@@ -4737,6 +5098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "issuer did",
           "example": "1",
           "member": "string",
@@ -4747,6 +5109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "example": "1",
           "member": "int64",
@@ -4757,6 +5120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "声明",
           "example": "1",
           "member": "string",
@@ -4767,6 +5131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "颁发时间",
           "example": "1",
           "member": "int64",
@@ -4777,6 +5142,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "context值",
           "example": "1",
           "member": "string",
@@ -4787,6 +5153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "id值",
           "example": "1",
           "member": "string",
@@ -4797,6 +5164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名值",
           "example": "无",
           "member": "Proof",
@@ -4807,6 +5175,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "type值",
           "example": "[\"a\",\"b\"]",
           "member": "string",

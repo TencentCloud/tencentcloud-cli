@@ -146,6 +146,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入框类型",
           "example": "xx",
           "member": "string",
@@ -156,6 +157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "初始化展示",
           "example": "xx",
           "member": "string",
@@ -166,6 +168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "展示排序",
           "example": "1",
           "member": "int64",
@@ -176,6 +179,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AttributeKey值",
           "example": "xx",
           "member": "string",
@@ -186,6 +190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "中文标签",
           "example": "xx",
           "member": "string",
@@ -202,6 +207,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集状态，1：开启，0：关闭",
           "example": "1",
           "member": "int64",
@@ -212,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "COS存储桶名称",
           "example": "xx",
           "member": "string",
@@ -222,6 +229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -232,6 +240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志前缀",
           "example": "xx",
           "member": "string",
@@ -248,6 +257,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域描述",
           "example": "xx",
           "member": "string",
@@ -258,6 +268,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cmq地域",
           "example": "xx",
           "member": "string",
@@ -274,6 +285,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cos地域",
           "example": "xx",
           "member": "string",
@@ -284,6 +296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域描述",
           "example": "xx",
           "member": "string",
@@ -300,6 +313,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。",
           "example": "1",
           "member": "int64",
@@ -309,6 +323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "管理事件的读写属性。1：只读，2：只写，3：全部。",
           "example": "1",
           "member": "int64",
@@ -318,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称。3-128字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9，下划线 _。",
           "example": "xx",
           "member": "string",
@@ -327,6 +343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos地域。目前支持的地域可以使用ListCosEnableRegion来获取。",
           "example": "xx",
           "member": "string",
@@ -336,6 +353,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否创建新的cos存储桶。1：是，0：否。",
           "example": "1",
           "member": "int64",
@@ -345,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos的存储桶名称。仅支持小写英文字母和数字即[a-z，0-9]、中划线“-”及其组合。用户自定义的字符串支持1 - 40个字符。存储桶命名不能以“-”开头或结尾。如果不是新创建的存储桶，云审计不会去校验该存储桶是否真的存在，请谨慎填写，避免日志投递不成功，导致您的数据丢失。",
           "example": "xx",
           "member": "string",
@@ -354,6 +373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。",
           "example": "xx",
           "member": "string",
@@ -363,6 +383,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "队列名称。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。如果IsEnableCmqNotify值是1的话，此值属于必填字段。如果不是新创建的队列，云审计不会去校验该队列是否真的存在，请谨慎填写，避免日志通知不成功，导致您的数据丢失。",
           "example": "xx",
           "member": "string",
@@ -372,6 +393,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。",
           "example": "1",
           "member": "string",
@@ -381,6 +403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
           "example": "1",
           "member": "int64",
@@ -390,6 +413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "队列所在的地域。可以通过ListCmqEnableRegion获取支持的cmq地域。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
           "example": "xx",
           "member": "string",
@@ -399,6 +423,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID作为日志前缀。",
           "example": "xx",
           "member": "string",
@@ -408,6 +433,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
           "example": "1",
           "member": "int64",
@@ -422,6 +448,7 @@
       "document": "CreateAudit返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否创建成功。",
           "example": "1",
           "member": "int64",
@@ -444,6 +471,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
           "example": "云审计",
           "member": "string",
@@ -453,6 +481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
           "example": "Read",
           "member": "string",
@@ -462,6 +491,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
           "example": "*",
           "member": "string",
@@ -471,6 +501,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集状态（未开启：0；开启：1）",
           "example": "1",
           "member": "uint64",
@@ -480,6 +511,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
           "example": "[*]",
           "member": "string",
@@ -489,6 +521,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据投递存储（目前支持 cos、cls）",
           "example": "cos",
           "member": "Storage",
@@ -498,6 +531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
           "example": "1",
           "member": "uint64",
@@ -512,6 +546,7 @@
       "document": "CreateAuditTrack返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "跟踪集 ID",
           "example": "1",
           "member": "uint64",
@@ -534,6 +569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -548,6 +584,7 @@
       "document": "DeleteAudit返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否删除成功",
           "example": "1",
           "member": "int64",
@@ -570,6 +607,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集 ID",
           "example": "1",
           "member": "uint64",
@@ -597,6 +635,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -611,6 +650,7 @@
       "document": "DescribeAudit返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否开启cmq消息通知。1：是，0：否。",
           "example": "1",
           "member": "int64",
@@ -620,6 +660,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "管理事件读写属性，1：只读，2：只写，3：全部",
           "example": "1",
           "member": "int64",
@@ -629,6 +670,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CMK的全局唯一标识符。",
           "example": "xx",
           "member": "string",
@@ -638,6 +680,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪集状态，1：开启，0：停止。",
           "example": "1",
           "member": "int64",
@@ -647,6 +690,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪集名称。",
           "example": "xx",
           "member": "string",
@@ -656,6 +700,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "cos存储桶所在地域。",
           "example": "xx",
           "member": "string",
@@ -665,6 +710,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "队列名称。",
           "example": "xx",
           "member": "string",
@@ -674,6 +720,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CMK别名。",
           "example": "xx",
           "member": "string",
@@ -683,6 +730,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "kms地域。",
           "example": "xx",
           "member": "string",
@@ -692,6 +740,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
           "example": "1",
           "member": "int64",
@@ -701,6 +750,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "cos存储桶名称。",
           "example": "xx",
           "member": "string",
@@ -710,6 +760,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "队列所在地域。",
           "example": "xx",
           "member": "string",
@@ -719,6 +770,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志前缀。",
           "example": "xx",
           "member": "string",
@@ -741,6 +793,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集 ID",
           "example": "1",
           "member": "uint64",
@@ -755,6 +808,7 @@
       "document": "DescribeAuditTrack返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "云审计",
           "member": "string",
@@ -764,6 +818,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
           "example": "Read",
           "member": "string",
@@ -773,6 +828,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪事件所属产品（如：cos，全部：*）",
           "example": "*",
           "member": "string",
@@ -782,6 +838,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪集状态（未开启：0；开启：1）",
           "example": "1",
           "member": "uint64",
@@ -791,6 +848,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪事件接口名列表（全部：[*]）",
           "example": "1",
           "member": "string",
@@ -800,6 +858,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据投递存储（目前支持 cos、cls）",
           "example": "cos",
           "member": "Storage",
@@ -809,6 +868,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "跟踪集创建时间",
           "example": "2021-02-01 18:03",
           "member": "string",
@@ -818,6 +878,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -839,6 +900,7 @@
       "document": "DescribeAuditTracks请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "页码",
           "example": "1",
           "member": "uint64",
@@ -847,6 +909,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数目",
           "example": "10",
           "member": "uint64",
@@ -861,6 +924,7 @@
       "document": "DescribeAuditTracks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "跟踪集列表",
           "example": "*",
           "member": "Tracks",
@@ -869,6 +933,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数目",
           "example": "10",
           "member": "uint64",
@@ -889,6 +954,7 @@
       "document": "DescribeEvents请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "起始时间戳（单位秒，不超过当前时间 90 天）",
           "example": "1612171581",
           "member": "uint64",
@@ -897,6 +963,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间戳（单位秒，查询时间跨度小于 30 天）",
           "example": "1612173581",
           "member": "uint64",
@@ -905,6 +972,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "查看更多日志的凭证",
           "example": "123213213312313",
           "member": "uint64",
@@ -913,6 +981,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回日志的最大条数（最大 50 条）",
           "example": "10",
           "member": "uint64",
@@ -921,6 +990,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]）备注:检索的各个条件间是与的关系,EventName传多个值内部是或的关系）",
           "example": "[{\"AttributeKey:XX,\"AttributeValue\":xx}]",
           "member": "LookupAttribute",
@@ -929,6 +999,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否返回 IP 归属地（1 返回，0 不返回）",
           "example": "1",
           "member": "uint64",
@@ -943,6 +1014,7 @@
       "document": "DescribeEvents返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志集合是否结束。true表示结束，无需进行翻页。",
           "example": "false",
           "member": "bool",
@@ -951,6 +1023,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查看更多日志的凭证",
           "example": "123123213",
           "member": "uint64",
@@ -959,6 +1032,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*",
           "member": "Event",
@@ -967,6 +1041,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -988,6 +1063,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志ID",
           "example": "xx",
           "member": "string",
@@ -998,6 +1074,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "example": "xx",
           "member": "string",
@@ -1008,6 +1085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件时间",
           "example": "xx",
           "member": "string",
@@ -1018,6 +1096,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志详情",
           "example": "xx",
           "member": "string",
@@ -1028,6 +1107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
           "example": "xx",
           "member": "string",
@@ -1038,6 +1118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "鉴权错误码",
           "example": "1",
           "member": "int64",
@@ -1048,6 +1129,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件名称",
           "example": "xx",
           "member": "string",
@@ -1058,6 +1140,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -1068,6 +1151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求来源",
           "example": "xx",
           "member": "string",
@@ -1078,6 +1162,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求ID",
           "example": "xx",
           "member": "string",
@@ -1088,6 +1173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源地域",
           "example": "xx",
           "member": "string",
@@ -1098,6 +1184,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主账号ID",
           "example": "1",
           "member": "int64",
@@ -1108,6 +1195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "源IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -1118,6 +1206,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
           "example": "xx",
           "member": "string",
@@ -1128,6 +1217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源对",
           "example": "xx",
           "member": "Resource",
@@ -1138,6 +1228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件地域",
           "example": "xx",
           "member": "string",
@@ -1148,6 +1239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP 归属地",
           "example": "中国 江苏省 南京市 腾讯网络",
           "member": "string",
@@ -1164,6 +1256,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网站类型，取值范围是zh和en。如果不传值默认zh",
           "example": "xx",
           "member": "string",
@@ -1178,6 +1271,7 @@
       "document": "GetAttributeKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "AttributeKey的有效取值范围",
           "example": "xx",
           "member": "AttributeKeyDetail",
@@ -1204,6 +1298,7 @@
       "document": "InquireAuditCredit返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可创建跟踪集的数量",
           "example": "1",
           "member": "int64",
@@ -1226,6 +1321,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
           "example": "xx",
           "member": "string",
@@ -1236,6 +1332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识",
           "example": "xx",
           "member": "string",
@@ -1256,6 +1353,7 @@
       "document": "ListAudits返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询跟踪集概要集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "AuditSummary",
@@ -1278,6 +1376,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "站点类型。zh表示中国区，en表示国际区。默认中国区。",
           "example": "xx",
           "member": "string",
@@ -1292,6 +1391,7 @@
       "document": "ListCmqEnableRegion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云审计支持的cmq的可用区",
           "example": "xx",
           "member": "CmqRegionInfo",
@@ -1314,6 +1414,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "站点类型。zh表示中国区，en表示国际区。默认中国区。",
           "example": "xx",
           "member": "string",
@@ -1328,6 +1429,7 @@
       "document": "ListCosEnableRegion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云审计支持的cos可用区",
           "example": "xx",
           "member": "CosRegionInfo",
@@ -1350,6 +1452,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Kms地域",
           "example": "xx",
           "member": "string",
@@ -1359,6 +1462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200",
           "example": "10",
           "member": "int64",
@@ -1368,6 +1472,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
           "example": "1",
           "member": "int64",
@@ -1382,6 +1487,7 @@
       "document": "ListKeyAliasByRegion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的总数量",
           "example": "1",
           "member": "int64",
@@ -1391,6 +1497,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥别名",
           "example": "[xx,xx]",
           "member": "KeyMetadata",
@@ -1413,6 +1520,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间",
           "example": "1553056487",
           "member": "int64",
@@ -1422,6 +1530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间",
           "example": "1553056687",
           "member": "int64",
@@ -1431,6 +1540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检索条件",
           "example": "无",
           "member": "LookupAttribute",
@@ -1440,6 +1550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查看更多日志的凭证",
           "example": "xxx",
           "member": "string",
@@ -1449,6 +1560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回日志的最大条数",
           "example": "10",
           "member": "int64",
@@ -1458,6 +1570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式",
           "example": "standard ",
           "member": "string",
@@ -1472,6 +1585,7 @@
       "document": "LookUpEvents返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查看更多日志的凭证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxxxx",
           "member": "string",
@@ -1481,6 +1595,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Event",
@@ -1490,6 +1605,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志集合是否结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -1512,6 +1628,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId",
           "example": "xx",
           "member": "string",
@@ -1522,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AttributeValue的值",
           "example": "xx",
           "member": "string",
@@ -1538,6 +1656,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集 ID",
           "example": "1",
           "member": "uint64",
@@ -1547,6 +1666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
           "example": "云审计",
           "member": "string",
@@ -1556,6 +1676,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
           "example": "Read",
           "member": "string",
@@ -1565,6 +1686,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
           "example": "*",
           "member": "string",
@@ -1574,6 +1696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集状态（未开启：0；开启：1）",
           "example": "1",
           "member": "uint64",
@@ -1583,6 +1706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
           "example": "1",
           "member": "string",
@@ -1592,6 +1716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据投递存储（目前支持 cos、cls）",
           "example": "cos",
           "member": "Storage",
@@ -1601,6 +1726,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
           "example": "1",
           "member": "uint64",
@@ -1628,6 +1754,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源类型",
           "example": "xx",
           "member": "string",
@@ -1638,6 +1765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源名称",
           "example": "xx",
           "member": "string",
@@ -1654,6 +1782,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -1668,6 +1797,7 @@
       "document": "StartLogging返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否开启成功",
           "example": "1",
           "member": "int64",
@@ -1690,6 +1820,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -1704,6 +1835,7 @@
       "document": "StopLogging返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否关闭成功",
           "example": "1",
           "member": "int64",
@@ -1726,6 +1858,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "存储类型（目前支持 cos、cls）",
           "example": "cos",
           "member": "string",
@@ -1736,6 +1869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储所在地域",
           "example": "ap-shanghai",
           "member": "string",
@@ -1746,6 +1880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储名称(cos：存储名称为用户自定义的存储桶名称，不包含\"-APPID\"，仅支持小写字母、数字以及中划线\"-\"的组合，不能超过50字符，且不支持中划线\"-\"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)",
           "example": "audit",
           "member": "string",
@@ -1756,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符",
           "example": "audit",
           "member": "string",
@@ -1772,6 +1908,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "cloudaudit",
           "member": "string",
@@ -1782,6 +1919,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
           "example": "Read",
           "member": "string",
@@ -1792,6 +1930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件所属产品（如：cos，全部：*）",
           "example": "cloudaudit",
           "member": "string",
@@ -1802,6 +1941,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集状态（未开启：0；开启：1）",
           "example": "1",
           "member": "uint64",
@@ -1812,6 +1952,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪事件接口名列表（全部：[*]）",
           "example": "[*]",
           "member": "string",
@@ -1822,6 +1963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据投递存储（目前支持 cos、cls）",
           "example": "cos",
           "member": "Storage",
@@ -1832,6 +1974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集创建时间",
           "example": "2021-01-20 11:06:00",
           "member": "string",
@@ -1842,6 +1985,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集 ID",
           "example": "1",
           "member": "uint64",
@@ -1858,6 +2002,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "跟踪集名称",
           "example": "xx",
           "member": "string",
@@ -1867,6 +2012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。",
           "example": "1",
           "member": "int64",
@@ -1876,6 +2022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "管理事件的读写属性。1：只读，2：只写，3：全部。",
           "example": "1",
           "member": "int64",
@@ -1885,6 +2032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。",
           "example": "xx",
           "member": "string",
@@ -1894,6 +2042,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos地域。目前支持的地域可以使用ListCosEnableRegion来获取。",
           "example": "xx",
           "member": "string",
@@ -1903,6 +2052,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "队列名称。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。如果IsEnableCmqNotify值是1的话，此值属于必填字段。如果不是新创建的队列，云审计不会去校验该队列是否真的存在，请谨慎填写，避免日志通知不成功，导致您的数据丢失。",
           "example": "xx",
           "member": "string",
@@ -1912,6 +2062,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否创建新的cos存储桶。1：是，0：否。",
           "example": "1",
           "member": "int64",
@@ -1921,6 +2072,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。",
           "example": "xx",
           "member": "string",
@@ -1930,6 +2082,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
           "example": "1",
           "member": "int64",
@@ -1939,6 +2092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cos的存储桶名称。仅支持小写英文字母和数字即[a-z，0-9]、中划线“-”及其组合。用户自定义的字符串支持1 - 40个字符。存储桶命名不能以“-”开头或结尾。如果不是新创建的存储桶，云审计不会去校验该存储桶是否真的存在，请谨慎填写，避免日志投递不成功，导致您的数据丢失。",
           "example": "xx",
           "member": "string",
@@ -1948,6 +2102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "队列所在的地域。可以通过ListCmqEnableRegion获取支持的cmq地域。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
           "example": "xx",
           "member": "string",
@@ -1957,6 +2112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。",
           "example": "xx",
           "member": "string",
@@ -1966,6 +2122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
           "example": "1",
           "member": "int64",
@@ -1980,6 +2137,7 @@
       "document": "UpdateAudit返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否更新成功",
           "example": "1",
           "member": "int64",

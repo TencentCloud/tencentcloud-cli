@@ -41,6 +41,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动Id",
           "member": "int64",
           "name": "ActivityId",
@@ -49,6 +50,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材Id",
           "member": "string",
           "name": "MaterialId",
@@ -57,6 +59,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每次拉取条数",
           "member": "int64",
           "name": "Limit",
@@ -65,6 +68,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "member": "int64",
           "name": "Offset",
@@ -78,6 +82,7 @@
       "document": "DescribeMaterialList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "素材列表数据",
           "member": "PublicMaterialInfos",
           "name": "MaterialInfos",
@@ -85,6 +90,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "素材条数",
           "member": "int64",
           "name": "Count",
@@ -105,6 +111,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动 ID，请在人脸融合控制台查看。",
           "example": "100646",
           "member": "string",
@@ -114,6 +121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材 ID，请在人脸融合控制台查看。",
           "example": "qc_100646_154021_9",
           "member": "string",
@@ -123,6 +131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
           "member": "MergeInfo",
@@ -132,6 +141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。默认url, url有效期为30天。",
           "example": "url",
           "member": "string",
@@ -141,6 +151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
           "example": "1",
           "member": "int64",
@@ -150,6 +161,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "算法引擎参数:  1）选脸版 - youturecreat; 2）优享版 - youtu1vN； 3）畅享版 - ptu； 4）随机 - ALL;  默认为活动选择的算法",
           "example": "string",
           "member": "string",
@@ -164,6 +176,7 @@
       "document": "FaceFusionLite返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
           "example": "url",
           "member": "string",
@@ -173,6 +186,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "鉴政结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "FuseFaceReviewResult",
@@ -195,6 +209,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动 ID，请在人脸融合控制台查看。",
           "example": "100646",
           "member": "string",
@@ -204,6 +219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材 ID，请在人脸融合控制台查看。",
           "example": "qc_100646_154021_9",
           "member": "string",
@@ -213,6 +229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
           "member": "string",
@@ -222,6 +239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片 base64 数据。请确保人脸为正脸，无旋转。若某些手机拍摄后人脸被旋转，请使用图片的 EXIF 信息对图片进行旋转处理；请勿在 base64 数据中包含头部，如“data:image/jpeg;base64,”。",
           "example": "image_base64",
           "member": "string",
@@ -231,6 +249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "历史遗留字段，无需填写。因为融合只需提取人脸特征，不需要鉴黄。",
           "example": "10",
           "member": "int64",
@@ -240,6 +259,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
           "example": "0",
           "member": "int64",
@@ -249,6 +269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片Url地址",
           "example": "image_url",
           "member": "string",
@@ -263,6 +284,7 @@
       "document": "FaceFusion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
           "example": "image_url",
           "member": "string",
@@ -272,6 +294,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "不适宜内容识别结果",
           "example": "[]",
           "member": "FuseFaceReviewResult",
@@ -294,6 +317,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的横坐标",
           "member": "int64",
           "name": "X",
@@ -303,6 +327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的纵坐标",
           "member": "int64",
           "name": "Y",
@@ -312,6 +337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的宽度",
           "member": "int64",
           "name": "Width",
@@ -321,6 +347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框的高度",
           "member": "int64",
           "name": "Height",
@@ -336,6 +363,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框左上角横坐标。",
           "member": "int64",
           "name": "X",
@@ -345,6 +373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "member": "int64",
           "name": "Y",
@@ -354,6 +383,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框宽度。",
           "member": "int64",
           "name": "Width",
@@ -363,6 +393,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框高度。",
           "member": "int64",
           "name": "Height",
@@ -378,6 +409,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "活动 ID，请在人脸融合控制台查看。",
           "example": "300029",
           "member": "string",
@@ -387,6 +419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材 ID，请在人脸融合控制台查看。",
           "example": "qc_300029_453345_1",
           "member": "string",
@@ -396,6 +429,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
           "member": "string",
@@ -405,6 +439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
           "member": "MergeInfo",
@@ -414,6 +449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
           "member": "int64",
@@ -423,6 +459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
           "member": "int64",
@@ -432,6 +469,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
           "example": "无",
           "member": "int64",
@@ -446,6 +484,7 @@
       "document": "FuseFace返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
           "example": "/9/tetwtwe",
           "member": "string",
@@ -455,6 +494,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FuseFaceReviewResult",
@@ -477,6 +517,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段",
           "example": "string",
           "member": "string",
@@ -487,6 +528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人员名称",
           "example": "string",
           "member": "string",
@@ -497,6 +539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应识别label的置信度，分数越高意味违法违规可能性越大。 \n0到70，Suggestion建议为PASS； \n70到80，Suggestion建议为REVIEW； \n80到100，Suggestion建议为BLOCK。",
           "example": "1",
           "member": "float",
@@ -507,6 +550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "识别场景的审核结论：  \nPASS：正常 \nREVIEW：疑似  \nBLOCK：违规",
           "example": "string",
           "member": "string",
@@ -523,6 +567,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段",
           "member": "string",
           "name": "Category",
@@ -532,6 +577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态码， 0为处理成功，其他值为处理失败",
           "member": "string",
           "name": "Code",
@@ -541,6 +587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应状态码信息描述",
           "member": "string",
           "name": "CodeDescription",
@@ -550,6 +597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段",
           "member": "float",
           "name": "Confidence",
@@ -559,6 +607,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "保留字段",
           "member": "string",
           "name": "Suggestion",
@@ -568,6 +617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "审核详细内容",
           "member": "FuseFaceReviewDetail",
           "name": "DetailSet",
@@ -583,6 +633,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人脸序号",
           "member": "string",
           "name": "FaceId",
@@ -592,6 +643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸框信息",
           "member": "FaceInfo",
           "name": "FaceInfo",
@@ -607,6 +659,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入图片base64",
           "example": "string",
           "member": "string",
@@ -617,6 +670,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "输入图片url",
           "example": "string",
           "member": "string",
@@ -627,6 +681,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上传的图片人脸位置信息（人脸框）",
           "example": "{}",
           "member": "FaceRect",
@@ -637,6 +692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
           "example": "string",
           "member": "string",
@@ -653,6 +709,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "素材Id",
           "member": "string",
           "name": "MaterialId",
@@ -662,6 +719,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材状态",
           "member": "int64",
           "name": "MaterialStatus",
@@ -671,6 +729,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "脸型参数P图",
           "member": "int64",
           "name": "BlendParamPtu",
@@ -680,6 +739,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五官参数P图",
           "member": "int64",
           "name": "PositionParamPtu",
@@ -689,6 +749,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "脸型参数优图",
           "member": "int64",
           "name": "BlendParamYoutu",
@@ -698,6 +759,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五官参数优图",
           "member": "int64",
           "name": "PositionParamYoutu",
@@ -707,6 +769,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "素材COS地址",
           "member": "string",
           "name": "Url",
@@ -716,6 +779,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -725,6 +789,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "member": "string",
           "name": "UpdateTime",
@@ -734,6 +799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人脸信息",
           "member": "MaterialFaceList",
           "name": "MaterialFaceList",

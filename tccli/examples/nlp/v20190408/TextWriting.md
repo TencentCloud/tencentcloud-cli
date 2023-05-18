@@ -7,7 +7,7 @@ Input:
 ```
 tccli nlp TextWriting --cli-unfold-argument  \
     --Text 今天天气不错 \
-    --SourceLang 此事还得从这说起， \
+    --SourceLang zh \
     --Number 2 \
     --Domain general \
     --Style xuanhuan_wuxia

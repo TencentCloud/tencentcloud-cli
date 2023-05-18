@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
@@ -57,6 +58,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
@@ -66,6 +68,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "example": "cap-abcdefgh",
           "member": "string",
@@ -75,6 +78,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用版本ID",
           "example": "ver-1a2b3c4d",
           "member": "string",
@@ -84,6 +88,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。如果是独享项目，将忽略该参数，使用项目绑定的应用。如果是共享项目，使用该参数来指定应用。",
           "example": "app-a1b2c3d4",
           "member": "string",
@@ -110,6 +115,7 @@
       "document": "CreateSession请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
@@ -118,6 +124,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
@@ -126,6 +133,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空",
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
@@ -134,6 +142,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "云端运行模式。\nRunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行\n默认值（空）：要求必须有客户端连接才会保持云端 App 运行。",
           "example": "RunWithoutClient",
           "member": "string",
@@ -142,6 +151,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "【多人互动】房主用户ID，在多人互动模式下为必填字段。\n如果该用户是房主，HostUserId需要和UserId保持一致；\n如果该用户非房主，HostUserId需要填写房主的HostUserId。",
           "example": "host_user_id",
           "member": "string",
@@ -150,6 +160,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "【多人互动】角色。\nPlayer：玩家（可通过键鼠等操作应用）\nViewer：观察者（只能观看，无法操作）",
           "example": "Player",
           "member": "string",
@@ -164,6 +175,7 @@
       "document": "CreateSession返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "服务端session信息，返回给SDK",
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
@@ -185,6 +197,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
@@ -211,6 +224,7 @@
       "document": "StartPublishStream请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（UserId将作为StreamId进行推流，比如绑定推流域名为abc.livepush.myqcloud.com，那么推流地址为rtmp://abc.livepush.myqcloud.com/live/UserId?txSecret=xxx&txTime=xxx）",
           "example": "abc123",
           "member": "string",
@@ -238,6 +252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "abc123",
           "member": "string",

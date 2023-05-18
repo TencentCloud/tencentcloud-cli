@@ -1,6 +1,6 @@
 **Example 1: 镜像仓库查看定时任务**
 
-
+镜像仓库查看定时任务
 
 Input: 
 
@@ -35,7 +35,8 @@ Output:
         "Id": [
             1
         ],
-        "Enable": true
+        "Enable": true,
+        "Latest": true
     }
 }
 ```

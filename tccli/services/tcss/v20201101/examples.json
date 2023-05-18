@@ -1432,9 +1432,9 @@
     ],
     "DescribeImageRegistryTimingScanTask": [
       {
-        "document": "",
+        "document": "镜像仓库查看定时任务",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryTimingScanTask\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f60f0ef9-a105-4535-8dfd-42ad8b3a9c73\",\n        \"ScanTime\": \"03:00:00\",\n        \"ScanPeriod\": 1,\n        \"ScanType\": [\n            \"risk\",\n            \"virus\"\n        ],\n        \"All\": false,\n        \"Images\": [\n            {\n                \"ImageDigest\": \"sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8\",\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/luping:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/luping\",\n                \"ImageTag\": \"v1\",\n                \"Force\": \"\"\n            }\n        ],\n        \"Id\": [\n            1\n        ],\n        \"Enable\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f60f0ef9-a105-4535-8dfd-42ad8b3a9c73\",\n        \"ScanTime\": \"03:00:00\",\n        \"ScanPeriod\": 1,\n        \"ScanType\": [\n            \"risk\",\n            \"virus\"\n        ],\n        \"All\": false,\n        \"Images\": [\n            {\n                \"ImageDigest\": \"sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8\",\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/luping:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/luping\",\n                \"ImageTag\": \"v1\",\n                \"Force\": \"\"\n            }\n        ],\n        \"Id\": [\n            1\n        ],\n        \"Enable\": true,\n        \"Latest\": true\n    }\n}",
         "title": "镜像仓库查看定时任务"
       }
     ],
@@ -2684,10 +2684,10 @@
     ],
     "UpdateImageRegistryTimingScanTask": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageRegistryTimingScanTask\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"Enable\": true,\n    \"ScanPeriod\": 1,\n    \"ScanTime\": \"19:35:20\",\n    \"ScanType\": [\n        \"RISK\",\n        \"VIRUS\",\n        \"CVE\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dc14a3b-9238-40b7-aa68-425db89964fa\"\n    }\n}",
-        "title": "镜像仓库更新定时任务"
+        "document": "扫描全部已授权的最新版本镜像，扫描类型：漏洞",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageRegistryTimingScanTask\n<公共请求参数>\n\n{\n    \"ScanPeriod\": 1,\n    \"ScanType\": [\n        \"CVE\"\n    ],\n    \"Images\": [\n        {\n            \"ImageDigest\": \"abc\",\n            \"RegistryType\": \"abc\",\n            \"ImageRepoAddress\": \"abc\",\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"ImageName\": \"abc\",\n            \"ImageTag\": \"abc\",\n            \"Force\": \"abc\"\n        }\n    ],\n    \"All\": true,\n    \"Latest\": true,\n    \"Enable\": true,\n    \"ScanTime\": \"04:00:00\",\n    \"Id\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "定时扫描-扫描全部已授权的最新版本镜像"
       }
     ],
     "UpdateNetworkFirewallPolicyDetail": [

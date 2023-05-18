@@ -34,6 +34,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "devid",
           "member": "string",
           "name": "OpenId",
@@ -43,6 +44,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险值",
           "member": "int64",
           "name": "RiskScore",
@@ -52,6 +54,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "RiskDetail",
           "name": "RiskInfo",
@@ -61,6 +64,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "概率值",
           "member": "float",
           "name": "Probability",
@@ -76,6 +80,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "dev临时token，通过sdk接口获取",
           "member": "string",
           "name": "DeviceToken",
@@ -84,6 +89,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务ID",
           "member": "int64",
           "name": "BusinessId",
@@ -92,6 +98,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务侧账号体系下的用户ID",
           "member": "string",
           "name": "BusinessUserId",
@@ -100,6 +107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平台：0-Android， 1-iOS， 2-web",
           "member": "int64",
           "name": "Platform",
@@ -108,6 +116,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "选项",
           "member": "string",
           "name": "Option",
@@ -121,6 +130,7 @@
       "document": "GetOpenId返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OpenId",
@@ -128,6 +138,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "RiskInfo",
           "name": "RiskInfo",
@@ -148,6 +159,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务ID",
           "member": "int64",
           "name": "BusinessId",
@@ -156,6 +168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务子场景",
           "member": "int64",
           "name": "Scene",
@@ -164,6 +177,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务侧账号体系下的用户ID",
           "member": "string",
           "name": "BusinessUserId",
@@ -172,6 +186,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户侧的IP",
           "member": "string",
           "name": "AppClientIp",
@@ -180,6 +195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "member": "int64",
           "name": "ExpireTime",
@@ -188,6 +204,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上一个token",
           "member": "string",
           "name": "OldToken",
@@ -201,6 +218,7 @@
       "document": "GetToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回token",
           "member": "string",
           "name": "Token",
@@ -208,6 +226,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "过期时间",
           "member": "int64",
           "name": "ExpireTime",
@@ -228,6 +247,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备类型 0表示Android， 1表示IOS",
           "member": "int64",
           "name": "DevType",
@@ -236,6 +256,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Android Imei号",
           "member": "string",
           "name": "Imei",
@@ -244,6 +265,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Mac地址",
           "member": "string",
           "name": "Mac",
@@ -252,6 +274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "android  Aid",
           "member": "string",
           "name": "Aid",
@@ -260,6 +283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Android Cid",
           "member": "string",
           "name": "Cid",
@@ -268,6 +292,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机Imsi",
           "member": "string",
           "name": "Imsi",
@@ -276,6 +301,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Df 磁盘分区信息",
           "member": "string",
           "name": "Df",
@@ -284,6 +310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内核版本",
           "member": "string",
           "name": "KernelVer",
@@ -292,6 +319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储大小",
           "member": "string",
           "name": "Storage",
@@ -300,6 +328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备驱动指纹",
           "member": "string",
           "name": "Dfp",
@@ -308,6 +337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "启动时间",
           "member": "string",
           "name": "BootTime",
@@ -316,6 +346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分辨率 水平*垂直 格式",
           "member": "string",
           "name": "Resolution",
@@ -324,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "铃声列表",
           "member": "string",
           "name": "RingList",
@@ -332,6 +364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字体列表",
           "member": "string",
           "name": "FontList",
@@ -340,6 +373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "传感器列表",
           "member": "string",
           "name": "SensorList",
@@ -348,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CPU型号",
           "member": "string",
           "name": "CpuType",
@@ -356,6 +391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "电池容量",
           "member": "string",
           "name": "Battery",
@@ -364,6 +400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信通院广告ID",
           "member": "string",
           "name": "Oaid",
@@ -372,6 +409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IOS 广告ID",
           "member": "string",
           "name": "Idfa",
@@ -380,6 +418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IOS 应用ID",
           "member": "string",
           "name": "Idfv",
@@ -388,6 +427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -396,6 +436,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IOS手机型号",
           "member": "string",
           "name": "IphoneModel",
@@ -404,6 +445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Android 指纹",
           "member": "string",
           "name": "Fingerprint",
@@ -412,6 +454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Android序列号",
           "member": "string",
           "name": "SerialId",
@@ -425,6 +468,7 @@
       "document": "QueryDevAndRisk返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "是否查得",
           "member": "int64",
           "name": "Found",
@@ -432,6 +476,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "匹配数量级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "AllCnt",
@@ -439,6 +484,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "匹配到的设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DevInfoQ",
           "name": "Matches",
@@ -459,6 +505,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "风险码",
           "member": "int64",
           "name": "RiskCode",
@@ -468,6 +515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RiskCodeValue",
@@ -483,6 +531,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "风险码",
           "member": "int64",
           "name": "Key",
@@ -492,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Value",

@@ -34,6 +34,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "代理角色临时密钥的Token",
           "member": "string",
           "name": "SessionKey",
@@ -47,6 +48,7 @@
       "document": "CreateWeappQRUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "渠道备案小程序二维码",
           "member": "string",
           "name": "Url",
@@ -71,6 +73,7 @@
       "document": "DescribeGetAuthInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实名认证状态：0未实名，1已实名",
           "example": "1",
           "member": "string",
@@ -80,6 +83,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实名认证类型：0个人，1企业",
           "example": "1",
           "member": "string",
@@ -89,6 +93,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "认证类型，个人0，企业1",
           "example": "1",
           "member": "string",
@@ -111,6 +116,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "备案ICP订单号",
           "example": "30159962067561775",
           "member": "string",
@@ -120,6 +126,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单里的webId",
           "example": "1000032",
           "member": "string",
@@ -129,6 +136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)",
           "example": "[\"10001\",\"10002\"]",
           "member": "string",
@@ -138,6 +146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网站信息字段名 数组",
           "example": "[\"urlQCloud\",\"siteLiveBodyVerifyUrl\"]",
           "member": "string",
@@ -147,6 +156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值",
           "example": "true",
           "member": "bool",

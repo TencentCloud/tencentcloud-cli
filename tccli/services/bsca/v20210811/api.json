@@ -48,6 +48,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CVE评分。",
           "example": "6.8",
           "member": "float",
@@ -58,6 +59,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AccessVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>",
           "example": "LOCAL",
           "member": "string",
@@ -68,6 +70,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AccessComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>MEDIUM 中</li>\n<li>LOW 低</li>",
           "example": "HIGH",
           "member": "string",
@@ -78,6 +81,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Authentication 身份验证。\n取值范围：\n<li>MULTIPLE 多系统认证</li>\n<li>SINGLE 单系统认证</li>\n<li>NONE 无</li>",
           "example": "MULTIPLE",
           "member": "string",
@@ -88,6 +92,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
           "example": "PARTIAL",
           "member": "string",
@@ -98,6 +103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
           "example": "PARTIAL",
           "member": "string",
@@ -108,6 +114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
           "example": "PARTIAL",
           "member": "string",
@@ -124,6 +131,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CVE评分。",
           "example": "5.5",
           "member": "float",
@@ -134,6 +142,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AttackVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>\n<li>PHYSICAL 物理</li>",
           "example": "NETWORK",
           "member": "string",
@@ -144,6 +153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AttackComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>",
           "example": "HIGH",
           "member": "string",
@@ -154,6 +164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "PrivilegesRequired 触发特权。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>\n<li>NONE 无</li>",
           "example": "HIGH",
           "member": "string",
@@ -164,6 +175,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "UserInteraction 交互必要性。\n取值范围：\n<li>NONE 无</li>\n<li>REQUIRED 需要</li>",
           "example": "REQUIRED",
           "member": "string",
@@ -174,6 +186,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Scope 绕过安全边界。\n取值范围：\n<li>UNCHANGED 否</li>\n<li>CHANGED 能</li>",
           "example": "UNCHANGED",
           "member": "string",
@@ -184,6 +197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
           "example": "LOW",
           "member": "string",
@@ -194,6 +208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
           "example": "LOW",
           "member": "string",
@@ -204,6 +219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
           "example": "LOW",
           "member": "string",
@@ -220,6 +236,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的PURL",
           "example": "无",
           "member": "PURL",
@@ -230,6 +247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的主页",
           "example": "http://example.com",
           "member": "string",
@@ -240,6 +258,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的简介",
           "example": "OpenSSL is a toolkit for supporting cryptography.",
           "member": "string",
@@ -250,6 +269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的别名列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -260,6 +280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的代码位置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -270,6 +291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方组件的许可证表达式",
           "example": "apache-2.0",
           "member": "string",
@@ -286,6 +308,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用于匹配漏洞的PURL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PURL",
@@ -296,6 +319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该组件是否包含修复漏洞的官方补丁",
           "example": "true",
           "member": "bool",
@@ -306,6 +330,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修复漏洞的组件版本号",
           "example": ">1.1.1c",
           "member": "string",
@@ -316,6 +341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞影响的组件版本号",
           "example": "1.1.1",
           "member": "string",
@@ -326,6 +352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞影响组件",
           "example": "openssl",
           "member": "string",
@@ -336,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞在该产品中的风险等级\n<li>Critical</li>\n<li>High</li>\n<li>Medium</li>\n<li>Low</li>",
           "example": "Medium",
           "member": "string",
@@ -352,6 +380,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞概览信息",
           "example": "无",
           "member": "VulnerabilitySummary",
@@ -362,6 +391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "与组件相关的漏洞概览信息",
           "example": "无",
           "member": "ComponentVulnerabilitySummary",
@@ -378,6 +408,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组件的PURL",
           "example": "无",
           "member": "PURL",
@@ -392,6 +423,7 @@
       "document": "DescribeKBComponent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "匹配的组件信息",
           "example": "无",
           "member": "Component",
@@ -414,6 +446,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组件的PURL，其中Name和Version为必填字段",
           "example": "无",
           "member": "PURL",
@@ -428,6 +461,7 @@
       "document": "DescribeKBComponentVulnerability返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "漏洞信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComponentVulnerabilityUnion",
@@ -450,6 +484,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "License表达式",
           "example": "apache-2.0",
           "member": "string",
@@ -464,6 +499,7 @@
       "document": "DescribeKBLicense返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "许可证列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LicenseUnion",
@@ -473,6 +509,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用于匹配的License表达式",
           "example": "apache-2.0",
           "member": "string",
@@ -495,6 +532,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CVE ID列表（不能与Vul ID同时存在）",
           "example": "[\"CVE-2020-1971\", \"CVE-2019-1551\"]",
           "member": "string",
@@ -504,6 +542,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vul ID列表（不能与CVE ID 同时存在）",
           "example": "[\"pcmgr-303514\"]",
           "member": "string",
@@ -518,6 +557,7 @@
       "document": "DescribeKBVulnerability返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "漏洞详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VulnerabilityUnion",
@@ -540,6 +580,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "许可证内容",
           "example": " TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION...",
           "member": "string",
@@ -550,6 +591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证允许信息列表",
           "example": "无",
           "member": "LicenseRestriction",
@@ -560,6 +602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证要求信息列表",
           "example": "无",
           "member": "LicenseRestriction",
@@ -570,6 +613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证禁止信息列表",
           "example": "无",
           "member": "LicenseRestriction",
@@ -586,6 +630,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "license约束的名称。",
           "example": "Commercial Use",
           "member": "string",
@@ -596,6 +641,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "license约束的描述。",
           "example": "The licensed material",
           "member": "string",
@@ -612,6 +658,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "许可证标识符",
           "example": "apache-2.0",
           "member": "string",
@@ -622,6 +669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证的SPDX标识符，见 https://spdx.org/licenses/",
           "example": "Apache-2.0",
           "member": "string",
@@ -632,6 +680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证短名称",
           "example": "Apache 2.0",
           "member": "string",
@@ -642,6 +691,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证完整名称",
           "example": "Apache License 2.0",
           "member": "string",
@@ -652,6 +702,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "License风险等级\n<li>NotDefined</li>\n<li>LowRisk</li>\n<li>MediumRisk</li>\n<li>HighRisk</li>",
           "example": "LowRisk",
           "member": "string",
@@ -662,6 +713,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证来源URL",
           "example": "https://spdx.org/licenses/Apache-2.0.html",
           "member": "string",
@@ -678,6 +730,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "许可证概览信息",
           "example": "无",
           "member": "LicenseSummary",
@@ -688,6 +741,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "许可证详细信息",
           "example": "无",
           "member": "LicenseDetail",
@@ -704,6 +758,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "SHA1。",
           "example": "7ed845de1dfe070d43511fab321784e6c4118398",
           "member": "string",
@@ -718,6 +773,7 @@
       "document": "MatchKBPURLList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "组件列表。",
           "example": "无",
           "member": "PURL",
@@ -727,6 +783,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否命中数据库。",
           "example": "true",
           "member": "bool",
@@ -749,6 +806,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组件名称",
           "example": "curl",
           "member": "string",
@@ -759,6 +817,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等",
           "example": "deb",
           "member": "string",
@@ -769,6 +828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等",
           "example": "debian",
           "member": "string",
@@ -779,6 +839,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修饰组件的额外属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Qualifier",
@@ -789,6 +850,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相对于组件包根位置的子目录",
           "example": "/release",
           "member": "string",
@@ -799,6 +861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组件版本号",
           "example": "7.50.3",
           "member": "string",
@@ -815,6 +878,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "额外属性的名称。",
           "example": "distro_version",
           "member": "string",
@@ -825,6 +889,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额外属性的值。",
           "example": "14.04",
           "member": "string",
@@ -841,6 +906,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞类别",
           "example": "其他",
           "member": "string",
@@ -851,6 +917,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞分类",
           "example": "web应用漏洞",
           "member": "string",
@@ -861,6 +928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞描述",
           "example": "漏洞描述",
           "member": "string",
@@ -871,6 +939,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞官方解决方案",
           "example": "升级到最新无漏洞版本",
           "member": "string",
@@ -881,6 +950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞信息参考列表",
           "example": "无",
           "member": "string",
@@ -891,6 +961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞防御方案",
           "example": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://www.openssl.org/news/secadv/2019",
           "member": "string",
@@ -901,6 +972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞CVSSv2信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CVSSV2Info",
@@ -911,6 +983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞CVSSv3信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CVSSV3Info",
@@ -921,6 +994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞提交时间",
           "example": "2019-09-11 01:15:00",
           "member": "string",
@@ -931,6 +1005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CWE编号",
           "example": "CWE-311",
           "member": "string",
@@ -941,6 +1016,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞CVSSv2向量",
           "example": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
           "member": "string",
@@ -951,6 +1027,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞CVSSv3向量",
           "example": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
           "member": "string",
@@ -967,6 +1044,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞ID",
           "example": "pcmgr-303514",
           "member": "string",
@@ -977,6 +1055,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞所属CVE编号",
           "example": "CVE-2019-11236",
           "member": "string",
@@ -987,6 +1066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞所属CNVD编号",
           "example": "CNVD-XXX",
           "member": "string",
@@ -997,6 +1077,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞所属CNNVD编号",
           "example": "CNNVD-202012-579",
           "member": "string",
@@ -1007,6 +1088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞名称",
           "example": "OpenSSL 拒绝服务漏洞",
           "member": "string",
@@ -1017,6 +1099,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该漏洞是否是需重点关注的漏洞",
           "example": "false",
           "member": "bool",
@@ -1027,6 +1110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞风险等级\n<li>Critical</li>\n<li>High</li>\n<li>Medium</li>\n<li>Low</li>",
           "example": "Low",
           "member": "string",
@@ -1043,6 +1127,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞概览信息",
           "example": "无",
           "member": "VulnerabilitySummary",
@@ -1053,6 +1138,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "漏洞详细信息",
           "example": "无",
           "member": "VulnerabilityDetail",

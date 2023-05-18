@@ -20,6 +20,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "枚举范围： AddTimeStamp, InstanceName, ProjectId",
           "example": "xx",
           "member": "string",
@@ -29,6 +30,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查找的关键字",
           "example": "[\"\\u5b57\\u7b26\\u4e32\\u578b\"]",
           "member": "string",
@@ -38,6 +40,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子网ID列表",
           "example": "[\"xx\"]",
           "member": "string",
@@ -47,6 +50,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VIP列表",
           "example": "[\"xx\"]",
           "member": "string",
@@ -56,6 +60,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0倒序，1正序，默认倒序",
           "example": "0",
           "member": "int64",
@@ -65,6 +70,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称列表",
           "example": "[\"\\u5b57\\u7b26\\u4e32\\u578b\"]",
           "member": "string",
@@ -74,6 +80,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "VPC ID列表",
           "example": "[\"xx\"]",
           "member": "string",
@@ -83,6 +90,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID列表",
           "example": "[0]",
           "member": "int64",
@@ -92,6 +100,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，取Limit整数倍",
           "example": "1",
           "member": "uint64",
@@ -101,6 +110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例列表的大小，参数默认值100",
           "example": "1",
           "member": "uint64",
@@ -110,6 +120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "[\"\\u6709\\u7b26\\u53f7\\u6574\\u578b\"]",
           "member": "string",
@@ -124,6 +135,7 @@
       "document": "DescribeInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例详细信息列表",
           "example": "无",
           "member": "InstanceListInfo",
@@ -133,6 +145,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例数量",
           "example": "1",
           "member": "int64",
@@ -155,6 +168,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例修改时间",
           "example": "xxxx",
           "member": "datetime",
@@ -165,6 +179,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例隔离时间",
           "example": "xxxx",
           "member": "datetime",
@@ -175,6 +190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费",
           "example": "0",
           "member": "int64",
@@ -185,6 +201,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仓库ID",
           "example": "0",
           "member": "int64",
@@ -195,6 +212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例当前状态，0：发货中；1：运行中；2：创建失败；4：销毁中；5：隔离中；6：下线中",
           "example": "0",
           "member": "int64",
@@ -205,6 +223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内置ID",
           "example": "0",
           "member": "int64",
@@ -215,6 +234,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例关联的标签信息",
           "example": "[]",
           "member": "TagInfo",
@@ -225,6 +245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "xxxx",
           "member": "string",
@@ -235,6 +256,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本",
           "example": "0",
           "member": "int64",
@@ -245,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例描述信息",
           "example": "xxxx",
           "member": "string",
@@ -255,6 +278,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期策略",
           "example": "0",
           "member": "int64",
@@ -265,6 +289,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc网络下子网id 如：46315",
           "example": "0",
           "member": "int64",
@@ -275,6 +300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID",
           "example": "0",
           "member": "int64",
@@ -285,6 +311,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例创建时间",
           "example": "xxxx",
           "member": "datetime",
@@ -295,6 +322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区域ID",
           "example": "0",
           "member": "int64",
@@ -305,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计费模式：0-按量计费，1-包年包月",
           "example": "0",
           "member": "int64",
@@ -315,6 +344,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc网络id 如：75101",
           "example": "0",
           "member": "int64",
@@ -325,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称",
           "example": "xxxx",
           "member": "string",
@@ -335,6 +366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例截止时间",
           "example": "xxxx",
           "member": "datetime",
@@ -345,6 +377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc网络id 如：vpc-fk33jsf43kgv",
           "example": "xxxx",
           "member": "string",
@@ -355,6 +388,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例vip",
           "example": "xxxx",
           "member": "string",
@@ -365,6 +399,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc网络下子网id 如：subnet-fd3j6l35mm0",
           "example": "xxxx",
           "member": "string",
@@ -375,6 +410,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户AppID",
           "example": "0",
           "member": "int64",
@@ -385,6 +421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例端口号",
           "example": "0",
           "member": "int64",
@@ -401,6 +438,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "example": "xxxx",
           "member": "string",
@@ -411,6 +449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "example": "xxxx",
           "member": "string",

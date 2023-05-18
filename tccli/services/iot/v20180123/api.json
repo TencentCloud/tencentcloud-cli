@@ -328,6 +328,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "转发至topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "TopicAction",
           "name": "Topic",
@@ -337,6 +338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发至第三发\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ServiceAction",
           "name": "Service",
@@ -346,6 +348,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发至第三发Ckafka\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "CkafkaAction",
           "name": "Ckafka",
@@ -361,6 +364,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -387,6 +391,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -395,6 +400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称，唯一标识某产品下的一个设备",
           "member": "string",
           "name": "DeviceName",
@@ -408,6 +414,7 @@
       "document": "AddDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备信息",
           "member": "Device",
           "name": "Device",
@@ -427,6 +434,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符",
           "member": "string",
           "name": "Name",
@@ -435,6 +443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品描述",
           "member": "string",
           "name": "Description",
@@ -443,6 +452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据模版",
           "member": "DataTemplate",
           "name": "DataTemplate",
@@ -451,6 +461,7 @@
         },
         {
           "default": "template",
+          "disabled": false,
           "document": "产品版本（native表示基础版，template表示高级版，默认值为template）",
           "member": "string",
           "name": "DataProtocol",
@@ -459,6 +470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备认证方式（1：动态令牌，2：签名直连鉴权）",
           "member": "uint64",
           "name": "AuthType",
@@ -467,6 +479,7 @@
         },
         {
           "default": "wifi",
+          "disabled": false,
           "document": "通信方式（other/wifi/cellular/nb-iot）",
           "member": "string",
           "name": "CommProtocol",
@@ -475,6 +488,7 @@
         },
         {
           "default": "device",
+          "disabled": false,
           "document": "产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）",
           "member": "string",
           "name": "DeviceType",
@@ -488,6 +502,7 @@
       "document": "AddProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "产品信息",
           "member": "Product",
           "name": "Product",
@@ -508,6 +523,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -516,6 +532,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Description",
@@ -524,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询",
           "member": "RuleQuery",
           "name": "Query",
@@ -532,6 +550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发动作列表",
           "member": "Action",
           "name": "Actions",
@@ -540,6 +559,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据类型（0：文本，1：二进制）",
           "member": "uint64",
           "name": "DataType",
@@ -553,6 +573,7 @@
       "document": "AddRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "规则",
           "member": "Rule",
           "name": "Rule",
@@ -572,6 +593,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -580,6 +602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Topic名称",
           "member": "string",
           "name": "TopicName",
@@ -593,6 +616,7 @@
       "document": "AddTopic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Topic信息",
           "member": "Topic",
           "name": "Topic",
@@ -613,6 +637,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "member": "string",
           "name": "UserName",
@@ -621,6 +646,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密码",
           "member": "string",
           "name": "Password",
@@ -634,6 +660,7 @@
       "document": "AppAddUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用用户",
           "member": "AppUser",
           "name": "AppUser",
@@ -654,6 +681,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -662,6 +690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -670,6 +699,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -696,6 +726,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备Id",
           "member": "string",
           "name": "DeviceId",
@@ -705,6 +736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属产品Id",
           "member": "string",
           "name": "ProductId",
@@ -714,6 +746,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -723,6 +756,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "别名",
           "member": "string",
           "name": "AliasName",
@@ -732,6 +766,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地区",
           "member": "string",
           "name": "Region",
@@ -741,6 +776,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -750,6 +786,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -765,6 +802,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备Id",
           "member": "string",
           "name": "DeviceId",
@@ -774,6 +812,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属产品Id",
           "member": "string",
           "name": "ProductId",
@@ -783,6 +822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -792,6 +832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "别名",
           "member": "string",
           "name": "AliasName",
@@ -801,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地区",
           "member": "string",
           "name": "Region",
@@ -810,6 +852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -819,6 +862,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -828,6 +872,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备信息（json）",
           "member": "string",
           "name": "DeviceInfo",
@@ -837,6 +882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据模板",
           "member": "DataTemplate",
           "name": "DataTemplate",
@@ -852,6 +898,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -860,6 +907,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -868,6 +916,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -881,6 +930,7 @@
       "document": "AppGetDeviceData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备数据。",
           "member": "string",
           "name": "DeviceData",
@@ -901,6 +951,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -909,6 +960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -917,6 +969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -930,6 +983,7 @@
       "document": "AppGetDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "绑定设备详情",
           "member": "AppDeviceDetail",
           "name": "AppDevice",
@@ -950,6 +1004,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -958,6 +1013,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备Id列表（单次限制1000个设备）",
           "member": "string",
           "name": "DeviceIds",
@@ -971,6 +1027,7 @@
       "document": "AppGetDeviceStatuses返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备状态",
           "member": "DeviceStatus",
           "name": "DeviceStatuses",
@@ -991,6 +1048,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1004,6 +1062,7 @@
       "document": "AppGetDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "绑定设备列表",
           "member": "AppDevice",
           "name": "Devices",
@@ -1024,6 +1083,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "member": "string",
           "name": "UserName",
@@ -1032,6 +1092,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密码",
           "member": "string",
           "name": "Password",
@@ -1040,6 +1101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "TTL",
           "member": "uint64",
           "name": "Expire",
@@ -1053,6 +1115,7 @@
       "document": "AppGetToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1073,6 +1136,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1086,6 +1150,7 @@
       "document": "AppGetUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户信息",
           "member": "AppUser",
           "name": "AppUser",
@@ -1106,6 +1171,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1114,6 +1180,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1122,6 +1189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1130,6 +1198,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "控制数据（json）",
           "member": "string",
           "name": "ControlData",
@@ -1138,6 +1207,7 @@
         },
         {
           "default": "true",
+          "disabled": false,
           "document": "是否发送metadata字段",
           "member": "bool",
           "name": "Metadata",
@@ -1164,6 +1234,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1172,6 +1243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "旧密码",
           "member": "string",
           "name": "OldPassword",
@@ -1180,6 +1252,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新密码",
           "member": "string",
           "name": "NewPassword",
@@ -1206,6 +1279,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1214,6 +1288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备签名",
           "member": "string",
           "name": "DeviceSignature",
@@ -1227,6 +1302,7 @@
       "document": "AppSecureAddDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "绑定设备信息",
           "member": "AppDevice",
           "name": "AppDevice",
@@ -1247,6 +1323,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1255,6 +1332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1263,6 +1341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1271,6 +1350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备别名",
           "member": "string",
           "name": "AliasName",
@@ -1284,6 +1364,7 @@
       "document": "AppUpdateDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备信息",
           "member": "AppDevice",
           "name": "AppDevice",
@@ -1304,6 +1385,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "访问Token",
           "member": "string",
           "name": "AccessToken",
@@ -1312,6 +1394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "昵称",
           "member": "string",
           "name": "NickName",
@@ -1325,6 +1408,7 @@
       "document": "AppUpdateUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用用户",
           "member": "AppUser",
           "name": "AppUser",
@@ -1345,6 +1429,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用Id",
           "member": "string",
           "name": "ApplicationId",
@@ -1354,6 +1439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "member": "string",
           "name": "UserName",
@@ -1363,6 +1449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "昵称",
           "member": "string",
           "name": "NickName",
@@ -1372,6 +1459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "date",
           "name": "CreateTime",
@@ -1381,6 +1469,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "member": "date",
           "name": "UpdateTime",
@@ -1396,6 +1485,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "子设备产品Id",
           "member": "string",
           "name": "SubDeviceProductId",
@@ -1404,6 +1494,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网关产品Id",
           "member": "string",
           "name": "GatewayProductId",
@@ -1430,6 +1521,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -1439,6 +1531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Desc",
@@ -1448,6 +1541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "读写模式",
           "member": "string",
           "name": "Mode",
@@ -1457,6 +1551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值列表",
           "member": "bool",
           "name": "Range",
@@ -1472,6 +1567,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例Id",
           "member": "string",
           "name": "InstanceId",
@@ -1481,6 +1577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "topic名称",
           "member": "string",
           "name": "TopicName",
@@ -1490,6 +1587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "member": "string",
           "name": "Region",
@@ -1505,6 +1603,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志id",
           "member": "string",
           "name": "Id",
@@ -1514,6 +1613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳",
           "member": "uint64",
           "name": "Timestamp",
@@ -1523,6 +1623,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1532,6 +1633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据",
           "member": "string",
           "name": "Data",
@@ -1547,6 +1649,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "数字类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "NumberData",
           "name": "Number",
@@ -1556,6 +1659,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StringData",
           "name": "String",
@@ -1565,6 +1669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "枚举类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "EnumData",
           "name": "Enum",
@@ -1574,6 +1679,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "布尔类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "BoolData",
           "name": "Bool",
@@ -1589,6 +1695,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -1615,6 +1722,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志id",
           "member": "string",
           "name": "Id",
@@ -1624,6 +1732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "行为（事件）",
           "member": "string",
           "name": "Event",
@@ -1633,6 +1742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "shadow/action/mqtt, 分别表示：影子/规则引擎/上下线日志",
           "member": "string",
           "name": "LogType",
@@ -1642,6 +1752,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳",
           "member": "uint64",
           "name": "Timestamp",
@@ -1651,6 +1762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "success/fail",
           "member": "string",
           "name": "Result",
@@ -1660,6 +1772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志详细内容",
           "member": "string",
           "name": "Data",
@@ -1669,6 +1782,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据来源topic",
           "member": "string",
           "name": "Topic",
@@ -1678,6 +1792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1693,6 +1808,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1701,6 +1817,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1727,6 +1844,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1753,6 +1871,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -1779,6 +1898,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TopicId",
           "member": "string",
           "name": "TopicId",
@@ -1787,6 +1907,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1813,6 +1934,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1822,6 +1944,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1831,6 +1954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备密钥",
           "member": "string",
           "name": "DeviceSecret",
@@ -1840,6 +1964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -1849,6 +1974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -1858,6 +1984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备信息（json）",
           "member": "string",
           "name": "DeviceInfo",
@@ -1873,6 +2000,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1882,6 +2010,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1891,6 +2020,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备密钥",
           "member": "string",
           "name": "DeviceSecret",
@@ -1900,6 +2030,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -1915,6 +2046,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志id",
           "member": "string",
           "name": "Id",
@@ -1924,6 +2056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志内容",
           "member": "string",
           "name": "Msg",
@@ -1933,6 +2066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态码",
           "member": "string",
           "name": "Code",
@@ -1942,6 +2076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳",
           "member": "uint64",
           "name": "Timestamp",
@@ -1951,6 +2086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1960,6 +2096,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备动作",
           "member": "string",
           "name": "Method",
@@ -1975,6 +2112,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -1984,6 +2122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备签名",
           "member": "string",
           "name": "DeviceSignature",
@@ -1999,6 +2138,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间点",
           "member": "datetime",
           "name": "Datetime",
@@ -2008,6 +2148,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在线设备数",
           "member": "uint64",
           "name": "DeviceOnline",
@@ -2017,6 +2158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "激活设备数",
           "member": "uint64",
           "name": "DeviceActive",
@@ -2026,6 +2168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备总数",
           "member": "uint64",
           "name": "DeviceTotal",
@@ -2041,6 +2184,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -2050,6 +2194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备状态（inactive, online, offline）",
           "member": "string",
           "name": "Status",
@@ -2059,6 +2204,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "FirstOnline",
@@ -2068,6 +2214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
           "name": "LastOnline",
@@ -2077,6 +2224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上线次数",
           "member": "uint64",
           "name": "OnlineTimes",
@@ -2092,6 +2240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -2101,6 +2250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Desc",
@@ -2110,6 +2260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "读写模式",
           "member": "string",
           "name": "Mode",
@@ -2119,6 +2270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值列表",
           "member": "string",
           "name": "Range",
@@ -2134,6 +2286,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2142,6 +2295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称列表，允许最多一次100台",
           "member": "string",
           "name": "DeviceNames",
@@ -2150,6 +2304,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -2158,6 +2313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -2166,6 +2322,7 @@
         },
         {
           "default": "10000",
+          "disabled": false,
           "document": "查询数据量",
           "member": "uint64",
           "name": "Size",
@@ -2174,6 +2331,7 @@
         },
         {
           "default": "desc",
+          "disabled": false,
           "document": "时间排序（desc/asc）",
           "member": "string",
           "name": "Order",
@@ -2182,6 +2340,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2195,6 +2354,7 @@
       "document": "GetDataHistory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据历史",
           "member": "DataHistoryEntry",
           "name": "DataHistory",
@@ -2202,6 +2362,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2209,6 +2370,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询游标超时",
           "member": "uint64",
           "name": "ScrollTimeout",
@@ -2229,6 +2391,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2237,6 +2400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称列表，最大支持100台",
           "member": "string",
           "name": "DeviceNames",
@@ -2245,6 +2409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -2253,6 +2418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -2261,6 +2427,7 @@
         },
         {
           "default": "10000",
+          "disabled": false,
           "document": "查询数据量",
           "member": "uint64",
           "name": "Size",
@@ -2269,6 +2436,7 @@
         },
         {
           "default": "desc",
+          "disabled": false,
           "document": "时间排序（desc/asc）",
           "member": "string",
           "name": "Order",
@@ -2277,6 +2445,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2285,6 +2454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志类型（shadow/action/mqtt）",
           "member": "string",
           "name": "Type",
@@ -2298,6 +2468,7 @@
       "document": "GetDebugLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "调试日志",
           "member": "DebugLogEntry",
           "name": "DebugLog",
@@ -2305,6 +2476,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2312,6 +2484,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "游标超时",
           "member": "uint64",
           "name": "ScrollTimeout",
@@ -2332,6 +2505,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2340,6 +2514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -2353,6 +2528,7 @@
       "document": "GetDeviceData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备数据",
           "member": "string",
           "name": "DeviceData",
@@ -2372,6 +2548,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2380,6 +2557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称列表，最大支持100台",
           "member": "string",
           "name": "DeviceNames",
@@ -2388,6 +2566,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -2396,6 +2575,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -2404,6 +2584,7 @@
         },
         {
           "default": "10000",
+          "disabled": false,
           "document": "查询数据量",
           "member": "uint64",
           "name": "Size",
@@ -2412,6 +2593,7 @@
         },
         {
           "default": "desc",
+          "disabled": false,
           "document": "时间排序（desc/asc）",
           "member": "string",
           "name": "Order",
@@ -2420,6 +2602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2428,6 +2611,7 @@
         },
         {
           "default": "comm",
+          "disabled": false,
           "document": "日志类型（comm/status）",
           "member": "string",
           "name": "Type",
@@ -2441,6 +2625,7 @@
       "document": "GetDeviceLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备日志",
           "member": "DeviceLogEntry",
           "name": "DeviceLog",
@@ -2448,6 +2633,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询游标",
           "member": "string",
           "name": "ScrollId",
@@ -2455,6 +2641,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "游标超时",
           "member": "uint64",
           "name": "ScrollTimeout",
@@ -2475,6 +2662,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2483,6 +2671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -2496,6 +2685,7 @@
       "document": "GetDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备信息",
           "member": "Device",
           "name": "Device",
@@ -2515,6 +2705,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2523,6 +2714,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称列表（单次限制1000个设备）",
           "member": "string",
           "name": "DeviceNames",
@@ -2531,6 +2723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "member": "uint64",
           "name": "Expire",
@@ -2544,6 +2737,7 @@
       "document": "GetDeviceSignatures返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备绑定签名列表",
           "member": "DeviceSignature",
           "name": "DeviceSignatures",
@@ -2564,6 +2758,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id列表",
           "member": "string",
           "name": "Products",
@@ -2572,6 +2767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始日期",
           "member": "date",
           "name": "StartDate",
@@ -2580,6 +2776,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束日期",
           "member": "date",
           "name": "EndDate",
@@ -2593,6 +2790,7 @@
       "document": "GetDeviceStatistics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "统计数据",
           "member": "DeviceStatData",
           "name": "DeviceStatistics",
@@ -2613,6 +2811,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2621,6 +2820,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称列表（单次限制1000个设备）",
           "member": "string",
           "name": "DeviceNames",
@@ -2634,6 +2834,7 @@
       "document": "GetDeviceStatuses返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备状态列表",
           "member": "DeviceStatus",
           "name": "DeviceStatuses",
@@ -2653,6 +2854,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2661,6 +2863,7 @@
         },
         {
           "default": "0",
+          "disabled": false,
           "document": "偏移",
           "member": "uint64",
           "name": "Offset",
@@ -2669,6 +2872,7 @@
         },
         {
           "default": "10000",
+          "disabled": false,
           "document": "长度",
           "member": "uint64",
           "name": "Length",
@@ -2677,6 +2881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键字查询",
           "member": "string",
           "name": "Keyword",
@@ -2690,6 +2895,7 @@
       "document": "GetDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备列表",
           "member": "DeviceEntry",
           "name": "Devices",
@@ -2697,6 +2903,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "设备总数",
           "member": "uint64",
           "name": "Total",
@@ -2717,6 +2924,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2730,6 +2938,7 @@
       "document": "GetProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "产品信息",
           "member": "Product",
           "name": "Product",
@@ -2749,6 +2958,7 @@
       "members": [
         {
           "default": "0",
+          "disabled": false,
           "document": "偏移",
           "member": "uint64",
           "name": "Offset",
@@ -2757,6 +2967,7 @@
         },
         {
           "default": "3000",
+          "disabled": false,
           "document": "长度",
           "member": "uint64",
           "name": "Length",
@@ -2770,12 +2981,14 @@
       "document": "GetProducts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Product列表",
           "member": "ProductEntry",
           "name": "Products",
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "Product总数",
           "member": "uint64",
           "name": "Total",
@@ -2795,6 +3008,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -2808,6 +3022,7 @@
       "document": "GetRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "规则",
           "member": "Rule",
           "name": "Rule",
@@ -2827,6 +3042,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移",
           "member": "uint64",
           "name": "Offset",
@@ -2835,6 +3051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "member": "uint64",
           "name": "Length",
@@ -2848,12 +3065,14 @@
       "document": "GetRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "规则列表",
           "member": "Rule",
           "name": "Rules",
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "规则总数",
           "member": "uint64",
           "name": "Total",
@@ -2873,6 +3092,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TopicId",
           "member": "string",
           "name": "TopicId",
@@ -2881,6 +3101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2894,6 +3115,7 @@
       "document": "GetTopic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Topic信息",
           "member": "Topic",
           "name": "Topic",
@@ -2914,6 +3136,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2922,6 +3145,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移",
           "member": "uint64",
           "name": "Offset",
@@ -2930,6 +3154,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "member": "uint64",
           "name": "Length",
@@ -2943,6 +3168,7 @@
       "document": "GetTopics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Topic列表",
           "member": "Topic",
           "name": "Topics",
@@ -2950,6 +3176,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Topic总数",
           "member": "uint64",
           "name": "Total",
@@ -2970,6 +3197,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -2978,6 +3206,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -2986,6 +3215,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "控制数据（json）",
           "member": "string",
           "name": "ControlData",
@@ -2994,6 +3224,7 @@
         },
         {
           "default": "true",
+          "disabled": false,
           "document": "是否发送metadata字段",
           "member": "bool",
           "name": "Metadata",
@@ -3020,6 +3251,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -3029,6 +3261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Desc",
@@ -3038,6 +3271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "读写模式",
           "member": "string",
           "name": "Mode",
@@ -3047,6 +3281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值范围",
           "member": "float",
           "name": "Range",
@@ -3062,6 +3297,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -3071,6 +3307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Key",
           "member": "string",
           "name": "ProductKey",
@@ -3080,6 +3317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AppId",
           "member": "uint64",
           "name": "AppId",
@@ -3089,6 +3327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品名称",
           "member": "string",
           "name": "Name",
@@ -3098,6 +3337,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品描述",
           "member": "string",
           "name": "Description",
@@ -3107,6 +3347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接域名",
           "member": "string",
           "name": "Domain",
@@ -3116,6 +3357,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品规格",
           "member": "uint64",
           "name": "Standard",
@@ -3125,6 +3367,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "鉴权类型（0：直连，1：Token）",
           "member": "uint64",
           "name": "AuthType",
@@ -3134,6 +3377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "删除（0未删除）",
           "member": "uint64",
           "name": "Deleted",
@@ -3143,6 +3387,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Message",
@@ -3152,6 +3397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -3161,6 +3407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -3170,6 +3417,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据模版",
           "member": "DataTemplate",
           "name": "DataTemplate",
@@ -3179,6 +3427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据协议（native/template）",
           "member": "string",
           "name": "DataProtocol",
@@ -3188,6 +3437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "直连用户名",
           "member": "string",
           "name": "Username",
@@ -3197,6 +3447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "直连密码",
           "member": "string",
           "name": "Password",
@@ -3206,6 +3457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通信方式",
           "member": "string",
           "name": "CommProtocol",
@@ -3215,6 +3467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "qps",
           "member": "uint64",
           "name": "Qps",
@@ -3224,6 +3477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "member": "string",
           "name": "Region",
@@ -3233,6 +3487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品的设备类型",
           "member": "string",
           "name": "DeviceType",
@@ -3242,6 +3497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联的产品列表",
           "member": "string",
           "name": "AssociatedProducts",
@@ -3257,6 +3513,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -3266,6 +3523,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Key",
           "member": "string",
           "name": "ProductKey",
@@ -3275,6 +3533,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AppId",
           "member": "uint64",
           "name": "AppId",
@@ -3284,6 +3543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品名称",
           "member": "string",
           "name": "Name",
@@ -3293,6 +3553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品描述",
           "member": "string",
           "name": "Description",
@@ -3302,6 +3563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接域名",
           "member": "string",
           "name": "Domain",
@@ -3311,6 +3573,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "鉴权类型（0：直连，1：Token）",
           "member": "uint64",
           "name": "AuthType",
@@ -3320,6 +3583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据协议（native/template）",
           "member": "string",
           "name": "DataProtocol",
@@ -3329,6 +3593,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "删除（0未删除）",
           "member": "uint64",
           "name": "Deleted",
@@ -3338,6 +3603,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Message",
@@ -3347,6 +3613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -3356,6 +3623,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通信方式",
           "member": "string",
           "name": "CommProtocol",
@@ -3365,6 +3633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "member": "string",
           "name": "Region",
@@ -3374,6 +3643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备类型",
           "member": "string",
           "name": "DeviceType",
@@ -3389,6 +3659,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Topic",
           "member": "string",
           "name": "Topic",
@@ -3397,6 +3668,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息内容",
           "member": "string",
           "name": "Message",
@@ -3405,6 +3677,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Qos(目前QoS支持0与1)",
           "member": "int64",
           "name": "Qos",
@@ -3431,6 +3704,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -3439,6 +3713,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -3452,6 +3727,7 @@
       "document": "ResetDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备信息",
           "member": "Device",
           "name": "Device",
@@ -3471,6 +3747,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -3480,6 +3757,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AppId",
           "member": "uint64",
           "name": "AppId",
@@ -3489,6 +3767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -3498,6 +3777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Description",
@@ -3507,6 +3787,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询",
           "member": "RuleQuery",
           "name": "Query",
@@ -3516,6 +3797,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发",
           "member": "Action",
           "name": "Actions",
@@ -3525,6 +3807,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已启动",
           "member": "uint64",
           "name": "Active",
@@ -3534,6 +3817,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已删除",
           "member": "uint64",
           "name": "Deleted",
@@ -3543,6 +3827,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -3552,6 +3837,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -3561,6 +3847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息顺序",
           "member": "uint64",
           "name": "MsgOrder",
@@ -3570,6 +3857,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据类型（0：文本，1：二进制）",
           "member": "uint64",
           "name": "DataType",
@@ -3585,6 +3873,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "字段",
           "member": "string",
           "name": "Field",
@@ -3594,6 +3883,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤规则",
           "member": "string",
           "name": "Condition",
@@ -3603,6 +3893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Topic",
@@ -3612,6 +3903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductId",
@@ -3627,6 +3919,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务url地址",
           "member": "string",
           "name": "Url",
@@ -3642,6 +3935,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -3651,6 +3945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Desc",
@@ -3660,6 +3955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "读写模式",
           "member": "string",
           "name": "Mode",
@@ -3669,6 +3965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度范围",
           "member": "uint64",
           "name": "Range",
@@ -3684,6 +3981,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TopicId",
           "member": "string",
           "name": "TopicId",
@@ -3693,6 +3991,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Topic名称",
           "member": "string",
           "name": "TopicName",
@@ -3702,6 +4001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -3711,6 +4011,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息最大生命周期",
           "member": "uint64",
           "name": "MsgLife",
@@ -3720,6 +4021,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息最大大小",
           "member": "uint64",
           "name": "MsgSize",
@@ -3729,6 +4031,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息最大数量",
           "member": "uint64",
           "name": "MsgCount",
@@ -3738,6 +4041,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已删除",
           "member": "uint64",
           "name": "Deleted",
@@ -3747,6 +4051,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Topic完整路径",
           "member": "string",
           "name": "Path",
@@ -3756,6 +4061,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -3765,6 +4071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "member": "datetime",
           "name": "UpdateTime",
@@ -3780,6 +4087,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "目标topic",
           "member": "string",
           "name": "Topic",
@@ -3795,6 +4103,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "子设备产品Id",
           "member": "string",
           "name": "SubDeviceProductId",
@@ -3803,6 +4112,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网关设备产品Id",
           "member": "string",
           "name": "GatewayProductId",
@@ -3829,6 +4139,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -3837,6 +4148,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品名称",
           "member": "string",
           "name": "Name",
@@ -3845,6 +4157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品描述",
           "member": "string",
           "name": "Description",
@@ -3853,6 +4166,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据模版",
           "member": "DataTemplate",
           "name": "DataTemplate",
@@ -3866,6 +4180,7 @@
       "document": "UpdateProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "更新后的产品信息",
           "member": "Product",
           "name": "Product",
@@ -3885,6 +4200,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则Id",
           "member": "string",
           "name": "RuleId",
@@ -3893,6 +4209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -3901,6 +4218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "member": "string",
           "name": "Description",
@@ -3909,6 +4227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询",
           "member": "RuleQuery",
           "name": "Query",
@@ -3917,6 +4236,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发动作列表",
           "member": "Action",
           "name": "Actions",
@@ -3925,6 +4245,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据类型（0：文本，1：二进制）",
           "member": "uint64",
           "name": "DataType",
@@ -3938,6 +4259,7 @@
       "document": "UpdateRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "规则",
           "member": "Rule",
           "name": "Rule",

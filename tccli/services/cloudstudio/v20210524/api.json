@@ -167,6 +167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
           "member": "string",
@@ -177,6 +178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像id",
           "example": "xxx",
           "member": "int64",
@@ -187,6 +189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像名称",
           "example": "xxx",
           "member": "string",
@@ -197,6 +200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云服务器登录名称",
           "example": "xxx",
           "member": "string",
@@ -207,6 +211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云服务器登录地址",
           "example": "xxx",
           "member": "string",
@@ -217,6 +222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云服务器登录端口",
           "example": "xxx",
           "member": "string",
@@ -227,6 +233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间类型",
           "example": "xxx",
           "member": "string",
@@ -237,6 +244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间版本",
           "example": "xxx",
           "member": "int64",
@@ -247,6 +255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间资源结构",
           "example": "xxx",
           "member": "WorkspaceResourceDTO",
@@ -257,6 +266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "xxx",
           "member": "string",
@@ -273,6 +283,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -282,6 +293,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "UserDefinedTemplateParams",
@@ -296,6 +308,7 @@
       "document": "CreateCustomizeTemplates返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -318,6 +331,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -327,6 +341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "AgentSpaceDTO",
@@ -341,6 +356,7 @@
       "document": "CreateWorkspaceByAgent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceInfoDTO",
@@ -362,6 +378,7 @@
       "document": "CreateWorkspaceByTemplate请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -370,6 +387,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -378,6 +396,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "工作空间名称",
           "example": "workspace_name",
           "member": "string",
@@ -392,6 +411,7 @@
       "document": "CreateWorkspaceByTemplate返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建工作空间返回的信息",
           "example": "无",
           "member": "WorkspaceInfo",
@@ -413,6 +433,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间结构",
           "example": "xxx",
           "member": "WorkspaceDTO",
@@ -422,6 +443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
           "member": "string",
@@ -436,6 +458,7 @@
       "document": "CreateWorkspaceByVersionControl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceInfoDTO",
@@ -457,6 +480,7 @@
       "document": "CreateWorkspaceTemporaryToken请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建工作空间凭证 DTO",
           "example": "无",
           "member": "WorkspaceTokenDTO",
@@ -471,6 +495,7 @@
       "document": "CreateWorkspaceTemporaryToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间临时访问 token 信息",
           "example": "无",
           "member": "WorkspaceTokenInfoV0",
@@ -492,6 +517,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模板tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -502,6 +528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板图标列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -512,6 +539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserDefinedTemplateParams",
@@ -528,6 +556,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -537,6 +566,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -564,6 +594,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -573,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -587,6 +619,7 @@
       "document": "DescribeCustomizeTemplatesById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -609,6 +642,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -618,6 +652,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间标识",
           "example": "xxx",
           "member": "string",
@@ -632,6 +667,7 @@
       "document": "DescribeCustomizeTemplatesPresets返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomizeTemplatesPresetsInfo",
@@ -654,6 +690,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -668,6 +705,7 @@
       "document": "DescribeCustomizeTemplates返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -690,6 +728,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
           "member": "string",
@@ -704,6 +743,7 @@
       "document": "DescribeWorkspaceEnvList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageUserDTO",
@@ -725,6 +765,7 @@
       "document": "DescribeWorkspaceIsReady请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间 spaceKey",
           "example": "无",
           "member": "string",
@@ -739,6 +780,7 @@
       "document": "DescribeWorkspaceIsReady返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间是否就绪\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -759,6 +801,7 @@
       "document": "DescribeWorkspaceNameExist请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -767,6 +810,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "工作空间名称",
           "example": "Go2-kubsff",
           "member": "string",
@@ -775,6 +819,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "工作空间ID",
           "example": "xxx",
           "member": "string",
@@ -789,6 +834,7 @@
       "document": "DescribeWorkspaceNameExist返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceInfoDTO",
@@ -810,6 +856,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "xxx",
           "example": "xxx",
           "member": "string",
@@ -824,6 +871,7 @@
       "document": "DescribeWorkspaceStatusList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "WorkspaceStatusInfo",
@@ -846,6 +894,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -855,6 +904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间标识",
           "example": "xxx",
           "member": "string",
@@ -869,6 +919,7 @@
       "document": "DescribeWorkspaceStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceStatusInfo",
@@ -891,6 +942,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "镜像模板ID",
           "example": "46749",
           "member": "string",
@@ -901,6 +953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像模板名称",
           "example": "All in One",
           "member": "string",
@@ -911,6 +964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Tag时间",
           "example": "2022.2.1",
           "member": "string",
@@ -921,6 +975,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "支持 Java、Go、Python 等多种语言",
           "member": "string",
@@ -931,6 +986,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "中文描述",
           "example": "支持 Java、Go、Python 等多种语言",
           "member": "string",
@@ -941,6 +997,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图标地址",
           "example": "https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg",
           "member": "string",
@@ -951,6 +1008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建人",
           "example": "admin",
           "member": "string",
@@ -961,6 +1019,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "访问状态",
           "example": "PUBLIC",
           "member": "string",
@@ -971,6 +1030,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本",
           "example": "2",
           "member": "int64",
@@ -981,6 +1041,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分类",
           "example": "99999",
           "member": "int64",
@@ -997,6 +1058,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1006,6 +1068,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "1",
           "member": "int64",
@@ -1015,6 +1078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仓库地址",
           "example": "xxx",
           "member": "string",
@@ -1024,6 +1088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码仓库分支/标签",
           "example": "xxx",
           "member": "string",
@@ -1033,6 +1098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码仓库 ref 类型",
           "example": "xxx",
           "member": "string",
@@ -1047,6 +1113,7 @@
       "document": "ModifyCustomizeTemplateVersionControl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -1069,6 +1136,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1078,6 +1146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -1087,6 +1156,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义模板参数",
           "example": "无",
           "member": "UserDefinedTemplateParams",
@@ -1101,6 +1171,7 @@
       "document": "ModifyCustomizeTemplatesFullById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义模板返回值",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -1123,6 +1194,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1132,6 +1204,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -1141,6 +1214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义模板Patched参数",
           "example": "无",
           "member": "UserDefinedTemplatePatchedParams",
@@ -1155,6 +1229,7 @@
       "document": "ModifyCustomizeTemplatesPartById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义模板返回值",
           "example": "无",
           "member": "WorkspaceTemplateInfo",
@@ -1177,6 +1252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1186,6 +1262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间ID",
           "example": "xxx",
           "member": "int64",
@@ -1195,6 +1272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
           "member": "string",
@@ -1204,6 +1282,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间描述",
           "example": "xxx",
           "member": "string",
@@ -1213,6 +1292,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx",
           "example": "xxx",
           "member": "int64",
@@ -1240,6 +1320,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1249,6 +1330,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "xxx",
           "member": "string",
@@ -1276,6 +1358,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -1285,6 +1368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "xxx",
           "member": "string",
@@ -1294,6 +1378,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否强制，true或者false",
           "example": "xxx",
           "member": "bool",
@@ -1321,6 +1406,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "空间标识",
           "example": "xx",
           "member": "string",
@@ -1330,6 +1416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
           "member": "string",
@@ -1357,6 +1444,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "空间标识",
           "example": "xxx",
           "member": "string",
@@ -1366,6 +1454,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户所属组",
           "example": "xxxx",
           "member": "string",
@@ -1375,6 +1464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否强制终止，true或者false",
           "example": "true",
           "member": "string",
@@ -1402,6 +1492,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cs-res.codehub.cn/vscode/go.svg",
           "member": "string",
@@ -1412,6 +1503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go 1.16.7",
           "member": "string",
@@ -1422,6 +1514,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go",
           "member": "string",
@@ -1432,6 +1525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jqfcxx",
           "member": "string",
@@ -1442,6 +1536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
@@ -1452,6 +1547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CUSTOM",
           "member": "string",
@@ -1462,6 +1558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -1478,6 +1575,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jqfcxx",
           "member": "string",
@@ -1488,6 +1586,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cs-res.codehub.cn/vscode/go.svg",
           "member": "string",
@@ -1498,6 +1597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go 1.16.7",
           "member": "string",
@@ -1508,6 +1608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
@@ -1518,6 +1619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go",
           "member": "string",
@@ -1534,6 +1636,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID",
           "example": "xxx",
           "member": "int64",
@@ -1544,6 +1647,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户验证信息",
           "example": "xxx",
           "member": "UserSubInfo",
@@ -1554,6 +1658,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "头像地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1564,6 +1669,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "介绍\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1574,6 +1680,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状况",
           "example": "0",
           "member": "int64",
@@ -1590,6 +1697,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "团队名称",
           "example": "programmer-frank",
           "member": "string",
@@ -1600,6 +1708,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名",
           "example": "cEbpeXHnQI",
           "member": "string",
@@ -1610,6 +1719,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "昵称",
           "example": "Programmer_frank",
           "member": "string",
@@ -1620,6 +1730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为管理员",
           "example": "false",
           "member": "bool",
@@ -1630,6 +1741,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "bool",
@@ -1646,6 +1758,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
           "member": "string",
@@ -1656,6 +1769,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码来源类型",
           "example": "xxx",
           "member": "string",
@@ -1666,6 +1780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像id",
           "example": "xxx",
           "member": "int64",
@@ -1676,6 +1791,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "镜像名称",
           "example": "xxx",
           "member": "string",
@@ -1686,6 +1802,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "xxx",
           "member": "string",
@@ -1696,6 +1813,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间版本",
           "example": "xxx",
           "member": "int64",
@@ -1706,6 +1824,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间资源结构",
           "example": "xxx",
           "member": "WorkspaceResourceDTO",
@@ -1716,6 +1835,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码仓库地址",
           "example": "xxx",
           "member": "string",
@@ -1726,6 +1846,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码Ref是分支还是标签",
           "example": "xxx",
           "member": "string",
@@ -1736,6 +1857,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "代码Ref地址",
           "example": "xxx",
           "member": "string",
@@ -1746,6 +1868,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "快照Uid",
           "example": "xxx",
           "member": "string",
@@ -1756,6 +1879,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板id",
           "example": "xxx",
           "member": "int64",
@@ -1766,6 +1890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "价格id",
           "example": "xxx",
           "member": "int64",
@@ -1776,6 +1901,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "初始化状态",
           "example": "xxx",
           "member": "int64",
@@ -1786,6 +1912,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "xxx",
           "member": "string",
@@ -1801,6 +1928,7 @@
       "document": "工作空间信息",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -1810,6 +1938,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "工作空间标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1819,6 +1948,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "工作空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "workspace_name",
           "member": "string",
@@ -1835,6 +1965,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间创建时间",
           "example": "null",
           "member": "string",
@@ -1845,6 +1976,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间key",
           "example": "null",
           "member": "string",
@@ -1855,6 +1987,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "工作空间id",
           "example": "null",
           "member": "int64",
@@ -1871,6 +2004,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CPU核心数",
           "example": "0",
           "member": "uint64",
@@ -1881,6 +2015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一般内存",
           "example": "0",
           "member": "uint64",
@@ -1891,6 +2026,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "系统存储",
           "example": "0",
           "member": "uint64",
@@ -1901,6 +2037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户存储",
           "example": "0",
           "member": "uint64",
@@ -1911,6 +2048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "GPU数",
           "example": "0",
           "member": "uint64",
@@ -1921,6 +2059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "GPU内存",
           "example": "0",
           "member": "uint64",
@@ -1937,6 +2076,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "共享或不共享状态",
           "example": "false",
           "member": "bool",
@@ -1947,6 +2087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否与我共享\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1957,6 +2098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -1967,6 +2109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "停止共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -1977,6 +2120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "停止共享的时间",
           "example": "[]",
           "member": "UserInfoRsp",
@@ -1993,6 +2137,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "空间ID",
           "example": "xxx",
           "member": "int64",
@@ -2003,6 +2148,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间名称",
           "example": "xxx",
           "member": "string",
@@ -2013,6 +2159,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属人",
           "example": "xxx",
           "member": "UserInfoRsp",
@@ -2023,6 +2170,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间标识",
           "example": "xxx",
           "member": "string",
@@ -2033,6 +2181,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态",
           "example": "xxx",
           "member": "string",
@@ -2043,6 +2192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2053,6 +2203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2063,6 +2214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "共享状态",
           "example": "xxx",
           "member": "WorkspaceShareInfo",
@@ -2073,6 +2225,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间类型",
           "example": "xxx",
           "member": "string",
@@ -2083,6 +2236,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2093,6 +2247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "空间版本",
           "example": "xxx",
           "member": "int64",
@@ -2103,6 +2258,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图标地址",
           "example": "xxx",
           "member": "string",
@@ -2113,6 +2269,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2123,6 +2280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本控制地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2133,6 +2291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本控制描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2143,6 +2302,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本控制引用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2153,6 +2313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本控制引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2163,6 +2324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本控制类型",
           "example": "xxx",
           "member": "string",
@@ -2173,6 +2335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -2183,6 +2346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2193,6 +2357,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2203,6 +2368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CPU数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -2213,6 +2379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -2229,6 +2396,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "模板ID",
           "example": "xxx",
           "member": "int64",
@@ -2239,6 +2407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板分类",
           "example": "xxx",
           "member": "string",
@@ -2249,6 +2418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板名称",
           "example": "xxx",
           "member": "string",
@@ -2259,6 +2429,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2269,6 +2440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2279,6 +2451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2289,6 +2462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2299,6 +2473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2309,6 +2484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2319,6 +2495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2329,6 +2506,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库所属人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2339,6 +2517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库引用地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2349,6 +2528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认仓库引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2359,6 +2539,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2369,6 +2550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2379,6 +2561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义仓库引用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2389,6 +2572,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户自定义仓库引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2399,6 +2583,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2409,6 +2594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2419,6 +2605,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2429,6 +2616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否标记",
           "example": "xxx",
           "member": "bool",
@@ -2439,6 +2627,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标记状态",
           "example": "xxx",
           "member": "int64",
@@ -2449,6 +2638,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "xxx",
           "member": "string",
@@ -2459,6 +2649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2469,6 +2660,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "编号",
           "example": "xxx",
           "member": "int64",
@@ -2479,6 +2671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2489,6 +2682,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -2499,6 +2693,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2509,6 +2704,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否属于当前用户",
           "example": "xxx",
           "member": "bool",
@@ -2519,6 +2715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -2534,6 +2731,7 @@
       "document": "创建临时工作空间凭证 DTO",
       "members": [
         {
+          "disabled": false,
           "document": "工作空间 SpaceKey",
           "example": "knhwex",
           "member": "string",
@@ -2543,6 +2741,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "token过期时间，单位是秒，默认 3600",
           "example": "3600",
           "member": "uint64",
@@ -2558,6 +2757,7 @@
       "document": "获取工作空间临时访问 token 出参",
       "members": [
         {
+          "disabled": false,
           "document": "访问工作空间临时凭证",
           "example": "83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973",
           "member": "string",
@@ -2567,6 +2767,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "token 过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-02-13T12:33:48 GMT+08:00",
           "member": "string",

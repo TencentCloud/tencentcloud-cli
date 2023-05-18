@@ -20,6 +20,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "发表消息设备IP",
           "member": "string",
           "name": "Ip",
@@ -29,6 +30,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Mac地址",
           "member": "string",
           "name": "Mac",
@@ -38,6 +40,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备指纹Token",
           "member": "string",
           "name": "TokenId",
@@ -47,6 +50,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备指纹ID",
           "member": "string",
           "name": "DeviceId",
@@ -56,6 +60,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备序列号",
           "member": "string",
           "name": "IMEI",
@@ -65,6 +70,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IOS设备，Identifier For Advertising（广告标识符）",
           "member": "string",
           "name": "IDFA",
@@ -74,6 +80,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）",
           "member": "string",
           "name": "IDFV",
@@ -83,6 +90,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP地址类型 0 代表ipv4 1 代表ipv6",
           "member": "uint64",
           "name": "IpType",
@@ -97,6 +105,7 @@
       "document": "ImageModeration请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
           "example": "test_1001",
           "member": "string",
@@ -105,6 +114,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "数据ID，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
           "example": "1213",
           "member": "string",
@@ -113,6 +123,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "数据Base64编码，图片检测接口为图片文件内容，大小不能超过5M",
           "example": "aHR0cDovL2lubmVycG9ybnNjcmVlbnNob3QtMTI1MjgxMzg1MC5jb3MuYXAtZ3Vh",
           "member": "string",
@@ -121,6 +132,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "图片资源访问链接，__与FileContent参数必须二选一输入__ 。由于网络安全策略，送审带重定向的链接，可能引起下载失败，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError",
           "example": "https://xxx.jpg",
           "member": "string",
@@ -129,6 +141,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "截帧频率，GIF图/长图检测专用，默认值为0，表示只会检测GIF图/长图的第一帧",
           "example": "1",
           "member": "int64",
@@ -137,6 +150,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "GIF图/长图检测专用，代表均匀最大截帧数量，默认值为1（即只取GIF第一张，或长图不做切分处理（可能会造成处理超时））。",
           "example": "1",
           "member": "int64",
@@ -145,6 +159,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "账号相关信息字段，填入后可识别违规风险账号。",
           "example": "无",
           "member": "User",
@@ -153,6 +168,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "设备相关信息字段，填入后可识别违规风险设备。",
           "example": "无",
           "member": "Device",
@@ -167,6 +183,7 @@
       "document": "ImageModeration返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据是否属于恶意类型。\n0：正常，1：可疑；",
           "example": "1",
           "member": "int64",
@@ -175,6 +192,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "Block",
           "member": "string",
@@ -183,6 +201,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "Porn",
           "member": "string",
@@ -191,6 +210,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；",
           "example": "SexBehavior",
           "member": "string",
@@ -199,6 +219,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。\n（如：色情 99.99，则该样本属于色情的置信度非常高。）",
           "example": "90",
           "member": "int64",
@@ -207,6 +228,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelResult",
@@ -215,6 +237,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ObjectResult",
@@ -223,6 +246,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OcrResult",
@@ -231,6 +255,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "基于图片风险库识别的结果。\n风险库包括不安全黑库与正常白库的结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LibResult",
@@ -239,6 +264,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "请求参数中的DataId。",
           "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
@@ -247,6 +273,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "您在入参时所填入的Biztype参数。 -- 该字段暂未开放。",
           "example": "test_1001",
           "member": "string",
@@ -255,6 +282,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -263,6 +291,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecognitionResult",
@@ -284,6 +313,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "序号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Id",
@@ -293,6 +323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Name",
@@ -302,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签分数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Score",
@@ -317,6 +349,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "场景识别结果",
           "example": "无",
           "member": "string",
@@ -327,6 +360,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "无",
           "member": "string",
@@ -337,6 +371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
@@ -347,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -357,6 +393,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "无",
           "member": "uint64",
@@ -367,6 +404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分类模型命中子标签结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelDetailItem",
@@ -383,6 +421,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "序号",
           "member": "int64",
           "name": "Id",
@@ -392,6 +431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id",
           "member": "string",
           "name": "LibId",
@@ -401,6 +441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LibName",
@@ -410,6 +451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片ID",
           "member": "string",
           "name": "ImageId",
@@ -419,6 +461,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。",
           "member": "string",
           "name": "Label",
@@ -428,6 +471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tag",
@@ -437,6 +481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命中的模型分值",
           "member": "int64",
           "name": "Score",
@@ -452,6 +497,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "场景识别结果",
           "example": "无",
           "member": "string",
@@ -462,6 +508,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "无",
           "member": "string",
@@ -472,6 +519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
@@ -482,6 +530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -492,6 +541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "无",
           "member": "int64",
@@ -502,6 +552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "黑白库结果明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LibDetail",
@@ -518,6 +569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "左上角横坐标",
           "member": "float",
           "name": "X",
@@ -527,6 +579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "左上角纵坐标",
           "member": "float",
           "name": "Y",
@@ -536,6 +589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宽度",
           "member": "float",
           "name": "Width",
@@ -545,6 +599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "高度",
           "member": "float",
           "name": "Height",
@@ -554,6 +609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测框的旋转角度",
           "member": "float",
           "name": "Rotate",
@@ -568,6 +624,7 @@
       "document": "实体检测结果明细，当检测场景为实体、广告台标、二维码时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。",
       "members": [
         {
+          "disabled": false,
           "document": "序号",
           "example": "0",
           "member": "uint64",
@@ -577,6 +634,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签名称",
           "example": "aaa",
           "member": "string",
@@ -586,6 +644,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签值，\n当标签为二维码时，表示URL地址，如Name为QrCode时，Value为\"http//abc.com/aaa\"",
           "example": "http//abc.com/aaa",
           "member": "string",
@@ -595,6 +654,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分数",
           "example": "100",
           "member": "uint64",
@@ -604,6 +664,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "检测框坐标",
           "example": "无",
           "member": "Location",
@@ -613,6 +674,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "二级标签名称",
           "example": "bbb",
           "member": "string",
@@ -622,6 +684,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "图库或人脸库id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -631,6 +694,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "图或人脸id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -647,6 +711,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "场景识别结果",
           "example": "无",
           "member": "string",
@@ -657,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "无",
           "member": "string",
@@ -667,6 +733,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
@@ -677,6 +744,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -687,6 +755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "无",
           "member": "uint64",
@@ -697,6 +766,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实体名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -707,6 +777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实体检测结果明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ObjectDetail",
@@ -723,6 +794,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "场景识别结果",
           "example": "无",
           "member": "string",
@@ -733,6 +805,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
           "example": "无",
           "member": "string",
@@ -743,6 +816,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
@@ -753,6 +827,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子标签检测结果",
           "example": "无",
           "member": "string",
@@ -763,6 +838,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "无",
           "member": "uint64",
@@ -773,6 +849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ocr结果详情",
           "example": "无",
           "member": "OcrTextDetail",
@@ -783,6 +860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ocr识别出的文本结果",
           "example": "无",
           "member": "string",
@@ -793,6 +871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否命中结果，0 未命中 1命中",
           "example": "无",
           "member": "uint64",
@@ -809,6 +888,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "OCR文本内容",
           "example": "无",
           "member": "string",
@@ -819,6 +899,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
@@ -829,6 +910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id",
           "example": "无",
           "member": "string",
@@ -839,6 +921,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库名称",
           "example": "无",
           "member": "string",
@@ -849,6 +932,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签下命中的关键词",
           "example": "无",
           "member": "string",
@@ -859,6 +943,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "无",
           "member": "uint64",
@@ -869,6 +954,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR位置",
           "example": "无",
           "member": "Location",
@@ -879,6 +965,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR文本识别置信度",
           "example": "无",
           "member": "uint64",
@@ -889,6 +976,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "OCR文本命中的二级标签",
           "example": "无",
           "member": "string",
@@ -904,6 +992,7 @@
       "document": "识别类型标签结果信息",
       "members": [
         {
+          "disabled": false,
           "document": "当前可能的取值：Scene（图片场景模型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Scene",
           "member": "string",
@@ -913,6 +1002,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "Label对应模型下的识别标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecognitionTag",
@@ -928,6 +1018,7 @@
       "document": "识别类型标签信息",
       "members": [
         {
+          "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -937,6 +1028,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -946,6 +1038,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签位置信息，若模型无位置信息，则可能为零值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Location",
@@ -962,6 +1055,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
           "member": "string",
           "name": "UserId",
@@ -971,6 +1065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "业务用户ID类型 \"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
           "member": "string",
           "name": "AccountType",
@@ -980,6 +1075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户昵称",
           "member": "string",
           "name": "Nickname",
@@ -989,6 +1085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "性别 默认0 未知 1 男性 2 女性",
           "member": "uint64",
           "name": "Gender",
@@ -998,6 +1095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "年龄 默认0 未知",
           "member": "uint64",
           "name": "Age",
@@ -1007,6 +1105,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户等级，默认0 未知 1 低 2 中 3 高",
           "member": "uint64",
           "name": "Level",
@@ -1016,6 +1115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机号",
           "member": "string",
           "name": "Phone",
@@ -1025,6 +1125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户简介，长度不超过5000字",
           "member": "string",
           "name": "Desc",
@@ -1034,6 +1135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户头像图片链接",
           "member": "string",
           "name": "HeadUrl",

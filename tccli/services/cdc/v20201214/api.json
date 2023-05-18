@@ -153,6 +153,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cbs存储大小，单位TB",
           "example": "1",
           "member": "int64",
@@ -163,6 +164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cbs存储类型，默认为SSD",
           "example": "SSD",
           "member": "string",
@@ -179,6 +181,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "已购cos的总容量大小，单位GB",
           "example": "3394.92",
           "member": "float",
@@ -189,6 +192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "剩余可用cos的容量大小，单位GB",
           "example": "3367.41",
           "member": "float",
@@ -199,6 +203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已用cos的容量大小，单位GB",
           "example": "27.51",
           "member": "float",
@@ -215,6 +220,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "COS存储大小，单位TB",
           "example": "1",
           "member": "int64",
@@ -225,6 +231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "COS存储类型，默认为cos",
           "example": "COS",
           "member": "string",
@@ -240,6 +247,7 @@
       "document": "CreateDedicatedClusterOrder请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "专用集群id",
           "example": "\"cluster-gbo27yc4\"",
           "member": "string",
@@ -248,6 +256,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "order关联的专用集群类型数组",
           "example": "无",
           "member": "DedicatedClusterTypeInfo",
@@ -256,6 +265,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "order关联的cos存储信息",
           "example": "无",
           "member": "CosInfo",
@@ -264,6 +274,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "order关联的cbs存储信息",
           "example": "无",
           "member": "CbsInfo",
@@ -272,6 +283,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "购买来源，默认为cloudApi",
           "example": "cloudApi",
           "member": "string",
@@ -280,6 +292,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId",
           "example": "ord-aijx4ets",
           "member": "string",
@@ -294,6 +307,7 @@
       "document": "CreateDedicatedClusterOrder返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "专用集群订单id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"ord-j3f3kdj4\"",
           "member": "string",
@@ -314,6 +328,7 @@
       "document": "CreateDedicatedCluster请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "专用集群所属的SiteId",
           "example": "\"site-98dj3kd\"",
           "member": "string",
@@ -322,6 +337,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "专用集群的名称",
           "example": "\"my-site\"",
           "member": "string",
@@ -330,6 +346,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "专用集群所属的可用区",
           "example": "\"ap-guangzhou\"",
           "member": "string",
@@ -338,6 +355,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "专用集群的描述",
           "example": "\"my dedicated cluster\"",
           "member": "string",
@@ -352,6 +370,7 @@
       "document": "CreateDedicatedCluster返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的专用集群id",
           "example": "\"cluster-gbo27yc4\"",
           "member": "string",
@@ -372,6 +391,7 @@
       "document": "CreateSite请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "站点名称",
           "example": "\"my-site\"",
           "member": "string",
@@ -380,6 +400,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在国家",
           "example": "China",
           "member": "string",
@@ -388,6 +409,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在省份",
           "example": "Guangdong",
           "member": "string",
@@ -396,6 +418,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在城市",
           "example": "Shenzhen",
           "member": "string",
@@ -404,6 +427,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在地区的详细地址信息",
           "example": "\"Shennan Road 10000\"",
           "member": "string",
@@ -412,6 +436,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点描述",
           "example": "\"this site is good\"",
           "member": "string",
@@ -420,6 +445,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "注意事项",
           "example": "\"the floor is not very good\"",
           "member": "string",
@@ -428,6 +454,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
           "example": "无",
           "member": "string",
@@ -436,6 +463,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
           "example": "无",
           "member": "string",
@@ -444,6 +472,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "电源连接器类型",
           "example": "无",
           "member": "string",
@@ -452,6 +481,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "从机架上方还是下方供电。",
           "example": "无",
           "member": "string",
@@ -460,6 +490,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "最大承重(KG)",
           "example": "5000",
           "member": "int64",
@@ -468,6 +499,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "功耗(KW)",
           "example": "4000",
           "member": "int64",
@@ -476,6 +508,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "网络到腾讯云Region区域的上行链路速度",
           "example": "10",
           "member": "int64",
@@ -484,6 +517,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
           "example": "2",
           "member": "int64",
@@ -492,6 +526,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
           "example": "True",
           "member": "bool",
@@ -500,6 +535,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
           "example": "True",
           "member": "bool",
@@ -508,6 +544,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
           "example": "True",
           "member": "bool",
@@ -516,6 +553,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "站点所在地区的邮编",
           "example": "518000",
           "member": "int64",
@@ -524,6 +562,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
           "example": "无",
           "member": "string",
@@ -532,6 +571,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否需要腾讯云团队协助完成机架支撑工作",
           "example": "True",
           "member": "bool",
@@ -540,6 +580,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否电源冗余",
           "example": "True",
           "member": "bool",
@@ -548,6 +589,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "上游断路器是否具备",
           "example": "True",
           "member": "bool",
@@ -562,6 +604,7 @@
       "document": "CreateSite返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建Site生成的id",
           "example": "\"site-98dj3kd\"",
           "member": "string",
@@ -583,6 +626,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群id。如\"cluster-xxxxx\"。",
           "member": "string",
           "name": "DedicatedClusterId",
@@ -592,6 +636,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群所属可用区名称。",
           "member": "string",
           "name": "Zone",
@@ -601,6 +646,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Description",
@@ -610,6 +656,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群的名称。",
           "member": "string",
           "name": "Name",
@@ -619,6 +666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群的生命周期。如\"PENDING\"。",
           "member": "string",
           "name": "LifecycleStatus",
@@ -628,6 +676,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群的创建时间。",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -637,6 +686,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群所属的站点id。",
           "member": "string",
           "name": "SiteId",
@@ -652,6 +702,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区",
           "member": "string",
           "name": "Zone",
@@ -661,6 +712,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格名称",
           "member": "string",
           "name": "InstanceType",
@@ -670,6 +722,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网卡类型，例如：25代表25G网卡",
           "member": "int64",
           "name": "NetworkCard",
@@ -679,6 +732,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的CPU核数，单位：核。",
           "member": "int64",
           "name": "Cpu",
@@ -688,6 +742,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存容量，单位：`GB`。",
           "member": "int64",
           "name": "Memory",
@@ -697,6 +752,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例机型系列。",
           "member": "string",
           "name": "InstanceFamily",
@@ -706,6 +762,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机型名称。",
           "member": "string",
           "name": "TypeName",
@@ -715,6 +772,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本地存储块数量。",
           "member": "int64",
           "name": "StorageBlockAmount",
@@ -724,6 +782,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内网带宽，单位Gbps。",
           "member": "float",
           "name": "InstanceBandwidth",
@@ -733,6 +792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络收发包能力，单位万PPS。",
           "member": "int64",
           "name": "InstancePps",
@@ -742,6 +802,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处理器型号。",
           "member": "string",
           "name": "CpuType",
@@ -751,6 +812,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的GPU数量。",
           "member": "int64",
           "name": "Gpu",
@@ -760,6 +822,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例的FPGA数量。",
           "member": "int64",
           "name": "Fpga",
@@ -769,6 +832,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机型描述",
           "member": "string",
           "name": "Remark",
@@ -778,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
           "member": "string",
           "name": "Status",
@@ -793,6 +858,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群id",
           "example": "无",
           "member": "string",
@@ -803,6 +869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
           "member": "string",
@@ -813,6 +880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
           "member": "string",
@@ -823,6 +891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
           "member": "int64",
@@ -833,6 +902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
           "member": "string",
@@ -843,6 +913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "无",
           "member": "int64",
@@ -853,6 +924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "功率要求(KW)",
           "example": "无",
           "member": "float",
@@ -863,6 +935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单状态",
           "example": "无",
           "member": "string",
@@ -873,6 +946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单创建的时间",
           "example": "无",
           "member": "datetime_iso",
@@ -883,6 +957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大订单ID",
           "example": "ord-aijx4ets ",
           "member": "string",
@@ -893,6 +968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单类型，创建CREATE或扩容EXTEND",
           "example": "CREATE",
           "member": "string",
@@ -903,6 +979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DedicatedClusterOrderItem",
@@ -913,6 +990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -923,6 +1001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -933,6 +1012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -943,6 +1023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0代表未支付，1代表已支付\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -953,6 +1034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支付方式，一次性、按月、按年\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MONTHLY",
           "member": "string",
@@ -963,6 +1045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "YEAR",
           "member": "string",
@@ -973,6 +1056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -983,6 +1067,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CUSTOM",
           "member": "string",
@@ -999,6 +1084,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "专用集群类型id",
           "example": "无",
           "member": "string",
@@ -1009,6 +1095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的存储类型列表",
           "example": "无",
           "member": "string",
@@ -1019,6 +1106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)",
           "example": "无",
           "member": "int64",
@@ -1029,6 +1117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的实例族列表",
           "example": "无",
           "member": "string",
@@ -1039,6 +1128,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "无",
           "member": "int64",
@@ -1049,6 +1139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "功率要求(KW)",
           "example": "无",
           "member": "float",
@@ -1059,6 +1150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单状态",
           "example": "无",
           "member": "string",
@@ -1069,6 +1161,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "订单创建的时间",
           "example": "无",
           "member": "datetime_iso",
@@ -1079,6 +1172,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子订单ID",
           "example": "ord-aijx4ets ",
           "member": "string",
@@ -1089,6 +1183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联的集群规格数量",
           "example": "1",
           "member": "int64",
@@ -1099,6 +1194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格简单描述",
           "example": "通用小型机",
           "member": "string",
@@ -1109,6 +1205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格详细描述",
           "example": "适用于...场景",
           "member": "string",
@@ -1119,6 +1216,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CPU数",
           "example": "1",
           "member": "int64",
@@ -1129,6 +1227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存数",
           "example": "1",
           "member": "int64",
@@ -1139,6 +1238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "GPU数",
           "example": "1",
           "member": "int64",
@@ -1149,6 +1249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格英文名",
           "example": "CBS.SSD",
           "member": "string",
@@ -1159,6 +1260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格展示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
           "member": "string",
@@ -1169,6 +1271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMPUTE",
           "member": "string",
@@ -1179,6 +1282,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0未支付，1已支付\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1195,6 +1299,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "配置id",
           "example": "dctype-00000000",
           "member": "string",
@@ -1205,6 +1310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置描述，对应描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "适用于xxx场景",
           "member": "string",
@@ -1215,6 +1321,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "配置名称，对应计算资源类型",
           "example": "通用小型机规格",
           "member": "string",
@@ -1225,6 +1332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建配置的时间",
           "example": "无",
           "member": "datetime_iso",
@@ -1235,6 +1343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的存储类型列表",
           "example": "COS",
           "member": "string",
@@ -1245,6 +1354,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的上连交换机的链路传输速率",
           "example": "10",
           "member": "int64",
@@ -1255,6 +1365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "支持的实例族列表",
           "example": "M5",
           "member": "string",
@@ -1265,6 +1376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "1000",
           "member": "int64",
@@ -1275,6 +1387,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "功率要求(KW)",
           "example": "100",
           "member": "float",
@@ -1285,6 +1398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "显示计算资源规格详情，存储等资源不显示；对应规格",
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
           "member": "string",
@@ -1301,6 +1415,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群类型Id",
           "example": "dctype-00000000",
           "member": "string",
@@ -1311,6 +1426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群类型个数",
           "example": "1",
           "member": "int64",
@@ -1326,6 +1442,7 @@
       "document": "DeleteDedicatedClusters请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要删除的专用集群id",
           "example": "[\"cluster-xh37dh\"]",
           "member": "string",
@@ -1352,6 +1469,7 @@
       "document": "DeleteSites请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "要删除的站点id列表",
           "example": "[\"site-98dj3kd\"]",
           "member": "string",
@@ -1378,6 +1496,7 @@
       "document": "DescribeDedicatedClusterCosCapacity请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询的专用集群id",
           "example": "\"cluster-gbo27yc4\"",
           "member": "string",
@@ -1392,6 +1511,7 @@
       "document": "DescribeDedicatedClusterCosCapacity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "本集群内cos容量信息，单位：‘GB’",
           "example": "无",
           "member": "CosCapacity",
@@ -1412,6 +1532,7 @@
       "document": "DescribeDedicatedClusterHostStatistics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询的专用集群id",
           "example": "\"cluster-gbo27yc4\"",
           "member": "string",
@@ -1426,6 +1547,7 @@
       "document": "DescribeDedicatedClusterHostStatistics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该集群内宿主机的统计信息列表",
           "example": "无",
           "member": "HostStatistic",
@@ -1447,6 +1569,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群id",
           "example": "cluster-nk6e8j6c",
           "member": "string",
@@ -1456,6 +1579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -1465,6 +1589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20",
           "example": "20",
           "member": "uint64",
@@ -1479,6 +1604,7 @@
       "document": "DescribeDedicatedClusterHosts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "宿主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HostInfo",
@@ -1488,6 +1614,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "宿主机总数",
           "example": "10",
           "member": "uint64",
@@ -1509,6 +1636,7 @@
       "document": "DescribeDedicatedClusterInstanceTypes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询的专用集群id",
           "example": "\"cluster-gbo27yc4\"",
           "member": "string",
@@ -1523,6 +1651,7 @@
       "document": "DescribeDedicatedClusterInstanceTypes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "支持的实例规格列表",
           "example": "无",
           "member": "DedicatedClusterInstanceType",
@@ -1543,6 +1672,7 @@
       "document": "DescribeDedicatedClusterOrders请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "按照专用集群id过滤",
           "example": "[\"cluster-xh37dh\"]",
           "member": "string",
@@ -1551,6 +1681,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "按照专用集群订单id过滤",
           "example": "[\"ord-xjehslf\"]",
           "member": "string",
@@ -1559,6 +1690,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1567,6 +1699,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1575,6 +1708,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "订单状态为过滤条件：PENDING INCONSTRUCTION DELIVERING DELIVERED EXPIRED CANCELLED  OFFLINE",
           "example": "DELIVERED",
           "member": "string",
@@ -1583,6 +1717,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "订单类型为过滤条件：CREATE  EXTEND",
           "example": "CREATE",
           "member": "string",
@@ -1597,6 +1732,7 @@
       "document": "DescribeDedicatedClusterOrders返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "专用集群订单列表",
           "example": "无",
           "member": "DedicatedClusterOrder",
@@ -1605,6 +1741,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的专用集群订单总数",
           "example": "20",
           "member": "int64",
@@ -1626,6 +1763,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "集群id",
           "example": "cluster-nk6e8j6c",
           "member": "string",
@@ -1640,6 +1778,7 @@
       "document": "DescribeDedicatedClusterOverview返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "云服务器数量",
           "example": "10",
           "member": "uint64",
@@ -1649,6 +1788,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "宿主机数量",
           "example": "10",
           "member": "uint64",
@@ -1658,6 +1798,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "vpn通道状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AVAILABLE",
           "member": "string",
@@ -1667,6 +1808,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "vpn网关监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpngwBandwidthData",
@@ -1676,6 +1818,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "本地网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LocalNetInfo",
@@ -1685,6 +1828,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "vpn网关通道监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpngwBandwidthData",
@@ -1706,6 +1850,7 @@
       "document": "DescribeDedicatedClusterTypes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "模糊匹配专用集群配置名称",
           "example": "\"my-type\"",
           "member": "string",
@@ -1714,6 +1859,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待查询的专用集群配置id列表",
           "example": "[\"dctype-lkm17jbu\"]",
           "member": "string",
@@ -1722,6 +1868,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1730,6 +1877,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1738,6 +1886,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否只查询计算规格类型",
           "example": "true",
           "member": "bool",
@@ -1752,6 +1901,7 @@
       "document": "DescribeDedicatedClusterTypes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "专用集群配置列表",
           "example": "无",
           "member": "DedicatedClusterType",
@@ -1760,6 +1910,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的个数",
           "example": "20",
           "member": "int64",
@@ -1780,6 +1931,7 @@
       "document": "DescribeDedicatedClusters请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "按照一个或者多个实例ID查询。实例ID形如：`cluster-xxxxxxxx`",
           "example": "[\"cluster-du3hdu\"]",
           "member": "string",
@@ -1788,6 +1940,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "按照可用区名称过滤",
           "example": "\"ap-guangzhou\"",
           "member": "string",
@@ -1796,6 +1949,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "按照站点id过滤",
           "example": "\"site-378xs3g\"",
           "member": "string",
@@ -1804,6 +1958,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "按照专用集群生命周期过滤",
           "example": "\"Pending\"",
           "member": "string",
@@ -1812,6 +1967,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "模糊匹配专用集群名称",
           "example": "\"my-cluster\"",
           "member": "string",
@@ -1820,6 +1976,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1828,6 +1985,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1842,6 +2000,7 @@
       "document": "DescribeDedicatedClusters返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的专用集群列表",
           "example": "无",
           "member": "DedicatedCluster",
@@ -1850,6 +2009,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的专用集群数量。",
           "example": "20 ",
           "member": "int64",
@@ -1871,6 +2031,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "传入region列表",
           "example": "无",
           "member": "int64",
@@ -1885,6 +2046,7 @@
       "document": "DescribeDedicatedSupportedZones返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "支持的可用区列表",
           "example": "无",
           "member": "RegionZoneInfo",
@@ -1906,6 +2068,7 @@
       "document": "DescribeSitesDetail请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "按照站点id过滤",
           "example": "[\"site-98dj3kd\"]",
           "member": "string",
@@ -1914,6 +2077,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1922,6 +2086,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1930,6 +2095,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "按照站定名称模糊匹配",
           "example": "\"my-site\"",
           "member": "string",
@@ -1944,6 +2110,7 @@
       "document": "DescribeSitesDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "站点详情",
           "example": "无",
           "member": "SiteDetail",
@@ -1952,6 +2119,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的站点总数",
           "example": "20",
           "member": "int64",
@@ -1972,6 +2140,7 @@
       "document": "DescribeSites请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "按照站点id过滤",
           "example": "[\"site-98dj3kd\"]",
           "member": "string",
@@ -1980,6 +2149,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "模糊匹配站点名称",
           "example": "\"first-site\"",
           "member": "string",
@@ -1988,6 +2158,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1996,6 +2167,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -2010,6 +2182,7 @@
       "document": "DescribeSites返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的站点列表",
           "example": "无",
           "member": "Site",
@@ -2018,6 +2191,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "符合条件的站点数量。",
           "example": "20",
           "member": "int64",
@@ -2039,6 +2213,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机IP",
           "example": "10.1.1.1",
           "member": "string",
@@ -2049,6 +2224,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云服务类型",
           "example": "云服务器宿主机",
           "member": "string",
@@ -2059,6 +2235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机运行状态",
           "example": "ONLINE",
           "member": "string",
@@ -2069,6 +2246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机类型",
           "example": "CG2-25G",
           "member": "string",
@@ -2079,6 +2257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cpu可用数",
           "example": "32",
           "member": "uint64",
@@ -2089,6 +2268,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "cpu总数",
           "example": "32",
           "member": "uint64",
@@ -2099,6 +2279,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存可用数",
           "example": "64",
           "member": "uint64",
@@ -2109,6 +2290,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存总数",
           "example": "64",
           "member": "uint64",
@@ -2119,6 +2301,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "运行时间",
           "example": "2020/12/18",
           "member": "string",
@@ -2129,6 +2312,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "到期时间",
           "example": "2023/12/18",
           "member": "string",
@@ -2139,6 +2323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "host-xxxx",
           "member": "string",
@@ -2155,6 +2340,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机规格",
           "example": "S5.21XLARGE320",
           "member": "string",
@@ -2165,6 +2351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机机型系列",
           "example": "S5",
           "member": "string",
@@ -2175,6 +2362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机的CPU核数，单位：核",
           "example": "84",
           "member": "uint64",
@@ -2185,6 +2373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "宿主机内存大小，单位：GB",
           "example": "320",
           "member": "uint64",
@@ -2195,6 +2384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该规格宿主机的数量",
           "example": "240",
           "member": "uint64",
@@ -2211,6 +2401,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
           "member": "float",
@@ -2221,6 +2412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
           "member": "float",
@@ -2237,6 +2429,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BGP",
           "member": "string",
@@ -2247,6 +2440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
           "member": "string",
@@ -2257,6 +2451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.0/24",
           "member": "string",
@@ -2267,6 +2462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "本地IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.0",
           "member": "string",
@@ -2282,6 +2478,7 @@
       "document": "ModifyDedicatedClusterInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "本地专用集群ID",
           "example": "cluster-6qvrhrmg",
           "member": "string",
@@ -2290,6 +2487,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "集群的新名称",
           "example": "task_success",
           "member": "string",
@@ -2298,6 +2496,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "集群的新可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -2306,6 +2505,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "集群的新描述信息",
           "example": "this is a description",
           "member": "string",
@@ -2314,6 +2514,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "集群所在站点",
           "example": "site-pp2cbp9k",
           "member": "string",
@@ -2341,6 +2542,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要更新成的状态",
           "example": "DELIVERED",
           "member": "string",
@@ -2350,6 +2552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "大订单ID",
           "example": "ord-aijx4ets",
           "member": "string",
@@ -2359,6 +2562,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "小订单ID",
           "example": "无",
           "member": "string",
@@ -2385,6 +2589,7 @@
       "document": "ModifySiteDeviceInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机房ID",
           "example": "site-pjmtpk14",
           "member": "string",
@@ -2393,6 +2598,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
           "example": "SM",
           "member": "string",
@@ -2401,6 +2607,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
           "example": "MM",
           "member": "string",
@@ -2409,6 +2616,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "电源连接器类型",
           "example": "220VAC50HZ",
           "member": "string",
@@ -2417,6 +2625,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "从机架上方还是下方供电。",
           "example": "UP",
           "member": "string",
@@ -2425,6 +2634,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "最大承重(KG)",
           "example": "800",
           "member": "int64",
@@ -2433,6 +2643,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "功耗(KW)",
           "example": "5",
           "member": "int64",
@@ -2441,6 +2652,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "网络到腾讯云Region区域的上行链路速度",
           "example": "10",
           "member": "int64",
@@ -2449,6 +2661,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
           "example": "3",
           "member": "int64",
@@ -2457,6 +2670,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
           "example": "true",
           "member": "bool",
@@ -2465,6 +2679,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
           "example": "true",
           "member": "bool",
@@ -2473,6 +2688,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
           "example": "true",
           "member": "bool",
@@ -2481,6 +2697,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否需要腾讯云团队协助完成机架支撑工作",
           "example": "true",
           "member": "bool",
@@ -2489,6 +2706,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否电源冗余",
           "example": "true",
           "member": "bool",
@@ -2497,6 +2715,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "上游断路器是否具备",
           "example": "true",
           "member": "bool",
@@ -2523,6 +2742,7 @@
       "document": "ModifySiteInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机房ID",
           "example": "site-pjmtpk14",
           "member": "string",
@@ -2531,6 +2751,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点名称",
           "example": "测试机房",
           "member": "string",
@@ -2539,6 +2760,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点描述",
           "example": "机房详细描述信息",
           "member": "string",
@@ -2547,6 +2769,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "注意事项",
           "example": "机房注意事项",
           "member": "string",
@@ -2555,6 +2778,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在国家",
           "example": "中国",
           "member": "string",
@@ -2563,6 +2787,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在省份",
           "example": "广东",
           "member": "string",
@@ -2571,6 +2796,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在城市",
           "example": "深圳",
           "member": "string",
@@ -2579,6 +2805,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在地区的邮编",
           "example": "518000",
           "member": "string",
@@ -2587,6 +2814,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "站点所在地区的详细地址信息",
           "example": "南山区",
           "member": "string",
@@ -2614,6 +2842,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
           "member": "float",
@@ -2624,6 +2853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应时间的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
           "member": "float",
@@ -2640,6 +2870,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "Region id",
           "example": "1",
           "member": "int64",
@@ -2650,6 +2881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ZoneInfo数组",
           "example": "无",
           "member": "ZoneInfo",
@@ -2666,6 +2898,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "站点名称",
           "member": "string",
           "name": "Name",
@@ -2675,6 +2908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点id",
           "member": "string",
           "name": "SiteId",
@@ -2684,6 +2918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Description",
@@ -2693,6 +2928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -2708,6 +2944,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "站点id",
           "example": "\"site-u37d8sh\"",
           "member": "string",
@@ -2718,6 +2955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点名称",
           "example": "\"my-site\"",
           "member": "string",
@@ -2728,6 +2966,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点描述",
           "example": "\"this site is good\"",
           "member": "string",
@@ -2738,6 +2977,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点创建时间",
           "example": "\"2020-12-25T10:26:11Z\"",
           "member": "datetime_iso",
@@ -2748,6 +2988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "光纤类型",
           "example": "\"MM\"",
           "member": "string",
@@ -2758,6 +2999,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络到腾讯云Region区域的上行链路速度",
           "example": "0",
           "member": "int64",
@@ -2768,6 +3010,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
           "example": "0",
           "member": "int64",
@@ -2778,6 +3021,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "将CDC连接到网络时采用的光学标准",
           "example": "\"MM\"",
           "member": "string",
@@ -2788,6 +3032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
           "example": "false",
           "member": "bool",
@@ -2798,6 +3043,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "电源连接器类型",
           "example": "\"MM\"",
           "member": "string",
@@ -2808,6 +3054,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "从机架上方还是下方供电。",
           "example": "\"above\"",
           "member": "string",
@@ -2818,6 +3065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "功耗(KW)",
           "example": "0.0",
           "member": "float",
@@ -2828,6 +3076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
           "example": "false",
           "member": "bool",
@@ -2838,6 +3087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
           "example": "false",
           "member": "bool",
@@ -2848,6 +3098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大承重(KG)",
           "example": "0",
           "member": "int64",
@@ -2858,6 +3109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点地址",
           "example": "\"Furong Road\"",
           "member": "string",
@@ -2868,6 +3120,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
           "example": "\"\"",
           "member": "string",
@@ -2878,6 +3131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否需要腾讯云团队协助完成机架支撑工作",
           "example": "true",
           "member": "bool",
@@ -2888,6 +3142,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上游断路器是否具备",
           "example": "false",
           "member": "bool",
@@ -2898,6 +3153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否电源冗余",
           "example": "false",
           "member": "bool",
@@ -2908,6 +3164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点所在国家",
           "example": "\"China\"",
           "member": "string",
@@ -2918,6 +3175,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点所在省份",
           "example": "\"Hunan\"",
           "member": "string",
@@ -2928,6 +3186,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点所在城市",
           "example": "\"Changsha\"",
           "member": "string",
@@ -2938,6 +3197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "站点所在地区的邮编",
           "example": "414012",
           "member": "int64",
@@ -2954,6 +3214,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutBandwidth",
@@ -2964,6 +3225,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "入带宽流量",
           "example": "无",
           "member": "InBandwidth",
@@ -2980,6 +3242,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区名称",
           "member": "string",
           "name": "Zone",
@@ -2989,6 +3252,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区描述",
           "member": "string",
           "name": "ZoneName",
@@ -2998,6 +3262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区ID",
           "member": "int64",
           "name": "ZoneId",
@@ -3007,6 +3272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
           "member": "string",
           "name": "ZoneState",

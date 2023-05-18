@@ -384,6 +384,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "算法的标识",
           "member": "string",
           "name": "KeyUsage",
@@ -393,6 +394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "算法的名称",
           "member": "string",
           "name": "Algorithm",
@@ -408,6 +410,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -435,6 +438,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的唯一标识",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -444,6 +448,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用PublicKey加密的密文，Base64编码",
           "example": "无",
           "member": "string",
@@ -453,6 +458,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256",
           "example": "RSAES_OAEP_SHA_1",
           "member": "string",
@@ -467,6 +473,7 @@
       "document": "AsymmetricRsaDecrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的唯一标识",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -476,6 +483,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解密后的明文，base64编码",
           "example": "dGVzdA==",
           "member": "string",
@@ -498,6 +506,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的唯一标识",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -507,6 +516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。",
           "example": "无",
           "member": "string",
@@ -521,6 +531,7 @@
       "document": "AsymmetricSm2Decrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的唯一标识",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -530,6 +541,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解密后的明文，base64编码",
           "example": "dGVzdA==",
           "member": "string",
@@ -552,6 +564,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cmk的ID",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -561,6 +574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云产品的唯一性标识符",
           "example": "ssm",
           "member": "string",
@@ -570,6 +584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。",
           "example": "resourceId",
           "member": "string",
@@ -597,6 +612,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -624,6 +640,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要被取消删除的CMK的唯一标志",
           "example": "无",
           "member": "string",
@@ -638,6 +655,7 @@
       "document": "CancelKeyDeletion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "唯一标志被取消删除的CMK。",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -660,6 +678,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。以 kms- 作为前缀的用于云产品使用，Alias 不可重复。",
           "example": "test",
           "member": "string",
@@ -669,6 +688,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK 的描述，最大1024字节",
           "example": "test",
           "member": "string",
@@ -678,6 +698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥，“ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECDSA384”表示创建用于签名验签的 ECDSA384 非对称秘钥。完整的秘钥用途与算法支持列表可通过 ListAlgorithms 接口获取。",
           "example": "ASYMMETRIC_DECRYPT_SM2",
           "member": "string",
@@ -687,6 +708,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定key类型，默认为1，1表示默认类型，由KMS创建CMK密钥，2 表示EXTERNAL 类型，该类型需要用户导入密钥材料，参考 GetParametersForImport 和 ImportKeyMaterial 接口",
           "example": "1",
           "member": "uint64",
@@ -696,6 +718,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "tags",
           "member": "Tag",
@@ -705,6 +728,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
           "example": "cluster-123",
           "member": "string",
@@ -719,6 +743,7 @@
       "document": "CreateKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的全局唯一标识符",
           "example": "9999aed0-4956-11e9-bc70-5254005e86b4",
           "member": "string",
@@ -728,6 +753,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
           "example": "test",
           "member": "string",
@@ -737,6 +763,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "密钥创建时间，unix时间戳",
           "example": "1552897190",
           "member": "uint64",
@@ -746,6 +773,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CMK的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -755,6 +783,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "CMK的状态",
           "example": "Enabled",
           "member": "string",
@@ -764,6 +793,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "CMK的用途",
           "example": "ENCRYPT_DECRYPT",
           "member": "string",
@@ -773,6 +803,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -782,6 +813,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
@@ -791,6 +823,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-hsm-1234abcd",
           "member": "string",
@@ -813,6 +846,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。",
           "example": "test_alias",
           "member": "string",
@@ -822,6 +856,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建密钥所有的算法类型，支持的取值：AES_256,SM4",
           "example": "SM4",
           "member": "string",
@@ -831,6 +866,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥的描述，最大1024字节",
           "example": "test_description",
           "member": "string",
@@ -840,6 +876,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -854,6 +891,7 @@
       "document": "CreateWhiteBoxKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用于加密的密钥，base64编码",
           "example": "无",
           "member": "string",
@@ -863,6 +901,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用于解密的密钥，base64编码",
           "example": "无",
           "member": "string",
@@ -872,6 +911,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "无",
           "member": "string",
@@ -881,6 +921,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -890,6 +931,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -912,6 +954,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待解密的密文数据",
           "example": "Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL",
           "member": "string",
@@ -921,6 +964,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符",
           "example": "无",
           "member": "string",
@@ -930,6 +974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
           "example": "无",
           "member": "string",
@@ -939,6 +984,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（以 C1C3C2 格式返回密文），SM2_C1C3C2_ASN1 （以 C1C3C2 ASN1 格式返回密文），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
           "example": "SM2",
           "member": "string",
@@ -953,6 +999,7 @@
       "document": "Decrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的全局唯一标识",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -962,6 +1009,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "若调用时未提供 EncryptionPublicKey，该字段值为 Base64 编码的明文，需进行 Base64 解码以获取明文。\n若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取明文。",
           "example": "dGVzdCUyMHBsYWluJTIwdGV4dA==",
           "member": "string",
@@ -984,6 +1032,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要删除密钥材料的EXTERNAL CMK。",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1011,6 +1060,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
@@ -1038,6 +1088,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1052,6 +1103,7 @@
       "document": "DescribeKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyMetadata",
@@ -1074,6 +1126,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询CMK的ID列表，批量查询一次最多支持100个KeyId",
           "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b03\\r\\n\"]",
           "member": "string",
@@ -1088,6 +1141,7 @@
       "document": "DescribeKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的属性信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyMetadata",
@@ -1110,6 +1164,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
@@ -1124,6 +1179,7 @@
       "document": "DescribeWhiteBoxDecryptKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白盒解密密钥，base64编码",
           "example": "无",
           "member": "string",
@@ -1146,6 +1202,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥ID",
           "example": "cd850a3d-9b1b-11ea-a96a-5254006d0810",
           "member": "string",
@@ -1160,6 +1217,7 @@
       "document": "DescribeWhiteBoxDeviceFingerprints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备指纹列表",
           "example": "无",
           "member": "DeviceFingerprint",
@@ -1182,6 +1240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "过滤条件：密钥的状态，0：disabled，1：enabled",
           "example": "无",
           "member": "int64",
@@ -1191,6 +1250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
           "example": "无",
           "member": "uint64",
@@ -1200,6 +1260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页",
           "example": "无",
           "member": "uint64",
@@ -1209,6 +1270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签过滤条件",
           "example": "无",
           "member": "TagFilter",
@@ -1223,6 +1285,7 @@
       "document": "DescribeWhiteBoxKeyDetails返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白盒密钥信息列表。",
           "example": "无",
           "member": "WhiteboxKeyInfo",
@@ -1232,6 +1295,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白盒密钥总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -1254,6 +1318,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
@@ -1268,6 +1333,7 @@
       "document": "DescribeWhiteBoxKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白盒密钥信息",
           "example": "无",
           "member": "WhiteboxKeyInfo",
@@ -1294,6 +1360,7 @@
       "document": "DescribeWhiteBoxServiceStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户的白盒密钥服务是否可用",
           "example": "1",
           "member": "bool",
@@ -1316,6 +1383,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指纹信息，由设备指纹采集工具采集获得，格式满足正则表达式：^[0-9a-f]{8}[\\-][0-9a-f]{14}[\\-][0-9a-f]{14}[\\-][0-9a-f]{14}[\\-][0-9a-f]{16}$",
           "member": "string",
           "name": "Identity",
@@ -1325,6 +1393,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述信息，如：IP，设备名称等，最大1024字节\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Description",
@@ -1340,6 +1409,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1367,6 +1437,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1394,6 +1465,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要批量禁用的CMK Id 列表，CMK数量最大支持100",
           "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
@@ -1421,6 +1493,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
@@ -1448,6 +1521,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。",
           "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
@@ -1475,6 +1549,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1502,6 +1577,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1511,6 +1587,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。",
           "example": "365",
           "member": "uint64",
@@ -1538,6 +1615,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要批量启用的CMK Id 列表， CMK数量最大支持100",
           "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
           "member": "string",
@@ -1565,6 +1643,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1592,6 +1671,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。",
           "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
@@ -1619,6 +1699,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
@@ -1628,6 +1709,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待加密的文本， base64编码，文本的原始长度最大不超过4KB",
           "example": "UGxhaW5UZXh0",
           "member": "string",
@@ -1637,6 +1719,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "初始化向量，大小为 16 Bytes，加密算法会使用到, base64编码；如果不传，则由后端服务随机生成。用户需要自行保存该值，作为解密的参数。",
           "example": "无",
           "member": "string",
@@ -1651,6 +1734,7 @@
       "document": "EncryptByWhiteBox返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "初始化向量，加密算法会使用到, base64编码。如果由调用方在入参中传入，则原样返回。如果调用方没有传入，则后端服务随机生成，并返回",
           "example": "BQbVImt3p_xr8VQebZaXGQ==",
           "member": "string",
@@ -1660,6 +1744,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加密后的密文，base64编码",
           "example": "ZKHH2la4DpwlkwjANQ5hgw==",
           "member": "string",
@@ -1682,6 +1767,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "调用CreateKey生成的CMK全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1691,6 +1777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被加密的明文数据，该字段必须使用base64编码，原文最大长度支持4K",
           "example": "testName",
           "member": "string",
@@ -1700,6 +1787,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "key/value对的json字符串，如果指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024个字符",
           "example": "testName",
           "member": "string",
@@ -1714,6 +1802,7 @@
       "document": "Encrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "加密后的密文，base64编码。注意：本字段中打包了密文和密钥的相关信息，不是对明文的直接加密结果，只有将该字段作为Decrypt接口的输入参数，才可以解密出原文。",
           "example": "ss",
           "member": "string",
@@ -1723,6 +1812,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加密使用的CMK的全局唯一标识",
           "example": "9999aed0-4956-11e9-bc70-5254005e86b4",
           "member": "string",
@@ -1745,6 +1835,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1754,6 +1845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个",
           "example": "AES_256",
           "member": "string",
@@ -1763,6 +1855,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个",
           "example": "无",
           "member": "uint64",
@@ -1772,6 +1865,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "key/value对的json字符串，如果使用该字段，则返回的DataKey在解密时需要填入相同的字符串",
           "example": "无",
           "member": "string",
@@ -1781,6 +1875,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
           "example": "无",
           "member": "string",
@@ -1790,6 +1885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（以 C1C3C2 格式返回密文），SM2_C1C3C2_ASN1 （以 C1C3C2 ASN1 格式返回密文），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
           "example": "SM2",
           "member": "string",
@@ -1804,6 +1900,7 @@
       "document": "GenerateDataKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的全局唯一标识",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1813,6 +1910,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "若调用时未提供 EncryptionPublicKey，该字段值为生成的数据密钥 DataKey 的 Base64 编码的明文，需进行 Base64 解码以获取 DataKey 明文。\n若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取 DataKey 明文。",
           "example": "uW9wqntw+FAgnfsIrxOpOA==",
           "member": "string",
@@ -1822,6 +1920,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "数据密钥DataKey加密后的密文，用户需要自行保存该密文，KMS不托管用户的数据密钥。可以通过Decrypt接口从CiphertextBlob中获取数据密钥DataKey明文",
           "example": "g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-h/nUfRbaTUY7/KWXwuSK1Py+ZFRTK5WQiUz6yQE5XBFUN3UwPOUbl8P3A3caow2rlqTjUw==",
           "member": "string",
@@ -1844,6 +1943,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "生成的随机数的长度。最小值为1， 最大值为1024。",
           "example": "16",
           "member": "uint64",
@@ -1858,6 +1958,7 @@
       "document": "GenerateRandom返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "生成的随机数的明文，该明文使用base64编码，用户需要使用base64解码得到明文。",
           "example": "17mvQgMl0sbM7OAJ7fpLsA==",
           "member": "string",
@@ -1880,6 +1981,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -1894,6 +1996,7 @@
       "document": "GetKeyRotationStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥轮换是否开启",
           "example": "无",
           "member": "bool",
@@ -1916,6 +2019,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。",
           "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0810",
           "member": "string",
@@ -1925,6 +2029,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256",
           "example": "RSAES_OAEP_SHA_1",
           "member": "string",
@@ -1934,6 +2039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定加密密钥材料的类型，目前只支持RSA_2048",
           "example": "RSA_2048",
           "member": "string",
@@ -1948,6 +2054,7 @@
       "document": "GetParametersForImport返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的唯一标识，用于指定目标导入密钥材料的CMK。",
           "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0810",
           "member": "string",
@@ -1957,6 +2064,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "导入密钥材料需要的token，用于作为 ImportKeyMaterial 的参数。",
           "example": "Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpw3adjEFXyCP2yqzV8xdD5GMY4gIZoDfJ33SnnbxDMRND8lzh4mZjzFNM8PsjhYrgVSxIiJOCHupZvD4QcoGco8",
           "member": "string",
@@ -1966,6 +2074,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用于加密密钥材料的RSA公钥，base64编码。使用PublicKey base64解码后的公钥将导入密钥进行加密后作为 ImportKeyMaterial 的参数。",
           "example": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1IjpYRubNKn97lPU0/eR8UBaV11glfQLNqlub+YspXwBsvVqcnSvu5c8GoLTEYGSTVbvsREDCq6VfFoSeoIqbv8aWukxbPGWgI1nu55ocvWwthzROFA5UPGC8LOuH0ftZ5Z7cIaigEenS3ngfo4MYTJtg6/Bl1jJVWvjnKzgswsZeFclSURedSXUcMxfSI344s6I17DTNAQ/vQqyjFGIyo2+JctaxVlY2XuBZf7tPimNdoxAoJ14QxAl1gQGu959xnRJ4rwZbxsklJnEivQqTBeFIiv3KTzFJS6bkz2eqRJ1p4jTBDWbHEWTVt6tdXPj4+4D21RFGAt3706vf4PIrwIDAQAB",
           "member": "string",
@@ -1975,6 +2084,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该导出token和公钥的有效期，超过该时间后无法导入，需要重新调用GetParametersForImport获取。",
           "example": "1566614716",
           "member": "uint64",
@@ -1997,6 +2107,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的唯一标识。",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -2011,6 +2122,7 @@
       "document": "GetPublicKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的唯一标识。",
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
@@ -2020,6 +2132,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "经过base64编码的公钥内容。",
           "example": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz0OTVMh28VCjOE5DMlBM8a2qIjgipYByb7WE/GyTRLUiIGDUq44VIM5fNI9nVeIf2D+4pIiU0s4LUYnLxkGcFKUVWkz3nubUzbNdSHRbNjKhbFyyRGT6YYxqMfvCmNXMA3OE56EmvsWU9VwVXqRPOFTaODCx8bRd+R6O+Aho9GaRfwLKHtlX7dochdDs9SWC6iybRISgpLEh4tvzcSlBemEuyx5U/X/BoL+sVnSsC/XT8J9w0EvJVHZaBW7OhIbBOolhzWTF8TpL/7ncZZUbtfP4SrAkvKgoEIEfRhv5vh5LfSxiS2zQzIShrT6JYqh5IgDIHTdCcPiYmTsk/lmM2wIDAQAB",
           "member": "string",
@@ -2029,6 +2142,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "PEM格式的公钥内容。",
           "example": "-----BEGIN PUBLIC KEY-----TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF6ME9UVk1oMjhWQ2pPRTVETWxCTThhMnFJamdpcFlCeWI3V0UvR3lUUkxVaUlHRFVxNDRWSU01Zk5JOW5WZUlmMkQrNHBJaVUwczRMVVluTHhrR2NGS1VWV2t6M251YlV6Yk5kU0hSYk5qS2hiRnl5UkdUNllZeHFNZnZDbU5YTUEzT0U1NkVtdnNXVTlWd1ZYcVJQT0ZUYU9EQ3g4YlJkK1I2TytBaG85R2FSZndMS0h0bFg3ZG9jaGREczlTV0M2aXliUklTZ3BMRWg0dHZ6Y1NsQmVtRXV5eDVVL1gvQm9MK3NWblNzQy9YVDhKOXcwRXZKVkhaYUJXN09oSWJCT29saHpXVEY4VHBMLzduY1paVWJ0ZlA0U3JBa3ZLZ29FSUVmUmh2NXZoNUxmU3hpUzJ6UXpJU2hyVDZKWXFoNUlnRElIVGRDY1BpWW1Uc2svbG1NMndJREFRQUI=-----END PUBLIC KEY-----",
           "member": "string",
@@ -2055,6 +2169,7 @@
       "document": "GetRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可用region列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-hongkong",
           "member": "string",
@@ -2081,6 +2196,7 @@
       "document": "GetServiceStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "KMS服务是否开通， true 表示已开通",
           "example": "1",
           "member": "bool",
@@ -2089,6 +2205,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2097,6 +2214,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "0-普通版，1-旗舰版",
           "example": "0",
           "member": "uint64",
@@ -2105,6 +2223,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "旗舰版到期时间（Epoch Unix Timestamp）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1603701385",
           "member": "uint64",
@@ -2113,6 +2232,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "旗舰版是否自动续费：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -2121,6 +2241,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kms_pro_12345",
           "member": "string",
@@ -2129,6 +2250,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否开通 KMS 托管版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2137,6 +2259,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否开通 KMS 独享版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2145,6 +2268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "KMS 订阅信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Prepaid_KMS",
           "member": "string",
@@ -2166,6 +2290,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。",
           "example": "无",
           "member": "string",
@@ -2175,6 +2300,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通过调用GetParametersForImport获得的导入令牌。",
           "example": "Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpxBApJqYG9zc37OM0Z3qT/mvLofzM3hwVJSTzIITcAo6ew3LidOJ3nwNoVNOM2wnrL+g9puwP0GpbbSwTd16X9E",
           "member": "string",
@@ -2184,6 +2310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。",
           "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0800",
           "member": "string",
@@ -2193,6 +2320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。",
           "example": "0",
           "member": "uint64",
@@ -2220,6 +2348,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识。",
           "member": "string",
           "name": "KeyId",
@@ -2235,6 +2364,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -2245,6 +2375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
           "example": "test",
           "member": "string",
@@ -2255,6 +2386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥创建时间",
           "example": "11",
           "member": "uint64",
@@ -2265,6 +2397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的描述",
           "example": "desc",
           "member": "string",
@@ -2275,6 +2408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived",
           "example": "PendingDelete",
           "member": "string",
@@ -2285,6 +2419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC",
           "example": "ASYMMETRIC_DECRYPT_RSA_2048",
           "member": "string",
@@ -2295,6 +2430,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK类型，2 表示符合FIPS标准，4表示符合国密标准",
           "example": "3",
           "member": "int64",
@@ -2305,6 +2441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者",
           "example": "12345678",
           "member": "uint64",
@@ -2315,6 +2452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启了密钥轮换功能",
           "example": "true",
           "member": "bool",
@@ -2325,6 +2463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名",
           "example": "user",
           "member": "string",
@@ -2335,6 +2474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在密钥轮换开启状态下，下次轮换的时间",
           "example": "1234567",
           "member": "uint64",
@@ -2345,6 +2485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计划删除的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -2355,6 +2496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EXTERNAL",
           "member": "string",
@@ -2365,6 +2507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "uint64",
@@ -2375,6 +2518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID，格式：creatorUin/$creatorUin/$keyId",
           "example": "creatorUin/12345/6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -2385,6 +2529,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-hsm-1a2b3c4d",
           "member": "string",
@@ -2405,6 +2550,7 @@
       "document": "ListAlgorithms返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "本地区支持的对称加密算法",
           "example": "无",
           "member": "AlgorithmInfo",
@@ -2414,6 +2560,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "本地区支持的非对称加密算法",
           "example": "无",
           "member": "AlgorithmInfo",
@@ -2423,6 +2570,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "本地区支持的非对称签名验签算法",
           "example": "无",
           "member": "AlgorithmInfo",
@@ -2445,6 +2593,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
           "example": "0",
           "member": "uint64",
@@ -2454,6 +2603,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200",
           "example": "10",
           "member": "uint64",
@@ -2463,6 +2613,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据创建者角色筛选，默认 0 表示用户自己创建的cmk， 1 表示授权其它云产品自动创建的cmk",
           "example": "0",
           "member": "uint64",
@@ -2472,6 +2623,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据CMK创建时间排序， 0 表示按照降序排序，1表示按照升序排序",
           "example": "0",
           "member": "uint64",
@@ -2481,6 +2633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据CMK状态筛选， 0表示全部CMK， 1 表示仅查询Enabled CMK， 2 表示仅查询Disabled CMK，3 表示查询PendingDelete 状态的CMK(处于计划删除状态的Key)，4 表示查询 PendingImport 状态的CMK，5 表示查询 Archived 状态的 CMK",
           "example": "0",
           "member": "uint64",
@@ -2490,6 +2643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据KeyId或者Alias进行模糊匹配查询",
           "example": "test",
           "member": "string",
@@ -2499,6 +2653,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据CMK类型筛选， \"TENCENT_KMS\" 表示筛选密钥材料由KMS创建的CMK， \"EXTERNAL\" 表示筛选密钥材料需要用户导入的 EXTERNAL类型CMK，\"ALL\" 或者不设置表示两种类型都查询，大小写敏感。",
           "example": "ALL",
           "member": "string",
@@ -2508,6 +2663,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据CMK的KeyUsage筛选，ALL表示筛选全部，可使用的参数为：ALL 或 ENCRYPT_DECRYPT 或 ASYMMETRIC_DECRYPT_RSA_2048 或 ASYMMETRIC_DECRYPT_SM2 或 ASYMMETRIC_SIGN_VERIFY_SM2 或 ASYMMETRIC_SIGN_VERIFY_RSA_2048 或 ASYMMETRIC_SIGN_VERIFY_ECC，为空则默认筛选ENCRYPT_DECRYPT类型",
           "example": "ASYMMETRIC_SIGN_VERIFY_RSA_2048",
           "member": "string",
@@ -2517,6 +2673,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签过滤条件",
           "example": "test",
           "member": "TagFilter",
@@ -2526,6 +2683,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
           "example": "无",
           "member": "string",
@@ -2540,6 +2698,7 @@
       "document": "ListKeyDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的总数量",
           "example": "10",
           "member": "uint64",
@@ -2549,6 +2708,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回的属性信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "KeyMetadata",
@@ -2571,6 +2731,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
           "example": "0",
           "member": "uint64",
@@ -2580,6 +2741,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200",
           "example": "2",
           "member": "uint64",
@@ -2589,6 +2751,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据创建者角色筛选，默认 0 表示用户自己创建的cmk， 1 表示授权其它云产品自动创建的cmk",
           "example": "无",
           "member": "uint64",
@@ -2598,6 +2761,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
           "example": "无",
           "member": "string",
@@ -2612,6 +2776,7 @@
       "document": "ListKeys返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK列表数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Key",
@@ -2621,6 +2786,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "CMK的总数量",
           "example": "100",
           "member": "uint64",
@@ -2643,6 +2809,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥ID",
           "example": "cd850a3d-9b1b-11ea-a96a-5254006d0810",
           "member": "string",
@@ -2652,6 +2819,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。",
           "example": "无",
           "member": "DeviceFingerprint",
@@ -2678,6 +2846,7 @@
       "document": "PostQuantumCryptoDecrypt请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待解密的密文数据",
           "example": "Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL",
           "member": "string",
@@ -2686,6 +2855,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
           "example": "无",
           "member": "string",
@@ -2694,6 +2864,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（以 C1C3C2 格式返回密文），SM2_C1C3C2_ASN1 （以 C1C3C2 ASN1 格式返回密文），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
           "example": "SM2",
           "member": "string",
@@ -2708,6 +2879,7 @@
       "document": "PostQuantumCryptoDecrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CMK的全局唯一标识",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -2716,6 +2888,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "若调用时未提供 EncryptionPublicKey，该字段值为 Base64 编码的明文，需进行 Base64 解码以获取明文。\n若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取明文。",
           "example": "dGVzdCUyMHBsYWluJTIwdGV4dA==",
           "member": "string",
@@ -2736,6 +2909,7 @@
       "document": "PostQuantumCryptoEncrypt请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "调用CreateKey生成的CMK全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -2744,6 +2918,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "被加密的明文数据，该字段必须使用base64编码，原文最大长度支持4K",
           "example": "testName",
           "member": "string",
@@ -2758,6 +2933,7 @@
       "document": "PostQuantumCryptoEncrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "加密后的密文，base64编码。注意：本字段中打包了密文和密钥的相关信息，不是对明文的直接加密结果，只有将该字段作为PostQuantumCryptoDecrypt接口的输入参数，才可以解密出原文。",
           "example": "ss",
           "member": "string",
@@ -2766,6 +2942,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加密使用的CMK的全局唯一标识",
           "example": "9999aed0-4956-11e9-bc70-5254005e86b4",
           "member": "string",
@@ -2786,6 +2963,7 @@
       "document": "PostQuantumCryptoSign请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Base64 编码的消息原文。消息原文的长度（Base64编码前的长度）不超过4096字节。",
           "example": "abc",
           "member": "string",
@@ -2794,6 +2972,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "密钥的唯一标识",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -2808,6 +2987,7 @@
       "document": "PostQuantumCryptoSign返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签名值，Base64编码。可使用 PostQuantumCryptoVerify接口对签名值进行验证。",
           "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
@@ -2828,6 +3008,7 @@
       "document": "PostQuantumCryptoVerify请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "密钥的唯一标识",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -2836,6 +3017,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "签名值，通过调用KMS PostQuantumCryptoSign签名接口生成",
           "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
@@ -2844,6 +3026,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "Base64 编码的消息原文，消息原文的长度（Base64编码前的长度）不超过4096字节。",
           "example": "abc",
           "member": "string",
@@ -2858,6 +3041,7 @@
       "document": "PostQuantumCryptoVerify返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签名是否有效。true：签名有效，false：签名无效。",
           "example": "true",
           "member": "bool",
@@ -2879,6 +3063,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要重新加密的密文",
           "example": "Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL",
           "member": "string",
@@ -2888,6 +3073,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "重新加密使用的CMK，如果为空，则使用密文原有的CMK重新加密（若密钥没有轮换则密文不会刷新）",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -2897,6 +3083,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CiphertextBlob 密文加密时使用的key/value对的json字符串。如果加密时未使用，则为空",
           "example": "无",
           "member": "string",
@@ -2906,6 +3093,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "重新加密使用的key/value对的json字符串，如果使用该字段，则返回的新密文在解密时需要填入相同的字符串",
           "example": "无",
           "member": "string",
@@ -2920,6 +3108,7 @@
       "document": "ReEncrypt返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "重新加密后的密文",
           "example": "无",
           "member": "string",
@@ -2929,6 +3118,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "重新加密使用的CMK",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -2938,6 +3128,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "重新加密前密文使用的CMK",
           "example": "23e80852-1e38-11e9-b129-5cb9019b0000",
           "member": "string",
@@ -2947,6 +3138,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "true表示密文已经重新加密。同一个CMK进行重加密，在密钥没有发生轮换的情况下不会进行实际重新加密操作，返回原密文",
           "example": "1",
           "member": "bool",
@@ -2969,6 +3161,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的唯一标志",
           "example": "无",
           "member": "string",
@@ -2978,6 +3171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计划删除时间区间[7,30]",
           "example": "无",
           "member": "uint64",
@@ -2992,6 +3186,7 @@
       "document": "ScheduleKeyDeletion返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "计划删除执行时间",
           "example": "1559318399",
           "member": "uint64",
@@ -3001,6 +3196,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "唯一标志被计划删除的CMK",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -3023,6 +3219,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。",
           "example": "SM2DSA",
           "member": "string",
@@ -3032,6 +3229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，消息摘要长度（Base64编码前的长度）必须等于32字节",
           "example": "abc",
           "member": "string",
@@ -3041,6 +3239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥的唯一标识",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -3050,6 +3249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
           "example": "RAW",
           "member": "string",
@@ -3064,6 +3264,7 @@
       "document": "SignByAsymmetricKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签名，Base64编码",
           "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
@@ -3086,6 +3287,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -3095,6 +3297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -3110,6 +3313,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -3119,6 +3323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -3134,6 +3339,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "cmk的ID",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -3143,6 +3349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云产品的唯一性标识符",
           "example": "ssm",
           "member": "string",
@@ -3152,6 +3359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。",
           "example": "resourceId",
           "member": "string",
@@ -3179,6 +3387,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新的别名，1-60个字符或数字的组合",
           "example": "NewAlias",
           "member": "string",
@@ -3188,6 +3397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CMK的全局唯一标识符",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -3215,6 +3425,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新的描述信息，最大支持1024字节",
           "example": "NewDescription",
           "member": "string",
@@ -3224,6 +3435,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要修改描述信息的CMK ID",
           "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
@@ -3251,6 +3463,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "密钥的唯一标识",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -3260,6 +3473,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名值，通过调用KMS签名接口生成",
           "example": "MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg3",
           "member": "string",
@@ -3269,6 +3483,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节",
           "example": "abc",
           "member": "string",
@@ -3278,6 +3493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。",
           "example": "SM2DSA",
           "member": "string",
@@ -3287,6 +3503,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。",
           "example": "RAW",
           "member": "string",
@@ -3301,6 +3518,7 @@
       "document": "VerifyByAsymmetricKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签名是否有效。true：签名有效，false：签名无效。",
           "example": "true",
           "member": "bool",
@@ -3323,6 +3541,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的全局唯一标识符",
           "member": "string",
           "name": "KeyId",
@@ -3332,6 +3551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字. 不可重复",
           "member": "string",
           "name": "Alias",
@@ -3341,6 +3561,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者",
           "member": "uint64",
           "name": "CreatorUin",
@@ -3350,6 +3571,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥的描述信息",
           "member": "string",
           "name": "Description",
@@ -3359,6 +3581,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥创建时间，Unix时间戳",
           "member": "uint64",
           "name": "CreateTime",
@@ -3368,6 +3591,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白盒密钥的状态， 取值为：Enabled | Disabled",
           "member": "string",
           "name": "Status",
@@ -3377,6 +3601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者",
           "member": "uint64",
           "name": "OwnerUin",
@@ -3386,6 +3611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "密钥所用的算法类型",
           "member": "string",
           "name": "Algorithm",
@@ -3395,6 +3621,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白盒加密密钥，base64编码",
           "member": "string",
           "name": "EncryptKey",
@@ -3404,6 +3631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "白盒解密密钥，base64编码",
           "member": "string",
           "name": "DecryptKey",
@@ -3413,6 +3641,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源ID，格式：creatorUin/$creatorUin/$keyId",
           "member": "string",
           "name": "ResourceId",
@@ -3422,6 +3651,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有设备指纹与当前密钥绑定\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "DeviceFingerprintBind",

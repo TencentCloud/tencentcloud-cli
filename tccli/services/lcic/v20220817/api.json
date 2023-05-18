@@ -390,6 +390,7 @@
       "document": "AddGroupMember请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID",
           "example": "dfgsdgsg",
           "member": "string",
@@ -398,6 +399,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -406,6 +408,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "成员列表，最大值200",
           "example": "无",
           "member": "string",
@@ -432,6 +435,7 @@
       "document": "房间问答答案详情",
       "members": [
         {
+          "disabled": false,
           "document": "用户名",
           "example": "1",
           "member": "string",
@@ -441,6 +445,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
           "example": "1",
           "member": "uint64",
@@ -450,6 +455,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "答题用时",
           "example": "1",
           "member": "uint64",
@@ -459,6 +465,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户ID",
           "example": "无",
           "member": "string",
@@ -468,6 +475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "答案是否正确（1正确0错误）",
           "example": "1",
           "member": "uint64",
@@ -483,6 +491,7 @@
       "document": "每个选项答题人数统计",
       "members": [
         {
+          "disabled": false,
           "document": "选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
           "example": "1",
           "member": "int64",
@@ -492,6 +501,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "答题人数",
           "example": "1",
           "member": "int64",
@@ -512,6 +522,7 @@
       "document": "应用自定义内容",
       "members": [
         {
+          "disabled": false,
           "document": "场景参数，一个应用下可以设置多个不同场景。",
           "example": "abc",
           "member": "string",
@@ -521,6 +532,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。",
           "example": "abc",
           "member": "string",
@@ -530,6 +542,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。",
           "example": "abc",
           "member": "string",
@@ -539,6 +552,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。",
           "example": "abc",
           "member": "string",
@@ -548,6 +562,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。",
           "example": "abc",
           "member": "string",
@@ -563,6 +578,7 @@
       "document": "背景图片配置",
       "members": [
         {
+          "disabled": false,
           "document": "背景图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
           "member": "string",
@@ -578,6 +594,7 @@
       "document": "BatchAddGroupMember请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待添加群组ID列表，最大值100",
           "example": "dfgsdgsg",
           "member": "string",
@@ -586,6 +603,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -594,6 +612,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "待添加成员列表，最大值200",
           "example": "无",
           "member": "string",
@@ -620,6 +639,7 @@
       "document": "BatchCreateGroupWithMembers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "12345678",
           "member": "uint64",
@@ -628,6 +648,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "批量创建群组基础信息，最大长度限制256",
           "example": "无",
           "member": "GroupBaseInfo",
@@ -636,6 +657,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "群组绑定的成员列表，一次性最多200个",
           "example": "无",
           "member": "string",
@@ -650,6 +672,7 @@
       "document": "BatchCreateGroupWithMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "新创建群组ID列表，与输入创建参数顺序一致",
           "example": "无",
           "member": "string",
@@ -670,6 +693,7 @@
       "document": "BatchCreateRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码平台的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -678,6 +702,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "创建房间ID列表",
           "example": "无",
           "member": "RoomInfo",
@@ -692,6 +717,7 @@
       "document": "BatchCreateRoom返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建成功课堂ID，与传入课堂信息顺序一致",
           "example": "无",
           "member": "uint64",
@@ -712,6 +738,7 @@
       "document": "BatchDeleteGroupMember请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待添加群组ID列表，最大值100",
           "example": "dfgsdgsg",
           "member": "string",
@@ -720,6 +747,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -728,6 +756,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "待添加成员列表，最大值256",
           "example": "无",
           "member": "string",
@@ -754,6 +783,7 @@
       "document": "BatchDeleteRecord请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID列表",
           "example": "无",
           "member": "int64",
@@ -762,6 +792,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "无",
           "member": "uint64",
@@ -776,6 +807,7 @@
       "document": "BatchDeleteRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "本次操作删除成功的房间ID列表。如果入参列表中某个房间ID的录制文件已经删除，则出参列表中无对应的房间ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -796,6 +828,7 @@
       "document": "BatchDescribeDocument请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "1234",
           "member": "uint64",
@@ -804,6 +837,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增",
           "example": "1",
           "member": "int64",
@@ -812,6 +846,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大1000",
           "example": "100",
           "member": "int64",
@@ -820,6 +855,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
           "example": "无",
           "member": "uint64",
@@ -828,6 +864,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "课件所有者的user_id，不填默认获取SdkAppId下所有课件",
           "example": "无",
           "member": "string",
@@ -836,6 +873,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "课件名称搜索词",
           "example": "无",
           "member": "string",
@@ -844,6 +882,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "课件id列表，从列表中查询，忽略错误的id",
           "example": "无",
           "member": "string",
@@ -858,6 +897,7 @@
       "document": "BatchDescribeDocument返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件文档总数",
           "example": "无",
           "member": "int64",
@@ -866,6 +906,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DocumentInfo",
@@ -886,6 +927,7 @@
       "document": "BatchRegister请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批量注册用户信息列表",
           "example": "无",
           "member": "BatchUserRequest",
@@ -900,6 +942,7 @@
       "document": "BatchRegister返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "注册成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BatchUserInfo",
@@ -920,6 +963,7 @@
       "document": "批量注册用户信息",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "123",
           "member": "uint64",
@@ -929,6 +973,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -938,6 +983,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -953,6 +999,7 @@
       "document": "用户注册请求信息",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "123",
           "member": "uint64",
@@ -962,6 +1009,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户名称。\n",
           "example": "无",
           "member": "string",
@@ -971,6 +1019,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。\n",
           "example": "无",
           "member": "string",
@@ -980,6 +1029,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户头像。\n",
           "example": "无",
           "member": "string",
@@ -996,6 +1046,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
           "member": "uint64",
@@ -1005,6 +1056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档ID。",
           "example": "abc",
           "member": "string",
@@ -1014,6 +1066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
           "example": "0",
           "member": "uint64",
@@ -1041,6 +1094,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -1050,6 +1104,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档地址。",
           "example": "无",
           "member": "string",
@@ -1059,6 +1114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档名称。",
           "example": "abc",
           "member": "string",
@@ -1068,6 +1124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档所有者的Id",
           "example": "abc",
           "member": "string",
@@ -1077,6 +1134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
           "example": "1",
           "member": "uint64",
@@ -1086,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权限，可以有如下取值：\n0 私有文档（默认）\n1 公共文档",
           "example": "1",
           "member": "uint64",
@@ -1095,6 +1154,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档后缀名。",
           "example": "doc",
           "member": "string",
@@ -1104,6 +1164,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档大小，单位 字节",
           "example": "123",
           "member": "uint64",
@@ -1118,6 +1179,7 @@
       "document": "CreateDocument返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档ID。",
           "example": "abc",
           "member": "string",
@@ -1139,6 +1201,7 @@
       "document": "CreateGroupWithMembers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待创建群组名称",
           "example": "test",
           "member": "string",
@@ -1147,6 +1210,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -1155,6 +1219,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认绑定主讲老师ID",
           "example": "adfgdsfgdf",
           "member": "string",
@@ -1163,6 +1228,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "群组成员列表,一次性最多200个",
           "example": "无",
           "member": "string",
@@ -1177,6 +1243,7 @@
       "document": "CreateGroupWithMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建成功群组ID",
           "example": "abc",
           "member": "string",
@@ -1197,6 +1264,7 @@
       "document": "CreateGroupWithSubGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待创建的新群组名",
           "example": "abc",
           "member": "string",
@@ -1205,6 +1273,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "12345678",
           "member": "uint64",
@@ -1213,6 +1282,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "子群组ID列表，子群组ID不能重复，最多40个",
           "example": "无",
           "member": "string",
@@ -1221,6 +1291,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "群组默认主讲老师ID",
           "example": "abc",
           "member": "string",
@@ -1235,6 +1306,7 @@
       "document": "CreateGroupWithSubGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "新创建群组ID",
           "example": "abc",
           "member": "string",
@@ -1255,6 +1327,7 @@
       "document": "CreateRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
           "member": "string",
@@ -1263,6 +1336,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "预定的房间开始时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -1271,6 +1345,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "预定的房间结束时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -1279,6 +1354,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -1287,6 +1363,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
@@ -1295,6 +1372,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
           "member": "uint64",
@@ -1303,6 +1381,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "abc",
           "member": "string",
@@ -1311,6 +1390,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
@@ -1319,6 +1399,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
           "member": "uint64",
@@ -1327,6 +1408,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
           "example": "1",
           "member": "uint64",
@@ -1335,6 +1417,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
           "example": "1",
           "member": "uint64",
@@ -1343,6 +1426,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
           "member": "uint64",
@@ -1351,6 +1435,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
           "example": "无",
           "member": "string",
@@ -1359,6 +1444,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "rtc人数。",
           "example": "1",
           "member": "uint64",
@@ -1367,6 +1453,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "观看类型，互动直播（默认）。",
           "example": "1",
           "member": "uint64",
@@ -1375,6 +1462,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
           "example": "1",
           "member": "uint64",
@@ -1383,6 +1471,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "房间绑定的群组ID,非空时限制组成员进入",
           "example": "abc",
           "member": "string",
@@ -1391,6 +1480,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
           "example": "0",
           "member": "uint64",
@@ -1405,6 +1495,7 @@
       "document": "CreateRoom返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "301234567",
           "member": "uint64",
@@ -1425,6 +1516,7 @@
       "document": "CreateSupervisor请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID。",
           "example": "1234657",
           "member": "uint64",
@@ -1433,6 +1525,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "用户ID列表。",
           "example": "无",
           "member": "string",
@@ -1460,6 +1553,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID。",
           "example": "1234657",
           "member": "uint64",
@@ -1469,6 +1563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定需要删除的已设置的scene场景自定义元素，如果为空则删除应用下已设置的所有自定义元素。",
           "example": "无",
           "member": "string",
@@ -1496,6 +1591,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文档ID。",
           "example": "xx",
           "member": "string",
@@ -1522,6 +1618,7 @@
       "document": "DeleteGroupMember请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID，联合群组无法删除群组成员",
           "example": "dfgsdgsg",
           "member": "string",
@@ -1530,6 +1627,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -1538,6 +1636,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "成员列表，最大值200",
           "example": "无",
           "member": "string",
@@ -1564,6 +1663,7 @@
       "document": "DeleteGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待删除群组ID列表",
           "example": "无",
           "member": "string",
@@ -1572,6 +1672,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -1598,6 +1699,7 @@
       "document": "DeleteRecord请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "无",
           "member": "int64",
@@ -1606,6 +1708,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "无",
           "member": "int64",
@@ -1633,6 +1736,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID。",
           "example": "3123456789",
           "member": "uint64",
@@ -1659,6 +1763,7 @@
       "document": "DeleteSupervisor请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "12345",
           "member": "uint64",
@@ -1667,6 +1772,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "用户ID列表",
           "example": "无",
           "member": "string",
@@ -1693,6 +1799,7 @@
       "document": "DescribeAnswerList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "问题ID",
           "example": "0491cbde-opd4-4d4c-a063-96864eccc73c",
           "member": "string",
@@ -1701,6 +1808,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "1",
           "example": "分页查询当前页数，从1开始递增，默认值为1",
           "member": "int64",
@@ -1709,6 +1817,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "100",
           "example": "每页数据量，最大1000，默认值为100",
           "member": "int64",
@@ -1723,6 +1832,7 @@
       "document": "DescribeAnswerList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的房间答案总数",
           "example": "1",
           "member": "uint64",
@@ -1731,6 +1841,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间提问答案列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnswerInfo",
@@ -1751,6 +1862,7 @@
       "document": "DescribeAppDetail请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID。低代码互动课堂的SdkAppId。\n",
           "example": "无",
           "member": "string",
@@ -1759,6 +1871,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "开发商ID",
           "example": "无",
           "member": "string",
@@ -1773,6 +1886,7 @@
       "document": "DescribeAppDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "SDK 对应的AppId ",
           "example": "无",
           "member": "string",
@@ -1781,6 +1895,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用配置",
           "example": "无",
           "member": "AppConfig",
@@ -1789,6 +1904,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "场景配置",
           "example": "无",
           "member": "SceneItem",
@@ -1809,6 +1925,7 @@
       "document": "DescribeCurrentMemberList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "1234657",
           "member": "uint64",
@@ -1817,6 +1934,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增。",
           "example": "1",
           "member": "uint64",
@@ -1825,6 +1943,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大1000。",
           "example": "10",
           "member": "uint64",
@@ -1839,6 +1958,7 @@
       "document": "DescribeCurrentMemberList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录总数。当前房间的总人数。",
           "example": "1",
           "member": "uint64",
@@ -1847,6 +1967,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "成员记录列表。",
           "example": "无",
           "member": "MemberRecord",
@@ -1872,6 +1993,7 @@
       "document": "DescribeDeveloper返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "开发商ID",
           "example": "123",
           "member": "string",
@@ -1893,6 +2015,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文档Id（唯一id）",
           "example": "abc",
           "member": "string",
@@ -1907,6 +2030,7 @@
       "document": "DescribeDocument返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档Id",
           "example": "abc",
           "member": "string",
@@ -1916,6 +2040,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档原址url",
           "example": "abc",
           "member": "string",
@@ -1925,6 +2050,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档名称",
           "example": "abc",
           "member": "string",
@@ -1934,6 +2060,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档所有者UserId",
           "example": "abc",
           "member": "string",
@@ -1943,6 +2070,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用Id",
           "example": "123",
           "member": "uint64",
@@ -1952,6 +2080,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档权限",
           "example": "1",
           "member": "uint64",
@@ -1961,6 +2090,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码",
           "example": "xx",
           "member": "string",
@@ -1970,6 +2100,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码类型",
           "example": "1",
           "member": "uint64",
@@ -1979,6 +2110,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码进度， 0 - 100 表示（0% - 100%）",
           "example": "1",
           "member": "uint64",
@@ -1988,6 +2120,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功",
           "example": "1",
           "member": "uint64",
@@ -1997,6 +2130,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "转码失败后的错误信息",
           "example": "abc",
           "member": "string",
@@ -2006,6 +2140,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档类型",
           "example": "abc",
           "member": "string",
@@ -2015,6 +2150,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档大小，单位：字节",
           "example": "1",
           "member": "uint64",
@@ -2024,6 +2160,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "更新的UNIX时间戳",
           "example": "1",
           "member": "uint64",
@@ -2045,6 +2182,7 @@
       "document": "DescribeDocumentsByRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "312345678",
           "member": "uint64",
@@ -2053,6 +2191,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId",
           "example": "123467",
           "member": "uint64",
@@ -2061,6 +2200,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增，默认值为1",
           "example": "1",
           "member": "int64",
@@ -2069,6 +2209,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大1000，默认值为100",
           "example": "100",
           "member": "int64",
@@ -2077,6 +2218,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "课件权限。\n[0]：获取owner的私有课件；\n[1]：获取owner的公开课件;\n[0,1]：则获取owner的私有课件和公开课件；\n[2]：获取owner的私有课件和所有人(包括owner)的公开课件。\n默认值为[2]",
           "example": "[2]",
           "member": "uint64",
@@ -2085,6 +2227,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "文档所有者的user_id，不填默认获取SdkAppId下所有课件",
           "example": "abc",
           "member": "string",
@@ -2099,6 +2242,7 @@
       "document": "DescribeDocumentsByRoom返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DocumentInfo",
@@ -2107,6 +2251,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "符合查询条件文档总数",
           "example": "1",
           "member": "uint64",
@@ -2127,6 +2272,7 @@
       "document": "DescribeDocuments请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "学校id",
           "example": "1234",
           "member": "uint64",
@@ -2135,6 +2281,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增",
           "example": "1",
           "member": "int64",
@@ -2143,6 +2290,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大1000",
           "example": "100",
           "member": "int64",
@@ -2151,6 +2299,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
           "example": "无",
           "member": "uint64",
@@ -2159,6 +2308,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "课件所有者的user_id，不填默认获取school_id下所有课件",
           "example": "无",
           "member": "string",
@@ -2167,6 +2317,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "课件名称搜索词",
           "example": "无",
           "member": "string",
@@ -2175,6 +2326,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "课件id列表，从列表中查询，忽略错误的id",
           "example": "无",
           "member": "string",
@@ -2189,6 +2341,7 @@
       "document": "DescribeDocuments返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件文档总数",
           "example": "无",
           "member": "int64",
@@ -2197,6 +2350,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DocumentInfo",
@@ -2217,6 +2371,7 @@
       "document": "DescribeGroupList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "1234657",
           "member": "uint64",
@@ -2225,6 +2380,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，默认从1开始递增。",
           "example": "1",
           "member": "uint64",
@@ -2233,6 +2389,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，默认20，最大1000。",
           "example": "10",
           "member": "uint64",
@@ -2241,6 +2398,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取",
           "example": "abc",
           "member": "string",
@@ -2249,6 +2407,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "成员ID刷选群组，与TeacherId有且只有一个",
           "example": "abc",
           "member": "string",
@@ -2263,6 +2422,7 @@
       "document": "DescribeGroupList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录总数。当前匹配群组总数。",
           "example": "1",
           "member": "uint64",
@@ -2271,6 +2431,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "群组信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupInfo",
@@ -2291,6 +2452,7 @@
       "document": "DescribeGroupMemberList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID",
           "example": "dfgsdgsg",
           "member": "string",
@@ -2299,6 +2461,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -2307,6 +2470,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页值，默认1",
           "example": "1",
           "member": "uint64",
@@ -2315,6 +2479,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，默认20，最大1000",
           "example": "10",
           "member": "uint64",
@@ -2329,6 +2494,7 @@
       "document": "DescribeGroupMemberList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件总条数",
           "example": "10",
           "member": "uint64",
@@ -2337,6 +2503,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查询成员列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2357,6 +2524,7 @@
       "document": "DescribeGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID",
           "example": "dfgsdgsg",
           "member": "string",
@@ -2365,6 +2533,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -2379,6 +2548,7 @@
       "document": "DescribeGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID",
           "example": "abc",
           "member": "string",
@@ -2387,6 +2557,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "群组名称",
           "example": "test",
           "member": "string",
@@ -2395,6 +2566,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "群主主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2403,6 +2575,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "群组类型\n0-基础群组\n1-组合群组，若为1时会返回子群组ID",
           "example": "无",
           "member": "uint64",
@@ -2411,6 +2584,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "子群组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2431,6 +2605,7 @@
       "document": "DescribeQuestionList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID",
           "example": "312345678",
           "member": "uint64",
@@ -2439,6 +2614,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增，默认值为1",
           "example": "1",
           "member": "int64",
@@ -2447,6 +2623,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增，默认值为1",
           "example": "100",
           "member": "int64",
@@ -2461,6 +2638,7 @@
       "document": "DescribeQuestionList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的房间问答问题总数",
           "example": "1",
           "member": "uint64",
@@ -2469,6 +2647,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间问答问题列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "课堂回答问题列表",
           "member": "QuestionInfo",
@@ -2489,6 +2668,7 @@
       "document": "DescribeRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
           "member": "uint64",
@@ -2503,6 +2683,7 @@
       "document": "DescribeRoom返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
           "member": "string",
@@ -2511,6 +2692,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "预定的房间开始时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -2519,6 +2701,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "预定的房间结束时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -2527,6 +2710,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "老师的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
@@ -2535,6 +2719,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -2543,6 +2728,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
@@ -2551,6 +2737,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
           "member": "uint64",
@@ -2559,6 +2746,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
           "member": "uint64",
@@ -2567,6 +2755,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
           "example": "1",
           "member": "uint64",
@@ -2575,6 +2764,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "video",
           "member": "string",
@@ -2583,6 +2773,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
           "member": "uint64",
@@ -2591,6 +2782,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "助教UserId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2599,6 +2791,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2607,6 +2800,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2615,6 +2809,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间绑定的群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2623,6 +2818,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关",
           "example": "0",
           "member": "uint64",
@@ -2643,6 +2839,7 @@
       "document": "DescribeRoomStatistics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "1234657",
           "member": "uint64",
@@ -2651,6 +2848,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增。",
           "example": "1",
           "member": "uint64",
@@ -2659,6 +2857,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大1000。",
           "example": "10",
           "member": "uint64",
@@ -2673,6 +2872,7 @@
       "document": "DescribeRoomStatistics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "峰值在线成员人数。",
           "example": "1",
           "member": "uint64",
@@ -2681,6 +2881,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "累计在线人数。",
           "example": "1",
           "member": "uint64",
@@ -2689,6 +2890,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "记录总数。包含进入房间或者应到未到的。",
           "example": "1",
           "member": "uint64",
@@ -2697,6 +2899,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "成员记录列表。",
           "example": "无",
           "member": "MemberRecord",
@@ -2705,6 +2908,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "秒级unix时间戳，实际房间开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1675677337",
           "member": "uint64",
@@ -2713,6 +2917,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "秒级unix时间戳，实际房间结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1675677337",
           "member": "uint64",
@@ -2721,6 +2926,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间消息总数。",
           "example": "1",
           "member": "uint64",
@@ -2729,6 +2935,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间连麦总数。",
           "example": "1",
           "member": "uint64",
@@ -2749,6 +2956,7 @@
       "document": "DescribeSdkAppIdUsers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用ID",
           "example": "123456",
           "member": "uint64",
@@ -2757,6 +2965,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页，默认值为1",
           "example": "1",
           "member": "int64",
@@ -2765,6 +2974,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页数据限制，默认值为20",
           "example": "1",
           "member": "int64",
@@ -2779,6 +2989,7 @@
       "document": "DescribeSdkAppIdUsers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户总数",
           "example": "10",
           "member": "uint64",
@@ -2787,6 +2998,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前获取用户信息数组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserInfo",
@@ -2807,6 +3019,7 @@
       "document": "DescribeSupervisors请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "1",
           "member": "uint64",
@@ -2815,6 +3028,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据量，最大100。 不填默认20.",
           "example": "无",
           "member": "uint64",
@@ -2823,6 +3037,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增，不填默认为1。",
           "example": "无",
           "member": "uint64",
@@ -2837,6 +3052,7 @@
       "document": "DescribeSupervisors返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数据总量",
           "example": "无",
           "member": "uint64",
@@ -2845,6 +3061,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数",
           "example": "无",
           "member": "uint64",
@@ -2853,6 +3070,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前页数据量",
           "example": "无",
           "member": "uint64",
@@ -2861,6 +3079,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "巡课列表",
           "example": "无",
           "member": "string",
@@ -2882,6 +3101,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户Id。",
           "example": "abc",
           "member": "string",
@@ -2896,6 +3116,7 @@
       "document": "DescribeUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用Id。",
           "example": "1",
           "member": "uint64",
@@ -2905,6 +3126,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户Id。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
@@ -2914,6 +3136,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户昵称。",
           "example": "abc",
           "member": "string",
@@ -2923,6 +3146,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户头像Url。",
           "example": "abc",
           "member": "string",
@@ -2944,6 +3168,7 @@
       "document": "文档信息",
       "members": [
         {
+          "disabled": false,
           "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2953,6 +3178,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档原址url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2962,6 +3188,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2971,6 +3198,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档所有者UserId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -2980,6 +3208,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "uint64",
@@ -2989,6 +3218,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档权限，0：私有课件 1：公共课件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -2998,6 +3228,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3007,6 +3238,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转码类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3016,6 +3248,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转码进度， 0 - 100 表示（0% - 100%）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3025,6 +3258,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -3034,6 +3268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转码失败后的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3043,6 +3278,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3052,6 +3288,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文档大小，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3061,6 +3298,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "更新的UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -3070,6 +3308,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "课件页数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3079,6 +3318,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "宽，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3088,6 +3328,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "高，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3097,6 +3338,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "封面，仅转码的课件会生成封面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3112,6 +3354,7 @@
       "document": "EndRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "3123456789",
           "member": "uint64",
@@ -3138,6 +3381,7 @@
       "document": "房间事件对应的信息。",
       "members": [
         {
+          "disabled": false,
           "document": "事件发生的房间号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -3147,6 +3391,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "事件发生的用户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -3162,6 +3407,7 @@
       "document": "房间事件信息。",
       "members": [
         {
+          "disabled": false,
           "document": "事件发生的秒级unix时间戳。",
           "example": "123456",
           "member": "uint64",
@@ -3171,6 +3417,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束\nCamera0n: 摄像头打开\nCamera0ff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
           "example": "RoomStart",
           "member": "string",
@@ -3180,6 +3427,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件详细内容，包含房间号,成员类型事件包含用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"RoomId\":1234}",
           "member": "EventDataInfo",
@@ -3195,6 +3443,7 @@
       "document": "GetRoomEvent请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
           "member": "uint64",
@@ -3203,6 +3452,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用Id。",
           "example": "12345",
           "member": "uint64",
@@ -3211,6 +3461,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "起始页，1开始。keyword为空时有效。",
           "example": "1",
           "member": "uint64",
@@ -3219,6 +3470,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页个数。keyword为空时有效。一次性最多200条。",
           "example": "10",
           "member": "uint64",
@@ -3227,6 +3479,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "搜索事件类型。有以下事件类型:\nRoomStart:房间开始\nRoomEnd:房间结束\nMemberJoin:成员加入\nMemberQuit:成员退出\nRecordFinish:录制结束",
           "example": "RoomStart",
           "member": "string",
@@ -3241,6 +3494,7 @@
       "document": "GetRoomEvent返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "该房间的事件总数，keyword搜索不影响该值。",
           "example": "100",
           "member": "uint64",
@@ -3249,6 +3503,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "详细事件内容。包含相应的类型、发生的时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Timestamp\":1234,\"EventType\":\"RoomStart\",\"EventData\":{\"RoomId\":123456}}]",
           "member": "EventInfo",
@@ -3269,6 +3524,7 @@
       "document": "GetRoomMessage请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "无",
           "member": "int64",
@@ -3277,6 +3533,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "房间Id。\t",
           "example": "无",
           "member": "uint64",
@@ -3285,6 +3542,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "消息序列。获取该序列以前的消息(不包含该seq消息)",
           "example": "无",
           "member": "int64",
@@ -3293,6 +3551,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "消息拉取的条数。最大数量不能超过套餐包限制。",
           "example": "无",
           "member": "uint64",
@@ -3307,6 +3566,7 @@
       "document": "GetRoomMessage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "消息列表",
           "example": "无",
           "member": "MessageList",
@@ -3327,6 +3587,7 @@
       "document": "GetRooms请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码平台的SdkAppId。\n",
           "example": "无",
           "member": "uint64",
@@ -3335,6 +3596,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "开始时间。默认以当前时间减去半小时作为开始时间。",
           "example": "无",
           "member": "uint64",
@@ -3343,6 +3605,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间。默认以当前时间加上半小时作为结束时间。",
           "example": "无",
           "member": "uint64",
@@ -3351,6 +3614,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页查询当前页数，从1开始递增",
           "example": "无",
           "member": "uint64",
@@ -3359,6 +3623,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认是10条",
           "example": "无",
           "member": "uint64",
@@ -3373,6 +3638,7 @@
       "document": "GetRooms返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数",
           "example": "无",
           "member": "uint64",
@@ -3381,6 +3647,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间列表",
           "example": "无",
           "member": "RoomItem",
@@ -3401,6 +3668,7 @@
       "document": "GetWatermark请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "无",
           "member": "uint64",
@@ -3415,6 +3683,7 @@
       "document": "GetWatermark返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "老师视频区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WatermarkConfig",
@@ -3423,6 +3692,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "白板区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WatermarkConfig",
@@ -3431,6 +3701,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BackgroundPictureConfig",
@@ -3439,6 +3710,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文字水印配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextMarkConfig",
@@ -3459,6 +3731,7 @@
       "document": "批量创建群组基础信息",
       "members": [
         {
+          "disabled": false,
           "document": "待创建群组名",
           "example": "test",
           "member": "string",
@@ -3468,6 +3741,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "群组主讲人ID",
           "example": "abc",
           "member": "string",
@@ -3483,6 +3757,7 @@
       "document": "获取群组列表返回的群组信息",
       "members": [
         {
+          "disabled": false,
           "document": "群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fdghdhdfh",
           "member": "string",
@@ -3492,6 +3767,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "群组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -3501,6 +3777,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "群组主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -3510,6 +3787,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "群组类型 \n0-基础群组 \n1-组合群组，若为1时会返回子群组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "群组类型",
           "member": "uint64",
@@ -3519,6 +3797,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "子群组ID列表，如有。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3534,6 +3813,7 @@
       "document": "KickUserFromRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
           "member": "uint64",
@@ -3542,6 +3822,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "低代码平台的SdkAppId。",
           "example": "123456",
           "member": "uint64",
@@ -3550,6 +3831,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "需要踢出成员Id",
           "example": "dfgsadffg",
           "member": "string",
@@ -3558,6 +3840,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "踢出类型：\n1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。\n2：永久踢出",
           "example": "1",
           "member": "uint64",
@@ -3566,6 +3849,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "污点时间(单位秒)，KickType = 1时生效，默认为0",
           "example": "10",
           "member": "uint64",
@@ -3593,6 +3877,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "1234657",
           "member": "uint64",
@@ -3602,6 +3887,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "userid",
           "member": "string",
@@ -3616,6 +3902,7 @@
       "document": "LoginOriginId返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户Id。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
@@ -3625,6 +3912,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "登录/注册成功后返回登录态token。有效期7天。",
           "example": "abae3faef12345",
           "member": "string",
@@ -3647,6 +3935,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "注册获取的用户id。",
           "example": "abc",
           "member": "string",
@@ -3661,6 +3950,7 @@
       "document": "LoginUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户Id。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
@@ -3670,6 +3960,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "登录/注册成功后返回登录态token。有效期7天。",
           "example": "abc",
           "member": "string",
@@ -3691,6 +3982,7 @@
       "document": "成员记录信息。",
       "members": [
         {
+          "disabled": false,
           "document": "用户ID。",
           "example": "abc",
           "member": "string",
@@ -3700,6 +3992,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户名称。",
           "example": "abc",
           "member": "string",
@@ -3709,6 +4002,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "在线时长，单位秒。",
           "example": "1",
           "member": "uint64",
@@ -3718,6 +4012,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启摄像头。",
           "example": "1",
           "member": "uint64",
@@ -3727,6 +4022,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否开启麦克风。",
           "example": "1",
           "member": "uint64",
@@ -3736,6 +4032,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否禁言。",
           "example": "1",
           "member": "uint64",
@@ -3745,6 +4042,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "回答问题数量。",
           "example": "1",
           "member": "uint64",
@@ -3754,6 +4052,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "举手数量。",
           "example": "1",
           "member": "uint64",
@@ -3763,6 +4062,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "首次进入房间的unix时间戳。",
           "example": "1234657",
           "member": "uint64",
@@ -3772,6 +4072,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最后一次退出房间的unix时间戳。",
           "example": "1234657",
           "member": "uint64",
@@ -3781,6 +4082,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "奖励次数。",
           "example": "1",
           "member": "uint64",
@@ -3790,6 +4092,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户IP。",
           "example": "1.1.1.1",
           "member": "string",
@@ -3799,6 +4102,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户位置信息。",
           "example": "城市(国家)",
           "member": "string",
@@ -3808,6 +4112,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）",
           "example": "5",
           "member": "int64",
@@ -3817,6 +4122,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每个成员上麦次数。",
           "example": "1",
           "member": "int64",
@@ -3826,6 +4132,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每个成员发送消息数量。\n",
           "example": "2",
           "member": "int64",
@@ -3835,6 +4142,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户角色。0代表学生；1代表老师； 2助教；3巡课。",
           "example": "1",
           "member": "uint64",
@@ -3844,6 +4152,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上课班号",
           "example": "abc",
           "member": "string",
@@ -3853,6 +4162,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "子上课班号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3862,6 +4172,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户的上台状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -3877,6 +4188,7 @@
       "document": "单条消息体内容",
       "members": [
         {
+          "disabled": false,
           "document": "消息类型。0表示文本消息，1表示图片消息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3886,6 +4198,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文本消息内容。message type为0时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "text",
           "member": "string",
@@ -3895,6 +4208,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "图片消息URL。 message type为1时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
           "member": "string",
@@ -3910,6 +4224,7 @@
       "document": "历史消息列表",
       "members": [
         {
+          "disabled": false,
           "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1676879993",
           "member": "int64",
@@ -3919,6 +4234,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "消息发送者\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3928,6 +4244,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "消息序列号，当前课堂内唯一且单调递增\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -3937,6 +4254,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "历史消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MessageItem",
@@ -3952,6 +4270,7 @@
       "document": "ModifyApp请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -3960,6 +4279,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "回调地址。",
           "example": "abc",
           "member": "string",
@@ -3968,6 +4288,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "回调key。",
           "example": "无",
           "member": "string",
@@ -3994,6 +4315,7 @@
       "document": "ModifyGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "需要修改的群组ID",
           "example": "test",
           "member": "string",
@@ -4002,6 +4324,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "低代码平台应用ID",
           "example": "123456",
           "member": "uint64",
@@ -4010,6 +4333,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认绑定主讲老师ID",
           "example": "adfgdsfgdf",
           "member": "string",
@@ -4018,6 +4342,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待修改的群组名称",
           "example": "无",
           "member": "string",
@@ -4044,6 +4369,7 @@
       "document": "ModifyRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "312345678",
           "member": "uint64",
@@ -4052,6 +4378,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId",
           "example": "123467",
           "member": "uint64",
@@ -4060,6 +4387,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "预定的房间开始时间，unix时间戳。直播开始后不允许修改。",
           "example": "1659600138",
           "member": "uint64",
@@ -4068,6 +4396,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "预定的房间结束时间，unix时间戳。直播开始后不允许修改。",
           "example": "1659600138",
           "member": "uint64",
@@ -4076,6 +4405,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "老师ID。直播开始后不允许修改。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
@@ -4084,6 +4414,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
           "member": "string",
@@ -4092,6 +4423,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
           "example": "1",
           "member": "uint64",
@@ -4100,6 +4432,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 17)\n直播开始后不允许修改。",
           "example": "1",
           "member": "uint64",
@@ -4108,6 +4441,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
           "example": "1",
           "member": "uint64",
@@ -4116,6 +4450,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
           "example": "1",
           "member": "uint64",
@@ -4124,6 +4459,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师\n直播开始后不允许修改。",
           "example": "video",
           "member": "string",
@@ -4132,6 +4468,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
           "example": "1",
           "member": "uint64",
@@ -4140,6 +4477,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "助教Id列表。直播开始后不允许修改。",
           "example": "无",
           "member": "string",
@@ -4148,6 +4486,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "房间绑定的群组ID",
           "example": "abc",
           "member": "string",
@@ -4156,6 +4495,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关",
           "example": "0",
           "member": "uint64",
@@ -4182,6 +4522,7 @@
       "document": "ModifyUserProfile请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待修改用户ID",
           "example": "abc",
           "member": "string",
@@ -4190,6 +4531,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待修改的用户名",
           "example": "abc",
           "member": "string",
@@ -4198,6 +4540,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待修改头像url",
           "example": "abc",
           "member": "string",
@@ -4224,6 +4567,7 @@
       "document": "房间问答问题详情",
       "members": [
         {
+          "disabled": false,
           "document": "问题ID",
           "example": "a304828e-c109-436e-aada-59aec20b7aab",
           "member": "string",
@@ -4233,6 +4577,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "问题内容",
           "example": "测试题",
           "member": "string",
@@ -4242,6 +4587,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "倒计时答题设置的秒数（0 表示不计时）",
           "example": "1",
           "member": "uint64",
@@ -4251,6 +4597,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "正确答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
           "example": "1",
           "member": "int64",
@@ -4260,6 +4607,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "每个选项答题人数统计\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnswerStat",
@@ -4276,6 +4624,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -4285,6 +4634,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户名称。",
           "example": "nickname",
           "member": "string",
@@ -4294,6 +4644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "id12345",
           "member": "string",
@@ -4303,6 +4654,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户头像。",
           "example": "abc",
           "member": "string",
@@ -4317,6 +4669,7 @@
       "document": "RegisterUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户Id。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
@@ -4326,6 +4679,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "登录/注册成功后返回登录态token。有效期7天。",
           "example": "abae3faef12345",
           "member": "string",
@@ -4347,6 +4701,7 @@
       "document": "批量创建房间的房间信息",
       "members": [
         {
+          "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
           "member": "string",
@@ -4356,6 +4711,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "预定的房间开始时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -4365,6 +4721,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "预定的房间结束时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -4374,6 +4731,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分辨率。可以有如下取值： 1 标清 2 高清 3 全高清",
           "example": "1",
           "member": "uint64",
@@ -4383,6 +4741,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
           "member": "uint64",
@@ -4392,6 +4751,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频",
           "example": "videodoc",
           "member": "string",
@@ -4401,6 +4761,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
@@ -4410,6 +4771,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值： 0 不自动连麦（需要手动申请上麦，默认值） 1 自动连麦",
           "example": "1",
           "member": "uint64",
@@ -4419,6 +4781,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值： 0 自动取消连麦（默认值） 1 保持连麦状态",
           "example": "1",
           "member": "uint64",
@@ -4428,6 +4791,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "高音质模式。可以有以下取值： 0 不开启高音质（默认值） 1 开启高音质",
           "example": "1",
           "member": "uint64",
@@ -4437,6 +4801,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值： 0 不禁止录制（自动开启录制，默认值） 1 禁止录制 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
           "member": "uint64",
@@ -4446,6 +4811,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
           "example": "无",
           "member": "string",
@@ -4455,6 +4821,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "rtc人数。",
           "example": "1",
           "member": "uint64",
@@ -4464,6 +4831,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "观看类型。",
           "example": "1",
           "member": "uint64",
@@ -4473,6 +4841,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录制布局。",
           "example": "1",
           "member": "uint64",
@@ -4482,6 +4851,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间绑定的群组ID",
           "example": "xfdfgdf",
           "member": "string",
@@ -4491,6 +4861,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关",
           "example": "0",
           "member": "uint64",
@@ -4506,6 +4877,7 @@
       "document": "房间列表",
       "members": [
         {
+          "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "room",
           "member": "string",
@@ -4515,6 +4887,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4524,6 +4897,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间状态。0 未开始 ；1进行中  ；2 已结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4533,6 +4907,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4542,6 +4917,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4551,6 +4927,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实际开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4560,6 +4937,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实际结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4569,6 +4947,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分辨率。1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4578,6 +4957,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最大允许连麦人数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4587,6 +4967,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "房间录制地址。已废弃，使用新字段 RecordUrl\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4596,6 +4977,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4605,6 +4987,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最高房间内人数（包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4614,6 +4997,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关 \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -4634,6 +5018,7 @@
       "document": "SetAppCustomContent请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自定义内容。",
           "example": "无",
           "member": "AppCustomContent",
@@ -4642,6 +5027,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "应用ID。",
           "example": "1234657",
           "member": "uint64",
@@ -4668,6 +5054,7 @@
       "document": "SetWatermark请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
           "example": "12333",
           "member": "uint64",
@@ -4676,6 +5063,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "老师视频区域的水印参数地址，设置为空字符串表示删除",
           "example": "url",
           "member": "string",
@@ -4684,6 +5072,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "白板视频区域的水印参数地址，设置为空字符串表示删除",
           "example": "无",
           "member": "string",
@@ -4692,6 +5081,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "视频默认图片（在没有视频流的时候显示），设置为空字符串表示删除",
           "example": "无",
           "member": "string",
@@ -4700,6 +5090,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "白板区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
           "example": "无",
           "member": "float",
@@ -4708,6 +5099,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "白板区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
           "example": "无",
           "member": "float",
@@ -4716,6 +5108,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "白板区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
           "example": "无",
           "member": "float",
@@ -4724,6 +5117,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "白板区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
           "example": "无",
           "member": "float",
@@ -4732,6 +5126,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "老师视频区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
           "example": "无",
           "member": "float",
@@ -4740,6 +5135,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "老师视频区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
           "example": "无",
           "member": "float",
@@ -4748,6 +5144,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "老师视频区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
           "example": "无",
           "member": "float",
@@ -4756,6 +5153,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "老师视频区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
           "example": "无",
           "member": "float",
@@ -4764,6 +5162,7 @@
           "type": "float"
         },
         {
+          "disabled": false,
           "document": "文字水印内容，设置为空字符串表示删除",
           "example": "无",
           "member": "string",
@@ -4772,6 +5171,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "文字水印颜色",
           "example": "无",
           "member": "string",
@@ -4798,6 +5198,7 @@
       "document": "StartRoom请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "房间ID。",
           "example": "3123456789",
           "member": "uint64",
@@ -4824,6 +5225,7 @@
       "document": "文字水印配置",
       "members": [
         {
+          "disabled": false,
           "document": "文字水印内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "text",
           "member": "string",
@@ -4833,6 +5235,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文字水印颜色\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4849,6 +5252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
           "member": "uint64",
@@ -4858,6 +5262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "文档ID。",
           "example": "abc",
           "member": "string",
@@ -4884,6 +5289,7 @@
       "document": "用户信息结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -4893,6 +5299,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
@@ -4902,6 +5309,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4911,6 +5319,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户头像Url。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4926,6 +5335,7 @@
       "document": "水印配置",
       "members": [
         {
+          "disabled": false,
           "document": "水印图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
           "member": "string",
@@ -4935,6 +5345,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "水印宽。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -4944,6 +5355,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "水印高。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -4953,6 +5365,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -4962,6 +5375,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",

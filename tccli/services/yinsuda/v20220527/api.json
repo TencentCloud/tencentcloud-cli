@@ -125,6 +125,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲 Id。",
           "example": "\"\"",
           "member": "string",
@@ -135,6 +136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲名称。",
           "example": "\"\"",
           "member": "string",
@@ -145,6 +147,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌手列表。",
           "example": "\"\"",
           "member": "string",
@@ -161,6 +164,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -170,6 +174,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -179,6 +184,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间号。",
           "example": "无",
           "member": "string",
@@ -188,6 +194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲 Id。",
           "example": "无",
           "member": "string",
@@ -197,6 +204,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大合唱人数，默认值为 8，最大值为 20。",
           "example": "无",
           "member": "uint64",
@@ -206,6 +214,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合唱用户标识列表。",
           "example": "无",
           "member": "string",
@@ -220,6 +229,7 @@
       "document": "ApplyChorus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "合唱 Token。",
           "example": "无",
           "member": "string",
@@ -241,6 +251,7 @@
       "document": "BatchDescribeKTVMusicDetails请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -249,6 +260,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -257,6 +269,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "歌曲 Id 列表。",
           "example": "无",
           "member": "string",
@@ -265,6 +278,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
           "example": "无",
           "member": "string",
@@ -279,6 +293,7 @@
       "document": "BatchDescribeKTVMusicDetails返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "歌曲详细信息列表。",
           "example": "无",
           "member": "KTVMusicDetailInfo",
@@ -287,6 +302,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "不存在歌曲Id列表。",
           "example": "无",
           "member": "string",
@@ -308,6 +324,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，单位：毫秒。",
           "example": "无",
           "member": "int64",
@@ -318,6 +335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间，单位：毫秒。",
           "example": "无",
           "member": "int64",
@@ -334,6 +352,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
@@ -343,6 +362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
@@ -352,6 +372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
           "member": "string",
@@ -361,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "进房参数。",
           "example": "无",
           "member": "JoinRoomInput",
@@ -370,6 +392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建机器人时初始化参数。",
           "example": "无",
           "member": "SyncRobotCommand",
@@ -384,6 +407,7 @@
       "document": "CreateKTVRobot返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxxx",
           "member": "string",
@@ -406,6 +430,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -415,6 +440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -424,6 +450,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "匹配规则列表。",
           "example": "无",
           "member": "KTVMatchRule",
@@ -438,6 +465,7 @@
       "document": "DescribeKTVMatchMusics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "匹配到的歌曲列表。",
           "example": "\"\"",
           "member": "KTVMatchMusic",
@@ -447,6 +475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "未匹配的规则列表。",
           "example": "\"\"",
           "member": "KTVMatchRule",
@@ -468,6 +497,7 @@
       "document": "DescribeKTVMusicsByTag请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -476,6 +506,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -484,6 +515,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "标签 Id。",
           "example": "无",
           "member": "string",
@@ -492,6 +524,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "滚动标记。",
           "example": "无",
           "member": "string",
@@ -500,6 +533,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回条数限制，默认 20，最大 50。",
           "example": "无",
           "member": "int64",
@@ -508,6 +542,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
           "member": "string",
@@ -516,6 +551,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
           "example": "无",
           "member": "string",
@@ -530,6 +566,7 @@
       "document": "DescribeKTVMusicsByTag返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "歌曲信息列表。",
           "example": "无",
           "member": "KTVMusicBaseInfo",
@@ -538,6 +575,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
           "example": "无",
           "member": "string",
@@ -558,6 +596,7 @@
       "document": "DescribeKTVPlaylistDetail请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -566,6 +605,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -574,6 +614,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "歌单 Id。",
           "example": "无",
           "member": "string",
@@ -582,6 +623,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "滚动标记。",
           "example": "无",
           "member": "string",
@@ -590,6 +632,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回条数，默认：20，最大：50。",
           "example": "无",
           "member": "int64",
@@ -598,6 +641,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
           "member": "string",
@@ -606,6 +650,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
           "example": "无",
           "member": "string",
@@ -614,6 +659,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
           "example": "无",
           "member": "string",
@@ -628,6 +674,7 @@
       "document": "DescribeKTVPlaylistDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "歌曲信息列表。",
           "example": "无",
           "member": "KTVMusicBaseInfo",
@@ -636,6 +683,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
           "example": "无",
           "member": "string",
@@ -657,6 +705,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -666,6 +715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -675,6 +725,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型列表，取值有：\n<li>OfficialRec：官方推荐；</li>\n<li>Customize：自定义。</li>\n默认值为 OfficialRec。",
           "example": "无",
           "member": "string",
@@ -684,6 +735,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "无",
           "member": "int64",
@@ -693,6 +745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页返回的记录条数，默认值：20，最大值：50。",
           "example": "无",
           "member": "int64",
@@ -707,6 +760,7 @@
       "document": "DescribeKTVPlaylists返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "歌单基础信息。",
           "example": "无",
           "member": "KTVPlaylistBaseInfo",
@@ -716,6 +770,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "歌单总数。",
           "example": "无",
           "member": "int64",
@@ -738,6 +793,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
@@ -747,6 +803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
@@ -756,6 +813,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器人Id列表。",
           "example": "无",
           "member": "string",
@@ -765,6 +823,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "无",
           "member": "string",
@@ -774,6 +833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
           "example": "无",
           "member": "TimeRange",
@@ -783,6 +843,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "0",
           "member": "int64",
@@ -792,6 +853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页返回的起始偏移量，默认值：10。",
           "example": "10",
           "member": "int64",
@@ -806,6 +868,7 @@
       "document": "DescribeKTVRobots返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "机器人总数。",
           "example": "100",
           "member": "int64",
@@ -815,6 +878,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机器人信息集合。",
           "example": "无",
           "member": "KTVRobotInfo",
@@ -837,6 +901,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -846,6 +911,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -855,6 +921,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索词。",
           "example": "无",
           "member": "string",
@@ -869,6 +936,7 @@
       "document": "DescribeKTVSuggestions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "联想词信息列表。",
           "example": "无",
           "member": "KTVSuggestionInfo",
@@ -891,6 +959,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -900,6 +969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -914,6 +984,7 @@
       "document": "DescribeKTVTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "标签分组列表。",
           "example": "无",
           "member": "KTVTagGroupInfo",
@@ -935,6 +1006,7 @@
       "document": "DescribeLiveVipTradeInfos请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -943,6 +1015,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "直播会员充值下单起始时间，格式为 ISO。默认为当前时间前一天。",
           "example": "2022-06-06T18:29:33Z",
           "member": "datetime_iso",
@@ -951,6 +1024,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "直播会员充值下单截止时间，格式为 ISO。默认为当前时间。 EndTime不能小于StartTime",
           "example": "2022-07-06T18:29:33Z\t",
           "member": "datetime_iso",
@@ -959,6 +1033,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "交易流水号集合，匹配集合指定所有流水号 。\n<li>数组长度限制：10。</li>",
           "example": "无",
           "member": "string",
@@ -967,6 +1042,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "用户标识集合，匹配集合指定所有用户标识 。\n<li>数组长度限制：10。</li>",
           "example": "无",
           "member": "string",
@@ -975,6 +1051,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "无",
           "member": "int64",
@@ -983,6 +1060,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页返回的记录条数，默认值：20，最大值：50。",
           "example": "无",
           "member": "int64",
@@ -997,6 +1075,7 @@
       "document": "DescribeLiveVipTradeInfos返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "直播会员充值流水信息列表",
           "example": "无",
           "member": "LiveVipTradeInfo",
@@ -1005,6 +1084,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "直播会员充值流水总数。",
           "example": "无",
           "member": "int64",
@@ -1025,6 +1105,7 @@
       "document": "DescribeUserInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -1033,6 +1114,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -1047,6 +1129,7 @@
       "document": "DescribeUserInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "用户信息。",
           "example": "无",
           "member": "UserInfo",
@@ -1068,6 +1151,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
@@ -1077,6 +1161,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
@@ -1086,6 +1171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxxx",
           "member": "string",
@@ -1113,6 +1199,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TRTC进房参数",
           "example": "无",
           "member": "TRTCJoinRoomInput",
@@ -1129,6 +1216,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节拍类型，取值有：\n<li>Slow：慢；</li>\n<li>Middle：中等；</li>\n<li>Fast：快；</li>\n<li>Unknown：未知。</li>",
           "example": "无",
           "member": "string",
@@ -1139,6 +1227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "BPM 值。",
           "example": "无",
           "member": "int64",
@@ -1155,6 +1244,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "匹配到的歌曲基础信息。",
           "example": "\"\"",
           "member": "KTVMusicBaseInfo",
@@ -1165,6 +1255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命中规则。",
           "example": "\"\"",
           "member": "KTVMatchRule",
@@ -1175,6 +1266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "AMEMusicBaseInfo",
@@ -1191,6 +1283,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "AME 曲库 Id。",
           "example": "\"\"",
           "member": "string",
@@ -1201,6 +1294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "KTVMatchRuleMusicInfo",
@@ -1211,6 +1305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音速达歌曲 Id，用于匹配 AME 曲库歌曲。",
           "example": "\"\"",
           "member": "string",
@@ -1227,6 +1322,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲名称。",
           "example": "\"\"",
           "member": "string",
@@ -1237,6 +1333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌手列表。",
           "example": "\"\"",
           "member": "string",
@@ -1253,6 +1350,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲Id。",
           "example": "无",
           "member": "string",
@@ -1263,6 +1361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲名称。",
           "example": "无",
           "member": "string",
@@ -1273,6 +1372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌手名称。",
           "example": "无",
           "member": "string",
@@ -1283,6 +1383,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放时长。",
           "example": "无",
           "member": "int64",
@@ -1293,6 +1394,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌手图片链接。",
           "example": "无",
           "member": "string",
@@ -1303,6 +1405,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MusicAlbumInfo",
@@ -1313,6 +1416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
           "member": "string",
@@ -1323,6 +1427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
           "example": "无",
           "member": "string",
@@ -1339,6 +1444,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲基础信息。",
           "example": "无",
           "member": "KTVMusicBaseInfo",
@@ -1349,6 +1455,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放凭证。",
           "example": "无",
           "member": "string",
@@ -1359,6 +1466,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌词下载链接。",
           "example": "无",
           "member": "string",
@@ -1369,6 +1477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音高数据下载链接。",
           "example": "无",
           "member": "string",
@@ -1379,6 +1488,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副歌片段信息。",
           "example": "无",
           "member": "ChorusClip",
@@ -1389,6 +1499,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "前奏间隔。",
           "example": "0",
           "member": "int64",
@@ -1399,6 +1510,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲流派列表。",
           "example": "无",
           "member": "string",
@@ -1409,6 +1521,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KTVBPMInfo",
@@ -1425,6 +1538,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌单Id。",
           "example": "无",
           "member": "string",
@@ -1435,6 +1549,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌单标题。",
           "example": "无",
           "member": "string",
@@ -1451,6 +1566,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxx",
           "member": "string",
@@ -1461,6 +1577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "Play",
           "member": "string",
@@ -1471,6 +1588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放列表。",
           "example": "无",
           "member": "string",
@@ -1481,6 +1599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前歌单索引位置。",
           "example": "1",
           "member": "int64",
@@ -1491,6 +1610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放进度，单位：毫秒。",
           "example": "120000",
           "member": "uint64",
@@ -1501,6 +1621,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频参数。",
           "example": "无",
           "member": "SetAudioParamCommandInput",
@@ -1511,6 +1632,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "进房信息。",
           "example": "无",
           "member": "JoinRoomInput",
@@ -1521,6 +1643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
           "member": "string",
@@ -1531,6 +1654,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "无",
           "member": "SetPlayModeCommandInput",
@@ -1547,6 +1671,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "联想词。",
           "example": "无",
           "member": "string",
@@ -1563,6 +1688,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分组 Id。",
           "example": "无",
           "member": "string",
@@ -1573,6 +1699,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分组名。",
           "example": "无",
           "member": "string",
@@ -1583,6 +1710,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签列表。",
           "example": "无",
           "member": "KTVTagInfo",
@@ -1599,6 +1727,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签 Id。",
           "example": "无",
           "member": "string",
@@ -1609,6 +1738,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签名称。",
           "example": "无",
           "member": "string",
@@ -1624,6 +1754,7 @@
       "document": "充值直播会员流水信息",
       "members": [
         {
+          "disabled": false,
           "document": "交易流水号。",
           "example": "无",
           "member": "string",
@@ -1633,6 +1764,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -1642,6 +1774,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -1651,6 +1784,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "房间标识。",
           "example": "无",
           "member": "string",
@@ -1660,6 +1794,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "充值会员天数。\n取值有： \n<li>31</li> <li>93</li><li>186</li> <li>372</li>",
           "example": "无",
           "member": "int64",
@@ -1669,6 +1804,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单状态。 \n取值有： \n<li>Success：成功</li><li>Fail：失败</li><li>Processing：订单处理中</li>",
           "example": "无",
           "member": "string",
@@ -1678,6 +1814,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1693,6 +1830,7 @@
       "document": "直播会员用户信息",
       "members": [
         {
+          "disabled": false,
           "document": "房间标识。",
           "example": "无",
           "member": "string",
@@ -1702,6 +1840,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "直播会员结束时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -1711,6 +1850,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "会员生效状态\n<li>Valid：生效</li><li>Invalid：无效</li>",
           "example": "无",
           "member": "string",
@@ -1727,6 +1867,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "尺寸规格，取值有：\n<li>Mini：150 x 150 尺寸；</li>\n<li>Small：240 x 240 尺寸；</li>\n<li>Medium：480 x 480 尺寸。</li>",
           "example": "无",
           "member": "string",
@@ -1737,6 +1878,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下载链接。",
           "example": "无",
           "member": "string",
@@ -1753,6 +1895,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "专辑名称。",
           "example": "无",
           "member": "string",
@@ -1763,6 +1906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "封面列表。",
           "example": "无",
           "member": "MusicAlbumCoverInfo",
@@ -1779,6 +1923,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲位置索引。",
           "example": "2",
           "member": "int64",
@@ -1794,6 +1939,7 @@
       "document": "RechargeLiveVip请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -1802,6 +1948,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -1810,6 +1957,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "交易流水号，用于标记此次充值记录，多次充值记录传入相同的 TradeSerialNo 会判断为失败，可用于防止重提提交造成重复计费。",
           "example": "无",
           "member": "string",
@@ -1818,6 +1966,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "房间标识。",
           "example": "无",
           "member": "string",
@@ -1826,6 +1975,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "充值会员天数。\n取值有：\n<li>31</li>\n<li>93</li>\n<li>186</li>\n<li>372</li>",
           "example": "无",
           "member": "int64",
@@ -1840,6 +1990,7 @@
       "document": "RechargeLiveVip返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "直播会员信息。",
           "example": "无",
           "member": "LiveVipUserInfo",
@@ -1860,6 +2011,7 @@
       "document": "SearchKTVMusics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -1868,6 +2020,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -1876,6 +2029,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "关键词。",
           "example": "无",
           "member": "string",
@@ -1884,6 +2038,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "滚动标记。",
           "example": "无",
           "member": "string",
@@ -1892,6 +2047,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回条数限制，默认 20，最大 50.",
           "example": "无",
           "member": "int64",
@@ -1900,6 +2056,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
           "member": "string",
@@ -1908,6 +2065,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
           "example": "无",
           "member": "string",
@@ -1916,6 +2074,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
           "example": "无",
           "member": "string",
@@ -1930,6 +2089,7 @@
       "document": "SearchKTVMusics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "歌曲信息列表。",
           "example": "无",
           "member": "KTVMusicBaseInfo",
@@ -1938,6 +2098,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
           "example": "无",
           "member": "string",
@@ -1959,6 +2120,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "播放位置，单位：毫秒。",
           "example": "120",
           "member": "uint64",
@@ -1975,6 +2137,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义消息，json格式字符串。",
           "example": "{\"field\":\"value\"}",
           "member": "string",
@@ -1985,6 +2148,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息重复次数，默认为 1。",
           "example": "2",
           "member": "uint64",
@@ -2001,6 +2165,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
           "example": "Original",
           "member": "string",
@@ -2017,6 +2182,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "销毁模式，取值有：\n<li>Auto：房间没人时自动销毁</li>\n<li>Expire：房间没人时过期自动销毁</li>\n<li>Never：不自动销毁，需手动销毁</li>默认为：Auto。",
           "example": "Auto",
           "member": "string",
@@ -2027,6 +2193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期销毁时间，单位：秒，当DestroyMode取Expire时必填。",
           "example": "120",
           "member": "int64",
@@ -2043,6 +2210,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "RepeatPlaylist",
           "member": "string",
@@ -2059,6 +2227,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>\n<li>ClearList：清空歌曲列表</li>\n<li>Move：移动歌曲</li>",
           "example": "Add",
           "member": "string",
@@ -2069,6 +2238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示待删除歌曲的位置；\n当 Type 取 Move 时，表示待调整歌曲的位置。",
           "example": "1",
           "member": "int64",
@@ -2079,6 +2249,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当 Type 取 Move 时，必填，表示移动歌曲的目标位置。",
           "example": "2",
           "member": "int64",
@@ -2089,6 +2260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
           "example": "xxxxx",
           "member": "string",
@@ -2105,6 +2277,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
@@ -2114,6 +2287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户标识。",
           "example": "100001",
           "member": "string",
@@ -2123,6 +2297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxx",
           "member": "string",
@@ -2132,6 +2307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指令及指令参数数组。",
           "example": "无",
           "member": "SyncRobotCommand",
@@ -2159,6 +2335,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
           "example": "无",
           "member": "string",
@@ -2169,6 +2346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放参数。",
           "example": "无",
           "member": "PlayCommandInput",
@@ -2179,6 +2357,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
           "example": "无",
           "member": "SetPlaylistCommandInput",
@@ -2189,6 +2368,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放进度，当Command取Seek时，必填。",
           "example": "无",
           "member": "SeekCommandInput",
@@ -2199,6 +2379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "音频参数，当Command取SetAudioParam时，必填。",
           "example": "无",
           "member": "SetAudioParamCommandInput",
@@ -2209,6 +2390,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义消息，当Command取SendMessage时，必填。",
           "example": "无",
           "member": "SendMessageCommandInput",
@@ -2219,6 +2401,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "播放模式，当Command取SetPlayMode时，必填。",
           "example": "无",
           "member": "SetPlayModeCommandInput",
@@ -2229,6 +2412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "销毁模式，当Command取SetDestroyMode时，必填。",
           "example": "无",
           "member": "SetDestroyModeCommandInput",
@@ -2245,6 +2429,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "签名。",
           "example": "xxxxxxx",
           "member": "string",
@@ -2255,6 +2440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "房间号。",
           "example": "1234",
           "member": "string",
@@ -2265,6 +2451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "推流应用ID。",
           "example": "140000001",
           "member": "string",
@@ -2275,6 +2462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户唯一标识。",
           "example": "tom",
           "member": "string",
@@ -2291,6 +2479,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
           "member": "string",
@@ -2301,6 +2490,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
           "member": "string",
@@ -2316,6 +2506,7 @@
       "document": "用户信息",
       "members": [
         {
+          "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -2325,6 +2516,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -2334,6 +2526,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "直播会员详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LiveVipUserInfo",
@@ -2343,6 +2536,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "用户类型\n<li>Normal：普通用户</li>\n<li>LiveVip：直播会员用户</li>",
           "example": "无",
           "member": "string",

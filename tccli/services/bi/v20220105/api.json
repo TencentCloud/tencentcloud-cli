@@ -27,6 +27,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分享项目id，必选",
           "example": "1",
           "member": "uint64",
@@ -36,6 +37,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分享页面id，嵌出看板时此为空值0",
           "example": "1",
           "member": "uint64",
@@ -45,6 +47,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "需要申请延期的Token",
           "example": "1",
           "member": "string",
@@ -54,6 +57,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备用字段",
           "example": "1",
           "member": "string",
@@ -63,6 +67,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "panel,看板；page，页面",
           "example": "page",
           "member": "string",
@@ -77,6 +82,7 @@
       "document": "ApplyEmbedInterval返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "额外参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -86,6 +92,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结果数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApplyEmbedTokenInfo",
@@ -95,6 +102,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
@@ -117,6 +125,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "申请结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -133,6 +142,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分享项目id，必选",
           "example": "1",
           "member": "uint64",
@@ -142,6 +152,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分享页面id，嵌出看板时此为空值0",
           "example": "1",
           "member": "uint64",
@@ -151,6 +162,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "page表示嵌出页面，panel表嵌出整个看板",
           "example": "1",
           "member": "string",
@@ -160,6 +172,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间。 单位：分钟 最大值：240。即，4小时 默认值：240",
           "example": "1",
           "member": "string",
@@ -169,6 +182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备用字段",
           "example": "1",
           "member": "string",
@@ -183,6 +197,7 @@
       "document": "CreateEmbedToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -192,6 +207,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EmbedTokenInfo",
@@ -201,6 +217,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
@@ -223,6 +240,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "信息标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -233,6 +251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "令牌\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -243,6 +262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -253,6 +273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -263,6 +284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -273,6 +295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -283,6 +306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -293,6 +317,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页面Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -303,6 +328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -313,6 +339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "嵌出类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -323,6 +350,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间，分钟为单位，最大240\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",

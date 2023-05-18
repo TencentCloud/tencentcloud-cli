@@ -152,8 +152,8 @@
     ],
     "DescribeAutoBackupConfig": [
       {
-        "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeAutoBackupConfig\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
+        "document": "查询指定实例的自动备份规则",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeAutoBackupConfig\n&InstanceId=crs-5a4p****\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925559\",\n        \"BackupStorageDays\": 7,\n        \"BinlogStorageDays\": 7,\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Monday\",\n            \"Tuesday\"\n        ],\n        \"TimePeriod\": \"01:00-02:00\"\n    }\n}",
         "title": "请求示例"
       }

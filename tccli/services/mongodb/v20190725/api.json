@@ -265,6 +265,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "[\"cmgo-eqmoa5sf\\r\\n\"]",
           "member": "string",
@@ -274,6 +275,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID，用户已创建项目的唯一ID,非自定义",
           "example": "12",
           "member": "uint64",
@@ -288,6 +290,7 @@
       "document": "AssignProject返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的异步任务ID列表",
           "example": "[1081]",
           "member": "uint64",
@@ -310,6 +313,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -320,6 +324,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指具有当前账号权限的数据库名。\n<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>",
           "example": "\"db_test\"",
           "member": "string",
@@ -336,6 +341,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务创建时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
@@ -346,6 +352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件名",
           "example": "cmgo-74sjf5mt_2021-03-24 15:40",
           "member": "string",
@@ -356,6 +363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片名称",
           "example": "cmgo-74sjf5mt_0",
           "member": "string",
@@ -366,6 +374,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份数据大小，单位为字节",
           "example": "102400",
           "member": "int64",
@@ -376,6 +385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试",
           "example": "0",
           "member": "int64",
@@ -386,6 +396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务进度百分比",
           "example": "20",
           "member": "int64",
@@ -396,6 +407,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "耗时，单位为秒",
           "example": "60",
           "member": "int64",
@@ -406,6 +418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份数据下载链接",
           "example": "http://a.b.c/d.tar?e",
           "member": "string",
@@ -416,6 +429,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件备份类型，0-逻辑备份，1-物理备份",
           "example": "1",
           "member": "int64",
@@ -426,6 +440,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发起备份时指定的备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "我的备份",
           "member": "string",
@@ -442,6 +457,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片名",
           "example": "cmgo-74sjf5mt_0",
           "member": "string",
@@ -452,6 +468,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务当前状态。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试",
           "example": "0",
           "member": "int64",
@@ -468,6 +485,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -477,6 +495,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份方式，0-自动备份，1-手动备份",
           "member": "uint64",
           "name": "BackupType",
@@ -486,6 +505,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份名称",
           "member": "string",
           "name": "BackupName",
@@ -495,6 +515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BackupDesc",
@@ -504,6 +525,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件大小，单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "BackupSize",
@@ -513,6 +535,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "StartTime",
@@ -522,6 +545,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EndTime",
@@ -531,6 +555,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份状态，1-备份中，2-备份成功",
           "member": "uint64",
           "name": "Status",
@@ -540,6 +565,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份方法，0-逻辑备份，1-物理备份",
           "member": "uint64",
           "name": "BackupMethod",
@@ -555,6 +581,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "连接的客户端IP",
           "example": "192.168.1.1",
           "member": "string",
@@ -565,6 +592,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "对应客户端IP的连接数",
           "example": "9",
           "member": "uint64",
@@ -575,6 +603,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为内部ip",
           "example": "true",
           "member": "bool",
@@ -590,6 +619,7 @@
       "document": "CreateAccountUser请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -598,6 +628,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "新账号名称。其格式要求如下：<ul><li>字符范围[1,32]。</li><li>可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“_”与短划线“-”。</li></ul>",
           "example": "mong_test",
           "member": "string",
@@ -606,6 +637,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "新账号密码。密码复杂度要求如下：<ul><li>字符长度范围[8,32]。</li><li>至少包含字母、数字和特殊字符（叹号“!”、at\"@\"、井号“#”、百分号“%”、插入符“^”、星号“*”、小括号“()”、下划线“_”）中的两种。</li></ul>",
           "example": "abc123...",
           "member": "string",
@@ -614,6 +646,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "mongouser 账号对应的密码。mongouser 为系统默认账号，即为创建实例时，设置的密码。",
           "example": "Abc123...",
           "member": "string",
@@ -622,6 +655,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "账号备注信息。",
           "example": "测试账号",
           "member": "string",
@@ -630,6 +664,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "账号的读写权限信息。",
           "example": "无",
           "member": "Auth",
@@ -644,6 +679,7 @@
       "document": "CreateAccountUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建任务ID。",
           "example": "1",
           "member": "uint64",
@@ -664,6 +700,7 @@
       "document": "CreateBackupDBInstance请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-ayxpky6l",
           "member": "string",
@@ -672,6 +709,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置备份方式。\n- 0：逻辑备份。\n- 1：物理备份。",
           "example": "0",
           "member": "int64",
@@ -680,6 +718,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "备份备注信息。",
           "example": "remarkInfo",
           "member": "string",
@@ -694,6 +733,7 @@
       "document": "CreateBackupDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询备份流程的状态。",
           "example": "4773",
           "member": "string",
@@ -715,6 +755,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
           "example": "cmgo-f555zzzz",
           "member": "string",
@@ -724,6 +765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "要下载的备份文件名，可通过DescribeDBBackups接口获取。",
           "example": "cmgo-74sjf5mt_2021-03-24 15:40",
           "member": "string",
@@ -733,6 +775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定要下载的副本集的节点名称 或 分片集群的分片名称列表。\n如副本集cmgo-p8vnipr5，示例(固定取值)：BackupSets.0=cmgo-p8vnipr5_0，可下载全量数据。\n如分片集群cmgo-p8vnipr5，示例：BackupSets.0=cmgo-p8vnipr5_0&BackupSets.1=cmgo-p8vnipr5_1，即下载分片0和分片1的数据，分片集群如需全量下载，请按示例方式传入全部分片名称。",
           "example": "无",
           "member": "ReplicaSetInfo",
@@ -747,6 +790,7 @@
       "document": "CreateBackupDownloadTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "下载任务状态",
           "example": "无",
           "member": "BackupDownloadTaskStatus",
@@ -768,6 +812,7 @@
       "document": "CreateDBInstanceHour请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例内存大小，单位：GB。",
           "example": "4",
           "member": "uint64",
@@ -776,6 +821,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例硬盘大小，单位：GB。",
           "example": "250",
           "member": "uint64",
@@ -784,6 +830,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指副本集数量。\n- 创建副本集实例，该参数只能为1。\n- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "1",
           "member": "uint64",
@@ -792,6 +839,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "2",
           "member": "uint64",
@@ -800,6 +848,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。",
           "example": "MONGO_3_WT",
           "member": "string",
@@ -808,6 +857,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "机器类型。\n- HIO：高IO型。\n- HIO10G：高IO万兆。",
           "example": "HIO10G",
           "member": "string",
@@ -816,6 +866,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例数量，最小值1，最大值为10。",
           "example": "1",
           "member": "uint64",
@@ -824,6 +875,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "可用区信息，输入格式如：ap-guangzhou-2。\n- 具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -832,6 +884,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例架构类型。\n- REPLSET：副本集。\n- SHARD：分片集群。",
           "example": "REPLSET",
           "member": "string",
@@ -840,6 +893,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "私有网络ID，如果不设置该参数，则默认选择基础网络。",
           "example": "无",
           "member": "string",
@@ -848,6 +902,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。",
           "example": "无",
           "member": "string",
@@ -856,6 +911,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例密码。\n- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 \n- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。",
           "example": "无",
           "member": "string",
@@ -864,6 +920,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "项目ID。若不设置该参数，则为默认项目。",
           "example": "无",
           "member": "int64",
@@ -872,6 +929,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例标签信息。",
           "example": "无",
           "member": "TagInfo",
@@ -880,6 +938,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。",
           "example": "1",
           "member": "int64",
@@ -888,6 +947,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "父实例 ID。当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。",
           "example": "无",
           "member": "string",
@@ -896,6 +956,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "安全组。",
           "example": "无",
           "member": "string",
@@ -904,6 +965,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "克隆实例回档时间。\n- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。\n- 回档时间范围：仅能回档7天内时间点的数据。",
           "example": "无",
           "member": "string",
@@ -912,6 +974,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "实例名称。仅支持长度为60个字符的中文、英文、数字、下划线_、分隔符- 。",
           "example": "无",
           "member": "string",
@@ -920,6 +983,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "多可用区部署的节点列表。具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)获取。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。\n- 不支持4.2及以上版本。\n- 不支持只读灾备实例。\n- 不能选择基础网络。",
           "example": "无",
           "member": "string",
@@ -928,6 +992,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "Mongos CPU 核数。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
           "example": "无",
           "member": "uint64",
@@ -936,6 +1001,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "Mongos 内存大小。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
           "example": "无",
           "member": "uint64",
@@ -944,6 +1010,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "Mongos 数量。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
           "example": "无",
           "member": "uint64",
@@ -952,6 +1019,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "只读节点数量，最大不超过7个。",
           "example": "无",
           "member": "uint64",
@@ -960,6 +1028,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
           "example": "无",
           "member": "string",
@@ -968,6 +1037,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
           "example": "无",
           "member": "string",
@@ -982,6 +1052,7 @@
       "document": "CreateDBInstanceHour返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单ID。",
           "example": "20190709160000003502416120946732",
           "member": "string",
@@ -990,6 +1061,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建的实例ID列表。",
           "example": "[\"cmgo-m26c6jsf\"]",
           "member": "string",
@@ -1011,6 +1083,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数",
           "example": "3",
           "member": "uint64",
@@ -1020,6 +1093,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存大小，单位：GB",
           "example": "4",
           "member": "uint64",
@@ -1029,6 +1103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例硬盘大小，单位：GB",
           "example": "250",
           "member": "uint64",
@@ -1038,6 +1113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本",
           "example": "MONGO_3_WT",
           "member": "string",
@@ -1047,6 +1123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例数量, 最小值1，最大值为10",
           "example": "1",
           "member": "uint64",
@@ -1056,6 +1133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -1065,6 +1143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]",
           "example": "1",
           "member": "uint64",
@@ -1074,6 +1153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型",
           "example": "HIO10G",
           "member": "string",
@@ -1083,6 +1163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点",
           "example": "REPLSET",
           "member": "string",
@@ -1092,6 +1173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0",
           "example": "1",
           "member": "uint64",
@@ -1101,6 +1183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID，不设置为默认项目",
           "example": "0",
           "member": "int64",
@@ -1110,6 +1193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 查询私有网络列表",
           "example": "vpc-0akbol5v",
           "member": "string",
@@ -1119,6 +1203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 查询子网列表",
           "example": "subnet-fyrtjbqw",
           "member": "string",
@@ -1128,6 +1213,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例密码，不设置该参数则默认密码规则为 实例ID+\"@\"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为\"cmgo-higv73ed@100000001\"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种",
           "example": "pwd123456",
           "member": "string",
@@ -1137,6 +1223,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例标签信息",
           "example": "无",
           "member": "TagInfo",
@@ -1146,6 +1233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为不自动续费",
           "example": "1",
           "member": "uint64",
@@ -1155,6 +1243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0",
           "example": "1",
           "member": "uint64",
@@ -1164,6 +1253,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例",
           "example": "1",
           "member": "int64",
@@ -1173,6 +1263,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID",
           "example": "无",
           "member": "string",
@@ -1182,6 +1273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组",
           "example": "无",
           "member": "string",
@@ -1191,6 +1283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点",
           "example": "无",
           "member": "string",
@@ -1200,6 +1293,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-",
           "example": "无",
           "member": "string",
@@ -1209,6 +1303,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络",
           "example": "无",
           "member": "string",
@@ -1218,6 +1313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果",
           "example": "无",
           "member": "uint64",
@@ -1227,6 +1323,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果",
           "example": "无",
           "member": "uint64",
@@ -1236,6 +1333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个",
           "example": "无",
           "member": "uint64",
@@ -1245,6 +1343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只读节点数量，最大不超过7个",
           "example": "无",
           "member": "uint64",
@@ -1254,6 +1353,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只读节点部署可用区",
           "example": "无",
           "member": "string",
@@ -1263,6 +1363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Hidden节点所在的可用区，跨可用区实例必传",
           "example": "无",
           "member": "string",
@@ -1277,6 +1378,7 @@
       "document": "CreateDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单ID",
           "example": "7142863",
           "member": "string",
@@ -1286,6 +1388,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建的实例ID列表",
           "example": "[\"cmgo-po5f899l\"]",
           "member": "string",
@@ -1308,6 +1411,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "操作序号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "OpId",
@@ -1317,6 +1421,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作所在的命名空间，形式如db.collection\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Ns",
@@ -1326,6 +1431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作执行语句\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Query",
@@ -1335,6 +1441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Op",
@@ -1344,6 +1451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作所在的分片名称",
           "member": "string",
           "name": "ReplicaSetName",
@@ -1353,6 +1461,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "State",
@@ -1362,6 +1471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Operation",
@@ -1371,6 +1481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作所在的节点名称",
           "member": "string",
           "name": "NodeName",
@@ -1380,6 +1491,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作已执行时间（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "MicrosecsRunning",
@@ -1395,6 +1507,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -1404,6 +1517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域信息",
           "member": "string",
           "name": "Region",
@@ -1419,6 +1533,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "单价\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "UnitPrice",
@@ -1428,6 +1543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原价",
           "member": "float",
           "name": "OriginalPrice",
@@ -1437,6 +1553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "折扣加",
           "member": "float",
           "name": "DiscountPrice",
@@ -1451,6 +1568,7 @@
       "document": "DeleteAccountUser请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -1459,6 +1577,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "配置待删除的账号名。",
           "example": "mong_test",
           "member": "string",
@@ -1467,6 +1586,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。",
           "example": "Abc123...",
           "member": "string",
@@ -1481,6 +1601,7 @@
       "document": "DeleteAccountUser返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "账户删除任务ID。",
           "example": "1",
           "member": "int64",
@@ -1501,6 +1622,7 @@
       "document": "DescribeAccountUsers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定待获取账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-******",
           "member": "string",
@@ -1515,6 +1637,7 @@
       "document": "DescribeAccountUsers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例账号列表。",
           "example": "无",
           "member": "UserInfo",
@@ -1536,6 +1659,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance",
           "example": "4762",
           "member": "string",
@@ -1550,6 +1674,7 @@
       "document": "DescribeAsyncRequestInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "状态。返回参数有：initial-初始化、running-运行中、paused-任务执行失败，已暂停、undoed-任务执行失败，已回滚、failed-任务执行失败, 已终止、success-成功",
           "example": "success",
           "member": "string",
@@ -1572,6 +1697,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-74sjf5mt",
           "member": "string",
@@ -1581,6 +1707,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份文件名，用来过滤指定文件的下载任务",
           "example": "cmgo-74sjf5mt_2021-03-24 15:40",
           "member": "string",
@@ -1590,6 +1717,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
@@ -1599,6 +1727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
@@ -1608,6 +1737,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "此次查询返回的条数，取值范围为1-100，默认为20",
           "example": "10",
           "member": "int64",
@@ -1617,6 +1747,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定此次查询返回的页数，默认为0",
           "example": "0",
           "member": "int64",
@@ -1626,6 +1757,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序字段，取值为createTime，finishTime两种，默认为createTime",
           "example": "finishTime",
           "member": "string",
@@ -1635,6 +1767,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "排序方式，取值为asc，desc两种，默认desc",
           "example": "desc",
           "member": "string",
@@ -1644,6 +1777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据任务状态过滤。0-等待执行，1-正在下载，2-下载完成，3-下载失败，4-等待重试。不填默认返回所有类型",
           "example": "[2]",
           "member": "int64",
@@ -1658,6 +1792,7 @@
       "document": "DescribeBackupDownloadTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "满足查询条件的所有条数",
           "example": "12",
           "member": "int64",
@@ -1667,6 +1802,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "下载任务列表",
           "example": "无",
           "member": "BackupDownloadTask",
@@ -1688,6 +1824,7 @@
       "document": "DescribeClientConnections请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
           "example": "cmgo-eqmoaxxx",
           "member": "string",
@@ -1696,6 +1833,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。",
           "example": "1",
           "member": "uint64",
@@ -1704,6 +1842,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认值为0。Offset=Limit*(页码-1)。",
           "example": "1",
           "member": "uint64",
@@ -1718,6 +1857,7 @@
       "document": "DescribeClientConnections返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "客户端连接信息，包括客户端 IP 和对应 IP 的连接数量。",
           "example": "无",
           "member": "ClientConnection",
@@ -1726,6 +1866,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "满足条件的记录总条数，可用于分页查询。",
           "example": "2",
           "member": "uint64",
@@ -1747,6 +1888,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-p8vnipr5",
           "member": "string",
@@ -1756,6 +1898,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，操作所属的命名空间namespace，格式为db.collection",
           "example": "无",
           "member": "string",
@@ -1765,6 +1908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]",
           "example": "无",
           "member": "uint64",
@@ -1774,6 +1918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors",
           "example": "无",
           "member": "string",
@@ -1783,6 +1928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，分片名称",
           "example": "无",
           "member": "string",
@@ -1792,6 +1938,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选条件，节点状态，可能的取值为：primary\nsecondary",
           "example": "无",
           "member": "string",
@@ -1801,6 +1948,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单次请求返回的数量，默认值为100，取值范围为[0,100]",
           "example": "10",
           "member": "uint64",
@@ -1810,6 +1958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认值为0，取值范围为[0,10000]",
           "example": "1",
           "member": "uint64",
@@ -1819,6 +1968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回结果集排序的字段，目前支持：\"MicrosecsRunning\"/\"microsecsrunning\"，默认为升序排序",
           "example": "无",
           "member": "string",
@@ -1828,6 +1978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回结果集排序方式，可能的取值：\"ASC\"/\"asc\"或\"DESC\"/\"desc\"",
           "example": "无",
           "member": "string",
@@ -1842,6 +1993,7 @@
       "document": "DescribeCurrentOp返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的操作总数",
           "example": "19",
           "member": "uint64",
@@ -1851,6 +2003,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前操作列表",
           "example": "无",
           "member": "CurrentOp",
@@ -1873,6 +2026,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-f555zzzz",
           "member": "string",
@@ -1882,6 +2036,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。",
           "example": "1",
           "member": "int64",
@@ -1891,6 +2046,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页大小，最大值为100，不设置默认查询所有。",
           "example": "10",
           "member": "uint64",
@@ -1900,6 +2056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，最小值为0，默认值为0。",
           "example": "1",
           "member": "uint64",
@@ -1914,6 +2071,7 @@
       "document": "DescribeDBBackups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "备份列表",
           "example": "无",
           "member": "BackupInfo",
@@ -1923,6 +2081,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份总数",
           "example": "0",
           "member": "uint64",
@@ -1945,6 +2104,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "订单ID，通过CreateDBInstance等接口返回",
           "example": "20200420111635",
           "member": "string",
@@ -1959,6 +2119,7 @@
       "document": "DescribeDBInstanceDeal返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。",
           "example": "4",
           "member": "int64",
@@ -1968,6 +2129,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单原价。",
           "example": "1116.67",
           "member": "float",
@@ -1977,6 +2139,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单折扣价格。",
           "example": "759.33",
           "member": "float",
@@ -1986,6 +2149,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。",
           "example": "purchase",
           "member": "string",
@@ -2008,6 +2172,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
           "example": "cmgo-p8vnipr5",
           "member": "string",
@@ -2017,6 +2182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点ID。",
           "example": "[\"cmgo-6heje4jp_0-node-slave0\",\"cmgo-6heje4jp_1-node-slave0\"]",
           "member": "string",
@@ -2026,6 +2192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点角色。可选值包括：\n<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>",
           "example": "PRIMARY",
           "member": "string",
@@ -2035,6 +2202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数指定节点是否为Hidden节点，默认为false。",
           "example": "false",
           "member": "bool",
@@ -2044,6 +2212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。",
           "example": "10",
           "member": "int64",
@@ -2053,6 +2222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该参数指定节点投票权。\n<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2062,6 +2232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点标签。",
           "example": "无",
           "member": "NodeTag",
@@ -2076,6 +2247,7 @@
       "document": "DescribeDBInstanceNodeProperty返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Mongos节点属性。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeProperty",
@@ -2085,6 +2257,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "副本集节点信息。",
           "example": "无",
           "member": "ReplicateSetInfo",
@@ -2106,6 +2279,7 @@
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-hcscymcl",
           "member": "string",
@@ -2114,6 +2288,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>",
           "example": "0",
           "member": "int64",
@@ -2122,6 +2297,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>",
           "example": "0",
           "member": "int64",
@@ -2130,6 +2306,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -2138,6 +2315,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "私有网络的 ID。\n- 基础网络则无需配置该参数。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。",
           "example": "1",
           "member": "string",
@@ -2146,6 +2324,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "私有网络的子网ID。\n- 基础网络则无需配置该参数。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。",
           "example": "1",
           "member": "string",
@@ -2154,6 +2333,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2162,6 +2342,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "单次请求返回的数量。默认值为20，取值范围为[1,100]。",
           "example": "10",
           "member": "uint64",
@@ -2170,6 +2351,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "偏移量，默认值为0。",
           "example": "1",
           "member": "uint64",
@@ -2178,6 +2360,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "配置返回结果排序依据的字段。目前支持依据\"ProjectId\"、\"InstanceName\"、\"CreateTime\"排序。",
           "example": "无",
           "member": "string",
@@ -2186,6 +2369,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "配置返回结果的排序方式。\n- ASC：升序。\n- DESC：降序。",
           "example": "无",
           "member": "string",
@@ -2194,6 +2378,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。",
           "example": "无",
           "member": "uint64",
@@ -2202,6 +2387,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。",
           "example": "无",
           "member": "string",
@@ -2210,6 +2396,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "标签信息，包含标签键与标签值。",
           "example": "无",
           "member": "TagInfo",
@@ -2224,6 +2411,7 @@
       "document": "DescribeDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "符合查询条件的实例总数。",
           "example": "19",
           "member": "uint64",
@@ -2232,6 +2420,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例详细信息列表。",
           "example": "无",
           "member": "InstanceDetail",
@@ -2252,6 +2441,7 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定待查询参数列表的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-********",
           "member": "string",
@@ -2266,6 +2456,7 @@
       "document": "DescribeInstanceParams返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "参数值为枚举类型参数集合。",
           "example": "无",
           "member": "InstanceEnumParam",
@@ -2274,6 +2465,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数值为 Integer 类型参数集合。",
           "example": "无",
           "member": "InstanceIntegerParam",
@@ -2282,6 +2474,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数值为 Text 类型的参数集合。",
           "example": "无",
           "member": "InstanceTextParam",
@@ -2290,6 +2483,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数值为混合类型的参数集合。",
           "example": "无",
           "member": "InstanceMultiParam",
@@ -2298,6 +2492,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前实例支持修改的参数个数统计 如0",
           "example": "2",
           "member": "uint64",
@@ -2318,6 +2513,7 @@
       "document": "DescribeSecurityGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。例如：cmgo-p8vn****。",
           "example": "cmgo-p8vnipr5",
           "member": "string",
@@ -2332,6 +2528,7 @@
       "document": "DescribeSecurityGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例绑定的安全组信息。",
           "example": "无",
           "member": "SecurityGroup",
@@ -2353,6 +2550,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-a3bm93hf",
           "member": "string",
@@ -2362,6 +2560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
           "example": "2020-04-20 00:00:00",
           "member": "datetime",
@@ -2371,6 +2570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
           "example": "2020-04-20 22:00:00",
           "member": "datetime",
@@ -2380,6 +2580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。",
           "example": "100",
           "member": "uint64",
@@ -2389,6 +2590,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，最小值为0，最大值为10000，默认值为0。",
           "example": "0",
           "member": "uint64",
@@ -2398,6 +2600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页大小，最小值为1，最大值为100，默认值为20。",
           "example": "100",
           "member": "uint64",
@@ -2407,6 +2610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。",
           "example": "json",
           "member": "string",
@@ -2421,6 +2625,7 @@
       "document": "DescribeSlowLogPatterns返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "慢日志统计信息总数",
           "example": "2",
           "member": "uint64",
@@ -2430,6 +2635,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢日志统计信息",
           "example": "无",
           "member": "SlowLogPattern",
@@ -2451,6 +2657,7 @@
       "document": "DescribeSlowLogs请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-a3bm93hf",
           "member": "string",
@@ -2459,6 +2666,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
           "example": "2020-04-20 00:00:00",
           "member": "datetime",
@@ -2467,6 +2675,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
           "example": "2020-04-20 22:00:00",
           "member": "datetime",
@@ -2475,6 +2684,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。",
           "example": "100",
           "member": "uint64",
@@ -2483,6 +2693,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "偏移量，最小值为0，最大值为10000，默认值为0。",
           "example": "0",
           "member": "uint64",
@@ -2491,6 +2702,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页大小，最小值为1，最大值为100，默认值为20。",
           "example": "100",
           "member": "uint64",
@@ -2499,6 +2711,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。",
           "example": "json",
           "member": "string",
@@ -2513,6 +2726,7 @@
       "document": "DescribeSlowLogs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "慢日志总数",
           "example": "20",
           "member": "uint64",
@@ -2521,6 +2735,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "慢日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Mon Apr 20 13:55:21.623 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362108, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 5335ms\",\"Mon Apr 20 14:01:00.309 I COMMAND  [conn1313] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362457, 1), signature: { hash: BinData(0, DC2B16681C70845D7B6C8C6C97400D4DFB394CA0), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362455, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 1264ms\",\"Mon Apr 20 14:20:15.283 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587363613, 1), signature: { hash: BinData(0, 72D24884320C8A9A26AF8C4DD1127874085DFAE5), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587363603, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 426ms\",\"Mon Apr 20 10:25:45.487 I COMMAND  [conn48] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"10.53.61.24:7004\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { wtimeout: 0, w: 1 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 423ms\",\"Mon Apr 20 10:25:34.934 I COMMAND  [conn28] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 414ms\",\"Mon Apr 20 10:24:52.278 I COMMAND  [conn30] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 406ms\",\"Mon Apr 20 10:25:02.675 I COMMAND  [conn50] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"9.34.46.139:7003\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 373ms\",\"Mon Apr 20 18:35:15.103 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587378913, 1), signature: { hash: BinData(0, A3C176F81B64A7473F88F3F40B84C59EC9E1E1AE), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587378912, 1), t: 2 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 248ms\",\"Mon Apr 20 10:27:38.171 I COMMAND  [conn281] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 212ms\",\"Mon Apr 20 10:26:27.924 I COMMAND  [conn111] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.53.80.6:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"100.93.44.26:7013\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d0841f0f688fc992fd087') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 212ms\",\"Mon Apr 20 13:55:15.051 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362085, 6), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 192ms\",\"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 183ms\",\"Mon Apr 20 10:26:09.357 I COMMAND  [conn36] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 59 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 134ms\",\"Mon Apr 20 13:00:16.363 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587358814, 1), signature: { hash: BinData(0, 90BD7BB9B481B9825527D89A3579B52E6C0C3915), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587358809, 2), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 123ms\",\"Mon Apr 20 13:35:14.983 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587360912, 1), signature: { hash: BinData(0, 06A84575A66B9316D1ECBFB9FB1C7B2F605AB3A8), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587360909, 5), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 122ms\",\"Mon Apr 20 10:24:43.760 I COMMAND  [conn16] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 39 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 112ms\",\"Mon Apr 20 10:25:26.300 I COMMAND  [conn15] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 24 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 7 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 110ms\",\"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 107ms\",\"Mon Apr 20 10:27:38.065 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_msg 107ms\",\"Mon Apr 20 10:27:38.170 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 105ms\"]",
           "member": "string",
@@ -2542,6 +2757,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待查询可用区",
           "example": "1",
           "member": "string",
@@ -2556,6 +2772,7 @@
       "document": "DescribeSpecInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例售卖规格信息列表",
           "example": "无",
           "member": "SpecificationInfo",
@@ -2578,6 +2795,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "cmgo-a3bm9xxx",
           "member": "string",
@@ -2605,6 +2823,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例所属区域及可用区信息。格式：ap-guangzhou-2。",
           "example": "ap-guangzhou-4",
           "member": "string",
@@ -2614,6 +2833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每个分片的主从节点数量。<br>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>",
           "example": "3",
           "member": "int64",
@@ -2623,6 +2843,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>",
           "example": "4",
           "member": "int64",
@@ -2632,6 +2853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>",
           "example": "100",
           "member": "int64",
@@ -2641,6 +2863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例版本信息。<ul><li>具体支持的版本，请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li><li>MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。</li><li>MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。</li></ul>",
           "example": "MONGO_36_WT",
           "member": "string",
@@ -2650,6 +2873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>",
           "example": "HIO10G",
           "member": "string",
@@ -2659,6 +2883,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例数量，取值范围为[1,10]。",
           "example": "2",
           "member": "int64",
@@ -2668,6 +2893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>",
           "example": "REPLSET",
           "member": "string",
@@ -2677,6 +2903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href=\"https://cloud.tencent.com/document/product/240/38567\">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2686,6 +2913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2695,6 +2923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>",
           "example": "PREPAID",
           "member": "string",
@@ -2704,6 +2933,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。",
           "example": "2",
           "member": "uint64",
@@ -2713,6 +2943,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。",
           "example": "4",
           "member": "uint64",
@@ -2722,6 +2953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。",
           "example": "3",
           "member": "uint64",
@@ -2731,6 +2963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。",
           "example": "1",
           "member": "uint64",
@@ -2740,6 +2973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。",
           "example": "2",
           "member": "uint64",
@@ -2749,6 +2983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。",
           "example": "50",
           "member": "uint64",
@@ -2763,6 +2998,7 @@
       "document": "InquirePriceCreateDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "价格",
           "example": "无",
           "member": "DBInstancePrice",
@@ -2784,6 +3020,7 @@
       "document": "InquirePriceModifyDBInstanceSpec请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。",
           "example": "cmgo-8oij5631",
           "member": "string",
@@ -2792,6 +3029,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "变更配置后实例内存大小，单位：GB。",
           "example": "8",
           "member": "int64",
@@ -2800,6 +3038,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "变更配置后实例磁盘大小，单位：GB。",
           "example": "200",
           "member": "int64",
@@ -2808,6 +3047,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例节点数。默认为不变更节点数，暂不支持变更。",
           "example": "3",
           "member": "int64",
@@ -2816,6 +3056,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例分片数。默认为不变更分片数，暂不支持变更。",
           "example": "2",
           "member": "int64",
@@ -2830,6 +3071,7 @@
       "document": "InquirePriceModifyDBInstanceSpec返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "价格。",
           "example": "无",
           "member": "DBInstancePrice",
@@ -2851,6 +3093,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。",
           "example": "[\"cmgo-8oij5631\\r\\n\"]",
           "member": "string",
@@ -2860,6 +3103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式（即包年包月）相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -2874,6 +3118,7 @@
       "document": "InquirePriceRenewDBInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "价格",
           "example": "无",
           "member": "DBInstancePrice",
@@ -2896,6 +3141,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。\n（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）",
           "member": "int64",
           "name": "Period",
@@ -2905,6 +3151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n（InquirePriceRenewDBInstances，RenewDBInstances调用时必填）",
           "member": "string",
           "name": "RenewFlag",
@@ -2920,6 +3167,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -2930,6 +3178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例名称。",
           "example": "test-instance",
           "member": "string",
@@ -2940,6 +3189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "付费类型，可能的返回值：1-包年包月；0-按量计费",
           "example": "1",
           "member": "uint64",
@@ -2950,6 +3200,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目ID。",
           "example": "无",
           "member": "uint64",
@@ -2960,6 +3211,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例。",
           "example": "1",
           "member": "uint64",
@@ -2970,6 +3222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域信息。",
           "example": "无",
           "member": "string",
@@ -2980,6 +3233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区信息。",
           "example": "无",
           "member": "string",
@@ -2990,6 +3244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网络类型，可能的返回值：0-基础网络，1-私有网络",
           "example": "1",
           "member": "uint64",
@@ -3000,6 +3255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络的ID。",
           "example": "vpc-0vjmgwtn",
           "member": "string",
@@ -3010,6 +3266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有网络的子网ID。",
           "example": "subnet-emtfpj2o",
           "member": "string",
@@ -3020,6 +3277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。",
           "example": "2",
           "member": "int64",
@@ -3030,6 +3288,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例IP。",
           "example": "10.100.0.0",
           "member": "string",
@@ -3040,6 +3299,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口号。",
           "example": "27017",
           "member": "uint64",
@@ -3050,6 +3310,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例创建时间。",
           "example": "2010-07-25 18:00:00",
           "member": "datetime",
@@ -3060,6 +3321,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例到期时间。",
           "example": "2010-07-25 20:00:00",
           "member": "datetime",
@@ -3070,6 +3332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例版本信息。",
           "example": "MONGO_42_WT",
           "member": "string",
@@ -3080,6 +3343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例内存规格，单位为MB。",
           "example": "4",
           "member": "uint64",
@@ -3090,6 +3354,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例磁盘规格，单位为MB。",
           "example": "120",
           "member": "uint64",
@@ -3100,6 +3365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例CPU核心数。",
           "example": "2",
           "member": "uint64",
@@ -3110,6 +3376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例机器类型。",
           "example": "HIO10G",
           "member": "string",
@@ -3120,6 +3387,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例从节点数。",
           "example": "2",
           "member": "uint64",
@@ -3130,6 +3398,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例分片数。",
           "example": "3",
           "member": "uint64",
@@ -3140,6 +3409,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。",
           "example": "0",
           "member": "int64",
@@ -3150,6 +3420,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已用容量，单位MB。",
           "example": "100",
           "member": "uint64",
@@ -3160,6 +3431,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维护窗口起始时间。",
           "example": "04:00:00",
           "member": "string",
@@ -3170,6 +3442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "维护窗口结束时间。",
           "example": "05:00:00",
           "member": "string",
@@ -3180,6 +3453,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片信息。",
           "example": "无",
           "member": "ShardInfo",
@@ -3190,6 +3464,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "只读实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3200,6 +3475,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "灾备实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3210,6 +3486,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "临时实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3220,6 +3497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3230,6 +3508,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例标签信息集合。",
           "example": "无",
           "member": "TagInfo",
@@ -3240,6 +3519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例版本标记。",
           "example": "4",
           "member": "uint64",
@@ -3250,6 +3530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例版本标记。",
           "example": "1",
           "member": "uint64",
@@ -3260,6 +3541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb。",
           "example": "0",
           "member": "uint64",
@@ -3270,6 +3552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例",
           "example": "1",
           "member": "uint64",
@@ -3280,6 +3563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例状态描述",
           "example": "运行中",
           "member": "string",
@@ -3290,6 +3574,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
           "example": "cmgo-8go1o9xl",
           "member": "string",
@@ -3300,6 +3585,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -3310,6 +3596,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -3320,6 +3607,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "mongos节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3330,6 +3618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Config Server节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -3340,6 +3629,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Config Server节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -3350,6 +3640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Config Server节点磁盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
@@ -3360,6 +3651,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Config Server节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3370,6 +3662,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "readonly节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -3385,6 +3678,7 @@
       "document": "实例可修改参数枚举类型集合。",
       "members": [
         {
+          "disabled": false,
           "document": "参数当前值。",
           "example": "\"all\"",
           "member": "string",
@@ -3394,6 +3688,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数默认值。",
           "example": "\"slowOp\"",
           "member": "string",
@@ -3403,6 +3698,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "枚举值，所有支持的值。",
           "example": "[\"off\",\"slowOp\",\"all\"]",
           "member": "string",
@@ -3412,6 +3708,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数修改之后是否需要重启生效。\n- 1：需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"0\"",
           "member": "string",
@@ -3421,6 +3718,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数名称。",
           "example": "\"operationProfiling.mode\"",
           "member": "string",
@@ -3430,6 +3728,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数说明。",
           "example": "[\"事务加锁超时时间\",\"max transaction lockrequest timeout millis\"]",
           "member": "string",
@@ -3439,6 +3738,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数值类型说明。",
           "example": "\"enum\"",
           "member": "string",
@@ -3448,6 +3748,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "1",
           "member": "uint64",
@@ -3463,6 +3764,7 @@
       "document": "实例可修改参数 Integer 类型集合。",
       "members": [
         {
+          "disabled": false,
           "document": "参数当前值。",
           "example": "\"100\"",
           "member": "string",
@@ -3472,6 +3774,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数默认值。",
           "example": "\"100\"",
           "member": "string",
@@ -3481,6 +3784,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数最大值。",
           "example": "\"65536\"",
           "member": "string",
@@ -3490,6 +3794,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最小值。",
           "example": "\"0\"",
           "member": "string",
@@ -3499,6 +3804,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数修改之后是否需要重启生效。\n- 1:需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"1\"",
           "member": "string",
@@ -3508,6 +3814,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数名称。",
           "example": "\"operation.profiling.slowOpThresholdMs\"",
           "member": "string",
@@ -3517,6 +3824,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数说明。",
           "example": "[\"数据库profiler确定慢查询的阈值，单位毫秒，默认值100\",\"The Performance Advisor re\"]",
           "member": "string",
@@ -3526,6 +3834,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数类型。",
           "example": "\"integer\"",
           "member": "string",
@@ -3535,6 +3844,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "1",
           "member": "uint64",
@@ -3544,6 +3854,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "冗余字段，可忽略。",
           "example": "\"\"",
           "member": "string",
@@ -3559,6 +3870,7 @@
       "document": "实例可修改参数Multi类型集合。",
       "members": [
         {
+          "disabled": false,
           "document": "参数当前值。",
           "example": "\"01:00\"",
           "member": "string",
@@ -3568,6 +3880,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数默认值。",
           "example": "NULL",
           "member": "string",
@@ -3577,6 +3890,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参考值范围。",
           "example": "[\"00:00\",\"23:00\" ]",
           "member": "string",
@@ -3586,6 +3900,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数修改后是否需要重启才会生效。\n- 1：需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"1\"",
           "member": "string",
@@ -3595,6 +3910,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数名称。",
           "example": "\"openBalance.window\"",
           "member": "string",
@@ -3604,6 +3920,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "\"1\"",
           "member": "uint64",
@@ -3613,6 +3930,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数说明。",
           "example": "[\"负载均衡时间窗\",\"balance.window\"]",
           "member": "string",
@@ -3622,6 +3940,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前值的类型描述，默认为multi。",
           "example": "\"multi\"",
           "member": "string",
@@ -3637,6 +3956,7 @@
       "document": "实例可修改参数为 Text 类型的参数集合。",
       "members": [
         {
+          "disabled": false,
           "document": "参数当前值。",
           "example": "\"\"",
           "member": "string",
@@ -3646,6 +3966,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数默认值。",
           "example": "\"\"",
           "member": "string",
@@ -3655,6 +3976,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改参数值之后是否需要重启。",
           "example": "\"\"",
           "member": "string",
@@ -3664,6 +3986,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数名称。",
           "example": "\"\"",
           "member": "string",
@@ -3673,6 +3996,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "Text 类型参数对应的值。",
           "example": "\"\"",
           "member": "string",
@@ -3682,6 +4006,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数说明。",
           "example": "\"\"",
           "member": "string",
@@ -3691,6 +4016,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "参数值类型说明。",
           "example": "\"\"",
           "member": "string",
@@ -3700,6 +4026,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为运行中的参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "\"\"",
           "member": "string",
@@ -3716,6 +4043,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-f555zzzz",
           "member": "string",
@@ -3730,6 +4058,7 @@
       "document": "IsolateDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
           "example": "28920",
           "member": "string",
@@ -3752,6 +4081,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-p8vnipr5",
           "member": "string",
@@ -3761,6 +4091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待终止的操作",
           "example": "无",
           "member": "Operation",
@@ -3788,6 +4119,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -3797,6 +4129,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP",
           "example": "1",
           "member": "uint64",
@@ -3806,6 +4139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空",
           "example": "vpc-****",
           "member": "string",
@@ -3815,6 +4149,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "切换后IP地址的归属子网统一ID，若为基础网络，该字段为空",
           "example": "subnet-****",
           "member": "string",
@@ -3824,6 +4159,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待修改IP信息",
           "example": "无",
           "member": "ModifyNetworkAddress",
@@ -3850,6 +4186,7 @@
       "document": "ModifyDBInstanceSecurityGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID。例如：cmgo-7pje****。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -3858,6 +4195,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "目标安全组 ID。请通过接口[DescribeSecurityGroup](https://cloud.tencent.com/document/product/240/55675)查看具体的安全组 ID。",
           "example": "[\"sg-a\", \"sg-b\"]",
           "member": "string",
@@ -3885,6 +4223,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-p8vnipr5",
           "member": "string",
@@ -3894,6 +4233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例配置变更后的内存大小，单位：GB。内存和磁盘必须同时升配或同时降配",
           "example": "4",
           "member": "uint64",
@@ -3903,6 +4243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例配置变更后的硬盘大小，单位：GB。内存和磁盘必须同时升配或同时降配。降配时，新的磁盘参数必须大于已用磁盘容量的1.2倍",
           "example": "250",
           "member": "uint64",
@@ -3912,6 +4253,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例配置变更后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
           "example": "25",
           "member": "uint64",
@@ -3921,6 +4263,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数",
           "example": "3",
           "member": "uint64",
@@ -3930,6 +4273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数",
           "example": "3",
           "member": "uint64",
@@ -3939,6 +4283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。",
           "example": "0",
           "member": "uint64",
@@ -3953,6 +4298,7 @@
       "document": "ModifyDBInstanceSpec返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单ID",
           "example": "7142863",
           "member": "string",
@@ -3975,6 +4321,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新IP地址。",
           "member": "string",
           "name": "NewIPAddress",
@@ -3984,6 +4331,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原IP地址。",
           "member": "string",
           "name": "OldIpAddress",
@@ -3999,6 +4347,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点所在的可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -4009,6 +4358,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cmgo-ocdv2lr7_0-node-primary",
           "member": "string",
@@ -4019,6 +4369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.4.0.7:30000",
           "member": "string",
@@ -4029,6 +4380,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "角色。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PRIMARY",
           "member": "string",
@@ -4039,6 +4391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否为Hidden节点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -4049,6 +4402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
           "member": "string",
@@ -4059,6 +4413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主从延迟，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4069,6 +4424,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -4079,6 +4435,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点投票权。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4089,6 +4446,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"TagKey\":\"role-cmgo\",\"TagValue\":\"primary-secondary-group\"}]",
           "member": "NodeTag",
@@ -4099,6 +4457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "副本集Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cmgo-ocdv2lr7_0",
           "member": "string",
@@ -4115,6 +4474,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点Tag key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testKey",
           "member": "string",
@@ -4125,6 +4485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "节点Tag Value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testValue",
           "member": "string",
@@ -4141,6 +4502,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-f555zzzz",
           "member": "string",
@@ -4155,6 +4517,7 @@
       "document": "OfflineIsolatedDBInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
           "example": "28920",
           "member": "string",
@@ -4177,6 +4540,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "操作所在的分片名",
           "member": "string",
           "name": "ReplicaSetName",
@@ -4186,6 +4550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作所在的节点名",
           "member": "string",
           "name": "NodeName",
@@ -4195,6 +4560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作序号",
           "member": "int64",
           "name": "OpId",
@@ -4210,6 +4576,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
           "example": "cmgo-eqmoa5sf",
           "member": "string",
@@ -4219,6 +4586,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -",
           "example": "test_name",
           "member": "string",
@@ -4246,6 +4614,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
           "example": "[\"cmgo-gzo03o75\\n\"]",
           "member": "string",
@@ -4255,6 +4624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -4282,6 +4652,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "副本集ID",
           "example": "cmgo_ih8uido9_0",
           "member": "string",
@@ -4298,6 +4669,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "节点属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeProperty",
@@ -4314,6 +4686,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例Id",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -4323,6 +4696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例账号名",
           "example": "rwuser",
           "member": "string",
@@ -4332,6 +4706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新密码，新密码长度不能少于8位",
           "example": "111111",
           "member": "string",
@@ -4346,6 +4721,7 @@
       "document": "ResetDBInstancePassword返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步请求Id，用户查询该流程的运行状态",
           "example": "4769",
           "member": "string",
@@ -4368,6 +4744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "所属项目id",
           "example": "0",
           "member": "int64",
@@ -4378,6 +4755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
@@ -4388,6 +4766,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "入站规则",
           "example": "无",
           "member": "SecurityGroupBound",
@@ -4398,6 +4777,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "出站规则",
           "example": "无",
           "member": "SecurityGroupBound",
@@ -4408,6 +4788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组id",
           "example": "sg-lxdvbitn",
           "member": "string",
@@ -4418,6 +4799,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组名称",
           "example": "全放通",
           "member": "string",
@@ -4428,6 +4810,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组备注",
           "example": "暴露全部端口到公网和内网，有一定安全风险",
           "member": "string",
@@ -4444,6 +4827,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "执行规则。ACCEPT或DROP",
           "example": "ACCEPT",
           "member": "string",
@@ -4454,6 +4838,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ip段。",
           "example": "0.0.0.0/0",
           "member": "string",
@@ -4464,6 +4849,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "端口范围",
           "example": "80,443",
           "member": "string",
@@ -4474,6 +4860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "传输层协议。tcp，udp或ALL",
           "example": "tcp",
           "member": "string",
@@ -4484,6 +4871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "安全组id代表的地址集合",
           "example": "无",
           "member": "string",
@@ -4494,6 +4882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地址组id代表的地址集合",
           "example": "无",
           "member": "string",
@@ -4504,6 +4893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务组id代表的协议和端口集合",
           "example": "无",
           "member": "string",
@@ -4514,6 +4904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "无",
           "member": "string",
@@ -4529,6 +4920,7 @@
       "document": "SetAccountUserPrivilege请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-kbcfl64r",
           "member": "string",
@@ -4537,6 +4929,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置账号名称。",
           "example": "bob",
           "member": "string",
@@ -4545,6 +4938,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "设置权限信息。",
           "example": "11",
           "member": "Auth",
@@ -4559,6 +4953,7 @@
       "document": "SetAccountUserPrivilege返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID。",
           "example": "100000",
           "member": "uint64",
@@ -4580,6 +4975,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分片已使用容量",
           "member": "float",
           "name": "UsedVolume",
@@ -4589,6 +4985,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片ID",
           "member": "string",
           "name": "ReplicaSetId",
@@ -4598,6 +4995,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片名",
           "member": "string",
           "name": "ReplicaSetName",
@@ -4607,6 +5005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片内存规格，单位为MB",
           "member": "uint64",
           "name": "Memory",
@@ -4616,6 +5015,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片磁盘规格，单位为MB",
           "member": "uint64",
           "name": "Volume",
@@ -4625,6 +5025,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片Oplog大小，单位为MB",
           "member": "uint64",
           "name": "OplogSize",
@@ -4634,6 +5035,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片从节点数",
           "member": "uint64",
           "name": "SecondaryNum",
@@ -4643,6 +5045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分片物理id",
           "member": "string",
           "name": "RealReplicaSetId",
@@ -4658,6 +5061,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "慢日志模式",
           "member": "string",
           "name": "Pattern",
@@ -4667,6 +5071,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大执行时间",
           "member": "uint64",
           "name": "MaxTime",
@@ -4676,6 +5081,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "平均执行时间",
           "member": "uint64",
           "name": "AverageTime",
@@ -4685,6 +5091,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "该模式慢日志条数",
           "member": "uint64",
           "name": "Total",
@@ -4700,6 +5107,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规格信息标识",
           "example": "mongo.HIO10G.128g",
           "member": "string",
@@ -4710,6 +5118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规格有效标志，取值：0-停止售卖，1-开放售卖",
           "example": "1",
           "member": "uint64",
@@ -4720,6 +5129,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计算资源规格，单位为CPU核心数",
           "example": "2",
           "member": "uint64",
@@ -4730,6 +5140,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "内存规格，单位为MB",
           "example": "4096",
           "member": "uint64",
@@ -4740,6 +5151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "默认磁盘规格，单位MB",
           "example": "3072000",
           "member": "uint64",
@@ -4750,6 +5162,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大磁盘规格，单位MB",
           "example": "5120000",
           "member": "uint64",
@@ -4760,6 +5173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小磁盘规格，单位MB",
           "example": "1536000",
           "member": "uint64",
@@ -4770,6 +5184,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可承载qps信息",
           "example": "36000",
           "member": "uint64",
@@ -4780,6 +5195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接数限制",
           "example": "20000",
           "member": "uint64",
@@ -4790,6 +5206,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例mongodb版本信息",
           "example": "MONGO_36_WT",
           "member": "string",
@@ -4800,6 +5217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例mongodb版本号",
           "example": "4",
           "member": "uint64",
@@ -4810,6 +5228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例mongodb版本号（短）",
           "example": "3.6",
           "member": "string",
@@ -4820,6 +5239,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "存储引擎",
           "example": "WiredTiger",
           "member": "string",
@@ -4830,6 +5250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "集群类型，取值：1-分片集群，0-副本集集群",
           "example": "1",
           "member": "uint64",
@@ -4840,6 +5261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小副本集从节点数",
           "example": "3",
           "member": "uint64",
@@ -4850,6 +5272,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大副本集从节点数",
           "example": "7",
           "member": "uint64",
@@ -4860,6 +5283,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小分片数",
           "example": "2",
           "member": "uint64",
@@ -4870,6 +5294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大分片数",
           "example": "20",
           "member": "uint64",
@@ -4880,6 +5305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最小分片从节点数",
           "example": "3",
           "member": "uint64",
@@ -4890,6 +5316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大分片从节点数",
           "example": "7",
           "member": "uint64",
@@ -4900,6 +5327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "机器类型，取值：0-HIO，4-HIO10G",
           "example": "4-HIO10G",
           "member": "string",
@@ -4916,6 +5344,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "地域信息",
           "example": "ap-guangzhou",
           "member": "string",
@@ -4926,6 +5355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区信息",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -4936,6 +5366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "售卖规格信息",
           "example": "无",
           "member": "SpecItem",
@@ -4946,6 +5377,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否支持跨可用区部署 1-支持，0-不支持",
           "example": "1",
           "member": "int64",
@@ -4961,6 +5393,7 @@
       "document": "实例标签信息",
       "members": [
         {
+          "disabled": false,
           "document": "标签键",
           "example": "无",
           "member": "string",
@@ -4970,6 +5403,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标签值",
           "example": "无",
           "member": "string",
@@ -4986,6 +5420,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "指定预隔离实例ID。格式如：cmgo-p8vnipr5。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -5013,6 +5448,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号名。",
           "example": "mongo_test",
           "member": "string",
@@ -5023,6 +5459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号权限详情。",
           "example": "无",
           "member": "Auth",
@@ -5033,6 +5470,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号创建时间。",
           "example": "2021-09-28 14:25:38",
           "member": "string",
@@ -5043,6 +5481,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号更新时间。",
           "example": "2021-09-28 14:25:38",
           "member": "string",
@@ -5053,6 +5492,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注信息。",
           "example": "mongodb测试账号",
           "member": "string",

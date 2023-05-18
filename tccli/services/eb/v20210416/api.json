@@ -209,6 +209,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "HTTPS",
           "example": "HTTPS",
           "member": "string",
@@ -219,6 +220,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "POST",
           "example": "POST",
           "member": "string",
@@ -252,6 +254,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待处理的json字符串",
           "example": "{\"key\": \"value\"}",
           "member": "string",
@@ -261,6 +264,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个转换规则列表",
           "example": "无",
           "member": "Transformation",
@@ -275,6 +279,7 @@
       "document": "CheckTransformation返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "经过Transformations处理之后的数据",
           "example": "{\"key2\": \"value2\"}",
           "member": "string",
@@ -297,6 +302,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "ckafka topic name",
           "example": "topic-xxxxxx",
           "member": "string",
@@ -307,6 +313,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ckafka资源qcs六段式",
           "example": "qcs::ckafka:ap-chongqing:uin/123456:ckafkaId/uin/456789/ckafka-x",
           "member": "string",
@@ -323,6 +330,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "kafka offset",
           "example": "latest",
           "member": "string",
@@ -333,6 +341,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ckafka  topic",
           "example": "topic",
           "member": "string",
@@ -349,6 +358,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要投递到的ckafka topic",
           "example": "topic-xxxx",
           "member": "string",
@@ -359,6 +369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "重试策略",
           "example": "无",
           "member": "RetryPolicy",
@@ -375,6 +386,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "状态",
           "example": "Active",
           "member": "string",
@@ -385,6 +397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -395,6 +408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
@@ -405,6 +419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
@@ -415,6 +430,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -425,6 +441,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
@@ -435,6 +452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -445,6 +463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接器描述",
           "example": "无",
           "member": "ConnectionDescription",
@@ -455,6 +474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接器名称",
           "example": "connection",
           "member": "string",
@@ -465,6 +485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型",
           "example": "apigw",
           "member": "string",
@@ -480,6 +501,7 @@
       "document": "连接器基础信息",
       "members": [
         {
+          "disabled": false,
           "document": "连接器类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tdmq",
           "member": "string",
@@ -489,6 +511,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "连接器状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
@@ -504,6 +527,7 @@
       "document": "ConnectionDescription描述",
       "members": [
         {
+          "disabled": false,
           "document": "资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::apigw:ap-guangzhou:uin/0000000:serviceid/service-id",
           "member": "string",
@@ -513,6 +537,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "apigw参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "APIGWParams",
@@ -522,6 +547,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "ckafka参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CkafkaParams",
@@ -531,6 +557,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "data transfer service (DTS)参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DTSParams",
@@ -547,6 +574,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "连接器描述",
           "example": "无",
           "member": "ConnectionDescription",
@@ -556,6 +584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -565,6 +594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接器名称",
           "example": "connection",
           "member": "string",
@@ -574,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
@@ -583,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
@@ -592,6 +624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型",
           "example": "apigw",
           "member": "string",
@@ -606,6 +639,7 @@
       "document": "CreateConnection返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
@@ -627,6 +661,7 @@
       "document": "CreateEventBus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "EventBusName",
           "member": "string",
@@ -635,6 +670,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
@@ -643,6 +679,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "EB存储时长",
           "example": "无",
           "member": "int64",
@@ -651,6 +688,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "EB是否开启存储",
           "example": "无",
           "member": "bool",
@@ -665,6 +703,7 @@
       "document": "CreateEventBus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -686,6 +725,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
@@ -695,6 +735,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID。",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -704,6 +745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "rule",
           "member": "string",
@@ -713,6 +755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关。",
           "example": "true",
           "member": "bool",
@@ -722,6 +765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
@@ -736,6 +780,7 @@
       "document": "CreateRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -758,6 +803,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -767,6 +813,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标类型",
           "example": "scf",
           "member": "string",
@@ -776,6 +823,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标描述",
           "example": "qcs::scf:ap-guangzhou:uin/3473058547:namespace/test/function/",
           "member": "TargetDescription",
@@ -785,6 +833,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -799,6 +848,7 @@
       "document": "CreateTarget返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "目标ID",
           "example": "target-e9r3a1l0",
           "member": "string",
@@ -821,6 +871,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件总线 id",
           "example": "eb-xxxxx",
           "member": "string",
@@ -830,6 +881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则id",
           "example": "rule-xxxxxx",
           "member": "string",
@@ -839,6 +891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个转换规则列表，当前仅限定一个",
           "example": "无",
           "member": "Transformation",
@@ -853,6 +906,7 @@
       "document": "CreateTransformation返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "生成的转换器id",
           "example": "tsfm-xxxxxxxxxxx",
           "member": "string",
@@ -880,6 +934,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR",
           "example": "DLQ",
           "member": "string",
@@ -890,6 +945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CkafkaDeliveryParams",
@@ -906,6 +962,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
@@ -915,6 +972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -942,6 +1000,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -969,6 +1028,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -978,6 +1038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -1005,6 +1066,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1014,6 +1076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件目标ID",
           "example": "target-xxxxxxxx",
           "member": "string",
@@ -1023,6 +1086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -1050,6 +1114,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
           "member": "string",
@@ -1059,6 +1124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxx",
           "member": "string",
@@ -1068,6 +1134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxx",
           "member": "string",
@@ -1094,6 +1161,7 @@
       "document": "DescribeLogTagValue请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "起始时间",
           "example": "无",
           "member": "int64",
@@ -1102,6 +1170,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间",
           "example": "无",
           "member": "int64",
@@ -1110,6 +1179,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
           "member": "string",
@@ -1118,6 +1188,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "聚合字段",
           "example": "无",
           "member": "string",
@@ -1126,6 +1197,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "页数",
           "example": "无",
           "member": "int64",
@@ -1134,6 +1206,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据大小",
           "example": "无",
           "member": "int64",
@@ -1142,6 +1215,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "筛选条件",
           "example": "无",
           "member": "LogFilter",
@@ -1156,6 +1230,7 @@
       "document": "DescribeLogTagValue返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "索引检索维度值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1177,6 +1252,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络连接类型",
           "example": "privatelink",
           "member": "string",
@@ -1187,6 +1263,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "索引前缀",
           "example": "esindex",
           "member": "string",
@@ -1197,6 +1274,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "es日志轮换粒度",
           "example": "none",
           "member": "string",
@@ -1207,6 +1285,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DTS事件配置",
           "example": "default",
           "member": "string",
@@ -1217,6 +1296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "DTS索引配置",
           "example": "default",
           "member": "string",
@@ -1227,6 +1307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "es模版类型",
           "example": "_type",
           "member": "string",
@@ -1243,6 +1324,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "语法Rule规则保持一致",
           "example": "\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"",
           "member": "string",
@@ -1259,6 +1341,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件源的信息,新产品上报必须符合EB的规范",
           "example": "cvm.cloud.tencent",
           "member": "string",
@@ -1269,6 +1352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件数据，内容由创建事件的系统来控制，当前datacontenttype仅支持application/json;charset=utf-8，所以该字段是json字符串",
           "example": "\"{\\\"a\\\":\\\"b\\\",\\\"c\\\":\\\"d\\\",\\\"e\\\":1}\"",
           "member": "string",
@@ -1279,6 +1363,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件类型，可自定义，选填。云服务默认写 COS:Created:PostObject，用“：”分割类型字段",
           "example": "cvm:ErrorEvent:PingUnreachable",
           "member": "string",
@@ -1289,6 +1374,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件来源详细描述，可自定义，选填。云服务默认为标准qcs资源表示语法：qcs::dts:ap-guangzhou:appid/uin:xxx",
           "example": "qcs::dts:ap-guangzhou:appid/uin:xxx",
           "member": "string",
@@ -1299,6 +1385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件发生的毫秒时间戳，\ntime.Now().UnixNano()/1e6",
           "example": "1631186355147",
           "member": "int64",
@@ -1314,6 +1401,7 @@
       "document": "事件集信息",
       "members": [
         {
+          "disabled": false,
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1323,6 +1411,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
@@ -1332,6 +1421,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1341,6 +1431,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "EventBus",
           "member": "string",
@@ -1350,6 +1441,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1359,6 +1451,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集类型",
           "example": "Cloud",
           "member": "string",
@@ -1368,6 +1461,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Postpaid(后付费)",
           "member": "string",
@@ -1377,6 +1471,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "连接器基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConnectionBrief",
@@ -1386,6 +1481,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "目标简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetBrief",
@@ -1402,6 +1498,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "JsonPath, 不指定则使用默认值$.",
           "example": "$",
           "member": "string",
@@ -1412,6 +1509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "取值: TEXT/JSON",
           "example": "TEXT",
           "member": "string",
@@ -1422,6 +1520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "仅在Text需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TextParams",
@@ -1438,6 +1537,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一个或者多个过滤值。",
           "example": "无",
           "member": "string",
@@ -1448,6 +1548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤键的名称。",
           "example": "无",
           "member": "string",
@@ -1463,6 +1564,7 @@
       "document": "GetEventBus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1477,6 +1579,7 @@
       "document": "GetEventBus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1485,6 +1588,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集描述",
           "example": "这是一个描述",
           "member": "string",
@@ -1493,6 +1597,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志主题ID",
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
@@ -1501,6 +1606,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1509,6 +1615,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志集ID",
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
@@ -1517,6 +1624,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集名称",
           "example": "eb",
           "member": "string",
@@ -1525,6 +1633,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1533,6 +1642,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "（已废弃）事件集类型",
           "example": "Cloud",
           "member": "string",
@@ -1541,6 +1651,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "计费模式",
           "example": "无",
           "member": "string",
@@ -1549,6 +1660,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "EB日志存储时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1557,6 +1669,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "EB日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1565,6 +1678,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否开启存储\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1573,6 +1687,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "消息序列，是否有序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Disorder",
           "member": "string",
@@ -1593,6 +1708,7 @@
       "document": "GetRule请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1601,6 +1717,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -1615,6 +1732,7 @@
       "document": "GetRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集id",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1623,6 +1741,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件规则id",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -1631,6 +1750,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件规则名称",
           "example": "rule",
           "member": "string",
@@ -1639,6 +1759,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件规则状态",
           "example": "Active",
           "member": "string",
@@ -1647,6 +1768,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
@@ -1655,6 +1777,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件规则描述",
           "example": "这是一个描述",
           "member": "string",
@@ -1663,6 +1786,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件模式",
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
@@ -1671,6 +1795,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1679,6 +1804,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1700,6 +1826,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
           "member": "string",
@@ -1709,6 +1836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxx",
           "member": "string",
@@ -1718,6 +1846,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxxx",
           "member": "string",
@@ -1732,6 +1861,7 @@
       "document": "GetTransformation返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "转换规则列表",
           "example": "无",
           "member": "Transformation",
@@ -1754,6 +1884,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1763,6 +1894,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime",
           "example": "ModTime",
           "member": "string",
@@ -1772,6 +1904,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
@@ -1781,6 +1914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
           "example": "DESC",
           "member": "string",
@@ -1790,6 +1924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -1804,6 +1939,7 @@
       "document": "ListConnections返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "连接器信息",
           "example": "无",
           "member": "Connection",
@@ -1813,6 +1949,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "连接器总数",
           "example": "1",
           "member": "int64",
@@ -1834,6 +1971,7 @@
       "document": "ListEventBuses请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
           "member": "string",
@@ -1842,6 +1980,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
@@ -1850,6 +1989,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
           "member": "string",
@@ -1858,6 +1998,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -1866,6 +2007,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "分页偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -1880,6 +2022,7 @@
       "document": "ListEventBuses返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集信息",
           "example": "无",
           "member": "EventBus",
@@ -1888,6 +2031,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件集总数",
           "example": "1",
           "member": "int64",
@@ -1909,6 +2053,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1918,6 +2063,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
           "member": "string",
@@ -1927,6 +2073,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
@@ -1936,6 +2083,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -1945,6 +2093,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
           "member": "string",
@@ -1959,6 +2108,7 @@
       "document": "ListRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件规则信息",
           "example": "无",
           "member": "Rule",
@@ -1968,6 +2118,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "事件规则总数",
           "example": "8",
           "member": "int64",
@@ -1990,6 +2141,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1999,6 +2151,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
           "member": "string",
@@ -2008,6 +2161,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -2017,6 +2171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "0",
           "member": "int64",
@@ -2026,6 +2181,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，默认为0。",
           "example": "20",
           "member": "int64",
@@ -2035,6 +2191,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
           "member": "string",
@@ -2049,6 +2206,7 @@
       "document": "ListTargets返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "目标总数",
           "example": "1",
           "member": "int64",
@@ -2058,6 +2216,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "目标信息",
           "example": "无",
           "member": "Target",
@@ -2079,6 +2238,7 @@
       "document": "日志查询相关接口filter参数定义",
       "members": [
         {
+          "disabled": false,
           "document": "过滤字段名称",
           "example": "status",
           "member": "string",
@@ -2088,6 +2248,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
           "example": "eq",
           "member": "string",
@@ -2097,6 +2258,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过滤值,范围运算需要同时输入两个值，以英文逗号分隔\n",
           "example": "\"0\"",
           "member": "string",
@@ -2106,6 +2268,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "该层级filters逻辑关系，取值 \"AND\" 或 \"OR\"",
           "example": "AND",
           "member": "string",
@@ -2115,6 +2278,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "LogFilters数组",
           "example": "无",
           "member": "LogFilters",
@@ -2130,6 +2294,7 @@
       "document": "日志存储过滤条件",
       "members": [
         {
+          "disabled": false,
           "document": "过滤字段名称",
           "example": "status",
           "member": "string",
@@ -2139,6 +2304,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
           "example": "eq",
           "member": "string",
@@ -2148,6 +2314,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过滤值，范围运算需要同时输入两个值，以英文逗号分隔\n",
           "example": "\"0\"",
           "member": "string",
@@ -2164,6 +2331,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "对应输出json中的key",
           "example": "name",
           "member": "string",
@@ -2174,6 +2342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可以填json-path也可以支持常量或者内置关键字date类型",
           "example": "$.name",
           "member": "string",
@@ -2184,6 +2353,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH",
           "example": "JSONPATH",
           "member": "string",
@@ -2200,6 +2370,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件列表",
           "example": "EventList",
           "member": "Event",
@@ -2209,6 +2380,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "EventBusId",
           "member": "string",
@@ -2236,6 +2408,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件列表",
           "example": "EventList",
           "member": "Event",
@@ -2245,6 +2418,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "EventBusId",
           "member": "string",
@@ -2272,6 +2446,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "重试间隔 单位:秒",
           "example": "30",
           "member": "uint64",
@@ -2282,6 +2457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最大重试次数",
           "example": "3",
           "member": "uint64",
@@ -2298,6 +2474,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "状态",
           "example": "Active",
           "member": "string",
@@ -2308,6 +2485,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -2318,6 +2496,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
@@ -2328,6 +2507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
@@ -2338,6 +2518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -2348,6 +2529,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -2358,6 +2540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -2368,6 +2551,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则名称",
           "example": "rule",
           "member": "string",
@@ -2378,6 +2562,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Target 简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetBrief",
@@ -2388,6 +2573,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "rule设置的dlq规则. 可能为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeadLetterConfig",
@@ -2404,6 +2590,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最长等待时间",
           "example": "1",
           "member": "int64",
@@ -2414,6 +2601,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最大事件条数",
           "example": "1",
           "member": "int64",
@@ -2424,6 +2612,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开启批量投递使能",
           "example": "false",
           "member": "bool",
@@ -2439,6 +2628,7 @@
       "document": "SearchLog请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "起始时间unix 毫秒时间戳",
           "example": "无",
           "member": "int64",
@@ -2447,6 +2637,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间unix 毫秒时间戳",
           "example": "无",
           "member": "int64",
@@ -2455,6 +2646,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
           "member": "string",
@@ -2463,6 +2655,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "页码",
           "example": "无",
           "member": "int64",
@@ -2471,6 +2664,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "每页数据大小",
           "example": "无",
           "member": "int64",
@@ -2479,6 +2673,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "筛选条件",
           "example": "无",
           "member": "LogFilter",
@@ -2487,6 +2682,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "排序数组",
           "example": "无",
           "member": "string",
@@ -2495,6 +2691,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "排序方式，asc 从旧到新，desc 从新到旧",
           "example": "无",
           "member": "string",
@@ -2509,6 +2706,7 @@
       "document": "SearchLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "日志总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -2517,6 +2715,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "每页日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -2525,6 +2724,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -2533,6 +2733,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志检索结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchLogResult",
@@ -2553,6 +2754,7 @@
       "document": "日志检索详情",
       "members": [
         {
+          "disabled": false,
           "document": "单条日志上报时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2562,6 +2764,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "日志内容详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2571,6 +2774,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2580,6 +2784,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2589,6 +2794,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule-xxxx",
           "member": "string",
@@ -2598,6 +2804,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-xxxx",
           "member": "string",
@@ -2607,6 +2814,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2616,6 +2824,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "事件状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2632,6 +2841,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "目标类型",
           "example": "scf",
           "member": "string",
@@ -2642,6 +2852,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -2652,6 +2863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标ID",
           "example": "target-xxxxxxxx",
           "member": "string",
@@ -2662,6 +2874,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标描述",
           "example": "无",
           "member": "TargetDescription",
@@ -2672,6 +2885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -2682,6 +2896,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2692,6 +2907,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2702,6 +2918,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2718,6 +2935,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "目标ID",
           "example": "target-xxxxxxxx",
           "member": "string",
@@ -2728,6 +2946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标类型",
           "example": "scf",
           "member": "string",
@@ -2744,6 +2963,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::scf:gz:uin/1111:resource",
           "member": "string",
@@ -2754,6 +2974,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "云函数参数",
           "example": "无",
           "member": "SCFParams",
@@ -2764,6 +2985,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Ckafka参数",
           "example": "无",
           "member": "CkafkaTargetParams",
@@ -2774,6 +2996,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ElasticSearch参数",
           "example": "无",
           "member": "ESTargetParams",
@@ -2790,6 +3013,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ",",
           "member": "string",
@@ -2800,6 +3024,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "填写正则表达式：长度128\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a(.*)bc",
           "member": "string",
@@ -2816,6 +3041,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "描述如何数据转换",
           "example": "无",
           "member": "OutputStructParam",
@@ -2832,6 +3058,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "描述如何提取数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Extraction",
@@ -2842,6 +3069,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述如何过滤数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EtlFilter",
@@ -2852,6 +3080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述如何数据转换\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Transform",
@@ -2868,6 +3097,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
@@ -2877,6 +3107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -2886,6 +3117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
@@ -2895,6 +3127,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
@@ -2904,6 +3137,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "连接器名称",
           "example": "connection",
           "member": "string",
@@ -2930,6 +3164,7 @@
       "document": "UpdateEventBus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -2938,6 +3173,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
@@ -2946,6 +3182,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "EventBusName",
           "member": "string",
@@ -2954,6 +3191,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "EB日志存储时长",
           "example": "无",
           "member": "int64",
@@ -2962,6 +3200,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "EB日志主题ID",
           "example": "无",
           "member": "string",
@@ -2970,6 +3209,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "是否开启存储",
           "example": "true",
           "member": "bool",
@@ -2997,6 +3237,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -3006,6 +3247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -3015,6 +3257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "使能开关。",
           "example": "true",
           "member": "bool",
@@ -3024,6 +3267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则描述，不限字符类型，200字符描述以内。",
           "example": "这是一个描述",
           "member": "string",
@@ -3033,6 +3277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
@@ -3042,6 +3287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "rule",
           "member": "string",
@@ -3069,6 +3315,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -3078,6 +3325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -3087,6 +3335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "事件目标ID",
           "example": "target-xxxxxxxx",
           "member": "string",
@@ -3096,6 +3345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开启批量投递使能",
           "example": "false",
           "member": "bool",
@@ -3105,6 +3355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最长等待时间",
           "example": "1",
           "member": "int64",
@@ -3114,6 +3365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批量投递最大事件条数",
           "example": "1",
           "member": "int64",
@@ -3141,6 +3393,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
           "member": "string",
@@ -3150,6 +3403,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxxxxx",
           "member": "string",
@@ -3159,6 +3413,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxxxxx",
           "member": "string",
@@ -3168,6 +3423,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一个转换规则列表，当前仅限定一个",
           "example": "无",
           "member": "Transformation",

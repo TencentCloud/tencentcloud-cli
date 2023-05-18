@@ -83,6 +83,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "证书sha1",
           "member": "string",
           "name": "Hash",
@@ -92,6 +93,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书通用名称",
           "member": "string",
           "name": "CN",
@@ -101,6 +103,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备用名称",
           "member": "string",
           "name": "SANs",
@@ -110,6 +113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公钥算法",
           "member": "string",
           "name": "KeyAlgo",
@@ -119,6 +123,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "颁发者",
           "member": "string",
           "name": "Issuer",
@@ -128,6 +133,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "有效期开始",
           "member": "string",
           "name": "BeginTime",
@@ -137,6 +143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "有效期结束",
           "member": "string",
           "name": "EndTime",
@@ -146,6 +153,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "剩余天数",
           "member": "int64",
           "name": "Days",
@@ -155,6 +163,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "品牌",
           "member": "string",
           "name": "Brand",
@@ -164,6 +173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "信任状态",
           "member": "string",
           "name": "TrustStatus",
@@ -173,6 +183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CertType",
@@ -188,6 +199,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "项目名",
           "member": "string",
           "name": "Name",
@@ -197,6 +209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "项目值",
           "member": "ChartNameValue",
           "name": "Children",
@@ -212,6 +225,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图表项名称",
           "member": "string",
           "name": "Name",
@@ -221,6 +235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图表项值",
           "member": "int64",
           "name": "Value",
@@ -236,6 +251,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "监控的服务器类型（0：web，1：smtp，2：imap，3：pops）",
           "example": "0",
           "member": "int64",
@@ -245,6 +261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "添加的域名",
           "example": "cloud.tencent.com",
           "member": "string",
@@ -254,6 +271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "添加的端口",
           "example": "443",
           "member": "string",
@@ -263,6 +281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定域名的IP",
           "example": "1.1.1.1",
           "member": "string",
@@ -272,6 +291,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启通知告警；true：开启通知告警，false：关闭通知告警",
           "example": "1",
           "member": "bool",
@@ -281,6 +301,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "给域名添加标签，多个以逗号隔开",
           "example": "123",
           "member": "string",
@@ -308,6 +329,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "安全等级图表",
           "member": "ChartNameValue",
           "name": "SecurityLevelPie",
@@ -317,6 +339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书品牌图表",
           "member": "ChartNameValue",
           "name": "CertBrandsPie",
@@ -326,6 +349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书有效时间图表",
           "member": "ChartNameValue",
           "name": "CertValidTimePie",
@@ -335,6 +359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书类型图表",
           "member": "ChartNameValue",
           "name": "CertTypePie",
@@ -344,6 +369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ssl bugs图表",
           "member": "ChartHistogram",
           "name": "SSLBugsLoopholeHistogram",
@@ -353,6 +379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "合规图表",
           "member": "ChartHistogram",
           "name": "ComplianceHistogram",
@@ -368,6 +395,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名ID，可通过<a href=\"https://cloud.tencent.com/document/api/1084/49339\">搜索域名</a>接口获得",
           "example": "13076",
           "member": "int64",
@@ -399,6 +427,7 @@
       "document": "DescribeDashboard返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "dashboard面板数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DashboardResult",
           "name": "Data",
@@ -419,6 +448,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名ID，可通过搜索域名接口获得",
           "member": "int64",
           "name": "DomainId",
@@ -432,6 +462,7 @@
       "document": "DescribeDomainCerts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "证书信息",
           "member": "CertInfo",
           "name": "Data",
@@ -456,6 +487,7 @@
       "document": "DescribeDomainTags返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Tag数组",
           "member": "string",
           "name": "Data",
@@ -476,6 +508,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DomainSiteInfo",
           "name": "Result",
@@ -485,6 +518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索出来的数量",
           "member": "int64",
           "name": "SearchTotal",
@@ -494,6 +528,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总数",
           "member": "int64",
           "name": "Total",
@@ -503,6 +538,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "允许的监控数量",
           "member": "int64",
           "name": "AllowMonitoringCount",
@@ -512,6 +548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前监控的数量",
           "member": "int64",
           "name": "CurrentMonitoringCount",
@@ -521,6 +558,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "允许添加域名总数",
           "member": "int64",
           "name": "AllowMaxAddDomain",
@@ -536,6 +574,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "int64",
@@ -545,6 +584,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "获取数量",
           "example": "1000",
           "member": "int64",
@@ -554,6 +594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。\n选tags，入参请填Tag，\n选grade，入参请填Grade，\n选brand，入参请填Brand，\n选code，入参请填Code，\n选hash，入参请填Hash\n选limit，标识只返回数量信息\n选domain，入参请填Domain",
           "example": "none",
           "member": "string",
@@ -563,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签，多个标签用逗号分隔",
           "example": "无",
           "member": "string",
@@ -572,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "等级",
           "example": "无",
           "member": "string",
@@ -581,6 +624,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "品牌",
           "example": "无",
           "member": "string",
@@ -590,6 +634,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "混合搜索",
           "example": "无",
           "member": "string",
@@ -599,6 +644,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书指纹",
           "example": "无",
           "member": "string",
@@ -608,6 +654,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索图标类型",
           "example": "无",
           "member": "string",
@@ -617,6 +664,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索图标值",
           "example": "无",
           "member": "string",
@@ -626,6 +674,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索域名",
           "example": "无",
           "member": "string",
@@ -640,6 +689,7 @@
       "document": "DescribeDomains返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "列表数据",
           "example": "无",
           "member": "DescribeDomains",
@@ -666,6 +716,7 @@
       "document": "DescribeNoticeInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "通知信息结果",
           "member": "NoticeInfoResult",
           "name": "Data",
@@ -686,6 +737,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "ID标识",
           "example": "无",
           "member": "int64",
@@ -696,6 +748,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名",
           "example": "无",
           "member": "string",
@@ -706,6 +759,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "IP地址",
           "example": "无",
           "member": "string",
@@ -716,6 +770,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自动获取IP：true：是，false:否",
           "example": "无",
           "member": "bool",
@@ -726,6 +781,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "评级\n\"A+\"，\n \"A\"，\n\"A-\"，\n\"B\"，\n\"C\"，\n\"D\"，\n \"E\"，\n \"F\"，\n\"T\"，",
           "example": "无",
           "member": "string",
@@ -736,6 +792,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "证书品牌",
           "example": "无",
           "member": "string",
@@ -746,6 +803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "监控服务类型\n0 :Web\n1: SMTP\n2: IMAP\n3: POP3",
           "example": "无",
           "member": "int64",
@@ -756,6 +814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "评级Code\n0：\"unknown\"，\n1：\"A+\"，\n2： \"A\"，\n3：\"A-\"，\n4：\"B\"，\n5：\"C\"，\n6：\"D\"，\n7： \"E\"，\n8： \"F\"，\n9：\"T\"，",
           "example": "无",
           "member": "int64",
@@ -766,6 +825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否监控告警；true：是，false:否",
           "example": "无",
           "member": "bool",
@@ -776,6 +836,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "账号域名关系ID",
           "example": "无",
           "member": "int64",
@@ -786,6 +847,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -796,6 +858,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名状态:\n连接异常，\n证书已过期，\n证书已吊销，\n证书黑名单，\n证书域名不匹配，\n证书不可信，\n证书密钥弱，\n证书即将过期，少于7天，\n证书即将过期，少于30天，\n正常，\n部分异常",
           "example": "无",
           "member": "string",
@@ -806,6 +869,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名端口",
           "example": "无",
           "member": "string",
@@ -822,6 +886,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "通知类型：\nlimit_emai：邮件\nlimit_wechat：微信\nlimit_phone：手机",
           "example": "limit_emai",
           "member": "string",
@@ -832,6 +897,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "总量",
           "example": "无",
           "member": "int64",
@@ -842,6 +908,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已发送",
           "example": "无",
           "member": "int64",
@@ -858,6 +925,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "账号下域名ID",
           "member": "int64",
           "name": "AccountDomainId",
@@ -866,6 +934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新后的tag，多个以逗号隔开",
           "member": "string",
           "name": "Tags",
@@ -892,6 +961,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "通知ID",
           "example": "无",
           "member": "int64",
@@ -902,6 +972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "通知开关信息；0：关闭；15开启",
           "example": "0",
           "member": "int64",
@@ -912,6 +983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额度信息",
           "example": "无",
           "member": "LimitInfo",
@@ -928,6 +1000,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名列表中的ID，可通过搜索域名接口获得",
           "member": "int64",
           "name": "DomainId",
@@ -954,6 +1027,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名",
           "member": "string",
           "name": "Domain",
@@ -967,6 +1041,7 @@
       "document": "ResolveDomain返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "响应数据",
           "member": "string",
           "name": "Data",

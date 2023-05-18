@@ -348,6 +348,7 @@
       "document": "AuthorizedTransfer请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务加密入参。",
           "example": "无",
           "member": "InputEncryptData",
@@ -362,6 +363,7 @@
       "document": "AuthorizedTransfer返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务出参。",
           "example": "无",
           "member": "OutputAuthorizedTransfer",
@@ -382,6 +384,7 @@
       "document": "上链数据",
       "members": [
         {
+          "disabled": false,
           "document": "区块hash\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0xfc7f37ba117bb01afd237c6949f7d6a0b0d4a4c785b3fb90cd9004e0335a9d",
           "member": "string",
@@ -391,6 +394,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "区块高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "28102",
           "member": "string",
@@ -400,6 +404,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "区块时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021",
           "member": "string",
@@ -415,6 +420,7 @@
       "document": "批次",
       "members": [
         {
+          "disabled": false,
           "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20121212000001",
           "member": "string",
@@ -424,6 +430,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -433,6 +440,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "批次编码(未使用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20121212000001",
           "member": "string",
@@ -442,6 +450,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "码数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -451,6 +460,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "所属商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
@@ -460,6 +470,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -469,6 +480,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "批次类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -478,6 +490,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -487,6 +500,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "微信模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "微信模板",
           "member": "string",
@@ -496,6 +510,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -505,6 +520,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
@@ -514,6 +530,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
@@ -523,6 +540,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "所属商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "所属商户名称",
           "member": "string",
@@ -532,6 +550,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "产品名称",
           "member": "string",
@@ -541,6 +560,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "扩展字段",
           "member": "Ext",
@@ -550,6 +570,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模板名称",
           "member": "string",
@@ -559,6 +580,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "调度任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Job",
@@ -575,6 +597,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "无",
           "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_02135114982303292",
           "member": "string",
@@ -590,6 +613,7 @@
       "document": "码包类型",
       "members": [
         {
+          "disabled": false,
           "document": "码id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -599,6 +623,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -608,6 +633,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "商户id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -617,6 +643,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
@@ -626,6 +653,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
@@ -635,6 +663,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -644,6 +673,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[time] xx",
           "member": "string",
@@ -653,6 +683,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -662,6 +693,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "码数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -671,6 +703,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "防伪码长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -680,6 +713,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "码类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -689,6 +723,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "是否暗码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -698,6 +733,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "[弃用] 文字码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -707,6 +743,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "[弃用] 二维码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -716,6 +753,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "商户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -725,6 +763,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "码规则类型 0: 默认, 1: 自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -734,6 +773,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "自定义码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -743,6 +783,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "码包类型 0: 普通码包 1: 层级码包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -752,6 +793,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "生码层级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -761,6 +803,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "层级码配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": " 无",
           "member": "PackSpec",
@@ -777,6 +820,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码段名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "码段",
           "member": "string",
@@ -787,6 +831,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -797,6 +842,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -807,6 +853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段长度",
           "example": "10",
           "member": "uint64",
@@ -817,6 +864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "str",
           "member": "string",
@@ -833,6 +881,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -843,6 +892,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业名称",
           "example": "渠道商企业",
           "member": "string",
@@ -853,6 +903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额度",
           "example": "{}",
           "member": "Quota",
@@ -863,6 +914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额度使用量",
           "example": "{}",
           "member": "UsageQuota",
@@ -879,6 +931,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -888,6 +941,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "商户ID",
           "member": "string",
@@ -897,6 +951,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "产品ID",
           "example": "产品ID",
           "member": "string",
@@ -906,6 +961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次类型 0:溯源 1:营销",
           "example": "1",
           "member": "uint64",
@@ -915,6 +971,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID，留空时系统自动生成",
           "example": "批次ID",
           "member": "string",
@@ -924,6 +981,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -933,6 +991,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模版ID，或者活动ID",
           "example": "1",
           "member": "string",
@@ -942,6 +1001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "克隆批次ID，同时会复制溯源信息",
           "example": "10000",
           "member": "string",
@@ -951,6 +1011,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次编号，业务字段不判断唯一性",
           "example": "202210",
           "member": "string",
@@ -965,6 +1026,7 @@
       "document": "CreateCodeBatch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -987,6 +1049,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "aaa",
           "member": "string",
@@ -996,6 +1059,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码长度",
           "example": "18",
           "member": "uint64",
@@ -1005,6 +1069,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码类型 alphabet 字母, number 数字, mixin 混合",
           "example": "number",
           "member": "string",
@@ -1014,6 +1079,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生码数量 普通码包时必填",
           "example": "10",
           "member": "int64",
@@ -1023,6 +1089,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1032,6 +1099,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包类型 0: 普通码包 1: 层级码包",
           "example": "1",
           "member": "uint64",
@@ -1041,6 +1109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包层级",
           "example": "1",
           "member": "uint64",
@@ -1050,6 +1119,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包规格",
           "example": "无",
           "member": "PackSpec",
@@ -1059,6 +1129,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
           "example": "id",
           "member": "string",
@@ -1068,6 +1139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有流水码 0:无 1:有",
           "example": "number",
           "member": "uint64",
@@ -1082,6 +1154,7 @@
       "document": "CreateCodePack返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码包ID",
           "example": "abc",
           "member": "string",
@@ -1104,6 +1177,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业名称",
           "example": "安心",
           "member": "string",
@@ -1113,6 +1187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所有者ID",
           "example": "1000",
           "member": "string",
@@ -1122,6 +1197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源码额度",
           "example": "100000",
           "member": "uint64",
@@ -1131,6 +1207,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "额度过期时间",
           "example": "2021-05-05 00:00:00",
           "member": "string",
@@ -1140,6 +1217,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "金额",
           "example": "10000",
           "member": "int64",
@@ -1149,6 +1227,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1158,6 +1237,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人",
           "example": "张三",
           "member": "string",
@@ -1167,6 +1247,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系电话",
           "example": "13912345678",
           "member": "string",
@@ -1176,6 +1257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "张三创建企业",
           "member": "string",
@@ -1190,6 +1272,7 @@
       "document": "CreateCorporationOrder返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -1212,6 +1295,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "aaa",
           "member": "string",
@@ -1221,6 +1305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生码数量, 普通码包时必填",
           "example": "10",
           "member": "uint64",
@@ -1230,6 +1315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1239,6 +1325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包类型 0: 普通码包 1: 层级码包",
           "example": "1",
           "member": "uint64",
@@ -1248,6 +1335,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包层级",
           "example": "1",
           "member": "uint64",
@@ -1257,6 +1345,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "层级码包规则",
           "example": "无",
           "member": "PackSpec",
@@ -1266,6 +1355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID,  和CodeParts二选一必填",
           "example": "customidx",
           "member": "string",
@@ -1275,6 +1365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段配置，和CustomId二选一必填",
           "example": "无",
           "member": "CodePart",
@@ -1284,6 +1375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
           "example": "id",
           "member": "string",
@@ -1293,6 +1385,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有流水码 0:无 1:有",
           "example": "number",
           "member": "uint64",
@@ -1307,6 +1400,7 @@
       "document": "CreateCustomPack返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码包ID",
           "example": "abc",
           "member": "string",
@@ -1329,6 +1423,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "规则名称",
           "example": "规则名称",
           "member": "string",
@@ -1338,6 +1433,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "MerchantId",
           "member": "string",
@@ -1347,6 +1443,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码长度",
           "example": "36",
           "member": "uint64",
@@ -1356,6 +1453,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段配置",
           "example": "无",
           "member": "CodePart",
@@ -1365,6 +1463,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -1379,6 +1478,7 @@
       "document": "CreateCustomRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ne73t",
           "member": "string",
@@ -1401,6 +1501,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户名称",
           "example": "商户名称",
           "member": "string",
@@ -1410,6 +1511,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -1419,6 +1521,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -1428,6 +1531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包来源 0:自建, 1:第三发",
           "example": "1",
           "member": "int64",
@@ -1437,6 +1541,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包前缀地址 第三方码包时必填",
           "example": "https://anxin.m.qq.com",
           "member": "string",
@@ -1451,6 +1556,7 @@
       "document": "CreateMerchant返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ng3de73t",
           "member": "string",
@@ -1473,6 +1579,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品名称",
           "example": "商品名称",
           "member": "string",
@@ -1482,6 +1589,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "商户ID",
           "member": "string",
@@ -1491,6 +1599,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -1500,6 +1609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户名称",
           "example": "商户名称",
           "member": "string",
@@ -1509,6 +1619,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品规格",
           "example": "100ml",
           "member": "string",
@@ -1518,6 +1629,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品图片",
           "example": "无",
           "member": "string",
@@ -1527,6 +1639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -1536,6 +1649,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预留字段",
           "example": "无",
           "member": "Ext",
@@ -1550,6 +1664,7 @@
       "document": "CreateProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tz6jpscwky41u23o9b",
           "member": "string",
@@ -1572,6 +1687,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1581,6 +1697,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源ID",
           "example": "aaa",
           "member": "string",
@@ -1595,6 +1712,7 @@
       "document": "CreateTraceChain返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "溯源ID",
           "example": "abc",
           "member": "string",
@@ -1617,6 +1735,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1626,6 +1745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "batchid",
           "member": "string",
@@ -1635,6 +1755,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上传文件Key，仅支持 csv 或者 zip 类型",
           "example": "anxin/filename.zip",
           "member": "string",
@@ -1649,6 +1770,7 @@
       "document": "CreateTraceCodesAsync返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "batchid",
           "member": "string",
@@ -1670,6 +1792,7 @@
       "document": "CreateTraceCodes请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -1678,6 +1801,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1686,6 +1810,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "码",
           "example": "无",
           "member": "CodeItem",
@@ -1694,6 +1819,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "码绑定激活策略，默认  0\n0: 传什么码就激活什么码\n1: 层级码 + 层级子码",
           "example": "0",
           "member": "uint64",
@@ -1702,6 +1828,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "错误检查类型，默认 0\n0: 没有新导入码时正常返回\n1: 没有新导入码时报错，并返回没有导入成功的原因",
           "example": "0",
           "member": "uint64",
@@ -1716,6 +1843,7 @@
       "document": "CreateTraceCodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -1724,6 +1852,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "导入成功码数量",
           "example": "1",
           "member": "uint64",
@@ -1732,6 +1861,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "批次码数量",
           "example": "1",
           "member": "uint64",
@@ -1753,6 +1883,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1762,6 +1893,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -1771,6 +1903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "1",
           "member": "string",
@@ -1780,6 +1913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "1",
           "member": "uint64",
@@ -1789,6 +1923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源阶段名称",
           "example": "名称",
           "member": "string",
@@ -1798,6 +1933,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[无效] 上链状态",
           "example": "1",
           "member": "uint64",
@@ -1807,6 +1943,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[无效] 码类型 0: 批次, 1: 码, 2: 生产任务, 3: 物流信息",
           "example": "1",
           "member": "uint64",
@@ -1816,6 +1953,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "[无效] 溯源ID",
           "example": "abc",
           "member": "string",
@@ -1825,6 +1963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源信息",
           "example": "无",
           "member": "TraceItem",
@@ -1834,6 +1973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "uint64",
@@ -1843,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "环节数据",
           "example": "无",
           "member": "PhaseData",
@@ -1857,6 +1998,7 @@
       "document": "CreateTraceData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "溯源ID",
           "example": "abc",
           "member": "string",
@@ -1879,6 +2021,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID",
           "example": "xxxid",
           "member": "string",
@@ -1889,6 +2032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码规则名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "规则名",
           "member": "string",
@@ -1899,6 +2043,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "uint64",
@@ -1909,6 +2054,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MerchantId",
           "member": "string",
@@ -1919,6 +2065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码ID长度",
           "example": "10",
           "member": "uint64",
@@ -1929,6 +2076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则状态",
           "example": "0",
           "member": "int64",
@@ -1939,6 +2087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段配置",
           "example": "[]",
           "member": "CodePart",
@@ -1949,6 +2098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2022-09-19T11:46:53.000Z",
           "member": "string",
@@ -1959,6 +2109,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "2022-09-19T11:46:53.000Z",
           "member": "string",
@@ -1975,6 +2126,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1984,6 +2136,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -1998,6 +2151,7 @@
       "document": "DeleteCodeBatch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -2020,6 +2174,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户标识码",
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
@@ -2029,6 +2184,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2043,6 +2199,7 @@
       "document": "DeleteMerchant返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
@@ -2065,6 +2222,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "example": "u0wa46ggyvtgzoen6r",
           "member": "string",
@@ -2074,6 +2232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2088,6 +2247,7 @@
       "document": "DeleteProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
@@ -2110,6 +2270,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "溯源ID",
           "example": "u0wa46ggyvtgzoen6r",
           "member": "string",
@@ -2119,6 +2280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -2133,6 +2295,7 @@
       "document": "DeleteTraceData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "溯源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
@@ -2155,6 +2318,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -2164,6 +2328,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -2178,6 +2343,7 @@
       "document": "DescribeCodeBatchById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次",
           "example": "无",
           "member": "CodeBatch",
@@ -2200,6 +2366,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "查询商户ID",
           "example": "商户ID",
           "member": "string",
@@ -2209,6 +2376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询商品ID",
           "example": "商品ID",
           "member": "string",
@@ -2218,6 +2386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询关键字",
           "example": "关键字",
           "member": "string",
@@ -2227,6 +2396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "条数",
           "example": "10",
           "member": "int64",
@@ -2236,6 +2406,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "int64",
@@ -2245,6 +2416,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次类型 0:溯源 1:营销",
           "example": "无",
           "member": "string",
@@ -2254,6 +2426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -2268,6 +2441,7 @@
       "document": "DescribeCodeBatchs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CodeBatch",
@@ -2277,6 +2451,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -2299,6 +2474,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码包ID",
           "example": "PackId",
           "member": "string",
@@ -2308,6 +2484,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -2322,6 +2499,7 @@
       "document": "DescribeCodePackStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码包状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "done",
           "member": "string",
@@ -2344,6 +2522,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码包ID",
           "example": "PackId",
           "member": "string",
@@ -2353,6 +2532,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -2367,6 +2547,7 @@
       "document": "DescribeCodePackUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文字码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
@@ -2376,6 +2557,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "图片码包地址，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
@@ -2385,6 +2567,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "文字码包Key，用于上传导入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "anxin/xxx.zip",
           "member": "string",
@@ -2407,6 +2590,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页数量",
           "example": "7999",
           "member": "uint64",
@@ -2416,6 +2600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "7999",
           "member": "uint64",
@@ -2425,6 +2610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询关键字",
           "example": "安心",
           "member": "string",
@@ -2434,6 +2620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2443,6 +2630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否有流水码 0:无 1:有",
           "example": "number",
           "member": "uint64",
@@ -2457,6 +2645,7 @@
       "document": "DescribeCodePacks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "CodePack",
@@ -2466,6 +2655,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "131",
           "member": "uint64",
@@ -2488,6 +2678,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码包ID",
           "example": "码包ID",
           "member": "string",
@@ -2497,6 +2688,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2511,6 +2703,7 @@
       "document": "DescribeCodesByPack返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CodeItem",
@@ -2533,6 +2726,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "渠道商ID，不要传",
           "example": "1000",
           "member": "uint64",
@@ -2542,6 +2736,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -2551,6 +2746,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页数量",
           "example": "20",
           "member": "uint64",
@@ -2560,6 +2756,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索企业ID",
           "example": "10000",
           "member": "string",
@@ -2574,6 +2771,7 @@
       "document": "DescribeCorpQuotas返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "子企业额度使用情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "CorpQuota",
@@ -2583,6 +2781,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "记录总数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "22",
           "member": "uint64",
@@ -2605,6 +2804,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID",
           "example": "xxxxid",
           "member": "string",
@@ -2614,6 +2814,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -2628,6 +2829,7 @@
       "document": "DescribeCustomRuleById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomRule",
@@ -2650,6 +2852,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "搜索关键字",
           "example": "关键字",
           "member": "string",
@@ -2659,6 +2862,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "条数",
           "example": "10",
           "member": "uint64",
@@ -2668,6 +2872,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -2677,6 +2882,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -2686,6 +2892,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
           "example": "1",
           "member": "int64",
@@ -2695,6 +2902,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID",
           "example": "商户ID",
           "member": "string",
@@ -2709,6 +2917,7 @@
       "document": "DescribeCustomRules返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CustomRule",
@@ -2718,6 +2927,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
@@ -2740,6 +2950,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "调度ID",
           "example": "1000",
           "member": "uint64",
@@ -2749,6 +2960,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -2763,6 +2975,7 @@
       "document": "DescribeJobFileUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
@@ -2785,6 +2998,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户标识码",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
@@ -2794,6 +3008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2808,6 +3023,7 @@
       "document": "DescribeMerchantById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商户信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Merchant",
@@ -2830,6 +3046,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "搜索商户名称",
           "example": "关键字",
           "member": "string",
@@ -2839,6 +3056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "条数",
           "example": "10",
           "member": "uint64",
@@ -2848,6 +3066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -2857,6 +3076,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -2866,6 +3086,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码来源类型 0:自建, 1:第三方",
           "example": "1",
           "member": "int64",
@@ -2880,6 +3101,7 @@
       "document": "DescribeMerchants返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商户列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Merchant",
@@ -2889,6 +3111,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
@@ -2911,6 +3134,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "example": "eqdmnz7020bmtvie9",
           "member": "string",
@@ -2920,6 +3144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -2934,6 +3159,7 @@
       "document": "DescribeProductById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Product",
@@ -2956,6 +3182,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品名称",
           "example": "商品名称",
           "member": "string",
@@ -2965,6 +3192,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "条数",
           "example": "10",
           "member": "uint64",
@@ -2974,6 +3202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -2983,6 +3212,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "example": "商品ID",
           "member": "string",
@@ -2992,6 +3222,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3006,6 +3237,7 @@
       "document": "DescribeProducts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商品列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Product",
@@ -3015,6 +3247,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
@@ -3037,6 +3270,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码",
           "example": "aba",
           "member": "string",
@@ -3046,6 +3280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "0",
           "member": "uint64",
@@ -3060,6 +3295,7 @@
       "document": "DescribeScanLogs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "【弃用】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScanLog",
@@ -3069,6 +3305,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "条数",
           "example": "1",
           "member": "int64",
@@ -3078,6 +3315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扫描记录",
           "example": "无",
           "member": "ScanLog",
@@ -3099,6 +3337,7 @@
       "document": "DescribeScanStats请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3107,6 +3346,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页数量",
           "example": "10",
           "member": "uint64",
@@ -3115,6 +3355,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "当前分页",
           "example": "1",
           "member": "uint64",
@@ -3123,6 +3364,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "商户ID",
           "example": "mid",
           "member": "string",
@@ -3131,6 +3373,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "产品ID",
           "example": "pid",
           "member": "string",
@@ -3139,6 +3382,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "bid",
           "member": "string",
@@ -3147,6 +3391,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "安心码",
           "example": "无",
           "member": "string",
@@ -3161,6 +3406,7 @@
       "document": "DescribeScanStats返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "统计记录",
           "example": "无",
           "member": "ScanStat",
@@ -3181,6 +3427,7 @@
       "document": "DescribeTmpToken请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3195,6 +3442,7 @@
       "document": "DescribeTmpToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "临时token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AbXtx",
           "member": "string",
@@ -3216,6 +3464,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -3225,6 +3474,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二维码",
           "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
@@ -3239,6 +3489,7 @@
       "document": "DescribeTraceCodeById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "TraceCode",
@@ -3261,6 +3512,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "搜索关键字 码标识，或者批次ID",
           "example": "code",
           "member": "string",
@@ -3270,6 +3522,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "条数",
           "example": "1",
           "member": "uint64",
@@ -3279,6 +3532,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码",
           "example": "1",
           "member": "uint64",
@@ -3288,6 +3542,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID，弃用",
           "example": "abc",
           "member": "string",
@@ -3297,6 +3552,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3311,6 +3567,7 @@
       "document": "DescribeTraceCodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "标识列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TraceCode",
@@ -3320,6 +3577,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3342,6 +3600,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "溯源ID",
           "example": "ccc",
           "member": "string",
@@ -3351,6 +3610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -3365,6 +3625,7 @@
       "document": "DescribeTraceDataById返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "TraceData",
@@ -3387,6 +3648,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -3396,6 +3658,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -3405,6 +3668,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID 用于外部溯源",
           "example": "1",
           "member": "string",
@@ -3414,6 +3678,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -3423,6 +3688,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二维码",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -3432,6 +3698,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源",
           "example": "0",
           "member": "uint64",
@@ -3441,6 +3708,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数量",
           "example": "10",
           "member": "uint64",
@@ -3455,6 +3723,7 @@
       "document": "DescribeTraceDataList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "数量",
           "example": "10",
           "member": "uint64",
@@ -3464,6 +3733,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "TraceData",
@@ -3485,6 +3755,7 @@
       "document": "EffectFeedback请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务加密入参。",
           "example": "无",
           "member": "InputEncryptData",
@@ -3499,6 +3770,7 @@
       "document": "EffectFeedback返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务出参。",
           "example": "无",
           "member": "OutputAuthorizedTransfer",
@@ -3525,6 +3797,7 @@
       "members": [
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "加密方式，0：AES加密；\n",
           "example": "1",
           "member": "int64",
@@ -3534,6 +3807,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式",
           "example": "1",
           "member": "int64",
@@ -3543,6 +3817,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "填充模式，0：ZeroPadding；1：PKCS5Padding；2：\nPKCS7Padding。",
           "example": "1",
           "member": "int64",
@@ -3552,6 +3827,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。",
           "example": "abc",
           "member": "string",
@@ -3561,6 +3837,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "用户是否授权，本接口取值：1，已授权。\n",
           "example": "1",
           "member": "int64",
@@ -3576,6 +3853,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "调度ID",
           "example": "1000",
           "member": "int64",
@@ -3586,6 +3864,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败",
           "example": "init",
           "member": "string",
@@ -3602,6 +3881,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户标识码",
           "example": "\"eqdmnz7020bmtvi9\"",
           "member": "string",
@@ -3612,6 +3892,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业id",
           "example": "10000",
           "member": "int64",
@@ -3622,6 +3903,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户名称",
           "example": "\"demo\"",
           "member": "string",
@@ -3632,6 +3914,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"abcdd\"",
           "member": "string",
@@ -3642,6 +3925,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "\"2021-11-30T08:19:40.000Z\"",
           "member": "string",
@@ -3652,6 +3936,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新时间",
           "example": "\"2021-12-06T08:09:17.000Z\"",
           "member": "string",
@@ -3662,6 +3947,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户码规则",
           "example": "\"^https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_(.*)\"",
           "member": "string",
@@ -3672,6 +3958,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码来源类型 0: 安心平台 1: 第三方码",
           "example": "0",
           "member": "int64",
@@ -3682,6 +3969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "第三方码域名前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://anxin.m.qq.com",
           "member": "string",
@@ -3697,6 +3985,7 @@
       "document": "ModifyCodeBatch请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -3705,6 +3994,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "1",
           "member": "uint64",
@@ -3713,6 +4003,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "状态 0: 未激活 1: 已激活 -1: 已冻结",
           "example": "1",
           "member": "int64",
@@ -3721,6 +4012,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "模板ID，或者活动ID",
           "example": "abc",
           "member": "string",
@@ -3729,6 +4021,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "商户ID",
           "example": "1",
           "member": "string",
@@ -3737,6 +4030,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "商品ID",
           "example": "1",
           "member": "string",
@@ -3745,6 +4039,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "备注",
           "example": "abc",
           "member": "string",
@@ -3753,6 +4048,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "批次编码，业务字段不判断唯一性",
           "example": "202210",
           "member": "string",
@@ -3767,6 +4063,7 @@
       "document": "ModifyCodeBatch返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -3788,6 +4085,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID",
           "example": "CustomId",
           "member": "string",
@@ -3797,6 +4095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "规则名称",
           "example": "规则名称",
           "member": "string",
@@ -3806,6 +4105,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码长度",
           "example": "36",
           "member": "uint64",
@@ -3815,6 +4115,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段配置",
           "example": "无",
           "member": "CodePart",
@@ -3824,6 +4125,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3838,6 +4140,7 @@
       "document": "ModifyCustomRule返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ne73t",
           "member": "string",
@@ -3860,6 +4163,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID",
           "example": "CustomId",
           "member": "string",
@@ -3869,6 +4173,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
           "example": "1",
           "member": "int64",
@@ -3878,6 +4183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -3892,6 +4198,7 @@
       "document": "ModifyCustomRuleStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ne73t",
           "member": "string",
@@ -3914,6 +4221,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商户名称",
           "example": "商户名称",
           "member": "string",
@@ -3923,6 +4231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户标识码",
           "example": "商户标识码",
           "member": "string",
@@ -3932,6 +4241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -3941,6 +4251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3950,6 +4261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包来源 0:自建, 1:第三码包，暂不支持修改",
           "example": "0",
           "member": "int64",
@@ -3959,6 +4271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码包前缀地址 第三方码包时必填",
           "example": "https://anxin.m.qq.com",
           "member": "string",
@@ -3973,6 +4286,7 @@
       "document": "ModifyMerchant返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
@@ -3995,6 +4309,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品名称",
           "example": "商品名称",
           "member": "string",
@@ -4004,6 +4319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -4013,6 +4329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -4022,6 +4339,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品规格",
           "example": "100ml",
           "member": "string",
@@ -4031,6 +4349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品图片",
           "example": "[]",
           "member": "string",
@@ -4040,6 +4359,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -4049,6 +4369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预留字段",
           "example": "无",
           "member": "Ext",
@@ -4063,6 +4384,7 @@
       "document": "ModifyProduct返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -4085,6 +4407,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "二维码",
           "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
@@ -4094,6 +4417,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -4103,6 +4427,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "状态 0: 冻结 1: 激活",
           "example": "0",
           "member": "uint64",
@@ -4130,6 +4455,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "aaa",
           "member": "string",
@@ -4139,6 +4465,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源码列表",
           "example": "[\"xxx\"]",
           "member": "string",
@@ -4148,6 +4475,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -4162,6 +4490,7 @@
       "document": "ModifyTraceCodeUnlink返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成功解绑溯源码的数量",
           "example": "1",
           "member": "uint64",
@@ -4171,6 +4500,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前批次的码数量",
           "example": "1",
           "member": "uint64",
@@ -4180,6 +4510,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "xx",
           "member": "string",
@@ -4202,6 +4533,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -4211,6 +4543,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID",
           "example": "aa",
           "member": "string",
@@ -4220,6 +4553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生产任务ID",
           "example": "1",
           "member": "string",
@@ -4229,6 +4563,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源ID",
           "example": "['abc']",
           "member": "string",
@@ -4243,6 +4578,7 @@
       "document": "ModifyTraceDataRanks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4264,6 +4600,7 @@
       "document": "ModifyTraceData请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "溯源ID",
           "example": "VyKxxkmi_myRD6ulG6HFo",
           "member": "string",
@@ -4272,6 +4609,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -4280,6 +4618,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "生产溯源任务ID",
           "example": "1",
           "member": "string",
@@ -4288,6 +4627,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "溯源信息",
           "example": "无",
           "member": "TraceItem",
@@ -4296,6 +4636,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "溯源阶段名称",
           "example": "名称",
           "member": "string",
@@ -4304,6 +4645,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "环节数据",
           "example": "无",
           "member": "PhaseData",
@@ -4312,6 +4654,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "溯源状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "uint64",
@@ -4320,6 +4663,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "排序",
           "example": "1",
           "member": "uint64",
@@ -4328,6 +4672,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "[无效] 类型",
           "example": "1",
           "member": "uint64",
@@ -4336,6 +4681,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "[无效] 溯源码",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -4344,6 +4690,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "1",
           "member": "uint64",
@@ -4352,6 +4699,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "[无效] 溯源时间",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
@@ -4360,6 +4708,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "[无效] 创建时间",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
@@ -4368,6 +4717,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "[无效] 上链状态",
           "example": "1",
           "member": "uint64",
@@ -4376,6 +4726,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "[无效] 上链时间",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
@@ -4384,6 +4735,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "[无效] 上链数据",
           "example": "无",
           "member": "ChainData",
@@ -4392,6 +4744,7 @@
           "type": "object"
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -4406,6 +4759,7 @@
       "document": "ModifyTraceData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "溯源ID",
           "example": "abc",
           "member": "string",
@@ -4426,6 +4780,7 @@
       "document": "业务出参",
       "members": [
         {
+          "disabled": false,
           "document": "推送状态，0表示成功。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4435,6 +4790,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4444,6 +4800,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "错误信息描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4460,6 +4817,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "层级",
           "example": "1",
           "member": "uint64",
@@ -4470,6 +4828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "比例",
           "example": "1",
           "member": "uint64",
@@ -4480,6 +4839,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数量",
           "example": "1",
           "member": "uint64",
@@ -4490,6 +4850,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxid",
           "member": "string",
@@ -4500,6 +4861,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码段配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CodePart",
@@ -4515,6 +4877,7 @@
       "document": "环节数据",
       "members": [
         {
+          "disabled": false,
           "document": "启用头",
           "example": "false",
           "member": "bool",
@@ -4524,6 +4887,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标题",
           "example": "标题",
           "member": "string",
@@ -4533,6 +4897,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "标识符",
           "example": "product",
           "member": "string",
@@ -4542,6 +4907,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序AppId",
           "example": "AppId",
           "member": "string",
@@ -4551,6 +4917,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序AppPath",
           "example": "AppPath",
           "member": "string",
@@ -4560,6 +4927,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序名称AppName",
           "example": "AppName",
           "member": "string",
@@ -4576,6 +4944,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "商品id",
           "example": "\"eqdmnz7020bmtvi9\"",
           "member": "string",
@@ -4586,6 +4955,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业id",
           "example": "0",
           "member": "int64",
@@ -4596,6 +4966,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户标识码",
           "example": "\"85tfp1sn78r9m1568i\"",
           "member": "string",
@@ -4606,6 +4977,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品编号",
           "example": "\"85tfp1sn78r9m1568i\"",
           "member": "string",
@@ -4616,6 +4988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品名称",
           "example": "\"demo5\"",
           "member": "string",
@@ -4626,6 +4999,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”100ml“",
           "member": "string",
@@ -4636,6 +5010,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”“",
           "member": "string",
@@ -4646,6 +5021,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品图片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4656,6 +5032,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "\"2021-11-30T09:00:33.000Z\"",
           "member": "string",
@@ -4666,6 +5043,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "\"2021-12-07T02:14:37.000Z\"",
           "member": "string",
@@ -4676,6 +5054,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预留字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Ext",
@@ -4686,6 +5065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户名称",
           "example": "\"demo\"",
           "member": "string",
@@ -4701,6 +5081,7 @@
       "document": "企业配额信息",
       "members": [
         {
+          "disabled": false,
           "document": "服务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
@@ -4710,6 +5091,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "服务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
@@ -4719,6 +5101,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "配额ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -4728,6 +5111,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -4737,6 +5121,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开通服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"track\"]",
           "member": "string",
@@ -4746,6 +5131,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4755,6 +5141,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "商品配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4764,6 +5151,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "溯源码配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
@@ -4773,6 +5161,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "销售码配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4782,6 +5171,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上链配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4791,6 +5181,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "风控配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4800,6 +5191,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4809,6 +5201,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开通版本 lite:轻量版, basic:基础版, standard:标准版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "basic",
           "member": "string",
@@ -4824,6 +5217,7 @@
       "document": "ReportBatchCallbackStatus请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务加密入参。",
           "example": "无",
           "member": "InputEncryptData",
@@ -4838,6 +5232,7 @@
       "document": "ReportBatchCallbackStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "业务出参。",
           "example": "无",
           "member": "OutputAuthorizedTransfer",
@@ -4859,6 +5254,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "行ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4869,6 +5265,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
@@ -4879,6 +5276,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -4889,6 +5287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
@@ -4899,6 +5298,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -4909,6 +5309,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
@@ -4919,6 +5320,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4929,6 +5331,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4939,6 +5342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
@@ -4949,6 +5353,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4959,6 +5364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东省",
           "member": "string",
@@ -4969,6 +5375,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州市",
           "member": "string",
@@ -4979,6 +5386,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "天河区",
           "member": "string",
@@ -4989,6 +5397,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "微信 unionid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4999,6 +5408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "首次扫码 0:否, 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5009,6 +5419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5024,6 +5435,7 @@
       "document": "扫码统计",
       "members": [
         {
+          "disabled": false,
           "document": "安心码",
           "example": "https://anxin.m.qq.com/qr/bmy7uus50t54",
           "member": "string",
@@ -5033,6 +5445,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -5042,6 +5455,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商户ID",
           "example": "无",
           "member": "string",
@@ -5051,6 +5465,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品ID",
           "example": "无",
           "member": "string",
@@ -5060,6 +5475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "无",
           "member": "string",
@@ -5069,6 +5485,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扫码次数",
           "example": "10",
           "member": "uint64",
@@ -5078,6 +5495,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扫码人数",
           "example": "1",
           "member": "uint64",
@@ -5087,6 +5505,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -5096,6 +5515,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "更新时间",
           "example": "无",
           "member": "string",
@@ -5105,6 +5525,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商户名称",
           "example": "无",
           "member": "string",
@@ -5114,6 +5535,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品名称",
           "example": "无",
           "member": "string",
@@ -5129,6 +5551,7 @@
       "document": "溯源码",
       "members": [
         {
+          "disabled": false,
           "document": "二维码",
           "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
@@ -5138,6 +5561,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -5147,6 +5571,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "码包ID",
           "example": "z1vt4ma2jpladh362o",
           "member": "string",
@@ -5156,6 +5581,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "批次ID",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -5165,6 +5591,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "所属商户ID",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
@@ -5174,6 +5601,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品ID",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -5183,6 +5611,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "码状态 0: 冻结 1: 激活",
           "example": "0",
           "member": "uint64",
@@ -5192,6 +5621,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间",
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
@@ -5201,6 +5631,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "修改时间",
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
@@ -5210,6 +5641,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商户名称",
           "example": "商户名称",
           "member": "string",
@@ -5219,6 +5651,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "产品名称",
           "example": "产品名称",
           "member": "string",
@@ -5228,6 +5661,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "渠道商ID",
           "example": "100",
           "member": "uint64",
@@ -5237,6 +5671,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "码层级 0: 最小级, 1: 一级, 2: 二级",
           "example": "0",
           "member": "uint64",
@@ -5252,6 +5687,7 @@
       "document": "溯源数据",
       "members": [
         {
+          "disabled": false,
           "document": "溯源ID",
           "example": "VyKxxkmi_myRD6ulG6HFo",
           "member": "string",
@@ -5261,6 +5697,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "企业ID",
           "example": "10",
           "member": "uint64",
@@ -5270,6 +5707,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "码类型 0: 批次, 1: 码, 2: 生产任务",
           "example": "码类型",
           "member": "uint64",
@@ -5279,6 +5717,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "码值，跟码类型一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -5288,6 +5727,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "排序，在Phase相同情况下，值越小排名靠前",
           "example": "1",
           "member": "uint64",
@@ -5297,6 +5737,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "0",
           "member": "uint64",
@@ -5306,6 +5747,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "溯源环节名称",
           "example": "环节名称",
           "member": "string",
@@ -5315,6 +5757,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "溯源时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
@@ -5324,6 +5767,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "TraceItem",
@@ -5333,6 +5777,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
@@ -5342,6 +5787,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -5351,6 +5797,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上链时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
@@ -5360,6 +5807,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChainData",
@@ -5369,6 +5817,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "溯源阶段配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PhaseData",
@@ -5378,6 +5827,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "溯源阶段状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "int64",
@@ -5393,6 +5843,7 @@
       "document": "溯源数据项 Type 的枚举值\n\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n\n具体组合如下\n- Type: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\n- Type: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\n- Type: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\n- Type: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\n- Type: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\n- Type: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
       "members": [
         {
+          "disabled": false,
           "document": "字段名称",
           "example": "商品名称2",
           "member": "string",
@@ -5402,6 +5853,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "字段值",
           "example": "demo",
           "member": "string",
@@ -5411,6 +5863,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "字段类型\ntext:文本类型, \nlongtext:长文本类型, banner:单图片类型, image:多图片类型,\nvideo:视频类型,\nmp:小程序类型",
           "example": "text",
           "member": "string",
@@ -5420,6 +5873,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "只读",
           "example": "false",
           "member": "bool",
@@ -5429,6 +5883,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扫码展示",
           "example": "false",
           "member": "bool",
@@ -5438,6 +5893,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "多个值",
           "example": "无",
           "member": "string",
@@ -5447,6 +5903,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "类型标识",
           "example": "ID",
           "member": "string",
@@ -5456,6 +5913,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "扩展字段",
           "example": "无",
           "member": "string",
@@ -5465,6 +5923,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "额外属性",
           "example": "无",
           "member": "TraceItem",
@@ -5474,6 +5933,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "子页面，只读",
           "example": "无",
           "member": "TraceData",
@@ -5490,6 +5950,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -5500,6 +5961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5510,6 +5972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5520,6 +5983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "溯源码量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5530,6 +5994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "营销码额度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5540,6 +6005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "区块链上链次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5550,6 +6016,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "营销风控次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5560,6 +6027,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-05-20",
           "member": "string",

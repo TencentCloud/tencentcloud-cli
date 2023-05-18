@@ -69,6 +69,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "App包名",
           "example": "com.test.app",
           "member": "string",
@@ -79,6 +80,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试App",
           "member": "string",
@@ -89,6 +91,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1.0",
           "member": "string",
@@ -99,6 +102,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -109,6 +113,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App隐私诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告下载链接",
           "member": "string",
@@ -119,6 +124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App隐私诊断报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告名称",
           "member": "string",
@@ -129,6 +135,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App诊断堆栈报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断堆栈报告下载链接",
           "member": "string",
@@ -139,6 +146,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App诊断堆栈报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断堆栈报告名称",
           "member": "string",
@@ -149,6 +157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诊断高风险项数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -159,6 +168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私申明文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "隐私申明文本.txt",
           "member": "string",
@@ -169,6 +179,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "c7991677cc57d3b9d4974316db0ac4f9f430593f",
           "member": "string",
@@ -179,6 +190,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3bc1efe919a5245f711071373a2b4523",
           "member": "string",
@@ -195,6 +207,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务ID",
           "example": "1701438134******0",
           "member": "string",
@@ -205,6 +218,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -215,6 +229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0:默认值(待检测/待咨询), 1.检测中, 2:待评估, 3:评估中, 4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "0",
           "member": "int64",
@@ -225,6 +240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "内部错误",
           "member": "string",
@@ -235,6 +251,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源,0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android)",
           "example": "2",
           "member": "int64",
@@ -245,6 +262,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用信息",
           "example": "复杂类型",
           "member": "AppInfoItem",
@@ -255,6 +273,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务启动时间",
           "example": "2021-09-30 10:57:34",
           "member": "string",
@@ -265,6 +284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务完成时间(更新时间)",
           "example": "2021-10-11 14:53:36",
           "member": "string",
@@ -275,6 +295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "老王",
           "member": "string",
@@ -291,6 +312,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -300,6 +322,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -309,6 +332,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -318,6 +342,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "原诊断任务ID",
           "example": "170143813*******360",
           "member": "string",
@@ -327,6 +352,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App包名",
           "example": "com.test.app",
           "member": "string",
@@ -336,6 +362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上传的文件ID(任务来源为1时必填)",
           "example": "673d29c2f70b40c18d88******141",
           "member": "string",
@@ -345,6 +372,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件下载链接地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.apk",
           "member": "string",
@@ -354,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私文本下载地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.txt",
           "member": "string",
@@ -363,6 +392,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "测试App",
           "member": "string",
@@ -372,6 +402,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私申明文件名称",
           "example": "隐私申明文本.txt",
           "member": "string",
@@ -381,6 +412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件Sha1值(PrivacyTextMD5不为空时必填)",
           "example": "软件Sha1值",
           "member": "string",
@@ -390,6 +422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私申明文本md5(AppSha1不为空时必填)",
           "example": "隐私申明文本md5",
           "member": "string",
@@ -404,6 +437,7 @@
       "document": "CreateAppScanTaskRepeat返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -413,6 +447,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "170143813*******360",
           "member": "string",
@@ -435,6 +470,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -444,6 +480,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -453,6 +490,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -462,6 +500,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App包名",
           "example": "com.test.app",
           "member": "string",
@@ -471,6 +510,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App名称(任务来源为2时必填)",
           "example": "测试App",
           "member": "string",
@@ -480,6 +520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "App版本",
           "example": "v1.0",
           "member": "string",
@@ -489,6 +530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上传的软件文件ID(任务来源为1时必填)",
           "example": "673d29c2f70b40c18d88******141",
           "member": "string",
@@ -498,6 +540,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件下载链接地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.apk",
           "member": "string",
@@ -507,6 +550,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私文本下载地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.txt",
           "member": "string",
@@ -516,6 +560,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系人信息",
           "example": "王某",
           "member": "string",
@@ -525,6 +570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "联系电话",
           "example": "13800138000",
           "member": "string",
@@ -534,6 +580,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公司邮箱",
           "example": "testApp@test.com",
           "member": "string",
@@ -543,6 +590,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "公司名称",
           "example": "App测试有限公司",
           "member": "string",
@@ -552,6 +600,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "商务对接人员",
           "example": "张三",
           "member": "string",
@@ -561,6 +610,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注信息",
           "example": "备注信息",
           "member": "string",
@@ -570,6 +620,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否同意隐私条款，0:不同意(默认), 1:同意",
           "example": "1",
           "member": "int64",
@@ -579,6 +630,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私申明文件名称",
           "example": "隐私申明文本.txt",
           "member": "string",
@@ -588,6 +640,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "软件Sha1值(PrivacyTextMD5不为空时必填)",
           "example": "软件Sha1值",
           "member": "string",
@@ -597,6 +650,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "隐私申明文本md5(AppSha1不为空时必填)",
           "example": "隐私申明文本md5",
           "member": "string",
@@ -611,6 +665,7 @@
       "document": "CreateAppScanTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -620,6 +675,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "170143813*******360",
           "member": "string",
@@ -641,6 +697,7 @@
       "document": "DescribeChannelTaskReportUrl请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -649,6 +706,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用平台, 0:android, 1: iOS，2:小程序",
           "example": "0",
           "member": "int64",
@@ -657,6 +715,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "无",
           "member": "string",
@@ -665,6 +724,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -673,6 +733,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "报告类型, 0:诊断报告, 1:堆栈报告, 2:视频证据(预留), 3:报告json结果",
           "example": "0",
           "member": "int64",
@@ -681,6 +742,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "子渠道APP MD5值",
           "example": "无",
           "member": "string",
@@ -695,6 +757,7 @@
       "document": "DescribeChannelTaskReportUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -703,6 +766,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断报告/堆栈信息/报告json结果下载链接",
           "example": "无",
           "member": "string",
@@ -711,6 +775,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断报告/堆栈/报告json结果的名称",
           "example": "无",
           "member": "string",
@@ -732,6 +797,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -741,6 +807,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -755,6 +822,7 @@
       "document": "DescribeFileTicket返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -764,6 +832,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)",
           "example": "https://private-7****2.gzc.vod.tencent-cloud.com/52423182d35",
           "member": "string",
@@ -773,6 +842,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "q-sign-algorithm=sha1&q-ak=BY...",
           "member": "string",
@@ -782,6 +852,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上传文件ID(任务来源为1时提交诊断任务需要)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "170143860",
           "member": "string",
@@ -804,6 +875,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)",
           "example": "sp_011886_maats_inquire",
           "member": "string",
@@ -813,6 +885,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版",
           "example": "0",
           "member": "int64",
@@ -822,6 +895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android",
           "example": "0",
           "member": "int64",
@@ -831,6 +905,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -845,6 +920,7 @@
       "document": "DescribeResourceUsageInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义，暂时未定",
           "example": "0",
           "member": "int64",
@@ -854,6 +930,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源使用信息",
           "example": "无",
           "member": "ResourceUsageInfoData",
@@ -876,6 +953,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, -1:所有, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "-1",
           "member": "int64",
@@ -885,6 +963,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -894,6 +973,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态,可多值查询,例如:\"1,2,3\" 0:默认值(待检测/待咨询), 1.检测中, 2:待评估, 3:评估中, 4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "1,2,3",
           "member": "string",
@@ -903,6 +983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型,可多值查询,采用逗号分隔,例如:\"0,1\" 0:基础版, 1:专家版, 2:本地化",
           "example": "0,1",
           "member": "string",
@@ -912,6 +993,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码",
           "example": "0",
           "member": "int64",
@@ -921,6 +1003,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页码大小",
           "example": "10",
           "member": "int64",
@@ -930,6 +1013,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称或小程序名称(可选参数)",
           "example": "测试",
           "member": "string",
@@ -939,6 +1023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间范围, 查询开始时间(2021-09-30 或 2021-09-30 10:57:34)",
           "example": "2021-09-30 10:57:34",
           "member": "string",
@@ -948,6 +1033,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询时间范围, 查询结束时间(2021-09-30 或 2021-09-30 10:57:34)",
           "example": "2021-10-10 10:57:34",
           "member": "string",
@@ -962,6 +1048,7 @@
       "document": "DescribeScanTaskList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -971,6 +1058,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务总数量",
           "example": "1",
           "member": "int64",
@@ -980,6 +1068,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断任务数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppTaskData",
@@ -1002,6 +1091,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -1011,6 +1101,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -1020,6 +1111,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1029,6 +1121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -1038,6 +1131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "报告类型, 0:诊断报告, 1:堆栈报告, 2:视频证据(预留), 3:报告json结果",
           "example": "0",
           "member": "int64",
@@ -1052,6 +1146,7 @@
       "document": "DescribeScanTaskReportUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -1061,6 +1156,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断报告/堆栈信息/报告json结果下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告下载链接",
           "member": "string",
@@ -1070,6 +1166,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "诊断报告/堆栈/报告json结果的名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告名称",
           "member": "string",
@@ -1079,6 +1176,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "诊断json结果内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断json结果内容",
           "member": "string",
@@ -1101,6 +1199,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
@@ -1110,6 +1209,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "0",
           "member": "int64",
@@ -1119,6 +1219,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1128,6 +1229,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -1142,6 +1244,7 @@
       "document": "DescribeScanTaskStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -1151,6 +1254,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "0:默认值(待检测/待咨询), 1.检测中,  4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "4",
           "member": "int64",
@@ -1160,6 +1264,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断失败的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "内部原因",
           "member": "string",
@@ -1169,6 +1274,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "任务流详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskFlowStepsInfo",
@@ -1191,6 +1297,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源计费项名称",
           "example": "sp_011886_maats_inquire",
           "member": "string",
@@ -1201,6 +1308,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "资源总数",
           "example": "10",
           "member": "int64",
@@ -1211,6 +1319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "未使用资源数",
           "example": "5",
           "member": "int64",
@@ -1227,6 +1336,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流程编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "string",
@@ -1237,6 +1347,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流程名称",
           "example": "APK 下载",
           "member": "string",
@@ -1247,6 +1358,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流程状态, 其他值:进行中, 2:成功, 3:失败",
           "example": "1",
           "member": "int64",
@@ -1257,6 +1369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流程状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "进行中",
           "member": "string",
@@ -1267,6 +1380,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流程启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-03-21 15:17:18",
           "member": "string",
@@ -1277,6 +1391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流程完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-03-21 15:17:18",
           "member": "string",

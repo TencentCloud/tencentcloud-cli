@@ -104,6 +104,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "新建设备的名称",
           "example": "dev1",
           "member": "string",
@@ -113,6 +114,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新建设备的备注",
           "example": "mobile",
           "member": "string",
@@ -122,6 +124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成",
           "example": "dasdfrfwer32e4r",
           "member": "string",
@@ -131,6 +134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否设置预置密钥",
           "example": "true",
           "member": "bool",
@@ -145,6 +149,7 @@
       "document": "AddDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "经过加密算法加密后的base64格式密钥",
           "example": "dasdfrfwer32e4r",
           "member": "string",
@@ -154,6 +159,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "设备ID",
           "example": "xxx",
           "member": "string",
@@ -163,6 +169,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "签名字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxxxx\"",
           "member": "string",
@@ -185,6 +192,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电信鉴权的Token。要加速的电信手机终端访问 http://qos.189.cn/qos-api/getToken?appid=TencentCloud 页面，获取返回结果中result的值",
           "example": "177cc9c4ab0-7b93546e8a7a89c7716b38139af3ba6b580045e9",
           "member": "string",
@@ -195,6 +203,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "终端所处在的省份，建议不填写由服务端自动获取，若需填写请填写带有省、市、自治区、特别行政区等后缀的省份中文全称",
           "example": "广东省",
           "member": "string",
@@ -211,6 +220,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "测速数据",
           "example": "略",
           "member": "NetworkData",
@@ -221,6 +231,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户期望最低门限",
           "example": "略",
           "member": "ExpectedThreshold",
@@ -231,6 +242,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户期望最高门限",
           "example": "略",
           "member": "ExpectedThreshold",
@@ -251,6 +263,7 @@
       "document": "CreateEncryptedKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "预置密钥",
           "example": "\"xxxxx\"",
           "member": "string",
@@ -273,6 +286,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加速业务源地址信息，SrcIpv6和（SrcIpv4+SrcPublicIpv4）二选一，目前Ipv6不可用，全部填写以Ipv4参数为准。",
           "example": "{\"SrcIpv4\": \"192.168.2.11\", \"SrcPublicIpv4\": \"10.22.33.14\"}",
           "member": "SrcAddressInfo",
@@ -282,6 +296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加速业务目标地址信息",
           "example": "{\"DestIpv4\": \"128.22.36.40\"}",
           "member": "DestAddressInfo",
@@ -291,6 +306,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加速套餐\nT100K：时延性保障 + 带宽保障上下行保障 100kbps\nT200K：时延性保障 + 带宽保障上下行保障 200kbps\nT400K：时延性保障 + 带宽保障上下行保障  400kbps\nBD1M：带宽型保障 + 下行带宽保障1Mbps\nBD2M：带宽型保障 + 下行带宽保障2Mbps\nBD4M：带宽型保障 + 下行带宽保障4Mbps\nBU1M：带宽型保障 + 上行带宽保障1Mbps\nBU2M：带宽型保障 + 上行带宽保障2Mbps\nBU4M：带宽型保障 + 上行带宽保障4Mbps",
           "example": "T100K",
           "member": "string",
@@ -300,6 +316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "申请加速的设备信息，包括运营商，操作系统，设备唯一标识等。",
           "example": "{\"OS\": 1, \"Vendor\": 2, \"IMEI\": \"357315094232545\"}",
           "member": "DeviceInfo",
@@ -309,6 +326,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "期望加速时长（单位分钟），默认值30分钟",
           "example": "30",
           "member": "uint64",
@@ -318,6 +336,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接口能力扩展，如果是电信用户，必须填充CTCC Token字段",
           "example": "{ \"CTCCToken\" : \"177cc9c4ab0-7b93546\", \"Province\": \"Guangdong\" }",
           "member": "Capacity",
@@ -327,6 +346,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用模板ID",
           "example": "app-1abcedf",
           "member": "string",
@@ -336,6 +356,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "针对特殊协议进行加速\n1. IP （默认值）\n2. UDP\n3. TCP",
           "example": "1",
           "member": "uint64",
@@ -345,6 +366,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加速策略关键数据",
           "example": "{\"NetworkData\":{\"RTT\":[30,25,51],\"Loss\":0.02,\"Jitter\":50.5,\"Inte",
           "member": "Context",
@@ -354,6 +376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "签名",
           "example": "af4764571f217a9bd2c50d8e97c54239bcacb15c835100e59fda84cb33603d14",
           "member": "string",
@@ -368,6 +391,7 @@
       "document": "CreateQos返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
           "member": "string",
@@ -377,6 +401,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当前加速剩余时长（单位秒）",
           "example": "1790",
           "member": "uint64",
@@ -399,6 +424,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "删除设备的唯一ID",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -426,6 +452,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
           "member": "string",
@@ -440,6 +467,7 @@
       "document": "DeleteQos返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
           "member": "string",
@@ -449,6 +477,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "本次加速会话持续时间（单位秒）",
           "example": "300",
           "member": "uint64",
@@ -471,6 +500,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
           "member": "string",
@@ -485,6 +515,7 @@
       "document": "DescribeQos返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "0：无匹配的加速中会话\n1：存在匹配的加速中会话",
           "example": "0",
           "member": "uint64",
@@ -494,6 +525,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "手机公网出口IP，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "114.114.114.114",
           "member": "string",
@@ -503,6 +535,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "业务访问目的IP，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"8.8.8.8\",\"8.8.8.9\"]",
           "member": "string",
@@ -512,6 +545,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "当前加速剩余时长（单位秒）有，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1790",
           "member": "uint64",
@@ -521,6 +555,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "加速套餐类型，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T100K",
           "member": "string",
@@ -543,6 +578,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "加速业务目标 ip 地址数组",
           "example": "[10.1.135.152, 10.1.133.14]",
           "member": "string",
@@ -559,6 +595,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备唯一ID",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -569,6 +606,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "example": "\"xxx\"",
           "member": "string",
@@ -579,6 +617,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备创建的时间，单位：ms",
           "example": "169043203113091072",
           "member": "string",
@@ -589,6 +628,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备最后在线时间，单位：ms",
           "example": "169043203113091072",
           "member": "string",
@@ -599,6 +639,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备的备注",
           "example": "\"xxx\"",
           "member": "string",
@@ -614,6 +655,7 @@
       "document": "设备详细信息",
       "members": [
         {
+          "disabled": false,
           "document": "设备基本信息",
           "example": "无",
           "member": "DeviceBaseInfo",
@@ -623,6 +665,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "设备网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeviceNetInfo",
@@ -632,6 +675,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "聚合服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
           "member": "string",
@@ -641,6 +685,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "业务下行速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "float",
@@ -650,6 +695,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "业务上行速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "float",
@@ -666,6 +712,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "运营商\n1：移动 \n2：电信\n3：联通\n4：广电\n99：其他",
           "example": "1",
           "member": "uint64",
@@ -676,6 +723,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备操作系统：\n1：Android\n2： IOS\n99：其他",
           "example": "1",
           "member": "uint64",
@@ -686,6 +734,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备唯一标识\nIOS 填写 IDFV\nAndroid 填写 IMEI",
           "example": "357315094232545",
           "member": "string",
@@ -696,6 +745,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户手机号码",
           "example": "18649853764",
           "member": "string",
@@ -706,6 +756,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "无线信息\n1：4G\n2：5G\n3：WIFI\n99：其他",
           "example": "1",
           "member": "uint64",
@@ -721,6 +772,7 @@
       "document": "设备网络状态信息",
       "members": [
         {
+          "disabled": false,
           "document": "网络类型：\n0:数据\n1:Wi-Fi\n2:有线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -730,6 +782,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "启用/禁用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -739,6 +792,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上行限速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "string",
@@ -748,6 +802,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "下行限速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "string",
@@ -757,6 +812,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "接收实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -766,6 +822,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "发送实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -775,6 +832,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "运营商类型：\n1: 中国移动；\n2: 中国电信; \n3: 中国联通\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -784,6 +842,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "连接状态：\n0:无连接\n1:连接中\n2:已连接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -793,6 +852,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxx.xxx.xxx.xx\"",
           "member": "string",
@@ -802,6 +862,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "信号强度/单位：dbm\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-85",
           "member": "int64",
@@ -811,6 +872,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "数据网络类型：\n-1 ：无效值   \n2：2G \n3：3G \n4：4G \n5：5G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
@@ -820,6 +882,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxx\"",
           "member": "string",
@@ -829,6 +892,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "下行实时速率（浮点数类型代替上一版本DataRx的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12.3",
           "member": "float",
@@ -838,6 +902,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "上行实时速率（浮点数类型代替上一版本TxRate的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
           "member": "float",
@@ -854,6 +919,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "期望发起加速的时延阈值",
           "example": "60",
           "member": "float",
@@ -864,6 +930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "期望发起加速的丢包率阈值",
           "example": "0.02",
           "member": "float",
@@ -874,6 +941,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "期望发起加速的抖动阈值",
           "example": "60",
           "member": "float",
@@ -889,6 +957,7 @@
       "document": "设备流量信息",
       "members": [
         {
+          "disabled": false,
           "document": "流量数据点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NetDetails",
@@ -898,6 +967,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -907,6 +977,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "流量最大值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "51548",
           "member": "float",
@@ -916,6 +987,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "流量平均值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15441",
           "member": "float",
@@ -925,6 +997,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "流量总值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "656546",
           "member": "float",
@@ -940,6 +1013,7 @@
       "document": "GetDevice请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "搜索指定设备的id",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -954,6 +1028,7 @@
       "document": "GetDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备详细信息",
           "example": "无",
           "member": "DeviceDetails",
@@ -975,6 +1050,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
           "example": "10",
           "member": "int64",
@@ -984,6 +1060,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
           "example": "1",
           "member": "int64",
@@ -993,6 +1070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "搜索设备的关键字（ID或者设备名），为空时匹配所有设备",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -1007,6 +1085,7 @@
       "document": "GetDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备信息列表",
           "example": "无",
           "member": "DeviceBaseInfo",
@@ -1016,6 +1095,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "设备总记录条数",
           "example": "20",
           "member": "int64",
@@ -1025,6 +1105,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总页数",
           "example": "2",
           "member": "int64",
@@ -1046,6 +1127,7 @@
       "document": "GetFlowStatistic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备ID",
           "example": "245aee95-f37e-55d0-5258-19520bdf4b53",
           "member": "string",
@@ -1054,6 +1136,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "开始查找时间",
           "example": "1659514436",
           "member": "int64",
@@ -1062,6 +1145,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "截止时间",
           "example": "1659515436",
           "member": "int64",
@@ -1070,6 +1154,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "流量种类（1：上行流量，2：下行流量）",
           "example": "1",
           "member": "int64",
@@ -1078,6 +1163,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "时间粒度（1：按小时统计，2：按天统计）",
           "example": "1",
           "member": "int64",
@@ -1092,6 +1178,7 @@
       "document": "GetFlowStatistic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "流量详细信息",
           "example": "无",
           "member": "NetDetails",
@@ -1100,6 +1187,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查找时间段流量使用最大值（单位：bit）",
           "example": "216516",
           "member": "float",
@@ -1108,6 +1196,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查找时间段流量使用平均值（单位：bit）",
           "example": "25151",
           "member": "float",
@@ -1116,6 +1205,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "查找时间段流量使用总量（单位：bit）",
           "example": "35465464",
           "member": "float",
@@ -1136,6 +1226,7 @@
       "document": "GetMultiFlowStatistic请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备id列表，单次最多请求10个设备",
           "example": "无",
           "member": "string",
@@ -1144,6 +1235,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "1659514436",
           "example": "1659514436",
           "member": "int64",
@@ -1152,6 +1244,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "1659515000",
           "example": "1659515000",
           "member": "int64",
@@ -1160,6 +1253,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "统计流量类型（1：上行流量，2：下行流量）",
           "example": "1",
           "member": "int64",
@@ -1168,6 +1262,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "统计时间粒度（1：按小时统计，2：按天统计）",
           "example": "1",
           "member": "int64",
@@ -1182,6 +1277,7 @@
       "document": "GetMultiFlowStatistic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批量设备流量信息",
           "example": "无",
           "member": "FlowDetails",
@@ -1207,6 +1303,7 @@
       "document": "GetPublicKey返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "非对称公钥",
           "example": "\"xxxxx\"",
           "member": "string",
@@ -1228,6 +1325,7 @@
       "document": "GetStatisticData请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备ID",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -1236,6 +1334,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "统计开始时间，单位：s",
           "example": "1661212800",
           "member": "int64",
@@ -1244,6 +1343,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "统计结束时间，单位：s",
           "example": "1661587200",
           "member": "int64",
@@ -1252,6 +1352,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
           "example": "1",
           "member": "int64",
@@ -1266,6 +1367,7 @@
       "document": "GetStatisticData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文件地址url",
           "example": "\"http://xxxx\"",
           "member": "string",
@@ -1287,6 +1389,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流量值（bit）",
           "example": "98",
           "member": "float",
@@ -1297,6 +1400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "时间点，单位：s",
           "example": "1690424186",
           "member": "string",
@@ -1313,6 +1417,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时延数组，最大长度30",
           "example": "[10,20,30]",
           "member": "float",
@@ -1323,6 +1428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "丢包率",
           "example": "0.02",
           "member": "float",
@@ -1333,6 +1439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "抖动",
           "example": "50.5",
           "member": "float",
@@ -1343,6 +1450,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "10位秒级时间戳",
           "example": "1644891913",
           "member": "int64",
@@ -1359,6 +1467,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户私网 ipv4 地址",
           "example": "10.1.135.152",
           "member": "string",
@@ -1369,6 +1478,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户公网 ipv4 地址",
           "example": "223.104.63.10",
           "member": "string",
@@ -1379,6 +1489,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户 ipv6 地址",
           "example": "1050:0:0:0:5:600:300c:326b",
           "member": "string",
@@ -1395,6 +1506,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "设备id",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -1404,6 +1516,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备名称",
           "example": "\"dev\"",
           "member": "string",
@@ -1413,6 +1526,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "设备备注",
           "example": "\"xxx\"",
           "member": "string",
@@ -1422,6 +1536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "更新设备网络信息",
           "example": "无",
           "member": "UpdateNetInfo",
@@ -1449,6 +1564,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "网络类型：\n0:数据\n1:Wi-Fi",
           "example": "1",
           "member": "int64",
@@ -1459,6 +1575,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "启用/禁用",
           "example": "true",
           "member": "bool",
@@ -1469,6 +1586,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上行限速：bit",
           "example": "10000",
           "member": "uint64",
@@ -1479,6 +1597,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下行限速：bit",
           "example": "10000",
           "member": "uint64",
@@ -1489,6 +1608,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "网卡名",
           "example": "\"xxx\"",
           "member": "string",

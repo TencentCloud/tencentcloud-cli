@@ -251,6 +251,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待处理的文本（仅支持UTF-8格式，不超过2000字）",
           "example": "中新经纬客户端......创造良好的氛围。",
           "member": "string",
@@ -260,6 +261,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定摘要的长度上限（默认值为200）\n注：为保证摘要的可读性，最终生成的摘要长度会低于指定的长度上限。",
           "example": "200",
           "member": "uint64",
@@ -274,6 +276,7 @@
       "document": "AutoSummarization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文本摘要结果",
           "example": "无",
           "member": "string",
@@ -295,6 +298,7 @@
       "document": "基础粒度分词和词性标注的结果",
       "members": [
         {
+          "disabled": false,
           "document": "基础词。",
           "example": "无",
           "member": "string",
@@ -304,6 +308,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词在NormalText中的起始位置。",
           "example": "无",
           "member": "int64",
@@ -313,6 +318,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词的长度。",
           "example": "无",
           "member": "int64",
@@ -322,6 +328,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词性。",
           "example": "无",
           "member": "string",
@@ -338,6 +345,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "错别字内容",
           "member": "string",
           "name": "Word",
@@ -347,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错别字的起始位置，从0开始",
           "member": "uint64",
           "name": "BeginOffset",
@@ -356,6 +365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错别字纠错结果",
           "member": "string",
           "name": "CorrectWord",
@@ -371,6 +381,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "用户请求的query",
           "example": "给我讲个故事可以",
           "member": "string",
@@ -380,6 +391,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务的id,  主要用于儿童闲聊接口，比如手Q的openid",
           "example": "no23391003",
           "member": "string",
@@ -389,6 +401,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊",
           "example": "1",
           "member": "uint64",
@@ -403,6 +416,7 @@
       "document": "ChatBot返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "闲聊回复",
           "example": "宝贝，最近好多小朋友都在听下面这些故事呢",
           "member": "string",
@@ -412,6 +426,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "对于当前输出回复的自信度",
           "example": "1",
           "member": "float",
@@ -434,6 +449,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "一级分类名称",
           "example": "财经",
           "member": "string",
@@ -444,6 +460,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级分类名称",
           "example": "资本市场",
           "member": "string",
@@ -454,6 +471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "一级分类概率",
           "example": "1.0",
           "member": "float",
@@ -464,6 +482,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "二级分类概率",
           "example": "1.0",
           "member": "float",
@@ -474,6 +493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "股票",
           "member": "string",
@@ -484,6 +504,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
@@ -494,6 +515,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "A股",
           "member": "string",
@@ -504,6 +526,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
@@ -514,6 +537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "公司动态",
           "member": "string",
@@ -524,6 +548,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
@@ -539,6 +564,7 @@
       "document": "复合粒度分词和词性标注的结果。",
       "members": [
         {
+          "disabled": false,
           "document": "基础词。",
           "example": "无",
           "member": "string",
@@ -548,6 +574,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词在NormalText中的起始位置。",
           "example": "无",
           "member": "int64",
@@ -557,6 +584,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词的长度。",
           "example": "无",
           "member": "int64",
@@ -566,6 +594,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词性。",
           "example": "无",
           "member": "string",
@@ -581,6 +610,7 @@
       "document": "纠错结果列表",
       "members": [
         {
+          "disabled": false,
           "document": "纠错句子的序号。",
           "example": "无",
           "member": "int64",
@@ -590,6 +620,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "错误的起始位置，从0开始。",
           "example": "无",
           "member": "int64",
@@ -599,6 +630,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "错误内容长度。",
           "example": "无",
           "member": "int64",
@@ -608,6 +640,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "错误内容。",
           "example": "无",
           "member": "string",
@@ -617,6 +650,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "纠错结果，当为删除类错误时，结果为null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -626,6 +660,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "纠错类型。0：替换；1：插入；2：删除。",
           "example": "无",
           "member": "int64",
@@ -635,6 +670,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）",
           "example": "无",
           "member": "int64",
@@ -644,6 +680,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "纠错信息中文描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -653,6 +690,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "纠错信息英文描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -669,6 +707,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库名称，不超过20字。",
           "member": "string",
           "name": "Name",
@@ -677,6 +716,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库描述，不超过100字。",
           "member": "string",
           "name": "Description",
@@ -690,6 +730,7 @@
       "document": "CreateDict返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的自定义词库ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DictId",
@@ -710,6 +751,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "example": "udf-066edc3449",
           "member": "string",
@@ -719,6 +761,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待添加的词条集合。",
           "example": "无",
           "member": "WordItem",
@@ -746,6 +789,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "要删除的自定义词库ID。",
           "member": "string",
           "name": "DictId",
@@ -772,6 +816,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "example": "udf-066edc3449",
           "member": "string",
@@ -781,6 +826,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待删除的词条集合。",
           "example": "无",
           "member": "WordItem",
@@ -808,6 +854,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待分析的文本（仅支持UTF-8格式，不超过200字）",
           "member": "string",
           "name": "Text",
@@ -821,6 +868,7 @@
       "document": "DependencyParsing返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "句法依存分析结果，其中句法依存关系的类型包括：\n<li>主谓关系，eg: 我送她一束花 (我 <-- 送)\n<li>动宾关系，eg: 我送她一束花 (送 --> 花)\n<li>间宾关系，eg: 我送她一束花 (送 --> 她)\n<li>前置宾语，eg: 他什么书都读 (书 <-- 读)\n<li>兼语，eg: 他请我吃饭 (请 --> 我)\n<li>定中关系，eg: 红苹果 (红 <-- 苹果)\n<li>状中结构，eg: 非常美丽 (非常 <-- 美丽)\n<li>动补结构，eg: 做完了作业 (做 --> 完)\n<li>并列关系，eg: 大山和大海 (大山 --> 大海)\n<li>介宾关系，eg: 在贸易区内 (在 --> 内)\n<li>左附加关系，eg: 大山和大海 (和 <-- 大海)\n<li>右附加关系，eg: 孩子们 (孩子 --> 们)\n<li>独立结构，eg: 两个单句在结构上彼此独立\n<li>标点符号，eg: 。\n<li>核心关系，eg: 整个句子的核心",
           "member": "DpToken",
           "name": "DpTokens",
@@ -841,6 +889,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "member": "string",
           "name": "DictId",
@@ -849,6 +898,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库名称，模糊搜索。",
           "member": "string",
           "name": "Name",
@@ -862,6 +912,7 @@
       "document": "DescribeDict返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询到的词库信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DictInfo",
           "name": "Dicts",
@@ -882,6 +933,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "每页数据量，范围为1~100，默认为10。",
           "member": "uint64",
           "name": "Limit",
@@ -890,6 +942,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -903,6 +956,7 @@
       "document": "DescribeDicts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录总条数。",
           "member": "uint64",
           "name": "TotalCount",
@@ -910,6 +964,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义词库信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "DictInfo",
           "name": "Dicts",
@@ -930,6 +985,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "member": "string",
           "name": "DictId",
@@ -938,6 +994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -946,6 +1003,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "每页数据量，范围为1~100，默认为10。",
           "member": "uint64",
           "name": "Limit",
@@ -954,6 +1012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待检索的词条文本，支持模糊匹配。",
           "member": "string",
           "name": "Text",
@@ -967,6 +1026,7 @@
       "document": "DescribeWordItems返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "词条记录总条数。",
           "member": "uint64",
           "name": "TotalCount",
@@ -974,6 +1034,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词条信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "WordItem",
           "name": "WordItems",
@@ -994,6 +1055,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库名称。",
           "member": "string",
           "name": "Name",
@@ -1003,6 +1065,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "member": "string",
           "name": "Id",
@@ -1012,6 +1075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库描述信息。",
           "member": "string",
           "name": "Description",
@@ -1021,6 +1085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。",
           "member": "string",
           "name": "UpdateTime",
@@ -1030,6 +1095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。",
           "member": "string",
           "name": "CreateTime",
@@ -1045,6 +1111,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "句法依存关系的类型",
           "member": "string",
           "name": "Relation",
@@ -1054,6 +1121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "当前词父节点的序号",
           "member": "uint64",
           "name": "HeadId",
@@ -1063,6 +1131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "基础词",
           "member": "string",
           "name": "Word",
@@ -1072,6 +1141,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "基础词的序号",
           "member": "uint64",
           "name": "Id",
@@ -1086,6 +1156,7 @@
       "document": "文本润色结果",
       "members": [
         {
+          "disabled": false,
           "document": "润色后的文本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "而这一次的中国奥运健儿击败强敌，毫无悬念地勇夺了中国代表团的冬奥会首金和总分第三的金",
           "member": "string",
@@ -1095,6 +1166,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "润色类型。类型列表\nexpansion：扩写\nrewriting：改写\ntranslation_m2a：从现代文改写为古文\ntranslation_a2m：从古文改写为现代文\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "expansion",
           "member": "string",
@@ -1110,6 +1182,7 @@
       "document": "实体识别结果。",
       "members": [
         {
+          "disabled": false,
           "document": "基础词。",
           "example": "无",
           "member": "string",
@@ -1119,6 +1192,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词在NormalText中的起始位置。",
           "example": "无",
           "member": "int64",
@@ -1128,6 +1202,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础词的长度。",
           "example": "无",
           "member": "int64",
@@ -1137,6 +1212,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实体类型的标准名字。",
           "example": "无",
           "member": "string",
@@ -1146,6 +1222,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "类型名字的自然语言表达。（中文或英文）",
           "example": "无",
           "member": "string",
@@ -1161,6 +1238,7 @@
       "document": "EvaluateSentenceSimilarity请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。",
           "example": "无",
           "member": "SentencePair",
@@ -1175,6 +1253,7 @@
       "document": "EvaluateSentenceSimilarity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "每个句子对的相似度分值。",
           "example": "无",
           "member": "float",
@@ -1195,6 +1274,7 @@
       "document": "EvaluateWordSimilarity请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "计算相似度的源词。（仅支持UTF-8格式，不超过10字符）\n",
           "example": "无",
           "member": "string",
@@ -1203,6 +1283,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "计算相似度的目标词。（仅支持UTF-8格式，不超过10字符）\n",
           "example": "无",
           "member": "string",
@@ -1217,6 +1298,7 @@
       "document": "EvaluateWordSimilarity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "词相似度分值。",
           "example": "无",
           "member": "float",
@@ -1238,6 +1320,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "生成对联的关键词。长度需>=2，当长度>2时，自动截取前两个字作为关键字。内容需为常用汉字（不含有数字、英文、韩语、日语、符号等等其他）。",
           "example": "小鸡",
           "member": "string",
@@ -1247,6 +1330,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的文本结果为繁体还是简体。0：简体；1：繁体。默认为0。",
           "example": "0",
           "member": "int64",
@@ -1261,6 +1345,7 @@
       "document": "GenerateCouplet返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "横批。",
           "example": "满园春色",
           "member": "string",
@@ -1270,6 +1355,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "上联与下联。",
           "example": "无",
           "member": "string",
@@ -1279,6 +1365,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当对联随机生成时，展示随机生成原因。",
           "example": "无",
           "member": "string",
@@ -1300,6 +1387,7 @@
       "document": "GenerateKeywordSentence请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "生成句子的关键词，关键词个数需不超过4个，中文关键词长度应不超过10字符，英文关键词长度不超过3个单词。关键词中不可包含标点符号。",
           "example": "无",
           "member": "string",
@@ -1308,6 +1396,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "返回生成句子的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
           "example": "无",
           "member": "int64",
@@ -1316,6 +1405,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指定生成句子的领域，支持领域列表\ngeneral：通用领域，支持中英文\nacademic：学术领域，仅支持英文\n默认为general（通用领域）。",
           "example": "无",
           "member": "string",
@@ -1330,6 +1420,7 @@
       "document": "GenerateKeywordSentence返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "生成的句子列表。",
           "example": "无",
           "member": "KeywordSentence",
@@ -1351,6 +1442,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "生成诗词的关键词。",
           "example": "阳光",
           "member": "string",
@@ -1360,6 +1452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "生成诗词的类型。0：藏头或藏身；1：藏头；2：藏身。默认为0。",
           "example": "0",
           "member": "int64",
@@ -1369,6 +1462,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "诗的体裁。0：五言律诗或七言律诗；5：五言律诗；7：七言律诗。默认为0。",
           "example": "7",
           "member": "int64",
@@ -1383,6 +1477,7 @@
       "document": "GeneratePoetry返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "诗题，即输入的生成诗词的关键词。",
           "example": "阳光",
           "member": "string",
@@ -1392,6 +1487,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诗的内容。",
           "example": "无",
           "member": "string",
@@ -1414,6 +1510,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "权重",
           "member": "float",
           "name": "Score",
@@ -1423,6 +1520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词",
           "member": "string",
           "name": "Word",
@@ -1437,6 +1535,7 @@
       "document": "通过关键词生成的句子信息",
       "members": [
         {
+          "disabled": false,
           "document": "通过关键词生成的句子。",
           "example": "无",
           "member": "string",
@@ -1453,6 +1552,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待处理的文本（仅支持UTF-8格式，不超过10000字符）",
           "example": "印发《关于促...进一步发挥。",
           "member": "string",
@@ -1462,6 +1562,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定关键词个数上限（默认值为5）",
           "example": "6",
           "member": "uint64",
@@ -1476,6 +1577,7 @@
       "document": "KeywordsExtraction返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "关键词提取结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Keyword",
@@ -1498,6 +1600,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待分析的文本（仅支持UTF-8格式，不超过500字）",
           "member": "string",
           "name": "Text",
@@ -1506,6 +1609,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "指定要加载的自定义词库ID。",
           "member": "string",
           "name": "DictId",
@@ -1514,6 +1618,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词法分析模式（默认取2值）：\n1、高精度（混合粒度分词能力）；\n2、高性能（单粒度分词能力）；",
           "member": "uint64",
           "name": "Flag",
@@ -1527,6 +1632,7 @@
       "document": "LexicalAnalysis返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "命名实体识别结果。取值范围：\n<li>PER：表示人名，如刘德华、贝克汉姆</li>\n<li>LOC：表示地名，如北京、华山</li>\n<li>ORG：表示机构团体名，如腾讯、最高人民法院、人大附中</li>\n<li>PRODUCTION：表示产品名，如QQ、微信、iPhone</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "NerToken",
           "name": "NerTokens",
@@ -1534,6 +1640,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分词&词性标注结果（词性表请参见附录）",
           "member": "PosToken",
           "name": "PosTokens",
@@ -1554,6 +1661,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "基础词",
           "member": "string",
           "name": "Word",
@@ -1563,6 +1671,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "member": "int64",
           "name": "Length",
@@ -1572,6 +1681,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始位置",
           "member": "int64",
           "name": "BeginOffset",
@@ -1581,6 +1691,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "命名实体类型",
           "member": "string",
           "name": "Type",
@@ -1595,6 +1706,7 @@
       "document": "ParseWords请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待分析的文本（支持中英文文本，不超过500字符）",
           "example": "无",
           "member": "string",
@@ -1609,6 +1721,7 @@
       "document": "ParseWords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "输入文本正则化的结果。（包括对英文文本中的开头和实体进行大写等）",
           "example": "无",
           "member": "string",
@@ -1617,6 +1730,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "基础粒度分词和词性标注的结果。（词性表请参见附录）\n",
           "example": "无",
           "member": "BasicParticiple",
@@ -1625,6 +1739,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "复合粒度分词和词性标注的结果。（词性表请参见附录）",
           "example": "无",
           "member": "CompoundParticiple",
@@ -1633,6 +1748,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实体识别结果。（实体类型数据请参见附录）\n",
           "example": "无",
           "member": "Entity",
@@ -1654,6 +1770,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "基础词",
           "member": "string",
           "name": "Word",
@@ -1663,6 +1780,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "长度",
           "member": "int64",
           "name": "Length",
@@ -1672,6 +1790,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始位置",
           "member": "int64",
           "name": "BeginOffset",
@@ -1681,6 +1800,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词性",
           "member": "string",
           "name": "Pos",
@@ -1695,6 +1815,7 @@
       "document": "RetrieveSimilarWords请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "输入的词语。（仅支持UTF-8格式，不超过10字符）",
           "example": "无",
           "member": "string",
@@ -1703,6 +1824,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "召回的相似词个数，取值范围为1-20。",
           "example": "无",
           "member": "int64",
@@ -1717,6 +1839,7 @@
       "document": "RetrieveSimilarWords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "召回的相似词数组。",
           "example": "无",
           "member": "string",
@@ -1738,6 +1861,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被搜索的词条文本。",
           "member": "string",
           "name": "Text",
@@ -1747,6 +1871,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0表示词条不存在，1表示存在。",
           "member": "uint64",
           "name": "IsExist",
@@ -1756,6 +1881,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "匹配到的词条文本。",
           "member": "string",
           "name": "MatchText",
@@ -1765,6 +1891,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词条的词性。",
           "member": "string",
           "name": "Pos",
@@ -1780,6 +1907,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "example": "udf-066edc3449",
           "member": "string",
@@ -1789,6 +1917,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待检索的词条集合。",
           "example": "无",
           "member": "WordItem",
@@ -1803,6 +1932,7 @@
       "document": "SearchWordItems返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "词条检索结果集合。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchResult",
@@ -1824,6 +1954,7 @@
       "document": "SentenceCorrection请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待纠错的句子列表。可以以数组方式在一次请求中填写多个待纠错的句子。文本统一使用utf-8格式编码，每个中文句子的长度不超过150字符，每个英文句子的长度不超过100个单词，且数组长度需小于150，即句子总数需少于150句。",
           "example": "无",
           "member": "string",
@@ -1838,6 +1969,7 @@
       "document": "SentenceCorrection返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "纠错结果列表。\n（注意仅展示错误句子的纠错结果，若句子无错则不展示，若全部待纠错句子都被认为无错，则可能返回数组为空）",
           "example": "无",
           "member": "CorrectionItem",
@@ -1859,6 +1991,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入的文本（仅支持UTF-8格式，不超过500字）",
           "member": "string",
           "name": "Text",
@@ -1872,6 +2005,7 @@
       "document": "SentenceEmbedding返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "句向量数组",
           "member": "float",
           "name": "Vector",
@@ -1879,6 +2013,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "句向量的维度",
           "member": "uint64",
           "name": "Dimension",
@@ -1898,6 +2033,7 @@
       "document": "待分析的句子对",
       "members": [
         {
+          "disabled": false,
           "document": "需要与目标句子计算相似度的源句子。（仅支持UTF-8格式，不超过500字符）",
           "example": "无",
           "member": "string",
@@ -1907,6 +2043,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "目标句子。（仅支持UTF-8格式，不超过500字符）\n",
           "example": "无",
           "member": "string",
@@ -1923,6 +2060,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待分析的文本（仅支持UTF-8格式，不超过200字）",
           "example": "今天受了委屈，心情很差。",
           "member": "string",
@@ -1932,6 +2070,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：\n1、商品评论类\n2、社交类\n3、美食酒店类\n4、通用领域类",
           "example": "4",
           "member": "uint64",
@@ -1941,6 +2080,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "情感分类模式选项，可取2class或3class（默认值为2class）\n1、2class：返回正负面二分类情感结果\n2、3class：返回正负面及中性三分类情感结果",
           "example": "3class",
           "member": "string",
@@ -1955,6 +2095,7 @@
       "document": "SentimentAnalysis返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "正面情感概率",
           "example": "0.00001098",
           "member": "float",
@@ -1964,6 +2105,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "中性情感概率，当输入参数Mode取值为3class时有效，否则值为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00009115",
           "member": "float",
@@ -1973,6 +2115,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "负面情感概率",
           "example": "0.99992788",
           "member": "float",
@@ -1982,6 +2125,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "情感分类结果：\n1、positive，表示正面情感\n2、negative，表示负面情感\n3、neutral，表示中性、无情感",
           "example": "negative",
           "member": "string",
@@ -2004,6 +2148,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入的词语（仅支持UTF-8格式，不超过20字）",
           "member": "string",
           "name": "Text",
@@ -2012,6 +2157,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相似词个数；取值范围：1-200，默认为10；",
           "member": "uint64",
           "name": "WordNumber",
@@ -2025,6 +2171,7 @@
       "document": "SimilarWords返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "相似词数组",
           "member": "string",
           "name": "SimilarWords",
@@ -2045,6 +2192,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "目标文本句子",
           "member": "string",
           "name": "Text",
@@ -2054,6 +2202,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "相似度分数",
           "member": "float",
           "name": "Score",
@@ -2069,6 +2218,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待分类的文本（仅支持UTF-8格式，不超过10000字）",
           "example": "你好",
           "member": "string",
@@ -2078,6 +2228,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "领域分类体系（默认取1值）：\n1、通用领域，二分类\n2、新闻领域，五分类。类别数据不一定全部返回，详情见类目映射表（注意：目前五分类已下线不可用）",
           "example": "1",
           "member": "uint64",
@@ -2092,6 +2243,7 @@
       "document": "TextClassification返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "文本分类结果（文本分类映射表请参见附录）",
           "example": "无",
           "member": "ClassificationResult",
@@ -2114,6 +2266,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待纠错的文本（仅支持UTF-8格式，不超过128字符）",
           "example": "纠错的文本",
           "member": "string",
@@ -2128,6 +2281,7 @@
       "document": "TextCorrectionPro返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "纠错详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CCIToken",
@@ -2137,6 +2291,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "纠错后的文本",
           "example": "今天天气很好，我们很早起床，去学校读书。",
           "member": "string",
@@ -2159,6 +2314,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待纠错的文本（仅支持UTF-8格式，不超过2000字符）",
           "example": "纠错的文本",
           "member": "string",
@@ -2173,6 +2329,7 @@
       "document": "TextCorrection返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "纠错详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CCIToken",
@@ -2182,6 +2339,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "纠错后的文本",
           "example": "今天天气很好，我们很早起床，去学校读书。",
           "member": "string",
@@ -2203,6 +2361,7 @@
       "document": "TextEmbellish请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。",
           "example": "中国奥运健儿击败强敌，勇夺冬奥会首金",
           "member": "string",
@@ -2211,6 +2370,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待润色文本的语言类型，支持语言列表\nzh：中文\nen：英文",
           "example": "zh",
           "member": "string",
@@ -2219,6 +2379,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回润色结果的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
           "example": "1",
           "member": "int64",
@@ -2227,6 +2388,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "控制润色类型，类型列表\nboth：同时返回改写和扩写\nexpansion：扩写\nrewriting：改写\nm2a：从现代文改写为古文\na2m：从古文改写为现代文\n默认为both。",
           "example": "both",
           "member": "string",
@@ -2241,6 +2403,7 @@
       "document": "TextEmbellish返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "润色结果列表。",
           "example": "无",
           "member": "Embellish",
@@ -2262,6 +2425,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过128字符）",
           "example": "天气不错",
           "member": "string",
@@ -2271,6 +2435,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标句子（仅支持UTF-8格式，不超过128字符）",
           "example": "你好",
           "member": "string",
@@ -2285,6 +2450,7 @@
       "document": "TextSimilarityPro返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "每个目标句子与源句子的相似度分值，按照分值降序排列",
           "example": "无",
           "member": "Similarity",
@@ -2307,6 +2473,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）",
           "example": "天气不错",
           "member": "string",
@@ -2316,6 +2483,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "目标句子（以句子数量为单位消耗资源包）",
           "example": "你好",
           "member": "string",
@@ -2330,6 +2498,7 @@
       "document": "TextSimilarity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "每个目标句子与源句子的相似度分值，按照分值降序排列",
           "example": "无",
           "member": "Similarity",
@@ -2351,6 +2520,7 @@
       "document": "TextWriting请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。",
           "example": "今天天气不错",
           "member": "string",
@@ -2359,6 +2529,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待续写文本的语言类型，支持语言列表\nzh：中文\nen：英文",
           "example": "zh",
           "member": "string",
@@ -2367,6 +2538,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回续写结果的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
           "example": "2",
           "member": "int64",
@@ -2375,6 +2547,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "指定续写领域，支持领域列表\ngeneral：通用领域，支持中英文补全\nacademic：学术领域，仅支持英文补全\n默认为general（通用领域）。",
           "example": "general",
           "member": "string",
@@ -2383,6 +2556,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "指定续写风格，支持风格列表\nscience_fiction：科幻\nmilitary_history：军事\nxuanhuan_wuxia：武侠\nurban_officialdom：职场\n默认为xuanhuan_wuxia（武侠）。",
           "example": "xuanhuan_wuxia",
           "member": "string",
@@ -2397,6 +2571,7 @@
       "document": "TextWriting返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "续写结果列表。",
           "example": "无",
           "member": "Writing",
@@ -2418,6 +2593,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "自定义词库ID。",
           "member": "string",
           "name": "DictId",
@@ -2426,6 +2602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词库描述，不超过100字。",
           "member": "string",
           "name": "Description",
@@ -2434,6 +2611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词库名称，不超过20字。",
           "member": "string",
           "name": "Name",
@@ -2460,6 +2638,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "输入的词语（仅支持UTF-8格式，不超过20字）",
           "example": "自然语言处理",
           "member": "string",
@@ -2474,6 +2653,7 @@
       "document": "WordEmbedding返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "词向量数组",
           "example": "[0.0723935,0.138519,0.0297711,0.0160847,0.0354727,0.0133147,...]",
           "member": "float",
@@ -2483,6 +2663,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词向量的维度",
           "example": "10",
           "member": "uint64",
@@ -2505,6 +2686,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "词条文本内容。",
           "member": "string",
           "name": "Text",
@@ -2514,6 +2696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词条创建时间。",
           "member": "string",
           "name": "CreateTime",
@@ -2523,6 +2706,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "词条的词性。",
           "member": "string",
           "name": "Pos",
@@ -2538,6 +2722,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "计算相似度的源词（仅支持UTF-8格式，不超过20字）",
           "member": "string",
           "name": "SrcWord",
@@ -2546,6 +2731,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "计算相似度的目标词（仅支持UTF-8格式，不超过20字）",
           "member": "string",
           "name": "TargetWord",
@@ -2559,6 +2745,7 @@
       "document": "WordSimilarity返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "两个词语的相似度",
           "member": "float",
           "name": "Similarity",
@@ -2578,6 +2765,7 @@
       "document": "文本续写结果",
       "members": [
         {
+          "disabled": false,
           "document": "续写的文本。",
           "example": "无",
           "member": "string",
@@ -2587,6 +2775,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "续写的前缀。",
           "example": "无",
           "member": "string",

@@ -89,6 +89,7 @@
       "document": "品牌响应数据",
       "members": [
         {
+          "disabled": false,
           "document": "品牌Id",
           "example": "1",
           "member": "int64",
@@ -98,6 +99,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "企业名称",
           "example": "腾讯科技有限公司",
           "member": "string",
@@ -107,6 +109,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "品牌名称",
           "example": "腾讯安全管家",
           "member": "string",
@@ -116,6 +119,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "联系电话",
           "example": "13000000000",
           "member": "string",
@@ -125,6 +129,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "营业执照",
           "example": "https://test.com",
           "member": "string",
@@ -134,6 +139,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "营业执照审核状态",
           "example": "2",
           "member": "int64",
@@ -143,6 +149,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "营业执照审核状态说明",
           "example": "审核成功",
           "member": "string",
@@ -152,6 +159,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "授权书",
           "example": "https://test.com",
           "member": "string",
@@ -161,6 +169,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "授权书审核状态",
           "example": "2",
           "member": "int64",
@@ -170,6 +179,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "授权书审核状态说明",
           "example": "审核成功",
           "member": "string",
@@ -179,6 +189,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标信息",
           "example": "无",
           "member": "TrademarkData",
@@ -188,6 +199,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "新增时间",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -197,6 +209,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "服务信息",
           "example": "无",
           "member": "ServiceData",
@@ -206,6 +219,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "账号id",
           "example": "无",
           "member": "string",
@@ -221,6 +235,7 @@
       "document": "CreateBPBrand请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "品牌名称",
           "example": "腾讯安全管家",
           "member": "string",
@@ -229,6 +244,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "企业名称",
           "example": "腾讯科技有限公司",
           "member": "string",
@@ -237,6 +253,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "品牌logo",
           "example": "品牌logo",
           "member": "string",
@@ -245,6 +262,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "联系电话",
           "example": "13012345678",
           "member": "string",
@@ -253,6 +271,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "营业执照",
           "example": "https://test.com",
           "member": "string",
@@ -261,6 +280,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "授权书",
           "example": "https://test.com",
           "member": "string",
@@ -269,6 +289,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "商标名称",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -277,6 +298,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "商标证明",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -285,6 +307,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "是否涉及转让: 0-不转让 1-转让",
           "example": "[\"1\"]",
           "member": "string",
@@ -293,6 +316,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "转让证明",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -301,6 +325,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "保护网址",
           "example": "[\"qq.com\"]",
           "member": "string",
@@ -309,6 +334,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "保护应用",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
@@ -317,6 +343,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "保护公众号",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
@@ -325,12 +352,22 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "保护小程序",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
           "name": "ProtectMiniPrograms",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "请求来源：0-反钓鱼 2-反假冒",
+          "example": "0",
+          "member": "int64",
+          "name": "APISource",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -339,6 +376,7 @@
       "document": "CreateBPBrand返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业id",
           "example": "123",
           "member": "int64",
@@ -359,6 +397,7 @@
       "document": "CreateBPFakeAPPList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批量模板",
           "example": "无",
           "member": "string",
@@ -385,6 +424,7 @@
       "document": "CreateBPFakeAPP请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业id",
           "example": "无",
           "member": "int64",
@@ -393,6 +433,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "仿冒应用名称",
           "example": "无",
           "member": "string",
@@ -401,6 +442,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒来源",
           "example": "无",
           "member": "string",
@@ -409,6 +451,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒应用包名",
           "example": "无",
           "member": "string",
@@ -417,6 +460,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒应用证书",
           "example": "无",
           "member": "string",
@@ -425,6 +469,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒应用大小",
           "example": "无",
           "member": "string",
@@ -433,6 +478,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒截图",
           "example": "无",
           "member": "string",
@@ -441,6 +487,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "备注",
           "example": "无",
           "member": "string",
@@ -467,6 +514,7 @@
       "document": "CreateBPFakeURL请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业id",
           "example": "无",
           "member": "int64",
@@ -475,6 +523,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "仿冒网址",
           "example": "无",
           "member": "string",
@@ -483,6 +532,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "仿冒网址截图",
           "example": "无",
           "member": "string",
@@ -491,6 +541,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "备注",
           "example": "无",
           "member": "string",
@@ -517,6 +568,7 @@
       "document": "CreateBPFakeURLs请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "批量模板",
           "example": "无",
           "member": "string",
@@ -543,6 +595,7 @@
       "document": "CreateBPWhiteList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业Id",
           "example": "无",
           "member": "int64",
@@ -551,6 +604,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "白名单类型：0-网站 1-应用 2-公众号 3-小程",
           "example": "无",
           "member": "int64",
@@ -559,6 +613,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "白名单名称",
           "example": "无",
           "member": "string",
@@ -585,6 +640,7 @@
       "document": "DeleteBPWhiteList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白名单id",
           "example": "无",
           "member": "int64",
@@ -616,6 +672,7 @@
       "document": "DescribeBPBrands返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "品牌信息",
           "example": "无",
           "member": "BrandData",
@@ -624,6 +681,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "品牌审核通知栏状态：0 不显示 1 显示",
           "example": "无",
           "member": "int64",
@@ -644,6 +702,7 @@
       "document": "DescribeBPFakeAPPList请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -652,6 +711,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "页数",
           "example": "无",
           "member": "int64",
@@ -660,6 +720,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "页码",
           "example": "无",
           "member": "int64",
@@ -674,6 +735,7 @@
       "document": "DescribeBPFakeAPPList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "仿冒应用列表",
           "example": "无",
           "member": "FakeAPPData",
@@ -682,6 +744,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "仿冒应用总数",
           "example": "无",
           "member": "int64",
@@ -702,6 +765,7 @@
       "document": "DescribeBPFakeURLs请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -710,6 +774,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "页数",
           "example": "无",
           "member": "int64",
@@ -718,6 +783,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "页码",
           "example": "无",
           "member": "int64",
@@ -732,6 +798,7 @@
       "document": "DescribeBPFakeURLs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "仿冒网址列表",
           "example": "无",
           "member": "FakeURLData",
@@ -740,6 +807,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "仿冒网址总数",
           "example": "无",
           "member": "int64",
@@ -760,6 +828,7 @@
       "document": "DescribeBPWhiteLists请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -768,6 +837,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "页数",
           "example": "无",
           "member": "int64",
@@ -776,6 +846,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "页码",
           "example": "无",
           "member": "int64",
@@ -790,6 +861,7 @@
       "document": "DescribeBPWhiteLists返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "白名单列表",
           "example": "无",
           "member": "WhiteListData",
@@ -798,6 +870,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "白名单总数",
           "example": "无",
           "member": "int64",
@@ -818,6 +891,7 @@
       "document": "仿冒应用数据",
       "members": [
         {
+          "disabled": false,
           "document": "仿冒应用id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -827,6 +901,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -836,6 +911,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒来源：0-系统检测 1-人工举报\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -845,6 +921,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -854,6 +931,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒应用包名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -863,6 +941,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒应用证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -872,6 +951,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒应用大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -881,6 +961,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "热度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -890,6 +971,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -899,6 +981,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "协助处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -908,6 +991,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -917,6 +1001,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "关停状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -926,6 +1011,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "app来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -935,6 +1021,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -944,6 +1031,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "App下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -953,6 +1041,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "资质证明状态:0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -968,6 +1057,7 @@
       "document": "仿冒网址数据",
       "members": [
         {
+          "disabled": false,
           "document": "仿冒网址id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -977,6 +1067,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -986,6 +1077,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒来源：0-系统检测 1-人工举报\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -995,6 +1087,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒网址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1004,6 +1097,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "仿冒域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1013,6 +1107,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "热度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1022,6 +1117,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1031,6 +1127,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "协助处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1040,6 +1137,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1049,6 +1147,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "关停状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1058,6 +1157,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1067,6 +1167,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "ip地理位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1076,6 +1177,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网站所属单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1085,6 +1187,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网站性质\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1094,6 +1197,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网站名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1103,6 +1207,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "备案号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1112,6 +1217,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网站创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1121,6 +1227,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网站过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1130,6 +1237,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1139,6 +1247,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "资质证明状态：0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1148,6 +1257,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "网址截图\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1157,6 +1267,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "账户资源状态：0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1172,6 +1283,7 @@
       "document": "过滤参数",
       "members": [
         {
+          "disabled": false,
           "document": "过滤参数键",
           "example": "无",
           "member": "string",
@@ -1181,6 +1293,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "过滤参数值",
           "example": "无",
           "member": "string",
@@ -1196,6 +1309,7 @@
       "document": "服务响应数据",
       "members": [
         {
+          "disabled": false,
           "document": "网站保护关联资产数",
           "example": "1",
           "member": "int64",
@@ -1205,6 +1319,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "网站保护服务到期时间",
           "example": "2022-10-01 00:00:00\"",
           "member": "string",
@@ -1214,6 +1329,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用保护关联资产数",
           "example": "1",
           "member": "int64",
@@ -1223,6 +1339,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用保护服务到期时间",
           "example": "2022-10-01 00:00:00\"",
           "member": "string",
@@ -1232,6 +1349,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公众号保护关联资产数",
           "example": "1",
           "member": "int64",
@@ -1241,6 +1359,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "公众号保护服务到期时间",
           "example": "2022-10-01 00:00:00\"",
           "member": "string",
@@ -1250,6 +1369,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序保护关联资产数",
           "example": "1",
           "member": "int64",
@@ -1259,6 +1379,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序保护服务到期时间",
           "example": "2022-10-01 00:00:00\"",
           "member": "string",
@@ -1268,6 +1389,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "关停下架使用次数",
           "example": "1",
           "member": "int64",
@@ -1283,6 +1405,7 @@
       "document": "商标响应数据",
       "members": [
         {
+          "disabled": false,
           "document": "商标证明",
           "example": "https://test.com",
           "member": "string",
@@ -1292,6 +1415,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标审核状态",
           "example": "2",
           "member": "int64",
@@ -1301,6 +1425,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标审核状态说明",
           "example": "审核成功",
           "member": "string",
@@ -1310,6 +1435,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标id",
           "example": "123",
           "member": "int64",
@@ -1319,6 +1445,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标转让书",
           "example": "https://test.com",
           "member": "string",
@@ -1328,6 +1455,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标转让书审核状态",
           "example": "1",
           "member": "int64",
@@ -1337,6 +1465,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标转让书审核状态说明",
           "example": "审核中",
           "member": "string",
@@ -1346,6 +1475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "商标名称",
           "example": "商标名称",
           "member": "string",
@@ -1361,6 +1491,7 @@
       "document": "白名单数据",
       "members": [
         {
+          "disabled": false,
           "document": "白名单id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1370,6 +1501,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1379,6 +1511,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1388,6 +1521,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "资产类型：0-网站 1-app 2-公众号 3-小程序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1397,6 +1531,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "白名单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1406,6 +1541,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",

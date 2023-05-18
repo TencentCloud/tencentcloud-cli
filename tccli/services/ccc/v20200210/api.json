@@ -285,6 +285,7 @@
       "document": "生效运营商白名单号码",
       "members": [
         {
+          "disabled": false,
           "document": "实例Id",
           "example": "1400000000",
           "member": "uint64",
@@ -294,6 +295,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主叫号码",
           "example": "008601012345678",
           "member": "string",
@@ -303,6 +305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "被叫号码",
           "example": "008601012345678",
           "member": "string",
@@ -312,6 +315,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "生效unix时间戳(秒)",
           "example": "1668590448",
           "member": "int64",
@@ -328,6 +332,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被叫号码",
           "example": "\"008613912345678\"",
           "member": "string",
@@ -338,6 +343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "呼叫状态 0初始 1已接听 2未接听 3呼叫中 4待重试",
           "example": "1",
           "member": "uint64",
@@ -348,6 +354,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话ID列表",
           "example": "[\"aaaa-xxxx\"]",
           "member": "string",
@@ -364,6 +371,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "任务名",
           "example": "任务1",
           "member": "string",
@@ -374,6 +382,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫数量",
           "example": "5",
           "member": "uint64",
@@ -384,6 +393,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫号码列表",
           "example": "[\"008601012345678\"]]",
           "member": "string",
@@ -394,6 +404,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间戳",
           "example": "123",
           "member": "int64",
@@ -404,6 +415,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "int64",
@@ -414,6 +426,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务使用的IvrId",
           "example": "5",
           "member": "uint64",
@@ -424,6 +437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务状态0初始 1运行中 2已完成 3结束中 4已结束",
           "example": "1",
           "member": "uint64",
@@ -434,6 +448,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务Id",
           "example": "341431",
           "member": "uint64",
@@ -449,6 +464,7 @@
       "document": "BindNumberCallOutSkillGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -457,6 +473,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "待绑定的号码",
           "example": "\"0086075512345678\"",
           "member": "string",
@@ -465,6 +482,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待绑定的技能组Id列表",
           "example": "[1,2,3]",
           "member": "uint64",
@@ -492,6 +510,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -501,6 +520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "staff1@xx.com",
           "member": "string",
@@ -510,6 +530,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定技能组列表",
           "example": "无",
           "member": "int64",
@@ -536,6 +557,7 @@
       "document": "呼入实时指标",
       "members": [
         {
+          "disabled": false,
           "document": "IVR驻留数量",
           "example": "0",
           "member": "int64",
@@ -545,6 +567,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "排队中数量",
           "example": "0",
           "member": "int64",
@@ -554,6 +577,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "振铃中数量",
           "example": "0",
           "member": "int64",
@@ -563,6 +587,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "接通中数量",
           "example": "0",
           "member": "int64",
@@ -572,6 +597,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "客服转接外线中数量",
           "example": "0",
           "member": "int64",
@@ -581,6 +607,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最大排队时长",
           "example": "0",
           "member": "int64",
@@ -590,6 +617,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "平均排队时长",
           "example": "0",
           "member": "int64",
@@ -599,6 +627,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最大振铃时长",
           "example": "0",
           "member": "int64",
@@ -608,6 +637,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "平均振铃时长",
           "example": "0",
           "member": "int64",
@@ -617,6 +647,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最大接通时长",
           "example": "0",
           "member": "int64",
@@ -626,6 +657,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "平均接通时长",
           "example": "0",
           "member": "int64",
@@ -642,6 +674,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "线路号码",
           "example": "02188888888",
           "member": "string",
@@ -652,6 +685,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "线路相关指标",
           "example": "无",
           "member": "CallInMetrics",
@@ -662,6 +696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属技能组相关指标",
           "example": "无",
           "member": "CallInSkillGroupMetrics",
@@ -678,6 +713,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "技能组ID",
           "example": "1",
           "member": "int64",
@@ -688,6 +724,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据指标",
           "example": "无",
           "member": "CallInMetrics",
@@ -698,6 +735,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组名称",
           "example": "技能组名称",
           "member": "string",
@@ -714,6 +752,7 @@
       "members": [
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "被叫号码",
           "example": "008613012345678",
           "member": "string",
@@ -723,6 +762,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "随路数据",
           "example": "xxx",
           "member": "string",
@@ -732,6 +772,7 @@
         },
         {
           "ValueAllowedNull": true,
+          "disabled": false,
           "document": "参数",
           "example": "无",
           "member": "Variable",
@@ -746,6 +787,7 @@
       "document": "运营商白名单号码申请单",
       "members": [
         {
+          "disabled": false,
           "document": "实例Id",
           "example": "1400000000",
           "member": "uint64",
@@ -755,6 +797,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "申请单Id",
           "example": "123",
           "member": "uint64",
@@ -764,6 +807,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主叫号码列表",
           "example": "[\"008601012345678\"]",
           "member": "string",
@@ -773,6 +817,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "被叫号码列表",
           "example": "[\"008601012345678\"]",
           "member": "string",
@@ -782,6 +827,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述",
           "member": "string",
@@ -791,6 +837,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "审批状态:1 待审核、2 通过、3 拒绝",
           "example": "1",
           "member": "int64",
@@ -800,6 +847,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建时间，unix时间戳(秒)",
           "example": "1668573686",
           "member": "int64",
@@ -809,6 +857,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "更新时间，unix时间戳(秒)",
           "example": "1668573686",
           "member": "int64",
@@ -824,6 +873,7 @@
       "document": "CreateAutoCalloutTask请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -832,6 +882,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务起始时间戳，Unix 秒级时间戳",
           "example": "1642500621",
           "member": "int64",
@@ -840,6 +891,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "被叫号码列表",
           "example": "[008613912341234,008613912341235]",
           "member": "string",
@@ -848,6 +900,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "主叫号码列表",
           "example": "[008601012345678]",
           "member": "string",
@@ -856,6 +909,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "呼叫使用的Ivr",
           "example": "3",
           "member": "uint64",
@@ -864,6 +918,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "任务名",
           "example": "任务1",
           "member": "string",
@@ -872,6 +927,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "任务描述",
           "example": "任务描述1",
           "member": "string",
@@ -880,6 +936,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "任务停止时间戳，Unix 秒级时间戳",
           "example": "1642500622",
           "member": "int64",
@@ -888,6 +945,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "最大尝试次数",
           "example": "1",
           "member": "uint64",
@@ -896,6 +954,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "自定义变量（仅高级版支持）",
           "example": "无",
           "member": "Variable",
@@ -904,6 +963,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "UUI",
           "example": "无",
           "member": "string",
@@ -912,6 +972,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "被叫属性",
           "example": "无",
           "member": "CalleeAttribute",
@@ -926,6 +987,7 @@
       "document": "CreateAutoCalloutTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务Id",
           "example": "2",
           "member": "uint64",
@@ -947,6 +1009,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填）",
           "example": "1400000000",
           "member": "int64",
@@ -956,6 +1019,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组名称",
           "example": "test",
           "member": "string",
@@ -965,6 +1029,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组类型0-电话，1-在线，3-音频，4-视频",
           "example": "0",
           "member": "int64",
@@ -974,6 +1039,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上\n2、若技能组类型为电话、音频、视频，则接待上线必须只能为1",
           "example": "1",
           "member": "uint64",
@@ -988,6 +1054,7 @@
       "document": "CreateCCCSkillGroup返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "技能组ID",
           "example": "10",
           "member": "int64",
@@ -1010,6 +1077,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID",
           "example": "14000000000",
           "member": "uint64",
@@ -1019,6 +1087,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客服用户 ID，一般为客服邮箱",
           "example": "foo@tencent.com",
           "member": "string",
@@ -1028,6 +1097,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫号码，须带 0086 前缀",
           "example": "008613012345678",
           "member": "string",
@@ -1037,6 +1107,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫号码，须带 0086 前缀",
           "example": "008610086",
           "member": "string",
@@ -1046,6 +1117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单",
           "example": "true",
           "member": "bool",
@@ -1055,6 +1127,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "自定义数据，长度限制 1024 字节",
           "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
           "member": "string",
@@ -1069,6 +1142,7 @@
       "document": "CreateCallOutSession返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "新创建的会话 ID",
           "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
           "member": "string",
@@ -1090,6 +1164,7 @@
       "document": "CreateCarrierPrivilegeNumberApplicant请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "SdkAppId",
           "example": "140000000",
           "member": "uint64",
@@ -1098,6 +1173,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）",
           "example": "[\"008601012345678\"]",
           "member": "string",
@@ -1106,6 +1182,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）",
           "example": "[\"008618612345678\"]",
           "member": "string",
@@ -1114,6 +1191,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "描述",
           "example": "无",
           "member": "string",
@@ -1128,6 +1206,7 @@
       "document": "CreateCarrierPrivilegeNumberApplicant返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "申请单Id",
           "example": "1543",
           "member": "uint64",
@@ -1149,6 +1228,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -1158,6 +1238,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -1167,6 +1248,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机名称",
           "example": "分机1",
           "member": "string",
@@ -1194,6 +1276,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1203,6 +1286,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席账号。",
           "example": "FooOrBar@tencent.com",
           "member": "string",
@@ -1217,6 +1301,7 @@
       "document": "CreateSDKLoginToken返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "SDK 登录 Token。",
           "example": "6bb56a09278740bc80c5dc6dab783eff",
           "member": "string",
@@ -1226,6 +1311,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "过期时间戳，Unix 时间戳。",
           "example": "1601371974",
           "member": "int64",
@@ -1235,6 +1321,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SDK 加载路径会随着 SDK 的发布而变动。",
           "example": "https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/",
           "member": "string",
@@ -1257,6 +1344,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1266,6 +1354,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客服信息，个数不超过 10",
           "example": "无",
           "member": "SeatUserInfo",
@@ -1275,6 +1364,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否发送密码邮件，默认true",
           "example": "false",
           "member": "bool",
@@ -1289,6 +1379,7 @@
       "document": "CreateStaff返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "错误坐席列表及错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ErrStaffItem",
@@ -1311,6 +1402,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1320,6 +1412,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户 ID",
           "example": "foo",
           "member": "string",
@@ -1329,6 +1422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "有效期，单位秒，不超过 1 小时",
           "example": "86400",
           "member": "int64",
@@ -1338,6 +1432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户签名数据",
           "example": "bar",
           "member": "string",
@@ -1352,6 +1447,7 @@
       "document": "CreateUserSig返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "签名结果",
           "example": "eJw0jkFPwjAYQP-Ld9Wwfm2HtokHswhK9IBMBtw22uEHbpa1JRrjfzfZ5vW95OX9",
           "member": "string",
@@ -1374,6 +1470,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -1383,6 +1480,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -1410,6 +1508,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1419,6 +1518,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "待删除客服邮箱列表",
           "example": "无",
           "member": "string",
@@ -1433,6 +1533,7 @@
       "document": "DeleteStaff返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无法删除的状态为在线的客服列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1454,6 +1555,7 @@
       "document": "DescribeActiveCarrierPrivilegeNumber请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例Id",
           "example": "1400000000",
           "member": "uint64",
@@ -1462,6 +1564,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认0",
           "example": "0",
           "member": "uint64",
@@ -1470,6 +1573,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认10，最大100",
           "example": "10",
           "member": "uint64",
@@ -1478,6 +1582,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "筛选条件 Name支持PhoneNumber(按号码模糊查找)",
           "example": "[]",
           "member": "Filter",
@@ -1492,6 +1597,7 @@
       "document": "DescribeActiveCarrierPrivilegeNumber返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数量",
           "example": "1",
           "member": "uint64",
@@ -1500,6 +1606,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "生效列表",
           "example": "[]",
           "member": "ActiveCarrierPrivilegeNumber",
@@ -1508,6 +1615,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "待审核单号",
           "example": "[]",
           "member": "uint64",
@@ -1529,6 +1637,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -1538,6 +1647,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务Id",
           "example": "3",
           "member": "uint64",
@@ -1552,6 +1662,7 @@
       "document": "DescribeAutoCalloutTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务名",
           "example": "任务1",
           "member": "string",
@@ -1561,6 +1672,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务描述",
           "example": "任务描述",
           "member": "string",
@@ -1570,6 +1682,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务起始时间戳",
           "example": "1",
           "member": "int64",
@@ -1579,6 +1692,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1588,6 +1702,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "主叫列表",
           "example": "无",
           "member": "string",
@@ -1597,6 +1712,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "被叫信息列表",
           "example": "无",
           "member": "AutoCalloutTaskCalleeInfo",
@@ -1606,6 +1722,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务使用的IvrId",
           "example": "2",
           "member": "uint64",
@@ -1615,6 +1732,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务状态 0初始 1运行中 2已完成 3结束中 4已终止",
           "example": "1",
           "member": "uint64",
@@ -1637,6 +1755,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -1646,6 +1765,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页大小",
           "example": "10",
           "member": "uint64",
@@ -1655,6 +1775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "页数",
           "example": "0",
           "member": "uint64",
@@ -1669,6 +1790,7 @@
       "document": "DescribeAutoCalloutTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数",
           "example": "5",
           "member": "uint64",
@@ -1678,6 +1800,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务列表",
           "example": "[]",
           "member": "AutoCalloutTaskInfo",
@@ -1700,6 +1823,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID列表，不传时查询所有应用",
           "example": "[1400000,14000001]",
           "member": "int64",
@@ -1714,6 +1838,7 @@
       "document": "DescribeCCCBuyInfoList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用总数",
           "example": "10",
           "member": "int64",
@@ -1723,6 +1848,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用购买信息列表",
           "example": "[]",
           "member": "SdkAppIdBuyInfo",
@@ -1732,6 +1858,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "套餐包购买信息列表",
           "example": "[]",
           "member": "PackageBuyInfo",
@@ -1753,6 +1880,7 @@
       "document": "DescribeCallInMetrics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1761,6 +1889,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "是否返回技能组维度信息，默认“是”",
           "example": "true",
           "member": "bool",
@@ -1769,6 +1898,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "是否返回线路维度信息，默认“否”",
           "example": "false",
           "member": "bool",
@@ -1777,6 +1907,7 @@
           "type": "bool"
         },
         {
+          "disabled": false,
           "document": "筛选技能组列表",
           "example": "无",
           "member": "int64",
@@ -1791,6 +1922,7 @@
       "document": "DescribeCallInMetrics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "时间戳",
           "example": "1",
           "member": "int64",
@@ -1799,6 +1931,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总体指标",
           "example": "无",
           "member": "CallInMetrics",
@@ -1807,6 +1940,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "线路维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallInNumberMetrics",
@@ -1815,6 +1949,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "技能组维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallInSkillGroupMetrics",
@@ -1835,6 +1970,7 @@
       "document": "DescribeCarrierPrivilegeNumberApplicants请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例Id",
           "example": "1400000000",
           "member": "uint64",
@@ -1843,6 +1979,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认0，从0开始",
           "example": "0",
           "member": "uint64",
@@ -1851,6 +1988,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "默认10，最大100",
           "example": "10",
           "member": "uint64",
@@ -1859,6 +1997,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)",
           "example": "[{\"Name\":\"ApplicantId\", \"Values\":\"1\"}]",
           "member": "Filter",
@@ -1873,6 +2012,7 @@
       "document": "DescribeCarrierPrivilegeNumberApplicants返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "筛选出的总申请单数量",
           "example": "13",
           "member": "uint64",
@@ -1881,6 +2021,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "申请单列表",
           "example": "无",
           "member": "CarrierPrivilegeNumberApplicant",
@@ -1901,6 +2042,7 @@
       "document": "DescribeChatMessages请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "实例 ID（废弃）",
           "example": "0",
           "member": "int64",
@@ -1909,6 +2051,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1917,6 +2060,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "服务记录ID（废弃）",
           "example": "13503",
           "member": "string",
@@ -1925,6 +2069,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "返回记录条数，最大为100 默认20",
           "example": "20",
           "member": "int64",
@@ -1933,6 +2078,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回记录偏移，默认为 0",
           "example": "0",
           "member": "int64",
@@ -1941,6 +2087,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "1为从早到晚，2为从晚到早，默认为2",
           "example": "1",
           "member": "int64",
@@ -1949,6 +2096,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "服务记录 SessionID（必填）",
           "example": "d6253538-7c28-477b-998a-919059801899",
           "member": "string",
@@ -1963,6 +2111,7 @@
       "document": "DescribeChatMessages返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总记录数",
           "example": "0",
           "member": "int64",
@@ -1971,6 +2120,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MessageBody",
@@ -1992,6 +2142,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -2001,6 +2152,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -2015,6 +2167,7 @@
       "document": "DescribeExtension返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -2024,6 +2177,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "域名",
           "example": "14000000.tccc.qcloud.com",
           "member": "string",
@@ -2033,6 +2187,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "注册密码",
           "example": "xxxxx",
           "member": "string",
@@ -2042,6 +2197,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "代理服务器地址",
           "example": "sip.tcc.qcloud.com",
           "member": "string",
@@ -2051,6 +2207,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "传输协议",
           "example": "tls",
           "member": "string",
@@ -2073,6 +2230,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -2082,6 +2240,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页页号（从0开始）",
           "example": "0",
           "member": "int64",
@@ -2091,6 +2250,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选分机号列表",
           "example": "无",
           "member": "string",
@@ -2100,6 +2260,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页大小",
           "example": "50",
           "member": "int64",
@@ -2109,6 +2270,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）",
           "example": "xxx",
           "member": "string",
@@ -2118,6 +2280,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否需要返回话机当前状态",
           "example": "false",
           "member": "bool",
@@ -2132,6 +2295,7 @@
       "document": "DescribeExtensions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "查询总数",
           "example": "1",
           "member": "int64",
@@ -2141,6 +2305,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "话机信息列表",
           "example": "无",
           "member": "ExtensionInfo",
@@ -2162,6 +2327,7 @@
       "document": "DescribeIMCdrs请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "起始时间（必填），Unix 秒级时间戳",
           "example": "1603877878",
           "member": "int64",
@@ -2170,6 +2336,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间（必填），Unix 秒级时间戳",
           "example": "1603877879",
           "member": "int64",
@@ -2178,6 +2345,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "实例 ID（废弃）",
           "example": "11",
           "member": "int64",
@@ -2186,6 +2354,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2194,6 +2363,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回记录条数，最大为100默认20",
           "example": "100",
           "member": "int64",
@@ -2202,6 +2372,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "返回记录偏移，默认为 0",
           "example": "0",
           "member": "int64",
@@ -2210,6 +2381,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "1为全媒体，2为文本客服，不填则查询全部",
           "example": "2",
           "member": "int64",
@@ -2224,6 +2396,7 @@
       "document": "DescribeIMCdrs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总记录数",
           "example": "0",
           "member": "int64",
@@ -2232,6 +2405,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "服务记录列表",
           "example": "无",
           "member": "IMCdrInfo",
@@ -2252,6 +2426,7 @@
       "document": "DescribeNumbers请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -2260,6 +2435,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "页数，从0开始",
           "example": "0",
           "member": "uint64",
@@ -2268,6 +2444,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "分页大小，默认20",
           "example": "20",
           "member": "uint64",
@@ -2282,6 +2459,7 @@
       "document": "DescribeNumbers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数量",
           "example": "1",
           "member": "uint64",
@@ -2290,6 +2468,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "号码列表",
           "example": "无",
           "member": "NumberInfo",
@@ -2311,6 +2490,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2320,6 +2500,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "数据偏移",
           "example": "0",
           "member": "int64",
@@ -2329,6 +2510,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回的数据条数，最大 25",
           "example": "25",
           "member": "int64",
@@ -2343,6 +2525,7 @@
       "document": "DescribePSTNActiveSessionList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "列表总条数",
           "example": "1",
           "member": "int64",
@@ -2352,6 +2535,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "列表内容",
           "example": "无",
           "member": "PSTNSessionInfo",
@@ -2374,6 +2558,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
@@ -2383,6 +2568,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
@@ -2392,6 +2578,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID，可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -2401,6 +2588,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页尺寸，上限 100",
           "example": "100",
           "member": "uint64",
@@ -2410,6 +2598,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
           "member": "uint64",
@@ -2424,6 +2613,7 @@
       "document": "DescribeProtectedTelCdr返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "话单记录总数",
           "example": "2",
           "member": "uint64",
@@ -2433,6 +2623,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "话单记录",
           "example": "无",
           "member": "TelCdrInfo",
@@ -2455,6 +2646,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2464,6 +2656,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页尺寸，上限 100",
           "example": "100",
           "member": "int64",
@@ -2473,6 +2666,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
           "member": "int64",
@@ -2482,6 +2676,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组ID，查询单个技能组时使用",
           "example": "12",
           "member": "int64",
@@ -2491,6 +2686,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询修改时间大于等于ModifiedTime的技能组时使用",
           "example": "1611631881",
           "member": "int64",
@@ -2500,6 +2696,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组名称",
           "example": "销售组",
           "member": "string",
@@ -2514,6 +2711,7 @@
       "document": "DescribeSkillGroupInfoList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "技能组总数",
           "example": "10",
           "member": "int64",
@@ -2523,6 +2721,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "技能组信息列表",
           "example": "无",
           "member": "SkillGroupInfoItem",
@@ -2545,6 +2744,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2554,6 +2754,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页尺寸，上限 9999",
           "example": "9999",
           "member": "int64",
@@ -2563,6 +2764,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
           "member": "int64",
@@ -2572,6 +2774,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席账号，查询单个坐席时使用",
           "example": "102992@qq.com",
           "member": "string",
@@ -2581,6 +2784,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询修改时间大于等于ModifiedTime的坐席时使用",
           "example": "1611631881",
           "member": "int64",
@@ -2590,6 +2794,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组ID",
           "example": "123",
           "member": "int64",
@@ -2604,6 +2809,7 @@
       "document": "DescribeStaffInfoList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "坐席用户总数",
           "example": "10",
           "member": "int64",
@@ -2613,6 +2819,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席用户信息列表",
           "example": "无",
           "member": "StaffInfo",
@@ -2634,6 +2841,7 @@
       "document": "DescribeStaffStatusMetrics请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2642,6 +2850,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "筛选坐席列表，默认不传返回全部坐席信息",
           "example": "无",
           "member": "string",
@@ -2650,6 +2859,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "筛选技能组ID列表",
           "example": "无",
           "member": "int64",
@@ -2658,6 +2868,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "筛选坐席状态列表",
           "example": "无",
           "member": "string",
@@ -2672,6 +2883,7 @@
       "document": "DescribeStaffStatusMetrics返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "坐席状态实时信息",
           "example": "无",
           "member": "StaffStatusMetrics",
@@ -2692,6 +2904,7 @@
       "document": "DescribeTelCallInfo请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "起始时间戳，Unix 时间戳",
           "example": "0",
           "member": "int64",
@@ -2700,6 +2913,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天",
           "example": "0",
           "member": "int64",
@@ -2708,6 +2922,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
           "example": "[\"0\\n\"]",
           "member": "int64",
@@ -2722,6 +2937,7 @@
       "document": "DescribeTelCallInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "呼出套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
@@ -2730,6 +2946,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "呼入套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
@@ -2738,6 +2955,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席使用统计个数",
           "example": "50",
           "member": "int64",
@@ -2746,6 +2964,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "音频套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
@@ -2754,6 +2973,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "离线语音转文字套餐包消耗分钟数",
           "example": "1",
           "member": "int64",
@@ -2762,6 +2982,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实时语音转文字套餐包消耗分钟数",
           "example": "1",
           "member": "int64",
@@ -2783,6 +3004,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "起始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
@@ -2792,6 +3014,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
@@ -2801,6 +3024,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "实例 ID（废弃）",
           "example": "11",
           "member": "int64",
@@ -2810,6 +3034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数据条数，上限（废弃）",
           "example": "0",
           "member": "int64",
@@ -2819,6 +3044,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移（废弃）",
           "example": "0",
           "member": "int64",
@@ -2828,6 +3054,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2837,6 +3064,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页尺寸（必填），上限 100",
           "example": "100",
           "member": "int64",
@@ -2846,6 +3074,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页页码（必填），从 0 开始",
           "example": "0",
           "member": "int64",
@@ -2855,6 +3084,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按手机号筛选",
           "example": "[\"13012345678\"]",
           "member": "string",
@@ -2864,6 +3094,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按SessionId筛选",
           "example": "[\"7cb26a84-83b2-42d8-a19b-7dae78e9b78e\"]",
           "member": "string",
@@ -2878,6 +3109,7 @@
       "document": "DescribeTelCdr返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "话单记录总数",
           "example": "2",
           "member": "int64",
@@ -2887,6 +3119,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "话单记录",
           "example": "无",
           "member": "TelCdrInfo",
@@ -2909,6 +3142,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2918,6 +3152,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话 ID",
           "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
           "member": "string",
@@ -2932,6 +3167,7 @@
       "document": "DescribeTelSession返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "会话信息",
           "example": "无",
           "member": "PSTNSession",
@@ -2953,6 +3189,7 @@
       "document": "DisableCCCPhoneNumber请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "号码列表，0086开头",
           "example": "['00860755XXXX','0086021XXXX']",
           "member": "string",
@@ -2961,6 +3198,7 @@
           "type": "list"
         },
         {
+          "disabled": false,
           "document": "停用开关，0启用 1停用",
           "example": "1",
           "member": "int64",
@@ -2969,6 +3207,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -2996,6 +3235,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "坐席邮箱地址",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -3006,6 +3246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误码",
           "example": "err",
           "member": "string",
@@ -3016,6 +3257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "错误描述",
           "example": "some error ",
           "member": "string",
@@ -3032,6 +3274,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "实例ID",
           "example": "1400000000",
           "member": "int64",
@@ -3042,6 +3285,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机全名",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -3052,6 +3296,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -3062,6 +3307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属技能组列表",
           "example": "1000,1001",
           "member": "string",
@@ -3072,6 +3318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机名称",
           "example": "分机1",
           "member": "string",
@@ -3082,6 +3329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "1617184839",
           "member": "int64",
@@ -3092,6 +3340,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后修改时间",
           "example": "1617184839",
           "member": "int64",
@@ -3102,6 +3351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "话机状态(0 离线、100 空闲、200忙碌）",
           "example": "100",
           "member": "int64",
@@ -3112,6 +3362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否注册",
           "example": "true",
           "member": "bool",
@@ -3122,6 +3373,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定坐席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -3132,6 +3384,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定坐席名称",
           "example": "坐席1",
           "member": "string",
@@ -3147,6 +3400,7 @@
       "document": "筛选条件",
       "members": [
         {
+          "disabled": false,
           "document": "筛选字段名",
           "example": "Key",
           "member": "string",
@@ -3156,6 +3410,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "筛选条件值",
           "example": "[\"Value1\",\"Value2\"]",
           "member": "string",
@@ -3172,6 +3427,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -3181,6 +3437,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话ID",
           "example": "1001",
           "member": "string",
@@ -3208,6 +3465,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "服务记录ID",
           "example": "12933",
           "member": "string",
@@ -3218,6 +3476,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务时长秒数",
           "example": "199",
           "member": "int64",
@@ -3228,6 +3487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "结束状态\n0 异常结束\n1 正常结束\n3 无坐席在线\n17 坐席放弃接听\n100 黑名单\n101 坐席手动转接\n102 IVR阶段放弃\n108 用户超时自动结束",
           "example": "1",
           "member": "int64",
@@ -3238,6 +3498,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户昵称",
           "example": "访客_e8d6",
           "member": "string",
@@ -3248,6 +3509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务类型 1为全媒体，2为文本客服",
           "example": "2",
           "member": "int64",
@@ -3258,6 +3520,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客服ID",
           "example": "foo@tencent.com",
           "member": "string",
@@ -3268,6 +3531,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "服务时间戳",
           "example": "1632814604",
           "member": "int64",
@@ -3278,6 +3542,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87fa1d7a-4194-4f2a-83dc-d7c293411720",
           "member": "string",
@@ -3288,6 +3553,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1154",
           "member": "string",
@@ -3298,6 +3564,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "foo",
           "member": "string",
@@ -3308,6 +3575,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "满意度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Id\":1,\"Label\":\"满意\"}",
           "member": "IMSatisfaction",
@@ -3324,6 +3592,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "满意度值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -3334,6 +3603,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "满意度标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "非常满意",
           "member": "string",
@@ -3350,6 +3620,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "按键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -3360,6 +3631,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "按键关联的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "非常满意",
           "member": "string",
@@ -3376,6 +3648,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "消息类型",
           "member": "string",
           "name": "Type",
@@ -3385,6 +3658,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息内容",
           "member": "string",
           "name": "Content",
@@ -3400,6 +3674,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "消息时间戳",
           "member": "int64",
           "name": "Timestamp",
@@ -3409,6 +3684,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "发消息的用户ID",
           "member": "string",
           "name": "From",
@@ -3418,6 +3694,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息列表",
           "member": "Message",
           "name": "Messages",
@@ -3433,6 +3710,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -3442,6 +3720,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -3451,6 +3730,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机名称",
           "example": "分机1",
           "member": "string",
@@ -3460,6 +3740,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属技能组列表",
           "example": "无",
           "member": "int64",
@@ -3469,6 +3750,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定坐席邮箱账号",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -3496,6 +3778,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "1400000",
           "member": "uint64",
@@ -3505,6 +3788,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席账户",
           "example": "xx@tencent.com",
           "member": "string",
@@ -3514,6 +3798,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席名称",
           "example": "XXX",
           "member": "string",
@@ -3523,6 +3808,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席手机号（带0086前缀,示例：008618011111111）",
           "example": "008618088888888",
           "member": "string",
@@ -3532,6 +3818,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席昵称",
           "example": "XXX",
           "member": "string",
@@ -3541,6 +3828,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定技能组ID列表",
           "example": "[123,134]",
           "member": "int64",
@@ -3550,6 +3838,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启手机外呼开关",
           "example": "true",
           "member": "bool",
@@ -3559,6 +3848,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终",
           "example": "0",
           "member": "int64",
@@ -3585,6 +3875,7 @@
       "document": "号码信息",
       "members": [
         {
+          "disabled": false,
           "document": "号码",
           "example": "0086075512345678",
           "member": "string",
@@ -3594,6 +3885,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "绑定的外呼技能组",
           "example": "[1,2,3]",
           "member": "uint64",
@@ -3610,6 +3902,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "会话 ID",
           "example": "d62a280a-b7dc-4a05-8295-eba7b61c2490",
           "member": "string",
@@ -3620,6 +3913,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话临时房间 ID",
           "example": "0",
           "member": "string",
@@ -3630,6 +3924,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫",
           "example": "00861010101033",
           "member": "string",
@@ -3640,6 +3935,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫",
           "example": "00861010101031",
           "member": "string",
@@ -3650,6 +3946,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，Unix 时间戳",
           "example": "1617184839",
           "member": "int64",
@@ -3660,6 +3957,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "振铃时间，Unix 时间戳",
           "example": "1617184839",
           "member": "int64",
@@ -3670,6 +3968,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接听时间，Unix 时间戳",
           "example": "1617184839",
           "member": "int64",
@@ -3680,6 +3979,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
@@ -3690,6 +3990,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席工号",
           "example": "007",
           "member": "string",
@@ -3700,6 +4001,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话状态\nringing 振铃中\nseatJoining  等待坐席接听\ninProgress 进行中\nfinished 已完成",
           "example": "finished",
           "member": "string",
@@ -3710,6 +4012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
           "example": "0",
           "member": "int64",
@@ -3720,6 +4023,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转外线使用的号码（转外线主叫）",
           "example": "00861010101031",
           "member": "string",
@@ -3730,6 +4034,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转外线被叫",
           "example": "00861010101032",
           "member": "string",
@@ -3740,6 +4045,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
           "example": "008613XXXX5678",
           "member": "string",
@@ -3750,6 +4056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
           "example": "008613XXXX5678",
           "member": "string",
@@ -3766,6 +4073,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "会话 ID",
           "example": "1",
           "member": "string",
@@ -3776,6 +4084,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话临时房间 ID",
           "example": "1",
           "member": "string",
@@ -3786,6 +4095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫",
           "example": "13712345678",
           "member": "string",
@@ -3796,6 +4106,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫",
           "example": "13712345678",
           "member": "string",
@@ -3806,6 +4117,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "开始时间，Unix 时间戳",
           "example": "1617184839",
           "member": "string",
@@ -3816,6 +4128,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "接听时间，Unix 时间戳",
           "example": "1617184839",
           "member": "string",
@@ -3826,6 +4139,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -3836,6 +4150,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席工号",
           "example": "1",
           "member": "string",
@@ -3846,6 +4161,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席状态 inProgress 进行中",
           "example": "inProgress",
           "member": "string",
@@ -3856,6 +4172,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
           "example": "0",
           "member": "int64",
@@ -3866,6 +4183,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "振铃时间，Unix 时间戳",
           "example": "1617184839",
           "member": "int64",
@@ -3876,6 +4194,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
           "example": "008613XXXX5678",
           "member": "string",
@@ -3886,6 +4205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
           "example": "008613XXXX5678",
           "member": "string",
@@ -3902,6 +4222,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "套餐包Id",
           "example": "1001",
           "member": "string",
@@ -3912,6 +4233,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐包类型，0-外呼套餐包|1-400呼入套餐包",
           "example": "1",
           "member": "int64",
@@ -3922,6 +4244,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐包总量",
           "example": "10000",
           "member": "int64",
@@ -3932,6 +4255,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "套餐包剩余量",
           "example": "143",
           "member": "int64",
@@ -3942,6 +4266,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时间戳",
           "example": "1630000000",
           "member": "int64",
@@ -3952,6 +4277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截至时间戳",
           "example": "1640000000",
           "member": "int64",
@@ -3968,6 +4294,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "电话号码",
           "example": "008602112345678",
           "member": "string",
@@ -3978,6 +4305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "号码类型，0-固话|1-虚商号码|2-运营商号码|3-400号码",
           "example": "1",
           "member": "int64",
@@ -3988,6 +4316,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "号码呼叫类型，1-呼入|2-呼出|3-呼入呼出",
           "example": "2",
           "member": "int64",
@@ -3998,6 +4327,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时间戳",
           "example": "1630000000",
           "member": "int64",
@@ -4008,6 +4338,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截至时间戳",
           "example": "1640000000",
           "member": "int64",
@@ -4018,6 +4349,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "号码状态，1正常|2欠费停用|4管理员停用|5违规停用",
           "example": "1",
           "member": "int64",
@@ -4034,6 +4366,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
@@ -4043,6 +4376,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
@@ -4057,6 +4391,7 @@
       "document": "ResetExtensionPassword返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "重置后密码",
           "example": "xxxx",
           "member": "string",
@@ -4079,6 +4414,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用ID",
           "example": "1400000000",
           "member": "int64",
@@ -4089,6 +4425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "应用名称",
           "example": "Test",
           "member": "string",
@@ -4099,6 +4436,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席购买数（还在有效期内）",
           "example": "10",
           "member": "int64",
@@ -4109,6 +4447,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席购买列表 （还在有效期内）",
           "example": "[]",
           "member": "StaffBuyInfo",
@@ -4119,6 +4458,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "号码购买列表",
           "example": "[]",
           "member": "PhoneNumBuyInfo",
@@ -4134,6 +4474,7 @@
       "document": "坐席用户信息",
       "members": [
         {
+          "disabled": false,
           "document": "坐席名称",
           "example": "张三",
           "member": "string",
@@ -4143,6 +4484,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
@@ -4152,6 +4494,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "007",
           "member": "string",
@@ -4161,6 +4504,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "坐席电话号码（带0086前缀）",
           "example": "008613012345678",
           "member": "string",
@@ -4170,6 +4514,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席昵称",
           "example": "三三",
           "member": "string",
@@ -4179,6 +4524,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "用户ID",
           "example": "foo@tencent.com",
           "member": "string",
@@ -4188,6 +4534,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -4203,6 +4550,7 @@
       "document": "参与者信息",
       "members": [
         {
+          "disabled": false,
           "document": "坐席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "foo@tencent.com",
           "member": "string",
@@ -4212,6 +4560,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "坐席电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "008613012345678",
           "member": "string",
@@ -4221,6 +4570,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "振铃时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4230,6 +4580,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "接听时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4239,6 +4590,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631891",
           "member": "int64",
@@ -4248,6 +4600,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录音 ID，能够索引到坐席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "string",
@@ -4257,6 +4610,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "参与者类型，\"staffSeat\", \"outboundSeat\", \"staffPhoneSeat\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "staffSeat",
           "member": "string",
@@ -4266,6 +4620,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转接来源坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bar@tencent.com",
           "member": "string",
@@ -4275,6 +4630,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转接来源参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "staffSeat",
           "member": "string",
@@ -4284,6 +4640,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转接去向坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "san@tencent.com",
           "member": "string",
@@ -4293,6 +4650,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "转接去向参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "staffSeat",
           "member": "string",
@@ -4302,6 +4660,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1101",
           "member": "int64",
@@ -4311,6 +4670,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
           "member": "string",
@@ -4320,6 +4680,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录音 URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxxxx",
           "member": "string",
@@ -4329,6 +4690,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "参与者序号，从 0 开始\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4338,6 +4700,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "开始时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4347,6 +4710,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tel",
           "member": "string",
@@ -4356,6 +4720,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxxxx",
           "member": "string",
@@ -4371,6 +4736,7 @@
       "document": "技能组信息",
       "members": [
         {
+          "disabled": false,
           "document": "技能组ID",
           "example": "1400000000",
           "member": "int64",
@@ -4380,6 +4746,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "技能组名称",
           "example": "Test",
           "member": "string",
@@ -4389,6 +4756,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "（废弃）类型：IM、TEL、ALL（全媒体）",
           "example": "IM",
           "member": "string",
@@ -4398,6 +4766,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "会话分配策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fifo",
           "member": "string",
@@ -4407,6 +4776,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "会话分配是否优先上次服务坐席\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4416,6 +4786,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "单客服最大并发数（电话类型默认1）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4425,6 +4796,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4434,6 +4806,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "技能组类型0-电话，1-在线，3-音频，4-视频\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4450,6 +4823,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "技能组ID",
           "example": "101",
           "member": "int64",
@@ -4460,6 +4834,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "技能组名称",
           "example": "Test",
           "member": "string",
@@ -4470,6 +4845,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "优先级",
           "example": "1",
           "member": "int64",
@@ -4480,6 +4856,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "类型：IM、TEL、ALL（全媒体）",
           "example": "IM",
           "member": "string",
@@ -4496,6 +4873,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "购买坐席数量",
           "example": "10",
           "member": "int64",
@@ -4506,6 +4884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "购买时间戳",
           "example": "163000000",
           "member": "int64",
@@ -4516,6 +4895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "截至时间戳",
           "example": "164000000",
           "member": "int64",
@@ -4532,6 +4912,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "坐席名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaowang",
           "member": "string",
@@ -4542,6 +4923,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "10982291@qq.com",
           "member": "string",
@@ -4552,6 +4934,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18092226822",
           "member": "string",
@@ -4562,6 +4945,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaohong",
           "member": "string",
@@ -4572,6 +4956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "坐席工号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "string",
@@ -4582,6 +4967,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "所属技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "SkillGroupItem",
@@ -4592,6 +4978,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1614149408",
           "member": "int64",
@@ -4607,6 +4994,7 @@
       "document": "坐席状态补充信息",
       "members": [
         {
+          "disabled": false,
           "document": "im - 文本 | tel - 电话 | all - 全媒体",
           "example": "tel",
           "member": "string",
@@ -4616,6 +5004,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "in - 呼入 | out - 呼出",
           "example": "in",
           "member": "string",
@@ -4631,6 +5020,7 @@
       "document": "坐席状态相关信息",
       "members": [
         {
+          "disabled": false,
           "document": "坐席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -4640,6 +5030,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
           "example": "free",
           "member": "string",
@@ -4649,6 +5040,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席状态补充信息",
           "example": "无",
           "member": "StaffStatusExtra",
@@ -4658,6 +5050,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天在线总时长",
           "example": "0",
           "member": "int64",
@@ -4667,6 +5060,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天示闲总时长",
           "example": "0",
           "member": "int64",
@@ -4676,6 +5070,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天忙碌总时长",
           "example": "0",
           "member": "int64",
@@ -4685,6 +5080,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天示忙总时长",
           "example": "0",
           "member": "int64",
@@ -4694,6 +5090,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天小休总时长",
           "example": "0",
           "member": "int64",
@@ -4703,6 +5100,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "当天话后调整总时长",
           "example": "0",
           "member": "int64",
@@ -4712,6 +5110,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小休原因",
           "example": "会议",
           "member": "string",
@@ -4721,6 +5120,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否预约小休",
           "example": "false",
           "member": "bool",
@@ -4730,6 +5130,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否预约示忙",
           "example": "false",
           "member": "bool",
@@ -4739,6 +5140,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "手机接听模式： 0 - 关闭 | 1 - 仅离线 | 2- 始终",
           "example": "0",
           "member": "int64",
@@ -4748,6 +5150,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "手机外呼开关",
           "example": "false",
           "member": "bool",
@@ -4757,6 +5160,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "最近一次上线时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1679300000",
           "member": "int64",
@@ -4766,6 +5170,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "最近一次状态时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1679300000",
           "member": "int64",
@@ -4782,6 +5187,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "呼叫中心实例Id",
           "example": "1",
           "member": "uint64",
@@ -4791,6 +5197,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "任务Id",
           "example": "1",
           "member": "uint64",
@@ -4817,6 +5224,7 @@
       "document": "电话话单信息",
       "members": [
         {
+          "disabled": false,
           "document": "主叫号码",
           "example": "008613012345678",
           "member": "string",
@@ -4826,6 +5234,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "被叫号码",
           "example": "008613012345670",
           "member": "string",
@@ -4835,6 +5244,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "呼叫发起时间戳，Unix 时间戳",
           "example": "1611631881",
           "member": "int64",
@@ -4844,6 +5254,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "呼入呼出方向 0 呼入 1 呼出",
           "example": "0",
           "member": "int64",
@@ -4853,6 +5264,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "通话时长",
           "example": "120",
           "member": "int64",
@@ -4862,6 +5274,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "录音信息",
           "example": "https://xxxxx",
           "member": "string",
@@ -4871,6 +5284,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐席信息",
           "example": "0",
           "member": "SeatUserInfo",
@@ -4880,6 +5294,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      CallinBlockedContact  呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n",
           "example": "1",
           "member": "int64",
@@ -4889,6 +5304,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "技能组名称",
           "example": "tel",
           "member": "string",
@@ -4898,6 +5314,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "主叫归属地",
           "example": "广东深圳",
           "member": "string",
@@ -4907,6 +5324,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "IVR 阶段耗时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -4916,6 +5334,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "振铃时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4925,6 +5344,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "接听时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4934,6 +5354,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "结束时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
@@ -4943,6 +5364,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "IVR 按键信息 ，e.g. [\"1\",\"2\",\"3\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
@@ -4952,6 +5374,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "挂机方 seat 坐席 user 用户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
@@ -4961,6 +5384,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "服务参与者列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "ServeParticipant",
@@ -4970,6 +5394,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "110",
           "member": "int64",
@@ -4979,6 +5404,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      CallinBlockedContact  呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n听\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
@@ -4988,6 +5414,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "会话开始时间戳，UNIX 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631891",
           "member": "int64",
@@ -4997,6 +5424,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "进入排队时间，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631891",
           "member": "int64",
@@ -5006,6 +5434,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "IVRKeyPressedElement",
@@ -5015,6 +5444,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "排队技能组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "110",
           "member": "int64",
@@ -5024,6 +5454,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "会话 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "c2b303a5-7814-42f4-ab7d-573b7f195d30",
           "member": "string",
@@ -5033,6 +5464,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "008613XXXX5678",
           "member": "string",
@@ -5042,6 +5474,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "008613XXXX5678",
           "member": "string",
@@ -5051,6 +5484,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "whatever",
           "member": "string",
@@ -5060,6 +5494,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "IVRKeyPressedElement",
@@ -5069,6 +5504,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "获取录音ASR文本信息地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://api.tccc.qcloud.com/tcccadmin/cdr/getAsrText?session_id=",
           "member": "string",
@@ -5078,6 +5514,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxx",
           "member": "string",
@@ -5087,6 +5524,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -5096,6 +5534,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "排队技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "销售组",
           "member": "string",
@@ -5105,6 +5544,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "通话中语音留言录音URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"https://xxxxx\"]",
           "member": "string",
@@ -5120,6 +5560,7 @@
       "document": "UnbindNumberCallOutSkillGroup请求参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -5128,6 +5569,7 @@
           "type": "int"
         },
         {
+          "disabled": false,
           "document": "待解绑的号码",
           "example": "\"0086075512345678\"",
           "member": "string",
@@ -5136,6 +5578,7 @@
           "type": "string"
         },
         {
+          "disabled": false,
           "document": "待解绑的技能组Id列表",
           "example": "[1,2,3]",
           "member": "uint64",
@@ -5163,6 +5606,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -5172,6 +5616,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "客服邮箱",
           "example": "staff1@xx.com",
           "member": "string",
@@ -5181,6 +5626,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "解绑技能组列表",
           "example": "无",
           "member": "int64",
@@ -5208,6 +5654,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "变量名",
           "example": "key1",
           "member": "string",
@@ -5218,6 +5665,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "变量值",
           "example": "value",
           "member": "string",

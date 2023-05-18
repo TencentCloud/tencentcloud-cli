@@ -160,6 +160,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "example": "无",
           "member": "string",
@@ -170,6 +171,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -180,6 +182,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456789",
           "member": "string",
@@ -190,6 +193,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc资源名称：testname\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
           "member": "string",
@@ -206,6 +210,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "example": "无",
           "member": "string",
@@ -216,6 +221,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
           "example": "无",
           "member": "string",
@@ -226,6 +232,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vpc所属账号: 123456789",
           "example": "无",
           "member": "string",
@@ -236,6 +243,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpc资源名称：testname",
           "example": "无",
           "member": "string",
@@ -252,6 +260,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "关联账户的uin",
           "example": "12345678",
           "member": "string",
@@ -262,6 +271,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "vpcid",
           "example": "vpc-wdskdss1",
           "member": "string",
@@ -272,6 +282,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -288,6 +299,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "日志类型",
           "member": "string",
           "name": "Resource",
@@ -297,6 +309,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志表名",
           "member": "string",
           "name": "Metric",
@@ -306,6 +319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志总数",
           "member": "int64",
           "name": "TotalCount",
@@ -315,6 +329,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志列表",
           "member": "AuditLogInfo",
           "name": "DataSet",
@@ -330,6 +345,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间",
           "member": "datetime",
           "name": "Date",
@@ -339,6 +355,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "操作人uin",
           "member": "string",
           "name": "OperatorUin",
@@ -348,6 +365,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "日志内容",
           "member": "string",
           "name": "Content",
@@ -363,6 +381,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域解析账号",
           "example": "无",
           "member": "PrivateDNSAccount",
@@ -390,6 +409,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
@@ -399,6 +419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
@@ -408,6 +429,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "b",
           "member": "string",
@@ -417,6 +439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "3.3.3.3",
           "member": "string",
@@ -426,6 +449,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
@@ -435,6 +459,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "15",
           "member": "int64",
@@ -444,6 +469,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
@@ -458,6 +484,7 @@
       "document": "CreatePrivateZoneRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录Id",
           "example": "1111",
           "member": "string",
@@ -480,6 +507,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名，格式必须是标准的TLD",
           "example": "a.com",
           "member": "string",
@@ -489,6 +517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建私有域的同时，为其打上标签",
           "example": "无",
           "member": "TagInfo",
@@ -498,6 +527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
@@ -507,6 +537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
@@ -516,6 +547,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
@@ -525,6 +557,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
@@ -534,6 +567,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建私有域同时绑定关联账号的VPC",
           "example": "无",
           "member": "AccountVpcInfo",
@@ -543,6 +577,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
@@ -557,6 +592,7 @@
       "document": "CreatePrivateZone返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域ID, zone-xxxxxx",
           "example": "41",
           "member": "string",
@@ -566,6 +602,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域名",
           "example": "a.com",
           "member": "string",
@@ -588,6 +625,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "时间",
           "member": "datetime",
           "name": "Date",
@@ -597,6 +635,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "值",
           "member": "int64",
           "name": "Value",
@@ -612,6 +651,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域解析账号",
           "example": "无",
           "member": "PrivateDNSAccount",
@@ -639,6 +679,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "1999",
           "member": "string",
@@ -648,6 +689,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录ID",
           "example": "2323",
           "member": "string",
@@ -657,6 +699,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录ID数组，RecordId 优先",
           "example": "[]",
           "member": "string",
@@ -684,6 +727,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
@@ -693,6 +737,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID数组，ZoneId 优先",
           "example": "无",
           "member": "string",
@@ -720,6 +765,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "关联账号的uin",
           "example": "123456789",
           "member": "string",
@@ -729,6 +775,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
           "member": "int64",
@@ -738,6 +785,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
           "member": "int64",
@@ -747,6 +795,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -761,6 +810,7 @@
       "document": "DescribeAccountVpcList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "VPC数量",
           "example": "无",
           "member": "int64",
@@ -770,6 +820,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "VPC 列表",
           "example": "无",
           "member": "AccountVpcInfoOut",
@@ -792,6 +843,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "请求量统计起始时间",
           "example": "2020-11-22 00:00:00",
           "member": "string",
@@ -801,6 +853,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID",
           "example": "无",
           "member": "Filter",
@@ -810,6 +863,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求量统计结束时间",
           "example": "2020-11-23 23:59:59",
           "member": "string",
@@ -819,6 +873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
           "member": "int64",
@@ -828,6 +883,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "20",
           "member": "int64",
@@ -842,6 +898,7 @@
       "document": "DescribeAuditLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作日志列表",
           "example": "无",
           "member": "AuditLog",
@@ -868,6 +925,7 @@
       "document": "DescribeDashboard返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析总数",
           "example": "20",
           "member": "int64",
@@ -877,6 +935,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域关联VPC数量",
           "example": "7",
           "member": "int64",
@@ -886,6 +945,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "历史请求量总数",
           "example": "10000",
           "member": "int64",
@@ -895,6 +955,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "流量包用量",
           "example": "无",
           "member": "FlowUsage",
@@ -917,6 +978,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
           "member": "int64",
@@ -926,6 +988,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
           "member": "int64",
@@ -935,6 +998,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -949,6 +1013,7 @@
       "document": "DescribePrivateDNSAccountList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析账号数量",
           "example": "无",
           "member": "int64",
@@ -958,6 +1023,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域解析账号列表",
           "example": "无",
           "member": "PrivateDNSAccount",
@@ -980,6 +1046,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
           "member": "int64",
@@ -989,6 +1056,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
           "member": "int64",
@@ -998,6 +1066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -1012,6 +1081,7 @@
       "document": "DescribePrivateZoneList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域数量",
           "example": "无",
           "member": "int64",
@@ -1021,6 +1091,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域列表",
           "example": "无",
           "member": "PrivateZone",
@@ -1043,6 +1114,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID: zone-xxxxxx",
           "example": "1",
           "member": "string",
@@ -1052,6 +1124,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过滤参数（支持使用Value、RecordType过滤）",
           "example": "无",
           "member": "Filter",
@@ -1061,6 +1134,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
           "member": "int64",
@@ -1070,6 +1144,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大200，默认20",
           "example": "200",
           "member": "int64",
@@ -1084,6 +1159,7 @@
       "document": "DescribePrivateZoneRecordList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "解析记录数量",
           "example": "5",
           "member": "int64",
@@ -1093,6 +1169,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析记录列表",
           "example": "无",
           "member": "PrivateZoneRecord",
@@ -1115,6 +1192,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "域名，格式必须是标准的TLD",
           "example": "无",
           "member": "string",
@@ -1129,6 +1207,7 @@
       "document": "DescribePrivateZone返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域详情",
           "example": "无",
           "member": "PrivateZone",
@@ -1155,6 +1234,7 @@
       "document": "DescribePrivateZoneService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析服务开通状态。ENABLED已开通，DISABLED未开通",
           "example": "ENABLED",
           "member": "string",
@@ -1181,6 +1261,7 @@
       "document": "DescribeQuotaUsage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Tld额度使用情况",
           "example": "无",
           "member": "TldQuota",
@@ -1203,6 +1284,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "请求量统计起始时间，格式：2020-11-22 00:00:00",
           "example": "2020-11-22 00:00:00",
           "member": "string",
@@ -1212,6 +1294,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "筛选参数：",
           "example": "无",
           "member": "Filter",
@@ -1221,6 +1304,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "请求量统计结束时间，格式：2020-11-22 23:59:59",
           "example": "2020-11-23 23:59:59",
           "member": "string",
@@ -1235,6 +1319,7 @@
       "document": "DescribeRequestData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "请求量统计表",
           "example": "无",
           "member": "MetricData",
@@ -1244,6 +1329,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求量单位时间: Day：天，Hour：小时",
           "example": "hour",
           "member": "string",
@@ -1266,6 +1352,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "参数名",
           "member": "string",
           "name": "Name",
@@ -1275,6 +1362,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "参数值数组",
           "member": "string",
           "name": "Values",
@@ -1290,6 +1378,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "流量包类型：ZONE 私有域；TRAFFIC 解析流量包",
           "example": "zone",
           "member": "string",
@@ -1300,6 +1389,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包总额度",
           "example": "无",
           "member": "int64",
@@ -1310,6 +1400,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "流量包可用额度",
           "example": "无",
           "member": "int64",
@@ -1326,6 +1417,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "资源描述",
           "example": "无",
           "member": "string",
@@ -1336,6 +1428,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "表名",
           "example": "无",
           "member": "string",
@@ -1346,6 +1439,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "表数据",
           "example": "无",
           "member": "DatePoint",
@@ -1356,6 +1450,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "查询范围内的请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -1372,6 +1467,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "zone-xxxxxx",
           "member": "string",
@@ -1381,6 +1477,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录ID",
           "example": "289",
           "member": "string",
@@ -1390,6 +1487,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
@@ -1399,6 +1497,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "@",
           "member": "string",
@@ -1408,6 +1507,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "8.8.8.8",
           "member": "string",
@@ -1417,6 +1517,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
@@ -1426,6 +1527,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "50",
           "member": "int64",
@@ -1435,6 +1537,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
@@ -1462,6 +1565,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
@@ -1471,6 +1575,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
@@ -1480,6 +1585,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
@@ -1489,6 +1595,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否开启CNAME加速：ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
@@ -1516,6 +1623,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
@@ -1525,6 +1633,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域关联的全部VPC列表",
           "example": "无",
           "member": "VpcInfo",
@@ -1534,6 +1643,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域账号关联的全部VPC列表",
           "example": "无",
           "member": "AccountVpcInfo",
@@ -1548,6 +1658,7 @@
       "document": "ModifyPrivateZoneVpc返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域ID, zone-xxxxxx",
           "example": "1",
           "member": "string",
@@ -1557,6 +1668,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析域关联的VPC列表",
           "example": "无",
           "member": "VpcInfo",
@@ -1566,6 +1678,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域账号关联的全部VPC列表",
           "example": "无",
           "member": "AccountVpcInfoOutput",
@@ -1588,6 +1701,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "zone-vcxs31di",
           "member": "string",
@@ -1597,6 +1711,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "解析记录ID列表",
           "example": "[1,2,3]",
           "member": "int64",
@@ -1606,6 +1721,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "enabled：生效，disabled：失效",
           "example": "enabled",
           "member": "string",
@@ -1620,6 +1736,7 @@
       "document": "ModifyRecordsStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域ID",
           "example": "zone-sdf1fds3",
           "member": "string",
@@ -1629,6 +1746,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析记录ID列表",
           "example": "[1,2,3]",
           "member": "int64",
@@ -1638,6 +1756,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "enabled：生效，disabled：失效",
           "example": "enabled",
           "member": "string",
@@ -1660,6 +1779,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "主账号Uin",
           "example": "123456789",
           "member": "string",
@@ -1670,6 +1790,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "主账号名称",
           "example": "privatedns@qcloud.com",
           "member": "string",
@@ -1680,6 +1801,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户昵称",
           "example": "私有域解析用户",
           "member": "string",
@@ -1696,6 +1818,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
           "example": "1782",
           "member": "string",
@@ -1706,6 +1829,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名所有者uin",
           "example": "444353877",
           "member": "int64",
@@ -1716,6 +1840,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域名",
           "example": "test.com",
           "member": "string",
@@ -1726,6 +1851,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
@@ -1736,6 +1862,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
@@ -1746,6 +1873,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录数",
           "example": "0",
           "member": "int64",
@@ -1756,6 +1884,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -1766,6 +1895,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的Vpc列表",
           "example": "[]",
           "member": "VpcInfo",
@@ -1776,6 +1906,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN",
           "example": "ENABLED",
           "member": "string",
@@ -1786,6 +1917,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "域名递归解析状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
           "member": "string",
@@ -1796,6 +1928,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签键值对集合",
           "example": "[{TagKey: \"testtag\", TagValue: \"testtag\"}]",
           "member": "TagInfo",
@@ -1806,6 +1939,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccountVpcInfoOutput",
@@ -1816,6 +1950,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否自定义TLD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1826,6 +1961,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "CNAME加速状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
           "member": "string",
@@ -1836,6 +1972,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "转发规则名",
           "member": "string",
@@ -1846,6 +1983,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DOWN",
           "member": "string",
@@ -1856,6 +1994,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "转发的地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.23.41:53,10.0.23.42:53,",
           "member": "string",
@@ -1866,6 +2005,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "终端节点名",
           "member": "string",
@@ -1882,6 +2022,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "记录id",
           "example": "12076",
           "member": "string",
@@ -1892,6 +2033,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
           "example": "zone-pckv03qy",
           "member": "string",
@@ -1902,6 +2044,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "子域名",
           "example": "www",
           "member": "string",
@@ -1912,6 +2055,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
@@ -1922,6 +2066,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录值",
           "example": "1.1.1.1",
           "member": "string",
@@ -1932,6 +2077,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "300",
           "member": "int64",
@@ -1942,6 +2088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1952,6 +2099,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录状态：ENABLED",
           "example": "enabled",
           "member": "string",
@@ -1962,6 +2110,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "int64",
@@ -1972,6 +2121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录创建时间",
           "example": "2021-09-07 19:00:58",
           "member": "datetime",
@@ -1982,6 +2132,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "记录更新时间",
           "example": "2021-09-07 19:00:58",
           "member": "datetime",
@@ -1992,6 +2143,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2002,6 +2154,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "0暂停，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是否暂停",
           "member": "uint64",
@@ -2022,6 +2175,7 @@
       "document": "SubscribePrivateZoneService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析服务开通状态",
           "example": "ENABLED",
           "member": "string",
@@ -2044,6 +2198,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2053,6 +2208,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "标签值",
           "member": "string",
           "name": "TagValue",
@@ -2068,6 +2224,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "总共额度",
           "example": "1",
           "member": "int64",
@@ -2078,6 +2235,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "已使用额度",
           "example": "1",
           "member": "int64",
@@ -2088,6 +2246,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "库存",
           "example": "5000",
           "member": "int64",
@@ -2098,6 +2257,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户限额",
           "example": "100",
           "member": "int64",
@@ -2114,6 +2274,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "member": "string",
           "name": "UniqVpcId",
@@ -2123,6 +2284,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
           "member": "string",
           "name": "Region",

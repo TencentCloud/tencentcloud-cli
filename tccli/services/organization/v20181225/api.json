@@ -153,6 +153,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -179,6 +180,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "父组织单元ID",
           "member": "uint64",
           "name": "ParentNodeId",
@@ -187,6 +189,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织单元名字",
           "member": "string",
           "name": "Name",
@@ -200,6 +203,7 @@
       "document": "AddOrganizationNode返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -220,6 +224,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -246,6 +251,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织类型（目前固定为1）",
           "member": "uint64",
           "name": "OrgType",
@@ -259,6 +265,7 @@
       "document": "CreateOrganization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业组织ID",
           "member": "uint64",
           "name": "OrgId",
@@ -266,6 +273,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建者昵称",
           "member": "string",
           "name": "Nickname",
@@ -273,6 +281,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建者邮箱",
           "member": "string",
           "name": "Mail",
@@ -280,6 +289,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组织类型",
           "member": "uint64",
           "name": "OrgType",
@@ -300,6 +310,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被删除成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -308,6 +319,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -334,6 +346,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被删除成员的UIN列表",
           "example": "[\"1\\r\\n\"]",
           "member": "uint64",
@@ -361,6 +374,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织单元ID列表",
           "member": "uint64",
           "name": "NodeIds",
@@ -404,6 +418,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -430,6 +445,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -443,6 +459,7 @@
       "document": "GetOrganizationMember返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "组织成员UIN",
           "member": "uint64",
           "name": "Uin",
@@ -450,6 +467,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组织成员名称",
           "member": "string",
           "name": "Name",
@@ -457,6 +475,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -464,6 +483,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "加入时间",
           "member": "datetime",
           "name": "JoinTime",
@@ -471,6 +491,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -478,6 +499,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "组织单元名称",
           "member": "string",
           "name": "NodeName",
@@ -485,6 +507,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "父组织单元ID",
           "member": "uint64",
           "name": "ParentNodeId",
@@ -509,6 +532,7 @@
       "document": "GetOrganization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业组织ID",
           "member": "uint64",
           "name": "OrgId",
@@ -516,6 +540,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建者UIN",
           "member": "uint64",
           "name": "HostUin",
@@ -523,6 +548,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建者昵称",
           "member": "string",
           "name": "Nickname",
@@ -530,6 +556,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "创建者邮箱",
           "member": "string",
           "name": "Mail",
@@ -537,6 +564,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "企业组织类型",
           "member": "uint64",
           "name": "OrgType",
@@ -544,6 +572,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "是否为空",
           "member": "uint64",
           "name": "IsEmpty",
@@ -564,6 +593,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "是否被邀请。1：被邀请，0：发出的邀请",
           "member": "uint64",
           "name": "Invited",
@@ -572,6 +602,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -580,6 +611,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -593,6 +625,7 @@
       "document": "ListOrganizationInvitations返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "邀请信息列表",
           "member": "OrgInvitation",
           "name": "Invitations",
@@ -600,6 +633,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数目",
           "member": "uint64",
           "name": "TotalCount",
@@ -620,6 +654,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -628,6 +663,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -641,6 +677,7 @@
       "document": "ListOrganizationMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "成员列表",
           "member": "OrgMember",
           "name": "Members",
@@ -648,6 +685,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "总数目",
           "member": "uint64",
           "name": "TotalCount",
@@ -668,6 +706,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -676,6 +715,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -684,6 +724,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -697,6 +738,7 @@
       "document": "ListOrganizationNodeMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总数目",
           "member": "uint64",
           "name": "TotalCount",
@@ -704,6 +746,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "成员列表",
           "member": "OrgMember",
           "name": "Members",
@@ -728,6 +771,7 @@
       "document": "ListOrganizationNodes返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "企业组织单元列表",
           "example": "无",
           "member": "OrgNode",
@@ -750,6 +794,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -758,6 +803,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员UIN列表",
           "member": "uint64",
           "name": "Uins",
@@ -784,6 +830,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -793,6 +840,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "被邀请UIN",
           "member": "uint64",
           "name": "Uin",
@@ -802,6 +850,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者UIN",
           "member": "uint64",
           "name": "HostUin",
@@ -811,6 +860,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者名称",
           "member": "string",
           "name": "HostName",
@@ -820,6 +870,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "创建者邮箱",
           "member": "string",
           "name": "HostMail",
@@ -829,6 +880,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邀请状态。-1：已过期，0：正常，1：已接受，2：已失效，3：已取消",
           "member": "uint64",
           "name": "Status",
@@ -838,6 +890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -847,6 +900,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -856,6 +910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "企业组织类型",
           "member": "uint64",
           "name": "OrgType",
@@ -865,6 +920,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "邀请时间",
           "member": "datetime",
           "name": "InviteTime",
@@ -874,6 +930,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "过期时间",
           "member": "datetime",
           "name": "ExpireTime",
@@ -889,6 +946,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "UIN",
           "member": "uint64",
           "name": "Uin",
@@ -898,6 +956,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -907,6 +966,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -916,6 +976,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "加入时间",
           "member": "datetime",
           "name": "JoinTime",
@@ -931,6 +992,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -940,6 +1002,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -949,6 +1012,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "父单元ID",
           "member": "uint64",
           "name": "ParentNodeId",
@@ -958,6 +1022,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "成员数量",
           "member": "uint64",
           "name": "MemberCount",
@@ -973,6 +1038,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业组织ID",
           "member": "uint64",
           "name": "OrgId",
@@ -999,6 +1065,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "被邀请账户UIN",
           "example": "100005229292",
           "member": "uint64",
@@ -1008,6 +1075,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "example": "testAccount",
           "member": "string",
@@ -1017,6 +1085,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "test",
           "member": "string",
@@ -1044,6 +1113,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -1052,6 +1122,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -1060,6 +1131,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -1086,6 +1158,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "企业组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -1094,6 +1167,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -1102,6 +1176,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "父单元ID",
           "member": "uint64",
           "name": "ParentNodeId",

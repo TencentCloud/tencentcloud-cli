@@ -139,6 +139,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体年龄信息，返回值为以下集合中的一个{小孩,青年,中年,老年}。",
           "member": "string",
           "name": "Type",
@@ -148,6 +149,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -163,6 +165,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "返回年龄信息",
           "member": "bool",
           "name": "Age",
@@ -172,6 +175,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回随身挎包信息",
           "member": "bool",
           "name": "Bag",
@@ -181,6 +185,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回性别信息",
           "member": "bool",
           "name": "Gender",
@@ -190,6 +195,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回朝向信息",
           "member": "bool",
           "name": "Orientation",
@@ -199,6 +205,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回上装信息",
           "member": "bool",
           "name": "UpperBodyCloth",
@@ -208,6 +215,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回下装信息",
           "member": "bool",
           "name": "LowerBodyCloth",
@@ -223,6 +231,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "挎包信息，返回值为以下集合中的一个{双肩包, 斜挎包, 手拎包, 无包}。",
           "member": "string",
           "name": "Type",
@@ -232,6 +241,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -247,6 +257,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体年龄信息。 \nAttributesType 不含 Age 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Age",
           "name": "Age",
@@ -256,6 +267,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体是否挎包。 \nAttributesType 不含 Bag 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Bag",
           "name": "Bag",
@@ -265,6 +277,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体性别信息。 \nAttributesType 不含 Gender 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Gender",
           "name": "Gender",
@@ -274,6 +287,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体朝向信息。   \nAttributesType 不含 UpperBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Orientation",
           "name": "Orientation",
@@ -283,6 +297,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体上衣属性信息。\nAttributesType 不含 Orientation 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "UpperBodyCloth",
           "name": "UpperBodyCloth",
@@ -292,6 +307,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体下衣属性信息。  \nAttributesType 不含 LowerBodyCloth 或检测超过 5 个人体时，此参数仍返回，但不具备参考意义。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "LowerBodyCloth",
           "name": "LowerBodyCloth",
@@ -307,6 +323,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "检测出的人体置信度。 \n误识率百分之十对应的阈值是0.14；误识率百分之五对应的阈值是0.32；误识率百分之二对应的阈值是0.62；误识率百分之一对应的阈值是0.81。 \n通常情况建议使用阈值0.32，可适用大多数情况。",
           "member": "float",
           "name": "Confidence",
@@ -316,6 +333,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图中检测出来的人体框",
           "member": "BodyRect",
           "name": "BodyRect",
@@ -325,6 +343,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图中检测出的人体属性信息。",
           "member": "BodyAttributeInfo",
           "name": "BodyAttributeInfo",
@@ -340,6 +359,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图中检测出来的人体框。",
           "member": "BoundRect",
           "name": "BoundBox",
@@ -349,6 +369,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "14个人体关键点的坐标，人体关键点详见KeyPointInfo。",
           "member": "KeyPointInfo",
           "name": "BodyJoints",
@@ -358,6 +379,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "检测出的人体置信度，0-1之间，数值越高越准确。",
           "member": "float",
           "name": "Confidence",
@@ -373,6 +395,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体框左上角横坐标。",
           "member": "uint64",
           "name": "X",
@@ -382,6 +405,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体框左上角纵坐标。",
           "member": "uint64",
           "name": "Y",
@@ -391,6 +415,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体宽度。",
           "member": "uint64",
           "name": "Width",
@@ -400,6 +425,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体高度。",
           "member": "uint64",
           "name": "Height",
@@ -415,6 +441,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体框左上角横坐标。",
           "member": "int64",
           "name": "X",
@@ -424,6 +451,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体框左上角纵坐标。",
           "member": "int64",
           "name": "Y",
@@ -433,6 +461,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体宽度。",
           "member": "int64",
           "name": "Width",
@@ -442,6 +471,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体高度。",
           "member": "int64",
           "name": "Height",
@@ -457,6 +487,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID。",
           "example": "xxxxx",
           "member": "string",
@@ -467,6 +498,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹ID。",
           "example": "xxxxx",
           "member": "string",
@@ -477,6 +509,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "候选者的匹配得分。 \n十万人体库下，误识率百分之五对应的分数为70分；误识率百分之二对应的分数为80分；误识率百分之一对应的分数为90分。\n \n二十万人体库下，误识率百分之五对应的分数为80分；误识率百分之二对应的分数为90分；误识率百分之一对应的分数为95分。\n \n通常情况建议使用分数80分（保召回）。若希望获得较高精度，建议使用分数90分（保准确）。",
           "example": "xxxxx",
           "member": "float",
@@ -493,6 +526,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体库名称，[1,60]个字符，可修改，不可重复。",
           "example": "testG3",
           "member": "string",
@@ -502,6 +536,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库 ID，不可修改，不可重复。支持英文、数字、-%@#&_，长度限制64B。",
           "example": "testG3",
           "member": "string",
@@ -511,6 +546,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库信息备注，[0，40]个字符。",
           "example": "TestG3T3",
           "member": "string",
@@ -520,6 +556,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。 \n目前入参仅支持 “1.0”1个输入。 默认为\"1.0\"。  \n不同算法模型版本对应的人体识别算法不同，新版本的整体效果会优于旧版本，后续我们将推出更新版本。",
           "example": "2.0",
           "member": "string",
@@ -547,6 +584,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "待加入的人员库ID。",
           "example": "testG3",
           "member": "string",
@@ -556,6 +594,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人员名称。[1，60]个字符，可修改，可重复。",
           "example": "string",
           "member": "string",
@@ -565,6 +604,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID，单个腾讯云账号下不可修改，不可重复。 \n支持英文、数字、-%@#&_，，长度限制64B。",
           "example": "string",
           "member": "string",
@@ -574,6 +614,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹信息。",
           "example": "无",
           "member": "Trace",
@@ -588,6 +629,7 @@
       "document": "CreatePerson返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "人员动作轨迹唯一标识。",
           "example": "string",
           "member": "string",
@@ -597,6 +639,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "example": "string",
           "member": "string",
@@ -606,6 +649,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成动作轨迹。",
           "example": "-1001",
           "member": "int64",
@@ -615,6 +659,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。\nRetCode 的顺序和入参中Images 或 Urls 的顺序一致。",
           "example": "[-1102]",
           "member": "int64",
@@ -637,6 +682,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "需要分割的视频URL，可外网访问。",
           "example": "test.video.url",
           "member": "string",
@@ -646,6 +692,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "背景图片URL。 \n可以将视频背景替换为输入的图片。 \n如果不输入背景图片，则输出人像区域mask。",
           "example": "test.image.url",
           "member": "string",
@@ -655,6 +702,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "预留字段，后期用于展示更多识别信息。",
           "example": "无",
           "member": "string",
@@ -669,6 +717,7 @@
       "document": "CreateSegmentationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务标识ID,可以用与追溯任务状态，查看任务结果",
           "example": "fakeTaskID",
           "member": "string",
@@ -678,6 +727,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "预估处理时间，单位为秒",
           "example": "30",
           "member": "float",
@@ -700,6 +750,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID。",
           "example": "3333333333333",
           "member": "string",
@@ -709,6 +760,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹信息。",
           "example": "无",
           "member": "Trace",
@@ -723,6 +775,7 @@
       "document": "CreateTrace返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "人员动作轨迹唯一标识。",
           "example": "无",
           "member": "string",
@@ -732,6 +785,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "example": "无",
           "member": "string",
@@ -741,6 +795,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成轨迹。",
           "example": "无",
           "member": "int64",
@@ -750,6 +805,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。",
           "example": "无",
           "member": "int64",
@@ -772,6 +828,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体库ID。",
           "member": "string",
           "name": "GroupId",
@@ -798,6 +855,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID。",
           "member": "string",
           "name": "PersonId",
@@ -824,6 +882,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "在提交分割任务成功时返回的任务标识ID。",
           "member": "string",
           "name": "TaskID",
@@ -837,6 +896,7 @@
       "document": "DescribeSegmentationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "当前任务状态：\nQUEUING 排队中\nPROCESSING 处理中\nFINISHED 处理完成",
           "member": "string",
           "name": "TaskStatus",
@@ -844,6 +904,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "分割后视频URL, 存储于腾讯云COS\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResultVideoUrl",
@@ -851,6 +912,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分割后视频MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResultVideoMD5",
@@ -858,6 +920,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "视频基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "VideoBasicInformation",
           "name": "VideoBasicInformation",
@@ -865,6 +928,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "分割任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ErrorMsg",
@@ -885,6 +949,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
@@ -894,6 +959,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "IamNotUrl",
           "member": "string",
@@ -903,6 +969,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启\n\n注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。",
           "example": "true",
           "member": "bool",
@@ -917,6 +984,7 @@
       "document": "DetectBodyJoints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "图中检测出的人体框和人体关键点， 包含14个人体关键点的坐标，建议根据人体框置信度筛选出合格的人体；",
           "example": "无",
           "member": "BodyJointsResult",
@@ -939,6 +1007,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体图片 Base64 数据。\n图片 base64 编码后大小不可超过5M。\n图片分辨率不得超过 1920 * 1080 。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "image",
           "member": "string",
@@ -948,6 +1017,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "最多检测的人体数目，默认值为1（仅检测图片中面积最大的那个人体）； 最大值10 ，检测图片中面积最大的10个人体。",
           "example": "1",
           "member": "uint64",
@@ -957,6 +1027,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体图片 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片 base64 编码后大小不可超过5M。 \n图片分辨率不得超过 1920 * 1080 。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "url",
           "member": "string",
@@ -966,6 +1037,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "是否返回年龄、性别、朝向等属性。 \n可选项有 Age、Bag、Gender、UpperBodyCloth、LowerBodyCloth、Orientation。  \n如果此参数为空则为不需要返回。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 个人体属性信息，超过 5 个人体（第 6 个及以后的人体）的 BodyAttributesInfo 不具备参考意义。",
           "example": "test",
           "member": "AttributesOptions",
@@ -980,6 +1052,7 @@
       "document": "DetectBody返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "图中检测出来的人体框。",
           "example": "[]",
           "member": "BodyDetectResult",
@@ -989,6 +1062,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "example": "1.0",
           "member": "string",
@@ -1011,6 +1085,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "性别信息，返回值为以下集合中的一个 {男性, 女性}",
           "member": "string",
           "name": "Type",
@@ -1020,6 +1095,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -1035,6 +1111,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "起始序号，默认值为0。",
           "example": "-1",
           "member": "uint64",
@@ -1044,6 +1121,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认值为10，最大值为1000。",
           "example": "10",
           "member": "uint64",
@@ -1058,6 +1136,7 @@
       "document": "GetGroupList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的人体库信息。",
           "example": "无",
           "member": "GroupInfo",
@@ -1067,6 +1146,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体库总数量。",
           "example": "无",
           "member": "uint64",
@@ -1089,6 +1169,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体库ID。",
           "member": "string",
           "name": "GroupId",
@@ -1097,6 +1178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "起始序号，默认值为0。",
           "member": "uint64",
           "name": "Offset",
@@ -1105,6 +1187,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回数量，默认值为10，最大值为1000。",
           "member": "uint64",
           "name": "Limit",
@@ -1118,6 +1201,7 @@
       "document": "GetPersonList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回的人员信息。",
           "member": "PersonInfo",
           "name": "PersonInfos",
@@ -1125,6 +1209,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "该人体库的人员数量。",
           "member": "uint64",
           "name": "PersonNum",
@@ -1132,6 +1217,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "member": "string",
           "name": "BodyModelVersion",
@@ -1156,6 +1242,7 @@
       "document": "GetSummaryInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "人体库总数量。",
           "example": "10",
           "member": "uint64",
@@ -1165,6 +1252,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人员总数量",
           "example": "100",
           "member": "uint64",
@@ -1174,6 +1262,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人员轨迹总数量",
           "example": "1000",
           "member": "uint64",
@@ -1196,6 +1285,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体库名称。",
           "member": "string",
           "name": "GroupName",
@@ -1205,6 +1295,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库ID。",
           "member": "string",
           "name": "GroupId",
@@ -1214,6 +1305,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库信息备注。",
           "member": "string",
           "name": "Tag",
@@ -1223,6 +1315,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "member": "string",
           "name": "BodyModelVersion",
@@ -1232,6 +1325,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。  \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 。",
           "member": "uint64",
           "name": "CreationTimestamp",
@@ -1247,6 +1341,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "左上角横坐标。",
           "member": "int64",
           "name": "X",
@@ -1256,6 +1351,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "左上角纵坐标。",
           "member": "int64",
           "name": "Y",
@@ -1265,6 +1361,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体宽度。",
           "member": "int64",
           "name": "Width",
@@ -1274,6 +1371,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体高度。",
           "member": "int64",
           "name": "Height",
@@ -1283,6 +1381,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项名称。",
           "member": "string",
           "name": "Label",
@@ -1298,6 +1397,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]",
           "example": "\"\"",
           "member": "string",
@@ -1308,6 +1408,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体关键点横坐标",
           "example": "0",
           "member": "float",
@@ -1318,6 +1419,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体关键点纵坐标",
           "example": "0",
           "member": "float",
@@ -1328,6 +1430,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。",
           "example": "0",
           "member": "float",
@@ -1344,6 +1447,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "下衣颜色信息。",
           "member": "LowerBodyClothColor",
           "name": "Color",
@@ -1353,6 +1457,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下衣长度信息 。",
           "member": "LowerBodyClothLength",
           "name": "Length",
@@ -1362,6 +1467,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "下衣类型信息。",
           "member": "LowerBodyClothType",
           "name": "Type",
@@ -1377,6 +1483,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。",
           "member": "string",
           "name": "Type",
@@ -1386,6 +1493,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -1401,6 +1509,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "下衣长度信息，返回值为以下集合中的一个，{长, 短} 。",
           "member": "string",
           "name": "Type",
@@ -1410,6 +1519,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -1425,6 +1535,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。",
           "member": "string",
           "name": "Type",
@@ -1434,6 +1545,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -1449,6 +1561,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体库ID。",
           "member": "string",
           "name": "GroupId",
@@ -1457,6 +1570,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库名称。",
           "member": "string",
           "name": "GroupName",
@@ -1465,6 +1579,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体库信息备注。",
           "member": "string",
           "name": "Tag",
@@ -1491,6 +1606,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID。",
           "member": "string",
           "name": "PersonId",
@@ -1499,6 +1615,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人员名称。",
           "member": "string",
           "name": "PersonName",
@@ -1525,6 +1642,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体朝向信息，返回值为以下集合中的一个 {正向, 背向, 左, 右}。",
           "member": "string",
           "name": "Type",
@@ -1534,6 +1652,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -1549,6 +1668,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人员名称。",
           "example": "xxxxx",
           "member": "string",
@@ -1559,6 +1679,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人员ID。",
           "example": "xxxxx",
           "member": "string",
@@ -1569,6 +1690,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "包含的人体动作轨迹图片信息列表。",
           "example": "xxxxx",
           "member": "TraceInfo",
@@ -1585,6 +1707,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "希望搜索的人体库ID。",
           "example": "12311111111",
           "member": "string",
@@ -1594,6 +1717,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹信息。",
           "example": "无",
           "member": "Trace",
@@ -1603,6 +1727,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "单张被识别的人体动作轨迹返回的最相似人员数量。\n默认值为5，最大值为100。\n 例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。",
           "example": "2",
           "member": "uint64",
@@ -1612,6 +1737,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "出参Score中，只有超过TraceMatchThreshold值的结果才会返回。\n默认为0。范围[0, 100.0]。",
           "example": "无",
           "member": "float",
@@ -1626,6 +1752,7 @@
       "document": "SearchTrace返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "识别出的最相似候选人。",
           "example": "无",
           "member": "Candidate",
@@ -1635,6 +1762,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成动作轨迹。",
           "example": "无",
           "member": "int64",
@@ -1644,6 +1772,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。",
           "example": "无",
           "member": "int64",
@@ -1653,6 +1782,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "人体识别所用的算法模型版本。",
           "example": "无",
           "member": "string",
@@ -1675,6 +1805,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "此参数为分割选项，请根据需要选择自己所想从图片中分割的部分。注意所有选项均为非必选，如未选择则值默认为false, 但是必须要保证多于一个选项的描述为true。",
           "example": "{",
           "member": "SegmentationOptions",
@@ -1684,6 +1815,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "base64",
           "member": "string",
@@ -1693,6 +1825,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "test.jpg",
           "member": "string",
@@ -1707,6 +1840,7 @@
       "document": "SegmentCustomizedPortraitPic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "根据指定标签分割输出的透明背景人像图片的 base64 数据。",
           "example": "base64",
           "member": "string",
@@ -1715,6 +1849,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "指定标签处理后的Mask。一个通过 Base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）",
           "example": "base64",
           "member": "string",
@@ -1723,6 +1858,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{",
           "member": "ImageRect",
@@ -1744,6 +1880,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n图片分辨率须小于2000*2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "xxxxx",
           "member": "string",
@@ -1753,6 +1890,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "图片的 Url 。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "IamNotAUrl",
           "member": "string",
@@ -1762,6 +1900,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。",
           "example": "url",
           "member": "string",
@@ -1771,6 +1910,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "适用场景类型。\n\n取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。\n两种模式选择一种传入，默认为GEN。",
           "example": "GEN",
           "member": "string",
@@ -1785,6 +1925,7 @@
       "document": "SegmentPortraitPic返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "处理后的图片 base64 数据，透明背景图。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "******",
           "member": "string",
@@ -1794,6 +1935,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "******",
           "member": "string",
@@ -1803,6 +1945,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "图片是否存在前景。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1812,6 +1955,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "支持将处理过的图片 base64 数据，透明背景图以Url的形式返回值，Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1821,6 +1965,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以Url形式的返回值；Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -1843,6 +1988,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-背景",
           "member": "bool",
           "name": "Background",
@@ -1852,6 +1998,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-头发",
           "member": "bool",
           "name": "Hair",
@@ -1861,6 +2008,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-左眉",
           "member": "bool",
           "name": "LeftEyebrow",
@@ -1870,6 +2018,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-右眉",
           "member": "bool",
           "name": "RightEyebrow",
@@ -1879,6 +2028,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-左眼",
           "member": "bool",
           "name": "LeftEye",
@@ -1888,6 +2038,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-右眼",
           "member": "bool",
           "name": "RightEye",
@@ -1897,6 +2048,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-鼻子",
           "member": "bool",
           "name": "Nose",
@@ -1906,6 +2058,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-上唇",
           "member": "bool",
           "name": "UpperLip",
@@ -1915,6 +2068,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-下唇",
           "member": "bool",
           "name": "LowerLip",
@@ -1924,6 +2078,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-牙齿",
           "member": "bool",
           "name": "Tooth",
@@ -1933,6 +2088,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-口腔（不包含牙齿）",
           "member": "bool",
           "name": "Mouth",
@@ -1942,6 +2098,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-左耳",
           "member": "bool",
           "name": "LeftEar",
@@ -1951,6 +2108,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-右耳",
           "member": "bool",
           "name": "RightEar",
@@ -1960,6 +2118,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-面部(不包含眼、耳、口、鼻等五官及头发。)",
           "member": "bool",
           "name": "Face",
@@ -1969,6 +2128,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "复合分割选项-头部(包含所有的头部元素，相关装饰除外)",
           "member": "bool",
           "name": "Head",
@@ -1978,6 +2138,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-身体（包含脖子）",
           "member": "bool",
           "name": "Body",
@@ -1987,6 +2148,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-帽子",
           "member": "bool",
           "name": "Hat",
@@ -1996,6 +2158,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-头饰",
           "member": "bool",
           "name": "Headdress",
@@ -2005,6 +2168,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-耳环",
           "member": "bool",
           "name": "Earrings",
@@ -2014,6 +2178,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-项链",
           "member": "bool",
           "name": "Necklace",
@@ -2023,6 +2188,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "分割选项-随身物品（ 例如伞、包、手机等。 ）",
           "member": "bool",
           "name": "Belongings",
@@ -2038,6 +2204,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "在提交分割任务成功时返回的任务标识ID。",
           "member": "string",
           "name": "TaskID",
@@ -2064,6 +2231,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹图片 Base64 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "xxxxx",
           "member": "string",
@@ -2074,6 +2242,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹图片 Url 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \nUrls、Images必须提供一个，如果都提供，只使用 Urls。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "xxxxx",
           "member": "string",
@@ -2084,6 +2253,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "若输入的Images 和 Urls 是已经裁剪后的人体小图，则可以忽略本参数。 \n若否，或图片中包含多个人体，则需要通过本参数来指定图片中的人体框。 \n顺序对应 Images 或 Urls 中的顺序。  \n当不输入本参数时，我们将认为输入图片已是经过裁剪后的人体小图，不会进行人体检测而直接进行特征提取处理。",
           "example": "无",
           "member": "BodyRect",
@@ -2100,6 +2270,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "人体动作轨迹ID。",
           "example": "xxxxx",
           "member": "string",
@@ -2110,6 +2281,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "包含的人体动作轨迹图片Id列表。",
           "example": "xxxxx",
           "member": "string",
@@ -2126,6 +2298,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "上衣纹理信息。",
           "member": "UpperBodyClothTexture",
           "name": "Texture",
@@ -2135,6 +2308,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上衣颜色信息。",
           "member": "UpperBodyClothColor",
           "name": "Color",
@@ -2144,6 +2318,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "上衣衣袖信息。",
           "member": "UpperBodyClothSleeve",
           "name": "Sleeve",
@@ -2159,6 +2334,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "上衣颜色信息，返回值为以下集合中的一个 {红色系, 黄色系, 绿色系, 蓝色系, 黑色系, 灰白色系。",
           "member": "string",
           "name": "Type",
@@ -2168,6 +2344,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -2183,6 +2360,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "上衣衣袖信息, 返回值为以下集合中的一个 {长袖, 短袖}。",
           "member": "string",
           "name": "Type",
@@ -2192,6 +2370,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -2207,6 +2386,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "上衣纹理信息，返回值为以下集合中的一个, {纯色, 格子, 大色块}。",
           "member": "string",
           "name": "Type",
@@ -2216,6 +2396,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "Type识别概率值，[0.0,1.0], 代表判断正确的概率。如0.8则代表有Type值有80%概率正确。",
           "member": "float",
           "name": "Probability",
@@ -2231,6 +2412,7 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "视频宽度",
           "member": "int64",
           "name": "FrameWidth",
@@ -2240,6 +2422,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频高度",
           "member": "int64",
           "name": "FrameHeight",
@@ -2249,6 +2432,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频帧速率(FPS)",
           "member": "int64",
           "name": "FramesPerSecond",
@@ -2258,6 +2442,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频时长",
           "member": "float",
           "name": "Duration",
@@ -2267,6 +2452,7 @@
         },
         {
           "default": "",
+          "disabled": false,
           "document": "视频帧数",
           "member": "int64",
           "name": "TotalFrames",
