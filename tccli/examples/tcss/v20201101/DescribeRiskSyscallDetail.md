@@ -1,12 +1,12 @@
 **Example 1: 运行时高危系统调用事件详细信息**
 
-
+运行时高危系统调用事件详细信息
 
 Input: 
 
 ```
 tccli tcss DescribeRiskSyscallDetail --cli-unfold-argument  \
-    --EventId xxx
+    --EventId abc
 ```
 
 Output: 
@@ -14,58 +14,66 @@ Output:
 {
     "Response": {
         "EventBaseInfo": {
-            "EventId": "xx",
-            "ContainerName": "xx",
-            "ContainerId": "xx",
-            "EventCount": 0,
-            "EventType": "xx",
-            "HostIP": "xx",
+            "EventId": "abc",
             "FoundTime": "2020-09-22 00:00:00",
-            "Status": "xx",
-            "EventName": "xx",
-            "ImageId": "xx",
-            "ImageName": "xx",
-            "PodName": "xx",
-            "ClientIP": "xx",
-            "LatestFoundTime": "xx",
-            "NodeName": "xx",
-            "ContainerIsolateOperationSrc": "xx",
-            "ContainerNetSubStatus": "xx",
-            "ContainerNetStatus": "xx"
+            "ContainerId": "abc",
+            "ContainerName": "abc",
+            "ImageId": "abc",
+            "ImageName": "abc",
+            "NodeName": "abc",
+            "Status": "abc",
+            "EventName": "abc",
+            "EventType": "abc",
+            "EventCount": 0,
+            "LatestFoundTime": "abc",
+            "HostIP": "abc",
+            "ClientIP": "abc",
+            "ContainerNetStatus": "abc",
+            "ContainerNetSubStatus": "abc",
+            "ContainerIsolateOperationSrc": "abc",
+            "NodeID": "abc",
+            "NodeType": "abc",
+            "NodeSubNetID": "abc",
+            "NodeSubNetName": "abc",
+            "NodeSubNetCIDR": "abc",
+            "PodName": "abc",
+            "PodIP": "abc",
+            "PodStatus": "abc",
+            "ClusterID": "abc"
         },
-        "AncestorProcessInfo": {
-            "ProcessPath": "xx",
-            "ProcessParam": "xx",
-            "ProcessStartUser": "xx",
-            "ProcessUserGroup": "xx"
-        },
-        "EventDetail": {
-            "SyscallName": "xx",
-            "Remark": "xx",
-            "Description": "xx",
-            "Solution": "xx",
-            "OperationTime": "xx"
-        },
-        "RequestId": "xx",
         "ProcessInfo": {
-            "ProcessPath": "xx",
-            "ProcessTree": "xx",
+            "ProcessName": "abc",
+            "ProcessAuthority": "abc",
             "ProcessId": 1,
-            "ProcessAuthority": "xx",
-            "ProcessUserGroup": "xx",
-            "ProcessName": "xx",
-            "ProcessParam": "xx",
-            "ProcessMd5": "xx",
-            "ProcessStartUser": "xx"
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessTree": "abc",
+            "ProcessMd5": "abc",
+            "ProcessParam": "abc"
         },
         "ParentProcessInfo": {
-            "ProcessPath": "xx",
+            "ProcessName": "abc",
             "ProcessId": 1,
-            "ProcessUserGroup": "xx",
-            "ProcessName": "xx",
-            "ProcessParam": "xx",
-            "ProcessStartUser": "xx"
-        }
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessParam": "abc"
+        },
+        "EventDetail": {
+            "Description": "abc",
+            "Solution": "abc",
+            "Remark": "abc",
+            "SyscallName": "abc",
+            "OperationTime": "abc"
+        },
+        "AncestorProcessInfo": {
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessParam": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

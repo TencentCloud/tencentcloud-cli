@@ -1,11 +1,12 @@
 **Example 1: 修改安全日志接入对象**
 
-
+修改安全日志接入对象
 
 Input: 
 
 ```
 tccli tcss ModifySecLogJoinObjects --cli-unfold-argument  \
+    --NodeType Normal \
     --LogType container_bash \
     --BindList xxxxx xxxxx \
     --UnBindList xxxxx xxxxx

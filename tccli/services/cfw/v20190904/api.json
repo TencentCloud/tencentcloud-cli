@@ -175,6 +175,13 @@
       "output": "DescribeIPStatusListResponse",
       "status": "online"
     },
+    "DescribeLogs": {
+      "document": "日志审计日志查询",
+      "input": "DescribeLogsRequest",
+      "name": "日志审计日志查询",
+      "output": "DescribeLogsResponse",
+      "status": "online"
+    },
     "DescribeNatAcRule": {
       "document": "查询NAT访问控制列表",
       "input": "DescribeNatAcRuleRequest",
@@ -3642,6 +3649,114 @@
           "member": "string",
           "name": "ReturnMsg",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsRequest": {
+      "document": "DescribeLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志类型标识\n流量日志：互联网边界防火墙netflow_border，NAT边界防火墙netflow_nat，VPC间防火墙vpcnetflow，内网流量日志netflow_fl\n入侵防御日志rule_threatinfo\n访问控制日志：互联网边界规则rule_acl，NAT边界规则rule_acl，内网间规则rule_vpcacl，企业安全组rule_sg\n操作日志：防火墙开关-开关操作operate_switch，防火墙开关-实例配置operate_instance，资产中心操作operate_assetgroup，访问控制操作operate_acl，零信任防护操作operate_identity，入侵防御操作-入侵防御operate_ids，入侵防御操作-安全基线operate_baseline，常用工具操作operate_tool，网络蜜罐操作operate_honeypot，日志投递操作operate_logdelivery，通用设置操作operate_logstorage，登录日志operate_login",
+          "example": "netflow_border",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数，最大支持2000",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值，最大支持60000",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选开始时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选结束时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件组合，各数组元素间为AND关系，查询字段名Name参考文档https://cloud.tencent.com/document/product/1132/87894，数值类型字段不支持模糊匹配",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsResponse": {
+      "document": "DescribeLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志列表",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回状态码 0 成功 非0不成功",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息  success 成功 其他 不成功",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
           "type": "string",
           "value_allowed_null": false
         },

@@ -1167,7 +1167,7 @@
         },
         {
           "disabled": false,
-          "document": "润色类型。类型列表\nexpansion：扩写\nrewriting：改写\ntranslation_m2a：从现代文改写为古文\ntranslation_a2m：从古文改写为现代文\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "润色类型。类型如下：\nexpansion：扩写\nrewriting：改写\ntranslation_m2a：从现代文改写为古文\ntranslation_a2m：从古文改写为现代文\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "expansion",
           "member": "string",
           "name": "EmbellishType",
@@ -1406,7 +1406,7 @@
         },
         {
           "disabled": false,
-          "document": "指定生成句子的领域，支持领域列表\ngeneral：通用领域，支持中英文\nacademic：学术领域，仅支持英文\n默认为general（通用领域）。",
+          "document": "指定生成句子的领域，支持领域如下：\ngeneral：通用领域，支持中英文\nacademic：学术领域，仅支持英文\n默认为general（通用领域）。",
           "example": "无",
           "member": "string",
           "name": "Domain",
@@ -2371,7 +2371,7 @@
         },
         {
           "disabled": false,
-          "document": "待润色文本的语言类型，支持语言列表\nzh：中文\nen：英文",
+          "document": "待润色文本的语言类型，支持语言如下：\nzh：中文\nen：英文",
           "example": "zh",
           "member": "string",
           "name": "SourceLang",
@@ -2389,7 +2389,7 @@
         },
         {
           "disabled": false,
-          "document": "控制润色类型，类型列表\nboth：同时返回改写和扩写\nexpansion：扩写\nrewriting：改写\nm2a：从现代文改写为古文\na2m：从古文改写为现代文\n默认为both。",
+          "document": "控制润色类型，类型如下：\nboth：同时返回改写和扩写\nexpansion：扩写\nrewriting：改写\nm2a：从现代文改写为古文\na2m：从古文改写为现代文\n默认为both。",
           "example": "both",
           "member": "string",
           "name": "Style",
@@ -2530,7 +2530,7 @@
         },
         {
           "disabled": false,
-          "document": "待续写文本的语言类型，支持语言列表\nzh：中文\nen：英文",
+          "document": "待续写文本的语言类型，支持语言如下：\nzh：中文\nen：英文",
           "example": "zh",
           "member": "string",
           "name": "SourceLang",
@@ -2548,7 +2548,7 @@
         },
         {
           "disabled": false,
-          "document": "指定续写领域，支持领域列表\ngeneral：通用领域，支持中英文补全\nacademic：学术领域，仅支持英文补全\n默认为general（通用领域）。",
+          "document": "指定续写领域，支持领域如下：\ngeneral：通用领域，支持中英文补全\nacademic：学术领域，仅支持英文补全\n默认为general（通用领域）。",
           "example": "general",
           "member": "string",
           "name": "Domain",
@@ -2557,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "指定续写风格，支持风格列表\nscience_fiction：科幻\nmilitary_history：军事\nxuanhuan_wuxia：武侠\nurban_officialdom：职场\n默认为xuanhuan_wuxia（武侠）。",
+          "document": "指定续写风格，支持风格如下：\nscience_fiction：科幻\nmilitary_history：军事\nxuanhuan_wuxia：武侠\nurban_officialdom：职场\n默认为xuanhuan_wuxia（武侠）。",
           "example": "xuanhuan_wuxia",
           "member": "string",
           "name": "Style",

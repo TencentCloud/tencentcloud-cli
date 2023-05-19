@@ -2511,8 +2511,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "预览文件Url，有效期30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "预览文件Url，有效期30分钟 \n当前字段返回为空，发起的时候，将ResourceId 放入发起即可\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PreviewUrl",

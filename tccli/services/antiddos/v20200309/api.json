@@ -1754,7 +1754,6 @@
       "document": "高防包绑定IP对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "1.1.1.1",
@@ -1765,7 +1764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的产品分类，绑定操作为必填项，解绑操作可不填。取值[public（CVM、CLB产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
           "example": "public",
@@ -1776,7 +1774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP所属的资源实例ID，绑定操作为必填项，解绑操作可不填。例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*); 如果绑定的是托管IP没有对应的资源实例ID，请填写\"none\";",
           "example": "none",
@@ -1787,7 +1784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品分类下的子类型，绑定操作为必填项，解绑操作可不填。取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（弹性公网常规IP）]",
           "example": "cvm",
@@ -1798,7 +1794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商，绑定操作为必填项，解绑操作可不填。0：电信；1：联通；2：移动；5：BGP",
           "example": "5",
@@ -1807,6 +1802,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2772,7 +2777,6 @@
       "document": "CreateBoundIP请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
           "example": "bgp",
@@ -2782,7 +2786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "example": "bgp-000000xe",
@@ -2792,7 +2795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "example": "无",
@@ -2802,7 +2804,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "example": "无",
@@ -2812,12 +2813,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用，不填",
           "example": "yes",
           "member": "string",
           "name": "CopyPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果该资源实例为域名化资产则，该参数必填",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "FilterRegion",
           "required": false,
           "type": "string"
         }
@@ -2833,7 +2842,6 @@
           "example": "无",
           "member": "SuccessCode",
           "name": "Success",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4544,14 +4552,31 @@
       "document": "DescribeBasicDeviceStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP 资源列表",
           "example": "[\"\\u20181.1.1.1\\u2019\\r\\n\"]",
           "member": "string",
           "name": "IpList",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名化资源传id",
+          "example": "无",
+          "member": "string",
+          "name": "IdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域名称",
+          "example": "无",
+          "member": "uint64",
+          "name": "FilterRegion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4565,9 +4590,17 @@
           "example": "无",
           "member": "KeyValue",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名化资产的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "CLBData",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7638,7 +7671,6 @@
       "document": "DescribeNewL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
@@ -7648,7 +7680,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "example": "无",
@@ -7658,7 +7689,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
           "example": "无",
@@ -7668,7 +7698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP搜索，选填，当需要搜索IP请填写",
           "example": "无",
@@ -7678,7 +7707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "example": "无",
@@ -7688,7 +7716,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "无",
@@ -7698,7 +7725,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
           "example": "无",
@@ -7708,7 +7734,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高防IP实例的Cname",
           "example": "abcdefg",
@@ -7716,6 +7741,15 @@
           "name": "Cname",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则",
+          "example": "无",
+          "member": "bool",
+          "name": "Export",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7729,7 +7763,6 @@
           "example": "无",
           "member": "NewL7RuleEntry",
           "name": "Rules",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7739,7 +7772,6 @@
           "example": "无",
           "member": "L7RuleHealth",
           "name": "Healths",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7749,7 +7781,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

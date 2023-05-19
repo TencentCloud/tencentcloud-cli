@@ -1,6 +1,6 @@
 **Example 1: 查询漏洞防御事件详情**
 
-
+查询漏洞防御事件详情
 
 Input: 
 
@@ -14,50 +14,51 @@ Output:
 {
     "Response": {
         "EventDetail": {
-            "City": "xx",
-            "CVEID": "xx",
-            "StackTrace": "xx",
-            "ImageID": "xx",
-            "PocID": "xx",
-            "NetworkPayload": "xx",
-            "ServerArg": "xx",
+            "CVEID": "abc",
+            "VulName": "abc",
+            "PocID": "abc",
+            "EventType": "abc",
+            "SourceIP": "abc",
+            "City": "abc",
             "EventCount": 0,
-            "Status": "xx",
-            "Description": "xx",
-            "EventType": "xx",
-            "HostName": "xx",
+            "ContainerID": "abc",
+            "ContainerName": "abc",
+            "ImageID": "abc",
+            "ImageName": "abc",
+            "Status": "abc",
+            "SourcePort": [
+                "abc"
+            ],
+            "EventID": 0,
+            "HostName": "abc",
+            "HostIP": "abc",
+            "PublicIP": "abc",
+            "PodName": "abc",
+            "Description": "abc",
+            "OfficialSolution": "abc",
+            "NetworkPayload": "abc",
             "PID": 0,
-            "ServerPort": "xx",
-            "ServerAccount": "xx",
-            "SourceIP": "xx",
-            "ContainerID": "xx",
-            "VulName": "xx",
-            "ServerExe": "xx",
+            "MainClass": "abc",
+            "StackTrace": "abc",
+            "ServerAccount": "abc",
+            "ServerPort": "abc",
+            "ServerExe": "abc",
+            "ServerArg": "abc",
+            "QUUID": "abc",
+            "ContainerNetStatus": "abc",
+            "ContainerNetSubStatus": "abc",
+            "ContainerIsolateOperationSrc": "abc",
+            "ContainerStatus": "abc",
+            "JNDIUrl": "abc",
             "RaspDetail": [
                 {
-                    "Name": "xx",
-                    "Value": "xx"
+                    "Name": "abc",
+                    "Value": "abc"
                 }
             ],
-            "ContainerName": "xx",
-            "JNDIUrl": "xx",
-            "PublicIP": "xx",
-            "ImageName": "xx",
-            "MainClass": "xx",
-            "OfficialSolution": "xx",
-            "HostIP": "xx",
-            "ContainerNetStatus": "xx",
-            "EventID": 0,
-            "ContainerStatus": "xx",
-            "ContainerNetSubStatus": "xx",
-            "QUUID": "xx",
-            "PodName": "xx",
-            "SourcePort": [
-                "xx"
-            ],
-            "ContainerIsolateOperationSrc": "xx"
+            "PodIP": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

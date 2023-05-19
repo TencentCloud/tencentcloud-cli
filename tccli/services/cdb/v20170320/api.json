@@ -274,11 +274,11 @@
       "status": "online"
     },
     "DescribeBackupDatabases": {
-      "document": "本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。",
+      "document": "接口已废弃，需要下线\n\n本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。",
       "input": "DescribeBackupDatabasesRequest",
       "name": "查询备份数据库列表",
       "output": "DescribeBackupDatabasesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBackupDecryptionKey": {
       "document": "本接口(DescribeBackupDecryptionKey)用于查询备份文件解密密钥。",
@@ -316,11 +316,11 @@
       "status": "online"
     },
     "DescribeBackupTables": {
-      "document": "本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。",
+      "document": "该接口已废弃，需要下线\n\n本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。",
       "input": "DescribeBackupTablesRequest",
       "name": "查询指定数据库的备份数据表",
       "output": "DescribeBackupTablesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBackups": {
       "document": "本接口(DescribeBackups)用于查询云数据库实例的备份数据。",
@@ -9047,7 +9047,6 @@
       "document": "DescribeDBPrice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。",
           "example": "1",
@@ -9057,7 +9056,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区信息，格式如 \"ap-guangzhou-2\"。具体能设置的值请通过 <a href=\"https://cloud.tencent.com/document/api/236/17229\">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。",
           "example": "ap-guangzhou-2",
@@ -9067,7 +9065,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。",
           "example": "1",
@@ -9077,7 +9074,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存大小，单位：MB。InstanceId为空时该参数为必填项。",
           "example": "1000",
@@ -9087,7 +9083,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。",
           "example": "50",
@@ -9097,7 +9092,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。",
           "example": "master",
@@ -9107,7 +9101,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。",
           "example": "PRE_PAID",
@@ -9117,7 +9110,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。",
           "example": "0",
@@ -9127,9 +9119,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC\" - 基础版实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - 单节点云盘版实例。 不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -9137,7 +9128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例节点数。对于 RO 和 基础版实例， 该值默认为1。 如果需要询价三节点实例， 请将该值设置为3。其余主实例该值默认为2。",
           "example": "2",
@@ -9147,7 +9137,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "询价实例的CPU核心数目，单位：核，为保证传入 CPU 值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的核心数目，当未指定该值时，将按照 Memory 大小补全一个默认值。",
           "example": "4",
@@ -9157,7 +9146,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。",
           "example": "\"cdb-xxx\"",
@@ -9167,7 +9155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按量计费阶梯。仅PayType=HOUR_PAID有效，支持值包括：1，2，3。阶梯时长见https://cloud.tencent.com/document/product/236/18335。",
           "example": "1",
@@ -9188,7 +9175,6 @@
           "example": "48000",
           "member": "int64",
           "name": "Price",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9198,7 +9184,6 @@
           "example": "460800",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9208,7 +9193,6 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

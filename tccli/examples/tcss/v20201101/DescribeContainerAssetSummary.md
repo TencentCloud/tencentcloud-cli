@@ -1,6 +1,6 @@
 **Example 1: 查询容器资产信息**
 
-
+查询容器资产信息
 
 Input: 
 
@@ -11,18 +11,19 @@ Output:
 ```
 {
     "Response": {
-        "HostRunningCnt": 1,
-        "ContainerPauseCnt": 1,
+        "ContainerTotalCnt": 1,
         "ContainerRunningCnt": 1,
-        "ImageRegistryCnt": 1,
+        "ContainerPauseCnt": 1,
         "ContainerStopped": 1,
-        "ImageTotalCnt": 1,
         "ImageCnt": 1,
         "HostCnt": 1,
-        "RequestId": "xx",
+        "HostRunningCnt": 1,
         "HostOfflineCnt": 1,
-        "ContainerTotalCnt": 1,
-        "HostUnInstallCnt": 1
+        "ImageRegistryCnt": 1,
+        "ImageTotalCnt": 1,
+        "HostUnInstallCnt": 1,
+        "HostSuperNodeCnt": 1,
+        "RequestId": "abc"
     }
 }
 ```

@@ -1232,9 +1232,8 @@
       "document": "ListOrganizationIdentity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -1242,9 +1241,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "限制数目。最大50",
+          "document": "限制数目。取值范围：1~50。默认值：10。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1252,7 +1250,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称搜索关键字。",
           "example": "test",
@@ -1262,12 +1259,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份ID搜索。",
           "example": "1",
           "member": "uint64",
           "name": "IdentityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "身份类型。取值范围 1-预设, 2-自定义",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityType",
           "required": false,
           "type": "int"
         }
@@ -1283,7 +1288,6 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1293,7 +1297,6 @@
           "example": "无",
           "member": "OrgIdentity",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

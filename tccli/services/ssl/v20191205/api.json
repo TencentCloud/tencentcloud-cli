@@ -56,6 +56,27 @@
       "output": "DeleteManagerResponse",
       "status": "online"
     },
+    "DeployCertificateInstance": {
+      "document": "证书部署到云资源实例列表",
+      "input": "DeployCertificateInstanceRequest",
+      "name": "证书部署到云资源实例列表",
+      "output": "DeployCertificateInstanceResponse",
+      "status": "online"
+    },
+    "DeployCertificateRecordRetry": {
+      "document": "云资源部署重试部署记录",
+      "input": "DeployCertificateRecordRetryRequest",
+      "name": "云资源部署重试部署记录",
+      "output": "DeployCertificateRecordRetryResponse",
+      "status": "online"
+    },
+    "DeployCertificateRecordRollback": {
+      "document": "云资源部署一键回滚",
+      "input": "DeployCertificateRecordRollbackRequest",
+      "name": "云资源部署一键回滚",
+      "output": "DeployCertificateRecordRollbackResponse",
+      "status": "online"
+    },
     "DescribeCertificate": {
       "document": "本接口（DescribeCertificate）用于获取证书信息。",
       "input": "DescribeCertificateRequest",
@@ -96,6 +117,111 @@
       "input": "DescribeDeployedResourcesRequest",
       "name": "证书查询关联资源",
       "output": "DescribeDeployedResourcesResponse",
+      "status": "online"
+    },
+    "DescribeHostApiGatewayInstanceList": {
+      "document": "查询证书apiGateway云资源部署实例列表",
+      "input": "DescribeHostApiGatewayInstanceListRequest",
+      "name": "查询证书apiGateway云资源部署实例列表",
+      "output": "DescribeHostApiGatewayInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostCdnInstanceList": {
+      "document": "查询证书cdn云资源部署实例列表",
+      "input": "DescribeHostCdnInstanceListRequest",
+      "name": "查询证书cdn云资源部署实例列表",
+      "output": "DescribeHostCdnInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostClbInstanceList": {
+      "document": "查询证书clb云资源部署实例列表",
+      "input": "DescribeHostClbInstanceListRequest",
+      "name": "查询证书clb云资源部署实例列表",
+      "output": "DescribeHostClbInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostCosInstanceList": {
+      "document": "查询证书cos云资源部署实例列表",
+      "input": "DescribeHostCosInstanceListRequest",
+      "name": "查询证书cos云资源部署实例列表",
+      "output": "DescribeHostCosInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostDdosInstanceList": {
+      "document": "查询证书ddos云资源部署实例列表",
+      "input": "DescribeHostDdosInstanceListRequest",
+      "name": "查询证书ddos云资源部署实例列表",
+      "output": "DescribeHostDdosInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostDeployRecord": {
+      "document": "查询证书云资源部署记录列表",
+      "input": "DescribeHostDeployRecordRequest",
+      "name": "查询证书云资源部署记录列表",
+      "output": "DescribeHostDeployRecordResponse",
+      "status": "online"
+    },
+    "DescribeHostDeployRecordDetail": {
+      "document": "查询证书云资源部署记录详情列表",
+      "input": "DescribeHostDeployRecordDetailRequest",
+      "name": "查询证书云资源部署记录详情列表",
+      "output": "DescribeHostDeployRecordDetailResponse",
+      "status": "online"
+    },
+    "DescribeHostLighthouseInstanceList": {
+      "document": "查询证书Lighthouse云资源部署实例列表",
+      "input": "DescribeHostLighthouseInstanceListRequest",
+      "name": "查询证书Lighthouse云资源部署实例列表",
+      "output": "DescribeHostLighthouseInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostLiveInstanceList": {
+      "document": "查询证书live云资源部署实例列表",
+      "input": "DescribeHostLiveInstanceListRequest",
+      "name": "查询证书live云资源部署实例列表",
+      "output": "DescribeHostLiveInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostTeoInstanceList": {
+      "document": "查询证书EdgeOne云资源部署实例列表",
+      "input": "DescribeHostTeoInstanceListRequest",
+      "name": "查询证书EdgeOne云资源部署实例列表",
+      "output": "DescribeHostTeoInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostTkeInstanceList": {
+      "document": "查询证书tke云资源部署实例列表",
+      "input": "DescribeHostTkeInstanceListRequest",
+      "name": "查询证书tke云资源部署实例列表",
+      "output": "DescribeHostTkeInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostUpdateRecord": {
+      "document": "查询证书云资源更新记录列表",
+      "input": "DescribeHostUpdateRecordRequest",
+      "name": "查询证书云资源更新记录列表",
+      "output": "DescribeHostUpdateRecordResponse",
+      "status": "online"
+    },
+    "DescribeHostUpdateRecordDetail": {
+      "document": "查询证书云资源更新记录详情列表",
+      "input": "DescribeHostUpdateRecordDetailRequest",
+      "name": "查询证书云资源更新记录详情列表",
+      "output": "DescribeHostUpdateRecordDetailResponse",
+      "status": "online"
+    },
+    "DescribeHostVodInstanceList": {
+      "document": "查询证书Vod云资源部署实例列表",
+      "input": "DescribeHostVodInstanceListRequest",
+      "name": "查询证书Vod云资源部署实例列表",
+      "output": "DescribeHostVodInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeHostWafInstanceList": {
+      "document": "查询证书waf云资源部署实例列表",
+      "input": "DescribeHostWafInstanceListRequest",
+      "name": "查询证书waf云资源部署实例列表",
+      "output": "DescribeHostWafInstanceListResponse",
       "status": "online"
     },
     "DescribeManagerDetail": {
@@ -182,6 +308,27 @@
       "output": "SubmitCertificateInformationResponse",
       "status": "online"
     },
+    "UpdateCertificateInstance": {
+      "document": "一键更新旧证书资源",
+      "input": "UpdateCertificateInstanceRequest",
+      "name": "一键更新旧证书资源",
+      "output": "UpdateCertificateInstanceResponse",
+      "status": "online"
+    },
+    "UpdateCertificateRecordRetry": {
+      "document": "云资源更新重试部署记录",
+      "input": "UpdateCertificateRecordRetryRequest",
+      "name": "云资源更新重试部署记录",
+      "output": "UpdateCertificateRecordRetryResponse",
+      "status": "online"
+    },
+    "UpdateCertificateRecordRollback": {
+      "document": "云资源更新一键回滚",
+      "input": "UpdateCertificateRecordRollbackRequest",
+      "name": "云资源更新一键回滚",
+      "output": "UpdateCertificateRecordRollbackResponse",
+      "status": "online"
+    },
     "UploadCertificate": {
       "document": "本接口（UploadCertificate）用于上传证书。",
       "input": "UploadCertificateRequest",
@@ -218,6 +365,67 @@
     "serviceShortName": "ssl"
   },
   "objects": {
+    "ApiGatewayInstanceDetail": {
+      "document": "apiGateway实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "使用协议",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ApplyCertificateRequest": {
       "document": "ApplyCertificate请求参数结构体",
       "members": [
@@ -421,6 +629,45 @@
       ],
       "type": "object"
     },
+    "CdnInstanceDetail": {
+      "document": "CDN实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "已部署证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CertHostingInfo": {
       "document": "云资源配置详情",
       "members": [
@@ -467,6 +714,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Certificate": {
+      "document": "CLB证书详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书绑定的域名",
+          "example": "无",
+          "member": "string",
+          "name": "DnsNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -977,6 +1252,177 @@
       ],
       "type": "object"
     },
+    "ClbInstanceDetail": {
+      "document": "clb实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CLB实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CLB实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CLB监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbListener",
+          "name": "Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClbListener": {
+      "document": "CLB实例监听器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监听器ID",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SNI，1为开启，0为关闭",
+          "example": "无",
+          "member": "uint64",
+          "name": "SniSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器协议类型， HTTPS|TCP_SSL",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器绑定的证书数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Certificate",
+          "name": "Certificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监听器规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbListenerRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClbListenerRule": {
+      "document": "CLB监听器规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则绑定的域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则是否匹配待绑定证书的域名",
+          "example": "无",
+          "member": "bool",
+          "name": "IsMatch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则已绑定的证书数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Certificate",
+          "name": "Certificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CommitCertificateInformationRequest": {
       "document": "CommitCertificateInformation请求参数结构体",
       "members": [
@@ -1151,6 +1597,67 @@
       ],
       "type": "object"
     },
+    "CosInstanceDetail": {
+      "document": "COS实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ENABLED: 域名上线状态\nDISABLED:域名下线状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateCertificateRequest": {
       "document": "CreateCertificate请求参数结构体",
       "members": [
@@ -1218,6 +1725,67 @@
         }
       ],
       "type": "object"
+    },
+    "DdosInstanceDetail": {
+      "document": "ddos复杂类型",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "协议类型",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转发端口",
+          "example": "无",
+          "member": "string",
+          "name": "VirtualPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteCertificateRequest": {
       "document": "DeleteCertificate请求参数结构体",
@@ -1291,6 +1859,429 @@
         }
       ],
       "type": "object"
+    },
+    "DeployCertificateInstanceRequest": {
+      "document": "DeployCertificateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要部署实例列表",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署的云资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署云资源状态：\n云直播：\n-1：域名未关联证书。\n1： 域名https已开启。\n0： 域名https已关闭。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployCertificateInstanceResponse": {
+      "document": "DeployCertificateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云资源部署任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署状态，1表示部署成功，0表示部署失败",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployCertificateRecordRetryRequest": {
+      "document": "DeployCertificateRecordRetry请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录详情ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordDetailId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployCertificateRecordRetryResponse": {
+      "document": "DeployCertificateRecordRetry返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployCertificateRecordRollbackRequest": {
+      "document": "DeployCertificateRecordRollback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployCertificateRecordRollbackResponse": {
+      "document": "DeployCertificateRecordRollback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回滚部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployRecordDetail": {
+      "document": "部署记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署记录详情ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署状态",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署记录详情创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署记录详情最后一次更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SNI",
+          "example": "无",
+          "member": "int64",
+          "name": "SniSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "secret名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeployRecordInfo": {
+      "document": "部署记录信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署记录ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最近一次更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeployedResources": {
       "document": "资源详情",
@@ -2426,6 +3417,1306 @@
       ],
       "type": "object"
     },
+    "DescribeHostApiGatewayInstanceListRequest": {
+      "document": "DescribeHostApiGatewayInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostApiGatewayInstanceListResponse": {
+      "document": "DescribeHostApiGatewayInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "apiGateway实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiGatewayInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostCdnInstanceListRequest": {
+      "document": "DescribeHostCdnInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。\t",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。\t",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostCdnInstanceListResponse": {
+      "document": "DescribeHostCdnInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CDN实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdnInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CDN域名总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostClbInstanceListRequest": {
+      "document": "DescribeHostClbInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步缓存",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostClbInstanceListResponse": {
+      "document": "DescribeHostClbInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB实例监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncTotalNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新当前执行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncOffset",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostCosInstanceListRequest": {
+      "document": "DescribeHostCosInstanceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型 cos",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostCosInstanceListResponse": {
+      "document": "DescribeHostCosInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "COS实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosInstanceDetail",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncTotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新当前执行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDdosInstanceListRequest": {
+      "document": "DescribeHostDdosInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDdosInstanceListResponse": {
+      "document": "DescribeHostDdosInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DDOS实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DdosInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDeployRecordDetailRequest": {
+      "document": "DescribeHostDeployRecordDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDeployRecordDetailResponse": {
+      "document": "DescribeHostDeployRecordDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书部署记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeployRecordDetail",
+          "name": "DeployRecordDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署中总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RunningTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDeployRecordRequest": {
+      "document": "DescribeHostDeployRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostDeployRecordResponse": {
+      "document": "DescribeHostDeployRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书部署记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeployRecordInfo",
+          "name": "DeployRecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLighthouseInstanceListRequest": {
+      "document": "DescribeHostLighthouseInstanceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型 lighthouse",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLighthouseInstanceListResponse": {
+      "document": "DescribeHostLighthouseInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Lighthouse实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LighthouseInstanceDetail",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLiveInstanceListRequest": {
+      "document": "DescribeHostLiveInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLiveInstanceListResponse": {
+      "document": "DescribeHostLiveInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "live实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostTeoInstanceListRequest": {
+      "document": "DescribeHostTeoInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostTeoInstanceListResponse": {
+      "document": "DescribeHostTeoInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "teo实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TeoInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostTkeInstanceListRequest": {
+      "document": "DescribeHostTkeInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步缓存",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostTkeInstanceListResponse": {
+      "document": "DescribeHostTkeInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB实例监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TkeInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncTotalNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新当前执行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncOffset",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUpdateRecordDetailRequest": {
+      "document": "DescribeHostUpdateRecordDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUpdateRecordDetailResponse": {
+      "document": "DescribeHostUpdateRecordDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书部署记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateRecordDetails",
+          "name": "RecordDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署中总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RunningTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUpdateRecordRequest": {
+      "document": "DescribeHostUpdateRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUpdateRecordResponse": {
+      "document": "DescribeHostUpdateRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书部署记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateRecordInfo",
+          "name": "DeployRecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostVodInstanceListRequest": {
+      "document": "DescribeHostVodInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型 vod",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostVodInstanceListResponse": {
+      "document": "DescribeHostVodInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Vod实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VodInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostWafInstanceListRequest": {
+      "document": "DescribeHostWafInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostWafInstanceListResponse": {
+      "document": "DescribeHostWafInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "WAF实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveInstanceDetail",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeManagerDetailRequest": {
       "document": "DescribeManagerDetail请求参数结构体",
       "members": [
@@ -3065,6 +5356,34 @@
       ],
       "usage": "out"
     },
+    "Filter": {
+      "document": "过滤参数列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数key",
+          "example": "DomainMatch",
+          "member": "string",
+          "name": "FilterKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数值",
+          "example": "1",
+          "member": "string",
+          "name": "FilterValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HostCertificateRequest": {
       "document": "HostCertificate请求参数结构体",
       "members": [
@@ -3112,6 +5431,95 @@
         }
       ],
       "type": "object"
+    },
+    "LighthouseInstanceDetail": {
+      "document": "Lighthouse实例",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID",
+          "example": "asfgas",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例名称",
+          "example": "gsehsd",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "可选择域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveInstanceDetail": {
+      "document": "live实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "-1：域名未关联证书。\n1： 域名https已开启。\n0： 域名https已关闭。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ManagerInfo": {
       "document": "管理人信息",
@@ -3873,6 +6281,32 @@
       ],
       "type": "object"
     },
+    "ResourceTypeRegions": {
+      "document": "云资源地域列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域列表",
+          "example": "无",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "RevokeCertificateRequest": {
       "document": "RevokeCertificate请求参数结构体",
       "members": [
@@ -4583,6 +7017,662 @@
       ],
       "usage": "both"
     },
+    "TeoInstanceDetail": {
+      "document": "teo实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TkeIngressDetail": {
+      "document": "tke ingress实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ingress名称",
+          "example": "无",
+          "member": "string",
+          "name": "IngressName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "tls域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "TlsDomains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ingress域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TkeInstanceDetail": {
+      "document": "tke实例详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群命名空间列表",
+          "example": "无",
+          "member": "TkeNameSpaceDetail",
+          "name": "NamespaceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TkeNameSpaceDetail": {
+      "document": "tke namespace详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "namespace名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "secret列表",
+          "example": "无",
+          "member": "TkeSecretDetail",
+          "name": "SecretList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TkeSecretDetail": {
+      "document": "tke secret详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "secret名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ingress列表",
+          "example": "无",
+          "member": "TkeIngressDetail",
+          "name": "IngressList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "和新证书不匹配的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateCertificateInstanceRequest": {
+      "document": "UpdateCertificateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一键更新新证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一键更新原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要部署的资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要部署的地域列表（废弃）",
+          "example": "无",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云资源需要部署的地域列表",
+          "example": "无",
+          "member": "ResourceTypeRegions",
+          "name": "ResourceTypesRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCertificateInstanceResponse": {
+      "document": "UpdateCertificateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云资源部署任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DeployRecordId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署状态，1表示部署成功，0表示部署失败",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCertificateRecordRetryRequest": {
+      "document": "UpdateCertificateRecordRetry请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录详情ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordDetailId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCertificateRecordRetryResponse": {
+      "document": "UpdateCertificateRecordRetry返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCertificateRecordRollbackRequest": {
+      "document": "UpdateCertificateRecordRollback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待重试部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCertificateRecordRollbackResponse": {
+      "document": "UpdateCertificateRecordRollback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回滚部署记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRecordDetail": {
+      "document": "更新记录详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "详情记录id",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "旧证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最后一次更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署监听器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启SNI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SniSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "bucket名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateRecordDetails": {
+      "document": "更新记录详情列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源详情列表",
+          "example": "无",
+          "member": "UpdateRecordDetail",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateRecordInfo": {
+      "document": "部署记录信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "记录ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署资源类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部署时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最后一次更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UploadCertificateRequest": {
       "document": "UploadCertificate请求参数结构体",
       "members": [
@@ -4829,6 +7919,34 @@
         }
       ],
       "type": "object"
+    },
+    "VodInstanceDetail": {
+      "document": "Vod实例",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书ID",
+          "example": "asdasd",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -1,6 +1,6 @@
 **Example 1: 删除SSL-VPN-CLIENT**
 
-
+删除SSL-VPN-CLIENT
 
 Input: 
 

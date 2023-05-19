@@ -64,6 +64,30 @@
         "title": "删除管理人"
       }
     ],
+    "DeployCertificateInstance": [
+      {
+        "document": "证书部署到clb云资源实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"lb-pk278gkq|lbl-2yju432e\",\n        \"lb-mmgz14kg|lbl-5q6yn03o|asdasd.ninghhuang.top\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployStatus\": 0,\n        \"DeployRecordId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "证书部署到clb云资源实例列表"
+      }
+    ],
+    "DeployCertificateRecordRetry": [
+      {
+        "document": "云资源部署重试部署记录",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateRecordRetry\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1,\n    \"DeployRecordDetailId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1111111111111\"\n    }\n}",
+        "title": "云资源部署重试部署记录"
+      }
+    ],
+    "DeployCertificateRecordRollback": [
+      {
+        "document": "云资源部署一键回滚",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateRecordRollback\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "云资源部署一键回滚"
+      }
+    ],
     "DescribeCertificate": [
       {
         "document": "获取证书信息",
@@ -116,6 +140,126 @@
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployedResources\n<公共请求参数>\n\n{\n    \"ResourceType\": \"xx\",\n    \"CertificateIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DeployedResources\": [\n            {\n                \"CertificateId\": \"xx\",\n                \"ResourceIds\": null,\n                \"Resources\": [],\n                \"Type\": \"xx\",\n                \"Count\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "证书查询关联资源"
+      }
+    ],
+    "DescribeHostApiGatewayInstanceList": [
+      {
+        "document": "查询证书ddos云资源部署实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostApiGatewayInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"ServiceId\": \"abc\",\n                \"ServiceName\": \"abc\",\n                \"Domain\": \"abc\",\n                \"CertId\": \"abc\",\n                \"Protocol\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询证书ddos云资源部署实例列表"
+      }
+    ],
+    "DescribeHostCdnInstanceList": [
+      {
+        "document": "获取CDN证书部署域名列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostCdnInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Domain\": \"abc\",\n                \"CertId\": \"abc\",\n                \"Status\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取CDN证书部署域名列表"
+      }
+    ],
+    "DescribeHostClbInstanceList": [
+      {
+        "document": "获取主机安全服务列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostClbInstanceList\n<公共请求参数>\n\n{\n    \"IsCache\": 1,\n    \"CertificateId\": \"xx\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"xx\",\n            \"FilterValue\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceList\": [\n            {\n                \"Listeners\": [\n                    {\n                        \"Protocol\": \"xx\",\n                        \"Certificate\": {\n                            \"CertId\": \"xx\",\n                            \"DnsNames\": [\n                                \"xx\"\n                            ]\n                        },\n                        \"Rules\": [\n                            {\n                                \"IsMatch\": true,\n                                \"Domain\": \"xx\",\n                                \"LocationId\": \"xx\",\n                                \"Certificate\": {\n                                    \"CertId\": \"xx\",\n                                    \"DnsNames\": [\n                                        \"xx\"\n                                    ]\n                                }\n                            }\n                        ],\n                        \"SniSwitch\": 1,\n                        \"ListenerId\": \"xx\",\n                        \"ListenerName\": \"xx\"\n                    }\n                ],\n                \"LoadBalancerName\": \"xx\",\n                \"LoadBalancerId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AsyncOffset\": 0,\n        \"AsyncTotalNum\": 0\n    }\n}",
+        "title": "获取主机安全服务列表"
+      }
+    ],
+    "DescribeHostCosInstanceList": [
+      {
+        "document": "获取主机安全服务列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostCosInstanceList\n<公共请求参数>\n\n{\n    \"ResourceType\": \"xx\",\n    \"IsCache\": 1,\n    \"CertificateId\": \"xx\",\n    \"Filters\": [\n        {\n            \"FilterKey\": \"xx\",\n            \"FilterValue\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AsyncOffset\": 0,\n        \"AsyncTotalNum\": 0,\n        \"InstanceList\": [\n            {\n                \"Domain\": \"hathlim.cn\",\n                \"Status\": \"ENABLED\",\n                \"CertId\": null,\n                \"Bucket\": \"hath-1302189209\",\n                \"Region\": \"ap-nanjing\"\n            },\n            {\n                \"Domain\": \"aaa.likeghost.club\",\n                \"Status\": \"DISABLED\",\n                \"CertId\": null,\n                \"Bucket\": \"hath-1302189209\",\n                \"Region\": \"ap-nanjing\"\n            },\n            {\n                \"Domain\": \"zz.hathlim.cn\",\n                \"Status\": \"ENABLED\",\n                \"CertId\": null,\n                \"Bucket\": \"test-1302189209\",\n                \"Region\": \"ap-nanjing\"\n            }\n        ],\n        \"RequestId\": \"875c1016-64a3-41c3-b3d3-430af1a6e1f9\"\n    }\n}",
+        "title": "获取主机安全服务列表"
+      }
+    ],
+    "DescribeHostDdosInstanceList": [
+      {
+        "document": "查询证书ddos云资源部署实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostDdosInstanceList\n<公共请求参数>\n\n{\n    \"ResourceType\": \"ddos\",\n    \"IsCache\": 1,\n    \"CertificateId\": \"abc\",\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Domain\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"CertId\": \"abc\",\n                \"VirtualPort\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询证书ddos云资源部署实例列表"
+      }
+    ],
+    "DescribeHostDeployRecord": [
+      {
+        "document": "查询证书云资源部署记录列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostDeployRecord\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Status\": 1,\n                \"UpdateTime\": \"xx\",\n                \"CertId\": \"xx\",\n                \"ResourceType\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询证书云资源部署记录列表"
+      }
+    ],
+    "DescribeHostDeployRecordDetail": [
+      {
+        "document": "查询证书云资源部署记录详情列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostDeployRecordDetail\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedTotalCount\": 1,\n        \"SuccessTotalCount\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RunningTotalCount\": 1,\n        \"DeployRecordDetailList\": [\n            {\n                \"Status\": 1,\n                \"Bucket\": \"test-1302189209\",\n                \"UpdateTime\": \"xx\",\n                \"CertId\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"ErrorMsg\": \"xx\",\n                \"ListenerId\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"OldCertId\": \"xx\",\n                \"Domains\": [\n                    \"xx\"\n                ],\n                \"InstanceName\": \"xx\",\n                \"Id\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询证书云资源部署记录详情列表"
+      }
+    ],
+    "DescribeHostLighthouseInstanceList": [
+      {
+        "document": "lighthouse实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostLighthouseInstanceList\n<公共请求参数>\n\n{\n    \"ResourceType\": \"xx\",\n    \"IsCache\": 1,\n    \"CertificateId\": \"xx\",\n    \"Filters\": [\n        {\n            \"FilterKey\": \"xx\",\n            \"FilterValue\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"lhins-nh7lql34\",\n                \"InstanceName\": \"个人网站\",\n                \"IP\": [\n                    \"124.221.178.108\"\n                ],\n                \"Domain\": [\n                    \"7ui.cn\",\n                    \"www.7ui.cn\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d117a6c0-9a20-4d0e-917a-2f1599da3150\"\n    }\n}",
+        "title": "lighthouse实例列表"
+      }
+    ],
+    "DescribeHostLiveInstanceList": [
+      {
+        "document": "查询证书live云资源部署实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostLiveInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Domain\": \"abc\",\n                \"CertId\": \"abc\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询证书live云资源部署实例列表"
+      }
+    ],
+    "DescribeHostTeoInstanceList": [
+      {
+        "document": "获取EdgeOne网关实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostTeoInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Host\": \"abc\",\n                \"CertId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取EdgeOne实例列表"
+      }
+    ],
+    "DescribeHostTkeInstanceList": [
+      {
+        "document": "获取主机安全服务列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostTkeInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"AsyncCache\": 0,\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceList\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"NamespaceList\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"SecretList\": [\n                            {\n                                \"Name\": \"abc\",\n                                \"CertId\": \"abc\",\n                                \"IngressList\": [\n                                    {\n                                        \"IngressName\": \"abc\",\n                                        \"TlsDomains\": [\n                                            \"abc\"\n                                        ],\n                                        \"Domains\": [\n                                            \"abc\"\n                                        ]\n                                    }\n                                ],\n                                \"NoMatchDomains\": [\n                                    \"abc\"\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"AsyncTotalNum\": 0,\n        \"AsyncOffset\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取主机安全服务列表"
+      }
+    ],
+    "DescribeHostUpdateRecord": [
+      {
+        "document": "查询证书云资源更新记录列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostUpdateRecord\n<公共请求参数>\n\n{\n    \"OldCertificateId\": \"zYrIXwpu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Id\": 1,\n                \"CertId\": \"zXkBVP88\",\n                \"OldCertId\": \"zYrIXwpu\",\n                \"ResourceTypes\": [\n                    \"cdn\"\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2022-10-09 17:38:38\",\n                \"UpdateTime\": \"2022-10-09 19:21:35\"\n            }\n        ],\n        \"RequestId\": \"1111111111111\"\n    }\n}",
+        "title": "查询证书云资源更新记录列表"
+      }
+    ],
+    "DescribeHostUpdateRecordDetail": [
+      {
+        "document": "查询证书云资源更新记录详情列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostUpdateRecordDetail\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SuccessTotalCount\": 1,\n        \"FailedTotalCount\": 0,\n        \"RunningTotalCount\": 0,\n        \"RecordDetailList\": [\n            {\n                \"ResourceType\": \"cdn\",\n                \"List\": [\n                    {\n                        \"Id\": 1,\n                        \"CertId\": \"zXkBVP88\",\n                        \"OldCertId\": \"zYrIXwpu\",\n                        \"Domains\": [\n                            \"aaa.ninghhuang.top\"\n                        ],\n                        \"ResourceType\": [\n                            \"cdn\"\n                        ],\n                        \"Region\": [\n                            \"ap-guangzhou\"\n                        ],\n                        \"Status\": 1,\n                        \"ErrorMsg\": \"\",\n                        \"CreateTime\": \"2022-10-09T09:38:38.000000Z\",\n                        \"UpdateTime\": \"2022-10-09T11:21:35.000000Z\",\n                        \"InstanceId\": \"\",\n                        \"InstanceName\": \"\",\n                        \"ListenerId\": \"\",\n                        \"ListenerName\": \"\",\n                        \"Protocol\": \"\",\n                        \"SniSwitch\": 0,\n                        \"Bucket\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"1111111111111\"\n    }\n}",
+        "title": "查询证书云资源更新记录详情列表"
+      }
+    ],
+    "DescribeHostVodInstanceList": [
+      {
+        "document": "云点播实例列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostVodInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Domain\": \"hatm.cn\",\n                \"CertId\": \"yX1eNoWz\"\n            },\n            {\n                \"Domain\": \"www.hama.cn\",\n                \"CertId\": \"yX2eNoWz\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"ba893ea5-7862-424e-8daf-000e55931501\"\n    }\n}",
+        "title": "云点播实例列表"
+      }
+    ],
+    "DescribeHostWafInstanceList": [
+      {
+        "document": "获取主机安全服务列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostWafInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Domain\": \"abc\",\n                \"CertId\": \"abc\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取主机安全服务列表"
       }
     ],
     "DescribeManagerDetail": [
@@ -212,6 +356,30 @@
         "input": "https://ssl.tencentcloudapi.com/?Action=SubmitCertificateInformation\n&CertificateId=abcb1234\n&CsrType=online\n&CertificateDomain=*.test-dq342da.com\n&OrganizationName=Tencent\n&OrganizationDivision=Qcloud\n&OrganizationAddress=南山区腾讯大厦1000号\n&OrganizationCountry=CN\n&OrganizationCity=深圳市\n&OrganizationRegion=广东省\n&PhoneAreaCode=0755\n&PhoneNumber=86013388\n&AdminFirstName=test\n&AdminLastName=test\n&AdminPhoneNum=12345678901\n&AdminEmail=test@tencent.com\n&AdminPosition=developer\n&ContactFirstName=test\n&ContactLastName=test\n&ContactEmail=test@tencent.com\n&ContactNumber=12345678901\n&ContactPosition=developer\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书资料"
+      }
+    ],
+    "UpdateCertificateInstance": [
+      {
+        "document": "一键更新旧证书资源",
+        "input": "{\n  \"CertificateId\": \"xx\",\n  \"OldCertificateId\": \"xx\",\n  \"ResourceTypes\": [\n    \"xx\"\n  ],\n  \"Regions\": [\n    \"xx\"\n  ],\n  \"ResourceTypesRegions\": [\n    {\n      \"ResourceType\": \"xx\",\n      \"Regions\": [\n        \"xx\"\n      ]\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 1,\n        \"RequestId\": \"c9c9d2fb-41c0-43b6-8c10-44c81de553c1\"\n    }\n}",
+        "title": "一键更新旧证书资源"
+      }
+    ],
+    "UpdateCertificateRecordRetry": [
+      {
+        "document": "云资源更新重试部署记录",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCertificateRecordRetry\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1,\n    \"DeployRecordDetailId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1111111111111\"\n    }\n}",
+        "title": "云资源更新重试部署记录"
+      }
+    ],
+    "UpdateCertificateRecordRollback": [
+      {
+        "document": "云资源更新一键回滚",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCertificateRecordRollback\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "云资源更新一键回滚"
       }
     ],
     "UploadCertificate": [

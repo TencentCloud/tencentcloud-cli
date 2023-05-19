@@ -1320,7 +1320,7 @@
         },
         {
           "disabled": false,
-          "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00",
+          "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00,。到期时间最小可设置为一天后的当前时间。",
           "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
@@ -1598,7 +1598,6 @@
       "document": "DescribeDiskBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。",
           "example": "[\"dbp-xxxxxxxx\"]",
@@ -1608,7 +1607,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定 DiskBackupIds 和 Filters。过滤条件：<br><li>disk-backup-id - Array of String - 是否必填：否 -（过滤条件）按照备份点的ID过滤。备份点ID形如：dbp-11112222。\n<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照创建备份点的云硬盘ID过滤。\n<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按创建备份点的云硬盘类型过滤。 (SYSTEM_DISK：代表系统盘 | DATA_DISK：代表数据盘。)",
           "example": "无",
@@ -1618,7 +1616,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
           "example": "0",
@@ -1628,7 +1625,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
           "example": "20",
@@ -1638,7 +1634,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
           "example": "ASC",
@@ -1648,7 +1643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘备份点列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云硬盘备份点的创建时间排序<br>默认按创建时间排序。",
           "example": "CREATE_TIME",
@@ -1669,7 +1663,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1679,7 +1672,6 @@
           "example": "无",
           "member": "DiskBackup",
           "name": "DiskBackupSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

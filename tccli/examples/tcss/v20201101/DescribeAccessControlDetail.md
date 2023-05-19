@@ -1,12 +1,12 @@
 **Example 1: 运行时访问控制事件详细信息**
 
-
+运行时访问控制事件详细信息
 
 Input: 
 
 ```
 tccli tcss DescribeAccessControlDetail --cli-unfold-argument  \
-    --EventId xxx
+    --EventId abc
 ```
 
 Output: 
@@ -14,71 +14,82 @@ Output:
 {
     "Response": {
         "EventBaseInfo": {
-            "EventId": "xx",
-            "ContainerName": "xx",
-            "ContainerId": "xx",
-            "EventCount": 0,
-            "EventType": "xx",
-            "HostIP": "xx",
+            "EventId": "abc",
             "FoundTime": "2020-09-22 00:00:00",
-            "Status": "xx",
-            "EventName": "xx",
-            "ImageId": "xx",
-            "ImageName": "xx",
-            "PodName": "xx",
-            "ClientIP": "xx",
-            "LatestFoundTime": "xx",
-            "NodeName": "xx",
-            "ContainerIsolateOperationSrc": "xx",
-            "ContainerNetSubStatus": "xx",
-            "ContainerNetStatus": "xx"
+            "ContainerId": "abc",
+            "ContainerName": "abc",
+            "ImageId": "abc",
+            "ImageName": "abc",
+            "NodeName": "abc",
+            "Status": "abc",
+            "EventName": "abc",
+            "EventType": "abc",
+            "EventCount": 0,
+            "LatestFoundTime": "abc",
+            "HostIP": "abc",
+            "ClientIP": "abc",
+            "ContainerNetStatus": "abc",
+            "ContainerNetSubStatus": "abc",
+            "ContainerIsolateOperationSrc": "abc",
+            "NodeID": "abc",
+            "NodeType": "abc",
+            "NodeSubNetID": "abc",
+            "NodeSubNetName": "abc",
+            "NodeSubNetCIDR": "abc",
+            "PodName": "abc",
+            "PodIP": "abc",
+            "PodStatus": "abc",
+            "ClusterID": "abc",
+            "ClusterName": "abc"
         },
         "ProcessInfo": {
-            "ProcessPath": "xx",
-            "ProcessTree": "xx",
+            "ProcessName": "abc",
+            "ProcessAuthority": "abc",
             "ProcessId": 1,
-            "ProcessAuthority": "xx",
-            "ProcessUserGroup": "xx",
-            "ProcessName": "xx",
-            "ProcessParam": "xx",
-            "ProcessMd5": "xx",
-            "ProcessStartUser": "xx"
-        },
-        "EventDetail": {
-            "Remark": "xx",
-            "MatchRule": {
-                "ProcessPath": "xx",
-                "RuleMode": "xx",
-                "TargetFilePath": "xx",
-                "RuleId": "xx"
-            },
-            "Description": "xx",
-            "RuleId": "xx",
-            "Solution": "xx",
-            "RuleName": "xx",
-            "OperationTime": "xx"
-        },
-        "AncestorProcessInfo": {
-            "ProcessPath": "xx",
-            "ProcessParam": "xx",
-            "ProcessStartUser": "xx",
-            "ProcessUserGroup": "xx"
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessTree": "abc",
+            "ProcessMd5": "abc",
+            "ProcessParam": "abc"
         },
         "TamperedFileInfo": {
-            "FilePath": "xx",
-            "FileType": "xx",
-            "FileName": "xx",
+            "FileName": "abc",
+            "FileType": "abc",
             "FileSize": 1,
+            "FilePath": "abc",
+            "FileCreateTime": "2020-09-22 00:00:00",
             "LatestTamperedFileMTime": "2020-09-22 00:00:00",
-            "FileCreateTime": "2020-09-22 00:00:00"
+            "NewFile": "abc",
+            "FileDiff": "abc"
+        },
+        "EventDetail": {
+            "Description": "abc",
+            "Solution": "abc",
+            "Remark": "abc",
+            "MatchRule": {
+                "RuleId": "abc",
+                "RuleMode": "abc",
+                "ProcessPath": "abc",
+                "TargetFilePath": "abc"
+            },
+            "RuleName": "abc",
+            "RuleId": "abc",
+            "OperationTime": "abc"
         },
         "ParentProcessInfo": {
-            "ProcessPath": "xx",
-            "ProcessParam": "xx",
-            "ProcessStartUser": "xx",
-            "ProcessUserGroup": "xx"
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessParam": "abc"
         },
-        "RequestId": "xx"
+        "AncestorProcessInfo": {
+            "ProcessStartUser": "abc",
+            "ProcessUserGroup": "abc",
+            "ProcessPath": "abc",
+            "ProcessParam": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

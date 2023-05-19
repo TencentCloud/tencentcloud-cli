@@ -1,6 +1,6 @@
 **Example 1: 查询db服务列表**
 
-
+查询db服务列表
 
 Input: 
 
@@ -11,65 +11,42 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": [
             {
-                "ContainerName": "xx",
-                "Parameter": "xx",
-                "HostID": "xx",
-                "Version": "xx",
-                "ContainerId": "xx",
-                "AccessLog": "xx",
-                "Config": "xx",
-                "RunAs": "xx",
-                "HostName": "xx",
-                "ErrorLog": "xx",
-                "DataPath": "xx",
-                "MainType": "xx",
-                "PublicIp": "xx",
-                "WebRoot": "xx",
+                "ServiceID": "abc",
+                "HostID": "abc",
+                "HostIP": "abc",
+                "ContainerName": "abc",
+                "Type": "abc",
+                "Version": "abc",
+                "RunAs": "abc",
+                "Listen": [
+                    "abc"
+                ],
+                "Config": "abc",
                 "ProcessCnt": 1,
-                "Exe": "xx",
-                "ServiceID": "xx",
-                "HostIP": "xx",
+                "AccessLog": "abc",
+                "ErrorLog": "abc",
+                "DataPath": "abc",
+                "WebRoot": "abc",
                 "Pids": [
                     1
                 ],
-                "Type": "xx",
-                "Listen": [
-                    "tcp://:::3306"
-                ]
-            },
-            {
-                "ContainerName": "xx",
-                "Type": "xx",
-                "HostID": "xx",
-                "ContainerId": "xx",
-                "Exe": "xx",
-                "AccessLog": "xx",
-                "Config": "xx",
-                "RunAs": "xx",
-                "HostName": "xx",
-                "ErrorLog": "xx",
-                "DataPath": "xx",
-                "MainType": "xx",
-                "PublicIp": "xx",
-                "WebRoot": "xx",
-                "ProcessCnt": 1,
-                "Version": "xx",
-                "ServiceID": "xx",
-                "HostIP": "xx",
-                "Pids": [
-                    1
-                ],
-                "Parameter": "xx",
-                "Listen": [
-                    "tcp://:::6379",
-                    "tcp://0.0.0.0:6379"
-                ]
+                "MainType": "abc",
+                "Exe": "abc",
+                "Parameter": "abc",
+                "ContainerId": "abc",
+                "HostName": "abc",
+                "PublicIp": "abc",
+                "NodeID": "abc",
+                "PodIP": "abc",
+                "PodName": "abc",
+                "NodeType": "abc",
+                "NodeUniqueID": "abc"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

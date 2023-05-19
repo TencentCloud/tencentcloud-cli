@@ -634,9 +634,9 @@
     ],
     "CreateVpnGatewaySslClient": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGatewaySslClient\n&SslVpnServerId=vpns-xxxx\n&SslVpnClientName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SslVpnClientId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": 1\n    }\n}",
+        "document": "创建SSL-VPN-CLIENT",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGatewaySslClient\n&SslVpnServerId=vpns-5au854w1\n&SslVpnClientName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SslVpnClientId\": \"vpnc-f5yln4n3\",\n        \"RequestId\": \"13322b62-5943-41c9-4a1c-4bff13f56aeb\",\n        \"TaskId\": 1\n    }\n}",
         "title": "创建SSL-VPN-CLIENT"
       }
     ],
@@ -982,7 +982,7 @@
     ],
     "DeleteVpnGatewaySslClient": [
       {
-        "document": "",
+        "document": "删除SSL-VPN-CLIENT",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGatewaySslClient\n&SslVpnClientId=vpnc-xxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
         "title": "删除SSL-VPN-CLIENT"
@@ -1888,10 +1888,10 @@
     ],
     "DisableVpnGatewaySslClientCert": [
       {
-        "document": "",
+        "document": "禁用SSL-VPN-CLIENT 证书",
         "input": "https://vpc.tencentcloudapi.com/?Action=DisableVpnGatewaySslClientCert\n&SslVpnClientId=vpnc-xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
-        "title": "禁用SSL-VPN-CLIENT证书"
+        "title": "禁用SSL-VPN-CLIENT 证书"
       }
     ],
     "DisassociateAddress": [
@@ -1960,9 +1960,9 @@
     ],
     "DownloadVpnGatewaySslClientCert": [
       {
-        "document": "",
+        "document": "下载SSL-VPN-CLIENT配置",
         "input": "https://vpc.tencentcloudapi.com/?Action=DownloadVpnGatewaySslClientCert\n&SslVpnClientId=vpnc--84tby4k2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SslClientConfig\": [\n            {\n                \"SslVpnCert\": \"xx\",\n                \"SslVpnKey\": \"xx\",\n                \"SslVpnRootCert\": \"xx\",\n                \"SslVpnClientConfiguration\": \"xx\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"xx\",\n        \"SslClientConfigsSet\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslClientConfig\": [\n            {\n                \"SslVpnCert\": \"-----BEGIN CERTIFICATE-----......\",\n                \"SslVpnKey\": \"-----BEGIN PRIVATE KEY-----......\",\n                \"SslVpnRootCert\": \"-----BEGIN CERTIFICATE-----......\",\n                \"SslVpnClientConfiguration\": \"client\\ndev tun\\nproto udp\\nremote......\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"d3c01d8b-0363-41d4-a8be-3cfcf2c69711\",\n        \"SslClientConfigsSet\": \"${SslClientConfigsSet}\"\n    }\n}",
         "title": "下载SSL-VPN-CLIENT配置"
       }
     ],
@@ -2022,7 +2022,7 @@
     ],
     "EnableVpnGatewaySslClientCert": [
       {
-        "document": "",
+        "document": "启用SSL-VPN-CLIENT证书",
         "input": "https://vpc.tencentcloudapi.com/?Action=EnableVpnGatewaySslClientCert\n&SslVpnClientId=vpnc-xxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
         "title": "启用SSL-VPN-CLIENT证书"

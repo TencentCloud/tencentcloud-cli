@@ -1,6 +1,6 @@
 **Example 1: 查询漏洞防御的主机列表**
 
-
+查询漏洞防御的主机列表
 
 Input: 
 
@@ -17,15 +17,19 @@ Output:
         "TotalCount": 0,
         "List": [
             {
-                "Status": "xx",
-                "ModifyTime": "xx",
-                "HostName": "xx",
-                "PublicIP": "xx",
-                "HostIP": "xx",
-                "CreateTime": "xx"
+                "HostName": "abc",
+                "HostIP": "abc",
+                "HostID": "abc",
+                "Status": "abc",
+                "PublicIP": "abc",
+                "CreateTime": "abc",
+                "ModifyTime": "abc",
+                "NodeType": "abc",
+                "NodeSubNetName": "abc",
+                "NodeSubNetCIDR": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

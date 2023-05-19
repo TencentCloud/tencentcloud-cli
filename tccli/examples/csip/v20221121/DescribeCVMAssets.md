@@ -5,7 +5,17 @@ cvm列表
 Input: 
 
 ```
-tccli csip DescribeCVMAssets --cli-unfold-argument ```
+tccli csip DescribeCVMAssets --cli-unfold-argument  \
+    --Filter.Limit 0 \
+    --Filter.Offset 0 \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
+    --Filter.Filters.0.OperatorType 0 \
+    --Filter.StartTime abc \
+    --Filter.EndTime abc
+```
 
 Output: 
 ```
@@ -19,6 +29,10 @@ Output:
         ],
         "AssetTypeList": [
             {
+                "Text": "边缘计算机器(ECM)",
+                "Value": "ECM"
+            },
+            {
                 "Text": "腾讯云服务器(CVM)",
                 "Value": "CVM"
             }
@@ -26,357 +40,65 @@ Output:
         "Data": [
             {
                 "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
+                "AccountCount": "-",
+                "AppCount": "-",
                 "AppId": 1300448058,
-                "AssetCreateTime": "2020-11-24 08:47:17",
-                "AssetId": "ins-17ye5faf",
-                "AssetName": "[autotest][勿删]自动化测试VPC",
-                "AssetType": "CVM",
+                "AssetCreateTime": "2023-02-16 16:51:34",
+                "AssetId": "ein-b41zgmgq",
+                "AssetName": "test1",
+                "AssetType": "ECM",
                 "Attack": 0,
-                "AvailableArea": "上海三区",
+                "AvailableArea": "",
                 "CPUInfo": "",
                 "CPULoad": "低",
                 "CPUSize": 0,
-                "CWPStatus": 2,
+                "CWPStatus": 1,
                 "ConfigurationRisk": 0,
                 "DiskLoad": "0.00%",
                 "DiskSize": "0GB",
                 "InBandwidth": "0.00bps",
                 "InFlow": "0.00B",
-                "InstanceQUuid": "",
+                "InstanceQUuid": "40b8a793-1e96-4101-b832-1f973b8efdb7",
                 "InstanceUuid": "",
                 "Intercept": 0,
                 "IsCore": 1,
-                "LastScanTime": "2023-02-03 14:48:17",
+                "LastScanTime": "2023-03-31 17:40:20",
+                "MemberId": "mem-c957e6a7195c85e0",
                 "MemoryLoad": "0.00%",
                 "MemorySize": "0GB",
                 "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
+                "NickName": "天空之蓝",
+                "Os": "CentOS 8.0 64bit",
+                "OsName": "CentOS 8.0 64bit",
                 "OutBandwidth": "0.00bps",
                 "OutFlow": "0.00B",
                 "PartitionCount": 0,
                 "PortCount": 0,
                 "PortRisk": 0,
-                "PrivateIp": "10.5.1.4",
-                "ProcessCount": "0",
-                "PublicIp": "81.69.38.139",
-                "Region": "ap-shanghai",
+                "PrivateIp": "10.212.0.4",
+                "ProcessCount": "-",
+                "PublicIp": "119.147.20.109",
+                "Region": "ap-guangzhou",
                 "ScanTask": 13,
-                "SubnetId": "subnet-cjxihpy1",
-                "SubnetName": "[autotest][勿删]自动化测试B2",
+                "SubnetId": "subnet-0aos839s",
+                "SubnetName": "",
                 "Tag": [
                     {
-                        "Name": "ruri",
-                        "Value": "test"
+                        "Name": "测试A",
+                        "Value": "测试B"
                     }
                 ],
                 "Uin": "100011616646",
-                "VpcId": "vpc-msa9dvac",
-                "VpcName": "[autotest][勿删]自动化测试B",
-                "VulnerabilityRisk": 2
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2023-02-02 09:25:49",
-                "AssetId": "ins-c2c1ebl4",
-                "AssetName": "漏洞机",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "广州六区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 0,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 1,
-                "LastScanTime": "-",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 0,
-                "PrivateIp": "172.16.16.8",
-                "ProcessCount": "0",
-                "PublicIp": "43.136.112.195",
-                "Region": "ap-guangzhou",
-                "ScanTask": 0,
-                "SubnetId": "subnet-piyq3xq0",
-                "SubnetName": "Default-Subnet",
-                "Tag": null,
-                "Uin": "100011616646",
-                "VpcId": "vpc-imk763v1",
-                "VpcName": "Default-VPC",
-                "VulnerabilityRisk": 5
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2022-10-21 01:18:03",
-                "AssetId": "ins-gt3h3i8f",
-                "AssetName": "[autotest][勿删]自动化测试NAT",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "上海三区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 74,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 0,
-                "LastScanTime": "2023-02-02 15:44:38",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 0,
-                "PrivateIp": "10.5.2.13",
-                "ProcessCount": "0",
-                "PublicIp": "115.159.113.26",
-                "Region": "ap-shanghai",
-                "ScanTask": 14,
-                "SubnetId": "subnet-kdu0qj4t",
-                "SubnetName": "[autotest][勿删]自动化测试B1",
-                "Tag": null,
-                "Uin": "100011616646",
-                "VpcId": "vpc-msa9dvac",
-                "VpcName": "[autotest][勿删]自动化测试B",
-                "VulnerabilityRisk": 519
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2020-10-21 11:11:49",
-                "AssetId": "ins-kja8dy5r",
-                "AssetName": "[autotest][勿删]自动化测试NAT",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "上海二区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 0,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 0,
-                "LastScanTime": "2023-02-02 15:44:38",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 0,
-                "PrivateIp": "172.17.32.17",
-                "ProcessCount": "0",
-                "PublicIp": "182.254.145.158",
-                "Region": "ap-shanghai",
-                "ScanTask": 13,
-                "SubnetId": "subnet-5sx5vrcj",
-                "SubnetName": "[autotest][勿删]自动化测试A1",
-                "Tag": [
-                    {
-                        "Name": "自动化测试-勿删",
-                        "Value": "autotest"
-                    }
-                ],
-                "Uin": "100011616646",
-                "VpcId": "vpc-q9h93ip4",
-                "VpcName": "[autotest][勿删]自动化测试A",
-                "VulnerabilityRisk": 1
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2022-12-19 08:00:54",
-                "AssetId": "ins-o49doo4m",
-                "AssetName": "未命名",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "广州四区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 0,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 0,
-                "LastScanTime": "2023-02-02 11:42:10",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 7,
-                "PrivateIp": "172.16.0.14",
-                "ProcessCount": "0",
-                "PublicIp": "43.136.103.9",
-                "Region": "ap-guangzhou",
-                "ScanTask": 8,
-                "SubnetId": "subnet-q6ztsegg",
-                "SubnetName": "Default-Subnet",
-                "Tag": null,
-                "Uin": "100011616646",
-                "VpcId": "vpc-imk763v1",
-                "VpcName": "Default-VPC",
+                "VpcId": "vpc-4c9w05r5",
+                "VpcName": "",
                 "VulnerabilityRisk": 0
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2020-11-12 07:00:13",
-                "AssetId": "ins-p1jyrg75",
-                "AssetName": "[autotest][勿删]自动化测试VPC",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "上海二区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 0,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 0,
-                "LastScanTime": "2023-02-02 15:44:38",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 0,
-                "PrivateIp": "172.17.32.11",
-                "ProcessCount": "0",
-                "PublicIp": "42.192.123.209",
-                "Region": "ap-shanghai",
-                "ScanTask": 13,
-                "SubnetId": "subnet-5sx5vrcj",
-                "SubnetName": "[autotest][勿删]自动化测试A1",
-                "Tag": [
-                    {
-                        "Name": "自动化测试-勿删",
-                        "Value": "autotest"
-                    }
-                ],
-                "Uin": "100011616646",
-                "VpcId": "vpc-q9h93ip4",
-                "VpcName": "[autotest][勿删]自动化测试A",
-                "VulnerabilityRisk": 3
-            },
-            {
-                "Access": 0,
-                "AccountCount": "0",
-                "AppCount": "0",
-                "AppId": 1300448058,
-                "AssetCreateTime": "2022-11-14 02:53:37",
-                "AssetId": "ins-r6ou78a4",
-                "AssetName": "漏扫新引擎测试-请勿动-PGP",
-                "AssetType": "CVM",
-                "Attack": 0,
-                "AvailableArea": "南京三区",
-                "CPUInfo": "",
-                "CPULoad": "低",
-                "CPUSize": 0,
-                "CWPStatus": 2,
-                "ConfigurationRisk": 0,
-                "DiskLoad": "0.00%",
-                "DiskSize": "0GB",
-                "InBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "InstanceQUuid": "",
-                "InstanceUuid": "",
-                "Intercept": 0,
-                "IsCore": 0,
-                "LastScanTime": "2023-02-02 15:44:38",
-                "MemoryLoad": "0.00%",
-                "MemorySize": "0GB",
-                "NetWorkOut": 0,
-                "NickName": "天空之蓝-现网",
-                "OsName": "",
-                "OutBandwidth": "0.00bps",
-                "OutFlow": "0.00B",
-                "PartitionCount": 0,
-                "PortCount": 0,
-                "PortRisk": 0,
-                "PrivateIp": "10.206.16.11",
-                "ProcessCount": "0",
-                "PublicIp": "43.137.1.67",
-                "Region": "ap-nanjing",
-                "ScanTask": 13,
-                "SubnetId": "subnet-p311203u",
-                "SubnetName": "Default-Subnet",
-                "Tag": null,
-                "Uin": "100011616646",
-                "VpcId": "vpc-5vcbd7cv",
-                "VpcName": "Default-VPC很长的很长的231321321321321313",
-                "VulnerabilityRisk": 1
             }
         ],
         "DefenseStatusList": [
+            {
+                "Text": "未开通防护",
+                "Value": "1"
+            },
             {
                 "Text": "基础版未防护",
                 "Value": "2"
@@ -386,42 +108,76 @@ Output:
             {
                 "Text": "公网资产",
                 "Value": "1"
+            },
+            {
+                "Text": "私网资产",
+                "Value": "0"
+            }
+        ],
+        "OsList": [
+            {
+                "Text": "CentOS",
+                "Value": "1"
+            },
+            {
+                "Text": "未知",
+                "Value": "0"
+            },
+            {
+                "Text": "TencentOS",
+                "Value": "7"
+            },
+            {
+                "Text": "Ubuntu",
+                "Value": "5"
             }
         ],
         "RegionList": [
+            {
+                "Text": "广州",
+                "Value": "ap-guangzhou"
+            },
             {
                 "Text": "上海",
                 "Value": "ap-shanghai"
             },
             {
-                "Text": "广州",
-                "Value": "ap-guangzhou"
+                "Text": "北京",
+                "Value": "ap-beijing"
+            },
+            {
+                "Text": "成都",
+                "Value": "ap-chengdu"
             },
             {
                 "Text": "南京",
                 "Value": "ap-nanjing"
             }
         ],
-        "RequestId": "7c5ca068-50ab-450c-9bbe-000f6c67fbb9",
+        "RequestId": "71673908-8c7d-41c3-8564-57c741ed3596",
         "SystemTypeList": [
             {
                 "Text": "linux",
                 "Value": "linux"
             }
         ],
-        "Total": 7,
+        "Total": 29,
         "VpcList": [
             {
-                "Text": "[autotest][勿删]自动化测试B",
-                "Value": "vpc-msa9dvac"
+                "Text": "跨租户天空之蓝",
+                "Value": "vpc-f6xj8nho"
             },
             {
-                "Text": "Default-VPC",
-                "Value": "vpc-imk763v1"
+                "Text": "成都sdwan",
+                "Value": "vpc-ebfqtnxa"
             },
             {
-                "Text": "[autotest][勿删]自动化测试A",
-                "Value": "vpc-q9h93ip4"
+                "Text": "冲突sdwan",
+                "Value": "vpc-dw314am3"
+            },
+            {
+                "Text": "vpctest",
+                "Value": "vpc-rkm452h0"
             },
             {
                 "Text": "Default-VPC很长的很长的231321321321321313",
@@ -430,12 +186,20 @@ Output:
         ],
         "ZoneList": [
             {
+                "Text": "广州",
+                "Value": "ap-guangzhou"
+            },
+            {
                 "Text": "上海",
                 "Value": "ap-shanghai"
             },
             {
-                "Text": "广州",
-                "Value": "ap-guangzhou"
+                "Text": "北京",
+                "Value": "ap-beijing"
+            },
+            {
+                "Text": "成都",
+                "Value": "ap-chengdu"
             },
             {
                 "Text": "南京",

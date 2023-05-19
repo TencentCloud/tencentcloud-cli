@@ -1,6 +1,6 @@
 **Example 1: 获取组织成员访问身份列表**
 
-
+获取组织成员访问身份列表
 
 Input: 
 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Items": [
             {
-                "IdentityId": "2021-07-15 21:08:38",
+                "IdentityId": 1,
                 "IdentityAliasName": "test",
                 "Description": "",
                 "IdentityPolicy": [

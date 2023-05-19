@@ -1,6 +1,6 @@
 **Example 1: 查询端口占用列表**
 
-
+查询端口占用列表
 
 Input: 
 
@@ -11,26 +11,31 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": [
             {
-                "ContainerName": "xx",
-                "HostID": "xx",
-                "Type": "xx",
-                "RunAs": "xx",
-                "HostName": "xx",
-                "ContainerPID": 1,
-                "ListenContainer": "xx",
-                "PublicIP": "xx",
-                "ProcessName": "xx",
-                "HostIP": "xx",
-                "PublicIp": "xx",
+                "Type": "abc",
+                "PublicIP": "abc",
                 "PublicPort": 1,
                 "ContainerPort": 1,
-                "ListenHost": "xx"
+                "ContainerPID": 1,
+                "ContainerName": "abc",
+                "HostID": "abc",
+                "HostIP": "abc",
+                "ProcessName": "abc",
+                "ListenContainer": "abc",
+                "ListenHost": "abc",
+                "RunAs": "abc",
+                "HostName": "abc",
+                "PublicIp": "abc",
+                "NodeID": "abc",
+                "PodIP": "abc",
+                "PodName": "abc",
+                "NodeType": "abc",
+                "NodeUniqueID": "abc"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

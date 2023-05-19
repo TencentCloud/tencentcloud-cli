@@ -1,6 +1,6 @@
-**Example 1: 禁用SSL-VPN-CLIENT证书**
+**Example 1: 禁用SSL-VPN-CLIENT 证书**
 
-
+禁用SSL-VPN-CLIENT 证书
 
 Input: 
 

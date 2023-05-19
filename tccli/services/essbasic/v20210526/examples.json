@@ -186,7 +186,7 @@
       {
         "document": "查询文件转换任务",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelGetTaskResultApi\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"TaskId\": \"2022*********589282\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f08b529-f13e-4129-85a4-9585fd794656\",\n        \"ResourceId\": \"yDRt2*********EytoAXw44x\",\n        \"TaskId\": \"2022*********4589282\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8,\n        \"PreviewUrl\": \"https://xxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f08b529-f13e-4129-85a4-9585fd794656\",\n        \"ResourceId\": \"yDRt2*********EytoAXw44x\",\n        \"TaskId\": \"2022*********4589282\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8,\n        \"PreviewUrl\": \"\"\n    }\n}",
         "title": "查询转换任务"
       }
     ],

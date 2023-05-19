@@ -514,13 +514,13 @@
     ],
     "DescribeDBPrice": [
       {
-        "document": "",
+        "document": "查询数据库实例新购价格",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBPrice\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\",\n    \"GoodsNum\": \"1\",\n    \"PayType\": \"PRE_PAID\",\n    \"Period\": \"24\",\n    \"Volume\": \"25\",\n    \"Memory\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Currency\": \"CNY\",\n        \"Price\": 48000,\n        \"OriginalPrice\": 460800\n    }\n}",
         "title": "查询数据库实例新购价格"
       },
       {
-        "document": "",
+        "document": "查询数据库实例续费价格",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBPrice\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6no119yd\",\n    \"Period\": \"24\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Currency\": \"CNY\",\n        \"Price\": 48000,\n        \"OriginalPrice\": 460800\n    }\n}",
         "title": "查询数据库实例续费价格"

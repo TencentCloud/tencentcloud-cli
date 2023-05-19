@@ -1,41 +1,41 @@
 **Example 1: 查询安全日志接入对象列表**
 
-
+查询安全日志接入对象列表
 
 Input: 
 
 ```
 tccli tcss DescribeSecLogJoinObjectList --cli-unfold-argument  \
-    --By xx \
-    --LogType container_bash \
+    --LogType abc \
     --Limit 1 \
-    --Filters.0.Values UNINSTALL \
-    --Filters.0.Name HostState \
-    --Filters.0.ExactMatch True \
     --Offset 1 \
-    --Order asc
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Filters.0.ExactMatch True \
+    --By abc \
+    --Order abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 15,
+        "TotalCount": 1,
         "List": [
             {
-                "ClusterMainAddress": "xx",
-                "HostID": "xx",
-                "ClusterVersion": "xx",
-                "ClusterName": "xx",
-                "HostName": "xx",
-                "ClusterID": "xx",
-                "PublicIP": "xx",
+                "HostID": "abc",
+                "HostName": "abc",
+                "HostIP": "abc",
+                "HostStatus": "abc",
+                "ClusterID": "abc",
+                "ClusterName": "abc",
+                "PublicIP": "abc",
                 "JoinState": true,
-                "HostIP": "xx",
-                "HostStatus": "xx"
+                "ClusterVersion": "abc",
+                "ClusterMainAddress": "abc"
             }
         ],
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "RequestId": "abc"
     }
 }
 ```

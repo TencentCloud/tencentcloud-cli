@@ -22,7 +22,8 @@ Output:
         "FailedClusterCount": 1,
         "ManualCheckClusterCount": 1,
         "RiskClusterCount": 1,
-        "NotImportedClusterCount": 1
+        "NotImportedClusterCount": 1,
+        "ServerlessClusterCount": 3
     }
 }
 ```

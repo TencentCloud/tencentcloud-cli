@@ -868,6 +868,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险服务暴露\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RiskExposure",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1359,6 +1369,15 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "os列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "OsList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1716,8 +1735,8 @@
         },
         {
           "disabled": false,
-          "document": "需排序的字段",
-          "example": "insert_time",
+          "document": "排序采用升序还是降序 升:asc 降 desc",
+          "example": "Desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -1726,8 +1745,8 @@
         },
         {
           "disabled": false,
-          "document": "排序采用升序还是降序 升:asc 降 desc",
-          "example": "Desc",
+          "document": "需排序的字段",
+          "example": "insert_time",
           "member": "string",
           "name": "By",
           "required": false,

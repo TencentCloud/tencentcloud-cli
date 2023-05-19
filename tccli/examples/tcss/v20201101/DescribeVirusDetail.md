@@ -35,7 +35,6 @@ Output:
         "ProcessStartAccount": "abc",
         "ProcessFileAuthority": "abc",
         "SourceType": 0,
-        "PodName": "abc",
         "Tags": [
             "abc"
         ],
@@ -45,6 +44,7 @@ Output:
         "FileName": "abc",
         "FileMd5": "abc",
         "EventType": "abc",
+        "PodName": "abc",
         "Status": "abc",
         "SubStatus": "abc",
         "HostIP": "abc",
@@ -66,6 +66,16 @@ Output:
         ],
         "FileAccessTime": "abc",
         "FileModifyTime": "abc",
+        "NodeSubNetID": "abc",
+        "NodeSubNetName": "abc",
+        "NodeSubNetCIDR": "abc",
+        "ClusterID": "abc",
+        "PodIP": "abc",
+        "PodStatus": "abc",
+        "NodeUniqueID": "abc",
+        "NodeType": "abc",
+        "NodeID": "abc",
+        "ClusterName": "abc",
         "RequestId": "abc"
     }
 }

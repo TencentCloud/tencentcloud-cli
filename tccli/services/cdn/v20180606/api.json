@@ -572,9 +572,9 @@
       "document": "请求头部及请求url访问控制",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on | off 是否启用请求头部及请求url访问控制",
+          "document": "启用请求头部及请求url访问控制开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -582,9 +582,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求头部及请求url访问规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AccessControlRule",
           "name": "AccessControlRules",
           "required": false,
@@ -592,9 +592,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ReturnCode",
           "required": false,
@@ -1224,9 +1224,9 @@
       "document": "时间戳防盗链高级版配置，白名单功能",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。",
+          "document": "防盗链配置开关，取值有：\non：开启\noff：关闭\n开启时必须且只配置一种模式，其余模式需要设置为 null",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -1234,9 +1234,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式A配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeA",
           "name": "TypeA",
           "required": false,
@@ -1244,9 +1244,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式B配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeB",
           "name": "TypeB",
           "required": false,
@@ -1254,9 +1254,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式C配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeC",
           "name": "TypeC",
           "required": false,
@@ -1264,9 +1264,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式D配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeD",
           "name": "TypeD",
           "required": false,
@@ -1274,9 +1274,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式E配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeE",
           "name": "TypeE",
           "required": false,
@@ -1284,9 +1284,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链高级版模式F配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AdvancedAuthenticationTypeF",
           "name": "TypeF",
           "required": false,
@@ -1993,9 +1993,9 @@
       "document": "时间戳防盗链配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "防盗链配置开关\non：开启\noff：关闭\n开启时必须且只配置一种模式，其余模式需要设置为 null",
+          "document": "防盗链配置开关，取值有：\non：开启\noff：关闭\n开启时必须且只配置一种模式，其余模式需要设置为 null",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -2003,9 +2003,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链模式 A 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuthenticationTypeA",
           "name": "TypeA",
           "required": false,
@@ -2013,9 +2013,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链模式 B 配置（模式 B 后台升级中，暂时不支持配置）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuthenticationTypeB",
           "name": "TypeB",
           "required": false,
@@ -2023,9 +2023,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链模式 C 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuthenticationTypeC",
           "name": "TypeC",
           "required": false,
@@ -2033,9 +2033,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳防盗链模式 D 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuthenticationTypeD",
           "name": "TypeD",
           "required": false,
@@ -2348,9 +2348,8 @@
       "document": "图片优化-AvifAdapter配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片优化AvifAdapter配置项开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -2365,9 +2364,8 @@
       "document": "s3源站回源鉴权。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "开关，on/off。",
+          "document": "s3源站回源鉴权配置项开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -2376,7 +2374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dfss12nk",
@@ -2387,7 +2384,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dsfds13m",
@@ -2398,7 +2394,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
@@ -2409,7 +2404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hw-oss",
@@ -2426,9 +2420,8 @@
       "document": "带宽封顶配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "用量封顶配置开关\non：开启\noff：关闭",
+          "document": "用量封顶配置开关，取值有：\non：开启\noff：关闭",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -2437,7 +2430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量封顶阈值，带宽单位为bps，流量单位byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000",
@@ -2448,7 +2440,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "达到阈值后的操作\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RETURN_404",
@@ -2459,7 +2450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "境内区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2470,9 +2460,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "用量封顶提醒开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量封顶提醒配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "AlertSwitch",
@@ -2481,7 +2470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量封顶阈值提醒百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
@@ -2492,7 +2480,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2503,7 +2490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量阈值触发的维度\n带宽：bandwidth\n流量：flux\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bandwith",
@@ -2514,7 +2500,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "累计用量配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3135,9 +3120,8 @@
       "document": "启发式自定义时间缓存配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on 代表开启自定义启发式缓存时间\noff 代表关闭自定义启发式缓存时间",
+          "document": "启发式自定义时间缓存配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "HeuristicCacheTimeSwitch",
@@ -3146,7 +3130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位 秒.",
           "example": "10",
@@ -3163,9 +3146,8 @@
       "document": "路径缓存缓存配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径缓存配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -3174,7 +3156,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缓存过期时间设置\n单位为秒，最大可设置为 365 天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "600",
@@ -3185,7 +3166,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级缓存过期配置，开启时会对比源站返回的 max-age 值与 CacheRules 中设置的缓存过期时间，取最小值在节点进行缓存\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
@@ -3196,7 +3176,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "强制缓存\non：开启\noff：关闭\n默认为关闭状态，开启后，源站返回的 no-store、no-cache 资源，也将按照 CacheRules 规则进行缓存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
@@ -3207,7 +3186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当源站返回Set-Cookie头部时，节点是否缓存该头部及body\non：开启，不缓存该头部及body\noff：关闭，遵循用户自定义的节点缓存规则\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
@@ -3224,9 +3202,8 @@
       "document": "路径缓存遵循源站配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "遵循源站配置开关\non：开启\noff：关闭",
+          "document": "路径缓存遵循源站配置开关，取值有：\non：开启\noff：关闭",
           "example": "无",
           "member": "string",
           "name": "Switch",
@@ -3235,7 +3212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启发式缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3252,9 +3228,9 @@
       "document": "路径缓存不缓存配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "不缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径缓存不缓存配置配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -3262,9 +3238,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总是回源站校验\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Revalidate",
           "required": true,
@@ -3398,9 +3374,9 @@
       "document": "组成CacheKey的一部分",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否使用CacheTag作为CacheKey的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用CacheTag作为CacheKey的一部分配置开关，取值有\non：开启，使用CacheTag作为CacheKey的一部分\noff：关闭，不使用CacheTag作为CacheKey的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -3408,9 +3384,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义CacheTag的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -3904,9 +3880,9 @@
       "document": "智能压缩配置，默认对 js、html、css、xml、json、shtml、htm 后缀且大小为 256 ~ 2097152 字节的文件进行 GZIP 压缩",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "智能压缩配置开关\non：开启\noff：关闭",
+          "document": "智能压缩配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -3914,9 +3890,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压缩规则数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CompressionRule",
           "name": "CompressionRules",
           "required": false,
@@ -4013,9 +3989,9 @@
       "document": "组成CacheKey的一部分",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on | off 是否使用Cookie作为Cache的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用Cookie作为Cache的一部分配置开关，取值有：\non：开启，使用Cookie作为Cache的一部分\noff：关闭，不使用Cookie作为Cache的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -4023,9 +3999,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用的cookie，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -9480,9 +9456,9 @@
       "document": "单链接下行限速配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "下行速度配置开关\non：开启\noff：关闭",
+          "document": "下行速度配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -9490,9 +9466,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下行限速规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CappingRule",
           "name": "CappingRules",
           "required": false,
@@ -9761,9 +9737,8 @@
       "document": "状态码重定向配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "状态码重定向配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态码重定向配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -9772,7 +9747,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态码重定向规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9881,9 +9855,8 @@
       "document": "回源 301/302 状态码自动跟随配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "回源跟随开关\non：开启\noff：关闭",
+          "document": "回源跟随配置开关，取值有：\non：开启\noff：关闭",
           "example": "无",
           "member": "string",
           "name": "Switch",
@@ -9892,7 +9865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9909,9 +9881,9 @@
       "document": "访问协议强制跳转配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "访问强制跳转配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问强制跳转配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -9919,9 +9891,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问强制跳转类型\nhttp：强制 http 跳转\nhttps：强制 https 跳转\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RedirectType",
           "required": false,
@@ -9929,9 +9901,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "强制跳转时返回状态码 \n支持 301、302\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RedirectStatusCode",
           "required": false,
@@ -9939,9 +9911,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "强制跳转时是否返回增加的头部。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CarryHeaders",
           "required": false,
@@ -10063,9 +10035,9 @@
       "document": "图片优化-GuetzliAdapter配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片优化-GuetzliAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -10107,9 +10079,9 @@
       "document": "组成CacheKey",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否组成Cachekey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组成Cachekey配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -10117,9 +10089,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组成CacheKey的header数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -10133,9 +10105,8 @@
       "document": "启发式缓存配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on 代表开启启发式缓存\noff 代表关闭启发式缓存",
+          "document": "启发式缓存配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -10144,7 +10115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义启发式缓存时间配置",
           "example": "无",
@@ -10161,9 +10131,9 @@
       "document": "HSTS 配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启，on或off。",
+          "document": "HSTS 配置开关，取值有：\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -10171,9 +10141,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MaxAge数值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MaxAge",
           "required": false,
@@ -10181,9 +10151,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否包含子域名，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "IncludeSubDomains",
           "required": false,
@@ -10294,9 +10264,8 @@
       "document": "域名 https 加速配置，默认为关闭状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "https 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "https 配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -10305,7 +10274,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rewrew",
@@ -10316,7 +10284,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OCSP 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -10327,7 +10294,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端证书校验功能\non：开启\noff：关闭\n默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dsadsa",
@@ -10338,7 +10304,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务端证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10349,7 +10314,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10360,7 +10324,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Spdy 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dfdf",
@@ -10371,7 +10334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "https 证书部署状态\nclosed：已关闭\ndeploying：部署中\ndeployed：部署成功\nfailed：部署失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "closed",
@@ -10382,7 +10344,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hsts配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10393,7 +10354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"TLSv1\"]",
@@ -10410,9 +10370,8 @@
       "document": "HTTPS服务，若关闭，下发配置拦截https请求，开启时会产生计费",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "HTTPS服务，缺省时默认开启【会产生计费】",
+          "document": "HTTPS服务配置开关，取值有：\non：开启，缺省时默认开启【会产生计费】\noff：关闭，拦截https请求\n",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -10620,12 +10579,11 @@
       "usage": "out"
     },
     "HwPrivateAccess": {
-      "document": " 华为云对象存储回源鉴权",
+      "document": "华为云对象存储回源鉴权",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "开关 on/off",
+          "document": " 华为云对象存储回源鉴权配置开关，取值有：\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -10634,7 +10592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SYWKY0DAR8I5NXZO93YT",
@@ -10645,7 +10602,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5Hhn0uss213Szfgysb6nOkWaGA6Z4V956n8NtSmg",
@@ -10656,7 +10612,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hw-1-163",
@@ -10724,7 +10679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP 黑白名单配置开关\non：开启\noff：关闭",
+          "document": "IP 黑白名单配置开关，取值有\non：开启\noff：关闭",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -14719,9 +14674,9 @@
       "document": "是否回源站校验",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on | off 是否总是回源校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总是回源校验配置开关，取值有：\non：开启\noff：关闭\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14729,9 +14684,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只在特定请求路径回源站校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -14846,9 +14801,9 @@
       "document": "路径保留参数配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "on | off CacheKey是否由QueryString组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径保留参数配置开关，取值有：\non：开启，CacheKey由QueryString组成\noff：关闭，CacheKey不由QueryString组成\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -14856,9 +14811,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "includeCustom 包含部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Action",
           "required": true,
@@ -14866,9 +14821,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
