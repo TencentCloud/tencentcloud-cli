@@ -1,251 +1,4 @@
-**Example 1: 查询告警策略列表**
-
-
-
-Input: 
-
-```
-tccli monitor DescribeAlarmPolicies --cli-unfold-argument  \
-    --Module monitor \
-    --PageSize 10 \
-    --PageNumber 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
-        "Policies": [
-            {
-                "NamespaceShowName": "xx",
-                "LastEditUin": "xx",
-                "Namespace": "xx",
-                "InstanceGroupName": "xx",
-                "AdvancedMetricNumber": 0,
-                "Notices": [
-                    {
-                        "AMPConsumerId": "xx",
-                        "URLNotices": [
-                            {
-                                "ValidationCode": "xx",
-                                "URL": "xx",
-                                "IsValid": 0,
-                                "Weekday": [
-                                    0
-                                ],
-                                "StartTime": 0,
-                                "EndTime": 0
-                            }
-                        ],
-                        "Name": "xx",
-                        "NoticeType": "xx",
-                        "Tags": [
-                            {
-                                "Value": "xx",
-                                "Key": "xx"
-                            }
-                        ],
-                        "CLSNotices": [
-                            {
-                                "TopicId": "xx",
-                                "Region": "xx",
-                                "Enable": 0,
-                                "LogSetId": "xx"
-                            }
-                        ],
-                        "PolicyIds": [
-                            "xx"
-                        ],
-                        "UserNotices": [
-                            {
-                                "NoticeWay": [
-                                    "EMAIL"
-                                ],
-                                "NeedPhoneArriveNotice": 1,
-                                "PhoneOrder": [
-                                    0
-                                ],
-                                "PhoneCallType": "xx",
-                                "UserIds": [
-                                    0
-                                ],
-                                "ReceiverType": "xx",
-                                "PhoneCircleInterval": 60,
-                                "GroupIds": [
-                                    3877
-                                ],
-                                "StartTime": 0,
-                                "PhoneCircleTimes": 2,
-                                "EndTime": 1,
-                                "PhoneInnerInterval": 60,
-                                "Weekday": [
-                                    0
-                                ]
-                            }
-                        ],
-                        "IsPreset": 0,
-                        "UpdatedBy": "xx",
-                        "UpdatedAt": "xx",
-                        "NoticeLanguage": "xx",
-                        "Id": "xx"
-                    }
-                ],
-                "TriggerTasks": [
-                    {
-                        "Type": "xx",
-                        "TaskConfig": "xx"
-                    }
-                ],
-                "ConditionTemplateId": "xx",
-                "UpdateTime": 1603114100,
-                "Enable": 1,
-                "TagInstances": null,
-                "Tags": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "Condition": {
-                    "IsUnionRule": 0,
-                    "Rules": [
-                        {
-                            "NoticeFrequency": 86400,
-                            "RuleType": "xx",
-                            "ValueMax": 0.0,
-                            "IsAdvanced": 0,
-                            "Description": "xx",
-                            "IsOpen": 0,
-                            "ValueMin": 0.0,
-                            "Period": 60,
-                            "Value": "xx",
-                            "Filter": {
-                                "Type": "xx",
-                                "Dimensions": "xx"
-                            },
-                            "IsPowerNotice": 0,
-                            "ContinuePeriod": 1,
-                            "Operator": "xx",
-                            "MetricName": "xx",
-                            "Unit": "xx",
-                            "ProductId": "xx"
-                        }
-                    ]
-                },
-                "PolicyName": "xx",
-                "Remark": "xx",
-                "ConditionsTemp": {
-                    "EventCondition": {
-                        "Rules": [
-                            {
-                                "NoticeFrequency": 0,
-                                "RuleType": "xx",
-                                "ValueMax": 0.0,
-                                "IsAdvanced": 0,
-                                "Description": "xx",
-                                "IsOpen": 0,
-                                "ValueMin": 0.0,
-                                "Period": 0,
-                                "Value": "xx",
-                                "Filter": {
-                                    "Type": "xx",
-                                    "Dimensions": "xx"
-                                },
-                                "IsPowerNotice": 0,
-                                "ContinuePeriod": 0,
-                                "Operator": "xx",
-                                "MetricName": "xx",
-                                "Unit": "xx",
-                                "ProductId": "xx"
-                            }
-                        ]
-                    },
-                    "Condition": {
-                        "IsUnionRule": 0
-                    },
-                    "TemplateName": "xx"
-                },
-                "ProjectId": 0,
-                "Region": [
-                    "bj",
-                    "ca",
-                    "cd",
-                    "cq",
-                    "de",
-                    "fzec",
-                    "gz",
-                    "gzopen",
-                    "hk",
-                    "hzec",
-                    "in",
-                    "jnec",
-                    "jp",
-                    "kr",
-                    "nj",
-                    "ru",
-                    "sg",
-                    "sh",
-                    "shjr",
-                    "szjr",
-                    "szx",
-                    "th",
-                    "tpe",
-                    "tsn",
-                    "use",
-                    "usw"
-                ],
-                "RuleType": "xx",
-                "FilterDimensionsParam": "xx",
-                "EventCondition": {
-                    "Rules": [
-                        {
-                            "NoticeFrequency": 0,
-                            "RuleType": "xx",
-                            "ValueMax": 0.0,
-                            "IsAdvanced": 0,
-                            "Description": "xx",
-                            "IsOpen": 0,
-                            "ValueMin": 0.0,
-                            "Period": 0,
-                            "Value": "xx",
-                            "Filter": {
-                                "Type": "xx",
-                                "Dimensions": "xx"
-                            },
-                            "IsPowerNotice": 0,
-                            "ContinuePeriod": 0,
-                            "Operator": "xx",
-                            "MetricName": "xx",
-                            "Unit": "xx",
-                            "ProductId": "xx"
-                        }
-                    ]
-                },
-                "InsertTime": 1603114100,
-                "InstanceGroupId": 0,
-                "NoticeIds": [
-                    "notice-esrwma09"
-                ],
-                "OriginId": "xx",
-                "IsDefault": 0,
-                "PolicyId": "xx",
-                "UseSum": 0,
-                "InstanceSum": 0,
-                "ProjectName": "xx",
-                "IsBindAll": 0,
-                "OneClickStatus": 0,
-                "IsOneClick": 0,
-                "CanSetDefault": 1,
-                "MonitorType": "xx"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 搜索一个云服务器绑定的告警策略**
+**Example 1: 搜索一个云服务器绑定的告警策略**
 
 按照实例过滤策略，需要填入监控类型、策略类型、实例的维度信息。我们以搜索两个云服务器为例，假设他们的实例 ID 分别为 `ins-qr8d555g`,  `ins-qr8d555h`。
 
@@ -288,133 +41,487 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "Policies": [
             {
-                "PolicyId": "policy-pvnj4u7h",
-                "PolicyName": "Test-2",
+                "PolicyId": "abc",
+                "PolicyName": "abc",
+                "Remark": "abc",
+                "MonitorType": "abc",
+                "Enable": 0,
                 "UseSum": 0,
-                "Remark": "For-Test-2",
-                "MonitorType": "MT_QCE",
-                "Enable": 1,
-                "RuleType": "STATIC",
-                "TagInstances": null,
-                "IsDefault": 0,
                 "ProjectId": 0,
-                "ProjectName": "",
-                "Namespace": "cvm_device",
-                "ConditionTemplateId": "",
+                "ProjectName": "abc",
+                "Namespace": "abc",
+                "ConditionTemplateId": "abc",
                 "Condition": {
                     "IsUnionRule": 0,
                     "Rules": [
                         {
-                            "MetricName": "CpuUsage",
-                            "Description": "CPU利用率",
-                            "Period": 60,
-                            "Operator": "gt",
-                            "Value": "0",
-                            "ContinuePeriod": 1,
-                            "NoticeFrequency": 86400,
+                            "MetricName": "abc",
+                            "Period": 0,
+                            "Operator": "abc",
+                            "Value": "abc",
+                            "ContinuePeriod": 0,
+                            "NoticeFrequency": 0,
                             "IsPowerNotice": 0,
                             "Filter": {
-                                "Type": "",
-                                "Dimensions": "[]"
+                                "Type": "abc",
+                                "Dimensions": "abc"
+                            },
+                            "Description": "abc",
+                            "Unit": "abc",
+                            "RuleType": "abc",
+                            "IsAdvanced": 0,
+                            "IsOpen": 0,
+                            "ProductId": "abc",
+                            "ValueMax": 0,
+                            "ValueMin": 0,
+                            "HierarchicalValue": {
+                                "Remind": "abc",
+                                "Warn": "abc",
+                                "Serious": "abc"
+                            }
+                        }
+                    ],
+                    "ComplexExpression": "abc"
+                },
+                "EventCondition": {
+                    "Rules": [
+                        {
+                            "MetricName": "abc",
+                            "Period": 0,
+                            "Operator": "abc",
+                            "Value": "abc",
+                            "ContinuePeriod": 0,
+                            "NoticeFrequency": 0,
+                            "IsPowerNotice": 0,
+                            "Filter": {
+                                "Type": "abc",
+                                "Dimensions": "abc"
+                            },
+                            "Description": "abc",
+                            "Unit": "abc",
+                            "RuleType": "abc",
+                            "IsAdvanced": 0,
+                            "IsOpen": 0,
+                            "ProductId": "abc",
+                            "ValueMax": 0,
+                            "ValueMin": 0,
+                            "HierarchicalValue": {
+                                "Remind": "abc",
+                                "Warn": "abc",
+                                "Serious": "abc"
                             }
                         }
                     ]
                 },
-                "EventCondition": {
-                    "Rules": []
-                },
                 "NoticeIds": [
-                    "notice-esrwma09"
+                    "abc"
                 ],
                 "Notices": [
                     {
-                        "Id": "notice-esrwma09",
-                        "Name": "Notice-Test-2",
-                        "UpdatedAt": "2020-10-19 20:56:50",
-                        "UpdatedBy": "1500000685",
-                        "NoticeType": "OK",
+                        "Id": "abc",
+                        "Name": "abc",
+                        "UpdatedAt": "abc",
+                        "UpdatedBy": "abc",
+                        "NoticeType": "abc",
                         "UserNotices": [
                             {
-                                "ReceiverType": "GROUP",
-                                "UserIds": null,
+                                "ReceiverType": "abc",
+                                "UserIds": [
+                                    0
+                                ],
                                 "GroupIds": [
-                                    3877
+                                    0
                                 ],
                                 "StartTime": 0,
-                                "EndTime": 1,
+                                "EndTime": 0,
                                 "NoticeWay": [
-                                    "EMAIL"
+                                    "abc"
                                 ],
-                                "PhoneOrder": null,
-                                "PhoneCircleTimes": 2,
-                                "PhoneInnerInterval": 60,
-                                "PhoneCircleInterval": 60,
-                                "NeedPhoneArriveNotice": 1
+                                "PhoneOrder": [
+                                    0
+                                ],
+                                "PhoneCircleTimes": 0,
+                                "PhoneInnerInterval": 0,
+                                "PhoneCircleInterval": 0,
+                                "NeedPhoneArriveNotice": 0,
+                                "PhoneCallType": "abc",
+                                "Weekday": [
+                                    0
+                                ],
+                                "OnCallFormIDs": [
+                                    "abc"
+                                ]
                             }
                         ],
                         "URLNotices": [
                             {
-                                "URL": "https://www.abc.com",
-                                "IsValid": 0
+                                "URL": "abc",
+                                "IsValid": 0,
+                                "ValidationCode": "abc",
+                                "StartTime": 0,
+                                "EndTime": 0,
+                                "Weekday": [
+                                    0
+                                ]
                             }
                         ],
                         "IsPreset": 0,
-                        "AMPConsumerId": "xx",
+                        "NoticeLanguage": "abc",
                         "PolicyIds": [
-                            "xx"
+                            "abc"
+                        ],
+                        "AMPConsumerId": "abc",
+                        "CLSNotices": [
+                            {
+                                "Enable": 0,
+                                "Region": "abc",
+                                "LogSetId": "abc",
+                                "TopicId": "abc"
+                            }
+                        ],
+                        "Tags": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
                         ]
                     }
                 ],
-                "TriggerTasks": [],
-                "OriginId": "1314081",
-                "ConditionsTemp": {
-                    "TemplateName": "",
-                    "Condition": null,
-                    "EventCondition": null
-                },
-                "LastEditUin": "1500000685",
-                "UpdateTime": 1603114100,
-                "InsertTime": 1603114100,
-                "Region": [
-                    "bj",
-                    "ca",
-                    "cd",
-                    "cq",
-                    "de",
-                    "fzec",
-                    "gz",
-                    "gzopen",
-                    "hk",
-                    "hzec",
-                    "in",
-                    "jnec",
-                    "jp",
-                    "kr",
-                    "nj",
-                    "ru",
-                    "sg",
-                    "sh",
-                    "shjr",
-                    "szjr",
-                    "szx",
-                    "th",
-                    "tpe",
-                    "tsn",
-                    "use",
-                    "usw"
+                "TriggerTasks": [
+                    {
+                        "Type": "abc",
+                        "TaskConfig": "abc"
+                    }
                 ],
-                "FilterDimensionsParam": "",
-                "NamespaceShowName": "云服务器-基础监控",
-                "CanSetDefault": 1,
+                "ConditionsTemp": {
+                    "TemplateName": "abc",
+                    "Condition": {
+                        "IsUnionRule": 0,
+                        "Rules": [
+                            {
+                                "MetricName": "abc",
+                                "Period": 0,
+                                "Operator": "abc",
+                                "Value": "abc",
+                                "ContinuePeriod": 0,
+                                "NoticeFrequency": 0,
+                                "IsPowerNotice": 0,
+                                "Filter": {
+                                    "Type": "abc",
+                                    "Dimensions": "abc"
+                                },
+                                "Description": "abc",
+                                "Unit": "abc",
+                                "RuleType": "abc",
+                                "IsAdvanced": 0,
+                                "IsOpen": 0,
+                                "ProductId": "abc",
+                                "ValueMax": 0,
+                                "ValueMin": 0,
+                                "HierarchicalValue": {
+                                    "Remind": "abc",
+                                    "Warn": "abc",
+                                    "Serious": "abc"
+                                }
+                            }
+                        ],
+                        "ComplexExpression": "abc"
+                    },
+                    "EventCondition": {}
+                },
+                "LastEditUin": "abc",
+                "UpdateTime": 0,
+                "InsertTime": 0,
+                "Region": [
+                    "abc"
+                ],
+                "NamespaceShowName": "abc",
+                "IsDefault": 0,
+                "CanSetDefault": 0,
                 "InstanceGroupId": 0,
-                "InstanceGroupName": "",
-                "InstanceSum": 0
+                "InstanceSum": 0,
+                "InstanceGroupName": "abc",
+                "RuleType": "abc",
+                "OriginId": "abc",
+                "TagInstances": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc",
+                        "InstanceSum": 0,
+                        "ServiceType": "abc",
+                        "RegionId": 0,
+                        "BindingStatus": 0,
+                        "TagStatus": 0
+                    }
+                ],
+                "FilterDimensionsParam": "abc",
+                "IsOneClick": 0,
+                "OneClickStatus": 0,
+                "AdvancedMetricNumber": 0,
+                "IsBindAll": 0,
+                "Tags": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ]
             }
         ],
-        "RequestId": "p7gicv4fb-4euztbaaczrsj4vz-s28g-",
-        "TotalCount": 1
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 根据接收组搜索**
+
+根据接收组搜索
+
+Input: 
+
+```
+tccli monitor DescribeAlarmPolicies --cli-unfold-argument  \
+    --Module monitor \
+    --PageSize 10 \
+    --PageNumber 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "Policies": [
+            {
+                "PolicyId": "abc",
+                "PolicyName": "abc",
+                "Remark": "abc",
+                "MonitorType": "abc",
+                "Enable": 0,
+                "UseSum": 0,
+                "ProjectId": 0,
+                "ProjectName": "abc",
+                "Namespace": "abc",
+                "ConditionTemplateId": "abc",
+                "Condition": {
+                    "IsUnionRule": 0,
+                    "Rules": [
+                        {
+                            "MetricName": "abc",
+                            "Period": 0,
+                            "Operator": "abc",
+                            "Value": "abc",
+                            "ContinuePeriod": 0,
+                            "NoticeFrequency": 0,
+                            "IsPowerNotice": 0,
+                            "Filter": {
+                                "Type": "abc",
+                                "Dimensions": "abc"
+                            },
+                            "Description": "abc",
+                            "Unit": "abc",
+                            "RuleType": "abc",
+                            "IsAdvanced": 0,
+                            "IsOpen": 0,
+                            "ProductId": "abc",
+                            "ValueMax": 0,
+                            "ValueMin": 0,
+                            "HierarchicalValue": {
+                                "Remind": "abc",
+                                "Warn": "abc",
+                                "Serious": "abc"
+                            }
+                        }
+                    ],
+                    "ComplexExpression": "abc"
+                },
+                "EventCondition": {
+                    "Rules": [
+                        {
+                            "MetricName": "abc",
+                            "Period": 0,
+                            "Operator": "abc",
+                            "Value": "abc",
+                            "ContinuePeriod": 0,
+                            "NoticeFrequency": 0,
+                            "IsPowerNotice": 0,
+                            "Filter": {
+                                "Type": "abc",
+                                "Dimensions": "abc"
+                            },
+                            "Description": "abc",
+                            "Unit": "abc",
+                            "RuleType": "abc",
+                            "IsAdvanced": 0,
+                            "IsOpen": 0,
+                            "ProductId": "abc",
+                            "ValueMax": 0,
+                            "ValueMin": 0,
+                            "HierarchicalValue": {
+                                "Remind": "abc",
+                                "Warn": "abc",
+                                "Serious": "abc"
+                            }
+                        }
+                    ]
+                },
+                "NoticeIds": [
+                    "abc"
+                ],
+                "Notices": [
+                    {
+                        "Id": "abc",
+                        "Name": "abc",
+                        "UpdatedAt": "abc",
+                        "UpdatedBy": "abc",
+                        "NoticeType": "abc",
+                        "UserNotices": [
+                            {
+                                "ReceiverType": "abc",
+                                "UserIds": [
+                                    0
+                                ],
+                                "GroupIds": [
+                                    0
+                                ],
+                                "StartTime": 0,
+                                "EndTime": 0,
+                                "NoticeWay": [
+                                    "abc"
+                                ],
+                                "PhoneOrder": [
+                                    0
+                                ],
+                                "PhoneCircleTimes": 0,
+                                "PhoneInnerInterval": 0,
+                                "PhoneCircleInterval": 0,
+                                "NeedPhoneArriveNotice": 0,
+                                "PhoneCallType": "abc",
+                                "Weekday": [
+                                    0
+                                ],
+                                "OnCallFormIDs": [
+                                    "abc"
+                                ]
+                            }
+                        ],
+                        "URLNotices": [
+                            {
+                                "URL": "abc",
+                                "IsValid": 0,
+                                "ValidationCode": "abc",
+                                "StartTime": 0,
+                                "EndTime": 0,
+                                "Weekday": [
+                                    0
+                                ]
+                            }
+                        ],
+                        "IsPreset": 0,
+                        "NoticeLanguage": "abc",
+                        "PolicyIds": [
+                            "abc"
+                        ],
+                        "AMPConsumerId": "abc",
+                        "CLSNotices": [
+                            {
+                                "Enable": 0,
+                                "Region": "abc",
+                                "LogSetId": "abc",
+                                "TopicId": "abc"
+                            }
+                        ],
+                        "Tags": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ]
+                    }
+                ],
+                "TriggerTasks": [
+                    {
+                        "Type": "abc",
+                        "TaskConfig": "abc"
+                    }
+                ],
+                "ConditionsTemp": {
+                    "TemplateName": "abc",
+                    "Condition": {
+                        "IsUnionRule": 0,
+                        "Rules": [
+                            {
+                                "MetricName": "abc",
+                                "Period": 0,
+                                "Operator": "abc",
+                                "Value": "abc",
+                                "ContinuePeriod": 0,
+                                "NoticeFrequency": 0,
+                                "IsPowerNotice": 0,
+                                "Filter": {
+                                    "Type": "abc",
+                                    "Dimensions": "abc"
+                                },
+                                "Description": "abc",
+                                "Unit": "abc",
+                                "RuleType": "abc",
+                                "IsAdvanced": 0,
+                                "IsOpen": 0,
+                                "ProductId": "abc",
+                                "ValueMax": 0,
+                                "ValueMin": 0,
+                                "HierarchicalValue": {
+                                    "Remind": "abc",
+                                    "Warn": "abc",
+                                    "Serious": "abc"
+                                }
+                            }
+                        ],
+                        "ComplexExpression": "abc"
+                    },
+                    "EventCondition": {}
+                },
+                "LastEditUin": "abc",
+                "UpdateTime": 0,
+                "InsertTime": 0,
+                "Region": [
+                    "abc"
+                ],
+                "NamespaceShowName": "abc",
+                "IsDefault": 0,
+                "CanSetDefault": 0,
+                "InstanceGroupId": 0,
+                "InstanceSum": 0,
+                "InstanceGroupName": "abc",
+                "RuleType": "abc",
+                "OriginId": "abc",
+                "TagInstances": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc",
+                        "InstanceSum": 0,
+                        "ServiceType": "abc",
+                        "RegionId": 0,
+                        "BindingStatus": 0,
+                        "TagStatus": 0
+                    }
+                ],
+                "FilterDimensionsParam": "abc",
+                "IsOneClick": 0,
+                "OneClickStatus": 0,
+                "AdvancedMetricNumber": 0,
+                "IsBindAll": 0,
+                "Tags": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ]
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

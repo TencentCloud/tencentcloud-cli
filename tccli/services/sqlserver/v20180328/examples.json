@@ -88,6 +88,22 @@
         "title": "创建商业智能平面文件"
       }
     ],
+    "CreateCloudDBInstances": [
+      {
+        "document": "创建基于通用型云盘版的双机高可用实例。",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudDBInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"ProjectId\": 0,\n    \"Memory\": 4,\n    \"Storage\": 200,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-15y3y4eo\",\n    \"VpcId\": \"vpc-hqxhp43z\",\n    \"Period\": 1,\n    \"DBVersion\": \"2008R2\",\n    \"AutoRenewFlag\": 0,\n    \"SecurityGroupList\": [\n        \"sg-7hb0hisl\"\n    ],\n    \"Weekly\": [\n        1,\n        2\n    ],\n    \"StartTime\": \"01:00\",\n    \"Span\": 1,\n    \"MultiZones\": true,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"product\"\n        }\n    ],\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"TimeZone\": \"China Standard Time\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"202301231\",\n        \"RequestId\": \"61999983-b0af-4889-b067-xxxxxxxxx\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
+    "CreateCloudReadOnlyDBInstances": [
+      {
+        "document": "创建基于通用型SSD云硬盘的只读副本",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudReadOnlyDBInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupMaxDelayTime\": \"10\",\n    \"VpcId\": \"vpc-3xq2t5al\",\n    \"GoodsNum\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"InstanceId\": \"mssql-6upluvd5\",\n    \"Period\": \"1\",\n    \"Storage\": \"10\",\n    \"ReadOnlyGroupIsOfflineDelay\": \"1\",\n    \"ReadOnlyGroupMinInGroup\": \"1\",\n    \"ReadOnlyGroupName\": \"default_name\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"ReadOnlyGroupType\": \"2\",\n    \"InstanceChargeType\": \"POSTPAID\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-gdy95gfs\",\n    \"TimeZone\": \"China Standard Time\",\n    \"ReadOnlyGroupForcedUpgrade\": \"1\",\n    \"Cpu\": 2,\n    \"MachineType\": \"CLOUD_BSSD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20200722117963\"\n        ],\n        \"RequestId\": \"0509b6b8-8906-479f-9489-10620ec6d4ce\"\n    }\n}",
+        "title": "创建只读实例"
+      }
+    ],
     "CreateDB": [
       {
         "document": "",

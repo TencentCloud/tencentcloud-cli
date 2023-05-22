@@ -1572,7 +1572,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "腾讯云项目 ID，废弃参数，填写0即可。",
           "example": "0",
           "member": "uint64",
@@ -1582,7 +1582,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "子服务类型。2： 一句话识别。",
           "example": "2",
           "member": "uint64",
@@ -1602,7 +1602,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "废弃参数，填写任意字符串即可。",
           "example": "d4ce3bb438dd0743",
           "member": "string",

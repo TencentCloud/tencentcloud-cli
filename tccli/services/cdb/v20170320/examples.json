@@ -384,14 +384,6 @@
         "title": "查询备份实时统计"
       }
     ],
-    "DescribeBackupTables": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupTables\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"DatabaseName\": \"mysql\",\n    \"StartTime\": \"2017-07-12 10:29:20\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"28\",\n        \"Items\": [\n            {\n                \"TableName\": \"general_log\"\n            },\n            {\n                \"TableName\": \"slow_log\"\n            },\n            {\n                \"TableName\": \"columns_priv\"\n            },\n            {\n                \"TableName\": \"db\"\n            },\n            {\n                \"TableName\": \"event\"\n            },\n            {\n                \"TableName\": \"func\"\n            },\n            {\n                \"TableName\": \"help_category\"\n            },\n            {\n                \"TableName\": \"help_keyword\"\n            },\n            {\n                \"TableName\": \"help_relation\"\n            },\n            {\n                \"TableName\": \"help_topic\"\n            },\n            {\n                \"TableName\": \"innodb_index_stats\"\n            },\n            {\n                \"TableName\": \"innodb_table_stats\"\n            },\n            {\n                \"TableName\": \"ndb_binlog_index\"\n            },\n            {\n                \"TableName\": \"plugin\"\n            },\n            {\n                \"TableName\": \"proc\"\n            },\n            {\n                \"TableName\": \"procs_priv\"\n            },\n            {\n                \"TableName\": \"proxies_priv\"\n            },\n            {\n                \"TableName\": \"servers\"\n            },\n            {\n                \"TableName\": \"slave_master_info\"\n            },\n            {\n                \"TableName\": \"slave_relay_log_info\"\n            },\n            {\n                \"TableName\": \"slave_worker_info\"\n            },\n            {\n                \"TableName\": \"tables_priv\"\n            },\n            {\n                \"TableName\": \"time_zone\"\n            },\n            {\n                \"TableName\": \"time_zone_leap_second\"\n            },\n            {\n                \"TableName\": \"time_zone_name\"\n            },\n            {\n                \"TableName\": \"time_zone_transition\"\n            },\n            {\n                \"TableName\": \"time_zone_transition_type\"\n            },\n            {\n                \"TableName\": \"user\"\n            }\n        ]\n    }\n}",
-        "title": "查询指定数据库的备份数据表"
-      }
-    ],
     "DescribeBackups": [
       {
         "document": "查询数据备份文件列表",

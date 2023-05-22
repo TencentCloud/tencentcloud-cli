@@ -11461,7 +11461,6 @@
       "document": "ModifyLiveCallbackTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DescribeLiveCallbackTemplates接口返回的模板 ID。",
           "example": "1000",
@@ -11472,7 +11471,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。",
           "example": "testName",
@@ -11483,7 +11481,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。",
           "example": "test",
@@ -11494,7 +11491,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开播回调 URL。",
           "example": "无",
@@ -11505,7 +11501,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "断流回调 URL。",
           "example": "无",
@@ -11516,7 +11511,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制回调 URL。",
           "example": "无",
@@ -11527,7 +11521,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图回调 URL。",
           "example": "无",
@@ -11538,7 +11531,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "鉴黄回调 URL。",
           "example": "无",
@@ -11549,7 +11541,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。",
           "example": "adasdas23432423",
@@ -11560,12 +11551,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流异常回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "PushExceptionNotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "音频审核回调 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioAuditNotifyUrl",
           "required": false,
           "type": "string",
           "visibility": 1
