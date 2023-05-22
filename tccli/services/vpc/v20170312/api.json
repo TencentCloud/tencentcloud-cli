@@ -3362,7 +3362,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -5542,7 +5542,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -6965,7 +6965,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -21004,7 +21004,7 @@
         },
         {
           "disabled": false,
-          "document": "服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "document": "服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
           "example": "无",
           "member": "string",
           "name": "QosLevel",

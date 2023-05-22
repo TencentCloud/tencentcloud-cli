@@ -92,9 +92,9 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "创建集成页面签署链接，请联系客户经理申请使用",
+      "document": "创建个人H5签署链接，请联系客户经理申请使用 <br/>\n该接口用于发起合同后，生成C端签署人的签署链接 <br/>\n注意：该接口目前签署人类型仅支持个人签署方（PERSON） <br/>\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>",
       "input": "CreateFlowSignUrlRequest",
-      "name": "获取集成页面签署链接",
+      "name": "创建个人用户H5签署链接",
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreatePreparedPersonalEsign": {
-      "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，在开通个人自动签之后调用，使用此接口请与客户经理确认）。",
+      "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。",
       "input": "CreatePreparedPersonalEsignRequest",
       "name": "创建导入个人印章",
       "output": "CreatePreparedPersonalEsignResponse",
@@ -2686,7 +2686,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码",
+          "document": "手机号码；当需要开通自动签时，该参数必传",
           "example": "无",
           "member": "string",
           "name": "Mobile",
@@ -4334,11 +4334,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开通",
+          "document": "是否已开通自动签",
           "example": "无",
           "member": "bool",
           "name": "IsOpen",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动签许可生效时间。当且仅当已开通自动签时有值。",
+          "example": "1684412179",
+          "member": "int64",
+          "name": "LicenseFrom",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动签许可到期时间。当且仅当已开通自动签时有值。",
+          "example": "1715948179",
+          "member": "int64",
+          "name": "LicenseTo",
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -28002,9 +28002,9 @@
       "document": "微服务网关单元化规则项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "逻辑关系：AND/OR",
+          "example": "无",
           "member": "string",
           "name": "Relationship",
           "required": true,
@@ -28012,9 +28012,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的地命名空间ID",
+          "example": "无",
           "member": "string",
           "name": "DestNamespaceId",
           "required": true,
@@ -28022,9 +28022,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的地命名空间名称",
+          "example": "无",
           "member": "string",
           "name": "DestNamespaceName",
           "required": true,
@@ -28032,9 +28032,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则项名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -28042,9 +28042,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -28052,9 +28052,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元化规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UnitRuleId",
           "required": false,
@@ -28062,9 +28062,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则顺序，越小优先级越高：默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Priority",
           "required": false,
@@ -28072,9 +28072,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -28082,13 +28082,43 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UnitRuleTag",
           "name": "UnitRuleTagList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

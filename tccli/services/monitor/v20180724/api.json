@@ -1643,7 +1643,6 @@
       "document": "告警策略详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1654,7 +1653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1665,7 +1663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1676,7 +1673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型 MT_QCE=云产品监控\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1687,7 +1683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启停状态 0=停用 1=启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1698,7 +1693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组绑定的实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1709,7 +1703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 Id -1=无项目 0=默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1720,7 +1713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1731,7 +1723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1742,7 +1733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发条件模板 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1753,7 +1743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1764,7 +1753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1775,7 +1763,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知规则 id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1786,7 +1773,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知规则 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1797,7 +1783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1808,7 +1793,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1819,7 +1803,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后编辑的用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1830,7 +1813,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1841,7 +1823,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1852,7 +1833,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1863,7 +1843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "namespace显示名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1874,7 +1853,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1885,7 +1863,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "能否设置默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1896,7 +1873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1907,7 +1883,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组总实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1918,7 +1893,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1929,7 +1903,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1940,7 +1913,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1951,7 +1923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1962,7 +1933,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略关联的过滤维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -1973,7 +1943,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为一键告警策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1984,7 +1953,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一键告警策略是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1995,7 +1963,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级指标数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2006,7 +1973,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略是否是全部对象策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2017,7 +1983,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2969,12 +2934,12 @@
       "usage": "out"
     },
     "ConditionsTemp": {
-      "document": "告警条件模版",
+      "document": "告警条件模板",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -2982,9 +2947,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": true,
@@ -2992,9 +2957,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": true,
@@ -6154,7 +6119,6 @@
       "document": "DescribeAlarmNotices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
@@ -6164,7 +6128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码 最小为1",
           "example": "1",
@@ -6174,7 +6137,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小 1～200",
           "example": "20",
@@ -6184,7 +6146,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按更新时间排序方式 ASC=正序 DESC=倒序",
           "example": "DESC",
@@ -6194,7 +6155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号 uid 用于创建预设通知",
           "example": "1234567",
@@ -6204,7 +6164,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板名称 用来模糊搜索",
           "example": "模板",
@@ -6214,7 +6173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据接收人过滤告警通知模板需要选定通知用户类型 USER=用户 GROUP=用户组 传空=不按接收人过滤",
           "example": "USER",
@@ -6224,7 +6182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收对象列表",
           "example": "[]",
@@ -6234,7 +6191,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收组列表",
           "example": "[]",
@@ -6244,7 +6200,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据通知模板 id 过滤，空数组/不传则不过滤",
           "example": "[\"notice-ah28cv9d\"]",
@@ -6254,12 +6209,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板根据标签过滤",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "值班列表",
+          "example": "无",
+          "member": "string",
+          "name": "OnCallFormIDs",
           "required": false,
           "type": "list"
         }
@@ -6275,7 +6238,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6285,7 +6247,6 @@
           "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6302,7 +6263,6 @@
       "document": "DescribeAlarmPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -6312,7 +6272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数，从 1 开始计数，默认 1",
           "example": "1",
@@ -6322,7 +6281,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页的数量，取值1~100，默认20",
           "example": "20",
@@ -6332,7 +6290,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按策略名称模糊搜索",
           "example": "policy-24sxe890",
@@ -6342,7 +6299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控",
           "example": "[\"MT_QCE\"]",
@@ -6352,7 +6308,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据命名空间过滤，不同策略类型的值详见\n[策略类型列表](https://cloud.tencent.com/document/product/248/50397)",
           "example": "[\"cvm_device\"]",
@@ -6362,7 +6317,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：\n`[ {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555g\"}}, {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555h\"}} ]`\n具体也可以参考下方的示例 2。\n\n不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)\n\n注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时",
           "example": "[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]",
@@ -6372,7 +6326,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段",
           "example": "[9989]",
@@ -6382,7 +6335,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段",
           "example": "[1112]",
@@ -6392,7 +6344,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据默认策略筛选 不传展示全部策略 DEFAULT=展示默认策略 NOT_DEFAULT=展示非默认策略",
           "example": "[DEFAULT]",
@@ -6402,7 +6353,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，例如按照最后修改时间排序，Field: \"UpdateTime\"",
           "example": "PolicyId",
@@ -6412,7 +6362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序顺序：升序：ASC  降序：DESC",
           "example": "DESC",
@@ -6422,7 +6371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略所属项目的id数组，可在此页面查看\n[项目管理](https://console.cloud.tencent.com/project)",
           "example": "[1]",
@@ -6432,9 +6380,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "通知模版的id列表，可查询通知模版列表获取。\n可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。",
+          "document": "通知模板的id列表，可查询通知模板列表获取。\n可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。",
           "example": "[1,2]",
           "member": "string",
           "name": "NoticeIds",
@@ -6442,7 +6389,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据触发条件筛选 不传展示全部策略 STATIC=展示静态阈值策略 DYNAMIC=展示动态阈值策略",
           "example": "[STATIC]",
@@ -6452,7 +6398,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警启停筛选，[1]：启用   [0]：停止，全部[0, 1]",
           "example": "1",
@@ -6462,7 +6407,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "传 1 查询未配置通知规则的告警策略；不传或传其他数值，查询所有策略。",
           "example": "1",
@@ -6472,7 +6416,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组id",
           "example": "1",
@@ -6482,7 +6425,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0",
           "example": "1",
@@ -6492,7 +6434,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照触发任务（例如弹性伸缩）过滤策略。最多10个",
           "example": "无",
@@ -6502,7 +6443,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略",
           "example": "[\"ONECLICK\"]",
@@ -6512,9 +6452,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤",
+          "document": "返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤",
           "example": "1",
           "member": "int64",
           "name": "NotBindAll",
@@ -6522,9 +6461,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤",
+          "document": "返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤",
           "example": "1",
           "member": "int64",
           "name": "NotInstanceGroup",
@@ -6532,12 +6470,29 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略根据标签过滤",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "prom实例id，自定义指标策略时会用到",
+          "example": "prom-xxxx",
+          "member": "string",
+          "name": "PromInsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据排班表搜索",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverOnCallFormIDs",
           "required": false,
           "type": "list"
         }
@@ -6553,7 +6508,6 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6563,7 +6517,6 @@
           "example": "无",
           "member": "AlarmPolicy",
           "name": "Policies",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18624,7 +18577,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签key",
           "example": "\"abc\"",
@@ -18635,7 +18587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签value",
           "example": "\"abc\"",
@@ -18646,7 +18597,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TagInstance": {
       "document": "策略列表详情标签返回体",
@@ -20396,6 +20347,16 @@
           "example": "[1,2,5]",
           "member": "int64",
           "name": "Weekday",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班表id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[“form-10001”,“form-10002”]",
+          "member": "string",
+          "name": "OnCallFormIDs",
           "required": false,
           "type": "list",
           "value_allowed_null": true

@@ -4493,7 +4493,6 @@
       "document": "查询迁移实例列表的实例对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cdb-9djwowo2",
@@ -4504,7 +4503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "实例名称",
@@ -4515,7 +4513,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Vip",
           "example": "192.168.1.1",
@@ -4526,7 +4523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Vport",
           "example": "3306",
@@ -4537,7 +4533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可以作为迁移对象，1-可以，0-不可以",
           "example": "1",
@@ -4548,7 +4543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不可以作为迁移对象的原因",
           "example": "当前实例不可以作为迁移源",
@@ -5020,7 +5014,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移对象类型 Partial(部分对象)，默认为Partial\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移对象类型 Partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Partial",
           "member": "string",
           "name": "Mode",
@@ -5040,7 +5034,7 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AdvancedObjects",
@@ -5949,7 +5943,7 @@
         },
         {
           "disabled": false,
-          "document": "当前步骤进度，范围为[0-100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
@@ -6918,7 +6912,6 @@
       "document": "数据同步view的描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "view名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6929,9 +6922,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "新view名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预留字段、目前暂时不支持view的重命名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "NewViewName",

@@ -21,6 +21,8 @@ Output:
 {
     "Response": {
         "IsOpen": true,
+        "LicenseFrom": 1684412179,
+        "LicenseTo": 1715948179,
         "RequestId": "5beb5f54-cf3d-4c26-a4ee-a97c85196a3e"
     }
 }
