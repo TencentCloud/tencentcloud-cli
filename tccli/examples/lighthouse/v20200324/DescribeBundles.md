@@ -36,6 +36,7 @@ Output:
                 "SupportWindowsPlatform": true,
                 "BundleType": "GENERAL_BUNDLE",
                 "BundleTypeDescription": "通用型",
+                "BundleTypePriority": 1,
                 "BundleSalesState": "AVAILABLE",
                 "BundleDisplayLabel": "NORMAL"
             }

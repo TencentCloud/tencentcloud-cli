@@ -1,47 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 语音识别(asr) 版本：2019-06-14
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 13 次发布
+### 第 26 次发布
 
-发布时间：2023-05-22 01:07:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 59 次发布
-
-发布时间：2023-05-22 01:10:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeBackupTables
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* TableName
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 34 次发布
-
-发布时间：2023-05-22 01:27:41
+发布时间：2023-05-23 01:09:32
 
 本次发布包含了以下内容：
 
@@ -49,48 +12,41 @@
 
 修改接口：
 
-* [ModifyLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32631)
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/362/16312)
 
-	* 新增入参：AudioAuditNotifyUrl
+	* 新增入参：BurstPerformance
+
+* [ModifyDiskAttributes](http://document.tencentcloudapi.woa.com/document/product/362/15659)
+
+	* 新增入参：BurstPerformanceOperation
 
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
+## 负载均衡(clb) 版本：2018-03-17
 
-### 第 57 次发布
+### 第 40 次发布
 
-发布时间：2023-05-22 01:29:02
+发布时间：2023-05-23 01:12:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [DescribeAlarmNotices](http://document.tencentcloudapi.woa.com/document/product/248/51280)
-
-	* 新增入参：OnCallFormIDs
-
-* [DescribeAlarmPolicies](http://document.tencentcloudapi.woa.com/document/product/248/51279)
-
-	* 新增入参：PromInsId, ReceiverOnCallFormIDs
-
 
 修改数据结构：
 
-* [UserNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#UserNotice)
+* [TargetHealth](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetHealth)
 
-	* 新增成员：OnCallFormIDs
-
-
+	* <font color="#dd0000">**修改成员**：</font>HealthStatusDetial
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 20 次发布
 
-发布时间：2023-05-22 01:37:59
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 32 次发布
+
+发布时间：2023-05-23 01:17:33
 
 本次发布包含了以下内容：
 
@@ -98,8 +54,119 @@
 
 新增接口：
 
-* [CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)
-* [CreateCloudReadOnlyDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77815)
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77818)
+* [UpgradeDedicatedDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77817)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeSqlLogs
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 31 次发布
+
+发布时间：2023-05-23 01:24:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBundleConfigs](http://document.tencentcloudapi.woa.com/document/product/1207/77819)
+
+新增数据结构：
+
+* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 31 次发布
+
+发布时间：2023-05-23 01:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpgradeDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/77820)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 55 次发布
+
+发布时间：2023-05-23 01:27:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Key](http://document.tencentcloudapi.woa.com/document/product/866/33527#Key)
+
+	* 新增成员：ConfigName
+
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 3 次发布
+
+发布时间：2023-05-23 01:28:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckUinFollower](http://document.tencentcloudapi.woa.com/document/product/1602/77821)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 89 次发布
+
+发布时间：2023-05-23 01:37:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AcceptVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77814)
+
+	* 新增入参：PeeringConnectionId
+
+* [CreateVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77813)
+
+	* 新增入参：SourceVpcId, PeeringConnectionName, DestinationVpcId, DestinationUin, DestinationRegion, Bandwidth, Type, ChargeType, QosLevel
+
+* [DeleteVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77812)
+
+	* 新增入参：PeeringConnectionId
+
+* [DescribeVpcPeeringConnections](http://document.tencentcloudapi.woa.com/document/product/215/77811)
+
+	* 新增出参：TotalCount, PeerConnectionSet
+
+
+新增数据结构：
+
+* [PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)
 
 
 
@@ -5836,6 +5903,25 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 26 次发布
+
+发布时间：2023-05-23 01:09:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/362/16312)
+
+	* 新增入参：BurstPerformance
+
+* [ModifyDiskAttributes](http://document.tencentcloudapi.woa.com/document/product/362/15659)
+
+	* 新增入参：BurstPerformanceOperation
+
 
 ### 第 25 次发布
 
@@ -12288,6 +12374,21 @@
 
 
 ## 负载均衡(clb) 版本：2018-03-17
+
+### 第 40 次发布
+
+发布时间：2023-05-23 01:12:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TargetHealth](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetHealth)
+
+	* <font color="#dd0000">**修改成员**：</font>HealthStatusDetial
+
 
 ### 第 39 次发布
 
@@ -21088,6 +21189,24 @@
 
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 32 次发布
+
+发布时间：2023-05-23 01:17:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpgradeDedicatedDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77817)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeSqlLogs
 
 ### 第 31 次发布
 
@@ -32150,6 +32269,22 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 31 次发布
+
+发布时间：2023-05-23 01:24:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBundleConfigs](http://document.tencentcloudapi.woa.com/document/product/1207/77819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig))
+
 ### 第 30 次发布
 
 发布时间：2023-05-10 01:30:47
@@ -33802,6 +33937,18 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 31 次发布
+
+发布时间：2023-05-23 01:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpgradeDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/77820)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 30 次发布
 
@@ -38765,6 +38912,21 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 55 次发布
+
+发布时间：2023-05-23 01:27:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Key](http://document.tencentcloudapi.woa.com/document/product/866/33527#Key)
+
+	* 新增成员：ConfigName
+
+
 ### 第 54 次发布
 
 发布时间：2023-05-19 01:37:47
@@ -39875,6 +40037,18 @@
 
 
 ## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 3 次发布
+
+发布时间：2023-05-23 01:28:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckUinFollower](http://document.tencentcloudapi.woa.com/document/product/1602/77821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 2 次发布
 
@@ -44308,8 +44482,8 @@
 
 新增接口：
 
-* [[CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCloudReadOnlyDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77815)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)
+* [CreateCloudReadOnlyDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77815)
 
 ### 第 19 次发布
 
@@ -58761,6 +58935,37 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 89 次发布
+
+发布时间：2023-05-23 01:37:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AcceptVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77814)
+
+	* 新增入参：PeeringConnectionId
+
+* [CreateVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77813)
+
+	* 新增入参：SourceVpcId, PeeringConnectionName, DestinationVpcId, DestinationUin, DestinationRegion, Bandwidth, Type, ChargeType, QosLevel
+
+* [DeleteVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77812)
+
+	* 新增入参：PeeringConnectionId
+
+* [DescribeVpcPeeringConnections](http://document.tencentcloudapi.woa.com/document/product/215/77811)
+
+	* 新增出参：TotalCount, PeerConnectionSet
+
+
+新增数据结构：
+
+* [[PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection))
 
 ### 第 88 次发布
 

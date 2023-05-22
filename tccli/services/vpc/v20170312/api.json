@@ -3137,7 +3137,18 @@
     },
     "AcceptVpcPeeringConnectionRequest": {
       "document": "AcceptVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "AcceptVpcPeeringConnectionResponse": {
@@ -11029,7 +11040,98 @@
     },
     "CreateVpcPeeringConnectionRequest": {
       "document": "CreateVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "本端VPC唯一ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "SourceVpcId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对等连接名称。",
+          "example": "test",
+          "member": "string",
+          "name": "PeeringConnectionName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对端VPC唯一ID。",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "DestinationVpcId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对端用户UIN。",
+          "example": "568722665",
+          "member": "string",
+          "name": "DestinationUin",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对端地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DestinationRegion",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "带宽上限，单位Mbps。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，日峰值POSTPAID_BY_DAY_MAX，月95POSTPAID_BY_MONTH_95。",
+          "example": "POSTPAID_BY_DAY_MAX",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "服务分级：PT、AU、AG。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "CreateVpcPeeringConnectionResponse": {
@@ -14173,7 +14275,18 @@
     },
     "DeleteVpcPeeringConnectionRequest": {
       "document": "DeleteVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": "pcx-r2kt047o",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DeleteVpcPeeringConnectionResponse": {
@@ -22222,64 +22335,64 @@
       "document": "DescribeSnapshotFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务类型，目前支持安全组：securitygroup。",
           "example": "securitygroup",
           "member": "string",
           "name": "BusinessType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id。",
           "example": "sg-12314a",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始日期，格式%Y-%m-%d %H:%M:%S。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "StartDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束日期，格式%Y-%m-%d %H:%M:%S。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "EndDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "返回数量，默认为20，最大为200。",
+          "document": "返回数量，默认为20，最大为100。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22293,9 +22406,9 @@
           "example": "无",
           "member": "SnapshotFileInfo",
           "name": "SnapshotFileSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -22303,9 +22416,9 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -24813,7 +24926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
+          "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -24843,7 +24956,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。",
           "example": "无",
           "member": "string",
           "name": "EndPointServiceIds",
@@ -25468,64 +25581,64 @@
       "document": "DescribeVpcPeeringConnections请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接唯一ID数组。",
           "example": "[\"pcx-test1234\"]",
           "member": "string",
           "name": "PeeringConnectionIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定PeeringConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>state String - （过滤条件）对等连接状态，可选值有：PENDING，投放中；ACTIVE，使用中；EXPIRED，已过期；REJECTED，拒绝。</li>\n<li>peering-connection-name - String - （过滤条件）对等连接名称。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求对象个数。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可选值有：CreatedTime，PeeringConnectionName。",
           "example": "CreatedTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式：DESC，降序；ASC，升序。",
           "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -25533,6 +25646,26 @@
     "DescribeVpcPeeringConnectionsResponse": {
       "document": "DescribeVpcPeeringConnections返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "满足条件的对等连接实例个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对等连接实例列表。",
+          "example": "无",
+          "member": "PeerConnection",
+          "name": "PeerConnectionSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -35219,7 +35352,6 @@
       "document": "ModifySubnetAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。形如：subnet-pxir56ns。",
           "example": "subnet-test1234",
@@ -35230,7 +35362,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称，最大长度不能超过60个字节。",
           "example": "NewSubnetName",
@@ -35241,7 +35372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网是否开启广播。",
           "example": "true",
@@ -35252,7 +35382,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网所在的可用区ID。不同子网选择不同可用区可以做跨可用区灾备。",
           "example": "ap-guangzhou-3",
@@ -37421,6 +37550,23 @@
         }
       ],
       "type": "object"
+    },
+    "PeerConnection": {
+      "document": "对等连接实例信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源标签数据。",
+          "example": "[{\"Key\": \"test\", \"Value\":\"test\"}]",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Price": {
       "document": "价格",

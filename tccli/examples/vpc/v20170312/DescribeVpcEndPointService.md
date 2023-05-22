@@ -45,8 +45,8 @@ Output:
                         "EndPointVip": "10.101.1.11"
                     }
                 ],
-                "CreateTime": "xx",
-                "ServiceType": "xx",
+                "CreateTime": "0000-00-00 00:00:00",
+                "ServiceType": "CLB",
                 "Region": "ap-guangzhou"
             }
         ],

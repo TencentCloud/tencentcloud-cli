@@ -14,6 +14,13 @@
       "output": "CancelActivityGoodsQuotaDeductionResponse",
       "status": "online"
     },
+    "CheckUinFollower": {
+      "document": "校验uin和OA账号在tcc系统中是否有关联关系",
+      "input": "CheckUinFollowerRequest",
+      "name": "检查TCC UIN关联关系",
+      "output": "CheckUinFollowerResponse",
+      "status": "online"
+    },
     "ConfirmActivityGoodsQuotaDeduction": {
       "document": "活动商品下单确认商品配额扣减",
       "input": "ConfirmActivityGoodsQuotaDeductionRequest",
@@ -226,6 +233,54 @@
     "CancelActivityGoodsQuotaDeductionResponse": {
       "document": "CancelActivityGoodsQuotaDeduction返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUinFollowerRequest": {
+      "document": "CheckUinFollower请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "909619400",
+          "member": "string",
+          "name": "CheckUin",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "OA账号名",
+          "example": "xxx",
+          "member": "string",
+          "name": "OAAccountId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUinFollowerResponse": {
+      "document": "CheckUinFollower返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

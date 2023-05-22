@@ -1,11 +1,13 @@
 **Example 1: 接受对等连接请求**
 
-
+接受对等连接请求
 
 Input: 
 
 ```
-tccli vpc AcceptVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc AcceptVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionId pcx-aw8hzt6c
+```
 
 Output: 
 ```

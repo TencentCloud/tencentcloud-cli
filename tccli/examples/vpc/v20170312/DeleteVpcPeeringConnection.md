@@ -1,11 +1,13 @@
 **Example 1: 删除对等连接**
 
-
+删除对等连接
 
 Input: 
 
 ```
-tccli vpc DeleteVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc DeleteVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionId pcx-aw8hzt6c
+```
 
 Output: 
 ```

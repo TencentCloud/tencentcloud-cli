@@ -32,7 +32,7 @@ Output:
                 "RowsSentMax": 0,
                 "RowsExaminedMin": 0,
                 "RowsSentMin": 0,
-                "SqlText": "select * from user",
+                "SqlText": "select * from user where name='sz'",
                 "Schema": "test",
                 "LockTimeMax": 0.0,
                 "LockTimeRatio": 0.0,
