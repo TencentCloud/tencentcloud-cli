@@ -1,6 +1,6 @@
 **Example 1: 查询主机列表**
 
-
+查询主机列表
 
 Input: 
 
@@ -11,64 +11,38 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": [
             {
-                "Status": "xx",
-                "PublicIp": "xx",
-                "HostID": "xx",
-                "Group": "xx",
-                "DockerVersion": "xx",
-                "IsContainerd": true,
-                "InstanceID": "xx",
-                "HostName": "xx",
+                "HostID": "abc",
+                "HostIP": "abc",
+                "HostName": "abc",
+                "Group": "abc",
+                "DockerVersion": "abc",
+                "DockerFileSystemDriver": "abc",
                 "ImageCnt": 1,
-                "DockerFileSystemDriver": "xx",
-                "HostIP": "xx",
-                "RegionID": 0,
-                "MachineType": "xx",
                 "ContainerCnt": 1,
-                "Uuid": "xx",
+                "Status": "abc",
+                "IsContainerd": true,
+                "MachineType": "abc",
+                "PublicIp": "abc",
+                "Uuid": "abc",
+                "InstanceID": "abc",
+                "RegionID": 0,
+                "Project": {
+                    "ProjectName": "abc",
+                    "ProjectID": 0
+                },
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
                 ],
-                "Project": {
-                    "ProjectName": "xx",
-                    "ProjectID": 0
-                }
-            },
-            {
-                "Status": "xx",
-                "ImageCnt": 1,
-                "HostID": "xx",
-                "Group": "xx",
-                "DockerVersion": "xx",
-                "IsContainerd": true,
-                "InstanceID": "xx",
-                "HostName": "xx",
-                "PublicIp": "xx",
-                "DockerFileSystemDriver": "xx",
-                "HostIP": "xx",
-                "RegionID": 0,
-                "MachineType": "xx",
-                "ContainerCnt": 1,
-                "Uuid": "xx",
-                "Tags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "Project": {
-                    "ProjectName": "xx",
-                    "ProjectID": 0
-                }
+                "ClusterID": "abc"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

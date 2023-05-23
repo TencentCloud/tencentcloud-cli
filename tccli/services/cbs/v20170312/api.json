@@ -1272,6 +1272,15 @@
           "name": "DiskBackupQuota",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建云盘时是否开启性能突发",
+          "example": "True",
+          "member": "bool",
+          "name": "BurstPerformance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3742,6 +3751,15 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启/关闭云盘性能突发功能",
+          "example": "CREATE",
+          "member": "string",
+          "name": "BurstPerformanceOperation",
           "required": false,
           "type": "string"
         }

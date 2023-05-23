@@ -120,7 +120,7 @@
       "status": "online"
     },
     "DescribeSecurityGroup": {
-      "document": "本就口（DescribeSecurityGroup）用于查询实例绑定的安全组。",
+      "document": "本接口（DescribeSecurityGroup）用于查询实例绑定的安全组。",
       "input": "DescribeSecurityGroupRequest",
       "name": "查询实例绑定的安全组",
       "output": "DescribeSecurityGroupResponse",

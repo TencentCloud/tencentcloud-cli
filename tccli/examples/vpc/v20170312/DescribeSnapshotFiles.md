@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc DescribeSnapshotFiles --cli-unfold-argument  \
     --BusinessType securitygroup \
-    --InstanceId sg-e18r37v3 \
+    --InstanceId sg-ntrgm89v \
     --StartDate '2021-10-10 00:00:00' \
     --EndDate '2021-10-30 19:00:00'
 ```

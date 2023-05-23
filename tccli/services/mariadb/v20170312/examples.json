@@ -559,6 +559,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"DealName\": \"20171103110035\"\n    }\n}",
         "title": "扩容云数据库实例"
       }
+    ],
+    "UpgradeDedicatedDBInstance": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=UpgradeDedicatedDBInstance\n&InstanceId=tdsql-jv8z8fhl\n&Memory=2\n&Storage=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
+        "title": "无"
+      }
     ]
   },
   "version": "1.0"

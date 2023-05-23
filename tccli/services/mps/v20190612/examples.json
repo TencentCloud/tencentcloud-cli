@@ -348,10 +348,10 @@
     ],
     "DescribeAnimatedGraphicsTemplates": [
       {
-        "document": "",
+        "document": "获取转动图模板列表",
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\n&Definitions.0=10001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"ResolutionAdaptive\": \"xx\",\n                \"Type\": \"Preset\",\n                \"Quality\": 0.0,\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "获转动图模板列表"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"ResolutionAdaptive\": \"open\",\n                \"Type\": \"Preset\",\n                \"Quality\": 0.0,\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取转动图模板列表"
       }
     ],
     "DescribeContentReviewTemplates": [

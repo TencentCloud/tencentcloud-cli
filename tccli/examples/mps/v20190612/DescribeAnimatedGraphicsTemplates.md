@@ -1,6 +1,6 @@
-**Example 1: 获转动图模板列表**
+**Example 1: 获取转动图模板列表**
 
-
+获取转动图模板列表
 
 Input: 
 
@@ -24,7 +24,7 @@ Output:
                 "Width": 960,
                 "Format": "gif",
                 "Fps": 30,
-                "ResolutionAdaptive": "xx",
+                "ResolutionAdaptive": "open",
                 "Type": "Preset",
                 "Quality": 0.0,
                 "Comment": ""

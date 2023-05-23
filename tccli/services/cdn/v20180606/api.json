@@ -1767,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 惩罚开关，可选on|off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 惩罚配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PunishmentSwitch",
@@ -9351,9 +9351,8 @@
       "document": "域名查询时过滤条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download，media，hybrid或dynamic。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
+          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download，media，hybrid或dynamic。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储，igtm表示IGTM多活源。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
           "example": "domainType",
           "member": "string",
           "name": "Name",
@@ -9362,7 +9361,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值。",
           "example": "cname",
@@ -9373,7 +9371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用模糊查询，仅支持过滤字段名为origin，domain。\n模糊查询时，Value长度最大为1，否则Value长度最大为5。",
           "example": "false",
@@ -10371,7 +10368,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HTTPS服务配置开关，取值有：\non：开启，缺省时默认开启【会产生计费】\noff：关闭，拦截https请求\n",
+          "document": "HTTPS服务配置开关，取值有：\non：开启，缺省时默认开启，会产生计费\noff：关闭，拦截https请求\n",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -12805,7 +12802,7 @@
         },
         {
           "disabled": false,
-          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nthird_party: 第三方存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nthird_party: 第三方存储源站\nigtm: IGTM多活源\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "OriginType",
@@ -13586,9 +13583,8 @@
       "document": "POST请求上传文件流式传输最大限制",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是调整POST请求限制，平台默认为32MB。\n关闭：off，\n开启：on。",
+          "document": "POST请求上传文件流式传输最大限制配置开关，取值有：\non：开启，平台默认为32MB\noff：关闭\n",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -13597,7 +13593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大限制，取值在1MB和200MB之间。",
           "example": "32",

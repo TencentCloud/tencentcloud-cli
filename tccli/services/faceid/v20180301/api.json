@@ -2345,7 +2345,6 @@
       "document": "获取token时的的配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "姓名身份证输入方式。\n1：传身份证正反面OCR   \n2：传身份证正面OCR  \n3：用户手动输入  \n4：客户后台传入  \n默认1\n注：使用OCR时仅支持用户修改结果中的姓名",
           "example": "1",
@@ -2356,7 +2355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。",
           "example": "true",
@@ -2367,7 +2365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1",
           "example": "1",
@@ -2378,7 +2375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。",
           "example": "无",
@@ -2389,7 +2385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "意愿核身问答模式的配置列表。当前仅支持一个问答。",
           "example": "无",
@@ -2400,7 +2395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认不开启。",
           "example": "true",
@@ -2409,6 +2403,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持港澳台居住证识别",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportHMTResidentPermitOCR",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

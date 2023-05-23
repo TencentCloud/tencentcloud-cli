@@ -8823,7 +8823,6 @@
       "document": "DescribeAnimatedGraphicsTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转动图模板唯一标识过滤条件，数组长度限制：100。",
           "example": "[\"10001\\r\\n\"]",
@@ -8833,7 +8832,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -8843,7 +8841,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "0",
@@ -8853,7 +8850,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
           "example": "“”",
@@ -8874,7 +8870,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8884,7 +8879,6 @@
           "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

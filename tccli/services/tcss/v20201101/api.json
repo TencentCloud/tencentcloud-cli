@@ -14254,7 +14254,6 @@
       "document": "DescribeAssetHostList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "无",
@@ -14264,7 +14263,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "无",
@@ -14274,7 +14272,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>\n<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>\n<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li>",
           "example": "无",
@@ -14284,7 +14281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "无",
@@ -14294,7 +14290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式 asc,desc",
           "example": "无",
@@ -14315,7 +14310,6 @@
           "example": "无",
           "member": "HostInfo",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14325,7 +14319,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29403,7 +29396,6 @@
       "document": "容器安全主机列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机id",
           "example": "无",
@@ -29414,7 +29406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机ip即内网ip",
           "example": "无",
@@ -29425,7 +29416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名称",
           "example": "无",
@@ -29436,7 +29426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务组",
           "example": "无",
@@ -29447,7 +29436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "docker 版本",
           "example": "无",
@@ -29458,7 +29446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "docker 文件系统类型",
           "example": "无",
@@ -29469,7 +29456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像个数",
           "example": "无",
@@ -29480,7 +29466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器个数",
           "example": "无",
@@ -29491,7 +29476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "agent运行状态",
           "example": "无",
@@ -29502,7 +29486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是Containerd",
           "example": "无",
@@ -29513,7 +29496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；",
           "example": "无",
@@ -29524,7 +29506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网ip",
           "example": "无",
@@ -29535,7 +29516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机uuid",
           "example": "无",
@@ -29546,7 +29526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机实例ID",
           "example": "无",
@@ -29557,7 +29536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "无",
@@ -29568,7 +29546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -29579,7 +29556,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -29588,6 +29564,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

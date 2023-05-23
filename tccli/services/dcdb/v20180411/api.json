@@ -56,6 +56,13 @@
       "output": "CreateDCDBInstanceResponse",
       "status": "online"
     },
+    "CreateDedicatedClusterDCDBInstance": {
+      "document": "创建独享集群DCDB实例",
+      "input": "CreateDedicatedClusterDCDBInstanceRequest",
+      "name": "创建独享集群DCDB实例",
+      "output": "CreateDedicatedClusterDCDBInstanceResponse",
+      "status": "online"
+    },
     "CreateHourDCDBInstance": {
       "document": "创建DCDB后付费实例",
       "input": "CreateHourDCDBInstanceRequest",
@@ -89,6 +96,13 @@
       "input": "DescribeBackupFilesRequest",
       "name": "查看备份文件列表",
       "output": "DescribeBackupFilesResponse",
+      "status": "online"
+    },
+    "DescribeDBEncryptAttributes": {
+      "document": "本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。",
+      "input": "DescribeDBEncryptAttributesRequest",
+      "name": "查询实例数据加密状态",
+      "output": "DescribeDBEncryptAttributesResponse",
       "status": "online"
     },
     "DescribeDBLogFiles": {
@@ -253,11 +267,11 @@
       "status": "online"
     },
     "DescribeSqlLogs": {
-      "document": "本接口（DescribeSqlLogs）用于获取实例SQL日志。",
+      "document": "已废弃接口\n\n本接口（DescribeSqlLogs）用于获取实例SQL日志。",
       "input": "DescribeSqlLogsRequest",
       "name": "获取SQL日志",
       "output": "DescribeSqlLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeUserTasks": {
       "document": "本接口（DescribeUserTasks）用于拉取用户任务列表",
@@ -453,6 +467,13 @@
       "input": "UpgradeDCDBInstanceRequest",
       "name": "升级分布式数据库",
       "output": "UpgradeDCDBInstanceResponse",
+      "status": "online"
+    },
+    "UpgradeDedicatedDCDBInstance": {
+      "document": "本接口（UpgradeDedicatedDCDBInstance）用于升级独享DCDB实例",
+      "input": "UpgradeDedicatedDCDBInstanceRequest",
+      "name": "升级独享DCDB实例",
+      "output": "UpgradeDedicatedDCDBInstanceResponse",
       "status": "online"
     },
     "UpgradeHourDCDBInstance": {
@@ -1380,6 +1401,304 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterDCDBInstanceRequest": {
+      "document": "CreateDedicatedClusterDCDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分配实例个数",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分片数量",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分片內存大小, 单位GB",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardMemory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分片磁盘大小, 单位GB",
+          "example": "10",
+          "member": "int64",
+          "name": "ShardStorage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "独享集群集群uuid",
+          "example": "dbdc-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）可用区",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）cpu大小，单位：核",
+          "example": "0",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "网络ID",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）分片机型",
+          "example": "TS85",
+          "member": "string",
+          "name": "ShardMachine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分片的节点个数",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）节点cpu核数，单位：1/100核",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）节点內存大小，单位：GB",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardNodeMemory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）节点磁盘大小，单位：GB",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardNodeStorage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "db版本",
+          "example": "5.7.17",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "安全组ID",
+          "example": "sg-xxxx",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "DCN源实例ID",
+          "example": "tdsqlshard-xxxx",
+          "member": "string",
+          "name": "DcnInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "DCN源实例地域名",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DcnRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "自定义实例名称",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "支持IPv6标志：1 支持， 0 不支持",
+          "example": "无",
+          "member": "int64",
+          "name": "Ipv6Flag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "（废弃）Pid，可通过获取独享集群售卖配置接口得到",
+          "example": "100",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
+          "example": "无",
+          "member": "DBParamValue",
+          "name": "InitParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "指定主节点uuid，不填随机分配",
+          "example": "svr-xxxx",
+          "member": "string",
+          "name": "MasterHostId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "指定从节点uuid，不填随机分配",
+          "example": "[\"svr-xxx\",\"svr-xxx\"]",
+          "member": "string",
+          "name": "SlaveHostIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要回档的源实例ID",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "RollbackInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回档时间",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "RollbackTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterDCDBInstanceResponse": {
+      "document": "CreateDedicatedClusterDCDBInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3291,6 +3610,64 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBEncryptAttributesRequest": {
+      "document": "DescribeDBEncryptAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例Id，形如：tdsqlshard-ow728lmc。",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBEncryptAttributesResponse": {
+      "document": "DescribeDBEncryptAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用加密，1-已开启；0-未开启。",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DEK密钥",
+          "example": "无",
+          "member": "string",
+          "name": "CipherText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DEK密钥过期日期。",
+          "example": "2019-01-01 10:00:00",
+          "member": "string",
+          "name": "ExpireDate",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8790,6 +9167,114 @@
           "name": "DealName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDedicatedDCDBInstanceRequest": {
+      "document": "UpgradeDedicatedDCDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "升级类型，取值为ADD，SPLIT和EXPAND。ADD-添加分片；SPLIT-切分某个分片；EXPAND-垂直扩容某个分片",
+          "example": "EXPAND",
+          "member": "string",
+          "name": "UpgradeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID，形如 dcdbt-mlfjm74h",
+          "example": "dcdbt-mlfjm74h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当UpgradeType取值为ADD时，添加分片的配置参数",
+          "example": "无",
+          "member": "AddShardConfig",
+          "name": "AddShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当UpgradeType取值为EXPAND时，垂直扩容分片的配置参数",
+          "example": "无",
+          "member": "ExpandShardConfig",
+          "name": "ExpandShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当UpgradeType取值为SPLIT时，切分分片的配置参数",
+          "example": "无",
+          "member": "SplitShardConfig",
+          "name": "SplitShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错过切换时间窗口时，是否自动重试一次，0-否，1-是",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchAutoRetry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "切换时间窗口开始时间",
+          "example": "2020-12-01 00:30:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "切换时间窗口结束时间",
+          "example": "2020-12-01 00:45:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDedicatedDCDBInstanceResponse": {
+      "document": "UpgradeDedicatedDCDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务流程ID",
+          "example": "11",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

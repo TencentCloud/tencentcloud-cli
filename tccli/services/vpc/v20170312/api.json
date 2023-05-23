@@ -14188,7 +14188,6 @@
       "document": "DescribeSnapshotFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务类型，目前支持安全组：securitygroup。",
           "example": "securitygroup",
@@ -14198,7 +14197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id。",
           "example": "sg-12314a",
@@ -14208,7 +14206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始日期，格式%Y-%m-%d %H:%M:%S。",
           "example": "2021-03-02 14:41:15",
@@ -14218,7 +14215,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束日期，格式%Y-%m-%d %H:%M:%S。",
           "example": "2021-03-02 14:41:15",
@@ -14228,7 +14224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -14238,9 +14233,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "返回数量，默认为20，最大为200。",
+          "document": "返回数量，默认为20，最大为100。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -14259,7 +14253,6 @@
           "example": "无",
           "member": "SnapshotFileInfo",
           "name": "SnapshotFileSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14269,7 +14262,6 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14845,7 +14837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
+          "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -14872,7 +14864,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。",
           "example": "无",
           "member": "string",
           "name": "EndPointServiceIds",
@@ -21328,7 +21320,6 @@
       "document": "ModifySubnetAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。形如：subnet-pxir56ns。",
           "example": "subnet-test1234",
@@ -21338,7 +21329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称，最大长度不能超过60个字节。",
           "example": "NewSubnetName",
@@ -21348,7 +21338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网是否开启广播。",
           "example": "true",

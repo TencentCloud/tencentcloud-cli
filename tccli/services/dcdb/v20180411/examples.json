@@ -64,6 +64,14 @@
         "title": "创建包年包月的分布式数据库实例"
       }
     ],
+    "CreateDedicatedClusterDCDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\",\n    \"ShardNodeMemory\": 0,\n    \"ShardNodeCpu\": 0,\n    \"ShardNodeNum\": 0,\n    \"ShardMachine\": \"xx\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DcnRegion\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"DbVersionId\": \"xx\",\n    \"DcnInstanceId\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"ShardNodeStorage\": 0,\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"Cpu\": 0,\n    \"ShardNum\": 0,\n    \"SecurityGroupId\": \"xx\",\n    \"ShardMemory\": 0,\n    \"ShardStorage\": 0,\n    \"Pid\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
+        "title": "input demo1"
+      }
+    ],
     "CreateHourDCDBInstance": [
       {
         "document": "创建后付费分布式DB实例",
@@ -101,6 +109,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupFiles\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"BackupType\": \"Binlog\",\n                \"EndTime\": \"2022-05-23 09:16:18\",\n                \"FileName\": \"binlog+1653031073+20220520+151753+3085689978+binlog.000003.lz4\",\n                \"FilePath\": \"cos_backup/tdsql/group_1652793502_8559507/set_1652793624_1/binlog/2022-05-20/binlog+1653031073+20220520+151753+3085689978+binlog.000003.lz4\",\n                \"FileSize\": 30537563,\n                \"InstanceId\": \"dcdbt-21dfpcv1\",\n                \"InstanceName\": \"test-name\",\n                \"InstanceStatus\": 2,\n                \"ManualBackup\": 0,\n                \"ShardId\": \"shard-ngbrea6b\",\n                \"StartTime\": \"2022-05-20 15:17:53\"\n            },\n            {\n                \"BackupType\": \"Binlog\",\n                \"EndTime\": \"2022-05-22 21:33:53\",\n                \"FileName\": \"binlog+1653010199+20220520+092959+3085680764+binlog.000003.lz4\",\n                \"FilePath\": \"cos_backup/tdsql/group_1652793502_8559507/set_1652793754_3/binlog/2022-05-20/binlog+1653010199+20220520+092959+3085680764+binlog.000003.lz4\",\n                \"FileSize\": 31018905,\n                \"InstanceId\": \"dcdbt-21dfpcv1\",\n                \"InstanceName\": \"test-name\",\n                \"InstanceStatus\": 2,\n                \"ManualBackup\": 0,\n                \"ShardId\": \"shard-5zf65smf\",\n                \"StartTime\": \"2022-05-20 09:29:59\"\n            },\n            {\n                \"BackupType\": \"Data\",\n                \"EndTime\": \"2022-05-20 00:20:06\",\n                \"FileName\": \"cos_xtrabackup+1652977196+20220520+001956+3085689978+xbstream.lz4\",\n                \"FilePath\": \"cos_backup/tdsql/group_1652793502_8559507/set_1652793624_1/xtrabackup/2022-05-20/cos_xtrabackup+1652977196+20220520+001956+3085689978+xbstream.lz4\",\n                \"FileSize\": 165413701,\n                \"InstanceId\": \"dcdbt-21dfpcv1\",\n                \"InstanceName\": \"test-name\",\n                \"InstanceStatus\": 2,\n                \"ManualBackup\": 0,\n                \"ShardId\": \"shard-ngbrea6b\",\n                \"StartTime\": \"2022-05-20 00:19:56\"\n            },\n            {\n                \"BackupType\": \"Data\",\n                \"EndTime\": \"2022-05-20 00:06:18\",\n                \"FileName\": \"cos_xtrabackup+1652976368+20220520+000608+3085680764+xbstream.lz4\",\n                \"FilePath\": \"cos_backup/tdsql/group_1652793502_8559507/set_1652793754_3/xtrabackup/2022-05-20/cos_xtrabackup+1652976368+20220520+000608+3085680764+xbstream.lz4\",\n                \"FileSize\": 174847785,\n                \"InstanceId\": \"dcdbt-21dfpcv1\",\n                \"InstanceName\": \"test-name\",\n                \"InstanceStatus\": 2,\n                \"ManualBackup\": 0,\n                \"ShardId\": \"shard-5zf65smf\",\n                \"StartTime\": \"2022-05-20 00:06:08\"\n            },\n            {\n                \"BackupType\": \"Binlog\",\n                \"EndTime\": \"2022-05-20 15:18:04\",\n                \"FileName\": \"binlog+1652793627+20220517+212027+3085689978+binlog.000002.lz4\",\n                \"FilePath\": \"cos_backup/tdsql/group_1652793502_8559507/set_1652793624_1/binlog/2022-05-17/binlog+1652793627+20220517+212027+3085689978+binlog.000002.lz4\",\n                \"FileSize\": 30809729,\n                \"InstanceId\": \"dcdbt-21dfpcv1\",\n                \"InstanceName\": \"test-name\",\n                \"InstanceStatus\": 2,\n                \"ManualBackup\": 0,\n                \"ShardId\": \"shard-ngbrea6b\",\n                \"StartTime\": \"2022-05-17 21:20:27\"\n            }\n        ],\n        \"RequestId\": \"d30ef4e8-d99d-4502-a870-196592035794\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "DescribeDBEncryptAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBEncryptAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CipherText\": \"\",\n        \"EncryptStatus\": 0,\n        \"ExpireDate\": \"1970-01-01\",\n        \"RequestId\": \"7c04c9f9-4b1b-4eed-ac21-45d1d8a261f4\"\n    }\n}",
         "title": "无"
       }
     ],
@@ -524,6 +540,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeDCDBInstance\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&AutoVoucher=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"DealName\": \"20180103110035\"\n    }\n}",
         "title": "升级分布式数据库"
+      }
+    ],
+    "UpgradeDedicatedDCDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDedicatedDCDBInstance\n<公共请求参数>\n\n{\n    \"UpgradeType\": \"EXPAND\",\n    \"InstanceId\": \"tdsqlshard-jv8z8fhl\",\n    \"ExpandShardConfig\": {\n        \"ShardInstanceIds\": [\n            \"shard-xxx1\",\n            \"shard-xxx2\"\n        ],\n        \"ShardMemory\": 2,\n        \"ShardStorage\": 20\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
+        "title": "无"
       }
     ],
     "UpgradeHourDCDBInstance": [

@@ -489,6 +489,13 @@
       "name": "扩容实例",
       "output": "UpgradeDBInstanceResponse",
       "status": "online"
+    },
+    "UpgradeDedicatedDBInstance": {
+      "document": "本接口(UpgradeDedicatedDBInstance)用于扩容独享云数据库实例。",
+      "input": "UpgradeDedicatedDBInstanceRequest",
+      "name": "升级独享云数据库实例",
+      "output": "UpgradeDedicatedDBInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -8335,6 +8342,94 @@
           "name": "DealName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDedicatedDBInstanceRequest": {
+      "document": "UpgradeDedicatedDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。",
+          "example": "tdsql-2gk4nxyz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "4",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错过切换时间窗口时，是否自动重试一次，0-否，1-是",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchAutoRetry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "切换时间窗口开始时间",
+          "example": "2020-12-01 00:30:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "切换时间窗口结束时间",
+          "example": "2020-12-01 00:45:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDedicatedDBInstanceResponse": {
+      "document": "UpgradeDedicatedDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程Id",
+          "example": "11",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

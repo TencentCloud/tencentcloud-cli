@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeSecurityGroup --cli-unfold-argument  \
-    --InstanceId cmgo-p8vnipr5
+    --InstanceId cmgo-p8vn****
 ```
 
 Output: 
