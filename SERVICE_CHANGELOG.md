@@ -1,33 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 26 次发布
+### 第 19 次发布
 
-发布时间：2023-05-23 01:09:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/362/16312)
-
-	* 新增入参：BurstPerformance
-
-* [ModifyDiskAttributes](http://document.tencentcloudapi.woa.com/document/product/362/15659)
-
-	* 新增入参：BurstPerformanceOperation
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 40 次发布
-
-发布时间：2023-05-23 01:12:25
+发布时间：2023-05-24 01:04:42
 
 本次发布包含了以下内容：
 
@@ -35,60 +12,91 @@
 
 修改数据结构：
 
-* [TargetHealth](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetHealth)
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
 
-	* <font color="#dd0000">**修改成员**：</font>HealthStatusDetial
+	* 新增成员：TransferPayAmount
 
+	* <font color="#dd0000">**修改成员**：</font>SpecifiedPrice, SPDeduction
 
+* [BillResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillResourceSummary)
 
+	* 新增成员：TransferPayAmount
 
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
-
-### 第 32 次发布
-
-发布时间：2023-05-23 01:17:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
-* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77818)
-* [UpgradeDedicatedDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77817)
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeSqlLogs
+	* <font color="#dd0000">**修改成员**：</font>SPDeduction
 
 
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 31 次发布
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-发布时间：2023-05-23 01:24:11
+### 第 47 次发布
+
+发布时间：2023-05-24 01:09:01
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeBundleConfigs](http://document.tencentcloudapi.woa.com/document/product/1207/77819)
+* [ScdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnDomain)
+
+	* 新增成员：SourceLimit
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 12 次发布
+
+发布时间：2023-05-24 01:09:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#SnapshotInfo)
+
+	* 新增成员：SnapshotType
+
+
+
+
+## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 5 次发布
+
+发布时间：2023-05-24 01:10:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 新增数据结构：
 
-* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary)
+
+修改数据结构：
+
+* [LifeCycleRule](http://document.tencentcloudapi.woa.com/document/product/1105/51158#LifeCycleRule)
+
+	* 新增成员：Summary, LastSummaryTime
 
 
 
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 31 次发布
+## 云 HDFS(chdfs) 版本：2019-07-18
 
-发布时间：2023-05-23 01:25:19
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 49 次发布
+
+发布时间：2023-05-24 01:20:34
 
 本次发布包含了以下内容：
 
@@ -96,34 +104,21 @@
 
 新增接口：
 
-* [UpgradeDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/77820)
+* [CreateSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77823)
+* [DescribeSparkSessionBatchSqlLog](http://document.tencentcloudapi.woa.com/document/product/1342/77822)
+
+新增数据结构：
+
+* [SparkSessionBatchLog](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLog)
+* [SparkSessionBatchLogOperate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLogOperate)
 
 
 
 ## 文字识别(ocr) 版本：2018-11-19
 
-### 第 55 次发布
+### 第 56 次发布
 
-发布时间：2023-05-23 01:27:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Key](http://document.tencentcloudapi.woa.com/document/product/866/33527#Key)
-
-	* 新增成员：ConfigName
-
-
-
-
-## 运营产品中心(opc) 版本：2018-07-19
-
-### 第 3 次发布
-
-发布时间：2023-05-23 01:28:23
+发布时间：2023-05-24 01:36:18
 
 本次发布包含了以下内容：
 
@@ -131,15 +126,60 @@
 
 新增接口：
 
-* [CheckUinFollower](http://document.tencentcloudapi.woa.com/document/product/1602/77821)
+* [RecognizeIdentityCard](http://document.tencentcloudapi.woa.com/document/product/866/77824)
+
+修改接口：
+
+* [CreateAIFormTask](http://document.tencentcloudapi.woa.com/document/product/866/77092)
+
+	* 新增入参：FileType
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 89 次发布
+## 流量反欺诈(taf) 版本：2020-02-10
 
-发布时间：2023-05-23 01:37:39
+### 第 11 次发布
+
+发布时间：2023-05-24 01:42:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OutputRecognizeTargetAudienceValue](http://document.tencentcloudapi.woa.com/document/product/1031/43310#OutputRecognizeTargetAudienceValue)
+
+	* 新增成员：ModelType, Uid
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 62 次发布
+
+发布时间：2023-05-24 01:51:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EditMediaVideoStream](http://document.tencentcloudapi.woa.com/document/product/266/31773#EditMediaVideoStream)
+
+	* 新增成员：Fps
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 3 次发布
+
+发布时间：2023-05-24 01:56:57
 
 本次发布包含了以下内容：
 
@@ -147,26 +187,45 @@
 
 修改接口：
 
-* [AcceptVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77814)
+* [CommitRuleGroupTask](http://document.tencentcloudapi.woa.com/document/product/1607/77674)
 
-	* 新增入参：PeeringConnectionId
+	* 新增入参：EngineType
 
-* [CreateVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77813)
+* [CreateRule](http://document.tencentcloudapi.woa.com/document/product/1607/77673)
 
-	* 新增入参：SourceVpcId, PeeringConnectionName, DestinationVpcId, DestinationUin, DestinationRegion, Bandwidth, Type, ChargeType, QosLevel
+	* 新增入参：SourceEngineTypes
 
-* [DeleteVpcPeeringConnection](http://document.tencentcloudapi.woa.com/document/product/215/77812)
+* [DescribeRules](http://document.tencentcloudapi.woa.com/document/product/1607/77639)
 
-	* 新增入参：PeeringConnectionId
+	* 新增入参：EngineType
 
-* [DescribeVpcPeeringConnections](http://document.tencentcloudapi.woa.com/document/product/215/77811)
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
 
-	* 新增出参：TotalCount, PeerConnectionSet
+	* 新增入参：ExecEngineType
+
+* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/1607/77628)
+
+	* 新增入参：SourceEngineTypes
 
 
-新增数据结构：
+修改数据结构：
 
-* [PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：SourceEngineTypes
+
+* [RuleExecConfig](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecConfig)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：ExecEngineType, ExecPlan
+
 
 
 
@@ -4067,6 +4126,29 @@
 
 
 ## 费用中心(billing) 版本：2018-07-09
+
+### 第 19 次发布
+
+发布时间：2023-05-24 01:04:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：TransferPayAmount
+
+	* <font color="#dd0000">**修改成员**：</font>SpecifiedPrice, SPDeduction
+
+* [BillResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillResourceSummary)
+
+	* 新增成员：TransferPayAmount
+
+	* <font color="#dd0000">**修改成员**：</font>SPDeduction
+
 
 ### 第 18 次发布
 
@@ -8498,6 +8580,21 @@
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
+### 第 47 次发布
+
+发布时间：2023-05-24 01:09:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ScdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnDomain)
+
+	* 新增成员：SourceLimit
+
+
 ### 第 46 次发布
 
 发布时间：2023-05-08 01:10:57
@@ -9774,6 +9871,21 @@
 
 ## 文件存储(cfs) 版本：2019-07-19
 
+### 第 12 次发布
+
+发布时间：2023-05-24 01:09:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#SnapshotInfo)
+
+	* 新增成员：SnapshotType
+
+
 ### 第 11 次发布
 
 发布时间：2023-04-25 01:10:31
@@ -10612,6 +10724,25 @@
 
 
 ## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 5 次发布
+
+发布时间：2023-05-24 01:10:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary)](http://document.tencentcloudapi.woa.com/document/product/1105/51158#[Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary))
+
+修改数据结构：
+
+* [LifeCycleRule](http://document.tencentcloudapi.woa.com/document/product/1105/51158#LifeCycleRule)
+
+	* 新增成员：Summary, LastSummaryTime
+
 
 ### 第 4 次发布
 
@@ -21200,9 +21331,9 @@
 
 新增接口：
 
-* [[CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpgradeDedicatedDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77817)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77818)
+* [UpgradeDedicatedDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77817)
 
 <font color="#dd0000">**预下线接口**：</font>
 
@@ -21801,6 +21932,24 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 49 次发布
+
+发布时间：2023-05-24 01:20:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeSparkSessionBatchSqlLog](http://document.tencentcloudapi.woa.com/document/product/1342/77822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SparkSessionBatchLog](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLog)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[SparkSessionBatchLog](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLog))
+* [[SparkSessionBatchLogOperate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLogOperate)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[SparkSessionBatchLogOperate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLogOperate))
 
 ### 第 48 次发布
 
@@ -32279,11 +32428,11 @@
 
 新增接口：
 
-* [[DescribeBundleConfigs](http://document.tencentcloudapi.woa.com/document/product/1207/77819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBundleConfigs](http://document.tencentcloudapi.woa.com/document/product/1207/77819)
 
 新增数据结构：
 
-* [[BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig))
+* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
 
 ### 第 30 次发布
 
@@ -33948,7 +34097,7 @@
 
 新增接口：
 
-* [[UpgradeDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/77820)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpgradeDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/77820)
 
 ### 第 30 次发布
 
@@ -38912,6 +39061,25 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 56 次发布
+
+发布时间：2023-05-24 01:36:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[RecognizeIdentityCard](http://document.tencentcloudapi.woa.com/document/product/866/77824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateAIFormTask](http://document.tencentcloudapi.woa.com/document/product/866/77092)
+
+	* 新增入参：FileType
+
+
 ### 第 55 次发布
 
 发布时间：2023-05-23 01:27:53
@@ -40048,7 +40216,7 @@
 
 新增接口：
 
-* [[CheckUinFollower](http://document.tencentcloudapi.woa.com/document/product/1602/77821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckUinFollower](http://document.tencentcloudapi.woa.com/document/product/1602/77821)
 
 ### 第 2 次发布
 
@@ -46208,6 +46376,21 @@
 
 
 ## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 11 次发布
+
+发布时间：2023-05-24 01:42:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OutputRecognizeTargetAudienceValue](http://document.tencentcloudapi.woa.com/document/product/1031/43310#OutputRecognizeTargetAudienceValue)
+
+	* 新增成员：ModelType, Uid
+
 
 ### 第 10 次发布
 
@@ -56899,6 +57082,21 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 62 次发布
+
+发布时间：2023-05-24 01:51:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EditMediaVideoStream](http://document.tencentcloudapi.woa.com/document/product/266/31773#EditMediaVideoStream)
+
+	* 新增成员：Fps
+
+
 ### 第 61 次发布
 
 发布时间：2023-05-19 01:49:06
@@ -58965,7 +59163,7 @@
 
 新增数据结构：
 
-* [[PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection))
+* [PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)
 
 ### 第 88 次发布
 
@@ -62511,6 +62709,56 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 3 次发布
+
+发布时间：2023-05-24 01:56:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CommitRuleGroupTask](http://document.tencentcloudapi.woa.com/document/product/1607/77674)
+
+	* 新增入参：EngineType
+
+* [CreateRule](http://document.tencentcloudapi.woa.com/document/product/1607/77673)
+
+	* 新增入参：SourceEngineTypes
+
+* [DescribeRules](http://document.tencentcloudapi.woa.com/document/product/1607/77639)
+
+	* 新增入参：EngineType
+
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
+
+	* 新增入参：ExecEngineType
+
+* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/1607/77628)
+
+	* 新增入参：SourceEngineTypes
+
+
+修改数据结构：
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：SourceEngineTypes
+
+* [RuleExecConfig](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecConfig)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：ExecEngineType, ExecPlan
+
 
 ### 第 2 次发布
 

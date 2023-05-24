@@ -687,7 +687,7 @@
       "status": "online"
     },
     "CreateVpnGatewaySslServer": {
-      "document": "创建 Server端",
+      "document": "本接口（CreateVpnGatewaySslServer）用于创建SSL-VPN Server端。",
       "input": "CreateVpnGatewaySslServerRequest",
       "name": "创建SSL-VPN Server端",
       "output": "CreateVpnGatewaySslServerResponse",
@@ -11690,9 +11690,8 @@
       "document": "CreateVpnGatewaySslServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "VPN实例ID",
+          "document": "VPN网关实例ID。",
           "example": "vpn-12345678",
           "member": "string",
           "name": "VpnGatewayId",
@@ -11701,9 +11700,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL_VPN_SERVER 实例名",
+          "document": "SSL-VPN-SERVER 实例名称，长度不超过60个字节。",
           "example": "name",
           "member": "string",
           "name": "SslVpnServerName",
@@ -11712,9 +11710,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本端地址网段",
+          "document": "云端地址（CIDR）列表。",
           "example": "['10.0.0.0/16']",
           "member": "string",
           "name": "LocalAddress",
@@ -11723,9 +11720,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "客户端地址网段",
+          "document": "客户端地址网段。",
           "example": "172.16.0.0/16",
           "member": "string",
           "name": "RemoteAddress",
@@ -11734,9 +11730,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP",
+          "document": "SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。",
           "example": "UDP",
           "member": "string",
           "name": "SslVpnProtocol",
@@ -11745,9 +11740,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL VPN服务端监听协议端口。默认1194。",
+          "document": "SSL VPN服务端监听协议端口，默认1194。",
           "example": "1194",
           "member": "int64",
           "name": "SslVpnPort",
@@ -11756,9 +11750,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE",
+          "document": "认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。",
           "example": "HMAC-SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",
@@ -11767,9 +11760,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE",
+          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。",
           "example": "AES-128",
           "member": "string",
           "name": "EncryptAlgorithm",
@@ -11778,9 +11770,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否支持压缩。当前仅支持不支持压缩。默认False",
+          "document": "是否支持压缩。当前仅支持不支持压缩，默认False。",
           "example": "False",
           "member": "bool",
           "name": "Compress",
@@ -11789,9 +11780,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启SSO认证",
+          "document": "是否开启SSO认证。默认为False",
           "example": "False",
           "member": "bool",
           "name": "SsoEnabled",
@@ -11800,9 +11790,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启策略访问控制",
+          "document": "是否开启策略访问控制。默认为False",
           "example": "False",
           "member": "bool",
           "name": "AccessPolicyEnabled",
@@ -11811,9 +11800,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SAML-DATA",
+          "document": "SAML-DATA，开启SSO时传。",
           "example": "xxxxx",
           "member": "string",
           "name": "SamlData",
@@ -11829,22 +11817,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建SSL-VPN server 异步任务ID",
+          "document": "创建SSL-VPN server 异步任务ID。",
           "example": "无",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "SSL-VPN server 唯一ID",
+          "document": "SSL-VPN-SERVER 唯一ID。",
           "example": "vpns-xxxxx",
           "member": "string",
           "name": "SslVpnServerId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -14484,14 +14470,14 @@
       "document": "DeleteVpnGatewaySslServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SSL-VPN-SERVER 实例ID。",
           "example": "vpngwSslServer-123456",
           "member": "string",
           "name": "SslVpnServerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14505,9 +14491,9 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15850,7 +15836,7 @@
         },
         {
           "disabled": false,
-          "document": "时间粒度。",
+          "document": "时间粒度。单位为:秒，如60为60s的时间粒度",
           "example": "60",
           "member": "int64",
           "name": "Period",
@@ -15914,9 +15900,11 @@
         {
           "disabled": false,
           "document": "对端网关厂商信息对象。",
+          "example": "[{'Platform': 'ios', 'SoftwareVersion': 'V15.4', 'VendorName': 'cisco'}, {'Platform': 'comware', 'SoftwareVersion': 'V1.0', 'VendorName': 'h3c'}]",
           "member": "CustomerGatewayVendor",
           "name": "CustomerGatewayVendorSet",
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

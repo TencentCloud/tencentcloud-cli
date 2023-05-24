@@ -1,3 +1,234 @@
+# Release 3.0.768.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 19 次发布
+
+发布时间：2023-05-24 01:04:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：TransferPayAmount
+
+	* <font color="#dd0000">**修改成员**：</font>SpecifiedPrice, SPDeduction
+
+* [BillResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillResourceSummary)
+
+	* 新增成员：TransferPayAmount
+
+	* <font color="#dd0000">**修改成员**：</font>SPDeduction
+
+
+
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 47 次发布
+
+发布时间：2023-05-24 01:09:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ScdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnDomain)
+
+	* 新增成员：SourceLimit
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 12 次发布
+
+发布时间：2023-05-24 01:09:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#SnapshotInfo)
+
+	* 新增成员：SnapshotType
+
+
+
+
+## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 5 次发布
+
+发布时间：2023-05-24 01:10:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary)
+
+修改数据结构：
+
+* [LifeCycleRule](http://document.tencentcloudapi.woa.com/document/product/1105/51158#LifeCycleRule)
+
+	* 新增成员：Summary, LastSummaryTime
+
+
+
+
+## 云 HDFS(chdfs) 版本：2019-07-18
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 49 次发布
+
+发布时间：2023-05-24 01:20:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77823)
+* [DescribeSparkSessionBatchSqlLog](http://document.tencentcloudapi.woa.com/document/product/1342/77822)
+
+新增数据结构：
+
+* [SparkSessionBatchLog](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLog)
+* [SparkSessionBatchLogOperate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLogOperate)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 56 次发布
+
+发布时间：2023-05-24 01:36:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizeIdentityCard](http://document.tencentcloudapi.woa.com/document/product/866/77824)
+
+修改接口：
+
+* [CreateAIFormTask](http://document.tencentcloudapi.woa.com/document/product/866/77092)
+
+	* 新增入参：FileType
+
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 11 次发布
+
+发布时间：2023-05-24 01:42:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OutputRecognizeTargetAudienceValue](http://document.tencentcloudapi.woa.com/document/product/1031/43310#OutputRecognizeTargetAudienceValue)
+
+	* 新增成员：ModelType, Uid
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 62 次发布
+
+发布时间：2023-05-24 01:51:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EditMediaVideoStream](http://document.tencentcloudapi.woa.com/document/product/266/31773#EditMediaVideoStream)
+
+	* 新增成员：Fps
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 3 次发布
+
+发布时间：2023-05-24 01:56:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CommitRuleGroupTask](http://document.tencentcloudapi.woa.com/document/product/1607/77674)
+
+	* 新增入参：EngineType
+
+* [CreateRule](http://document.tencentcloudapi.woa.com/document/product/1607/77673)
+
+	* 新增入参：SourceEngineTypes
+
+* [DescribeRules](http://document.tencentcloudapi.woa.com/document/product/1607/77639)
+
+	* 新增入参：EngineType
+
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
+
+	* 新增入参：ExecEngineType
+
+* [ModifyRule](http://document.tencentcloudapi.woa.com/document/product/1607/77628)
+
+	* 新增入参：SourceEngineTypes
+
+
+修改数据结构：
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：SourceEngineTypes
+
+* [RuleExecConfig](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecConfig)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
+
+	* 新增成员：EngineType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：ExecEngineType, ExecPlan
+
+
+
+
 # Release 3.0.767.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

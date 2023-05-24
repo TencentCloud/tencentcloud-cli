@@ -1,13 +1,11 @@
 **Example 1: 查询可支持的对端网关厂商信息**
 
-
+本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。
 
 Input: 
 
 ```
-tccli vpc DescribeCustomerGatewayVendors --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeCustomerGatewayVendors --cli-unfold-argument ```
 
 Output: 
 ```

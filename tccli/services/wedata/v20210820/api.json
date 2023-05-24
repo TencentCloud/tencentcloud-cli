@@ -3784,54 +3784,64 @@
       "document": "CommitRuleGroupTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则组ID",
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发类型 1.手动触发 2.调度事中触发 3.周期调度触发",
           "example": "1",
           "member": "uint64",
           "name": "TriggerType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则配置列表",
           "example": "无",
           "member": "RuleConfig",
           "name": "ExecRuleConfig",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行配置",
           "example": "无",
           "member": "RuleExecConfig",
           "name": "ExecConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "123456",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎",
+          "example": "HIVE",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3845,9 +3855,9 @@
           "example": "无",
           "member": "RuleGroupExecResult",
           "name": "Data",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5209,7 +5219,6 @@
       "document": "CreateRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123456",
@@ -5220,7 +5229,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组Id",
           "example": "123456",
@@ -5231,7 +5239,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "rule1",
@@ -5242,7 +5249,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表ID",
           "example": "123456",
@@ -5253,7 +5259,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模板列表",
           "example": "123456",
@@ -5264,7 +5269,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL",
           "example": "1",
@@ -5275,7 +5279,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性",
           "example": "1",
@@ -5286,7 +5289,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段详细类型，int、string",
           "example": "int",
@@ -5297,7 +5299,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段名称",
           "example": "name",
@@ -5308,7 +5309,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测范围 1.全表   2.条件扫描",
           "example": "1",
@@ -5319,7 +5319,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件扫描WHERE条件表达式",
           "example": "dt=1",
@@ -5330,7 +5329,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义SQL",
           "example": "select count(*) from person",
@@ -5341,7 +5339,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警触发条件",
           "example": "无",
@@ -5352,7 +5349,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警触发级别 1.低, 2.中, 3.高",
           "example": "1",
@@ -5363,7 +5359,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "example": "demo",
@@ -5374,7 +5369,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源Id",
           "example": "123456",
@@ -5385,7 +5379,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库Id",
           "example": "123456",
@@ -5396,7 +5389,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标库Id",
           "example": "123456",
@@ -5407,7 +5399,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表Id",
           "example": "123456",
@@ -5418,7 +5409,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标过滤条件表达式",
           "example": "dt=${yyyymmdd}",
@@ -5429,7 +5419,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段与目标字段关联条件on表达式",
           "example": "a.age=b.age",
@@ -5440,7 +5429,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模版sql表达式字段替换参数",
           "example": "无",
@@ -5451,7 +5439,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标字段名称  CITY",
           "example": "city",
@@ -5459,6 +5446,16 @@
           "name": "TargetObjectValue",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该规则支持的执行引擎列表",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "SourceEngineTypes",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -5473,7 +5470,6 @@
           "example": "123456",
           "member": "Rule",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -13035,24 +13031,34 @@
       "document": "DescribeRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123456",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组id",
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎",
+          "example": "HIVE",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13066,9 +13072,9 @@
           "example": "无",
           "member": "Rule",
           "name": "Data",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18600,164 +18606,174 @@
       "document": "ModifyExecStrategy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则组ID",
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测",
           "example": "1",
           "member": "uint64",
           "name": "MonitorType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算队列",
           "example": "default",
           "member": "string",
           "name": "ExecQueue",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源组ID",
           "example": "123456",
           "member": "string",
           "name": "ExecutorGroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源组名称",
           "example": "group1",
           "member": "string",
           "name": "ExecutorGroupName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的生产调度任务列表",
           "example": "无",
           "member": "ProdSchedulerTask",
           "name": "Tasks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "123456",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线周期模式下,生效日期-开始时间",
           "example": "yyyyy-MM-dd",
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线周期模式下,生效日期-结束时间",
           "example": "yyyyy-MM-dd",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线周期模式下,调度周期 \nMINUTE_CYCLE:I,\nHOUR_CYCLE:H,\nDAY_CYCLE:D,\nWEEK_CYCLE:W,\nMONTH_CYCLE:M",
           "example": "H",
           "member": "string",
           "name": "CycleType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线周期模式下,调度步长",
           "example": "1",
           "member": "uint64",
           "name": "CycleStep",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线周期模式下,指定时间",
           "example": "无",
           "member": "string",
           "name": "TaskAction",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延时执行时间，单位分钟，可选: <0-1439",
           "example": "1",
           "member": "uint64",
           "name": "DelayTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库Id",
           "example": "123456",
           "member": "string",
           "name": "DatabaseId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源Id",
           "example": "123456",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表Id",
           "example": "123456",
           "member": "string",
           "name": "TableId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "运行的执行引擎，不传时会请求该数据源下默认的执行引擎",
+          "example": "HIVE",
+          "member": "string",
+          "name": "ExecEngineType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -18771,9 +18787,9 @@
           "example": "123456",
           "member": "uint64",
           "name": "Data",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19177,7 +19193,6 @@
       "document": "ModifyRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "123456",
@@ -19188,7 +19203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "123456",
@@ -19199,7 +19213,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组ID",
           "example": "123456",
@@ -19210,7 +19223,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "rule1",
@@ -19221,7 +19233,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表ID",
           "example": "123456",
@@ -19232,7 +19243,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模板ID",
           "example": "123456",
@@ -19243,7 +19253,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL",
           "example": "1",
@@ -19254,7 +19263,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性",
           "example": "1",
@@ -19265,7 +19273,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段详细类型，int、string",
           "example": "int",
@@ -19276,7 +19283,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段名称",
           "example": "name",
@@ -19287,7 +19293,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测范围 1.全表   2.条件扫描",
           "example": "1",
@@ -19298,7 +19303,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件扫描WHERE条件表达式",
           "example": "dt=1",
@@ -19309,7 +19313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义SQL",
           "example": "select count(*) from person",
@@ -19320,7 +19323,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警触发条件",
           "example": "无",
@@ -19331,7 +19333,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警触发级别 1.低, 2.中, 3.高",
           "example": "1",
@@ -19342,7 +19343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "example": "demo",
@@ -19353,7 +19353,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标库Id",
           "example": "123456",
@@ -19364,7 +19363,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表Id",
           "example": "123456",
@@ -19375,7 +19373,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标过滤条件表达式",
           "example": "createTime=${yyyymmdd}",
@@ -19386,7 +19383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段与目标字段关联条件on表达式",
           "example": "a.age=b.age",
@@ -19397,7 +19393,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模版sql表达式字段替换参数",
           "example": "无",
@@ -19408,7 +19403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标字段名称  CITY",
           "example": "city",
@@ -19416,6 +19410,16 @@
           "name": "TargetObjectValue",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该规则适配的执行引擎",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "SourceEngineTypes",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -19430,7 +19434,6 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -22769,6 +22772,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "源端对应的引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "SourceEngineTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -22887,18 +22901,17 @@
       "document": "规则执行配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计算队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "QueueName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22906,7 +22919,19 @@
           "name": "ExecutorGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "运行的执行引擎，不传时会请求该数据源下默认的执行引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -23810,7 +23835,6 @@
       "document": "规则组执行结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则组执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -23818,10 +23842,10 @@
           "name": "RuleGroupExecId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -23829,10 +23853,10 @@
           "name": "RuleGroupId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行触发类型（1：手动触发， 2：调度事中触发，3：周期调度触发）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -23840,10 +23864,10 @@
           "name": "TriggerType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间 yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yyyy-MM-dd HH:mm:ss",
@@ -23851,10 +23875,10 @@
           "name": "ExecTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行状态（1.已提交 2.检测中 3.正常 4.异常）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -23862,10 +23886,10 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常规则数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -23873,10 +23897,10 @@
           "name": "AlarmRuleCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总规则数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -23884,10 +23908,10 @@
           "name": "TotalRuleCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源表负责人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "park",
@@ -23895,10 +23919,10 @@
           "name": "TableOwnerName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "person",
@@ -23906,10 +23930,10 @@
           "name": "TableName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -23917,10 +23941,10 @@
           "name": "TableId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -23928,10 +23952,10 @@
           "name": "DatabaseId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -23939,10 +23963,10 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有无权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -23950,10 +23974,10 @@
           "name": "Permission",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行详情，调度计划或者关联生产任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "调度计划",
@@ -23961,7 +23985,19 @@
           "name": "ExecDetail",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实际执行引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -23998,7 +24034,6 @@
       "document": "质量规则执行策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -24006,10 +24041,10 @@
           "name": "RuleGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -24017,21 +24052,21 @@
           "name": "MonitorType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算队列\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "ExecQueue",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -24039,10 +24074,10 @@
           "name": "ExecutorGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group1",
@@ -24050,10 +24085,10 @@
           "name": "ExecutorGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的生产调度任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24061,10 +24096,10 @@
           "name": "Tasks",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24072,10 +24107,10 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24083,10 +24118,10 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调度周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "H",
@@ -24094,10 +24129,10 @@
           "name": "CycleType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟调度时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24105,10 +24140,10 @@
           "name": "DelayTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "间隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -24116,10 +24151,10 @@
           "name": "CycleStep",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间指定\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24127,7 +24162,30 @@
           "name": "TaskAction",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "运行的执行引擎，不传时会请求该数据源下默认的执行引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE",
+          "member": "string",
+          "name": "ExecEngineType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "执行计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecPlan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

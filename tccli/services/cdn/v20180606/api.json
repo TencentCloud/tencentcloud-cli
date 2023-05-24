@@ -11649,31 +11649,34 @@
       "document": "ListScdnDomains请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始地址",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表分页记录条数，最大1000",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名信息",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11684,18 +11687,22 @@
         {
           "disabled": false,
           "document": "域名列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ScdnDomain",
           "name": "DomainList",
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "域名的总条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15798,7 +15805,6 @@
       "document": "聚合了SCDN域名的基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "test.com",
@@ -15806,10 +15812,10 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前状态，取值online | offline | process",
           "example": "online",
@@ -15817,10 +15823,10 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Waf 状态默认为‘/’，取值 close | intercept | observe",
           "example": "close",
@@ -15828,10 +15834,10 @@
           "name": "Waf",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Acl 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15839,10 +15845,10 @@
           "name": "Acl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15850,10 +15856,10 @@
           "name": "CC",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ddos 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15861,10 +15867,10 @@
           "name": "Ddos",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -15872,10 +15878,10 @@
           "name": "ProjectId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Acl 规则数",
           "example": "3",
@@ -15883,10 +15889,10 @@
           "name": "AclRuleNumbers",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Bot 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15894,10 +15900,10 @@
           "name": "Bot",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名加速区域，取值global | mainland |  overseas\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "global",
@@ -15905,10 +15911,10 @@
           "name": "Area",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "waf规则等级，可取100|200|300\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",
@@ -15916,7 +15922,19 @@
           "name": "WafLevel",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SourceLimit 状态默认为‘/’，不显示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "SourceLimit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
