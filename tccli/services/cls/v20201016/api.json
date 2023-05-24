@@ -2821,6 +2821,15 @@
       "document": "CreateCosRecharge返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "cos_recharge记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "Id",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

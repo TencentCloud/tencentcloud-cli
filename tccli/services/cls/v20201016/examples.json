@@ -68,7 +68,7 @@
       {
         "document": "创建cos导入任务",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"LogsetId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"test_bucket\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
         "title": "创建cos导入任务"
       }
     ],

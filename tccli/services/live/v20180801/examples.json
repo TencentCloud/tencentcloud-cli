@@ -370,9 +370,9 @@
     ],
     "DescribeCallbackRecordsList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallbackRecordsList\n<公共请求参数>\n\n{\n    \"StreamName\": \"test\",\n    \"StartTime\": \"2020-10-12 00:00:00\",\n    \"EndTime\": \"2020-10-12 00:10:00\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 11,\n        \"TotalPage\": 2,\n        \"RequestId\": \"xx\",\n        \"DataInfoList\": [\n            {\n                \"EventTime\": \"2020-10-12 00:32:10\",\n                \"EventType\": 0,\n                \"Request\": \"opensso++server%3D10.12.1.1%3A\",\n                \"Response\": \"status+code%3A200%2C+content%3DSuccess\",\n                \"ResponseTime\": \"2020-10-12 00:32:11\",\n                \"ResultCode\": 0,\n                \"StreamId\": \"test\"\n            }\n        ]\n    }\n}",
+        "document": "用于查询回调事件。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallbackRecordsList\n<公共请求参数>\n\n{\n    \"StreamName\": \"test\",\n    \"StartTime\": \"2020-10-12T00:00:00+08:00\",\n    \"EndTime\": \"2020-10-12T00:10:00+08:00\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"EventTime\": \"abc\",\n                \"EventType\": 1,\n                \"Request\": \"abc\",\n                \"Response\": \"abc\",\n                \"ResponseTime\": \"abc\",\n                \"ResultCode\": 1,\n                \"StreamId\": \"abc\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 1,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

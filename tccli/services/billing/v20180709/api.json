@@ -29,9 +29,9 @@
       "status": "online"
     },
     "DescribeBillSummaryByPayMode": {
-      "document": "获取按付费模式汇总费用分布",
+      "document": "获取按计费模式汇总费用分布",
       "input": "DescribeBillSummaryByPayModeRequest",
-      "name": "获取按付费模式汇总费用分布",
+      "name": "获取按计费模式汇总费用分布",
       "output": "DescribeBillSummaryByPayModeResponse",
       "status": "online"
     },
@@ -153,7 +153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
+          "document": "交易类型编码",
           "example": "prepay_purchase",
           "member": "string",
           "name": "ActionType",
@@ -163,20 +163,10 @@
         },
         {
           "disabled": false,
-          "document": "交易类型名称",
+          "document": "交易类型：如包年包月新购、包年包月续费、按量计费扣费等类型",
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实际花费",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -193,7 +183,17 @@
         },
         {
           "disabled": false,
-          "document": "现金金额",
+          "document": "优惠后总价",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -203,7 +203,7 @@
         },
         {
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -213,13 +213,23 @@
         },
         {
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -240,16 +250,6 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分成金金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00",
-          "member": "string",
-          "name": "TransferPayAmount",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -287,7 +287,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM",
           "example": "云服务器CVM",
           "member": "string",
           "name": "BusinessCodeName",
@@ -297,7 +297,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1",
+          "document": "子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1",
           "example": "云服务器CVM-标准型S1",
           "member": "string",
           "name": "ProductCodeName",
@@ -307,7 +307,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式：包年包月和按量计费",
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
@@ -317,7 +317,7 @@
         },
         {
           "disabled": false,
-          "document": "项目:资源所属项目",
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -327,7 +327,7 @@
         },
         {
           "disabled": false,
-          "document": "区域：资源所属地域，如华南地区（广州）",
+          "document": "地域：资源所属地域，如华南地区（广州）",
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
@@ -347,7 +347,7 @@
         },
         {
           "disabled": false,
-          "document": "资源实例ID",
+          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID",
           "example": "ins-rb7bmkwx",
           "member": "string",
           "name": "ResourceId",
@@ -357,7 +357,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空",
           "example": "emr-Core.3_emr-4g83a3k3",
           "member": "string",
           "name": "ResourceName",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型",
+          "document": "交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型",
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
@@ -377,7 +377,7 @@
         },
         {
           "disabled": false,
-          "document": "订单ID",
+          "document": "订单ID：包年包月计费模式下订购的订单号",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "OrderId",
@@ -387,7 +387,7 @@
         },
         {
           "disabled": false,
-          "document": "交易ID",
+          "document": "交易ID：结算扣费单号",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "BillId",
@@ -397,7 +397,7 @@
         },
         {
           "disabled": false,
-          "document": "扣费时间",
+          "document": "扣费时间：结算扣费时间",
           "example": "2021-12-02 12:45:12",
           "member": "datetime",
           "name": "PayTime",
@@ -407,7 +407,7 @@
         },
         {
           "disabled": false,
-          "document": "开始使用时间",
+          "document": "开始使用时间：产品服务开始使用时间",
           "example": "2021-12-02 12:45:05",
           "member": "datetime",
           "name": "FeeBeginTime",
@@ -417,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "结束使用时间",
+          "document": "结束使用时间：产品服务结束使用时间",
           "example": "2021-12-03 12:45:05",
           "member": "datetime",
           "name": "FeeEndTime",
@@ -437,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者UIN",
+          "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -447,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者UIN",
+          "document": "使用者UIN：实际使用资源的账号 ID",
           "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
@@ -457,7 +457,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN",
+          "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
@@ -467,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[           {             \"TagKey\": \"jemmahuang\",             \"T",
           "member": "BillTagInfo",
           "name": "Tags",
@@ -477,7 +477,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
@@ -487,7 +487,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sp_cvm_sa2",
           "member": "string",
           "name": "ProductCode",
@@ -497,7 +497,7 @@
         },
         {
           "disabled": false,
-          "document": "交易类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
@@ -507,7 +507,7 @@
         },
         {
           "disabled": false,
-          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "RegionId",
@@ -517,7 +517,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID:资源所属项目ID",
+          "document": "项目ID",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -543,7 +543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件类型:资源组件类型的名称，如内存、硬盘等",
+          "document": "组件类型：用户购买的产品或服务对应的组件大类，例如：云服务器 CVM 的组件：CPU、内存等",
           "example": "内存",
           "member": "string",
           "name": "ComponentCodeName",
@@ -553,7 +553,7 @@
         },
         {
           "disabled": false,
-          "document": "组件名称:资源组件的名称，如云数据库MySQL-内存等",
+          "document": "组件名称：用户购买的产品或服务，所包含的具体组件",
           "example": "高效云系统盘",
           "member": "string",
           "name": "ItemCodeName",
@@ -563,7 +563,7 @@
         },
         {
           "disabled": false,
-          "document": "组件刊例价:资源组件的原始价格，保持原始粒度",
+          "document": "组件刊例价：组件的官网原始单价（如果客户享受一口价/合同价则默认不展示）",
           "example": "0.35000000",
           "member": "string",
           "name": "SinglePrice",
@@ -572,18 +572,18 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "组件指定价",
+          "disabled": true,
+          "document": "组件指定价（已废弃）",
           "example": "0.00000000",
           "member": "string",
           "name": "SpecifiedPrice",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "价格单位",
+          "document": "组件价格单位：组件价格的单位，单位构成：元/用量单位/时长单位",
           "example": "元/GB/月",
           "member": "string",
           "name": "PriceUnit",
@@ -593,7 +593,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量",
+          "document": "组件用量：该组件实际结算用量，组件用量 = 组件原始用量 - 抵扣用量（含资源包",
           "example": "50.00000000",
           "member": "string",
           "name": "UsedAmount",
@@ -603,7 +603,7 @@
         },
         {
           "disabled": false,
-          "document": "组件用量单位",
+          "document": "组件用量单位：组件用量对应的单位",
           "example": "GB",
           "member": "string",
           "name": "UsedAmountUnit",
@@ -613,7 +613,7 @@
         },
         {
           "disabled": false,
-          "document": "使用时长",
+          "document": "使用时长：资源使用的时长",
           "example": "1.00000000",
           "member": "string",
           "name": "TimeSpan",
@@ -623,7 +623,7 @@
         },
         {
           "disabled": false,
-          "document": "时长单位",
+          "document": "时长单位：资源使用时长的单位",
           "example": "月",
           "member": "string",
           "name": "TimeUnitName",
@@ -633,7 +633,7 @@
         },
         {
           "disabled": false,
-          "document": "组件原价",
+          "document": "组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如果客户享受一口价/合同价则默认不展示，退费类场景也默认不展示）",
           "example": "17.50000000",
           "member": "string",
           "name": "Cost",
@@ -643,8 +643,354 @@
         },
         {
           "disabled": false,
-          "document": "折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）",
+          "document": "折扣率：本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）",
           "example": "0.00000000",
+          "member": "string",
+          "name": "Discount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠类型",
+          "example": "折扣",
+          "member": "string",
+          "name": "ReduceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价=（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RealCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出：通过现金账户支付的金额",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出：使用赠送金支付的金额",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_cvm_rootdisk_cbspremium",
+          "member": "string",
+          "name": "ItemCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_cvm_rootdisk",
+          "member": "string",
+          "name": "ComponentCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "ContractPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RI",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣的使用时长：本产品或服务使用预留实例抵扣的使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RiTimeSpan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "OriginalCostWithRI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeductionRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "节省计划抵扣金额（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeduction",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "OriginalCostWithSP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "BlendedDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BillResourceSummary": {
+      "document": "账单资源汇总数据对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM",
+          "example": "实时音视频",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1",
+          "example": "实时音视频-音视频通话",
+          "member": "string",
+          "name": "ProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费",
+          "example": "包年包月",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域：资源所属地域，如华南地区（广州）",
+          "example": "华南地区（广州）",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区：资源所属可用区，如广州三区",
+          "example": "其他",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID\t",
+          "example": "1000068815",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空",
+          "example": " 1",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：如包年包月新购、包年包月续费、按量计费扣费等类型",
+          "example": "包年包月新购",
+          "member": "string",
+          "name": "ActionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单ID：包年包月计费模式下订购的订单号",
+          "example": "20210818400005559878881",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扣费时间：结算扣费时间",
+          "example": "2021-08-18 15:35:01",
+          "member": "datetime",
+          "name": "PayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始使用时间：产品服务开始使用时间",
+          "example": "2021-08-18 15:35:00",
+          "member": "datetime",
+          "name": "FeeBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束使用时间：产品服务结束使用时间",
+          "example": "2022-08-31 23:59:59",
+          "member": "datetime",
+          "name": "FeeEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置描述：该资源下的计费项名称和用量合并展示，仅在资源账单体现",
+          "example": "音视频通话-自定义套餐包: 1000分钟; ",
+          "member": "string",
+          "name": "ConfigDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段1：产品对应的扩展属性信息，仅在资源账单体现",
+          "example": "-",
+          "member": "string",
+          "name": "ExtendField1",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段2：产品对应的扩展属性信息，仅在资源账单体现",
+          "example": "-",
+          "member": "string",
+          "name": "ExtendField2",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如果客户享受一口价/合同价则默认不展示，退费类场景也默认不展示）",
+          "example": "7",
+          "member": "string",
+          "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣率：本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）",
+          "example": "1",
           "member": "string",
           "name": "Discount",
           "required": true,
@@ -664,362 +1010,6 @@
         {
           "disabled": false,
           "document": "优惠后总价",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "RealCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "代金券支付金额",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "VoucherPayAmount",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "现金支付金额",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "CashPayAmount",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "赠送账户支付金额",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "IncentivePayAmount",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sv_cvm_rootdisk_cbspremium",
-          "member": "string",
-          "name": "ItemCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组件名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "v_cvm_rootdisk",
-          "member": "string",
-          "name": "ComponentCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组件单价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "ContractPrice",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RI",
-          "member": "string",
-          "name": "InstanceType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "RiTimeSpan",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "OriginalCostWithRI",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "SPDeductionRate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节省计划抵扣金额，节省计划抵扣的SP包面值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "SPDeduction",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "OriginalCostWithSP",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00000000",
-          "member": "string",
-          "name": "BlendedDiscount",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "BillResourceSummary": {
-      "document": "账单资源汇总数据对象",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
-          "example": "实时音视频",
-          "member": "string",
-          "name": "BusinessCodeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回\"-\"",
-          "example": "实时音视频-音视频通话",
-          "member": "string",
-          "name": "ProductCodeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "计费模式：包年包月和按量计费",
-          "example": "包年包月",
-          "member": "string",
-          "name": "PayModeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "项目",
-          "example": "默认项目",
-          "member": "string",
-          "name": "ProjectName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "地域",
-          "example": "华南地区（广州）",
-          "member": "string",
-          "name": "RegionName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "可用区",
-          "example": "其他",
-          "member": "string",
-          "name": "ZoneName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "资源实例ID",
-          "example": "1000068815",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "资源实例名称",
-          "example": " 1",
-          "member": "string",
-          "name": "ResourceName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
-          "example": "包年包月新购",
-          "member": "string",
-          "name": "ActionTypeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "订单ID",
-          "example": "20210818400005559878881",
-          "member": "string",
-          "name": "OrderId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "扣费时间",
-          "example": "2021-08-18 15:35:01",
-          "member": "datetime",
-          "name": "PayTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "开始使用时间",
-          "example": "2021-08-18 15:35:00",
-          "member": "datetime",
-          "name": "FeeBeginTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "结束使用时间",
-          "example": "2022-08-31 23:59:59",
-          "member": "datetime",
-          "name": "FeeEndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "配置描述",
-          "example": "音视频通话-自定义套餐包: 1000分钟; ",
-          "member": "string",
-          "name": "ConfigDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "扩展字段1",
-          "example": "-",
-          "member": "string",
-          "name": "ExtendField1",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "扩展字段2",
-          "example": "-",
-          "member": "string",
-          "name": "ExtendField2",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "原价，单位为元",
-          "example": "7",
-          "member": "string",
-          "name": "TotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "折扣率\n当聚合之后折扣不唯一或者合同价的情况下，返回“-”",
-          "example": "1",
-          "member": "string",
-          "name": "Discount",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "优惠类型",
-          "example": "折扣",
-          "member": "string",
-          "name": "ReduceType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "优惠后总价，单位为元",
           "example": "7.00000000",
           "member": "string",
           "name": "RealTotalCost",
@@ -1028,9 +1018,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券支付金额，单位为元",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -1039,9 +1028,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金账户支付金额，单位为元",
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "7.00000000",
           "member": "string",
           "name": "CashPayAmount",
@@ -1050,9 +1038,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送账户支付金额，单位为元",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -1061,9 +1048,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "扩展字段3",
+          "document": "分成金账户支出：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段3：产品对应的扩展属性信息，仅在资源账单体现",
           "example": "-",
           "member": "string",
           "name": "ExtendField3",
@@ -1072,9 +1068,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "扩展字段4",
+          "document": "扩展字段4：产品对应的扩展属性信息，仅在资源账单体现",
           "example": "-",
           "member": "string",
           "name": "ExtendField4",
@@ -1083,9 +1078,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "扩展字段5",
+          "document": "扩展字段5：产品对应的扩展属性信息，仅在资源账单体现",
           "example": "-",
           "member": "string",
           "name": "ExtendField5",
@@ -1094,9 +1088,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "BillTagInfo",
           "name": "Tags",
@@ -1105,9 +1098,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "付款方uin",
+          "document": "支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识",
           "example": "xxx",
           "member": "string",
           "name": "PayerUin",
@@ -1116,9 +1108,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "资源所有者uin,无值则返回\"-\"",
+          "document": "使用者UIN：实际使用资源的账号 ID",
           "example": "xxx",
           "member": "string",
           "name": "OwnerUin",
@@ -1127,9 +1118,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "操作者uin,无值则返回\"-\"",
+          "document": "操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）",
           "example": "xxx",
           "member": "string",
           "name": "OperateUin",
@@ -1138,9 +1128,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "产品名称代码",
+          "document": "产品编码",
           "example": "p_rav",
           "member": "string",
           "name": "BusinessCode",
@@ -1149,9 +1138,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "子产品名称代码",
+          "document": "子产品编码",
           "example": "sp_rav_audio_video",
           "member": "string",
           "name": "ProductCode",
@@ -1160,9 +1148,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "区域ID",
+          "document": "地域ID",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -1171,9 +1158,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：\n\nri=Standard RI\n\nsvp=Savings Plan\n\nsi=Spot Instances\n\nrp=Resource Pack",
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示",
           "example": "ri",
           "member": "string",
           "name": "InstanceType",
@@ -1182,9 +1168,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "按组件原价的口径换算的预留实例抵扣金额",
+          "document": "预留实例抵扣组件原价：本产品或服务使用预留实例抵扣的组件原价金额\t",
           "example": "0",
           "member": "string",
           "name": "OriginalCostWithRI",
@@ -1193,20 +1178,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "节省计划抵扣的SP包面值",
+          "disabled": true,
+          "document": "节省计划抵扣金额（已废弃）",
           "example": "0",
           "member": "string",
           "name": "SPDeduction",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "按组件原价的口径换算的节省计划抵扣金额",
+          "document": "节省计划抵扣组件原价：节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率\t",
           "example": "0",
           "member": "string",
           "name": "OriginalCostWithSP",
@@ -1363,9 +1346,8 @@
       "document": "按产品汇总产品详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
@@ -1374,9 +1356,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "document": "产品名称：用户所采购的各类云产品，例如：云服务器 CVM",
           "example": "内容分发网络 CDN",
           "member": "string",
           "name": "BusinessCodeName",
@@ -1385,18 +1366,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实际花费",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "费用所占百分比，两位小数",
           "example": "0.00",
@@ -1407,9 +1376,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额",
+          "document": "优惠后总价",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -1418,9 +1396,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -1429,9 +1406,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -1440,7 +1416,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "账单月份，格式2019-08",
           "example": "2021-01",
@@ -1451,23 +1436,11 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "分成金金额",
-          "example": "0.00",
-          "member": "string",
-          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1479,9 +1452,8 @@
       "document": "按产品汇总总费用",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "总花费",
+          "document": "优惠后总价\n",
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
@@ -1490,9 +1462,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -1501,9 +1472,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -1512,9 +1482,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额",
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -1523,23 +1492,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "document": "分成金账户支出：通过分成金账户支付的金额",
           "example": "0.00",
           "member": "string",
-          "name": "TotalCost",
+          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分成金金额",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
           "example": "0.00",
           "member": "string",
-          "name": "TransferPayAmount",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3462,7 +3429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -3480,7 +3447,7 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份",
           "example": "2018-08",
           "member": "string",
           "name": "Month",
@@ -3507,7 +3474,7 @@
         },
         {
           "disabled": false,
-          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n包年包月转按量",
+          "document": "查询交易类型（请使用交易类型名称入参），入参示例枚举如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款 \n按量计费扣费 \n线下项目扣费 \n线下产品扣费 \n调账扣费 \n调账补偿 \n按量计费小时结 \n按量计费日结 \n按量计费月结 \n竞价实例小时结 \n线下项目调账补偿 \n线下产品调账补偿 \n优惠扣费 \n优惠补偿 \n按量计费迁入资源 \n按量计费迁出资源 \n包年包月迁入资源 \n包年包月迁出资源 \n预付费用 \n小时费用 \n预留实例退款 \n按量计费冲正 \n包年包月转按量 \n保底扣款 \n节省计划小时费用",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",
@@ -3558,7 +3525,7 @@
         },
         {
           "disabled": false,
-          "document": "资源汇总列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源汇总列表总数，入参NeedRecordNum为0时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "103",
           "member": "int64",
           "name": "Total",
@@ -3578,7 +3545,6 @@
       "document": "DescribeBillSummaryByPayMode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3588,7 +3554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3598,7 +3563,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单数据的用户UIN",
           "example": "xxx",
@@ -3615,11 +3579,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "数据是否准备好，0未准备好，1准备好。\nReady=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3629,7 +3592,6 @@
           "example": "无",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3646,7 +3608,6 @@
       "document": "DescribeBillSummaryByProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3656,7 +3617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3666,7 +3626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单数据的用户UIN",
           "example": "xxx",
@@ -3676,7 +3635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "款项类别，与L0账单上的汇总类别对应。\n此参数自账单3.0（即2021-05）之后开始生效。\n枚举值：\nconsume-消费\nrefund-退款\nadjustment-调账",
           "example": "consume",
@@ -3693,11 +3651,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "数据是否准备好，0未准备好，1准备好。\nReady=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3707,7 +3664,6 @@
           "example": "无",
           "member": "BusinessSummaryTotal",
           "name": "SummaryTotal",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3717,7 +3673,6 @@
           "example": "无",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3734,7 +3689,6 @@
       "document": "DescribeBillSummaryByProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3744,7 +3698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3754,7 +3707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单数据的用户UIN",
           "example": "xxx",
@@ -3771,11 +3723,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "数据是否准备好，0未准备好，1准备好\nReady=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3785,7 +3736,6 @@
           "example": "无",
           "member": "ProjectSummaryOverviewItem",
           "name": "SummaryOverview",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3802,7 +3752,6 @@
       "document": "DescribeBillSummaryByRegion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3812,7 +3761,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2018-11",
@@ -3822,7 +3770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单数据的用户UIN",
           "example": "xxx",
@@ -3839,11 +3786,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "数据是否准备好，0未准备好，1准备好\nReady=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3853,7 +3799,6 @@
           "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3922,7 +3867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0未准备好，1准备好",
+          "document": "数据是否准备好，0未准备好，1准备好\nReady=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -5213,12 +5158,11 @@
       "type": "object"
     },
     "PayModeSummaryOverviewItem": {
-      "document": "按付费模式汇总消费详情",
+      "document": "按计费模式汇总消费详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "付费模式",
+          "document": "计费模式编码",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
@@ -5227,9 +5171,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "付费模式名称",
+          "document": "计费模式：区分为包年包月和按量计费",
           "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
@@ -5238,18 +5181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实际花费",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "费用所占百分比，两位小数",
           "example": "0.00",
@@ -5260,20 +5191,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情",
-          "example": "[                     {                         \"ActionType\": \"p",
-          "member": "ActionSummaryOverviewItem",
-          "name": "Detail",
+          "document": "优惠后总价",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
           "required": true,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额",
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -5282,9 +5211,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -5293,9 +5221,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -5304,7 +5231,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
           "example": "0.00",
@@ -5315,14 +5251,13 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分成金金额",
-          "example": "0.00",
-          "member": "string",
-          "name": "TransferPayAmount",
+          "document": "按交易类型汇总消费详情",
+          "example": "[                     {                         \"ActionType\": \"p",
+          "member": "ActionSummaryOverviewItem",
+          "name": "Detail",
           "required": true,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5358,7 +5293,6 @@
       "document": "按项目汇总消费详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -5369,9 +5303,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "项目名称",
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
@@ -5380,18 +5313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实际花费",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "费用所占百分比，两位小数",
           "example": "0.00",
@@ -5402,9 +5323,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额",
+          "document": "优惠后总价",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -5413,9 +5343,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -5424,9 +5353,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -5435,7 +5363,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "账单月份，格式2019-08",
           "example": "2021-01",
@@ -5446,23 +5383,11 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "分成金金额",
-          "example": "0.00",
-          "member": "string",
-          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5474,7 +5399,6 @@
       "document": "按地域汇总消费详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -5485,9 +5409,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "地域名称",
+          "document": "地域名称：资源所属地域，例如华南地区（广州）",
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
@@ -5496,18 +5419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实际花费",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "费用所占百分比，两位小数",
           "example": "0.00",
@@ -5518,9 +5429,18 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额",
+          "document": "优惠后总价",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出：通过现金账户支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -5529,9 +5449,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额",
+          "document": "赠送账户支出：使用赠送金支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -5540,9 +5459,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -5551,7 +5469,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "分成金账户支出：通过分成金账户支付的金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "账单月份，格式2019-08",
           "example": "2021-01",
@@ -5562,23 +5489,11 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "分成金金额",
-          "example": "0.00",
-          "member": "string",
-          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5590,9 +5505,8 @@
       "document": "总数",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优惠后总价\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
@@ -5601,7 +5515,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
@@ -5618,7 +5531,6 @@
       "document": "按标签汇总消费详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5629,18 +5541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实际花费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.00",
-          "member": "string",
-          "name": "RealTotalCost",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "费用所占百分比，两位小数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
@@ -5651,20 +5551,18 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优惠后总价\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
-          "name": "TotalCost",
+          "name": "RealTotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "现金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "现金账户支出：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
@@ -5673,9 +5571,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "赠送金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赠送账户支出：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
@@ -5684,9 +5581,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
@@ -5695,12 +5591,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分成金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分成金账户支出：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.00",
           "member": "string",
           "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": true

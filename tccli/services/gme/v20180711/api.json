@@ -2623,10 +2623,9 @@
       "usage": "out"
     },
     "RecordInfo": {
-      "document": "房间内录制信息信息\n注意：此字段可能返回 null，表示取不到有效值。",
+      "document": "房间内录制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID（当混流模式时，取值为0）。",
           "example": "6787",
@@ -2637,7 +2636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件名。",
           "example": "/3400352518_2314_447947346201176660_9081",
@@ -2648,7 +2646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制开始时间（unix时间戳如：1234567868）。",
           "example": "1234567868",
@@ -2659,7 +2656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制状态：2代表正在录制  10代表等待转码  11代表正在转码  12正在上传  13代表上传完成  14代表通知用户完成。",
           "example": "2",

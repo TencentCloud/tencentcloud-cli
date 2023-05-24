@@ -450,9 +450,9 @@
     ],
     "ListScdnDomains": [
       {
-        "document": "",
+        "document": "查询SCDN域名列表",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnDomains\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Status\": \"online\",\n                \"Waf\": \"/\",\n                \"Acl\": \"yes\"\n            }\n        ],\n        \"TotalCount\": 11\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Status\": \"online\",\n                \"Waf\": \"/\",\n                \"Acl\": \"yes\",\n                \"WafLevel\": 200,\n                \"CC\": \"close\",\n                \"Area\": \"global\",\n                \"AclRuleNumbers\": 3,\n                \"Ddos\": \"close\",\n                \"ProjectId\": \"0\",\n                \"Bot\": \"close\"\n            }\n        ],\n        \"TotalCount\": 11\n    }\n}",
         "title": "查询SCDN域名列表"
       }
     ],

@@ -642,9 +642,9 @@
     ],
     "CreateVpnGatewaySslServer": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGatewaySslServer\n<公共请求参数>\n\n{\n    \"SslVpnProtocol\": \"xx\",\n    \"IntegrityAlgorithm\": \"xx\",\n    \"RemoteAddress\": \"xx\",\n    \"EncryptAlgorithm\": \"xx\",\n    \"Compress\": true,\n    \"LocalAddress\": [\n        \"xx\"\n    ],\n    \"VpnGatewayId\": \"xx\",\n    \"SslVpnServerName\": \"xx\",\n    \"SslVpnPort\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"SslVpnServerId\": \"xx\",\n        \"TaskId\": 123,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建SSL-VPN-SERVER",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGatewaySslServer\n<公共请求参数>\n\n{\n    \"RemoteAddress\": \"172.0.0.0/16\",\n    \"LocalAddress\": [\n        \"10.0.0.0/16\"\n    ],\n    \"VpnGatewayId\": \"vpngw-awd2451x\",\n    \"SslVpnServerName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SslVpnServerId\": \"vpns-cik6bjct\",\n        \"TaskId\": 12233,\n        \"RequestId\": \"b0ef44b0-410a-400f-8aa2-a8abedb26b3a\"\n    }\n}",
         "title": "创建SSL-VPN-SERVER"
       }
     ],
@@ -990,7 +990,7 @@
     ],
     "DeleteVpnGatewaySslServer": [
       {
-        "document": "",
+        "document": "删除SSL-VPN-SERVER",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGatewaySslServer\n&SslVpnServerId=vpns-xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
         "title": "删除SSL-VPN-SERVER"
@@ -1178,8 +1178,8 @@
     ],
     "DescribeCustomerGatewayVendors": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeCustomerGatewayVendors\r\n&Version=2017-03-12\r\n&<公共请求参数>",
+        "document": "本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerGatewayVendors\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CustomerGatewayVendorSet\": [\n            {\n                \"Platform\": \"ios\",\n                \"SoftwareVersion\": \"V15.4\",\n                \"VendorName\": \"cisco\"\n            },\n            {\n                \"Platform\": \"comware\",\n                \"SoftwareVersion\": \"V1.0\",\n                \"VendorName\": \"h3c\"\n            }\n        ],\n        \"RequestId\": \"ccda8bff-d7aa-4a16-8a72-13e72a116205\"\n    }\n}",
         "title": "查询可支持的对端网关厂商信息"
       }

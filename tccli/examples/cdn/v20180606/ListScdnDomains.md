@@ -1,6 +1,6 @@
 **Example 1: 查询SCDN域名列表**
 
-
+查询SCDN域名列表
 
 Input: 
 
@@ -17,7 +17,14 @@ Output:
                 "Domain": "www.test.com",
                 "Status": "online",
                 "Waf": "/",
-                "Acl": "yes"
+                "Acl": "yes",
+                "WafLevel": 200,
+                "CC": "close",
+                "Area": "global",
+                "AclRuleNumbers": 3,
+                "Ddos": "close",
+                "ProjectId": "0",
+                "Bot": "close"
             }
         ],
         "TotalCount": 11

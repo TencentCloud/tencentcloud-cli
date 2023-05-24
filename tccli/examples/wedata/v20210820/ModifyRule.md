@@ -1,37 +1,49 @@
 **Example 1: 更新质量规则接口**
 
-
+更新质量规则接口
 
 Input: 
 
 ```
 tccli wedata ModifyRule --cli-unfold-argument  \
-    --FieldConfig.TableConfig xx \
-    --ConditionExpression xx \
-    --QualityDim 1 \
-    --TableId xx \
-    --TargetTableId xx \
+    --ProjectId abc \
+    --RuleId 1 \
+    --RuleGroupId 1 \
+    --Name abc \
+    --TableId abc \
+    --RuleTemplateId 1 \
     --Type 1 \
-    --CustomSql xx \
-    --Name xx \
-    --Description xx \
-    --TargetDatabaseId xx \
-    --TargetObjectValue xx \
+    --QualityDim 1 \
+    --SourceObjectDataTypeName abc \
+    --SourceObjectValue abc \
     --ConditionType 1 \
-    --RelConditionExpr xx \
-    --ProjectId xx \
-    --TargetConditionExpr xx \
-    --CompareRule.Items.0.Operator xx \
+    --ConditionExpression abc \
+    --CustomSql abc \
+    --CompareRule.Items.0.CompareType 1 \
+    --CompareRule.Items.0.Operator abc \
     --CompareRule.Items.0.ValueComputeType 1 \
     --CompareRule.Items.0.ValueList.0.ValueType 1 \
-    --CompareRule.Items.0.ValueList.0.Value xx \
-    --CompareRule.Items.0.CompareType 1 \
-    --RuleTemplateId 1 \
-    --SourceObjectDataTypeName xx \
-    --RuleGroupId 1 \
-    --RuleId 1 \
-    --SourceObjectValue xx \
-    --AlarmLevel 1
+    --CompareRule.Items.0.ValueList.0.Value abc \
+    --CompareRule.CycleStep 1 \
+    --AlarmLevel 1 \
+    --Description abc \
+    --TargetDatabaseId abc \
+    --TargetTableId abc \
+    --TargetConditionExpr abc \
+    --RelConditionExpr abc \
+    --FieldConfig.WhereConfig.0.FieldKey abc \
+    --FieldConfig.WhereConfig.0.FieldValue abc \
+    --FieldConfig.WhereConfig.0.FieldDataType abc \
+    --FieldConfig.TableConfig.0.DatabaseId abc \
+    --FieldConfig.TableConfig.0.DatabaseName abc \
+    --FieldConfig.TableConfig.0.TableId abc \
+    --FieldConfig.TableConfig.0.TableName abc \
+    --FieldConfig.TableConfig.0.TableKey abc \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldKey abc \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldValue abc \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldDataType abc \
+    --TargetObjectValue abc \
+    --SourceEngineTypes 1
 ```
 
 Output: 
@@ -39,7 +51,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

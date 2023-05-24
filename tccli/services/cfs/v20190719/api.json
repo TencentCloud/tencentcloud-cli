@@ -800,7 +800,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。",
+          "document": "网络类型，可选值为 VPC，CCN；其中 VPC 为私有网络， CCN 为云联网。通用标准型/性能型请选择VPC，Turbo标准型/性能型请选择CCN。",
           "example": "VPC",
           "member": "string",
           "name": "NetInterface",
@@ -809,7 +809,7 @@
         },
         {
           "disabled": false,
-          "document": "权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic",
+          "document": "权限组 ID",
           "example": "pgroupbasic",
           "member": "string",
           "name": "PGroupId",
@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
+          "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。",
           "example": "SD",
           "member": "string",
           "name": "StorageType",
@@ -3762,7 +3762,6 @@
       "document": "快照信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建快照时间",
           "example": "xx",
@@ -3773,7 +3772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称",
           "example": "xx",
@@ -3784,7 +3782,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照ID",
           "example": "snapcfs-xx",
@@ -3795,7 +3792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照状态",
           "example": "available ",
@@ -3806,7 +3802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "beijing",
@@ -3817,7 +3812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "cfs-xx",
@@ -3828,7 +3822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照大小",
           "example": "11",
@@ -3839,7 +3832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留时长天",
           "example": "12",
@@ -3850,7 +3842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照进度",
           "example": "1",
@@ -3861,7 +3852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID",
           "example": "21211",
@@ -3872,7 +3862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照删除时间",
           "example": "xx",
@@ -3883,7 +3872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名称",
           "example": "xx",
@@ -3894,7 +3882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照标签",
           "example": "无",
@@ -3903,6 +3890,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Turbo",
+          "member": "string",
+          "name": "SnapshotType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

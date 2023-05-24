@@ -1126,7 +1126,6 @@
       "document": "DescribeLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -1147,7 +1146,6 @@
           "example": "无",
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1523,7 +1521,6 @@
       "document": "生命周期规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期规则ID",
           "example": "1",
@@ -1534,7 +1531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期规则名称",
           "example": "test",
@@ -1545,7 +1541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期规则路径（目录或文件）",
           "example": "/test",
@@ -1556,7 +1551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期规则转换列表",
           "example": "无",
@@ -1567,7 +1561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期规则状态（1：打开；2：关闭）",
           "example": "1",
@@ -1578,12 +1571,31 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期规则当前路径具体存储量",
+          "example": "无",
+          "member": "Summary",
+          "name": "Summary",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Summary更新时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "LastSummaryTime",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2016,6 +2028,72 @@
         }
       ],
       "usage": "both"
+    },
+    "Summary": {
+      "document": "生命周期规则当前路径具体存储量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "CapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StandardCapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低频存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DegradeCapacityUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归档存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ArchiveCapacityUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "深度归档存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeepArchiveCapacityUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能分层存储量（单位byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IntelligentCapacityUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "资源标签。",

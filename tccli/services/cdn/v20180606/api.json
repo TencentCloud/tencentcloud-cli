@@ -11213,27 +11213,27 @@
       "document": "ListScdnDomains请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始地址",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表分页记录条数，最大1000",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名信息",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -11248,6 +11248,7 @@
         {
           "disabled": false,
           "document": "域名列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ScdnDomain",
           "name": "DomainList",
           "type": "list",
@@ -11256,6 +11257,7 @@
         {
           "disabled": false,
           "document": "域名的总条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -15172,7 +15174,6 @@
       "document": "聚合了SCDN域名的基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "test.com",
@@ -15183,7 +15184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前状态，取值online | offline | process",
           "example": "online",
@@ -15194,7 +15194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Waf 状态默认为‘/’，取值 close | intercept | observe",
           "example": "close",
@@ -15205,7 +15204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Acl 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15216,7 +15214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15227,7 +15224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ddos 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15238,7 +15234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -15249,7 +15244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Acl 规则数",
           "example": "3",
@@ -15260,7 +15254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Bot 状态默认为‘/’，取值 close | open",
           "example": "close",
@@ -15271,7 +15264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名加速区域，取值global | mainland |  overseas\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "global",
@@ -15282,7 +15274,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "waf规则等级，可取100|200|300\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",

@@ -1,19 +1,21 @@
 **Example 1: 提交规则组运行任务接口**
 
-
+提交规则组运行任务接口
 
 Input: 
 
 ```
 tccli wedata CommitRuleGroupTask --cli-unfold-argument  \
-    --ExecRuleConfig.0.ConditionType 1 \
-    --ExecRuleConfig.0.Condition xx \
-    --ExecRuleConfig.0.RuleId 1 \
-    --ExecConfig.ExecutorGroupId 1 \
-    --ExecConfig.QueueName xx \
-    --TriggerType 1 \
     --RuleGroupId 1 \
-    --ProjectId 1
+    --TriggerType 1 \
+    --ExecRuleConfig.0.RuleId 1 \
+    --ExecRuleConfig.0.ConditionType 1 \
+    --ExecRuleConfig.0.Condition abc \
+    --ExecRuleConfig.0.TargetCondition abc \
+    --ExecConfig.QueueName abc \
+    --ExecConfig.ExecutorGroupId abc \
+    --ProjectId abc \
+    --EngineType abc
 ```
 
 Output: 
@@ -21,20 +23,22 @@ Output:
 {
     "Response": {
         "Data": {
+            "RuleGroupExecId": 1,
+            "RuleGroupId": 1,
+            "TriggerType": 1,
+            "ExecTime": "abc",
             "Status": 1,
             "AlarmRuleCount": 1,
-            "DatabaseId": "xx",
-            "RuleGroupId": 1,
-            "RuleGroupExecId": 1,
-            "TableName": "xx",
-            "ExecTime": "xx",
-            "TableId": "xx",
-            "TableOwnerName": "xx",
-            "TriggerType": 1,
-            "DatasourceId": "xx",
-            "TotalRuleCount": 1
+            "TotalRuleCount": 1,
+            "TableOwnerName": "abc",
+            "TableName": "abc",
+            "TableId": "abc",
+            "DatabaseId": "abc",
+            "DatasourceId": "abc",
+            "Permission": true,
+            "ExecDetail": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
