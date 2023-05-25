@@ -1310,7 +1310,7 @@
       "status": "online"
     },
     "DescribeVpnGatewaySslClients": {
-      "document": "查询SSL-VPN-CLIENT 列表",
+      "document": "本接口（DescribeVpnGatewaySslClients）用于查询SSL-VPN-CLIENT 列表。",
       "input": "DescribeVpnGatewaySslClientsRequest",
       "name": "查询SSL-VPN-CLIENT 列表",
       "output": "DescribeVpnGatewaySslClientsResponse",
@@ -15554,9 +15554,8 @@
       "document": "DescribeVpnGatewaySslClients请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SslVpnClientIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpngwSslServer-123456。</li>\n<li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpngwSslClient-123456。</li>\n<li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>",
+          "document": "过滤条件，参数不支持同时指定SslVpnClientIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpns-1j2w6xpx。</li>\n<li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpnc-3rlxp4nd。</li>\n<li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -15564,9 +15563,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认值0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -15574,9 +15572,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "请求对象个数",
+          "document": "请求对象个数，默认值20。",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -15584,9 +15581,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT实例ID。形如：vpngwSslClient-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。",
+          "document": "SSL-VPN-CLIENT实例ID。形如：\t\nvpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。",
           "example": "无",
           "member": "string",
           "name": "SslVpnClientIds",
@@ -15594,7 +15590,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN门户网站使用。默认是False。",
           "example": "无",
@@ -15615,17 +15610,15 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的实例个数。",
+          "document": "SSL-VPN-CLIENT 实例列表。",
           "example": "无",
           "member": "SslVpnClient",
           "name": "SslVpnClientSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26202,9 +26195,8 @@
       "document": "SSL-VPN-CLIENT 出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "VPC实例ID",
+          "document": "VPC实例ID。",
           "example": "vpc-123456",
           "member": "string",
           "name": "VpcId",
@@ -26213,9 +26205,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-SERVER 实例ID",
+          "document": "SSL-VPN-SERVER 实例ID。",
           "example": "vpngwSslServer-123456",
           "member": "string",
           "name": "SslVpnServerId",
@@ -26224,9 +26215,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "证书状态. \n0:创建中\n1:正常\n2:已停用\n3.已过期\n4.创建出错",
+          "document": "证书状态。\n0:创建中\n1:正常\n2:已停用\n3.已过期\n4.创建出错",
           "example": "0",
           "member": "uint64",
           "name": "CertStatus",
@@ -26235,9 +26225,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SSL-VPN-CLIENT 实例ID",
+          "document": "SSL-VPN-CLIENT 实例ID。",
           "example": "vpngwSslClient-123456",
           "member": "string",
           "name": "SslVpnClientId",
@@ -26246,9 +26235,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "证书开始时间",
+          "document": "证书开始时间。",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CertBeginTime",
@@ -26257,9 +26245,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "证书到期时间",
+          "document": "证书到期时间。",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CertEndTime",
@@ -26268,9 +26255,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "CLIENT NAME",
+          "document": "CLIENT NAME。",
           "example": "name-test",
           "member": "string",
           "name": "Name",
@@ -26279,7 +26265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建CLIENT 状态。\n0 创建中\n1 创建出错\n2 更新中\n3 更新出错\n4 销毁中\n5 销毁出粗\n6 已连通\n7 未知",
           "example": "0",

@@ -9938,6 +9938,15 @@
           "name": "Desc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放模式，可选值：\n<li>Loop：循环播放播单；</li>\n<li>Linear：单次播放，播单播放完停止播放。</li>\n默认值：Loop。",
+          "example": "Loop",
+          "member": "string",
+          "name": "PlayBackMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23331,6 +23340,24 @@
           "name": "Desc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放状态，可选值：\n<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>\n",
+          "example": "Disabled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放模式，可选值：\n<li>Loop：循环播放播单；</li>\n<li>Linear：单次播放，播单播放完停止播放。</li>",
+          "example": "Loop",
+          "member": "string",
+          "name": "PlayBackMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -30091,6 +30118,36 @@
           "member": "string",
           "name": "Desc",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放状态，可选值：\n<li>Enabled：启动状态；</li>\n<li>Disabled：停止状态。</li>\n默认值：Enabled。",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放模式，可选值：\n<li>Loop：循环播放播单；</li>\n<li>Linear：单次播放，播单播放完停止播放。</li>\n默认值：Loop。",
+          "example": "Loop",
+          "member": "string",
+          "name": "PlayBackMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "轮播播放地址。",
+          "example": "http://123.vod-qcloud.com/rplay/v1/xxxx/playlist.m3u8",
+          "member": "string",
+          "name": "Url",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

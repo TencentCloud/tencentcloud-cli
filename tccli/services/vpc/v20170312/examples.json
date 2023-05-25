@@ -1786,9 +1786,9 @@
     ],
     "DescribeVpnGatewaySslClients": [
       {
-        "document": "",
+        "document": "查询SSL-VPN-CLIENT",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewaySslClients\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpn-gateway-id\n&Filters.0.Values.0=vpn-123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"fe40c051-723d-4cf7-9838-71d5684f2cbb\",\n        \"SslVpnClientSet\": [\n            {\n                \"VpcId\": \"vpc-ez3k7doq\",\n                \"SslVpnServerId\": \"vpns-80pwpme0\",\n                \"CertStatus\": 1,\n                \"SslVpnClientId\": \"vpnc-dyc72w04\",\n                \"CertBeginTime\": \"2021-11-15 19:48:20\",\n                \"CertEndTime\": \"2024-11-14 19:48:20\",\n                \"Name\": \"SSL-VPN-CLIENT\",\n                \"State\": 6\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SslVpnClientSet\": [\n            {\n                \"VpcId\": \"vpc-ez3k7doq\",\n                \"SslVpnServerId\": \"vpns-80pwpme0\",\n                \"CertStatus\": 1,\n                \"SslVpnClientId\": \"vpnc-dyc72w04\",\n                \"CertBeginTime\": \"2021-11-15 19:48:20\",\n                \"CertEndTime\": \"2024-11-14 19:48:20\",\n                \"Name\": \"SSL-VPN-CLIENT\",\n                \"State\": \"6\"\n            }\n        ],\n        \"RequestId\": \"fe40c051-723d-4cf7-9838-71d5684f2cbb\"\n    }\n}",
         "title": "查询SSL-VPN-CLIENT"
       }
     ],

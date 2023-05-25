@@ -285,6 +285,24 @@
           "name": "PlayScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "玩家用户标识",
+          "example": "无",
+          "member": "string",
+          "name": "GuestUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间Id",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1982,6 +2000,24 @@
           "name": "VipDays",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "充值分类。取值有：room_card-包月房卡; 其他-保留。",
+          "example": "无",
+          "member": "string",
+          "name": "GiveType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Live\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

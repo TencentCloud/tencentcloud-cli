@@ -1364,7 +1364,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码失效时间 unix 时间戳 精确到秒",
+          "document": "二维码失效时间 UNIX 时间戳 精确到秒",
           "example": "无",
           "member": "int64",
           "name": "ExpiredTime",
@@ -3071,6 +3071,15 @@
           "name": "NotifyAddress",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

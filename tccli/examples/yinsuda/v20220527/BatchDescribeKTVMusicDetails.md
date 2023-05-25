@@ -9,7 +9,9 @@ tccli yinsuda BatchDescribeKTVMusicDetails --cli-unfold-argument  \
     --UserId userid1 \
     --MusicIds mid-47n6qwV1 testdddd \
     --AppName AppName1 \
-    --PlayScene Live
+    --PlayScene Live \
+    --GuestUserId userid2 \
+    --RoomId 1883
 ```
 
 Output: 

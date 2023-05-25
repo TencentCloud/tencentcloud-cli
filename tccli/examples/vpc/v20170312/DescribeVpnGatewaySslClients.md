@@ -1,6 +1,6 @@
 **Example 1: 查询SSL-VPN-CLIENT**
 
-
+查询SSL-VPN-CLIENT
 
 Input: 
 
@@ -17,7 +17,6 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "fe40c051-723d-4cf7-9838-71d5684f2cbb",
         "SslVpnClientSet": [
             {
                 "VpcId": "vpc-ez3k7doq",
@@ -27,9 +26,10 @@ Output:
                 "CertBeginTime": "2021-11-15 19:48:20",
                 "CertEndTime": "2024-11-14 19:48:20",
                 "Name": "SSL-VPN-CLIENT",
-                "State": 6
+                "State": "6"
             }
-        ]
+        ],
+        "RequestId": "fe40c051-723d-4cf7-9838-71d5684f2cbb"
     }
 }
 ```

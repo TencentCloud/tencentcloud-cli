@@ -1884,7 +1884,6 @@
       "document": "函数列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-01-10 23:49:31",
@@ -1895,7 +1894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-01-10 23:49:31",
@@ -1906,18 +1904,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "运行时",
+          "document": "运行时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "python2.7",
           "member": "string",
           "name": "Runtime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "helloworld",
@@ -1928,7 +1924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数ID",
           "example": "lam-functionid",
@@ -1939,10 +1934,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -1950,7 +1944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)",
           "example": "Active",
@@ -1961,7 +1954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数状态详情",
           "example": "\"\"",
@@ -1972,7 +1964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数描述",
           "example": "\"\"",
@@ -1983,7 +1974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数标签",
           "example": "[]",
@@ -1994,7 +1984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数类型，取值为 HTTP 或者 Event",
           "example": "Event",
@@ -2005,7 +1994,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数状态失败原因",
           "example": "\"\"",
@@ -2016,7 +2004,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所有版本预置并发内存总和\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "128000",
@@ -2027,7 +2014,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数并发保留内存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12800",
@@ -2038,7 +2024,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数异步属性，取值 TRUE 或者 FALSE",
           "example": "FALSE",
@@ -2049,7 +2034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步函数是否开启调用追踪，取值 TRUE 或者 FALSE",
           "example": "FALSE",
@@ -2847,12 +2831,12 @@
         },
         {
           "disabled": false,
-          "document": "函数的运行环境",
+          "document": "函数的运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5150,7 +5134,6 @@
       "document": "PublishVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布函数的名称",
           "example": "<FunctionName>",
@@ -5160,7 +5143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的描述",
           "example": "<Description>",
@@ -5170,7 +5152,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的命名空间",
           "example": "\"\"",
@@ -5191,7 +5172,6 @@
           "example": "4",
           "member": "string",
           "name": "FunctionVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5201,7 +5181,6 @@
           "example": "45686",
           "member": "int64",
           "name": "CodeSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5211,7 +5190,6 @@
           "example": "256",
           "member": "int64",
           "name": "MemorySize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5221,7 +5199,6 @@
           "example": "dummytut",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5231,7 +5208,6 @@
           "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5241,19 +5217,17 @@
           "example": "3",
           "member": "int64",
           "name": "Timeout",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "函数的运行环境",
+          "document": "函数的运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5261,7 +5235,6 @@
           "example": "default",
           "member": "string",
           "name": "Namespace",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

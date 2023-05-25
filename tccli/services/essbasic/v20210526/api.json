@@ -579,6 +579,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedCreateReview",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1988,7 +1998,7 @@
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
-          "required": true,
+          "required": false,
           "type": "object"
         }
       ],
@@ -2051,7 +2061,7 @@
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
-          "required": true,
+          "required": false,
           "type": "object"
         }
       ],
@@ -2362,21 +2372,21 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "查询的关键字段:\nKey:\"RoleType\",Vales:[\"1\"]查询系统角色，Values:[\"2]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色",
+          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4820,6 +4830,16 @@
           "name": "CcInfos",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedCreateReview",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

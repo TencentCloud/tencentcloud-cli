@@ -10,7 +10,8 @@ tccli yinsuda RechargeLiveVip --cli-unfold-argument  \
     --UserId test \
     --TradeSerialNo TradeSerialNo1 \
     --RoomId 123 \
-    --VipDays 31
+    --VipDays 31 \
+    --GiveType room_card
 ```
 
 Output: 
@@ -19,8 +20,7 @@ Output:
     "Response": {
         "LiveVipUserInfo": {
             "LiveVipEndTime": "2023-07-10T18:17:37+08:00",
-            "LiveVipStatus": "LiveVip",
-            "RoomId": "123"
+            "LiveVipStatus": "LiveVip"
         },
         "RequestId": "RequestId"
     }

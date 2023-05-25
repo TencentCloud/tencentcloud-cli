@@ -35,6 +35,27 @@
       "output": "CloseAuditServiceResponse",
       "status": "online"
     },
+    "CloseClusterPasswordComplexity": {
+      "document": "本接口（CloseClusterPasswordComplexity）用于关闭集群密码复杂度",
+      "input": "CloseClusterPasswordComplexityRequest",
+      "name": "关闭集群密码复杂度",
+      "output": "CloseClusterPasswordComplexityResponse",
+      "status": "online"
+    },
+    "CloseWan": {
+      "document": "本接口（CloseWan）用于关闭外网",
+      "input": "CloseWanRequest",
+      "name": "关闭外网",
+      "output": "CloseWanResponse",
+      "status": "online"
+    },
+    "CopyClusterPasswordComplexity": {
+      "document": "本接口（CopyClusterPasswordComplexity）用于复制集群密码复杂度",
+      "input": "CopyClusterPasswordComplexityRequest",
+      "name": "复制集群密码复杂度",
+      "output": "CopyClusterPasswordComplexityResponse",
+      "status": "online"
+    },
     "CreateAccounts": {
       "document": "创建账号",
       "input": "CreateAccountsRequest",
@@ -63,11 +84,32 @@
       "output": "CreateBackupResponse",
       "status": "online"
     },
+    "CreateClusterDatabase": {
+      "document": "创建数据库",
+      "input": "CreateClusterDatabaseRequest",
+      "name": "创建数据库",
+      "output": "CreateClusterDatabaseResponse",
+      "status": "online"
+    },
     "CreateClusters": {
       "document": "创建集群",
       "input": "CreateClustersRequest",
       "name": "创建集群",
       "output": "CreateClustersResponse",
+      "status": "online"
+    },
+    "CreateParamTemplate": {
+      "document": "本接口（CreateParamTemplate）用于创建参数模版",
+      "input": "CreateParamTemplateRequest",
+      "name": "创建参数模版",
+      "output": "CreateParamTemplateResponse",
+      "status": "online"
+    },
+    "DeleteAccounts": {
+      "document": "删除账号",
+      "input": "DeleteAccountsRequest",
+      "name": "删除账号",
+      "output": "DeleteAccountsResponse",
       "status": "online"
     },
     "DeleteAuditLogFile": {
@@ -91,11 +133,32 @@
       "output": "DeleteBackupResponse",
       "status": "online"
     },
+    "DeleteClusterDatabase": {
+      "document": "删除数据库",
+      "input": "DeleteClusterDatabaseRequest",
+      "name": "删除数据库",
+      "output": "DeleteClusterDatabaseResponse",
+      "status": "online"
+    },
+    "DeleteParamTemplate": {
+      "document": "本接口（DeleteParamTemplate）用于删除用户创建的参数模版。",
+      "input": "DeleteParamTemplateRequest",
+      "name": "删除参数模版",
+      "output": "DeleteParamTemplateResponse",
+      "status": "online"
+    },
     "DescribeAccountAllGrantPrivileges": {
       "document": "账号所有权限",
       "input": "DescribeAccountAllGrantPrivilegesRequest",
       "name": "账号所有权限",
       "output": "DescribeAccountAllGrantPrivilegesResponse",
+      "status": "online"
+    },
+    "DescribeAccountPrivileges": {
+      "document": "查询账号已有权限",
+      "input": "DescribeAccountPrivilegesRequest",
+      "name": "查询账号已有权限",
+      "output": "DescribeAccountPrivilegesResponse",
       "status": "online"
     },
     "DescribeAccounts": {
@@ -182,6 +245,13 @@
       "output": "DescribeClusterDetailResponse",
       "status": "online"
     },
+    "DescribeClusterDetailDatabases": {
+      "document": "查询数据库列表",
+      "input": "DescribeClusterDetailDatabasesRequest",
+      "name": "查询数据库列表",
+      "output": "DescribeClusterDetailDatabasesResponse",
+      "status": "online"
+    },
     "DescribeClusterInstanceGrps": {
       "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。",
       "input": "DescribeClusterInstanceGrpsRequest",
@@ -201,6 +271,13 @@
       "input": "DescribeClusterParamsRequest",
       "name": "查询集群参数",
       "output": "DescribeClusterParamsResponse",
+      "status": "online"
+    },
+    "DescribeClusterPasswordComplexity": {
+      "document": "本接口（DescribeClusterPasswordComplexity）用于查看集群密码复杂度详情",
+      "input": "DescribeClusterPasswordComplexityRequest",
+      "name": "查看集群密码复杂度详情",
+      "output": "DescribeClusterPasswordComplexityResponse",
       "status": "online"
     },
     "DescribeClusters": {
@@ -238,6 +315,13 @@
       "output": "DescribeInstanceErrorLogsResponse",
       "status": "online"
     },
+    "DescribeInstanceParams": {
+      "document": "该接口(DescribeInstanceParams)查询实例参数列表",
+      "input": "DescribeInstanceParamsRequest",
+      "name": "查询实例参数列表",
+      "output": "DescribeInstanceParamsResponse",
+      "status": "online"
+    },
     "DescribeInstanceSlowQueries": {
       "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。",
       "input": "DescribeInstanceSlowQueriesRequest",
@@ -264,6 +348,13 @@
       "input": "DescribeMaintainPeriodRequest",
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintainPeriodResponse",
+      "status": "online"
+    },
+    "DescribeParamTemplateDetail": {
+      "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模版详情",
+      "input": "DescribeParamTemplateDetailRequest",
+      "name": "查询参数模版详情",
+      "output": "DescribeParamTemplateDetailResponse",
       "status": "online"
     },
     "DescribeParamTemplates": {
@@ -364,11 +455,32 @@
       "output": "IsolateInstanceResponse",
       "status": "online"
     },
+    "ModifyAccountDescription": {
+      "document": "本接口(ModifyAccountDescription)用于修改数据库账号描述信息。",
+      "input": "ModifyAccountDescriptionRequest",
+      "name": "修改数据库账号描述信息",
+      "output": "ModifyAccountDescriptionResponse",
+      "status": "online"
+    },
+    "ModifyAccountHost": {
+      "document": "修改账号主机",
+      "input": "ModifyAccountHostRequest",
+      "name": "修改账号主机",
+      "output": "ModifyAccountHostResponse",
+      "status": "online"
+    },
     "ModifyAccountParams": {
       "document": "修改账号参数",
       "input": "ModifyAccountParamsRequest",
       "name": "修改账号参数",
       "output": "ModifyAccountParamsResponse",
+      "status": "online"
+    },
+    "ModifyAccountPrivileges": {
+      "document": "修改账号权限",
+      "input": "ModifyAccountPrivilegesRequest",
+      "name": "修改账号权限",
+      "output": "ModifyAccountPrivilegesResponse",
       "status": "online"
     },
     "ModifyAuditRuleTemplates": {
@@ -399,6 +511,20 @@
       "output": "ModifyBackupNameResponse",
       "status": "online"
     },
+    "ModifyBinlogSaveDays": {
+      "document": "此接口（ModifyBinlogSaveDays）用于修改集群Binlog保留天数。",
+      "input": "ModifyBinlogSaveDaysRequest",
+      "name": "修改Binlog保留天数",
+      "output": "ModifyBinlogSaveDaysResponse",
+      "status": "online"
+    },
+    "ModifyClusterDatabase": {
+      "document": "修改数据库",
+      "input": "ModifyClusterDatabaseRequest",
+      "name": "修改数据库",
+      "output": "ModifyClusterDatabaseResponse",
+      "status": "online"
+    },
     "ModifyClusterName": {
       "document": "修改集群名称",
       "input": "ModifyClusterNameRequest",
@@ -411,6 +537,13 @@
       "input": "ModifyClusterParamRequest",
       "name": "修改集群参数",
       "output": "ModifyClusterParamResponse",
+      "status": "online"
+    },
+    "ModifyClusterPasswordComplexity": {
+      "document": "本接口（ModifyClusterPasswordComplexity）用于修改/开启集群密码复杂度",
+      "input": "ModifyClusterPasswordComplexityRequest",
+      "name": "修改集群密码复杂度",
+      "output": "ModifyClusterPasswordComplexityResponse",
       "status": "online"
     },
     "ModifyClusterSlaveZone": {
@@ -441,11 +574,25 @@
       "output": "ModifyInstanceNameResponse",
       "status": "online"
     },
+    "ModifyInstanceParam": {
+      "document": "本接口（ModifyInstanceParam）用于修改实例参数。",
+      "input": "ModifyInstanceParamRequest",
+      "name": "修改实例参数",
+      "output": "ModifyInstanceParamResponse",
+      "status": "online"
+    },
     "ModifyMaintainPeriodConfig": {
       "document": "修改维护时间配置",
       "input": "ModifyMaintainPeriodConfigRequest",
       "name": "修改维护时间配置",
       "output": "ModifyMaintainPeriodConfigResponse",
+      "status": "online"
+    },
+    "ModifyParamTemplate": {
+      "document": "本接口（ModifyParamTemplate）用于修改用户参数模版。",
+      "input": "ModifyParamTemplateRequest",
+      "name": "修改参数模版",
+      "output": "ModifyParamTemplateResponse",
       "status": "online"
     },
     "ModifyVipVport": {
@@ -476,11 +623,25 @@
       "output": "OpenAuditServiceResponse",
       "status": "online"
     },
+    "OpenClusterPasswordComplexity": {
+      "document": "本接口（OpenClusterPasswordComplexity）用于开启集群密码复杂度",
+      "input": "OpenClusterPasswordComplexityRequest",
+      "name": "开启集群密码复杂度",
+      "output": "OpenClusterPasswordComplexityResponse",
+      "status": "online"
+    },
     "OpenReadOnlyInstanceExclusiveAccess": {
       "document": "开通只读实例独有访问接入组",
       "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
       "name": "开通只读实例独有访问接入组",
       "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
+      "status": "online"
+    },
+    "OpenWan": {
+      "document": "本接口（OpenWan）用于开通外网",
+      "input": "OpenWanRequest",
+      "name": "开通外网",
+      "output": "OpenWanResponse",
       "status": "online"
     },
     "PauseServerless": {
@@ -572,6 +733,13 @@
       "input": "SwitchProxyVpcRequest",
       "name": "更换数据库代理vpc",
       "output": "SwitchProxyVpcResponse",
+      "status": "online"
+    },
+    "UpgradeClusterVersion": {
+      "document": "更新集群Cynos内核版本",
+      "input": "UpgradeClusterVersionRequest",
+      "name": "更新集群Cynos内核版本",
+      "output": "UpgradeClusterVersionResponse",
       "status": "online"
     },
     "UpgradeInstance": {
@@ -1832,6 +2000,82 @@
       ],
       "type": "object"
     },
+    "CloseClusterPasswordComplexityRequest": {
+      "document": "CloseClusterPasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID数组",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseClusterPasswordComplexityResponse": {
+      "document": "CloseClusterPasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseWanRequest": {
+      "document": "CloseWan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例组id",
+          "example": "cynosdbmysql-grp-o48ssqs5",
+          "member": "string",
+          "name": "InstanceGrpId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseWanResponse": {
+      "document": "CloseWan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "734",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ClusterInstanceDetail": {
       "document": "集群实例信息",
       "members": [
@@ -2030,6 +2274,54 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyClusterPasswordComplexityRequest": {
+      "document": "CopyClusterPasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "复制集群ID数组",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "SourceClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyClusterPasswordComplexityResponse": {
+      "document": "CopyClusterPasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAccountsRequest": {
       "document": "CreateAccounts请求参数结构体",
@@ -2284,6 +2576,84 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterDatabaseRequest": {
+      "document": "CreateClusterDatabase请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字符集类型",
+          "example": "utf8",
+          "member": "string",
+          "name": "CharacterSet",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序规则",
+          "example": " utf8_general_ci ",
+          "member": "string",
+          "name": "CollateRule",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "授权用户主机权限",
+          "example": "无",
+          "member": "UserHostPrivilege",
+          "name": "UserHostPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterDatabaseResponse": {
+      "document": "CreateClusterDatabase返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2715,6 +3085,94 @@
           "name": "BigDealIds",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateParamTemplateRequest": {
+      "document": "CreateParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模版名称",
+          "example": "参数模版5.7",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "mysql版本号",
+          "example": "5.7",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模版描述",
+          "example": "常用模版",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "可选参数，需要复制的模版ID",
+          "example": "93",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库类型，可选值：NORMAL（默认值），SERVERLESS",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数列表",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateParamTemplateResponse": {
+      "document": "CreateParamTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版ID",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4884,6 +5342,144 @@
       ],
       "usage": "both"
     },
+    "DbInfo": {
+      "document": "数据库详细信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字符集类型",
+          "example": "utf8",
+          "member": "string",
+          "name": "CharacterSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "拍讯规则",
+          "example": " utf8_general_ci ",
+          "member": "string",
+          "name": "CollateRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DbUserName\":\"root\",\"DbHost\":\"%\",\"DbPrivilege\":\"\"}",
+          "member": "UserHostPrivilege",
+          "name": "UserHostPrivileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "DbId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DbTable": {
       "document": "数据库表",
       "members": [
@@ -4911,6 +5507,44 @@
         }
       ],
       "usage": "in"
+    },
+    "DeleteAccountsRequest": {
+      "document": "DeleteAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-ixgbd0di",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号数组，包含account和host",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Accounts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountsResponse": {
+      "document": "DeleteAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteAuditLogFileRequest": {
       "document": "DeleteAuditLogFile请求参数结构体",
@@ -5026,6 +5660,72 @@
       ],
       "type": "object"
     },
+    "DeleteClusterDatabaseRequest": {
+      "document": "DeleteClusterDatabase请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名",
+          "example": "test",
+          "member": "string",
+          "name": "DbNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterDatabaseResponse": {
+      "document": "DeleteClusterDatabase返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteParamTemplateRequest": {
+      "document": "DeleteParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数模版ID",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteParamTemplateResponse": {
+      "document": "DeleteParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAccountAllGrantPrivilegesRequest": {
       "document": "DescribeAccountAllGrantPrivileges请求参数结构体",
       "members": [
@@ -5094,6 +5794,94 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountPrivilegesRequest": {
+      "document": "DescribeAccountPrivileges请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosmysql-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "主机",
+          "example": "xxx",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；",
+          "example": "xxx",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "指定数据库下的对象类型，可选\"table\"，\"*\"",
+          "example": "table",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当Type=\"table\"时，用来指定表名",
+          "example": "xx",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountPrivilegesResponse": {
+      "document": "DescribeAccountPrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限列表，示例值为：[\"select\",\"update\",\"delete\",\"create\",\"drop\",\"references\",\"index\",\"alter\",\"show_db\",\"create_tmp_table\",\"lock_tables\",\"execute\",\"create_view\",\"show_view\",\"create_routine\",\"alter_routine\",\"event\",\"trigger\"]",
+          "example": "[\"select\"]",
+          "member": "string",
+          "name": "Privileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5992,6 +6780,84 @@
       ],
       "type": "object"
     },
+    "DescribeClusterDetailDatabasesRequest": {
+      "document": "DescribeClusterDetailDatabases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认20,最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterDetailDatabasesResponse": {
+      "document": "DescribeClusterDetailDatabases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DbInfo",
+          "name": "DbInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterDetailRequest": {
       "document": "DescribeClusterDetail请求参数结构体",
       "members": [
@@ -6223,6 +7089,94 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterPasswordComplexityRequest": {
+      "document": "DescribeClusterPasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterPasswordComplexityResponse": {
+      "document": "DescribeClusterPasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据字典参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordDictionary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordLength",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大小写敏感字符个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordMixedCaseCount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数字个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordNumberCount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MEDIUM",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "特殊字符个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ParamInfo",
+          "name": "ValidatePasswordSpecialCharCount",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -6553,6 +7507,64 @@
           "name": "ErrorLogs",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamsRequest": {
+      "document": "DescribeInstanceParams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID，支持批量查询",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数名搜索条件，支持模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "ParamKeyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamsResponse": {
+      "document": "DescribeInstanceParams返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例参数列表",
+          "example": "无",
+          "member": "InstanceParamItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6901,6 +7913,104 @@
           "name": "MaintainDuration",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplateDetailRequest": {
+      "document": "DescribeParamTemplateDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数模版ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplateDetailResponse": {
+      "document": "DescribeParamTemplateDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数模版ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数模版名称",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数模版描述",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎版本",
+          "example": "无",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数总条数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数列表",
+          "example": "无",
+          "member": "ParamDetail",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型，可选值：NORMAL，SERVERLESS",
+          "example": "无",
+          "member": "string",
+          "name": "DbMode",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8210,6 +9320,34 @@
       ],
       "usage": "out"
     },
+    "InstanceParamItem": {
+      "document": "实例参数信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例参数列表",
+          "example": "无",
+          "member": "ParamItemDetail",
+          "name": "ParamsItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",
       "members": [
@@ -8457,6 +9595,112 @@
       "members": [],
       "usage": "out"
     },
+    "ModifyAccountDescriptionRequest": {
+      "document": "ModifyAccountDescription请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库账号名",
+          "example": "admin",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库账号描述信息",
+          "example": "admin",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbpg-on5xw0ni",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "主机，默认为\"%\"",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountDescriptionResponse": {
+      "document": "ModifyAccountDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountHostRequest": {
+      "document": "ModifyAccountHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbpg-on5xw0ni",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新主机",
+          "example": "xx",
+          "member": "string",
+          "name": "NewHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号信息",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountHostResponse": {
+      "document": "ModifyAccountHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAccountParamsRequest": {
       "document": "ModifyAccountParams请求参数结构体",
       "members": [
@@ -8495,6 +9739,74 @@
     },
     "ModifyAccountParamsResponse": {
       "document": "ModifyAccountParams返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountPrivilegesRequest": {
+      "document": "ModifyAccountPrivileges请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号信息",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "全局权限数组",
+          "example": "[\"xxx\\r\\n\"]",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库权限数组",
+          "example": "无",
+          "member": "DatabasePrivileges",
+          "name": "DatabasePrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "表权限数组",
+          "example": "无",
+          "member": "TablePrivileges",
+          "name": "TablePrivileges",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountPrivilegesResponse": {
+      "document": "ModifyAccountPrivileges返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8761,6 +10073,112 @@
       ],
       "type": "object"
     },
+    "ModifyBinlogSaveDaysRequest": {
+      "document": "ModifyBinlogSaveDays请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdb-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Binlog保留天数",
+          "example": "7",
+          "member": "int64",
+          "name": "BinlogSaveDays",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBinlogSaveDaysResponse": {
+      "document": "ModifyBinlogSaveDays返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterDatabaseRequest": {
+      "document": "ModifyClusterDatabase请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新授权用户主机权限",
+          "example": "无",
+          "member": "UserHostPrivilege",
+          "name": "NewUserHostPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "历史授权用户主机权限",
+          "example": "无",
+          "member": "UserHostPrivilege",
+          "name": "OldUserHostPrivileges",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterDatabaseResponse": {
+      "document": "ModifyClusterDatabase返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterNameRequest": {
       "document": "ModifyClusterName请求参数结构体",
       "members": [
@@ -8846,6 +10264,104 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterPasswordComplexityRequest": {
+      "document": "ModifyClusterPasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "密码长度",
+          "example": "8",
+          "member": "int64",
+          "name": "ValidatePasswordLength",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "大小写字符个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordMixedCaseCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "特殊字符个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordSpecialCharCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数字个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordNumberCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "密码强度（\"MEDIUM\", \"STRONG\"）",
+          "example": "MEDIUM",
+          "member": "string",
+          "name": "ValidatePasswordPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据字典",
+          "example": "无",
+          "member": "string",
+          "name": "ValidatePasswordDictionary",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterPasswordComplexityResponse": {
+      "document": "ModifyClusterPasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9089,6 +10605,84 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceParamRequest": {
+      "document": "ModifyInstanceParam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群参数列表",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "ClusterParamList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例参数列表",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "InstanceParamList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "yes：在运维时间窗内修改，no：立即执行（默认值）",
+          "example": "无",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceParamResponse": {
+      "document": "ModifyInstanceParam返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMaintainPeriodConfigRequest": {
       "document": "ModifyMaintainPeriodConfig请求参数结构体",
       "members": [
@@ -9185,6 +10779,64 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyParamTemplateRequest": {
+      "document": "ModifyParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模版ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模版名",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模版描述",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数列表",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyParamTemplateResponse": {
+      "document": "ModifyParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyVipVportRequest": {
       "document": "ModifyVipVport请求参数结构体",
@@ -9728,6 +11380,104 @@
       ],
       "type": "object"
     },
+    "OpenClusterPasswordComplexityRequest": {
+      "document": "OpenClusterPasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "密码长度",
+          "example": "8",
+          "member": "int64",
+          "name": "ValidatePasswordLength",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "大小写字符个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordMixedCaseCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "特殊字符个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordSpecialCharCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数字个数",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidatePasswordNumberCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "密码强度（\"MEDIUM\", \"STRONG\"）",
+          "example": "MEDIUM",
+          "member": "string",
+          "name": "ValidatePasswordPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据字典",
+          "example": "无",
+          "member": "string",
+          "name": "ValidatePasswordDictionary",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenClusterPasswordComplexityResponse": {
+      "document": "OpenClusterPasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OpenReadOnlyInstanceExclusiveAccessRequest": {
       "document": "OpenReadOnlyInstanceExclusiveAccess请求参数结构体",
       "members": [
@@ -9808,6 +11558,226 @@
         }
       ],
       "type": "object"
+    },
+    "OpenWanRequest": {
+      "document": "OpenWan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例组id",
+          "example": "cynosdbmysql-grp-o48ssqs5",
+          "member": "string",
+          "name": "InstanceGrpId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenWanResponse": {
+      "document": "OpenWan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "734",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParamDetail": {
+      "document": "实例参数详细描述",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数名称",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数类型：integer，enum，float，string，func",
+          "example": "无",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "true-支持\"func\"，false-不支持公式",
+          "example": "无",
+          "member": "bool",
+          "name": "SupportFunc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "默认值",
+          "example": "无",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数当前值",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。",
+          "example": "无",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数容许的最大值",
+          "example": "无",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数容许的最小值",
+          "example": "无",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数的可选枚举值。如果为非枚举值，则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "1：全局参数，0：非全局参数",
+          "example": "无",
+          "member": "int64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配类型，multiVal",
+          "example": "无",
+          "member": "string",
+          "name": "MatchType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配目标值，当multiVal时，各个key用，分割",
+          "example": "无",
+          "member": "string",
+          "name": "MatchValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "true-为公式，false-非公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFunc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数设置为公式时，Func返回设置的公式内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Func",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数是否可修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifiableInfo",
+          "name": "ModifiableInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ParamInfo": {
       "document": "参数信息",
@@ -10018,6 +11988,144 @@
         }
       ],
       "usage": "in"
+    },
+    "ParamItemDetail": {
+      "document": "实例参数信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前值",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "默认值",
+          "example": "无",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数的可选枚举值。如果为非枚举值，则为空",
+          "example": "无",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "1：全局参数，0：非全局参数",
+          "example": "无",
+          "member": "int64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大值",
+          "example": "无",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最小值",
+          "example": "无",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。",
+          "example": "无",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数名称",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数类型：integer，enum，float，string，func",
+          "example": "无",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "类型是否为公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFunc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数配置公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Func",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ParamTemplateListInfo": {
       "document": "参数模板信息",
@@ -11783,6 +13891,64 @@
       ],
       "usage": "out"
     },
+    "UpgradeClusterVersionRequest": {
+      "document": "UpgradeClusterVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "内核版本",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "CynosVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "升级时间类型，可选：upgradeImmediate,upgradeInMaintain",
+          "example": "upgradeImmediate",
+          "member": "string",
+          "name": "UpgradeType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeClusterVersionResponse": {
+      "document": "UpgradeClusterVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpgradeInstanceRequest": {
       "document": "UpgradeInstance请求参数结构体",
       "members": [
@@ -11920,6 +14086,45 @@
         }
       ],
       "type": "object"
+    },
+    "UserHostPrivilege": {
+      "document": "用户主机权限",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "授权用户",
+          "example": "root",
+          "member": "string",
+          "name": "DbUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "%",
+          "member": "string",
+          "name": "DbHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "readonly",
+          "member": "string",
+          "name": "DbPrivilege",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ZoneStockInfo": {
       "document": "可用区库存信息",

@@ -393,7 +393,7 @@
       "status": "online"
     },
     "RecognizeTableAccurateOCR": {
-      "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。",
+      "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。点击[立即体验](https://cloud.tencent.com/product/smart-ocr)。",
       "input": "RecognizeTableAccurateOCRRequest",
       "name": "表格识别（V3）",
       "output": "RecognizeTableAccurateOCRResponse",
@@ -505,7 +505,7 @@
       "status": "online"
     },
     "VatInvoiceOCR": {
-      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子发票全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子专票、增值税电子普票、电子发票（普通发票）、电子发票（增值税专用发票）德全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：10次/秒。",
       "input": "VatInvoiceOCRRequest",
       "name": "增值税发票识别",
       "output": "VatInvoiceOCRResponse",
@@ -9756,7 +9756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片支持的像素范围：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -9765,7 +9765,7 @@
         },
         {
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片支持的像素范围：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定\n性可能受一定影响。",
           "example": "xxx",
           "member": "string",
           "name": "ImageUrl",
@@ -15602,7 +15602,6 @@
       "document": "增值税发票项目明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "行号",
           "example": "1",
@@ -15613,7 +15612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "XX",
@@ -15624,7 +15622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格",
           "example": "N",
@@ -15635,7 +15632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位",
           "example": "无",
@@ -15646,7 +15642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "1",
@@ -15657,7 +15652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单价",
           "example": "1",
@@ -15668,7 +15662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不含税金额",
           "example": "1",
@@ -15679,7 +15672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税率",
           "example": "3%",
@@ -15690,7 +15682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税额",
           "example": "1",
@@ -15701,13 +15692,82 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税收分类编码",
           "example": "XXX",
           "member": "string",
           "name": "TaxClassifyCode",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运输工具类型",
+          "example": "无",
+          "member": "string",
+          "name": "VehicleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运输工具牌号",
+          "example": "无",
+          "member": "string",
+          "name": "VehicleBrand",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "起始地",
+          "example": "无",
+          "member": "string",
+          "name": "DeparturePlace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到达地",
+          "example": "无",
+          "member": "string",
+          "name": "ArrivalPlace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运输货物名称",
+          "example": "无",
+          "member": "string",
+          "name": "TransportItemsName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建筑服务发生地",
+          "example": "无",
+          "member": "string",
+          "name": "ConstructionPlace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建筑项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConstructionName",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15844,9 +15904,8 @@
       "document": "VatInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -15854,9 +15913,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -15864,7 +15922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
@@ -15874,7 +15931,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
@@ -15895,7 +15951,6 @@
           "example": "无",
           "member": "TextVatInvoice",
           "name": "VatInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15905,7 +15960,6 @@
           "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15915,7 +15969,6 @@
           "example": "0",
           "member": "int64",
           "name": "PdfPageSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15925,7 +15978,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

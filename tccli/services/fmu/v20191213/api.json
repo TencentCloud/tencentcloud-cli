@@ -110,7 +110,7 @@
         },
         {
           "disabled": false,
-          "document": "磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。",
+          "document": "磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。",
           "example": "1",
           "member": "uint64",
           "name": "Smoothing",

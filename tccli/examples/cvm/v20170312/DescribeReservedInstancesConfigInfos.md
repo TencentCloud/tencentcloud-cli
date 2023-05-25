@@ -1,15 +1,13 @@
 **Example 1: 查询预留实例机型配置**
 
-
+查询预留实例机型配置
 
 Input: 
 
 ```
 tccli cvm DescribeReservedInstancesConfigInfos --cli-unfold-argument  \
     --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-1 \
-    --Offset 0 \
-    --Limit 1
+    --Filters.0.Values ap-guangzhou-1
 ```
 
 Output: 
@@ -20,10 +18,10 @@ Output:
             {
                 "Type": "C",
                 "TypeName": "计算型",
-                "Order": 400,
+                "Order": 0,
                 "InstanceFamilies": [
                     {
-                        "InstanceFamily": "C3",
+                        "InstanceFamily": "abc",
                         "Order": 402,
                         "InstanceTypes": [
                             {
@@ -34,30 +32,29 @@ Output:
                                 "Fpga": 0,
                                 "StorageBlock": 0,
                                 "NetworkCard": 0,
-                                "MaxBandwidth": 2.5,
-                                "Frequency": "3.2 GHz",
+                                "MaxBandwidth": 0,
+                                "Frequency": "2.5",
                                 "CpuModelName": "Intel Xeon Skylake 6146",
                                 "Pps": 60,
-                                "Externals": {},
+                                "Externals": {
+                                    "ReleaseAddress": true,
+                                    "UnsupportNetworks": [],
+                                    "StorageBlockAttr": {
+                                        "Type": "",
+                                        "MinSize": 0,
+                                        "MaxSize": 0
+                                    }
+                                },
                                 "Remark": "",
                                 "Prices": [
-                                    {
-                                        "ReservedInstancesOfferingId": "de06832b-1961-4efd-a470-efee242812a8",
-                                        "OfferingType": "All Upfront",
-                                        "FixedPrice": 200.99,
-                                        "UsagePrice": 0
-                                    },
-                                    {
-                                        "ReservedInstancesOfferingId": "daa72710-c529-4ab3-afca-917e192ea49d",
-                                        "OfferingType": "Partial Upfront",
-                                        "FixedPrice": 100.99,
-                                        "UsagePrice": 1.99
-                                    },
                                     {
                                         "ReservedInstancesOfferingId": "d81353d7-fe7d-43d0-a361-fb5633a9a7e5",
                                         "OfferingType": "No Upfront",
                                         "FixedPrice": 0,
-                                        "UsagePrice": 2.99
+                                        "UsagePrice": 2.99,
+                                        "Duration": 1,
+                                        "Zone": "ap-guangzhou-1",
+                                        "ProductDescription": ""
                                     }
                                 ]
                             }

@@ -6,11 +6,8 @@ Input:
 
 ```
 tccli ess CreateChannelSubOrganizationModifyQrCode --cli-unfold-argument  \
-    --Operator.UserId yDwFQUUckpswii3uUEwyEKVCYtOQfzVk \
-    --Operator.Channel TENCENTCLOUD \
-    --Operator.OpenId yDwFQUUckpsw6tpgUuMcjx2yLwQhEm9k \
-    --Operator.ClientIp 59.37.125.125 \
-    --ApplicationId yDwFYUUckpsywy56UekPZF8PM7tLlo6p
+    --Operator.UserId yDwFQU******CYtOQfzVk \
+    --ApplicationId yDwFYUU*****UekPZF8PM7tLlo6p
 ```
 
 Output: 

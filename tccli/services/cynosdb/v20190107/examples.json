@@ -40,6 +40,30 @@
         "title": "关闭审计"
       }
     ],
+    "CloseClusterPasswordComplexity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-bzxxrmtq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "关闭集群密码复杂度"
+      }
+    ],
+    "CloseWan": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=CloseWan\n&InstanceGrpId=cynosdbmysql-grp-o48ssqs5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 734,\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
+        "title": "关闭RO组外网"
+      }
+    ],
+    "CopyClusterPasswordComplexity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-bzxxrmtq\"\n    ],\n    \"SourceClusterId\": \"cynosdbmysql-bzxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "复制集群密码复杂度"
+      }
+    ],
     "CreateAccounts": [
       {
         "document": "",
@@ -72,12 +96,42 @@
         "title": "创建备份"
       }
     ],
+    "CreateClusterDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterDatabase\n<公共请求参数>\n\n{\n    \"UserHostPrivileges\": [\n        {\n            \"DbUserName\": \"root\",\n            \"DbHost\": \"%\",\n            \"DbPrivilege\": \"xx\"\n        }\n    ],\n    \"CollateRule\": \"utf8_general_ci\",\n    \"DbName\": \"test\",\n    \"Description\": \"test-beizhu\",\n    \"CharacterSet\": \"utf8\",\n    \"ClusterId\": \"cynosdbmysql-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f569bea2-0a51-11ec-af61-525400542aa6\"\n    }\n}",
+        "title": "创建数据库"
+      }
+    ],
     "CreateClusters": [
       {
         "document": "创建集群",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"StoragePayMode\": \"0\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"AdminPassword\": \"passwd@admin\",\n    \"DbType\": \"MYSQL\",\n    \"ProjectId\": \"0\",\n    \"DbVersion\": \"10.0\",\n    \"Storage\": \"100\",\n    \"PayMode\": \"0\",\n    \"ClusterName\": \"newInstance\",\n    \"StorageLimit\": \"100\",\n    \"RollbackStrategy\": \"noneRollback\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\",\n    \"HaCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbmysql-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
         "title": "创建集群"
+      }
+    ],
+    "CreateParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"常用模版\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"93\",\n    \"TemplateName\": \"5.7常用参数模版\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7735dc6-5847-4c9b-a713-9745f9afda34\",\n        \"TemplateId\": 95\n    }\n}",
+        "title": "创建参数模版"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"API测试\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"0\",\n    \"DbMode\": \"NORMAL\",\n    \"TemplateName\": \"API测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"edbd6b65-daf0-4ca8-b34f-cc3fd42790d8\",\n        \"TemplateId\": 27\n    }\n}",
+        "title": "自定义参数模版"
+      }
+    ],
+    "DeleteAccounts": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DeleteAccounts\n&ClusterId=cynosdbmysql-ixgbd0di\n&Accounts.0.AccountName=admin\n&Accounts.0.Host=myHost\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"120440\"\n    }\n}",
+        "title": "删除账号"
       }
     ],
     "DeleteAuditLogFile": [
@@ -104,12 +158,36 @@
         "title": "删除备份"
       }
     ],
+    "DeleteClusterDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterDatabase\n<公共请求参数>\n\n{\n    \"DbNames\": [\n        \"test\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f569bea2-0a51-11ec-af61-525400542aa6\"\n    }\n}",
+        "title": "创建数据库"
+      }
+    ],
+    "DeleteParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"93\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"855d70ae-2815-4311-a42e-75a41ee0af8b\"\n    }\n}",
+        "title": "删除参数模版"
+      }
+    ],
     "DescribeAccountAllGrantPrivileges": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountAllGrantPrivileges\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Host\": \"%\",\n        \"AccountName\": \"test\"\n    },\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"DatabasePrivileges\": [\n            {\n                \"Db\": \"test1\",\n                \"Privileges\": [\n                    \"DROP\",\n                    \"EXECUTE\"\n                ]\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"CREATE\",\n            \"ALTER\"\n        ],\n        \"PrivilegeStatements\": [\n            \"GRANT CREATE, ALTER ON *.* TO 'test'@'%'\",\n            \"GRANT DROP, EXECUTE ON `test1`.* TO 'test'@'%'\",\n            \"GRANT UPDATE, SHOW VIEW ON `test1`.`user1` TO 'test'@'%'\"\n        ],\n        \"RequestId\": \"46bf5c40-3fc1-4030-ab84-a66355ae25ab\",\n        \"TablePrivileges\": [\n            {\n                \"Db\": \"test1\",\n                \"Privileges\": [\n                    \"UPDATE\",\n                    \"SHOW VIEW\"\n                ],\n                \"TableName\": \"user1\"\n            }\n        ]\n    }\n}",
         "title": "账号当前权限语句"
+      }
+    ],
+    "DescribeAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeAccountPrivileges\n&ClusterId=cynosdbmysql-xxxxxxxx\n&Host=xxx\n&AccountName=xxx\n&Db=xxx\n&Type=table\n&TableName=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Privileges\": [\n            \"select\",\n            \"update\",\n            \"delete\",\n            \"create\",\n            \"drop\",\n            \"references\",\n            \"index\",\n            \"alter\",\n            \"show_db\",\n            \"create_tmp_table\",\n            \"lock_tables\",\n            \"execute\",\n            \"create_view\",\n            \"show_view\",\n            \"create_routine\",\n            \"alter_routine\",\n            \"event\",\n            \"trigger\"\n        ],\n        \"RequestId\": \"167350\"\n    }\n}",
+        "title": "查询账号已有权限"
       }
     ],
     "DescribeAccounts": [
@@ -208,6 +286,14 @@
         "title": "查询集群详情"
       }
     ],
+    "DescribeClusterDetailDatabases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetailDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbpg-xxxxxxx\",\n    \"Limit\": \"20\",\n    \"DbName\": \"test\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DbInfos\": [\n            {\n                \"Status\": \"running\",\n                \"UserHostPrivileges\": [],\n                \"UpdateTime\": \"0001-01-01T00:00:00Z\",\n                \"Description\": \"\",\n                \"DbId\": 0,\n                \"CharacterSet\": \"\",\n                \"ClusterId\": \"\",\n                \"DbName\": \"mysql\",\n                \"Uin\": \"\",\n                \"AppId\": 0,\n                \"CollateRule\": \"\",\n                \"CreateTime\": \"0001-01-01T00:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6e094b68-0a37-11ec-97e7-525400542aa6\"\n    }\n}",
+        "title": "查询数据库列表"
+      }
+    ],
     "DescribeClusterInstanceGrps": [
       {
         "document": "",
@@ -230,6 +316,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterParams\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbpg-1xcycbu8\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"MatchValue\": \"\",\n                \"CurrentValue\": \"4096\",\n                \"Min\": \"1024\",\n                \"Default\": \"4096\",\n                \"Description\": \"xx\",\n                \"Max\": \"65536\",\n                \"ParamType\": \"integer\",\n                \"EnumValue\": null,\n                \"ParamName\": \"work_mem\",\n                \"MatchType\": \"\",\n                \"NeedReboot\": 0\n            },\n            {\n                \"MatchValue\": \"\",\n                \"CurrentValue\": \"base64\",\n                \"Min\": \"\",\n                \"Default\": \"base64\",\n                \"Description\": \"xx\",\n                \"Max\": \"\",\n                \"ParamType\": \"enum\",\n                \"EnumValue\": [\n                    \"base64\",\n                    \"hex\"\n                ],\n                \"ParamName\": \"xmlbinary\",\n                \"MatchType\": \"\",\n                \"NeedReboot\": 0\n            }\n        ],\n        \"RequestId\": \"117812\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询集群参数"
+      }
+    ],
+    "DescribeClusterPasswordComplexity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-bzxxrmtq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7613eed6-5eb5-4d17-ae69-dd93c44d7ad4\",\n        \"ValidatePasswordDictionary\": {\n            \"CurrentValue\": \"\",\n            \"Default\": \"\",\n            \"Description\": \"The dictionary words that validate_password uses for checking passwords.\",\n            \"EnumValue\": [],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"0\",\n            \"Min\": \"0\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_txsql_dictionary\",\n            \"ParamType\": \"string\"\n        },\n        \"ValidatePasswordLength\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"8\",\n            \"Description\": \"The minimum number of characters that validate_password requires passwords to have.\",\n            \"EnumValue\": [],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"256\",\n            \"Min\": \"8\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_length\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordMixedCaseCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of lowercase and uppercase characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.\",\n            \"EnumValue\": [],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_mixed_case_count\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordNumberCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of numeric (digit) characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. \",\n            \"EnumValue\": [],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_number_count\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordPolicy\": {\n            \"CurrentValue\": \"LOW\",\n            \"Default\": \"MEDIUM\",\n            \"Description\": \"The password policy enforced by validate_password.\",\n            \"EnumValue\": [\n                \"MEDIUM\",\n                \"STRONG\"\n            ],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"2\",\n            \"Min\": \"0\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_policy\",\n            \"ParamType\": \"enum\"\n        },\n        \"ValidatePasswordSpecialCharCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of nonalphanumeric characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. \",\n            \"EnumValue\": [],\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {},\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_special_char_count\",\n            \"ParamType\": \"integer\"\n        }\n    }\n}",
+        "title": "查看集群密码复杂度详情"
       }
     ],
     "DescribeClusters": [
@@ -272,6 +366,14 @@
         "title": "查询错误日志"
       }
     ],
+    "DescribeInstanceParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ge5ck0jr\",\n    \"ParamKeyword\": \"cdb\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-ins-kzavkukw\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"InstanceId\": \"cynosdbmysql-ins-1111111\",\n                \"ParamsItems\": [\n                    {\n                        \"CurrentValue\": \"1\",\n                        \"Default\": \"1\",\n                        \"Description\": \"Controls the interval between successive column values.\",\n                        \"EnumValue\": [],\n                        \"Func\": \"\",\n                        \"IsFunc\": false,\n                        \"IsGlobal\": 1,\n                        \"Max\": \"65535\",\n                        \"Min\": \"1\",\n                        \"NeedReboot\": 0,\n                        \"ParamName\": \"auto_increment_increment\",\n                        \"ParamType\": \"integer\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12fc29c0-6a35-11ed-bc4c-d5b8675844ad\"\n    }\n}",
+        "title": "查询实例参数"
+      }
+    ],
     "DescribeInstanceSlowQueries": [
       {
         "document": "",
@@ -302,6 +404,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeMaintainPeriod\n&InstanceId=cynosdbmysql-ins-n7ocdslw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"165202\",\n        \"MaintainWeekDays\": [\n            \"Mon\",\n            \"Tue\"\n        ],\n        \"MaintainStartTime\": \"3600\",\n        \"MaintainDuration\": \"3600\"\n    }\n}",
         "title": "查询维护时间窗"
+      }
+    ],
+    "DescribeParamTemplateDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplateDetail\n<公共请求参数>\n\n{\n    \"TemplateId\": \"4837003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DbMode\": \"NORMAL\",\n        \"EngineVersion\": \"5.7\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"1000\",\n                \"Default\": \"0\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections per user.\",\n                \"EnumValue\": [],\n                \"Func\": \"\",\n                \"IsFunc\": false,\n                \"IsGlobal\": 0,\n                \"MatchType\": \"\",\n                \"MatchValue\": \"\",\n                \"Max\": \"10240\",\n                \"Min\": \"0\",\n                \"ModifiableInfo\": {},\n                \"NeedReboot\": 0,\n                \"ParamName\": \"max_user_connections\",\n                \"ParamType\": \"integer\",\n                \"SupportFunc\": false\n            }\n        ],\n        \"RequestId\": \"ca8481bf-ba79-42ba-b90b-bd47df104add\",\n        \"TemplateDescription\": \"测试模版\",\n        \"TemplateId\": 4837003,\n        \"TemplateName\": \"测试模版\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询参数模版"
       }
     ],
     "DescribeParamTemplates": [
@@ -416,12 +526,36 @@
         "title": "隔离实例访问"
       }
     ],
+    "ModifyAccountDescription": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyAccountDescription\n&ClusterId=cynosdbpg-on5xw0ni\n&AccountName=admin\n&Description=admin\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "修改数据库账号描述信息"
+      }
+    ],
+    "ModifyAccountHost": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyAccountHost\n&ClusterId=cynosdbpg-on5xw0ni\n&Account.AccountName=admin\n&Account.Host=myHost\n&NewHost=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "修改账号主机"
+      }
+    ],
     "ModifyAccountParams": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountParams\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"Account\": {\n        \"AccountName\": \"test\",\n        \"Host\": \"%\"\n    },\n    \"AccountParams\": [\n        {\n            \"ParamName\": \"max_user_connections\",\n            \"ParamValue\": \"400\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
         "title": "修改账号参数"
+      }
+    ],
+    "ModifyAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&ClusterId=xxx\n&Account.AccountName=xxx\n&Account.Host=xx\n&GlobalPrivileges.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
+        "title": "修改账号权限"
       }
     ],
     "ModifyAuditRuleTemplates": [
@@ -456,6 +590,22 @@
         "title": "修改备份文件备注名"
       }
     ],
+    "ModifyBinlogSaveDays": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBinlogSaveDays\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdb-xxxxxxxx\",\n    \"BinlogSaveDays\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "修改集群Binlog保留天数"
+      }
+    ],
+    "ModifyClusterDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDatabase\n<公共请求参数>\n\n{\n    \"OldUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"xx\",\n            \"DbHost\": \"xx\",\n            \"DbPrivilege\": \"xx\"\n        }\n    ],\n    \"NewUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"xx\",\n            \"DbHost\": \"xx\",\n            \"DbPrivilege\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DbName\": \"xx\",\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f569bea2-0a51-11ec-af61-525400542aa6\"\n    }\n}",
+        "title": "创建数据库"
+      }
+    ],
     "ModifyClusterName": [
       {
         "document": "",
@@ -470,6 +620,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterParam\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ins-jhi2gdi0\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"59\",\n            \"OldValue\": \"60\",\n            \"ParamName\": \"authentication_timeout\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"164063\",\n        \"AsyncRequestId\": \"56317d06-8078-4e5c-b675-9e048995c820\"\n    }\n}",
         "title": "修改集群参数"
+      }
+    ],
+    "ModifyClusterPasswordComplexity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ValidatePasswordLength\": 0,\n    \"ValidatePasswordMixedCaseCount\": 0,\n    \"ValidatePasswordDictionary\": [\n        \"admin\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-abcdxxxx\",\n    \"ValidatePasswordNumberCount\": 0,\n    \"ValidatePasswordSpecialCharCount\": 0,\n    \"ValidatePasswordPolicy\": \"MEDIUM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "用于修改/开启集群密码复杂度"
       }
     ],
     "ModifyClusterSlaveZone": [
@@ -504,12 +662,28 @@
         "title": "修改实例名称"
       }
     ],
+    "ModifyInstanceParam": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParam\n<公共请求参数>\n\n{\n    \"InstanceParamList\": [\n        {\n            \"CurrentValue\": \"2\",\n            \"ParamName\": \"innodb_stats_transient_sample_pages\"\n        }\n    ],\n    \"ClusterId\": \"cynosdbmysql-ge5ck0jr\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-ins-kzavkukw\"\n    ],\n    \"IsInMaintainPeriod\": \"no\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1103611,\n        \"RequestId\": \"77735431-2058-4999-ace4-a16874c2177b\"\n    }\n}",
+        "title": "修改实例参数"
+      }
+    ],
     "ModifyMaintainPeriodConfig": [
       {
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyMaintainPeriodConfig\n&InstanceId=cynosdbmysql-ins-n7ocdslw\n&MaintainStartTime=3600\n&MaintainDuration=3600\n&MaintainWeekDays.0=Mon\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"165202\"\n    }\n}",
         "title": "修改实例维护时间窗"
+      }
+    ],
+    "ModifyParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"勿删\",\n    \"TemplateId\": \"94\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"1024\",\n            \"ParamName\": \"query_cache_size\"\n        }\n    ],\n    \"TemplateName\": \"5.7常用参数模版-勿删\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"916e8185-4749-45af-899f-e57043164675\"\n    }\n}",
+        "title": "修改参数模版"
       }
     ],
     "ModifyVipVport": [
@@ -544,12 +718,28 @@
         "title": "开通审计"
       }
     ],
+    "OpenClusterPasswordComplexity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ValidatePasswordLength\": 0,\n    \"ValidatePasswordMixedCaseCount\": 0,\n    \"ValidatePasswordDictionary\": [\n        \"admin\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-abcdxxxx\",\n    \"ValidatePasswordNumberCount\": 0,\n    \"ValidatePasswordSpecialCharCount\": 0,\n    \"ValidatePasswordPolicy\": \"MEDIUM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "用于开启集群密码复杂度"
+      }
+    ],
     "OpenReadOnlyInstanceExclusiveAccess": [
       {
         "document": "任何场景",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenReadOnlyInstanceExclusiveAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwertyui\",\n    \"InstanceId\": \"cynosdbmysql-ins-asdfghjk\",\n    \"VpcId\": \"vpc-asdfghjk\",\n    \"SubnetId\": \"subnet-qwertyui\",\n    \"Port\": 3306,\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"12345\",\n        \"RequestId\": \"123123123123123\"\n    }\n}",
         "title": "ex:"
+      }
+    ],
+    "OpenWan": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=OpenWan\n&InstanceGrpId=cynosdbmysql-grp-o48ssqs5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 734,\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
+        "title": "开通RO组外网"
       }
     ],
     "PauseServerless": [
@@ -654,6 +844,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": \"0\",\n    \"UniqSubnetId\": \"xx\",\n    \"ClusterId\": \"xxx\",\n    \"UniqVpcId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "转换网络"
+      }
+    ],
+    "UpgradeClusterVersion": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeClusterVersion\n&ClusterId=xxx\n&CynosVersion=2.0.0\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "升级Cynos内核版本"
       }
     ],
     "UpgradeInstance": [

@@ -13694,7 +13694,6 @@
       "document": "export 集成配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "test",
@@ -13705,7 +13704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "blackbox-exporter",
@@ -13716,7 +13714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内容",
           "example": "{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"in",
@@ -13727,7 +13724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "1",
@@ -13738,7 +13734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型",
           "example": "MySQL",
@@ -13749,7 +13744,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例描述",
           "example": "root:**@localhost:3306",
@@ -13760,7 +13754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "dashboard 的 URL",
           "example": "http://xx",

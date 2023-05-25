@@ -6931,7 +6931,6 @@
       "document": "脚本内置压力模型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器数量",
           "example": "10",
@@ -6942,7 +6941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器规格",
           "example": "1c2g, 2c4g, 4g8g",
@@ -6953,7 +6951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测时长",
           "example": "1200",
