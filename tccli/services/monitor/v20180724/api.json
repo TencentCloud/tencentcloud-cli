@@ -14513,7 +14513,6 @@
       "document": "export 集成配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "test",
@@ -14521,10 +14520,10 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "blackbox-exporter",
@@ -14532,10 +14531,10 @@
           "name": "Kind",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内容",
           "example": "{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"in",
@@ -14543,10 +14542,10 @@
           "name": "Content",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "1",
@@ -14554,10 +14553,10 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型",
           "example": "MySQL",
@@ -14565,10 +14564,10 @@
           "name": "Category",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例描述",
           "example": "root:**@localhost:3306",
@@ -14576,10 +14575,10 @@
           "name": "InstanceDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "dashboard 的 URL",
           "example": "http://xx",
@@ -14587,7 +14586,8 @@
           "name": "GrafanaDashboardURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -8,7 +8,7 @@ Input:
 tccli mna GetFlowStatistic --cli-unfold-argument  \
     --EndTime 1659514692 \
     --Type 1 \
-    --DeviceId xx \
+    --DeviceId abc \
     --TimeGranularity 1 \
     --BeginTime 1659513692
 ```
@@ -22,15 +22,15 @@ Output:
         "TotalValue": 656546,
         "NetDetails": [
             {
-                "Time": 1659513692,
+                "Time": "1659513692",
                 "Current": 3546545
             },
             {
-                "Time": 1659513692,
+                "Time": "1659513692",
                 "Current": 4454864
             },
             {
-                "Time": 1659513692,
+                "Time": "1659513692",
                 "Current": 4848941
             }
         ],

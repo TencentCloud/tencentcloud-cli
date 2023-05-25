@@ -1,3 +1,209 @@
+# Release 3.0.769.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 50 次发布
+
+发布时间：2023-05-25 01:20:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeConfig](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeConfig)
+
+	* 新增成员：GpuCount
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 42 次发布
+
+发布时间：2023-05-25 01:23:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77835)
+* [CloseWan](http://document.tencentcloudapi.woa.com/document/product/1003/77848)
+* [CopyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77834)
+* [CreateClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77847)
+* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77842)
+* [DeleteAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/77829)
+* [DeleteClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77846)
+* [DeleteParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77841)
+* [DescribeAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77828)
+* [DescribeClusterDetailDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/77845)
+* [DescribeClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77833)
+* [DescribeInstanceParams](http://document.tencentcloudapi.woa.com/document/product/1003/77840)
+* [DescribeParamTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1003/77839)
+* [ModifyAccountDescription](http://document.tencentcloudapi.woa.com/document/product/1003/77827)
+* [ModifyAccountHost](http://document.tencentcloudapi.woa.com/document/product/1003/77826)
+* [ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77825)
+* [ModifyBinlogSaveDays](http://document.tencentcloudapi.woa.com/document/product/1003/77836)
+* [ModifyClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77844)
+* [ModifyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77832)
+* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/77838)
+* [ModifyParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77837)
+* [OpenClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77831)
+* [OpenWan](http://document.tencentcloudapi.woa.com/document/product/1003/77843)
+* [UpgradeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/1003/77830)
+
+新增数据结构：
+
+* [DbInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DbInfo)
+* [InstanceParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceParamItem)
+* [ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail)
+* [ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)
+* [UserHostPrivilege](http://document.tencentcloudapi.woa.com/document/product/1003/48097#UserHostPrivilege)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 15 次发布
+
+发布时间：2023-05-25 01:28:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchDomainBuyDetails](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyDetails)
+
+	* 新增成员：BigDealId
+
+* [BatchDomainBuyLog](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyLog)
+
+	* 新增成员：Success, Doing, Failed, BigDealId, PayStatus
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 56 次发布
+
+发布时间：2023-05-25 01:32:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateUserRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77349)
+
+	* <font color="#dd0000">**修改入参**：</font>Operator
+
+* [ChannelDeleteRoleUsers](http://document.tencentcloudapi.woa.com/document/product/1595/77348)
+
+	* <font color="#dd0000">**修改入参**：</font>Operator
+
+* [ChannelDescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77347)
+
+	* <font color="#dd0000">**修改入参**：</font>Operator
+
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：NeedCreateReview
+
+* [FlowDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowDetailInfo)
+
+	* 新增成员：NeedCreateReview
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 57 次发布
+
+发布时间：2023-05-25 01:43:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizeKoreanDrivingLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/77850)
+* [RecognizeKoreanIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/77849)
+
+修改数据结构：
+
+* [VatInvoiceItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VatInvoiceItem)
+
+	* 新增成员：VehicleType, VehicleBrand, DeparturePlace, ArrivalPlace, TransportItemsName, ConstructionPlace, ConstructionName
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 33 次发布
+
+发布时间：2023-05-25 01:47:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Namespace](http://document.tencentcloudapi.woa.com/document/product/583/17244#Namespace)
+
+	* <font color="#dd0000">**修改成员**：</font>Stamp
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 63 次发布
+
+发布时间：2023-05-25 01:57:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77031)
+
+	* 新增入参：PlayBackMode
+
+* [ModifyRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77028)
+
+	* 新增入参：Status, PlayBackMode
+
+
+修改数据结构：
+
+* [RoundPlayInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RoundPlayInfo)
+
+	* 新增成员：Status, PlayBackMode, Url
+
+
+
+
 # Release 3.0.768.1
 
 ## 费用中心(billing) 版本：2018-07-09

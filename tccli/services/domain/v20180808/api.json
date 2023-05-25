@@ -515,10 +515,9 @@
       "usage": "both"
     },
     "BatchDomainBuyDetails": {
-      "document": "批量购买域名详情  ",
+      "document": "批量购买域名详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "详情ID",
           "example": "1",
@@ -526,10 +525,10 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新",
           "example": "new",
@@ -537,10 +536,10 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "xx.cn",
@@ -548,10 +547,10 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态  SUCCESS 成功  FAILURE 失败",
           "example": "SUCCESS ",
@@ -559,10 +558,10 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fail",
@@ -570,10 +569,10 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-23 17:40:27",
@@ -581,10 +580,10 @@
           "name": "CreatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-04-23 17:40:27",
@@ -592,10 +591,10 @@
           "name": "UpdatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -603,10 +602,10 @@
           "name": "TransferDnsResult",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因，中文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "原因",
@@ -614,10 +613,10 @@
           "name": "ReasonZh",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -625,7 +624,19 @@
           "name": "PayStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230516807032418894611",
+          "member": "string",
+          "name": "BigDealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -634,54 +645,114 @@
       "document": "批量购买域名记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志ID",
+          "example": "无",
           "member": "int64",
           "name": "LogId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量操作类型  new:域名注册  batch_transfer_prohibition_on:开启禁止转移 batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新 batch_update_prohibition_off:关闭禁止更新",
+          "example": "无",
           "member": "string",
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
+          "example": "无",
           "member": "int64",
           "name": "Number",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行状态  doing 执行中   done执行完成",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交时间",
+          "example": "无",
           "member": "string",
           "name": "CreatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批量操作成功个数",
+          "example": "0",
+          "member": "int64",
+          "name": "Success",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批量操作成功处理中个数",
+          "example": "0",
+          "member": "int64",
+          "name": "Doing",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批量操作失败个数",
+          "example": "0",
+          "member": "int64",
+          "name": "Failed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230516807032418894611",
+          "member": "string",
+          "name": "BigDealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否支付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PayStatus",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

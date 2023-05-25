@@ -1240,7 +1240,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用最大值（单位：bit）",
+          "document": "查找时间段流量使用最大值（单位：byte）",
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
@@ -1250,7 +1250,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用平均值（单位：bit）",
+          "document": "查找时间段流量使用平均值（单位：byte）",
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
@@ -1260,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "查找时间段流量使用总量（单位：bit）",
+          "document": "查找时间段流量使用总量（单位：byte）",
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",

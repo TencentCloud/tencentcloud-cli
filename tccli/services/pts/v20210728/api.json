@@ -7534,7 +7534,6 @@
       "document": "脚本内置压力模型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器数量",
           "example": "10",
@@ -7542,10 +7541,10 @@
           "name": "MachineNumber",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器规格",
           "example": "1c2g, 2c4g, 4g8g",
@@ -7553,10 +7552,10 @@
           "name": "MachineSpecification",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测时长",
           "example": "1200",
@@ -7564,7 +7563,8 @@
           "name": "DurationSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
