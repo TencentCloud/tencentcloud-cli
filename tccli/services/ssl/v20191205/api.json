@@ -7021,7 +7021,6 @@
       "document": "teo实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -7032,13 +7031,32 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "无",
           "member": "string",
           "name": "CertId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

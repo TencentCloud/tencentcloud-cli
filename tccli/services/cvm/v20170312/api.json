@@ -211,7 +211,7 @@
       "status": "online"
     },
     "DescribeInstanceTypeConfigs": {
-      "document": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。\n\n* 可以根据`zone`、`instance-family`来查询实例机型配置。过滤条件详见过滤器[`Filter`](https://cloud.tencent.com/document/api/213/15753#Filter)。\n* 如果参数为空，返回指定地域的所有实例机型配置。",
+      "document": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。\n\n* 可以根据`zone`、`instance-family`、`instance-type`来查询实例机型配置。过滤条件详见过滤器[`Filter`](https://cloud.tencent.com/document/api/213/15753#Filter)。\n* 如果参数为空，返回指定地域的所有实例机型配置。",
       "input": "DescribeInstanceTypeConfigsRequest",
       "name": "查询实例机型列表",
       "output": "DescribeInstanceTypeConfigsResponse",
@@ -3317,9 +3317,8 @@
       "document": "DescribeInstanceTypeConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。实例类型形如：S5.12XLARGE128、S5.12XLARGE96等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3338,7 +3337,6 @@
           "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfigSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5797,36 +5795,36 @@
       "document": "InquiryPriceRenewInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-2zvpghhc\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "试运行，测试使用，不执行具体逻辑。取值范围：<br><li>TRUE：跳过执行逻辑<br><li>FALSE：执行逻辑<br><br>默认取值：FALSE。",
+          "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。",
+          "example": "False",
           "member": "bool",
           "name": "RenewPortableDataDisk",
           "required": false,
@@ -5841,6 +5839,7 @@
         {
           "disabled": false,
           "document": "该参数表示对应配置实例的价格。",
+          "example": "无",
           "member": "Price",
           "name": "Price",
           "type": "object",

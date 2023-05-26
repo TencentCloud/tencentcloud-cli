@@ -1,6 +1,6 @@
 **Example 1: 查询SSL-VPN-SERVER**
 
-
+查询SSL-VPN-SERVER
 
 Input: 
 
@@ -19,40 +19,41 @@ Output:
         "TotalCount": 1,
         "SslVpnSeverSet": [
             {
-                "SslVpnProtocol": "xx",
-                "SsoEnabled": 1,
-                "VpcId": "xx",
-                "IntegrityAlgorithm": "xx",
-                "RemoteAddress": "xx",
-                "EncryptAlgorithm": "xx",
-                "Compress": 1,
+                "VpcId": "abc",
+                "SslVpnServerId": "abc",
+                "VpnGatewayId": "abc",
+                "SslVpnServerName": "abc",
                 "LocalAddress": [
-                    "xx"
+                    "abc"
                 ],
+                "RemoteAddress": "abc",
+                "MaxConnection": 1,
+                "WanIp": "abc",
+                "SslVpnProtocol": "abc",
+                "SslVpnPort": 1,
+                "EncryptAlgorithm": "abc",
+                "IntegrityAlgorithm": "abc",
+                "Compress": 1,
+                "CreateTime": "abc",
+                "State": 1,
+                "SsoEnabled": 1,
+                "EiamApplicationId": "abc",
+                "AccessPolicyEnabled": 1,
                 "AccessPolicy": [
                     {
+                        "TargetCidr": "abc",
+                        "VpnGatewayIdSslAccessPolicyId": "abc",
+                        "ForAllClient": 1,
                         "UserGroupIds": [
-                            "xx"
+                            "abc"
                         ],
-                        "VpnGatewayIdSslAccessPolicyId": "xx",
-                        "UpdateTime": "xx",
-                        "TargetCidr": "xx",
-                        "ForAllClient": 1
+                        "UpdateTime": "abc",
+                        "Remark": "abc"
                     }
-                ],
-                "State": 1,
-                "MaxConnection": 1,
-                "EiamApplicationId": "xx",
-                "VpnGatewayId": "xx",
-                "SslVpnServerId": "xx",
-                "WanIp": "xx",
-                "AccessPolicyEnabled": 1,
-                "SslVpnServerName": "xx",
-                "CreateTime": "xx",
-                "SslVpnPort": 1
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

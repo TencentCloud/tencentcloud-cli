@@ -77,6 +77,13 @@
       "output": "CreateContentReviewTemplateResponse",
       "status": "online"
     },
+    "CreateEnhanceMediaTemplate": {
+      "document": "创建音画质重生模板。",
+      "input": "CreateEnhanceMediaTemplateRequest",
+      "name": "创建音画质重生模板",
+      "output": "CreateEnhanceMediaTemplateResponse",
+      "status": "online"
+    },
     "CreateHeadTailTemplate": {
       "document": "创建片头片尾模板。",
       "input": "CreateHeadTailTemplateRequest",
@@ -236,6 +243,13 @@
       "input": "DeleteContentReviewTemplateRequest",
       "name": "删除音视频内容审核模板",
       "output": "DeleteContentReviewTemplateResponse",
+      "status": "online"
+    },
+    "DeleteEnhanceMediaTemplate": {
+      "document": "删除音画质重生模板。",
+      "input": "DeleteEnhanceMediaTemplateRequest",
+      "name": "删除音画质重生模板",
+      "output": "DeleteEnhanceMediaTemplateResponse",
       "status": "online"
     },
     "DeleteHeadTailTemplate": {
@@ -453,6 +467,13 @@
       "input": "DescribeDrmKeyProviderInfoRequest",
       "name": "查询 DRM 密钥提供商信息",
       "output": "DescribeDrmKeyProviderInfoResponse",
+      "status": "online"
+    },
+    "DescribeEnhanceMediaTemplates": {
+      "document": "获取音画质重生模板列表。",
+      "input": "DescribeEnhanceMediaTemplatesRequest",
+      "name": "获取音画质重生模板列表",
+      "output": "DescribeEnhanceMediaTemplatesResponse",
       "status": "online"
     },
     "DescribeEventConfig": {
@@ -679,6 +700,13 @@
       "output": "EditMediaResponse",
       "status": "online"
     },
+    "EnhanceMediaByTemplate": {
+      "document": "使用模板发起音画质重生。",
+      "input": "EnhanceMediaByTemplateRequest",
+      "name": "使用模板发起音画质重生",
+      "output": "EnhanceMediaByTemplateResponse",
+      "status": "online"
+    },
     "ExecuteFunction": {
       "document": "本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。",
       "input": "ExecuteFunctionRequest",
@@ -761,6 +789,13 @@
       "input": "ModifyDefaultStorageRegionRequest",
       "name": "设置默认的存储地域",
       "output": "ModifyDefaultStorageRegionResponse",
+      "status": "online"
+    },
+    "ModifyEnhanceMediaTemplate": {
+      "document": "修改音画质重生模板。",
+      "input": "ModifyEnhanceMediaTemplateRequest",
+      "name": "修改音画质重生模板",
+      "output": "ModifyEnhanceMediaTemplateResponse",
       "status": "online"
     },
     "ModifyEventConfig": {
@@ -9145,6 +9180,123 @@
       ],
       "type": "object"
     },
+    "CreateEnhanceMediaTemplateRequest": {
+      "document": "CreateEnhanceMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出文件封装格式，可选值：mp4、flv、hls。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生视频控制控制信息。",
+          "example": "无",
+          "member": "RebuildVideoInfo",
+          "name": "RebuildVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生音频控制控制信息。",
+          "example": "无",
+          "member": "RebuildAudioInfo",
+          "name": "RebuildAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出目标视频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出目标音频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "TargetAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnhanceMediaTemplateResponse": {
+      "document": "CreateEnhanceMediaTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质重生模板 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateHeadTailTemplateRequest": {
       "document": "CreateHeadTailTemplate请求参数结构体",
       "members": [
@@ -11068,6 +11220,42 @@
       ],
       "type": "object"
     },
+    "DeleteEnhanceMediaTemplateRequest": {
+      "document": "DeleteEnhanceMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质重生模板号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnhanceMediaTemplateResponse": {
+      "document": "DeleteEnhanceMediaTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteHeadTailTemplateRequest": {
       "document": "DeleteHeadTailTemplate请求参数结构体",
       "members": [
@@ -12772,6 +12960,87 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnhanceMediaTemplatesRequest": {
+      "document": "DescribeEnhanceMediaTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板列表。长度限制：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnhanceMediaTemplatesResponse": {
+      "document": "DescribeEnhanceMediaTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板详情列表。",
+          "example": "无",
+          "member": "RebuildMediaTemplate",
+          "name": "RebuildMediaTemplateSet",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16318,6 +16587,123 @@
         }
       ],
       "usage": "both"
+    },
+    "EnhanceMediaByTemplateRequest": {
+      "document": "EnhanceMediaByTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始偏移时间，单位：秒，不填表示从视频开始截取。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "结束偏移时间，单位：秒，不填表示截取到视频末尾。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生后的文件配置。",
+          "example": "无",
+          "member": "RebuildMediaOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhanceMediaByTemplateResponse": {
+      "document": "EnhanceMediaByTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EventContent": {
       "document": "事件通知内容，其中，TranscodeCompleteEvent、ConcatCompleteEvent、ClipCompleteEvent、CreateImageSpriteCompleteEvent、SnapshotByTimeOffsetCompleteEvent 为兼容 2017 版接口发起任务的事件通知。",
@@ -22433,6 +22819,123 @@
     },
     "ModifyDefaultStorageRegionResponse": {
       "document": "ModifyDefaultStorageRegion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnhanceMediaTemplateRequest": {
+      "document": "ModifyEnhanceMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质重生模板号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生视频控制控制信息。",
+          "example": "无",
+          "member": "RebuildVideoInfo",
+          "name": "RebuildVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生音频控制控制信息。",
+          "example": "无",
+          "member": "RebuildAudioInfo",
+          "name": "RebuildAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出目标视频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出目标音频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "TargetAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出文件封装格式，可选值：mp4、flv、hls。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnhanceMediaTemplateResponse": {
+      "document": "ModifyEnhanceMediaTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

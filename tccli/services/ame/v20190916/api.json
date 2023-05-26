@@ -4284,6 +4284,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型：\n<li>Integer：数字类型</li>\n<li> String：字符串类型</li>\n默认为：Integer 。",
+          "example": "Integer",
+          "member": "string",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

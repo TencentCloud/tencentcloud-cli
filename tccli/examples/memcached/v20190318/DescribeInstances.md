@@ -1,103 +1,206 @@
 **Example 1: 请求示例**
 
-
+请求示例
 
 Input: 
 
 ```
 tccli memcached DescribeInstances --cli-unfold-argument  \
-    --OrderBy xx \
-    --SearchKeys 字符串型 \
-    --UniqSubnetIds xx \
-    --Vips xx \
-    --OrderType 0 \
-    --InstanceNames 字符串型 \
-    --UniqVpcIds xx \
-    --Limit 1 \
-    --Offset 1 \
-    --ProjectIds 0 \
-    --InstanceIds 有符号整型
+    --Limit 2 \
+    --Offset 0 \
+    --OrderBy createtime 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalNum": 1,
-        "RequestId": "e3d683fc-f2ff-43c9-980d-fae7a1166abc",
         "InstanceList": [
             {
-                "InstanceId": 165150,
-                "InstanceName": "cmem-a85xwfxm",
-                "AppId": 0,
-                "ProjectId": 0,
-                "InstanceDesc": "cmem-a85xwfxm",
-                "Vip": "",
-                "Vport": 1030,
-                "Status": 1,
+                "AddTimeStamp": "2023-03-06 20:18:26",
+                "AppId": 251223625,
                 "AutoRenewFlag": 0,
-                "VpcId": 0,
-                "SubnetId": 0,
-                "PayMode": 0,
-                "ZoneId": 0,
-                "Expire": 0,
-                "RegionId": 1,
-                "AddTimeStamp": "2019-03-31 15:23:07",
-                "ModTimeStamp": "2019-04-03 20:30:06",
-                "IsolateTimeStamp": "2019-03-31 15:23:07",
-                "UniqVpcId": "",
-                "UniqSubnetId": "",
-                "DeadlineTimeStamp": "0001-01-01 08:05:52",
-                "SetId": 0
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 测试返回**
-
-
-
-Input: 
-
-```
-tccli memcached DescribeInstances --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "50084d05-cbd9-4fd6-9ee6-03504521a1f2",
-        "TotalNum": 1,
-        "InstanceList": [
-            {
-                "InstanceId": "cmem-nksuaveq",
-                "InstanceName": "cmem-nksuaveq",
-                "AppId": 251009545,
-                "ProjectId": 10,
-                "InstanceDesc": "cmem-nksuaveq",
-                "Vip": "",
-                "Vport": 9101,
-                "Status": 0,
-                "AutoRenewFlag": 0,
-                "VpcId": 0,
-                "SubnetId": 0,
-                "PayMode": 0,
-                "ZoneId": 100002,
-                "Expire": 0,
-                "RegionId": 1,
-                "AddTimeStamp": "2022-02-11 11:12:45",
-                "ModTimeStamp": "2022-02-11 11:12:45",
-                "IsolateTimeStamp": "2022-02-11 11:12:45",
-                "UniqVpcId": "",
-                "UniqSubnetId": "",
+                "CmemId": 999900082,
                 "DeadlineTimeStamp": "0001-01-01 08:05:43",
-                "SetId": 500728,
-                "CmemId": 0,
-                "Tags": []
+                "Expire": 0,
+                "InstanceDesc": "cmem-ei31rc25",
+                "InstanceId": "cmem-ei31rc25",
+                "InstanceName": "cmem-ei31rc25",
+                "IsolateTimeStamp": "2023-03-06 20:18:26",
+                "ModTimeStamp": "2023-03-13 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 1,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "10.66.46.111",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-06 20:18:32",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900083,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-juos84wf",
+                "InstanceId": "cmem-juos84wf",
+                "InstanceName": "cmem-juos84wf",
+                "IsolateTimeStamp": "2023-03-06 20:18:32",
+                "ModTimeStamp": "2023-03-13 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 1,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "10.66.46.112",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-06 20:19:06",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900085,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-XXXXXXXX",
+                "InstanceId": "cmem-XXXXXXXX",
+                "InstanceName": "cmem-XXXXXXXX",
+                "IsolateTimeStamp": "2023-03-06 20:19:06",
+                "ModTimeStamp": "2023-03-13 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 1,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "10.66.46.113",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-06 20:19:15",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900086,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-XXXXXXXX",
+                "InstanceId": "cmem-XXXXXXXX",
+                "InstanceName": "cmem-XXXXXXXX",
+                "IsolateTimeStamp": "2023-03-06 20:19:15",
+                "ModTimeStamp": "2023-03-13 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 1,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "10.66.46.114",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-06 20:23:24",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900088,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-XXXXXXXX",
+                "InstanceId": "cmem-XXXXXXXX",
+                "InstanceName": "cmem-XXXXXXXX",
+                "IsolateTimeStamp": "2023-03-06 20:23:24",
+                "ModTimeStamp": "2023-03-13 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 0,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "10.66.46.116",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-06 20:24:38",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900089,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-XXXXXXXX",
+                "InstanceId": "cmem-XXXXXXXX",
+                "InstanceName": "cmem-XXXXXXXX",
+                "IsolateTimeStamp": "2023-03-06 20:24:38",
+                "ModTimeStamp": "2023-03-20 11:15:00",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 0,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
+            },
+            {
+                "AddTimeStamp": "2023-03-20 11:30:34",
+                "AppId": 251223625,
+                "AutoRenewFlag": 0,
+                "CmemId": 999900091,
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "Expire": 0,
+                "InstanceDesc": "cmem-XXXXXXXX",
+                "InstanceId": "cmem-XXXXXXXX",
+                "InstanceName": "cmem-XXXXXXXX",
+                "IsolateTimeStamp": "2023-03-20 11:30:34",
+                "ModTimeStamp": "2023-03-20 11:30:34",
+                "PayMode": 0,
+                "ProjectId": 0,
+                "RegionId": 1,
+                "SetId": 999901,
+                "Status": 0,
+                "SubnetId": 0,
+                "Tags": [],
+                "UniqSubnetId": "",
+                "UniqVpcId": "",
+                "Vip": "",
+                "VpcId": 0,
+                "Vport": 9101,
+                "ZoneId": 100007
             }
-        ]
+        ],
+        "RequestId": "57bc4b72-18d6-4047-abba-3f5c71f2XXXXX",
+        "TotalNum": 7
     }
 }
 ```

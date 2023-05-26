@@ -1317,7 +1317,7 @@
       "status": "online"
     },
     "DescribeVpnGatewaySslServers": {
-      "document": "查询SSL-VPN SERVER 列表信息",
+      "document": "本接口（DescribeVpnGatewaySslServers）用于查询SSL-VPN SERVER 列表信息。",
       "input": "DescribeVpnGatewaySslServersRequest",
       "name": "查询SSL-VPN SERVER 列表",
       "output": "DescribeVpnGatewaySslServersResponse",
@@ -2192,7 +2192,6 @@
       "document": "策略信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目的CIDR",
           "example": "178.16.0.0/16",
@@ -2203,7 +2202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "example": "无",
@@ -2214,7 +2212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否对所有用户都生效。1 生效 0不生效",
           "example": "0",
@@ -2225,7 +2222,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "无",
@@ -2236,7 +2232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "无",
@@ -2245,6 +2240,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Remark\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15635,9 +15640,8 @@
       "document": "DescribeVpnGatewaySslServers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -15645,9 +15649,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "请求对象个数",
+          "document": "请求对象个数。",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -15655,7 +15658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SSL-VPN-SERVER实例ID。形如：vpngwSslServer-12345678。每次请求的实例的上限为100。参数不支持同时指定SslVpnServerIds和Filters。",
           "example": "['vpngwSslServer-12345']",
@@ -15665,9 +15667,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SslVpnServerIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>ssl-vpn-server-name - String - （过滤条件）SSL-VPN-SERVER实例名称。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpngwSslServer-123456。</li>",
+          "document": "过滤条件，参数不支持同时指定SslVpnServerIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID，形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>ssl-vpn-server-name - String - （过滤条件）SSL-VPN-SERVER实例名称。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID，形如：vpns-xxx。</li>",
           "example": "无",
           "member": "FilterObject",
           "name": "Filters",
@@ -15675,7 +15676,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpn门户使用。 默认Flase",
           "example": "无",
@@ -15696,7 +15696,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15706,7 +15705,6 @@
           "example": "无",
           "member": "SslVpnSever",
           "name": "SslVpnSeverSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

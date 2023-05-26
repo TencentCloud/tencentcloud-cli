@@ -202,9 +202,9 @@
     ],
     "DescribeNormalLogs": [
       {
-        "document": "",
+        "document": "查询压测过程日志",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNormalLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-fjs583kq\",\n    \"ScenarioId\": \"scenario-q63bkqsa\",\n    \"JobId\": \"job-657v4tmi\",\n    \"LogType\": \"console\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Context\": \"123-456-789\",\n        \"NormalLogs\": [],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"123-456-789\",\n        \"NormalLogs\": [],\n        \"RequestId\": \"nes5mdwkfrbfhbpjrs4ox6ck41xjn9jp\"\n    }\n}",
         "title": "查询压测过程日志"
       }
     ],

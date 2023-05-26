@@ -1,6 +1,6 @@
 **Example 1: 创建商业智能服务实例**
 
-
+创建商业智能服务实例
 
 Input: 
 
@@ -26,7 +26,11 @@ Output:
 {
     "Response": {
         "DealName": "20200318114212",
-        "RequestId": "2b6f7e2a-e909-4753-84b7-0db3e6099877"
+        "RequestId": "2b6f7e2a-e909-4753-84b7-0db3e6099877",
+        "FlowId": 100439,
+        "InstanceIdSet": [
+            "mssqlbi-sdjiej23"
+        ]
     }
 }
 ```

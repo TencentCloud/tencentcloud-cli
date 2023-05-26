@@ -142,6 +142,14 @@
         "title": "创建开启画面令人反感的信息的内容审核模板，并指定过滤标签"
       }
     ],
+    "CreateEnhanceMediaTemplate": [
+      {
+        "document": "创建音画质重生模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnhanceMediaTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 123,\n    \"Name\": \"test\",\n    \"Comment\": \"abc\",\n    \"RebuildVideoInfo\": {\n        \"RepairInfo\": {\n            \"Switch\": \"ON\"\n        }\n    },\n    \"Container\": \"mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 20001,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建音画质重生模板。"
+      }
+    ],
     "CreateHeadTailTemplate": [
       {
         "document": "创建片头片尾模板。",
@@ -366,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的内容审核模板"
+      }
+    ],
+    "DeleteEnhanceMediaTemplate": [
+      {
+        "document": "删除音画质重生模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnhanceMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除音画质重生模板。"
       }
     ],
     "DeleteHeadTailTemplate": [
@@ -656,6 +672,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDrmKeyProviderInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-4594145287e1\",\n        \"SDMCInfo\": {\n            \"Uid\": \"123\",\n            \"SecretId\": \"testId\",\n            \"SecretKey\": \"testKey\",\n            \"FairPlayCertificateUrl\": \"https://xx/fairplay.cer\"\n        }\n    }\n}",
         "title": "查询 DRM 密钥提供商信息"
+      }
+    ],
+    "DescribeEnhanceMediaTemplates": [
+      {
+        "document": "获取音画质重生模板列表。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnhanceMediaTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        20001\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RebuildMediaTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"test\",\n                \"Comment\": \"\",\n                \"Container\": \"mp4\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取音画质重生模板列表。"
       }
     ],
     "DescribeEventConfig": [
@@ -1004,6 +1028,14 @@
         "title": "对点播中的一个文件进行剪辑，生成一个新的视频，同时对新视频执行任务流"
       }
     ],
+    "EnhanceMediaByTemplate": [
+      {
+        "document": "使用模板发起音画质重生。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceMediaByTemplate\n<公共请求参数>\n\n{\n    \"FileId\": \"8312960950918954859\",\n    \"Definition\": 20001\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx-RebuildMedia-75e45d323ffad76987112fafe2eb87dxxx\",\n        \"RequestId\": \"ef5aae86-6eab-4cb3-9ebc-0979010b3f22\"\n    }\n}",
+        "title": "使用模板发起音画质重生"
+      }
+    ],
     "ExecuteFunction": [
       {
         "document": "",
@@ -1140,6 +1172,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyDefaultStorageRegion\n&StorageRegion=ap-chongqing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "设置重庆为默认的存储桶地域"
+      }
+    ],
+    "ModifyEnhanceMediaTemplate": [
+      {
+        "document": "修改音画质重生模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnhanceMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001,\n    \"Name\": \"testEnhanceName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改音画质重生模板。"
       }
     ],
     "ModifyEventConfig": [

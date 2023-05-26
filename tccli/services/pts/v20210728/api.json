@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeNormalLogs": {
-      "document": "压测过程日志日志包括引擎输出日志及用户输出日志",
+      "document": "压测过程日志包括引擎输出日志及用户输出日志",
       "input": "DescribeNormalLogsRequest",
       "name": "查询压测过程日志",
       "output": "DescribeNormalLogsResponse",
@@ -3119,7 +3119,6 @@
       "document": "DescribeNormalLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "压测项目ID",
           "example": "project-xxx",
@@ -3129,7 +3128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测试场景ID",
           "example": "scenario-xxx",
@@ -3139,7 +3137,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测任务ID",
           "example": "job-xxxx",
@@ -3149,7 +3146,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
           "example": "1234-5678",
@@ -3159,7 +3155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志开始时间",
           "example": "2021-09-02T03:18:35+08:00",
@@ -3169,7 +3164,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志结束时间",
           "example": "2021-09-02T03:18:35+08:00",
@@ -3179,7 +3173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志级别，可取debug/info/error",
           "example": "debug/info/error",
@@ -3189,7 +3182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "施压节点IP",
           "example": "192.168.9.9",
@@ -3199,7 +3191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "施压节点所在地域",
           "example": "ap-guangzhou/ap-shanghai",
@@ -3209,7 +3200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志类型， console代表用户输出，engine代表引擎输出",
           "example": "console/engine",
@@ -3219,7 +3209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回日志条数限制，最大100",
           "example": "50",
@@ -3240,7 +3229,6 @@
           "example": "123-456-789",
           "member": "string",
           "name": "Context",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3250,7 +3238,6 @@
           "example": "无",
           "member": "NormalLog",
           "name": "NormalLogs",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

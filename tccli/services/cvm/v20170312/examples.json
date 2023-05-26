@@ -256,7 +256,7 @@
       {
         "document": "查询广州二区中实例机型系列为I1的机型列表",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceTypeConfigs\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-2\n&Filters.1.Name=instance-family\n&Filters.1.Values.0=I1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM4\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 4\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM8\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM16\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 16\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.LARGE8\",\n                \"CPU\": 4,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8\n            }\n        ],\n        \"RequestId\": \"2f1fd71e-95ab-4f10-8adb-895e99d33ff5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM4\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 4,\n                \"GpuCount\": 0\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM8\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8,\n                \"GpuCount\": 0\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM16\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 16,\n                \"GpuCount\": 0\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.LARGE8\",\n                \"CPU\": 4,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8,\n                \"GpuCount\": 0\n            }\n        ],\n        \"RequestId\": \"2f1fd71e-95ab-4f10-8adb-895e99d33ff5\"\n    }\n}",
         "title": "查询实例机型列表"
       }
     ],
@@ -472,10 +472,16 @@
     ],
     "InquiryPriceRenewInstances": [
       {
-        "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceRenewInstances\r\n&InstanceIds.0=ins-2zvpghhc\r\n&InstanceChargePrepaid.Period=1\r\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_MANUAL_RENEW\r\n&<公共请求参数>",
+        "document": "续费实例询价",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": \"120.00\",\n                \"DiscountPrice\": \"1.20\"\n            }\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
         "title": "续费实例询价"
+      },
+      {
+        "document": "查询单个实例费用信息",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-xlsl6f2h\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {},\n            \"BandwidthPrice\": {}\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询单个实例费用信息"
       }
     ],
     "InquiryPriceResetInstance": [

@@ -1475,6 +1475,24 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "是否为副本。1为是，-1为不是。",
+          "example": "-1",
+          "member": "int64",
+          "name": "IsDuplication",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登记日期",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrationDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

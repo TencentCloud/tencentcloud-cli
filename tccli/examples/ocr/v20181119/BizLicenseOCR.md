@@ -23,6 +23,8 @@ Output:
         "Type": "有限责任公司",
         "ComposingForm": "",
         "SetDate": "1998年11月",
+        "IsDuplication": 1,
+        "RegistrationDate": "1998年11月11日",
         "RecognizeWarnCode": [
             -9102
         ],

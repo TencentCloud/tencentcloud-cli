@@ -42,10 +42,10 @@
     ],
     "CheckForwardAuth": [
       {
-        "document": "",
+        "document": "通用场景",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckForwardAuth\n<公共请求参数>\n\n{\n    \"QueueType\": 1,\n    \"Skey\": \"1231523awe\"\n}",
         "output": "{\n    \"Response\": {\n        \"Endpoint\": \"12321514\",\n        \"QueueType\": 1,\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\",\n        \"Productid\": \"PTROMP3AOB\",\n        \"ErrMsg\": \"ok\",\n        \"Result\": 1\n    }\n}",
-        "title": "判断是否开启的转发的权限"
+        "title": "判断是否开启转发的权限"
       }
     ],
     "ControlDeviceData": [
