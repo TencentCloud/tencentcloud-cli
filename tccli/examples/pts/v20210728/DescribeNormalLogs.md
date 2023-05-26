@@ -1,6 +1,6 @@
 **Example 1: 查询压测过程日志**
 
-
+查询压测过程日志
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
     "Response": {
         "Context": "123-456-789",
         "NormalLogs": [],
-        "RequestId": "xx"
+        "RequestId": "nes5mdwkfrbfhbpjrs4ox6ck41xjn9jp"
     }
 }
 ```

@@ -24,7 +24,8 @@ Output:
                 "CPU": 2,
                 "GPU": 0,
                 "FPGA": 0,
-                "Memory": 4
+                "Memory": 4,
+                "GpuCount": 0
             },
             {
                 "Zone": "ap-guangzhou-2",
@@ -33,7 +34,8 @@ Output:
                 "CPU": 2,
                 "GPU": 0,
                 "FPGA": 0,
-                "Memory": 8
+                "Memory": 8,
+                "GpuCount": 0
             },
             {
                 "Zone": "ap-guangzhou-2",
@@ -42,7 +44,8 @@ Output:
                 "CPU": 2,
                 "GPU": 0,
                 "FPGA": 0,
-                "Memory": 16
+                "Memory": 16,
+                "GpuCount": 0
             },
             {
                 "Zone": "ap-guangzhou-2",
@@ -51,7 +54,8 @@ Output:
                 "CPU": 4,
                 "GPU": 0,
                 "FPGA": 0,
-                "Memory": 8
+                "Memory": 8,
+                "GpuCount": 0
             }
         ],
         "RequestId": "2f1fd71e-95ab-4f10-8adb-895e99d33ff5"

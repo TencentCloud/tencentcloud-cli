@@ -57,9 +57,9 @@
       "status": "online"
     },
     "CheckForwardAuth": {
-      "document": "判断是否开启的转发的权限",
+      "document": "判断是否开启转发的权限",
       "input": "CheckForwardAuthRequest",
-      "name": "判断是否开启的转发的权限",
+      "name": "判断是否开启转发的权限",
       "output": "CheckForwardAuthResponse",
       "status": "online"
     },
@@ -1657,24 +1657,24 @@
       "document": "CheckForwardAuth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "控制台Skey",
           "example": "safawef",
           "member": "string",
           "name": "Skey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列类型 0.CMQ  1.Ckafka",
           "example": "1",
           "member": "uint64",
           "name": "QueueType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1688,9 +1688,9 @@
           "example": "1242345132",
           "member": "string",
           "name": "Endpoint",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1698,9 +1698,9 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1708,9 +1708,9 @@
           "example": "PTROMP3AOB",
           "member": "string",
           "name": "Productid",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1718,9 +1718,9 @@
           "example": "ok",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1728,9 +1728,9 @@
           "example": "1",
           "member": "uint64",
           "name": "QueueType",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

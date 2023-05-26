@@ -74,9 +74,9 @@
     ],
     "CreateBusinessDBInstances": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBusinessDBInstances\n<公共请求参数>\n\n{\n    \"Storage\": 50,\n    \"Cpu\": 1,\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Memory\": 2,\n    \"ProjectId\": 1,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-xxxx\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"DBVersion\": 201703,\n    \"StartTime\": \"01:34\",\n    \"Span\": 4,\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Weekly\": [\n        1,\n        5\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200318114212\",\n        \"RequestId\": \"2b6f7e2a-e909-4753-84b7-0db3e6099877\"\n    }\n}",
+        "document": "创建商业智能服务实例",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBusinessDBInstances\n<公共请求参数>\n\n{\n    \"Storage\": 50,\n    \"Cpu\": 1,\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Memory\": 2,\n    \"ProjectId\": 1,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-xxxx\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"DBVersion\": \"201703\",\n    \"StartTime\": \"01:34\",\n    \"Span\": 4,\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Weekly\": [\n        1,\n        5\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200318114212\",\n        \"RequestId\": \"2b6f7e2a-e909-4753-84b7-0db3e6099877\",\n        \"FlowId\": 100439,\n        \"InstanceIdSet\": [\n            \"mssqlbi-sdjiej23\"\n        ]\n    }\n}",
         "title": "创建商业智能服务实例"
       }
     ],

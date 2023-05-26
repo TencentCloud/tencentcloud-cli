@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云服务器(cvm) 版本：2017-03-12
+## 正版曲库直通车(ame) 版本：2019-09-16
 
-### 第 50 次发布
+### 第 18 次发布
 
-发布时间：2023-05-25 01:20:07
+发布时间：2023-05-26 01:01:28
 
 本次发布包含了以下内容：
 
@@ -12,18 +12,18 @@
 
 修改数据结构：
 
-* [InstanceTypeConfig](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeConfig)
+* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#TRTCJoinRoomInput)
 
-	* 新增成员：GpuCount
-
-
+	* 新增成员：RoomIdType
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 42 次发布
 
-发布时间：2023-05-25 01:23:54
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 50 次发布
+
+发布时间：2023-05-26 01:22:06
 
 本次发布包含了以下内容：
 
@@ -31,69 +31,15 @@
 
 新增接口：
 
-* [CloseClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77835)
-* [CloseWan](http://document.tencentcloudapi.woa.com/document/product/1003/77848)
-* [CopyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77834)
-* [CreateClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77847)
-* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77842)
-* [DeleteAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/77829)
-* [DeleteClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77846)
-* [DeleteParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77841)
-* [DescribeAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77828)
-* [DescribeClusterDetailDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/77845)
-* [DescribeClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77833)
-* [DescribeInstanceParams](http://document.tencentcloudapi.woa.com/document/product/1003/77840)
-* [DescribeParamTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1003/77839)
-* [ModifyAccountDescription](http://document.tencentcloudapi.woa.com/document/product/1003/77827)
-* [ModifyAccountHost](http://document.tencentcloudapi.woa.com/document/product/1003/77826)
-* [ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77825)
-* [ModifyBinlogSaveDays](http://document.tencentcloudapi.woa.com/document/product/1003/77836)
-* [ModifyClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77844)
-* [ModifyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77832)
-* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/77838)
-* [ModifyParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77837)
-* [OpenClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77831)
-* [OpenWan](http://document.tencentcloudapi.woa.com/document/product/1003/77843)
-* [UpgradeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/1003/77830)
-
-新增数据结构：
-
-* [DbInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DbInfo)
-* [InstanceParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceParamItem)
-* [ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail)
-* [ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)
-* [UserHostPrivilege](http://document.tencentcloudapi.woa.com/document/product/1003/48097#UserHostPrivilege)
+* [CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)
 
 
 
-## 域名注册(domain) 版本：2018-08-08
+## 文字识别(ocr) 版本：2018-11-19
 
-### 第 15 次发布
+### 第 58 次发布
 
-发布时间：2023-05-25 01:28:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BatchDomainBuyDetails](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyDetails)
-
-	* 新增成员：BigDealId
-
-* [BatchDomainBuyLog](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyLog)
-
-	* 新增成员：Success, Doing, Failed, BigDealId, PayStatus
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 56 次发布
-
-发布时间：2023-05-25 01:32:03
+发布时间：2023-05-26 01:39:28
 
 本次发布包含了以下内容：
 
@@ -101,65 +47,37 @@
 
 修改接口：
 
-* [ChannelCreateUserRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77349)
+* [BizLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/36215)
 
-	* <font color="#dd0000">**修改入参**：</font>Operator
-
-* [ChannelDeleteRoleUsers](http://document.tencentcloudapi.woa.com/document/product/1595/77348)
-
-	* <font color="#dd0000">**修改入参**：</font>Operator
-
-* [ChannelDescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77347)
-
-	* <font color="#dd0000">**修改入参**：</font>Operator
-
-
-修改数据结构：
-
-* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
-
-	* 新增成员：NeedCreateReview
-
-* [FlowDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowDetailInfo)
-
-	* 新增成员：NeedCreateReview
+	* 新增出参：IsDuplication, RegistrationDate
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 21 次发布
 
-
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 57 次发布
-
-发布时间：2023-05-25 01:43:42
+发布时间：2023-05-26 01:44:26
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [RecognizeKoreanDrivingLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/77850)
-* [RecognizeKoreanIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/77849)
+* [CreateBusinessDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/75953)
 
-修改数据结构：
-
-* [VatInvoiceItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VatInvoiceItem)
-
-	* 新增成员：VehicleType, VehicleBrand, DeparturePlace, ArrivalPlace, TransportItemsName, ConstructionPlace, ConstructionName
+	* 新增出参：FlowId, InstanceIdSet
 
 
 
 
-## 云函数(scf) 版本：2018-04-16
+## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 33 次发布
+### 第 26 次发布
 
-发布时间：2023-05-25 01:47:26
+发布时间：2023-05-26 01:45:30
 
 本次发布包含了以下内容：
 
@@ -167,39 +85,48 @@
 
 修改数据结构：
 
-* [Namespace](http://document.tencentcloudapi.woa.com/document/product/583/17244#Namespace)
+* [TeoInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceDetail)
 
-	* <font color="#dd0000">**修改成员**：</font>Stamp
+	* 新增成员：ZoneId, Status
 
 
 
 
 ## 云点播(vod) 版本：2018-07-17
 
-### 第 63 次发布
+### 第 64 次发布
 
-发布时间：2023-05-25 01:57:15
+发布时间：2023-05-26 01:54:02
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77031)
+* [CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
+* [DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
+* [DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
+* [EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
+* [ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
 
-	* 新增入参：PlayBackMode
 
-* [ModifyRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77028)
 
-	* 新增入参：Status, PlayBackMode
+## 私有网络(vpc) 版本：2017-03-12
 
+### 第 90 次发布
+
+发布时间：2023-05-26 01:58:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [RoundPlayInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RoundPlayInfo)
+* [AccessPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccessPolicy)
 
-	* 新增成员：Status, PlayBackMode, Url
+	* 新增成员：Remark
 
 
 
@@ -587,6 +514,21 @@
 
 
 ## 正版曲库直通车(ame) 版本：2019-09-16
+
+### 第 18 次发布
+
+发布时间：2023-05-26 01:01:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#TRTCJoinRoomInput)
+
+	* 新增成员：RoomIdType
+
 
 ### 第 17 次发布
 
@@ -19400,38 +19342,38 @@
 
 新增接口：
 
-* [[CloseClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77835)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CloseWan](http://document.tencentcloudapi.woa.com/document/product/1003/77848)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CopyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77834)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77847)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77842)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/77829)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77846)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77841)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77828)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterDetailDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/77845)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77833)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstanceParams](http://document.tencentcloudapi.woa.com/document/product/1003/77840)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeParamTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1003/77839)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAccountDescription](http://document.tencentcloudapi.woa.com/document/product/1003/77827)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAccountHost](http://document.tencentcloudapi.woa.com/document/product/1003/77826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBinlogSaveDays](http://document.tencentcloudapi.woa.com/document/product/1003/77836)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77844)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/77838)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77837)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenWan](http://document.tencentcloudapi.woa.com/document/product/1003/77843)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpgradeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/1003/77830)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CloseClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77835)
+* [CloseWan](http://document.tencentcloudapi.woa.com/document/product/1003/77848)
+* [CopyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77834)
+* [CreateClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77847)
+* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77842)
+* [DeleteAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/77829)
+* [DeleteClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77846)
+* [DeleteParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77841)
+* [DescribeAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77828)
+* [DescribeClusterDetailDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/77845)
+* [DescribeClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77833)
+* [DescribeInstanceParams](http://document.tencentcloudapi.woa.com/document/product/1003/77840)
+* [DescribeParamTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1003/77839)
+* [ModifyAccountDescription](http://document.tencentcloudapi.woa.com/document/product/1003/77827)
+* [ModifyAccountHost](http://document.tencentcloudapi.woa.com/document/product/1003/77826)
+* [ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/1003/77825)
+* [ModifyBinlogSaveDays](http://document.tencentcloudapi.woa.com/document/product/1003/77836)
+* [ModifyClusterDatabase](http://document.tencentcloudapi.woa.com/document/product/1003/77844)
+* [ModifyClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77832)
+* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/77838)
+* [ModifyParamTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/77837)
+* [OpenClusterPasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/1003/77831)
+* [OpenWan](http://document.tencentcloudapi.woa.com/document/product/1003/77843)
+* [UpgradeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/1003/77830)
 
 新增数据结构：
 
-* [[DbInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DbInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[DbInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DbInfo))
-* [[InstanceParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceParamItem)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[InstanceParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceParamItem))
-* [[ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail))
-* [[ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail))
-* [[UserHostPrivilege](http://document.tencentcloudapi.woa.com/document/product/1003/48097#UserHostPrivilege)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[UserHostPrivilege](http://document.tencentcloudapi.woa.com/document/product/1003/48097#UserHostPrivilege))
+* [DbInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DbInfo)
+* [InstanceParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceParamItem)
+* [ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail)
+* [ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)
+* [UserHostPrivilege](http://document.tencentcloudapi.woa.com/document/product/1003/48097#UserHostPrivilege)
 
 ### 第 41 次发布
 
@@ -21965,6 +21907,18 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 50 次发布
+
+发布时间：2023-05-26 01:22:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 49 次发布
 
@@ -39147,6 +39101,21 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 58 次发布
+
+发布时间：2023-05-26 01:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BizLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/36215)
+
+	* 新增出参：IsDuplication, RegistrationDate
+
+
 ### 第 57 次发布
 
 发布时间：2023-05-25 01:43:42
@@ -39157,8 +39126,8 @@
 
 新增接口：
 
-* [[RecognizeKoreanDrivingLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/77850)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RecognizeKoreanIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/77849)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [RecognizeKoreanDrivingLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/77850)
+* [RecognizeKoreanIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/77849)
 
 修改数据结构：
 
@@ -44761,6 +44730,21 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 21 次发布
+
+发布时间：2023-05-26 01:44:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBusinessDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/75953)
+
+	* 新增出参：FlowId, InstanceIdSet
+
+
 ### 第 20 次发布
 
 发布时间：2023-05-22 01:37:59
@@ -45666,6 +45650,21 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 26 次发布
+
+发布时间：2023-05-26 01:45:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TeoInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceDetail)
+
+	* 新增成员：ZoneId, Status
+
 
 ### 第 25 次发布
 
@@ -57203,6 +57202,22 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 64 次发布
+
+发布时间：2023-05-26 01:54:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 63 次发布
 
 发布时间：2023-05-25 01:57:15
@@ -59280,6 +59295,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 90 次发布
+
+发布时间：2023-05-26 01:58:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AccessPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccessPolicy)
+
+	* 新增成员：Remark
+
 
 ### 第 89 次发布
 

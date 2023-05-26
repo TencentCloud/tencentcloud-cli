@@ -2330,7 +2330,6 @@
       "document": "CreateBusinessDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
           "example": "ap-guangzhou-1",
@@ -2341,7 +2340,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存大小，单位GB",
           "example": "2",
@@ -2352,7 +2350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例磁盘大小，单位GB",
           "example": "100",
@@ -2363,7 +2360,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预购买实例的CPU核心数",
           "example": "1",
@@ -2374,7 +2370,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘",
           "example": "CLOUD_PREMIUM",
@@ -2385,7 +2380,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1003",
@@ -2396,7 +2390,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次购买几个实例，默认值为1",
           "example": "1",
@@ -2407,7 +2400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "subnet-bdoe83fa",
@@ -2418,7 +2410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "vpc-dsp338hz",
@@ -2429,7 +2420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业智能服务器版本，目前只支持：201603（SQL Server 2016 Integration Services），201703（SQL Server 2017 Integration Services），201903（SQL Server 2019 Integration Services）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本201903。",
           "example": "2008R2",
@@ -2440,7 +2430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
           "example": "sg-xxxx",
@@ -2451,7 +2440,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
           "example": "1",
@@ -2462,7 +2450,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，每天可维护的开始时间",
           "example": "2020-04-09 00:00:00",
@@ -2473,7 +2460,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，持续时间，单位：小时",
           "example": "2",
@@ -2484,7 +2470,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建实例绑定的标签集合",
           "example": "无",
@@ -2506,9 +2491,28 @@
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100546",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mssqlbi-bej23trh",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {

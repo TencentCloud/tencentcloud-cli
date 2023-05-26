@@ -1,3 +1,136 @@
+# Release 3.0.770.1
+
+## 正版曲库直通车(ame) 版本：2019-09-16
+
+### 第 18 次发布
+
+发布时间：2023-05-26 01:01:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#TRTCJoinRoomInput)
+
+	* 新增成员：RoomIdType
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 50 次发布
+
+发布时间：2023-05-26 01:22:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 58 次发布
+
+发布时间：2023-05-26 01:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BizLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/36215)
+
+	* 新增出参：IsDuplication, RegistrationDate
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 21 次发布
+
+发布时间：2023-05-26 01:44:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBusinessDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/75953)
+
+	* 新增出参：FlowId, InstanceIdSet
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 26 次发布
+
+发布时间：2023-05-26 01:45:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TeoInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceDetail)
+
+	* 新增成员：ZoneId, Status
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 64 次发布
+
+发布时间：2023-05-26 01:54:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
+* [DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
+* [DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
+* [EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
+* [ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 90 次发布
+
+发布时间：2023-05-26 01:58:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AccessPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccessPolicy)
+
+	* 新增成员：Remark
+
+
+
+
 # Release 3.0.769.1
 
 ## 云服务器(cvm) 版本：2017-03-12

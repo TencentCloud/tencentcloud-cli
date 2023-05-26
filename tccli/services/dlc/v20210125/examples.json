@@ -80,6 +80,14 @@
         "title": "按批取消session statement"
       }
     ],
+    "CancelSparkSessionBatchSQL": [
+      {
+        "document": "取消Spark SQL 批任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelSparkSessionBatchSQL\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "取消Spark SQL 批任务"
+      }
+    ],
     "CancelTask": [
       {
         "document": "",
