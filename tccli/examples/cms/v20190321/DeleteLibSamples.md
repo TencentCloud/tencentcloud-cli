@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cms DeleteLibSamples --cli-unfold-argument  \
-    --UserAppID xx \
-    --UserUin xx \
-    --LibID xx \
-    --SampleIDs xx \
-    --UserSubUin xx \
-    --Type Text
+    --Type abc \
+    --UserAppID abc \
+    --UserUin abc \
+    --UserSubUin abc \
+    --LibID abc \
+    --SampleIDs abc
 ```
 
 Output: 

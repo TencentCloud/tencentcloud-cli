@@ -484,7 +484,7 @@
       "status": "online"
     },
     "RecognizeTableAccurateOCR": {
-      "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。点击[立即体验](https://cloud.tencent.com/product/smart-ocr)。",
+      "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。点击[立即体验](https://cloud.tencent.com/product/smart-ocr)。\n\n默认接口请求频率限制：2次/秒。",
       "input": "RecognizeTableAccurateOCRRequest",
       "name": "表格识别（V3）",
       "output": "RecognizeTableAccurateOCRResponse",
@@ -11252,7 +11252,6 @@
       "document": "RecognizeKoreanDrivingLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
@@ -11263,7 +11262,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -11274,7 +11272,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回人像照片。",
           "example": "true",
@@ -11296,7 +11293,6 @@
           "example": "无",
           "member": "string",
           "name": "ID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11307,7 +11303,6 @@
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11318,7 +11313,6 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11329,7 +11323,6 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11340,7 +11333,6 @@
           "example": "无",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11351,18 +11343,16 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "能力测试日期",
+          "document": "换证时间",
           "example": "无",
           "member": "string",
           "name": "AptitudeTesDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11373,7 +11363,6 @@
           "example": "无",
           "member": "string",
           "name": "DateOfIssue",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11384,7 +11373,6 @@
           "example": "无",
           "member": "string",
           "name": "Photo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11395,7 +11383,6 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11406,7 +11393,6 @@
           "example": "11/11/1911",
           "member": "string",
           "name": "Birthday",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11424,7 +11410,6 @@
       "document": "RecognizeKoreanIDCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
@@ -11435,7 +11420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -11446,7 +11430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回人像照片。",
           "example": "true",
@@ -11468,7 +11451,6 @@
           "example": "无",
           "member": "string",
           "name": "ID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11479,7 +11461,6 @@
           "example": "无",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11490,7 +11471,6 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11501,7 +11481,6 @@
           "example": "无",
           "member": "string",
           "name": "DateOfIssue",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11512,7 +11491,6 @@
           "example": "无",
           "member": "string",
           "name": "Photo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11523,7 +11501,6 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11534,7 +11511,6 @@
           "example": "11/11/1911",
           "member": "string",
           "name": "Birthday",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

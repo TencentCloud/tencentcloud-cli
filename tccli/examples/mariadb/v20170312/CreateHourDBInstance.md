@@ -1,6 +1,6 @@
-**Example 1: 创建后付费实例**
+**Example 1: 创建MariaDB按量计费实例**
 
-创建后付费实例
+创建MariaDB按量计费实例
 
 Input: 
 

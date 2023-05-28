@@ -188,6 +188,14 @@
         "title": "事件投递"
       }
     ],
+    "PutBreakdownEvents": [
+      {
+        "document": "发送事件",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutBreakdownEvents\n<公共请求参数>\n\n{\n    \"EventList\": [\n        {\n            \"SpecVersion\": \"1.0\",\n            \"Id\": \"22222\",\n            \"Source\": \"cvm.cloud.tencent\",\n            \"Type\": \"cvm:breakdown:xxx\",\n            \"AlarmTime\": 1683599998927,\n            \"RecoverTime\": null,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Status\": \"2\",\n            \"Data\": {\n                \"Instances\": [\n                    {\n                        \"InstanceId\": \"ins-xxx\",\n                        \"AppId\": 123,\n                        \"Uin\": \"456\",\n                        \"Status\": \"2\"\n                    }\n                ],\n                \"Description\": \"test\",\n                \"InternalReason\": \"test\",\n                \"ExternalReason\": \"test\",\n                \"RecoverAdvise\": \"test\",\n                \"LocationTool\": \"test\",\n                \"Follower\": [\n                    \"allenmzhang\"\n                ],\n                \"Handler\": [\n                    \"allenmzhang\"\n                ],\n                \"Owner\": [\n                    \"allenmzhang\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9178600d-67ba-4f25-9d6c-4f8ab3f32ccc\",\n        \"EventList\": [\n            {\n                \"Id\": \"b7ef8793-7bbc-449c-abf5-71f5b022ec60\"\n            }\n        ]\n    }\n}",
+        "title": "故障事件上报demo"
+      }
+    ],
     "PutEvents": [
       {
         "document": "",

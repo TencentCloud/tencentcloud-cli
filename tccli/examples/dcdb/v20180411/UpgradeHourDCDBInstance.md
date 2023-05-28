@@ -1,6 +1,6 @@
-**Example 1: 升级后付费分布式DB**
+**Example 1: 升级TDSQL按量计费实例**
 
-
+升级TDSQL按量计费实例
 
 Input: 
 

@@ -10,7 +10,7 @@
     ],
     "CreateGroup": [
       {
-        "document": "",
+        "document": "调用成功示例",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"Brief\": \"brief_test\",\n    \"GroupName\": \"name_test\",\n    \"MaxQps\": \"123\",\n    \"MaxCapacity\": \"123\",\n    \"GroupId\": \"test_1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ba53193-90af-4440-b706-b3d3a0657982\"\n    }\n}",
         "title": "调用成功示例"

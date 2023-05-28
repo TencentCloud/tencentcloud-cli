@@ -1,45 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 正版曲库直通车(ame) 版本：2019-09-16
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 18 次发布
+### 第 60 次发布
 
-发布时间：2023-05-26 01:01:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#TRTCJoinRoomInput)
-
-	* 新增成员：RoomIdType
-
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 50 次发布
-
-发布时间：2023-05-26 01:22:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)
-
-
-
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 58 次发布
-
-发布时间：2023-05-26 01:39:28
+发布时间：2023-05-29 01:07:05
 
 本次发布包含了以下内容：
 
@@ -47,18 +12,18 @@
 
 修改接口：
 
-* [BizLicenseOCR](http://document.tencentcloudapi.woa.com/document/product/866/36215)
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
 
-	* 新增出参：IsDuplication, RegistrationDate
-
-
+	* 新增入参：WithExpandCPU
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 21 次发布
 
-发布时间：2023-05-26 01:44:26
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 5 次发布
+
+发布时间：2023-05-29 01:10:24
 
 本次发布包含了以下内容：
 
@@ -66,37 +31,39 @@
 
 修改接口：
 
-* [CreateBusinessDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/75953)
+* [CreateKeywordsSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76796)
 
-	* 新增出参：FlowId, InstanceIdSet
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+	* 新增出参：InvalidSamples
+
+* [DescribeKeywordsLibs](http://document.tencentcloudapi.woa.com/document/product/1604/76791)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+* [DescribeLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76789)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
 
 
+新增数据结构：
 
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 26 次发布
-
-发布时间：2023-05-26 01:45:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample)
 
 修改数据结构：
 
-* [TeoInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceDetail)
+* [KeywordsLibInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#KeywordsLibInfo)
 
-	* 新增成员：ZoneId, Status
-
-
+	* 新增成员：BizTypes
 
 
-## 云点播(vod) 版本：2018-07-17
 
-### 第 64 次发布
 
-发布时间：2023-05-26 01:54:02
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 33 次发布
+
+发布时间：2023-05-29 01:14:50
 
 本次发布包含了以下内容：
 
@@ -104,29 +71,129 @@
 
 新增接口：
 
-* [CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
-* [DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
-* [DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
-* [EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
-* [ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
+* [CreateTmpDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77852)
+
+修改接口：
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+	* 新增出参：ReservedNetResources
+
+
+新增数据结构：
+
+* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource)
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/557/16142#DBAccount)
+
+	* 新增成员：MaxUserConnections
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 90 次发布
+## 事件总线(eb) 版本：2021-04-16
 
-发布时间：2023-05-26 01:58:45
+### 第 5 次发布
+
+发布时间：2023-05-29 01:16:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [PutBreakdownEvents](http://document.tencentcloudapi.woa.com/document/product/1359/77853)
+
+新增数据结构：
+
+* [BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent)
+* [BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)
+* [SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 57 次发布
+
+发布时间：2023-05-29 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignReview](http://document.tencentcloudapi.woa.com/document/product/1595/75657)
+
+	* 新增入参：OperateType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 32 次发布
+
+发布时间：2023-05-29 01:22:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+	* 新增出参：ReservedNetResources
+
+
+新增数据结构：
+
+* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource)
+
 修改数据结构：
 
-* [AccessPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccessPolicy)
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBAccount)
 
-	* 新增成员：Remark
+	* 新增成员：MaxUserConnections
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 25 次发布
+
+发布时间：2023-05-29 01:25:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJob](http://document.tencentcloudapi.woa.com/document/product/849/52009)
+
+	* 新增入参：Tags
+
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：Tags
+
+* [TreeResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeResourceItem)
+
+	* 新增成员：RefJobStatusCountSet
 
 
 
@@ -7106,6 +7173,21 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 60 次发布
+
+发布时间：2023-05-29 01:07:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
+
+	* 新增入参：WithExpandCPU
+
 
 ### 第 59 次发布
 
@@ -14726,6 +14808,42 @@
 
 ## 内容安全(cms) 版本：2019-03-21
 
+### 第 5 次发布
+
+发布时间：2023-05-29 01:10:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateKeywordsSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76796)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+	* 新增出参：InvalidSamples
+
+* [DescribeKeywordsLibs](http://document.tencentcloudapi.woa.com/document/product/1604/76791)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+* [DescribeLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76789)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+
+新增数据结构：
+
+* [[InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample)](http://document.tencentcloudapi.woa.com/document/product/1604/76800#[InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample))
+
+修改数据结构：
+
+* [KeywordsLibInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#KeywordsLibInfo)
+
+	* 新增成员：BizTypes
+
+
 ### 第 4 次发布
 
 发布时间：2023-04-25 01:14:12
@@ -21296,6 +21414,36 @@
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
 
+### 第 33 次发布
+
+发布时间：2023-05-29 01:14:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateTmpDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77852)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+	* 新增出参：ReservedNetResources
+
+
+新增数据结构：
+
+* [[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource))
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/557/16142#DBAccount)
+
+	* 新增成员：MaxUserConnections
+
+
 ### 第 32 次发布
 
 发布时间：2023-05-23 01:17:33
@@ -21918,7 +22066,7 @@
 
 新增接口：
 
-* [[CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CancelSparkSessionBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77851)
 
 ### 第 49 次发布
 
@@ -24103,6 +24251,24 @@
 
 
 ## 事件总线(eb) 版本：2021-04-16
+
+### 第 5 次发布
+
+发布时间：2023-05-29 01:16:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[PutBreakdownEvents](http://document.tencentcloudapi.woa.com/document/product/1359/77853)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent))
+* [[BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData))
+* [[SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary))
 
 ### 第 4 次发布
 
@@ -26701,6 +26867,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 57 次发布
+
+发布时间：2023-05-29 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignReview](http://document.tencentcloudapi.woa.com/document/product/1595/75657)
+
+	* 新增入参：OperateType
+
 
 ### 第 56 次发布
 
@@ -34127,6 +34308,32 @@
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
+### 第 32 次发布
+
+发布时间：2023-05-29 01:22:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+	* 新增出参：ReservedNetResources
+
+
+新增数据结构：
+
+* [[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource))
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBAccount)
+
+	* 新增成员：MaxUserConnections
+
+
 ### 第 31 次发布
 
 发布时间：2023-05-23 01:25:19
@@ -38577,6 +38784,32 @@
 
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 25 次发布
+
+发布时间：2023-05-29 01:25:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJob](http://document.tencentcloudapi.woa.com/document/product/849/52009)
+
+	* 新增入参：Tags
+
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：Tags
+
+* [TreeResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeResourceItem)
+
+	* 新增成员：RefJobStatusCountSet
+
 
 ### 第 24 次发布
 
@@ -57212,11 +57445,11 @@
 
 新增接口：
 
-* [[CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
+* [DeleteEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
+* [DescribeEnhanceMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
+* [EnhanceMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
+* [ModifyEnhanceMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
 
 ### 第 63 次发布
 

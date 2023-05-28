@@ -6,13 +6,15 @@ Input:
 
 ```
 tccli cms CreateKeywordsSamples --cli-unfold-argument  \
-    --UserAppID xx \
-    --UserSubUin xx \
-    --UserKeywords.0.Content xx \
-    --UserKeywords.0.Label xx \
-    --LibID xx \
-    --UserUin xx \
-    --Type xx
+    --Type abc \
+    --UserAppID abc \
+    --UserUin abc \
+    --UserSubUin abc \
+    --LibID abc \
+    --UserKeywords.0.Content abc \
+    --UserKeywords.0.Label abc \
+    --UserKeywords.0.Remark abc \
+    --UserKeywords.0.WordType abc
 ```
 
 Output: 
@@ -20,19 +22,26 @@ Output:
 {
     "Response": {
         "SampleIDs": [
-            "xx"
+            "abc"
         ],
         "DupInfos": [
             {
-                "ID": "xx",
-                "Content": "xx",
-                "Label": "xx",
-                "CreateTime": "xx",
-                "Remark": "xx",
-                "WordType": "xx"
+                "ID": "abc",
+                "Content": "abc",
+                "Label": "abc",
+                "CreateTime": "abc",
+                "Remark": "abc",
+                "WordType": "abc"
             }
         ],
-        "RequestId": "xx"
+        "InvalidSamples": [
+            {
+                "Content": "abc",
+                "InvalidCode": 0,
+                "InvalidMessage": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

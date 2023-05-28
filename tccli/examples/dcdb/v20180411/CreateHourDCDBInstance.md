@@ -1,6 +1,6 @@
-**Example 1: 无**
+**Example 1: 创建TDSQL按量计费实例**
 
-创建后付费分布式DB实例
+创建TDSQL按量计费实例
 
 Input: 
 

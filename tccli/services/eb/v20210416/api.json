@@ -154,6 +154,13 @@
       "output": "PublishEventResponse",
       "status": "online"
     },
+    "PutBreakdownEvents": {
+      "document": "投递云产品故障事件",
+      "input": "PutBreakdownEventsRequest",
+      "name": "投递云产品故障事件",
+      "output": "PutBreakdownEventsResponse",
+      "status": "online"
+    },
     "PutEvents": {
       "document": "用于Event事件投递",
       "input": "PutEventsRequest",
@@ -245,6 +252,227 @@
         }
       ],
       "usage": "both"
+    },
+    "BreakdownEvent": {
+      "document": "腾讯内部故障事件结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）",
+          "example": "1.0",
+          "member": "string",
+          "name": "SpecVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障唯一ID",
+          "example": "f583f408-6cf1-432e-b69f-68d4bf4f380a",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "事件来源",
+          "example": "cvm.cloud.tencent",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障名称",
+          "example": "cvm:breakdown:xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障发生时间戳，单位毫秒",
+          "example": "1675666108658",
+          "member": "int64",
+          "name": "AlarmTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "地域信息，按照地域管理系统的查询产品支持的地域列表上报",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障状态,\"1\"：正常，\"2\"：故障/异常",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障扩展字段",
+          "example": "无",
+          "member": "BreakdownEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障恢复时间戳，单位毫秒",
+          "example": "1675666108658",
+          "member": "int64",
+          "name": "RecoverTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "BreakdownEventData": {
+      "document": "腾讯内部故障事件Data字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例汇总信息",
+          "example": "无",
+          "member": "SubjectSummary",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障原因（对外）：必填（建议提前针\n对不同的故障场景准备好故障话术，\n从话术库关联）",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障原因（对内）：必填（建议提前针\n对不同的故障场景准备好故障话术，\n从话术库关联）",
+          "example": "无",
+          "member": "string",
+          "name": "InternalReason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障恢复建议：选填（提供给客户做\n恢复决策用。如过上报时不能提供，\n在故障对外环节处理）",
+          "example": "无",
+          "member": "string",
+          "name": "RecoverAdvise",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "选填（提供售后定位和复核客户受影响\n的具体情况及恢复情况使用，方便售后\n跟客户沟通故障恢复手段。如过上报时\n不能提供，在故障对外环节处理）",
+          "example": "无",
+          "member": "string",
+          "name": "LocationTool",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障关注人：选填（需要关注次故障的\n人员的企业微信名 ，选填，可多个）",
+          "example": "无",
+          "member": "string",
+          "name": "Follower",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障当前处理人：选填（可多个）",
+          "example": "无",
+          "member": "string",
+          "name": "Handler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障技术owner：选填（可多个）",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
     },
     "CheckRuleRequest": {
       "document": "CheckRule请求参数结构体",
@@ -2734,6 +2962,44 @@
       ],
       "type": "object"
     },
+    "PutBreakdownEventsRequest": {
+      "document": "PutBreakdownEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "故障事件列表",
+          "example": "无",
+          "member": "BreakdownEvent",
+          "name": "EventList",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "PutBreakdownEventsResponse": {
+      "document": "PutBreakdownEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "eventList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PutEventsRespEventList",
+          "name": "EventList",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PutEventsOpsRequest": {
       "document": "PutEventsOps请求参数结构体",
       "members": [
@@ -3307,6 +3573,56 @@
         }
       ],
       "usage": "out"
+    },
+    "SubjectSummary": {
+      "document": "实例汇总信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "456",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "1:恢复，2:故障中，-:无状态",
+          "example": "故障事件状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
     },
     "Target": {
       "document": "Target信息",

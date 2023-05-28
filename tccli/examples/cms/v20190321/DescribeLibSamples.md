@@ -1,36 +1,38 @@
 **Example 1: 获取关键词接口**
 
-
+获取关键词
 
 Input: 
 
 ```
 tccli cms DescribeLibSamples --cli-unfold-argument  \
-    --UserAppID xx \
-    --UserSubUin xx \
-    --Content xx \
-    --EvilTypeList 0 \
-    --LibID xx \
+    --Type abc \
+    --UserAppID abc \
+    --UserUin abc \
+    --UserSubUin abc \
+    --LibID abc \
     --Limit 0 \
     --Offset 0 \
-    --UserUin xx \
-    --Type xx
+    --Content abc \
+    --EvilTypeList 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 3000,
+        "TotalCount": 0,
         "Infos": [
             {
-                "Content": "xx",
-                "ID": "xx",
-                "CreateTime": "xx",
-                "Label": "xx"
+                "ID": "abc",
+                "Content": "abc",
+                "Label": "abc",
+                "CreateTime": "abc",
+                "Remark": "abc",
+                "WordType": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

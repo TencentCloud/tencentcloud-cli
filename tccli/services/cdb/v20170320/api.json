@@ -9392,6 +9392,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "控制是否需要返回扩容核心数。1 返回，0 不返回，默认为 0 。",
+          "example": "无",
+          "member": "int64",
+          "name": "WithExpandCPU",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -18008,7 +18018,6 @@
       "document": "只读组参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。",
           "example": "''",
@@ -18016,10 +18025,10 @@
           "name": "RoGroupMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组 ID。",
           "example": "cdbrg-92zkeaq2",
@@ -18027,10 +18036,10 @@
           "name": "RoGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组名称。",
           "example": "your_group_name",
@@ -18038,10 +18047,10 @@
           "name": "RoGroupName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。",
           "example": "0",
@@ -18049,10 +18058,10 @@
           "name": "RoOfflineDelay",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟阈值。",
           "example": "1",
@@ -18060,10 +18069,10 @@
           "name": "RoMaxDelayTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。",
           "example": "1",
@@ -18071,10 +18080,10 @@
           "name": "MinRoInGroup",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权重分配模式，可选值：system-系统自动分配；custom-自定义。",
           "example": "system",
@@ -18082,21 +18091,21 @@
           "name": "WeightMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "权重值。",
+          "document": "该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。",
           "example": "0",
           "member": "int64",
           "name": "Weight",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组中的只读实例详情。",
           "example": "[]",
@@ -18104,10 +18113,10 @@
           "name": "RoInstances",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的内网 IP。",
           "example": "10.89.90.66",
@@ -18115,10 +18124,10 @@
           "name": "Vip",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的内网端口号。",
           "example": "3306",
@@ -18126,10 +18135,10 @@
           "name": "Vport",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-ja6ts123",
@@ -18137,10 +18146,10 @@
           "name": "UniqVpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-njh2bc99",
@@ -18148,10 +18157,10 @@
           "name": "UniqSubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组所在的地域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
@@ -18159,10 +18168,10 @@
           "name": "RoGroupRegion",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组所在的可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing-3",
@@ -18170,10 +18179,10 @@
           "name": "RoGroupZone",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟复制时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -18181,7 +18190,8 @@
           "name": "DelayReplicationTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -1,30 +1,16 @@
-**Example 1: input demo1**
+**Example 1: 创建MariaDB独享集群实例**
 
-
+创建MariaDB独享集群实例
 
 Input: 
 
 ```
 tccli mariadb CreateDedicatedClusterDBInstance --cli-unfold-argument  \
-    --DbVersionId xx \
-    --VpcId  \
-    --DcnInstanceId xx \
-    --Zone xx \
-    --GoodsNum 0 \
-    --ProjectId 1 \
-    --SecurityGroupIds xx \
-    --Pid 0 \
-    --DcnRegion xx \
-    --Machine xx \
-    --Storage 0 \
-    --ResourceTags.0.TagKey xx \
-    --ResourceTags.0.TagValue xx \
-    --Manual 0 \
-    --Memory 0 \
-    --SubnetId  \
-    --DeviceNo xx \
-    --ClusterId xx \
-    --InstanceName xx
+    --Zone ap-guangzhou-2 \
+    --GoodsNum 1 \
+    --Storage 10 \
+    --Memory 2 \
+    --ClusterId cage-shjr-2-10
 ```
 
 Output: 

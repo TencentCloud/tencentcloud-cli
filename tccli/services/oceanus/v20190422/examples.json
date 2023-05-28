@@ -44,7 +44,7 @@
     ],
     "CreateJob": [
       {
-        "document": "",
+        "document": "新建作业",
         "input": "https://oceanus.tencentcloudapi.com/?Action=CreateJob\n&Name=job_new\n&JobType=2\n&ClusterType=2\n&ClusterId=cluster-xxxxxxxx\n&CuMem=4\n&Remark=测试作业\n&FolderId=folder-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"cql-qlpn5o2a\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
         "title": "新建作业示例"

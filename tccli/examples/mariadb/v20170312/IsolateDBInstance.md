@@ -1,6 +1,6 @@
-**Example 1: 隔离云数据库实例（包年包月）**
+**Example 1: 隔离MariaDB包年包月实例**
 
-
+隔离MariaDB包年包月实例
 
 Input: 
 

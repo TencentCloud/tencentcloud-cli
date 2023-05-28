@@ -764,7 +764,7 @@
       "status": "online"
     },
     "ModifyAlarmPolicyNotice": {
-      "document": "告警修改告警策略绑定的告警通知模板",
+      "document": "修改告警策略绑定的告警通知模板",
       "input": "ModifyAlarmPolicyNoticeRequest",
       "name": "修改告警策略绑定的告警通知模板",
       "output": "ModifyAlarmPolicyNoticeResponse",

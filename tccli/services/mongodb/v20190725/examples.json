@@ -44,7 +44,7 @@
       {
         "document": "当前示例仅适合4.0版本，其余版本请严格参考传入参数中各版本说明项",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": \"1\",\n    \"Clone\": \"1\",\n    \"Memory\": \"4\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": \"250\",\n    \"NodeNum\": \"2\",\n    \"ReplicateSetNum\": \"1\",\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_40_WT\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c6jsf\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c****\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }
     ],
