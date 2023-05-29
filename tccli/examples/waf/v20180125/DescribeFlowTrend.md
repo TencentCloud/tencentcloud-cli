@@ -15,13 +15,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
         "Data": [
             {
-                "Key": "xx",
+                "Key": "/api/cf/v4/user/get-info",
                 "Value": 21,
-                "Label": "xx",
-                "TimeStamp": "312312"
+                "Label": "/api/cf/v4/user/get-info",
+                "TimeStamp": "2021-04-22 20:30:00"
             }
         ]
     }

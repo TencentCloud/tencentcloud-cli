@@ -1,14 +1,13 @@
 **Example 1: 续费包月带宽弹性公网IP**
 
-
+续费包月带宽弹性公网IP。
 
 Input: 
 
 ```
 tccli vpc RenewAddresses --cli-unfold-argument  \
-    --AddressIds eip-fo00aojo \
-    --AddressChargePrepaid.Period 1 \
-    --AddressChargePrepaid.TimeUnit m \
+    --AddressIds eip-12345678 \
+    --AddressChargePrepaid.Period 0 \
     --AddressChargePrepaid.AutoRenewFlag 0
 ```
 

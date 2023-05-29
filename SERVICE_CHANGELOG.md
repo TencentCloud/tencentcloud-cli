@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 60 次发布
+### 第 28 次发布
 
-发布时间：2023-05-29 01:07:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
-
-	* 新增入参：WithExpandCPU
-
-
-
-
-## 内容安全(cms) 版本：2019-03-21
-
-### 第 5 次发布
-
-发布时间：2023-05-29 01:10:24
+发布时间：2023-05-30 01:22:34
 
 本次发布包含了以下内容：
 
@@ -31,95 +12,58 @@
 
 修改接口：
 
-* [CreateKeywordsSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76796)
+* [ParseLiveStreamProcessNotification](http://document.tencentcloudapi.woa.com/document/product/862/39229)
 
-	* <font color="#dd0000">**修改入参**：</font>Type
-
-	* 新增出参：InvalidSamples
-
-* [DescribeKeywordsLibs](http://document.tencentcloudapi.woa.com/document/product/1604/76791)
-
-	* <font color="#dd0000">**修改入参**：</font>Type
-
-* [DescribeLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76789)
-
-	* <font color="#dd0000">**修改入参**：</font>Type
+	* 新增出参：AiAnalysisResultInfo, AiQualityControlResultInfo
 
 
 新增数据结构：
 
-* [InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample)
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult)
+* [LiveStreamAiAnalysisResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultInfo)
+* [LiveStreamAiAnalysisResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultItem)
+* [LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo)
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
 
 修改数据结构：
 
-* [KeywordsLibInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#KeywordsLibInfo)
+* [LiveStreamAsrFullTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAsrFullTextRecognitionResult)
 
-	* 新增成员：BizTypes
+	* 新增成员：StartTime, EndTime, SteadyState
+
+* [LiveStreamTransTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTransTextRecognitionResult)
+
+	* 新增成员：StartTime, EndTime, SteadyState
 
 
 
 
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 33 次发布
+### 第 47 次发布
 
-发布时间：2023-05-29 01:14:50
+发布时间：2023-05-30 01:29:22
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [CreateTmpDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77852)
-
-修改接口：
-
-* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
-
-	* 新增出参：ReservedNetResources
-
-
-新增数据结构：
-
-* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource)
-
 修改数据结构：
 
-* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/557/16142#DBAccount)
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
 
-	* 新增成员：MaxUserConnections
+	* 新增成员：CanEditRoute
 
-
-
-
-## 事件总线(eb) 版本：2021-04-16
-
-### 第 5 次发布
-
-发布时间：2023-05-29 01:16:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [PutBreakdownEvents](http://document.tencentcloudapi.woa.com/document/product/1359/77853)
-
-新增数据结构：
-
-* [BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent)
-* [BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)
-* [SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 57 次发布
+## Web 应用防火墙(waf) 版本：2018-01-25
 
-发布时间：2023-05-29 01:18:16
+### 第 38 次发布
+
+发布时间：2023-05-30 01:35:49
 
 本次发布包含了以下内容：
 
@@ -127,73 +71,24 @@
 
 修改接口：
 
-* [ChannelCreateFlowSignReview](http://document.tencentcloudapi.woa.com/document/product/1595/75657)
+* [PostAttackDownloadTask](http://document.tencentcloudapi.woa.com/document/product/627/75472)
 
-	* 新增入参：OperateType
+	* 新增入参：Count
 
+* [SearchAccessLog](http://document.tencentcloudapi.woa.com/document/product/627/60012)
 
+	* 新增入参：Page
 
+* [SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 32 次发布
-
-发布时间：2023-05-29 01:22:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
-
-	* 新增出参：ReservedNetResources
-
-
-新增数据结构：
-
-* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource)
-
-修改数据结构：
-
-* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBAccount)
-
-	* 新增成员：MaxUserConnections
-
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 25 次发布
-
-发布时间：2023-05-29 01:25:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateJob](http://document.tencentcloudapi.woa.com/document/product/849/52009)
-
-	* 新增入参：Tags
+	* 新增入参：Page
 
 
 修改数据结构：
 
-* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+* [QPSPackageNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#QPSPackageNew)
 
-	* 新增成员：Tags
-
-* [TreeResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeResourceItem)
-
-	* 新增成员：RefJobStatusCountSet
+	* 新增成员：BillingItem
 
 
 
@@ -14835,7 +14730,7 @@
 
 新增数据结构：
 
-* [[InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample)](http://document.tencentcloudapi.woa.com/document/product/1604/76800#[InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample))
+* [InvalidSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#InvalidSample)
 
 修改数据结构：
 
@@ -21424,7 +21319,7 @@
 
 新增接口：
 
-* [[CreateTmpDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77852)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateTmpDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/77852)
 
 修改接口：
 
@@ -21435,7 +21330,7 @@
 
 新增数据结构：
 
-* [[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource))
+* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/557/16142#ReservedNetResource)
 
 修改数据结构：
 
@@ -24262,13 +24157,13 @@
 
 新增接口：
 
-* [[PutBreakdownEvents](http://document.tencentcloudapi.woa.com/document/product/1359/77853)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [PutBreakdownEvents](http://document.tencentcloudapi.woa.com/document/product/1359/77853)
 
 新增数据结构：
 
-* [[BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent))
-* [[BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData))
-* [[SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary))
+* [BreakdownEvent](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEvent)
+* [BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)
+* [SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)
 
 ### 第 4 次发布
 
@@ -33309,6 +33204,32 @@
 
 ## 云直播CSS(live) 版本：2018-08-01
 
+### 第 35 次发布
+
+发布时间：2023-05-29 14:45:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddLiveWatermark](http://document.tencentcloudapi.woa.com/document/product/267/30154)
+
+	* 新增入参：BackgroundWidth, BackgroundHeight
+
+* [UpdateLiveWatermark](http://document.tencentcloudapi.woa.com/document/product/267/30150)
+
+	* 新增入参：BackgroundWidth, BackgroundHeight
+
+
+修改数据结构：
+
+* [WatermarkInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#WatermarkInfo)
+
+	* 新增成员：BackgroundWidth, BackgroundHeight
+
+
 ### 第 34 次发布
 
 发布时间：2023-05-22 01:27:41
@@ -34325,7 +34246,7 @@
 
 新增数据结构：
 
-* [[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource))
+* [ReservedNetResource](http://document.tencentcloudapi.woa.com/document/product/237/16191#ReservedNetResource)
 
 修改数据结构：
 
@@ -37008,6 +36929,40 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 28 次发布
+
+发布时间：2023-05-30 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ParseLiveStreamProcessNotification](http://document.tencentcloudapi.woa.com/document/product/862/39229)
+
+	* 新增出参：AiAnalysisResultInfo, AiQualityControlResultInfo
+
+
+新增数据结构：
+
+* [[DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult))
+* [[LiveStreamAiAnalysisResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[LiveStreamAiAnalysisResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultInfo))
+* [[LiveStreamAiAnalysisResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultItem)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[LiveStreamAiAnalysisResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultItem))
+* [[LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo))
+* [[SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem))
+
+修改数据结构：
+
+* [LiveStreamAsrFullTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAsrFullTextRecognitionResult)
+
+	* 新增成员：StartTime, EndTime, SteadyState
+
+* [LiveStreamTransTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTransTextRecognitionResult)
+
+	* 新增成员：StartTime, EndTime, SteadyState
+
 
 ### 第 27 次发布
 
@@ -45884,6 +45839,21 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 27 次发布
+
+发布时间：2023-05-29 14:52:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CommitCertificateInformation](http://document.tencentcloudapi.woa.com/document/product/400/41676)
+
+	* 新增入参：VerifyType
+
+
 ### 第 26 次发布
 
 发布时间：2023-05-26 01:45:30
@@ -49490,6 +49460,23 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 47 次发布
+
+发布时间：2023-05-30 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：CanEditRoute
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage
+
+
 ### 第 46 次发布
 
 发布时间：2023-05-16 02:03:25
@@ -51889,6 +51876,25 @@
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 24 次发布
+
+发布时间：2023-05-29 14:55:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CFSTurbo](http://document.tencentcloudapi.woa.com/document/product/851/74915#CFSTurbo)
+
+修改数据结构：
+
+* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+
+	* 新增成员：CFSTurboSource
+
 
 ### 第 23 次发布
 
@@ -62163,6 +62169,36 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 38 次发布
+
+发布时间：2023-05-30 01:35:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PostAttackDownloadTask](http://document.tencentcloudapi.woa.com/document/product/627/75472)
+
+	* 新增入参：Count
+
+* [SearchAccessLog](http://document.tencentcloudapi.woa.com/document/product/627/60012)
+
+	* 新增入参：Page
+
+* [SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)
+
+	* 新增入参：Page
+
+
+修改数据结构：
+
+* [QPSPackageNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#QPSPackageNew)
+
+	* 新增成员：BillingItem
+
 
 ### 第 37 次发布
 

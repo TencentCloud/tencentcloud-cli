@@ -1,6 +1,6 @@
 **Example 1: 解析事件通知内容**
 
-
+解析事件通知内容
 
 Input: 
 
@@ -32,8 +32,10 @@ Output:
                 "AudioStreamSet": [
                     {
                         "Bitrate": 383854,
+                        "SamplingRate": 48000,
                         "Codec": "aac",
-                        "SamplingRate": 48000
+                        "Channel": 0,
+                        "Loudness": 0
                     }
                 ],
                 "Bitrate": 1021028,
@@ -49,7 +51,11 @@ Output:
                         "Codec": "h264",
                         "Fps": 23,
                         "Height": 480,
-                        "Width": 640
+                        "Width": 640,
+                        "ColorPrimaries": "abc",
+                        "ColorSpace": "abc",
+                        "ColorTransfer": "abc",
+                        "HdrType": "abc"
                     }
                 ],
                 "Width": 640
@@ -59,8 +65,10 @@ Output:
                     "Type": "Transcode",
                     "TranscodeTask": {
                         "Status": "SUCCESS",
+                        "ErrCodeExt": "SUCCESS",
                         "ErrCode": 0,
                         "Message": "SUCCESS",
+                        "Progress": 0,
                         "Input": {
                             "Definition": 20,
                             "WatermarkSet": null
@@ -80,14 +88,20 @@ Output:
                                     "Codec": "h264",
                                     "Fps": 24,
                                     "Height": 480,
-                                    "Width": 640
+                                    "Width": 640,
+                                    "ColorPrimaries": "abc",
+                                    "ColorSpace": "abc",
+                                    "ColorTransfer": "abc",
+                                    "HdrType": "abc"
                                 }
                             ],
                             "AudioStreamSet": [
                                 {
                                     "Bitrate": 48491,
                                     "Codec": "aac",
-                                    "SamplingRate": 44100
+                                    "SamplingRate": 44100,
+                                    "Channel": 0,
+                                    "Loudness": 0
                                 }
                             ],
                             "Definition": 0
@@ -98,7 +112,11 @@ Output:
                     "SampleSnapshotTask": null,
                     "ImageSpriteTask": null
                 }
-            ]
+            ],
+            "AiQualityControlTaskResult": null,
+            "AiAnalysisResultSet": [],
+            "AiRecognitionResultSet": [],
+            "AiContentReviewResultSet": []
         },
         "RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5",
         "ScheduleTaskEvent": null,

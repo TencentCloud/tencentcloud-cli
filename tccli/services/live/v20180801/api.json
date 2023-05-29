@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AddLiveWatermark": {
-      "document": "添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。\n水印数量上限 100，超过后需要先删除，再添加。",
+      "document": "添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。 水印数量上限 100，超过后需要先删除，再添加。",
       "input": "AddLiveWatermarkRequest",
       "name": "添加水印",
       "output": "AddLiveWatermarkResponse",
@@ -1102,64 +1102,84 @@
       "document": "AddLiveWatermark请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "水印图片 URL。\nURL中禁止包含的字符：\n ;(){}$>`#\"\\'|",
           "example": "http://watermark-101.cos.myqcloud.com/1251830167/imglogo.png",
           "member": "string",
           "name": "PictureUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印名称。\n最长16字节。",
           "example": "logo",
           "member": "string",
           "name": "WatermarkName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
           "example": "80",
           "member": "int64",
           "name": "XPosition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
           "example": "10",
           "member": "int64",
           "name": "YPosition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
           "example": "100",
           "member": "int64",
           "name": "Width",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
           "example": "100",
           "member": "int64",
           "name": "Height",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印宽度。默认宽度1920。",
+          "example": "1920",
+          "member": "int64",
+          "name": "BackgroundWidth",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印高度。默认高度1080。",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackgroundHeight",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1173,9 +1193,9 @@
           "example": "123",
           "member": "uint64",
           "name": "WatermarkId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16415,74 +16435,94 @@
       "document": "UpdateLiveWatermark请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。",
           "example": "123",
           "member": "int64",
           "name": "WatermarkId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印图片 URL。\nURL中禁止包含的字符：\n ;(){}$>`#\"\\'|",
           "example": "http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png",
           "member": "string",
           "name": "PictureUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
           "example": "80",
           "member": "int64",
           "name": "XPosition",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
           "example": "10",
           "member": "int64",
           "name": "YPosition",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印名称。\n最长16字节。",
           "example": "logo",
           "member": "string",
           "name": "WatermarkName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
           "example": "100",
           "member": "int64",
           "name": "Width",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
           "example": "100",
           "member": "int64",
           "name": "Height",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印宽度。默认宽度1920。",
+          "example": "1920",
+          "member": "int64",
+          "name": "BackgroundWidth",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印高度。默认高度1080。",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackgroundHeight",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16596,6 +16636,28 @@
           "example": "无",
           "member": "int64",
           "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印宽。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackgroundWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景水印高。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackgroundHeight",
           "required": false,
           "type": "int",
           "value_allowed_null": false,

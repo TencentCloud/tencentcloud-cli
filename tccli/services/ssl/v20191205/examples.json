@@ -26,7 +26,7 @@
     ],
     "CommitCertificateInformation": [
       {
-        "document": "",
+        "document": "提交证书订单",
         "input": "https://ssl.tencentcloudapi.com/?Action=CommitCertificateInformation\n&CertificateId=abcb1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"OrderId\": \"SO8zRv29\",\n        \"Status\": 8,\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书订单"

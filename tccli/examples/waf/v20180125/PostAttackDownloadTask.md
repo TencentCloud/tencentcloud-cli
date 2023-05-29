@@ -1,16 +1,18 @@
 **Example 1: 创建搜索下载攻击日志任务**
 
-
+创建搜索下载攻击日志任务
 
 Input: 
 
 ```
 tccli waf PostAttackDownloadTask --cli-unfold-argument  \
-    --StartTime 2020-08-2800:00:00 \
-    --EndTime 2020-08-2814:12:36 \
-    --Domain all \
-    --QueryString method:GET \
-    --Sort desc
+    --Domain abc \
+    --StartTime 2020-09-22T00:00:00+00:00 \
+    --EndTime 2020-09-22T00:00:00+00:00 \
+    --QueryString abc \
+    --TaskName abc \
+    --Sort abc \
+    --Count 0
 ```
 
 Output: 
