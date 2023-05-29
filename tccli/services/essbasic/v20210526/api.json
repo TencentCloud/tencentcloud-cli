@@ -45,7 +45,7 @@
     "ChannelCreateEmbedWebUrl": {
       "document": "本接口（ChannelCreateEmbedWebUrl）用于创建嵌入web的链接\n本接口支持创建：创建印章，创建模板，修改模板，预览模板，预览合同流程的web链接\n进入web连接后与当前控制台操作保持一致",
       "input": "ChannelCreateEmbedWebUrlRequest",
-      "name": "创建嵌入web的链接",
+      "name": "获取印章模板可嵌入web页面",
       "output": "ChannelCreateEmbedWebUrlResponse",
       "status": "online"
     },
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignReview": {
-      "document": "提交企业签署流程审批结果\n\n在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
+      "document": "提交企业流程审批结果\n目前存在两种审核操作，签署审核，发起审核\n签署审核：通过接口（CreateFlowsByTemplates或ChannelCreateFlowByFiles或ChannelCreatePrepareFlow）发起签署流程后，若指定了参数 NeedSignReview 为true,则可以调用此接口，指定operate=SignReview，提交企业内部签署审批结果；若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效\n\n发起审核：通过接口ChannelCreatePrepareFlow指定发起后需要审核，则可以通过调用此接口，指定operate=CreateReview，提交企业内部审批结果，可多次提交，当通过后，后续提交结果无效",
       "input": "ChannelCreateFlowSignReviewRequest",
       "name": "提交企业签署流程审批结果",
       "output": "ChannelCreateFlowSignReviewResponse",
@@ -94,7 +94,7 @@
     "ChannelCreatePrepareFlow": {
       "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模板发起",
       "input": "ChannelCreatePrepareFlowRequest",
-      "name": "创建预发起合同",
+      "name": "获取模板发起合同web页面",
       "output": "ChannelCreatePrepareFlowResponse",
       "status": "online"
     },
@@ -1460,6 +1460,15 @@
           "name": "RecipientId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核\n注：接口通过该字段区分操作类型\n该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程\n若想使用发起审核，请指定该字段为：CreateReview",
+          "example": "无",
+          "member": "string",
+          "name": "OperateType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1733,7 +1742,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
+          "document": "通过flowid快速获得之前成功通过页面发起的合同生成链接",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -2039,7 +2048,7 @@
         },
         {
           "disabled": false,
-          "document": "角色Id",
+          "document": "角色Id（非超管或法人角色Id）",
           "example": "无",
           "member": "string",
           "name": "RoleId",

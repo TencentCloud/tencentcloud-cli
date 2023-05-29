@@ -80,6 +80,14 @@
         "title": "按批取消session statement"
       }
     ],
+    "CancelSparkSessionBatchSQL": [
+      {
+        "document": "取消Spark SQL 批任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelSparkSessionBatchSQL\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "取消Spark SQL 批任务"
+      }
+    ],
     "CancelTask": [
       {
         "document": "",
@@ -206,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateSparkAppTask\n<公共请求参数>\n\n{\n    \"JobName\": \"spark-app-test\",\n    \"CmdArgs\": \"10 test 20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"BatchId\": \"batch-9vsx3lh0\",\n        \"TaskId\": \"4a7cad6bb86211ec9c616e6f30623d72\"\n    }\n}",
         "title": "创建spark任务"
+      }
+    ],
+    "CreateSparkSessionBatchSQL": [
+      {
+        "document": "提交Spark SQL批任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkSessionBatchSQL\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"data_engine_1\",\n    \"ExecuteSQL\": \"select 1\",\n    \"DriverSize\": \"small\",\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"TimeoutInSecond\": 2,\n    \"SessionId\": \"\",\n    \"SessionName\": \"livy-session-123\",\n    \"Arguments\": [\n        {\n            \"Value\": \"eni\",\n            \"Key\": \"test_eni\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n    }\n}",
+        "title": "提交Spark SQL批任务"
       }
     ],
     "CreateStoreLocation": [
@@ -478,6 +494,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SparkAppTasks\": [\n            {\n                \"CanDownload\": true,\n                \"DataSet\": \"{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}\",\n                \"State\": 2,\n                \"DataAmount\": 1024,\n                \"Percentage\": 100,\n                \"SQLType\": \"DDL\",\n                \"RowAffectInfo\": \"500 rows selected (0.077 seconds)\",\n                \"InputConf\": \"[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]\",\n                \"DataEngineId\": \"resource-1gghpd1t\",\n                \"UpdateTime\": \"1611646962000\",\n                \"TaskType\": \"presto\",\n                \"ProgressDetail\": \"[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]\",\n                \"InputType\": \"local\",\n                \"DataNumber\": 100,\n                \"ResultExpired\": true,\n                \"OutputPath\": \"cosn://test-bucket-123434324234/result/\",\n                \"DataEngineName\": \"shared_presto\",\n                \"Error\": \"****\",\n                \"OperateUin\": \"****\",\n                \"OutputMessage\": \"****\",\n                \"CreateTime\": \"1611646962000\",\n                \"UsedTime\": 60000,\n                \"DatabaseName\": \"database1\",\n                \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGA7\",\n                \"Id\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\"\n            }\n        ],\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"Tasks\": {\n            \"CanDownload\": true,\n            \"DataSet\": \"{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}\",\n            \"State\": 2,\n            \"DataAmount\": 1024,\n            \"Percentage\": 100,\n            \"SQLType\": \"DDL\",\n            \"RowAffectInfo\": \"500 rows selected (0.077 seconds)\",\n            \"InputConf\": \"[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]\",\n            \"DataEngineId\": \"resource-1gghpd1t\",\n            \"UpdateTime\": \"1611646962000\",\n            \"TaskType\": \"presto\",\n            \"ProgressDetail\": \"[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]\",\n            \"InputType\": \"local\",\n            \"DataNumber\": 100,\n            \"ResultExpired\": true,\n            \"OutputPath\": \"cosn://test-bucket-123434324234/result/\",\n            \"DataEngineName\": \"shared_presto\",\n            \"Error\": \"****\",\n            \"OperateUin\": \"****\",\n            \"OutputMessage\": \"****\",\n            \"CreateTime\": \"1611646962000\",\n            \"UsedTime\": 60000,\n            \"DatabaseName\": \"database1\",\n            \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGA7\",\n            \"Id\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\"\n        }\n    }\n}",
         "title": "查询spark应用的运行任务实例列表"
+      }
+    ],
+    "DescribeSparkSessionBatchSqlLog": [
+      {
+        "document": "获取SparkSQL批任务日志",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkSessionBatchSqlLog\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"LogSet\": [\n            {\n                \"Step\": \"BEG\",\n                \"Time\": \"2023-03-20 12:12:12\",\n                \"Message\": \"集群名称\",\n                \"Operate\": [\n                    {\n                        \"Text\": \"dateEngine-1\",\n                        \"Operate\": \"COPY\",\n                        \"Supplement\": [\n                            {\n                                \"Key\": \"TASKID\",\n                                \"Value\": \"d0ds1sad4-9d7e-4f64-a3f4-f385dcs6742\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取SparkSQL批任务日志"
       }
     ],
     "DescribeStoreLocation": [

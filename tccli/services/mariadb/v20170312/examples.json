@@ -2,10 +2,10 @@
   "actions": {
     "ActivateHourDBInstance": [
       {
-        "document": "",
+        "document": "解隔离MariaDB按量计费实例",
         "input": "https://mariadb.tencentcloudapi.com/?Action=ActivateHourDBInstance\n&InstanceIds.0=tdsql-rlye31jd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\",\n        \"SuccessInstanceIds\": [\n            \"tdsql-rlye31jd\"\n        ]\n    }\n}",
-        "title": "解隔离后付费实例"
+        "title": "解隔离MariaDB按量计费实例"
       }
     ],
     "AssociateSecurityGroups": [
@@ -58,26 +58,26 @@
     ],
     "CreateDBInstance": [
       {
-        "document": "创建包年包月的云数据库实例",
+        "document": "创建MariaDB包年包月实例",
         "input": "https://mariadb.tencentcloudapi.com/?Action=CreateDBInstance\n&Zones.0=ap-guangzhou-2\n&Zones.1=ap-guangzhou-2\n&Memory=2000\n&Storage=10000\n&NodeCount=1\n&Count=1\n&Period=1\n&AutoVoucher=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20171103110163\",\n        \"InstanceIds\": null\n    }\n}",
-        "title": "创建包年包月的云数据库实例"
+        "title": "创建MariaDB包年包月实例"
       }
     ],
     "CreateDedicatedClusterDBInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDBInstance\n<公共请求参数>\n\n{\n    \"DbVersionId\": \"xx\",\n    \"VpcId\": \"\",\n    \"DcnInstanceId\": \"xx\",\n    \"Zone\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"SecurityGroupIds\": [\n        \"xx\"\n    ],\n    \"Pid\": 0,\n    \"DcnRegion\": \"xx\",\n    \"Machine\": \"xx\",\n    \"Storage\": 0,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"Manual\": 0,\n    \"Memory\": 0,\n    \"SubnetId\": \"\",\n    \"DeviceNo\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"InstanceName\": \"xx\"\n}",
+        "document": "创建MariaDB独享集群实例",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"GoodsNum\": 1,\n    \"Storage\": 10,\n    \"Memory\": 2,\n    \"ClusterId\": \"cage-shjr-2-10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"FlowId\": 1122\n    }\n}",
-        "title": "input demo1"
+        "title": "创建MariaDB独享集群实例"
       }
     ],
     "CreateHourDBInstance": [
       {
-        "document": "创建后付费实例",
+        "document": "创建MariaDB按量计费实例",
         "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHourDBInstance\n<公共请求参数>\n\n{\n    \"DbVersionId\": \"5.7.17\",\n    \"VpcId\": \"vpc-n2vdqxdx\",\n    \"Storage\": \"10\",\n    \"Zones\": [\n        \"ap-guangzhou-1\",\n        \"ap-guangzhou-1\"\n    ],\n    \"SubnetId\": \"subnet-j2ezrypg\",\n    \"Memory\": \"2\",\n    \"NodeCount\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"20200409111543\",\n        \"InstanceIds\": [\n            \"tdsql-dup8gl6t\"\n        ],\n        \"FlowId\": 22051110000,\n        \"RequestId\": \"05ad9b30-ac0a-4945-afd5-3d405d537a93\"\n    }\n}",
-        "title": "创建后付费实例"
+        "title": "创建MariaDB按量计费实例"
       }
     ],
     "CreateTmpInstances": [
@@ -140,7 +140,7 @@
       {
         "document": "查询集中式实例的详细信息",
         "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-h178kq75\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 0,\n        \"Cpu\": 1,\n        \"CreateTime\": \"2023-02-27 17:58:50\",\n        \"DbEngine\": \"MySQL\",\n        \"DbVersion\": \"8.0.24\",\n        \"DbVersionId\": \"8.0\",\n        \"DcnDstNum\": 1,\n        \"DcnFlag\": 1,\n        \"DcnStatus\": 2,\n        \"EncryptStatus\": 0,\n        \"ExclusterId\": \"\",\n        \"ExclusterType\": 0,\n        \"InstanceId\": \"tdsql-h178kq75\",\n        \"InstanceName\": \"cdz\",\n        \"InstanceType\": 2,\n        \"Ipv6Flag\": 0,\n        \"IsAuditSupported\": true,\n        \"IsEncryptSupported\": 0,\n        \"IsMaxUserConnectionsSupported\": true,\n        \"IsTmp\": 0,\n        \"LogStorage\": 8,\n        \"Machine\": \"TS85\",\n        \"MasterZone\": \"ap-guangzhou-3\",\n        \"Memory\": 2,\n        \"NodeCount\": 2,\n        \"NodesInfo\": [\n            {\n                \"NodeId\": \"60af5538060f\",\n                \"Role\": \"master\"\n            },\n            {\n                \"NodeId\": \"12c58811dbfd\",\n                \"Role\": \"slave\"\n            }\n        ],\n        \"PayMode\": \"postpaid\",\n        \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n        \"Pid\": 1002231,\n        \"ProjectId\": 0,\n        \"Qps\": 2100,\n        \"Region\": \"ap-guangzhou\",\n        \"ReplicaConfig\": null,\n        \"ReplicaStatus\": null,\n        \"RequestId\": \"40b4a902-5217-4e18-8db1-10e0ff01be62\",\n        \"ResourceTags\": [],\n        \"RsAccessStrategy\": 0,\n        \"SlaveZones\": [\n            \"ap-guangzhou-3\"\n        ],\n        \"Status\": 2,\n        \"StatusDesc\": \"运行中\",\n        \"Storage\": 10,\n        \"StorageUsage\": \"0.010\",\n        \"SubnetId\": \"subnet-8ve8m3xy\",\n        \"TdsqlVersion\": \"基于MySQL 8.0.24设计(兼容Mysql 8.0)\",\n        \"Vip\": \"10.1.0.13\",\n        \"Vip6\": \"\",\n        \"VpcId\": \"vpc-0rjtvrlz\",\n        \"Vport\": 3306,\n        \"WanDomain\": \"\",\n        \"WanPort\": 0,\n        \"WanPortIpv6\": 0,\n        \"WanStatus\": 0,\n        \"WanStatusIpv6\": 0,\n        \"WanVip\": \"\",\n        \"WanVipv6\": \"\",\n        \"Zone\": \"ap-guangzhou-3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 0,\n        \"Cpu\": 1,\n        \"CreateTime\": \"2023-02-27 17:58:50\",\n        \"DbEngine\": \"MySQL\",\n        \"DbVersion\": \"8.0.24\",\n        \"DbVersionId\": \"8.0\",\n        \"DcnDstNum\": 1,\n        \"DcnFlag\": 1,\n        \"DcnStatus\": 2,\n        \"EncryptStatus\": 0,\n        \"ExclusterId\": \"\",\n        \"ExclusterType\": 0,\n        \"InstanceId\": \"tdsql-h178kq75\",\n        \"InstanceName\": \"cdz\",\n        \"InstanceType\": 2,\n        \"Ipv6Flag\": 0,\n        \"IsAuditSupported\": true,\n        \"IsEncryptSupported\": 0,\n        \"IsMaxUserConnectionsSupported\": true,\n        \"IsTmp\": 0,\n        \"LogStorage\": 8,\n        \"Machine\": \"TS85\",\n        \"MasterZone\": \"ap-guangzhou-3\",\n        \"Memory\": 2,\n        \"NodeCount\": 2,\n        \"NodesInfo\": [\n            {\n                \"NodeId\": \"60af5538060f\",\n                \"Role\": \"master\"\n            },\n            {\n                \"NodeId\": \"12c58811dbfd\",\n                \"Role\": \"slave\"\n            }\n        ],\n        \"PayMode\": \"postpaid\",\n        \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n        \"Pid\": 1002231,\n        \"ProjectId\": 0,\n        \"Qps\": 2100,\n        \"Region\": \"ap-guangzhou\",\n        \"ReplicaConfig\": null,\n        \"ReplicaStatus\": null,\n        \"RequestId\": \"40b4a902-5217-4e18-8db1-10e0ff01be62\",\n        \"ResourceTags\": [],\n        \"RsAccessStrategy\": 0,\n        \"SlaveZones\": [\n            \"ap-guangzhou-3\"\n        ],\n        \"Status\": 2,\n        \"StatusDesc\": \"运行中\",\n        \"Storage\": 10,\n        \"StorageUsage\": \"0.010\",\n        \"SubnetId\": \"subnet-8ve8m3xy\",\n        \"TdsqlVersion\": \"基于MySQL 8.0.24设计(兼容Mysql 8.0)\",\n        \"Vip\": \"10.1.0.13\",\n        \"Vip6\": \"\",\n        \"VpcId\": \"vpc-0rjtvrlz\",\n        \"Vport\": 3306,\n        \"WanDomain\": \"\",\n        \"WanPort\": 0,\n        \"WanPortIpv6\": 0,\n        \"WanStatus\": 0,\n        \"WanStatusIpv6\": 0,\n        \"WanVip\": \"\",\n        \"WanVipv6\": \"\",\n        \"Zone\": \"ap-guangzhou-3\",\n        \"ReservedNetResources\": [\n            {\n                \"VpcId\": \"vpc-5rske1or\",\n                \"SubnetId\": \"subnet-0z3os0xe\",\n                \"Vip\": \"10.1.0.6\",\n                \"Vports\": [\n                    3306\n                ],\n                \"RecycleTime\": \"2023-05-19 16:12:32\"\n            }\n        ]\n    }\n}",
         "title": "查询实例详细信息"
       }
     ],
@@ -218,10 +218,10 @@
     ],
     "DescribeDcnDetail": [
       {
-        "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDcnDetail\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"Status\": 2,\n                \"DcnStatus\": 0,\n                \"DcnFlag\": 1,\n                \"Zone\": \"ap-guangzhou-4\",\n                \"InstanceId\": \"tdsql-2rn9lmpx\",\n                \"InstanceName\": \"tdsql-2rn9lmpx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Storage\": 0,\n                \"InstanceType\": 0,\n                \"Cpu\": 0,\n                \"PayMode\": 0,\n                \"Vip\": \"10.0.0.24\",\n                \"Memory\": 0,\n                \"PeriodEndTime\": \"2020-03-08 12:00:01\",\n                \"Vport\": 3306,\n                \"StatusDesc\": \"运行中\",\n                \"Vipv6\": \"\",\n                \"CreateTime\": \"2019-03-08 12:00:01\"\n            },\n            {\n                \"Status\": 2,\n                \"DcnStatus\": 2,\n                \"DcnFlag\": 2,\n                \"Zone\": \"xx\",\n                \"InstanceId\": \"tdsql-cbr0g5v1\",\n                \"Vipv6\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"Storage\": 0,\n                \"Cpu\": 0,\n                \"PayMode\": 0,\n                \"Vip\": \"10.0.0.29\",\n                \"CreateTime\": \"2020-04-08 12:00:01\",\n                \"Memory\": 0,\n                \"PeriodEndTime\": \"2020-05-08 12:00:01\",\n                \"Vport\": 3306,\n                \"StatusDesc\": \"运行中\",\n                \"InstanceName\": \"tdsql-cbr0g5v1\",\n                \"InstanceType\": 0\n            }\n        ],\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
-        "title": "无"
+        "document": "获取实例灾备详情",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDcnDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-ohjuvzgt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"Cpu\": 1,\n                \"CreateTime\": \"2022-11-08 11:39:44\",\n                \"DcnFlag\": 1,\n                \"DcnStatus\": 0,\n                \"EncryptStatus\": 0,\n                \"InstanceId\": \"tdsql-ohjuvzgt\",\n                \"InstanceName\": \"tdsql-ohjuvzgt\",\n                \"InstanceType\": 2,\n                \"Memory\": 2,\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"ReplicaConfig\": null,\n                \"ReplicaStatus\": null,\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"Vip\": \"172.16.16.140\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-2\"\n            },\n            {\n                \"Cpu\": 1,\n                \"CreateTime\": \"2022-11-08 11:43:06\",\n                \"DcnFlag\": 2,\n                \"DcnStatus\": 2,\n                \"EncryptStatus\": 0,\n                \"InstanceId\": \"tdsql-61vf76u9\",\n                \"InstanceName\": \"tdsql-61vf76u9\",\n                \"InstanceType\": 3,\n                \"Memory\": 2,\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"ReplicaConfig\": {\n                    \"DelayReplicationType\": \"DEFAULT\",\n                    \"DueTime\": \"\",\n                    \"ReplicationDelay\": 0,\n                    \"RoReplicationMode\": \"START\"\n                },\n                \"ReplicaStatus\": {\n                    \"Delay\": 0,\n                    \"Status\": \"RUNNING\"\n                },\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"Vip\": \"172.16.16.70\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"6bd7aceb-4f68-4048-9551-037d16a0870b\"\n    }\n}",
+        "title": "获取实例灾备详情"
       }
     ],
     "DescribeFileDownloadUrl": [
@@ -314,10 +314,10 @@
     ],
     "DestroyHourDBInstance": [
       {
-        "document": "",
+        "document": "销毁MariaDB按量计费实例",
         "input": "https://mariadb.tencentcloudapi.com/?Action=DestroyHourDBInstance\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsql-avw0207d\"\n    }\n}",
-        "title": "请求示例DEMO"
+        "title": "销毁MariaDB按量计费实例"
       }
     ],
     "DisassociateSecurityGroups": [
@@ -354,10 +354,10 @@
     ],
     "IsolateDBInstance": [
       {
-        "document": "",
+        "document": "隔离MariaDB包年包月实例",
         "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBInstance\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql-cq3ndzu7\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"15eec42b-2c7b-410b-8efc-46da52e217a9\",\n        \"SuccessInstanceIds\": [\n            \"tdsql-cq3ndzu7\"\n        ]\n    }\n}",
-        "title": "隔离云数据库实例（包年包月）"
+        "title": "隔离MariaDB包年包月实例"
       }
     ],
     "IsolateDedicatedDBInstance": [
@@ -370,10 +370,10 @@
     ],
     "IsolateHourDBInstance": [
       {
-        "document": "",
+        "document": "隔离MariaDB按量计费实例",
         "input": "https://mariadb.tencentcloudapi.com/?Action=IsolateHourDBInstance\n&InstanceIds.0=tdsql-cq3ndzu7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\",\n        \"SuccessInstanceIds\": []\n    }\n}",
-        "title": "隔离后付费实例"
+        "title": "隔离MariaDB按量计费实例"
       }
     ],
     "KillSession": [
@@ -394,10 +394,10 @@
     ],
     "ModifyAccountPrivileges": [
       {
-        "document": "",
+        "document": "修改云数据库实例账号的权限信息",
         "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=tdsql-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
-        "title": "请求示例DEMO"
+        "title": "修改云数据库实例账号的权限信息"
       }
     ],
     "ModifyBackupTime": [

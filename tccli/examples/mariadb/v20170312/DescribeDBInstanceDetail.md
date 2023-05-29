@@ -79,7 +79,18 @@ Output:
         "WanStatusIpv6": 0,
         "WanVip": "",
         "WanVipv6": "",
-        "Zone": "ap-guangzhou-3"
+        "Zone": "ap-guangzhou-3",
+        "ReservedNetResources": [
+            {
+                "VpcId": "vpc-5rske1or",
+                "SubnetId": "subnet-0z3os0xe",
+                "Vip": "10.1.0.6",
+                "Vports": [
+                    3306
+                ],
+                "RecycleTime": "2023-05-19 16:12:32"
+            }
+        ]
     }
 }
 ```

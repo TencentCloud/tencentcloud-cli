@@ -1,12 +1,12 @@
-**Example 1: 无**
+**Example 1: 获取实例灾备详情**
 
-
+获取实例灾备详情
 
 Input: 
 
 ```
 tccli dcdb DescribeDcnDetail --cli-unfold-argument  \
-    --InstanceId tdsql-2rn9lmpx
+    --InstanceId tdsqlshard-hqtjy5d1
 ```
 
 Output: 
@@ -15,47 +15,49 @@ Output:
     "Response": {
         "DcnDetails": [
             {
-                "Status": 2,
-                "DcnStatus": 0,
-                "DcnFlag": 1,
-                "Zone": "ap-guangzhou-4",
-                "InstanceId": "tdsql-2rn9lmpx",
-                "InstanceName": "tdsdql-2rn9lmpx",
-                "Region": "ap-guangzhou",
-                "Storage": 0,
-                "InstanceType": 0,
                 "Cpu": 0,
-                "PayMode": 0,
-                "Vip": "10.0.0.24",
+                "CreateTime": "2022-11-08 17:43:48",
+                "DcnFlag": 1,
+                "DcnStatus": 0,
+                "EncryptStatus": 0,
+                "InstanceId": "tdsqlshard-hqtjy5d1",
+                "InstanceName": "tdsqlshard-hqtjy5d1",
+                "InstanceType": 2,
                 "Memory": 0,
-                "PeriodEndTime": "2019-02-01 10:00:00",
-                "Vport": 3306,
+                "PayMode": 0,
+                "PeriodEndTime": "0001-01-01 00:00:00",
+                "Region": "ap-guangzhou",
+                "Status": 2,
                 "StatusDesc": "运行中",
+                "Storage": 0,
+                "Vip": "172.16.16.86",
                 "Vipv6": "",
-                "CreateTime": "2019-01-01 10:00:00"
+                "Vport": 3306,
+                "Zone": "ap-guangzhou-3"
             },
             {
-                "Status": 2,
-                "DcnStatus": 2,
-                "DcnFlag": 2,
-                "Zone": "xx",
-                "InstanceId": "tdsql-cbr0g5v1",
-                "Vipv6": "",
-                "Region": "ap-guangzhou",
-                "Storage": 0,
                 "Cpu": 0,
-                "PayMode": 0,
-                "Vip": "10.0.0.25",
-                "CreateTime": "2019-01-01 10:00:00",
+                "CreateTime": "2022-11-08 17:56:43",
+                "DcnFlag": 2,
+                "DcnStatus": 2,
+                "EncryptStatus": 0,
+                "InstanceId": "tdsqlshard-c06stiq3",
+                "InstanceName": "tdsqlshard-c06stiq3",
+                "InstanceType": 3,
                 "Memory": 0,
-                "PeriodEndTime": "2019-02-01 10:00:00",
-                "Vport": 3306,
+                "PayMode": 0,
+                "PeriodEndTime": "0001-01-01 00:00:00",
+                "Region": "ap-guangzhou",
+                "Status": 2,
                 "StatusDesc": "运行中",
-                "InstanceName": "tdsql-cbr0g5v1",
-                "InstanceType": 0
+                "Storage": 0,
+                "Vip": "172.16.16.18",
+                "Vipv6": "",
+                "Vport": 3306,
+                "Zone": "ap-guangzhou-3"
             }
         ],
-        "RequestId": "cbca1c8e-e123-11ea-a777-525400542aa6"
+        "RequestId": "f1989672-5114-4289-a0b5-3b5b4c11dccc"
     }
 }
 ```

@@ -34264,7 +34264,6 @@
       "document": "网络集群资产返回的结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cls-jvrv0kf2",
@@ -34275,7 +34274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名字",
           "example": "tke_test",
@@ -34286,7 +34284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群版本",
           "example": "1.8.8",
@@ -34297,7 +34294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群操作系统",
           "example": "ubuntu18.04.1x86_64",
@@ -34308,7 +34304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型",
           "example": "MANAGED_CLUSTER",
@@ -34319,7 +34314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群区域",
           "example": "ap-guangzhou",
@@ -34330,7 +34324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群网络插件",
           "example": "Kube-router",
@@ -34341,7 +34334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态",
           "example": "Running",
@@ -34352,7 +34344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总策略数量",
           "example": "3",
@@ -34363,7 +34354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已开启策略数量",
           "example": "4",
@@ -34374,7 +34364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群网络插件状态，正常：Running 不正常：Error",
           "example": "Running",
@@ -34385,13 +34374,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群网络插件错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "网络插件运行状态非RUNNING",
           "member": "string",
           "name": "NetworkPolicyPluginError",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器网络插件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Cilium-Overlay",
+          "member": "string",
+          "name": "ClusterNetworkSettings",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

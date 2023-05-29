@@ -4644,7 +4644,6 @@
       "document": "DescribeLogHistogram请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1608794855000",
@@ -4654,7 +4653,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1608794855000",
@@ -4664,7 +4662,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询语句",
           "example": "http_status:200",
@@ -4674,7 +4671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
@@ -4684,12 +4680,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200",
           "example": "10",
           "member": "int64",
           "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
           "required": false,
           "type": "int"
         }
@@ -4705,7 +4709,6 @@
           "example": "10",
           "member": "int64",
           "name": "Interval",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4715,7 +4718,6 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4725,7 +4727,6 @@
           "example": "无",
           "member": "HistogramInfo",
           "name": "HistogramInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

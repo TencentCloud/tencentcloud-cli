@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CreateGroup": {
-      "document": "本接口用于创建一个空的图片库，图片库主要用于存储在创建图片时提取的图片特征数据，如果图片库已存在则返回错误。不同的图片库类型对应不同的图像搜索服务类型，根据输入参数GroupType区分。\n\n<table>\n    <th>服务类型</th><th>GroupType</th><th>功能描述</th>\n    <tr>\n        <td>通用图像搜索</td>\n        <td>4</td>\n        <td>通用图像搜索1.0版。<br>在自建图片库中搜索相同原图或相似图片集，并给出相似度打分，可支持裁剪、翻转、调色、加水印等二次编辑后的图片搜索。适用于图片版权保护、原图查询等场景。</td>\n    </tr>\n    <tr>\n        <td rowspan=\"2\">商品图像搜索</td>\n        <td>7</td><td>商品图像搜索2.0升级版。<br>\n        在自建图库中搜索同款或相似商品，并给出相似度打分。对于服饰类商品可支持识别服饰类别、属性等信息。适用于商品分类、检索、推荐等电商场景。</td>\n    </tr>\n     <tr>\n        <td>5</td>\n        <td>商品图像搜索1.0版。<br>\n        功能和2.0升级版类似。</td>\n    </tr>\n    <tr>\n    <td>图案花纹搜索</td><td>6</td><td>图案花纹搜索1.0版。<br>\n    在自建图库中搜索相似的图案、logo、纹理等图像元素或主体，并给出相似度打分。</td>\n    </tr>\n</table> \n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n\n",
+      "document": "本接口用于创建一个空的图片库，图片库主要用于存储在创建图片时提取的图片特征数据，如果图片库已存在则返回错误。不同的图片库类型对应不同的图像搜索服务类型，根据输入参数GroupType区分。\n\n<table>\n    <th>服务类型</th><th>GroupType</th><th>功能描述</th>\n    <tr>\n        <td>通用图像搜索</td>\n        <td>4</td>\n        <td>通用图像搜索1.0版。<br>在自建图片库中搜索相同原图或相似图片集，并给出相似度打分，可支持裁剪、翻转、调色、加水印等二次编辑后的图片搜索。适用于图片版权保护、原图查询等场景。</td>\n    </tr>\n    <tr>\n        <td rowspan=\"2\">商品图像搜索</td>\n        <td>7</td><td>商品图像搜索2.0升级版。<br>\n        在自建图库中搜索同款或相似商品，并给出相似度打分。对于服饰类商品可支持识别服饰类别、属性等信息。适用于商品分类、检索、推荐等电商场景。</td>\n    </tr>\n     <tr>\n        <td>5</td>\n        <td>商品图像搜索1.0版。<br>\n        功能和2.0升级版类似。</td>\n    </tr>\n    <tr>\n    <td>图案花纹搜索</td><td>6</td><td>图案花纹搜索1.0版。<br>\n    在自建图库中搜索相似的图案、logo、纹理等图像元素或主体，并给出相似度打分。</td>\n    </tr>\n</table> \n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。",
       "input": "CreateGroupRequest",
       "name": "创建图片库",
       "output": "CreateGroupResponse",
@@ -723,9 +723,8 @@
       "document": "CreateGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "图库ID，不可重复，仅支持字母、数字和下划线。",
+          "document": "图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。",
           "example": "test_group",
           "member": "string",
           "name": "GroupId",
@@ -733,7 +732,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库名称描述。",
           "example": "test_name",
@@ -743,7 +741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片库可容纳的最大图片特征条数，一张图片对应一条图片特征数据，不支持修改。\n单个图片库容量最大可达亿级，达到容量限制后继续创建图片将会报错。\n注意，包月计费下支持绑定的最小库容量为500万。",
           "example": "123",
@@ -753,7 +750,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库简介。",
           "example": "test_brief",
@@ -763,7 +759,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。",
           "example": "10",
@@ -773,7 +768,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库类型，用于决定图像搜索的服务类型和算法版本，默认为4。\nGroupType不支持修改，若不确定适用的服务类型，建议先对不同类型分别小规模测试后再开始正式使用。\n参数取值：\n4：通用图像搜索1.0版。\n7：商品图像搜索2.0升级版。\n5：商品图像搜索1.0版。\n6：图案花纹搜索1.0版。\n1 - 3：通用图像搜索旧版，不推荐使用。",
           "example": "1",

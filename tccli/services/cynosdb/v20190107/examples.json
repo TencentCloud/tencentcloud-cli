@@ -114,16 +114,16 @@
     ],
     "CreateParamTemplate": [
       {
-        "document": "",
+        "document": "创建参数模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"常用模版\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"93\",\n    \"TemplateName\": \"5.7常用参数模版\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7735dc6-5847-4c9b-a713-9745f9afda34\",\n        \"TemplateId\": 95\n    }\n}",
-        "title": "创建参数模版"
+        "title": "创建参数模板"
       },
       {
-        "document": "",
+        "document": "自定义参数模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"API测试\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"0\",\n    \"DbMode\": \"NORMAL\",\n    \"TemplateName\": \"API测试\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"edbd6b65-daf0-4ca8-b34f-cc3fd42790d8\",\n        \"TemplateId\": 27\n    }\n}",
-        "title": "自定义参数模版"
+        "title": "自定义参数模板"
       }
     ],
     "DeleteAccounts": [
@@ -168,10 +168,10 @@
     ],
     "DeleteParamTemplate": [
       {
-        "document": "",
+        "document": "删除参数模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"93\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"855d70ae-2815-4311-a42e-75a41ee0af8b\"\n    }\n}",
-        "title": "删除参数模版"
+        "title": "删除参数模板"
       }
     ],
     "DescribeAccountAllGrantPrivileges": [
@@ -408,10 +408,10 @@
     ],
     "DescribeParamTemplateDetail": [
       {
-        "document": "",
+        "document": "查询参数模板详情",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplateDetail\n<公共请求参数>\n\n{\n    \"TemplateId\": \"4837003\"\n}",
         "output": "{\n    \"Response\": {\n        \"DbMode\": \"NORMAL\",\n        \"EngineVersion\": \"5.7\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"1000\",\n                \"Default\": \"0\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections per user.\",\n                \"EnumValue\": [],\n                \"Func\": \"\",\n                \"IsFunc\": false,\n                \"IsGlobal\": 0,\n                \"MatchType\": \"\",\n                \"MatchValue\": \"\",\n                \"Max\": \"10240\",\n                \"Min\": \"0\",\n                \"ModifiableInfo\": {},\n                \"NeedReboot\": 0,\n                \"ParamName\": \"max_user_connections\",\n                \"ParamType\": \"integer\",\n                \"SupportFunc\": false\n            }\n        ],\n        \"RequestId\": \"ca8481bf-ba79-42ba-b90b-bd47df104add\",\n        \"TemplateDescription\": \"测试模版\",\n        \"TemplateId\": 4837003,\n        \"TemplateName\": \"测试模版\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询参数模版"
+        "title": "查询参数模板详情"
       }
     ],
     "DescribeParamTemplates": [
@@ -680,10 +680,10 @@
     ],
     "ModifyParamTemplate": [
       {
-        "document": "",
+        "document": "修改参数模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"勿删\",\n    \"TemplateId\": \"94\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"1024\",\n            \"ParamName\": \"query_cache_size\"\n        }\n    ],\n    \"TemplateName\": \"5.7常用参数模版-勿删\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"916e8185-4749-45af-899f-e57043164675\"\n    }\n}",
-        "title": "修改参数模版"
+        "title": "修改参数模板"
       }
     ],
     "ModifyVipVport": [

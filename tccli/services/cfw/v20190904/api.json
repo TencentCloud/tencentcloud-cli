@@ -5795,7 +5795,6 @@
       "document": "ModifyBlockIgnoreList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "1封禁列表 2 放通列表",
           "example": "1",
@@ -5805,9 +5804,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "IP、Domain二选一，不能同时为空",
+          "document": "IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空",
           "example": "无",
           "member": "IocListData",
           "name": "IOC",
@@ -5815,7 +5813,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选值：delete（删除）、edit（编辑）、add（添加）  其他值无效",
           "example": "add",
@@ -5825,7 +5822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填",
           "example": "2020-04-23 18:56:16",
@@ -5835,7 +5831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime",
           "example": "2020-04-30 18:56:16",
@@ -5856,7 +5851,6 @@
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5866,7 +5860,6 @@
           "example": "0",
           "member": "uint64",
           "name": "ReturnCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

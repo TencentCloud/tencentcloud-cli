@@ -122,7 +122,18 @@ Output:
         "DbVersionId": "5.7",
         "EncryptStatus": 0,
         "ExclusterType": 0,
-        "RsAccessStrategy": 0
+        "RsAccessStrategy": 0,
+        "ReservedNetResources": [
+            {
+                "VpcId": "vpc-p6alckzx",
+                "SubnetId": "subnet-3pz073lq",
+                "Vip": "172.16.0.40",
+                "Vports": [
+                    3306
+                ],
+                "RecycleTime": "2023-05-19 16:12:32"
+            }
+        ]
     }
 }
 ```

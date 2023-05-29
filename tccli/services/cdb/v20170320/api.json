@@ -16960,7 +16960,6 @@
       "document": "只读组参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只读组模式，可选值为：alone-系统自动分配只读组；allinone-新建只读组；join-使用现有只读组。",
           "example": "''",
@@ -16971,7 +16970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组 ID。",
           "example": "cdbrg-92zkeaq2",
@@ -16982,7 +16980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组名称。",
           "example": "your_group_name",
@@ -16993,7 +16990,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用延迟超限剔除功能，启用该功能后，只读实例与主实例的延迟超过延迟阈值，只读实例将被隔离。可选值：1-启用；0-不启用。",
           "example": "0",
@@ -17004,7 +17000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟阈值。",
           "example": "1",
@@ -17015,7 +17010,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最少实例保留个数，若购买只读实例数量小于设置数量将不做剔除。",
           "example": "1",
@@ -17026,7 +17020,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权重分配模式，可选值：system-系统自动分配；custom-自定义。",
           "example": "system",
@@ -17037,9 +17030,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "权重值。",
+          "document": "该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。",
           "example": "0",
           "member": "int64",
           "name": "Weight",
@@ -17048,7 +17040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组中的只读实例详情。",
           "example": "[]",
@@ -17059,7 +17050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的内网 IP。",
           "example": "10.89.90.66",
@@ -17070,7 +17060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的内网端口号。",
           "example": "3306",
@@ -17081,7 +17070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-ja6ts123",
@@ -17092,7 +17080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-njh2bc99",
@@ -17103,7 +17090,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组所在的地域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
@@ -17114,7 +17100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组所在的可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing-3",
@@ -17125,7 +17110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟复制时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",

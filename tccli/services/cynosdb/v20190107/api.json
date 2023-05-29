@@ -99,9 +99,9 @@
       "status": "online"
     },
     "CreateParamTemplate": {
-      "document": "本接口（CreateParamTemplate）用于创建参数模版",
+      "document": "本接口（CreateParamTemplate）用于创建参数模板",
       "input": "CreateParamTemplateRequest",
-      "name": "创建参数模版",
+      "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DeleteParamTemplate": {
-      "document": "本接口（DeleteParamTemplate）用于删除用户创建的参数模版。",
+      "document": "本接口（DeleteParamTemplate）用于删除用户创建的参数模板。",
       "input": "DeleteParamTemplateRequest",
-      "name": "删除参数模版",
+      "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse",
       "status": "online"
     },
@@ -351,9 +351,9 @@
       "status": "online"
     },
     "DescribeParamTemplateDetail": {
-      "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模版详情",
+      "document": "本接口（DescribeParamTemplateDetail）用于查询用户参数模板详情",
       "input": "DescribeParamTemplateDetailRequest",
-      "name": "查询参数模版详情",
+      "name": "查询参数模板详情",
       "output": "DescribeParamTemplateDetailResponse",
       "status": "online"
     },
@@ -589,9 +589,9 @@
       "status": "online"
     },
     "ModifyParamTemplate": {
-      "document": "本接口（ModifyParamTemplate）用于修改用户参数模版。",
+      "document": "本接口（ModifyParamTemplate）用于修改用户参数模板。",
       "input": "ModifyParamTemplateRequest",
-      "name": "修改参数模版",
+      "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse",
       "status": "online"
     },
@@ -3099,7 +3099,6 @@
       "document": "CreateParamTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模版名称",
           "example": "参数模版5.7",
@@ -3109,7 +3108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "mysql版本号",
           "example": "5.7",
@@ -3119,7 +3117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版描述",
           "example": "常用模版",
@@ -3129,7 +3126,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选参数，需要复制的模版ID",
           "example": "93",
@@ -3139,7 +3135,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，可选值：NORMAL（默认值），SERVERLESS",
           "example": "NORMAL",
@@ -3149,7 +3144,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数列表",
           "example": "无",
@@ -3170,7 +3164,6 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5702,7 +5695,6 @@
       "document": "DeleteParamTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模版ID",
           "example": "1000",
@@ -7928,7 +7920,6 @@
       "document": "DescribeParamTemplateDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模版ID",
           "example": "无",
@@ -7949,7 +7940,6 @@
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7959,7 +7949,6 @@
           "example": "无",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7969,7 +7958,6 @@
           "example": "无",
           "member": "string",
           "name": "TemplateDescription",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7979,7 +7967,6 @@
           "example": "无",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7989,7 +7976,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7999,7 +7985,6 @@
           "example": "无",
           "member": "ParamDetail",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8009,7 +7994,6 @@
           "example": "无",
           "member": "string",
           "name": "DbMode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10784,7 +10768,6 @@
       "document": "ModifyParamTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模版ID",
           "example": "无",
@@ -10794,7 +10777,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版名",
           "example": "无",
@@ -10804,7 +10786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版描述",
           "example": "无",
@@ -10814,7 +10795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数列表",
           "example": "无",

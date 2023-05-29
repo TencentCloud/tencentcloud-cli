@@ -1,6 +1,6 @@
-**Example 1: 创建包年包月的云数据库实例**
+**Example 1: 创建MariaDB包年包月实例**
 
-创建包年包月的云数据库实例
+创建MariaDB包年包月实例
 
 Input: 
 

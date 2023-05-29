@@ -1,9 +1,9 @@
 {
   "actions": {
     "ActivateHourDBInstance": {
-      "document": "解隔离后付费实例",
+      "document": "解隔离MariaDB按量计费实例",
       "input": "ActivateHourDBInstanceRequest",
-      "name": "解隔离后付费实例",
+      "name": "解隔离MariaDB按量计费实例",
       "output": "ActivateHourDBInstanceResponse",
       "status": "online"
     },
@@ -50,23 +50,23 @@
       "status": "online"
     },
     "CreateDBInstance": {
-      "document": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。",
+      "document": "本接口（CreateDBInstance）用于创建包年包月的MariaDB云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。",
       "input": "CreateDBInstanceRequest",
-      "name": "创建实例（包年包月）",
+      "name": "创建MariaDB包年包月实例",
       "output": "CreateDBInstanceResponse",
       "status": "online"
     },
     "CreateDedicatedClusterDBInstance": {
-      "document": "创建独享集群Mariadb实例",
+      "document": "创建Mariadb独享集群实例",
       "input": "CreateDedicatedClusterDBInstanceRequest",
-      "name": "创建独享集群Mariadb实例",
+      "name": "创建Mariadb独享集群实例",
       "output": "CreateDedicatedClusterDBInstanceResponse",
       "status": "online"
     },
     "CreateHourDBInstance": {
-      "document": "创建后付费实例",
+      "document": "创建MariaDB按量计费实例",
       "input": "CreateHourDBInstanceRequest",
-      "name": "创建后付费实例",
+      "name": "创建MariaDB按量计费实例",
       "output": "CreateHourDBInstanceResponse",
       "status": "online"
     },
@@ -274,9 +274,9 @@
       "status": "online"
     },
     "DestroyHourDBInstance": {
-      "document": "本接口（DestroyHourDBInstance）用于销毁按量计费实例。",
+      "document": "本接口（DestroyHourDBInstance）用于销毁MariaDB按量计费实例。",
       "input": "DestroyHourDBInstanceRequest",
-      "name": "销毁按量计费实例",
+      "name": "销毁MariaDB按量计费实例",
       "output": "DestroyHourDBInstanceResponse",
       "status": "online"
     },
@@ -309,9 +309,9 @@
       "status": "online"
     },
     "IsolateDBInstance": {
-      "document": "本接口(IsolateDBInstance)用于隔离云数据库实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
+      "document": "本接口(IsolateDBInstance)用于隔离云数据库MariaDB实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
       "input": "IsolateDBInstanceRequest",
-      "name": "隔离云数据库实例（包年包月）",
+      "name": "隔离MariaDB包年包月实例",
       "output": "IsolateDBInstanceResponse",
       "status": "online"
     },
@@ -323,9 +323,9 @@
       "status": "online"
     },
     "IsolateHourDBInstance": {
-      "document": "隔离后付费实例",
+      "document": "隔离MariaDB按量计费实例",
       "input": "IsolateHourDBInstanceRequest",
-      "name": "隔离后付费实例",
+      "name": "隔离MariaDB按量计费实例",
       "output": "IsolateHourDBInstanceResponse",
       "status": "online"
     },
@@ -537,7 +537,6 @@
       "document": "ActivateHourDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID列表",
           "example": "[\"tdsql-1234\"]",
@@ -558,7 +557,6 @@
           "example": "[\"tdsql-rlye31jd\"]",
           "member": "string",
           "name": "SuccessInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -568,7 +566,6 @@
           "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1253,7 +1250,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持IPv6",
+          "document": "是否支持IPv6，0:不支持，1:支持",
           "example": "无",
           "member": "int64",
           "name": "Ipv6Flag",
@@ -1333,7 +1330,6 @@
       "document": "CreateDedicatedClusterDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分配实例个数",
           "example": "1",
@@ -1343,7 +1339,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "內存大小，单位GB",
           "example": "2",
@@ -1353,7 +1348,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小，单位GB",
           "example": "10",
@@ -1363,7 +1357,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群集群uuid",
           "example": "xx",
@@ -1373,7 +1366,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（废弃）可用区",
           "example": "ap-guangzhou-1",
@@ -1383,7 +1375,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1",
@@ -1393,7 +1384,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（废弃）Pid，可通过获取独享集群售卖配置接口得到",
           "example": "0",
@@ -1403,7 +1393,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（废弃）机型",
           "example": "xx",
@@ -1413,7 +1402,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络Id",
           "example": "vpc-xxxx",
@@ -1423,7 +1411,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网Id",
           "example": "subnet-xxxx",
@@ -1433,7 +1420,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "db类型，不传默认0",
           "example": "xx",
@@ -1443,7 +1429,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（废弃）是否手动指定一组服务器分配, 运维使用",
           "example": "0",
@@ -1453,7 +1438,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（废弃）DeviceNo参数",
           "example": "xx",
@@ -1463,7 +1447,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID",
           "example": "[\"sg-xx\"]",
@@ -1473,7 +1456,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DCN源实例ID",
           "example": "tdsql-xxxx",
@@ -1483,7 +1465,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DCN源实例地域名",
           "example": "ap-guangzhou",
@@ -1493,7 +1474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义实例名称",
           "example": "xx",
@@ -1503,7 +1483,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
@@ -1513,7 +1492,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持IPv6标志：1 支持， 0 不支持",
           "example": "无",
@@ -1523,7 +1501,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
@@ -1533,7 +1510,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例节点数",
           "example": "2",
@@ -1543,7 +1519,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定主节点uuid，不填随机分配",
           "example": "svr-xxxx",
@@ -1553,7 +1528,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定从节点uuid，不填随机分配",
           "example": "[\"svr-xxxx\"]",
@@ -1563,7 +1537,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要回档的源实例ID",
           "example": "tdsql-xxx",
@@ -1573,7 +1546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档时间",
           "example": "2022-05-10 12:00:00",
@@ -1594,7 +1566,6 @@
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1604,7 +1575,6 @@
           "example": "1122",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1721,7 +1691,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持IPv6",
+          "document": "是否支持IPv6，0:不支持，1:支持",
           "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
@@ -1766,7 +1736,7 @@
         },
         {
           "disabled": false,
-          "document": "回档源实例ID",
+          "document": "回档源实例ID，例如“2021-11-22 00:00:00”",
           "example": "tdsql-dup8gl6t",
           "member": "string",
           "name": "RollbackInstanceId",
@@ -1876,7 +1846,6 @@
       "document": "云数据库账号信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "无",
@@ -1887,7 +1856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）",
           "example": "无",
@@ -1898,7 +1866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户备注信息",
           "example": "无",
@@ -1909,7 +1876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -1920,7 +1886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新时间",
           "example": "无",
@@ -1931,7 +1896,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
           "example": "无",
@@ -1942,7 +1906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段对只读帐号有意义，表示选择主备延迟小于该值的备机\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1953,13 +1916,22 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
           "example": "无",
           "member": "int64",
           "name": "SlaveConst",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户最大连接数，0代表无限制",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4061,6 +4033,15 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "尚未回收的网络资源",
+          "example": "无",
+          "member": "ReservedNetResource",
+          "name": "ReservedNetResources",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4934,10 +4915,9 @@
       "document": "DescribeDcnDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
-          "example": "tdsql-2rn9lmpx",
+          "example": "tdsql-ohjuvzgt",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4955,7 +4935,6 @@
           "example": "无",
           "member": "DcnDetailItem",
           "name": "DcnDetails",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5639,7 +5618,6 @@
       "document": "DestroyHourDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：tdsql-avw0207d，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "tdsql-avw0207d",
@@ -5660,7 +5638,6 @@
           "example": "100",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5670,7 +5647,6 @@
           "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6109,7 +6085,6 @@
       "document": "IsolateDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：tdsql-dasjkhd，与云数据库控制台页面中显示的实例 ID 相同，可使用 查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "tdsql-dasjkhd",
@@ -6130,7 +6105,6 @@
           "example": "[]",
           "member": "string",
           "name": "SuccessInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6140,7 +6114,6 @@
           "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6185,7 +6158,6 @@
       "document": "IsolateHourDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID列表",
           "example": "[\"tdsql-cq3ndzu7\"]",
@@ -6206,7 +6178,6 @@
           "example": "[]",
           "member": "string",
           "name": "SuccessInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6216,7 +6187,6 @@
           "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6385,7 +6355,6 @@
       "document": "ModifyAccountPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：tdsql-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "无",
@@ -6395,7 +6364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库的账号，包括用户名和域名。",
           "example": "无",
@@ -6405,7 +6373,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，该字段传空数组。",
           "example": "无",
@@ -6415,7 +6382,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6425,7 +6391,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库中表的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6435,7 +6400,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6445,7 +6409,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库视图的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6455,7 +6418,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库函数的权限。Privileges 权限的可选值为：\"ALTER ROUTINE\"，\"EXECUTE\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6465,7 +6427,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库存储过程的权限。Privileges 权限的可选值为：\"ALTER ROUTINE\"，\"EXECUTE\"。\n注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。",
           "example": "无",
@@ -6486,7 +6447,6 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7542,6 +7502,62 @@
         }
       ],
       "type": "object"
+    },
+    "ReservedNetResource": {
+      "document": "保留的网络资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络",
+          "example": "vpc-1iy15ozp",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网",
+          "example": "subnet-l9bprnz2",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VpcId,SubnetId下保留的内网ip",
+          "example": "10.107.76.25",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Vip下的端口",
+          "example": "[3306,3307]",
+          "member": "int64",
+          "name": "Vports",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip的回收时间",
+          "example": "2023-02-23 10:36:17",
+          "member": "string",
+          "name": "RecycleTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResetAccountPasswordRequest": {
       "document": "ResetAccountPassword请求参数结构体",

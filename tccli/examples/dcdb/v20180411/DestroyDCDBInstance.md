@@ -1,6 +1,6 @@
-**Example 1: 请求示例DEMO**
+**Example 1: 销毁已隔离的TDSQL包年包月实例**
 
-
+销毁已隔离的TDSQL包年包月实例
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: 请求示例DEMO**
+**Example 1: 销毁TDSQL按量计费实例**
 
-
+销毁TDSQL按量计费实例
 
 Input: 
 

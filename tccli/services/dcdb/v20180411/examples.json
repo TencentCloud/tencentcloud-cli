@@ -2,10 +2,10 @@
   "actions": {
     "ActiveHourDCDBInstance": [
       {
-        "document": "",
+        "document": "解隔离TDSQL按量计费实例",
         "input": "https://dcdb.tencentcloudapi.com/?Action=ActiveHourDCDBInstance\n&InstanceIds.0=tdsqlshard-cq3ndzu7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\",\n        \"SuccessInstanceIds\": [\n            \"tdsqlshard-cq3ndzu7\"\n        ]\n    }\n}",
-        "title": "解隔离DCDB后付费实例"
+        "title": "解隔离TDSQL按量计费实例"
       }
     ],
     "AssociateSecurityGroups": [
@@ -58,26 +58,34 @@
     ],
     "CreateDCDBInstance": [
       {
-        "document": "创建包年包月的分布式数据库实例",
+        "document": "创建TDSQL包年包月实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDCDBInstance\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"DbVersionId\": \"5.7.17\",\n    \"ShardNodeCount\": \"3\",\n    \"Period\": \"1\",\n    \"AutoVoucher\": \"true\",\n    \"Zones\": [\n        \"ap-guangzhou-2\",\n        \"ap-guangzhou-2\"\n    ],\n    \"ShardMemory\": \"2\",\n    \"ShardCount\": \"2\",\n    \"ShardStorage\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20181103110163\",\n        \"InstanceIds\": [\n            \"dcdbt-avw0207d\"\n        ]\n    }\n}",
-        "title": "创建包年包月的分布式数据库实例"
+        "title": "创建TDSQL包年包月实例"
       }
     ],
     "CreateDedicatedClusterDCDBInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\",\n    \"ShardNodeMemory\": 0,\n    \"ShardNodeCpu\": 0,\n    \"ShardNodeNum\": 0,\n    \"ShardMachine\": \"xx\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DcnRegion\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"DbVersionId\": \"xx\",\n    \"DcnInstanceId\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"ShardNodeStorage\": 0,\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"Cpu\": 0,\n    \"ShardNum\": 0,\n    \"SecurityGroupId\": \"xx\",\n    \"ShardMemory\": 0,\n    \"ShardStorage\": 0,\n    \"Pid\": 100\n}",
+        "document": "创建TDSQL独享集群实例",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"ClusterId\": \"cage-shjr-2-15\",\n    \"GoodsNum\": 1,\n    \"ShardNum\": 2,\n    \"ShardMemory\": 2,\n    \"ShardStorage\": 10,\n    \"Pid\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
-        "title": "input demo1"
+        "title": "创建TDSQL独享集群实例"
       }
     ],
     "CreateHourDCDBInstance": [
       {
-        "document": "创建后付费分布式DB实例",
+        "document": "创建TDSQL按量计费实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHourDCDBInstance\n<公共请求参数>\n\n{\n    \"ShardCount\": \"2\",\n    \"ShardMemory\": \"2\",\n    \"ShardNodeCount\": \"2\",\n    \"ShardStorage\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"DealName\": \"20200409111543\",\n        \"FlowId\": 1122\n    }\n}",
-        "title": "无"
+        "title": "创建TDSQL按量计费实例"
+      }
+    ],
+    "CreateTmpDCDBInstance": [
+      {
+        "document": "回档TDSQL分布式数据库实例",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateTmpDCDBInstance\n&InstanceId=tdsqlshard-1pif6bs0\n&RollbackTime=2020-01-15+10%3A27%3A02\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1001056,\n        \"RequestId\": \"7359902f-582d-4fe0-a610-6be23bf8db48\"\n    }\n}",
+        "title": "回档TDSQL分布式数据库实例"
       }
     ],
     "DeleteAccount": [
@@ -164,7 +172,7 @@
       {
         "document": "查询分布式实例 dcdbt-21dfpcv1 的详细信息",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDCDBInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-21dfpcv1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 0,\n        \"Cpu\": 3,\n        \"CreateTime\": \"2016-07-13 11:08:38\",\n        \"DbEngine\": \"MariaDB\",\n        \"DbVersion\": \"10.0.10\",\n        \"DcnDstNum\": 0,\n        \"DcnFlag\": 0,\n        \"DcnStatus\": 0,\n        \"ExclusterId\": \"\",\n        \"InstanceId\": \"dcdbt-21dfpcv1\",\n        \"InstanceName\": \"dcdbt-21dfpcv1\",\n        \"InstanceType\": 2,\n        \"Ipv6Flag\": 0,\n        \"IsAuditSupported\": 1,\n        \"IsEncryptSupported\": 0,\n        \"LogStorage\": 16,\n        \"Machine\": \"TS85\",\n        \"MasterZone\": \"ap-guangzhou-1\",\n        \"Memory\": 6,\n        \"NodeCount\": 2,\n        \"PayMode\": \"prepaid\",\n        \"PeriodEndTime\": \"2023-01-01 11:12:24\",\n        \"Pid\": 1001670,\n        \"ProjectId\": 0,\n        \"Qps\": 4000,\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"e1828feb-9a21-409a-8964-309215615d84\",\n        \"ResourceTags\": [],\n        \"Shards\": [\n            {\n                \"Cpu\": 2,\n                \"CreateTime\": \"2021-12-01 11:49:54\",\n                \"LogDisk\": 8,\n                \"Memory\": 4,\n                \"NodeCount\": 2,\n                \"NodesInfo\": [\n                    {\n                        \"NodeId\": \"85409b834943\",\n                        \"Role\": \"master\"\n                    },\n                    {\n                        \"NodeId\": \"9de9c0321ccd\",\n                        \"Role\": \"slave\"\n                    }\n                ],\n                \"ProxyVersion\": \"\\\"1.17.6-M-V2.0R723D002\\\"\",\n                \"ShardInstanceId\": \"shard-ngbrea6b\",\n                \"ShardMasterZone\": \"ap-guangzhou-1\",\n                \"ShardSerialId\": \"set_1643096858_1\",\n                \"ShardSlaveZones\": [\n                    \"ap-guangzhou-1\"\n                ],\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"StorageUsage\": 0.01\n            },\n            {\n                \"Cpu\": 1,\n                \"CreateTime\": \"2021-12-01 11:49:54\",\n                \"LogDisk\": 8,\n                \"Memory\": 2,\n                \"NodeCount\": 2,\n                \"NodesInfo\": [\n                    {\n                        \"NodeId\": \"1e2025d21782\",\n                        \"Role\": \"master\"\n                    },\n                    {\n                        \"NodeId\": \"b228c46e9b63\",\n                        \"Role\": \"slave\"\n                    }\n                ],\n                \"ProxyVersion\": \"\\\"1.17.6-M-V2.0R723D002\\\"\",\n                \"ShardInstanceId\": \"shard-5zf65smf\",\n                \"ShardMasterZone\": \"ap-guangzhou-1\",\n                \"ShardSerialId\": \"set_1643096949_3\",\n                \"ShardSlaveZones\": [\n                    \"ap-guangzhou-1\"\n                ],\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"StorageUsage\": 0.011\n            }\n        ],\n        \"SlaveZones\": [\n            \"ap-guangzhou-1\"\n        ],\n        \"Status\": 2,\n        \"StatusDesc\": \"运行中\",\n        \"Storage\": 20,\n        \"StorageUsage\": 0.0105,\n        \"SubnetId\": \"subnet-ovkcc9x6\",\n        \"Vip\": \"10.1.0.5\",\n        \"Vip6\": \"\",\n        \"VpcId\": \"vpc-j97vcvb5\",\n        \"Vport\": 3306,\n        \"WanDomain\": \"\",\n        \"WanPort\": 0,\n        \"WanPortIpv6\": 0,\n        \"WanStatus\": 0,\n        \"WanStatusIpv6\": 0,\n        \"WanVip\": \"\",\n        \"WanVipv6\": \"\",\n        \"IsMaxUserConnectionsSupported\": true,\n        \"DbVersionId\": \"5.7\",\n        \"EncryptStatus\": 0,\n        \"ExclusterType\": 0,\n        \"RsAccessStrategy\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 0,\n        \"Cpu\": 3,\n        \"CreateTime\": \"2016-07-13 11:08:38\",\n        \"DbEngine\": \"MariaDB\",\n        \"DbVersion\": \"10.0.10\",\n        \"DcnDstNum\": 0,\n        \"DcnFlag\": 0,\n        \"DcnStatus\": 0,\n        \"ExclusterId\": \"\",\n        \"InstanceId\": \"dcdbt-21dfpcv1\",\n        \"InstanceName\": \"dcdbt-21dfpcv1\",\n        \"InstanceType\": 2,\n        \"Ipv6Flag\": 0,\n        \"IsAuditSupported\": 1,\n        \"IsEncryptSupported\": 0,\n        \"LogStorage\": 16,\n        \"Machine\": \"TS85\",\n        \"MasterZone\": \"ap-guangzhou-1\",\n        \"Memory\": 6,\n        \"NodeCount\": 2,\n        \"PayMode\": \"prepaid\",\n        \"PeriodEndTime\": \"2023-01-01 11:12:24\",\n        \"Pid\": 1001670,\n        \"ProjectId\": 0,\n        \"Qps\": 4000,\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"e1828feb-9a21-409a-8964-309215615d84\",\n        \"ResourceTags\": [],\n        \"Shards\": [\n            {\n                \"Cpu\": 2,\n                \"CreateTime\": \"2021-12-01 11:49:54\",\n                \"LogDisk\": 8,\n                \"Memory\": 4,\n                \"NodeCount\": 2,\n                \"NodesInfo\": [\n                    {\n                        \"NodeId\": \"85409b834943\",\n                        \"Role\": \"master\"\n                    },\n                    {\n                        \"NodeId\": \"9de9c0321ccd\",\n                        \"Role\": \"slave\"\n                    }\n                ],\n                \"ProxyVersion\": \"\\\"1.17.6-M-V2.0R723D002\\\"\",\n                \"ShardInstanceId\": \"shard-ngbrea6b\",\n                \"ShardMasterZone\": \"ap-guangzhou-1\",\n                \"ShardSerialId\": \"set_1643096858_1\",\n                \"ShardSlaveZones\": [\n                    \"ap-guangzhou-1\"\n                ],\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"StorageUsage\": 0.01\n            },\n            {\n                \"Cpu\": 1,\n                \"CreateTime\": \"2021-12-01 11:49:54\",\n                \"LogDisk\": 8,\n                \"Memory\": 2,\n                \"NodeCount\": 2,\n                \"NodesInfo\": [\n                    {\n                        \"NodeId\": \"1e2025d21782\",\n                        \"Role\": \"master\"\n                    },\n                    {\n                        \"NodeId\": \"b228c46e9b63\",\n                        \"Role\": \"slave\"\n                    }\n                ],\n                \"ProxyVersion\": \"\\\"1.17.6-M-V2.0R723D002\\\"\",\n                \"ShardInstanceId\": \"shard-5zf65smf\",\n                \"ShardMasterZone\": \"ap-guangzhou-1\",\n                \"ShardSerialId\": \"set_1643096949_3\",\n                \"ShardSlaveZones\": [\n                    \"ap-guangzhou-1\"\n                ],\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 10,\n                \"StorageUsage\": 0.011\n            }\n        ],\n        \"SlaveZones\": [\n            \"ap-guangzhou-1\"\n        ],\n        \"Status\": 2,\n        \"StatusDesc\": \"运行中\",\n        \"Storage\": 20,\n        \"StorageUsage\": 0.0105,\n        \"SubnetId\": \"subnet-ovkcc9x6\",\n        \"Vip\": \"10.1.0.5\",\n        \"Vip6\": \"\",\n        \"VpcId\": \"vpc-j97vcvb5\",\n        \"Vport\": 3306,\n        \"WanDomain\": \"\",\n        \"WanPort\": 0,\n        \"WanPortIpv6\": 0,\n        \"WanStatus\": 0,\n        \"WanStatusIpv6\": 0,\n        \"WanVip\": \"\",\n        \"WanVipv6\": \"\",\n        \"IsMaxUserConnectionsSupported\": true,\n        \"DbVersionId\": \"5.7\",\n        \"EncryptStatus\": 0,\n        \"ExclusterType\": 0,\n        \"RsAccessStrategy\": 0,\n        \"ReservedNetResources\": [\n            {\n                \"VpcId\": \"vpc-p6alckzx\",\n                \"SubnetId\": \"subnet-3pz073lq\",\n                \"Vip\": \"172.16.0.40\",\n                \"Vports\": [\n                    3306\n                ],\n                \"RecycleTime\": \"2023-05-19 16:12:32\"\n            }\n        ]\n    }\n}",
         "title": "查询实例详细信息"
       }
     ],
@@ -250,10 +258,10 @@
     ],
     "DescribeDcnDetail": [
       {
-        "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDcnDetail\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"Status\": 2,\n                \"DcnStatus\": 0,\n                \"DcnFlag\": 1,\n                \"Zone\": \"ap-guangzhou-4\",\n                \"InstanceId\": \"tdsql-2rn9lmpx\",\n                \"InstanceName\": \"tdsdql-2rn9lmpx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Storage\": 0,\n                \"InstanceType\": 0,\n                \"Cpu\": 0,\n                \"PayMode\": 0,\n                \"Vip\": \"10.0.0.24\",\n                \"Memory\": 0,\n                \"PeriodEndTime\": \"2019-02-01 10:00:00\",\n                \"Vport\": 3306,\n                \"StatusDesc\": \"运行中\",\n                \"Vipv6\": \"\",\n                \"CreateTime\": \"2019-01-01 10:00:00\"\n            },\n            {\n                \"Status\": 2,\n                \"DcnStatus\": 2,\n                \"DcnFlag\": 2,\n                \"Zone\": \"xx\",\n                \"InstanceId\": \"tdsql-cbr0g5v1\",\n                \"Vipv6\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"Storage\": 0,\n                \"Cpu\": 0,\n                \"PayMode\": 0,\n                \"Vip\": \"10.0.0.25\",\n                \"CreateTime\": \"2019-01-01 10:00:00\",\n                \"Memory\": 0,\n                \"PeriodEndTime\": \"2019-02-01 10:00:00\",\n                \"Vport\": 3306,\n                \"StatusDesc\": \"运行中\",\n                \"InstanceName\": \"tdsql-cbr0g5v1\",\n                \"InstanceType\": 0\n            }\n        ],\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
-        "title": "无"
+        "document": "获取实例灾备详情",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDcnDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-hqtjy5d1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"Cpu\": 0,\n                \"CreateTime\": \"2022-11-08 17:43:48\",\n                \"DcnFlag\": 1,\n                \"DcnStatus\": 0,\n                \"EncryptStatus\": 0,\n                \"InstanceId\": \"tdsqlshard-hqtjy5d1\",\n                \"InstanceName\": \"tdsqlshard-hqtjy5d1\",\n                \"InstanceType\": 2,\n                \"Memory\": 0,\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 0,\n                \"Vip\": \"172.16.16.86\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"Cpu\": 0,\n                \"CreateTime\": \"2022-11-08 17:56:43\",\n                \"DcnFlag\": 2,\n                \"DcnStatus\": 2,\n                \"EncryptStatus\": 0,\n                \"InstanceId\": \"tdsqlshard-c06stiq3\",\n                \"InstanceName\": \"tdsqlshard-c06stiq3\",\n                \"InstanceType\": 3,\n                \"Memory\": 0,\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"0001-01-01 00:00:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 0,\n                \"Vip\": \"172.16.16.18\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"f1989672-5114-4289-a0b5-3b5b4c11dccc\"\n    }\n}",
+        "title": "获取实例灾备详情"
       }
     ],
     "DescribeFileDownloadUrl": [
@@ -328,18 +336,18 @@
     ],
     "DestroyDCDBInstance": [
       {
-        "document": "",
+        "document": "销毁已隔离的TDSQL包年包月实例",
         "input": "https://dcdb.tencentcloudapi.com/?Action=DestroyDCDBInstance\n&InstanceId=tdsqlshard-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsqlshard-avw0207d\"\n    }\n}",
-        "title": "请求示例DEMO"
+        "title": "销毁已隔离的TDSQL包年包月实例"
       }
     ],
     "DestroyHourDCDBInstance": [
       {
-        "document": "",
+        "document": "销毁TDSQL按量计费实例",
         "input": "https://dcdb.tencentcloudapi.com/?Action=DestroyHourDCDBInstance\n&InstanceId=tdsqlshard-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsqlshard-avw0207d\"\n    }\n}",
-        "title": "请求示例DEMO"
+        "title": "销毁TDSQL按量计费实例"
       }
     ],
     "DisassociateSecurityGroups": [
@@ -384,10 +392,10 @@
     ],
     "IsolateHourDCDBInstance": [
       {
-        "document": "",
+        "document": "隔离TDSQL按量计费实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateHourDCDBInstance\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"dcdbt-21dfpcv1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"204d03dc-2308-45e0-8ef8-aed2b3254e13\",\n        \"SuccessInstanceIds\": [\n            \"dcdbt-21dfpcv1\"\n        ]\n    }\n}",
-        "title": "无"
+        "title": "隔离TDSQL按量计费实例"
       }
     ],
     "KillSession": [
@@ -408,10 +416,10 @@
     ],
     "ModifyAccountPrivileges": [
       {
-        "document": "",
+        "document": "修改云数据库实例账号的权限信息",
         "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=tdsqlshard-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
-        "title": "请求示例DEMO"
+        "title": "修改云数据库实例账号的权限信息"
       }
     ],
     "ModifyDBEncryptAttributes": [
@@ -544,18 +552,18 @@
     ],
     "UpgradeDedicatedDCDBInstance": [
       {
-        "document": "",
+        "document": "升级TDSQL独享集群实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDedicatedDCDBInstance\n<公共请求参数>\n\n{\n    \"UpgradeType\": \"EXPAND\",\n    \"InstanceId\": \"tdsqlshard-jv8z8fhl\",\n    \"ExpandShardConfig\": {\n        \"ShardInstanceIds\": [\n            \"shard-xxx1\",\n            \"shard-xxx2\"\n        ],\n        \"ShardMemory\": 2,\n        \"ShardStorage\": 20\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
-        "title": "无"
+        "title": "升级TDSQL独享集群实例"
       }
     ],
     "UpgradeHourDCDBInstance": [
       {
-        "document": "",
+        "document": "升级TDSQL按量计费实例",
         "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeHourDCDBInstance\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\"\n    }\n}",
-        "title": "升级后付费分布式DB"
+        "title": "升级TDSQL按量计费实例"
       }
     ]
   },

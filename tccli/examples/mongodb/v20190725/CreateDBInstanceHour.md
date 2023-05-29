@@ -25,7 +25,7 @@ Output:
         "RequestId": "eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f",
         "DealId": "20190709160000003502416120946732",
         "InstanceIds": [
-            "cmgo-m26c6jsf"
+            "cmgo-m26c****"
         ]
     }
 }

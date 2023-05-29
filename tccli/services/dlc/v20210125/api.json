@@ -70,6 +70,13 @@
       "output": "CancelNotebookSessionStatementBatchResponse",
       "status": "online"
     },
+    "CancelSparkSessionBatchSQL": {
+      "document": "本接口（CancelSparkSessionBatchSQL）用于取消Spark SQL批任务。",
+      "input": "CancelSparkSessionBatchSQLRequest",
+      "name": "取消Spark SQL批任务",
+      "output": "CancelSparkSessionBatchSQLResponse",
+      "status": "online"
+    },
     "CancelTask": {
       "document": "本接口（CancelTask），用于取消任务执行",
       "input": "CancelTaskRequest",
@@ -180,6 +187,13 @@
       "input": "CreateSparkAppTaskRequest",
       "name": "创建spark任务",
       "output": "CreateSparkAppTaskResponse",
+      "status": "online"
+    },
+    "CreateSparkSessionBatchSQL": {
+      "document": "本接口（CreateSparkSessionBatchSQL）用于提交Spark SQL批任务。",
+      "input": "CreateSparkSessionBatchSQLRequest",
+      "name": "提交Spark SQL批任务",
+      "output": "CreateSparkSessionBatchSQLResponse",
       "status": "online"
     },
     "CreateStoreLocation": {
@@ -418,6 +432,13 @@
       "input": "DescribeSparkAppTasksRequest",
       "name": "查询spark应用的运行任务实例列表",
       "output": "DescribeSparkAppTasksResponse",
+      "status": "online"
+    },
+    "DescribeSparkSessionBatchSqlLog": {
+      "document": "本接口（DescribeSparkSessionBatchSqlLog）用于获取SparkSQL批任务日志",
+      "input": "DescribeSparkSessionBatchSqlLogRequest",
+      "name": "获取SparkSQL批任务日志",
+      "output": "DescribeSparkSessionBatchSqlLogResponse",
       "status": "online"
     },
     "DescribeStoreLocation": {
@@ -1417,6 +1438,33 @@
     },
     "CancelNotebookSessionStatementResponse": {
       "document": "CancelNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelSparkSessionBatchSQLRequest": {
+      "document": "CancelSparkSessionBatchSQL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批任务唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelSparkSessionBatchSQLResponse": {
+      "document": "CancelSparkSessionBatchSQL返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3145,6 +3193,123 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkSessionBatchSQLRequest": {
+      "document": "CreateSparkSessionBatchSQL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DLC Spark作业引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行sql",
+          "example": "select 1;",
+          "member": "string",
+          "name": "ExecuteSQL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的Executor数量，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定的Session超时时间，单位秒，默认3600秒",
+          "example": "10",
+          "member": "int64",
+          "name": "TimeoutInSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Session唯一标识，当指定sessionid，则使用该session运行任务。",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定要创建的session名称",
+          "example": "testSession",
+          "member": "string",
+          "name": "SessionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；",
+          "example": "[\"eni\":\"test_eni\"]",
+          "member": "KVPair",
+          "name": "Arguments",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkSessionBatchSQLResponse": {
+      "document": "CreateSparkSessionBatchSQL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批任务唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -7008,6 +7173,51 @@
       ],
       "type": "object"
     },
+    "DescribeSparkSessionBatchSqlLogRequest": {
+      "document": "DescribeSparkSessionBatchSqlLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SparkSQL唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkSessionBatchSqlLogResponse": {
+      "document": "DescribeSparkSessionBatchSqlLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态：0：初始化、1：成功、2：失败、3：取消、4：异常；",
+          "example": "0",
+          "member": "uint64",
+          "name": "State",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "SparkSessionBatchLog",
+          "name": "LogSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStoreLocationRequest": {
       "document": "DescribeStoreLocation请求参数结构体",
       "members": [],
@@ -10419,6 +10629,88 @@
           "name": "DataEngineImageVersion",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SparkSessionBatchLog": {
+      "document": "SparkSQL批任务运行日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志步骤：BEG/CS/DS/DSS/DSF/FINF/RTO/CANCEL/CT/DT/DTS/DTF/FINT/EXCE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BEG",
+          "member": "string",
+          "name": "Step",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-20 12:12:12",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "开始",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "SparkSessionBatchLogOperate",
+          "name": "Operate",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SparkSessionBatchLogOperate": {
+      "document": "SparkSQL批任务日志操作信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：COPY、LOG、UI、RESULT、List、TAB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COPY",
+          "member": "string",
+          "name": "Operate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补充信息：如：taskid、sessionid、sparkui等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "KVPair",
+          "name": "Supplement",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

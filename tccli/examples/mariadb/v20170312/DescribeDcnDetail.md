@@ -1,12 +1,12 @@
-**Example 1: 无**
+**Example 1: 获取实例灾备详情**
 
-
+获取实例灾备详情
 
 Input: 
 
 ```
 tccli mariadb DescribeDcnDetail --cli-unfold-argument  \
-    --InstanceId tdsql-2rn9lmpx
+    --InstanceId tdsql-ohjuvzgt
 ```
 
 Output: 
@@ -15,47 +15,61 @@ Output:
     "Response": {
         "DcnDetails": [
             {
-                "Status": 2,
-                "DcnStatus": 0,
+                "Cpu": 1,
+                "CreateTime": "2022-11-08 11:39:44",
                 "DcnFlag": 1,
-                "Zone": "ap-guangzhou-4",
-                "InstanceId": "tdsql-2rn9lmpx",
-                "InstanceName": "tdsql-2rn9lmpx",
-                "Region": "ap-guangzhou",
-                "Storage": 0,
-                "InstanceType": 0,
-                "Cpu": 0,
+                "DcnStatus": 0,
+                "EncryptStatus": 0,
+                "InstanceId": "tdsql-ohjuvzgt",
+                "InstanceName": "tdsql-ohjuvzgt",
+                "InstanceType": 2,
+                "Memory": 2,
                 "PayMode": 0,
-                "Vip": "10.0.0.24",
-                "Memory": 0,
-                "PeriodEndTime": "2020-03-08 12:00:01",
-                "Vport": 3306,
+                "PeriodEndTime": "0001-01-01 00:00:00",
+                "Region": "ap-guangzhou",
+                "ReplicaConfig": null,
+                "ReplicaStatus": null,
+                "Status": 2,
                 "StatusDesc": "运行中",
+                "Storage": 10,
+                "Vip": "172.16.16.140",
                 "Vipv6": "",
-                "CreateTime": "2019-03-08 12:00:01"
+                "Vport": 3306,
+                "Zone": "ap-guangzhou-2"
             },
             {
-                "Status": 2,
-                "DcnStatus": 2,
+                "Cpu": 1,
+                "CreateTime": "2022-11-08 11:43:06",
                 "DcnFlag": 2,
-                "Zone": "xx",
-                "InstanceId": "tdsql-cbr0g5v1",
-                "Vipv6": "",
-                "Region": "ap-guangzhou",
-                "Storage": 0,
-                "Cpu": 0,
+                "DcnStatus": 2,
+                "EncryptStatus": 0,
+                "InstanceId": "tdsql-61vf76u9",
+                "InstanceName": "tdsql-61vf76u9",
+                "InstanceType": 3,
+                "Memory": 2,
                 "PayMode": 0,
-                "Vip": "10.0.0.29",
-                "CreateTime": "2020-04-08 12:00:01",
-                "Memory": 0,
-                "PeriodEndTime": "2020-05-08 12:00:01",
-                "Vport": 3306,
+                "PeriodEndTime": "0001-01-01 00:00:00",
+                "Region": "ap-guangzhou",
+                "ReplicaConfig": {
+                    "DelayReplicationType": "DEFAULT",
+                    "DueTime": "",
+                    "ReplicationDelay": 0,
+                    "RoReplicationMode": "START"
+                },
+                "ReplicaStatus": {
+                    "Delay": 0,
+                    "Status": "RUNNING"
+                },
+                "Status": 2,
                 "StatusDesc": "运行中",
-                "InstanceName": "tdsql-cbr0g5v1",
-                "InstanceType": 0
+                "Storage": 10,
+                "Vip": "172.16.16.70",
+                "Vipv6": "",
+                "Vport": 3306,
+                "Zone": "ap-guangzhou-3"
             }
         ],
-        "RequestId": "cbca1c8e-e123-11ea-a777-525400542aa6"
+        "RequestId": "6bd7aceb-4f68-4048-9551-037d16a0870b"
     }
 }
 ```
