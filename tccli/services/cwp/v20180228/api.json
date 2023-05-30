@@ -1177,11 +1177,11 @@
       "status": "online"
     },
     "DescribeSaveOrUpdateWarnings": {
-      "document": "更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )",
+      "document": "下线\n\n更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )",
       "input": "DescribeSaveOrUpdateWarningsRequest",
       "name": "更新用户告警设置",
       "output": "DescribeSaveOrUpdateWarningsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScanMalwareSchedule": {
       "document": "查询木马扫描进度",
@@ -5459,7 +5459,6 @@
       "document": "资源管理系统安装包列表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "xx",
@@ -5471,7 +5470,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xx",
@@ -5483,7 +5481,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本",
           "example": "xx",
@@ -5495,7 +5492,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安装时间",
           "example": "xx",
@@ -5507,7 +5503,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "1",
@@ -5519,7 +5514,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名称",
           "example": "xx",
@@ -5531,7 +5525,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机IP",
           "example": "1.1.1.1",
@@ -5543,7 +5536,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统",
           "example": "Centos",
@@ -5555,7 +5547,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2011-11-11 12:12:12",
@@ -5567,7 +5558,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首次采集时间",
           "example": "2022-07-15 11:27:01",
@@ -5579,7 +5569,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否新增[0:否|1:是]",
           "example": "1",
@@ -5587,6 +5576,39 @@
           "name": "IsNew",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "附加信息",
+          "example": "无",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主机Id",
+          "example": "无",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Agent Id",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -14564,29 +14586,26 @@
       "document": "DescribeAssetSystemPackageList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机Uuid",
           "example": "1",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "required": false,
           "type": "string",
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机Quuid",
           "example": "1",
           "member": "string",
           "name": "Quuid",
-          "required": true,
+          "required": false,
           "type": "string",
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rmp\n2:dpkg\n3:java\n4:system</li>",
           "example": "1",
@@ -14597,7 +14616,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "11",
@@ -14608,7 +14626,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
@@ -14619,7 +14636,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，asc-升序 或 desc-降序。默认：desc-降序",
           "example": "1",
@@ -14630,7 +14646,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式可选：[FistTime|InstallTime:安装时间]",
           "example": "1",
@@ -14652,7 +14667,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -14663,7 +14677,6 @@
           "example": "1",
           "member": "AssetSystemPackageInfo",
           "name": "Packages",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

@@ -961,6 +961,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模型关联关系字段列表",
+          "example": "无",
+          "member": "RelationField",
+          "name": "RelationFieldList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1544,6 +1555,16 @@
           "name": "ChannelList",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否查询数据源关联关系",
+          "example": "无",
+          "member": "bool",
+          "name": "QueryDataSourceRelationList",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -3709,6 +3730,45 @@
         }
       ],
       "usage": "in"
+    },
+    "RelationField": {
+      "document": "数据源关联的的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联关系字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关联关系格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关联数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RelateDataSourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ResourceInfo": {
       "document": "资源信息",

@@ -28,60 +28,67 @@ Output:
 {
     "Response": {
         "Data": {
-            "Count": 1,
             "Rows": [
                 {
+                    "Id": "abc",
+                    "Title": "abc",
+                    "Name": "abc",
+                    "Type": "abc",
+                    "Description": "abc",
+                    "Schema": "abc",
+                    "CmsProject": "abc",
+                    "PkgId": "abc",
+                    "SchemaVersion": "abc",
+                    "CreatorId": "abc",
+                    "CreatedAt": "abc",
+                    "UpdatedAt": "abc",
+                    "EnvId": "abc",
+                    "DataSourceVersion": "abc",
                     "AppUsageList": [
                         {
+                            "Id": "abc",
+                            "Title": "abc",
                             "EditStatusUse": 0,
-                            "Id": "",
-                            "OnlineStatusUse": 0,
                             "PreviewStatusUse": 0,
-                            "Title": ""
+                            "OnlineStatusUse": 0
                         }
                     ],
-                    "AuthInfo": {
-                        "AuthUser": ""
-                    },
-                    "AuthStatus": 0,
+                    "PublishedAt": "abc",
                     "ChildDataSourceIds": [
-                        ""
+                        "abc"
                     ],
+                    "Fun": "abc",
+                    "ScfStatus": 1,
+                    "Methods": "abc",
                     "ChildDataSourceNames": [
-                        ""
+                        "abc"
                     ],
-                    "CmsProject": "0",
-                    "Configuration": "",
-                    "CreatedAt": "",
-                    "CreatorId": "",
-                    "DataSourceVersion": "",
-                    "Description": "",
-                    "EnvId": "",
-                    "Fun": "",
-                    "Id": "",
                     "IsNewDataSource": 0,
-                    "Methods": "",
-                    "Name": "",
-                    "PkgId": "",
-                    "PublishStatus": 0,
-                    "PublishVersion": "",
-                    "PublishViewId": "",
-                    "PublishedAt": "",
-                    "ScfStatus": 0,
-                    "Schema": "",
-                    "SchemaVersion": "",
+                    "ViewId": "abc",
+                    "Configuration": "abc",
+                    "TemplateCode": "abc",
                     "Source": 0,
-                    "SubType": "",
-                    "TemplateCode": "",
-                    "Title": "",
-                    "Type": "",
+                    "PublishVersion": "abc",
+                    "PublishViewId": "abc",
+                    "SubType": "abc",
+                    "AuthStatus": 0,
+                    "AuthInfo": {
+                        "AuthUser": "abc"
+                    },
+                    "PublishStatus": 0,
                     "UpdateVersion": 0,
-                    "UpdatedAt": "",
-                    "ViewId": ""
+                    "RelationFieldList": [
+                        {
+                            "Field": "abc",
+                            "Format": "abc",
+                            "RelateDataSourceName": "abc"
+                        }
+                    ]
                 }
-            ]
+            ],
+            "Count": 0
         },
-        "RequestId": "374c93bd-253a-41e7-afc2-922af046beac"
+        "RequestId": "abc"
     }
 }
 ```

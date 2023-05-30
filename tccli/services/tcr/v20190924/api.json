@@ -316,7 +316,7 @@
       "status": "online"
     },
     "DeleteSecurityPolicy": {
-      "document": "删除实例公网访问白名单策略",
+      "document": "删除实例公网访问白名单策略\n\n注意：当PolicyIndex和CidrBlock同时存在时，CidrBlock优先级更高",
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除实例公网访问白名单策略",
       "output": "DeleteSecurityPolicyResponse",
@@ -3649,34 +3649,44 @@
       "document": "DeleteSecurityPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
           "example": "tcr-test134",
           "member": "string",
           "name": "RegistryId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单Id",
           "example": "1",
           "member": "int64",
           "name": "PolicyIndex",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单版本",
           "example": "10",
           "member": "string",
           "name": "PolicyVersion",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网段或IP(互斥)",
+          "example": "1.1.1.1/20",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3690,9 +3700,9 @@
           "example": "tcr-test134",
           "member": "string",
           "name": "RegistryId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -11135,6 +11135,16 @@
       "document": "CreateVpcPeeringConnection返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "对等连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pcx-xxxxxx",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

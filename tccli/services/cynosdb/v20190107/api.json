@@ -28,6 +28,13 @@
       "output": "AssociateSecurityGroupsResponse",
       "status": "online"
     },
+    "BindClusterResourcePackages": {
+      "document": "为集群绑定资源包",
+      "input": "BindClusterResourcePackagesRequest",
+      "name": "为集群绑定资源包",
+      "output": "BindClusterResourcePackagesResponse",
+      "status": "online"
+    },
     "CheckAccountPasswordValidation": {
       "document": "检查密码合法性",
       "input": "CheckAccountPasswordValidationRequest",
@@ -117,6 +124,13 @@
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
+      "status": "online"
+    },
+    "CreateResourcePackage": {
+      "document": "新购资源包",
+      "input": "CreateResourcePackageRequest",
+      "name": "新购资源包",
+      "output": "CreateResourcePackageResponse",
       "status": "online"
     },
     "DeleteAccounts": {
@@ -392,6 +406,27 @@
       "output": "DescribeProjectSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeResourcePackageDetail": {
+      "document": "查询资源包使用详情",
+      "input": "DescribeResourcePackageDetailRequest",
+      "name": "查询资源包使用详情",
+      "output": "DescribeResourcePackageDetailResponse",
+      "status": "online"
+    },
+    "DescribeResourcePackageList": {
+      "document": "查询资源包列表",
+      "input": "DescribeResourcePackageListRequest",
+      "name": "查询资源包列表",
+      "output": "DescribeResourcePackageListResponse",
+      "status": "online"
+    },
+    "DescribeResourcePackageSaleSpec": {
+      "document": "查询资源包规格",
+      "input": "DescribeResourcePackageSaleSpecRequest",
+      "name": "查询资源包规格",
+      "output": "DescribeResourcePackageSaleSpecResponse",
+      "status": "online"
+    },
     "DescribeResourcesByDealName": {
       "document": "根据计费订单id查询资源列表",
       "input": "DescribeResourcesByDealNameRequest",
@@ -616,6 +651,20 @@
       "output": "ModifyParamTemplateResponse",
       "status": "online"
     },
+    "ModifyResourcePackageClusters": {
+      "document": "给资源包绑定集群",
+      "input": "ModifyResourcePackageClustersRequest",
+      "name": "给资源包绑定集群",
+      "output": "ModifyResourcePackageClustersResponse",
+      "status": "online"
+    },
+    "ModifyResourcePackageName": {
+      "document": "修改资源包名称",
+      "input": "ModifyResourcePackageNameRequest",
+      "name": "修改资源包名称",
+      "output": "ModifyResourcePackageNameResponse",
+      "status": "online"
+    },
     "ModifyVipVport": {
       "document": "修改实例组ip，端口",
       "input": "ModifyVipVportRequest",
@@ -677,6 +726,13 @@
       "input": "QueryMigrateDBTaskRequest",
       "name": "查询一键迁移任务",
       "output": "QueryMigrateDBTaskResponse",
+      "status": "online"
+    },
+    "RefundResourcePackage": {
+      "document": "退款资源包",
+      "input": "RefundResourcePackageRequest",
+      "name": "退款资源包",
+      "output": "RefundResourcePackageResponse",
       "status": "online"
     },
     "RemoveClusterSlaveZone": {
@@ -789,6 +845,13 @@
       "input": "TransferFromCDBRequest",
       "name": "从cdb迁移到本产品",
       "output": "TransferFromCDBResponse",
+      "status": "online"
+    },
+    "UnbindClusterResourcePackages": {
+      "document": "cynos解绑资源包",
+      "input": "UnbindClusterResourcePackagesRequest",
+      "name": "cynos解绑资源包",
+      "output": "UnbindClusterResourcePackagesResponse",
       "status": "online"
     },
     "UndoTransferFromCDB": {
@@ -2055,6 +2118,83 @@
       ],
       "usage": "out"
     },
+    "BindClusterResourcePackagesRequest": {
+      "document": "BindClusterResourcePackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "pkg-test",
+          "member": "string",
+          "name": "PackageIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdb-qwerty",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BindClusterResourcePackagesResponse": {
+      "document": "BindClusterResourcePackages返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindInstanceInfo": {
+      "document": "资源包绑定的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定的实例所在的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定的实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdb-serverless",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "BinlogItem": {
       "document": "Binlog描述",
       "members": [
@@ -2329,7 +2469,6 @@
       "document": "集群实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
@@ -2341,7 +2480,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "无",
@@ -2353,7 +2491,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型",
           "example": "无",
@@ -2365,7 +2502,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态",
           "example": "无",
@@ -2377,7 +2513,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态描述",
           "example": "无",
@@ -2389,7 +2524,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu核数",
           "example": "无",
@@ -2401,7 +2535,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存",
           "example": "无",
@@ -2413,7 +2546,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘",
           "example": "无",
@@ -2425,7 +2557,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例角色",
           "example": "无",
@@ -3519,11 +3650,128 @@
       ],
       "type": "object"
     },
+    "CreateResourcePackageRequest": {
+      "document": "CreateResourcePackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用",
+          "example": "china",
+          "member": "string",
+          "name": "PackageRegion",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型\n\n资源包类型：CCU-计算资源包，DISK-存储资源包",
+          "example": "CCU",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包版本\nbase-基础版本，common-通用版本，enterprise-企业版本",
+          "example": "base",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包大小，计算资源单位：万个；存储资源：GB",
+          "example": "100",
+          "member": "float",
+          "name": "PackageSpec",
+          "required": true,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包有效期，单位:天",
+          "example": "180",
+          "member": "int64",
+          "name": "ExpireDay",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "购买资源包个数",
+          "example": "1",
+          "member": "int64",
+          "name": "PackageCount",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包名称",
+          "example": "资源包_1",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourcePackageResponse": {
+      "document": "CreateResourcePackage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "付费总订单号",
+          "example": "无",
+          "member": "string",
+          "name": "BigDealIds",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每个物品对应一个dealName，业务需要根据dealName保证发货接口幂等",
+          "example": "无",
+          "member": "string",
+          "name": "DealNames",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CynosdbCluster": {
       "document": "集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态， 可选值如下:\ncreating: 创建中\nrunning:运行中\nisolating:隔离中\nisolated:已隔离\nactivating:解隔离中\nofflining:下线中\nofflined:已下线\ndeleting:删除中\ndeleted:已删除",
           "example": "running",
@@ -3535,7 +3783,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-05-08 14:29:25",
@@ -3547,7 +3794,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
@@ -3559,7 +3805,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "MyClusterName",
@@ -3571,7 +3816,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -3583,7 +3827,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库版本",
           "example": "5.7",
@@ -3595,7 +3838,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosmysql-xxxxxxxx",
@@ -3607,7 +3849,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数",
           "example": "1",
@@ -3619,7 +3860,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111111",
@@ -3631,7 +3871,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
@@ -3643,7 +3882,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111111",
@@ -3655,7 +3893,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "运行中",
@@ -3667,7 +3904,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-05-08 14:29:25",
@@ -3679,7 +3915,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式。0-按量计费，1-包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3691,7 +3926,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-08 14:29:25",
@@ -3703,7 +3937,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群读写vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
@@ -3715,7 +3948,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群读写vport\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
@@ -3727,7 +3959,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3739,7 +3970,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxxxx",
@@ -3751,7 +3981,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxxxxx",
@@ -3763,7 +3992,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cynos内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0.12",
@@ -3775,7 +4003,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -3787,7 +4014,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3799,7 +4025,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在处理的任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ProcessingTask",
@@ -3811,7 +4036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群的任务数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3823,7 +4047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群绑定的tag数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3835,7 +4058,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Db类型(NORMAL, SERVERLESS)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SERVERLESS",
@@ -3847,7 +4069,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\npause\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resume",
@@ -3859,7 +4080,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群预付费存储值大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -3871,7 +4091,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群存储为预付费时的存储ID，用于预付费存储变配\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosmysql-xxxxxxxx",
@@ -3883,7 +4102,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群存储付费模式。0-按量计费，1-包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3895,7 +4113,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群计算规格对应的最小存储值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -3907,7 +4124,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群计算规格对应的最大存储值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -3919,7 +4135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3931,7 +4146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3943,7 +4157,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3955,7 +4168,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3967,7 +4179,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3979,7 +4190,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3991,7 +4201,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4003,7 +4212,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4015,7 +4223,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "能力\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4023,6 +4230,17 @@
           "name": "Ability",
           "required": false,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourcePackage",
+          "name": "ResourcePackages",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -4033,7 +4251,6 @@
       "document": "集群详情详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxx",
@@ -4045,7 +4262,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "cynosdbmysql-xxx",
@@ -4057,7 +4273,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -4069,223 +4284,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "状态",
-          "example": "running",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "状态描述",
-          "example": "运行中",
-          "member": "string",
-          "name": "StatusDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "VPC名称",
-          "example": "Default-VPC",
-          "member": "string",
-          "name": "VpcName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "vpc唯一id",
-          "example": "vpc-xxx",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "子网名称",
-          "example": "Default-Subnet",
-          "member": "string",
-          "name": "SubnetName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "子网ID",
-          "example": "subnet-xxx",
-          "member": "string",
-          "name": "SubnetId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "字符集",
-          "example": "utf8",
-          "member": "string",
-          "name": "Charset",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "创建时间",
-          "example": "\"2021-05-25 19:23:31\"",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "数据库类型",
-          "example": "MYSQL",
-          "member": "string",
-          "name": "DbType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "数据库版本",
-          "example": "5.7",
-          "member": "string",
-          "name": "DbVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "使用容量",
-          "example": "100",
-          "member": "int64",
-          "name": "UsedStorage",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "读写分离Vport",
-          "example": "无",
-          "member": "Addr",
-          "name": "RoAddr",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "实例信息",
-          "example": "无",
-          "member": "ClusterInstanceDetail",
-          "name": "InstanceSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "付费模式",
-          "example": "1",
-          "member": "int64",
-          "name": "PayMode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "到期时间",
-          "example": "\"2021-05-25 19:23:31\"",
-          "member": "string",
-          "name": "PeriodEndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "vip地址",
-          "example": "127.0.0.1",
-          "member": "string",
-          "name": "Vip",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "vport端口",
-          "example": "3306",
-          "member": "int64",
-          "name": "Vport",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "项目id",
-          "example": "0",
-          "member": "int64",
-          "name": "ProjectID",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
@@ -4297,55 +4295,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "实例绑定的tag数组信息",
-          "example": "无",
-          "member": "Tag",
-          "name": "ResourceTags",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\nresuming\npause\npausing",
-          "example": "resume",
-          "member": "string",
-          "name": "ServerlessStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "binlog开关，可选值：ON, OFF\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "OFF",
-          "member": "string",
-          "name": "LogBin",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "pitr类型，可选值：normal, redo_pitr\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "normal",
-          "member": "string",
-          "name": "PitrType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "物理可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-1",
@@ -4357,7 +4306,39 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\nresuming\npause\npausing",
+          "example": "resume",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "存储Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -4369,7 +4350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -4381,7 +4361,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大存储规格，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -4393,7 +4372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小存储规格，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -4405,7 +4383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储付费类型，1为包年包月，0为按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4417,7 +4394,83 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "VPC名称",
+          "example": "Default-VPC",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "vpc唯一id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子网名称",
+          "example": "Default-Subnet",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "字符集",
+          "example": "utf8",
+          "member": "string",
+          "name": "Charset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "数据库类型，normal，serverless\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
@@ -4429,7 +4482,17 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "存储空间上限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3000",
@@ -4441,7 +4504,50 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "使用容量",
+          "example": "100",
+          "member": "int64",
+          "name": "UsedStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "vip地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "vport端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "读写分离Vport",
+          "example": "无",
+          "member": "Addr",
+          "name": "RoAddr",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "集群支持的功能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4453,7 +4559,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cynos版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0.21",
@@ -4465,7 +4570,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4477,7 +4581,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yes",
@@ -4489,7 +4592,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
@@ -4501,7 +4603,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4513,7 +4614,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
@@ -4525,7 +4625,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
@@ -4537,7 +4636,61 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "实例信息",
+          "example": "无",
+          "member": "ClusterInstanceDetail",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "\"2021-05-25 19:23:31\"",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定的tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "Proxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4549,7 +4702,17 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "binlog开关，可选值：ON, OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFF",
+          "member": "string",
+          "name": "LogBin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "是否跳过交易\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
@@ -4561,7 +4724,17 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "pitr类型，可选值：normal, redo_pitr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "PitrType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "是否打开密码复杂度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4573,7 +4746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
@@ -4581,6 +4753,17 @@
           "name": "NetworkStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群绑定的资源包信息\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourcePackage",
+          "name": "ResourcePackages",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -4746,6 +4929,17 @@
           "member": "string",
           "name": "StatusDesc",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例形态，是否为serverless实例",
+          "example": "SERVERLESS",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5174,6 +5368,17 @@
           "example": "无",
           "member": "InstanceNetInfo",
           "name": "InstanceNetInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourcePackage",
+          "name": "ResourcePackages",
           "required": false,
           "type": "list",
           "value_allowed_null": true,
@@ -9178,6 +9383,320 @@
       ],
       "type": "object"
     },
+    "DescribeResourcePackageDetailRequest": {
+      "document": "DescribeResourcePackageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "pkg-qwe",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "[cynosdb-ins-test]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-02-12 23:59:59",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2023-3-23 01:01:01",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "10",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "20",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePackageDetailResponse": {
+      "document": "DescribeResourcePackageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总使用明细数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包明细说明",
+          "example": "无",
+          "member": "PackageDetail",
+          "name": "Detail",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePackageListRequest": {
+      "document": "DescribeResourcePackageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包名称",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型\nCCU-计算资源包，DISK-存储资源包",
+          "example": "无",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用",
+          "example": "无",
+          "member": "string",
+          "name": "PackageRegion",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包状态\ncreating-创建中；\nusing-使用中；\nexpired-已过期；\nnormal_finish-使用完；\napply_refund-申请退费中；\nrefund-已退费。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序条件，支持排序条件:startTime-生效时间，\nexpireTime-过期时间，packageUsedSpec-使用容量，packageTotalSpec-总存储量。\n按照数组顺序排列；",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，DESC-降序，ASC-升序",
+          "example": "无",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePackageListResponse": {
+      "document": "DescribeResourcePackageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总配置数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Package",
+          "name": "Detail",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePackageSaleSpecRequest": {
+      "document": "DescribeResourcePackageSaleSpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "cynosdb-serverless",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用",
+          "example": "china",
+          "member": "string",
+          "name": "PackageRegion",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型\nCCU-计算资源包\nDISK-存储资源包",
+          "example": "CCU",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcePackageSaleSpecResponse": {
+      "document": "DescribeResourcePackageSaleSpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可售卖资源包规格总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包明细说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SalePackageSpec",
+          "name": "Detail",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourcesByDealNameRequest": {
       "document": "DescribeResourcesByDealName请求参数结构体",
       "members": [
@@ -10145,7 +10664,6 @@
       "document": "实例初始化配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例cpu",
           "example": "1",
@@ -10157,7 +10675,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存",
           "example": "2",
@@ -10169,7 +10686,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型 rw/ro",
           "example": "rw",
@@ -10181,7 +10697,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例个数,范围[1,15]",
           "example": "1",
@@ -11986,6 +12501,92 @@
       ],
       "type": "object"
     },
+    "ModifyResourcePackageClustersRequest": {
+      "document": "ModifyResourcePackageClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "pkg-test",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "需要建立绑定关系的集群ID",
+          "example": "[cynosdb-qwerty]",
+          "member": "string",
+          "name": "BindClusterIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "需要解除绑定关系的集群ID",
+          "example": "[cynosdb-123456]",
+          "member": "string",
+          "name": "UnbindClusterIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePackageClustersResponse": {
+      "document": "ModifyResourcePackageClusters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePackageNameRequest": {
+      "document": "ModifyResourcePackageName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "pkg-test",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义的资源包名称，最长支持120个字符",
+          "example": "资源包_1",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePackageNameResponse": {
+      "document": "ModifyResourcePackageName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVipVportRequest": {
       "document": "ModifyVipVport请求参数结构体",
       "members": [
@@ -12790,6 +13391,238 @@
         }
       ],
       "type": "object"
+    },
+    "Package": {
+      "document": "资源包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AppID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pkg-qwerty",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "资源包_2",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型\nCCU-计算资源包，DISK-存储资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CCU",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "china",
+          "member": "string",
+          "name": "PackageRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包状态\ncreating-创建中；\nusing-使用中；\nexpired-已过期；\nnormal_finish-使用完；\napply_refund-申请退费中；\nrefund-已退费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "using",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "PackageTotalSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "29",
+          "member": "float",
+          "name": "PackageUsedSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasQuota",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BindInstanceInfo",
+          "name": "BindInstanceInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生效时间：2022-07-01 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "失效时间：2022-08-01 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageDetail": {
+      "document": "资源包明细说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AppId账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "扩展信息",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdb-ins-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成功抵扣容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "SuccessDeductSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "截止当前，资源包已使用的容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "float",
+          "name": "PackageTotalUsedSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "抵扣开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "抵扣结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtendInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ParamDetail": {
       "document": "实例参数详细描述",
@@ -13743,6 +14576,44 @@
       ],
       "type": "object"
     },
+    "RefundResourcePackageRequest": {
+      "document": "RefundResourcePackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包唯一ID",
+          "example": "pkg-qwerty",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RefundResourcePackageResponse": {
+      "document": "RefundResourcePackage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个物品对应一个dealName，业务需要根据dealName保证发货接口幂等",
+          "example": "3164723785123674",
+          "member": "string",
+          "name": "DealNames",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveClusterSlaveZoneRequest": {
       "document": "RemoveClusterSlaveZone请求参数结构体",
       "members": [
@@ -13899,6 +14770,34 @@
         }
       ],
       "type": "object"
+    },
+    "ResourcePackage": {
+      "document": "资源包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "package-123456",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型：CCU：计算资源包\nDISK：存储资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CCU",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
@@ -14306,6 +15205,78 @@
         }
       ],
       "usage": "both"
+    },
+    "SalePackageSpec": {
+      "document": "资源包明细说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包使用地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "china",
+          "member": "string",
+          "name": "PackageRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型\nCCU-计算资源包\nDISK-存储资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CCU",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包版本\nbase-基础版本，common-通用版本，enterprise-企业版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "base",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前版本资源包最小资源数，计算资源单位：个；存储资源：GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "MinPackageSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前版本资源包最大资源数，计算资源单位：个；存储资源：GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "MaxPackageSpec",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包有效期，单位:天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180",
+          "member": "int64",
+          "name": "ExpireDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "SaleRegion": {
       "document": "售卖地域信息",
@@ -15509,6 +16480,44 @@
           "value_allowed_null": false,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindClusterResourcePackagesRequest": {
+      "document": "UnbindClusterResourcePackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdb-test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资源包唯一ID,如果不传，解绑该实例绑定的所有资源包",
+          "example": "[pkg-test]",
+          "member": "string",
+          "name": "PackageIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindClusterResourcePackagesResponse": {
+      "document": "UnbindClusterResourcePackages返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
