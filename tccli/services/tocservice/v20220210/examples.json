@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "QueryApplyCBSCapacity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tocservice.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryApplyCBSCapacity\n<公共请求参数>\n\n{\n    \"DeptId\": 102,\n    \"Zone\": \"ap-guangzhou-5\",\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskSize\": 100,\n    \"DiskApplyNum\": 5,\n    \"ProjectName\": \"常规项目\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"MaxNum\": 10,\n            \"MaxInfo\": [\n                {\n                    \"KeyTitle\": \"云后端CBS容量计算可申领量\",\n                    \"KeyValue\": 100\n                },\n                {\n                    \"KeyTitle\": \"云规划最大剩余可用量\",\n                    \"KeyValue\": 10\n                },\n                {\n                    \"KeyTitle\": \"云梯单次提单数量上限\",\n                    \"KeyValue\": 100\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询CBS可用容量"
+      }
+    ],
+    "QueryCbsTypeInfo": [
+      {
+        "document": "查询可选的CBS类型",
+        "input": "POST / HTTP/1.1\nHost: tocservice.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCbsTypeInfo\n<公共请求参数>\n\n{\n    \"DeptId\": 64,\n    \"Zone\": \"ap-guangzhou-4\",\n    \"ObsProject\": \"常规项目\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234567-1234-56712-34567\",\n        \"Data\": [\n            {\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskName\": \"高性能云硬盘\"\n            },\n            {\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskName\": \"SSD云硬盘\"\n            }\n        ]\n    }\n}",
+        "title": "查询可选的CBS类型"
+      }
+    ],
+    "QueryRequirementCBSList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tocservice.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRequirementCBSList\n<公共请求参数>\n\n{\n    \"DeptId\": 64\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234567-1234-56712-34567\",\n        \"Data\": [\n            {\n                \"ZoneId\": \"200001\",\n                \"ZoneName\": \"ap-guangzhou-1\"\n            }\n        ]\n    }\n}",
+        "title": "QueryRequirementCBSList"
+      }
+    ]
+  },
+  "version": "1.0"
+}

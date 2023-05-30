@@ -1,0 +1,341 @@
+{
+  "actions": {
+    "QueryApplyCBSCapacity": {
+      "document": "查询CBS可用容量",
+      "input": "QueryApplyCBSCapacityRequest",
+      "name": "查询CBS可用容量",
+      "output": "QueryApplyCBSCapacityResponse",
+      "status": "online"
+    },
+    "QueryCbsTypeInfo": {
+      "document": "查询可选的CBS类型",
+      "input": "QueryCbsTypeInfoRequest",
+      "name": "查询可选的CBS类型",
+      "output": "QueryCbsTypeInfoResponse",
+      "status": "online"
+    },
+    "QueryRequirementCBSList": {
+      "document": "查询未执行的CBS需求预测地域",
+      "input": "QueryRequirementCBSListRequest",
+      "name": "查询未执行的CBS需求预测地域",
+      "output": "QueryRequirementCBSListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-02-10",
+    "api_brief": "提供自研上云基础服务。账号基础信息，预算和预测查询、更新等功能",
+    "serviceNameCN": "自研上云",
+    "serviceShortName": "tocservice"
+  },
+  "objects": {
+    "DiskTypeAndName": {
+      "document": "CBS 可选类型出参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "硬盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "硬盘名称",
+          "example": "SSD云硬盘",
+          "member": "string",
+          "name": "DiskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyTitleAndValue": {
+      "document": "名称和数值",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "名称",
+          "example": "云规划最大剩余可用量",
+          "member": "string",
+          "name": "KeyTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数值",
+          "example": "0",
+          "member": "int64",
+          "name": "KeyValue",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryApplyCBSCapacityRequest": {
+      "document": "QueryApplyCBSCapacity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "department id",
+          "example": "102",
+          "member": "int64",
+          "name": "DeptId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地区",
+          "example": "\"ap-guangzhou-5\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "磁盘类型",
+          "example": "“1”",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "磁盘大小",
+          "example": "11",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目类型",
+          "example": "“1”",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "申请数量",
+          "example": "11",
+          "member": "int64",
+          "name": "DiskApplyNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "QueryApplyCBSCapacityResponse": {
+      "document": "QueryApplyCBSCapacity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出",
+          "example": "无",
+          "member": "QueryApplyCVMCapacityOutParams",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryApplyCVMCapacityOutParams": {
+      "document": "查询CVM可用容量-区分小额和常规出参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大可用数量（*台机器/*块磁盘）",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大可用容量信息",
+          "example": "无",
+          "member": "KeyTitleAndValue",
+          "name": "MaxInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryCbsTypeInfoRequest": {
+      "document": "QueryCbsTypeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部门id",
+          "example": "11",
+          "member": "int64",
+          "name": "DeptId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "one可用区",
+          "example": "\"ap-guangzhou-4\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "obs项目类型",
+          "example": "常规项目",
+          "member": "string",
+          "name": "ObsProject",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCbsTypeInfoResponse": {
+      "document": "QueryCbsTypeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出参数",
+          "example": "无",
+          "member": "DiskTypeAndName",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRequirementCBSListRequest": {
+      "document": "QueryRequirementCBSList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部门Id",
+          "example": "11",
+          "member": "int64",
+          "name": "DeptId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRequirementCBSListResponse": {
+      "document": "QueryRequirementCBSList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出",
+          "example": "无",
+          "member": "ZoneIdAndName",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ZoneIdAndName": {
+      "document": "出参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地区Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地区name",
+          "example": "“ap-guangzhou-1\"”",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,3 +1,123 @@
+# Release 3.0.773.1
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 28 次发布
+
+发布时间：2023-05-30 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ParseLiveStreamProcessNotification](http://document.tencentcloudapi.woa.com/document/product/862/39229)
+
+	* 新增出参：AiAnalysisResultInfo, AiQualityControlResultInfo
+
+
+新增数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#DiagnoseResult)
+* [LiveStreamAiAnalysisResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultInfo)
+* [LiveStreamAiAnalysisResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultItem)
+* [LiveStreamAiQualityControlResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiQualityControlResultInfo)
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
+
+修改数据结构：
+
+* [LiveStreamAsrFullTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAsrFullTextRecognitionResult)
+
+	* 新增成员：StartTime, EndTime, SteadyState
+
+* [LiveStreamTransTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTransTextRecognitionResult)
+
+	* 新增成员：StartTime, EndTime, SteadyState
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 47 次发布
+
+发布时间：2023-05-30 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：CanEditRoute
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage
+
+
+
+
+## 自研上云(tocservice) 版本：2022-02-10
+
+### 第 1 次发布
+
+发布时间：2023-05-30 10:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryApplyCBSCapacity](http://document.tencentcloudapi.woa.com/document/product/1608/77858)
+* [QueryCbsTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1608/77857)
+* [QueryRequirementCBSList](http://document.tencentcloudapi.woa.com/document/product/1608/77856)
+
+新增数据结构：
+
+* [DiskTypeAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#DiskTypeAndName)
+* [KeyTitleAndValue](http://document.tencentcloudapi.woa.com/document/product/1608/77859#KeyTitleAndValue)
+* [QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams)
+* [ZoneIdAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#ZoneIdAndName)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 38 次发布
+
+发布时间：2023-05-30 01:35:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PostAttackDownloadTask](http://document.tencentcloudapi.woa.com/document/product/627/75472)
+
+	* 新增入参：Count
+
+* [SearchAccessLog](http://document.tencentcloudapi.woa.com/document/product/627/60012)
+
+	* 新增入参：Page
+
+* [SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)
+
+	* 新增入参：Page
+
+
+修改数据结构：
+
+* [QPSPackageNew](http://document.tencentcloudapi.woa.com/document/product/627/53609#QPSPackageNew)
+
+	* 新增成员：BillingItem
+
+
+
+
 # Release 3.0.772.1
 
 ## 媒体处理(mps) 版本：2019-06-12

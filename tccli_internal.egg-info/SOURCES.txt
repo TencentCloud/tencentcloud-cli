@@ -736,6 +736,10 @@ tccli/services/tmt/__init__.py
 tccli/services/tmt/tmt_client.py
 tccli/services/tmt/v20180321/api.json
 tccli/services/tmt/v20180321/examples.json
+tccli/services/tocservice/__init__.py
+tccli/services/tocservice/tocservice_client.py
+tccli/services/tocservice/v20220210/api.json
+tccli/services/tocservice/v20220210/examples.json
 tccli/services/trtc/__init__.py
 tccli/services/trtc/trtc_client.py
 tccli/services/trtc/v20190722/api.json

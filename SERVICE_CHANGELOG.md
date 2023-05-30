@@ -59,6 +59,31 @@
 
 
 
+## 自研上云(tocservice) 版本：2022-02-10
+
+### 第 1 次发布
+
+发布时间：2023-05-30 10:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryApplyCBSCapacity](http://document.tencentcloudapi.woa.com/document/product/1608/77858)
+* [QueryCbsTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1608/77857)
+* [QueryRequirementCBSList](http://document.tencentcloudapi.woa.com/document/product/1608/77856)
+
+新增数据结构：
+
+* [DiskTypeAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#DiskTypeAndName)
+* [KeyTitleAndValue](http://document.tencentcloudapi.woa.com/document/product/1608/77859#KeyTitleAndValue)
+* [QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams)
+* [ZoneIdAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#ZoneIdAndName)
+
+
+
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
 ### 第 38 次发布
@@ -54668,6 +54693,32 @@
 
 * [ImageRecord](http://document.tencentcloudapi.woa.com/document/product/551/17233#ImageRecord)
 * [ItemValue](http://document.tencentcloudapi.woa.com/document/product/551/17233#ItemValue)
+
+
+
+
+## 自研上云(tocservice) 版本：2022-02-10
+
+### 第 1 次发布
+
+发布时间：2023-05-30 10:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryApplyCBSCapacity](http://document.tencentcloudapi.woa.com/document/product/1608/77858)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryCbsTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1608/77857)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryRequirementCBSList](http://document.tencentcloudapi.woa.com/document/product/1608/77856)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DiskTypeAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#DiskTypeAndName)](http://document.tencentcloudapi.woa.com/document/product/1608/77859#[DiskTypeAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#DiskTypeAndName))
+* [[KeyTitleAndValue](http://document.tencentcloudapi.woa.com/document/product/1608/77859#KeyTitleAndValue)](http://document.tencentcloudapi.woa.com/document/product/1608/77859#[KeyTitleAndValue](http://document.tencentcloudapi.woa.com/document/product/1608/77859#KeyTitleAndValue))
+* [[QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams)](http://document.tencentcloudapi.woa.com/document/product/1608/77859#[QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams))
+* [[ZoneIdAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#ZoneIdAndName)](http://document.tencentcloudapi.woa.com/document/product/1608/77859#[ZoneIdAndName](http://document.tencentcloudapi.woa.com/document/product/1608/77859#ZoneIdAndName))
 
 
 

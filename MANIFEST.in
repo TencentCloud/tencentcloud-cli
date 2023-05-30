@@ -351,6 +351,8 @@ include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
+include tccli/services/tocservice/v20220210/api.json
+include tccli/services/tocservice/v20220210/examples.json
 include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tse/v20201207/api.json
