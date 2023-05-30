@@ -1358,9 +1358,9 @@
       "document": "攻击日志详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "攻击日志的详情内容",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -1368,9 +1368,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS返回内容",
+          "example": "无",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -1378,9 +1378,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS返回内容",
+          "example": "无",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -1388,9 +1388,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS返回内容",
+          "example": "无",
           "member": "datetime",
           "name": "TimeStamp",
           "required": true,
@@ -6688,58 +6688,67 @@
       "document": "PostAttackDownloadTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
+          "example": " ",
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间",
+          "example": " ",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间",
+          "example": " ",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Lucene语法",
+          "example": " ",
           "member": "string",
           "name": "QueryString",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
+          "example": " ",
           "member": "string",
           "name": "TaskName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为desc，可以取值desc和asc",
+          "example": " ",
           "member": "string",
           "name": "Sort",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载的日志条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6750,6 +6759,7 @@
         {
           "disabled": false,
           "document": "任务task id",
+          "example": " ",
           "member": "string",
           "name": "Flow",
           "type": "string",
@@ -6816,6 +6826,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_scene_bot_qpsep_clb",
+          "member": "string",
+          "name": "BillingItem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -6917,7 +6937,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
+          "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
           "member": "string",
           "name": "TopicId",
@@ -6962,7 +6982,7 @@
         },
         {
           "disabled": false,
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。\n新版本此字段填空填",
           "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
           "member": "string",
           "name": "Context",
@@ -6977,6 +6997,15 @@
           "name": "Sort",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第几页，从0开始。新版本接口字段",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7051,67 +7080,76 @@
       "document": "SearchAttackLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
+          "example": " ",
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间",
+          "example": " ",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间",
+          "example": " ",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。",
+          "example": " ",
           "member": "string",
           "name": "Context",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Lucene语法",
+          "example": " ",
           "member": "string",
           "name": "QueryString",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的数量，默认10条，最多100条",
+          "example": " ",
           "member": "int64",
           "name": "Count",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为desc，可以取值desc和asc",
+          "example": " ",
           "member": "string",
           "name": "Sort",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第几页，从0开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7122,6 +7160,7 @@
         {
           "disabled": false,
           "document": "当前返回的攻击日志条数",
+          "example": " ",
           "member": "uint64",
           "name": "Count",
           "type": "int",
@@ -7130,6 +7169,7 @@
         {
           "disabled": false,
           "document": "翻页游标，如果没有下一页了，这个参数为空\"\"",
+          "example": " ",
           "member": "string",
           "name": "Context",
           "type": "string",
@@ -7138,6 +7178,7 @@
         {
           "disabled": false,
           "document": "攻击日志数组条目内容",
+          "example": " ",
           "member": "AttackLogInfo",
           "name": "Data",
           "type": "list",
@@ -7146,6 +7187,7 @@
         {
           "disabled": false,
           "document": "CLS接口返回内容",
+          "example": " ",
           "member": "bool",
           "name": "ListOver",
           "type": "bool",
@@ -7154,6 +7196,7 @@
         {
           "disabled": false,
           "document": "CLS接口返回内容，标志是否启动新版本索引",
+          "example": " ",
           "member": "bool",
           "name": "SqlFlag",
           "type": "bool",

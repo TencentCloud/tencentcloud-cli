@@ -11363,92 +11363,94 @@
       "document": "Pulsar专业版集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id。",
           "example": "1000",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称。",
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息。",
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-21 19:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:隔离",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群版本",
           "example": "2.5.1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InstanceNodeDistribution",
           "name": "NodeDistribution",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大储存容量，单位：MB",
           "example": "1000",
           "member": "uint64",
           "name": "MaxStorage",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以修改路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEditRoute",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14562,7 +14564,6 @@
       "document": "主题实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14573,7 +14574,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14584,7 +14584,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14595,7 +14594,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14606,7 +14604,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14617,7 +14614,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14628,7 +14624,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14639,7 +14634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14650,7 +14644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14661,7 +14654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区数<=0：topic下无子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14672,7 +14664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14683,7 +14674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14694,7 +14684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区topic里面的子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14705,7 +14694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic类型描述：\n0：普通消息；\n1：全局顺序消息；\n2：局部顺序消息；\n3：重试队列；\n4：死信队列；\n5：事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14716,7 +14704,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14727,7 +14714,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14738,7 +14724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明，128个字符以内。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14749,7 +14734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14760,7 +14744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -14771,7 +14754,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者上限。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5000",
@@ -14782,7 +14764,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者上限。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5000",
@@ -14793,7 +14774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",

@@ -29,7 +29,7 @@
       "status": "online"
     },
     "AdjustPublicAddress": {
-      "document": "本接口 (AdjustPublicAddress) 用于更换IP地址，支持更换CVM实例的普通公网IP和包月带宽的EIP。\n",
+      "document": "本接口 (AdjustPublicAddress) 用于更换IP地址，支持更换CVM实例的普通公网IP和包月带宽的EIP。",
       "input": "AdjustPublicAddressRequest",
       "name": "更换公网IP",
       "output": "AdjustPublicAddressResponse",
@@ -2902,7 +2902,6 @@
       "document": "AdjustPublicAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。",
           "example": "ins-11112222",
@@ -2912,7 +2911,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
           "example": "eip-11112222",
@@ -2933,7 +2931,6 @@
           "example": "5513621",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3448,7 +3445,6 @@
       "document": "AssociateAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
           "example": "eip-ek0cdz1g",
@@ -3458,7 +3454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的实例 ID。实例 ID 形如：`ins-11112222`、`lb-11112222`。可通过登录[控制台](https://console.cloud.tencent.com/cvm)查询，也可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "ins-1bmpb9tu",
@@ -3468,7 +3463,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：`eni-11112222`。`NetworkInterfaceId` 与 `InstanceId` 不可同时指定。弹性网卡 ID 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的`networkInterfaceId`获取。",
           "example": "eni-jyhoxx61",
@@ -3478,7 +3472,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的内网 IP。如果指定了 `NetworkInterfaceId` 则也必须指定 `PrivateIpAddress` ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 `PrivateIpAddress` 是指定的 `NetworkInterfaceId` 上的一个内网 IP。指定弹性网卡的内网 IP 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的`privateIpAddress`获取。",
           "example": "10.0.0.120",
@@ -3488,7 +3481,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定绑定时是否设置直通。弹性公网 IP 直通请参见 [EIP 直通](https://cloud.tencent.com/document/product/1199/41709)。取值：True、False，默认值为 False。当绑定 CVM 实例、EKS 弹性集群时，可设定此参数为 True。此参数目前处于内测中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。",
           "example": "False",
@@ -3509,7 +3501,6 @@
           "example": "50121411",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10445,7 +10436,6 @@
       "document": "DescribeAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`AddressIds`和`Filters.address-id`。",
           "example": "eip-11112222",
@@ -10455,7 +10445,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：\n<li> address-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。</li>\n<li> address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。</li>\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'。</li>\n<li> instance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。</li>\n<li> is-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）</li>\n<li> address-type - String - 是否必填：否 - （过滤条件）按照 IP类型 进行过滤。可选值：'WanIP', 'EIP'，'AnycastEIP'，'HighQualityEIP'。默认值是'EIP'。</li>\n<li> address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'</li>\n<li> dedicated-cluster-id - String - 是否必填：否 - （过滤条件）按照 CDC 的唯一 ID 过滤。CDC 唯一 ID 形如：cluster-11112222。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
@@ -10465,7 +10454,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。",
           "example": "0",
@@ -10475,7 +10463,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。",
           "example": "20",
@@ -10496,7 +10483,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10506,7 +10492,6 @@
           "example": "无",
           "member": "Address",
           "name": "AddressSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19531,7 +19516,6 @@
       "document": "ModifyAddressAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
           "example": "eip-p2x6wxc0",
@@ -19541,7 +19525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的 EIP 名称。长度上限为20个字符。",
           "example": "test_eip",
@@ -19551,7 +19534,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设定EIP是否直通，\"TRUE\"表示直通，\"FALSE\"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。",
           "example": "FALSE",
@@ -19736,7 +19718,6 @@
       "document": "ModifyAddressesBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
           "example": "[\"eip-alfxy9c8\\n\"]",
@@ -19746,7 +19727,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调整带宽目标值",
           "example": "2",
@@ -19756,7 +19736,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包月带宽起始时间(已废弃，输入无效)",
           "example": "2021-07-20 00:00:00",
@@ -19766,7 +19745,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包月带宽结束时间(已废弃，输入无效)",
           "example": "2021-07-20 00:00:00",
@@ -19787,7 +19765,6 @@
           "example": "11531422",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23487,7 +23464,6 @@
       "document": "ReleaseAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。",
           "example": "[\"eip-gzc5rgr2\\r\\n\"]",
@@ -23508,7 +23484,6 @@
           "example": "12331420",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23653,18 +23628,18 @@
       "document": "RenewAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
+          "example": "eip-59c7l00y",
           "member": "string",
           "name": "AddressIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费参数",
+          "example": "无",
           "member": "AddressChargePrepaid",
           "name": "AddressChargePrepaid",
           "required": true,

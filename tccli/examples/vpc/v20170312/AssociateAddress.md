@@ -1,6 +1,6 @@
 **Example 1: 绑定EIP到实例上**
 
-
+绑定EIP到实例上。
 
 Input: 
 

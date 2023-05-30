@@ -1258,6 +1258,32 @@
       ],
       "usage": "both"
     },
+    "CFSTurbo": {
+      "document": "配置CFSTurbo参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CFSTurbo实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d3dcc487",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFSTurbo路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/turbo",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Container": {
       "document": "容器信息",
       "members": [
@@ -2929,10 +2955,20 @@
         },
         {
           "disabled": false,
-          "document": "配饰GooseFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置GooseFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GooseFS",
           "name": "GooseFSSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置TurboFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSTurbo",
+          "name": "CFSTurboSource",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -8227,7 +8263,6 @@
       "document": "描述资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "处理器资源, 单位为1/1000核\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -8238,7 +8273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存资源, 单位为1M\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "256",
@@ -8249,7 +8283,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Gpu卡个数资源, 单位为0.01单位的GpuType.\nGpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型\n例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.\n例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -8260,7 +8293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
@@ -8271,26 +8303,24 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "创建或更新时无需填写，仅展示需要关注\n后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.\nRealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建或更新时无需填写，仅展示需要关注\n后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.\nRealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.",
           "example": "50",
           "member": "uint64",
           "name": "RealGpu",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。",
           "example": "{}",
           "member": "GpuDetail",
           "name": "RealGpuDetailSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

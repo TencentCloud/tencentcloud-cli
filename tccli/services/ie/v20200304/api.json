@@ -3575,10 +3575,9 @@
       "usage": "in"
     },
     "SpriteImageInfo": {
-      "document": "雪碧图参数信息\n注意：雪碧图大图整体的宽和高都不能大于 65000 像素。",
+      "document": "雪碧图参数信息\n注意：雪碧图大图整体的宽和高都不能大于 15000 像素。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表示雪碧图行数，默认：10。",
           "example": "0",
@@ -3589,7 +3588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示雪碧图列数，默认：10。",
           "example": "0",
@@ -3600,7 +3598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第一行元素与顶部像素距离，默认：0。",
           "example": "0",
@@ -3611,7 +3608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一行元素与底部像素距离，默认：0。",
           "example": "0",
@@ -3622,7 +3618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最左一行元素与左边像素距离，默认：0。",
           "example": "0",
@@ -3633,7 +3628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最右一行元素与右边像素距离，默认：0。",
           "example": "0",
@@ -3644,7 +3638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小图与元素顶部像素距离，默认：0。",
           "example": "0",
@@ -3655,7 +3648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小图与元素底部像素距离，默认：0。",
           "example": "0",
@@ -3666,7 +3658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小图与元素左边像素距离，默认：0。",
           "example": "0",
@@ -3677,7 +3668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小图与元素右边像素距离，默认：0。",
           "example": "0",
@@ -3688,7 +3678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "背景颜色，格式：#RRGGBB，默认：#FFFFFF。",
           "example": "“”",

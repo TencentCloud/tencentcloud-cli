@@ -77,8 +77,8 @@
     "DeleteAttackDownloadRecord": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DeleteAttackDownloadRecord\n&Id=60001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackDownloadRecord\n<公共请求参数>\n\n{\n    \"Id\": \"60001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除攻击日志下载任务记录"
       }
     ],
@@ -198,7 +198,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"www.baidu.com\",\n    \"StartTs\": 1620144000,\n    \"EndTs\": 1620180000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Key\": \"xx\",\n                \"Value\": 21,\n                \"Label\": \"xx\",\n                \"TimeStamp\": \"312312\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": [\n            {\n                \"Key\": \"/api/cf/v4/user/get-info\",\n                \"Value\": 21,\n                \"Label\": \"/api/cf/v4/user/get-info\",\n                \"TimeStamp\": \"2021-04-22 20:30:00\"\n            }\n        ]\n    }\n}",
         "title": "获取流量趋势数据"
       }
     ],
@@ -380,8 +380,8 @@
     ],
     "PostAttackDownloadTask": [
       {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=PostAttackDownloadTask\n&StartTime=2020-08-2800:00:00\n&EndTime=2020-08-2814:12:36\n&Domain=all\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
+        "document": "创建搜索下载攻击日志任务",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PostAttackDownloadTask\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"QueryString\": \"abc\",\n    \"TaskName\": \"abc\",\n    \"Sort\": \"abc\",\n    \"Count\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Flow\": \"ead32d5d-a9ac-496f-b8e3-d3a92f1fb1ce\",\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "创建搜索下载攻击日志任务"
       }
@@ -396,9 +396,9 @@
     ],
     "SearchAttackLog": [
       {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=SearchAttackLog\n&StartTime=2020-08-2800:00:00\n&EndTime=2020-08-2814:12:36\n&Domain=all\n&Context=xxxxx\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Content\": \"{\\\"ipinfo_province\\\":\\\"四川\\\",\\\"ipinfo_state\\\":\\\"CN\\\",\\\"attack_type\\\":\\\"XSS攻击\\\",\\\"ipinfo_city\\\":\\\"成都\\\",\\\"ipinfo_dimensionality\\\":\\\"30.658529\\\",\\\"attack_ip\\\":\\\"132.232.42.183\\\",\\\"uuid\\\":\\\"f860aac92f758432779cdf0b5b244266-57538d9b7970dfb5bb222e933d6a2d7d\\\",\\\"attack_content\\\":\\\"alert()\\\",\\\"http_log\\\":\\\"\\\\\\\"{\\\\\\\\\\\\\\\"REQUEST_ARG_RAW\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"alert()\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"PROCOTOL\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"HTTP\\\\\\\\\\\\\\\\\\\\\\\\/1.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"REQEUST_HEADERS_RAW\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"GET \\\\\\\\\\\\\\\\\\\\\\\\/ HTTP\\\\\\\\\\\\\\\\\\\\\\\\/1.1\\\\\\\\\\\\\\\\nHost:bj-clbwaf.qcloudwaf.com\\\\\\\\\\\\\\\\nconnection:close\\\\\\\\\\\\\\\\ncontent-length:0\\\\\\\\\\\\\\\\naccept:*\\\\\\\\\\\\\\\\\\\\\\\\/*\\\\\\\\\\\\\\\\nuser-agent:curl\\\\\\\\\\\\\\\\\\\\\\\\/7.29.0\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"REQUEST_METHOD\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"GET\\\\\\\\\\\\\\\"}\\\\\\\"\\\",\\\"ipinfo_nation\\\":\\\"中国\\\",\\\"pan\\\":\\\"bj-clbwaf.qcloudwaf.com\\\",\\\"user_agent\\\":\\\"curl/7.29.0\\\",\\\"method\\\":\\\"GET\\\",\\\"count\\\":1,\\\"ipinfo_detail\\\":\\\"tencent.com\\\",\\\"args_name\\\":\\\"ARGS_GET\\\",\\\"ipinfo_isp\\\":\\\"电信/联通/移动\\\",\\\"uri\\\":\\\"/\\\",\\\"rule_id\\\":22000002,\\\"risk_level\\\":1,\\\"appid\\\":1256704386,\\\"attack_time\\\":\\\"2020-08-28 11:07:18\\\",\\\"domain\\\":\\\"bj-clbwaf.qcloudwaf.com\\\",\\\"ipinfo_longitude\\\":\\\"104.075546\\\",\\\"status\\\":0}\",\n                \"Source\": \"\",\n                \"TimeStamp\": \"2020-08-28 11:07:18\"\n            },\n            {\n                \"Content\": \"{\\\"ipinfo_province\\\":\\\"四川\\\",\\\"ipinfo_state\\\":\\\"CN\\\",\\\"attack_type\\\":\\\"SQL注入攻击\\\",\\\"ipinfo_city\\\":\\\"成都\\\",\\\"ipinfo_dimensionality\\\":\\\"30.658529\\\",\\\"attack_ip\\\":\\\"132.232.42.183\\\",\\\"uuid\\\":\\\"ed0ddb4f49236b1a28e0f55c72cee974-145e10f0d70f0a07b6c426acd3ee3341\\\",\\\"attack_content\\\":\\\"GET /?id= 11 or benchmark(100000000,MD5(1))-- - HTTP/1.1\\\",\\\"http_log\\\":\\\"\\\\\\\"{\\\\\\\\\\\\\\\"REQUEST_ARG_RAW\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"PROCOTOL\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"HTTP\\\\\\\\\\\\\\\\\\\\\\\\/1.1\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"REQEUST_HEADERS_RAW\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"GET \\\\\\\\\\\\\\\\\\\\\\\\/ HTTP\\\\\\\\\\\\\\\\\\\\\\\\/1.1\\\\\\\\\\\\\\\\nHost:bj-clbwaf.qcloudwaf.com\\\\\\\\\\\\\\\\nconnection:close\\\\\\\\\\\\\\\\nstgw-orgreq:GET \\\\\\\\\\\\\\\\\\\\\\\\/?id= 11 or benchmark(100000000,MD5(1))--+- HTTP\\\\\\\\\\\\\\\\\\\\\\\\/1.1\\\\\\\\\\\\\\\\naccept:*\\\\\\\\\\\\\\\\\\\\\\\\/*\\\\\\\\\\\\\\\\ncontent-length:0\\\\\\\\\\\\\\\\nuser-agent:curl\\\\\\\\\\\\\\\\\\\\\\\\/7.29.0\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"REQUEST_METHOD\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"GET\\\\\\\\\\\\\\\"}\\\\\\\"\\\",\\\"ipinfo_nation\\\":\\\"中国\\\",\\\"pan\\\":\\\"bj-clbwaf.qcloudwaf.com\\\",\\\"user_agent\\\":\\\"curl/7.29.0\\\",\\\"method\\\":\\\"GET\\\",\\\"count\\\":1,\\\"ipinfo_detail\\\":\\\"tencent.com\\\",\\\"args_name\\\":\\\"REQUEST_HEADERS\\\",\\\"ipinfo_isp\\\":\\\"电信/联通/移动\\\",\\\"uri\\\":\\\"/\\\",\\\"rule_id\\\":21000003,\\\"risk_level\\\":1,\\\"appid\\\":1256704386,\\\"attack_time\\\":\\\"2020-08-28 11:06:07\\\",\\\"domain\\\":\\\"bj-clbwaf.qcloudwaf.com\\\",\\\"ipinfo_longitude\\\":\\\"104.075546\\\",\\\"status\\\":0}\",\n                \"Source\": \"\",\n                \"TimeStamp\": \"2020-08-28 11:06:07\"\n            }\n        ],\n        \"Count\": 2,\n        \"Context\": \"\",\n        \"ListOver\": true,\n        \"SqlFlag\": false,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "document": "搜索攻击日志详情内容",
+        "input": "https://waf.tencentcloudapi.com/?Action=SearchAttackLog\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 00:00:00\n&Domain=all\n&Context=xxxxx\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Context\": \"abc\",\n        \"Data\": [\n            {\n                \"Content\": \"abc\",\n                \"FileName\": \"abc\",\n                \"Source\": \"abc\",\n                \"TimeStamp\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"ListOver\": true,\n        \"SqlFlag\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "搜索攻击日志详情内容"
       }
     ],

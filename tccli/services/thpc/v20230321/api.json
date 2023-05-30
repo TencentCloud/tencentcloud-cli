@@ -721,6 +721,16 @@
         },
         {
           "disabled": false,
+          "document": "弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。",
+          "example": "THPC_AS",
+          "member": "string",
+          "name": "AutoScalingType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "集群所属私有网络ID。",
           "example": "vpc-r9fr2jzy",
           "member": "string",

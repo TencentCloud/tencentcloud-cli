@@ -1,6 +1,6 @@
 **Example 1: 解析直播流事件通知内容**
 
-
+回调包体描述
 
 Input: 
 
@@ -35,6 +35,9 @@ Output:
                 }
             ]
         },
+        "AiRecognitionResultInfo": null,
+        "AiAnalysisResultInfo": null,
+        "AiQualityControlResultInfo": null,
         "SessionId": "",
         "SessionContext": "",
         "RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5"

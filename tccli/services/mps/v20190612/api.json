@@ -568,14 +568,14 @@
       "status": "online"
     },
     "ParseLiveStreamProcessNotification": {
-      "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。",
+      "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 中的解析实现事件通知的解析。",
       "input": "ParseLiveStreamProcessNotificationRequest",
       "name": "解析直播流处理结果",
       "output": "ParseLiveStreamProcessNotificationResponse",
       "status": "online"
     },
     "ParseNotification": {
-      "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。",
+      "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 中的解析函数，实现事件通知的解析。",
       "input": "ParseNotificationRequest",
       "name": "解析事件通知",
       "output": "ParseNotificationResponse",
@@ -11658,6 +11658,72 @@
       ],
       "type": "object"
     },
+    "DiagnoseResult": {
+      "document": "诊断结果项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断出的异常类别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出的具体异常类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出异常开始的PTS时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Timestamp",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出的异常描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断到异常的北京时间，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出的异常级别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SeverityLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DisableScheduleRequest": {
       "document": "DisableSchedule请求参数结构体",
       "members": [
@@ -13744,6 +13810,74 @@
       ],
       "usage": "out"
     },
+    "LiveStreamAiAnalysisResultInfo": {
+      "document": "直播流分析结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播分析子任务结果，暂时只支持直播拆条。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamAiAnalysisResultItem",
+          "name": "ResultSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveStreamAiAnalysisResultItem": {
+      "document": "直播流 AI 分析结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果的类型，取值范围：\n<li>SegmentRecognition：拆条。</li>",
+          "example": "SegmentRecognition",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拆条结果，当 Type 为\nSegmentRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "SegmentRecognitionItem",
+          "name": "SegmentResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveStreamAiQualityControlResultInfo": {
+      "document": "直播流质检结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "质检结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityControlResult",
+          "name": "QualityControlResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式诊断结果列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagnoseResult",
+          "name": "DiagnoseResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LiveStreamAiRecognitionResultInfo": {
       "document": "直播流 AI 识别结果",
       "members": [
@@ -14239,9 +14373,9 @@
       "document": "直播识别 Asr 全文识别",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别文本。",
+          "example": "你好",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -14249,9 +14383,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别片段起始的 PTS 时间，单位：秒。",
+          "example": "123.301",
           "member": "float",
           "name": "StartPtsTime",
           "required": true,
@@ -14259,9 +14393,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别片段终止的 PTS 时间，单位：秒。",
+          "example": "125.301",
           "member": "float",
           "name": "EndPtsTime",
           "required": true,
@@ -14269,14 +14403,44 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别片段置信度。取值：0~100。",
+          "example": "99",
           "member": "float",
           "name": "Confidence",
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别开始UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别结束UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稳态标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SteadyState",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14678,7 +14842,6 @@
       "document": "直播实时翻译结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别文本。",
           "example": "Hello",
@@ -14689,7 +14852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻译片段起始的 PTS 时间，单位：秒。",
           "example": "0.0",
@@ -14700,7 +14862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻译片段终止的 PTS 时间，单位：秒。",
           "example": "1.0",
@@ -14711,7 +14872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻译片段置信度。取值：0~100。",
           "example": "99",
@@ -14722,7 +14882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻译文本。",
           "example": "你好",
@@ -14731,6 +14890,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译开始UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译结束UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稳态标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SteadyState",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18785,9 +18974,9 @@
       "document": "ParseLiveStreamProcessNotification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "从 CMQ 获取到的直播流事件通知内容。",
+          "example": "xx",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -18802,6 +18991,7 @@
         {
           "disabled": false,
           "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
+          "example": "ProcessEof",
           "member": "string",
           "name": "NotificationType",
           "type": "string",
@@ -18810,6 +19000,7 @@
         {
           "disabled": false,
           "document": "视频处理任务 ID。",
+          "example": "xxx",
           "member": "string",
           "name": "TaskId",
           "type": "string",
@@ -18818,6 +19009,7 @@
         {
           "disabled": false,
           "document": "直播流处理错误信息，当 NotificationType 为 ProcessEof 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LiveStreamProcessErrorInfo",
           "name": "ProcessEofInfo",
           "type": "object",
@@ -18826,6 +19018,7 @@
         {
           "disabled": false,
           "document": "内容审核结果，当 NotificationType 为 AiReviewResult 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LiveStreamAiReviewResultInfo",
           "name": "AiReviewResultInfo",
           "type": "object",
@@ -18834,6 +19027,7 @@
         {
           "disabled": false,
           "document": "内容识别结果，当 NotificationType 为 AiRecognitionResult 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LiveStreamAiRecognitionResultInfo",
           "name": "AiRecognitionResultInfo",
           "type": "object",
@@ -18841,7 +19035,26 @@
         },
         {
           "disabled": false,
+          "document": "内容分析结果，当 NotificationType 为 AiAnalysisResult 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamAiAnalysisResultInfo",
+          "name": "AiAnalysisResultInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检结果，当 NotificationType 为 AiQualityControlResult 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamAiQualityControlResultInfo",
+          "name": "AiQualityControlResultInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。",
+          "example": "xx",
           "member": "string",
           "name": "SessionId",
           "type": "string",
@@ -18850,6 +19063,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长1000个字符。",
+          "example": "xx",
           "member": "string",
           "name": "SessionContext",
           "type": "string",
@@ -18868,7 +19082,6 @@
       "document": "ParseNotification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "从 CMQ 获取到的事件通知内容。",
           "example": "\"\"",
@@ -18889,7 +19102,6 @@
           "example": "WorkflowTask",
           "member": "string",
           "name": "EventType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18899,7 +19111,6 @@
           "example": "无",
           "member": "WorkflowTask",
           "name": "WorkflowTaskEvent",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18909,7 +19120,6 @@
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTaskEvent",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18919,7 +19129,6 @@
           "example": "\"xxxx\"",
           "member": "string",
           "name": "SessionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18929,7 +19138,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18939,7 +19147,6 @@
           "example": "无",
           "member": "ScheduleTask",
           "name": "ScheduleTaskEvent",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21580,6 +21787,52 @@
         }
       ],
       "usage": "both"
+    },
+    "SegmentRecognitionItem": {
+      "document": "智能拆条片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "置信度。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片段起始时间偏移。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片段结束时间偏移。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拆条片段URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SharpEnhanceConfig": {
       "document": "细节增强配置",

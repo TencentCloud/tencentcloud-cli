@@ -132,7 +132,7 @@
     ],
     "AssociateAddress": [
       {
-        "document": "",
+        "document": "绑定EIP到实例上。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-1bmpb9tu\",\n    \"AddressId\": \"eip-ek0cdz1g\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"50121411\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "绑定EIP到实例上"
@@ -1030,21 +1030,21 @@
     ],
     "DescribeAddresses": [
       {
-        "document": "",
+        "document": "查询弹性公网EIP。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddresses\n&AddressIds.0=eip-hxlqja90\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-76w7384s\",\n                \"AddressName\": null,\n                \"AddressIp\": \"106.55.251.58\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": null,\n                \"NetworkInterfaceId\": null,\n                \"PrivateAddressIp\": null,\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": false,\n                    \"Sip\": false\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2020-10-20T08:19:31Z\",\n                \"InternetChargeType\": \"BANDWIDTH_PACKAGE\",\n                \"Bandwidth\": 65535,\n                \"InternetServiceProvider\": \"BGP\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"tag1\",\n                        \"Value\": \"value1\"\n                    }\n                ]\n            },\n            {\n                \"AddressId\": \"eip-lshmvwlc\",\n                \"AddressName\": null,\n                \"AddressIp\": \"81.71.146.150\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": null,\n                \"NetworkInterfaceId\": null,\n                \"PrivateAddressIp\": null,\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": false,\n                    \"Sip\": false\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2020-10-20T08:19:29Z\",\n                \"InternetChargeType\": \"BANDWIDTH_PACKAGE\",\n                \"Bandwidth\": 65535,\n                \"InternetServiceProvider\": \"BGP\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"tag2\",\n                        \"Value\": \"value2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"42bc5893-70ff-4f13-bcc3-1308dedab8f6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-12345678\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressIp\": \"34.3.4.5.6\",\n                \"InstanceId\": \"ins-12345678\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"WanIp\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"BGP\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询弹性公网EIP"
       },
       {
-        "document": "",
+        "document": "查询普通公网IP。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddresses\n&Filters.0.Name=address-type\n&Filters.0.Values.0=WanIP\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-7fid2cge\",\n                \"AddressName\": null,\n                \"AddressIp\": \"43.132.1.131\",\n                \"AddressStatus\": \"BIND\",\n                \"AddressType\": \"WanIP\",\n                \"InstanceId\": \"ins-ywxt3tlk\",\n                \"NetworkInterfaceId\": \"eni-hrw4cw93\",\n                \"PrivateAddressIp\": \"172.16.0.103\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2021-07-30T07:15:47Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 10,\n                \"InternetServiceProvider\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"2f73635c-6d4d-4f83-8cc5-48d952fbe04b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-12345678\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressIp\": \"34.3.4.5.6\",\n                \"InstanceId\": \"ins-12345678\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"192.2.3.4\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"WanIp\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询普通公网IP"
       },
       {
-        "document": "",
+        "document": "查询EIP信息。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddresses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-qhx8udkc\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.91.34\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"aa\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"bb\",\n                \"PrivateAddressIp\": \"cc\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:57:05Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            },\n            {\n                \"AddressId\": \"eip-qygpzm9y\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.90.212\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"aa\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"bb\",\n                \"PrivateAddressIp\": \"cc\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:47:03Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"4ead34c4-3112-40fe-bbde-2295eee9d664\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-qhx8udkc\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.91.34\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-wf123456\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:57:05Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            },\n            {\n                \"AddressId\": \"eip-qygpzm9y\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.90.212\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-12345678\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.3.4.5.6\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:47:03Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"4ead34c4-3112-40fe-bbde-2295eee9d664\"\n    }\n}",
         "title": "查询EIP信息"
       }
     ],
@@ -2138,7 +2138,7 @@
     ],
     "ModifyAddressAttribute": [
       {
-        "document": "",
+        "document": "修改EIP名称。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressAttribute\n<公共请求参数>\n\n{\n    \"AddressName\": \"test_eip\",\n    \"AddressId\": \"eip-p2x6wxc0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改EIP名称"
@@ -2170,8 +2170,8 @@
     ],
     "ModifyAddressesBandwidth": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressesBandwidth\n&InternetMaxBandwidthOut=2\n&AddressIds.0=eip-alfxy9c8\n&<公共请求参数>",
+        "document": "调整后付费带宽。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": \"2\",\n    \"AddressIds\": [\n        \"eip-alfxy9c8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"11531422\",\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
         "title": "调整后付费带宽"
       }
@@ -2592,8 +2592,8 @@
     ],
     "ReleaseAddresses": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseAddresses\n&AddressIds.0=eip-gzc5rgr2\n&<公共请求参数>",
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseAddresses\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-gzc5rgr2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12331420\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "释放弹性公网IP"
       }
@@ -2630,8 +2630,8 @@
     ],
     "RenewAddresses": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=RenewAddresses\n&AddressIds.0=eip-fo00aojo\n&AddressChargePrepaid.Period=1\n&AddressChargePrepaid.TimeUnit=m\n&AddressChargePrepaid.AutoRenewFlag=0\n&<公共请求参数>",
+        "document": "续费包月带宽弹性公网IP。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAddresses\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-12345678\"\n    ],\n    \"AddressChargePrepaid\": {\n        \"Period\": 0,\n        \"AutoRenewFlag\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"076ca3ee-0fed-4576-b5b8-44fa1f3d4424\"\n    }\n}",
         "title": "续费包月带宽弹性公网IP"
       }

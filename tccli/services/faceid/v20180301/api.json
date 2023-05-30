@@ -1506,6 +1506,16 @@
         },
         {
           "disabled": false,
+          "document": "用户认证时使用的证件号码类型：\n0：二代身份证的证件号码\n1：港澳台居住证的证件号码\n2：其他（核验使用的证件号码非合法身份号码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UseIDType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "本次验证使用的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "爱新觉罗永琪",
           "member": "string",

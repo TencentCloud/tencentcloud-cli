@@ -34,8 +34,8 @@
     ],
     "BindSecretIds": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=BindSecretIds\n&UsagePlanId=usagePlan-quqxvett\n&AccessKeyIds.0=AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob\n&<公共请求参数>",
+        "document": "\t\n使用计划绑定密钥",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=BindSecretIds\n&UsagePlanId=usagePlan-quqxvett\n&AccessKeyIds.0=AKIDmyE2z0gvi2p6***************\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"fcc3e46c-931d-4c58-88e9-f3cfc2251769\"\n    }\n}",
         "title": "使用计划绑定密钥"
       }

@@ -1,13 +1,14 @@
 **Example 1: 使用计划绑定密钥**
 
-
+	
+使用计划绑定密钥
 
 Input: 
 
 ```
 tccli apigateway BindSecretIds --cli-unfold-argument  \
     --UsagePlanId usagePlan-quqxvett \
-    --AccessKeyIds AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob
+    --AccessKeyIds AKIDmyE2z0gvi2p6***************
 ```
 
 Output: 
