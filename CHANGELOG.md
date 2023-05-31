@@ -1,3 +1,134 @@
+# Release 3.0.775.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 10 次发布
+
+发布时间：2023-06-01 01:05:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRealNameAuthInfo](http://document.tencentcloudapi.woa.com/document/product/1594/77882)
+
+
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 16 次发布
+
+发布时间：2023-06-01 01:06:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindSubDomain](http://document.tencentcloudapi.woa.com/document/product/628/45188)
+
+	* <font color="#dd0000">**删除出参**：</font>Result
+
+
+修改数据结构：
+
+* [EnvironmentStrategy](http://document.tencentcloudapi.woa.com/document/product/628/45244#EnvironmentStrategy)
+
+	* <font color="#dd0000">**删除成员**：</font>MaxQuota
+
+* [UsagePlanInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanInfo)
+
+	* <font color="#dd0000">**删除成员**：</font>InitQuota, IsHide
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 61 次发布
+
+发布时间：2023-06-01 01:09:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBinlogs](http://document.tencentcloudapi.woa.com/document/product/236/15843)
+
+	* 新增入参：MinStartTime, MaxStartTime
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 34 次发布
+
+发布时间：2023-06-01 01:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyAccountConfig](http://document.tencentcloudapi.woa.com/document/product/557/77883)
+
+新增数据结构：
+
+* [ConfigValue](http://document.tencentcloudapi.woa.com/document/product/557/16142#ConfigValue)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 23 次发布
+
+发布时间：2023-06-01 01:19:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteUserManagerUserList](http://document.tencentcloudapi.woa.com/document/product/589/76760)
+
+	* 新增入参：TkeClusterId, DisplayStrategy, UserGroupList
+
+	* <font color="#dd0000">**修改入参**：</font>UserNameList
+
+
+新增数据结构：
+
+* [UserAndGroup](http://document.tencentcloudapi.woa.com/document/product/589/33981#UserAndGroup)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 28 次发布
+
+发布时间：2023-06-01 01:30:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41665)
+
+	* 新增入参：AllowDownload
+
+
+
+
 # Release 3.0.774.1
 
 ## 主机安全(cwp) 版本：2018-02-28

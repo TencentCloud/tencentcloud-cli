@@ -505,7 +505,7 @@
       "status": "online"
     },
     "RecognizeThaiIDCardOCR": {
-      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码、首次领用日期、签发日期等字段。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码、首次领用日期、签发日期等字段。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n\n默认接口请求频率限制：10次/秒",
       "input": "RecognizeThaiIDCardOCRRequest",
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse",

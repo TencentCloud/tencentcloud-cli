@@ -12627,14 +12627,14 @@
       "document": "DeleteBandwidthPackage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除带宽包唯一ID",
           "example": "bwp-cs7j6pd0",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

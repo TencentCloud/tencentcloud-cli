@@ -8234,6 +8234,16 @@
           "required": false,
           "type": "bool",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否允许下载",
+          "example": "无",
+          "member": "bool",
+          "name": "AllowDownload",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"

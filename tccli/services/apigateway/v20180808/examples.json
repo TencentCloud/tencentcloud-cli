@@ -42,9 +42,9 @@
     ],
     "BindSubDomain": [
       {
-        "document": "",
+        "document": "绑定自定义域名",
         "input": "https://apigateway.tencentcloudapi.com/?Action=BindSubDomain\n&ServiceId=service-1w9ekbwo\n&NetType=OUTER\n&SubDomain=xxx.com\n&NetSubDomain=service-1w9ekbwo-1259027407.gz.apigw.tencentcs.com\n&IsDefaultMapping=TRUE\n&PathMappingSet.0.Environment=release\n&PathMappingSet.0.Path=/\n&Protocol=http\n&IsForcedHttps=TRUE\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"6e00553a-8158-4f70-ad43-e1b046af1502\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e00553a-8158-4f70-ad43-e1b046af1502\"\n    }\n}",
         "title": "绑定自定义域名"
       }
     ],
@@ -120,7 +120,7 @@
     ],
     "CreateUpstream": [
       {
-        "document": "",
+        "document": "用于创建vpc通道",
         "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUpstream\n&Retries=1\n&UpstreamName=test\n&Algorithm=ROUND_ROBIN\n&UniqVpcId=vpc-sadada\n&UpstreamType=IP_PORT\n&UpstreamHost=www.a.com\n&UpstreamDescription=test\n&Scheme=instance-HTTP\n&Nodes.0.VmInstanceId=ins-saadas\n&Nodes.0.Host=127.0.0.1\n&Nodes.0.Port=80\n&Nodes.0.Weight=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"UpstreamId\": \"upstream-0c96l2bo\",\n        \"RequestId\": \"b3197c48-53fb-46df-b721-df4424cf8be9\"\n    }\n}",
         "title": "创建vpc通道"
@@ -130,7 +130,7 @@
       {
         "document": "",
         "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\n&UsagePlanName=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"InitQuota\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"IsHide\": 0,\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\n    }\n}",
         "title": "创建使用计划"
       }
     ],
@@ -430,9 +430,9 @@
     ],
     "DescribeService": [
       {
-        "document": "",
+        "document": "无",
         "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"service-rypiqi13\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"xx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"xx\",\n        \"UserType\": \"xx\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"xx\",\n                \"Environment\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"xx\"\n            }\n        ],\n        \"OuterSubDomain\": \"xx\",\n        \"UsagePlanTotalCount\": 0,\n        \"SetType\": \"xx\",\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"UniqVpcId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"xx\",\n                    \"LoginRedirectUrl\": \"xx\",\n                    \"TokenLocation\": \"xx\"\n                },\n                \"ApiId\": \"xx\",\n                \"AuthRelationApiId\": \"xx\",\n                \"ApiDesc\": \"xx\",\n                \"ApiType\": \"xx\",\n                \"ApiBusinessType\": \"xx\",\n                \"ServiceId\": \"xx\",\n                \"ApiName\": \"xx\",\n                \"Path\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"xx\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"xx\",\n                \"TokenLocation\": \"xx\"\n            }\n        ],\n        \"ServiceName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"InstanceName\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ExclusiveSetName\": \"xx\",\n        \"DeploymentType\": \"DEFAULT\",\n        \"SpecialUse\": \"DEFAULT\",\n        \"InstanceId\": \"xx\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"xx\",\n        \"InternalSubDomain\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"sesrxx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"test\",\n                \"Key\": \"test\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"\",\n        \"UserType\": \"\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"test\",\n                \"Environment\": \"test\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"sdfafxx\"\n            }\n        ],\n        \"OuterSubDomain\": \"domain.com\",\n        \"UsagePlanTotalCount\": 0,\n        \"SetType\": \"\",\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"\",\n                \"Protocol\": \"\",\n                \"UniqVpcId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"\",\n                    \"LoginRedirectUrl\": \"\",\n                    \"TokenLocation\": \"\"\n                },\n                \"ApiId\": \"\",\n                \"AuthRelationApiId\": \"\",\n                \"ApiDesc\": \"\",\n                \"ApiType\": \"\",\n                \"ApiBusinessType\": \"\",\n                \"ServiceId\": \"\",\n                \"ApiName\": \"\",\n                \"Path\": \"\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"\",\n                \"TokenLocation\": \"\"\n            }\n        ],\n        \"ServiceName\": \"\",\n        \"RequestId\": \"\",\n        \"InstanceName\": \"\",\n        \"Protocol\": \"\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ExclusiveSetName\": \"\",\n        \"DeploymentType\": \"DEFAULT\",\n        \"SpecialUse\": \"DEFAULT\",\n        \"InstanceId\": \"\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"\",\n        \"InternalSubDomain\": \"\"\n    }\n}",
         "title": "用于查询服务详情"
       }
     ],
@@ -528,7 +528,7 @@
       {
         "document": "",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeUsagePlan\n&UsagePlanId=usagePlan-bxtnltfd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-bxtnltfd\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"InitQuota\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"IsHide\": null,\n            \"CreatedTime\": \"2020-02-26T14:19:52Z\",\n            \"ModifiedTime\": \"2020-02-26T14:25:30Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": [],\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": []\n        },\n        \"RequestId\": \"e61705f3-e88a-4311-ada3-526bad10f7ab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-bxtnltfd\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"CreatedTime\": \"2020-02-26T14:19:52Z\",\n            \"ModifiedTime\": \"2020-02-26T14:25:30Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": [],\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": []\n        },\n        \"RequestId\": \"e61705f3-e88a-4311-ada3-526bad10f7ab\"\n    }\n}",
         "title": "DescribeUsagePlan"
       }
     ],
@@ -702,7 +702,7 @@
       {
         "document": "",
         "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyUsagePlan\n&UsagePlanId=usagePlan-bxtnltfd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-bxtnltfd\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"InitQuota\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"IsHide\": 0,\n            \"CreatedTime\": \"2020-02-26T14:19:52Z\",\n            \"ModifiedTime\": \"2020-02-26T14:25:30Z\",\n            \"BindSecretIdTotalCount\": null,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": null,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"d929b56e-d7c3-4929-a103-3302fa9fee2e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-bxtnltfd\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"CreatedTime\": \"2020-02-26T14:19:52Z\",\n            \"ModifiedTime\": \"2020-02-26T14:25:30Z\",\n            \"BindSecretIdTotalCount\": null,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": null,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"d929b56e-d7c3-4929-a103-3302fa9fee2e\"\n    }\n}",
         "title": "ModifyUsagePlan"
       }
     ],

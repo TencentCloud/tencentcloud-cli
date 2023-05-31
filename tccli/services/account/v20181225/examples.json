@@ -78,6 +78,14 @@
         "title": "获取用户昵称"
       }
     ],
+    "DescribeRealNameAuthInfo": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=DescribeRealNameAuthInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AuthType\": 0,\n        \"AuthMethod\": 0,\n        \"IDCard\": \"xx\",\n        \"AuthArea\": 0,\n        \"RequestId\": \"95f11eac-1821-4eea-a36f-22bdd31b41f1\",\n        \"AuthName\": \"xx\",\n        \"AuthStatus\": 0\n    }\n}",
+        "title": "获取账号实名认证脱敏信息"
+      }
+    ],
     "DescribeSensitiveInfoHashValue": [
       {
         "document": "",

@@ -63,6 +63,13 @@
       "output": "DescribeNicknameResponse",
       "status": "online"
     },
+    "DescribeRealNameAuthInfo": {
+      "document": "获取账号实名认证脱敏信息",
+      "input": "DescribeRealNameAuthInfoRequest",
+      "name": "获取账号实名认证脱敏信息",
+      "output": "DescribeRealNameAuthInfoResponse",
+      "status": "online"
+    },
     "DescribeSensitiveInfoHashValue": {
       "document": "获取账号敏感信息哈希值",
       "input": "DescribeSensitiveInfoHashValueRequest",
@@ -633,6 +640,71 @@
           "member": "string",
           "name": "DisplayName",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealNameAuthInfoRequest": {
+      "document": "DescribeRealNameAuthInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRealNameAuthInfoResponse": {
+      "document": "DescribeRealNameAuthInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实名类型，0：个人、1：企业",
+          "member": "int64",
+          "name": "AuthType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打码的实名名称，个人姓名或企业名称",
+          "member": "string",
+          "name": "AuthName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打码的个人身份证号，企业认证时返回空字符串",
+          "member": "string",
+          "name": "IDCard",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证地域，0：大陆、1：港澳、2：台湾、3：外籍",
+          "member": "int64",
+          "name": "AuthArea",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证类型，0：未认证、1：认证中；2：认证失败；3：已认证",
+          "member": "int64",
+          "name": "AuthStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证方式，2：个人财富通；3：企业银行卡；4：微信；5：手Q；6：企业微信；7：线下认证；8：国际信用卡；9：企业线下打款；10：线下审核；11：米大师认证；12：人脸核身；13：微信支付；14：微信小程序；20：代理商；21：企点",
+          "member": "int64",
+          "name": "AuthMethod",
+          "type": "int",
           "value_allowed_null": false
         },
         {
