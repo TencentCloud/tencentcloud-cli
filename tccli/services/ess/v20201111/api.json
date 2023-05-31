@@ -129,7 +129,7 @@
     "CreatePreparedPersonalEsign": {
       "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。",
       "input": "CreatePreparedPersonalEsignRequest",
-      "name": "创建导入个人印章",
+      "name": "创建导入处方单个人印章",
       "output": "CreatePreparedPersonalEsignResponse",
       "status": "online"
     },
@@ -360,7 +360,7 @@
       "document": "代理相关应用信息，如集团主企业代子企业操作",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "代理机构的应用编号,32位字符串，一般不用传",
           "example": "无",
           "member": "string",
@@ -370,7 +370,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "被代理机构的应用号，一般不用传",
           "example": "无",
           "member": "string",
@@ -390,7 +390,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "被代理机构的经办人，一般不用传",
           "example": "无",
           "member": "string",
@@ -417,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "本环节需要操作人的名字",
+          "document": "签署人的姓名",
           "example": "无",
           "member": "string",
           "name": "ApproverName",
@@ -427,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "本环节需要操作人的手机号",
+          "document": "签署人的手机号，11位数字",
           "example": "无",
           "member": "string",
           "name": "ApproverMobile",
@@ -437,7 +437,7 @@
         },
         {
           "disabled": false,
-          "document": "本环节操作人签署控件配置",
+          "document": "签署人的签署控件列表",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -447,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "如果是企业,则为企业的名字",
+          "document": "如果签署方是企业签署方，则为企业名",
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
@@ -457,7 +457,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "签署人的身份证号",
           "example": "xxx",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -467,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型 \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "document": "签署人的身份证件类型 \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -477,7 +477,7 @@
         },
         {
           "disabled": false,
-          "document": "sms--短信，none--不通知",
+          "document": "签署通知类型：sms--短信，none--不通知",
           "example": "sms",
           "member": "string",
           "name": "NotifyType",
@@ -487,7 +487,7 @@
         },
         {
           "disabled": false,
-          "document": "1--收款人、2--开具人、3--见证人",
+          "document": "签署人角色类型：1--收款人、2--开具人、3--见证人",
           "example": "1",
           "member": "int64",
           "name": "ApproverRole",
@@ -497,7 +497,7 @@
         },
         {
           "disabled": false,
-          "document": "签署意愿确认渠道,WEIXINAPP:人脸识别",
+          "document": "签署意愿确认渠道，默认为WEIXINAPP:人脸识别",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannel",
@@ -527,7 +527,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
+          "document": "签署人用户来源，企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "member": "string",
           "name": "ApproverSource",
@@ -610,7 +610,6 @@
       "document": "指定签署人限制项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定签署人名字",
           "example": "张三",
@@ -621,9 +620,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人手机号",
+          "document": "指定签署人手机号，11位数字",
           "example": "13000000000",
           "member": "string",
           "name": "Mobile",
@@ -632,9 +630,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人证件类型",
+          "document": "指定签署人证件类型，ID_CARD-身份证",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -643,9 +640,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人证件号码",
+          "document": "指定签署人证件号码，字母大写",
           "example": "4500000000000000000",
           "member": "string",
           "name": "IdCardNumber",
@@ -660,9 +656,8 @@
       "document": "授权用户",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "用户id",
+          "document": "电子签系统中的用户id",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -688,7 +683,7 @@
         },
         {
           "disabled": false,
-          "document": "回调链接",
+          "document": "接受自动签开启的回调地址。需要保证post返回200",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -698,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "是否回调证书信息",
+          "document": "是否回调证书信息，默认false-不需要",
           "example": "无",
           "member": "bool",
           "name": "CertInfoCallback",
@@ -708,7 +703,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持用户自定义签名印章",
+          "document": "是否支持用户自定义签名印章，默认false-不需要",
           "example": "无",
           "member": "bool",
           "name": "UserDefineSeal",
@@ -718,7 +713,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要回调的时候返回印章(签名) 图片的 base64",
+          "document": "是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要",
           "example": "无",
           "member": "bool",
           "name": "SealImgCallback",
@@ -976,7 +971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "被抄送人手机号",
+          "document": "被抄送人手机号，11位数字",
           "example": "xxx",
           "member": "string",
           "name": "Mobile",
@@ -1022,7 +1017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分割；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component填写控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分割；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；\n\n如果是SignComponent签署控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -1032,7 +1027,7 @@
         },
         {
           "disabled": false,
-          "document": "控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）",
+          "document": "控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0",
           "example": "无",
           "member": "int64",
           "name": "FileIndex",
@@ -1092,7 +1087,7 @@
         },
         {
           "disabled": false,
-          "document": "GenerateMode==KEYWORD 指定关键字",
+          "document": "查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字",
           "example": "无",
           "member": "string",
           "name": "ComponentId",
@@ -1102,7 +1097,7 @@
         },
         {
           "disabled": false,
-          "document": "GenerateMode==FIELD 指定表单域名称",
+          "document": "查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称",
           "example": "无",
           "member": "string",
           "name": "ComponentName",
@@ -1142,7 +1137,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是表单域类型，默认不存在",
+          "document": "是否是表单域类型，默认不false-不是",
           "example": "无",
           "member": "bool",
           "name": "IsFormType",
@@ -1182,7 +1177,7 @@
         },
         {
           "disabled": false,
-          "document": "平台模板控件 id 标识",
+          "document": "第三方应用集成平台模板控件 id 标识",
           "example": "无",
           "member": "string",
           "name": "ChannelComponentId",
@@ -1212,7 +1207,7 @@
         },
         {
           "disabled": false,
-          "document": "//子客控件来源。0-平台指定；1-用户自定义",
+          "document": "第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义",
           "example": "无",
           "member": "uint64",
           "name": "ChannelComponentSource",
@@ -2627,7 +2622,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "个人用户名称",
+          "document": "个人用户姓名",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -2645,19 +2640,19 @@
         },
         {
           "disabled": false,
-          "document": "印章图片的base64",
+          "document": "印章名称",
           "example": "无",
           "member": "string",
-          "name": "SealImage",
+          "name": "SealName",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "印章名称",
+          "document": "印章图片的base64，最大不超过 8M",
           "example": "无",
           "member": "string",
-          "name": "SealName",
+          "name": "SealImage",
           "required": true,
           "type": "string"
         },
@@ -2681,6 +2676,15 @@
         },
         {
           "disabled": false,
+          "document": "是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。",
+          "example": "无",
+          "member": "bool",
+          "name": "SealImageCompress",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "手机号码；当需要开通自动签时，该参数必传",
           "example": "无",
           "member": "string",
@@ -2694,6 +2698,24 @@
           "example": "无",
           "member": "bool",
           "name": "EnableAutoSign",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "印章颜色（参数ProcessSeal=true时生效）\n默认值：BLACK黑色\n取值: \nBLACK 黑色,\nRED 红色,\nBLUE 蓝色。",
+          "example": "BLACK",
+          "member": "string",
+          "name": "SealColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否处理印章\n默认不做印章处理。\n取值：false：不做任何处理；\ntrue：做透明化处理和颜色增强。",
+          "example": "false",
+          "member": "bool",
+          "name": "ProcessSeal",
           "required": false,
           "type": "bool"
         }
@@ -4566,7 +4588,7 @@
         },
         {
           "disabled": false,
-          "document": "用户OpenId",
+          "document": "员工在第三方平台的openId",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -4578,12 +4600,12 @@
       "usage": "out"
     },
     "FileInfo": {
-      "document": "二期接口返回的模板中文件的信息结构",
+      "document": "模板中文件的信息结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件Id",
+          "example": "无",
           "member": "string",
           "name": "FileId",
           "required": false,
@@ -4591,9 +4613,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名",
+          "example": "无",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -4601,9 +4623,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位为Byte",
+          "example": "无",
           "member": "int64",
           "name": "FileSize",
           "required": false,
@@ -4611,9 +4633,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件上传时间，10位时间戳（精确到秒）",
+          "example": "无",
           "member": "int64",
           "name": "CreatedOn",
           "required": false,
@@ -6888,6 +6910,16 @@
           "name": "Promoter",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型\n取值：\n1  静默签,\n3  普通模板",
+          "example": "无",
+          "member": "int64",
+          "name": "TemplateType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

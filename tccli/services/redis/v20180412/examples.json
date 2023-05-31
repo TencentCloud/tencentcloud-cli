@@ -184,9 +184,9 @@
     ],
     "DescribeCommonDBInstances": [
       {
-        "document": "",
+        "document": "废弃接口",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeCommonDBInstances\n&PayMode=0\n&InstanceIds.0=crs-nh47ubwr\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceDetails\": [\n            {\n                \"AppId\": 251006366,\n                \"Createtime\": \"2020-05-06 19:38:19\",\n                \"InstanceId\": \"crs-nh47ubwr\",\n                \"InstanceName\": \"crs-nh47ubwr\",\n                \"NetType\": 1,\n                \"PayMode\": 1,\n                \"ProjectId\": 1075668,\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"1\",\n                \"SubnetId\": 1210162,\n                \"Vips\": [\n                    \"172.16.1.84\"\n                ],\n                \"VpcId\": \"79963\",\n                \"Vport\": 6379,\n                \"Zone\": \"\"\n            }\n        ],\n        \"RequestId\": \"e306be36-f01b-477a-bdfb-e63d9b16d0a5\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceDetails\": [\n            {\n                \"InstanceName\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"AppId\": 0,\n                \"ProjectId\": 0,\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Status\": \"abc\",\n                \"Vips\": [\n                    \"abc\"\n                ],\n                \"Vport\": 0,\n                \"Createtime\": \"abc\",\n                \"PayMode\": 0,\n                \"NetType\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -232,9 +232,9 @@
     ],
     "DescribeInstanceMonitorBigKey": [
       {
-        "document": "",
+        "document": "请求示例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceMonitorBigKey\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"Date\": \"20191101\",\n    \"ReqType\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Type\": \"xx\",\n                \"Updatetime\": 1572577196,\n                \"DB\": 0,\n                \"Key\": \"xx\",\n                \"Size\": 56\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 56\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 56\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 64\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 64\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 64\n            },\n            {\n                \"DB\": 1,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 64\n            },\n            {\n                \"DB\": 0,\n                \"Updatetime\": 1572577196,\n                \"Type\": \"xx\",\n                \"Key\": \"xx\",\n                \"Size\": 88\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DB\": 0,\n                \"Key\": \"abc\",\n                \"Type\": \"abc\",\n                \"Size\": 0,\n                \"Updatetime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -248,7 +248,7 @@
     ],
     "DescribeInstanceMonitorBigKeyTypeDist": [
       {
-        "document": "",
+        "document": "请求示例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceMonitorBigKeyTypeDist\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-r34wkc1d\",\n    \"Date\": \"2019-11-07\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Count\": 0,\n                \"Size\": 0,\n                \"Type\": \"string\",\n                \"Updatetime\": 0\n            },\n            {\n                \"Count\": 0,\n                \"Size\": 0,\n                \"Type\": \"list\",\n                \"Updatetime\": 0\n            },\n            {\n                \"Count\": 0,\n                \"Size\": 0,\n                \"Type\": \"set\",\n                \"Updatetime\": 0\n            },\n            {\n                \"Count\": 0,\n                \"Size\": 0,\n                \"Type\": \"zset\",\n                \"Updatetime\": 0\n            },\n            {\n                \"Count\": 0,\n                \"Size\": 0,\n                \"Type\": \"hash\",\n                \"Updatetime\": 0\n            }\n        ],\n        \"RequestId\": \"e903f105-241c-4557-ae99-d4b5bbc015d8\"\n    }\n}",
         "title": "请求示例"

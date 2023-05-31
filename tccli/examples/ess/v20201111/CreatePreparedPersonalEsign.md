@@ -7,10 +7,6 @@ Input:
 ```
 tccli ess CreatePreparedPersonalEsign --cli-unfold-argument  \
     --Operator.UserId abc \
-    --Operator.Channel abc \
-    --Operator.OpenId abc \
-    --Operator.ClientIp abc \
-    --Operator.ProxyIp abc \
     --UserName 印章归属个人姓名 \
     --IdCardType  \
     --IdCardNumber 身份证件号码 \

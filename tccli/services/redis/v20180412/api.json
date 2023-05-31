@@ -157,7 +157,7 @@
     "DescribeCommonDBInstances": {
       "document": "查询Redis实例列表信息。该接口已废弃。",
       "input": "DescribeCommonDBInstancesRequest",
-      "name": "查询Redis实例列表信息",
+      "name": "查询Redis实例列表信息（已废弃）",
       "output": "DescribeCommonDBInstancesResponse",
       "status": "online"
     },
@@ -199,21 +199,21 @@
     "DescribeInstanceMonitorBigKey": {
       "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见[查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeyRequest",
-      "name": "查询实例大Key",
+      "name": "查询实例大Key（已废弃）",
       "output": "DescribeInstanceMonitorBigKeyResponse",
       "status": "online"
     },
     "DescribeInstanceMonitorBigKeySizeDist": {
       "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeySizeDistRequest",
-      "name": "查询实例大Key大小分布",
+      "name": "查询实例大Key大小分布（已废弃）",
       "output": "DescribeInstanceMonitorBigKeySizeDistResponse",
       "status": "online"
     },
     "DescribeInstanceMonitorBigKeyTypeDist": {
       "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeyTypeDistRequest",
-      "name": "查询实例大Key类型分布",
+      "name": "查询实例大Key类型分布（已废弃）",
       "output": "DescribeInstanceMonitorBigKeyTypeDistResponse",
       "status": "online"
     },
@@ -2095,9 +2095,9 @@
       "document": "延时分布详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "分布阶梯，延时和Ladder值的对应关系：\n[0ms,1ms]: 1；\n[1ms,5ms]: 5；\n[5ms,10ms]: 10；\n[10ms,50ms]: 50；\n[50ms,200ms]: 200；\n[200ms,∞]: -1。",
+          "document": "指延时分布阶梯，其与延时区间的对应关系如下所示。\n- 1：[0ms,1ms]。\n- 5： [1ms,5ms]。\n- 10： [5ms,10ms]。\n- 50： [10ms,50ms]。\n- 200：[50ms,200ms]。\n- -1： [200ms,∞]。",
+          "example": "无",
           "member": "int64",
           "name": "Ladder",
           "required": true,
@@ -2105,9 +2105,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "延时处于当前分布阶梯的命令数量，个。",
+          "document": "延时处于当前分布阶梯的命令数量，单位：个。",
+          "example": "无",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -2115,9 +2115,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间。",
+          "example": "无",
           "member": "int64",
           "name": "Updatetime",
           "required": true,
@@ -2584,7 +2584,6 @@
       "document": "DescribeCommonDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc网络ID信息列表",
           "example": "crs-deindi7de",
@@ -2594,7 +2593,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID信息列表",
           "example": "null",
@@ -2604,7 +2602,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费类型过滤列表；0表示包年包月，1表示按量计费",
           "example": "0",
@@ -2614,7 +2611,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID过滤信息列表",
           "example": "[\"crs-nh47ubwr\\n\"]",
@@ -2624,7 +2620,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称过滤信息列表",
           "example": "null",
@@ -2634,7 +2629,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态信息过滤列表",
           "example": "null",
@@ -2644,7 +2638,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "null",
@@ -2654,7 +2647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式",
           "example": "null",
@@ -2664,7 +2656,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例vip信息列表",
           "example": "null",
@@ -2674,7 +2665,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc网络ID信息列表",
           "example": "null",
@@ -2684,7 +2674,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网统一ID列表",
           "example": "null",
@@ -2694,7 +2683,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量限制，默认推荐100",
           "example": "20",
@@ -2704,7 +2692,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -2725,7 +2712,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2735,7 +2721,6 @@
           "example": "无",
           "member": "RedisCommonInstanceList",
           "name": "InstanceDetails",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3207,7 +3192,6 @@
       "document": "DescribeInstanceMonitorBigKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
           "example": "crs-5a4py64p",
@@ -3217,7 +3201,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求类型：1——string类型，2——所有类型",
           "example": "1",
@@ -3227,7 +3210,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间；例如：\"20190219\"",
           "example": "20191101",
@@ -3248,7 +3230,6 @@
           "example": "无",
           "member": "BigKeyInfo",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3310,7 +3291,6 @@
       "document": "DescribeInstanceMonitorBigKeyTypeDist请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
           "example": "crs-r34wkc1d",
@@ -3320,7 +3300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间；例如：\"20190219\"",
           "example": "2019-11-07",
@@ -3341,7 +3320,6 @@
           "example": "无",
           "member": "BigKeyTypeInfo",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

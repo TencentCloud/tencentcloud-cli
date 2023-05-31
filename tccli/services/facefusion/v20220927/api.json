@@ -421,7 +421,6 @@
       "document": "素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材Id",
           "example": "string",
@@ -432,7 +431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材状态",
           "example": "1",
@@ -443,7 +441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "string",
@@ -454,7 +451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "string",
@@ -465,7 +461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸信息",
           "example": "string",
@@ -476,7 +471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材名",
           "example": "string",
@@ -485,6 +479,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "AuditResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

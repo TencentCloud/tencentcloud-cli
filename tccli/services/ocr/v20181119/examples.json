@@ -522,7 +522,7 @@
       {
         "document": "泰国身份证识别",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeThaiIDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ID\": \"3102001968756\",\n        \"ThaiName\": \"นาย ธนกฤต  บุญโญปกรุณ์\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"Address\": \"Boonyopakron\",\n        \"Birthday\": \"ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง\",\n        \"IssueDate\": \"14ธ.ค.2509\",\n        \"ExpirationDate\": \"9ธ.ค.2559\",\n        \"EnLastName\": \"13ธ.ค.2567\",\n        \"PortraitImage\": \"oiuu\",\n        \"RequestId\": \"98f8fcbf-933a-4e95-ac48-6f1a9308fs51\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": \"3102001968756\",\n        \"ThaiName\": \"นาย ธนกฤต  บุญโญปกรุณ์\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"Address\": \"Boonyopakron\",\n        \"Birthday\": \"ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง\",\n        \"IssueDate\": \"14ธ.ค.2509\",\n        \"ExpirationDate\": \"9ธ.ค.2559\",\n        \"EnLastName\": \"Boonyopakron\",\n        \"PortraitImage\": \"oiuu\",\n        \"RequestId\": \"98f8fcbf-933a-4e95-ac48-6f1a9308fs51\"\n    }\n}",
         "title": "泰国身份证识别示例代码"
       }
     ],

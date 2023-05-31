@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+请求示例
 
 Input: 
 
@@ -17,63 +17,14 @@ Output:
     "Response": {
         "Data": [
             {
-                "Type": "xx",
-                "Updatetime": 1572577196,
                 "DB": 0,
-                "Key": "xx",
-                "Size": 56
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 56
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 56
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 64
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 64
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 64
-            },
-            {
-                "DB": 1,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 64
-            },
-            {
-                "DB": 0,
-                "Updatetime": 1572577196,
-                "Type": "xx",
-                "Key": "xx",
-                "Size": 88
+                "Key": "abc",
+                "Type": "abc",
+                "Size": 0,
+                "Updatetime": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

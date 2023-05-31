@@ -458,9 +458,9 @@
     ],
     "DescribeAssetSystemPackageList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSystemPackageList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Packages\": [\n            {\n                \"Name\": \"xx\",\n                \"Version\": \"xx\",\n                \"Type\": 1,\n                \"InstallTime\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "document": "获取资产管理系统安装包列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSystemPackageList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Packages\": [\n            {\n                \"Name\": \"abc\",\n                \"Desc\": \"abc\",\n                \"Version\": \"abc\",\n                \"InstallTime\": \"abc\",\n                \"Type\": \"abc\",\n                \"MachineName\": \"abc\",\n                \"MachineIp\": \"abc\",\n                \"OsInfo\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"FirstTime\": \"abc\",\n                \"IsNew\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取资产管理系统安装包列表"
       }
     ],

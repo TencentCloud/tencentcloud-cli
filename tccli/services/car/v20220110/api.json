@@ -152,6 +152,15 @@
         },
         {
           "disabled": false,
+          "document": "应用启动参数。\n如果请求的是多应用共享项目，此参数生效；\n如果请求的是关闭预启动的单应用独享项目，此参数生效；\n如果请求的是开启预启动的单应用独享项目，此参数失效。",
+          "example": "StartFor=1",
+          "member": "string",
+          "name": "ApplicationParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "【多人互动】房主用户ID，在多人互动模式下为必填字段。\n如果该用户是房主，HostUserId需要和UserId保持一致；\n如果该用户非房主，HostUserId需要填写房主的HostUserId。",
           "example": "host_user_id",
           "member": "string",

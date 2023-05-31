@@ -3618,7 +3618,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或着为空字符串，清空之前的DRM配置。",
+          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或者为空字符串，清空之前的DRM配置。",
           "example": "normalaes",
           "member": "string",
           "name": "DRMType",
@@ -3627,7 +3627,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或着为空字符串，清空之前的DRM配置。",
+          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或者为空字符串，清空之前的DRM配置。",
           "example": "AUDIO|HD",
           "member": "string",
           "name": "DRMTracks",
@@ -12009,7 +12009,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或着为空字符串，清空之前的DRM配置。",
+          "document": "DRM 加密类型，可选值：fairplay、normalaes、widevine。\n不传递或者为空字符串，清空之前的DRM配置。",
           "example": "fairplay",
           "member": "string",
           "name": "DRMType",
@@ -12018,7 +12018,7 @@
         },
         {
           "disabled": false,
-          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或着为空字符串，清空之前的DRM配置。",
+          "document": "DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。\n不传递或者为空字符串，清空之前的DRM配置。",
           "example": "AUDIO|HD",
           "member": "string",
           "name": "DRMTracks",

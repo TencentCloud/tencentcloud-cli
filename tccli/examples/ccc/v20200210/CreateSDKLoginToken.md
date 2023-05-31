@@ -1,6 +1,6 @@
 **Example 1: 创建 SDK 登录 Token**
 
-
+创建 SDK 登录 Token
 
 Input: 
 

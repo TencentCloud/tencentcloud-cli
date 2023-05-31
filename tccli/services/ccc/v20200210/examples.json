@@ -35,7 +35,7 @@
     "CreateCallOutSession": [
       {
         "document": "在不加载前端 SDK 的场景下，可以通过在后台触发此接口进行外呼，当前只支持通过手机端回拨外呼（先拨通客服手机），并且确认已经申请并通过添加外呼白名单。",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCallOutSession\n<公共请求参数>\n\n{\n    \"IsForceUseMobile\": \"true\",\n    \"Callee\": \"008612300000000\",\n    \"Uui\": \"fooandbar\",\n    \"UserId\": \"FooOrBar@tencent.com\",\n    \"SdkAppId\": \"1400000000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCallOutSession\n<公共请求参数>\n\n{\n    \"IsForceUseMobile\": \"true\",\n    \"Callee\": \"008612300000000\",\n    \"Uui\": \"fooandbar\",\n    \"UserId\": \"FooOrBar@tencent.com\",\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
         "title": "外呼接口调用示例"
       }
@@ -58,7 +58,7 @@
     ],
     "CreateSDKLoginToken": [
       {
-        "document": "",
+        "document": "创建 SDK 登录 Token",
         "input": "https://ccc.tencentcloudapi.com/?Action=CreateSDKLoginToken\n&SdkAppId=1400000000\n&SeatUserId=FooOrBar@tencent.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"Token\": \"6bb56a09278740bc80c5dc6dab783eff\",\n        \"SdkURL\": \"https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/\",\n        \"ExpiredTime\": 1601371974\n    }\n}",
         "title": "创建 SDK 登录 Token"
@@ -66,8 +66,8 @@
     ],
     "CreateStaff": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStaff\n<公共请求参数>\n\n{\n    \"Staffs\": [\n        {\n            \"Phone\": \"联系电话\",\n            \"Mail\": \"联系人邮箱\"\n        }\n    ],\n    \"SdkAppId\": \"1400000000\"\n}",
+        "document": "创建客服示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStaff\n<公共请求参数>\n\n{\n    \"Staffs\": [\n        {\n            \"Phone\": \"联系电话\",\n            \"Mail\": \"联系人邮箱\",\n            \"StaffNumber\": \"001\",\n            \"Name\": \"小军\"\n        }\n    ],\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ErrorStaffList\": null\n    }\n}",
         "title": "创建客服示例"
       }
@@ -147,7 +147,7 @@
     "DescribeChatMessages": [
       {
         "document": "获取指定服务记录的文本消息记录。",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400000000\",\n    \"SessionId\": \"d6253538-7c28-477b-998a-919059801899\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"d6253538-7c28-477b-998a-919059801899\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"TotalCount\": 0,\n        \"Messages\": []\n    }\n}",
         "title": "查询聊天记录示例"
       }
@@ -202,16 +202,16 @@
     ],
     "DescribeSkillGroupInfoList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillGroupInfoList\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"0\",\n    \"ModifiedTime\": \"1590147606\",\n    \"SdkAppId\": \"1400000000\",\n    \"SkillGroupId\": \"12\"\n}",
+        "document": "获取技能组列表示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillGroupInfoList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"ModifiedTime\": 1590147606,\n    \"SdkAppId\": 1400000000,\n    \"SkillGroupId\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 2,\n        \"SkillGroupList\": [\n            {\n                \"SkillGroupId\": 1115,\n                \"SkillGroupName\": \"luluttt\",\n                \"Type\": \"TEL\",\n                \"RoutePolicy\": \"firstCreate\",\n                \"UsingLastSeat\": 0,\n                \"MaxConcurrency\": 1,\n                \"LastModifyTimestamp\": 1613976392\n            }\n        ]\n    }\n}",
         "title": "获取技能组列表示例"
       }
     ],
     "DescribeStaffInfoList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStaffInfoList\n<公共请求参数>\n\n{\n    \"ModifiedTime\": \"1590147606\",\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"0\",\n    \"StaffMail\": \"“121223@qq.com”\",\n    \"SdkAppId\": \"1400000000\"\n}",
+        "document": "获取坐席列表示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStaffInfoList\n<公共请求参数>\n\n{\n    \"ModifiedTime\": 1590147606,\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"StaffMail\": \"“121223@qq.com”\",\n    \"SdkAppId\": \"1400000000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 602,\n        \"StaffList\": [\n            {\n                \"Name\": \"xiao\",\n                \"Mail\": \"1000273@qq.com\",\n                \"Phone\": \"008617636049517\",\n                \"Nick\": \"测试3\",\n                \"StaffNumber\": \"125\",\n                \"SkillGroupList\": [\n                    {\n                        \"SkillGroupId\": 53,\n                        \"SkillGroupName\": \"ALL-dingoding-测试\",\n                        \"Priority\": 3,\n                        \"Type\": \"ALL\"\n                    },\n                    {\n                        \"SkillGroupId\": 82,\n                        \"SkillGroupName\": \"uu\",\n                        \"Priority\": 1,\n                        \"Type\": \"IM\"\n                    }\n                ],\n                \"LastModifyTimestamp\": 1613988825\n            }\n        ]\n    }\n}",
         "title": "获取坐席列表示例"
       }
@@ -274,7 +274,7 @@
     ],
     "ModifyStaff": [
       {
-        "document": "",
+        "document": "修改客服示例",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStaff\n<公共请求参数>\n\n{\n    \"Phone\": \"008618092688910\",\n    \"Email\": \"xxx@tencent.com\",\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\"\n    }\n}",
         "title": "修改客服示例"

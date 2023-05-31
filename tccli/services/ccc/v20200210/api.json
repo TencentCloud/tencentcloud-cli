@@ -1076,7 +1076,6 @@
       "document": "CreateCallOutSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID",
           "example": "14000000000",
@@ -1086,7 +1085,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客服用户 ID，一般为客服邮箱",
           "example": "foo@tencent.com",
@@ -1096,7 +1094,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫号码，须带 0086 前缀",
           "example": "008613012345678",
@@ -1106,7 +1103,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫号码，须带 0086 前缀",
           "example": "008610086",
@@ -1116,7 +1112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单",
           "example": "true",
@@ -1126,7 +1121,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义数据，长度限制 1024 字节",
           "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
@@ -1147,7 +1141,6 @@
           "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
           "member": "string",
           "name": "SessionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1275,7 +1268,6 @@
       "document": "CreateSDKLoginToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -1285,9 +1277,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "坐席账号。",
+          "document": "座席账号。",
           "example": "FooOrBar@tencent.com",
           "member": "string",
           "name": "SeatUserId",
@@ -1306,7 +1297,6 @@
           "example": "6bb56a09278740bc80c5dc6dab783eff",
           "member": "string",
           "name": "Token",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1316,7 +1306,6 @@
           "example": "1601371974",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1326,7 +1315,6 @@
           "example": "https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/",
           "member": "string",
           "name": "SdkURL",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1343,7 +1331,6 @@
       "document": "CreateStaff请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -1353,7 +1340,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客服信息，个数不超过 10",
           "example": "无",
@@ -1363,7 +1349,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否发送密码邮件，默认true",
           "example": "false",
@@ -1384,7 +1369,6 @@
           "example": "无",
           "member": "ErrStaffItem",
           "name": "ErrorStaffList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2645,7 +2629,6 @@
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -2655,7 +2638,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页尺寸，上限 100",
           "example": "100",
@@ -2665,7 +2647,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
@@ -2675,7 +2656,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组ID，查询单个技能组时使用",
           "example": "12",
@@ -2685,7 +2665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询修改时间大于等于ModifiedTime的技能组时使用",
           "example": "1611631881",
@@ -2695,7 +2674,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组名称",
           "example": "销售组",
@@ -2716,7 +2694,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2726,7 +2703,6 @@
           "example": "无",
           "member": "SkillGroupInfoItem",
           "name": "SkillGroupList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2743,7 +2719,6 @@
       "document": "DescribeStaffInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -2753,7 +2728,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页尺寸，上限 9999",
           "example": "9999",
@@ -2763,7 +2737,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
@@ -2773,7 +2746,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席账号，查询单个坐席时使用",
           "example": "102992@qq.com",
@@ -2783,7 +2755,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询修改时间大于等于ModifiedTime的坐席时使用",
           "example": "1611631881",
@@ -2793,7 +2764,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组ID",
           "example": "123",
@@ -2814,7 +2784,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2824,7 +2793,6 @@
           "example": "无",
           "member": "StaffInfo",
           "name": "StaffList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3231,10 +3199,9 @@
       "type": "object"
     },
     "ErrStaffItem": {
-      "document": "批量添加客服时，返回出错客服的像个信息",
+      "document": "批量添加客服时，返回出错客服的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "坐席邮箱地址",
           "example": "xxx@xxx.com",
@@ -3245,7 +3212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码",
           "example": "err",
@@ -3256,7 +3222,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误描述",
           "example": "some error ",
@@ -3777,7 +3742,6 @@
       "document": "ModifyStaff请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "1400000",
@@ -3787,9 +3751,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "坐席账户",
+          "document": "座席账户",
           "example": "xx@tencent.com",
           "member": "string",
           "name": "Email",
@@ -3797,9 +3760,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "坐席名称",
+          "document": "座席名称",
           "example": "XXX",
           "member": "string",
           "name": "Name",
@@ -3807,9 +3769,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "坐席手机号（带0086前缀,示例：008618011111111）",
+          "document": "座席手机号（带0086前缀,示例：008618011111111）",
           "example": "008618088888888",
           "member": "string",
           "name": "Phone",
@@ -3817,9 +3778,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "坐席昵称",
+          "document": "座席昵称",
           "example": "XXX",
           "member": "string",
           "name": "Nick",
@@ -3827,7 +3787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定技能组ID列表",
           "example": "[123,134]",
@@ -3837,7 +3796,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启手机外呼开关",
           "example": "true",
@@ -3847,7 +3805,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终",
           "example": "0",

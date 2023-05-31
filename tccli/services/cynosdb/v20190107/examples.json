@@ -32,6 +32,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "BindClusterResourcePackages": [
+      {
+        "document": "为集群绑定资源包",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterResourcePackages\n<公共请求参数>\n\n{\n    \"PackageIds\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "为集群绑定资源包"
+      }
+    ],
     "CloseAuditService": [
       {
         "document": "",
@@ -124,6 +132,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"API测试\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"0\",\n    \"DbMode\": \"NORMAL\",\n    \"TemplateName\": \"API测试\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"edbd6b65-daf0-4ca8-b34f-cc3fd42790d8\",\n        \"TemplateId\": 27\n    }\n}",
         "title": "自定义参数模板"
+      }
+    ],
+    "CreateResourcePackage": [
+      {
+        "document": "新购资源包",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSourcePackage\n<公共请求参数>\n\n{\n    \"InstanceType\": \"abc\",\n    \"PackageRegion\": \"abc\",\n    \"PackageType\": \"abc\",\n    \"PackageVersion\": \"abc\",\n    \"PackageSpec\": 0,\n    \"ExpireDay\": 0,\n    \"PackageName\": \"abc\",\n    \"PackageCount\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新购资源包"
       }
     ],
     "DeleteAccounts": [
@@ -430,6 +446,30 @@
         "title": "查询项目安全组信息"
       }
     ],
+    "DescribeResourcePackageDetail": [
+      {
+        "document": "查询资源包使用详情\n",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcePackageDetail\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\",\n    \"ClusterIds\": [\n        \"abc\"\n    ],\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Offset\": \"abc\",\n    \"Limit\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Detail\": [\n            {\n                \"AppId\": 0,\n                \"PackageId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"SuccessDeductSpec\": 0,\n                \"PackageTotalUsedSpec\": 0,\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"ExtendInfo\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源包使用详情"
+      }
+    ],
+    "DescribeResourcePackageList": [
+      {
+        "document": "查询资源包列表\n",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourcePackageList\n<公共请求参数>\n\n{\n    \"PackageId\": [\n        \"abc\"\n    ],\n    \"PackageName\": [\n        \"abc\"\n    ],\n    \"PackageType\": [\n        \"abc\"\n    ],\n    \"PackageRegion\": [\n        \"abc\"\n    ],\n    \"Status\": [\n        \"abc\"\n    ],\n    \"OrderBy\": [\n        \"abc\"\n    ],\n    \"OrderDirection\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Detail\": [\n            {\n                \"AppId\": 0,\n                \"PackageId\": \"abc\",\n                \"PackageName\": \"abc\",\n                \"PackageType\": \"abc\",\n                \"PackageRegion\": \"abc\",\n                \"Status\": \"abc\",\n                \"PackageTotalSpec\": 0,\n                \"PackageUsedSpec\": 0,\n                \"HasQuota\": true,\n                \"BindInstanceInfos\": [\n                    {\n                        \"InstanceId\": \"abc\",\n                        \"InstanceRegion\": \"abc\",\n                        \"InstanceType\": \"abc\"\n                    }\n                ],\n                \"StartTime\": \"abc\",\n                \"ExpireTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源包列表"
+      }
+    ],
+    "DescribeResourcePackageSaleSpec": [
+      {
+        "document": "查询资源包规格\n",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourcePackageSaleSpec\n<公共请求参数>\n\n{\n    \"InstanceType\": \"abc\",\n    \"PackageRegion\": \"abc\",\n    \"PackageType\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Detail\": [\n            {\n                \"PackageRegion\": \"abc\",\n                \"PackageType\": \"abc\",\n                \"PackageVersion\": \"abc\",\n                \"MinPackageSpec\": 0,\n                \"MaxPackageSpec\": 0,\n                \"ExpireDay\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源包规格"
+      }
+    ],
     "DescribeResourcesByDealName": [
       {
         "document": "",
@@ -686,6 +726,22 @@
         "title": "修改参数模板"
       }
     ],
+    "ModifyResourcePackageClusters": [
+      {
+        "document": "给资源包绑定集群",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackageClusters\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\",\n    \"BindClusterIds\": [\n        \"abc\"\n    ],\n    \"UnbindClusterIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "给资源包绑定集群"
+      }
+    ],
+    "ModifyResourcePackageName": [
+      {
+        "document": "修改资源包名称",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySourcePackageName\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\",\n    \"PackageName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改资源包名称"
+      }
+    ],
     "ModifyVipVport": [
       {
         "document": "",
@@ -748,6 +804,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseServerless\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-8vcxoq75\",\n    \"ForcePause\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1008306,\n        \"RequestId\": \"37508f2e-23eb-11eb-a713-525400b7dd5a\"\n    }\n}",
         "title": "暂停serverless集群"
+      }
+    ],
+    "RefundResourcePackage": [
+      {
+        "document": "退款资源包\n",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundSourcePackage\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "退款资源包"
       }
     ],
     "RemoveClusterSlaveZone": [
@@ -844,6 +908,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": \"0\",\n    \"UniqSubnetId\": \"xx\",\n    \"ClusterId\": \"xxx\",\n    \"UniqVpcId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "转换网络"
+      }
+    ],
+    "UnbindClusterResourcePackages": [
+      {
+        "document": "cynos解绑资源包",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindSourcePackageCynos\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"PackageIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "cynos解绑资源包"
       }
     ],
     "UpgradeClusterVersion": [

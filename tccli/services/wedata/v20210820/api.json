@@ -10124,7 +10124,6 @@
       "document": "DescribeOperateTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -10134,7 +10133,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹id，多个文件夹以逗号分隔",
           "example": "\"11,2222\"",
@@ -10144,7 +10142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作流id，多个工作流id之间以英文字符逗号分隔",
           "example": "\"111,222\"",
@@ -10154,7 +10151,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作流名称，多个工作流名称之间以英文字符逗号分隔",
           "example": "\"111,222\"",
@@ -10164,7 +10160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称，多个任务名称之间以英文字符逗号分隔",
           "example": "\"111,222\"",
@@ -10174,7 +10169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务id，多个任务id之间以英文字符逗号分隔",
           "example": "\"111,222\"",
@@ -10184,7 +10178,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页号",
           "example": "1",
@@ -10194,7 +10187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "15",
@@ -10204,7 +10196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件",
           "example": "LastUpdate",
@@ -10214,7 +10205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序类型。两种取值 DESC、ASC",
           "example": "DESC",
@@ -10224,7 +10214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "责任人，多个责任人之间以英文字符逗号分隔",
           "example": "\"111,222\"",
@@ -10234,7 +10223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔",
           "example": "\"34,35\"",
@@ -10244,7 +10232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态字符串，多个任务状态之间以英文字符逗号分隔",
           "example": "\"INVALID,Y\"",
@@ -10254,7 +10241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务周期类型字符串，多个任务周期之间以英文字符逗号分隔",
           "example": "\"H,D\"",
@@ -10264,12 +10250,56 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所属产品类型",
           "example": "\"dev\"",
           "member": "string",
           "name": "ProductNameList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源id或（仅针对离线同步任务）来源数据源id",
+          "example": "\"111\"",
+          "member": "string",
+          "name": "SourceServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型或（仅针对离线同步任务）来源数据源类型",
+          "example": "\"mysql\"",
+          "member": "string",
+          "name": "SourceServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（仅针对离线同步任务）目标数据源id",
+          "example": "\"111\"",
+          "member": "string",
+          "name": "TargetServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（仅针对离线同步任务）目标数据源类型",
+          "example": "\"mysql\"",
+          "member": "string",
+          "name": "TargetServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警类型，多个类型以逗号分隔",
+          "example": "\"failure\"",
+          "member": "string",
+          "name": "AlarmType",
           "required": false,
           "type": "string"
         }
@@ -10285,7 +10315,6 @@
           "example": "无",
           "member": "TaskInfoPage",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -25515,7 +25544,6 @@
       "document": "任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"111\"",
@@ -25526,7 +25554,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"周期任务\"",
@@ -25537,7 +25564,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxxxx-yyyy\"",
@@ -25548,7 +25574,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"工作流名称\"",
@@ -25559,7 +25584,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"项目名称\"",
@@ -25570,7 +25594,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"项目标识\"",
@@ -25581,7 +25604,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，'Y','F','O','T','INVALID' 分别表示调度中、已停止、已暂停、停止中、已失效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"Y\"",
@@ -25592,7 +25614,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"12\"",
@@ -25603,7 +25624,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型描述，其中任务类型id和任务类型描述的对应的关系为\n20\t通用数据同步任务\n21\tJDBC SQL\n22\tTbase\n25\t数据ETL\n30\tPython\n31\tPySpark\n34\tHive SQL\n35\tShell\n36\tSpark SQL\n37\tHDFS到HBase\n38\tSHELL\n39\tSpark\n45\tDATA_QUALITY\n55\tTHIVE到MYSQL\n56\tTHIVE到PG\n66\tHDFS到PG\n67\tHDFS到Oracle\n68\tHDFS到MYSQL\n69\tFTP到HDFS\n70\tHIVE SQL\n72\tHIVE到HDFS\n75\tHDFS到HIVE\n81\tPYTHONSQL脚本\n82\tSPARKSCALA计算\n83\t虫洞任务\n84\t校验对账文件\n85\tHDFS到THIVE\n86\tTDW到HDFS\n87\tHDFS到TDW\n88\t校验对账文件\n91\tFLINK任务\n92\tMapReduce\n98\tcustom topology\n99\tkafkatoHDFS\n100\tkafkatoHbase\n101\tMYSQL导入至HIVE(DX)\n104\tMYSQL到HIVE\n105\tHIVE到MYSQL\n106\tSQL SERVER到HIVE\n107\tHIVE到SQL SERVER\n108\tORACLE到HIVE\n109\tHIVE到ORACLE\n111\tHIVE到MYSQL(NEW)\n112\tHIVE到PG\n113\tHIVE到PHOENIX\n118\tMYSQL到HDFS\n119\tPG到HDFS\n120\tORACLE到HDFS\n121\t数据质量\n10000\t自定义业务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"shell\"",
@@ -25614,7 +25634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"12\"",
@@ -25625,7 +25644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"测试文件夹\"",
@@ -25636,7 +25654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"12\"",
@@ -25647,7 +25664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近提交时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-09-08 12:00:00",
@@ -25658,7 +25674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-09-08 12:00:00",
@@ -25669,7 +25684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调度计划展示描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "从2022-09-08 12:00:00 开始 ，间隔1天执行一次",
@@ -25680,7 +25694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负责人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wang;ling;",
@@ -25691,7 +25704,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调度周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"O\"",
@@ -25702,7 +25714,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布x轴坐标点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "234.34",
@@ -25713,7 +25724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布y轴坐标点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "345.23",
@@ -25724,7 +25734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨工作流虚拟任务标识；true标识跨工作流任务；false标识本工作流任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -25735,7 +25744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性周期配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"3\"",
@@ -25746,7 +25754,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -25754,6 +25761,96 @@
           "name": "DelayTime",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutionEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Layer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceServiceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceServiceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetServiceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetServiceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务告警类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -26463,7 +26560,6 @@
       "document": "任务分页查询",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "页号",
           "example": "1",
@@ -26474,7 +26570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小",
           "example": "15",
@@ -26485,7 +26580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作流列表信息",
           "example": "无",
@@ -26496,13 +26590,32 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总页数",
           "example": "10",
           "member": "uint64",
           "name": "TotalPage",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
