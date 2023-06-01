@@ -686,6 +686,14 @@
         "title": "户口本识别示例代码"
       }
     ],
+    "ResolveAddress": [
+      {
+        "document": "智能地址解析",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResolveAddress\n<公共请求参数>\n\n{\n    \"Address\": \"深圳市南山区深南大道0001号腾讯大厦\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressDetail\": \"深圳市 南山区 深南大道 0001号 腾讯大厦\",\n        \"City\": \"深圳市\",\n        \"District\": \"南山区\",\n        \"Province\": \"广东省\",\n        \"RequestId\": \"b3185dc4-b3f9-40d9-9f8d-6b2d9d2f84de\",\n        \"Street\": \"深南大道\"\n    }\n}",
+        "title": "智能地址解析示例代码"
+      }
+    ],
     "RideHailingDriverLicenseOCR": [
       {
         "document": "网约车驾驶证识别示例代码",

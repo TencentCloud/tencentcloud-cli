@@ -48,6 +48,14 @@
         "title": "创建证书"
       }
     ],
+    "CreateCertificateByPackage": [
+      {
+        "document": "使用权益点创建证书",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCertificateByPackage\n<公共请求参数>\n\n{\n    \"PackageIds\": [\n        \"xx123\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx123\",\n            \"TagValue\": \"xx123\"\n        }\n    ],\n    \"ProjectId\": 1,\n    \"RenewAlgorithmParam\": \"xx123\",\n    \"RenewKeyPass\": \"xx123\",\n    \"Period\": 1,\n    \"OldCertificateId\": \"xx123\",\n    \"ProductPid\": 1,\n    \"RenewGenCsrMethod\": \"xx123\",\n    \"RenewCsr\": \"xx123\",\n    \"DomainCount\": \"xx123\",\n    \"RenewAlgorithmType\": \"xx123\",\n    \"VerifyType\": \"DNS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"xx123\",\n        \"RequestId\": \"xx123\",\n        \"CertificateIds\": [\n            \"xx123\"\n        ]\n    }\n}",
+        "title": "使用权益点创建证书"
+      }
+    ],
     "DeleteCertificate": [
       {
         "document": "",

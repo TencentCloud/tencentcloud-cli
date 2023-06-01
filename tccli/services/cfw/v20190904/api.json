@@ -979,84 +979,114 @@
       "document": "企业安全组关联实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VpcName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PublicIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联安全组数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "SecurityGroupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关联安全组规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SecurityGroupRuleCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关联数据库代理Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CdbId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -5490,10 +5520,9 @@
       "usage": "out"
     },
     "InstanceInfo": {
-      "document": "// InstanceInfo 实例详情结果\ntype InstanceInfo struct {\n\tAppID        string `json:\"AppId\" gorm:\"column:appid\"`\n\tRegion       string `json:\"Region\" gorm:\"column:region\"`\n\tVPCID        string `json:\"VpcId\" gorm:\"column:vpc_id\"`\n\tSubNetID     string `json:\"SubnetId\" gorm:\"column:subnet_id\"`\n\tInstanceID   string `json:\"InstanceId\" gorm:\"column:instance_id\"`\n\tInstanceName string `json:\"InstanceName\" gorm:\"column:instance_name\"`\n\t//InsType common.CVM 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA\n\tInsType   int    `json:\"InsType\" gorm:\"column:instance_type\"`\n\tPublicIP  string `json:\"PublicIp\" gorm:\"column:public_ip\"`\n\tPrivateIP string `json:\"PrivateIp\" gorm:\"column:ip\"`\n\n\t//规则下发无需管，前端展示用\n\tPortNum          string `json:\"PortNum\" gorm:\"column:port_num\"`\n\tLeakNum          string `json:\"LeakNum\" gorm:\"column:leak_num\"`\n\tResourceGroupNum int    `json:\"ResourceGroupNum\"`\n\tVPCName          string `json:\"VPCName\" gorm:\"column:VPCName\"`\n}\n",
+      "document": "// InstanceInfo 实例详情结果\ntype InstanceInfo struct {\n\tAppID        string `json:\"AppId\" gorm:\"column:appid\"`\n\tRegion       string `json:\"Region\" gorm:\"column:region\"`\n\tVPCID        string `json:\"VpcId\" gorm:\"column:vpc_id\"`\n\tSubNetID     string `json:\"SubnetId\" gorm:\"column:subnet_id\"`\n\tInstanceID   string `json:\"InstanceId\" gorm:\"column:instance_id\"`\n\tInstanceName string `json:\"InstanceName\" gorm:\"column:instance_name\"`\n\t//InsType common.CVM 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA\n\tInsType   int    `json:\"InsType\" gorm:\"column:instance_type\"`\n\tPublicIP  string `json:\"PublicIp\" gorm:\"column:public_ip\"`\n\tPrivateIP string `json:\"PrivateIp\" gorm:\"column:ip\"`\n\n\t//规则下发无需管，前端展示用\n\tPortNum          string `json:\"PortNum\" gorm:\"column:port_num\"`\n\tLeakNum          string `json:\"LeakNum\" gorm:\"column:leak_num\"`\n\tResourceGroupNum int    `json:\"ResourceGroupNum\"`\n\tVPCName          string `json:\"VPCName\" gorm:\"column:VPCName\"`\n}",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "appid信息",
           "example": "1300448058",
@@ -5501,10 +5530,10 @@
           "name": "AppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "上海",
@@ -5512,10 +5541,10 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpcid信息",
           "example": "vpc-aa",
@@ -5523,10 +5552,10 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc名称",
           "example": "vpcname-1",
@@ -5534,10 +5563,10 @@
           "name": "VPCName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id",
           "example": "sub-test",
@@ -5545,10 +5574,10 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产id",
           "example": "ins-888",
@@ -5556,10 +5585,10 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名",
           "example": "test",
@@ -5567,10 +5596,10 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW",
           "example": "6",
@@ -5578,10 +5607,10 @@
           "name": "InsType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网ip",
           "example": "120.11.85.5,211.10,2.,5",
@@ -5589,10 +5618,10 @@
           "name": "PublicIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网ip",
           "example": "172.11.85.5",
@@ -5600,10 +5629,10 @@
           "name": "PrivateIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口数",
           "example": "1",
@@ -5611,10 +5640,10 @@
           "name": "PortNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞数",
           "example": "0",
@@ -5622,10 +5651,10 @@
           "name": "LeakNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1，公网 2内网",
           "example": "资产类型",
@@ -5633,10 +5662,10 @@
           "name": "InsSource",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "[a,b]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "资产路径",
@@ -5644,7 +5673,19 @@
           "name": "ResourcePath",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫描结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Server",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

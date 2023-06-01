@@ -1,6 +1,6 @@
 **Example 1: CreateApi**
 
-
+CreateApi
 
 Input: 
 
@@ -25,8 +25,13 @@ Output:
 ```
 {
     "Response": {
-        "Result": {},
-        "RequestId": "d617a773-cfbd-47a7-8762-b213dcb681f0"
+        "Result": {
+            "ApiId": "abc",
+            "Path": "abc",
+            "Method": "abc",
+            "CreatedTime": "2020-09-22T00:00:00+00:00"
+        },
+        "RequestId": "abc"
     }
 }
 ```

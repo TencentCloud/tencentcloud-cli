@@ -1,6 +1,6 @@
 **Example 1: 查询独享实例列表**
 
-
+查询独享实例列表
 
 Input: 
 
@@ -14,18 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": {
-            "InstanceDescription": "xx",
-            "InstanceId": "xx",
-            "InstanceState": "xx",
-            "InstanceChargeType": "xx",
-            "ResourceId": "xx",
-            "CreatedTime": "2020-09-22T00:00:00+00:00",
-            "InstanceName": "xx",
-            "InstanceType": "xx",
-            "DealName": "xx"
-        },
-        "RequestId": "xx"
+        "Result": {},
+        "RequestId": "abc"
     }
 }
 ```

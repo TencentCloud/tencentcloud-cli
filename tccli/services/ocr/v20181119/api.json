@@ -532,6 +532,13 @@
       "output": "ResidenceBookletOCRResponse",
       "status": "online"
     },
+    "ResolveAddress": {
+      "document": "本接口对地址进行智能解析。\n\n默认接口请求频率限制：10次/秒。",
+      "input": "ResolveAddressRequest",
+      "name": "智能地址解析",
+      "output": "ResolveAddressResponse",
+      "status": "online"
+    },
     "RideHailingDriverLicenseOCR": {
       "document": "本接口支持网约车驾驶证关键字段的识别，包括姓名、证号、起始日期、截止日期、发证日期。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RideHailingDriverLicenseOCRRequest",
@@ -13573,6 +13580,84 @@
           "example": "无",
           "member": "string",
           "name": "FormerName",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResolveAddressRequest": {
+      "document": "ResolveAddress请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要解析的地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ResolveAddressResponse": {
+      "document": "ResolveAddress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "省份",
+          "example": "无",
+          "member": "string",
+          "name": "Province",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "市",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "区",
+          "example": "无",
+          "member": "string",
+          "name": "District",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "街道",
+          "example": "无",
+          "member": "string",
+          "name": "Street",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "详细地址",
+          "example": "无",
+          "member": "string",
+          "name": "AddressDetail",
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

@@ -2616,7 +2616,7 @@
       {
         "document": "根据资源ID查询实例信息",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcPeeringConnections\n&PeeringConnectionIds.0=pcx-test1234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PeerConnectionSet\": [\n            {\n                \"TagSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PeerConnectionSet\": [\n            {\n                \"SourceVpcId\": \"vpc-ebmfbrg7\",\n                \"PeeringConnectionId\": \"pcx-b050bu7c\",\n                \"PeeringConnectionName\": \"andytesttong\",\n                \"State\": \"PENDING\",\n                \"IsNgw\": false,\n                \"Bandwidth\": 10,\n                \"SourceRegion\": \"ca\",\n                \"DestinationRegion\": \"gz\",\n                \"CreateTime\": \"2021-12-08 14:56:35\",\n                \"AppId\": 1255486055,\n                \"PeerAppId\": 1254277469,\n                \"ChargeType\": \"POSTPAID_BY_DAY_MAX\",\n                \"SourceUin\": 100002840660,\n                \"DestinationUin\": 100001332514,\n                \"QosLevel\": \"\",\n                \"Type\": \"VPC_BM_PEER\",\n                \"TagSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96\"\n    }\n}",
         "title": "根据资源ID查询实例信息"
       }
     ],
