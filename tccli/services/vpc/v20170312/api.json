@@ -9120,7 +9120,6 @@
       "document": "DeleteBandwidthPackage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除带宽包唯一ID",
           "example": "bwp-cs7j6pd0",

@@ -1,58 +1,46 @@
 {
   "actions": {
-    "CreateFileSample": {
-      "document": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n通过该接口可以将图片新增到样本库。",
-      "input": "CreateFileSampleRequest",
-      "name": "新增图片样本库",
-      "output": "CreateFileSampleResponse"
+    "CreateKeywordsSamples": {
+      "document": "创建关键词接口",
+      "input": "CreateKeywordsSamplesRequest",
+      "name": "创建关键词接口",
+      "output": "CreateKeywordsSamplesResponse",
+      "status": "online"
     },
-    "CreateTextSample": {
-      "document": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n通过该接口可以将文本新增到样本库。",
-      "input": "CreateTextSampleRequest",
-      "name": "新增文本样本库",
-      "output": "CreateTextSampleResponse"
+    "DeleteLibSamples": {
+      "document": "删除关键词接口",
+      "input": "DeleteLibSamplesRequest",
+      "name": "删除关键词接口",
+      "output": "DeleteLibSamplesResponse",
+      "status": "online"
     },
-    "DeleteFileSample": {
-      "document": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n删除图片样本库，支持批量删除，一次提交不超过20个。",
-      "input": "DeleteFileSampleRequest",
-      "name": "删除图片样本库",
-      "output": "DeleteFileSampleResponse"
+    "DescribeKeywordsLibs": {
+      "document": "获取用户词库列表",
+      "input": "DescribeKeywordsLibsRequest",
+      "name": "获取词库列表",
+      "output": "DescribeKeywordsLibsResponse",
+      "status": "online"
     },
-    "DeleteTextSample": {
-      "document": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n删除文本样本库，暂时只支持单个删除。",
-      "input": "DeleteTextSampleRequest",
-      "name": "删除文本样本库",
-      "output": "DeleteTextSampleResponse"
-    },
-    "DescribeFileSample": {
-      "document": "本文档适用于图片内容安全、视频内容安全自定义识别库的管理。\n<br>\n查询图片样本库，支持批量查询。",
-      "input": "DescribeFileSampleRequest",
-      "name": "查询图片样本库",
-      "output": "DescribeFileSampleResponse"
-    },
-    "DescribeTextSample": {
-      "document": "本文档适用于文本内容安全、音频内容安全自定义识别库的管理。\n<br>\n支持批量查询文本样本库。",
-      "input": "DescribeTextSampleRequest",
-      "name": "查询文本样本库",
-      "output": "DescribeTextSampleResponse"
+    "DescribeLibSamples": {
+      "document": "获取关键词接口",
+      "input": "DescribeLibSamplesRequest",
+      "name": "获取关键词接口",
+      "output": "DescribeLibSamplesResponse",
+      "status": "online"
     },
     "ImageModeration": {
       "document": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。",
       "input": "ImageModerationRequest",
       "name": "图片内容检测",
-      "output": "ImageModerationResponse"
-    },
-    "ManualReview": {
-      "document": "人工审核对外接口",
-      "input": "ManualReviewRequest",
-      "name": "人工审核对外接口",
-      "output": "ManualReviewResponse"
+      "output": "ImageModerationResponse",
+      "status": "online"
     },
     "TextModeration": {
       "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。",
       "input": "TextModerationRequest",
       "name": "文本内容检测",
-      "output": "TextModerationResponse"
+      "output": "TextModerationResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -66,238 +54,239 @@
       "document": "从图片中检测到的二维码，可能为多个",
       "members": [
         {
-          "default": "",
-          "document": "二维码在图片中的位置，由边界点的坐标表示",
-          "member": "CodePosition",
-          "name": "CodePosition",
+          "disabled": false,
+          "document": "二维码文本的编码格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StrCharset",
           "required": false,
-          "type": "list"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "二维码文本的编码格式",
+          "disabled": false,
+          "document": "二维码在图片中的位置，由边界点的坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePosition",
+          "name": "QrCodePosition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二维码的文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StrQrCodeText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Uint32QrCodeType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二维码文本的编码格式（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CodeCharset",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "二维码的文本内容",
+          "disabled": false,
+          "document": "二维码在图片中的位置，由边界点的坐标表示（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePosition",
+          "name": "CodePosition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二维码的文本内容（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CodeText",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX",
+          "disabled": false,
+          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "CodeType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "CodeDetect": {
       "document": "图片二维码详情",
       "members": [
         {
           "default": "",
-          "document": "从图片中检测到的二维码，可能为多个",
-          "member": "CodeDetail",
-          "name": "ModerationDetail",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "检测是否成功，0：成功，-1：出错",
+          "disabled": false,
+          "document": "检测是否成功，0：成功，-1：出错\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ModerationCode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "从图片中检测到的二维码，可能为多个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CodeDetail",
+          "name": "ModerationDetail",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "CodePosition": {
       "document": "二维码在图片中的位置，由边界点的坐标表示",
       "members": [
         {
           "default": "",
-          "document": "二维码边界点X轴坐标",
+          "disabled": false,
+          "document": "二维码边界点X轴坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "FloatX",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "二维码边界点Y轴坐标",
+          "disabled": false,
+          "document": "二维码边界点Y轴坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "FloatY",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "Coordinate": {
       "document": "坐标",
       "members": [
         {
           "default": "",
-          "document": "左上角横坐标",
-          "member": "int64",
-          "name": "Cx",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "左上角纵坐标",
-          "member": "int64",
-          "name": "Cy",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "高度",
-          "member": "int64",
-          "name": "Height",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "宽度",
+          "disabled": false,
+          "document": "宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Width",
           "required": false,
-          "type": "int"
-        }
-      ],
-      "usage": "in"
-    },
-    "CreateFileSampleRequest": {
-      "document": "CreateFileSample请求参数结构体",
-      "members": [
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "default": "",
-          "document": "文件类型结构数组",
-          "is_public": true,
-          "member": "FileSample",
-          "name": "Contents",
+          "disabled": false,
+          "document": "左上角纵坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "左上角横坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cx",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateKeywordsSamplesRequest": {
+      "document": "CreateKeywordsSamples请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库信息：单次限制写入2000个，词库总容量不可超过10000个。",
+          "example": "无",
+          "member": "UserKeyword",
+          "name": "UserKeywords",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
-          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐\n20105：广告引流",
-          "is_public": true,
-          "member": "int64",
-          "name": "EvilType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "image：图片",
-          "is_public": true,
+          "disabled": false,
+          "document": "词库ID",
+          "example": "xxx-xxx-xxx",
           "member": "string",
-          "name": "FileType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "样本类型\n1：黑库\n2：白库",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Label",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateFileSampleResponse": {
-      "document": "CreateFileSample返回参数结构体",
-      "members": [
-        {
-          "document": "任务状态\n1：已完成\n2：处理中",
-          "member": "uint64",
-          "name": "Progress",
-          "type": "int"
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTextSampleRequest": {
-      "document": "CreateTextSample请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "关键词数组",
-          "is_public": true,
-          "member": "string",
-          "name": "Contents",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐\n20105：广告引流",
-          "is_public": true,
-          "member": "int64",
-          "name": "EvilType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "样本类型\n1：黑库\n2：白库",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Label",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "测试修改参数",
-          "is_public": true,
-          "member": "string",
-          "name": "Test",
+          "name": "LibID",
           "required": false,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "CreateTextSampleResponse": {
-      "document": "CreateTextSample返回参数结构体",
+    "CreateKeywordsSamplesResponse": {
+      "document": "CreateKeywordsSamples返回参数结构体",
       "members": [
         {
-          "document": "操作样本失败时返回的错误信息示例：  \"样本1\":错误码，\"样本2\":错误码",
+          "disabled": false,
+          "document": "添加成功的关键词ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
-          "name": "ErrMsg",
-          "type": "string"
+          "name": "SampleIDs",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
-          "document": "任务状态\n1：已完成\n2：处理中",
-          "member": "uint64",
-          "name": "Progress",
-          "type": "int"
+          "disabled": false,
+          "document": "重复关键词列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserKeywordInfo",
+          "name": "DupInfos",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效关键词列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InvalidSample",
+          "name": "InvalidSamples",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -313,62 +302,91 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "命中的自定义关键词",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "自定义库id",
-          "member": "string",
-          "name": "LibId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "自定义词库名称",
           "member": "string",
           "name": "LibName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "自定义库id",
+          "member": "string",
+          "name": "LibId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "命中的自定义关键词的类型",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
     },
-    "DeleteFileSampleRequest": {
-      "document": "DeleteFileSample请求参数结构体",
+    "DeleteLibSamplesRequest": {
+      "document": "DeleteLibSamples请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "唯一标识数组",
-          "is_public": true,
+          "disabled": false,
+          "document": "关键词ID",
+          "example": "346",
           "member": "string",
-          "name": "Ids",
+          "name": "SampleIDs",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "词库ID",
+          "example": "xxx-xxx-xxx",
+          "member": "string",
+          "name": "LibID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DeleteFileSampleResponse": {
-      "document": "DeleteFileSample返回参数结构体",
+    "DeleteLibSamplesResponse": {
+      "document": "DeleteLibSamples返回参数结构体",
       "members": [
         {
-          "document": "任务状态\n1：已完成\n2：处理中",
-          "member": "uint64",
-          "name": "Progress",
-          "type": "int"
+          "disabled": false,
+          "document": "删除成功的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个关键词删除的结果",
+          "example": "无",
+          "member": "DeleteSampleDetails",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -379,104 +397,109 @@
       ],
       "type": "object"
     },
-    "DeleteTextSampleRequest": {
-      "document": "DeleteTextSample请求参数结构体",
+    "DeleteSampleDetails": {
+      "document": "词库关键词删除结果详情",
       "members": [
         {
           "default": "",
-          "document": "唯一标识数组，目前暂时只支持单个删除",
-          "is_public": true,
+          "disabled": false,
+          "document": "关键词ID",
+          "example": "100",
           "member": "string",
-          "name": "Ids",
+          "name": "SampleID",
           "required": true,
-          "type": "list"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键词内容",
+          "example": "wo",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Deleted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错误信息",
+          "example": "NotFound",
+          "member": "string",
+          "name": "ErrorInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
-      "type": "object"
+      "usage": "out"
     },
-    "DeleteTextSampleResponse": {
-      "document": "DeleteTextSample返回参数结构体",
+    "DescribeKeywordsLibsRequest": {
+      "document": "DescribeKeywordsLibs请求参数结构体",
       "members": [
         {
-          "document": "任务状态\n1：已完成\n2：处理中",
-          "member": "uint64",
-          "name": "Progress",
+          "disabled": false,
+          "document": "单页条数，最大为100条",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
           "type": "int"
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFileSampleRequest": {
-      "document": "DescribeFileSample请求参数结构体",
-      "members": [
+          "disabled": false,
+          "document": "条数偏移量",
+          "example": "300",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
         {
-          "default": "",
-          "document": "支持通过标签值进行筛选",
-          "is_public": true,
-          "member": "Filter",
+          "disabled": false,
+          "document": "过滤器(支持LibName模糊查询,CustomLibIDs词库id列表过滤)",
+          "example": "无",
+          "member": "Filters",
           "name": "Filters",
           "required": false,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "数量限制，默认为20，最大值为100",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "升序（asc）还是降序（desc），默认：desc",
-          "is_public": true,
-          "member": "string",
-          "name": "OrderDirection",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "按某个字段排序，目前仅支持CreatedAt排序",
-          "is_public": true,
-          "member": "string",
-          "name": "OrderField",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeFileSampleResponse": {
-      "document": "DescribeFileSample返回参数结构体",
+    "DescribeKeywordsLibsResponse": {
+      "document": "DescribeKeywordsLibs返回参数结构体",
       "members": [
         {
-          "document": "符合要求的样本的信息",
-          "member": "FileSampleInfo",
-          "name": "FileSampleSet",
-          "type": "list"
+          "disabled": false,
+          "document": "词库记录数",
+          "example": "50",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
-          "document": "符合要求的样本的数量",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int"
+          "disabled": false,
+          "document": "词库详情",
+          "example": "1",
+          "member": "KeywordsLibInfo",
+          "name": "Infos",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -487,71 +510,77 @@
       ],
       "type": "object"
     },
-    "DescribeTextSampleRequest": {
-      "document": "DescribeTextSample请求参数结构体",
+    "DescribeLibSamplesRequest": {
+      "document": "DescribeLibSamples请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "支持通过标签值进行筛选",
-          "is_public": true,
-          "member": "Filter",
-          "name": "Filters",
+          "disabled": false,
+          "document": "单页条数，最大为100条",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "条数偏移量",
+          "example": "300",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "词库ID",
+          "example": "xxx-xxx-xxx",
+          "member": "string",
+          "name": "LibID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "词内容过滤",
+          "example": "敏感",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "违规类型列表过滤",
+          "example": "[20001,20002]",
+          "member": "int64",
+          "name": "EvilTypeList",
           "required": false,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "数量限制，默认为20，最大值为100",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0",
-          "is_public": true,
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "升序（asc）还是降序（desc），默认：desc",
-          "is_public": true,
-          "member": "string",
-          "name": "OrderDirection",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "按某个字段排序，目前仅支持CreatedAt排序",
-          "is_public": true,
-          "member": "string",
-          "name": "OrderField",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeTextSampleResponse": {
-      "document": "DescribeTextSample返回参数结构体",
+    "DescribeLibSamplesResponse": {
+      "document": "DescribeLibSamples返回参数结构体",
       "members": [
         {
-          "document": "符合要求的样本的信息",
-          "member": "TextSample",
-          "name": "TextSampleSet",
-          "type": "list"
+          "disabled": false,
+          "document": "词记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
-          "document": "符合要求的样本的数量",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int"
+          "disabled": false,
+          "document": "词详情",
+          "example": "无",
+          "member": "UserKeywordInfo",
+          "name": "Infos",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -567,35 +596,43 @@
       "members": [
         {
           "default": "",
-          "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
-          "member": "string",
-          "name": "EvilLabel",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂\n20105：广告引流 \n24001：暴恐",
-          "member": "uint64",
-          "name": "EvilType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "该标签下命中的关键词",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂\n20105：广告引流 \n24001：暴恐",
+          "member": "uint64",
+          "name": "EvilType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "该标签模型命中的分值",
           "member": "uint64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
+          "member": "string",
+          "name": "EvilLabel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -605,213 +642,101 @@
       "members": [
         {
           "default": "",
-          "document": "设备指纹ID",
-          "member": "string",
-          "name": "DeviceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "IOS设备，Identifier For Advertising（广告标识符）",
-          "member": "string",
-          "name": "IDFA",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）",
           "member": "string",
           "name": "IDFV",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "设备序列号",
-          "member": "string",
-          "name": "IMEI",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "用户IP",
-          "member": "string",
-          "name": "IP",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Mac地址",
-          "member": "string",
-          "name": "Mac",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "设备指纹Token",
           "member": "string",
           "name": "TokenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户IP",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Mac地址",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IOS设备，Identifier For Advertising（广告标识符）",
+          "member": "string",
+          "name": "IDFA",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备指纹ID",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备序列号",
+          "member": "string",
+          "name": "IMEI",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
     },
-    "FileSample": {
-      "document": "文件类型样本",
+    "Filters": {
+      "document": "入参过滤条件",
       "members": [
         {
           "default": "",
-          "document": "文件md5",
-          "member": "string",
-          "name": "FileMd5",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件名称",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件url",
-          "member": "string",
-          "name": "FileUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件压缩后云url",
-          "member": "string",
-          "name": "CompressFileUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "usage": "in"
-    },
-    "FileSampleInfo": {
-      "document": "文件样本返回信息",
-      "members": [
-        {
-          "default": "",
-          "document": "处理错误码",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "创建时间戳",
-          "member": "uint64",
-          "name": "CreatedAt",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐",
-          "member": "uint64",
-          "name": "EvilType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "文件的md5",
-          "member": "string",
-          "name": "FileMd5",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件名称",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件类型",
-          "member": "string",
-          "name": "FileType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "唯一标识",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "样本类型\n1：黑库\n2：白库",
-          "member": "uint64",
-          "name": "Label",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "任务状态\n1：添加完成\n2：添加处理中\n3：下载中\n4：下载完成\n5：上传完成\n6：步骤完成",
-          "member": "uint64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "文件压缩后云url",
-          "member": "string",
-          "name": "CompressFileUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件的url",
-          "member": "string",
-          "name": "FileUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "usage": "in"
-    },
-    "Filter": {
-      "document": "筛选数据结构",
-      "members": [
-        {
-          "default": "",
-          "document": "需要过滤的字段",
+          "disabled": false,
+          "document": "查询字段",
+          "example": "1",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "需要过滤字段的值",
+          "disabled": false,
+          "document": "查询值",
+          "example": "[\"1\"]",
           "member": "string",
-          "name": "Value",
+          "name": "Values",
           "required": true,
-          "type": "string"
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -821,222 +746,266 @@
       "members": [
         {
           "default": "",
-          "document": "是否恶意 0：正常 1：可疑",
-          "member": "int64",
-          "name": "EvilFlag",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n20103：性感\n24001：暴恐",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "图片二维码详情",
-          "member": "CodeDetect",
-          "name": "CodeDetect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "图片性感详情",
+          "disabled": false,
+          "document": "图片性感详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImageHotDetect",
           "name": "HotDetect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "图片违法详情",
-          "member": "ImageIllegalDetect",
-          "name": "IllegalDetect",
+          "disabled": false,
+          "document": "是否恶意 0：正常 1：可疑",
+          "member": "int64",
+          "name": "EvilFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "图片二维码详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CodeDetect",
+          "name": "CodeDetect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "logo详情",
-          "member": "LogoDetail",
-          "name": "LogoDetect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "图片OCR详情",
-          "member": "OCRDetect",
-          "name": "OCRDetect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "手机检测详情",
-          "member": "PhoneDetect",
-          "name": "PhoneDetect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "图片涉政详情",
+          "disabled": false,
+          "document": "图片涉政详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImagePolityDetect",
           "name": "PolityDetect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "图片涉黄详情",
+          "disabled": false,
+          "document": "图片违法详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ImageIllegalDetect",
+          "name": "IllegalDetect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "图片涉黄详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImagePornDetect",
           "name": "PornDetect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "图片相似度详情",
-          "member": "Similar",
-          "name": "Similar",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "图片暴恐详情",
+          "disabled": false,
+          "document": "图片暴恐详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ImageTerrorDetect",
           "name": "TerrorDetect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "图片OCR详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OCRDetect",
+          "name": "OCRDetect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LogoDetail",
+          "name": "LogoDetect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "图片相似度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Similar",
+          "name": "Similar",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机检测详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PhoneDetect",
+          "name": "PhoneDetect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "ImageHotDetect": {
       "document": "图片性感详情",
       "members": [
         {
           "default": "",
-          "document": "恶意类型\n100：正常\n20103：性感",
-          "member": "int64",
-          "name": "EvilType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "处置判定 0：正常 1：可疑",
-          "member": "int64",
-          "name": "HitFlag",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "关键词明细",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "恶意类型\n100：正常\n20103：性感",
+          "member": "int64",
+          "name": "EvilType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "性感标签：性感特征中文描述",
           "member": "string",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "性感分：分值范围 0-100，分数越高性感倾向越明显",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处置判定 0：正常 1：可疑",
+          "member": "int64",
+          "name": "HitFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "ImageIllegalDetect": {
       "document": "图片违法详情",
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常 \n20006：涉毒违法",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处置判定 0：正常 1：可疑",
           "member": "int64",
           "name": "HitFlag",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词明细",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违法标签：返回违法特征中文描述，如赌桌，枪支",
           "member": "string",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "违法分：分值范围 0-100，分数越高违法倾向越明显",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ImageModerationRequest": {
       "document": "ImageModeration请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "文件内容 Base64,与FileUrl必须二填一",
-          "is_public": true,
+          "disabled": false,
+          "document": "文件地址",
+          "example": "http://123.jpg",
           "member": "string",
-          "name": "FileContent",
+          "name": "FileUrl",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "文件MD5值",
-          "is_public": true,
+          "example": "无",
           "member": "string",
           "name": "FileMD5",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "文件地址",
-          "is_public": true,
+          "disabled": false,
+          "document": "文件内容 Base64,与FileUrl必须二填一",
+          "example": "无",
           "member": "string",
-          "name": "FileUrl",
+          "name": "FileContent",
           "required": false,
           "type": "string"
         }
@@ -1047,16 +1016,22 @@
       "document": "ImageModeration返回参数结构体",
       "members": [
         {
-          "document": "识别结果",
-          "member": "ImageData",
-          "name": "Data",
-          "type": "object"
-        },
-        {
+          "disabled": false,
           "document": "业务返回码",
+          "example": "0",
           "member": "int64",
           "name": "BusinessCode",
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别结果",
+          "example": "无",
+          "member": "ImageData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1072,496 +1047,533 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处置判定  0：正常 1：可疑",
           "member": "int64",
           "name": "HitFlag",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "命中的logo标签信息",
-          "member": "Logo",
-          "name": "PolityLogoDetail",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "命中的人脸名称",
           "member": "string",
           "name": "FaceNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "关键词明细",
-          "member": "string",
-          "name": "Keywords",
+          "disabled": false,
+          "document": "命中的logo标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Logo",
+          "name": "PolityLogoDetail",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "命中的政治物品名称",
+          "disabled": false,
+          "document": "命中的政治物品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PolityItems",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
+          "disabled": false,
           "document": "政治（人脸）分：分值范围 0-100，分数越高可疑程度越高",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键词明细",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ImagePornDetect": {
       "document": "图片涉黄详情",
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常\n20002：色情",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处置判定 0：正常 1：可疑",
           "member": "int64",
           "name": "HitFlag",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "关键词明细",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "色情标签：色情特征中文描述",
           "member": "string",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "色情分：分值范围 0-100，分数越高色情倾向越明显",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ImageTerrorDetect": {
       "document": "图片暴恐详情",
       "members": [
         {
           "default": "",
-          "document": "恶意类型\n100：正常\n24001：暴恐",
-          "member": "int64",
-          "name": "EvilType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "处置判定 0：正常 1：可疑",
-          "member": "int64",
-          "name": "HitFlag",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "关键词明细",
+          "disabled": false,
+          "document": "关键词明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "暴恐标签：返回暴恐特征中文描述",
+          "disabled": false,
+          "document": "恶意类型\n100：正常\n24001：暴恐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EvilType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "暴恐标签：返回暴恐特征中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "暴恐分：分值范围0--100，分数越高暴恐倾向越明显",
+          "disabled": false,
+          "document": "暴恐分：分值范围0--100，分数越高暴恐倾向越明显\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
-        }
-      ],
-      "usage": "in"
-    },
-    "Logo": {
-      "document": "Logo",
-      "members": [
-        {
-          "default": "",
-          "document": "logo图标坐标信息",
-          "member": "RrectF",
-          "name": "RrectF",
-          "required": false,
-          "type": "object"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "logo图标置信度",
+          "disabled": false,
+          "document": "处置判定 0：正常 1：可疑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HitFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InvalidSample": {
+      "document": "无效关键词",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "放火",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效代码:1-标签不存在;2-词过长;3-词类型不匹配;4-备注超长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InvalidCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sample content should less then 40 words",
+          "member": "string",
+          "name": "InvalidMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KeywordsLibInfo": {
+      "document": "关键词库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库ID",
+          "example": "1111",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "LibName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词库描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user defined",
+          "member": "string",
+          "name": "Describe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词库创建时间",
+          "example": "2021-11-22 11:12",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核建议(Review/Block)",
+          "example": "Review",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配模式(ExactMatch/FuzzyMatch)",
+          "example": "FuzzyMatch",
+          "member": "string",
+          "name": "MatchType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联策略BizType列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BizTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Logo": {
+      "document": "Logo审核结果",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo图标置信度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "Confidence",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "logo图标名称",
+          "disabled": false,
+          "document": "logo图标坐标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RrectF",
+          "name": "RrectF",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo图标名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LogoDetail": {
-      "document": "LogoDetail",
+      "document": "Logo命中详情",
       "members": [
         {
           "default": "",
-          "document": "命中的Applogo详情",
+          "disabled": false,
+          "document": "命中的Applogo详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Logo",
           "name": "AppLogoDetail",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
-    },
-    "ManualReviewContent": {
-      "document": "人审审核数据相关信息",
-      "members": [
-        {
-          "default": "",
-          "document": "审核批次号",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "审核内容",
-          "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "消息Id",
-          "member": "string",
-          "name": "ContentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "审核内容类型 1 图片 2 视频 3 文本 4 音频",
-          "member": "int64",
-          "name": "ContentType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "用户信息",
-          "member": "User",
-          "name": "UserInfo",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "机器审核类型，与腾讯机器审核定义一致\n100 正常\n20001 政治\n20002 色情\n20006 违法\n20007 谩骂\n24001 暴恐\n20105 广告\n20103 性感",
-          "member": "int64",
-          "name": "AutoDetailCode",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "机器审核结果 0 放过 1 拦截",
-          "member": "int64",
-          "name": "AutoResult",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "回调信息标识，回传数据时原样返回",
-          "member": "string",
-          "name": "CallBackInfo",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "创建时间 格式“2020-01-01 00:00:12”",
-          "member": "string",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "审核优先级，可选值 [1,2,3,4]，其中 1 最高，4 最低",
-          "member": "int64",
-          "name": "Priority",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "标题",
-          "member": "string",
-          "name": "Title",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "usage": "in"
-    },
-    "ManualReviewData": {
-      "document": "人工审核接口返回结果，由ContentId和BatchId组成",
-      "members": [
-        {
-          "default": "",
-          "document": "人审内容批次号",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "人审内容ID",
-          "member": "string",
-          "name": "ContentId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "usage": "in"
-    },
-    "ManualReviewRequest": {
-      "document": "ManualReview请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "人工审核信息",
-          "is_public": true,
-          "member": "ManualReviewContent",
-          "name": "ReviewContent",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ManualReviewResponse": {
-      "document": "ManualReview返回参数结构体",
-      "members": [
-        {
-          "document": "人审接口同步响应结果",
-          "member": "ManualReviewData",
-          "name": "Data",
-          "type": "object"
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
+      "usage": "both"
     },
     "OCRDetect": {
       "document": "OCR识别结果详情",
       "members": [
         {
           "default": "",
-          "document": "识别到的详细信息",
+          "disabled": false,
+          "document": "识别到的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OCRItem",
           "name": "Item",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "识别到的文本信息",
+          "disabled": false,
+          "document": "识别到的文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TextInfo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "OCRItem": {
       "document": "OCR详情",
       "members": [
         {
           "default": "",
-          "document": "检测到的文本坐标信息",
+          "disabled": false,
+          "document": "检测到的文本坐标信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Coordinate",
           "name": "TextPosition",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "文本命中具体标签",
-          "member": "string",
-          "name": "EvilLabel",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文本命中恶意违规类型",
+          "disabled": false,
+          "document": "文本命中恶意违规类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "EvilType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "文本命中违规的关键词",
-          "member": "string",
-          "name": "Keywords",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "文本涉嫌违规分值",
-          "member": "int64",
-          "name": "Rate",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "检测到的文本信息",
+          "disabled": false,
+          "document": "检测到的文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TextContent",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文本涉嫌违规分值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Rate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文本命中具体标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EvilLabel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文本命中违规的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "PhoneDetect": {
       "document": "手机模型识别检测",
       "members": [
         {
           "default": "",
-          "document": "恶意类型\n100：正常\n21000：综合",
+          "disabled": false,
+          "document": "恶意类型\n100：正常\n21000：综合\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "EvilType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "处置判定 0：正常 1：可疑",
-          "member": "int64",
-          "name": "HitFlag",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "特征中文描述",
+          "disabled": false,
+          "document": "特征中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "分值范围 0-100，分数越高倾向越明显",
+          "disabled": false,
+          "document": "分值范围 0-100，分数越高倾向越明显\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处置判定 0：正常 1：可疑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "HitFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RiskDetails": {
       "document": "账号风险检测结果",
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "预留字段，暂时不使用",
           "member": "string",
           "name": "Keywords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "风险类别，RiskAccount，RiskIP, RiskIMEI",
-          "member": "string",
-          "name": "Label",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "预留字段，暂时不用",
           "member": "string",
           "name": "Lable",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "风险类别，RiskAccount，RiskIP, RiskIMEI",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "风险等级，1:疑似，2：恶意",
           "member": "int64",
           "name": "Level",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1571,199 +1583,245 @@
       "members": [
         {
           "default": "",
-          "document": "logo横坐标",
-          "member": "float",
-          "name": "Cx",
-          "required": false,
-          "type": "float"
-        },
-        {
-          "default": "",
-          "document": "logo纵坐标",
-          "member": "float",
-          "name": "Cy",
-          "required": false,
-          "type": "float"
-        },
-        {
-          "default": "",
-          "document": "logo图标高度",
-          "member": "float",
-          "name": "Height",
-          "required": false,
-          "type": "float"
-        },
-        {
-          "default": "",
-          "document": "logo图标中心旋转度",
-          "member": "float",
-          "name": "Rotate",
-          "required": false,
-          "type": "float"
-        },
-        {
-          "default": "",
-          "document": "logo图标宽度",
+          "disabled": false,
+          "document": "logo图标宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "Width",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo纵坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Cy",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo横坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Cx",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo图标中心旋转度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Rotate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "logo图标高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Height",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Similar": {
       "document": "相似度详情",
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "处置判定 0：未匹配到 1：恶意 2：白样本",
           "member": "int64",
           "name": "HitFlag",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "返回的种子url",
+          "disabled": false,
+          "document": "返回的种子url\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SeedUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TextData": {
       "document": "文本识别结果详情",
       "members": [
         {
           "default": "",
-          "document": "是否恶意 0：正常 1：可疑",
-          "member": "int64",
-          "name": "EvilFlag",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂\n20105：广告引流 \n24001：暴恐",
           "member": "int64",
           "name": "EvilType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "消息类公共相关参数",
-          "member": "TextOutputComm",
-          "name": "Common",
-          "required": false,
-          "type": "object"
+          "disabled": false,
+          "document": "是否恶意 0：正常 1：可疑",
+          "member": "int64",
+          "name": "EvilFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "返回的自定义词库结果",
-          "member": "CustomResult",
-          "name": "CustomResult",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "返回的详细结果",
-          "member": "DetailResult",
-          "name": "DetailResult",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "消息类ID信息",
-          "member": "TextOutputID",
-          "name": "ID",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "消息类输出结果",
-          "member": "TextOutputRes",
-          "name": "Res",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "账号风险检测结果",
-          "member": "RiskDetails",
-          "name": "RiskDetails",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "最终使用的BizType",
-          "member": "uint64",
-          "name": "BizType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "和请求中的DataId一致，原样返回",
           "member": "string",
           "name": "DataId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
-          "member": "string",
-          "name": "EvilLabel",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "输出的其他信息，不同客户内容不同",
           "member": "string",
           "name": "Extra",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "命中的关键词",
-          "member": "string",
-          "name": "Keywords",
+          "disabled": false,
+          "document": "最终使用的BizType",
+          "member": "uint64",
+          "name": "BizType",
           "required": false,
-          "type": "list"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "消息类输出结果",
+          "member": "TextOutputRes",
+          "name": "Res",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号风险检测结果",
+          "member": "RiskDetails",
+          "name": "RiskDetails",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息类ID信息",
+          "member": "TextOutputID",
+          "name": "ID",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "命中的模型分值",
           "member": "uint64",
           "name": "Score",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "消息类公共相关参数",
+          "member": "TextOutputComm",
+          "name": "Common",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "建议值,Block：打击,Review：待复审,Normal：正常",
           "member": "string",
           "name": "Suggestion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "命中的关键词",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回的详细结果",
+          "member": "DetailResult",
+          "name": "DetailResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回的自定义词库结果",
+          "member": "CustomResult",
+          "name": "CustomResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
+          "member": "string",
+          "name": "EvilLabel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1773,8 +1831,8 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。",
-          "is_public": true,
           "member": "string",
           "name": "Content",
           "required": true,
@@ -1782,35 +1840,8 @@
         },
         {
           "default": "",
-          "document": "设备相关信息",
-          "is_public": true,
-          "member": "Device",
-          "name": "Device",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "用户相关信息",
-          "is_public": true,
-          "member": "User",
-          "name": "User",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略",
-          "is_public": true,
-          "member": "uint64",
-          "name": "BizType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
-          "is_public": true,
           "member": "string",
           "name": "DataId",
           "required": false,
@@ -1818,12 +1849,39 @@
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略",
+          "member": "uint64",
+          "name": "BizType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户相关信息",
+          "member": "User",
+          "name": "User",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "业务应用ID",
-          "is_public": true,
           "member": "uint64",
           "name": "SdkAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备相关信息",
+          "member": "Device",
+          "name": "Device",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1832,16 +1890,20 @@
       "document": "TextModeration返回参数结构体",
       "members": [
         {
-          "document": "识别结果",
-          "member": "TextData",
-          "name": "Data",
-          "type": "object"
-        },
-        {
+          "disabled": false,
           "document": "业务返回码",
           "member": "int64",
           "name": "BusinessCode",
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TextData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1857,35 +1919,43 @@
       "members": [
         {
           "default": "",
-          "document": "接入业务的唯一ID",
-          "member": "int64",
-          "name": "AppID",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "接口唯一ID，旁路调用接口返回有该字段，标识唯一接口",
           "member": "int64",
           "name": "BUCtrlID",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "消息发送时间",
           "member": "int64",
           "name": "SendTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
+          "document": "接入业务的唯一ID",
+          "member": "int64",
+          "name": "AppID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
           "document": "请求字段里的Common.Uin",
           "member": "int64",
           "name": "Uin",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1895,19 +1965,23 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "接入业务的唯一ID",
           "member": "string",
           "name": "MsgID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段",
           "member": "string",
           "name": "Uin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1917,97 +1991,43 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "操作人,信安处理人企业微信ID",
           "member": "string",
           "name": "Operator",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "恶意操作码，\n删除（1）， 通过（2）， 先审后发（100012）",
-          "member": "int64",
-          "name": "ResultCode",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "操作结果备注说明",
-          "member": "string",
-          "name": "ResultMsg",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "恶意类型，广告（10001）， 政治（20001）， 色情（20002）， 社会事件（20004）， 暴力（20011）， 低俗（20012）， 违法犯罪（20006）， 欺诈（20008）， 版权（20013）， 谣言（20104）， 其他（21000）",
           "member": "int64",
           "name": "ResultType",
           "required": false,
-          "type": "int"
-        }
-      ],
-      "usage": "in"
-    },
-    "TextSample": {
-      "document": "文字样本信息",
-      "members": [
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "default": "",
-          "document": "处理错误码",
+          "disabled": false,
+          "document": "恶意操作码，\n删除（1）， 通过（2）， 先审后发（100012）",
           "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int"
+          "name": "ResultCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "关键词",
+          "disabled": false,
+          "document": "操作结果备注说明",
           "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "创建时间戳",
-          "member": "uint64",
-          "name": "CreatedAt",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n20105：广告引流 \n24001：暴恐",
-          "member": "uint64",
-          "name": "EvilType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "唯一标识",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "样本类型\n1：黑库\n2：白库",
-          "member": "uint64",
-          "name": "Label",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "任务状态\n1：已完成\n2：处理中",
-          "member": "uint64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
+          "name": "ResultMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2017,62 +2037,194 @@
       "members": [
         {
           "default": "",
-          "document": "账号类别，\"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
-          "member": "int64",
-          "name": "AccountType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "年龄 默认0 未知",
-          "member": "int64",
-          "name": "Age",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "性别 默认0 未知 1 男性 2 女性",
-          "member": "int64",
-          "name": "Gender",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
+          "disabled": false,
           "document": "用户等级，默认0 未知 1 低 2 中 3 高",
           "member": "int64",
           "name": "Level",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "用户昵称",
-          "member": "string",
-          "name": "Nickname",
+          "disabled": false,
+          "document": "性别 默认0 未知 1 男性 2 女性",
+          "member": "int64",
+          "name": "Gender",
           "required": false,
-          "type": "string"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "手机号",
-          "member": "string",
-          "name": "Phone",
+          "disabled": false,
+          "document": "年龄 默认0 未知",
+          "member": "int64",
+          "name": "Age",
           "required": false,
-          "type": "string"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "default": "",
+          "disabled": false,
           "document": "用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号类别，\"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
+          "member": "int64",
+          "name": "AccountType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户昵称",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
+    },
+    "UserKeyword": {
+      "document": "添加关键词。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词内容：最多40个字符，并且符合词类型的规则",
+          "example": "违法",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词类型，取值范围为：\"Normal\",\"Polity\",\"Porn\",\"Ad\",\"Illegal\",\"Abuse\",\"Terror\",\"Spam\"",
+          "example": "Illegal",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词备注：最多100个字符。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词类型：Default,Pinyin,English,CompoundWord,ExclusionWord,AffixWord",
+          "example": "Default",
+          "member": "string",
+          "name": "WordType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserKeywordInfo": {
+      "document": "关键词信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键词条ID",
+          "example": "2",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键词内容",
+          "example": "1",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键词标签；取值范围为：\"Normal\",\"Polity\",\"Porn\",\"Sexy\",\"Ad\",\"Illegal\",\"Abuse\",\"Terror\",\"Spam\",\"Moan\"",
+          "example": "3",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "4",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "词类型：Default,Pinyin,English,CompoundWord,ExclusionWord,AffixWord\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "WordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

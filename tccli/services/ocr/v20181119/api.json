@@ -385,6 +385,13 @@
       "output": "RecognizePhilippinesTinIDOCRResponse",
       "status": "online"
     },
+    "RecognizePhilippinesUMIDOCR": {
+      "document": "菲律宾UMID识别",
+      "input": "RecognizePhilippinesUMIDOCRRequest",
+      "name": "菲律宾UMID识别",
+      "output": "RecognizePhilippinesUMIDOCRResponse",
+      "status": "online"
+    },
     "RecognizePhilippinesVoteIDOCR": {
       "document": "本接口支持菲律宾VoteID识别，识别字段包括姓名、姓氏、出生日期、婚姻状况、国籍、地址、地区、菲律宾VoteID的VIN等。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizePhilippinesVoteIDOCRRequest",
@@ -407,7 +414,7 @@
       "status": "online"
     },
     "RecognizeThaiIDCardOCR": {
-      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码、首次领用日期、签发日期等字段。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码、首次领用日期、签发日期等字段。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n\n默认接口请求频率限制：10次/秒",
       "input": "RecognizeThaiIDCardOCRRequest",
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse",
@@ -9631,6 +9638,123 @@
           "member": "TextDetectionResult",
           "name": "IssueDate",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesUMIDOCRRequest": {
+      "document": "RecognizePhilippinesUMIDOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回人像照片。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesUMIDOCRResponse": {
+      "document": "RecognizePhilippinesUMIDOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Surname",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中间名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "MiddleName",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "GivenName",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "crn码",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "CRN",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "性别",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Sex",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
           "type": "object",
           "value_allowed_null": false
         },

@@ -674,7 +674,7 @@
     ],
     "DeleteBandwidthPackage": [
       {
-        "document": "",
+        "document": "无",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteBandwidthPackage\n&BandwidthPackageId=bwp-cs7j6pd0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"733e5cbd-da2d-43fb-89b5-083aad6d58f8\"\n    }\n}",
         "title": "删除共享带宽包"

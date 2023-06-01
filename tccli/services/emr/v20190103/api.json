@@ -22,7 +22,7 @@
       "status": "online"
     },
     "DeleteUserManagerUserList": {
-      "document": "删除用户列表（用户管理）\n",
+      "document": "删除用户列表（用户管理）",
       "input": "DeleteUserManagerUserListRequest",
       "name": "删除用户列表",
       "output": "DeleteUserManagerUserListResponse",
@@ -2126,7 +2126,6 @@
       "document": "DeleteUserManagerUserList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "emr-xxx",
@@ -2136,13 +2135,39 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群用户名列表",
           "example": "[\"emr\", \"es\"]",
           "member": "string",
           "name": "UserNameList",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "tke/eks集群id，容器集群传",
+          "example": "无",
+          "member": "string",
+          "name": "TkeClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认空，容器版传\"native\"",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组",
+          "example": "无",
+          "member": "UserAndGroup",
+          "name": "UserGroupList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -8795,6 +8820,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserAndGroup": {
+      "document": "容器集群用户组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

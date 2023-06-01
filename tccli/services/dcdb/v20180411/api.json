@@ -350,6 +350,13 @@
       "output": "KillSessionResponse",
       "status": "online"
     },
+    "ModifyAccountConfig": {
+      "document": "修改账号的一些配置，比如 max_user_connections",
+      "input": "ModifyAccountConfigRequest",
+      "name": "修改账号配置",
+      "output": "ModifyAccountConfigResponse",
+      "status": "online"
+    },
     "ModifyAccountDescription": {
       "document": "本接口（ModifyAccountDescription）用于修改云数据库账号备注。\n注意：相同用户名，不同Host是不同的账号。",
       "input": "ModifyAccountDescriptionRequest",
@@ -914,6 +921,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ConfigValue": {
+      "document": "配置信息。包含配置项Config，配置值Value",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项的名称，支持填写max_user_connections",
+          "example": "max_user_connections",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置值",
+          "example": "1024",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -6810,6 +6843,60 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAccountConfigRequest": {
+      "document": "ModifyAccountConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：tdsqlshard-kpkvq5oj，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "tdsqlshard-kpkvq5oj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号的名称",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号的域名",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置列表，每一个元素是Config和Value的组合",
+          "example": "无",
+          "member": "ConfigValue",
+          "name": "Configs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountConfigResponse": {
+      "document": "ModifyAccountConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAccountDescriptionRequest": {
       "document": "ModifyAccountDescription请求参数结构体",

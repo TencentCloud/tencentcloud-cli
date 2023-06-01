@@ -406,6 +406,14 @@
         "title": "杀死指定会话"
       }
     ],
+    "ModifyAccountConfig": [
+      {
+        "document": "修改实例tdsqlshard-lfkz0geb下，账号user_test的最大连接数为 123",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-lfkz0geb\",\n    \"UserName\": \"user_test\",\n    \"Host\": \"%\",\n    \"Configs\": [\n        {\n            \"Config\": \"max_user_connections\",\n            \"Value\": \"123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c200ca1-4cac-480e-9f58-574a35a7b895\"\n    }\n}",
+        "title": "修改账号最大连接数"
+      }
+    ],
     "ModifyAccountDescription": [
       {
         "document": "",
