@@ -442,7 +442,7 @@
       "status": "online"
     },
     "ModifyLoadBalancerSla": {
-      "document": "本接口（ModifyLoadBalancerSla）用于将按量计费模式的共享型实例升级为性能容量型实例。<br/>\n限制条件：\n- 本接口只支持升级按量计费的CLB实例，包年包月的CLB实例升级请通过控制台进行升级。\n- 升级为性能容量型实例后，不支持再回退到共享型实例。\n- 目前性能容量型实例处于内测中，如需升级为性能容量型实例，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。\n- 传统型负载均衡实例不支持升级为性能容量型实例。",
+      "document": "本接口（ModifyLoadBalancerSla）用于将按量计费模式的共享型实例升级为性能容量型实例。<br/>\n限制条件：\n- 本接口只支持升级按量计费的CLB实例，包年包月的CLB实例升级请通过控制台进行升级。\n- 升级为性能容量型实例后，不支持再回退到共享型实例。\n- 传统型负载均衡实例不支持升级为性能容量型实例。",
       "input": "ModifyLoadBalancerSlaRequest",
       "name": "升级为性能容量型实例",
       "output": "ModifyLoadBalancerSlaResponse",
@@ -2729,7 +2729,6 @@
       "document": "CreateLoadBalancer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。",
           "example": "OPEN",
@@ -2739,7 +2738,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的类型。1：通用的负载均衡实例，目前只支持传入1。",
           "example": "1",
@@ -2749,7 +2747,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-60 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
           "example": "test",
@@ -2759,7 +2756,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。",
           "example": "vpc-30xq****",
@@ -2769,7 +2765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。",
           "example": "subnet-dva8****",
@@ -2779,7 +2774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。",
           "example": "0",
@@ -2789,7 +2783,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。",
           "example": "IPV4",
@@ -2799,7 +2792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建负载均衡的个数，默认值 1。",
           "example": "1",
@@ -2809,7 +2801,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主可用区的列表。",
           "example": "ap-guangzhou-1",
@@ -2819,7 +2810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
           "example": "ap-guangzhou-1",
@@ -2829,9 +2819,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "仅适用于公网负载均衡。负载均衡的网络计费模式。",
+          "document": "仅对内网属性的性能容量型实例和公网属性的所有实例生效。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
@@ -2839,7 +2828,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。",
           "example": "CMCC",
@@ -2849,7 +2837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。",
           "example": "无",
@@ -2859,7 +2846,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定VIP申请负载均衡。此参数选填，不填写此参数时自动分配VIP。IPv4和IPv6类型支持此参数，IPv6 NAT64类型不支持。\n注意：当指定VIP创建内网实例、或公网IPv6 BGP实例时，若VIP不属于指定VPC子网的网段内时，会创建失败；若VIP已被占用，也会创建失败。",
           "example": "139.X.X.X",
@@ -2869,7 +2855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。",
           "example": "bwp-pnbe****",
@@ -2879,7 +2864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占型实例信息。若创建独占型的内网负载均衡实例，则此参数必填。",
           "example": "无",
@@ -2889,9 +2873,8 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "创建性能容量型实例。\n<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。\n<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>\n<li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>",
+          "document": "创建性能容量型实例。\n<ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。\n<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。\n<li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SlaType",
@@ -2899,7 +2882,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "23494*****",
@@ -2909,7 +2891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持绑定跨地域/跨Vpc绑定IP的功能。",
           "example": "true",
@@ -2919,7 +2900,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
           "example": "无",
@@ -2929,7 +2909,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Stgw独占集群的标签。",
           "example": "test",
@@ -2939,7 +2918,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1\n注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 [DescribeResources](https://cloud.tencent.com/document/api/214/70213) 接口查询一个地域的主/备可用区的列表。",
           "example": "ap-guangzhou-1",
@@ -2949,7 +2927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。",
           "example": "eip-1111****",
@@ -2959,12 +2936,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。",
           "example": "true",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "创建域名化负载均衡。",
+          "example": "True",
+          "member": "bool",
+          "name": "DynamicVip",
           "required": false,
           "type": "bool"
         }
@@ -2980,7 +2965,6 @@
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2990,7 +2974,6 @@
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6235,7 +6218,7 @@
         },
         {
           "disabled": false,
-          "document": "最大出带宽，单位Mbps，仅对公网属性的共享型、性能容量型和独占型 CLB 实例、以及内网属性的性能容量型 CLB 实例生效。\n- 对于公网属性的共享型和独占型 CLB 实例，最大出带宽的范围为1Mbps-2048Mbps。\n- 对于公网属性和内网属性的性能容量型 CLB实例\n  - 当您开通了普通规格的性能容量型时，最大出带宽的范围为1Mbps-10240Mbps。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。\n  - 当您开通了超大型规格的性能容量型时，最大出带宽的范围为1Mbps-61440Mbps。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大出带宽，单位Mbps，仅对公网属性的共享型、性能容量型和独占型 CLB 实例、以及内网属性的性能容量型 CLB 实例生效。\n- 对于公网属性的共享型和独占型 CLB 实例，最大出带宽的范围为1Mbps-2048Mbps。\n- 对于公网属性和内网属性的性能容量型 CLB实例\n  - 默认为普通规格的性能容量型实例，SLA对应超强型1规格，最大出带宽的范围为1Mbps-10240Mbps。\n  - 当您开通了超大型规格的性能容量型时，最大出带宽的范围为1Mbps-61440Mbps。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -9378,7 +9361,6 @@
       "document": "资源详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "运营商内具体资源信息，如\"CMCC\", \"CUCC\", \"CTCC\", \"BGP\", \"INTERNAL\"。",
           "example": "CMCC",
@@ -9389,7 +9371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商信息，如\"CMCC\", \"CUCC\", \"CTCC\", \"BGP\", \"INTERNAL\"。",
           "example": "CMCC",
@@ -9400,13 +9381,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用资源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceAvailability",
           "name": "AvailabilitySet",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运营商类型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TypeInfo",
+          "name": "TypeSet",
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10441,13 +10431,39 @@
       ],
       "usage": "both"
     },
+    "SpecAvailability": {
+      "document": "规格可用性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shared",
+          "member": "string",
+          "name": "SpecType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格可用性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Availability",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TagInfo": {
       "document": "负载均衡的标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的键",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -10455,9 +10471,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -10465,7 +10481,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Target": {
       "document": "转发目标，即绑定在负载均衡上的后端服务",
@@ -10918,6 +10934,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TypeInfo": {
+      "document": "运营商类型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运营商类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BGP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格可用性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpecAvailability",
+          "name": "SpecAvailabilitySet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ZoneInfo": {
       "document": "可用区相关信息",

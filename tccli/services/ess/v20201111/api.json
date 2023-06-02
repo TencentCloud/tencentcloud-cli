@@ -818,8 +818,7 @@
       "document": "此结构体 (Caller) 用于描述调用方属性。",
       "members": [
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "应用号",
           "example": "c17bdf9c2a7bdcb88811f4d0200fee3d",
           "member": "string",
@@ -829,8 +828,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "主机构ID",
           "example": "732aaefa78c439d726f999b89c49e022",
           "member": "string",
@@ -840,9 +838,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "经办人的用户ID",
+          "document": "经办人的用户ID，同UserId",
           "example": "88fb0c591044be771f60aa382cc5ed0e",
           "member": "string",
           "name": "OperatorId",
@@ -851,8 +848,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "下属机构ID",
           "example": "dasdasdhjksdjk2938hein",
           "member": "string",
@@ -4649,9 +4645,8 @@
       "document": "下载文件的URL信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "下载文件的URL",
+          "document": "下载文件的URL，有效期为输入的UrlTtl，默认5分钟",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -4660,9 +4655,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "下载文件的附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Option",
@@ -4677,9 +4671,8 @@
       "document": "补充签署人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人签署Id",
+          "document": "对应模板中的参与方ID",
           "example": "xxxx",
           "member": "string",
           "name": "RecipientId",
@@ -4688,7 +4681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署人来源\nWEWORKAPP: 企业微信",
           "example": "WEWORKAPP",
@@ -4699,9 +4691,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "企业自定义账号Id\nWEWORKAPP场景下指企业自有应用获取企微明文的userid",
+          "document": "企业自定义账号ID\nWEWORKAPP场景下指企业自有应用获取企微明文的userid",
           "example": "zhangsan",
           "member": "string",
           "name": "CustomUserId",
@@ -4742,9 +4733,8 @@
       "document": "签署人详情信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署时的相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApproveMessage",
@@ -4753,9 +4743,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人名字",
+          "document": "签署方姓名",
           "example": "无",
           "member": "string",
           "name": "ApproveName",
@@ -4764,9 +4753,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人的状态\n0：还没有发起\n1：流程中 没有开始处理\n2：待处理\n3：签署态\n4：拒绝态\n5：过期没人处理\n6：取消态\n7：还没有预发起\n8：待填写\n9：因为各种原因而终止",
+          "document": "签署方的签署状态\n0：还没有发起\n1：流程中 没有开始处理\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n7：还没有预发起\n8：待填写\n9：因为各种原因而终止\n10：填写完成\n15：已解除\n19：转他人处理",
           "example": "无",
           "member": "int64",
           "name": "ApproveStatus",
@@ -4775,9 +4763,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "模板配置时候的签署人id,与控件绑定",
+          "document": "模板配置中的参与方ID,与控件绑定",
           "example": "无",
           "member": "string",
           "name": "ReceiptId",
@@ -4786,9 +4773,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "客户自定义userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CustomUserId",
@@ -4797,7 +4783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署人手机号",
           "example": "无",
@@ -4808,9 +4793,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署顺序",
+          "document": "签署顺序，如果是有序签署，签署顺序从小到大",
           "example": "无",
           "member": "int64",
           "name": "SignOrder",
@@ -4819,9 +4803,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人签署时间",
+          "document": "签署人签署时间，时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "ApproveTime",
@@ -4830,9 +4813,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "参与者类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApproveType",
@@ -4841,9 +4823,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人侧用户来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方侧用户来源，如WEWORKAPP-企业微信等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApproverSource",
@@ -4852,9 +4833,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "客户自定义签署人标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义签署方标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CustomApproverTag",
@@ -4863,9 +4843,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OrganizationId",
@@ -4874,9 +4853,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "签署人企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
@@ -4948,7 +4926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程的编号",
+          "document": "流程的编号ID",
           "example": "xxx",
           "member": "string",
           "name": "FlowId",
@@ -4968,7 +4946,7 @@
         },
         {
           "disabled": false,
-          "document": "流程的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "FlowDescription",
@@ -4988,7 +4966,7 @@
         },
         {
           "disabled": false,
-          "document": "流程状态\n- `0`  还没有发起\n- `1`  未签署\n- `2`  部分签署\n- `3`  已退回\n- `4`  完成签署\n- `5`  已过期\n- `6`  已取消\n- `7`  还没有预发起\n- `8`  等待填写\n- `9`  部分填写\n- `10`  拒填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程状态\n- 0 还没有发起\n- 1 待签署\n- 2 部分签署\n- 3 已拒签\n- 4 已签署\n- 5 已过期\n- 6 已撤销\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填\n- 21 已解除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
           "name": "FlowStatus",
@@ -4998,7 +4976,7 @@
         },
         {
           "disabled": false,
-          "document": "流程创建的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程创建的时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "CreatedOn",
@@ -5044,7 +5022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -5104,7 +5082,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中的角色ID",
+          "document": "签署方经办人在模板中的参与方ID",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -5213,7 +5191,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "签署完前端跳转的url，暂未使用",
           "example": "无",
           "member": "string",
@@ -5230,7 +5208,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同(流程)的Id",
+          "document": "合同(流程)的ID",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -5260,7 +5238,7 @@
         },
         {
           "disabled": false,
-          "document": "流程状态\n- 0 还没有发起\n- 1 未签署\n- 2 部分签署\n- 3 已退回\n- 4 完成签署\n- 5 已过期\n- 6 已取消\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填",
+          "document": "流程状态\n- 0 还没有发起\n- 1 待签署\n- 2 部分签署\n- 3 已拒签\n- 4 已签署\n- 5 已过期\n- 6 已撤销\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填\n- 21 已解除",
           "example": "无",
           "member": "int64",
           "name": "FlowStatus",
@@ -5290,7 +5268,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的创建时间戳",
+          "document": "合同(流程)的创建时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
@@ -5300,7 +5278,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的签署人数组",
+          "document": "合同(流程)的签署方数组",
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "FlowApproverInfos",

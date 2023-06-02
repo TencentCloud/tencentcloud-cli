@@ -6398,13 +6398,13 @@
         },
         {
           "disabled": false,
-          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据更新时间",
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6435,6 +6435,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

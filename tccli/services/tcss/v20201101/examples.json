@@ -2210,6 +2210,14 @@
         "title": "查询各类型漏洞各威胁等级统计数"
       }
     ],
+    "DescribeVulRegistryImageList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulRegistryImageList\n&PocID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"ComponentList\": [\n                    {\n                        \"Path\": \"xx\",\n                        \"Version\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"FixedVersion\": \"xx\"\n                    }\n                ],\n                \"ImageTag\": \"xx\",\n                \"ImageRepoAddress\": \"xx\",\n                \"Namespace\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"ImageID\": \"xx\",\n                \"IsLatestImage\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞影响的仓库镜像列表"
+      }
+    ],
     "DescribeVulScanAuthorizedImageSummary": [
       {
         "document": "",

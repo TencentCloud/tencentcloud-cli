@@ -1876,6 +1876,13 @@
       "output": "DescribeVulLevelSummaryResponse",
       "status": "online"
     },
+    "DescribeVulRegistryImageList": {
+      "document": "查询漏洞影响的仓库镜像列表",
+      "input": "DescribeVulRegistryImageListRequest",
+      "name": "查询漏洞影响的仓库镜像列表",
+      "output": "DescribeVulRegistryImageListResponse",
+      "status": "online"
+    },
     "DescribeVulScanAuthorizedImageSummary": {
       "document": "统计漏洞扫描页已授权和未扫描镜像数",
       "input": "DescribeVulScanAuthorizedImageSummaryRequest",
@@ -27786,6 +27793,104 @@
       ],
       "type": "object"
     },
+    "DescribeVulRegistryImageListRequest": {
+      "document": "DescribeVulRegistryImageList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "漏洞ID",
+          "example": "1",
+          "member": "string",
+          "name": "PocID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件。\nOnlyAffectedNewestImage bool 是否影响最新镜像\nImageDigest 镜像Digest，支持模糊查询\nImageId 镜像ID，支持模糊查询\nNamespace 命名空间，支持模糊查询\nImageTag 镜像版本，支持模糊查询\nInstanceName 实例名称，支持模糊查询\nImageName 镜像名，支持模糊查询\nImageRepoAddress 镜像地址，支持模糊查询",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序方式",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulRegistryImageListResponse": {
+      "document": "DescribeVulRegistryImageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仓库镜像列表",
+          "example": "无",
+          "member": "VulAffectedRegistryImageInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVulScanAuthorizedImageSummaryRequest": {
       "document": "DescribeVulScanAuthorizedImageSummary请求参数结构体",
       "members": [],
@@ -39946,6 +40051,100 @@
           "name": "ComponentList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulAffectedRegistryImageInfo": {
+      "document": "漏洞影响的仓库镜像列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "无",
+          "member": "string",
+          "name": "ImageID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "无",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "镜像版本",
+          "example": "无",
+          "member": "string",
+          "name": "ImageTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "镜像命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "无",
+          "member": "string",
+          "name": "ImageRepoAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "组件列表",
+          "example": "无",
+          "member": "VulAffectedImageComponentInfo",
+          "name": "ComponentList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否为镜像的最新版本",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLatestImage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "内部镜像资产ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ImageAssetId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

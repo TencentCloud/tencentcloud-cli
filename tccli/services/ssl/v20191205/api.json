@@ -42,6 +42,13 @@
       "output": "CreateCertificateResponse",
       "status": "online"
     },
+    "CreateCertificateByPackage": {
+      "document": "使用权益点创建证书",
+      "input": "CreateCertificateByPackageRequest",
+      "name": "使用权益点创建证书",
+      "output": "CreateCertificateByPackageResponse",
+      "status": "online"
+    },
     "DeleteCertificate": {
       "document": "本接口（DeleteCertificate）用于删除证书。",
       "input": "DeleteCertificateRequest",
@@ -1668,6 +1675,195 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateCertificateByPackageRequest": {
+      "document": "CreateCertificateByPackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书产品PID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProductPid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要消耗的权益包ID。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "证书域名数量。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainCount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多年期证书年限。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要续费的原证书ID（续费时填写）。",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时CSR生成方式（original、upload、online）。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewGenCsrMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时选择上传CSR时填写CSR。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewCsr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费证书CSR的算法类型。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewAlgorithmType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费证书CSR的算法参数。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewAlgorithmParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "续费证书的私钥密码。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewKeyPass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量购买证书时预填写的域名。",
+          "example": "a.com,b.com,c.com",
+          "member": "string",
+          "name": "DomainNames",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量购买证书数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CertificateCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预填写的管理人ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ManagerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预填写的公司ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "验证方式",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCertificateByPackageResponse": {
+      "document": "CreateCertificateByPackage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量购买证书时返回多个证书ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCertificateRequest": {
       "document": "CreateCertificate请求参数结构体",
