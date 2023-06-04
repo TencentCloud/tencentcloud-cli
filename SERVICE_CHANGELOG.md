@@ -1,133 +1,33 @@
 # 本版本更新包含以下内容：
 
-## API 网关(apigateway) 版本：2018-08-08
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 17 次发布
+### 第 48 次发布
 
-发布时间：2023-06-02 01:06:54
+发布时间：2023-06-05 01:12:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [CreateApi](http://document.tencentcloudapi.woa.com/document/product/628/45243)
-
-	* <font color="#dd0000">**修改出参**：</font>Result
-
-* [DescribeApisStatus](http://document.tencentcloudapi.woa.com/document/product/628/45239)
-
-	* <font color="#dd0000">**修改出参**：</font>Result
-
-* [DescribeExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/628/63805)
-
-	* <font color="#dd0000">**修改出参**：</font>Result
-
-* [ModifyUpstream](http://document.tencentcloudapi.woa.com/document/product/628/70410)
-
-	* <font color="#dd0000">**修改出参**：</font>Result
-
 
 新增数据结构：
 
-* [CreateApiResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#CreateApiResultInfo)
-* [DescribeApisStatusResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultInfo)
-* [DescribeExclusiveInstancesResult](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeExclusiveInstancesResult)
-* [DescribeServiceReleaseVersionResultVersionListInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeServiceReleaseVersionResultVersionListInfo)
-* [ModifyUpstreamResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#ModifyUpstreamResultInfo)
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ApisStatus
+* [OriginSni](http://document.tencentcloudapi.woa.com/document/product/228/30987#OriginSni)
 
 修改数据结构：
 
-* [ServiceReleaseVersion](http://document.tencentcloudapi.woa.com/document/product/628/45244#ServiceReleaseVersion)
+* [Origin](http://document.tencentcloudapi.woa.com/document/product/228/30987#Origin)
 
-	* <font color="#dd0000">**修改成员**：</font>VersionList
-
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 26 次发布
-
-发布时间：2023-06-02 01:12:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [AssociatedInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#AssociatedInstanceInfo)
-
-	* 新增成员：SecurityGroupRuleCount, CdbId
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#InstanceInfo)
-
-	* 新增成员：Server
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 41 次发布
-
-发布时间：2023-06-02 01:13:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
-
-	* 新增入参：DynamicVip
-
-
-新增数据结构：
-
-* [SpecAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#SpecAvailability)
-* [TypeInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TypeInfo)
-
-修改数据结构：
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/214/30694#Resource)
-
-	* 新增成员：TypeSet
+	* 新增成员：Sni
 
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 66 次发布
+### 第 67 次发布
 
-发布时间：2023-06-02 01:16:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [AssetWebFrameBaseInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#AssetWebFrameBaseInfo)
-
-	* 新增成员：Path
-
-
-
-
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 60 次发布
-
-发布时间：2023-06-02 01:30:29
+发布时间：2023-06-05 01:18:26
 
 本次发布包含了以下内容：
 
@@ -135,58 +35,107 @@
 
 新增接口：
 
-* [ResolveAddress](http://document.tencentcloudapi.woa.com/document/product/866/77886)
+* [DescribeVulStoreList](http://document.tencentcloudapi.woa.com/document/product/296/77888)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSaveOrUpdateWarnings
+
+新增数据结构：
+
+* [VulStoreListInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulStoreListInfo)
 
 
 
-## 渠道合作伙伴(partners) 版本：2018-03-21
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
 
-### 第 6 次发布
+### 第 35 次发布
 
-发布时间：2023-06-02 01:31:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeClientBalance
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 29 次发布
-
-发布时间：2023-06-02 01:34:26
+发布时间：2023-06-05 01:22:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateCertificateByPackage](http://document.tencentcloudapi.woa.com/document/product/400/77887)
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+
+	* 新增出参：InstanceIds, FlowId
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 92 次发布
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-发布时间：2023-06-02 01:41:20
+### 第 51 次发布
+
+发布时间：2023-06-05 01:22:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：SessionResourceTemplate
+
+* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
+
+	* 新增入参：IsInherit
+
+* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
+
+	* 新增入参：IsInherit
+
+
+新增数据结构：
+
+* [SessionResourceTemplate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SessionResourceTemplate)
 
 修改数据结构：
 
-* [PeerConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#PeerConnection)
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
 
-	* 新增成员：SourceVpcId, PeerVpcId, PeeringConnectionId, PeeringConnectionName, State, IsNgw, Bandwidth, SourceRegion, DestinationRegion, CreateTime, AppId, PeerAppId, ChargeType, SourceUin, DestinationUin, QosLevel, Type
+	* 新增成员：DefaultHouse, MaxConcurrency, TolerableQueueTime, UserAppId, UserUin, SessionResourceTemplate
 
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：IsInherit
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* 新增成员：MapMaterializedViewName
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：ImageVersion, DriverSize, ExecutorSize, ExecutorNums, ExecutorMaxNumbers
+
+
+
+
+## 腾讯智能对话平台(tbp) 版本：2019-06-27
+
+### 第 2 次发布
+
+发布时间：2023-06-05 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextReset](http://document.tencentcloudapi.woa.com/document/product/1060/37437)
+
+	* 新增出参：ResponseText
+
+
+
+
+## 腾讯智能对话平台(tbp) 版本：2019-03-11
 
 
 
@@ -2392,11 +2341,11 @@
 
 新增数据结构：
 
-* [[CreateApiResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#CreateApiResultInfo)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[CreateApiResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#CreateApiResultInfo))
-* [[DescribeApisStatusResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultInfo)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[DescribeApisStatusResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultInfo))
-* [[DescribeExclusiveInstancesResult](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeExclusiveInstancesResult)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[DescribeExclusiveInstancesResult](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeExclusiveInstancesResult))
-* [[DescribeServiceReleaseVersionResultVersionListInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeServiceReleaseVersionResultVersionListInfo)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[DescribeServiceReleaseVersionResultVersionListInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeServiceReleaseVersionResultVersionListInfo))
-* [[ModifyUpstreamResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#ModifyUpstreamResultInfo)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[ModifyUpstreamResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#ModifyUpstreamResultInfo))
+* [CreateApiResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#CreateApiResultInfo)
+* [DescribeApisStatusResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultInfo)
+* [DescribeExclusiveInstancesResult](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeExclusiveInstancesResult)
+* [DescribeServiceReleaseVersionResultVersionListInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeServiceReleaseVersionResultVersionListInfo)
+* [ModifyUpstreamResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#ModifyUpstreamResultInfo)
 
 <font color="#dd0000">**删除数据结构**：</font>
 
@@ -8670,6 +8619,25 @@
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
+### 第 48 次发布
+
+发布时间：2023-06-05 01:12:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[OriginSni](http://document.tencentcloudapi.woa.com/document/product/228/30987#OriginSni)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[OriginSni](http://document.tencentcloudapi.woa.com/document/product/228/30987#OriginSni))
+
+修改数据结构：
+
+* [Origin](http://document.tencentcloudapi.woa.com/document/product/228/30987#Origin)
+
+	* 新增成员：Sni
+
+
 ### 第 47 次发布
 
 发布时间：2023-05-24 01:09:01
@@ -12632,8 +12600,8 @@
 
 新增数据结构：
 
-* [[SpecAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#SpecAvailability)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[SpecAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#SpecAvailability))
-* [[TypeInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TypeInfo)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[TypeInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TypeInfo))
+* [SpecAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#SpecAvailability)
+* [TypeInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TypeInfo)
 
 修改数据结构：
 
@@ -17640,6 +17608,26 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 67 次发布
+
+发布时间：2023-06-05 01:18:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeVulStoreList](http://document.tencentcloudapi.woa.com/document/product/296/77888)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSaveOrUpdateWarnings
+
+新增数据结构：
+
+* [[VulStoreListInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulStoreListInfo)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[VulStoreListInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulStoreListInfo))
+
 ### 第 66 次发布
 
 发布时间：2023-06-02 01:16:14
@@ -21635,6 +21623,21 @@
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
 
+### 第 35 次发布
+
+发布时间：2023-06-05 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+
+	* 新增出参：InstanceIds, FlowId
+
+
 ### 第 34 次发布
 
 发布时间：2023-06-01 01:17:25
@@ -22292,6 +22295,52 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 51 次发布
+
+发布时间：2023-06-05 01:22:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：SessionResourceTemplate
+
+* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
+
+	* 新增入参：IsInherit
+
+* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
+
+	* 新增入参：IsInherit
+
+
+新增数据结构：
+
+* [[SessionResourceTemplate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SessionResourceTemplate)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[SessionResourceTemplate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SessionResourceTemplate))
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：DefaultHouse, MaxConcurrency, TolerableQueueTime, UserAppId, UserUin, SessionResourceTemplate
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：IsInherit
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* 新增成员：MapMaterializedViewName
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：ImageVersion, DriverSize, ExecutorSize, ExecutorNums, ExecutorMaxNumbers
+
 
 ### 第 50 次发布
 
@@ -39688,7 +39737,7 @@
 
 新增接口：
 
-* [[ResolveAddress](http://document.tencentcloudapi.woa.com/document/product/866/77886)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ResolveAddress](http://document.tencentcloudapi.woa.com/document/product/866/77886)
 
 ### 第 59 次发布
 
@@ -46293,7 +46342,7 @@
 
 新增接口：
 
-* [[CreateCertificateByPackage](http://document.tencentcloudapi.woa.com/document/product/400/77887)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateCertificateByPackage](http://document.tencentcloudapi.woa.com/document/product/400/77887)
 
 ### 第 28 次发布
 
@@ -47818,6 +47867,21 @@
 
 
 ## 腾讯智能对话平台(tbp) 版本：2019-06-27
+
+### 第 2 次发布
+
+发布时间：2023-06-05 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextReset](http://document.tencentcloudapi.woa.com/document/product/1060/37437)
+
+	* 新增出参：ResponseText
+
 
 ### 第 1 次发布
 

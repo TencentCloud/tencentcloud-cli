@@ -1,6 +1,6 @@
 **Example 1: 机器人对话服务接口**
 
-
+会话重制
 
 Input: 
 
@@ -35,6 +35,8 @@ Output:
             ]
         },
         "ResultType": "1",
+        "ResponseText": "重制会话成功。",
+        "RequestId": "xxx",
         "SessionAttributes": "xxx"
     }
 }

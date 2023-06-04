@@ -2355,6 +2355,16 @@
           "required": false,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "spark作业集群session资源配置模板",
+          "example": "无",
+          "member": "SessionResourceTemplate",
+          "name": "SessionResourceTemplate",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3416,6 +3426,16 @@
           "name": "SessionId",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务资源配置是否继承集群模板，0（默认）不继承，1：继承",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsInherit",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -5232,6 +5252,72 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否为默认引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultHouse",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "单个集群任务最大并发数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务排队上限时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TolerableQueueTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SessionResourceTemplate\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SessionResourceTemplate",
+          "name": "SessionResourceTemplate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -5449,7 +5535,6 @@
       "document": "数据库对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。",
           "example": "database1",
@@ -5461,7 +5546,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库描述信息，长度 0~256。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
@@ -5473,7 +5557,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许针对数据库的属性元数据信息进行指定。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5485,7 +5568,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库创建时间戳，单位：s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611646963",
@@ -5497,7 +5579,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库更新时间戳，单位：s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611646963",
@@ -5509,7 +5590,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://test",
@@ -5521,7 +5601,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建库用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testUser",
@@ -5533,7 +5612,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建库用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100019878767",
@@ -5545,7 +5623,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5557,9 +5634,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库ID（无效字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DatabaseId",
@@ -9939,6 +10015,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务资源配置是否继承集群配置模板：0（默认）不继承、1：继承",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsInherit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11372,6 +11458,56 @@
       ],
       "usage": "out"
     },
+    "SessionResourceTemplate": {
+      "document": "Spark批作业集群Session资源配置模板；",
+      "members": [
+        {
+          "disabled": false,
+          "document": "driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "指定executor数量，最小值为1，最大值小于集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNums",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "SparkJobInfo": {
       "document": "spark作业详情。",
       "members": [
@@ -11801,6 +11937,17 @@
           "name": "DataEngineImageVersion",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务资源配置是否继承集群模板，0（默认）不继承，1：继承\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsInherit",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -12544,7 +12691,6 @@
       "document": "查询表信息对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据表基本信息。",
           "example": "无",
@@ -12556,7 +12702,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12568,7 +12713,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表分块信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12580,7 +12724,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据存储路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://test-bucket-123242/csvdata/",
@@ -12592,7 +12735,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12604,7 +12746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表更新时间, 单位: ms。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611579344000",
@@ -12616,7 +12757,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表创建时间,单位: ms。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611579344000",
@@ -12628,7 +12768,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据格式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
@@ -12640,7 +12779,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表存储大小（单位：Byte）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1024",
@@ -12652,7 +12790,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表行数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -12660,6 +12797,17 @@
           "name": "RecordCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "xxxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MapMaterializedViewName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -12726,7 +12874,6 @@
       "document": "任务实例。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务所属Database的名称。",
           "example": "database1",
@@ -12738,7 +12885,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务数据量。",
           "example": "1024",
@@ -12750,7 +12896,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id。",
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
@@ -12762,7 +12907,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算耗时，单位： ms",
           "example": "60000",
@@ -12774,7 +12918,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务输出路径。",
           "example": "cosn://test-bucket-123434324234/result/",
@@ -12786,7 +12929,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间。",
           "example": "1611646962000",
@@ -12798,7 +12940,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。",
           "example": "2",
@@ -12810,7 +12951,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务SQL类型，DDL|DML等",
           "example": "DDL",
@@ -12822,7 +12962,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务SQL语句",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
@@ -12834,7 +12973,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果是否过期。",
           "example": "false",
@@ -12846,7 +12984,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据影响统计信息。",
           "example": "500 rows selected (0.077 seconds)",
@@ -12858,7 +12995,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结果数据表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
@@ -12870,7 +13006,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败信息, 例如：errorMessage。该字段已废弃。",
           "example": "\"\"",
@@ -12882,7 +13017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行进度num/100(%)",
           "example": "100",
@@ -12894,7 +13028,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行输出信息。",
           "example": "\"\"",
@@ -12906,7 +13039,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行SQL的引擎类型",
           "example": "\"\"",
@@ -12918,7 +13050,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
@@ -12930,7 +13061,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611646962000",
@@ -12942,7 +13072,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算资源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-1gghpd1t",
@@ -12954,7 +13083,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行sql的子uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "****",
@@ -12966,7 +13094,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算资源名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "shared_presto",
@@ -12978,7 +13105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入类型是本地导入还是cos\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "local",
@@ -12990,7 +13116,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"paths\",\"Value\":\"lakefs://20000003366d155f79a522c8349496",
@@ -13002,7 +13127,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
@@ -13014,7 +13138,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询数据能不能下载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -13026,7 +13149,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
@@ -13038,7 +13160,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark应用作业名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark_app",
@@ -13050,7 +13171,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark应用作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "batch_sdafa",
@@ -13062,7 +13182,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark应用入口jar文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "example.jar",
@@ -13074,7 +13193,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark ui url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://dlc-spark-ui.cloud.tencent.com/history/spark-893c606226b",
@@ -13086,7 +13204,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务耗时，单位： ms\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80000",
@@ -13098,7 +13215,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark app job执行task的程序入口参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark.sql.shuffle.partitions",
@@ -13106,6 +13222,61 @@
           "name": "CmdArgs",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群镜像大版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SuperSQL P 1.0",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "指定executor数量，最小值为1，最大值小于集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNums",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -13793,7 +13964,6 @@
       "document": "视图基本配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该视图所属数据库名字",
           "example": "database1",
@@ -13805,7 +13975,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图名称",
           "example": "view-test",
@@ -13817,7 +13986,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图创建人昵称",
           "example": "testUser",
@@ -13829,7 +13997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图创建人ID",
           "example": "100019878767",
@@ -13847,7 +14014,6 @@
       "document": "查询视图信息对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视图基本信息。",
           "example": "无",
@@ -13855,10 +14021,10 @@
           "name": "ViewBaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13866,10 +14032,10 @@
           "name": "Columns",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13877,10 +14043,10 @@
           "name": "Properties",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图创建时间。",
           "example": "1611646962",
@@ -13888,10 +14054,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图更新时间。",
           "example": "1611646962",
@@ -13899,7 +14065,8 @@
           "name": "ModifiedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

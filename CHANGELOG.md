@@ -1,3 +1,144 @@
+# Release 3.0.777.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 48 次发布
+
+发布时间：2023-06-05 01:12:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [OriginSni](http://document.tencentcloudapi.woa.com/document/product/228/30987#OriginSni)
+
+修改数据结构：
+
+* [Origin](http://document.tencentcloudapi.woa.com/document/product/228/30987#Origin)
+
+	* 新增成员：Sni
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 67 次发布
+
+发布时间：2023-06-05 01:18:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVulStoreList](http://document.tencentcloudapi.woa.com/document/product/296/77888)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSaveOrUpdateWarnings
+
+新增数据结构：
+
+* [VulStoreListInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulStoreListInfo)
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 35 次发布
+
+发布时间：2023-06-05 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+
+	* 新增出参：InstanceIds, FlowId
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 51 次发布
+
+发布时间：2023-06-05 01:22:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：SessionResourceTemplate
+
+* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
+
+	* 新增入参：IsInherit
+
+* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
+
+	* 新增入参：IsInherit
+
+
+新增数据结构：
+
+* [SessionResourceTemplate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SessionResourceTemplate)
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：DefaultHouse, MaxConcurrency, TolerableQueueTime, UserAppId, UserUin, SessionResourceTemplate
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：IsInherit
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* 新增成员：MapMaterializedViewName
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：ImageVersion, DriverSize, ExecutorSize, ExecutorNums, ExecutorMaxNumbers
+
+
+
+
+## 腾讯智能对话平台(tbp) 版本：2019-06-27
+
+### 第 2 次发布
+
+发布时间：2023-06-05 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextReset](http://document.tencentcloudapi.woa.com/document/product/1060/37437)
+
+	* 新增出参：ResponseText
+
+
+
+
+## 腾讯智能对话平台(tbp) 版本：2019-03-11
+
+
+
 # Release 3.0.776.1
 
 ## API 网关(apigateway) 版本：2018-08-08

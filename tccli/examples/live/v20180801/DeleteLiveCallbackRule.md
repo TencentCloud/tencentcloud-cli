@@ -1,14 +1,13 @@
 **Example 1: 请求示例**
 
-
+删除直播回调规则。
 
 Input: 
 
 ```
 tccli live DeleteLiveCallbackRule --cli-unfold-argument  \
     --DomainName 5000.livepush.myqcloud.com \
-    --AppName live \
-    --TemplateId 1000
+    --AppName live
 ```
 
 Output: 
