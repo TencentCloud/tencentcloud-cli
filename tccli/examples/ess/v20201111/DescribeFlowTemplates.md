@@ -7,10 +7,6 @@ Input:
 ```
 tccli ess DescribeFlowTemplates --cli-unfold-argument  \
     --Operator.UserId string \
-    --Operator.ClientIp string \
-    --Operator.Channel string \
-    --Operator.OpenId  \
-    --Operator.ProxyIp string \
     --Offset 0 \
     --Limit 20 \
     --ContentType 0 \
@@ -26,7 +22,7 @@ Output:
             {
                 "TemplateId": "162509******b1949e047d8",
                 "TemplateName": "string",
-                "Description": "XXXXX",
+                "Description": "test",
                 "DocumentResourceIds": [
                     "123456******7812345678"
                 ],

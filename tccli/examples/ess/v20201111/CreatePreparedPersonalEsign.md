@@ -10,7 +10,7 @@ tccli ess CreatePreparedPersonalEsign --cli-unfold-argument  \
     --UserName 印章归属个人姓名 \
     --IdCardType  \
     --IdCardNumber 身份证件号码 \
-    --SealImage 印章图片Base64 \
+    --FileId yDxdfffxxxxxxxx \
     --SealName 我的印章名称 \
     --Mobile 135*111 \
     --EnableAutoSign True

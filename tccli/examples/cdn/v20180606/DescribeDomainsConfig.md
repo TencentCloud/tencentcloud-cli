@@ -268,7 +268,11 @@ Output:
                     "BackupServerName": "www.a.com",
                     "PathRules": [],
                     "BasePath": null,
-                    "PathBasedOrigin": []
+                    "PathBasedOrigin": [],
+                    "Sni": {
+                        "Switch": "off",
+                        "ServerName": null
+                    }
                 },
                 "OriginAuthentication": null,
                 "OriginCombine": {

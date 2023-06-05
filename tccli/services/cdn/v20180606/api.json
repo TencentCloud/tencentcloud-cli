@@ -12904,6 +12904,16 @@
         },
         {
           "disabled": false,
+          "document": "HTTPS回源SNI配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Switch\":\"on\",\"ServerName\":\"abc.com\"}",
+          "member": "OriginSni",
+          "name": "Sni",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "HTTPS回源高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "AdvanceHttps",
@@ -13048,6 +13058,32 @@
           "name": "ReceiveTimeout",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginSni": {
+      "document": "HTTPS回源SNI",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启HTTPS回源SNI。\n开启：on，\n关闭：off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回源域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

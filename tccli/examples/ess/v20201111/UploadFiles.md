@@ -6,8 +6,6 @@ Input:
 
 ```
 tccli ess UploadFiles --cli-unfold-argument  \
-    --Caller.OrganizationId 732aaefa******1b89c49e022 \
-    --Caller.ApplicationId c17bdf******4d0200fee3d \
     --Caller.OperatorId a08c79*******b33bee00ce12 \
     --BusinessType SEAL \
     --CoverRect True \
@@ -23,7 +21,7 @@ Output:
             "d54e3cae*******6762b7562"
         ],
         "TotalCount": 1,
-        "RequestId": "4fecde8c313xxxa3c8136bdbb7e5"
+        "RequestId": "4fecdxxxxxx6bdbb7e5"
     }
 }
 ```
@@ -51,7 +49,7 @@ Output:
         "FileIds": [
             "testfileid"
         ],
-        "RequestId": "f56f474a-8bxxxxa0872d6312bf",
+        "RequestId": "f56f474xxxxxx72d6312bf",
         "TotalCount": 1
     }
 }

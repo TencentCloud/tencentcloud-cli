@@ -7,10 +7,6 @@ Input:
 ```
 tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --Operator.UserId 123 \
-    --Operator.Channel  \
-    --Operator.OpenId  \
-    --Operator.ClientIp  \
-    --Operator.ProxyIp  \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --AutoSignConfig.UserInfo.Name 小明 \
     --AutoSignConfig.UserInfo.IdCardType ID_CARD \
@@ -30,7 +26,7 @@ Output:
         "AppId": "wxa02378y4jruwye1d",
         "AppOriginalId": "gh_da87293fsd87987",
         "Path": "page?abc=123&def=456",
-        "QrCode": "EBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCN",
+        "QrCode": "EBAQAAAAAAAAAAAQIDBAUGBwgxxxxxwAEEQUSITFBBhNRYQcicRQygZGhCCN",
         "RequestId": "5beb5f54-cf3d-4c26-a4ee-a97c85196a3e",
         "Url": "https://xxx.xxx/abc123",
         "UrlType": ""

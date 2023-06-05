@@ -202,8 +202,8 @@
     ],
     "DeleteLiveCallbackRule": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCallbackRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "document": "删除直播回调规则。",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCallbackRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -258,8 +258,8 @@
     ],
     "DeleteLiveSnapshotRule": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "document": "删除截图规则。",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

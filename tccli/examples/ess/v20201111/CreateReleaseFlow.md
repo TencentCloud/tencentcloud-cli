@@ -7,9 +7,9 @@ Input:
 
 ```
 tccli ess CreateReleaseFlow --cli-unfold-argument  \
-    --Operator.UserId xxxOUUgydjfxgnzUuO4zjEWA0dddl \
+    --Operator.UserId xxxOUUgyxxxxEWA0dddl \
     --NeedRelievedFlowId xxxnGUUgygkgi7fdUx6JlVOE0wzdddd \
-    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方人民币10000元以作赔偿 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxxxx以作赔偿 \
     --ReliveInfo.OriginalOtherSettlement 无 \
     --ReliveInfo.OtherDeals 无 \
     --ReliveInfo.Reason 因为业务调整,结束合作。 \
@@ -21,7 +21,7 @@ Output:
 {
     "Response": {
         "FlowId": "yDwnGUUgygkgi7fdUx6JlVOE0wzmtxxx",
-        "RequestId": "s187767536345780"
+        "RequestId": "s18776xxx345780"
     }
 }
 ```
@@ -35,12 +35,12 @@ Input:
 
 ```
 tccli ess CreateReleaseFlow --cli-unfold-argument  \
-    --Operator.UserId yDxjOUUgydjfxgnzUuO4zjEWA07rC2xl \
+    --Operator.UserId yDxjOUUgydjxxxxxjEWA07rC2xl \
     --NeedRelievedFlowId yDwnGUUgygkgi7fdUx6JlVOE0wxxxxx \
     --ReleasedApprovers.0.Mobile 1870000000 \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDRscUUgyg1zr7vjUyJ8QKxxxxxxx \
-    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方人民币10000元以作赔偿 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
     --ReliveInfo.OriginalOtherSettlement 无 \
     --ReliveInfo.OtherDeals 无 \
     --ReliveInfo.Reason 因为业务调整,结束合作。 \

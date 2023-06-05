@@ -1176,13 +1176,6 @@
       "output": "DescribeRiskDnsListResponse",
       "status": "online"
     },
-    "DescribeSaveOrUpdateWarnings": {
-      "document": "下线\n\n更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )",
-      "input": "DescribeSaveOrUpdateWarningsRequest",
-      "name": "更新用户告警设置",
-      "output": "DescribeSaveOrUpdateWarningsResponse",
-      "status": "deprecated"
-    },
     "DescribeScanMalwareSchedule": {
       "document": "查询木马扫描进度",
       "input": "DescribeScanMalwareScheduleRequest",
@@ -1384,6 +1377,13 @@
       "input": "DescribeVulListRequest",
       "name": "漏洞列表",
       "output": "DescribeVulListResponse",
+      "status": "online"
+    },
+    "DescribeVulStoreList": {
+      "document": "获取漏洞库列表",
+      "input": "DescribeVulStoreListRequest",
+      "name": "获取漏洞库列表",
+      "output": "DescribeVulStoreListResponse",
       "status": "online"
     },
     "DescribeVulTop": {
@@ -22291,34 +22291,6 @@
       ],
       "type": "object"
     },
-    "DescribeSaveOrUpdateWarningsRequest": {
-      "document": "DescribeSaveOrUpdateWarnings请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "告警设置的修改内容",
-          "example": "{}",
-          "member": "WarningObject",
-          "name": "WarningObjects",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSaveOrUpdateWarningsResponse": {
-      "document": "DescribeSaveOrUpdateWarnings返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeScanMalwareScheduleRequest": {
       "document": "DescribeScanMalwareSchedule请求参数结构体",
       "members": [],
@@ -24773,6 +24745,105 @@
           "name": "FollowVulCount",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulStoreListRequest": {
+      "document": "DescribeVulStoreList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\n<li>VulName- string - 是否必填：否 - 漏洞名称</li>\n<li>CveId- string - 是否必填：否 - cveid</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞分类  1 Web-CMS漏洞 ,2 应用漏洞 ,4 Linux软件漏洞,5 Windows系统漏洞</li>\n<li>Method- string - 是否必填：否 - 检测方法 0版本对比,1 poc检测 </li>\n<li>SupportDefense- string - 是否必填：否 - 是否支持防御 0不支持,1支持</li>\n<li>FixSwitch- string - 是否必填：否 - 是否支持自动修复 0不支持,1支持</li>\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数,默认10,最大100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选排序列: [PublishDate]",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulStoreListResponse": {
+      "document": "DescribeVulStoreList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VulStoreListInfo",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "今日剩余搜索此时",
+          "example": "1",
+          "member": "uint64",
+          "name": "Remaining",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费搜索次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "FreeSearchTimes",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -37047,6 +37118,112 @@
           "member": "uint64",
           "name": "Count",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulStoreListInfo": {
+      "document": "漏洞仓库列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞级别",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "漏洞",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve编号",
+          "example": "123",
+          "member": "string",
+          "name": "CveId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞 0= 应急漏洞",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulCategory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布时间",
+          "example": "11",
+          "member": "string",
+          "name": "PublishDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞检测方法 0 - 版本比对, 1 - POC验证",
+          "example": "0",
+          "member": "uint64",
+          "name": "Method",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞攻击热度",
+          "example": "1",
+          "member": "uint64",
+          "name": "AttackLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞是否支持自动修复\n0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "FixSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞是否支持防御\n0:不支持 1:支持",
+          "example": "1",
+          "member": "uint64",
+          "name": "SupportDefense",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

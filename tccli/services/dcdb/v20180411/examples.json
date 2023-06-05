@@ -68,7 +68,7 @@
       {
         "document": "创建TDSQL独享集群实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"ClusterId\": \"cage-shjr-2-15\",\n    \"GoodsNum\": 1,\n    \"ShardNum\": 2,\n    \"ShardMemory\": 2,\n    \"ShardStorage\": 10,\n    \"Pid\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"FlowId\": 1122\n    }\n}",
         "title": "创建TDSQL独享集群实例"
       }
     ],

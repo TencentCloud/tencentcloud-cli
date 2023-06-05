@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+删除截图规则。
 
 Input: 
 
@@ -8,8 +8,7 @@ Input:
 tccli live DeleteLiveSnapshotRule --cli-unfold-argument  \
     --DomainName 5000.livepush.myqcloud.com \
     --AppName live \
-    --StreamName stream1 \
-    --TemplateId 1000
+    --StreamName stream1
 ```
 
 Output: 

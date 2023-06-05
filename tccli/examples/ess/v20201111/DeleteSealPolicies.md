@@ -6,10 +6,6 @@ Input:
 
 ```
 tccli ess DeleteSealPolicies --cli-unfold-argument  \
-    --Operator.Channel string \
-    --Operator.ClientIp 1.1.1.1 \
-    --Operator.OpenId 321654 \
-    --Operator.ProxyIp 2.2.2.2 \
     --Operator.UserId 11234567890123456789012345678901 \
     --PolicyIds string
 ```

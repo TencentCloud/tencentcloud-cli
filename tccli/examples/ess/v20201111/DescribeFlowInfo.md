@@ -15,33 +15,51 @@ Output:
     "Response": {
         "FlowDetailInfos": [
             {
-                "FlowName": "xx",
+                "FlowId": "abc",
+                "FlowName": "abc",
+                "FlowType": "abc",
                 "FlowStatus": 0,
-                "FlowDescription": "xx",
+                "FlowMessage": "abc",
+                "FlowDescription": "abc",
                 "CreatedOn": 0,
-                "FlowMessage": "xx",
-                "FlowId": "xx",
-                "FlowType": "xx",
                 "FlowApproverInfos": [
                     {
-                        "CustomApproverTag": "xx",
-                        "OrganizationName": "xx",
-                        "ApproveName": "xx",
-                        "ApproveMessage": "xx",
-                        "Mobile": "xx",
-                        "ReceiptId": "xx",
-                        "CustomUserId": "xx",
+                        "ApproveMessage": "abc",
+                        "ApproveName": "abc",
                         "ApproveStatus": 0,
-                        "OrganizationId": "xx",
-                        "ApproverSource": "xx",
+                        "ReceiptId": "abc",
+                        "CustomUserId": "abc",
+                        "Mobile": "abc",
+                        "SignOrder": 0,
                         "ApproveTime": 0,
-                        "ApproveType": "xx",
-                        "SignOrder": 0
+                        "ApproveType": "abc",
+                        "ApproverSource": "abc",
+                        "CustomApproverTag": "abc",
+                        "OrganizationId": "abc",
+                        "OrganizationName": "abc"
                     }
-                ]
+                ],
+                "CcInfos": [
+                    {
+                        "ApproveMessage": "abc",
+                        "ApproveName": "abc",
+                        "ApproveStatus": 0,
+                        "ReceiptId": "abc",
+                        "CustomUserId": "abc",
+                        "Mobile": "abc",
+                        "SignOrder": 0,
+                        "ApproveTime": 0,
+                        "ApproveType": "abc",
+                        "ApproverSource": "abc",
+                        "CustomApproverTag": "abc",
+                        "OrganizationId": "abc",
+                        "OrganizationName": "abc"
+                    }
+                ],
+                "Creator": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

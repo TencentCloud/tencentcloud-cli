@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
-    --Organization.OrganizationId yD*****************1Khs7 \
+    --Operator.UserId yD*****************1Khs7 \
     --FlowApproverInfos.0.ApproverMobile test \
     --FlowApproverInfos.0.ApproverName test \
     --FlowApproverInfos.0.ApproverType 1 \

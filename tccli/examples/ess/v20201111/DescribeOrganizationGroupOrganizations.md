@@ -7,8 +7,6 @@ Input:
 ```
 tccli ess DescribeOrganizationGroupOrganizations --cli-unfold-argument  \
     --Operator.UserId y******************g \
-    --Operator.ClientIp 0.0.0.1 \
-    --Operator.Channel YUFU \
     --Export False \
     --Limit 10 \
     --Offset 0
@@ -40,7 +38,7 @@ Output:
                 "UpdateTime": 1673232933
             }
         ],
-        "RequestId": "s1675342956277361364",
+        "RequestId": "s16753xxx7361364",
         "Total": 1
     }
 }

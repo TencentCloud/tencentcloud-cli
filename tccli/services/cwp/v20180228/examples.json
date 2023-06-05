@@ -1368,14 +1368,6 @@
         "title": "获取恶意请求列表"
       }
     ],
-    "DescribeSaveOrUpdateWarnings": [
-      {
-        "document": "告警设置-更新和插入用户修改的告警设置",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSaveOrUpdateWarnings\n&WarningObjects.0.Type=3\n&WarningObjects.0.DisablePhoneWarning=0\n&WarningObjects.0.BeginTime=\"00:11\"\n&WarningObjects.0.EndTime=\"22:33\"\n&WarningObjects.0.ControlBits=\"111\"\n&WarningObjects.1.Type=12\n&WarningObjects.1.DisablePhoneWarning=1\n&WarningObjects.1.BeginTime=\"11:11\"\n&WarningObjects.1.EndTime=\"11:33\"\n&WarningObjects.1.ControlBits=\"010\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
-        "title": "告警设置-更新和插入用户修改的告警设置"
-      }
-    ],
     "DescribeScanMalwareSchedule": [
       {
         "document": "",
@@ -1606,6 +1598,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VulInfoList\": [\n            {\n                \"Ids\": \"abc\",\n                \"Name\": \"abc\",\n                \"Status\": 1,\n                \"VulId\": 1,\n                \"PublishTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"HostCount\": 1,\n                \"Level\": 1,\n                \"From\": 1,\n                \"Descript\": \"abc\",\n                \"PublishTimeWisteria\": \"abc\",\n                \"NameWisteria\": \"abc\",\n                \"DescriptWisteria\": \"abc\",\n                \"StatusStr\": \"abc\",\n                \"CveId\": \"abc\",\n                \"CvssScore\": 0,\n                \"Labels\": \"abc\",\n                \"FixSwitch\": 1,\n                \"TaskId\": 1,\n                \"IsSupportDefense\": 1,\n                \"DefenseAttackCount\": 1,\n                \"FirstAppearTime\": \"abc\",\n                \"VulCategory\": 1,\n                \"AttackLevel\": 1,\n                \"FixNoNeedRestart\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"FollowVulCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取指定分类和状态的漏洞列表"
+      }
+    ],
+    "DescribeVulStoreList": [
+      {
+        "document": "获取漏洞库列表\n\n",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulStoreList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"VulId\": 1,\n                \"Level\": 1,\n                \"Name\": \"abc\",\n                \"CveId\": \"abc\",\n                \"VulCategory\": 1,\n                \"PublishDate\": \"abc\",\n                \"Method\": 1,\n                \"AttackLevel\": 1,\n                \"FixSwitch\": 1,\n                \"SupportDefense\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Remaining\": 1,\n        \"FreeSearchTimes\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取漏洞库列表"
       }
     ],
     "DescribeVulTop": [

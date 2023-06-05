@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli ess DescribeIntegrationMainOrganizationUser --cli-unfold-argument  \
-    --Operator.UserId y********************F \
-    --Operator.ClientIp 0.0.0.1
+    --Operator.UserId y********************F
 ```
 
 Output: 
@@ -19,7 +18,7 @@ Output:
             "MainUserId": "y************************2",
             "UserName": "胡*"
         },
-        "RequestId": "s1673521047686880372"
+        "RequestId": "s1673xxxxx880372"
     }
 }
 ```

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ess CreateIntegrationUserRoles --cli-unfold-argument  \
-    --Agent.ProxyOrganizationId yDwcwUUgyg3ku4dcUnb2eQRA5tb3wCvJ \
-    --UserIds yDwcwUUgyg3kuuemUnb2eQS1BsaTeVDP \
-    --RoleIds 6fad1903eea5074122d6921046819037 \
-    --Operator.UserId yDwnHUUgygksdjwxUuMR3gQvehewF4C5 \
+    --Agent.ProxyOrganizationId yDwcwUUgxxxxxb2eQRA5tb3wCvJ \
+    --UserIds yDwcwUUgyg3xxxx2eQS1BsaTeVDP \
+    --RoleIds 6fad1903xxxx6921046819037 \
+    --Operator.UserId yDwnHUUxxxxMR3gQvehewF4C5 \
     --Operator.ClientIp 0.0.0.1 \
     --Operator.Channel YUFU
 ```
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "FailedCreateRoleData": [],
-        "RequestId": "s1679478914712921175"
+        "RequestId": "s1679xxxxx21175"
     }
 }
 ```
@@ -34,9 +34,7 @@ Input:
 tccli ess CreateIntegrationUserRoles --cli-unfold-argument  \
     --UserIds y**************************************************s y**************************************************e \
     --RoleIds 0************************************************e f*************************************************b \
-    --Operator.UserId y**********************************s \
-    --Operator.ClientIp 0.0.0.1 \
-    --Operator.Channel YUFU
+    --Operator.UserId y**********************************s
 ```
 
 Output: 
