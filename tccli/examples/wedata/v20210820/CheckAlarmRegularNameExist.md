@@ -1,21 +1,20 @@
-**Example 1: 判断告警规则重名**
+**Example 1: 检查规则名称是否存在**
 
-
+检查规则名称是否存在
 
 Input: 
 
 ```
 tccli wedata CheckAlarmRegularNameExist --cli-unfold-argument  \
-    --ProjectId xx \
-    --AlarmRegularName xx \
-    --TaskId xx
+    --ProjectId 123 \
+    --AlarmRegularName test_regular
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "123",
         "Data": true
     }
 }

@@ -535,7 +535,7 @@
     "DescribeInstanceList": {
       "document": "获取实例列表",
       "input": "DescribeInstanceListRequest",
-      "name": "获取实例列表",
+      "name": "获取离线运维实例列表",
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
@@ -1384,7 +1384,6 @@
       "document": "告警事件详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警ID",
           "example": "4523",
@@ -1396,7 +1395,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间",
           "example": "2020-10-10 10:10:10",
@@ -1408,7 +1406,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "74567",
@@ -1420,7 +1417,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "hjgjh",
@@ -1432,7 +1428,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警级别,0表示普通，1表示重要，2表示紧急",
           "example": "1",
@@ -1444,7 +1439,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）",
           "example": "1,2,3",
@@ -1456,7 +1450,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收人Id，多个用逗号隔开",
           "example": "780798",
@@ -1468,7 +1461,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "8765",
@@ -1480,7 +1472,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停",
           "example": "1",
@@ -1492,7 +1483,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hgff",
@@ -1504,7 +1494,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1516,7 +1505,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预计的超时时间，分钟级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -1528,7 +1516,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "865764",
@@ -1540,7 +1527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ggrt",
@@ -1552,7 +1538,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：部分成功，1：全部成功，2：全部失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1564,7 +1549,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kuytujnv",
@@ -1576,7 +1560,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阈值计算算子，1 : 大于 2 ：小于\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1584,6 +1567,17 @@
           "name": "Operator",
           "required": false,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "告警规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegularId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -3156,44 +3150,54 @@
       "document": "CheckAlarmRegularNameExist请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "97876567",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "任务ID",
-          "example": "8764",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "feyer",
           "member": "string",
           "name": "AlarmRegularName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "disabled": true,
+          "document": "任务ID",
+          "example": "8764",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "主键ID",
           "example": "7467",
           "member": "string",
           "name": "Id",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务类型:201.实时,202.离线",
+          "example": "201",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3207,9 +3211,9 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5051,9 +5055,8 @@
       "document": "CreateOrUpdateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "项目ID",
+          "document": "项目ID，必填项",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -5062,9 +5065,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "文件名",
+          "document": "文件名，必填项",
           "example": "wedata-spark-1.0-SNAPSHOT.jar",
           "member": "string",
           "name": "Files",
@@ -5073,9 +5075,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "文件所属路径，资源管理根路径为 /datastudio/resouce",
+          "document": "必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名",
           "example": "/datastudio/resource",
           "member": "string",
           "name": "FilePath",
@@ -5084,7 +5085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos存储桶名字",
           "example": "\"hannahtest-1257305158",
@@ -5095,7 +5095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos所属地域",
           "example": "ap-guangzhou",
@@ -5106,7 +5105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为新文件，新增为 true，更新为 false",
           "example": "true",
@@ -5117,9 +5115,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "文件大小",
+          "document": "必填项，文件大小，与 Files 字段对应",
           "example": "3167",
           "member": "string",
           "name": "FilesSize",
@@ -5139,7 +5136,6 @@
           "example": "无",
           "member": "UserFileDTO",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -7790,7 +7786,6 @@
       "document": "DescribeDataSourceInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间id",
           "example": "1",
@@ -7801,7 +7796,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "1",
@@ -7812,7 +7806,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "10",
@@ -7823,7 +7816,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选过滤条件，Filter可选配置(参考): \"Name\": { \"type\": \"string\", \"description\": \"数据源名称\" }, \"Type\": { \"type\": \"string\", \"description\": \"类型\" }, \"ClusterId\": { \"type\": \"string\", \"description\": \"集群id\" }, \"CategoryId\": { \"type\": \"string\", \"description\": \"分类，项目或空间id\" }",
           "example": "无",
@@ -7834,7 +7826,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序配置",
           "example": "无",
@@ -7845,7 +7836,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源类型",
           "example": "mysql",
@@ -7856,7 +7846,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称过滤用",
           "example": "123",
@@ -7878,7 +7867,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7889,7 +7877,6 @@
           "example": "无",
           "member": "DatasourceBaseInfo",
           "name": "DatasourceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -9179,7 +9166,6 @@
       "document": "DescribeInstanceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目/工作空间id",
           "example": "1",
@@ -9190,7 +9176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "1",
@@ -9201,7 +9186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小",
           "example": "10",
@@ -9212,7 +9196,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期列表（如天，一次性），可选",
           "example": "[]",
@@ -9223,7 +9206,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "责任人",
           "example": "[]",
@@ -9234,7 +9216,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跟之前保持一致",
           "example": "__ALL__",
@@ -9245,7 +9226,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序顺序（asc，desc）",
           "example": "desc",
@@ -9256,7 +9236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）",
           "example": "startTime",
@@ -9267,7 +9246,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型列表（如35 shell任务），可选",
           "example": "[27]",
@@ -9278,7 +9256,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态列表（如成功 2，正在执行 1），可选",
           "example": "[]",
@@ -9289,7 +9266,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "123",
@@ -9311,9 +9287,28 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceList",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -9329,24 +9324,24 @@
       "document": "DescribeInstanceLogList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "20210602165654425",
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据时间",
           "example": "2021-06-02+00:00:00",
           "member": "string",
           "name": "CurRunDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9360,9 +9355,19 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLogList",
+          "name": "InstanceLogList",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9377,44 +9382,44 @@
       "document": "DescribeInstanceLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "20210602165654425",
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据时间",
           "example": "2021-06-02+00:00:00",
           "member": "string",
           "name": "CurRunDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务器Ip",
           "example": "172.16.16.16",
           "member": "string",
           "name": "BrokerIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件Name",
           "example": "20210602000000-9-all-log-0.20210602222614.log",
           "member": "string",
           "name": "OriginFileName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9428,9 +9433,19 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntegrationInstanceLog",
+          "name": "InstanceLogInfo",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10238,84 +10253,84 @@
       "document": "DescribeIntegrationTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页第n页",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询filter",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段信息",
           "example": "无",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2022-01-01",
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-01-02",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "201. stream, 202. offline 默认实时",
           "example": "201. stream, 202. offline",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10329,9 +10344,19 @@
           "example": "无",
           "member": "IntegrationTaskInfo",
           "name": "TaskInfoSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13665,74 +13690,74 @@
       "document": "DescribeTaskAlarmRegulations请求参数结构体",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "任务ID",
-          "example": "76645",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "67980",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "任务类型(201代表实时任务，202代表离线任务)",
-          "example": "201",
-          "member": "int64",
-          "name": "TaskType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "当前页",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页记录数",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件(name有RegularStatus、AlarmLevel、AlarmIndicator、RegularName)",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件(RegularId)",
           "example": "无",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "76645",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务类型(201代表实时任务，202代表离线任务)",
+          "example": "201",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13742,13 +13767,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务告警规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskAlarmInfo",
           "name": "TaskAlarmInfos",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -13756,9 +13781,9 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16593,6 +16618,144 @@
       ],
       "usage": "both"
     },
+    "InstanceList": {
+      "document": "离线运维实例列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "耗费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:15",
+          "member": "string",
+          "name": "CostTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurRunDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CycleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否补录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DoFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InCharge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastLog",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "调度计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SchedulerDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开始启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "尝试运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TryLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceLog": {
       "document": "实例日志实体",
       "members": [
@@ -16702,6 +16865,133 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceLogList": {
+      "document": "实例日志信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurRunDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tries",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最后更新事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrokerIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "原始文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginFileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例日志类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceLogType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "耗费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CostTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -17062,6 +17352,23 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "IntegrationInstanceLog": {
+      "document": "实例日志信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务日志信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -17610,7 +17917,6 @@
       "document": "集成任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "test",
@@ -17622,7 +17928,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -17634,7 +17939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同步类型1.解决方案(整库迁移),2.单表同步",
           "example": "2",
@@ -17646,7 +17950,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "201.实时,202.离线",
           "example": "1",
@@ -17658,7 +17961,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所属工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17670,7 +17972,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17682,7 +17983,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务调度id(oceanus or us等作业id)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17694,7 +17994,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17706,7 +18005,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17718,7 +18016,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17730,7 +18027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作人uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17742,7 +18038,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "owner uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17754,7 +18049,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17766,7 +18060,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -17778,7 +18071,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17790,7 +18082,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17802,7 +18093,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17814,7 +18104,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务扩展配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17826,7 +18115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行context信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17838,7 +18126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点映射\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17850,7 +18137,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务模式：1.画布模式，2.flink jar\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17862,7 +18148,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17874,7 +18159,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线新增参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -17886,7 +18170,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "group name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17898,7 +18181,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17910,7 +18192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "stream id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17922,7 +18203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "version\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17934,7 +18214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "dataproxy url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -17946,7 +18225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务版本是否已提交运维\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -17954,6 +18232,171 @@
           "name": "Submit",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "MYSQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputDatasourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "DLC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputDatasourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "读取条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NumRecordsIn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "写入条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NumRecordsOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "读取延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ReaderDelay",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NumRestarts",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务最后一次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastRunTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StopTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "作业是否已提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasVersion",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务是否被锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Locked",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务锁定人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Locker",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "耗费资源量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RunningCu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该任务关联的告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskAlarmRegularList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -26683,7 +27126,6 @@
       "document": "任务告警信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "890708",
@@ -26695,7 +27137,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "hukhhb",
@@ -26707,7 +27148,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态(0表示关闭，1表示打开)",
           "example": "0",
@@ -26719,7 +27159,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警级别(0表示普通，1表示重要，2表示紧急)",
           "example": "1",
@@ -26731,7 +27170,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）",
           "example": "1,2",
@@ -26743,7 +27181,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型(201表示实时，202表示离线)",
           "example": "201",
@@ -26755,7 +27192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87",
@@ -26767,7 +27203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "8908_890",
@@ -26779,7 +27214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数",
           "example": "1",
@@ -26791,7 +27225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标阈值(1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -26803,7 +27236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预计的超时时间(分钟级别)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -26815,7 +27247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收人ID，多个用逗号隔开",
           "example": "4529080",
@@ -26827,7 +27258,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "709896987",
@@ -26839,7 +27269,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7897809",
@@ -26851,7 +27280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收人昵称，多个用逗号隔开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "afdhauhu,fdaga",
@@ -26863,7 +27291,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fhdfg",
@@ -26875,7 +27302,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实时任务告警需要的参数，1是大于2是小于\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -26887,7 +27313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点id，多个逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -26899,7 +27324,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点名称，多个逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -26911,7 +27335,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -26923,7 +27346,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收人类型，0指定人员；1任务责任人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -26935,12 +27357,99 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业微信群Hook地址，多个hook地址使用,隔开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "WeComHook",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近操作人Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关联任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型,1:所有任务,2:指定任务,3:指定责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MonitorType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "监控对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MonitorObjectIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近一次告警的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestAlarmInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近一次告警时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestAlarmTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "告警规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string",
           "value_allowed_null": true,

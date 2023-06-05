@@ -1,14 +1,14 @@
 **Example 1: 获取按资源汇总消耗详情**
 
-
+获取按资源汇总消耗详情
 
 Input: 
 
 ```
 tccli billing DescribeCostSummaryByResource --cli-unfold-argument  \
-    --BeginTime 2018-11 \
     --EndTime 2018-11 \
     --Limit 1 \
+    --BeginTime 2018-11 \
     --Offset 0
 ```
 
@@ -49,7 +49,7 @@ Output:
             {
                 "BusinessCode": "billVirtualId",
                 "BusinessCodeName": "月度计费精度差异",
-                "ConsumptionTypeName": "xx",
+                "ConsumptionTypeName": "新购",
                 "ResourceId": "billVirtualId",
                 "ResourceName": "扣费精度补偿",
                 "RealTotalCost": "-0.69",

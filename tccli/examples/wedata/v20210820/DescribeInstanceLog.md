@@ -1,23 +1,26 @@
 **Example 1: 获取实例运行日志**
 
-
+获取实例运行日志
 
 Input: 
 
 ```
 tccli wedata DescribeInstanceLog --cli-unfold-argument  \
-    --BrokerIp xx \
-    --OriginFileName xx \
-    --TaskId xx \
-    --CurRunDate xx
+    --TaskId abc \
+    --CurRunDate abc \
+    --BrokerIp abc \
+    --OriginFileName abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "XX",
-        "RequestId": "xx"
+        "Data": "abc",
+        "InstanceLogInfo": {
+            "LogInfo": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

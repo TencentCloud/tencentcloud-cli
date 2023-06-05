@@ -1,16 +1,16 @@
 **Example 1: 获取按产品汇总消耗详情**
 
-
+获取按产品汇总消耗详情
 
 Input: 
 
 ```
 tccli billing DescribeCostSummaryByProduct --cli-unfold-argument  \
-    --BeginTime 2018-11 \
+    --NeedRecordNum 1 \
     --EndTime 2018-11 \
-    --Offset 0 \
     --Limit 1 \
-    --NeedRecordNum 1
+    --BeginTime 2018-11 \
+    --Offset 0
 ```
 
 Output: 
@@ -33,7 +33,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"
     }
 }
 ```

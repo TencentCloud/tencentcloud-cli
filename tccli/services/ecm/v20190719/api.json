@@ -6879,34 +6879,59 @@
       "document": "磁盘信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型：LOCAL_BASIC",
+          "example": "无",
           "member": "string",
           "name": "DiskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘ID",
+          "example": "无",
           "member": "string",
           "name": "DiskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小（GB）",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否随实例删除。",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7787,7 +7812,6 @@
       "document": "用于描述实例相关的信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "无",
@@ -7795,10 +7819,10 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称，如ens-34241f3s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7806,10 +7830,10 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态。取值范围：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关机\nSTARTING：表示开机中\nSTOPPING：表示关机中\nREBOOTING：表示重启中\nSHUTDOWN：表示停止待销毁\nTERMINATING：表示销毁中。",
           "example": "无",
@@ -7817,10 +7841,10 @@
           "name": "InstanceState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例当前使用的镜像的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7828,10 +7852,10 @@
           "name": "Image",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例当前所属的模块简要信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7839,10 +7863,10 @@
           "name": "SimpleModule",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7850,10 +7874,10 @@
           "name": "Position",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的网络相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7861,10 +7885,10 @@
           "name": "Internet",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的配置相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7872,10 +7896,10 @@
           "name": "InstanceTypeConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7883,10 +7907,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7894,10 +7918,10 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最后一次操作。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7905,10 +7929,10 @@
           "name": "LatestOperation",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最后一次操作结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7916,10 +7940,10 @@
           "name": "LatestOperationState",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例业务状态。取值范围：\nNORMAL：表示正常状态的实例\nEXPIRED：表示过期的实例\nPROTECTIVELY_ISOLATED：表示被安全隔离的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7927,10 +7951,10 @@
           "name": "RestrictState",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7938,10 +7962,10 @@
           "name": "SystemDiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7949,10 +7973,10 @@
           "name": "DataDiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例UUID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7960,10 +7984,10 @@
           "name": "UUID",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费方式。\n    0为后付费。\n    1为预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7971,10 +7995,10 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7982,10 +8006,10 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7993,10 +8017,10 @@
           "name": "IsolatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动续费。\n      0为不自动续费。\n      1为自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8004,10 +8028,10 @@
           "name": "RenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期状态。\n    NORMAL 表示机器运行正常。\n    WILL_EXPIRE 表示即将过期。\n    EXPIRED 表示已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8015,10 +8039,10 @@
           "name": "ExpireState",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8026,10 +8050,10 @@
           "name": "SystemDisk",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8037,10 +8061,10 @@
           "name": "DataDisks",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新实例标志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8048,10 +8072,10 @@
           "name": "NewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8059,10 +8083,10 @@
           "name": "SecurityGroupIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8070,10 +8094,10 @@
           "name": "VirtualPrivateCloud",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例运营商字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8081,10 +8105,10 @@
           "name": "ISP",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理位置信息。注意该字段目前为保留字段，均为空值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8092,7 +8116,8 @@
           "name": "PhysicalPosition",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -10457,7 +10482,6 @@
       "document": "模块信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块Id。",
           "example": "无",
@@ -10465,10 +10489,10 @@
           "name": "ModuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模块名称。",
           "example": "无",
@@ -10476,10 +10500,10 @@
           "name": "ModuleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模块状态：\nNORMAL：正常。\nDELETING：删除中 \nDELETEFAILED：删除失败。",
           "example": "无",
@@ -10487,10 +10511,10 @@
           "name": "ModuleState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认系统盘大小。",
           "example": "无",
@@ -10498,10 +10522,10 @@
           "name": "DefaultSystemDiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认数据盘大小。",
           "example": "无",
@@ -10509,10 +10533,10 @@
           "name": "DefaultDataDiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认机型。",
           "example": "无",
@@ -10520,10 +10544,10 @@
           "name": "InstanceTypeConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认镜像。",
           "example": "无",
@@ -10531,10 +10555,10 @@
           "name": "DefaultImage",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "无",
@@ -10542,10 +10566,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认出带宽。",
           "example": "无",
@@ -10553,10 +10577,10 @@
           "name": "DefaultBandwidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签集合。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10564,10 +10588,10 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否关闭IP直通。",
           "example": "无",
@@ -10575,10 +10599,10 @@
           "name": "CloseIpDirect",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认安全组id列表。",
           "example": "无",
@@ -10586,10 +10610,10 @@
           "name": "SecurityGroupIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认入带宽。",
           "example": "无",
@@ -10597,10 +10621,10 @@
           "name": "DefaultBandwidthIn",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义脚本数据",
           "example": "无",
@@ -10608,10 +10632,10 @@
           "name": "UserData",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘信息。",
           "example": "无",
@@ -10619,10 +10643,10 @@
           "name": "SystemDisk",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘信息。",
           "example": "无",
@@ -10630,7 +10654,19 @@
           "name": "DataDisks",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止外网ip",
+          "example": "无",
+          "member": "int64",
+          "name": "DisableWanIp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -11309,7 +11345,6 @@
       "document": "节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "zone信息。",
           "example": "无",
@@ -11317,10 +11352,10 @@
           "name": "ZoneInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家信息。",
           "example": "无",
@@ -11328,10 +11363,10 @@
           "name": "Country",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域信息。",
           "example": "无",
@@ -11339,10 +11374,10 @@
           "name": "Area",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份信息。",
           "example": "无",
@@ -11350,10 +11385,10 @@
           "name": "Province",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "城市信息。",
           "example": "无",
@@ -11361,10 +11396,10 @@
           "name": "City",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Region信息。",
           "example": "无",
@@ -11372,10 +11407,10 @@
           "name": "RegionInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商列表。",
           "example": "无",
@@ -11383,10 +11418,10 @@
           "name": "ISPSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商数量。",
           "example": "无",
@@ -11394,7 +11429,19 @@
           "name": "ISPNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点是否支持LB",
+          "example": "无",
+          "member": "bool",
+          "name": "LBSupported",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

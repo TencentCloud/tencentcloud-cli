@@ -115,7 +115,7 @@
     "GetSendEmailStatus": {
       "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
       "input": "GetSendEmailStatusRequest",
-      "name": "获取邮件发送的状态（待废弃）",
+      "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse",
       "status": "online"
     },
@@ -1444,54 +1444,54 @@
       "document": "GetSendEmailStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发送的日期，必填。仅支持查询某个日期，不支持范围查询。",
           "example": "2020-09-22",
           "member": "date",
           "name": "RequestDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉取最大条数，最多 100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SendMail接口返回的MessageId字段。",
           "example": "qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1",
           "member": "string",
           "name": "MessageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收件人邮箱。",
           "example": "abc@ef.com",
           "member": "string",
           "name": "ToEmailAddress",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1505,9 +1505,9 @@
           "example": "无",
           "member": "SendEmailStatus",
           "name": "EmailStatusList",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2151,6 +2151,26 @@
           "name": "ReplyToAddresses",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "抄送人邮箱地址，最多支持抄送20人。",
+          "example": "无",
+          "member": "string",
+          "name": "Cc",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密送人邮箱地址，最多支持抄送20人。",
+          "example": "无",
+          "member": "string",
+          "name": "Bcc",
+          "required": false,
+          "type": "list",
           "visibility": 1
         },
         {

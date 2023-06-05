@@ -84,7 +84,6 @@ Output:
                     "Name": "xx",
                     "RelevantRequestParameterDesc": "xx",
                     "DefaultValue": "xx",
-                    "RelevantRequestParameterType": "xx",
                     "RelevantRequestParameterName": "xx",
                     "Position": "xx"
                 }

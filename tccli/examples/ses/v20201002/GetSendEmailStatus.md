@@ -1,6 +1,6 @@
 **Example 1: 根据MessageId查询发送结果**
 
-
+ 
 
 Input: 
 
@@ -39,7 +39,7 @@ Output:
 
 **Example 2: 根据收件人查询发送结果**
 
-
+ 
 
 Input: 
 

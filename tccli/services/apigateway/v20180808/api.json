@@ -673,7 +673,7 @@
       "status": "online"
     },
     "UpdateService": {
-      "document": "本接口（UpdateService）用于从服务发布的环境中运行版本切换到特定版本。用户在使用 API 网关创建服务并发布服务到某个环境后，多因为开发过程会产生多个版本，此时可调用本接口。",
+      "document": "本接口（UpdateService）用于从服务发布的环境中运行版本切换到特定版本。用户在使用 API 网关创建服务并发布服务到某个环境后，多因开发过程会产生多个版本，此时可调用本接口。",
       "input": "UpdateServiceRequest",
       "name": "更新服务版本",
       "output": "UpdateServiceResponse",
@@ -1252,13 +1252,13 @@
         },
         {
           "disabled": false,
-          "document": "API描述",
+          "document": "API描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApiDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -1700,7 +1700,7 @@
           "disabled": false,
           "document": "API的后端服务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "ServiceParameter",
+          "member": "DescribeApiResultServiceParametersInfo",
           "name": "ServiceParameters",
           "required": true,
           "type": "list",
@@ -6191,6 +6191,78 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeApiResultServiceParametersInfo": {
+      "document": "ServiceParameter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Position",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterPosition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "DescribeApiUsagePlanRequest": {
       "document": "DescribeApiUsagePlan请求参数结构体",
@@ -13636,44 +13708,44 @@
       "document": "UpdateService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待切换服务的唯一 Id。",
           "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待切换的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
           "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换的版本号。",
           "example": "202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215",
           "member": "string",
           "name": "VersionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次的切换描述。",
           "example": "test",
           "member": "string",
           "name": "UpdateDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13687,9 +13759,9 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14134,74 +14206,81 @@
       "document": "usagePlan详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称。",
+          "example": "无",
           "member": "string",
           "name": "Environment",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划唯一ID。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划名称。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "使用计划描述。",
+          "document": "使用计划描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划qps，-1表示没有限制。",
+          "example": "无",
           "member": "int64",
           "name": "MaxRequestNumPreSec",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划修改时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

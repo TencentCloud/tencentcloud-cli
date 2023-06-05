@@ -1,16 +1,16 @@
 **Example 1: 获取按项目汇总消耗详情**
 
-
+获取按项目汇总消耗详情
 
 Input: 
 
 ```
 tccli billing DescribeCostSummaryByProject --cli-unfold-argument  \
-    --BeginTime 2018-11 \
+    --NeedRecordNum 1 \
     --EndTime 2018-11 \
-    --Offset 0 \
     --Limit 1 \
-    --NeedRecordNum 1
+    --BeginTime 2018-11 \
+    --Offset 0
 ```
 
 Output: 
