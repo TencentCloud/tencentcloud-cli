@@ -1,6 +1,6 @@
 **Example 1: 修改vpc通道信息**
 
-
+修改vpc通道信息
 
 Input: 
 
@@ -18,27 +18,67 @@ Output:
 {
     "Response": {
         "Result": {
+            "UpstreamId": "abc",
+            "UpstreamName": "abc",
+            "UpstreamDescription": "abc",
+            "Scheme": "abc",
+            "Algorithm": "abc",
+            "UniqVpcId": "abc",
             "Retries": 1,
-            "Algorithm": "xx",
-            "UniqVpcId": "xx",
-            "CreatedTime": "2020-09-22T00:00:00+00:00",
-            "UpstreamId": "xx",
-            "UpstreamName": "xx",
-            "UpstreamDescription": "xx",
             "Nodes": [
                 {
-                    "VmInstanceId": "xx",
-                    "Host": "xx",
+                    "VmInstanceId": "abc",
+                    "Host": "abc",
                     "Port": 1,
                     "Weight": 1,
                     "Tags": [
-                        "xx"
+                        "abc"
+                    ],
+                    "Healthy": "abc",
+                    "ServiceName": "abc",
+                    "NameSpace": "abc",
+                    "ClusterId": "abc",
+                    "Source": "abc",
+                    "UniqueServiceName": "abc"
+                }
+            ],
+            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "HealthChecker": {
+                "EnableActiveCheck": true,
+                "EnablePassiveCheck": true,
+                "ActiveCheckHttpPath": "abc",
+                "ActiveCheckTimeout": 1,
+                "ActiveCheckInterval": 1,
+                "ActiveRequestHeader": [
+                    {}
+                ],
+                "UnhealthyTimeout": 1,
+                "HealthyHttpStatus": "abc",
+                "UnhealthyHttpStatus": "abc",
+                "TcpFailureThreshold": 1,
+                "TimeoutThreshold": 1,
+                "HttpFailureThreshold": 1
+            },
+            "UpstreamType": "abc",
+            "K8sServices": [
+                {
+                    "Name": "abc",
+                    "Weight": 0,
+                    "ClusterId": "abc",
+                    "Namespace": "abc",
+                    "ServiceName": "abc",
+                    "Port": 0,
+                    "ExtraLabels": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
                     ]
                 }
             ],
-            "Scheme": "xx"
+            "UpstreamHost": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

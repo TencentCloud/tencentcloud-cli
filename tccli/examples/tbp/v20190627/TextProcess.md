@@ -1,6 +1,6 @@
 **Example 1: 机器人对话服务接口**
 
-
+文本处理。
 
 Input: 
 
@@ -36,6 +36,8 @@ Output:
             ]
         },
         "ResultType": "1",
+        "ResponseText": "xxx",
+        "RequestId": "xxx",
         "SessionAttributes": "xxx"
     }
 }

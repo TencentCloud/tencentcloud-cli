@@ -18,9 +18,9 @@
     ],
     "TextProcess": [
       {
-        "document": "",
+        "document": "文本处理。",
         "input": "https://tbp.tencentcloudapi.com/?Action=TextProcess\r\n&BotId=972445\r\n&InputText=北京\r\n&TerminalId=123\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20190117150912\",\n        \"DialogStatus\": \"COMPLETE\",\n        \"BotName\": \"订票机器人\",\n        \"IntentName\": \"Intent_book_tickets\",\n        \"ResponseText\": \"好的，我这就去办。\",\n        \"SlotInfoList\": [\n            {\n                \"SlotName\": \"CityName\",\n                \"SlotValue\": \"北京\"\n            }\n        ],\n        \"SessionAttributes\": \"\",\n        \"InputText\": \"北京\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DialogStatus\": \"START\",\n        \"BotName\": \"botname\",\n        \"IntentName\": \"intentName\",\n        \"SlotInfoList\": null,\n        \"InputText\": \"hi\",\n        \"ResponseMessage\": {\n            \"GroupList\": {\n                \"ContentType\": \"text/plain\",\n                \"Url\": \"www.baidu.com\",\n                \"Content\": \"hello\"\n            }\n        },\n        \"ResultType\": \"1\",\n        \"ResponseText\": \"xxx\",\n        \"RequestId\": \"xxx\",\n        \"SessionAttributes\": \"xxx\"\n    }\n}",
         "title": "机器人对话服务接口"
       }
     ],

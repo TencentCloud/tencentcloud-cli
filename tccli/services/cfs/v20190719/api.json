@@ -4077,7 +4077,18 @@
     },
     "TieringDetailInfo": {
       "document": "分层存储详细信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "低频存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TieringSizeInBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "UnbindAutoSnapshotPolicyRequest": {

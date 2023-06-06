@@ -101,7 +101,7 @@
     "GetSendEmailStatus": {
       "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
       "input": "GetSendEmailStatusRequest",
-      "name": "获取邮件发送的状态（待废弃）",
+      "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse",
       "status": "online"
     },
@@ -1082,7 +1082,6 @@
       "document": "GetSendEmailStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发送的日期，必填。仅支持查询某个日期，不支持范围查询。",
           "example": "2020-09-22",
@@ -1092,7 +1091,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。默认为0",
           "example": "0",
@@ -1102,7 +1100,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉取最大条数，最多 100。",
           "example": "10",
@@ -1112,7 +1109,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SendMail接口返回的MessageId字段。",
           "example": "qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1",
@@ -1122,7 +1118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收件人邮箱。",
           "example": "abc@ef.com",
@@ -1143,7 +1138,6 @@
           "example": "无",
           "member": "SendEmailStatus",
           "name": "EmailStatusList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1756,6 +1750,24 @@
           "name": "ReplyToAddresses",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "抄送人邮箱地址，最多支持抄送20人。",
+          "example": "无",
+          "member": "string",
+          "name": "Cc",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "密送人邮箱地址，最多支持抄送20人。",
+          "example": "无",
+          "member": "string",
+          "name": "Bcc",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

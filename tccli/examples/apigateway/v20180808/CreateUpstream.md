@@ -1,6 +1,6 @@
 **Example 1: 创建vpc通道**
 
-
+用于创建vpc通道
 
 Input: 
 

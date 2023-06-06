@@ -7297,7 +7297,6 @@
       "document": "DescribeNamespaceBundlesOpt请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理集群名",
           "example": "cluster-s3hklt5n",
@@ -7307,7 +7306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群（租户）ID",
           "example": "pulsar-nzw8q5b3g7b2",
@@ -7317,7 +7315,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名",
           "example": "default",
@@ -7327,7 +7324,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要监控指标，若传false，则不需要传Limit和Offset分页参数",
           "example": "true",
@@ -7337,7 +7333,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询限制条数",
           "example": "10",
@@ -7347,7 +7342,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量",
           "example": "0",
@@ -7355,6 +7349,24 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的 bundle",
+          "example": "0x03d70a3c_0x051eb851",
+          "member": "string",
+          "name": "Bundle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "bundle 所属的 broker ip 地址，支持模糊查询",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "OwnerBroker",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7368,7 +7380,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7378,7 +7389,6 @@
           "example": "无",
           "member": "BundleSetOpt",
           "name": "BundleSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

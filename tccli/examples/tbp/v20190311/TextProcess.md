@@ -1,6 +1,6 @@
 **Example 1: 机器人对话服务接口**
 
-
+文本处理。
 
 Input: 
 
@@ -15,19 +15,22 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "20190117150912",
-        "DialogStatus": "COMPLETE",
-        "BotName": "订票机器人",
-        "IntentName": "Intent_book_tickets",
-        "ResponseText": "好的，我这就去办。",
-        "SlotInfoList": [
-            {
-                "SlotName": "CityName",
-                "SlotValue": "北京"
+        "DialogStatus": "START",
+        "BotName": "botname",
+        "IntentName": "intentName",
+        "SlotInfoList": null,
+        "InputText": "hi",
+        "ResponseMessage": {
+            "GroupList": {
+                "ContentType": "text/plain",
+                "Url": "www.baidu.com",
+                "Content": "hello"
             }
-        ],
-        "SessionAttributes": "",
-        "InputText": "北京"
+        },
+        "ResultType": "1",
+        "ResponseText": "xxx",
+        "RequestId": "xxx",
+        "SessionAttributes": "xxx"
     }
 }
 ```

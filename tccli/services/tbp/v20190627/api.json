@@ -104,63 +104,63 @@
       "document": "TextProcess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人标识，用于定义抽象机器人。",
+          "example": "无",
           "member": "string",
           "name": "BotId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。",
+          "example": "无",
           "member": "string",
           "name": "BotEnv",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端标识，每个终端(或线程)对应一个，区分并发多用户。",
+          "example": "无",
           "member": "string",
           "name": "TerminalId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的文本。",
+          "example": "无",
           "member": "string",
           "name": "InputText",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "透传字段，透传给用户自定义的WebService服务。",
+          "example": "无",
           "member": "string",
           "name": "SessionAttributes",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台类型，{小程序：MiniProgram；小微：XiaoWei；公众号：OfficialAccount；企业微信: WXWork}。",
+          "example": "无",
           "member": "string",
           "name": "PlatformType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当PlatformType为微信公众号或企业微信时，传递对应微信公众号或企业微信的唯一标识",
+          "example": "无",
           "member": "string",
           "name": "PlatformId",
           "required": false,
@@ -175,6 +175,7 @@
         {
           "disabled": false,
           "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DialogStatus",
           "type": "string",
@@ -183,6 +184,7 @@
         {
           "disabled": false,
           "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "BotName",
           "type": "string",
@@ -191,6 +193,7 @@
         {
           "disabled": false,
           "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "IntentName",
           "type": "string",
@@ -199,6 +202,7 @@
         {
           "disabled": false,
           "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SlotInfo",
           "name": "SlotInfoList",
           "type": "list",
@@ -207,6 +211,7 @@
         {
           "disabled": false,
           "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InputText",
           "type": "string",
@@ -215,6 +220,7 @@
         {
           "disabled": false,
           "document": "机器人应答。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResponseMessage",
           "name": "ResponseMessage",
           "type": "object",
@@ -223,6 +229,7 @@
         {
           "disabled": false,
           "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SessionAttributes",
           "type": "string",
@@ -231,10 +238,20 @@
         {
           "disabled": false,
           "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResultType",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器人对话的应答文本。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ResponseText",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

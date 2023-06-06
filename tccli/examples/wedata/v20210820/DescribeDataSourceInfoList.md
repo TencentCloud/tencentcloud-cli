@@ -1,6 +1,6 @@
 **Example 1: 获取数据源信息**
 
-
+获取数据源列表
 
 Input: 
 
@@ -18,19 +18,20 @@ Output:
         "TotalCount": 0,
         "DatasourceSet": [
             {
-                "Name": "xx",
-                "Region": "xx",
-                "ClusterId": "xx",
                 "DatabaseNames": [
-                    "xx"
+                    "abc"
                 ],
-                "Instance": "xx",
-                "Type": "xx",
+                "Description": "abc",
                 "ID": 1,
-                "Description": "xx"
+                "Instance": "abc",
+                "Name": "abc",
+                "Region": "abc",
+                "Type": "abc",
+                "ClusterId": "abc",
+                "Version": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -39,7 +39,9 @@ Output:
                 "FsName": "test_fs",
                 "AppId": 12700000,
                 "BandwidthLimit": 200,
-                "TieringDetail": {},
+                "TieringDetail": {
+                    "TieringSizeInBytes": 0
+                },
                 "TieringState": "xx",
                 "Tags": [
                     {

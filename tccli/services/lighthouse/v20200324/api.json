@@ -6115,7 +6115,6 @@
       "document": "实例密码登录配置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "<li>\"YES\"代表选择自动生成密码，这时不指定Password字段。</li>\n<li>\"NO\"代表选择自定义密码，这时要指定Password字段。</li>",
           "example": "NO",
@@ -6126,7 +6125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录密码。具体按照操作系统的复杂度要求。\nWINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符\n<li>小写字母：[a-z]</li>\n<li>大写字母：[A-Z]</li>\n<li>数字： 0-9</li>\n<li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>",
           "example": " HelloTgHd123_&*",

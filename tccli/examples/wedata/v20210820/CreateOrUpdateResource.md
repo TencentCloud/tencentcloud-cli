@@ -1,6 +1,6 @@
 **Example 1: 示例1**
 
-
+创建资源
 
 Input: 
 
@@ -28,11 +28,12 @@ Output:
                 "CreateTime": 1665648126363,
                 "UpdateTime": 1665648126363,
                 "Size": 8148,
+                "FileUploadType": "resource",
                 "LocalPath": "/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
                 "RemotePath": "/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
                 "OwnerName": "fe",
                 "Owner": "100022256608",
-                "PathDepth": 5,
+                "PathDepth": "5",
                 "ProjectId": "1171938931991703552",
                 "ExtraInfo": null,
                 "LocalTmpPath": "/tmp//datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
@@ -41,7 +42,7 @@ Output:
                 "Region": "ap-guangzhou"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "12321312"
     }
 }
 ```

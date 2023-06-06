@@ -1,6 +1,6 @@
 **Example 1: 绑定自定义域名**
 
-
+绑定自定义域名
 
 Input: 
 
@@ -21,7 +21,6 @@ Output:
 ```
 {
     "Response": {
-        "Result": true,
         "RequestId": "6e00553a-8158-4f70-ad43-e1b046af1502"
     }
 }

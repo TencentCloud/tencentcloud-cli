@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateUpstream": {
-      "document": "用于创建创建后端通道",
+      "document": "用于创建后端通道",
       "input": "CreateUpstreamRequest",
       "name": "创建后端通道",
       "output": "CreateUpstreamResponse",
@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeExclusiveInstances": {
-      "document": "本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。​",
+      "document": "本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。",
       "input": "DescribeExclusiveInstancesRequest",
       "name": "查询独享实例列表",
       "output": "DescribeExclusiveInstancesResponse",
@@ -673,7 +673,7 @@
       "status": "online"
     },
     "UpdateService": {
-      "document": "本接口（UpdateService）用于从服务发布的环境中运行版本切换到特定版本。用户在使用 API 网关创建服务并发布服务到某个环境后，多因为开发过程会产生多个版本，此时可调用本接口。",
+      "document": "本接口（UpdateService）用于从服务发布的环境中运行版本切换到特定版本。用户在使用 API 网关创建服务并发布服务到某个环境后，多因开发过程会产生多个版本，此时可调用本接口。",
       "input": "UpdateServiceRequest",
       "name": "更新服务版本",
       "output": "UpdateServiceResponse",
@@ -1038,7 +1038,6 @@
       "document": "应用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "x x",
@@ -1049,7 +1048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "x x",
@@ -1060,7 +1058,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用SECRET\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sajsnda",
@@ -1071,7 +1068,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "x x",
@@ -1082,7 +1078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-01",
@@ -1093,7 +1088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-01",
@@ -1104,7 +1098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用KEY\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sajsnda",
@@ -1229,9 +1222,9 @@
       "document": "API状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务唯一ID。",
+          "example": "无",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -1239,9 +1232,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API唯一ID。",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -1249,19 +1242,19 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "API描述",
+          "document": "API描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API PATH。",
+          "example": "无",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -1269,9 +1262,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API METHOD。",
+          "example": "无",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -1279,9 +1272,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -1289,9 +1282,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务修改时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -1299,9 +1292,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiName",
           "required": true,
@@ -1309,9 +1302,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -1319,9 +1312,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiType",
           "required": true,
@@ -1329,9 +1322,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -1339,9 +1332,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否买后调试。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsDebugAfterCharge",
           "required": true,
@@ -1349,9 +1342,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -1359,9 +1352,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API业务类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiBusinessType",
           "required": true,
@@ -1369,9 +1362,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联授权API唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AuthRelationApiId",
           "required": true,
@@ -1379,9 +1372,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RelationBuniessApiIds",
           "required": true,
@@ -1389,9 +1382,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "oauth配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OauthConfig",
           "name": "OauthConfig",
           "required": true,
@@ -1399,9 +1392,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "oauth2.0API请求，token存放位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TokenLocation",
           "required": true,
@@ -1415,7 +1408,6 @@
       "document": "展示api信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "API 所在的服务唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1426,7 +1418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 所在的服务的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1437,7 +1428,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 所在的服务的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1448,7 +1438,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 接口唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1459,7 +1448,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 接口的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1470,7 +1458,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1481,7 +1468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1492,7 +1478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 接口的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1503,7 +1488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 类型。可取值为NORMAL（普通API）、TSF（微服务API）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1514,7 +1498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1525,7 +1508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 鉴权类型。可取值为 SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1536,7 +1518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OAUTH API的类型。可取值为NORMAL（业务API）、\bOAUTH（授权API）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1547,7 +1528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OAUTH 业务API 关联的授权API 唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1558,7 +1538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OAUTH配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1569,7 +1548,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否购买后调试（云市场预留参数）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1580,7 +1558,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的前端配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1591,7 +1568,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1602,7 +1578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义响应配置成功响应示例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1613,7 +1588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义响应配置失败响应示例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1624,7 +1598,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义错误码配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1635,7 +1608,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前端请求参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1646,7 +1618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务超时时间，单位是秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1657,7 +1628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务类型。可取值为 HTTP、MOCK、TSF、CLB、SCF、WEBSOCKET、TARGET（内测）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1668,7 +1638,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1679,18 +1648,16 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API的后端服务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "ServiceParameter",
+          "member": "DescribeApiResultServiceParametersInfo",
           "name": "ServiceParameters",
           "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "常量参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1701,7 +1668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1712,7 +1678,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf 函数名称。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1723,7 +1688,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf 函数命名空间。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1734,7 +1698,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf函数版本。当后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1745,7 +1708,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启集成响应。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1756,7 +1718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1767,7 +1728,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1778,7 +1738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1789,7 +1748,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1800,7 +1758,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1811,7 +1768,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1822,7 +1778,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WEBSOCKET 回推地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1833,7 +1788,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1844,7 +1798,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1855,7 +1808,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1866,7 +1818,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API绑定微服务服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1877,7 +1828,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务信息详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1888,7 +1838,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务的负载均衡配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1899,7 +1848,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务的健康检查配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1910,7 +1858,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启跨域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1921,7 +1868,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API绑定的tag信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1932,7 +1878,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API已发布的环境信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1943,7 +1888,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Base64编码，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1954,7 +1898,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Base64编码的header触发，只有后端为scf时才会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1965,7 +1908,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Header触发规则，总规则数量不超过10。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2316,32 +2258,6 @@
       ],
       "usage": "out"
     },
-    "ApisStatus": {
-      "document": "描述api列表状态",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "符合条件的 API 接口数量。",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "API 接口列表。",
-          "member": "DesApisStatus",
-          "name": "ApiIdStatusSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "AttachPluginRequest": {
       "document": "AttachPlugin请求参数结构体",
       "members": [
@@ -2414,9 +2330,9 @@
       "document": "插件绑定的API信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "API所在服务ID。",
+          "example": "无",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2424,9 +2340,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API所在服务名称。",
+          "example": "无",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -2434,9 +2350,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API所在服务描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceDesc",
           "required": true,
@@ -2444,9 +2360,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API ID。",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -2454,9 +2370,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API名称。",
+          "example": "无",
           "member": "string",
           "name": "ApiName",
           "required": true,
@@ -2464,9 +2380,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiDesc",
           "required": true,
@@ -2474,9 +2390,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件绑定API的环境。",
+          "example": "无",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -2484,9 +2400,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件和API绑定时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "AttachedTime",
           "required": true,
@@ -3066,7 +2982,6 @@
       "document": "BindSubDomain请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务唯一 ID。",
           "example": "service-1w9ekbwo",
@@ -3076,7 +2991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待绑定的自定义的域名。",
           "example": "xxx.com",
@@ -3086,7 +3000,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务支持协议，可选值为http、https、http&https。",
           "example": "http",
@@ -3096,7 +3009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，可选值为OUTER、INNER。",
           "example": "OUTER",
@@ -3106,7 +3018,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用默认路径映射，默认为 true。为 false 时，表示自定义路径映射，此时 PathMappingSet 必填。",
           "example": "TRUE",
@@ -3116,7 +3027,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认域名。",
           "example": "service-1w9ekbwo-1259027407.gz.apigw.tencentcs.com",
@@ -3126,7 +3036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待绑定自定义域名的证书唯一 ID。针对Protocol 为https或http&https可以选择上传。",
           "example": "x x",
@@ -3136,7 +3045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义域名路径映射，最多输入三个Environment，并且只能分别取值“test”、 ”prepub“、”release“。",
           "example": "无",
@@ -3146,7 +3054,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否将HTTP请求强制跳转 HTTPS，默认为false。参数为 true时，API网关会将所有使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议进行转发。",
           "example": "TRUE",
@@ -3161,16 +3068,6 @@
     "BindSubDomainResponse": {
       "document": "BindSubDomain返回参数结构体",
       "members": [
-        {
-          "disabled": false,
-          "document": "绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "bool",
-          "name": "Result",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": true
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3222,47 +3119,47 @@
       "document": "常量参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。",
+          "document": "常量参数名称。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。",
+          "document": "常量参数描述。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Desc",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。",
+          "document": "常量参数位置。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Position",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。",
+          "document": "常量参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DefaultValue",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CosConfig": {
       "document": "cos类型的api配置",
@@ -3502,7 +3399,6 @@
       "document": "CreateApi请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "API 所在的服务唯一 ID。",
           "example": "service-ody35h5e",
@@ -3512,7 +3408,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。",
           "example": "MOCK",
@@ -3522,7 +3417,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务超时时间，单位是秒。",
           "example": "15",
@@ -3532,7 +3426,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的前端请求协议，支持HTTP和WEBSOCKET。",
           "example": "HTTP",
@@ -3542,7 +3435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的前端配置。",
           "example": "无",
@@ -3552,7 +3444,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的 API 名称。",
           "example": "name",
@@ -3562,7 +3453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的 API 接口描述。",
           "example": "desc",
@@ -3572,7 +3462,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。",
           "example": "NORMAL",
@@ -3582,7 +3471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。",
           "example": "NONE",
@@ -3592,7 +3480,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启跨域。",
           "example": "false",
@@ -3602,7 +3489,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "常量参数。",
           "example": "无",
@@ -3612,7 +3498,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前端请求参数。",
           "example": "无",
@@ -3622,7 +3507,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。",
           "example": "NORMAL",
@@ -3632,7 +3516,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。",
           "example": "mock",
@@ -3642,7 +3525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API绑定微服务服务列表。",
           "example": "无",
@@ -3652,7 +3534,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务的负载均衡配置。",
           "example": "无",
@@ -3662,7 +3543,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务的健康检查配置。",
           "example": "无",
@@ -3672,7 +3552,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "target类型后端资源信息。（内测阶段）",
           "example": "无",
@@ -3682,7 +3561,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "target类型负载均衡配置。（内测阶段）",
           "example": "0",
@@ -3692,7 +3570,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "target健康检查配置。（内测阶段）",
           "example": "无",
@@ -3702,7 +3579,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf 函数名称。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3712,7 +3588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3722,7 +3597,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3732,7 +3606,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3742,7 +3615,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf 函数命名空间。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3752,7 +3624,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf函数版本。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3762,7 +3633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3772,7 +3642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3782,7 +3651,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3792,7 +3660,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3802,7 +3669,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3812,7 +3678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3822,7 +3687,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启响应集成。当后端类型是SCF时生效。",
           "example": "false",
@@ -3832,7 +3696,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始调试后计费。（云市场预留字段）",
           "example": "false",
@@ -3842,7 +3705,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。",
           "example": "false",
@@ -3852,7 +3714,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回类型。",
           "example": "html",
@@ -3862,7 +3723,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义响应配置成功响应示例。",
           "example": "xxx",
@@ -3872,7 +3732,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义响应配置失败响应示例。",
           "example": "xxx",
@@ -3882,7 +3741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的后端服务配置。",
           "example": "无",
@@ -3892,7 +3750,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。",
           "example": "api-xxx",
@@ -3902,7 +3759,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API的后端服务参数。",
           "example": "无",
@@ -3912,7 +3768,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "oauth配置。当AuthType是OAUTH时生效。",
           "example": "无",
@@ -3922,7 +3777,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义错误码配置。",
           "example": "无",
@@ -3932,7 +3786,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tsf serverless 命名空间ID。（内测中）",
           "example": "xxx",
@@ -3942,7 +3795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型。",
           "example": "xxx",
@@ -3952,7 +3804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否打开Base64编码，只有后端是scf时才会生效。",
           "example": "false",
@@ -3962,7 +3813,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件总线ID。",
           "example": "eb-xsae3sdf",
@@ -3972,7 +3822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。",
           "example": "EVENT",
@@ -3982,7 +3831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIAM应用类型。",
           "example": "Client",
@@ -3992,7 +3840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。",
           "example": "Authorization",
@@ -4002,7 +3849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIAM应用Token 有效时间，单位为秒，默认为7200秒。",
           "example": "7200",
@@ -4012,7 +3858,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIAM应用ID。",
           "example": "无",
@@ -4022,7 +3867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的Owner",
           "example": "无",
@@ -4041,9 +3885,8 @@
           "disabled": false,
           "document": "api信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "CreateApiRsp",
+          "member": "CreateApiResultInfo",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4055,6 +3898,52 @@
         }
       ],
       "type": "object"
+    },
+    "CreateApiResultInfo": {
+      "document": "创建api返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api-sdfsdf",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-02T14:27:56Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateApiRsp": {
       "document": "创建api返回",
@@ -4525,7 +4414,6 @@
       "document": "CreateUpstream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "后端协议，取值范围：HTTP, HTTPS",
           "example": "HTTP",
@@ -4535,7 +4423,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡算法，取值范围：ROUND-ROBIN",
           "example": "ROUND-ROBIN",
@@ -4545,7 +4432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC唯一ID",
           "example": "vpc-123456",
@@ -4555,7 +4441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端通道名字",
           "example": "test_upstream",
@@ -4565,7 +4450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端通道描述",
           "example": "description",
@@ -4575,7 +4459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端访问类型，取值范围：IP_PORT, K8S",
           "example": "IP_PORT",
@@ -4585,7 +4468,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求重试次数，默认3次",
           "example": "3",
@@ -4595,7 +4477,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关转发到后端的Host请求头",
           "example": "example.com",
@@ -4605,7 +4486,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端节点",
           "example": "无",
@@ -4615,7 +4495,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
@@ -4625,7 +4504,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查配置，目前只支持VPC通道",
           "example": "无",
@@ -4635,7 +4513,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "K8S容器服务的配置",
           "example": "无",
@@ -4656,7 +4533,6 @@
           "example": "upstream-0c96l2bo",
           "member": "string",
           "name": "UpstreamId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5229,7 +5105,6 @@
       "document": "api状态详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务唯一ID。",
           "example": "service-2nuhovb7",
@@ -5240,7 +5115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API唯一ID。",
           "example": "api-d2sdvx",
@@ -5251,7 +5125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的 API 接口描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "API",
@@ -5262,7 +5135,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5273,7 +5145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5284,7 +5155,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 接口的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "apiname",
@@ -5295,7 +5165,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPCID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
@@ -5306,7 +5175,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5317,7 +5185,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API类型。取值为NORMAL（普通API）和TSF（微服务API）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
@@ -5328,7 +5195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API协议。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HTTP",
@@ -5339,7 +5205,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否买后调试。（云市场预留字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "False",
@@ -5350,7 +5215,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EIAM",
@@ -5361,7 +5225,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OAUTH API的类型。当AuthType 为 OAUTH时该字段有效， 取值为NORMAL（业务API）和 OAUTH（授权API）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OAUTH",
@@ -5372,7 +5235,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api-dd3acs",
@@ -5383,7 +5245,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OAUTH 配置信息。当AuthType是OAUTH时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5394,7 +5255,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -5405,7 +5265,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API关联的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -5416,7 +5275,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的路径，如 /path。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/hello",
@@ -5427,7 +5285,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API 的请求方法，如 GET。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GET",
@@ -6126,6 +5983,72 @@
       ],
       "type": "object"
     },
+    "DescribeApiResultServiceParametersInfo": {
+      "document": "ServiceParameter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API的后端服务参数名称。只有ServiceType是HTTP才会用到此参数。前后端参数名称可不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。前后端参数位置可配置不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Position",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数对应的前端参数位置，如 head。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterPosition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数对应的前端参数名称。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数默认值。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的后端服务参数备注。只有 ServiceType 是 HTTP 才会用到此参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelevantRequestParameterDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DescribeApiUsagePlanRequest": {
       "document": "DescribeApiUsagePlan请求参数结构体",
       "members": [
@@ -6188,7 +6111,6 @@
       "document": "DescribeApisStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "API 所在的服务唯一 ID。",
           "example": "service-ody35h5e",
@@ -6198,7 +6120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "xx",
@@ -6208,7 +6129,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "xx",
@@ -6218,7 +6138,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API过滤条件。支持ApiId、ApiName、ApiPath、ApiType、AuthRelationApiId、AuthType、ApiBuniessType、NotUsagePlanId、 Environment、Tags (values为 $tag_key:tag_value的列表)、TagKeys （values 为 tag key的列表），其中NotUsagePlanId和Environment必须同时使用，不能单独使用一个。",
           "example": "无",
@@ -6237,9 +6156,8 @@
           "disabled": false,
           "document": "API 详情列表。",
           "example": "无",
-          "member": "ApisStatus",
+          "member": "DescribeApisStatusResultInfo",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6251,6 +6169,22 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeApisStatusResultInfo": {
+      "document": "描述api列表状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的 API 接口数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeExclusiveInstanceDetailRequest": {
       "document": "DescribeExclusiveInstanceDetail请求参数结构体",
@@ -6294,7 +6228,6 @@
       "document": "DescribeExclusiveInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询，limit",
           "example": "10",
@@ -6304,7 +6237,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询，offset",
           "example": "1",
@@ -6314,7 +6246,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -6333,9 +6264,8 @@
           "disabled": false,
           "document": "独享实例列表查询结果",
           "example": "无",
-          "member": "InstanceInfo",
+          "member": "DescribeExclusiveInstancesResult",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6347,6 +6277,11 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeExclusiveInstancesResult": {
+      "document": "数据结构",
+      "members": [],
+      "usage": "out"
     },
     "DescribeExclusiveInstancesStatusRequest": {
       "document": "DescribeExclusiveInstancesStatus请求参数结构体",
@@ -7540,11 +7475,36 @@
       ],
       "type": "object"
     },
+    "DescribeServiceReleaseVersionResultVersionListInfo": {
+      "document": "服务发布列表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VersionDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeServiceRequest": {
       "document": "DescribeService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的服务唯一 ID。",
           "example": "service-rypiqi13",
@@ -7565,7 +7525,6 @@
           "example": "service-rypiqi13",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7575,7 +7534,6 @@
           "example": "[\"release\"]",
           "member": "string",
           "name": "AvailableEnvironments",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7585,7 +7543,6 @@
           "example": "dd",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7595,7 +7552,6 @@
           "example": "xxxx",
           "member": "string",
           "name": "ServiceDesc",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7605,7 +7561,6 @@
           "example": "http",
           "member": "string",
           "name": "Protocol",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7615,7 +7570,6 @@
           "example": "2020-04-15T11:03:41Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7625,7 +7579,6 @@
           "example": "2020-04-15T11:03:42Z",
           "member": "datetime_iso",
           "name": "ModifiedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7635,7 +7588,6 @@
           "example": "xxxx",
           "member": "string",
           "name": "ExclusiveSetName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7645,7 +7597,6 @@
           "example": "[\"OUTER\"]",
           "member": "string",
           "name": "NetTypes",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7655,7 +7606,6 @@
           "example": "xxxx",
           "member": "string",
           "name": "InternalSubDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7665,7 +7615,6 @@
           "example": "service-rypiqi13-1259027407.bj.apigw.tencentcs.com",
           "member": "string",
           "name": "OuterSubDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7675,7 +7624,6 @@
           "example": "0",
           "member": "int64",
           "name": "InnerHttpPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7685,7 +7633,6 @@
           "example": "0",
           "member": "int64",
           "name": "InnerHttpsPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7695,7 +7642,6 @@
           "example": "1",
           "member": "int64",
           "name": "ApiTotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7705,7 +7651,6 @@
           "example": "无",
           "member": "ApiIdStatus",
           "name": "ApiIdStatusSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7715,7 +7660,6 @@
           "example": "0",
           "member": "int64",
           "name": "UsagePlanTotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7725,7 +7669,6 @@
           "example": "无",
           "member": "UsagePlan",
           "name": "UsagePlanList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7735,7 +7678,6 @@
           "example": "IPv4",
           "member": "string",
           "name": "IpVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7745,7 +7687,6 @@
           "example": "xxx",
           "member": "string",
           "name": "UserType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7755,7 +7696,6 @@
           "example": "1",
           "member": "int64",
           "name": "SetId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7765,7 +7705,6 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7775,7 +7714,6 @@
           "example": "InstanceId-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7785,7 +7723,6 @@
           "example": "xxxx",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7795,7 +7732,6 @@
           "example": "xxx",
           "member": "string",
           "name": "SetType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7805,7 +7741,6 @@
           "example": "DEFAULT",
           "member": "string",
           "name": "DeploymentType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7815,7 +7750,6 @@
           "example": "DEFAULT",
           "member": "string",
           "name": "SpecialUse",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8794,7 +8728,6 @@
       "document": "环境限流",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境名",
           "example": "x x",
@@ -8805,7 +8738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流值",
           "example": "1",
@@ -8814,17 +8746,6 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "限流最大值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "MaxQuota",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8973,47 +8894,47 @@
       "document": "健康检查配置，包括TsfHealthCheckConf和TargetServicesHealthCheckConf",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启健康检查。",
+          "document": "是否开启健康检查。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsHealthCheck",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "健康检查阈值。",
+          "document": "健康检查阈值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RequestVolumeThreshold",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "窗口大小。",
+          "document": "窗口大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "SleepWindowInMilliseconds",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "阈值百分比。",
+          "document": "阈值百分比。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ErrorThresholdPercentage",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "IPStrategy": {
       "document": "ip策略",
@@ -9688,7 +9609,6 @@
       "document": "k8s 服务的配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权重",
           "example": "10",
@@ -9699,7 +9619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "k8s集群ID",
           "example": "cls-ehovttb4",
@@ -9710,10 +9629,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器命名空间",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -9721,7 +9639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器服务的名字",
           "example": "web",
@@ -9732,7 +9649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务的端口",
           "example": "8088",
@@ -9743,7 +9659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "额外选择的Pod的Label",
           "example": "[{\"Key\": \"app\", \"Value\": \"web\"}]",
@@ -9754,7 +9669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义的服务名字，可选",
           "example": "TestServiceName",
@@ -9765,7 +9679,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LogQuery": {
       "document": "检索条件入参",
@@ -11137,7 +11051,6 @@
       "document": "ModifyUpstream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "后端通道唯一ID",
           "example": "upstream-0c96l2bo",
@@ -11147,7 +11060,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端通道名字",
           "example": "upstream_a",
@@ -11157,7 +11069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端通道描述",
           "example": "description",
@@ -11167,7 +11078,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端协议，取值范围：HTTP, HTTPS",
           "example": "HTTP",
@@ -11177,7 +11087,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端访问类型，取值范围：IP_PORT, K8S",
           "example": "IP_PORT",
@@ -11187,7 +11096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡算法，取值范围：ROUND_ROBIN",
           "example": "ROUND_ROBIN",
@@ -11197,7 +11105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC唯一ID",
           "example": "vpc-123456",
@@ -11207,7 +11114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求重试次数，默认3次",
           "example": "3",
@@ -11217,7 +11123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关转发到后端的 Host 请求头",
           "example": "example.com",
@@ -11227,7 +11132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端节点列表",
           "example": "无",
@@ -11237,7 +11141,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查配置，目前只支持VPC通道",
           "example": "无",
@@ -11247,7 +11150,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器服务配置",
           "example": "无",
@@ -11266,9 +11168,8 @@
           "disabled": false,
           "document": "返回修改后的后端通道信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "UpstreamInfo",
+          "member": "ModifyUpstreamResultInfo",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11280,6 +11181,142 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyUpstreamResultInfo": {
+      "document": "后端通道详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后端通道唯一ID",
+          "example": "upstream-xxxx",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端通道名字",
+          "example": "test_upstream",
+          "member": "string",
+          "name": "UpstreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端通道描述",
+          "example": "description",
+          "member": "string",
+          "name": "UpstreamDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端协议，取值范围：HTTP, HTTPS",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡算法，取值范围：ROUND_ROBIN",
+          "example": "ROUND_ROBIN",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC唯一ID",
+          "example": "vpc-123456",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求重试次数",
+          "example": "3",
+          "member": "uint64",
+          "name": "Retries",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端节点",
+          "example": "x x",
+          "member": "UpstreamNode",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "x x",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHealthChecker",
+          "name": "HealthChecker",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端的类型，取值范围：IP_PORT, K8S",
+          "example": "K8S",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S容器服务配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "K8sService",
+          "name": "K8sServices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关转发给后端的Host请求头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpstreamHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModifyUsagePlanRequest": {
       "document": "ModifyUsagePlan请求参数结构体",
@@ -11613,7 +11650,6 @@
       "document": "API网关插件详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "插件ID。",
           "example": "plugin-2nuhovb7",
@@ -11624,7 +11660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件名称。",
           "example": "myplugin",
@@ -11635,7 +11670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件类型。",
           "example": "IPControl",
@@ -11646,7 +11680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件定义语句。",
           "example": "{\\",
@@ -11657,7 +11690,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IPControl",
@@ -11668,7 +11700,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-01-25T10:15:21Z",
@@ -11679,7 +11710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-01-25T10:15:21Z",
@@ -11690,7 +11720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件绑定的API总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -11701,7 +11730,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插件绑定的API信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12095,7 +12123,6 @@
       "document": "展示服务列表用",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "内网访问https端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12106,7 +12133,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的服务描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12117,7 +12143,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务的前端请求类型。如http、https 或者 http&https。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
@@ -12128,7 +12153,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -12139,7 +12163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务支持的网络类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
@@ -12150,7 +12173,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占集群名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -12161,7 +12183,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12172,7 +12193,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP版本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12183,7 +12203,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已经发布的环境列表。如test、prepub、release。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -12194,7 +12213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的服务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12205,7 +12223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统为该服务分配的外网域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12216,7 +12233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12227,7 +12243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网访问http端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12238,7 +12253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统为该服务自动分配的内网域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12249,7 +12263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务的计费状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12260,7 +12273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12271,7 +12283,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12282,7 +12293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "x x",
@@ -12293,7 +12303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务部署的集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12655,9 +12664,9 @@
       "document": "服务发布版本",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布版本总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -12665,10 +12674,10 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布版本列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "ServiceReleaseHistoryInfo",
+          "example": "无",
+          "member": "DescribeServiceReleaseVersionResultVersionListInfo",
           "name": "VersionList",
           "required": true,
           "type": "list",
@@ -12841,9 +12850,9 @@
       "document": "TsfLoadBalanceConf 出参使用",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启负载均衡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "IsLoadBalance",
           "required": false,
@@ -12851,9 +12860,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -12861,9 +12870,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启会话保持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "SessionStickRequired",
           "required": false,
@@ -12871,9 +12880,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "SessionStickTimeout",
           "required": false,
@@ -12881,7 +12890,7 @@
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "UnBindEnvironmentRequest": {
       "document": "UnBindEnvironment请求参数结构体",
@@ -13361,7 +13370,6 @@
       "document": "UpdateService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待切换服务的唯一 Id。",
           "example": "service-ody35h5e",
@@ -13371,7 +13379,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待切换的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
           "example": "test",
@@ -13381,7 +13388,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换的版本号。",
           "example": "202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215",
@@ -13391,7 +13397,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次的切换描述。",
           "example": "test",
@@ -13412,7 +13417,6 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -13732,7 +13736,6 @@
       "document": "后端通道后端节点元数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP或域名",
           "example": "1.1.1.1",
@@ -13743,7 +13746,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口[0, 65535]",
           "example": "22",
@@ -13754,7 +13756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重[0, 100], 0为禁用",
           "example": "10",
@@ -13765,7 +13766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CVM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-123456",
@@ -13776,7 +13776,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "染色标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"release\",\"test\"]",
@@ -13787,7 +13786,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OFF",
@@ -13798,7 +13796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "K8S容器服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "web",
@@ -13809,10 +13806,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "K8S命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "NameSpace",
           "required": false,
@@ -13820,7 +13816,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TKE集群的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-xxxx",
@@ -13831,7 +13826,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Node的来源，取值范围：K8S\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "K8S",
@@ -13842,7 +13836,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API网关内部记录唯一的服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/upstream-xxxx/cls-xxx/default/web",
@@ -13859,9 +13852,9 @@
       "document": "usagePlan详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称。",
+          "example": "无",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -13869,9 +13862,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划唯一ID。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -13879,9 +13872,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划名称。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanName",
           "required": true,
@@ -13889,19 +13882,19 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "使用计划描述。",
+          "document": "使用计划描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划qps，-1表示没有限制。",
+          "example": "无",
           "member": "int64",
           "name": "MaxRequestNumPreSec",
           "required": true,
@@ -13909,9 +13902,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -13919,9 +13912,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划修改时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -14175,9 +14168,9 @@
       "document": "使用计划详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -14185,9 +14178,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanName",
           "required": true,
@@ -14195,9 +14188,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用计划描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsagePlanDesc",
           "required": true,
@@ -14205,19 +14198,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "初始化调用次数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "InitQuota",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "每秒请求限制数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MaxRequestNumPreSec",
           "required": true,
@@ -14225,9 +14208,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大调用次数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MaxRequestNum",
           "required": true,
@@ -14235,19 +14218,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "是否隐藏。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "IsHide",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -14255,9 +14228,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -14265,9 +14238,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定密钥的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "BindSecretIdTotalCount",
           "required": true,
@@ -14275,9 +14248,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定密钥的详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "BindSecretIds",
           "required": true,
@@ -14285,9 +14258,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定环境数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "BindEnvironmentTotalCount",
           "required": true,
@@ -14295,9 +14268,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定环境详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanBindEnvironment",
           "name": "BindEnvironments",
           "required": true,

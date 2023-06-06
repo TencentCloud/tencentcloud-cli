@@ -1,6 +1,6 @@
 **Example 1: 用于查询服务详情**
 
-
+无
 
 Input: 
 
@@ -13,79 +13,79 @@ Output:
 ```
 {
     "Response": {
-        "ServiceDesc": "xx",
+        "ServiceDesc": "sesrxx",
         "CreatedTime": "2020-09-22T00:00:00+00:00",
         "SetId": 1,
         "InnerHttpsPort": 0,
         "InnerHttpPort": 0,
         "Tags": [
             {
-                "Value": "xx",
-                "Key": "xx"
+                "Value": "test",
+                "Key": "test"
             }
         ],
         "NetTypes": [
             "OUTER"
         ],
-        "IpVersion": "xx",
-        "UserType": "xx",
+        "IpVersion": "",
+        "UserType": "",
         "UsagePlanList": [
             {
                 "MaxRequestNumPreSec": 0,
-                "UsagePlanId": "xx",
+                "UsagePlanId": "",
                 "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                "UsagePlanDesc": "xx",
-                "Environment": "xx",
+                "UsagePlanDesc": "test",
+                "Environment": "test",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UsagePlanName": "xx"
+                "UsagePlanName": "sdfafxx"
             }
         ],
-        "OuterSubDomain": "xx",
+        "OuterSubDomain": "domain.com",
         "UsagePlanTotalCount": 0,
-        "SetType": "xx",
+        "SetType": "",
         "ApiIdStatusSet": [
             {
-                "AuthType": "xx",
-                "Protocol": "xx",
-                "UniqVpcId": "xx",
+                "AuthType": "",
+                "Protocol": "",
+                "UniqVpcId": "",
                 "ModifiedTime": "2020-09-22T00:00:00+00:00",
                 "OauthConfig": {
-                    "PublicKey": "xx",
-                    "LoginRedirectUrl": "xx",
-                    "TokenLocation": "xx"
+                    "PublicKey": "",
+                    "LoginRedirectUrl": "",
+                    "TokenLocation": ""
                 },
-                "ApiId": "xx",
-                "AuthRelationApiId": "xx",
-                "ApiDesc": "xx",
-                "ApiType": "xx",
-                "ApiBusinessType": "xx",
-                "ServiceId": "xx",
-                "ApiName": "xx",
-                "Path": "xx",
+                "ApiId": "",
+                "AuthRelationApiId": "",
+                "ApiDesc": "",
+                "ApiType": "",
+                "ApiBusinessType": "",
+                "ServiceId": "",
+                "ApiName": "",
+                "Path": "",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "RelationBuniessApiIds": [
-                    "xx"
+                    ""
                 ],
                 "IsDebugAfterCharge": false,
-                "Method": "xx",
-                "TokenLocation": "xx"
+                "Method": "",
+                "TokenLocation": ""
             }
         ],
-        "ServiceName": "xx",
-        "RequestId": "xx",
-        "InstanceName": "xx",
-        "Protocol": "xx",
+        "ServiceName": "",
+        "RequestId": "",
+        "InstanceName": "",
+        "Protocol": "",
         "ApiTotalCount": 1,
         "ModifiedTime": "2020-09-22T00:00:00+00:00",
-        "ExclusiveSetName": "xx",
+        "ExclusiveSetName": "",
         "DeploymentType": "DEFAULT",
         "SpecialUse": "DEFAULT",
-        "InstanceId": "xx",
+        "InstanceId": "",
         "AvailableEnvironments": [
             "release"
         ],
-        "ServiceId": "xx",
-        "InternalSubDomain": "xx"
+        "ServiceId": "",
+        "InternalSubDomain": ""
     }
 }
 ```
