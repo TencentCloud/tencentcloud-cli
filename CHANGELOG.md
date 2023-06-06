@@ -1,3 +1,177 @@
+# Release 3.0.779.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 62 次发布
+
+发布时间：2023-06-07 01:11:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Inbound](http://document.tencentcloudapi.woa.com/document/product/236/15878#Inbound)
+
+	* 新增成员：AddressModule
+
+* [Outbound](http://document.tencentcloudapi.woa.com/document/product/236/15878#Outbound)
+
+	* 新增成员：AddressModule
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 62 次发布
+
+发布时间：2023-06-07 01:14:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRoute](http://document.tencentcloudapi.woa.com/document/product/597/45484)
+
+	* 新增入参：RouteId
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 52 次发布
+
+发布时间：2023-06-07 01:22:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifySparkAppBatch](http://document.tencentcloudapi.woa.com/document/product/1342/77890)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 58 次发布
+
+发布时间：2023-06-07 01:26:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+* [OrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#OrganizationInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ClientIp, ProxyIp
+
+* [SignUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#SignUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CustomUserId
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>IsPromoter
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#UserInfo)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 36 次发布
+
+发布时间：2023-06-07 01:31:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PullStreamTaskInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#PullStreamTaskInfo)
+
+	* 新增成员：RecordTemplateId
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 29 次发布
+
+发布时间：2023-06-07 01:34:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateStreamLinkInput](http://document.tencentcloudapi.woa.com/document/product/862/77892)
+
+修改接口：
+
+* [ProcessLiveStream](http://document.tencentcloudapi.woa.com/document/product/862/39227)
+
+	* 新增入参：AiQualityControlTask
+
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 7 次发布
+
+发布时间：2023-06-07 01:37:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeAgentDealsCache
+* DescribeAgentPayDeals
+* DescribeAgentSelfPayDeals
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 6 次发布
+
+发布时间：2023-06-07 01:52:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteTaskAlarmRegular](http://document.tencentcloudapi.woa.com/document/product/1607/77597)
+
+	* <font color="#dd0000">**修改入参**：</font>TaskId, TaskType
+
+
+
+
 # Release 3.0.778.1
 
 ## API 网关(apigateway) 版本：2018-08-08

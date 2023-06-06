@@ -1,6 +1,6 @@
 **Example 1: 查看路由信息**
 
-
+查看路由信息
 
 Input: 
 
@@ -17,18 +17,30 @@ Output:
             "Routers": [
                 {
                     "AccessType": 0,
-                    "RouteId": 2,
-                    "VipType": 4,
+                    "RouteId": 0,
+                    "VipType": 0,
                     "VipList": [
                         {
-                            "Vip": "9.13.100.63",
-                            "Vport": "8774"
+                            "Vip": "1.1.1.1",
+                            "Vport": "8080"
                         }
-                    ]
+                    ],
+                    "Domain": "abc",
+                    "DomainPort": 0,
+                    "DeleteTimestamp": "abc",
+                    "Subnet": "abc",
+                    "BrokerVipList": [
+                        {
+                            "Vip": "1.1.1.2",
+                            "Vport": "90"
+                        }
+                    ],
+                    "Processing": 1,
+                    "VpcId": "vpc-fdafdsa"
                 }
             ]
         },
-        "RequestId": "e36d80f9-21aa-4a22-9932-91e1fbd12f39"
+        "RequestId": "abc"
     }
 }
 ```

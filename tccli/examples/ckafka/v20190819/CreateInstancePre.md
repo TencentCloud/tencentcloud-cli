@@ -20,7 +20,7 @@ Output:
         "Result": {
             "ReturnCode": "0",
             "ReturnMessage": "ok",
-            "DeleteRouteTimestamp": "xx",
+            "DeleteRouteTimestamp": "xxxx",
             "Data": {
                 "FlowId": 0,
                 "DealNames": [

@@ -1074,7 +1074,7 @@
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AccountPrivilegeModifyInfo": {
       "document": "数据库账号权限变更信息",
@@ -4760,7 +4760,6 @@
       "document": "账号的数据库权限信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "db_test",
@@ -4772,7 +4771,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者",
           "example": "ReadOnly",
@@ -4784,7 +4782,7 @@
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DBPrivilegeModifyInfo": {
       "document": "数据库权限变更信息",

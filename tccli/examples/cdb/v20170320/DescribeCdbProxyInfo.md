@@ -1,6 +1,6 @@
 **Example 1: 查询代理信息**
 
-
+查询代理信息
 
 Input: 
 
@@ -16,59 +16,64 @@ Output:
         "Count": 1,
         "ProxyInfos": [
             {
-                "Status": "xx",
-                "ProxyGroupId": "xx",
-                "ProxyVersion": "xx",
+                "ConnectionPoolLimit": 5,
                 "ProxyAddress": [
                     {
-                        "MaxDelay": 1,
+                        "AutoAddRo": true,
+                        "ConnectionPool": false,
+                        "Desc": "",
+                        "FailOver": true,
+                        "IsKickOut": false,
+                        "MaxDelay": 0,
+                        "MinCount": 0,
+                        "ProxyAddressId": "proxyaddr-test",
                         "ProxyAllocation": [
                             {
-                                "Region": "xx",
                                 "ProxyInstance": [
                                     {
-                                        "Status": "xx",
-                                        "Zone": "xx",
-                                        "Weight": 1,
-                                        "InstanceId": "xx",
-                                        "Region": "xx",
-                                        "InstanceName": "xx",
-                                        "InstanceType": "xx"
+                                        "InstanceId": "cdb-test",
+                                        "InstanceName": "测试",
+                                        "InstanceType": "1",
+                                        "Region": "ap-nanjing",
+                                        "Status": 1,
+                                        "Weight": 0,
+                                        "Zone": "ap-nanjing-1"
                                     }
                                 ],
-                                "Zone": "xx"
+                                "Region": "ap-nanjing",
+                                "Zone": "ap-nanjing-1"
                             }
                         ],
-                        "UniqVpcId": "xx",
-                        "IsKickOut": true,
-                        "ReadOnly": true,
-                        "ProxyAddressId": "xx",
-                        "Vip": "xx",
-                        "UniqSubnetId": "xx",
-                        "TransSplit": true,
-                        "MinCount": 1,
-                        "AutoAddRo": true,
-                        "VPort": 1,
-                        "WeightMode": "xx",
-                        "Desc": "xx"
+                        "ReadOnly": false,
+                        "TransSplit": false,
+                        "UniqSubnetId": "subnet-test",
+                        "UniqVpcId": "vpc-test",
+                        "VPort": 3306,
+                        "Vip": "10.0.0.0",
+                        "WeightMode": "custom"
                     }
                 ],
-                "TaskStatus": "xx",
-                "SupportUpgradeProxyVersion": "xx",
+                "ProxyGroupId": "proxy-mfxftest",
                 "ProxyNode": [
                     {
-                        "Status": "xx",
-                        "Zone": "xx",
-                        "ProxyId": "xx",
-                        "Region": "xx",
-                        "Mem": 1,
-                        "Connection": 1,
-                        "Cpu": 1
+                        "Cpu": 2,
+                        "Mem": 4000,
+                        "ProxyId": "proxynode-test",
+                        "Region": "ap-nanjing",
+                        "Status": "online",
+                        "Zone": "ap-nanjing-1",
+                        "Connection": 1
                     }
-                ]
+                ],
+                "ProxyVersion": "1.3.7",
+                "Status": "online",
+                "SupportCreateProxyAddress": false,
+                "SupportUpgradeProxyMysqlVersion": "20211030",
+                "SupportUpgradeProxyVersion": "1.3.7",
+                "TaskStatus": "ProxyModifyAddress"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "69d4c061-9730-4e2f-btttbb2-a74624bc9a6c"
     }
 }
 ```

@@ -7073,44 +7073,44 @@
       "document": "DeleteTaskAlarmRegular请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主键ID",
           "example": "6798",
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "78909",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "7898",
           "member": "string",
           "name": "TaskId",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型(201表示实时任务，202表示离线任务)",
           "example": "201",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7124,9 +7124,9 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
