@@ -1,23 +1,27 @@
 **Example 1: pod列表**
 
-
+获取任务对应的pod列表
 
 Input: 
 
 ```
 tccli tione DescribeTrainingTaskPods --cli-unfold-argument  \
-    --Id xx
+    --Id abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "PodNames": [
-            "xx"
+            "abc"
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "PodInfoList": {
+            "Name": "abc",
+            "IP": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

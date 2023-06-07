@@ -1,6 +1,6 @@
 **Example 1: 查看路由表对象列表**
 
-
+查看路由表对象列表
 
 Input: 
 
@@ -74,13 +74,13 @@ Output:
                 "Main": false,
                 "TagSet": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "test",
+                        "Key": "test"
                     }
                 ],
                 "LocalCidrForCcn": [
                     {
-                        "Cidr": "xx",
+                        "Cidr": "10.1.0.0/16",
                         "PublishedToVbc": true
                     }
                 ],
@@ -95,7 +95,7 @@ Output:
 
 **Example 2: 查询绑定了标签的路由表列表**
 
-
+查询绑定了标签的路由表列表
 
 Input: 
 
@@ -159,7 +159,7 @@ Output:
                 ],
                 "LocalCidrForCcn": [
                     {
-                        "Cidr": "xx",
+                        "Cidr": "10.1.0.0/16",
                         "PublishedToVbc": true
                     }
                 ],

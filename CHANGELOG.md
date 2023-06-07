@@ -1,3 +1,325 @@
+# Release 3.0.780.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 36 次发布
+
+发布时间：2023-06-08 01:11:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCallOutSession](http://document.tencentcloudapi.woa.com/document/product/679/68726)
+
+	* 新增入参：Callers
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 63 次发布
+
+发布时间：2023-06-08 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDefaultParams](http://document.tencentcloudapi.woa.com/document/product/236/32662)
+
+	* <font color="#dd0000">**修改入参**：</font>EngineVersion
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 63 次发布
+
+发布时间：2023-06-08 01:14:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+
+	* 新增入参：InstanceType, KafkaVersion, SpecificationsType, DiskType, DiskSize, Partition, TopicNum, MultiZoneFlag, ZoneIds, InstanceNum, PublicNetworkMonthly
+
+
+新增数据结构：
+
+* [RouteDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#RouteDTO)
+
+修改数据结构：
+
+* [OperateResponseData](http://document.tencentcloudapi.woa.com/document/product/597/40861#OperateResponseData)
+
+	* 新增成员：RouteDTO
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 22 次发布
+
+发布时间：2023-06-08 01:23:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDomainFilterList](http://document.tencentcloudapi.woa.com/document/product/1427/77893)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 59 次发布
+
+发布时间：2023-06-08 01:26:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelBatchCancelFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75964)
+
+* [ChannelCancelFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76442)
+
+* [ChannelCancelMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75253)
+
+* [ChannelCreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75575)
+
+* [ChannelCreateBoundFlows](http://document.tencentcloudapi.woa.com/document/product/1595/76671)
+
+* [ChannelCreateConvertTaskApi](http://document.tencentcloudapi.woa.com/document/product/1595/75618)
+
+* [ChannelCreateEmbedWebUrl](http://document.tencentcloudapi.woa.com/document/product/1595/77218)
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+* [ChannelCreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75963)
+
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+
+* [ChannelCreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75252)
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
+
+* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
+
+* [ChannelCreateUserRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77349)
+
+* [ChannelDeleteRoleUsers](http://document.tencentcloudapi.woa.com/document/product/1595/77348)
+
+* [ChannelDeleteSealPolicies](http://document.tencentcloudapi.woa.com/document/product/1595/77034)
+
+* [ChannelDescribeEmployees](http://document.tencentcloudapi.woa.com/document/product/1595/76386)
+
+* [ChannelDescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77347)
+
+* [ChannelGetTaskResultApi](http://document.tencentcloudapi.woa.com/document/product/1595/75617)
+
+* [ChannelUpdateSealStatus](http://document.tencentcloudapi.woa.com/document/product/1595/77075)
+
+* [ChannelVerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1595/76372)
+
+* [CreateChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/75739)
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+* [CreateFlowsByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75250)
+
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+* [DescribeChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/76717)
+
+* [DescribeFlowDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75248)
+
+* [DescribeResourceUrlsByFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75247)
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+* [DescribeUsage](http://document.tencentcloudapi.woa.com/document/product/1595/75245)
+
+* [GetDownloadFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75244)
+
+* [OperateChannelTemplate](http://document.tencentcloudapi.woa.com/document/product/1595/75243)
+
+* [PrepareFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75242)
+
+* [SyncProxyOrganization](http://document.tencentcloudapi.woa.com/document/product/1595/75241)
+
+* [SyncProxyOrganizationOperators](http://document.tencentcloudapi.woa.com/document/product/1595/75240)
+
+* [UploadFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75255)
+
+
+修改数据结构：
+
+* [Agent](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Agent)
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：SignId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 35 次发布
+
+发布时间：2023-06-08 01:41:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FunctionLog](http://document.tencentcloudapi.woa.com/document/product/583/17244#FunctionLog)
+
+	* <font color="#dd0000">**修改成员**：</font>StartTime
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 49 次发布
+
+发布时间：2023-06-08 01:45:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1179/46081)
+
+	* 新增入参：AutoSubscriptionCreation
+
+* [ModifyEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46077)
+
+	* 新增入参：AutoSubscriptionCreation
+
+
+修改数据结构：
+
+* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
+
+	* 新增成员：AutoSubscriptionCreation
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 25 次发布
+
+发布时间：2023-06-08 01:47:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrainingTaskPods](http://document.tencentcloudapi.woa.com/document/product/851/74851)
+
+	* 新增出参：PodInfoList
+
+
+新增数据结构：
+
+* [PodInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PodInfo)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 25 次发布
+
+发布时间：2023-06-08 01:49:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePolarisMetrics](http://document.tencentcloudapi.woa.com/document/product/1364/77898)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 93 次发布
+
+发布时间：2023-06-08 01:51:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/15763)
+
+	* <font color="#dd0000">**修改出参**：</font>RegionStatistics
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 7 次发布
+
+发布时间：2023-06-08 01:55:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UploadContent](http://document.tencentcloudapi.woa.com/document/product/1607/77900)
+
+新增数据结构：
+
+* [ScriptInfoResponse](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ScriptInfoResponse)
+* [ScriptRequestInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ScriptRequestInfo)
+
+
+
 # Release 3.0.779.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

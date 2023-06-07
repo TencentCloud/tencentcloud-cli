@@ -253,7 +253,7 @@
       "status": "online"
     },
     "GetDownloadFlowUrl": {
-      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，让合作企业进入控制台直接下载，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.",
+      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，让合作企业进入控制台直接下载，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.\n返回的链接只能使用一次",
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取合同（流程）批量下载链接",
       "output": "GetDownloadFlowUrlResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "SyncProxyOrganizationOperators": {
-      "document": "此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于第三方应用平台的，无法针对员工做新增/更新/离职等操作。\n若经办人信息有误，或者需要修改，也可以先将之前的经办人做离职操作，然后重新使用控制台链接CreateConsoleLoginUrl让经办人重新实名。",
+      "document": "此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于第三方应用平台的，无法针对员工做新增/更新/离职等操作。 \n若经办人信息有误，或者需要修改，也可以先将之前的经办人做离职操作，然后重新使用控制台链接CreateConsoleLoginUrl让经办人重新实名。",
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "同步企业经办人列表",
       "output": "SyncProxyOrganizationOperatorsResponse",
@@ -357,7 +357,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -704,7 +704,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -782,7 +782,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -830,7 +830,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -878,7 +878,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -956,7 +956,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -1024,7 +1024,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "调用方用户信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -1034,7 +1034,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1073,16 +1073,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程",
-          "example": "无",
-          "member": "string",
-          "name": "EmbedType",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
           "example": "无",
           "member": "Agent",
@@ -1093,12 +1083,12 @@
         },
         {
           "disabled": false,
-          "document": "渠道操作者信息",
+          "document": "WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object",
+          "member": "string",
+          "name": "EmbedType",
+          "required": true,
+          "type": "string",
           "visibility": 1
         },
         {
@@ -1119,6 +1109,16 @@
           "name": "HiddenComponents",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": true,
+          "document": "渠道操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -1301,16 +1301,6 @@
         },
         {
           "disabled": false,
-          "document": "操作者的信息，不用传",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object",
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "被抄送人信息列表",
           "example": "无",
           "member": "CcInfo",
@@ -1337,6 +1327,16 @@
           "name": "AutoSignScene",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": true,
+          "document": "操作者的信息，不用传",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -1408,7 +1408,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息，此参数不用传",
           "example": "无",
           "member": "UserInfo",
@@ -1612,7 +1612,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户信息，暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -1622,7 +1622,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "机构信息，暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1740,7 +1740,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "限制二维码用户条件（已弃用）",
           "example": "无",
           "member": "ApproverRestriction",
@@ -1750,7 +1750,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -1878,7 +1878,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "企业机构信息，不用传",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1888,7 +1888,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作人（用户）信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -1986,7 +1986,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1996,7 +1996,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -2055,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "指定待授权的用户ID数组",
+          "document": "指定待授权的用户ID数组,电子签的用户ID",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2064,21 +2064,21 @@
           "visibility": 1
         },
         {
-          "disabled": false,
-          "document": "企业机构信息，不用传",
+          "disabled": true,
+          "document": "操作人（用户）信息，不用传",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object",
           "visibility": 1
         },
         {
-          "disabled": false,
-          "document": "操作人（用户）信息，不用传",
+          "disabled": true,
+          "document": "企业机构信息，不用传",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -2091,7 +2091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最终授权成功的用户ID数组。其他的跳过的是已经授权了的",
+          "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2123,7 +2123,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定角色的员工id列表",
+          "document": "绑定角色的员工id列表，电子签的UserId",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2142,7 +2142,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者信息",
           "example": "无",
           "member": "UserInfo",
@@ -2201,7 +2201,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表",
+          "document": "用户列表，电子签系统的UserId",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2210,7 +2210,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作人信息",
           "example": "无",
           "member": "UserInfo",
@@ -2269,7 +2269,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用户ID数组",
+          "document": "指定用户ID数组，电子签系统用户ID",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2278,7 +2278,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "组织机构信息，不用传",
           "example": "无",
           "member": "OrganizationInfo",
@@ -2288,7 +2288,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作人（用户）信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -2356,7 +2356,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -2562,7 +2562,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作人信息",
           "example": "无",
           "member": "UserInfo",
@@ -2650,7 +2650,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -2660,7 +2660,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -2818,22 +2818,22 @@
         },
         {
           "disabled": false,
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object",
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "更新印章状态原因说明",
           "example": "更新原因-停用印章",
           "member": "string",
           "name": "Reason",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": true,
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -2875,7 +2875,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传",
+          "document": "企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传",
           "example": "无",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -3401,7 +3401,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -3559,7 +3559,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -3586,7 +3586,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业是否已开通腾讯电子签",
+          "document": "子客企业是否已开通腾讯电子签，true-是，false-否",
           "example": "无",
           "member": "bool",
           "name": "IsActivated",
@@ -3674,7 +3674,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -3782,7 +3782,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -3940,7 +3940,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -4036,7 +4036,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -4152,7 +4152,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -4250,7 +4250,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -4369,16 +4369,6 @@
         },
         {
           "disabled": false,
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object",
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "是否获取模板预览链接",
           "example": "无",
           "member": "bool",
@@ -4399,12 +4389,22 @@
         },
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "对应第三方应用平台企业的模板ID",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateId",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": true,
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -4526,7 +4526,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -5064,6 +5064,17 @@
           "name": "ApproverSignTypes",
           "required": false,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签署ID\n- 发起流程时系统自动补充\n- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -5658,7 +5669,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
@@ -5931,7 +5942,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -6270,7 +6281,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -7183,7 +7194,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -7281,7 +7292,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -7588,7 +7599,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",

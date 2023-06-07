@@ -764,7 +764,7 @@
       "status": "online"
     },
     "SendMessages": {
-      "document": "发送单条消息",
+      "document": "发送单条消息\n不支持持久topic",
       "input": "SendMessagesRequest",
       "name": "发送单条消息",
       "output": "SendMessagesResponse",
@@ -3899,7 +3899,6 @@
       "document": "CreateEnvironment请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
           "example": "default",
@@ -3910,7 +3909,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未消费消息过期时间，单位：秒，取值范围：60秒~15天。",
           "example": "60",
@@ -3921,7 +3919,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明，128个字符以内。",
           "example": "demo",
@@ -3932,7 +3929,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -3943,7 +3939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留策略",
           "example": "无",
@@ -3951,6 +3946,16 @@
           "name": "RetentionPolicy",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动创建订阅",
+          "example": "开启:true(default) false: 关闭",
+          "member": "bool",
+          "name": "AutoSubscriptionCreation",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -3965,7 +3970,6 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3976,7 +3980,6 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3987,7 +3990,6 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3998,7 +4000,6 @@
           "example": "namespace-ak7jexmrz2",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -9536,7 +9537,6 @@
       "document": "命名空间信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test",
@@ -9544,10 +9544,10 @@
           "name": "EnvironmentId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明",
           "example": "test",
@@ -9555,10 +9555,10 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未消费消息过期时间，单位：秒，最大1296000（15天）",
           "example": "2",
@@ -9566,10 +9566,10 @@
           "name": "MsgTTL",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2020-02-17 00:00:00",
@@ -9577,10 +9577,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近修改时间",
           "example": "2020-02-17 00:00:00",
@@ -9588,10 +9588,10 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间ID",
           "example": "test",
@@ -9599,10 +9599,10 @@
           "name": "NamespaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test",
@@ -9610,10 +9610,10 @@
           "name": "NamespaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -9621,10 +9621,10 @@
           "name": "TopicNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9632,7 +9632,19 @@
           "name": "RetentionPolicy",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否自动创建订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSubscriptionCreation",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -10865,7 +10877,6 @@
       "document": "ModifyEnvironmentAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称。",
           "example": "default",
@@ -10876,7 +10887,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未消费消息过期时间，单位：秒，范围60秒~15天。",
           "example": "60",
@@ -10887,7 +10897,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注，字符串最长不超过128。",
           "example": "demo",
@@ -10898,7 +10907,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "pulsar-ge3n43v3wj",
@@ -10909,7 +10917,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留策略",
           "example": "无",
@@ -10917,6 +10924,16 @@
           "name": "RetentionPolicy",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动创建订阅",
+          "example": "true:开启 false:关闭",
+          "member": "bool",
+          "name": "AutoSubscriptionCreation",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -10931,7 +10948,6 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10942,7 +10958,6 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10953,7 +10968,6 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -10964,7 +10978,6 @@
           "example": "namespace-ak27qjs68x",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -14960,7 +14973,6 @@
       "document": "SendMessages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default",
           "example": "persistent://tenant/namespaces/my-topic",
@@ -14971,7 +14983,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要发送的消息的内容",
           "example": "hello tdmq",
@@ -14982,7 +14993,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Token 是用来做鉴权使用的，可以不填，系统会自动获取",
           "example": "abcdefghijklmnopqrstovwxyz",
@@ -14993,7 +15003,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置 producer 的名字，要求全局唯一。该参数建议用户无需手动配置，此时系统会随机生成，如果手动设置有可能会造成创建 Producer 失败进而导致消息发送失败。\n该参数主要用于某些特定场景下，只允许特定的 Producer 生产消息时设置，用户的大部分场景使用不到该特性。",
           "example": "producer",
@@ -15004,7 +15013,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置消息发送的超时时间，默认为30s",
           "example": "30",
@@ -15015,7 +15023,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存中缓存的最大的生产消息的数量，默认为1000条",
           "example": "1000",
@@ -15037,7 +15044,6 @@
           "example": "{\"Response\":{\"MessageId\":\"26365:1475:0\"}}",
           "member": "string",
           "name": "MessageId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -15048,7 +15054,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1

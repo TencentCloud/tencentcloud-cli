@@ -49,6 +49,13 @@
       "output": "DescribeNacosServerInterfacesResponse",
       "status": "online"
     },
+    "DescribePolarisMetrics": {
+      "document": "获取北极星实例的监控信息",
+      "input": "DescribePolarisMetricsRequest",
+      "name": "获取北极星实例的监控信息",
+      "output": "DescribePolarisMetricsResponse",
+      "status": "online"
+    },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
@@ -1008,6 +1015,84 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolarisMetricsRequest": {
+      "document": "DescribePolarisMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "北极星实例id ",
+          "example": "ins-e949841b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，格式为 rfc3339或者时间戳，包含指定的时间",
+          "example": "1681711154",
+          "member": "string",
+          "name": "Start",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，格式为 rfc3339或者时间戳，包含指定的时间",
+          "example": "1681714754",
+          "member": "string",
+          "name": "End",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "查询步长，Prometheus duration 格式（单位为指定的单位，如h/m/s）或者浮点型（单位为s）",
+          "example": "60",
+          "member": "string",
+          "name": "Step",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "PromQL",
+          "example": "ratelimit_rq_limit{called_labels=\"labelA\"}",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolarisMetricsResponse": {
+      "document": "DescribePolarisMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "PromQL 结果返回，整体作为 string 返回",
+          "example": "{\"status\":\"success\",\"data\":{\"resultType\":\"matrix\",\"result\":[{\"metric\":{},\"values\":[[1681723324,\"0\"],[1681723384,\"0\"],[1681723444,\"0\"],[1681723504,\"0\"],[1681723564,\"0\"],[1681723624,\"0\"],[1681723684,\"0\"],[1681723744,\"0\"],[1681723804,\"0\"],[1681723864,\"0\"],[1681723924,\"0\"],[1681723984,\"0\"],[1681724044,\"0\"],[1681724104,\"0\"],[1681724164,\"0\"],[1681724224,\"0\"],[1681724284,\"0\"],[1681724344,\"0\"],[1681724404,\"2\"],[1681724464,\"1\"],[1681724524,\"4\"],[1681724584,\"2\"],[1681724644,\"1\"],[1681724704,\"0\"],[1681724764,\"0\"],[1681724824,\"0\"],[1681724884,\"0\"],[1681724944,\"0\"],[1681725004,\"0\"],[1681725064,\"0\"],[1681725124,\"0\"],[1681725184,\"0\"],[1681725244,\"0\"],[1681725304,\"0\"],[1681725364,\"0\"],[1681725424,\"0\"],[1681725484,\"0\"],[1681725544,\"0\"],[1681725604,\"0\"],[1681725664,\"0\"],[1681725724,\"0\"],[1681725784,\"0\"],[1681725844,\"0\"],[1681725904,\"0\"],[1681725964,\"0\"],[1681726024,\"0\"],[1681726084,\"0\"],[1681726144,\"1\"],[1681726204,\"0\"],[1681726264,\"0\"],[1681726324,\"0\"],[1681726384,\"0\"],[1681726444,\"0\"],[1681726504,\"0\"],[1681726564,\"0\"],[1681726624,\"0\"],[1681726684,\"0\"],[1681726744,\"0\"],[1681726804,\"0\"],[1681726864,\"0\"],[1681726924,\"0\"]]}]}}",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

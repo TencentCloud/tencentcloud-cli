@@ -1,6 +1,6 @@
 **Example 1: 创建命名空间**
 
-
+是否开启自动创建订阅
 
 Input: 
 
@@ -8,6 +8,7 @@ Input:
 tccli tdmq CreateEnvironment --cli-unfold-argument  \
     --EnvironmentId test1 \
     --MsgTTL 100 \
+    --AutoSubscriptionCreation True \
     --ClusterId pulsar-xxxxxxxx
 ```
 
