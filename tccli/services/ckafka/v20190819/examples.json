@@ -140,7 +140,7 @@
       {
         "document": "创建实例(预付费包年包月)",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"MsgRetentionTime\": \"1440\",\n    \"Period\": \"1m\",\n    \"InstanceName\": \"test\",\n    \"InstanceType\": \"1\",\n    \"ZoneId\": \"100003\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"DeleteRouteTimestamp\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"DeleteRouteTimestamp\": \"xxxx\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\n    }\n}",
         "title": "创建实例(预付费包年包月)"
       }
     ],
@@ -442,9 +442,9 @@
     ],
     "DescribeRoute": [
       {
-        "document": "",
+        "document": "查看路由信息",
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRoute\n&InstanceId=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Routers\": [\n                {\n                    \"AccessType\": 0,\n                    \"RouteId\": 2,\n                    \"VipType\": 4,\n                    \"VipList\": [\n                        {\n                            \"Vip\": \"9.13.100.63\",\n                            \"Vport\": \"8774\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"e36d80f9-21aa-4a22-9932-91e1fbd12f39\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Routers\": [\n                {\n                    \"AccessType\": 0,\n                    \"RouteId\": 0,\n                    \"VipType\": 0,\n                    \"VipList\": [\n                        {\n                            \"Vip\": \"1.1.1.1\",\n                            \"Vport\": \"8080\"\n                        }\n                    ],\n                    \"Domain\": \"abc\",\n                    \"DomainPort\": 0,\n                    \"DeleteTimestamp\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查看路由信息"
       }
     ],

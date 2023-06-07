@@ -5905,6 +5905,32 @@
       ],
       "usage": "in"
     },
+    "ClusterCustomParameters": {
+      "document": "集群自定义参数",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "参数名",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "参数值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ClusterInfoItem": {
       "document": "集群资产返回的结构体",
       "members": [
@@ -13067,7 +13093,6 @@
       "document": "DescribeAgentDaemonSetCmd请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否是腾讯云",
           "example": "无",
@@ -13077,7 +13102,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型：basic-基础网络，private-VPC, public-公网，direct-专线",
           "example": "无",
@@ -13087,7 +13111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域标示, NetType=direct时必填",
           "example": "无",
@@ -13097,7 +13120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId, NetType=direct时必填",
           "example": "无",
@@ -13107,7 +13129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令有效期，非腾讯云时必填",
           "example": "无",
@@ -13115,6 +13136,15 @@
           "name": "ExpireDate",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群自定义参数",
+          "example": "无",
+          "member": "ClusterCustomParameters",
+          "name": "ClusterCustomParameters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13128,7 +13158,6 @@
           "example": "无",
           "member": "string",
           "name": "Command",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

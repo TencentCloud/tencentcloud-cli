@@ -694,7 +694,7 @@
       "status": "online"
     },
     "DescribeStreamPlayInfoList": {
-      "document": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。",
+      "document": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。",
       "input": "DescribeStreamPlayInfoListRequest",
       "name": "查询流的播放信息列表",
       "output": "DescribeStreamPlayInfoListResponse",
@@ -2491,9 +2491,8 @@
       "document": "CreateLivePullStreamTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "拉流源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\nPullPicPushLive -图片。",
+          "document": "拉流源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播，\nPullPicPushLive -图片。",
           "example": "PullLivePushLive",
           "member": "string",
           "name": "SourceType",
@@ -2501,7 +2500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉流源 url 列表。\nSourceType 为直播（PullLivePushLive）只可以填1个，\nSourceType 为点播（PullVodPushLive）可以填多个，上限30个。\n当前支持的文件格式：flv，mp4，hls。\n当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。\n注意：\n1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。\n2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。\n3. 源文件请保持时间戳正常交织递增，避免因源文件异常影响推流及播放。\n4. 视频编码格式仅支持: H264, H265。\n5. 音频编码格式仅支持: AAC。\n6. 点播源请使用小文件，尽量时长保持在1小时内，较大文件打开和续播耗时较久，耗时超过15秒会有无法正常转推风险。",
           "example": "http://5000.liveplay.myqcloud.com/live/testsrc.flv?txSecret=4d8e",
@@ -2511,7 +2509,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流域名。\n将拉取过来的流推到该域名。\n注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。",
           "example": "5000.livepush.myqcloud.com",
@@ -2521,7 +2518,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流路径。\n将拉取过来的流推到该路径。",
           "example": "live",
@@ -2531,7 +2527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流名称。\n将拉取过来的流推到该流名称。",
           "example": "teststream",
@@ -2541,7 +2536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-07T08:00:00Z",
@@ -2551,7 +2545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-09T08:00:00Z",
@@ -2561,7 +2554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务操作人备注。",
           "example": "admin",
@@ -2571,7 +2563,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流参数。\n推流时携带自定义参数。\n示例：\nbak=1&test=2 。",
           "example": "无",
@@ -2581,7 +2572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择需要回调的事件（不填则回调全部）：\nTaskStart：任务启动回调，\nTaskExit：任务停止回调，\nVodSourceFileStart：从点播源文件开始拉流回调，\nVodSourceFileFinish：从点播源文件拉流结束回调，\nResetTaskConfig：任务更新回调。\n\nTaskAlarm: 用于告警事件通知，AlarmType 示例:\nPullFileUnstable - 文件拉取不稳定，\nPushStreamUnstable - 推流不稳定，\nPullFileFailed - 文件拉取出错，\nPushStreamFailed - 推流出现失败，\nFileEndEarly - 文件提前结束。",
           "example": "无",
@@ -2591,7 +2581,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播拉流转推循环次数。默认：-1。\n-1：无限循环，直到任务结束。\n0：不循环。\n>0：具体循环次数。次数和时间以先结束的为准。\n注意：该配置仅对拉流源为点播时生效。",
           "example": "-1",
@@ -2601,7 +2590,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播更新SourceUrls后的播放方式：\nImmediateNewSource：立即播放新的拉流源内容；\nContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的拉流源播放。（旧拉流源未播放的点播 url 不会再播放）\n\n注意：该配置生效仅对变更前拉流源为点播时生效。",
           "example": "ContinueBreakPoint",
@@ -2611,7 +2599,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义回调地址。\n拉流转推任务相关事件会回调到该地址。",
           "example": "无",
@@ -2621,7 +2608,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其他参数。\n示例: ignore_region  用于忽略传入地域, 内部按负载分配。",
           "example": "无",
@@ -2631,7 +2617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务描述，限制 512 字节。",
           "example": "任务描述",
@@ -2641,7 +2626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完整目标 URL 地址。\n用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。\n\n注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。",
           "example": "无",
@@ -2651,7 +2635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 主直播源拉流中断时，自动使用备源进行拉流。\n3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
           "example": "PullLivePushLive",
@@ -2661,7 +2644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源 URL。\n只允许填一个备源 URL",
           "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
@@ -2671,7 +2653,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印信息列表。\n注意：\n1. 最多支持4个不同位置的水印。\n2. 水印图片 URL 请使用合法外网可访问地址。\n3. 支持的水印图片格式：png，jpg，gif 等。",
           "example": "无",
@@ -2681,7 +2662,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播源是否启用本地推流模式，默认0，不启用。\n0 - 不启用。\n1 - 启用。\n注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。",
           "example": "0",
@@ -2702,7 +2682,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4024,9 +4003,9 @@
       "document": "流播放信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "数据时间点，格式：yyyy-mm-dd HH:MM:SS。",
+          "document": "数据时间点，接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
+          "example": "2019-01-08T10:00:00Z",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -4034,9 +4013,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽（单位Mbps）。",
+          "example": "1.0",
           "member": "float",
           "name": "Bandwidth",
           "required": true,
@@ -4044,9 +4023,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量 （单位MB）。",
+          "example": "1.0",
           "member": "float",
           "name": "Flux",
           "required": true,
@@ -4054,9 +4033,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求数。",
+          "example": "1",
           "member": "uint64",
           "name": "Request",
           "required": true,
@@ -4064,9 +4043,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在线人数。",
+          "example": "1",
           "member": "uint64",
           "name": "Online",
           "required": true,
@@ -9062,27 +9041,24 @@
       "document": "DescribeStreamPlayInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS",
-          "example": "2019-03-01 00:00:00",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n开始时间和结束时间的格式需要保持一致。",
+          "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。",
-          "example": "2019-03-01 00:03:00",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。",
+          "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放域名，\n若不填，则为查询所有播放域名的在线流数据。",
           "example": "5000.playdomain.com",
@@ -9092,7 +9068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流名称，精确匹配。\n若不填，则为查询总体播放数据。",
           "example": "stream1",
@@ -9102,9 +9077,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。",
+          "document": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。",
           "example": "live",
           "member": "string",
           "name": "AppName",
@@ -9112,7 +9086,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
           "example": "LVB",
@@ -9133,7 +9106,6 @@
           "example": "无",
           "member": "DayStreamPlayInfo",
           "name": "DataInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11222,7 +11194,6 @@
       "document": "ModifyLivePullStreamTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id。",
           "example": "123",
@@ -11232,7 +11203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作人姓名。",
           "example": "yourname",
@@ -11242,7 +11212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉流源url列表。\nSourceType为直播（PullLivePushLive）只可以填1个，\nSourceType为点播（PullVodPushLive）可以填多个，上限30个。",
           "example": "[\"rtmp:\\/\\/your.domainname.com\\/live\\/stream1\\n\"]",
@@ -11252,7 +11221,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2020-04-16T11:02:00Z",
@@ -11262,7 +11230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2020-04-17T12:02:00Z",
@@ -11272,7 +11239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播拉流转推循环次数。\n-1：无限循环，直到任务结束。\n0：不循环。\n>0：具体循环次数。次数和时间以先结束的为准。\n注意：拉流源为点播，该配置生效。",
           "example": "-1",
@@ -11282,7 +11248,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播更新SourceUrls后的播放方式：\nImmediateNewSource：立即从更新的拉流源开始播放；\nContinueBreakPoint：从上次断流url源的断点处继续，结束后再使用新的拉流源。\n注意：拉流源为点播，该配置生效。",
           "example": "ImmediateNewSource",
@@ -11292,7 +11257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态：\nenable - 启用，\npause - 暂停。",
           "example": "enable",
@@ -11302,7 +11266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择需要回调的事件（不填则回调全部）：\nTaskStart：任务启动回调，\nTaskExit：任务停止回调，\nVodSourceFileStart：从点播源文件开始拉流回调，\nVodSourceFileFinish：从点播源文件拉流结束回调，\nResetTaskConfig：任务更新回调。",
           "example": "无",
@@ -11312,7 +11275,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义回调地址。\n相关事件会回调到该地址。",
           "example": "http://callback.com/interface",
@@ -11322,7 +11284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定播放文件索引。\n注意： 从1开始，不大于SourceUrls中文件个数。",
           "example": "0",
@@ -11332,7 +11293,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定播放文件偏移。\n注意：\n1. 单位：秒，配合FileIndex使用。",
           "example": "0",
@@ -11342,7 +11302,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务备注。",
           "example": "备注",
@@ -11352,7 +11311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 将该参数置为空，则可将任务去除备源信息。\n3. 主直播源拉流中断时，自动使用备源进行拉流。\n4. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
           "example": "PullLivePushLive",
@@ -11362,7 +11320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源 URL。\n只允许填一个备源 URL",
           "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
@@ -11372,7 +11329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印信息列表。\n注意：\n1. 最多支持4个不同位置的水印。\n2. 水印图片 URL 请使用合法外网可访问地址。\n3. 支持的水印图片格式：png，jpg等。\n4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。\n5. 直播源任务修改水印后，水印立即生效。\n6. 清除水印时，需携带该水印列表参数，内容为空数组。\n7. 暂不支持动图水印。",
           "example": "无",
@@ -11382,7 +11338,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播源是否启用本地推流模式，默认0，不启用。\n0 - 不启用。\n1 - 启用。\n注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。",
           "example": "0",
@@ -12716,7 +12671,6 @@
       "document": "直播拉流任务信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "拉流任务Id。",
           "example": "12345",
@@ -12727,7 +12681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉流源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播，\nPullPicPushLive -图片。",
           "example": "PullLivePushLive",
@@ -12738,7 +12691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉流源url列表。\nSourceType为直播（PullLiveToLive）只可以填1个，\nSourceType为点播（PullVodToLive）可以填多个，上限10个。",
           "example": "http://test.domain/live/test.flv?txSecret=xx&txTime=xxx",
@@ -12749,7 +12701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流域名。\n将拉到的源推到该域名。",
           "example": "5000.livepush.qcloud.com",
@@ -12760,7 +12711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流路径。\n将拉到的源推到该路径。",
           "example": "live",
@@ -12771,7 +12721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流名称。\n将拉到的源推到该流名称。",
           "example": "teststream",
@@ -12782,7 +12731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流参数。\n推流携带的自定义参数。",
           "example": "secret=abc&time=F7F78AE7",
@@ -12793,7 +12741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-24T00:00:00Z",
@@ -12804,7 +12751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-28T00:00:00Z",
@@ -12815,7 +12761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建所在地域：\nap-beijing - 华北地区(北京)，\nap-shanghai -华东地区(上海)，\nap-guangzhou -华南地区(广州)，\nap-mumbai - 印度，\nap-hongkong - 香港，\neu-frankfurt - 德国，\nap-seoul - 韩国，\nap-bangkok - 泰国，\nap-singapore - 新加坡，\nna-siliconvalley - 美西，\nna-ashburn - 美东，\nap-tokyo - 日本。",
           "example": "ap-guangzhou",
@@ -12826,7 +12771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播拉流转推循环次数。\n-1：无限循环，直到任务结束。\n0：不循环。\n>0：具体循环次数。次数和时间以先结束的为准。\n注意：拉流源为点播，该配置生效。",
           "example": "-1",
@@ -12837,7 +12781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播更新SourceUrls后的播放方式：\nImmediateNewSource：立即从更新的拉流源开始播放；\nContinueBreakPoint：从上次断流url源的断点处继续，结束后再使用新的拉流源。\n\n注意：拉流源为点播，该配置生效。",
           "example": "ImmediateNewSource",
@@ -12848,7 +12791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-23T00:00:00Z",
@@ -12859,7 +12801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务更新时间。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-02-24T10:00:00Z",
@@ -12870,7 +12811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建任务的操作者。",
           "example": "admin",
@@ -12881,7 +12821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新任务的操作者。",
           "example": "admin",
@@ -12892,7 +12831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调地址。",
           "example": "http://you.callback.url",
@@ -12903,7 +12841,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择需要回调的事件：\nTaskStart：任务启动回调，\nTaskExit：任务停止回调，\nVodSourceFileStart：从点播源文件开始拉流回调，\nVodSourceFileFinish：从点播源文件拉流结束回调，\nResetTaskConfig：任务更新回调。",
           "example": "无",
@@ -12914,7 +12851,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注意：该信息暂不返回。\n最后一次回调信息。",
           "example": "无",
@@ -12925,7 +12861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注意：该信息暂不返回。\n错误信息。",
           "example": "无",
@@ -12936,7 +12871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态。\nenable：生效中。\npause：暂停中。",
           "example": "enable",
@@ -12947,7 +12881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注意：该信息仅在查询单个任务时返回。\n任务最新拉流信息。\n包含：源 url，偏移时间，上报时间。",
           "example": "无",
@@ -12958,7 +12891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务备注信息。",
           "example": "直播活动任务",
@@ -12969,7 +12901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PullLivePushLive",
@@ -12980,7 +12911,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备源URL。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://test.domain/live/test.flv?txSecret=xx&txTime=xxx",
@@ -12991,7 +12921,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13002,7 +12931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播源是否启用本地推流模式，默认0，不启用。\n0 - 不启用。\n1 - 启用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -13010,6 +12938,16 @@
           "name": "VodLocalMode",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制模板 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "RecordTemplateId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

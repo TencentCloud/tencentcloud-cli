@@ -78,7 +78,7 @@
     ],
     "CreateLivePullStreamTask": [
       {
-        "document": "",
+        "document": "用于创建直播拉流任务。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLivePullStreamTask\n<公共请求参数>\n\n{\n    \"SourceType\": \"PullLivePushLive\",\n    \"DomainName\": \"5000.livepush.myqcloud.com\",\n    \"SourceUrls\": [\n        \"rtmp://5000.liveplay.myqcloud.com/live/stream1\"\n    ],\n    \"StreamName\": \"test\",\n    \"AppName\": \"live\",\n    \"StartTime\": \"2019-12-16T11:02:00Z\",\n    \"Operator\": \"vinson\",\n    \"EndTime\": \"2019-12-17T12:02:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"10000\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
@@ -818,9 +818,9 @@
     ],
     "DescribeStreamPlayInfoList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPlayInfoList\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"5000.playdomain.com\",\n    \"StreamName\": \"stream1\",\n    \"EndTime\": \"2019-03-01 00:03:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Bandwidth\": 10.0,\n                \"Flux\": 75.0,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01 00:02:00\",\n                \"Bandwidth\": 20.0,\n                \"Flux\": 150.0,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01 00:03:00\",\n                \"Bandwidth\": 30.0,\n                \"Flux\": 225.0,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "document": "查询流的播放信息列表",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPlayInfoList\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"5000.playdomain.com\",\n    \"StreamName\": \"stream1\",\n    \"EndTime\": \"2019-03-01T00:03:00+08:00\",\n    \"StartTime\": \"2019-03-01T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Bandwidth\": 10.0,\n                \"Flux\": 75.0,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01T00:02:00+08:00\",\n                \"Bandwidth\": 20.0,\n                \"Flux\": 150.0,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01T00:03:00+08:00\",\n                \"Bandwidth\": 30.0,\n                \"Flux\": 225.0,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -954,7 +954,7 @@
     ],
     "ModifyLivePullStreamTask": [
       {
-        "document": "",
+        "document": "修改直播拉流任务。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLivePullStreamTask\n<公共请求参数>\n\n{\n    \"Operator\": \"yourname\",\n    \"EndTime\": \"2020-04-17T12:02:00Z\",\n    \"StartTime\": \"2020-04-16T11:02:00Z\",\n    \"TaskId\": \"123\",\n    \"SourceUrls\": [\n        \"rtmp://your.domainname.com/live/stream1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"

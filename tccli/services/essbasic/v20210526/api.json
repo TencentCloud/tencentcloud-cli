@@ -386,9 +386,8 @@
       "document": "指定签署人限制项",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人名字",
+          "document": "指定签署人姓名",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -397,9 +396,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人手机号",
+          "document": "指定签署人手机号，11位数字",
           "example": "13000000000",
           "member": "string",
           "name": "Mobile",
@@ -408,9 +406,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人证件类型",
+          "document": "指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -419,9 +416,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定签署人证件号码",
+          "document": "指定签署人证件号码，其中字母大写",
           "example": "4500000000000000000",
           "member": "string",
           "name": "IdCardNumber",
@@ -436,9 +432,8 @@
       "document": "授权出错信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "合作企业Id",
+          "document": "第三方应用平台的子客企业OpenId",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
@@ -447,9 +442,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "出错信息",
+          "document": "错误信息",
           "example": "无",
           "member": "string",
           "name": "Message",
@@ -464,9 +458,8 @@
       "document": "授权用户",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "用户openid",
+          "document": "第三方应用平台的用户openid",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -512,7 +505,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程截止时间，unix时间戳",
+          "document": "合同流程截止时间，unix时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
@@ -532,7 +525,7 @@
         },
         {
           "disabled": false,
-          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
+          "document": "是否打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
           "example": "无",
           "member": "string",
           "name": "IntelligentStatus",
@@ -552,7 +545,7 @@
         },
         {
           "disabled": false,
-          "document": "本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批",
+          "document": "本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -3348,7 +3341,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否允许修改合同信息",
+          "document": "是否允许修改合同信息，true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "CanEditFlow",
@@ -4255,7 +4248,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩展服务类型\n  AUTO_SIGN             企业静默签（自动签署）\n  OVERSEA_SIGN          企业与港澳台居民*签署合同\n  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份\n  PAGING_SEAL           骑缝章\n  DOWNLOAD_FLOW         授权渠道下载合同 ",
+          "document": "扩展服务类型\n  AUTO_SIGN             企业静默签（自动签署）\n  OVERSEA_SIGN          企业与港澳台居民*签署合同\n  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份\n  PAGING_SEAL           骑缝章\n  DOWNLOAD_FLOW         授权平台企业下载合同 ",
           "example": "AUTO_SIGN",
           "member": "string",
           "name": "Type",
@@ -4285,7 +4278,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作人openid（经办人openid）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近操作人第三方应用平台的用户openid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OperatorOpenId",
@@ -4295,7 +4288,7 @@
         },
         {
           "disabled": false,
-          "document": "最近操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近操作时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "OperateOn",
@@ -4455,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署时间",
+          "document": "签署人签署时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "ApproveTime",
@@ -4581,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "签署截止时间，默认一年",
+          "document": "签署截止时间戳，默认一年",
           "example": "1689688460",
           "member": "int64",
           "name": "Deadline",
@@ -4590,7 +4583,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "签署完回调url，最大长度1000个字符",
           "example": "https://qq.com",
           "member": "string",
@@ -4631,7 +4624,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完前端跳转的url，暂未使用",
+          "document": "签署完前端跳转的url，此字段的用法场景请联系客户经理确认",
           "example": "https://qq.com",
           "member": "string",
           "name": "JumpUrl",
@@ -4793,7 +4786,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的创建时间戳",
+          "document": "合同(流程)的创建时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CreateOn",
@@ -4803,7 +4796,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的签署截止时间戳",
+          "document": "合同(流程)的签署截止时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "DeadLine",
@@ -5145,13 +5138,12 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "此结构 (FormField) 用于描述内容控件填充结构。\n",
+      "document": "此结构 (FormField) 用于描述内容控件填充结构。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
-          "example": "name",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo",
+          "example": "Name",
           "member": "string",
           "name": "ComponentValue",
           "required": true,
@@ -5159,7 +5151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空；\nCreateFlowsByTemplates 接口不使用此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "391963b9d3cb2de35dedc6eb0a60e535",
@@ -5170,7 +5161,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控件的名字，跟ComponentId二选一，不能全为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "住房地址",
@@ -5295,7 +5285,6 @@
       "document": "持有的电子印章信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电子印章编号",
           "example": "无",
@@ -5306,7 +5295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电子印章名称",
           "example": "无",
@@ -5317,9 +5305,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "电子印章授权时间戳",
+          "document": "电子印章授权时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CreateOn",
@@ -5328,9 +5315,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "电子印章授权人",
+          "document": "电子印章授权人，电子签的UserId",
           "example": "无",
           "member": "string",
           "name": "Creator",
@@ -5339,7 +5325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电子印章策略Id",
           "example": "无",
@@ -5350,7 +5335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）",
           "example": "无",
@@ -5361,7 +5345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5372,7 +5355,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章图片url，5分钟内有效",
           "example": "无",
@@ -5383,9 +5365,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "印章类型",
+          "document": "印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章",
           "example": "无",
           "member": "string",
           "name": "SealType",
@@ -5394,7 +5375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用印申请是否为永久授权",
           "example": "无",
@@ -5405,7 +5385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权人列表",
           "example": "无",
@@ -5548,7 +5527,6 @@
       "document": "机构信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户在渠道的机构编号",
           "example": "OrganizationOpenId",
@@ -5559,29 +5537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "用户真实的IP",
-          "example": "ClientIp",
-          "member": "string",
-          "name": "ClientIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "机构的代理IP",
-          "example": "ProxyIp",
-          "member": "string",
-          "name": "ProxyIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "机构在平台的编号",
           "example": "OrganizationId",
@@ -5592,12 +5547,31 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户渠道",
           "example": "Channel",
           "member": "string",
           "name": "Channel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "用户真实的IP",
+          "example": "ClientIp",
+          "member": "string",
+          "name": "ClientIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "机构的代理IP",
+          "example": "ProxyIp",
+          "member": "string",
+          "name": "ProxyIp",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5640,7 +5614,7 @@
         },
         {
           "disabled": false,
-          "document": "签署时间",
+          "document": "签署时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "SignTime",
@@ -5670,7 +5644,7 @@
         },
         {
           "disabled": false,
-          "document": "证书起始时间",
+          "document": "证书起始时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotBefore",
@@ -5680,7 +5654,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间",
+          "document": "证书过期时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotAfter",
@@ -5700,7 +5674,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域横坐标",
+          "document": "签名域横坐标，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentPosX",
@@ -5710,7 +5684,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域纵坐标",
+          "document": "签名域纵坐标，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentPosY",
@@ -5720,7 +5694,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域宽度",
+          "document": "签名域宽度，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentWidth",
@@ -5730,7 +5704,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域高度",
+          "document": "签名域高度，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",
@@ -5740,7 +5714,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域所在页码",
+          "document": "签名域所在页码，1～N",
           "example": "无",
           "member": "int64",
           "name": "ComponentPage",
@@ -5885,7 +5859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署人唯一标识",
+          "document": "签署人唯一标识，在通过模板发起合同的时候对应签署方Id",
           "example": "ed68bc6904fbd4795b4658c480214e4e",
           "member": "string",
           "name": "RecipientId",
@@ -5915,7 +5889,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方备注信息",
+          "document": "签署方备注角色名",
           "example": "无",
           "member": "string",
           "name": "RoleName",
@@ -5925,7 +5899,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要校验",
+          "document": "是否需要校验，true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "RequireValidation",
@@ -5935,7 +5909,7 @@
         },
         {
           "disabled": false,
-          "document": "是否必须填写",
+          "document": "是否必须填写，true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "RequireSign",
@@ -6001,7 +5975,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人类型，目前仅支持\nORGANIZATION-企业",
+          "document": "签署人类型，目前仅支持\nORGANIZATION-企业\nENTERPRISESERVER-企业静默签",
           "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproverType",
@@ -6137,9 +6111,8 @@
       "document": "催办接口返回详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否能够催办",
+          "document": "是否能够催办，true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "CanRemind",
@@ -6148,7 +6121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同id",
           "example": "xxx",
@@ -6159,9 +6131,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "催办详情",
+          "document": "催办详情信息",
           "example": "xxx",
           "member": "string",
           "name": "RemindMessage",
@@ -6293,7 +6264,6 @@
       "document": "签署链接内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "签署链接，过期时间为30天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://essurl.cn/xxxx",
@@ -6304,9 +6274,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "合同过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同过期时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
@@ -6315,7 +6284,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6326,7 +6294,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署人编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6337,18 +6304,16 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "自定义用户编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CustomUserId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6359,7 +6324,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6370,7 +6334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署参与者机构名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6381,7 +6344,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参与者类型:\nORGANIZATION 企业经办人\nPERSON 自然人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6392,7 +6354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6403,7 +6364,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署链接对应流程Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"test-flow-id\"",
@@ -6414,7 +6374,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业经办人 用户在渠道的编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_open_id",
@@ -6425,7 +6384,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同组签署链接对应的合同组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"test-flow-group-id\"",
@@ -6442,9 +6400,8 @@
       "document": "企业员工信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "员工在电子签平台的id",
+          "document": "员工在电子签平台的用户ID",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -6453,7 +6410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示的员工名",
           "example": "无",
@@ -6464,7 +6420,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工手机号",
           "example": "无",
@@ -6475,7 +6430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6486,9 +6440,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "员工在第三方平台id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工在第三方应用平台的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -6497,7 +6450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工角色\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6508,7 +6460,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工部门\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6519,7 +6470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工是否实名",
           "example": "无",
@@ -6530,9 +6480,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "员工创建时间戳",
+          "document": "员工创建时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
@@ -6541,9 +6490,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "员工实名时间戳",
+          "document": "员工实名时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "VerifiedOn",
@@ -6552,7 +6500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工是否离职：0-未离职，1-离职",
           "example": "无",
@@ -6595,9 +6542,8 @@
       "document": "同步经办人失败原因",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "经办人Id",
+          "document": "对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串",
           "example": "operator_id1",
           "member": "string",
           "name": "Id",
@@ -6606,7 +6552,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因\n例如：Id不符合规范、证件号码不合法等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Id不符合规范",
@@ -6826,7 +6771,7 @@
         },
         {
           "disabled": false,
-          "document": "模板控件信息结构",
+          "document": "模板的填充控件信息结构",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -6846,7 +6791,7 @@
         },
         {
           "disabled": false,
-          "document": "签署区模板信息结构",
+          "document": "模板中的签署控件信息结构",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -6865,18 +6810,18 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否是发起人 ,已弃用",
           "example": "true",
           "member": "bool",
           "name": "IsPromoter",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板的创建者信息",
+          "document": "模板的创建者信息，电子签系统用户ID",
           "example": "无",
           "member": "string",
           "name": "Creator",
@@ -6886,7 +6831,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建的时间戳（精确到秒）",
+          "document": "模板创建的时间戳，单位秒",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
@@ -6896,7 +6841,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PreviewUrl",
@@ -6906,7 +6851,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用集成-模板PDF文件链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PdfUrl",
@@ -6916,7 +6861,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的平台企业模板ID",
+          "document": "关联的第三方应用平台企业模板ID",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateId",
@@ -6926,7 +6871,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的平台企业模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的三方应用平台平台企业模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateName",
@@ -7154,7 +7099,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -7164,7 +7109,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -7174,7 +7119,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -7184,7 +7129,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",

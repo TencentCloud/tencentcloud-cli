@@ -77,6 +77,13 @@
       "output": "CreateStreamLinkFlowResponse",
       "status": "online"
     },
+    "CreateStreamLinkInput": {
+      "document": "创建媒体传输的输入配置。",
+      "input": "CreateStreamLinkInputRequest",
+      "name": "创建媒体传输输入",
+      "output": "CreateStreamLinkInputResponse",
+      "status": "online"
+    },
     "CreateStreamLinkOutputInfo": {
       "document": "创建媒体传输流的输出信息。",
       "input": "CreateStreamLinkOutputInfoRequest",
@@ -7671,6 +7678,54 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkInputRequest": {
+      "document": "CreateStreamLinkInput请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "媒体传输流ID。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流的输入组。",
+          "example": "无",
+          "member": "CreateInput",
+          "name": "InputGroup",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkInputResponse": {
+      "document": "CreateStreamLinkInput返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的Flow信息。",
+          "example": "无",
+          "member": "DescribeFlow",
+          "name": "Info",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19864,6 +19919,15 @@
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频内容质检类型任务参数。",
+          "example": "无",
+          "member": "AiQualityControlTaskInput",
+          "name": "AiQualityControlTask",
           "required": false,
           "type": "object"
         },

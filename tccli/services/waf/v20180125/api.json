@@ -6844,9 +6844,9 @@
       "document": "响应体的返回码",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "如果成功则返回Success，失败则返回yunapi定义的错误码",
+          "document": "如果成功则返回Success，失败则返回云api定义的错误码",
+          "example": "无",
           "member": "string",
           "name": "Code",
           "required": true,
@@ -6854,9 +6854,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果成功则返回Success，失败则返回WAF定义的二级错误码",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,

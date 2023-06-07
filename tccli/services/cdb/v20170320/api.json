@@ -5053,7 +5053,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
+          "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
           "example": "***",
           "member": "string",
           "name": "InstanceName",
@@ -5107,7 +5107,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
+          "document": "告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "member": "int64",
           "name": "AlarmPolicyList",
@@ -7955,7 +7955,6 @@
       "document": "DescribeCdbProxyInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cdb-aykuksx3",
@@ -7965,7 +7964,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代理组ID",
           "example": "proxy-ixw3ll2d",
@@ -7986,7 +7984,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7996,7 +7993,6 @@
           "example": "无",
           "member": "ProxyGroupInfo",
           "name": "ProxyInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10444,7 +10440,6 @@
       "document": "DescribeRemoteBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
@@ -10461,11 +10456,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "异地备份保留天时间，单位为天",
+          "document": "异地备份保留时间，单位为天",
           "example": "1",
           "member": "int64",
           "name": "ExpireDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10475,7 +10469,6 @@
           "example": "on",
           "member": "string",
           "name": "RemoteBackupSave",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10485,7 +10478,6 @@
           "example": "on",
           "member": "string",
           "name": "RemoteBinlogSave",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10495,7 +10487,6 @@
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RemoteRegion",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10505,7 +10496,6 @@
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RegionList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11968,7 +11958,6 @@
       "document": "安全组入站规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT 或者 DROP",
           "example": "ACCEPT",
@@ -11979,7 +11968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源 IP 或 IP 段，例如192.168.0.0/16",
           "example": "192.168.0.0/16",
@@ -11990,7 +11978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
           "example": "ALL",
@@ -12001,7 +11988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持 UDP、TCP 等",
           "example": "ALL",
@@ -12012,7 +11998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则限定的方向，进站规则为 INPUT",
           "example": "‘’",
@@ -12023,7 +12008,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "地址模块",
+          "example": "‘’",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "规则描述",
           "example": "放通内网",
@@ -15247,7 +15241,6 @@
       "document": "安全组出站规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT 或者 DROP",
           "example": "ACCEPT",
@@ -15258,7 +15251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的 IP 或 IP 段，例如172.16.0.0/12",
           "example": "0.0.0.0/0",
@@ -15269,7 +15261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口或者端口范围",
           "example": "ALL",
@@ -15280,7 +15271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持 UDP、TCP等",
           "example": "ALL",
@@ -15291,7 +15281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则限定的方向，进站规则为 OUTPUT",
           "example": "‘’",
@@ -15302,7 +15291,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "地址模块",
+          "example": "‘’",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "规则描述",
           "example": "放通内网",
@@ -17830,7 +17828,7 @@
         },
         {
           "disabled": false,
-          "document": "审计规则过滤条件的匹配值。sqlType条件的Value需在一下选择\"alter\", \"changeuser\", \"create\", \"delete\", \"drop\", \"execute\", \"insert\", \"login\", \"logout\", \"other\", \"replace\", \"select\", \"set\", \"update\"。",
+          "document": "审计规则过滤条件的匹配值。sqlType条件的Value需在以下选择\"alter\", \"changeuser\", \"create\", \"delete\", \"drop\", \"execute\", \"insert\", \"login\", \"logout\", \"other\", \"replace\", \"select\", \"set\", \"update\"。",
           "example": "UPDATE",
           "member": "string",
           "name": "Value",
@@ -18976,7 +18974,6 @@
       "document": "UpgradeDBInstanceEngineVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "cdb-8qrg9t04",
@@ -18986,7 +18983,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主实例数据库引擎版本，支持值包括：5.6 和 5.7。",
           "example": "5.7",
@@ -18996,9 +18992,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "切换访问新实例的方式，默认为 0。支持值包括：0 - 立刻切换，1 - 时间窗切换；当该值为 1 时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口 [切换访问新实例](https://cloud.tencent.com/document/product/236/15864) 触发该流程。",
+          "document": "切换访问新实例的方式，默认为 0。支持值包括：0 - 立刻切换，1 - 时间窗切换；当该值为 1 时，升级过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口 [切换访问新实例](https://cloud.tencent.com/document/product/236/15864) 触发该流程。",
           "example": "1",
           "member": "int64",
           "name": "WaitSwitch",
@@ -19006,7 +19001,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。",
           "example": "20201231",
@@ -19016,7 +19010,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟阈值。取值范围1~10",
           "example": "1",
@@ -19037,7 +19030,6 @@
           "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19118,7 +19110,7 @@
         },
         {
           "disabled": false,
-          "document": "切换访问新实例的方式，默认为 0。支持值包括：0 - 立刻切换，1 - 时间窗切换；当该值为 1 时，升级中过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口 [切换访问新实例](https://cloud.tencent.com/document/product/236/15864) 触发该流程。",
+          "document": "切换访问新实例的方式，默认为 0。支持值包括：0 - 立刻切换，1 - 时间窗切换；当该值为 1 时，升级过程中，切换访问新实例的流程将会在时间窗内进行，或者用户主动调用接口 [切换访问新实例](https://cloud.tencent.com/document/product/236/15864) 触发该流程。",
           "example": "0",
           "member": "int64",
           "name": "WaitSwitch",

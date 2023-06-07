@@ -567,6 +567,13 @@
       "output": "ModifySparkAppResponse",
       "status": "online"
     },
+    "ModifySparkAppBatch": {
+      "document": "本接口（ModifySparkAppBatch）用于批量修改Spark作业参数配置",
+      "input": "ModifySparkAppBatchRequest",
+      "name": "批量修改Spark作业参数配置",
+      "output": "ModifySparkAppBatchResponse",
+      "status": "online"
+    },
     "ModifyUser": {
       "document": "修改用户信息",
       "input": "ModifyUserRequest",
@@ -8813,6 +8820,87 @@
     },
     "ModifyGovernEventRuleResponse": {
       "document": "ModifyGovernEventRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySparkAppBatchRequest": {
+      "document": "ModifySparkAppBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要批量修改的Spark作业任务ID列表",
+          "example": "batch_8ec20f53-999a-4ba5-aa6b-15945dssa4ae8,batch_f8a0aa7f-8ed8-4775-9ac0-0c2c9ke23b05d",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-dr6udevq",
+          "member": "string",
+          "name": "DataEngine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppDriverSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppExecutorSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定executor数量，最小值为1，最大值小于集群规格",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppExecutorNums",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppExecutorMaxNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务资源配置是否继承集群模板，0（默认）不继承，1：继承",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsInherit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySparkAppBatchResponse": {
+      "document": "ModifySparkAppBatch返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

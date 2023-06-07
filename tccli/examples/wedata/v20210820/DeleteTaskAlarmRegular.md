@@ -1,15 +1,13 @@
-**Example 1: 删除任务告警规则**
+**Example 1: 删除告警规则**
 
-
+删除告警规则
 
 Input: 
 
 ```
 tccli wedata DeleteTaskAlarmRegular --cli-unfold-argument  \
-    --ProjectId xx \
-    --Id xx \
-    --TaskId xx \
-    --TaskType 0
+    --ProjectId 123 \
+    --Id 1
 ```
 
 Output: 
@@ -17,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "123"
     }
 }
 ```

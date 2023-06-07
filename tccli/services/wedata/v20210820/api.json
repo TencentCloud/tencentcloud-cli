@@ -6781,7 +6781,6 @@
       "document": "DeleteTaskAlarmRegular请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主键ID",
           "example": "6798",
@@ -6791,7 +6790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "78909",
@@ -6801,23 +6799,21 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "7898",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型(201表示实时任务，202表示离线任务)",
           "example": "201",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
@@ -6832,7 +6828,6 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

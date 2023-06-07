@@ -786,9 +786,9 @@
     ],
     "DescribeAgentDaemonSetCmd": [
       {
-        "document": "",
+        "document": "查询平行容器安装命令",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAgentDaemonSetCmd\n&IsCloud=true\n&NetType=\"basic\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Command\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询平行容器安装命令"
       }
     ],

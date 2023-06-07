@@ -4178,7 +4178,6 @@
       "document": "套餐包购买信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "套餐包Id",
           "example": "1001",
@@ -4189,7 +4188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐包类型，0-外呼套餐包|1-400呼入套餐包",
           "example": "1",
@@ -4200,7 +4198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐包总量",
           "example": "10000",
@@ -4211,7 +4208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐包剩余量",
           "example": "143",
@@ -4222,7 +4218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时间戳",
           "example": "1630000000",
@@ -4233,9 +4228,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "截至时间戳",
+          "document": "截止时间戳",
           "example": "1640000000",
           "member": "int64",
           "name": "EndTime",
@@ -4250,7 +4244,6 @@
       "document": "号码购买信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "008602112345678",
@@ -4261,7 +4254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "号码类型，0-固话|1-虚商号码|2-运营商号码|3-400号码",
           "example": "1",
@@ -4272,7 +4264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "号码呼叫类型，1-呼入|2-呼出|3-呼入呼出",
           "example": "2",
@@ -4283,7 +4274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时间戳",
           "example": "1630000000",
@@ -4294,9 +4284,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "截至时间戳",
+          "document": "截止时间戳",
           "example": "1640000000",
           "member": "int64",
           "name": "EndTime",
@@ -4305,7 +4294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "号码状态，1正常|2欠费停用|4管理员停用|5违规停用",
           "example": "1",

@@ -3603,7 +3603,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算",
+          "document": "磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功",
           "example": "500GB",
           "member": "int64",
           "name": "DiskSize",
@@ -3612,7 +3612,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算",
+          "document": "带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功",
           "example": "40MB",
           "member": "int64",
           "name": "BandWidth",
@@ -3621,7 +3621,7 @@
         },
         {
           "disabled": false,
-          "document": "分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算",
+          "document": "分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功",
           "example": "800",
           "member": "int64",
           "name": "Partition",
@@ -7630,7 +7630,6 @@
       "document": "DescribeRoute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例唯一id",
           "example": "xxx",
@@ -7638,6 +7637,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由id",
+          "example": "无",
+          "member": "int64",
+          "name": "RouteId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7651,7 +7659,6 @@
           "example": "无",
           "member": "RouteResponse",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

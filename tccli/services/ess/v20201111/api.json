@@ -6228,6 +6228,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定签署人类型，目前仅支持\nORGANIZATION-企业\nENTERPRISESERVER-企业静默签",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

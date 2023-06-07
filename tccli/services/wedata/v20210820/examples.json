@@ -402,10 +402,10 @@
     ],
     "DeleteTaskAlarmRegular": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Id\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"TaskType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除任务告警规则"
+        "document": "删除告警规则",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"123\",\n    \"Id\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "删除告警规则"
       }
     ],
     "DeleteWorkflowNew": [

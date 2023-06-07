@@ -1,6 +1,6 @@
 **Example 1: 查询平行容器安装命令**
 
-
+查询平行容器安装命令
 
 Input: 
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Command": "xx",
-        "RequestId": "xx"
+        "Command": "abc",
+        "RequestId": "abc"
     }
 }
 ```

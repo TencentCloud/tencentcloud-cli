@@ -692,6 +692,14 @@
         "title": "DescribeContainerEvents"
       }
     ],
+    "DescribeContainerGroupAttribute": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerGroupAttribute\n&GroupId=group-gvkwqkjv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54deaac8-aba2-4db4-b092-ecc3f6e21755\",\n        \"Result\": {\n            \"InstanceNum\": 1,\n            \"Envs\": [],\n            \"CurrentNum\": 0,\n            \"Message\": \"\",\n            \"NodePort\": null,\n            \"ClusterIp\": \"10.19.255.46\",\n            \"LbIp\": \"\",\n            \"Status\": \"Waiting\"\n        }\n    }\n}",
+        "title": "部署组列表"
+      }
+    ],
     "DescribeContainerGroupDeployInfo": [
       {
         "document": "",

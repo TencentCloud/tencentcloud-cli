@@ -648,6 +648,14 @@
         "title": "更新spark应用"
       }
     ],
+    "ModifySparkAppBatch": [
+      {
+        "document": "批量修改Spark作业参数",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkAppBatch\n<公共请求参数>\n\n{\n    \"SparkAppId\": [\n        \"batch_a7dca867-b941-4294-af9e-3dsefc086f1e\"\n    ],\n    \"DataEngine\": \"DataEngine-dde2f7vq\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1,\n    \"IsInherit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "批量修改Spark作业参数"
+      }
+    ],
     "ModifyUser": [
       {
         "document": "",
