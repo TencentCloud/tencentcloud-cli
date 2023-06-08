@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ModifySmsSign": {
-      "document": "1. 修改短信签名，修改之前请先认证参阅 [腾讯云短信签名审核标准](https://cloud.tencent.com/document/product/382/39022)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信签名。\n3. 修改短信签名，仅当签名为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的签名不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "1. 修改短信签名，修改之前请先认真参阅 [腾讯云短信签名审核标准](https://cloud.tencent.com/document/product/382/39022)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信签名。\n3. 修改短信签名，仅当签名为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的签名不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "ModifySmsSignRequest",
       "name": "修改短信签名",
       "output": "ModifySmsSignResponse",
@@ -908,7 +908,6 @@
       "document": "ModifySmsSign请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改的签名 ID。",
           "example": "1110",
@@ -918,7 +917,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名名称。",
           "example": "test",
@@ -928,7 +926,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司，可选 DocumentType 有（0，1）。\n1：APP，可选 DocumentType 有（0，1，2，3，4） 。\n2：网站，可选 DocumentType 有（0，1，2，3，5）。\n3：公众号，可选 DocumentType 有（0，1，2，3，8）。\n4：商标，可选 DocumentType 有（7）。\n5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。\n6：小程序，可选 DocumentType 有（0，1，2，3，6）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
           "example": "0",
@@ -938,7 +935,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书。\n8：公众号设置页面截图（个人认证公众号）。",
           "example": "1",
@@ -948,7 +944,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。\n注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。",
           "example": "0",
@@ -958,7 +953,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名用途：\n0：自用。\n1：他用。",
           "example": "1",
@@ -968,7 +962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
           "example": "xxxx",
@@ -978,7 +971,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。",
           "example": "xxxx",
@@ -988,7 +980,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名的申请备注。",
           "example": "xxxx",
@@ -1009,7 +1000,6 @@
           "example": "无",
           "member": "ModifySignStatus",
           "name": "ModifySignStatus",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

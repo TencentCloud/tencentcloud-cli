@@ -1,6 +1,6 @@
 **Example 1: 指定ipv6地址开通公网访问能力**
 
-
+指定ipv6地址开通公网访问能力。
 
 Input: 
 
@@ -15,10 +15,10 @@ Output:
 {
     "Response": {
         "AddressSet": [
-            "eip-3l4nwzvo"
+            "eip-68dqs5ri"
         ],
-        "TaskId": 102368001,
-        "RequestId": "aac03e7b-3c91-4970-b2bc-c20f0c6bdd38"
+        "TaskId": "194395704",
+        "RequestId": "283a29bf-982d-4d55-984a-0d464f61f9ae"
     }
 }
 ```

@@ -7,6 +7,13 @@
       "output": "AddNewBindRoleUserResponse",
       "status": "online"
     },
+    "CreateDomainAndIp": {
+      "document": "创建域名、ip相关信息",
+      "input": "CreateDomainAndIpRequest",
+      "name": "创建域名、ip相关信息",
+      "output": "CreateDomainAndIpResponse",
+      "status": "online"
+    },
     "DescribeCVMAssetInfo": {
       "document": "cvm详情",
       "input": "DescribeCVMAssetInfoRequest",
@@ -881,6 +888,42 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateDomainAndIpRequest": {
+      "document": "CreateDomainAndIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-",
+          "example": "-",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainAndIpResponse": {
+      "document": "CreateDomainAndIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回创建成功的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DBAssetVO": {
       "document": "db资产输出字段",

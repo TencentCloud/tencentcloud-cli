@@ -110,8 +110,8 @@
     ],
     "CreateEnvironment": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test1\",\n    \"MsgTTL\": \"100\",\n    \"ClusterId\": \"pulsar-xxxxxxxx\"\n}",
+        "document": "是否开启自动创建订阅",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test1\",\n    \"MsgTTL\": \"100\",\n    \"AutoSubscriptionCreation\": true,\n    \"ClusterId\": \"pulsar-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test1\",\n        \"NamespaceId\": \"namespace-8893gp3428\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"0843ea4f-d6ba-463b-952c-75708a7e8901\"\n    }\n}",
         "title": "创建命名空间"
       }
@@ -742,7 +742,7 @@
     ],
     "ModifyEnvironmentAttributes": [
       {
-        "document": "",
+        "document": "修改指定命名空间的属性值",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentAttributes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test\",\n    \"MsgTTL\": \"100\",\n    \"ClusterId\": \"pulsar-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test\",\n        \"NamespaceId\": \"namespace-5r59xen74x\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"7db00a30-933c-4f6f-bba9-79cdf6be7d8c\"\n    }\n}",
         "title": "修改指定命名空间的属性值"
@@ -878,7 +878,7 @@
     ],
     "SendMessages": [
       {
-        "document": "",
+        "document": "成功发送单条消息\n不支持非持久化topic",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessages\n<公共请求参数>\n\n{\n    \"Topic\": \"tenant/namespace/topic\",\n    \"Payload\": \"\\\"hello TDMQ\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:11:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "成功发送单条消息"

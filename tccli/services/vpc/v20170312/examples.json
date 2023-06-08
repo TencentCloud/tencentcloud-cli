@@ -18,8 +18,8 @@
     ],
     "AddIp6Rules": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AddIp6Rules\r\n&Ip6TranslatorId=ip6-90pt7p9q\r\n&Ip6RuleInfos.0.Vport6=55\r\n&Ip6RuleInfos.0.Vip4=106.54.197.66\r\n&Ip6RuleInfos.0.Protocol=TCP\r\n&Ip6RuleInfos.0.Vport=66\r\n&<公共请求参数>",
+        "document": "添加IPV6转换规则。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AddIp6Rules\n&Ip6TranslatorId=ip6-90pt7p9q\n&Ip6RuleInfos.0.Vport6=55\n&Ip6RuleInfos.0.Vip=106.54.197.66\n&Ip6RuleInfos.0.Protocol=TCP\n&Ip6RuleInfos.0.Vport=66\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ip6RuleSet\": [\n            \"rule6-f3se1mki\"\n        ],\n        \"RequestId\": \"fd8c7584-b5e7-4d93-99bd-470ed0aa51e7\"\n    }\n}",
         "title": "添加IPV6转换规则"
       }
@@ -86,9 +86,9 @@
     ],
     "AllocateIp6AddressesBandwidth": [
       {
-        "document": "",
+        "document": "指定ipv6地址开通公网访问能力。",
         "input": "https://vpc.tencentcloudapi.com/?Action=AllocateIp6AddressesBandwidth\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&InternetMaxBandwidthOut=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-3l4nwzvo\"\n        ],\n        \"TaskId\": 102368001,\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-68dqs5ri\"\n        ],\n        \"TaskId\": \"194395704\",\n        \"RequestId\": \"283a29bf-982d-4d55-984a-0d464f61f9ae\"\n    }\n}",
         "title": "指定ipv6地址开通公网访问能力"
       }
     ],
@@ -574,7 +574,7 @@
       {
         "document": "创建VPC",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpc\n<公共请求参数>\n\n{\n    \"VpcName\": \"TestVPC\",\n    \"CidrBlock\": \"10.8.0.0/16\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-4tboefn3\",\n            \"VpcName\": \"TestVPC\",\n            \"CidrBlock\": \"10.8.0.0/16\",\n            \"Ipv6CidrBlock\": \"\",\n            \"IsDefault\": false,\n            \"EnableMulticast\": false,\n            \"CreatedTime\": \"2020-09-24 15:57:39\",\n            \"EnableDhcp\": true,\n            \"DhcpOptionsId\": \"dopt-5f5lzouo\",\n            \"DnsServerSet\": [\n                \"183.60.82.98\",\n                \"183.60.83.1\"\n            ],\n            \"DomainName\": \"\",\n            \"TagSet\": [],\n            \"AssistantCidrSet\": [\n                {\n                    \"CidrBlock\": \"172.16.0.0/16\",\n                    \"AssistantType\": 0,\n                    \"SubnetSet\": []\n                }\n            ]\n        },\n        \"RequestId\": \"680f4013-31a3-440a-bc09-fd9348a90900\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a74f7fe-0cfe-4bc7-b1d2-6575168d7a44\",\n        \"Vpc\": {\n            \"VpcId\": \"vpc-2ln96dly\",\n            \"DomainName\": \"TEST\",\n            \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\",\n            \"EnableDhcp\": true,\n            \"DnsServerSet\": [\n                \"183.60.82.98\",\n                \"183.60.83.1\"\n            ],\n            \"EnableMulticast\": false,\n            \"VpcName\": \"TEST\",\n            \"AssistantCidrSet\": [\n                {\n                    \"SubnetSet\": [\n                        {\n                            \"NetworkAclId\": \"acl-n8w3ppae\",\n                            \"RouteTableId\": \"rtb-57ruphgv\",\n                            \"VpcId\": \"vpc-lrrlomg7\",\n                            \"EnableBroadcast\": true,\n                            \"Zone\": \"ap-guangzhou-1\",\n                            \"IsCdcSubnet\": 0,\n                            \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffda\",\n                            \"CdcId\": \"cluster-gbo27yc4\",\n                            \"AvailableIpAddressCount\": 1,\n                            \"IsRemoteVpcSnat\": true,\n                            \"SubnetName\": \"TEST\",\n                            \"TotalIpAddressCount\": 1,\n                            \"CreatedTime\": \"2020-09-18 19:46:07\",\n                            \"SubnetId\": \"subnet-p9oa3yo7\",\n                            \"CidrBlock\": \"10.0.0.0/16\",\n                            \"TagSet\": [\n                                {\n                                    \"Value\": \"TEST\",\n                                    \"Key\": \"TEST\"\n                                }\n                            ],\n                            \"IsDefault\": true\n                        }\n                    ],\n                    \"VpcId\": \"vpc-lrrlomg7\",\n                    \"CidrBlock\": \"10.0.0.0/16\",\n                    \"AssistantType\": 0\n                }\n            ],\n            \"TagSet\": [\n                {\n                    \"Value\": \"TEST\",\n                    \"Key\": \"TESt\"\n                }\n            ],\n            \"DhcpOptionsId\": \"dopt-058pu85z\",\n            \"CreatedTime\": \"0000-00-00 00:00:00\",\n            \"CidrBlock\": \"10.0.0.0/16\",\n            \"IsDefault\": false\n        }\n    }\n}",
         "title": "创建VPC"
       }
     ],
@@ -892,25 +892,25 @@
     ],
     "DeleteTemplateMember": [
       {
-        "document": "",
+        "document": "删除IP地址模板成员",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ipm-test1234\n&TemplateMember.0.Member=10.0.0.1\n&TemplateMember.1.Member=172.20.0.1/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "删除IP地址模板成员"
       },
       {
-        "document": "",
+        "document": "删除IP地址组模板成员",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ipmg-test1234\n&TemplateMember.0.Member=ipm-test1234\n&TemplateMember.1.Member=ipm-demo1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "删除IP地址组模板成员"
       },
       {
-        "document": "",
+        "document": "添加协议端口模板成员",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppm-test1234\n&TemplateMember.0.Member=TCP:80\n&TemplateMember.1.Member=TCP:443\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "添加协议端口模板成员"
       },
       {
-        "document": "",
+        "document": "添加协议端口组模板成员",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppmg-test1234\n&TemplateMember.0.Member=ppm-test1234\n&TemplateMember.1.Member=ppm-demo1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "添加协议端口组模板成员"
@@ -1288,15 +1288,15 @@
     ],
     "DescribeIp6Addresses": [
       {
-        "document": "",
+        "document": "根据Ip6AddressIds查询IPV6信息。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Ip6AddressIds.0=eip-lrhy2lpe\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-lrhy2lpe\",\n                \"AddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"AddressStatus\": \"BIND\",\n                \"InstanceId\": \"ins-190087yw\",\n                \"NetworkInterfaceId\": \"eni-rw4fh3gn\",\n                \"IsArrears\": false,\n                \"CreatedTime\": \"2020-01-13T04:09:52Z\",\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 6\n            }\n        ],\n        \"RequestId\": \"bfe06911-32f5-4862-9d42-6bb4954dcb59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"abc\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"abc\",\n                \"AddressIp\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"abc\",\n                \"PrivateAddressIp\": \"abc\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"abc\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据Ip6AddressIds查询IPV6信息"
       },
       {
-        "document": "",
+        "document": "根据Filter查询IPV6信息。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Filters.0.Name=address-ip\r\n&Filters.0.Values.0=2402:4e00:1000:2d00:0:8f3f:6:9895\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-lrhy2lpe\",\n                \"AddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"AddressStatus\": \"BIND\",\n                \"InstanceId\": \"ins-190087yw\",\n                \"NetworkInterfaceId\": \"eni-rw4fh3gn\",\n                \"IsArrears\": false,\n                \"CreatedTime\": \"2020-01-13T04:09:52Z\",\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 6\n            }\n        ],\n        \"RequestId\": \"d3ac2762-ae08-44ed-98fc-65c002d916b7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"abc\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"abc\",\n                \"AddressIp\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"abc\",\n                \"PrivateAddressIp\": \"abc\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"abc\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据Filter查询IPV6信息"
       }
     ],
@@ -1460,7 +1460,7 @@
       {
         "document": "查询弹性网卡列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkInterfaces\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NetworkInterfaceSet\": [\n            {\n                \"MacAddress\": \"20:90:6F:F5:34:C7\",\n                \"VpcId\": \"vpc-2kx9z6h3\",\n                \"Business\": \"cvm\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"NetworkInterfaceId\": \"eni-f1xjkw1b\",\n                \"Primary\": false,\n                \"CdcId\": \"\",\n                \"PrivateIpAddressSet\": [\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": true,\n                        \"PrivateIpAddress\": \"192.168.0.13\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.15\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.17\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.24\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"NetworkInterfaceDescription\": \"xx\",\n                \"Ipv6AddressSet\": [],\n                \"State\": \"AVAILABLE\",\n                \"GroupSet\": [\n                    \"sg-c2r7lnxh\",\n                    \"sg-f9ekbxeq\"\n                ],\n                \"Attachment\": {\n                    \"InstanceId\": \"ins-ymk3eje8\",\n                    \"DeviceIndex\": 1,\n                    \"InstanceAccountId\": \"251153169\",\n                    \"AttachTime\": \"2021-01-08 16:36:49\"\n                },\n                \"TagSet\": [],\n                \"EniType\": 1,\n                \"CreatedTime\": \"2021-01-07 16:32:55\",\n                \"SubnetId\": \"subnet-nao8lfro\",\n                \"NetworkInterfaceName\": \"royhyangtest-main\",\n                \"AttachType\": 1\n            }\n        ],\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NetworkInterfaceSet\": [\n            {\n                \"MacAddress\": \"20:90:6F:F5:34:C7\",\n                \"VpcId\": \"vpc-2kx9z6h3\",\n                \"Business\": \"cvm\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"NetworkInterfaceId\": \"eni-f1xjkw1b\",\n                \"Primary\": false,\n                \"CdcId\": \"\",\n                \"PrivateIpAddressSet\": [\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": true,\n                        \"PrivateIpAddress\": \"192.168.0.13\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.15\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.17\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.0.24\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"NetworkInterfaceDescription\": \"aaa\",\n                \"Ipv6AddressSet\": [],\n                \"State\": \"AVAILABLE\",\n                \"GroupSet\": [\n                    \"sg-c2r7lnxh\",\n                    \"sg-f9ekbxeq\"\n                ],\n                \"Attachment\": {\n                    \"InstanceId\": \"ins-ymk3eje8\",\n                    \"DeviceIndex\": 1,\n                    \"InstanceAccountId\": \"251153169\",\n                    \"AttachTime\": \"2021-01-08 16:36:49\"\n                },\n                \"TagSet\": [],\n                \"EniType\": 1,\n                \"CreatedTime\": \"2021-01-07 16:32:55\",\n                \"SubnetId\": \"subnet-nao8lfro\",\n                \"NetworkInterfaceName\": \"royhyangtest-main\",\n                \"AttachType\": 1\n            }\n        ],\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "查询弹性网卡列表"
       },
       {
@@ -1488,15 +1488,15 @@
     ],
     "DescribeRouteTables": [
       {
-        "document": "",
+        "document": "查看路由表对象列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteTables\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"vpc-2at5y1pn\"\n            ],\n            \"Name\": \"vpc-id\"\n        },\n        {\n            \"Values\": [\n                \"rtb-l2h8d7c2\"\n            ],\n            \"Name\": \"route-table-id\"\n        },\n        {\n            \"Values\": [\n                \"true\"\n            ],\n            \"Name\": \"association.main\"\n        },\n        {\n            \"Values\": [\n                \"TestRouteTable\"\n            ],\n            \"Name\": \"route-table-name\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteId\": 0,\n                        \"RouteItemId\": \"rti6-12345678\",\n                        \"DestinationCidrBlock\": \"\",\n                        \"DestinationIpv6CidrBlock\": \"2402:4e00:1000:810b::/64\",\n                        \"GatewayType\": \"CCN\",\n                        \"GatewayId\": \"ccn-12345678\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14916,\n                        \"RouteItemId\": \"rti-22345678\",\n                        \"DestinationCidrBlock\": \"10.254.64.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14917,\n                        \"RouteItemId\": \"rti-32345678\",\n                        \"DestinationCidrBlock\": \"10.254.100.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"whoIam\"\n                    },\n                    {\n                        \"RouteId\": 16642,\n                        \"RouteItemId\": \"rti-42345678\",\n                        \"DestinationCidrBlock\": \"10.200.0.0/18\",\n                        \"GatewayType\": \"PEERCONNECTION\",\n                        \"GatewayId\": \"pcx-4n2m594s\",\n                        \"RouteDescription\": \"bb\"\n                    }\n                ],\n                \"Main\": false,\n                \"TagSet\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"xx\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 16,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteId\": 0,\n                        \"RouteItemId\": \"rti6-12345678\",\n                        \"DestinationCidrBlock\": \"\",\n                        \"DestinationIpv6CidrBlock\": \"2402:4e00:1000:810b::/64\",\n                        \"GatewayType\": \"CCN\",\n                        \"GatewayId\": \"ccn-12345678\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14916,\n                        \"RouteItemId\": \"rti-22345678\",\n                        \"DestinationCidrBlock\": \"10.254.64.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14917,\n                        \"RouteItemId\": \"rti-32345678\",\n                        \"DestinationCidrBlock\": \"10.254.100.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"whoIam\"\n                    },\n                    {\n                        \"RouteId\": 16642,\n                        \"RouteItemId\": \"rti-42345678\",\n                        \"DestinationCidrBlock\": \"10.200.0.0/18\",\n                        \"GatewayType\": \"PEERCONNECTION\",\n                        \"GatewayId\": \"pcx-4n2m594s\",\n                        \"RouteDescription\": \"bb\"\n                    }\n                ],\n                \"Main\": false,\n                \"TagSet\": [\n                    {\n                        \"Value\": \"test\",\n                        \"Key\": \"test\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"10.1.0.0/16\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 16,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查看路由表对象列表"
       },
       {
-        "document": "",
+        "document": "查询绑定了标签的路由表列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteTables\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"shanghai\"\n            ],\n            \"Name\": \"tag:city\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14916,\n                        \"RouteItemId\": \"rti-22345678\",\n                        \"DestinationCidrBlock\": \"10.254.64.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14917,\n                        \"RouteItemId\": \"rti-32345678\",\n                        \"DestinationCidrBlock\": \"10.254.100.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"whoIam\"\n                    },\n                    {\n                        \"RouteId\": 16642,\n                        \"RouteItemId\": \"rti-42345678\",\n                        \"DestinationCidrBlock\": \"10.200.0.0/18\",\n                        \"GatewayType\": \"PEERCONNECTION\",\n                        \"GatewayId\": \"pcx-4n2m594s\",\n                        \"RouteDescription\": \"bb\"\n                    }\n                ],\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"xx\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 16,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14916,\n                        \"RouteItemId\": \"rti-22345678\",\n                        \"DestinationCidrBlock\": \"10.254.64.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14917,\n                        \"RouteItemId\": \"rti-32345678\",\n                        \"DestinationCidrBlock\": \"10.254.100.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"whoIam\"\n                    },\n                    {\n                        \"RouteId\": 16642,\n                        \"RouteItemId\": \"rti-42345678\",\n                        \"DestinationCidrBlock\": \"10.200.0.0/18\",\n                        \"GatewayType\": \"PEERCONNECTION\",\n                        \"GatewayId\": \"pcx-4n2m594s\",\n                        \"RouteDescription\": \"bb\"\n                    }\n                ],\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"10.1.0.0/16\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 16,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询绑定了标签的路由表列表"
       }
     ],
@@ -2146,7 +2146,7 @@
     ],
     "ModifyAddressInternetChargeType": [
       {
-        "document": "",
+        "document": "调整弹性公网IP计费模式。",
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressInternetChargeType\n&AddressId=eip-fo00aojo\n&InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetMaxBandwidthOut=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a3524d83-9f3b-40ee-beb8-3a8144e7d125\"\n    }\n}",
         "title": "调整弹性公网IP计费模式"
@@ -2278,7 +2278,7 @@
     ],
     "ModifyIp6AddressesBandwidth": [
       {
-        "document": "",
+        "document": "修改IPV6地址带宽。",
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6AddressesBandwidth\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&InternetMaxBandwidthOut=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579795\",\n        \"RequestId\": \"61b49567-8cbf-4523-8f25-7a2c9da23ddb\"\n    }\n}",
         "title": "修改IPV6地址带宽"
@@ -2286,7 +2286,7 @@
     ],
     "ModifyIp6Rule": [
       {
-        "document": "",
+        "document": "修改转换规则的IPV4地址和IPV4端口号。",
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6Rule\n&Ip6TranslatorId=ip6-90pt7p9q\n&Ip6RuleId=rule6-7v3vwgec\n&Vip=100.192.3.9\n&Vport=77\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80243425-b653-4b2c-82c0-d3d758a0e12a\"\n    }\n}",
         "title": "修改转换规则的IPV4地址和IPV4端口号"
@@ -2348,10 +2348,10 @@
     ],
     "ModifyNetDetect": [
       {
-        "document": "",
+        "document": "修改网络探测",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetDetect\n<公共请求参数>\n\n{\n    \"NetDetectId\": \"netd-12345678\",\n    \"NetDetectName\": \"test\",\n    \"NextHopType\": \"NORMAL_CVM\",\n    \"NextHopDestination\": \"10.0.0.4\",\n    \"DetectDestinationIp\": [\n        \"10.0.0.3\",\n        \"10.0.0.2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
-        "title": "修改网络探测参数"
+        "title": "修改网络探测"
       }
     ],
     "ModifyNetworkAclAttribute": [
@@ -2622,7 +2622,7 @@
     ],
     "RemoveIp6Rules": [
       {
-        "document": "",
+        "document": "删除IPV6转换规则。",
         "input": "https://vpc.tencentcloudapi.com/?Action=RemoveIp6Rules\r\n&Ip6TranslatorId=ip6-90pt7p9q\r\n&Ip6RuleIds.0=rule6-k5l5hnwk\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"688521e4-25d8-4b28-b0de-2b098f6fe535\"\n    }\n}",
         "title": "删除IPV6转换规则"
@@ -2764,7 +2764,7 @@
     ],
     "TransformAddress": [
       {
-        "document": "",
+        "document": "普通IP转弹性IP。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransformAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-3ea0qeu6\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressId\": \"eip-fk2gmm9s\",\n        \"TaskId\": 345732,\n        \"RequestId\": \"070889cb-a42a-40a0-ac50-293ef36e0dfc\"\n    }\n}",
         "title": "普通IP转弹性IP"

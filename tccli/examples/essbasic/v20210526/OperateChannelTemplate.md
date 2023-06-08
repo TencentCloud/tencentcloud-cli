@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf9c2xxxx611f4d0200fef3d \
-    --Agent.ProxyOrganizationId 00498cc8500be9cxxxxxxx3aff766cac \
-    --Agent.ProxyOrganizationOpenId d7c13a8b8134xxxx968c0ee248f04 \
-    --Agent.AppId 65fb0c59104xxxxa382cc5ed0e \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test \
     --TemplateId yDxlkUyKxxxxxxxxxjEvToNRI2MuTr \
     --OperateType select
 ```

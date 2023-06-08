@@ -19,7 +19,7 @@
     "ChannelCancelMultiFlowSignQRCode": [
       {
         "document": "ChannelCancelMultiFlowSignQRCode",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"test\",\n        \"ClientIp\": \"test\",\n        \"CustomUserId\": \"test\",\n        \"ProxyIp\": \"test\",\n        \"Channel\": \"test\"\n    },\n    \"QrCodeId\": \"test\",\n    \"Agent\": {\n        \"ProxyAppId\": \"test\",\n        \"ProxyOrganizationId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\",\n            \"ClientIp\": \"test\",\n            \"CustomUserId\": \"test\",\n            \"ProxyIp\": \"test\",\n            \"Channel\": \"test\"\n        },\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"AppId\": \"test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"QrCodeId\": \"test\",\n    \"Agent\": {\n        \"ProxyAppId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"AppId\": \"test\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"id\"\n    }\n}",
         "title": "ChannelCancelMultiFlowSignQRCode"
       }
@@ -51,7 +51,7 @@
     "ChannelCreateEmbedWebUrl": [
       {
         "document": "获取创建印章的嵌入WEB链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"Channel\": \"CHANNEL\",\n        \"CustomUserId\": \"1\",\n        \"ClientIp\": \"1.1.1.1\",\n        \"ProxyIp\": \"0.0.0.0\"\n    },\n    \"BusinessId\": \"\",\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"AppId\": \"1\",\n        \"ProxyOrganizationOpenId\": \"1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"1\",\n            \"Channel\": \"1\",\n            \"CustomUserId\": \"1\",\n            \"ClientIp\": \"1\",\n            \"ProxyIp\": \"1\"\n        },\n        \"ProxyAppId\": \"1\",\n        \"ProxyOrganizationId\": \"1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"BusinessId\": \"\",\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"AppId\": \"1\",\n        \"ProxyOrganizationOpenId\": \"1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"1\"\n        },\n        \"ProxyAppId\": \"1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://test.ess.com/seal-create?embed=1&code=testcode&channel=PROXYCHANNEL\",\n        \"RequestId\": \"2\"\n    }\n}",
         "title": "获取创建印章的嵌入WEB链接"
       }
@@ -137,7 +137,7 @@
     "ChannelCreateUserRoles": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserRoles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"RoleIds\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserRoles\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\"\n    },\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"RoleIds\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCreateRoleData\": [],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
@@ -145,7 +145,7 @@
     "ChannelDeleteRoleUsers": [
       {
         "document": "解绑用户与角色绑定关系",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDeleteRoleUsers\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"RoleId\": \"abc\",\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDeleteRoleUsers\n<公共请求参数>\n\n{\n    \"RoleId\": \"abc\",\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "解绑用户与角色关系"
       }
@@ -177,7 +177,7 @@
     "ChannelDescribeRoles": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeRoles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeRoles\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Offset\": 1,\n        \"Limit\": 1,\n        \"TotalCount\": 1,\n        \"ChannelRoles\": [\n            {\n                \"RoleId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"RoleStatus\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
@@ -361,7 +361,7 @@
     "OperateChannelTemplate": [
       {
         "document": "查询模板库中的模板信息",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2xxxx611f4d0200fef3d\",\n        \"ProxyOrganizationId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b8134xxxx968c0ee248f04\",\n        \"AppId\": \"65fb0c59104xxxxa382cc5ed0e\"\n    },\n    \"TemplateId\": \"yDxlkUyKxxxxxxxxxjEvToNRI2MuTr\",\n    \"OperateType\": \"select\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"AppId\": \"test\"\n    },\n    \"TemplateId\": \"yDxlkUyKxxxxxxxxxjEvToNRI2MuTr\",\n    \"OperateType\": \"select\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppId\": \"16fd2f7d7axxxxxf8d501d57b5ec\",\n        \"AuthTag\": \"all\",\n        \"FailMessageList\": [],\n        \"OperateResult\": \"all-success\",\n        \"ProxyOrganizationOpenIds\": [\n            \"子客企业1\",\n            \"子客企业2\"\n        ],\n        \"TemplateId\": \"yDxlkUyKQDpMxxxxxoNRI2MuTr\",\n        \"RequestId\": \"s16395xxxxx249716125\"\n    }\n}",
         "title": "查询模板库中的模板信息"
       }

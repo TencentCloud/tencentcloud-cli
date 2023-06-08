@@ -55,7 +55,7 @@ Output:
                         "State": "AVAILABLE"
                     }
                 ],
-                "NetworkInterfaceDescription": "xx",
+                "NetworkInterfaceDescription": "aaa",
                 "Ipv6AddressSet": [],
                 "State": "AVAILABLE",
                 "GroupSet": [

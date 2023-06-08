@@ -9475,7 +9475,7 @@
           "example": "8.0",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

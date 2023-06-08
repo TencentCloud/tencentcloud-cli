@@ -329,6 +329,13 @@
       "output": "InitDCDBInstancesResponse",
       "status": "online"
     },
+    "IsolateDCDBInstance": {
+      "document": "本接口(IsolateDCDBInstance)用于隔离分布式数据库TDSQL实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
+      "input": "IsolateDCDBInstanceRequest",
+      "name": "隔离TDSQL包年包月实例",
+      "output": "IsolateDCDBInstanceResponse",
+      "status": "online"
+    },
     "IsolateDedicatedDBInstance": {
       "document": "本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。",
       "input": "IsolateDedicatedDBInstanceRequest",
@@ -6674,6 +6681,51 @@
         }
       ],
       "usage": "out"
+    },
+    "IsolateDCDBInstanceRequest": {
+      "document": "IsolateDCDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：tdsqlshard-avw0207d，与云数据库控制台页面中显示的实例 ID 相同，可使用 查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "tdsqlshard-avw0207d",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDCDBInstanceResponse": {
+      "document": "IsolateDCDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "隔离成功实例ID列表。",
+          "example": "[]",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离失败实例ID列表。",
+          "example": "[]",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IsolateDedicatedDBInstanceRequest": {
       "document": "IsolateDedicatedDBInstance请求参数结构体",

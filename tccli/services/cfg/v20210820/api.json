@@ -1179,6 +1179,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不参演的实例列表",
+          "example": "[]",
+          "member": "string",
+          "name": "TaskGroupDiscardInstanceList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参演实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "TaskGroupSelectedInstanceList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器选取规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TaskGroupInstancesExecuteRules",
+          "name": "TaskGroupInstancesExecuteRule",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1629,6 +1659,42 @@
           "example": "10",
           "member": "int64",
           "name": "TaskGroupInstanceExecuteTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskGroupInstancesExecuteRules": {
+      "document": "机器选取规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例选取模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupInstancesExecuteMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按比例选取模式下选取比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TaskGroupInstancesExecutePercent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按数量选取模式下选取数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TaskGroupInstancesExecuteNum",
           "required": false,
           "type": "int",
           "value_allowed_null": true

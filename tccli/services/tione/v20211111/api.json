@@ -5722,7 +5722,6 @@
       "document": "DescribeTrainingTaskPods请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务ID",
           "example": "train-123311",
@@ -5743,7 +5742,6 @@
           "example": "[]",
           "member": "string",
           "name": "PodNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5753,8 +5751,16 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod详细信息",
+          "example": "[{\"Name\":\"train-786801095607790976-5z75pr7skj5s-master-0\",\"IP\":\"\t9.0.0.1\"}]",
+          "member": "PodInfo",
+          "name": "PodInfoList",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -8004,6 +8010,32 @@
         }
       ],
       "usage": "both"
+    },
+    "PodInfo": {
+      "document": "任务建模Pod信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "train-786801095607790976-5z75pr7skj5s-master-0",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PointInfo": {
       "document": "点信息描述",

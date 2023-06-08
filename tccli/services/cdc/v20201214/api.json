@@ -701,9 +701,9 @@
       "document": "专用宿主机支持的实例规格列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -711,9 +711,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格名称",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -721,9 +721,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网卡类型，例如：25代表25G网卡",
+          "example": "无",
           "member": "int64",
           "name": "NetworkCard",
           "required": true,
@@ -731,9 +731,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的CPU核数，单位：核。",
+          "example": "无",
           "member": "int64",
           "name": "Cpu",
           "required": true,
@@ -741,9 +741,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存容量，单位：`GB`。",
+          "example": "无",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -751,9 +751,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例机型系列。",
+          "example": "无",
           "member": "string",
           "name": "InstanceFamily",
           "required": true,
@@ -761,9 +761,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型名称。",
+          "example": "无",
           "member": "string",
           "name": "TypeName",
           "required": true,
@@ -771,9 +771,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地存储块数量。",
+          "example": "无",
           "member": "int64",
           "name": "StorageBlockAmount",
           "required": true,
@@ -781,9 +781,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网带宽，单位Gbps。",
+          "example": "无",
           "member": "float",
           "name": "InstanceBandwidth",
           "required": true,
@@ -791,9 +791,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络收发包能力，单位万PPS。",
+          "example": "无",
           "member": "int64",
           "name": "InstancePps",
           "required": true,
@@ -801,9 +801,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理器型号。",
+          "example": "无",
           "member": "string",
           "name": "CpuType",
           "required": true,
@@ -811,9 +811,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的GPU数量。",
+          "example": "无",
           "member": "int64",
           "name": "Gpu",
           "required": true,
@@ -821,9 +821,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的FPGA数量。",
+          "example": "无",
           "member": "int64",
           "name": "Fpga",
           "required": true,
@@ -831,9 +831,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型描述",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -841,9 +841,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,

@@ -673,7 +673,7 @@
       "status": "online"
     },
     "DeleteSubnet": {
-      "document": "本接口（DeleteSubnet）用于用于删除子网（Subnet）。\n* 删除子网前，请清理该子网下所有资源，包括云服务器、负载均衡、云数据、NoSQL、弹性网卡等资源。",
+      "document": "本接口（DeleteSubnet）用于删除子网（Subnet）。\n* 删除子网前，请清理该子网下所有资源，包括云服务器、负载均衡、云数据、NoSQL、弹性网卡等资源。",
       "input": "DeleteSubnetRequest",
       "name": "删除子网",
       "output": "DeleteSubnetResponse",
@@ -1086,7 +1086,7 @@
       "status": "online"
     },
     "DescribeRouteTables": {
-      "document": " 本接口（DescribeRouteTables）用于查询路由表。",
+      "document": "本接口（DescribeRouteTables）用于查询路由表。",
       "input": "DescribeRouteTablesRequest",
       "name": "查询路由表",
       "output": "DescribeRouteTablesResponse",
@@ -1212,7 +1212,7 @@
       "status": "online"
     },
     "DescribeUsedIpAddress": {
-      "document": "本接口(DescribeUsedIpAddress)用于查询Subnet或者Vpc内的ip的使用情况，\n如被ip被占用，返回占用ip的资源类别与id；如未被占用，返回空值",
+      "document": "本接口(DescribeUsedIpAddress)用于查询Subnet或者Vpc内的ip的使用情况，\n如ip被占用，返回占用ip的资源类别与id；如未被占用，返回空值",
       "input": "DescribeUsedIpAddressRequest",
       "name": "查看子网或者vpc内IP使用情况",
       "output": "DescribeUsedIpAddressResponse",
@@ -2352,27 +2352,27 @@
       "document": "AddIp6Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx",
+          "example": "ip6-90pt7p9q",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则信息",
+          "example": "无",
           "member": "Ip6RuleInfo",
           "name": "Ip6RuleInfos",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则名称",
+          "example": "\"IPv6 Rule1\"",
           "member": "string",
           "name": "Ip6RuleName",
           "required": false,
@@ -2387,6 +2387,7 @@
         {
           "disabled": false,
           "document": "IPV6转换规则唯一ID数组，形如rule6-xxxxxxxx",
+          "example": "[\"rule6-f3se1mki\"]",
           "member": "string",
           "name": "Ip6RuleSet",
           "type": "list",
@@ -3131,36 +3132,36 @@
       "document": "AllocateIp6AddressesBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通公网访问能力的IPV6地址",
+          "example": "2402:4e00:1011:9b02:0:98e8:f0fd:3a85",
           "member": "string",
           "name": "Ip6Addresses",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽，单位Mbps。默认是1Mbps",
+          "example": "50",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络计费模式。IPV6当前对标准账户类型支持\"TRAFFIC_POSTPAID_BY_HOUR\"，对传统账户类型支持\"BANDWIDTH_PACKAGE\"。默认网络计费模式是\"TRAFFIC_POSTPAID_BY_HOUR\"。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.",
+          "example": "bwp-12345678",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
@@ -3175,6 +3176,7 @@
         {
           "disabled": false,
           "document": "弹性公网 IPV6 的唯一 ID 列表。",
+          "example": "eip-68dqs5ri",
           "member": "string",
           "name": "AddressSet",
           "type": "list",
@@ -3183,6 +3185,7 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "194395704",
           "member": "string",
           "name": "TaskId",
           "type": "string",
@@ -6378,7 +6381,6 @@
       "document": "CreateIp6Translators请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转换实例名称",
           "example": "\"www_lakalakk\"",
@@ -6388,7 +6390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建转换实例数量，默认是1个",
           "example": "1",
@@ -6398,7 +6399,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换实例运营商属性，可取\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
           "example": "\"BGP\"",
@@ -6419,7 +6419,6 @@
           "example": "[\"ip6-90pt7p9q\"]",
           "member": "string",
           "name": "Ip6TranslatorSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6770,7 +6769,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
+          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
           "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
@@ -9357,9 +9356,9 @@
       "document": "DeleteIp6Translators请求参数结构体",
       "members": [
         {
-          "default": "无",
           "disabled": false,
           "document": "待释放的IPV6转换实例的唯一ID，形如‘ip6-xxxxxxxx’",
+          "example": "ip6-12345678",
           "member": "string",
           "name": "Ip6TranslatorIds",
           "required": true,
@@ -9897,7 +9896,6 @@
       "document": "DeleteTemplateMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
           "example": "ipm-test1234",
@@ -9907,7 +9905,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。",
           "example": "无",
@@ -12328,36 +12325,36 @@
       "document": "DescribeIp6Addresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。",
+          "example": "无",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -12372,6 +12369,7 @@
         {
           "disabled": false,
           "document": "符合条件的 IPV6 数量。",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -12380,6 +12378,7 @@
         {
           "disabled": false,
           "document": "IPV6 详细信息列表。",
+          "example": "无",
           "member": "Address",
           "name": "AddressSet",
           "type": "list",
@@ -13388,7 +13387,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。“AG”-服务质量为云铜，“AU”-服务质量为云银。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。“AG”-服务质量为云铜，“AU”-服务质量为云银。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -13539,7 +13538,6 @@
       "document": "DescribeRouteTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>\n<li>tag-key - String -是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>next-hop-type - String - 是否必填：否 - （过滤条件）按下一跳类型进行过滤。使用next-hop-type进行过滤时，必须同时携带route-table-id与vpc-id。\n目前我们支持的类型有：\nLOCAL: 本地路由\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网；\nLOCAL_GATEWAY：本地网关。\n</li>",
           "example": "[{\"Name\":\"route-table-id\", \"Values\": [\"rtb-3yuu2t62\"]},{\"Name\":\"",
@@ -13549,7 +13547,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "无",
@@ -13559,7 +13556,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "0",
@@ -13569,7 +13565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求对象个数。",
           "example": "1",
@@ -13590,7 +13585,6 @@
           "example": "16",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13600,7 +13594,6 @@
           "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19560,7 +19553,6 @@
       "document": "ModifyAddressInternetChargeType请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网IP的唯一ID，形如eip-xxx",
           "example": "eip-fo00aojo",
@@ -19570,7 +19562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网IP调整目标计费模式，只支持\"BANDWIDTH_PREPAID_BY_MONTH\"和\"TRAFFIC_POSTPAID_BY_HOUR\"",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -19580,7 +19571,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网IP调整目标带宽值",
           "example": "5",
@@ -19590,7 +19580,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是\"BANDWIDTH_PREPAID_BY_MONTH\"时，必传该参数。",
           "example": "无",
@@ -20270,7 +20259,6 @@
       "document": "ModifyIp6AddressesBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改的目标带宽，单位Mbps",
           "example": "50",
@@ -20280,7 +20268,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个",
           "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\\r\\n\"]",
@@ -20290,7 +20277,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个",
           "example": "[\"eip-6kr6f42w\"]",
@@ -20311,7 +20297,6 @@
           "example": "53734868",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20328,7 +20313,6 @@
       "document": "ModifyIp6Rule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx",
           "example": "ip6-90pt7p9q",
@@ -20338,7 +20322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则唯一ID，形如rule6-xxxxxxxx",
           "example": "rule6-7v3vwgec",
@@ -20348,7 +20331,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则修改后的名称",
           "example": "\"rule_name\"",
@@ -20358,7 +20340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则修改后的IPV4地址",
           "example": "100.192.3.9",
@@ -20368,7 +20349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则修改后的IPV4端口号",
           "example": "77",
@@ -20396,18 +20376,18 @@
       "document": "ModifyIp6Translator请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxxx",
+          "example": "ip6-12345678",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例修改名称",
+          "example": "test",
           "member": "string",
           "name": "Ip6TranslatorName",
           "required": false,
@@ -20676,7 +20656,6 @@
       "document": "ModifyNetDetect请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测实例`ID`。形如：`netd-12345678`",
           "example": "netd-12345678",
@@ -20686,7 +20665,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测名称，最大长度不能超过60个字节。",
           "example": "test",
@@ -20696,7 +20674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "探测目的IPv4地址数组，最多两个。",
           "example": "[\"10.0.0.2\\r\\n\",\"10.0.0.3\\r\\n\"]",
@@ -20706,7 +20683,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；\nCCN：云联网网关；\nNONEXTHOP：无下一跳；",
           "example": "NORMAL_CVM",
@@ -20716,9 +20692,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
+          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
           "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
@@ -20726,7 +20701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测描述。",
           "example": "test",
@@ -22358,7 +22332,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
+          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
           "example": "无",
           "member": "string",
           "name": "NextHopDestination",
@@ -23499,18 +23473,18 @@
       "document": "ReleaseIp6AddressesBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个",
+          "example": "2402:4e00:1205:8c00:0:9835:2940:98d3",
           "member": "string",
           "name": "Ip6Addresses",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。",
+          "example": "eip-12345678",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,
@@ -23525,6 +23499,7 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "123",
           "member": "string",
           "name": "TaskId",
           "type": "string",
@@ -23591,18 +23566,18 @@
       "document": "RemoveIp6Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx",
+          "example": "ip6-ma6nzj9n",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除IPV6转换规则，形如rule6-xxxxxxxx",
+          "example": "rule6-c1kjyfup",
           "member": "string",
           "name": "Ip6RuleIds",
           "required": true,
@@ -26880,7 +26855,6 @@
       "document": "TransformAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待操作有普通公网 IP 的实例 ID。实例 ID 形如：`ins-11112222`。可通过登录[控制台](https://console.cloud.tencent.com/cvm)查询，也可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/9389) 接口返回值中的`InstanceId`获取。",
           "example": "ins-3ea0qeu6",
@@ -26901,7 +26875,6 @@
           "example": "37888307",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26911,7 +26884,6 @@
           "example": "eip-fk2gmm9s",
           "member": "string",
           "name": "AddressId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

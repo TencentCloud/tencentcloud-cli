@@ -382,6 +382,14 @@
         "title": "批量初始化云数据库实例"
       }
     ],
+    "IsolateDCDBInstance": [
+      {
+        "document": "隔离TDSQL包年包月实例",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDCDBInstance\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsqlshard-pevrkilh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"e3b9a860-5864-43b2-8f0f-9684dea8fa58\",\n        \"SuccessInstanceIds\": [\n            \"tdsqlshard-pevrkilh\"\n        ]\n    }\n}",
+        "title": "隔离TDSQL包年包月实例"
+      }
+    ],
     "IsolateDedicatedDBInstance": [
       {
         "document": "",

@@ -1609,6 +1609,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新采集器"
       }
+    ],
+    "UploadContent": [
+      {
+        "document": "开发空间-保存任务信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadContent\n<公共请求参数>\n\n{\n    \"ScriptRequestInfo\": {\n        \"FilePath\": \"abc\",\n        \"ProjectId\": \"abc\",\n        \"Version\": \"abc\",\n        \"Operation\": \"abc\",\n        \"ExtraInfo\": \"abc\",\n        \"BucketName\": \"abc\",\n        \"Region\": \"abc\",\n        \"FileExtensionType\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ScriptInfo\": {\n            \"ResourceId\": \"abc\",\n            \"FileName\": \"abc\",\n            \"FileExtensionType\": \"abc\",\n            \"Type\": \"abc\",\n            \"Md5Value\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"Size\": 0,\n            \"LocalPath\": \"abc\",\n            \"RemotePath\": \"abc\",\n            \"OwnerName\": \"abc\",\n            \"Owner\": \"abc\",\n            \"PathDepth\": 0,\n            \"ProjectId\": \"abc\",\n            \"ExtraInfo\": \"abc\",\n            \"LocalTempPath\": \"abc\",\n            \"ZipPath\": \"abc\",\n            \"Bucket\": \"abc\",\n            \"Region\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "UploadContent 示例"
+      }
     ]
   },
   "version": "1.0"

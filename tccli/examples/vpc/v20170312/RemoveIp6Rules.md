@@ -1,6 +1,6 @@
 **Example 1: 删除IPV6转换规则**
 
-
+删除IPV6转换规则。
 
 Input: 
 

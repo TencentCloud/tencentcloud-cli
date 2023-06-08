@@ -8,6 +8,14 @@
         "title": "新用户加入通知"
       }
     ],
+    "CreateDomainAndIp": [
+      {
+        "document": "空示例",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Content\": [\n    \"xx\"\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "空示例"
+      }
+    ],
     "DescribeCVMAssetInfo": [
       {
         "document": "接口测试",

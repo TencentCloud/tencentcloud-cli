@@ -1,6 +1,6 @@
 **Example 1: 根据Ip6AddressIds查询IPV6信息**
 
-
+根据Ip6AddressIds查询IPV6信息。
 
 Input: 
 
@@ -13,28 +13,48 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "AddressSet": [
             {
-                "AddressId": "eip-lrhy2lpe",
-                "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
-                "AddressStatus": "BIND",
-                "InstanceId": "ins-190087yw",
-                "NetworkInterfaceId": "eni-rw4fh3gn",
-                "IsArrears": false,
-                "CreatedTime": "2020-01-13T04:09:52Z",
-                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                "Bandwidth": 6
+                "AddressId": "abc",
+                "AddressName": "abc",
+                "AddressStatus": "abc",
+                "AddressIp": "abc",
+                "InstanceId": "abc",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "NetworkInterfaceId": "abc",
+                "PrivateAddressIp": "abc",
+                "IsArrears": true,
+                "IsBlocked": true,
+                "IsEipDirectConnection": true,
+                "AddressType": "abc",
+                "CascadeRelease": true,
+                "EipAlgType": {
+                    "Ftp": true,
+                    "Sip": true
+                },
+                "InternetServiceProvider": "abc",
+                "LocalBgp": true,
+                "Bandwidth": 1,
+                "InternetChargeType": "abc",
+                "TagSet": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "DeadlineDate": "2020-09-22",
+                "InstanceType": "abc"
             }
         ],
-        "RequestId": "bfe06911-32f5-4862-9d42-6bb4954dcb59"
+        "RequestId": "abc"
     }
 }
 ```
 
 **Example 2: 根据Filter查询IPV6信息**
 
-
+根据Filter查询IPV6信息。
 
 Input: 
 
@@ -48,21 +68,41 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "AddressSet": [
             {
-                "AddressId": "eip-lrhy2lpe",
-                "AddressIp": "2402:4e00:1000:2d00:0:8f3f:6:9895",
-                "AddressStatus": "BIND",
-                "InstanceId": "ins-190087yw",
-                "NetworkInterfaceId": "eni-rw4fh3gn",
-                "IsArrears": false,
-                "CreatedTime": "2020-01-13T04:09:52Z",
-                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                "Bandwidth": 6
+                "AddressId": "abc",
+                "AddressName": "abc",
+                "AddressStatus": "abc",
+                "AddressIp": "abc",
+                "InstanceId": "abc",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "NetworkInterfaceId": "abc",
+                "PrivateAddressIp": "abc",
+                "IsArrears": true,
+                "IsBlocked": true,
+                "IsEipDirectConnection": true,
+                "AddressType": "abc",
+                "CascadeRelease": true,
+                "EipAlgType": {
+                    "Ftp": true,
+                    "Sip": true
+                },
+                "InternetServiceProvider": "abc",
+                "LocalBgp": true,
+                "Bandwidth": 1,
+                "InternetChargeType": "abc",
+                "TagSet": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "DeadlineDate": "2020-09-22",
+                "InstanceType": "abc"
             }
         ],
-        "RequestId": "d3ac2762-ae08-44ed-98fc-65c002d916b7"
+        "RequestId": "abc"
     }
 }
 ```

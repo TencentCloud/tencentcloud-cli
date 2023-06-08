@@ -58,9 +58,9 @@
     ],
     "ModifySmsSign": [
       {
-        "document": "",
+        "document": "修改短信签名",
         "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"\\\"xxxx\\\"\",\n    \"SignType\": \"0\",\n    \"CommissionImage\": \"\\\"xxxx\\\"\",\n    \"SignName\": \"“test”\",\n    \"DocumentType\": \"1\",\n    \"International\": \"0\",\n    \"SignId\": \"1110\",\n    \"ProofImage\": \"\\\"xxxx\\\"\",\n    \"UsedMethod\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModifySignStatus\": {\n            \"SignId\": 1110,\n            \"SignApplyId\": 1109\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ModifySignStatus\": {\n            \"SignId\": 1110,\n            \"SignApplyId\": \"1109\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
     ],
