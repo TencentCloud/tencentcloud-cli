@@ -466,6 +466,14 @@
         "title": "生成单个设备绑定的签名"
       }
     ],
+    "GenerateNFCScheme": [
+      {
+        "document": "该接口用于获取用于 NFC 的小程序 scheme 码，适用于 NFC 拉起小程序的业务场景。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AppGenerateNFCScheme\n<公共请求参数>\n\n{\n    \"DeviceId\": \"product-xxx/device-xxx\",\n    \"Path\": \"/pages/publishHomework/publishHomework\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OpenLink\": \"Scheme Payload\",\n        \"RequestId\": \"ebb39788-8b97-4a85-8e34-192c09e29376\"\n    }\n}",
+        "title": "获取 NFC 的小程序 scheme"
+      }
+    ],
     "GetBatchProductionsList": [
       {
         "document": "",

@@ -1,16 +1,15 @@
 **Example 1: 查询基础备份列表**
 
-
+查询最新一条备份集记录
 
 Input: 
 
 ```
 tccli postgres DescribeBaseBackups --cli-unfold-argument  \
-    --Limit 20 \
+    --Limit 1 \
     --Offset 0 \
-    --OrderByType desc \
-    --MaxFinishTime  \
-    --MinFinishTime 
+    --OrderBy FinishTime \
+    --OrderByType desc
 ```
 
 Output: 

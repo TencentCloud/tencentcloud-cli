@@ -36,9 +36,9 @@ Output:
             }
         ],
         "RequestId": "ca8481bf-ba79-42ba-b90b-bd47df104add",
-        "TemplateDescription": "测试模版",
+        "TemplateDescription": "测试模板",
         "TemplateId": 4837003,
-        "TemplateName": "测试模版",
+        "TemplateName": "测试模板",
         "TotalCount": 1
     }
 }

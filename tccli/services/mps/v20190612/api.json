@@ -5518,24 +5518,37 @@
       "document": "语音全文识别任务控制参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
+          "example": "无",
           "member": "string",
           "name": "SubtitleFormat",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频源语言。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -5544,24 +5557,37 @@
       "document": "语音全文识别任务控制参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
+          "example": "无",
           "member": "string",
           "name": "SubtitleFormat",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频源语言。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -6363,7 +6389,6 @@
       "document": "CreateAIRecognitionTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频内容识别模板名称，长度限制：64 个字符。",
           "example": "智能识别模板",
@@ -6374,7 +6399,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频内容识别模板描述信息，长度限制：256 个字符。",
           "example": "模板2",
@@ -6385,7 +6409,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸识别控制参数。",
           "example": "无",
@@ -6396,7 +6419,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本全文识别控制参数。",
           "example": "无",
@@ -6407,7 +6429,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本关键词识别控制参数。",
           "example": "无",
@@ -6418,7 +6439,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音全文识别控制参数。",
           "example": "无",
@@ -6429,12 +6449,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音关键词识别控制参数。",
           "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。",
+          "example": "无",
+          "member": "TranslateConfigureInfo",
+          "name": "TranslateConfigure",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -6451,7 +6480,6 @@
           "example": "31",
           "member": "int64",
           "name": "Definition",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -12076,7 +12104,6 @@
       "document": "DescribeTranscodeTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转码模板唯一标识过滤条件，数组长度限制：100。",
           "example": "[\"10\\n\"]",
@@ -12087,7 +12114,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
           "example": "“”",
@@ -12098,7 +12124,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>",
           "example": "“”",
@@ -12109,9 +12134,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>",
+          "document": "（建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>",
           "example": "“”",
           "member": "string",
           "name": "TEHDType",
@@ -12120,7 +12144,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -12131,7 +12154,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "10",
@@ -12142,9 +12164,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "模板类型（替换旧版本 TEHDType），可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>\n<li>Enhance：音视频增强模板。</li>\n默认空，不限制类型。",
+          "document": "模板类型（替换旧版本 TEHDType），可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>\n<li>TEHD-100：视频极速高清</li>\n<li>TEHD-200：音频极速高清</li>\n<li>Enhance：音视频增强模板。</li>\n默认空，不限制类型。\n",
           "example": "“”",
           "member": "string",
           "name": "TranscodeType",
@@ -12164,7 +12185,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -12175,7 +12195,6 @@
           "example": "无",
           "member": "TranscodeTemplate",
           "name": "TranscodeTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -18113,7 +18132,6 @@
       "document": "ModifyAIRecognitionTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频内容识别模板唯一标识。",
           "example": "30",
@@ -18124,7 +18142,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频内容识别模板名称，长度限制：64 个字符。",
           "example": "无",
@@ -18135,7 +18152,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频内容识别模板描述信息，长度限制：256 个字符。",
           "example": "无",
@@ -18146,7 +18162,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸识别控制参数。",
           "example": "无",
@@ -18157,7 +18172,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本全文识别控制参数。",
           "example": "无",
@@ -18168,7 +18182,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本关键词识别控制参数。",
           "example": "无",
@@ -18179,7 +18192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音全文识别控制参数。",
           "example": "无",
@@ -18190,12 +18202,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音关键词识别控制参数。",
           "example": "无",
           "member": "AsrWordsConfigureInfoForUpdate",
           "name": "AsrWordsConfigure",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。",
+          "example": "无",
+          "member": "TranslateConfigureInfoForUpdate",
+          "name": "TranslateConfigure",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -24587,6 +24608,84 @@
         }
       ],
       "usage": "out"
+    },
+    "TranslateConfigureInfo": {
+      "document": "语音翻译任务控制参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译任务开关，可选值：\n<li>ON：开启智能语音翻译任务；</li>\n<li>OFF：关闭智能语音翻译任务。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频源语言。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言。",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TranslateConfigureInfoForUpdate": {
+      "document": "语音翻译任务控制参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音翻译任务开关，可选值：\n<li>ON：开启智能语音翻译任务；</li>\n<li>OFF：关闭智能语音翻译任务。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频源语言。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言。",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "UrlInputInfo": {
       "document": "媒体处理 URL 对象信息。",

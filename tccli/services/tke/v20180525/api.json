@@ -4101,7 +4101,6 @@
       "document": "集群等级变配记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID",
           "example": "xxxx-xxxx-xxxx-xxxx",
@@ -4109,10 +4108,10 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxxxx",
@@ -4120,10 +4119,10 @@
           "name": "ClusterID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配状态：trading 发货中,upgrading 变配中,success 变配成功,failed 变配失败。",
           "example": "success",
@@ -4131,10 +4130,10 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态描述",
           "example": "余额不足",
@@ -4142,10 +4141,10 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配前规模",
           "example": "L5",
@@ -4153,10 +4152,10 @@
           "name": "OldLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配后规模",
           "example": "L20",
@@ -4164,10 +4163,10 @@
           "name": "NewLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配触发类型：manual 手动,auto 自动",
           "example": "manual",
@@ -4175,10 +4174,21 @@
           "name": "TriggerType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-02-01 00:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "开始时间",
           "example": "2022-02-01 00:00:00",
@@ -4186,10 +4196,10 @@
           "name": "StartedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-02-01 00:00:00",
@@ -4197,7 +4207,8 @@
           "name": "EndedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

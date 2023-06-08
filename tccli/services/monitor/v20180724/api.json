@@ -2583,7 +2583,6 @@
       "document": "BindingPolicyTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定取值 monitor",
           "example": "monitor",
@@ -2594,7 +2593,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "example": "policy-gqz8m9uq",
@@ -2605,7 +2603,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID",
           "example": "5678",
@@ -2616,7 +2613,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型",
           "example": "cvm",
@@ -2627,7 +2623,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略标签",
           "example": "无",
@@ -2638,7 +2633,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组ID",
           "example": "78",
@@ -2649,7 +2643,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量绑定标签",
           "example": "无",
@@ -2657,6 +2650,26 @@
           "name": "BatchTag",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否同步eb",
+          "example": "1",
+          "member": "int64",
+          "name": "EbEventFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],

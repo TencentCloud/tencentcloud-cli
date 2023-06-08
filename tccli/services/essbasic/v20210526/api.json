@@ -113,14 +113,14 @@
       "status": "online"
     },
     "ChannelCreateUserRoles": {
-      "document": "绑定员工角色",
+      "document": "通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelCreateUserRolesRequest",
       "name": "绑定员工角色",
       "output": "ChannelCreateUserRolesResponse",
       "status": "online"
     },
     "ChannelDeleteRoleUsers": {
-      "document": "删除员工绑定角色",
+      "document": "通过此接口，删除员工绑定的角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelDeleteRoleUsersRequest",
       "name": "删除员工绑定角色",
       "output": "ChannelDeleteRoleUsersResponse",
@@ -2055,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "指定待授权的用户ID数组,电子签的用户ID",
+          "document": "指定待授权的用户ID数组,电子签的用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2091,7 +2091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的",
+          "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的。\n请求参数填写OpenId时，返回授权成功的 Openid。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2123,21 +2123,31 @@
         },
         {
           "disabled": false,
-          "document": "绑定角色的员工id列表，电子签的UserId",
+          "document": "绑定角色的角色id列表",
           "example": "无",
           "member": "string",
-          "name": "UserIds",
+          "name": "RoleIds",
           "required": true,
           "type": "list",
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "绑定角色的角色id列表",
+          "document": "电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数",
           "example": "无",
           "member": "string",
-          "name": "RoleIds",
-          "required": true,
+          "name": "UserIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数",
+          "example": "无",
+          "member": "string",
+          "name": "OpenIds",
+          "required": false,
           "type": "list",
           "visibility": 1
         },
@@ -2201,11 +2211,11 @@
         },
         {
           "disabled": false,
-          "document": "用户列表，电子签系统的UserId",
+          "document": "电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数",
           "example": "无",
           "member": "string",
           "name": "UserIds",
-          "required": true,
+          "required": false,
           "type": "list",
           "visibility": 1
         },
@@ -2217,6 +2227,16 @@
           "name": "Operator",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数",
+          "example": "无",
+          "member": "string",
+          "name": "OpenIds",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -2269,7 +2289,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用户ID数组，电子签系统用户ID",
+          "document": "指定用户ID数组，电子签系统用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -5893,7 +5913,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.AppId必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",

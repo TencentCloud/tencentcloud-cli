@@ -130,18 +130,24 @@
     ],
     "CreateInstancePost": [
       {
-        "document": "创建按量计费实例",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePost\r\n&InstanceName=test\r\n&VpcId=vpc-12341234\r\n&SubnetId=subnetId-12341233\r\n&MsgRetentionTime=1440\r\n&BandWidth=8\r\n&ZoneId=100003\r\n&ClusterId=55\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 492917\n            }\n        },\n        \"RequestId\": \"4effa7c3-edb2-4310-9202-ea8259ca122f\"\n    }\n}",
-        "title": "创建按量计费实例"
+        "document": "创建峰值带宽为 20MB/s，硬盘大小 200GB 的专业版实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePost\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test45\",\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\",\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"BandWidth\": 20,\n    \"DiskSize\": 200,\n    \"Partition\": 400,\n    \"TopicNum\": 200,\n    \"ZoneId\": 450001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9432af9d-8c3e-4474-b5eb-0f5298dbb6e5\",\n        \"Result\": {\n            \"Data\": {\n                \"FlowId\": 0\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "创建专业版实例"
       }
     ],
     "CreateInstancePre": [
       {
-        "document": "创建实例(预付费包年包月)",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"MsgRetentionTime\": \"1440\",\n    \"Period\": \"1m\",\n    \"InstanceName\": \"test\",\n    \"InstanceType\": \"1\",\n    \"ZoneId\": \"100003\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"DeleteRouteTimestamp\": \"xxxx\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\n    }\n}",
-        "title": "创建实例(预付费包年包月)"
+        "document": "创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版预付费实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"Period\": \"1m\",\n    \"RenewFlag\": 0,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "创建预付费实例"
+      },
+      {
+        "document": "创建预付费标准版实例，规格为入门型(general) ，周期为一个月",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test57\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"Period\": \"1m\",\n    \"RenewFlag\": 2,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"standard\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2050ebf8-e255-4b90-ba0c-2fe8465e821a\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033922780000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-bz4dxxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20230608002033922780000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-bz4dxxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "创建预付费标准版实例"
       }
     ],
     "CreatePartition": [

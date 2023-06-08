@@ -2068,6 +2068,17 @@
         },
         {
           "disabled": false,
+          "document": "鉴权算法，取值有：\nmd5：按MD5算法取hash值\nsha256：按SHA-256算法取hash值\n默认为 md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "md5",
+          "member": "string",
+          "name": "AuthAlgorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "时间戳防盗链模式 A 配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AuthenticationTypeA",

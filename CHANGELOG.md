@@ -1,3 +1,293 @@
+# Release 3.0.781.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 19 次发布
+
+发布时间：2023-06-09 01:06:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ApigatewayTags](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApigatewayTags)
+* [DescribeApisStatusResultApiIdStatusSetInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultApiIdStatusSetInfo)
+
+修改数据结构：
+
+* [DescribeApisStatusResultInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#DescribeApisStatusResultInfo)
+
+	* 新增成员：ApiIdStatusSet
+
+
+
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 49 次发布
+
+发布时间：2023-06-09 01:10:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Authentication](http://document.tencentcloudapi.woa.com/document/product/228/30987#Authentication)
+
+	* 新增成员：AuthAlgorithm
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 64 次发布
+
+发布时间：2023-06-09 01:11:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePre](http://document.tencentcloudapi.woa.com/document/product/597/45847)
+
+	* 新增入参：PublicNetworkMonthly
+
+
+新增数据结构：
+
+* [DealInstanceDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DealInstanceDTO)
+
+修改数据结构：
+
+* [CreateInstancePreData](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePreData)
+
+	* 新增成员：DealNameInstanceIdMapping
+
+* [CreateInstancePreResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePreResp)
+
+	* <font color="#dd0000">**修改成员**：</font>DeleteRouteTimestamp
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 44 次发布
+
+发布时间：2023-06-09 01:16:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* 新增成员：RenewFlag
+
+* [ResourcePackage](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ResourcePackage)
+
+	* 新增成员：PackageAppId
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 23 次发布
+
+发布时间：2023-06-09 01:18:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainInfo)
+
+	* 新增成员：IsGracePeriod, VipBuffered, VipStartAt, VipEndAt, VipAutoRenew, VipResourceId, IsSubDomain
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 60 次发布
+
+发布时间：2023-06-09 01:20:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateUserRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77349)
+
+	* 新增入参：OpenIds
+
+	* <font color="#dd0000">**修改入参**：</font>UserIds
+
+* [ChannelDeleteRoleUsers](http://document.tencentcloudapi.woa.com/document/product/1595/77348)
+
+	* 新增入参：OpenIds
+
+	* <font color="#dd0000">**修改入参**：</font>UserIds
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 23 次发布
+
+发布时间：2023-06-09 01:22:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GenerateNFCScheme](http://document.tencentcloudapi.woa.com/document/product/1081/77902)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 58 次发布
+
+发布时间：2023-06-09 01:25:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindingPolicyTag](http://document.tencentcloudapi.woa.com/document/product/248/67219)
+
+	* 新增入参：EbEventFlag, EbSubject
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 30 次发布
+
+发布时间：2023-06-09 01:26:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAIRecognitionTemplate](http://document.tencentcloudapi.woa.com/document/product/862/39436)
+
+	* 新增入参：TranslateConfigure
+
+* [ModifyAIRecognitionTemplate](http://document.tencentcloudapi.woa.com/document/product/862/39430)
+
+	* 新增入参：TranslateConfigure
+
+
+新增数据结构：
+
+* [TranslateConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranslateConfigureInfo)
+* [TranslateConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranslateConfigureInfoForUpdate)
+
+修改数据结构：
+
+* [AsrFullTextConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AsrFullTextConfigureInfo)
+
+	* 新增成员：SourceLanguage
+
+* [AsrFullTextConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AsrFullTextConfigureInfoForUpdate)
+
+	* 新增成员：SourceLanguage
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 20 次发布
+
+发布时间：2023-06-09 01:29:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddOrganizationMemberEmail](http://document.tencentcloudapi.woa.com/document/product/850/77908)
+* [DescribeOrganizationMemberEmailBind](http://document.tencentcloudapi.woa.com/document/product/850/77907)
+* [UpdateOrganizationMemberEmailBind](http://document.tencentcloudapi.woa.com/document/product/850/77906)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 22 次发布
+
+发布时间：2023-06-09 01:29:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77304)
+
+	* 新增出参：BaseBackupId
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 69 次发布
+
+发布时间：2023-06-09 01:35:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterLevelChangeRecord](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterLevelChangeRecord)
+
+	* 新增成员：CreatedAt
+
+
+
+
 # Release 3.0.780.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

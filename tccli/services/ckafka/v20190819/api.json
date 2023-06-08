@@ -3721,37 +3721,48 @@
       "document": "创建预付费接口返回的Data",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单号列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "[\"20230608002033882210000\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-e5vjxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订单和购买实例对应映射列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DealInstanceDTO",
+          "name": "DealNameInstanceIdMapping",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3938,56 +3949,66 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0",
+          "example": "12",
+          "member": "int64",
+          "name": "PublicNetworkMonthly",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
     },
     "CreateInstancePreResp": {
-      "document": "创建预付费实例返回结构",
+      "document": "预付费实例相关接口返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回的code，0为正常，非0为错误",
-          "example": "1",
+          "example": "0",
           "member": "string",
           "name": "ReturnCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成功消息",
-          "example": "1",
+          "example": "success",
           "member": "string",
           "name": "ReturnMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作型返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "无",
           "member": "CreateInstancePreData",
           "name": "Data",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "删除是时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "disabled": true,
+          "document": "删除时间。目前该参数字段已废弃，将会在未来被删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N/A",
           "member": "string",
           "name": "DeleteRouteTimestamp",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5269,6 +5290,34 @@
         }
       ],
       "usage": "both"
+    },
+    "DealInstanceDTO": {
+      "document": "预付费/后付费接口中，订单和 CKafka 实例映射数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单流水\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230608002033882210000",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订单流水对应购买的 CKafka 实例 id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ckafka-na5gxxxx\",\"ckafka-xj4pxxxx\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAclRequest": {
       "document": "DeleteAcl请求参数结构体",

@@ -371,6 +371,13 @@
       "output": "GenSingleDeviceSignatureOfPublicResponse",
       "status": "online"
     },
+    "GenerateNFCScheme": {
+      "document": "该接口用于获取用于 NFC 的小程序 scheme 码，适用于 NFC 拉起小程序的业务场景。",
+      "input": "GenerateNFCSchemeRequest",
+      "name": "获取用于NFC的小程序scheme码",
+      "output": "GenerateNFCSchemeResponse",
+      "status": "online"
+    },
     "GetBatchProductionsList": {
       "document": "列出量产数据列表信息。",
       "input": "GetBatchProductionsListRequest",
@@ -5462,6 +5469,74 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateNFCSchemeRequest": {
+      "document": "GenerateNFCScheme请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "通过 scheme 码进入的小程序页面路径，必须是已经发布的小程序存在的页面，不可携带 query。path 为空时会跳转小程序主页",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "通过 scheme 码进入小程序时的 query，最大1024个字符，只支持数字，大小写英文以及部分特殊字符：`!#$&'()*+,/:;=?@-._~%`",
+          "example": "无",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "要打开的小程序版本。正式版为\"release\"，体验版为\"trial\"，开发版为\"develop\"，仅在微信外打开时生效\n",
+          "example": "无",
+          "member": "string",
+          "name": "EnvVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateNFCSchemeResponse": {
+      "document": "GenerateNFCScheme返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的小程序 scheme 码\n调用示例",
+          "example": "无",
+          "member": "string",
+          "name": "OpenLink",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

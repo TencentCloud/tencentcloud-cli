@@ -4766,6 +4766,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，1为自动续费，0为到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -9045,7 +9056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
@@ -9061,7 +9072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
@@ -9071,7 +9082,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模版名称",
+          "document": "参数模板名称",
           "example": "无",
           "member": "string",
           "name": "TemplateName",
@@ -9081,7 +9092,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模版描述",
+          "document": "参数模板描述",
           "example": "无",
           "member": "string",
           "name": "TemplateDescription",
@@ -14795,6 +14806,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "购买资源包账号APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "int64",
+          "name": "PackageAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "both"
@@ -15054,7 +15076,6 @@
       "document": "回滚数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "旧数据库名称",
           "example": "xxx",
@@ -15062,10 +15083,10 @@
           "name": "OldDatabase",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新数据库名称",
           "example": "xxx",
@@ -15073,16 +15094,16 @@
           "name": "NewDatabase",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RollbackTable": {
       "document": "回档数据库及表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "xxx",
@@ -15090,10 +15111,10 @@
           "name": "Database",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表",
           "example": "xxx",
@@ -15101,10 +15122,11 @@
           "name": "Tables",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RollbackTableInfo": {
       "document": "回档表信息",

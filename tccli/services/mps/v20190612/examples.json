@@ -32,6 +32,12 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"FaceLibrary\": \"All\"\n    },\n    \"Name\": \"智能识别模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
+      },
+      {
+        "document": "创建语音翻译模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"TranslateConfigure\": {\n        \"Switch\": \"ON\",\n        \"SourceLanguage\": \"en\",\n        \"DestinationLanguage\": \"zh\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 278654,\n        \"RequestId\": \"62cca75c-7dd3-4819-ad9d-13b48a4b4018\"\n    }\n}",
+        "title": "创建语音翻译模板"
       }
     ],
     "CreateAdaptiveDynamicStreamingTemplate": [
@@ -526,9 +532,9 @@
     ],
     "DescribeTranscodeTemplates": [
       {
-        "document": "",
+        "document": "获取转码模板",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        \"10\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": null,\n                \"Type\": \"Preset\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0,\n                    \"FillType\": \"black\",\n                    \"Vcrf\": 23\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"TEHDConfig\": {\n                    \"MaxVideoBitrate\": 1,\n                    \"Type\": \"TEHD-100\"\n                },\n                \"ContainerType\": \"Video\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": \"1008\",\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": \"\",\n                \"Type\": \"Preset\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0,\n                    \"FillType\": \"black\",\n                    \"Vcrf\": 23\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"TEHDConfig\": {\n                    \"MaxVideoBitrate\": 1,\n                    \"Type\": \"TEHD-100\"\n                },\n                \"EnhanceConfig\": null,\n                \"ContainerType\": \"Video\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取转码模板"
       }
     ],

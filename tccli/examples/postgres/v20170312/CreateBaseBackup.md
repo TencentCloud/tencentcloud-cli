@@ -1,6 +1,6 @@
 **Example 1: 创建实例基础备份**
 
-
+手动创建实例基础备份。
 
 Input: 
 
@@ -13,7 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e468f289-2313-4117-a5f0-f406faaefa24"
+        "RequestId": "abc",
+        "BaseBackupId": "443c810b-53c6-5d8c-b6d2-1abbe5794529"
     }
 }
 ```

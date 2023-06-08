@@ -1,6 +1,6 @@
 **Example 1: 获取转码模板**
 
-
+获取转码模板
 
 Input: 
 
@@ -16,10 +16,10 @@ Output:
         "TotalCount": 1,
         "TranscodeTemplateSet": [
             {
-                "Definition": 1008,
+                "Definition": "1008",
                 "Container": "mp4",
                 "Name": "模板1",
-                "Comment": null,
+                "Comment": "",
                 "Type": "Preset",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,
@@ -43,6 +43,7 @@ Output:
                     "MaxVideoBitrate": 1,
                     "Type": "TEHD-100"
                 },
+                "EnhanceConfig": null,
                 "ContainerType": "Video",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z"
