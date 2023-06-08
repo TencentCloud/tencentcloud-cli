@@ -1915,7 +1915,7 @@
         },
         {
           "disabled": false,
-          "document": "指定待授权的用户ID数组,电子签的用户ID",
+          "document": "指定待授权的用户ID数组,电子签的用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -1948,7 +1948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的",
+          "document": "最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的。\n请求参数填写OpenId时，返回授权成功的 Openid。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -2113,7 +2113,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用户ID数组，电子签系统用户ID",
+          "document": "指定用户ID数组，电子签系统用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -5412,7 +5412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.AppId必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",

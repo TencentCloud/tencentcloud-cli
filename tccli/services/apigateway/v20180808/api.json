@@ -2258,6 +2258,11 @@
       ],
       "usage": "out"
     },
+    "ApigatewayTags": {
+      "document": "key-value",
+      "members": [],
+      "usage": "out"
+    },
     "AttachPluginRequest": {
       "document": "AttachPlugin请求参数结构体",
       "members": [
@@ -6170,6 +6175,202 @@
       ],
       "type": "object"
     },
+    "DescribeApisStatusResultApiIdStatusSetInfo": {
+      "document": "api状态详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务唯一ID。",
+          "example": "service-2nuhovb7",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API唯一ID。",
+          "example": "api-d2sdvx",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义的 API 接口描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API",
+          "member": "string",
+          "name": "ApiDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 接口的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apiname",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPCID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API类型。取值为NORMAL（普通API）和TSF（微服务API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否买后调试。（云市场预留字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "False",
+          "member": "bool",
+          "name": "IsDebugAfterCharge",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EIAM",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OAUTH API的类型。当AuthType 为 OAUTH时该字段有效， 取值为NORMAL（业务API）和 OAUTH（授权API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OAUTH",
+          "member": "string",
+          "name": "ApiBusinessType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api-dd3acs",
+          "member": "string",
+          "name": "AuthRelationApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OAUTH 配置信息。当AuthType是OAUTH时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OauthConfig",
+          "name": "OauthConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "RelationBuniessApiIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API关联的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ApigatewayTags",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的路径，如 /path。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/hello",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API 的请求方法，如 GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeApisStatusResultInfo": {
       "document": "描述api列表状态",
       "members": [
@@ -6181,6 +6382,16 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 接口列表。",
+          "example": "无",
+          "member": "DescribeApisStatusResultApiIdStatusSetInfo",
+          "name": "ApiIdStatusSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

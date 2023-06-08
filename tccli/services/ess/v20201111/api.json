@@ -98,6 +98,13 @@
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
+    "CreateIntegrationDepartment": {
+      "document": "通过此接口，创建企业的部门，支持绑定客户系统部门ID。",
+      "input": "CreateIntegrationDepartmentRequest",
+      "name": "创建企业部门",
+      "output": "CreateIntegrationDepartmentResponse",
+      "status": "online"
+    },
     "CreateIntegrationEmployees": {
       "document": "创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传",
       "input": "CreateIntegrationEmployeesRequest",
@@ -161,6 +168,13 @@
       "output": "CreateUserAutoSignEnableUrlResponse",
       "status": "online"
     },
+    "DeleteIntegrationDepartment": {
+      "document": "通过此接口，删除企业的部门。",
+      "input": "DeleteIntegrationDepartmentRequest",
+      "name": "删除企业部门",
+      "output": "DeleteIntegrationDepartmentResponse",
+      "status": "online"
+    },
     "DeleteIntegrationEmployees": {
       "document": "移除员工",
       "input": "DeleteIntegrationEmployeesRequest",
@@ -215,6 +229,13 @@
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板",
       "output": "DescribeFlowTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeIntegrationDepartments": {
+      "document": "通过此接口，查询企业的部门，支持查询单个部门节点或单个部门节点及一级子节点部门列表。",
+      "input": "DescribeIntegrationDepartmentsRequest",
+      "name": "获取企业部门列表",
+      "output": "DescribeIntegrationDepartmentsResponse",
       "status": "online"
     },
     "DescribeIntegrationEmployees": {
@@ -285,6 +306,13 @@
       "input": "ModifyApplicationCallbackInfoRequest",
       "name": "修改企业回调配置",
       "output": "ModifyApplicationCallbackInfoResponse",
+      "status": "online"
+    },
+    "ModifyIntegrationDepartment": {
+      "document": "通过此接口，更新企业的部门信息，支持更新部门名、客户系统部门ID、部门序列号。",
+      "input": "ModifyIntegrationDepartmentRequest",
+      "name": "更新企业部门",
+      "output": "ModifyIntegrationDepartmentResponse",
       "status": "online"
     },
     "StartFlow": {
@@ -2274,6 +2302,87 @@
       ],
       "type": "object"
     },
+    "CreateIntegrationDepartmentRequest": {
+      "document": "CreateIntegrationDepartment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息，UserId必填且需拥有组织架构管理权限",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "部门名称，不超过50个字符",
+          "example": "无",
+          "member": "string",
+          "name": "DeptName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子签父部门ID，与ParentDeptOpenId二选一,优先ParentDeptId,都为空时自动填充至根节点下",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDeptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方平台中父部门ID,与ParentDeptId二选一,优先ParentDeptId,都为空时自动填充至根节点下",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDeptOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户系统部门ID，不超过64个字符",
+          "example": "无",
+          "member": "string",
+          "name": "DeptOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序号,1~30000范围内",
+          "example": "无",
+          "member": "uint64",
+          "name": "OrderNo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntegrationDepartmentResponse": {
+      "document": "CreateIntegrationDepartment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电子签部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeptId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateIntegrationEmployeesRequest": {
       "document": "CreateIntegrationEmployees请求参数结构体",
       "members": [
@@ -3184,6 +3293,51 @@
       ],
       "type": "object"
     },
+    "DeleteIntegrationDepartmentRequest": {
+      "document": "DeleteIntegrationDepartment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息，UserId必填且需拥有组织架构管理权限",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "电子签中的部门id",
+          "example": "无",
+          "member": "string",
+          "name": "DeptId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiveDeptId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntegrationDepartmentResponse": {
+      "document": "DeleteIntegrationDepartment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIntegrationEmployeesRequest": {
       "document": "DeleteIntegrationEmployees请求参数结构体",
       "members": [
@@ -3836,6 +3990,69 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationDepartmentsRequest": {
+      "document": "DescribeIntegrationDepartments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息，UserId必填且需拥有组织架构管理权限",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表",
+          "example": "无",
+          "member": "uint64",
+          "name": "QueryType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据",
+          "example": "无",
+          "member": "string",
+          "name": "DeptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据",
+          "example": "无",
+          "member": "string",
+          "name": "DeptOpenId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationDepartmentsResponse": {
+      "document": "DescribeIntegrationDepartments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门列表",
+          "example": "无",
+          "member": "IntegrationDepartment",
+          "name": "Departments",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5653,6 +5870,62 @@
       ],
       "usage": "out"
     },
+    "IntegrationDepartment": {
+      "document": "部门信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeptId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeptName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDeptId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户系统部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeptOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "OrderNo",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "IntegrationMainOrganizationUser": {
       "document": "主企业员工账号信息",
       "members": [
@@ -5724,6 +5997,78 @@
     },
     "ModifyApplicationCallbackInfoResponse": {
       "document": "ModifyApplicationCallbackInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIntegrationDepartmentRequest": {
+      "document": "ModifyIntegrationDepartment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息，UserId必填且需拥有组织架构管理权限",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "电子签部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeptId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子签父部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDeptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部门名称，不超过50个字符",
+          "example": "无",
+          "member": "string",
+          "name": "DeptName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户系统部门ID，不超过64个字符",
+          "example": "无",
+          "member": "string",
+          "name": "DeptOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序号,1~30000范围内",
+          "example": "无",
+          "member": "uint64",
+          "name": "OrderNo",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIntegrationDepartmentResponse": {
+      "document": "ModifyIntegrationDepartment返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
