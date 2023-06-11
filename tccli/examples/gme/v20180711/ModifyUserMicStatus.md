@@ -5,7 +5,13 @@
 Input: 
 
 ```
-tccli gme ModifyUserMicStatus --cli-unfold-argument ```
+tccli gme ModifyUserMicStatus --cli-unfold-argument  \
+    --BizId 1400000000 \
+    --RoomId 300 \
+    --Users.0.Uid 1111 \
+    --Users.0.EnableMic 1 \
+    --Users.0.StrUid 
+```
 
 Output: 
 ```

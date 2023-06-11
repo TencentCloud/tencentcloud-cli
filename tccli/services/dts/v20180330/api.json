@@ -645,13 +645,14 @@
       "document": "DescribeAsyncRequestInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID",
+          "example": "cafebabe-254f-11ea-8995-e92c139e6918",
           "member": "string",
           "name": "AsyncRequestId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -662,18 +663,22 @@
         {
           "disabled": false,
           "document": "任务执行结果信息",
+          "example": "success",
           "member": "string",
           "name": "Info",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "任务执行状态，可能的值有：success，failed，running",
+          "example": "ok",
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2075,22 +2080,24 @@
       "document": "ModifySubscribeAutoRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID，例如：subs-8uey736k",
+          "example": "subs-8uey736k",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。1-自动续费，0-不自动续费",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -1,11 +1,13 @@
-**Example 1: 查询网关负载均衡**
+**Example 1: 指定实例ID查询网关负载均衡**
 
-查询网关负载均衡
+指定实例ID查询网关负载均衡
 
 Input: 
 
 ```
-tccli clb DescribeGatewayLoadBalancers --cli-unfold-argument ```
+tccli clb DescribeGatewayLoadBalancers --cli-unfold-argument  \
+    --LoadBalancerIds abc
+```
 
 Output: 
 ```
@@ -14,29 +16,29 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "Status": 1,
-                "TargetGroupId": "xx",
-                "VpcId": "xx",
+                "LoadBalancerId": "abc",
+                "LoadBalancerName": "abc",
                 "Vips": [
-                    "x.x.x.x"
+                    "abc"
                 ],
+                "SubnetId": "abc",
+                "Status": 1,
+                "InternetMaxBandwidthOut": 0,
+                "DeleteProtect": true,
+                "TargetGroupId": "abc",
+                "VpcId": "abc",
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
                 ],
-                "Specifications": "xx",
-                "ProjectId": 1,
-                "DeleteProtect": true,
-                "InternetMaxBandwidthOut": 0,
-                "LoadBalancerId": "xx",
-                "SubnetId": "xx",
-                "LoadBalancerName": "xx",
-                "CreateTime": "xx"
+                "Specifications": "abc",
+                "CreateTime": "abc",
+                "AssociateAclGroup": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -1,5 +1,21 @@
 {
   "actions": {
+    "AddGatewayAclRule": [
+      {
+        "document": "添加网关负载均衡ACL规则",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGatewayAclRule\n<公共请求参数>\n\n{\n    \"AclGroupId\": \"gwlbacl-0pii****\",\n    \"AclRules\": [\n        {\n            \"Type\": \"in\",\n            \"VpcId\": \"vpc-b5oj****\",\n            \"Action\": \"drop\",\n            \"SrcIp\": \"10.0.0.0\"\n        },\n        {\n            \"Type\": \"out\",\n            \"VpcId\": \"vpc-b5oj****\",\n            \"Action\": \"bypass\",\n            \"DstIp\": \"10.0.0.0\"\n        },\n        {\n            \"Type\": \"all\",\n            \"VpcId\": \"all\",\n            \"Action\": \"drop\",\n            \"SrcIp\": \"10.0.0.0\",\n            \"Protocol\": \"tcp\"\n        },\n        {\n            \"Type\": \"all\",\n            \"VpcId\": \"vpc-b5oj****\",\n            \"Action\": \"bypass\",\n            \"SrcIp\": \"10.0.0.0\",\n            \"DstIp\": \"1.1.1.1\",\n            \"SrcPort\": 80,\n            \"DstPort\": 80\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39aeac6f-603b-4c1d-a3f0-d768599c8798\"\n    }\n}",
+        "title": "添加网关负载均衡ACL规则"
+      }
+    ],
+    "AssociateGatewayAclGroup": [
+      {
+        "document": "网关负载均衡ACL组关联网关负载均衡实例",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateGatewayAclGroup\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"gwlb-4qo****\",\n    \"AclGroupId\": \"gwlbacl-0pii****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7daa09a5-f9cd-40f9-9e24-6880aaf4cb2b\"\n    }\n}",
+        "title": "网关负载均衡ACL组关联网关负载均衡实例"
+      }
+    ],
     "AssociateTargetGroups": [
       {
         "document": "",
@@ -68,6 +84,22 @@
         "input": "https://clb.tencentcloudapi.com/?Action=CreateClsLogSet\n&LogsetName=clb_logset\n&Period=7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LogsetId\": \"578dd0ad-2e7c-488b-b5fe-0b23da3537eb\",\n        \"RequestId\": \"8b038842-70b2-411b-a1a2-c7fcde195d2c\"\n    }\n}",
         "title": "创建日志集。"
+      }
+    ],
+    "CreateGatewayAclGroup": [
+      {
+        "document": "创建ACL组",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatewayAclGroup\n<公共请求参数>\n\n{\n    \"AclGroupName\": \"ACL组名称\",\n    \"VpcId\": \"vpc-b5oj927d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AclGroupId\": \"gwlbacl-0pii****\",\n        \"RequestId\": \"d5c057bc-fa61-4b86-8c31-0ccdac426c7f\"\n    }\n}",
+        "title": "创建ACL组"
+      }
+    ],
+    "CreateGatewayLoadBalancer": [
+      {
+        "document": "在私有网络中创建一个网关负载均衡",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatewayLoadBalancer\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-30xq****\",\n    \"SubnetId\": \"subnet-****\",\n    \"LoadBalancerName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"gwlb-kmfr****\"\n        ],\n        \"DealName\": \"20211230660009761735781\",\n        \"RequestId\": \"7ffa6830-cd1b-4bc4-8e24-1688885f594a\"\n    }\n}",
+        "title": "创建一个网关负载均衡实例"
       }
     ],
     "CreateListener": [
@@ -140,9 +172,9 @@
     ],
     "CreateTargetGroup": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateTargetGroup\n&TargetGroupName=czhtest\n&VpcId=vpc-i1cnjuhx\n&Port=80\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-815iz538\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
+        "document": "创建目标组",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-i1cnjuhx\",\n    \"Port\": \"80\",\n    \"TargetGroupName\": \"czhtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-81******\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
         "title": "创建目标组"
       }
     ],
@@ -152,6 +184,30 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"PartitionCount\": \"3\",\n    \"TopicName\": \"clb-topic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b6xy\",\n        \"RequestId\": \"dccf2ce3-0277-465a-9c60-260cfb141d65\"\n    }\n}",
         "title": "创建主题。"
+      }
+    ],
+    "DeleteGatewayAclGroup": [
+      {
+        "document": "删除单个网关负载均衡ACL组",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayAclGroup\n<公共请求参数>\n\n{\n    \"AclGroupIds\": [\n        \"gwlbacl-okhd****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31bb359e-317e-49a9-a029-54a958f3a947\"\n    }\n}",
+        "title": "删除单个网关负载均衡ACL组"
+      }
+    ],
+    "DeleteGatewayAclRule": [
+      {
+        "document": "删除网关负载均衡ACL规则",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayAclRule\n<公共请求参数>\n\n{\n    \"AclGroupId\": \"gwlbacl-0piisgzs\",\n    \"AclRules\": [\n        {\n            \"Type\": \"in\",\n            \"VpcId\": \"vpc-b5oj927d\",\n            \"Action\": \"drop\",\n            \"SrcIp\": \"10.0.0.0\"\n        },\n        {\n            \"Type\": \"out\",\n            \"VpcId\": \"vpc-b5oj927d\",\n            \"Action\": \"bypass\",\n            \"DstIp\": \"10.0.0.0\"\n        },\n        {\n            \"Type\": \"all\",\n            \"VpcId\": \"all\",\n            \"Action\": \"drop\",\n            \"SrcIp\": \"10.0.0.0\",\n            \"Protocol\": \"tcp\"\n        },\n        {\n            \"Type\": \"all\",\n            \"VpcId\": \"vpc-b5oj927d\",\n            \"Action\": \"bypass\",\n            \"SrcIp\": \"10.0.0.0\",\n            \"DstIp\": \"1.1.1.1\",\n            \"SrcPort\": 80,\n            \"DstPort\": 80\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef36d811-96c9-4a8b-b45b-56613700ef9c\"\n    }\n}",
+        "title": "删除网关负载均衡ACL规则"
+      }
+    ],
+    "DeleteGatewayLoadBalancer": [
+      {
+        "document": "删除一个网负载均衡实例",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayLoadBalancer\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"gwlb-hsb9****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db141822-c025-4765-88d4-02bdec0e67ed\"\n    }\n}",
+        "title": "删除一个网关负载均衡实例"
       }
     ],
     "DeleteListener": [
@@ -344,12 +400,28 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeGatewayAclGroups": [
+      {
+        "document": "查看网关负载均衡ACL组",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayAclGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-b50****\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayAclGroupSet\": [\n            {\n                \"AclGroupId\": \"gwlbacl-ryrl****\",\n                \"AclGroupName\": \"test\",\n                \"AssociatedInstances\": [\n                    \"gwlb-owlo****\"\n                ],\n                \"CreateTime\": \"2023-03-22 10:39:03\",\n                \"VpcId\": \"vpc-b5oj****\"\n            }\n        ],\n        \"RequestId\": \"6379bfea-3828-4e8c-b9dd-39079d628f5f\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看网关负载均衡ACL组"
+      }
+    ],
+    "DescribeGatewayAclRules": [
+      {
+        "document": "查询网关负载均衡ACL规则",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayAclRules\n<公共请求参数>\n\n{\n    \"AclGroupId\": \"gwlbacl-0pii****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayAclRuleSet\": [\n            {\n                \"Action\": \"drop\",\n                \"CreateTime\": \"2023-05-22 14:36:48\",\n                \"DstIp\": \"0.0.0.0\",\n                \"DstPort\": 0,\n                \"Protocol\": \"tcp\",\n                \"SrcIp\": \"10.0.0.0\",\n                \"SrcPort\": 0,\n                \"Type\": \"all\",\n                \"VpcId\": \"all\"\n            },\n            {\n                \"Action\": \"bypass\",\n                \"CreateTime\": \"2023-05-22 14:36:48\",\n                \"DstIp\": \"1.1.1.1\",\n                \"DstPort\": 80,\n                \"Protocol\": \"all\",\n                \"SrcIp\": \"10.0.0.0\",\n                \"SrcPort\": 80,\n                \"Type\": \"all\",\n                \"VpcId\": \"vpc-b5oj****\"\n            },\n            {\n                \"Action\": \"drop\",\n                \"CreateTime\": \"2023-05-22 14:36:48\",\n                \"DstIp\": null,\n                \"DstPort\": null,\n                \"Protocol\": null,\n                \"SrcIp\": \"10.0.0.0\",\n                \"SrcPort\": null,\n                \"Type\": \"in\",\n                \"VpcId\": \"vpc-b5o*****\"\n            },\n            {\n                \"Action\": \"bypass\",\n                \"CreateTime\": \"2023-05-22 14:36:48\",\n                \"DstIp\": \"10.0.0.0\",\n                \"DstPort\": null,\n                \"Protocol\": null,\n                \"SrcIp\": null,\n                \"SrcPort\": null,\n                \"Type\": \"out\",\n                \"VpcId\": \"vpc-b5o****\"\n            }\n        ],\n        \"RequestId\": \"6f5bed47-97b6-4f36-81bf-7862c1a9ad40\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "查询网关负载均衡ACL规则"
+      }
+    ],
     "DescribeGatewayLoadBalancers": [
       {
-        "document": "查询网关负载均衡",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancers\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"Status\": 1,\n                \"TargetGroupId\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"Vips\": [\n                    \"x.x.x.x\"\n                ],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Specifications\": \"xx\",\n                \"ProjectId\": 1,\n                \"DeleteProtect\": true,\n                \"InternetMaxBandwidthOut\": 0,\n                \"LoadBalancerId\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"LoadBalancerName\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询网关负载均衡"
+        "document": "指定实例ID查询网关负载均衡",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"abc\",\n                \"LoadBalancerName\": \"abc\",\n                \"Vips\": [\n                    \"abc\"\n                ],\n                \"SubnetId\": \"abc\",\n                \"Status\": 1,\n                \"InternetMaxBandwidthOut\": 0,\n                \"DeleteProtect\": true,\n                \"TargetGroupId\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"Specifications\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"AssociateAclGroup\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "指定实例ID查询网关负载均衡"
       }
     ],
     "DescribeIdleLoadBalancers": [
@@ -476,6 +548,14 @@
         "title": "指定转发规则ID查询重定向关系"
       }
     ],
+    "DescribeTargetGroupInstanceStatus": [
+      {
+        "document": "批量查询gwlb目标组后端服务状态",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTargetGroupInstanceStatus\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-3j3****\",\n    \"TargetGroupInstanceIps\": [\n        \"10.0.1.13\",\n        \"10.0.1.5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3ba6587-1a1c-47eb-ac8b-0424bf3fdc86\",\n        \"TargetGroupInstanceSet\": [\n            {\n                \"InstanceIp\": \"10.0.1.13\",\n                \"Status\": \"on\"\n            },\n            {\n                \"InstanceIp\": \"10.0.1.5\",\n                \"Status\": \"on\"\n            }\n        ]\n    }\n}",
+        "title": "批量查询gwlb目标组后端服务状态"
+      }
+    ],
     "DescribeTargetGroupInstances": [
       {
         "document": "显示目标组绑定的服务器信息",
@@ -534,6 +614,14 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"55c85074-3e7f-4c6d-864f-673660d4f8de\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"RequestId\": \"917384bc-5b8d-4b68-a0bc-a58f815e8e3b\"\n    }\n}",
         "title": "查询异步任务状态"
+      }
+    ],
+    "DisassociateGatewayAclGroup": [
+      {
+        "document": "网关负载均衡ACL组解关联网关负载均衡实例",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateGatewayAclGroup\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"gwlb-4qoy****\",\n    \"AclGroupId\": \"gwlbacl-0pii****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e52be01e-a2d3-483e-a227-3506eb5c1cd0\"\n    }\n}",
+        "title": "网关负载均衡ACL组解关联网关负载均衡实例"
       }
     ],
     "DisassociateTargetGroups": [
@@ -598,6 +686,22 @@
         "title": "修改负载均衡转发规则上所绑定的云函数。"
       }
     ],
+    "ModifyGatewayAclGroup": [
+      {
+        "document": "修改名称",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayAclGroup\n<公共请求参数>\n\n{\n    \"AclGroupId\": \"gwlbacl-0pii****\",\n    \"AclGroupName\": \"ACL组新名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f1b948a-1c37-485e-ad12-122d60d674ef\"\n    }\n}",
+        "title": "修改网关复制均衡ACL组属性"
+      }
+    ],
+    "ModifyGatewayLoadBalancerAttribute": [
+      {
+        "document": "修改网关负载均衡实例名称",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayLoadBalancerAttribute\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"gwlb-6efswuxa\",\n    \"LoadBalancerName\": \"newlbname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
+        "title": "修改网关负载均衡实例名称"
+      }
+    ],
     "ModifyListener": [
       {
         "document": "修改TCP监听器的名称、健康检查参数及转发策略",
@@ -646,8 +750,8 @@
     ],
     "ModifyTargetGroupAttribute": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupAttribute\n&TargetGroupId=lbtg-815iz538\n&TargetGroupName=xxxxholic\n&<公共请求参数>",
+        "document": "修改目标组名称",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTargetGroupAttribute\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-815iz538\",\n    \"TargetGroupName\": \"xxxxholic\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73d80971-512f-400e-9c73-c0c135c04871\"\n    }\n}",
         "title": "修改目标组名称"
       }

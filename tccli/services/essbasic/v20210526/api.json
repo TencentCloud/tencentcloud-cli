@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ChannelCreateConvertTaskApi": {
-      "document": "上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。",
+      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
@@ -995,7 +995,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
+          "document": "资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型",
           "example": "无",
           "member": "string",
           "name": "ResourceType",

@@ -195,7 +195,7 @@
     "StartStopServiceOrMonitor": [
       {
         "document": "启停服务接口",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStopServiceOrMonitor\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-4zvc5mul\", \n    \"OpScope\": {\n        \"ServiceInfoList\": [\n            {\n                \"ComponentInfoList\": [\n                    {\n                        \"IpList\": [\n                            \"172.16.114.126\"\n                        ], \n                        \"ComponentName\": \"ZKFailoverController\"\n                    }\n                ], \n                \"ServiceName\": \"HDFS\"\n            }\n        ]\n    }, \n    \"OpType\": \"StartService\"\n\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStopServiceOrMonitor\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-4zvc5mul\",\n    \"OpType\": \"StartService\",\n    \"OpScope\": {\n        \"ServiceInfoList\": [\n            {\n                \"ServiceName\": \"abc\",\n                \"ComponentInfoList\": [\n                    {\n                        \"ComponentName\": \"ZKFailoverController\",\n                        \"IpList\": [\n                            \"172.16.114.126\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    },\n    \"StrategyConfig\": {\n        \"RollingRestartSwitch\": 0,\n        \"BatchSize\": 1,\n        \"TimeWait\": 5,\n        \"DealOnFail\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c141dbb-b365-4c1b-a209-2c18e47fdb11\"\n    }\n}",
         "title": "StartStopServiceOrMonitor"
       }

@@ -62,9 +62,9 @@
     ],
     "DescribeAsyncRequestInfo": [
       {
-        "document": "",
+        "document": "查询任务执行结果",
         "input": "https://dts.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\r\n&AsyncRequestId=cafebabe-254f-11ea-8995-e92c139e6918\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"Info\": \"ok\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"Info\": \"ok\",\n        \"RequestId\": \"cafebabe-254f-11ea-8995-e92c139e6918\"\n    }\n}",
         "title": "查询任务执行结果"
       }
     ],
@@ -132,7 +132,7 @@
     ],
     "ModifySubscribeAutoRenewFlag": [
       {
-        "document": "",
+        "document": "配置数据订阅自动续费标识",
         "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeAutoRenewFlag\r\n&SubscribeId=subs-8392jd821u\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "配置数据订阅自动续费标识"

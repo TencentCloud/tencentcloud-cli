@@ -1,5 +1,26 @@
 {
   "actions": {
+    "BatchDeleteStreamLinkFlow": {
+      "document": "批量删除媒体传输流。",
+      "input": "BatchDeleteStreamLinkFlowRequest",
+      "name": "批量删除媒体传输流",
+      "output": "BatchDeleteStreamLinkFlowResponse",
+      "status": "online"
+    },
+    "BatchStartStreamLinkFlow": {
+      "document": "批量启动媒体传输流。",
+      "input": "BatchStartStreamLinkFlowRequest",
+      "name": "批量开启媒体传输流",
+      "output": "BatchStartStreamLinkFlowResponse",
+      "status": "online"
+    },
+    "BatchStopStreamLinkFlow": {
+      "document": "批量停止媒体传输流。",
+      "input": "BatchStopStreamLinkFlowRequest",
+      "name": "批量停止媒体传输流",
+      "output": "BatchStopStreamLinkFlowResponse",
+      "status": "online"
+    },
     "CreateAIAnalysisTemplate": {
       "document": "创建用户自定义内容分析模板，数量上限：50。",
       "input": "CreateAIAnalysisTemplateRequest",
@@ -68,6 +89,13 @@
       "input": "CreateSnapshotByTimeOffsetTemplateRequest",
       "name": "创建指定时间点截图模板",
       "output": "CreateSnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
+    },
+    "CreateStreamLinkEvent": {
+      "document": "创建媒体传输的事件Event。",
+      "input": "CreateStreamLinkEventRequest",
+      "name": "创建媒体传输事件",
+      "output": "CreateStreamLinkEventResponse",
       "status": "online"
     },
     "CreateStreamLinkFlow": {
@@ -187,6 +215,13 @@
       "input": "DeleteSnapshotByTimeOffsetTemplateRequest",
       "name": "删除指定时间点截图模板",
       "output": "DeleteSnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
+    },
+    "DeleteStreamLinkEvent": {
+      "document": "删除媒体传输的事件配置。",
+      "input": "DeleteStreamLinkEventRequest",
+      "name": "删除媒体传输事件",
+      "output": "DeleteStreamLinkEventResponse",
       "status": "online"
     },
     "DeleteStreamLinkFlow": {
@@ -313,6 +348,27 @@
       "input": "DescribeStreamLinkActivateStateRequest",
       "name": "查询媒体传输开通状态",
       "output": "DescribeStreamLinkActivateStateResponse",
+      "status": "online"
+    },
+    "DescribeStreamLinkEvent": {
+      "document": "查询媒体传输事件的配置信息。",
+      "input": "DescribeStreamLinkEventRequest",
+      "name": "查询媒体传输事件",
+      "output": "DescribeStreamLinkEventResponse",
+      "status": "online"
+    },
+    "DescribeStreamLinkEventAttachedFlows": {
+      "document": "查询媒体传输事件关联的所有媒体输入流的配置信息。",
+      "input": "DescribeStreamLinkEventAttachedFlowsRequest",
+      "name": "查询媒体传输事件关联的所有媒体输入流的配置信息",
+      "output": "DescribeStreamLinkEventAttachedFlowsResponse",
+      "status": "online"
+    },
+    "DescribeStreamLinkEvents": {
+      "document": "批量查询媒体传输事件的配置信息。",
+      "input": "DescribeStreamLinkEventsRequest",
+      "name": "批量查询媒体传输事件",
+      "output": "DescribeStreamLinkEventsResponse",
       "status": "online"
     },
     "DescribeStreamLinkFlow": {
@@ -530,6 +586,13 @@
       "input": "ModifySnapshotByTimeOffsetTemplateRequest",
       "name": "修改指定时间点截图模板",
       "output": "ModifySnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
+    },
+    "ModifyStreamLinkEvent": {
+      "document": "修改媒体传输的事件配置信息。",
+      "input": "ModifyStreamLinkEventRequest",
+      "name": "修改媒体传输事件",
+      "output": "ModifyStreamLinkEventResponse",
       "status": "online"
     },
     "ModifyStreamLinkFlow": {
@@ -5897,6 +5960,126 @@
       ],
       "usage": "in"
     },
+    "BatchDeleteStreamLinkFlowRequest": {
+      "document": "BatchDeleteStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "EventId。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。",
+          "example": "[\"aaa\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteStreamLinkFlowResponse": {
+      "document": "BatchDeleteStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchStartStreamLinkFlowRequest": {
+      "document": "BatchStartStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "EventId。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Event关联的流Id数组，如果不传默认启动Event下面的所有媒体传输流。",
+          "example": "[\"aaa\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchStartStreamLinkFlowResponse": {
+      "document": "BatchStartStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchStopStreamLinkFlowRequest": {
+      "document": "BatchStopStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "EventId。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流Id，如果不传默认停止Event下所有的媒体传输流。",
+          "example": "[\"aaa\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchStopStreamLinkFlowResponse": {
+      "document": "BatchStopStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelInfo": {
       "document": "渠道必选入参",
       "members": [
@@ -8070,6 +8253,57 @@
       ],
       "type": "object"
     },
+    "CreateStreamLinkEventRequest": {
+      "document": "CreateStreamLinkEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件名称。",
+          "example": "aaa",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件描述。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkEventResponse": {
+      "document": "CreateStreamLinkEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的Event信息。",
+          "example": "无",
+          "member": "DescribeEvent",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStreamLinkFlowRequest": {
       "document": "CreateStreamLinkFlow请求参数结构体",
       "members": [
@@ -8959,6 +9193,35 @@
       ],
       "type": "object"
     },
+    "DeleteStreamLinkEventRequest": {
+      "document": "DeleteStreamLinkEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。",
+          "example": "aaa",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamLinkEventResponse": {
+      "document": "DeleteStreamLinkEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteStreamLinkFlowRequest": {
       "document": "DeleteStreamLinkFlow请求参数结构体",
       "members": [
@@ -9554,6 +9817,78 @@
       ],
       "type": "object"
     },
+    "DescribeEvent": {
+      "document": "查询Event的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Event的名称。",
+          "example": "eventnametest",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Event的Id，唯一标识一个event。",
+          "example": "eventidtest",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Event创建时间，格式为yyyy-MM-ddTHH:mm:ssZ。",
+          "example": "2022-12-01T20:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Event的描述。",
+          "example": "descri",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Event的状态信息\n0：未运行\n1：运行中",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Event关联的Flow列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeFlowId",
+          "name": "AttachedFlowGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeFlow": {
       "document": "查询Flow的配置信息。",
       "members": [
@@ -9655,6 +9990,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeFlowId": {
+      "document": "Event管理的Flow列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FlowId，唯一标识一个flow。",
+          "example": "flowidtest",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "flow所在的区域名称。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "DescribeHLSPullSourceAddress": {
       "document": "查询输入的HLS配置信息。",
@@ -11099,6 +11462,214 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventAttachedFlowsRequest": {
+      "document": "DescribeStreamLinkEventAttachedFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "EventId。",
+          "example": "无",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页数，默认1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页大小，默认10。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventAttachedFlowsResponse": {
+      "document": "DescribeStreamLinkEventAttachedFlows返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流的配置信息列表。",
+          "example": "无",
+          "member": "DescribeFlow",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventRequest": {
+      "document": "DescribeStreamLinkEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "媒体传输事件ID。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventResponse": {
+      "document": "DescribeStreamLinkEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体传输事件的配置信息。",
+          "example": "无",
+          "member": "DescribeEvent",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventsRequest": {
+      "document": "DescribeStreamLinkEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页数，默认1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页大小，默认10。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkEventsResponse": {
+      "document": "DescribeStreamLinkEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体传输事件的配置信息列表。",
+          "example": "无",
+          "member": "DescribeEvent",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPage",
           "required": true,
           "type": "int",
           "value_allowed_null": false,
@@ -19359,6 +19930,57 @@
     },
     "ModifySnapshotByTimeOffsetTemplateResponse": {
       "document": "ModifySnapshotByTimeOffsetTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkEventRequest": {
+      "document": "ModifyStreamLinkEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "媒体传输事件Event Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要修改的事件名称。",
+          "example": "aaa",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Event的描述信息。",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkEventResponse": {
+      "document": "ModifyStreamLinkEvent返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1,3 +1,247 @@
+# Release 3.0.782.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 27 次发布
+
+发布时间：2023-06-12 01:11:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEnterpriseSGRuleProgress](http://document.tencentcloudapi.woa.com/document/product/1132/77909)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 42 次发布
+
+发布时间：2023-06-12 01:12:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddGatewayAclRule](http://document.tencentcloudapi.woa.com/document/product/214/77923)
+* [AssociateGatewayAclGroup](http://document.tencentcloudapi.woa.com/document/product/214/77922)
+* [CreateGatewayAclGroup](http://document.tencentcloudapi.woa.com/document/product/214/77921)
+* [CreateGatewayLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/77912)
+* [DeleteGatewayAclGroup](http://document.tencentcloudapi.woa.com/document/product/214/77920)
+* [DeleteGatewayAclRule](http://document.tencentcloudapi.woa.com/document/product/214/77919)
+* [DeleteGatewayLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/77911)
+* [DescribeGatewayAclGroups](http://document.tencentcloudapi.woa.com/document/product/214/77918)
+* [DescribeGatewayAclRules](http://document.tencentcloudapi.woa.com/document/product/214/77917)
+* [DescribeTargetGroupInstanceStatus](http://document.tencentcloudapi.woa.com/document/product/214/77913)
+* [DisassociateGatewayAclGroup](http://document.tencentcloudapi.woa.com/document/product/214/77916)
+* [ModifyGatewayAclGroup](http://document.tencentcloudapi.woa.com/document/product/214/77915)
+* [ModifyGatewayLoadBalancerAttribute](http://document.tencentcloudapi.woa.com/document/product/214/77910)
+
+修改接口：
+
+* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/214/40559)
+
+	* 新增入参：Type, Protocol, HealthCheck, ScheduleAlgorithm, AutoUpdateWeight, AllDeadToAlive
+
+* [DescribeTargetGroupList](http://document.tencentcloudapi.woa.com/document/product/214/40555)
+
+	* 新增入参：Type
+
+* [DescribeTargetGroups](http://document.tencentcloudapi.woa.com/document/product/214/40554)
+
+	* 新增入参：Type
+
+* [ModifyTargetGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/214/40552)
+
+	* 新增入参：ScheduleAlgorithm, HealthCheck, AutoUpdateWeight, AllDeadToAlive
+
+
+新增数据结构：
+
+* [AclRulesInput](http://document.tencentcloudapi.woa.com/document/product/214/30694#AclRulesInput)
+* [AclRulesOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#AclRulesOutput)
+* [GatewayAclGroupSet](http://document.tencentcloudapi.woa.com/document/product/214/30694#GatewayAclGroupSet)
+* [TargetGroupHealthCheck](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupHealthCheck)
+* [TargetGroupInstanceStatus](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInstanceStatus)
+
+修改数据结构：
+
+* [GatewayLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#GatewayLoadBalancer)
+
+	* 新增成员：AssociateAclGroup
+
+	* <font color="#dd0000">**删除成员**：</font>ProjectId
+
+* [TargetGroupAssociation](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupAssociation)
+
+	* <font color="#dd0000">**修改成员**：</font>ListenerId
+
+* [TargetGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInfo)
+
+	* 新增成员：Protocol, ScheduleAlgorithm, HealthCheck, AutoUpdateWeight, AllDeadToAlive, JumboFrame
+
+* [TargetGroupInstance](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInstance)
+
+	* <font color="#dd0000">**修改成员**：</font>Port
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 18 次发布
+
+发布时间：2023-06-12 01:17:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowLogUserHostStats](http://document.tencentcloudapi.woa.com/document/product/1130/57783)
+
+	* 新增出参：UserNameItems, UserTotalCount
+
+
+新增数据结构：
+
+* [SlowLogUser](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogUser)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#InstanceInfo)
+
+	* 新增成员：ClusterId, ClusterName
+
+* [RedisKeySpaceData](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisKeySpaceData)
+
+	* 新增成员：AveElementSize, ShardId
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 24 次发布
+
+发布时间：2023-06-12 01:21:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStopServiceOrMonitor](http://document.tencentcloudapi.woa.com/document/product/589/77427)
+
+	* 新增入参：StrategyConfig
+
+
+新增数据结构：
+
+* [StrategyConfig](http://document.tencentcloudapi.woa.com/document/product/589/33981#StrategyConfig)
+
+
+
+## 物联网通信(iotcloud) 版本：2021-04-08
+
+### 第 11 次发布
+
+发布时间：2023-06-12 01:23:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProductMetadata](http://document.tencentcloudapi.woa.com/document/product/634/71973#ProductMetadata)
+
+	* 新增成员：CreateUserId, UserId
+
+* [ProductProperties](http://document.tencentcloudapi.woa.com/document/product/634/71973#ProductProperties)
+
+	* 新增成员：DeviceLimit, ForbiddenStatus
+
+
+
+
+## 物联网通信(iotcloud) 版本：2018-06-14
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 31 次发布
+
+发布时间：2023-06-12 01:27:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchDeleteStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/77933)
+* [BatchStartStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/77932)
+* [BatchStopStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/77931)
+* [CreateStreamLinkEvent](http://document.tencentcloudapi.woa.com/document/product/862/77929)
+* [DeleteStreamLinkEvent](http://document.tencentcloudapi.woa.com/document/product/862/77928)
+* [DescribeStreamLinkEvent](http://document.tencentcloudapi.woa.com/document/product/862/77927)
+* [DescribeStreamLinkEventAttachedFlows](http://document.tencentcloudapi.woa.com/document/product/862/77930)
+* [DescribeStreamLinkEvents](http://document.tencentcloudapi.woa.com/document/product/862/77926)
+* [ModifyStreamLinkEvent](http://document.tencentcloudapi.woa.com/document/product/862/77925)
+
+新增数据结构：
+
+* [DescribeEvent](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeEvent)
+* [DescribeFlowId](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlowId)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 30 次发布
+
+发布时间：2023-06-12 01:31:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHostCdnInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77805)
+
+	* 新增入参：AsyncCache
+
+	* 新增出参：AsyncTotalNum, AsyncOffset, AsyncCacheTime
+
+* [DescribeHostClbInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77804)
+
+	* 新增出参：AsyncCacheTime
+
+* [DescribeHostCosInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77803)
+
+	* 新增出参：AsyncCacheTime
+
+* [DescribeHostTkeInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77796)
+
+	* 新增出参：AsyncCacheTime
+
+
+
+
 # Release 3.0.781.1
 
 ## API 网关(apigateway) 版本：2018-08-08

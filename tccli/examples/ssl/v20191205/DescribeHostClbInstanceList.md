@@ -1,17 +1,19 @@
-**Example 1: 获取主机安全服务列表**
+**Example 1: 查询证书部署CLB实例列表**
 
-获取主机安全服务列表
+查询证书部署CLB实例列表
 
 Input: 
 
 ```
 tccli ssl DescribeHostClbInstanceList --cli-unfold-argument  \
-    --IsCache 1 \
-    --CertificateId xx \
+    --Offset 1 \
     --Limit 1 \
-    --Filters.0.FilterKey xx \
-    --Filters.0.FilterValue xx \
-    --Offset 1
+    --CertificateId abc \
+    --IsCache 1 \
+    --Filters.0.FilterKey abc \
+    --Filters.0.FilterValue abc \
+    --AsyncCache 0 \
+    --OldCertificateId abc
 ```
 
 Output: 
@@ -21,40 +23,47 @@ Output:
         "TotalCount": 1,
         "InstanceList": [
             {
+                "LoadBalancerId": "abc",
+                "LoadBalancerName": "abc",
                 "Listeners": [
                     {
-                        "Protocol": "xx",
+                        "ListenerId": "abc",
+                        "ListenerName": "abc",
+                        "SniSwitch": 1,
+                        "Protocol": "abc",
                         "Certificate": {
-                            "CertId": "xx",
+                            "CertId": "abc",
                             "DnsNames": [
-                                "xx"
+                                "abc"
                             ]
                         },
                         "Rules": [
                             {
+                                "LocationId": "abc",
+                                "Domain": "abc",
                                 "IsMatch": true,
-                                "Domain": "xx",
-                                "LocationId": "xx",
                                 "Certificate": {
-                                    "CertId": "xx",
+                                    "CertId": "abc",
                                     "DnsNames": [
-                                        "xx"
+                                        "abc"
                                     ]
-                                }
+                                },
+                                "NoMatchDomains": [
+                                    "abc"
+                                ]
                             }
                         ],
-                        "SniSwitch": 1,
-                        "ListenerId": "xx",
-                        "ListenerName": "xx"
+                        "NoMatchDomains": [
+                            "abc"
+                        ]
                     }
-                ],
-                "LoadBalancerName": "xx",
-                "LoadBalancerId": "xx"
+                ]
             }
         ],
-        "RequestId": "xx",
+        "AsyncTotalNum": 0,
         "AsyncOffset": 0,
-        "AsyncTotalNum": 0
+        "AsyncCacheTime": "abc",
+        "RequestId": "abc"
     }
 }
 ```
