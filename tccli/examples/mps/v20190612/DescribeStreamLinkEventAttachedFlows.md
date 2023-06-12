@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-请求示例
+查询媒体传输事件关联的所有媒体输入流的配置信息。
 
 Input: 
 
 ```
 tccli mps DescribeStreamLinkEventAttachedFlows --cli-unfold-argument  \
-    --EventId xx \
+    --EventId test \
     --PageNum 1 \
     --PageSize 10
 ```
@@ -17,165 +17,168 @@ Output:
     "Response": {
         "Infos": [
             {
-                "FlowName": "xx",
+                "FlowId": "abc",
+                "FlowName": "abc",
+                "State": "abc",
+                "MaxBandwidth": 0,
                 "InputGroup": [
                     {
-                        "AllowIpList": [
-                            "xx"
-                        ],
-                        "Protocol": "xx",
-                        "Description": "xx",
-                        "RTPSettings": {
-                            "IdleTimeout": 0,
-                            "FEC": "xx"
-                        },
+                        "InputId": "abc",
+                        "InputName": "abc",
+                        "Description": "abc",
+                        "Protocol": "abc",
                         "InputAddressList": [
                             {
-                                "Ip": "xx",
+                                "Ip": "abc",
                                 "Port": 0
                             }
                         ],
-                        "FailOver": "xx",
-                        "RTMPPullSettings": {
+                        "AllowIpList": [
+                            "abc"
+                        ],
+                        "SRTSettings": {
+                            "Mode": "abc",
+                            "StreamId": "abc",
+                            "Latency": 0,
+                            "RecvLatency": 0,
+                            "PeerLatency": 0,
+                            "PeerIdleTimeout": 0,
+                            "Passphrase": "abc",
+                            "PbKeyLen": 0,
                             "SourceAddresses": [
                                 {
-                                    "StreamKey": "xx",
-                                    "TcUrl": "xx"
+                                    "Ip": "abc",
+                                    "Port": 0
                                 }
                             ]
                         },
-                        "InputName": "xx",
-                        "SRTSettings": {
-                            "Latency": 0,
-                            "PeerLatency": 0,
-                            "PbKeyLen": 0,
-                            "RecvLatency": 0,
-                            "Passphrase": "xx",
-                            "StreamId": "xx",
-                            "PeerIdleTimeout": 0,
-                            "SourceAddresses": [
-                                {
-                                    "Ip": "xx",
-                                    "Port": 0
-                                }
-                            ],
-                            "Mode": "xx"
+                        "RTPSettings": {
+                            "FEC": "abc",
+                            "IdleTimeout": 0
                         },
-                        "HLSPullSettings": {
+                        "InputRegion": "abc",
+                        "RTMPSettings": {
+                            "AppName": "abc",
+                            "StreamKey": "abc"
+                        },
+                        "FailOver": "abc",
+                        "RTMPPullSettings": {
                             "SourceAddresses": [
                                 {
-                                    "Url": "xx"
+                                    "TcUrl": "abc",
+                                    "StreamKey": "abc"
                                 }
                             ]
                         },
                         "RTSPPullSettings": {
                             "SourceAddresses": [
                                 {
-                                    "Url": "xx"
+                                    "Url": "abc"
                                 }
                             ]
                         },
-                        "InputRegion": "xx",
-                        "InputId": "xx",
+                        "HLSPullSettings": {
+                            "SourceAddresses": [
+                                {
+                                    "Url": "abc"
+                                }
+                            ]
+                        },
                         "ResilientStream": {
                             "Enable": true,
                             "BufferTime": 1
-                        },
-                        "RTMPSettings": {
-                            "StreamKey": "xx",
-                            "AppName": "xx"
                         }
                     }
                 ],
-                "FlowId": "xx",
-                "State": "xx",
                 "OutputGroup": [
                     {
-                        "OutputName": "xx",
+                        "OutputId": "abc",
+                        "OutputName": "abc",
+                        "OutputType": "abc",
+                        "Description": "abc",
+                        "Protocol": "abc",
                         "OutputAddressList": [
                             {
-                                "Ip": "xx"
+                                "Ip": "abc"
                             }
                         ],
-                        "AllowIpList": [
-                            "xx"
-                        ],
-                        "Protocol": "xx",
-                        "Description": "xx",
-                        "RTPSettings": {
-                            "IdleTimeout": 0,
-                            "FEC": "xx",
+                        "OutputRegion": "abc",
+                        "SRTSettings": {
                             "Destinations": [
                                 {
-                                    "Ip": "xx",
-                                    "Port": 0
-                                }
-                            ]
-                        },
-                        "RTMPPullSettings": {
-                            "ServerUrls": [
-                                {
-                                    "StreamKey": "xx",
-                                    "TcUrl": "xx"
-                                }
-                            ]
-                        },
-                        "OutputType": "xx",
-                        "HLSPullSettings": {
-                            "ServerUrls": [
-                                {
-                                    "Url": "xx"
-                                }
-                            ]
-                        },
-                        "SRTSettings": {
-                            "Latency": 0,
-                            "PeerLatency": 0,
-                            "PbKeyLen": 0,
-                            "RecvLatency": 0,
-                            "Passphrase": "xx",
-                            "StreamId": "xx",
-                            "Mode": "xx",
-                            "PeerIdleTimeout": 0,
-                            "SourceAddresses": [
-                                {
-                                    "Ip": "xx",
+                                    "Ip": "abc",
                                     "Port": 0
                                 }
                             ],
-                            "Destinations": [
+                            "StreamId": "abc",
+                            "Latency": 0,
+                            "RecvLatency": 0,
+                            "PeerLatency": 0,
+                            "PeerIdleTimeout": 0,
+                            "Passphrase": "abc",
+                            "PbKeyLen": 0,
+                            "Mode": "abc",
+                            "SourceAddresses": [
                                 {
-                                    "Ip": "xx",
+                                    "Ip": "abc",
                                     "Port": 0
                                 }
                             ]
                         },
-                        "OutputId": "xx",
-                        "RTSPPullSettings": {
-                            "ServerUrls": [
+                        "RTPSettings": {
+                            "Destinations": [
                                 {
-                                    "Url": "xx"
+                                    "Ip": "abc",
+                                    "Port": 0
                                 }
-                            ]
+                            ],
+                            "FEC": "abc",
+                            "IdleTimeout": 0
                         },
                         "RTMPSettings": {
                             "IdleTimeout": 0,
                             "ChunkSize": 0,
                             "Destinations": [
                                 {
-                                    "Url": "xx",
-                                    "StreamKey": "xx"
+                                    "Url": "abc",
+                                    "StreamKey": "abc"
                                 }
                             ]
                         },
-                        "OutputRegion": "xx"
+                        "RTMPPullSettings": {
+                            "ServerUrls": [
+                                {
+                                    "TcUrl": "abc",
+                                    "StreamKey": "abc"
+                                }
+                            ]
+                        },
+                        "AllowIpList": [
+                            "abc"
+                        ],
+                        "RTSPPullSettings": {
+                            "ServerUrls": [
+                                {
+                                    "Url": "abc"
+                                }
+                            ]
+                        },
+                        "HLSPullSettings": {
+                            "ServerUrls": [
+                                {
+                                    "Url": "abc"
+                                }
+                            ]
+                        },
+                        "MaxConcurrent": 1
                     }
                 ],
-                "MaxBandwidth": 0
+                "EventId": "abc",
+                "Region": "abc"
             }
         ],
-        "RequestId": "xx",
-        "TotalNum": 0
+        "TotalNum": 0,
+        "RequestId": "abc"
     }
 }
 ```

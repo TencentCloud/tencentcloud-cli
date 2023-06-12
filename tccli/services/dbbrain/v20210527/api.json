@@ -1349,7 +1349,6 @@
       "document": "CreateSqlFilter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
@@ -1360,18 +1359,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cAuth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。",
           "example": "SELECT",
@@ -1382,7 +1369,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字，用于筛选SQL语句，多个关键字用英文逗号分隔，逗号不能作为关键词，多个关键词之间的关系为“逻辑与”。",
           "example": "test",
@@ -1393,7 +1379,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大并发度，取值不能小于0，如果该值设为 0，则表示限制所有匹配的SQL执行。",
           "example": "1",
@@ -1404,7 +1389,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流时长，单位秒，支持-1和小于2147483647的正整数，-1表示永不过期。",
           "example": "300",
@@ -1415,7 +1399,16 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cAuth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
@@ -1437,7 +1430,6 @@
           "example": "123",
           "member": "int64",
           "name": "FilterId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1633,22 +1625,22 @@
         },
         {
           "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cauth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "限流任务ID列表。",
           "example": "1234",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string",
           "visibility": 1
         },
         {
@@ -6122,7 +6114,6 @@
       "document": "ModifySqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
@@ -6133,18 +6124,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cauth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "SQL限流任务ID列表。",
           "example": "1234",
@@ -6155,7 +6134,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流任务状态，取值支持TERMINATED - 终止。",
           "example": "TERMINATED",
@@ -6166,7 +6144,16 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",

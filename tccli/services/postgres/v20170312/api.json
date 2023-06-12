@@ -36,23 +36,23 @@
       "status": "online"
     },
     "CreateDBInstanceNetworkAccess": {
-      "document": "可对实例进行网络的添加操作。",
+      "document": "本接口（CreateDBInstanceNetworkAccess）用于创建实例网络。",
       "input": "CreateDBInstanceNetworkAccessRequest",
-      "name": "添加实例网络",
+      "name": "创建实例网络",
       "output": "CreateDBInstanceNetworkAccessResponse",
       "status": "online"
     },
     "CreateDBInstances": {
-      "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。",
+      "document": "本接口（CreateDBInstances）用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。",
       "input": "CreateDBInstancesRequest",
-      "name": "创建实例(旧)",
+      "name": "创建实例（废弃）",
       "output": "CreateDBInstancesResponse",
       "status": "online"
     },
     "CreateInstances": {
       "document": "本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。",
       "input": "CreateInstancesRequest",
-      "name": "创建实例(新)",
+      "name": "创建实例",
       "output": "CreateInstancesResponse",
       "status": "online"
     },
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "CreateReadOnlyGroupNetworkAccess": {
-      "document": "可对RO组进行网络的添加操作。",
+      "document": "本接口（CreateReadOnlyGroupNetworkAccess）用于创建RO组的网络。",
       "input": "CreateReadOnlyGroupNetworkAccessRequest",
-      "name": "添加RO组网络",
+      "name": "创建RO组网络",
       "output": "CreateReadOnlyGroupNetworkAccessResponse",
       "status": "online"
     },
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "DescribeBaseBackups": {
-      "document": "本接口 (DescribeBaseBackups) 用于查询基础备份列表。",
+      "document": "本接口（DescribeBaseBackups）用于查询基础备份列表。",
       "input": "DescribeBaseBackupsRequest",
       "name": "查询基础备份列表",
       "output": "DescribeBaseBackupsResponse",
@@ -211,16 +211,16 @@
       "status": "online"
     },
     "DescribeDBBackups": {
-      "document": "本接口（DescribeDBBackups）用于查询实例备份列表。",
+      "document": "本接口（DescribeDBBackups）用于查询实例备份列表。本接口已废弃，推荐使用接口[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)替代。",
       "input": "DescribeDBBackupsRequest",
-      "name": "查询实例备份列表",
+      "name": "查询实例备份列表（废弃）",
       "output": "DescribeDBBackupsResponse",
       "status": "online"
     },
     "DescribeDBErrlogs": {
-      "document": "本接口（DescribeDBErrlogs）用于获取错误日志。",
+      "document": "本接口（DescribeDBErrlogs）用于查询错误日志。",
       "input": "DescribeDBErrlogsRequest",
-      "name": "获取错误日志",
+      "name": "查询错误日志",
       "output": "DescribeDBErrlogsResponse",
       "status": "online"
     },
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeDBSlowlogs": {
-      "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。已于2021.09.01日正式废弃，后续此接口将不再返回任何数据，新接口为DescribeSlowQueryList，详细请查看：https://cloud.tencent.com/document/product/409/60540",
+      "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。本接口已于2021.09.01日废弃，后续此接口将不再返回任何数据，推荐使用接口[DescribeSlowQueryList](https://cloud.tencent.com/document/api/409/60540)替代。",
       "input": "DescribeDBSlowlogsRequest",
       "name": "获取慢查询日志 （废弃）",
       "output": "DescribeDBSlowlogsResponse",
@@ -267,9 +267,9 @@
       "status": "online"
     },
     "DescribeDBXlogs": {
-      "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。",
+      "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。本接口已废弃，推荐使用接口[DescribeLogBackups](https://cloud.tencent.com/document/api/409/89021)替代。",
       "input": "DescribeDBXlogsRequest",
-      "name": "获取实例Xlog列表",
+      "name": "获取实例Xlog列表（废弃）",
       "output": "DescribeDBXlogsResponse",
       "status": "online"
     },
@@ -295,16 +295,16 @@
       "status": "online"
     },
     "DescribeLogBackups": {
-      "document": "本接口 (DescribeLogBackups) 用于查询日志备份列表。",
+      "document": "本接口（DescribeLogBackups）用于查询日志备份列表。",
       "input": "DescribeLogBackupsRequest",
       "name": "查询日志备份列表",
       "output": "DescribeLogBackupsResponse",
       "status": "online"
     },
     "DescribeOrders": {
-      "document": "本接口（DescribeOrders）用于获取订单信息。",
+      "document": "本接口（DescribeOrders）用于查询订单信息。",
       "input": "DescribeOrdersRequest",
-      "name": "获取订单信息",
+      "name": "查询订单信息",
       "output": "DescribeOrdersResponse",
       "status": "online"
     },
@@ -323,16 +323,16 @@
       "status": "online"
     },
     "DescribeParamsEvent": {
-      "document": "获取参数修改事件详情",
+      "document": "本接口 (DescribeParamsEvent) 用于查询参数修改事件详情。",
       "input": "DescribeParamsEventRequest",
-      "name": "获取参数修改事件详情",
+      "name": "查询参数修改事件详情",
       "output": "DescribeParamsEventResponse",
       "status": "online"
     },
     "DescribeProductConfig": {
-      "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
+      "document": "本接口（DescribeProductConfig）用于查询售卖规格配置。本接口已废弃，推荐使用新接口[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)。",
       "input": "DescribeProductConfigRequest",
-      "name": "查询售卖规格配置",
+      "name": "查询售卖规格配置（废弃）",
       "output": "DescribeProductConfigResponse",
       "status": "online"
     },
@@ -393,9 +393,9 @@
       "status": "online"
     },
     "InitDBInstances": {
-      "document": "本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。",
+      "document": "本接口（InitDBInstances）用于初始化云数据库PostgreSQL实例。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。",
       "input": "InitDBInstancesRequest",
-      "name": "初始化实例",
+      "name": "初始化实例（废弃）",
       "output": "InitDBInstancesResponse",
       "status": "online"
     },
@@ -449,7 +449,7 @@
       "status": "online"
     },
     "ModifyBaseBackupExpireTime": {
-      "document": "本接口（DeleteBaseBackup）用于修改实例指定全量备份的过期时间。",
+      "document": "本接口（ModifyBaseBackupExpireTime）用于修改实例指定全量备份的过期时间。",
       "input": "ModifyBaseBackupExpireTimeRequest",
       "name": "修改基础备份过期时间",
       "output": "ModifyBaseBackupExpireTimeResponse",
@@ -500,7 +500,7 @@
     "ModifyDBInstanceSpec": {
       "document": "本接口（ModifyDBInstanceSpec）用于调整实例规格，包括内存、磁盘。",
       "input": "ModifyDBInstanceSpecRequest",
-      "name": "调整实例规格（新）",
+      "name": "调整实例规格",
       "output": "ModifyDBInstanceSpecResponse",
       "status": "online"
     },
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "UpgradeDBInstance": {
-      "document": "本接口（UpgradeDBInstance）用于升级实例配置。",
+      "document": "本接口（UpgradeDBInstance）用于升级实例配置。本接口已废弃，推荐使用接口[ModifyDBInstanceSpec](https://cloud.tencent.com/document/api/409/63689)替代。",
       "input": "UpgradeDBInstanceRequest",
       "name": "升级实例配置（废弃）",
       "output": "UpgradeDBInstanceResponse",
@@ -1680,7 +1680,6 @@
       "document": "CreateDBInstanceNetworkAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如：postgres-6bwgamo3。",
           "example": "postgres-6bwgamo3",
@@ -1691,7 +1690,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络统一 ID。",
           "example": "vpc-gaestjaf",
@@ -1702,7 +1700,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID。",
           "example": "subnet-4s9dejli",
@@ -1713,7 +1710,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否指定分配vip true-指定分配  false-自动分配。",
           "example": "true",
@@ -1724,7 +1720,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标VIP地址。",
           "example": "无",
@@ -1746,7 +1741,6 @@
           "example": "1234",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1764,9 +1758,8 @@
       "document": "CreateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "document": "售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。",
           "example": "无",
           "member": "string",
           "name": "SpecCode",
@@ -1775,7 +1768,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例容量大小，单位：GB。",
           "example": "无",
@@ -1786,7 +1778,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一次性购买的实例数量。取值1-100",
           "example": "无",
@@ -1797,7 +1788,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
           "example": "无",
@@ -1808,7 +1798,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
           "example": "无",
@@ -1819,7 +1808,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID。",
           "example": "无",
@@ -1830,7 +1818,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。",
           "example": "12.4",
@@ -1841,9 +1828,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。",
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
@@ -1852,7 +1838,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
           "example": "无",
@@ -1863,7 +1848,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
@@ -1874,7 +1858,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID。",
           "example": "无",
@@ -1885,7 +1868,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络子网ID。",
           "example": "无",
@@ -1896,7 +1878,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标记：0-正常续费（默认）；1-自动续费；",
           "example": "无",
@@ -1907,7 +1888,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID",
           "example": "无",
@@ -1918,7 +1898,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名(后续支持)",
           "example": "无",
@@ -1929,7 +1908,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要支持Ipv6，1：是，0：否",
           "example": "无",
@@ -1940,7 +1918,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例需要绑定的Tag信息，默认为空",
           "example": "无",
@@ -1951,7 +1928,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组id",
           "example": "无",
@@ -1962,7 +1938,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。",
           "example": "12",
@@ -1973,7 +1948,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。",
           "example": "v12.4_r1.0",
@@ -1995,7 +1969,6 @@
           "example": "无",
           "member": "string",
           "name": "DealNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2006,7 +1979,6 @@
           "example": "无",
           "member": "string",
           "name": "BillId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2017,7 +1989,6 @@
           "example": "无",
           "member": "string",
           "name": "DBInstanceIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2035,9 +2006,8 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "document": "售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。",
           "example": "无",
           "member": "string",
           "name": "SpecCode",
@@ -2046,7 +2016,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例容量大小，单位：GB。",
           "example": "无",
@@ -2057,7 +2026,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一次性购买的实例数量。取值1-10。",
           "example": "无",
@@ -2068,7 +2036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
           "example": "无",
@@ -2079,7 +2046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
           "example": "无",
@@ -2090,7 +2056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例字符集，目前只支持：UTF8、LATIN1。",
           "example": "UTF8",
@@ -2101,7 +2066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例根账号用户名。",
           "example": "无",
@@ -2112,7 +2076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例根账号用户名对应的密码。",
           "example": "无",
@@ -2123,7 +2086,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID。",
           "example": "无",
@@ -2134,7 +2096,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。",
           "example": "12.4",
@@ -2145,9 +2106,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。",
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2156,7 +2116,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
           "example": "无",
@@ -2167,7 +2126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
@@ -2178,7 +2136,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID。",
           "example": "无",
@@ -2189,7 +2146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已配置的私有网络中的子网ID。",
           "example": "无",
@@ -2200,7 +2156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标记：0-正常续费（默认）；1-自动续费。",
           "example": "无",
@@ -2211,7 +2166,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID。",
           "example": "无",
@@ -2222,7 +2176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名。",
           "example": "无",
@@ -2233,7 +2186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要支持Ipv6，1：是，0：否（默认）。",
           "example": "无",
@@ -2244,7 +2196,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例需要绑定的Tag信息，默认为空。",
           "example": "无",
@@ -2255,7 +2206,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID。",
           "example": "无",
@@ -2266,7 +2216,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。",
           "example": "12",
@@ -2277,7 +2226,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。",
           "example": "v12.4_r1.0",
@@ -2288,7 +2236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例节点信息，购买跨可用区实例时填写。",
           "example": "无",
@@ -2299,7 +2246,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要支持数据透明加密，1：是，0：否（默认）。",
           "example": "1",
@@ -2310,7 +2256,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。",
           "example": "无",
@@ -2321,7 +2266,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。",
           "example": "ap-guangzhou",
@@ -2332,7 +2276,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
           "example": "postgresql",
@@ -2343,7 +2286,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎的配置信息，配置格式如下：\n{\"$key1\":\"$value1\", \"$key2\":\"$value2\"}\n\n各引擎支持如下：\n1、mssql_compatible引擎：\nmigrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。\ndefaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：\n\"af_ZA\", \"sq_AL\", \"ar_DZ\", \"ar_BH\", \"ar_EG\", \"ar_IQ\", \"ar_JO\", \"ar_KW\", \"ar_LB\", \"ar_LY\", \"ar_MA\", \"ar_OM\", \"ar_QA\", \"ar_SA\", \"ar_SY\", \"ar_TN\", \"ar_AE\", \"ar_YE\", \"hy_AM\", \"az_Cyrl_AZ\", \"az_Latn_AZ\", \"eu_ES\", \"be_BY\", \"bg_BG\", \"ca_ES\", \"zh_HK\", \"zh_MO\", \"zh_CN\", \"zh_SG\", \"zh_TW\", \"hr_HR\", \"cs_CZ\", \"da_DK\", \"nl_BE\", \"nl_NL\", \"en_AU\", \"en_BZ\", \"en_CA\", \"en_IE\", \"en_JM\", \"en_NZ\", \"en_PH\", \"en_ZA\", \"en_TT\", \"en_GB\", \"en_US\", \"en_ZW\", \"et_EE\", \"fo_FO\", \"fa_IR\", \"fi_FI\", \"fr_BE\", \"fr_CA\", \"fr_FR\", \"fr_LU\", \"fr_MC\", \"fr_CH\", \"mk_MK\", \"ka_GE\", \"de_AT\", \"de_DE\", \"de_LI\", \"de_LU\", \"de_CH\", \"el_GR\", \"gu_IN\", \"he_IL\", \"hi_IN\", \"hu_HU\", \"is_IS\", \"id_ID\", \"it_IT\", \"it_CH\", \"ja_JP\", \"kn_IN\", \"kok_IN\", \"ko_KR\", \"ky_KG\", \"lv_LV\", \"lt_LT\", \"ms_BN\", \"ms_MY\", \"mr_IN\", \"mn_MN\", \"nb_NO\", \"nn_NO\", \"pl_PL\", \"pt_BR\", \"pt_PT\", \"pa_IN\", \"ro_RO\", \"ru_RU\", \"sa_IN\", \"sr_Cyrl_RS\", \"sr_Latn_RS\", \"sk_SK\", \"sl_SI\", \"es_AR\", \"es_BO\", \"es_CL\", \"es_CO\", \"es_CR\", \"es_DO\", \"es_EC\", \"es_SV\", \"es_GT\", \"es_HN\", \"es_MX\", \"es_NI\", \"es_PA\", \"es_PY\",\"es_PE\", \"es_PR\", \"es_ES\", \"es_TRADITIONAL\", \"es_UY\", \"es_VE\", \"sw_KE\", \"sv_FI\", \"sv_SE\", \"tt_RU\", \"te_IN\", \"th_TH\", \"tr_TR\", \"uk_UA\", \"ur_IN\", \"ur_PK\", \"uz_Cyrl_UZ\", \"uz_Latn_UZ\", \"vi_VN\"。\nserverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下：\n\"bbf_unicode_general_ci_as\", \"bbf_unicode_cp1_ci_as\", \"bbf_unicode_CP1250_ci_as\", \"bbf_unicode_CP1251_ci_as\", \"bbf_unicode_cp1253_ci_as\", \"bbf_unicode_cp1254_ci_as\", \"bbf_unicode_cp1255_ci_as\", \"bbf_unicode_cp1256_ci_as\", \"bbf_unicode_cp1257_ci_as\", \"bbf_unicode_cp1258_ci_as\", \"bbf_unicode_cp874_ci_as\", \"sql_latin1_general_cp1250_ci_as\", \"sql_latin1_general_cp1251_ci_as\", \"sql_latin1_general_cp1_ci_as\", \"sql_latin1_general_cp1253_ci_as\", \"sql_latin1_general_cp1254_ci_as\", \"sql_latin1_general_cp1255_ci_as\",\"sql_latin1_general_cp1256_ci_as\", \"sql_latin1_general_cp1257_ci_as\", \"sql_latin1_general_cp1258_ci_as\", \"chinese_prc_ci_as\", \"cyrillic_general_ci_as\", \"finnish_swedish_ci_as\", \"french_ci_as\", \"japanese_ci_as\", \"korean_wansung_ci_as\", \"latin1_general_ci_as\", \"modern_spanish_ci_as\", \"polish_ci_as\", \"thai_ci_as\", \"traditional_spanish_ci_as\", \"turkish_ci_as\", \"ukrainian_ci_as\", \"vietnamese_ci_as\"。",
           "example": "无",
@@ -2365,7 +2307,6 @@
           "example": "无",
           "member": "string",
           "name": "DealNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2376,7 +2317,6 @@
           "example": "无",
           "member": "string",
           "name": "BillId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2387,7 +2327,6 @@
           "example": "无",
           "member": "string",
           "name": "DBInstanceIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2749,7 +2688,6 @@
       "document": "CreateReadOnlyGroupNetworkAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "RO组ID，形如：pgro-4t9c6g7k。",
           "example": "pgro-4t9c6g7k",
@@ -2760,7 +2698,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络统一 ID。",
           "example": "vpc-gaestjaf",
@@ -2771,7 +2708,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID。",
           "example": "subnet-4s9dejli",
@@ -2782,7 +2718,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否指定分配vip true-指定分配  false-自动分配。",
           "example": "true",
@@ -2793,7 +2728,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标VIP地址。",
           "example": "无",
@@ -2815,7 +2749,6 @@
           "example": "1234",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4932,7 +4865,6 @@
       "document": "DescribeDBBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-4wdeb0zv。",
           "example": "postgres-6fego161",
@@ -4943,7 +4875,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式（1-全量）。目前只支持全量，取值为1。",
           "example": "1",
@@ -4954,7 +4885,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
           "example": "2018-06-10 17:06:38",
@@ -4965,7 +4895,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，形如2018-06-10 17:06:38",
           "example": "2018-06-11 17:06:38",
@@ -4976,7 +4905,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份列表分页返回，每页返回数量，默认为 20，最小为1，最大值为 100。（当该参数不传或者传0时按默认值处理）",
           "example": "20",
@@ -4987,7 +4915,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果中的第几页，从第0页开始。默认为0。",
           "example": "0",
@@ -5009,7 +4936,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5020,7 +4946,6 @@
           "example": "无",
           "member": "DBBackup",
           "name": "BackupList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5038,9 +4963,8 @@
       "document": "DescribeDBErrlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "实例ID，形如postgres-5bq3wfjd",
+          "document": "实例ID。\t",
           "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
@@ -5049,9 +4973,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前",
+          "document": "查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。\t",
           "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
@@ -5060,9 +4983,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "查询结束时间，形如2018-01-01 00:00:00",
+          "document": "查询结束时间，形如2018-01-01 00:00:00。\t",
           "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
@@ -5071,10 +4993,9 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "数据库名字",
-          "example": "”postgres-xxx“",
+          "document": "数据库名字。",
+          "example": "postgres-xxx",
           "member": "string",
           "name": "DatabaseName",
           "required": false,
@@ -5082,9 +5003,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "搜索关键字。",
           "example": "test",
           "member": "string",
           "name": "SearchKeys",
@@ -5093,9 +5013,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页返回，每页返回的最大数量。取值为1-100",
+          "document": "每页显示数量，取值范围为1-100。默认值为50。\t",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5104,9 +5023,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页返回，返回第几页的数据，从第0页开始计数",
+          "document": "数据偏移量，从0开始。默认值为0。\t",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5122,22 +5040,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次调用返回了多少条数据",
+          "document": "查询到的日志数量，最大值为10000条。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "错误日志列表",
+          "document": "错误日志详细信息集合。",
           "example": "无",
           "member": "ErrLogDetail",
           "name": "Details",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5403,7 +5319,6 @@
       "document": "DescribeDBSlowlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-lnp6j617",
           "example": "postgres-apzvwncr",
@@ -5414,7 +5329,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
           "example": "2018-06-10 17:06:38",
@@ -5425,7 +5339,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，形如2018-06-10 17:06:38",
           "example": "2018-06-11 17:06:38",
@@ -5436,7 +5349,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名字",
           "example": "”postgres-xx“",
@@ -5447,7 +5359,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照何种指标排序，取值为sum_calls或者sum_cost_time。sum_calls-总调用次数；sum_cost_time-总的花费时间",
           "example": "sum_call",
@@ -5458,7 +5369,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则。desc-降序；asc-升序",
           "example": "desc",
@@ -5469,7 +5379,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回结果，每页最大返回数量，取值为1-100，默认20",
           "example": "10",
@@ -5480,7 +5389,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回结果，返回结果的第几页，从0开始计数",
           "example": "0",
@@ -5502,7 +5410,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5513,7 +5420,6 @@
           "example": "无",
           "member": "SlowlogDetail",
           "name": "Detail",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -5558,7 +5464,6 @@
       "document": "DescribeDBXlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-4wdeb0zv。",
           "example": "postgres-apzvwncr",
@@ -5569,7 +5474,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
           "example": "2018-06-10 17:06:38",
@@ -5580,7 +5484,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，形如2018-06-10 17:06:38",
           "example": "2018-06-11 17:06:38",
@@ -5591,7 +5494,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，表示返回第几页的条目。从第0页开始计数。",
           "example": "0",
@@ -5602,7 +5504,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，表示每页有多少条目。取值为1-100。",
           "example": "100",
@@ -5624,7 +5525,6 @@
           "example": "6",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5635,7 +5535,6 @@
           "example": "无",
           "member": "Xlog",
           "name": "XlogList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5795,7 +5694,6 @@
       "document": "DescribeLogBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份的最小结束时间，形如2018-01-01 00:00:00。默认为7天前。",
           "example": "2018-06-10 17:06:38",
@@ -5806,7 +5704,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的最大结束时间，形如2018-01-01 00:00:00。默认为当前时间。",
           "example": "2018-06-10 17:06:38",
@@ -5817,7 +5714,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
           "example": "无",
@@ -5828,7 +5724,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
           "example": "20",
@@ -5839,7 +5734,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，从0开始。",
           "example": "0",
@@ -5850,7 +5744,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持StartTime,FinishTime,Size。",
           "example": "StartTime",
@@ -5861,7 +5754,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，包括升序：asc，降序：desc。",
           "example": "asc",
@@ -5883,7 +5775,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5894,7 +5785,6 @@
           "example": "无",
           "member": "LogBackup",
           "name": "LogBackupSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5912,7 +5802,6 @@
       "document": "DescribeOrders请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单名集合",
           "example": "[\"20180615110033\\n\"]",
@@ -5934,7 +5823,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5945,7 +5833,6 @@
           "example": "无",
           "member": "PgDeal",
           "name": "Deals",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6164,7 +6051,6 @@
       "document": "DescribeParamsEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例DB ID",
           "example": "”postgres-xxx\"",
@@ -6186,7 +6072,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6197,7 +6082,6 @@
           "example": "无",
           "member": "EventItem",
           "name": "EventItems",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6215,7 +6099,6 @@
       "document": "DescribeProductConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称",
           "example": "ap-guangzhou-2",
@@ -6226,7 +6109,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
           "example": "postgresql",
@@ -6248,7 +6130,6 @@
           "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -7217,7 +7098,6 @@
       "document": "InitDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID集合。",
           "example": "[\"postgres-6fego161\\n\"]",
@@ -7228,7 +7108,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例根账号用户名。",
           "example": "testuser",
@@ -7239,7 +7118,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例根账号用户名对应的密码。",
           "example": "testuser%40123",
@@ -7250,7 +7128,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例字符集，目前只支持：UTF8、LATIN1。",
           "example": "UTF8",
@@ -7272,7 +7149,6 @@
           "example": "[\"postgres-6fego161\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -7290,7 +7166,6 @@
       "document": "InquiryPriceCreateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-2",
@@ -7301,9 +7176,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。",
+          "document": "规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。",
           "example": "cdb.pg.z1.2g",
           "member": "string",
           "name": "SpecCode",
@@ -7312,7 +7186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储容量大小，单位：GB。",
           "example": "100",
@@ -7323,7 +7196,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量。目前最大数量不超过100，如需一次性创建更多实例，请联系客服支持。",
           "example": "1",
@@ -7334,7 +7206,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。",
           "example": "1",
@@ -7345,7 +7216,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。",
           "example": "11004",
@@ -7356,7 +7226,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。",
           "example": "PREPAID",
@@ -7367,7 +7236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型，默认primary，支持如下：\nprimary（双机高可用（一主一从））\nreadonly（只读实例）",
           "example": "primary",
@@ -7378,7 +7246,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB引擎，默认postgresql，支持如下：\npostgresql（云数据库PostgreSQL）\nmssql_compatible（MSSQL兼容-云数据库PostgreSQL）",
           "example": "postgresql",
@@ -7400,7 +7267,6 @@
           "example": "27600",
           "member": "uint64",
           "name": "OriginalPrice",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7411,7 +7277,6 @@
           "example": "27600",
           "member": "uint64",
           "name": "Price",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7422,7 +7287,6 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7955,7 +7819,6 @@
       "document": "ModifyBaseBackupExpireTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "postgres-xxxxxxxx",
@@ -7966,7 +7829,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础备份ID。",
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
@@ -7977,7 +7839,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新过期时间。",
           "example": "2006-01-02 15:04:05",
@@ -8350,7 +8211,6 @@
       "document": "ModifyDBInstanceSpec请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如：postgres-6bwgamo3。",
           "example": "postgres-6bwgamo3",
@@ -8361,7 +8221,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的实例内存大小，单位GiB。",
           "example": "1000",
@@ -8372,7 +8231,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的实例磁盘大小，单位GiB。",
           "example": "16",
@@ -8383,7 +8241,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券,1是,0否，默认不使用。",
           "example": "0",
@@ -8394,7 +8251,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
@@ -8405,7 +8261,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID。",
           "example": "0",
@@ -8416,7 +8271,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。",
           "example": "1",
@@ -8427,7 +8281,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:00:00",
@@ -8438,7 +8291,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:30:00",
@@ -8460,7 +8312,6 @@
           "example": "201806127634",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -8471,7 +8322,6 @@
           "example": "123",
           "member": "string",
           "name": "BillId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11117,7 +10967,6 @@
       "document": "UpgradeDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "升级后的实例内存大小，单位GB",
           "example": "2",
@@ -11128,7 +10977,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升级后的实例磁盘大小，单位GB",
           "example": "200",
@@ -11139,7 +10987,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-lnp6j617",
           "example": "postgres-6bwgamo3",
@@ -11150,7 +10997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券,1是,0否，默认不使用",
           "example": "0",
@@ -11161,7 +11007,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID列表，目前仅支持指定一张代金券",
           "example": "无",
@@ -11172,7 +11017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID",
           "example": "无",
@@ -11183,7 +11027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
           "example": "0",
@@ -11194,7 +11037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换开始时间",
           "example": "8:30:00",
@@ -11205,7 +11047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换截止时间",
           "example": "8:30:00",
@@ -11227,7 +11068,6 @@
           "example": "201806127634",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11238,7 +11078,6 @@
           "example": "123",
           "member": "string",
           "name": "BillId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

@@ -238,9 +238,9 @@
     ],
     "DescribeAutoScalingAdvices": [
       {
-        "document": "",
+        "document": "查询伸缩组asg-2pvrsyog的配置建议",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingAdvices\n<公共请求参数>\n\n{\n    \"AutoScalingGroupIds\": [\n        \"asg-2pvrsyog\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoScalingAdviceSet\": [\n            {\n                \"AutoScalingGroupId\": \"asg-2pvrsyog\",\n                \"Level\": \"WARNING\",\n                \"Advices\": [\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-1` is invalid.\"\n                    },\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-4` is invalid.\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5f7c48b7-222b-4f13-ae5e-978716b49f1c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoScalingAdviceSet\": [\n            {\n                \"AutoScalingGroupId\": \"asg-2pvrsyog\",\n                \"Level\": \"WARNING\",\n                \"Advices\": [\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-1` is invalid.\",\n                        \"Level\": \"WARNING\"\n                    },\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-4` is invalid.\",\n                        \"Level\": \"WARNING\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5f7c48b7-222b-4f13-ae5e-978716b49f1c\"\n    }\n}",
         "title": "查询伸缩组配置建议"
       }
     ],
@@ -498,7 +498,7 @@
     ],
     "ScaleOutInstances": [
       {
-        "document": "",
+        "document": "伸缩组asg-12yqet78扩容一台实例",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12yqet78\",\n    \"ScaleOutNumber\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-k1q8oaz6\",\n        \"RequestId\": \"6af368fd-35ff-4dcc-b302-35c378f2cccb\"\n    }\n}",
         "title": "伸缩组扩容一台实例"

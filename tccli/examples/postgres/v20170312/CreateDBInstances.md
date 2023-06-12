@@ -1,6 +1,6 @@
 **Example 1: 创建PostgreSQL实例**
 
-
+新购实例
 
 Input: 
 

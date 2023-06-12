@@ -5964,7 +5964,6 @@
       "document": "BatchDeleteStreamLinkFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EventId。",
           "example": "eventid",
@@ -5975,7 +5974,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。",
           "example": "[\"aaa\"]",
@@ -6004,7 +6002,6 @@
       "document": "BatchStartStreamLinkFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EventId。",
           "example": "eventid",
@@ -6015,7 +6012,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Event关联的流Id数组，如果不传默认启动Event下面的所有媒体传输流。",
           "example": "[\"aaa\"]",
@@ -6044,7 +6040,6 @@
       "document": "BatchStopStreamLinkFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EventId。",
           "example": "eventid",
@@ -6055,7 +6050,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流Id，如果不传默认停止Event下所有的媒体传输流。",
           "example": "[\"aaa\"]",
@@ -8376,7 +8370,6 @@
       "document": "CreateStreamLinkInput请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体传输流ID。",
           "example": "aaa",
@@ -8387,7 +8380,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流的输入组。",
           "example": "无",
@@ -8409,7 +8401,6 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -9893,7 +9884,6 @@
       "document": "查询Flow的配置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流Id。",
           "example": "无",
@@ -9905,7 +9895,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流名称。",
           "example": "无",
@@ -9917,7 +9906,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流状态，目前有IDLE/RUNNING。",
           "example": "IDLE",
@@ -9929,7 +9917,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大带宽值。",
           "example": "无",
@@ -9941,7 +9928,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入组。",
           "example": "无",
@@ -9953,7 +9939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出组。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9965,7 +9950,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该Flow关联的媒体传输事件EventId。",
           "example": "eventid",
@@ -9977,7 +9961,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体传输输入流所属的区域，取值和InputRegion相同。",
           "example": "ap-shanghai",
@@ -11480,7 +11463,6 @@
       "document": "DescribeStreamLinkEventAttachedFlows请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EventId。",
           "example": "无",
@@ -11491,7 +11473,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页数，默认1。",
           "example": "1",
@@ -11502,9 +11483,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "每页大小，默认10。",
+          "document": "每页大小，默认1000。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -11524,7 +11504,6 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Infos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -11535,7 +11514,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

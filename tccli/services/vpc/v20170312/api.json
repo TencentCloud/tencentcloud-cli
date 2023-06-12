@@ -18742,13 +18742,14 @@
       "document": "DescribeIp6TranslatorQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询IPV6转换实例的唯一ID列表，形如ip6-xxxxxxxx",
+          "example": "无",
           "member": "string",
           "name": "Ip6TranslatorIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -18759,10 +18760,12 @@
         {
           "disabled": false,
           "document": "账户在指定地域的IPV6转换实例及规则配额信息\nQUOTAID属性是TOTAL_TRANSLATOR_QUOTA，表示账户在指定地域的IPV6转换实例配额信息；QUOTAID属性是IPV6转换实例唯一ID（形如ip6-xxxxxxxx），表示账户在该转换实例允许创建的转换规则配额",
+          "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18777,40 +18780,44 @@
       "document": "DescribeIp6Translators请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例唯一ID数组，形如ip6-xxxxxxxx",
+          "example": "无",
           "member": "string",
           "name": "Ip6TranslatorIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`Ip6TranslatorIds`和`Filters`。详细的过滤条件如下：\n<li> ip6-translator-id - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的唯一ID过滤,形如ip6-xxxxxxx。</li>\n<li> ip6-translator-vip6 - String - 是否必填：否 - （过滤条件）按照IPV6地址过滤。不支持模糊过滤。</li>\n<li> ip6-translator-name - String - 是否必填：否 - （过滤条件）按照IPV6转换实例名称过滤。不支持模糊过滤。</li>\n<li> ip6-translator-status - String - 是否必填：否 - （过滤条件）按照IPV6转换实例的状态过滤。状态取值范围为\"CREATING\",\"RUNNING\",\"DELETING\",\"MODIFYING\"",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -18821,18 +18828,22 @@
         {
           "disabled": false,
           "document": "符合过滤条件的IPV6转换实例数量。",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "符合过滤条件的IPV6转换实例详细信息",
+          "example": "无",
           "member": "Ip6Translator",
           "name": "Ip6TranslatorSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23289,22 +23300,24 @@
       "document": "DescribeTaskResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异步任务ID。TaskId和DealName必填一个参数",
+          "example": "无",
           "member": "uint64",
           "name": "TaskId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费订单号。TaskId和DealName必填一个参数",
+          "example": "无",
           "member": "string",
           "name": "DealName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23315,18 +23328,22 @@
         {
           "disabled": false,
           "document": "任务ID",
+          "example": "无",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "执行结果，包括\"SUCCESS\", \"FAILED\", \"RUNNING\"",
+          "example": "无",
           "member": "string",
           "name": "Result",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

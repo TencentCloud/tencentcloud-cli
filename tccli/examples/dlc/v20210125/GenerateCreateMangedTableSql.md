@@ -25,6 +25,14 @@ tccli dlc GenerateCreateMangedTableSql --cli-unfold-argument  \
     --TableBaseInfo.GovernPolicy.ExpiredSnapshotsPolicy.BeforeDays 0 \
     --TableBaseInfo.GovernPolicy.ExpiredSnapshotsPolicy.MaxConcurrentDeletes 0 \
     --TableBaseInfo.GovernPolicy.ExpiredSnapshotsPolicy.IntervalMin 0 \
+    --TableBaseInfo.GovernPolicy.RemoveOrphanFilesPolicy.RemoveOrphanFilesEnable abc \
+    --TableBaseInfo.GovernPolicy.RemoveOrphanFilesPolicy.Engine abc \
+    --TableBaseInfo.GovernPolicy.RemoveOrphanFilesPolicy.BeforeDays 0 \
+    --TableBaseInfo.GovernPolicy.RemoveOrphanFilesPolicy.MaxConcurrentDeletes 0 \
+    --TableBaseInfo.GovernPolicy.RemoveOrphanFilesPolicy.IntervalMin 0 \
+    --TableBaseInfo.GovernPolicy.MergeManifestsPolicy.MergeManifestsEnable abc \
+    --TableBaseInfo.GovernPolicy.MergeManifestsPolicy.Engine abc \
+    --TableBaseInfo.GovernPolicy.MergeManifestsPolicy.IntervalMin 0 \
     --TableBaseInfo.GovernPolicy.InheritDataBase abc \
     --TableBaseInfo.DbGovernPolicyIsDisable abc \
     --Columns.0.Name abc \

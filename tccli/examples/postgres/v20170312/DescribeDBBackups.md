@@ -1,6 +1,6 @@
 **Example 1: 查询实例postgres-6fego161备份列表**
 
-
+查询postgres-6fego161数据库实例在2018-06-10 17:06:38至2018-06-11 17:06:38时间内的全量备份列表。
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
         "TotalCount": 2,
         "BackupList": [
             {
-                "SetId": "xx",
+                "SetId": "f77ecd1a-087c-5c66-8c35-95c835d7ec24",
                 "Status": 2,
                 "InternalAddr": "http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=",
                 "StartTime": "2018-06-22 01:56:01.181971",
@@ -37,7 +37,7 @@ Output:
                 "Size": 3654968
             },
             {
-                "SetId": "xx",
+                "SetId": "f6yecd1a-087c-5c66-cdas-95c835d7ec24",
                 "Status": 2,
                 "InternalAddr": "http://172.16.16.30:8366/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=",
                 "StartTime": "2018-06-21 01:55:04.199169",

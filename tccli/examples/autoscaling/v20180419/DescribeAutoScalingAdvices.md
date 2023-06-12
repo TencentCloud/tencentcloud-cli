@@ -1,6 +1,6 @@
 **Example 1: 查询伸缩组配置建议**
 
-
+查询伸缩组asg-2pvrsyog的配置建议
 
 Input: 
 
@@ -21,12 +21,14 @@ Output:
                     {
                         "Problem": "InvalidInstanceType",
                         "Solution": "It is recommended to replace the invalid instance type.",
-                        "Detail": "Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-1` is invalid."
+                        "Detail": "Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-1` is invalid.",
+                        "Level": "WARNING"
                     },
                     {
                         "Problem": "InvalidInstanceType",
                         "Solution": "It is recommended to replace the invalid instance type.",
-                        "Detail": "Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-4` is invalid."
+                        "Detail": "Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-4` is invalid.",
+                        "Level": "WARNING"
                     }
                 ]
             }

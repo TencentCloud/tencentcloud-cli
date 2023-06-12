@@ -292,6 +292,22 @@
         "title": "删除命名空间"
       }
     ],
+    "DeleteRabbitMQUser": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-xxx\",\n    \"User\": \"test_user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "删除RabbitMQ用户"
+      }
+    ],
+    "DeleteRabbitMQVirtualHost": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "删除RabbitMQ的vhost"
+      }
+    ],
     "DeleteRocketMQCluster": [
       {
         "document": "",
@@ -580,6 +596,14 @@
         "title": "RabbitMQ专享版查询节点列表"
       }
     ],
+    "DescribeRabbitMQUser": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"RabbitMQUserList\": [\n            {\n                \"InstanceId\": \"amqp-xxx\",\n                \"User\": \"testVhost\",\n                \"Password\": \"123\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询RabbitMQ 用户列表"
+      }
+    ],
     "DescribeRabbitMQVipInstance": [
       {
         "document": "-",
@@ -594,6 +618,22 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVipInstances\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Instances\": [\n            {\n                \"Status\": 1,\n                \"PayMode\": 1,\n                \"Remark\": \"xx\",\n                \"AutoRenewFlag\": 1,\n                \"InstanceId\": \"xx\",\n                \"NodeCount\": 1,\n                \"ExpireTime\": 1,\n                \"InstanceVersion\": \"xx\",\n                \"MaxStorage\": 1,\n                \"MaxBandWidth\": 1,\n                \"SpecName\": \"xx\",\n                \"ConfigDisplay\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"MaxTps\": 1\n            }\n        ]\n    }\n}",
         "title": "获取实例列表"
+      }
+    ],
+    "DescribeRabbitMQVirtualHost": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVhost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"VirtualHostList\": [\n            {\n                \"InstanceId\": \"amqp-xxx\",\n                \"VirtualHost\": \"testVhost\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询RabbitMQ vhost列表"
+      }
+    ],
+    "DescribeRabbitMQVirtualHostList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVirtualHostList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取虚拟机列表"
       }
     ],
     "DescribeRocketMQCluster": [
@@ -764,12 +804,28 @@
         "title": "修改环境角色授权"
       }
     ],
+    "ModifyRabbitMQUser": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "修改RabbitMQ用户"
+      }
+    ],
     "ModifyRabbitMQVipInstance": [
       {
         "document": "修改RabbitMQ专享版实例",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"Remark\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dgdsfgdsfdghngesfds\",\n        \"InstanceId\": \"amqp-44w9928j\"\n    }\n}",
         "title": "修改RabbitMQ专享版实例"
+      }
+    ],
+    "ModifyRabbitMQVirtualHost": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "修改RabbitMQ的vhost"
       }
     ],
     "ModifyRocketMQCluster": [

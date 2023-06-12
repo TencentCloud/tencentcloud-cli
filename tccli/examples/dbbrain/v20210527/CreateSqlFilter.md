@@ -1,13 +1,12 @@
 **Example 1: 创建实例SQL限流任务**
 
-
+创建实例SQL限流任务
 
 Input: 
 
 ```
 tccli dbbrain CreateSqlFilter --cli-unfold-argument  \
     --InstanceId cdb-test \
-    --SessionToken cAuth \
     --SqlType SELECT \
     --FilterKey t1,t2 \
     --MaxConcurrency 1 \

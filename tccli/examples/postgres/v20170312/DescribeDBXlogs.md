@@ -1,6 +1,6 @@
 **Example 1: 获取实例postgres-apzvwncr的Xlog列表**
 
-
+获取实例postgres-apzvwncr在2018-06-10 17:06:38至2018-06-11 17:06:38时间内的Xlog列表。
 
 Input: 
 

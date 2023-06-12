@@ -6,50 +6,51 @@ Input:
 
 ```
 tccli ssl DescribeHostUpdateRecordDetail --cli-unfold-argument  \
-    --DeployRecordId 1
+    --DeployRecordId abc \
+    --Limit abc \
+    --Offset abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "SuccessTotalCount": 1,
-        "FailedTotalCount": 0,
-        "RunningTotalCount": 0,
+        "TotalCount": 0,
         "RecordDetailList": [
             {
-                "ResourceType": "cdn",
+                "ResourceType": "abc",
                 "List": [
                     {
                         "Id": 1,
-                        "CertId": "zXkBVP88",
-                        "OldCertId": "zYrIXwpu",
+                        "CertId": "abc",
+                        "OldCertId": "abc",
                         "Domains": [
-                            "aaa.ninghhuang.top"
+                            "abc"
                         ],
-                        "ResourceType": [
-                            "cdn"
-                        ],
-                        "Region": [
-                            "ap-guangzhou"
-                        ],
+                        "ResourceType": "abc",
+                        "Region": "abc",
                         "Status": 1,
-                        "ErrorMsg": "",
-                        "CreateTime": "2022-10-09T09:38:38.000000Z",
-                        "UpdateTime": "2022-10-09T11:21:35.000000Z",
-                        "InstanceId": "",
-                        "InstanceName": "",
-                        "ListenerId": "",
-                        "ListenerName": "",
-                        "Protocol": "",
-                        "SniSwitch": 0,
-                        "Bucket": ""
+                        "ErrorMsg": "abc",
+                        "CreateTime": "abc",
+                        "UpdateTime": "abc",
+                        "InstanceId": "abc",
+                        "InstanceName": "abc",
+                        "ListenerId": "abc",
+                        "ListenerName": "abc",
+                        "Protocol": "abc",
+                        "SniSwitch": 1,
+                        "Bucket": "abc",
+                        "Port": 0,
+                        "Namespace": "abc",
+                        "SecretName": "abc"
                     }
                 ]
             }
         ],
-        "RequestId": "1111111111111"
+        "SuccessTotalCount": 0,
+        "FailedTotalCount": 0,
+        "RunningTotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

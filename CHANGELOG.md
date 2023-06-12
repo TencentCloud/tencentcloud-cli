@@ -1,3 +1,215 @@
+# Release 3.0.783.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 25 次发布
+
+发布时间：2023-06-13 01:07:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Advice](http://document.tencentcloudapi.woa.com/document/product/377/20453#Advice)
+
+	* 新增成员：Level
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 19 次发布
+
+发布时间：2023-06-13 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSqlFilter](http://document.tencentcloudapi.woa.com/document/product/1130/72835)
+
+	* <font color="#dd0000">**修改入参**：</font>SessionToken
+
+* [DeleteSqlFilters](http://document.tencentcloudapi.woa.com/document/product/1130/72834)
+
+	* <font color="#dd0000">**修改入参**：</font>SessionToken
+
+* [ModifySqlFilters](http://document.tencentcloudapi.woa.com/document/product/1130/72829)
+
+	* <font color="#dd0000">**修改入参**：</font>SessionToken
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 36 次发布
+
+发布时间：2023-06-13 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+	* 新增出参：IsPhysicalReplicationSupported
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 53 次发布
+
+发布时间：2023-06-13 01:18:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MergeManifestsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#MergeManifestsInfo)
+
+	* 新增成员：MergeManifestsEnable, Engine, IntervalMin
+
+* [RemoveOrphanFilesInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#RemoveOrphanFilesInfo)
+
+	* 新增成员：RemoveOrphanFilesEnable, Engine, BeforeDays, MaxConcurrentDeletes, IntervalMin
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 37 次发布
+
+发布时间：2023-06-13 01:25:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56245)
+
+	* 新增入参：RecordTemplateId
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 33 次发布
+
+发布时间：2023-06-13 01:26:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+	* 新增出参：IsPhysicalReplicationSupported
+
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 13 次发布
+
+发布时间：2023-06-13 01:33:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDomainList](http://document.tencentcloudapi.woa.com/document/product/664/77936)
+
+新增数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/664/51406#DomainInfo)
+* [QueryFilterV3](http://document.tencentcloudapi.woa.com/document/product/664/51406#QueryFilterV3)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 31 次发布
+
+发布时间：2023-06-13 01:33:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHostUpdateRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/77794)
+
+	* 新增入参：Limit, Offset
+
+
+修改数据结构：
+
+* [UpdateRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateRecordDetail)
+
+	* 新增成员：Port, Namespace, SecretName
+
+* [UpdateRecordDetails](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateRecordDetails)
+
+	* 新增成员：TotalCount
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 50 次发布
+
+发布时间：2023-06-13 01:35:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77943)
+* [DeleteRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77942)
+* [DescribeRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77941)
+* [DescribeRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77940)
+* [DescribeRabbitMQVirtualHostList](http://document.tencentcloudapi.woa.com/document/product/1179/77937)
+* [ModifyRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77939)
+* [ModifyRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77938)
+
+新增数据结构：
+
+* [RabbitMQPrivateVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQPrivateVirtualHost)
+* [RabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQUser)
+* [RabbitMQVirtualHostInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVirtualHostInfo)
+* [RabbitMQVirtualHostStatistics](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVirtualHostStatistics)
+
+
+
 # Release 3.0.782.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

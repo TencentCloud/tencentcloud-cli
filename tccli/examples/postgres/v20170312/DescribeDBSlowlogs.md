@@ -1,6 +1,6 @@
 **Example 1: 获取实例慢查询日志**
 
-
+获取实例postgres-apzvwncr慢查询日志
 
 Input: 
 
@@ -31,11 +31,11 @@ Output:
                     "CallsGrids": [
                         0
                     ],
-                    "NormalQuery": "xx",
+                    "NormalQuery": "select 1;",
                     "MinCostTime": 0.0,
-                    "DatabaseName": "xx",
-                    "FirstTime": "xx",
-                    "LastTime": "xx",
+                    "DatabaseName": "postgres-apzvwncr",
+                    "FirstTime": "2018-06-10 17:06:38",
+                    "LastTime": "2018-06-11 17:06:38",
                     "SharedWriteBlks": 0
                 }
             ],
