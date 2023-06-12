@@ -4318,6 +4318,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识，1为自动续费，0为到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8107,7 +8117,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
@@ -8122,7 +8132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
@@ -8131,7 +8141,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模版名称",
+          "document": "参数模板名称",
           "example": "无",
           "member": "string",
           "name": "TemplateName",
@@ -8140,7 +8150,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模版描述",
+          "document": "参数模板描述",
           "example": "无",
           "member": "string",
           "name": "TemplateDescription",
@@ -13551,7 +13561,6 @@
       "document": "回滚数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "旧数据库名称",
           "example": "xxx",
@@ -13562,7 +13571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新数据库名称",
           "example": "xxx",
@@ -13573,13 +13581,12 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RollbackTable": {
       "document": "回档数据库及表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "xxx",
@@ -13590,7 +13597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表",
           "example": "xxx",
@@ -13601,7 +13607,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RollbackTableInfo": {
       "document": "回档表信息",

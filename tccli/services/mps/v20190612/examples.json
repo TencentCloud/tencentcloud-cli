@@ -1,5 +1,29 @@
 {
   "actions": {
+    "BatchDeleteStreamLinkFlow": [
+      {
+        "document": "请求示例",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteStreamLinkFlow\n<公共请求参数>\n\n{\n    \"EventId\": \"test\",\n    \"FlowIds\": [\n        \"aaa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaaaa\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "BatchStartStreamLinkFlow": [
+      {
+        "document": "请求示例",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStartStreamLinkFlow\n<公共请求参数>\n\n{\n    \"EventId\": \"test\",\n    \"FlowIds\": [\n        \"aaa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaaaa\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "BatchStopStreamLinkFlow": [
+      {
+        "document": "请求示例",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopStreamLinkFlow\n<公共请求参数>\n\n{\n    \"EventId\": \"test\",\n    \"FlowIds\": [\n        \"aaa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaaaa\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAIAnalysisTemplate": [
       {
         "document": "创建一个自定义视频内容分析模板，开启智能分类任务。",
@@ -32,6 +56,12 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"FaceLibrary\": \"All\"\n    },\n    \"Name\": \"智能识别模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
+      },
+      {
+        "document": "创建语音翻译模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"TranslateConfigure\": {\n        \"Switch\": \"ON\",\n        \"SourceLanguage\": \"en\",\n        \"DestinationLanguage\": \"zh\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 278654,\n        \"RequestId\": \"62cca75c-7dd3-4819-ad9d-13b48a4b4018\"\n    }\n}",
+        "title": "创建语音翻译模板"
       }
     ],
     "CreateAdaptiveDynamicStreamingTemplate": [
@@ -114,6 +144,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshotByTimeOffsetTemplate\n<公共请求参数>\n\n{\n    \"Width\": \"540\",\n    \"Format\": \"jpg\",\n    \"Name\": \"指定时间点截图模板1\",\n    \"Height\": \"960\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定时间点截图模板"
+      }
+    ],
+    "CreateStreamLinkEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamLinkEvent\n<公共请求参数>\n\n{\n    \"EventName\": \"aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"EventId\": \"xx\",\n            \"Status\": 1,\n            \"Description\": \"xx\",\n            \"EventName\": \"xx\",\n            \"AttachedFlowGroup\": [\n                {\n                    \"FlowId\": \"xx\",\n                    \"Region\": \"xx\"\n                }\n            ],\n            \"CreateTime\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "CreateStreamLinkFlow": [
@@ -268,6 +306,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除指定时间点截图模板"
+      }
+    ],
+    "DeleteStreamLinkEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamLinkEvent\n<公共请求参数>\n\n{\n    \"EventId\": \"aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaaaa\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteStreamLinkFlow": [
@@ -432,6 +478,30 @@
         "title": "请求示例"
       }
     ],
+    "DescribeStreamLinkEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkEvent\n<公共请求参数>\n\n{\n    \"EventId\": \"eventid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"EventId\": \"xx\",\n            \"Status\": 1,\n            \"Description\": \"xx\",\n            \"EventName\": \"xx\",\n            \"AttachedFlowGroup\": [\n                {\n                    \"FlowId\": \"xx\",\n                    \"Region\": \"xx\"\n                }\n            ],\n            \"CreateTime\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamLinkEventAttachedFlows": [
+      {
+        "document": "请求示例",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkEventAttachedFlows\n<公共请求参数>\n\n{\n    \"EventId\": \"xx\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"FlowName\": \"xx\",\n                \"InputGroup\": [\n                    {\n                        \"AllowIpList\": [\n                            \"xx\"\n                        ],\n                        \"Protocol\": \"xx\",\n                        \"Description\": \"xx\",\n                        \"RTPSettings\": {\n                            \"IdleTimeout\": 0,\n                            \"FEC\": \"xx\"\n                        },\n                        \"InputAddressList\": [\n                            {\n                                \"Ip\": \"xx\",\n                                \"Port\": 0\n                            }\n                        ],\n                        \"FailOver\": \"xx\",\n                        \"RTMPPullSettings\": {\n                            \"SourceAddresses\": [\n                                {\n                                    \"StreamKey\": \"xx\",\n                                    \"TcUrl\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"InputName\": \"xx\",\n                        \"SRTSettings\": {\n                            \"Latency\": 0,\n                            \"PeerLatency\": 0,\n                            \"PbKeyLen\": 0,\n                            \"RecvLatency\": 0,\n                            \"Passphrase\": \"xx\",\n                            \"StreamId\": \"xx\",\n                            \"PeerIdleTimeout\": 0,\n                            \"SourceAddresses\": [\n                                {\n                                    \"Ip\": \"xx\",\n                                    \"Port\": 0\n                                }\n                            ],\n                            \"Mode\": \"xx\"\n                        },\n                        \"HLSPullSettings\": {\n                            \"SourceAddresses\": [\n                                {\n                                    \"Url\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"RTSPPullSettings\": {\n                            \"SourceAddresses\": [\n                                {\n                                    \"Url\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"InputRegion\": \"xx\",\n                        \"InputId\": \"xx\",\n                        \"ResilientStream\": {\n                            \"Enable\": true,\n                            \"BufferTime\": 1\n                        },\n                        \"RTMPSettings\": {\n                            \"StreamKey\": \"xx\",\n                            \"AppName\": \"xx\"\n                        }\n                    }\n                ],\n                \"FlowId\": \"xx\",\n                \"State\": \"xx\",\n                \"OutputGroup\": [\n                    {\n                        \"OutputName\": \"xx\",\n                        \"OutputAddressList\": [\n                            {\n                                \"Ip\": \"xx\"\n                            }\n                        ],\n                        \"AllowIpList\": [\n                            \"xx\"\n                        ],\n                        \"Protocol\": \"xx\",\n                        \"Description\": \"xx\",\n                        \"RTPSettings\": {\n                            \"IdleTimeout\": 0,\n                            \"FEC\": \"xx\",\n                            \"Destinations\": [\n                                {\n                                    \"Ip\": \"xx\",\n                                    \"Port\": 0\n                                }\n                            ]\n                        },\n                        \"RTMPPullSettings\": {\n                            \"ServerUrls\": [\n                                {\n                                    \"StreamKey\": \"xx\",\n                                    \"TcUrl\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"OutputType\": \"xx\",\n                        \"HLSPullSettings\": {\n                            \"ServerUrls\": [\n                                {\n                                    \"Url\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"SRTSettings\": {\n                            \"Latency\": 0,\n                            \"PeerLatency\": 0,\n                            \"PbKeyLen\": 0,\n                            \"RecvLatency\": 0,\n                            \"Passphrase\": \"xx\",\n                            \"StreamId\": \"xx\",\n                            \"Mode\": \"xx\",\n                            \"PeerIdleTimeout\": 0,\n                            \"SourceAddresses\": [\n                                {\n                                    \"Ip\": \"xx\",\n                                    \"Port\": 0\n                                }\n                            ],\n                            \"Destinations\": [\n                                {\n                                    \"Ip\": \"xx\",\n                                    \"Port\": 0\n                                }\n                            ]\n                        },\n                        \"OutputId\": \"xx\",\n                        \"RTSPPullSettings\": {\n                            \"ServerUrls\": [\n                                {\n                                    \"Url\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"RTMPSettings\": {\n                            \"IdleTimeout\": 0,\n                            \"ChunkSize\": 0,\n                            \"Destinations\": [\n                                {\n                                    \"Url\": \"xx\",\n                                    \"StreamKey\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"OutputRegion\": \"xx\"\n                    }\n                ],\n                \"MaxBandwidth\": 0\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalNum\": 0\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamLinkEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkEvents\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"xx\",\n        \"Infos\": [\n            {\n                \"EventId\": \"xx\",\n                \"Status\": 1,\n                \"Description\": \"xx\",\n                \"EventName\": \"xx\",\n                \"AttachedFlowGroup\": [\n                    {\n                        \"FlowId\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalNum\": 1\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeStreamLinkFlow": [
       {
         "document": "",
@@ -526,9 +596,9 @@
     ],
     "DescribeTranscodeTemplates": [
       {
-        "document": "",
+        "document": "获取转码模板",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        \"10\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": null,\n                \"Type\": \"Preset\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0,\n                    \"FillType\": \"black\",\n                    \"Vcrf\": 23\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"TEHDConfig\": {\n                    \"MaxVideoBitrate\": 1,\n                    \"Type\": \"TEHD-100\"\n                },\n                \"ContainerType\": \"Video\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": \"1008\",\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": \"\",\n                \"Type\": \"Preset\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0,\n                    \"FillType\": \"black\",\n                    \"Vcrf\": 23\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"TEHDConfig\": {\n                    \"MaxVideoBitrate\": 1,\n                    \"Type\": \"TEHD-100\"\n                },\n                \"EnhanceConfig\": null,\n                \"ContainerType\": \"Video\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取转码模板"
       }
     ],
@@ -738,6 +808,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotByTimeOffsetTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"10001\",\n    \"Format\": \"jpg\",\n    \"Height\": \"960\",\n    \"Name\": \"指定时间点截图模板1\",\n    \"Width\": \"540\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改指定时间点截图模板"
+      }
+    ],
+    "ModifyStreamLinkEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamLinkEvent\n<公共请求参数>\n\n{\n    \"EventId\": \"aaa\",\n    \"EventName\": \"aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "ModifyStreamLinkFlow": [

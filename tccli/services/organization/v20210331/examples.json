@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddOrganizationMemberEmail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganizationMemberEmail\n<公共请求参数>\n\n{\n    \"MemberUin\": 12726,\n    \"Email\": \"123@qq.com\",\n    \"CountryCode\": \"86\",\n    \"Phone\": \"18726545611\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "添加组织成员邮箱"
+      }
+    ],
     "AddOrganizationNode": [
       {
         "document": "",
@@ -88,6 +96,14 @@
         "title": "获取组织成员可被管理的身份列表"
       }
     ],
+    "DescribeOrganizationMemberEmailBind": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMemberEmailBind\n<公共请求参数>\n\n{\n    \"MemberUin\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\",\n        \"BindId\": 1,\n        \"ApplyTime\": \"2022-01-13 12:09:08\",\n        \"Email\": \"123@qq.com\",\n        \"Phone\": \"18798765432\",\n        \"BindStatus\": \"Success\",\n        \"BindTime\": \"2022-01-13 18:09:08\",\n        \"Description\": \"\",\n        \"PhoneBind\": 0,\n        \"CountryCode\": \"86\"\n    }\n}",
+        "title": "查询成员邮箱绑定详细信息"
+      }
+    ],
     "DescribeOrganizationMemberPolicies": [
       {
         "document": "",
@@ -126,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MoveOrganizationNodeMembers\n<公共请求参数>\n\n{\n    \"MemberUin\": [\n        100000023837\n    ],\n    \"NodeId\": 123\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "移动成员到指定企业组织节点"
+      }
+    ],
+    "UpdateOrganizationMemberEmailBind": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationMemberEmailBind\n<公共请求参数>\n\n{\n    \"MemberUin\": 12726,\n    \"BindId\": 12,\n    \"Email\": \"2727226@qq.com\",\n    \"CountryCode\": \"86\",\n    \"Phone\": \"18765431234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "修改绑定成员邮箱"
       }
     ],
     "UpdateOrganizationNode": [

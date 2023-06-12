@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ChannelCreateConvertTaskApi": {
-      "document": "上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。",
+      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
@@ -113,14 +113,14 @@
       "status": "online"
     },
     "ChannelCreateUserRoles": {
-      "document": "绑定员工角色",
+      "document": "通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelCreateUserRolesRequest",
       "name": "绑定员工角色",
       "output": "ChannelCreateUserRolesResponse",
       "status": "online"
     },
     "ChannelDeleteRoleUsers": {
-      "document": "删除员工绑定角色",
+      "document": "通过此接口，删除员工绑定的角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelDeleteRoleUsersRequest",
       "name": "删除员工绑定角色",
       "output": "ChannelDeleteRoleUsersResponse",
@@ -943,7 +943,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
+          "document": "资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型",
           "example": "无",
           "member": "string",
           "name": "ResourceType",
@@ -1978,20 +1978,29 @@
         },
         {
           "disabled": false,
-          "document": "绑定角色的员工id列表，电子签的UserId",
-          "example": "无",
-          "member": "string",
-          "name": "UserIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "绑定角色的角色id列表",
           "example": "无",
           "member": "string",
           "name": "RoleIds",
           "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数",
+          "example": "无",
+          "member": "string",
+          "name": "OpenIds",
+          "required": false,
           "type": "list"
         },
         {
@@ -2050,11 +2059,11 @@
         },
         {
           "disabled": false,
-          "document": "用户列表，电子签系统的UserId",
+          "document": "电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数",
           "example": "无",
           "member": "string",
           "name": "UserIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -2065,6 +2074,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数",
+          "example": "无",
+          "member": "string",
+          "name": "OpenIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

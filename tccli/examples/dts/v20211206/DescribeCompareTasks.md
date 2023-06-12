@@ -1,6 +1,6 @@
 **Example 1: 查询一致性校验任务列表**
 
-
+查询一致性校验任务列表
 
 Input: 
 
@@ -20,6 +20,7 @@ Output:
                     "Status": "",
                     "StepAll": 0,
                     "StepNow": 0,
+                    "Percent": 0,
                     "Steps": []
                 },
                 "CompareProcess": {
@@ -56,6 +57,12 @@ Output:
                 },
                 "CreatedAt": "2022-07-11 17:21:02",
                 "FinishedAt": "2022-07-11 17:24:54",
+                "Method": "dataCheck",
+                "Options": {
+                    "Method": "dataCheck",
+                    "SampleRate": 100,
+                    "ThreadCount": 1
+                },
                 "JobId": "dts-amm1jw5q",
                 "Message": "done",
                 "StartedAt": "2022-07-11 17:24:09",

@@ -1,49 +1,36 @@
-**Example 1: 获取主机安全服务列表**
+**Example 1: 证书部署COS实例列表**
 
-获取主机安全服务列表
+证书部署COS实例列表
 
 Input: 
 
 ```
 tccli ssl DescribeHostCosInstanceList --cli-unfold-argument  \
-    --ResourceType xx \
+    --CertificateId abc \
     --IsCache 1 \
-    --CertificateId xx \
-    --Filters.0.FilterKey xx \
-    --Filters.0.FilterValue xx
+    --Filters.0.FilterKey abc \
+    --Filters.0.FilterValue abc \
+    --ResourceType abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "AsyncOffset": 0,
-        "AsyncTotalNum": 0,
         "InstanceList": [
             {
-                "Domain": "hathlim.cn",
-                "Status": "ENABLED",
-                "CertId": null,
-                "Bucket": "hath-1302189209",
-                "Region": "ap-nanjing"
-            },
-            {
-                "Domain": "aaa.likeghost.club",
-                "Status": "DISABLED",
-                "CertId": null,
-                "Bucket": "hath-1302189209",
-                "Region": "ap-nanjing"
-            },
-            {
-                "Domain": "zz.hathlim.cn",
-                "Status": "ENABLED",
-                "CertId": null,
-                "Bucket": "test-1302189209",
-                "Region": "ap-nanjing"
+                "Domain": "abc",
+                "CertId": "abc",
+                "Status": "abc",
+                "Bucket": "abc",
+                "Region": "abc"
             }
         ],
-        "RequestId": "875c1016-64a3-41c3-b3d3-430af1a6e1f9"
+        "TotalCount": 0,
+        "AsyncTotalNum": 0,
+        "AsyncOffset": 0,
+        "AsyncCacheTime": "abc",
+        "RequestId": "abc"
     }
 }
 ```

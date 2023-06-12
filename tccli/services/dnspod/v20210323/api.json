@@ -4581,7 +4581,6 @@
       "document": "域名详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID",
           "example": "123456",
@@ -4592,7 +4591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名状态",
           "example": "enable",
@@ -4603,7 +4601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名套餐等级",
           "example": "DP_EXTRA",
@@ -4614,7 +4611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名分组ID",
           "example": "1",
@@ -4625,7 +4621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否星标域名",
           "example": "no",
@@ -4636,7 +4631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TTL(DNS记录缓存时间)",
           "example": "600",
@@ -4647,7 +4641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cname加速启用状态",
           "example": "disable",
@@ -4658,7 +4651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "firstdomain",
@@ -4669,7 +4661,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名Punycode",
           "example": "dnspod.cn",
@@ -4680,7 +4671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名DNS状态",
           "example": "dnserror",
@@ -4691,7 +4681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名的NS列表",
           "example": "[ns3.dnsv3.com]",
@@ -4702,7 +4691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
@@ -4713,7 +4701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级代号",
           "example": "2",
@@ -4724,7 +4711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所属的用户ID",
           "example": "12342",
@@ -4735,7 +4721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为付费域名",
           "example": "yes",
@@ -4746,7 +4731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所有者的账号",
           "example": "dnspod@dnspod.cn",
@@ -4757,7 +4741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级的描述",
           "example": "免费版",
@@ -4768,7 +4751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名创建时间",
           "example": "2020-03-24 15:43:35",
@@ -4779,7 +4761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后操作时间",
           "example": "2020-03-24 15:43:35",
@@ -4790,7 +4771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云账户Uin",
           "example": "100000014226",
@@ -4801,7 +4781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名实际使用的NS列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[ns3.dnsv3.com]",
@@ -4812,7 +4791,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名的记录数量",
           "example": "1",
@@ -4823,7 +4801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所有者的账户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lili",
@@ -4831,6 +4808,76 @@
           "name": "OwnerNick",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否在付费套餐宽限期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "IsGracePeriod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否在付费套餐缓冲期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "VipBuffered",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VIP套餐有效期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-28 11:54:57",
+          "member": "string",
+          "name": "VipStartAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VIP套餐有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-11-28 11:54:57",
+          "member": "string",
+          "name": "VipEndAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "VipAutoRenew",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VIP套餐资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "43111772",
+          "member": "string",
+          "name": "VipResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是子域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSubDomain",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

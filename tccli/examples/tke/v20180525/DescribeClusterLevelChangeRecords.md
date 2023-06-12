@@ -19,15 +19,16 @@ Output:
     "Response": {
         "Items": [
             {
-                "ClusterID": "cls-7t1eo183",
-                "EndedAt": "2022-07-11 17:45:02",
                 "ID": "548",
-                "Message": "",
-                "NewLevel": "L20",
-                "OldLevel": "L5",
-                "StartedAt": "2022-07-11 17:40:22",
+                "ClusterID": "cls-7t1eo183",
                 "Status": "success",
-                "TriggerType": "manual"
+                "Message": "",
+                "OldLevel": "L5",
+                "NewLevel": "L20",
+                "TriggerType": "manual",
+                "CreatedAt": "2022-07-11 17:40:22",
+                "StartedAt": "2022-07-11 17:40:22",
+                "EndedAt": "2022-07-11 17:45:02"
             }
         ],
         "RequestId": "24564577-a642-4164-8752-4668d4ca8886",

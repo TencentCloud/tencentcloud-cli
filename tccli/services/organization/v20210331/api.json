@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddOrganizationMemberEmail": {
+      "document": "添加组织成员邮箱",
+      "input": "AddOrganizationMemberEmailRequest",
+      "name": "添加组织成员邮箱",
+      "output": "AddOrganizationMemberEmailResponse",
+      "status": "online"
+    },
     "AddOrganizationNode": {
       "document": "添加企业组织节点",
       "input": "AddOrganizationNodeRequest",
@@ -77,6 +84,13 @@
       "output": "DescribeOrganizationMemberAuthIdentitiesResponse",
       "status": "online"
     },
+    "DescribeOrganizationMemberEmailBind": {
+      "document": "查询成员邮箱绑定详细信息",
+      "input": "DescribeOrganizationMemberEmailBindRequest",
+      "name": "查询成员邮箱绑定详细信息",
+      "output": "DescribeOrganizationMemberEmailBindResponse",
+      "status": "online"
+    },
     "DescribeOrganizationMemberPolicies": {
       "document": "获取组织成员的授权策略列表",
       "input": "DescribeOrganizationMemberPoliciesRequest",
@@ -112,6 +126,13 @@
       "output": "MoveOrganizationNodeMembersResponse",
       "status": "online"
     },
+    "UpdateOrganizationMemberEmailBind": {
+      "document": "修改绑定成员邮箱",
+      "input": "UpdateOrganizationMemberEmailBindRequest",
+      "name": "修改绑定成员邮箱",
+      "output": "UpdateOrganizationMemberEmailBindResponse",
+      "status": "online"
+    },
     "UpdateOrganizationNode": {
       "document": "更新企业组织节点",
       "input": "UpdateOrganizationNodeRequest",
@@ -127,6 +148,64 @@
     "serviceShortName": "organization"
   },
   "objects": {
+    "AddOrganizationMemberEmailRequest": {
+      "document": "AddOrganizationMemberEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "成员Uin",
+          "example": "1234",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮箱地址",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "国际区号",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号",
+          "example": "18776541432",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrganizationMemberEmailResponse": {
+      "document": "AddOrganizationMemberEmail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddOrganizationNodeRequest": {
       "document": "AddOrganizationNode请求参数结构体",
       "members": [
@@ -765,6 +844,124 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberEmailBindRequest": {
+      "document": "DescribeOrganizationMemberEmailBind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "成员Uin",
+          "example": "123",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberEmailBindResponse": {
+      "document": "DescribeOrganizationMemberEmailBind返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "BindId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-13 12:08:09",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18797765432",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定状态    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "BindStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-13 18:08:09",
+          "member": "string",
+          "name": "BindTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全手机绑定状态  未绑定：0，已绑定：1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PhoneBind",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国际区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -2025,6 +2222,74 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateOrganizationMemberEmailBindRequest": {
+      "document": "UpdateOrganizationMemberEmailBind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "成员Uin",
+          "example": "1234",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "绑定ID",
+          "example": "12",
+          "member": "int64",
+          "name": "BindId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮箱",
+          "example": "23376@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "国际区号",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号",
+          "example": "18792790987",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationMemberEmailBindResponse": {
+      "document": "UpdateOrganizationMemberEmailBind返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateOrganizationNodeRequest": {
       "document": "UpdateOrganizationNode请求参数结构体",

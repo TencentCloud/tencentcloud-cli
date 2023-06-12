@@ -637,9 +637,9 @@
       "document": "DescribeAsyncRequestInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID",
+          "example": "cafebabe-254f-11ea-8995-e92c139e6918",
           "member": "string",
           "name": "AsyncRequestId",
           "required": true,
@@ -654,6 +654,7 @@
         {
           "disabled": false,
           "document": "任务执行结果信息",
+          "example": "success",
           "member": "string",
           "name": "Info",
           "type": "string",
@@ -662,6 +663,7 @@
         {
           "disabled": false,
           "document": "任务执行状态，可能的值有：success，failed，running",
+          "example": "ok",
           "member": "string",
           "name": "Status",
           "type": "string",
@@ -2052,18 +2054,18 @@
       "document": "ModifySubscribeAutoRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID，例如：subs-8uey736k",
+          "example": "subs-8uey736k",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。1-自动续费，0-不自动续费",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": true,
@@ -2812,12 +2814,12 @@
       "usage": "both"
     },
     "SubscribeObject": {
-      "document": "数据数据订阅的对象",
+      "document": "数据订阅的对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅对象的类型，0-数据库，1-数据库内的表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ObjectsType",
           "required": true,
@@ -2825,9 +2827,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DatabaseName",
           "required": true,
@@ -2835,9 +2837,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅数据库中表名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TableNames",
           "required": false,

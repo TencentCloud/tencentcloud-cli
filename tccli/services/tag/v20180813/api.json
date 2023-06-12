@@ -845,63 +845,63 @@
       "document": "DescribeResourceTagsByTagKeys请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务类型",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源前缀",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "资源唯一标识",
+          "document": "资源唯一标识ID的列表，列表容量不超过20",
+          "example": "无",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "资源标签键",
+          "document": "资源标签键列表，列表容量不超过20",
+          "example": "tagKey",
           "member": "string",
           "name": "TagKeys",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页大小，默认为 400",
+          "example": "400",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -916,6 +916,7 @@
         {
           "disabled": false,
           "document": "结果总数",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -924,6 +925,7 @@
         {
           "disabled": false,
           "document": "数据位移偏量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "type": "int",
@@ -932,6 +934,7 @@
         {
           "disabled": false,
           "document": "每页大小",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "type": "int",
@@ -940,6 +943,7 @@
         {
           "disabled": false,
           "document": "资源标签",
+          "example": "无",
           "member": "ResourceIdTag",
           "name": "Rows",
           "type": "list",

@@ -1,6 +1,6 @@
 **Example 1: 按照Sql模板查询指定时间段内的慢日志统计结果**
 
-
+按照Sql模板查询指定时间段内的慢日志统计结果。
 
 Input: 
 
@@ -43,7 +43,11 @@ Output:
                 "RowsSentRatio": 0,
                 "RowsExamined": 0,
                 "RowsExaminedMin": 0,
-                "QueryTimeMin": 0
+                "QueryTimeMin": 0,
+                "RowsSentAvg": 0,
+                "LockTimeAvg": 0,
+                "RowsExaminedAvg": 0,
+                "QueryTimeAvg": 0
             }
         ]
     }

@@ -143,7 +143,7 @@
     "DescribeHostClbInstanceList": {
       "document": "查询证书clb云资源部署实例列表",
       "input": "DescribeHostClbInstanceListRequest",
-      "name": "查询证书clb云资源部署实例列表",
+      "name": "查询证书CLB云资源部署实例列表信息",
       "output": "DescribeHostClbInstanceListResponse",
       "status": "online"
     },
@@ -3770,6 +3770,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncCache",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3793,6 +3802,33 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新总数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncTotalNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步刷新当前执行数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncOffset",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前缓存读取时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsyncCacheTime",
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -3913,6 +3949,15 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "当前缓存读取时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsyncCacheTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3925,7 +3970,6 @@
       "document": "DescribeHostCosInstanceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待部署的证书ID",
           "example": "无",
@@ -3935,7 +3979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型 cos",
           "example": "无",
@@ -3945,7 +3988,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
           "example": "无",
@@ -3955,7 +3997,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数列表",
           "example": "无",
@@ -3976,7 +4017,6 @@
           "example": "无",
           "member": "CosInstanceDetail",
           "name": "InstanceList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3986,7 +4026,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3996,7 +4035,6 @@
           "example": "无",
           "member": "int64",
           "name": "AsyncTotalNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4006,8 +4044,16 @@
           "example": "无",
           "member": "int64",
           "name": "AsyncOffset",
-          "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前缓存读取时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsyncCacheTime",
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -4604,6 +4650,15 @@
           "member": "int64",
           "name": "AsyncOffset",
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前缓存读取时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsyncCacheTime",
+          "type": "string",
           "value_allowed_null": true
         },
         {

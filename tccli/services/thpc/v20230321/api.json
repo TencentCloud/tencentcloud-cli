@@ -2533,6 +2533,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每轮扩容最大节点个数。默认值：100。取值范围：1～100。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxNodesPerCycle",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -2626,6 +2636,16 @@
           "example": "0",
           "member": "int64",
           "name": "ScaleOutNodeThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每轮扩容最大节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxNodesPerCycle",
           "required": false,
           "type": "int",
           "value_allowed_null": true

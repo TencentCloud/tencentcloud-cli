@@ -3539,7 +3539,6 @@
       "document": "DescribeSlowLogUserHostStats请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
@@ -3549,7 +3548,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围的开始时间，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
@@ -3559,7 +3557,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围的结束时间，时间格式如：2019-09-10 12:13:14。",
           "example": "2019-09-10 12:13:14",
@@ -3569,7 +3566,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
@@ -3579,7 +3575,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SOL模板的MD5值",
           "example": "AD7651E51E8C6FBA",
@@ -3600,7 +3595,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3610,8 +3604,25 @@
           "example": "-",
           "member": "SlowLogHost",
           "name": "Items",
-          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各来源用户名的慢日志占比详情列表。",
+          "example": "-",
+          "member": "SlowLogUser",
+          "name": "UserNameItems",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源用户数目。",
+          "example": "1",
+          "member": "int64",
+          "name": "UserTotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5272,7 +5283,7 @@
         },
         {
           "disabled": false,
-          "document": "内网vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网vip。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "InternalVip",
@@ -5282,7 +5293,7 @@
         },
         {
           "disabled": false,
-          "document": "内网port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网port。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "InternalVport",
@@ -5292,13 +5303,33 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5915,7 +5946,6 @@
       "document": "redis key空间信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "key名。",
           "example": "test",
@@ -5926,7 +5956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key类型。",
           "example": "string",
@@ -5937,7 +5966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key编码方式。",
           "example": "string",
@@ -5948,7 +5976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key过期时间戳（毫秒），0代表未设置过期时间。",
           "example": "0",
@@ -5959,7 +5986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key内存大小，单位Byte。",
           "example": "72",
@@ -5970,7 +5996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "元素个数。",
           "example": "1",
@@ -5981,7 +6006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大元素长度。",
           "example": "10",
@@ -5989,6 +6013,26 @@
           "name": "MaxElementSize",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均元素长度。",
+          "example": "10",
+          "member": "int64",
+          "name": "AveElementSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属分片序号。",
+          "example": "1",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7006,6 +7050,42 @@
           "name": "Md5",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogUser": {
+      "document": "慢日志来源用户详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该来源用户名的慢日志数目占总数目的比例，单位%。",
+          "example": "50.0",
+          "member": "float",
+          "name": "Ratio",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该来源用户名的慢日志数目。",
+          "example": "30",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

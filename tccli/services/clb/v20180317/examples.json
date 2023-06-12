@@ -132,9 +132,9 @@
     ],
     "CreateTargetGroup": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateTargetGroup\n&TargetGroupName=czhtest\n&VpcId=vpc-i1cnjuhx\n&Port=80\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-815iz538\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
+        "document": "创建目标组",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-i1cnjuhx\",\n    \"Port\": \"80\",\n    \"TargetGroupName\": \"czhtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-81******\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
         "title": "创建目标组"
       }
     ],
@@ -630,8 +630,8 @@
     ],
     "ModifyTargetGroupAttribute": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupAttribute\n&TargetGroupId=lbtg-815iz538\n&TargetGroupName=xxxxholic\n&<公共请求参数>",
+        "document": "修改目标组名称",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTargetGroupAttribute\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-815iz538\",\n    \"TargetGroupName\": \"xxxxholic\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73d80971-512f-400e-9c73-c0c135c04871\"\n    }\n}",
         "title": "修改目标组名称"
       }

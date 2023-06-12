@@ -7708,7 +7708,7 @@
         },
         {
           "disabled": false,
-          "document": "一页条数，填0表示不分页",
+          "document": "一页条数，默认值100，最大值100，超过100最大返回100条",
           "example": "无",
           "member": "uint64",
           "name": "Limit",

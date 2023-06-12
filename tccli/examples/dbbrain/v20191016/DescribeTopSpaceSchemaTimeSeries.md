@@ -1,6 +1,6 @@
 **Example 1: 获取Top库在指定时间段内的每日空间统计信息**
 
-
+获取Top库在指定时间段内的每日空间统计信息。
 
 Input: 
 
@@ -31,7 +31,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                0
                             ],
                             "Metric": "DataLength",
                             "Unit": "MB"
@@ -45,7 +45,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                0
                             ],
                             "Metric": "TotalLength",
                             "Unit": "MB"
@@ -66,7 +66,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                1
                             ],
                             "Metric": "PhysicalFileSize",
                             "Unit": "MB"
@@ -90,7 +90,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                1
                             ],
                             "Metric": "DataLength",
                             "Unit": "MB"
@@ -104,7 +104,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                1
                             ],
                             "Metric": "TotalLength",
                             "Unit": "MB"
@@ -125,7 +125,7 @@ Output:
                         },
                         {
                             "Values": [
-                                0.1
+                                1
                             ],
                             "Metric": "PhysicalFileSize",
                             "Unit": "MB"

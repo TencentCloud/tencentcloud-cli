@@ -34,8 +34,8 @@ Output:
                         {
                             "DiagType": "高并发/压力请求",
                             "ScoreLost": 6,
-                            "EndTime": "2021-01-28 11:20:42",
-                            "StartTime": "2021-01-28 11:00:00",
+                            "StartTime": "2020-09-22T00:00:00+00:00",
+                            "EndTime": "2020-09-22T00:00:00+00:00",
                             "EventId": 780019530,
                             "Outline": "监控指标 \"cpu_use_rate\" 告警，当前值 100",
                             "Severity": 1,
@@ -51,8 +51,8 @@ Output:
                         {
                             "DiagType": "复制",
                             "ScoreLost": 10,
-                            "EndTime": "2021-01-28 11:21:17",
-                            "StartTime": "2021-01-28 11:20:25",
+                            "StartTime": "2020-09-22T00:00:00+00:00",
+                            "EndTime": "2020-09-22T00:00:00+00:00",
                             "EventId": 780018741,
                             "Outline": "复制IO线程中断",
                             "Severity": 1,
@@ -62,8 +62,8 @@ Output:
                         {
                             "DiagType": "复制",
                             "ScoreLost": 10,
-                            "EndTime": "2021-01-28 11:09:37",
-                            "StartTime": "2021-01-28 11:09:32",
+                            "StartTime": "2020-09-22T00:00:00+00:00",
+                            "EndTime": "2020-09-22T00:00:00+00:00",
                             "EventId": 779984938,
                             "Outline": "复制IO线程中断",
                             "Severity": 1,
@@ -73,8 +73,8 @@ Output:
                         {
                             "DiagType": "复制",
                             "ScoreLost": 8,
-                            "EndTime": "2021-01-28 11:20:00",
-                            "StartTime": "2021-01-28 11:20:00",
+                            "StartTime": "2020-09-22T00:00:00+00:00",
+                            "EndTime": "2020-09-22T00:00:00+00:00",
                             "EventId": 780021648,
                             "Outline": "复制延迟",
                             "Severity": 2,
@@ -94,7 +94,7 @@ Output:
 
 **Example 2: 请求健康得分**
 
-
+请求健康得分。
 
 Input: 
 
@@ -102,7 +102,7 @@ Input:
 tccli dbbrain DescribeHealthScore --cli-unfold-argument  \
     --InstanceId cdb-8jawylhf \
     --Product mysql \
-    --Time 2021-02-01 14:30:00
+    --Time 2020-09-22T00:00:00+00:00
 ```
 
 Output: 

@@ -154,6 +154,13 @@
       "output": "DescribeDefenseSwitchResponse",
       "status": "online"
     },
+    "DescribeEnterpriseSGRuleProgress": {
+      "document": "查询新版安全组下发进度",
+      "input": "DescribeEnterpriseSGRuleProgressRequest",
+      "name": "查询新版安全组下发进度",
+      "output": "DescribeEnterpriseSGRuleProgressResponse",
+      "status": "online"
+    },
     "DescribeEnterpriseSecurityGroupRule": {
       "document": "查询新企业安全组规则",
       "input": "DescribeEnterpriseSecurityGroupRuleRequest",
@@ -3432,6 +3439,33 @@
           "name": "ReturnMsg",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnterpriseSGRuleProgressRequest": {
+      "document": "DescribeEnterpriseSGRuleProgress请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEnterpriseSGRuleProgressResponse": {
+      "document": "DescribeEnterpriseSGRuleProgress返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-100，代表下发进度百分比",
+          "example": "50",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

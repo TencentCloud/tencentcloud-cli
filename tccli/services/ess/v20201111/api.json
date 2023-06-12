@@ -21,6 +21,13 @@
       "output": "CancelMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "CancelUserAutoSignEnableUrl": {
+      "document": "此接口（CancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）",
+      "input": "CancelUserAutoSignEnableUrlRequest",
+      "name": "撤销自动签开通链接",
+      "output": "CancelUserAutoSignEnableUrlResponse",
+      "status": "online"
+    },
     "CreateBatchCancelFlowUrl": {
       "document": "注：此接口将会废弃，请使用撤销单个签署流程（CancelFlow）接口。\n指定需要批量撤回的签署流程Id，获取批量撤销链接。\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回。",
       "input": "CreateBatchCancelFlowUrlRequest",
@@ -36,7 +43,7 @@
       "status": "online"
     },
     "CreateConvertTaskApi": {
-      "document": "上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。",
+      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
       "input": "CreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "CreateConvertTaskApiResponse",
@@ -1007,6 +1014,51 @@
       ],
       "type": "object"
     },
+    "CancelUserAutoSignEnableUrlRequest": {
+      "document": "CancelUserAutoSignEnableUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息，UseId必填\t",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定撤销链接的用户指定撤销链接的用户信息，包含姓名、证件类型、证件号码。\n",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelUserAutoSignEnableUrlResponse": {
+      "document": "CancelUserAutoSignEnableUrl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CcInfo": {
       "document": "抄送信息",
       "members": [
@@ -1421,7 +1473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
+          "document": "资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型",
           "example": "无",
           "member": "string",
           "name": "ResourceType",

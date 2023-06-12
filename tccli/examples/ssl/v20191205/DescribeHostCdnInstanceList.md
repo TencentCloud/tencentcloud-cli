@@ -28,6 +28,9 @@ Output:
             }
         ],
         "TotalCount": 1,
+        "AsyncTotalNum": 0,
+        "AsyncOffset": 0,
+        "AsyncCacheTime": "abc",
         "RequestId": "abc"
     }
 }

@@ -1,6 +1,6 @@
 **Example 1: 查询任务执行结果**
 
-
+查询任务执行结果
 
 Input: 
 
@@ -14,7 +14,8 @@ Output:
 {
     "Response": {
         "Status": "success",
-        "Info": "ok"
+        "Info": "ok",
+        "RequestId": "cafebabe-254f-11ea-8995-e92c139e6918"
     }
 }
 ```

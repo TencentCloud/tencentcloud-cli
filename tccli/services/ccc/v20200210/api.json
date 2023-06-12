@@ -4826,7 +4826,6 @@
       "document": "坐席购买信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "购买坐席数量",
           "example": "10",
@@ -4837,7 +4836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时间戳",
           "example": "163000000",
@@ -4848,9 +4846,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "截至时间戳",
+          "document": "截止时间戳",
           "example": "164000000",
           "member": "int64",
           "name": "EndTime",

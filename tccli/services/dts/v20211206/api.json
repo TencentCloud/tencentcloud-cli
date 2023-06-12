@@ -683,7 +683,6 @@
       "document": "一致性校验库表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
@@ -694,7 +693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -705,7 +703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1",
@@ -716,7 +713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -727,7 +723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -738,7 +733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -749,7 +743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于一致性校验的视图配置，当 ViewMode 为 partial 时， 需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -805,7 +798,6 @@
       "document": "用于一致性校验的表配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t1",
@@ -2761,7 +2753,6 @@
       "document": "DescribeCompareTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "dts-e7ukka6g",
@@ -2771,7 +2762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页设置，表示每页显示多少条任务，默认为 20",
           "example": "20",
@@ -2781,7 +2771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -2791,7 +2780,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验任务 ID",
           "example": "dts-5ftw8366-compare-n0pee6pc",
@@ -2801,7 +2789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
           "example": "[\"running\"]",
@@ -2822,7 +2809,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2832,7 +2818,6 @@
           "example": "无",
           "member": "CompareTaskItem",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

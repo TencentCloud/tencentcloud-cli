@@ -77,6 +77,13 @@
       "output": "DescribeInstanceStateResponse",
       "status": "online"
     },
+    "DescribeInstancesNew": {
+      "document": "获取实例列表，供外部sdk使用",
+      "input": "DescribeInstancesNewRequest",
+      "name": "获取实例简单信息列表",
+      "output": "DescribeInstancesNewResponse",
+      "status": "online"
+    },
     "DescribeSpec": {
       "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
       "input": "DescribeSpecRequest",
@@ -1247,6 +1254,87 @@
           "name": "FlowMsg",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesNewRequest": {
+      "document": "DescribeInstancesNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索的集群id名称",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "SearchInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索的集群name",
+          "example": "-",
+          "member": "string",
+          "name": "SearchInstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，第一页为0，第二页为10",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，分页步长，默认为10",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索标签列表",
+          "example": "无",
+          "member": "SearchTags",
+          "name": "SearchTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesNewResponse": {
+      "document": "DescribeInstancesNew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数",
+          "example": "18",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例数组",
+          "example": "-",
+          "member": "InstanceInfo",
+          "name": "InstancesList",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3022,6 +3110,45 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchTags": {
+      "document": "列表页搜索的标记列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签的键",
+          "example": "标签一",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签的值",
+          "example": "标签值一",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "1表示只输入标签的键，没有输入值；0表示输入键时且输入值",
+          "example": "1",
+          "member": "int64",
+          "name": "AllValue",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ServiceInfo": {
       "document": "服务详细信息描述。",

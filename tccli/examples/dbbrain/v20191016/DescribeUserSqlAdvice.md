@@ -1,6 +1,6 @@
 **Example 1: 获取SQL优化建议**
 
-
+获取SQL优化建议。
 
 Input: 
 
@@ -28,7 +28,7 @@ Output:
 
 **Example 2: 获取无需优化SQL的优化建议**
 
-
+获取无需优化SQL的优化建议。
 
 Input: 
 

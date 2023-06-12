@@ -8415,7 +8415,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，当前支持\n<li>StartService：启动服务</li>\n<li>StopService：停止服务</li>\n<li>StartMonitor：退出维护</li>\n<li>StopMonitor：进入维护</li>\n",
+          "document": "操作类型，当前支持\n<li>StartService：启动服务</li>\n<li>StopService：停止服务</li>\n<li>StartMonitor：退出维护</li>\n<li>StopMonitor：进入维护</li>\n<li>RestartService：重启服务</li>",
           "example": "StartService",
           "member": "string",
           "name": "OpType",
@@ -8429,6 +8429,15 @@
           "member": "OpScope",
           "name": "OpScope",
           "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作策略",
+          "example": "无",
+          "member": "StrategyConfig",
+          "name": "StrategyConfig",
+          "required": false,
           "type": "object"
         }
       ],
@@ -8492,6 +8501,52 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StrategyConfig": {
+      "document": "重启/停止/启动服务/监控的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0:关闭滚动重启\n1:开启滚动启动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RollingRestartSwitch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "滚动重启每批次的重启数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "TimeWait",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作失败处理策略，0:失败阻塞, 1:失败自动跳过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DealOnFail",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

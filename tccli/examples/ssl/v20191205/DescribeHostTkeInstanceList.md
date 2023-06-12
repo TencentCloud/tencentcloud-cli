@@ -1,6 +1,6 @@
-**Example 1: 获取主机安全服务列表**
+**Example 1: 证书部署TKEX实例列表**
 
-获取主机安全服务列表
+证书部署TKEX实例列表
 
 Input: 
 
@@ -54,6 +54,7 @@ Output:
         ],
         "AsyncTotalNum": 0,
         "AsyncOffset": 0,
+        "AsyncCacheTime": "abc",
         "RequestId": "abc"
     }
 }

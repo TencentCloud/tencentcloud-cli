@@ -104,7 +104,7 @@
     ],
     "DescribeResourceTagsByTagKeys": [
       {
-        "document": "",
+        "document": "根据标签键获取资源标签",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByTagKeys\r\n&ServiceType=cvm\r\n&ResourcePrefix=instance\r\n&ResourceRegion=ap-beijing\r\n&ResourceIds.0=ins-1234\r\n&TagKeys.0=abc\r\n&TagKeys.1=edf\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Rows\": [\n            {\n                \"ResourceId\": \"ins-asdfsadf\",\n                \"TagKeyValues\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"edf\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\n    }\n}",
         "title": "根据标签键获取资源标签"

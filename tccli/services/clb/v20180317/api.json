@@ -3096,27 +3096,24 @@
       "document": "CreateTargetGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标组名称，限定50个字符",
-          "example": "czhtest",
+          "example": "test-name",
           "member": "string",
           "name": "TargetGroupName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组的vpcid属性，不填则使用默认vpc",
-          "example": "vpc-i1cnjuhx",
+          "example": "vpc-i1******",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口",
           "example": "80",
@@ -3126,7 +3123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组绑定的后端服务器",
           "example": "无",
@@ -3144,10 +3140,9 @@
         {
           "disabled": false,
           "document": "创建目标组后生成的id",
-          "example": "lbtg-815iz538",
+          "example": "lbtg-81******",
           "member": "string",
           "name": "TargetGroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8707,7 +8702,6 @@
       "document": "ModifyTargetGroupAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标组的ID。",
           "example": "lbtg-815iz538",
@@ -8717,7 +8711,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组的新名称。",
           "example": "xxxxholic",
@@ -8727,7 +8720,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组的新默认端口。",
           "example": "22",
@@ -10531,7 +10523,6 @@
       "document": "规则与目标组的关联关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡ID",
           "example": "lb-agcadfe",
@@ -10542,18 +10533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "监听器ID",
-          "example": "lbl-xxxx",
-          "member": "string",
-          "name": "ListenerId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "目标组ID",
           "example": "lbtg-0nzo3czo",
@@ -10564,7 +10543,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "监听器ID",
+          "example": "lbl-xxxx",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "转发规则ID",
           "example": "loc-aaaaaa",
@@ -10784,9 +10772,9 @@
       "document": "目标组实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标组实例的内网IP",
+          "example": "x.x.x.x",
           "member": "string",
           "name": "BindIP",
           "required": true,
@@ -10794,19 +10782,19 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组实例的端口",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组实例的权重",
+          "example": "10",
           "member": "uint64",
           "name": "Weight",
           "required": false,
@@ -10814,9 +10802,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标组实例的新端口",
+          "example": "80",
           "member": "uint64",
           "name": "NewPort",
           "required": false,

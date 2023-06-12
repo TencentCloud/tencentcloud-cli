@@ -5473,6 +5473,28 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建者 Uin",
+          "example": "0",
+          "member": "uint64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "账号 Uin",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5604,7 +5626,7 @@
         {
           "default": "",
           "disabled": false,
-          "document": "动态注册产品秘钥",
+          "document": "动态注册产品密钥",
           "example": "key",
           "member": "string",
           "name": "ProductSecret",
@@ -5652,6 +5674,28 @@
           "example": "12345",
           "member": "uint64",
           "name": "OriginUserId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备限制",
+          "example": "1000",
+          "member": "uint64",
+          "name": "DeviceLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品禁用状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "ForbiddenStatus",
           "required": false,
           "type": "int",
           "value_allowed_null": false

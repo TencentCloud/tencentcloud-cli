@@ -1,32 +1,36 @@
-**Example 1: 创建按量计费实例**
+**Example 1: 创建专业版实例**
 
-创建按量计费实例
+创建峰值带宽为 20MB/s，硬盘大小 200GB 的专业版实例
 
 Input: 
 
 ```
 tccli ckafka CreateInstancePost --cli-unfold-argument  \
-    --InstanceName test \
-    --VpcId vpc-12341234 \
-    --SubnetId subnetId-12341233 \
-    --MsgRetentionTime 1440 \
-    --BandWidth 8 \
-    --ZoneId 100003 \
-    --ClusterId 55
+    --InstanceName test45 \
+    --VpcId vpc-xxxxxxxx \
+    --SubnetId subnet-xxxxxxxx \
+    --KafkaVersion 2.4.2 \
+    --SpecificationsType profession \
+    --DiskType CLOUD_BASIC \
+    --BandWidth 20 \
+    --DiskSize 200 \
+    --Partition 400 \
+    --TopicNum 200 \
+    --ZoneId 450001
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "9432af9d-8c3e-4474-b5eb-0f5298dbb6e5",
         "Result": {
-            "ReturnCode": "0",
-            "ReturnMessage": "ok[apply ok]",
             "Data": {
-                "FlowId": 492917
-            }
-        },
-        "RequestId": "4effa7c3-edb2-4310-9202-ea8259ca122f"
+                "FlowId": 0
+            },
+            "ReturnCode": "0",
+            "ReturnMessage": "ok[apply ok]"
+        }
     }
 }
 ```

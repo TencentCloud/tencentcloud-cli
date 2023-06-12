@@ -47,3 +47,27 @@ Output:
 }
 ```
 
+**Example 3: 创建语音翻译模板**
+
+创建语音翻译模板
+
+Input: 
+
+```
+tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
+    --Name test \
+    --TranslateConfigure.Switch ON \
+    --TranslateConfigure.SourceLanguage en \
+    --TranslateConfigure.DestinationLanguage zh
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Definition": 278654,
+        "RequestId": "62cca75c-7dd3-4819-ad9d-13b48a4b4018"
+    }
+}
+```
+
