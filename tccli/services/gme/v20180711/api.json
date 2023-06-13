@@ -3189,7 +3189,6 @@
       "document": "服务开关状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实时语音服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3201,7 +3200,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音消息服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3213,7 +3211,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音内容安全服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3225,7 +3222,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音录制服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3237,13 +3233,23 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音转文本服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "StatusInfo",
           "name": "RealTimeAsr",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文本翻译服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "TextTranslate",
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1

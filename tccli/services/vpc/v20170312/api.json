@@ -16869,18 +16869,6 @@
       "document": "DescribeEniAllInternal请求参数结构体",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "用户AppId",
-          "example": "251198225",
-          "member": "string",
-          "name": "Owner",
-          "required": true,
-          "type": "string",
-          "visibility": 2
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "100",
@@ -16891,7 +16879,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -16902,7 +16889,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整数vpcId",
           "example": "123",
@@ -16913,7 +16899,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.uniqEniId",
           "example": "xxx",
@@ -16924,7 +16909,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.eniId",
           "example": "1",
@@ -16935,7 +16919,16 @@
           "visibility": 2
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "用户AppId",
+          "example": "251198225",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
           "disabled": false,
           "document": "整数subnetId",
           "example": "123",
@@ -16946,7 +16939,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对外唯一SubnetId",
           "example": "xxx",
@@ -16957,7 +16949,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.description",
           "example": "xxx",
@@ -16968,7 +16959,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "xxx",
@@ -16979,7 +16969,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.ifnName",
           "example": "xxx",
@@ -16990,7 +16979,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.mac",
           "example": "xxx",
@@ -17001,7 +16989,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.type",
           "example": "0",
@@ -17012,7 +16999,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.business",
           "example": "xxx",
@@ -17023,7 +17009,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.businessOwner",
           "example": "xxx",
@@ -17034,7 +17019,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.state",
           "example": "0",
@@ -17045,7 +17029,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.instanceId",
           "example": "xxx",
@@ -17056,7 +17039,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.uuid",
           "example": "xxx",
@@ -17067,7 +17049,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.sgId",
           "example": "xxx",
@@ -17078,7 +17059,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.tagKey",
           "example": "xxx",
@@ -17089,7 +17069,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.tagValue",
           "example": "xxx",
@@ -17100,7 +17079,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.eniPip",
           "example": "1.1.1.1",
@@ -17122,7 +17100,6 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": false,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 2
@@ -17133,7 +17110,6 @@
           "example": "无",
           "member": "VpcOssEniForDescribeEniAllInternal",
           "name": "EniSet",
-          "required": false,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 2
@@ -47308,7 +47284,6 @@
       "document": "复杂类型: VpcOssEniForDescribeEniAllInternal",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.bDefault",
           "example": "0",
@@ -47320,7 +47295,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整数vpcId",
           "example": "16769060",
@@ -47332,7 +47306,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.eniId",
           "example": "2609655",
@@ -47344,7 +47317,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对外唯一VpcId",
           "example": "vpc-7zayowkt",
@@ -47356,7 +47328,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "掩码",
           "example": "255.255.128.0",
@@ -47368,7 +47339,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.vpcBDefault",
           "example": "0",
@@ -47380,7 +47350,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.trunkingFlag",
           "example": "0",
@@ -47392,7 +47361,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整数subnetId",
           "example": "2018313",
@@ -47404,7 +47372,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.pip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -47416,7 +47383,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.eniQos\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -47428,7 +47394,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.aclId",
           "example": "95805",
@@ -47440,7 +47405,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "251197522",
@@ -47452,7 +47416,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.uniqAclId",
           "example": "acl-r762el0i",
@@ -47464,7 +47427,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.uniqCdcId",
           "example": "xxx",
@@ -47476,7 +47438,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网地址",
           "example": "10.4.128.0",
@@ -47488,7 +47449,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.uniqEniId",
           "example": "eni-nl6govs9",
@@ -47500,7 +47460,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.bFlushSubEniHavip",
           "example": "0",
@@ -47512,7 +47471,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.vpcIntMask",
           "example": "16",
@@ -47524,7 +47482,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.vpcMask",
           "example": "255.255.0.0",
@@ -47536,7 +47493,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.zoneId",
           "example": "100002",
@@ -47548,7 +47504,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.instance\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -47560,7 +47515,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.state",
           "example": "1",
@@ -47572,7 +47526,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.bArpLearning",
           "example": "1",
@@ -47584,7 +47537,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -47596,7 +47548,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整数掩码",
           "example": "17",
@@ -47608,7 +47559,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.businessOwner",
           "example": "xxx",
@@ -47620,7 +47570,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.dhcpFlag",
           "example": "0",
@@ -47632,7 +47581,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.type",
           "example": "1",
@@ -47644,7 +47592,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.description",
           "example": "xx",
@@ -47656,7 +47603,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.business",
           "example": "xx",
@@ -47668,7 +47614,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.vpcSubnet",
           "example": "10.0.0.0",
@@ -47680,7 +47625,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.bCdc",
           "example": "0",
@@ -47692,7 +47636,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.mac",
           "example": "52:54:00:51:48:6B",
@@ -47704,7 +47647,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.tagProto",
           "example": "vlan",
@@ -47716,7 +47658,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.createTime",
           "example": "2021-06-17 11:24:24",
@@ -47728,7 +47669,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.sflowNum",
           "example": "1",
@@ -47740,7 +47680,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "ins-yn79rou1 Primary ENI",
@@ -47752,7 +47691,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.sflow\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -47764,7 +47702,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.aclName",
           "example": "ttttt",
@@ -47776,7 +47713,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.bLocalZone",
           "example": "0",
@@ -47788,7 +47724,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.vpcName",
           "example": "cissytest",
@@ -47800,7 +47735,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对外唯一SubnetId",
           "example": "subnet-oiqmspv4",
@@ -47812,7 +47746,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.ifnName",
           "example": "veth_51486Bf0",
@@ -47824,7 +47757,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原VPC OSS APIv2名称: GetEniAll.subnetName",
           "example": "testtt",
@@ -47833,6 +47765,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: GetEniAll.sg\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcOssSafeGroup",
+          "name": "SafeGroup",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 2
         }
       ],
@@ -55811,6 +55754,23 @@
         }
       ],
       "usage": "both"
+    },
+    "VpcOssSafeGroup": {
+      "document": "vpcoss 安全组信息sg",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原vpcoss参数sgId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg-qkfewp0u",
+          "member": "string",
+          "name": "SafeGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
     },
     "VpcOssService": {
       "document": "复杂类型: VpcOssService",

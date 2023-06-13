@@ -1,6 +1,6 @@
 **Example 1: 查询实例克隆需要的最小规格**
 
-
+查询创建实例postgres-apzvwncr的克隆实例需要的最小规格
 
 Input: 
 

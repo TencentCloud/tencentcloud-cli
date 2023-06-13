@@ -1,0 +1,509 @@
+{
+  "actions": {
+    "CheckUser": [
+      {
+        "document": "检查用户",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUser\n<公共请求参数>\n\n{\n    \"User\": {\n        \"Tencent\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "检查用户"
+      }
+    ],
+    "CreateApplication": [
+      {
+        "document": "在指定项目和环境下创建应用",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "创建应用"
+      }
+    ],
+    "CreateComponent": [
+      {
+        "document": "为应用创建组件",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateComponent\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-xxxx\",\n    \"ProjectID\": \"prj-xxxx\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"Component\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "为应用创建组件"
+      }
+    ],
+    "CreateConfig": [
+      {
+        "document": "创建配置",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigType\": \"abc\",\n    \"Content\": {},\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CreateConfig"
+      }
+    ],
+    "CreateEnvironment": [
+      {
+        "document": "在指定业务下创建一个新环境",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "创建环境"
+      }
+    ],
+    "CreateInstance": [
+      {
+        "document": "创建应用实例",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Creator\": {\n        \"Tencent\": {}\n    },\n    \"Source\": \"abc\",\n    \"SourceURL\": \"abc\",\n    \"ReadOnly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建应用实例"
+      }
+    ],
+    "CreatePolicy": [
+      {
+        "document": "创建策略",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"Policy\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建策略"
+      }
+    ],
+    "CreateProject": [
+      {
+        "document": "创建业务",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "CreateProject"
+      }
+    ],
+    "CreateTrait": [
+      {
+        "document": "创建 北极星类型 Trait",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"Trait\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建 Trait"
+      }
+    ],
+    "DeleteApplication": [
+      {
+        "document": "删除指定环境下某一应用",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "删除应用实例"
+      }
+    ],
+    "DeleteComponent": [
+      {
+        "document": "删除组件",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteComponent\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-xxxxx\",\n    \"ProjectID\": \"prj-xxxxx\",\n    \"InstanceID\": \"ins-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "删除组件"
+      }
+    ],
+    "DeleteConfig": [
+      {
+        "document": "删除配置",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DeleteConfig"
+      }
+    ],
+    "DeleteEnvironment": [
+      {
+        "document": "删除指定业务下的某个环境",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3403fbab-192-4977-b067-d5fb433cf95a\"\n    }\n}",
+        "title": "删除环境"
+      }
+    ],
+    "DeleteInstance": [
+      {
+        "document": "删除应用实例",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除应用实例"
+      }
+    ],
+    "DeletePod": [
+      {
+        "document": "删除Pod",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePod\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "删除Pod"
+      }
+    ],
+    "DeletePolicy": [
+      {
+        "document": "删除策略",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicy\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"PolicyName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除策略"
+      }
+    ],
+    "DeleteProject": [
+      {
+        "document": "删除业务",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "DeleteProject"
+      }
+    ],
+    "DeleteTrait": [
+      {
+        "document": "删除 Trait",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"TraitName\": \"app-v2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除 Trait"
+      }
+    ],
+    "DescribeAggregatedConfigs": [
+      {
+        "document": "拉取配置聚合信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggregatedConfigs\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Query\": \"abc\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AggregatedConfigs\": [\n            {\n                \"ProjectID\": \"abc\",\n                \"ConfigName\": \"abc\",\n                \"ConfigType\": \"abc\",\n                \"VersionCount\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Filters\": [\n            {}\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeAggregatedConfigs"
+      }
+    ],
+    "DescribeApplication": [
+      {
+        "document": "获取应用详情",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "获取应用详情"
+      }
+    ],
+    "DescribeApplicationResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationResource\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看应用资源"
+      }
+    ],
+    "DescribeApplicationResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看应用资源列表"
+      }
+    ],
+    "DescribeApplicationStatus": [
+      {
+        "document": "查看应用状态",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看应用状态"
+      }
+    ],
+    "DescribeApplications": [
+      {
+        "document": "获取应用列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ProjectID\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "DescribeApplications"
+      }
+    ],
+    "DescribeComponentStatus": [
+      {
+        "document": "查看组件状态",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComponentStatus\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看组件状态"
+      }
+    ],
+    "DescribeComponentsStatus": [
+      {
+        "document": "查看组件状态列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComponentsStatus\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看组件状态列表"
+      }
+    ],
+    "DescribeConfig": [
+      {
+        "document": "查询配置",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"Rainbow\": {\n        \"AppID\": \"abc\",\n        \"Group\": \"abc\",\n        \"EnvName\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询配置"
+      }
+    ],
+    "DescribeConfigs": [
+      {
+        "document": "查询配置",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Query\": \"abc\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"Query\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询配置"
+      }
+    ],
+    "DescribeDepartments": [
+      {
+        "document": "查询部门列表信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDepartments\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "DescribeDepartments"
+      }
+    ],
+    "DescribeEnvironment": [
+      {
+        "document": "查看环境信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看环境信息"
+      }
+    ],
+    "DescribeEnvironments": [
+      {
+        "document": "查询指定业务下的环境列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询环境列表"
+      }
+    ],
+    "DescribeImages": [
+      {
+        "document": "拉取镜像列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "拉取镜像列表"
+      }
+    ],
+    "DescribeInstance": [
+      {
+        "document": "获取应用实例详情\n\n",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取应用实例详情"
+      }
+    ],
+    "DescribeInstanceStatus": [
+      {
+        "document": "查看应用实例状态",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceStatus\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看应用实例状态"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "获取应用实例列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"ApplicationID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取应用实例列表"
+      }
+    ],
+    "DescribeModules": [
+      {
+        "document": "查询部门模块信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查询部门模块信息"
+      }
+    ],
+    "DescribePod": [
+      {
+        "document": "查看Pod",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePod\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看Pod"
+      }
+    ],
+    "DescribePodEvents": [
+      {
+        "document": "查询Pod事件",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodEvents\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"Query\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询Pod事件"
+      }
+    ],
+    "DescribePodLog": [
+      {
+        "document": "查看Pod Log",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodLog\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看Pod Log"
+      }
+    ],
+    "DescribePods": [
+      {
+        "document": "查看Pod列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePods\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查看Pod列表"
+      }
+    ],
+    "DescribePolicies": [
+      {
+        "document": "查询策略列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicies\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Query\": \"abc\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Policies\": [\n            {}\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询策略列表"
+      }
+    ],
+    "DescribePolicy": [
+      {
+        "document": "查询策略",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicy\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"PolicyName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Policy\": {},\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询策略"
+      }
+    ],
+    "DescribeProducts": [
+      {
+        "document": "查询部门下产品信息列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "查询部门下产品信息列表"
+      }
+    ],
+    "DescribeProject": [
+      {
+        "document": "查询业务详情",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3403fbab-192-4977-b067-d5fb433cf95a\"\n    }\n}",
+        "title": "DescribeProject"
+      }
+    ],
+    "DescribeProjectConfig": [
+      {
+        "document": "获取业务配置信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeProjectConfig"
+      }
+    ],
+    "DescribeProjects": [
+      {
+        "document": "查询业务列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeProjects"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Regions\": [\n            {}\n        ],\n        \"RequestId\": \"wallaceqian1669712117\"\n    }\n}",
+        "title": "DescribeRegions"
+      }
+    ],
+    "DescribeRepositories": [
+      {
+        "document": "拉取镜像仓库列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "拉取镜像仓库列表"
+      }
+    ],
+    "DescribeTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Templates\": [\n            {\n                \"Content\": \"\",\n                \"DisplayName\": \"firststsplus\",\n                \"Description\": \"first statefulset plus\"\n            }\n        ],\n        \"RequestId\": \"123456\"\n    }\n}",
+        "title": "DescribeTemplates"
+      }
+    ],
+    "DescribeTrait": [
+      {
+        "document": "查询 Trait 信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"TraitName\": \"app-v1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Trait\": {},\n        \"RequestId\": \"bitliu-rid-xxxxx\"\n    }\n}",
+        "title": "查询 Trait 信息"
+      }
+    ],
+    "DescribeTraitStatus": [
+      {
+        "document": "查询运维操作状态",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraitStatus\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ComponentName\": \"abc\",\n    \"TraitName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TraitStatus\": {\n            \"Name\": \"abc\",\n            \"Complete\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询运维操作状态"
+      }
+    ],
+    "DescribeTraits": [
+      {
+        "document": "查询北极星类型的 Trait 列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraits\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"Filters\": [\n        {\n            \"Name\": \"Type\",\n            \"Values\": [\n                \"deploy\",\n                \"polaris\"\n            ]\n        },\n        {\n            \"Name\": \"ComponentName\",\n            \"Values\": [\n                \"app\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TraitOnComponents\": [\n            {\n                \"ComponentName\": \"abc\",\n                \"Trait\": [\n                    {}\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询北极星类型的 Trait 列表"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "获取子用户列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "获取子用户列表"
+      }
+    ],
+    "ListInstances": [
+      {
+        "document": "拉取应用实例基础信息列表",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "拉取应用实例基础信息列表"
+      }
+    ],
+    "ModifyApplication": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ],
+    "ModifyComponent": [
+      {
+        "document": "修改组件",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyComponent\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-xxxx\",\n    \"ProjectID\": \"prj-xxxx\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"Component\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "修改组件"
+      }
+    ],
+    "ModifyConfig": [
+      {
+        "document": "修改配置",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigType\": \"abc\",\n    \"Content\": {},\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyConfig"
+      }
+    ],
+    "ModifyEnvironment": [
+      {
+        "document": "修改指定业务下的某一个环境信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改环境信息"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "修改实例",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\",\n    \"Policies\": [\n        {}\n    ],\n    \"ReadOnly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改实例"
+      }
+    ],
+    "ModifyPolicy": [
+      {
+        "document": "修改策略",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicy\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"Policy\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改策略"
+      }
+    ],
+    "ModifyProject": [
+      {
+        "document": "修改业务信息",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "ModifyProject"
+      }
+    ],
+    "ModifyTrait": [
+      {
+        "document": "修改 北极星类型 Trait",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"Trait\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改 北极星类型 Trait"
+      }
+    ],
+    "ValidateCreateComponent": [
+      {
+        "document": "校验创建组件",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ValidateCreateComponent\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxxx\",\n    \"Component\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
+        "title": "校验创建组件"
+      }
+    ]
+  },
+  "version": "1.0"
+}

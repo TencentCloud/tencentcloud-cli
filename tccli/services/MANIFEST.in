@@ -55,6 +55,8 @@ include tccli/services/btoe/v20210303/api.json
 include tccli/services/btoe/v20210303/examples.json
 include tccli/services/cam/v20190116/api.json
 include tccli/services/cam/v20190116/examples.json
+include tccli/services/camp/v20220920/api.json
+include tccli/services/camp/v20220920/examples.json
 include tccli/services/captcha/v20190722/api.json
 include tccli/services/captcha/v20190722/examples.json
 include tccli/services/cat/v20180409/api.json

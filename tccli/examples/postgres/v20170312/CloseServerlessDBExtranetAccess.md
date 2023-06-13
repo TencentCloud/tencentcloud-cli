@@ -1,6 +1,6 @@
-**Example 1: 关闭serverless外网**
+**Example 1: 关闭serverless公网地址**
 
-
+关闭serverless公网地址
 
 Input: 
 

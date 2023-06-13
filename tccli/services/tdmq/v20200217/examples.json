@@ -748,14 +748,6 @@
         "title": "更新Amqp队列"
       }
     ],
-    "ModifyAMQPVHost": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyAMQPVHost\n&VHostId=test\n&Remark=example\n&MsgTtl=1\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "更新Vhost"
-      }
-    ],
     "ModifyCluster": [
       {
         "document": "",

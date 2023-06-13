@@ -150,6 +150,10 @@ tccli/services/cam/__init__.py
 tccli/services/cam/cam_client.py
 tccli/services/cam/v20190116/api.json
 tccli/services/cam/v20190116/examples.json
+tccli/services/camp/__init__.py
+tccli/services/camp/camp_client.py
+tccli/services/camp/v20220920/api.json
+tccli/services/camp/v20220920/examples.json
 tccli/services/captcha/__init__.py
 tccli/services/captcha/captcha_client.py
 tccli/services/captcha/v20190722/api.json

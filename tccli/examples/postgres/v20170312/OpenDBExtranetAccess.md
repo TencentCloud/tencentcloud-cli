@@ -1,6 +1,6 @@
-**Example 1: 开启外网地址**
+**Example 1: 开通实例外网**
 
-
+开通实例postgres-apzvwncr外网。
 
 Input: 
 

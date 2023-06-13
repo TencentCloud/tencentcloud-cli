@@ -1,6 +1,6 @@
-**Example 1: 关闭实例外网链接**
+**Example 1: 关闭实例外网**
 
-
+关闭实例postgres-apzvwncr外网。
 
 Input: 
 

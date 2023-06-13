@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AccessSpartaProtection": {
+      "document": "一键关闭bypass",
+      "input": "AccessSpartaProtectionRequest",
+      "name": "关闭bypass",
+      "output": "AccessSpartaProtectionResponse",
+      "status": "online"
+    },
     "AddCustomRule": {
       "document": "增加访问控制（自定义策略）",
       "input": "AddCustomRuleRequest",
@@ -784,6 +791,74 @@
         }
       ],
       "usage": "out"
+    },
+    "AccessSpartaProtectionRequest": {
+      "document": "AccessSpartaProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"www.google.com\"",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例",
+          "example": "\"waf-xx\"",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "int64",
+          "name": "AppIdInner",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "UinInner",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AccessSpartaProtectionResponse": {
+      "document": "AccessSpartaProtection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FailedMsg",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AccessValueInfo": {
       "document": "用于DescribeAccessIndex接口的出参",

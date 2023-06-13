@@ -3891,7 +3891,7 @@
         },
         {
           "disabled": false,
-          "document": "SOL模板的MD5值",
+          "document": "SQL模板的MD5值",
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",
@@ -7336,7 +7336,6 @@
       "document": "慢日志TopSql",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "sql总锁等待时间，单位秒",
           "example": "0.00008",
@@ -7344,10 +7343,10 @@
           "name": "LockTime",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大锁等待时间，单位秒",
           "example": "0.000096",
@@ -7355,10 +7354,10 @@
           "name": "LockTimeMax",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小锁等待时间，单位秒",
           "example": "0.000041",
@@ -7366,10 +7365,10 @@
           "name": "LockTimeMin",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总扫描行数",
           "example": "584832",
@@ -7377,10 +7376,10 @@
           "name": "RowsExamined",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大扫描行数",
           "example": "101782",
@@ -7388,10 +7387,10 @@
           "name": "RowsExaminedMax",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小扫描行数",
           "example": "584832",
@@ -7399,10 +7398,10 @@
           "name": "RowsExaminedMin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总耗时，单位秒",
           "example": "0.513363",
@@ -7410,10 +7409,10 @@
           "name": "QueryTime",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大执行时间，单位秒",
           "example": "0.765213",
@@ -7421,10 +7420,10 @@
           "name": "QueryTimeMax",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小执行时间，单位秒",
           "example": "0.629921",
@@ -7432,10 +7431,10 @@
           "name": "QueryTimeMin",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总返回行数",
           "example": "292416",
@@ -7443,10 +7442,10 @@
           "name": "RowsSent",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回行数",
           "example": "292416",
@@ -7454,10 +7453,10 @@
           "name": "RowsSentMax",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小返回行数",
           "example": "292416",
@@ -7465,10 +7464,10 @@
           "name": "RowsSentMin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行次数",
           "example": "37",
@@ -7476,10 +7475,10 @@
           "name": "ExecTimes",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql模板",
           "example": "select * from t;",
@@ -7487,10 +7486,10 @@
           "name": "SqlTemplate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带参数SQL（随机）",
           "example": "SELECT * FROM t;",
@@ -7498,10 +7497,10 @@
           "name": "SqlText",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test_center",
@@ -7509,10 +7508,10 @@
           "name": "Schema",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总耗时占比，单位%",
           "example": "2.44",
@@ -7520,10 +7519,10 @@
           "name": "QueryTimeRatio",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql总锁等待时间占比，单位%",
           "example": "1.92",
@@ -7531,10 +7530,10 @@
           "name": "LockTimeRatio",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总扫描行数占比，单位%",
           "example": "2.3",
@@ -7542,10 +7541,10 @@
           "name": "RowsExaminedRatio",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总返回行数占比，单位%",
           "example": "18.67",
@@ -7553,10 +7552,10 @@
           "name": "RowsSentRatio",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均执行时间，单位秒",
           "example": "0.513363",
@@ -7564,10 +7563,10 @@
           "name": "QueryTimeAvg",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均返回行数",
           "example": "26518.0",
@@ -7575,10 +7574,10 @@
           "name": "RowsSentAvg",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均锁等待时间，单位秒",
           "example": "0.000096",
@@ -7586,10 +7585,10 @@
           "name": "LockTimeAvg",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均扫描行数",
           "example": "584832.0",
@@ -7597,18 +7596,19 @@
           "name": "RowsExaminedAvg",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SOL模板的MD5值",
+          "document": "SQL模板的MD5值",
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -1,23 +1,21 @@
-**Example 1: 批量修改数据库实例参数**
+**Example 1: 修改实例单个参数**
 
-批量修改数据库实例参数
+修改实例max_replication_slots参数值为20
 
 Input: 
 
 ```
 tccli postgres ModifyDBInstanceParameters --cli-unfold-argument  \
-    --DBInstanceId postgres-nbvqjlhf \
-    --ParamList.0.Name vacuum_freeze_table_age \
-    --ParamList.0.ExpectedValue 1500000 \
-    --ParamList.1.Name autovacuum_multixact_freeze_max_age \
-    --ParamList.1.ExpectedValue 40000000
+    --DBInstanceId postgres-lzrwgg6d \
+    --ParamList.0.Name max_replication_slots \
+    --ParamList.0.ExpectedValue 20
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "13123123123123"
+        "RequestId": "ec555918-0c22-42ea-aa23-730167195708"
     }
 }
 ```

@@ -15,16 +15,16 @@
       "status": "online"
     },
     "CloseDBExtranetAccess": {
-      "document": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。",
+      "document": "本接口（CloseDBExtranetAccess）用于关闭实例公网地址。",
       "input": "CloseDBExtranetAccessRequest",
-      "name": "关闭实例外网链接",
+      "name": "关闭实例公网地址",
       "output": "CloseDBExtranetAccessResponse",
       "status": "online"
     },
     "CloseServerlessDBExtranetAccess": {
-      "document": "关闭serverlessDB实例外网",
+      "document": "本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
       "input": "CloseServerlessDBExtranetAccessRequest",
-      "name": "关闭serverlessDB实例外网",
+      "name": "关闭serverlessDB实例公网地址",
       "output": "CloseServerlessDBExtranetAccessResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DescribeAccounts": {
-      "document": "本接口（DescribeAccounts）用于获取实例用户列表。",
+      "document": "本接口（DescribeAccounts）用于查询实例的数据库账号列表。",
       "input": "DescribeAccountsRequest",
-      "name": "获取实例用户列表",
+      "name": "查询实例的数据库账号列表",
       "output": "DescribeAccountsResponse",
       "status": "online"
     },
@@ -162,9 +162,9 @@
       "status": "online"
     },
     "DescribeBackupDownloadURL": {
-      "document": "本接口 (DescribeBackupDownloadURL) 用于获取备份下载链接。",
+      "document": "本接口 (DescribeBackupDownloadURL) 用于查询指定备份集的下载地址，可包括全量备份集、增量日志备份集。",
       "input": "DescribeBackupDownloadURLRequest",
-      "name": "获取备份下载链接",
+      "name": "查询备份集的下载地址",
       "output": "DescribeBackupDownloadURLResponse",
       "status": "online"
     },
@@ -206,7 +206,7 @@
     "DescribeCloneDBInstanceSpec": {
       "document": "本接口（DescribeCloneDBInstanceSpec）用于查询克隆实例可选择的最小规格，包括SpecCode和磁盘。",
       "input": "DescribeCloneDBInstanceSpecRequest",
-      "name": "查询克隆实例购买规格",
+      "name": "查询克隆实例可购买的规格",
       "output": "DescribeCloneDBInstanceSpecResponse",
       "status": "online"
     },
@@ -239,9 +239,9 @@
       "status": "online"
     },
     "DescribeDBInstanceSecurityGroups": {
-      "document": "本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组信息。",
+      "document": "本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组。",
       "input": "DescribeDBInstanceSecurityGroupsRequest",
-      "name": "查询实例安全组信息",
+      "name": "查询实例安全组",
       "output": "DescribeDBInstanceSecurityGroupsResponse",
       "status": "online"
     },
@@ -260,9 +260,9 @@
       "status": "online"
     },
     "DescribeDBVersions": {
-      "document": "本接口（DescribeDBVersions）用于查询支持的数据库版本号列表。",
+      "document": "本接口（DescribeDBVersions）用于查询支持的数据库版本。",
       "input": "DescribeDBVersionsRequest",
-      "name": "查询支持的数据库版本号列表",
+      "name": "查询支持的数据库版本",
       "output": "DescribeDBVersionsResponse",
       "status": "online"
     },
@@ -274,9 +274,9 @@
       "status": "online"
     },
     "DescribeDatabases": {
-      "document": "接口（DescribeDatabases）用来拉取数据库列表",
+      "document": "接口（DescribeDatabases）用来查询实例的数据库列表。",
       "input": "DescribeDatabasesRequest",
-      "name": "拉取数据库列表",
+      "name": "查询实例的数据库列表",
       "output": "DescribeDatabasesResponse",
       "status": "online"
     },
@@ -288,9 +288,9 @@
       "status": "online"
     },
     "DescribeEncryptionKeys": {
-      "document": "获取实例的密钥信息列表。",
+      "document": "本接口 （DescribeEncryptionKeys） 用于查询实例的密钥信息列表。",
       "input": "DescribeEncryptionKeysRequest",
-      "name": "实例密钥信息列表",
+      "name": "查询实例密钥信息列表",
       "output": "DescribeEncryptionKeysResponse",
       "status": "online"
     },
@@ -323,9 +323,9 @@
       "status": "online"
     },
     "DescribeParamsEvent": {
-      "document": "本接口 (DescribeParamsEvent) 用于查询参数修改事件详情。",
+      "document": "本接口（DescribeParamsEvent）用于查询参数修改事件。",
       "input": "DescribeParamsEventRequest",
-      "name": "查询参数修改事件详情",
+      "name": "查询参数修改事件",
       "output": "DescribeParamsEventResponse",
       "status": "online"
     },
@@ -337,9 +337,9 @@
       "status": "online"
     },
     "DescribeReadOnlyGroups": {
-      "document": "本接口(DescribeReadOnlyGroups)用于查询用户输入指定实例的只读组",
+      "document": "本接口（DescribeReadOnlyGroups）用于查询只读组列表",
       "input": "DescribeReadOnlyGroupsRequest",
-      "name": "查询只读组信息",
+      "name": "查询只读组列表",
       "output": "DescribeReadOnlyGroupsResponse",
       "status": "online"
     },
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "DestroyDBInstance": {
-      "document": "本接口 (DestroyDBInstance) 用于彻底销毁指定DBInstanceId对应的实例，销毁后实例数据将彻底删除，无法找回，只能销毁隔离中的实例。",
+      "document": "本接口 (DestroyDBInstance) 用于彻底销毁指定DBInstanceId对应的实例，销毁后实例数据将彻底删除，无法找回，调用前请仔细确认要操作的实例。只能销毁隔离中的实例。",
       "input": "DestroyDBInstanceRequest",
       "name": "销毁实例",
       "output": "DestroyDBInstanceResponse",
@@ -400,9 +400,9 @@
       "status": "online"
     },
     "InquiryPriceCreateDBInstances": {
-      "document": "本接口 (InquiryPriceCreateDBInstances) 用于查询购买一个或多个实例的价格信息。",
+      "document": "本接口 (InquiryPriceCreateDBInstances) 用于查询购买实例的价格信息。",
       "input": "InquiryPriceCreateDBInstancesRequest",
-      "name": "查询售卖价格",
+      "name": "查询实例创建售卖价格",
       "output": "InquiryPriceCreateDBInstancesResponse",
       "status": "online"
     },
@@ -477,9 +477,9 @@
       "status": "online"
     },
     "ModifyDBInstanceParameters": {
-      "document": "批量修改参数",
+      "document": "本接口 (ModifyDBInstanceParameters) 用于修改实例参数。",
       "input": "ModifyDBInstanceParametersRequest",
-      "name": "批量修改参数",
+      "name": "修改实例参数",
       "output": "ModifyDBInstanceParametersResponse",
       "status": "online"
     },
@@ -498,23 +498,23 @@
       "status": "online"
     },
     "ModifyDBInstanceSpec": {
-      "document": "本接口（ModifyDBInstanceSpec）用于调整实例规格，包括内存、磁盘。",
+      "document": "本接口（ModifyDBInstanceSpec）用于修改实例规格，包括内存、磁盘。",
       "input": "ModifyDBInstanceSpecRequest",
-      "name": "调整实例规格",
+      "name": "修改实例规格",
       "output": "ModifyDBInstanceSpecResponse",
       "status": "online"
     },
     "ModifyDBInstancesProject": {
-      "document": "本接口（ModifyDBInstancesProject）用于将实例转至其他项目。",
+      "document": "本接口（ModifyDBInstancesProject）用于修改实例所属项目。",
       "input": "ModifyDBInstancesProjectRequest",
-      "name": "将实例转至其他项目",
+      "name": "修改实例所属项目",
       "output": "ModifyDBInstancesProjectResponse",
       "status": "online"
     },
     "ModifyParameterTemplate": {
-      "document": "本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述，修改，添加和删除参数模板参数。",
+      "document": "本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述等配置，也可用于管理参数模板中的参数列表。",
       "input": "ModifyParameterTemplateRequest",
-      "name": "修改参数模板信息",
+      "name": "修改参数模板",
       "output": "ModifyParameterTemplateResponse",
       "status": "online"
     },
@@ -533,16 +533,16 @@
       "status": "online"
     },
     "OpenDBExtranetAccess": {
-      "document": "本接口（OpenDBExtranetAccess）用于开通外网。",
+      "document": "本接口（OpenDBExtranetAccess）用于开通实例公网地址。",
       "input": "OpenDBExtranetAccessRequest",
-      "name": "开通外网",
+      "name": "开通实例公网地址",
       "output": "OpenDBExtranetAccessResponse",
       "status": "online"
     },
     "OpenServerlessDBExtranetAccess": {
-      "document": "开通serverlessDB实例外网",
+      "document": "本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。",
       "input": "OpenServerlessDBExtranetAccessRequest",
-      "name": "开通serverlessDB实例外网",
+      "name": "开通serverlessDB实例公网地址",
       "output": "OpenServerlessDBExtranetAccessResponse",
       "status": "online"
     },
@@ -1551,7 +1551,6 @@
       "document": "CloseDBExtranetAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-6r233v55",
           "example": "postgres-apzvwncr",
@@ -1562,7 +1561,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否关闭Ipv6外网，1：是，0：否",
           "example": "0",
@@ -1584,7 +1582,6 @@
           "example": "1234",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1602,7 +1599,6 @@
       "document": "CloseServerlessDBExtranetAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例唯一标识符",
           "example": "postgres-apzvwncr",
@@ -1613,7 +1609,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "test",
@@ -2291,6 +2286,16 @@
           "example": "无",
           "member": "string",
           "name": "DBEngineConfig",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async",
+          "example": "Async",
+          "member": "string",
+          "name": "SyncMode",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -4084,7 +4089,6 @@
       "document": "DescribeAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-6fego161",
           "example": "postgres-apzvwncr",
@@ -4095,7 +4099,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页最大返回数目，默认10，取值范围为1-100",
           "example": "20",
@@ -4106,7 +4109,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，从0开始。",
           "example": "0",
@@ -4117,7 +4119,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序",
           "example": "createTime",
@@ -4128,7 +4129,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序",
           "example": "desc",
@@ -4150,7 +4150,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4161,7 +4160,6 @@
           "example": "无",
           "member": "AccountInfo",
           "name": "Details",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4792,7 +4790,6 @@
       "document": "DescribeCloneDBInstanceSpec请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "postgres-abcd1234",
@@ -4803,7 +4800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。",
           "example": "f22057d2-46c0-5808-ab8a-d0c3385afabc",
@@ -4814,7 +4810,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。",
           "example": "2022-01-01 12:00:00",
@@ -4836,7 +4831,6 @@
           "example": "无",
           "member": "string",
           "name": "MinSpecCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4847,7 +4841,6 @@
           "example": "1000",
           "member": "int64",
           "name": "MinStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5173,7 +5166,6 @@
       "document": "DescribeDBInstanceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId",
           "example": "postgres-apzvwncr",
@@ -5184,7 +5176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要查询只读组关联的安全组，只传ReadOnlyGroupId",
           "example": "pgrogrp-nqwpkjbu",
@@ -5206,7 +5197,6 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5552,7 +5542,6 @@
       "document": "DescribeDatabases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "postgres-6bwgamo3",
@@ -5574,7 +5563,6 @@
           "example": "[\"postgres\",\"testdatabase\"]",
           "member": "string",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5654,7 +5642,6 @@
       "document": "DescribeEncryptionKeys请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "postgres-xxxxxxxx",
@@ -5676,7 +5663,6 @@
           "example": "无",
           "member": "EncryptionKey",
           "name": "EncryptionKeys",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6665,7 +6651,6 @@
       "document": "DestroyDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待下线实例ID",
           "example": "postgres-19nmz2xb",
@@ -8058,7 +8043,6 @@
       "document": "ModifyDBInstanceParameters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "postgres-xx",
@@ -8069,7 +8053,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改参数及期望值",
           "example": "无",
@@ -8339,7 +8322,6 @@
       "document": "ModifyDBInstancesProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。",
           "example": "[\"postgres-6bwgamo3\\n\",\"postgres-lnp6j6172\\n\"]",
@@ -8350,7 +8332,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属新项目的ID",
           "example": "10467",
@@ -8372,7 +8353,6 @@
           "example": "2",
           "member": "int64",
           "name": "Count",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8390,7 +8370,6 @@
       "document": "ModifyParameterTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板ID，用于唯一确认参数模板，不可修改",
           "example": "497857b4-4676-5583-8359-b697fe5968d9",
@@ -8401,7 +8380,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称",
           "example": "test_template",
@@ -8412,7 +8390,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述",
           "example": "test",
@@ -8423,7 +8400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中",
           "example": "无",
@@ -8434,7 +8410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中",
           "example": "[\"wal_level\"]",
@@ -8859,7 +8834,6 @@
       "document": "OpenDBExtranetAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如postgres-hez4fh0v",
           "example": "postgres-apzvwncr",
@@ -8870,7 +8844,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开通Ipv6外网，1：是，0：否",
           "example": "0",
@@ -8892,7 +8865,6 @@
           "example": "1234",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8910,7 +8882,6 @@
       "document": "OpenServerlessDBExtranetAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例的唯一标识符",
           "example": "postgres-apzvwncr",
@@ -8921,7 +8892,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "test",

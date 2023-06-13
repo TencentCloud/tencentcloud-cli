@@ -1,0 +1,3633 @@
+{
+  "actions": {
+    "CheckUser": {
+      "document": "检查用户",
+      "input": "CheckUserRequest",
+      "name": "检查用户",
+      "output": "CheckUserResponse",
+      "status": "online"
+    },
+    "CreateApplication": {
+      "document": "创建应用",
+      "input": "CreateApplicationRequest",
+      "name": "创建应用",
+      "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "CreateComponent": {
+      "document": "为应用创建组件",
+      "input": "CreateComponentRequest",
+      "name": "创建组件",
+      "output": "CreateComponentResponse",
+      "status": "online"
+    },
+    "CreateConfig": {
+      "document": "创建配置",
+      "input": "CreateConfigRequest",
+      "name": "创建配置",
+      "output": "CreateConfigResponse",
+      "status": "online"
+    },
+    "CreateEnvironment": {
+      "document": "创建指定业务下的一个环境",
+      "input": "CreateEnvironmentRequest",
+      "name": "创建环境",
+      "output": "CreateEnvironmentResponse",
+      "status": "online"
+    },
+    "CreateInstance": {
+      "document": "创建应用实例",
+      "input": "CreateInstanceRequest",
+      "name": "创建应用实例",
+      "output": "CreateInstanceResponse",
+      "status": "online"
+    },
+    "CreatePolicy": {
+      "document": "创建策略",
+      "input": "CreatePolicyRequest",
+      "name": "创建策略",
+      "output": "CreatePolicyResponse",
+      "status": "online"
+    },
+    "CreateProject": {
+      "document": "创建平台业务",
+      "input": "CreateProjectRequest",
+      "name": "创建业务",
+      "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "CreateTrait": {
+      "document": "创建运维操作 Trait",
+      "input": "CreateTraitRequest",
+      "name": "创建运维操作",
+      "output": "CreateTraitResponse",
+      "status": "online"
+    },
+    "DeleteApplication": {
+      "document": "删除应用",
+      "input": "DeleteApplicationRequest",
+      "name": "删除应用",
+      "output": "DeleteApplicationResponse",
+      "status": "online"
+    },
+    "DeleteComponent": {
+      "document": "删除某一应用的组件",
+      "input": "DeleteComponentRequest",
+      "name": "删除组件",
+      "output": "DeleteComponentResponse",
+      "status": "online"
+    },
+    "DeleteConfig": {
+      "document": "删除配置",
+      "input": "DeleteConfigRequest",
+      "name": "删除配置",
+      "output": "DeleteConfigResponse",
+      "status": "online"
+    },
+    "DeleteEnvironment": {
+      "document": "删除指定业务下的某个环境",
+      "input": "DeleteEnvironmentRequest",
+      "name": "删除环境",
+      "output": "DeleteEnvironmentResponse",
+      "status": "online"
+    },
+    "DeleteInstance": {
+      "document": "删除应用实例",
+      "input": "DeleteInstanceRequest",
+      "name": "删除应用实例",
+      "output": "DeleteInstanceResponse",
+      "status": "online"
+    },
+    "DeletePod": {
+      "document": "删除Pod",
+      "input": "DeletePodRequest",
+      "name": "删除Pod",
+      "output": "DeletePodResponse",
+      "status": "online"
+    },
+    "DeletePolicy": {
+      "document": "删除策略",
+      "input": "DeletePolicyRequest",
+      "name": "删除策略",
+      "output": "DeletePolicyResponse",
+      "status": "online"
+    },
+    "DeleteProject": {
+      "document": "删除平台业务",
+      "input": "DeleteProjectRequest",
+      "name": "删除业务",
+      "output": "DeleteProjectResponse",
+      "status": "online"
+    },
+    "DeleteTrait": {
+      "document": "删除运维操作",
+      "input": "DeleteTraitRequest",
+      "name": "删除运维操作",
+      "output": "DeleteTraitResponse",
+      "status": "online"
+    },
+    "DescribeAggregatedConfigs": {
+      "document": "查询配置聚合列表",
+      "input": "DescribeAggregatedConfigsRequest",
+      "name": "查询配置聚合列表",
+      "output": "DescribeAggregatedConfigsResponse",
+      "status": "online"
+    },
+    "DescribeApplication": {
+      "document": "获取应用详情",
+      "input": "DescribeApplicationRequest",
+      "name": "获取应用详情",
+      "output": "DescribeApplicationResponse",
+      "status": "online"
+    },
+    "DescribeApplicationResource": {
+      "document": "查看应用资源",
+      "input": "DescribeApplicationResourceRequest",
+      "name": "查看应用资源",
+      "output": "DescribeApplicationResourceResponse",
+      "status": "online"
+    },
+    "DescribeApplicationResources": {
+      "document": "查看应用资源列表",
+      "input": "DescribeApplicationResourcesRequest",
+      "name": "查看应用资源列表",
+      "output": "DescribeApplicationResourcesResponse",
+      "status": "online"
+    },
+    "DescribeApplicationStatus": {
+      "document": "查看应用状态",
+      "input": "DescribeApplicationStatusRequest",
+      "name": "查看应用状态",
+      "output": "DescribeApplicationStatusResponse",
+      "status": "online"
+    },
+    "DescribeApplications": {
+      "document": "获取平台应用列表",
+      "input": "DescribeApplicationsRequest",
+      "name": "获取应用列表",
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
+    },
+    "DescribeComponentStatus": {
+      "document": "查看组件状态",
+      "input": "DescribeComponentStatusRequest",
+      "name": "查看组件状态",
+      "output": "DescribeComponentStatusResponse",
+      "status": "online"
+    },
+    "DescribeComponentsStatus": {
+      "document": "查看组件状态列表",
+      "input": "DescribeComponentsStatusRequest",
+      "name": "查看组件状态列表",
+      "output": "DescribeComponentsStatusResponse",
+      "status": "online"
+    },
+    "DescribeConfig": {
+      "document": "查询配置",
+      "input": "DescribeConfigRequest",
+      "name": "查询配置",
+      "output": "DescribeConfigResponse",
+      "status": "online"
+    },
+    "DescribeConfigs": {
+      "document": "查询配置列表",
+      "input": "DescribeConfigsRequest",
+      "name": "查询配置列表",
+      "output": "DescribeConfigsResponse",
+      "status": "online"
+    },
+    "DescribeDepartments": {
+      "document": "查询部门列表信息",
+      "input": "DescribeDepartmentsRequest",
+      "name": "查询部门列表信息",
+      "output": "DescribeDepartmentsResponse",
+      "status": "online"
+    },
+    "DescribeEnvironment": {
+      "document": "查询指定业务下的某个环境详情",
+      "input": "DescribeEnvironmentRequest",
+      "name": "查询环境详情",
+      "output": "DescribeEnvironmentResponse",
+      "status": "online"
+    },
+    "DescribeEnvironments": {
+      "document": "查询指定业务下的环境列表",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "查询环境列表",
+      "output": "DescribeEnvironmentsResponse",
+      "status": "online"
+    },
+    "DescribeImages": {
+      "document": "拉取镜像列表",
+      "input": "DescribeImagesRequest",
+      "name": "拉取镜像列表",
+      "output": "DescribeImagesResponse",
+      "status": "online"
+    },
+    "DescribeInstance": {
+      "document": "获取应用实例详情",
+      "input": "DescribeInstanceRequest",
+      "name": "获取应用实例详情",
+      "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstanceStatus": {
+      "document": "查看应用实例状态",
+      "input": "DescribeInstanceStatusRequest",
+      "name": "查看应用实例状态",
+      "output": "DescribeInstanceStatusResponse",
+      "status": "online"
+    },
+    "DescribeInstances": {
+      "document": "获取应用实例列表",
+      "input": "DescribeInstancesRequest",
+      "name": "获取应用实例列表",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeModules": {
+      "document": "查询部门或产品下模块信息",
+      "input": "DescribeModulesRequest",
+      "name": "查询部门模块信息",
+      "output": "DescribeModulesResponse",
+      "status": "online"
+    },
+    "DescribePod": {
+      "document": "查看Pod",
+      "input": "DescribePodRequest",
+      "name": "查看Pod",
+      "output": "DescribePodResponse",
+      "status": "online"
+    },
+    "DescribePodEvents": {
+      "document": "查看Pod事件",
+      "input": "DescribePodEventsRequest",
+      "name": "查看Pod事件",
+      "output": "DescribePodEventsResponse",
+      "status": "online"
+    },
+    "DescribePodLog": {
+      "document": "查看Pod日志",
+      "input": "DescribePodLogRequest",
+      "name": "查看Pod日志",
+      "output": "DescribePodLogResponse",
+      "status": "online"
+    },
+    "DescribePods": {
+      "document": "查看Pod列表",
+      "input": "DescribePodsRequest",
+      "name": "查看Pod列表",
+      "output": "DescribePodsResponse",
+      "status": "online"
+    },
+    "DescribePolicies": {
+      "document": "查询策略列表",
+      "input": "DescribePoliciesRequest",
+      "name": "查询策略列表",
+      "output": "DescribePoliciesResponse",
+      "status": "online"
+    },
+    "DescribePolicy": {
+      "document": "查询策略",
+      "input": "DescribePolicyRequest",
+      "name": "查询策略",
+      "output": "DescribePolicyResponse",
+      "status": "online"
+    },
+    "DescribeProducts": {
+      "document": "查询部门下产品信息列表",
+      "input": "DescribeProductsRequest",
+      "name": "查询产品列表信息",
+      "output": "DescribeProductsResponse",
+      "status": "online"
+    },
+    "DescribeProject": {
+      "document": "查询平台业务详情",
+      "input": "DescribeProjectRequest",
+      "name": "查询业务详情",
+      "output": "DescribeProjectResponse",
+      "status": "online"
+    },
+    "DescribeProjectConfig": {
+      "document": "获取指定业务的配置信息",
+      "input": "DescribeProjectConfigRequest",
+      "name": "获取业务配置",
+      "output": "DescribeProjectConfigResponse",
+      "status": "online"
+    },
+    "DescribeProjects": {
+      "document": "查询业务列表详情",
+      "input": "DescribeProjectsRequest",
+      "name": "查询业务列表",
+      "output": "DescribeProjectsResponse",
+      "status": "online"
+    },
+    "DescribeRegions": {
+      "document": "查询地域列表",
+      "input": "DescribeRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeRegionsResponse",
+      "status": "online"
+    },
+    "DescribeRepositories": {
+      "document": "拉取镜像仓库列表",
+      "input": "DescribeRepositoriesRequest",
+      "name": "拉取镜像仓库列表",
+      "output": "DescribeRepositoriesResponse",
+      "status": "online"
+    },
+    "DescribeTemplates": {
+      "document": "查询模板列表",
+      "input": "DescribeTemplatesRequest",
+      "name": "查询模板列表",
+      "output": "DescribeTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeTrait": {
+      "document": "查询运维操作",
+      "input": "DescribeTraitRequest",
+      "name": "查询运维操作",
+      "output": "DescribeTraitResponse",
+      "status": "online"
+    },
+    "DescribeTraitStatus": {
+      "document": "查询运维操作状态",
+      "input": "DescribeTraitStatusRequest",
+      "name": "查询运维操作状态",
+      "output": "DescribeTraitStatusResponse",
+      "status": "online"
+    },
+    "DescribeTraits": {
+      "document": "查询运维操作列表",
+      "input": "DescribeTraitsRequest",
+      "name": "查询运维操作列表",
+      "output": "DescribeTraitsResponse",
+      "status": "online"
+    },
+    "DescribeUsers": {
+      "document": "获取主账号下的所有子账号信息",
+      "input": "DescribeUsersRequest",
+      "name": "获取用户列表",
+      "output": "DescribeUsersResponse",
+      "status": "online"
+    },
+    "ListInstances": {
+      "document": "拉取应用实例基础信息列表",
+      "input": "ListInstancesRequest",
+      "name": "拉取应用实例基础信息列表",
+      "output": "ListInstancesResponse",
+      "status": "online"
+    },
+    "ModifyApplication": {
+      "document": "修改应用",
+      "input": "ModifyApplicationRequest",
+      "name": "修改应用",
+      "output": "ModifyApplicationResponse",
+      "status": "online"
+    },
+    "ModifyComponent": {
+      "document": "修改组件",
+      "input": "ModifyComponentRequest",
+      "name": "修改组件",
+      "output": "ModifyComponentResponse",
+      "status": "online"
+    },
+    "ModifyConfig": {
+      "document": "修改配置",
+      "input": "ModifyConfigRequest",
+      "name": "修改配置",
+      "output": "ModifyConfigResponse",
+      "status": "online"
+    },
+    "ModifyEnvironment": {
+      "document": "修改指定业务下的某一环境信息",
+      "input": "ModifyEnvironmentRequest",
+      "name": "修改环境信息",
+      "output": "ModifyEnvironmentResponse",
+      "status": "online"
+    },
+    "ModifyInstance": {
+      "document": "修改应用实例",
+      "input": "ModifyInstanceRequest",
+      "name": "修改应用实例",
+      "output": "ModifyInstanceResponse",
+      "status": "online"
+    },
+    "ModifyPolicy": {
+      "document": "修改策略",
+      "input": "ModifyPolicyRequest",
+      "name": "修改策略",
+      "output": "ModifyPolicyResponse",
+      "status": "online"
+    },
+    "ModifyProject": {
+      "document": "修改平台业务信息",
+      "input": "ModifyProjectRequest",
+      "name": "修改业务信息",
+      "output": "ModifyProjectResponse",
+      "status": "online"
+    },
+    "ModifyTrait": {
+      "document": "修改运维操作",
+      "input": "ModifyTraitRequest",
+      "name": "修改运维操作",
+      "output": "ModifyTraitResponse",
+      "status": "online"
+    },
+    "ValidateCreateComponent": {
+      "document": "校验创建组件",
+      "input": "ValidateCreateComponentRequest",
+      "name": "校验创建组件",
+      "output": "ValidateCreateComponentResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-09-20",
+    "api_brief": "介绍如何使用API对应用平台进行操作，包括对业务和应用的创建、查询和销毁等操作。",
+    "serviceNameCN": "应用管理平台",
+    "serviceShortName": "camp"
+  },
+  "objects": {
+    "AggregatedConfig": {
+      "document": "聚合配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置版本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VersionCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "CheckUserRequest": {
+      "document": "CheckUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户",
+          "example": "无",
+          "member": "User",
+          "name": "User",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUserResponse": {
+      "document": "CheckUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Component": {
+      "document": "组件信息",
+      "members": [],
+      "usage": "both"
+    },
+    "ConfigContent": {
+      "document": "配置内容",
+      "members": [],
+      "usage": "both"
+    },
+    "CreateApplicationRequest": {
+      "document": "CreateApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建来源平台URL",
+          "example": "无",
+          "member": "string",
+          "name": "SourceURL",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationResponse": {
+      "document": "CreateApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateComponentRequest": {
+      "document": "CreateComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件信息",
+          "example": "无",
+          "member": "Component",
+          "name": "Component",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "平台实例",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateComponentResponse": {
+      "document": "CreateComponent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigRequest": {
+      "document": "CreateConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置类型",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置内容",
+          "example": "无",
+          "member": "ConfigContent",
+          "name": "Content",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigResponse": {
+      "document": "CreateConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentRequest": {
+      "document": "CreateEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建来源平台URL",
+          "example": "无",
+          "member": "string",
+          "name": "SourceURL",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentResponse": {
+      "document": "CreateEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "来源平台URL",
+          "example": "无",
+          "member": "string",
+          "name": "SourceURL",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "只读模式",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "策略",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policy",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "开发者列表",
+          "example": "无",
+          "member": "User",
+          "name": "Developers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "查看者列表",
+          "example": "无",
+          "member": "User",
+          "name": "Viewers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "创建来源平台URL",
+          "example": "无",
+          "member": "string",
+          "name": "SourceURL",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraitRequest": {
+      "document": "CreateTrait请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 信息",
+          "example": "无",
+          "member": "Trait",
+          "name": "Trait",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraitResponse": {
+      "document": "CreateTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationRequest": {
+      "document": "DeleteApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "prj-xxxx",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationResponse": {
+      "document": "DeleteApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteComponentRequest": {
+      "document": "DeleteComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "平台实例",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteComponentResponse": {
+      "document": "DeleteComponent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigRequest": {
+      "document": "DeleteConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigResponse": {
+      "document": "DeleteConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentRequest": {
+      "document": "DeleteEnvironment请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteEnvironmentResponse": {
+      "document": "DeleteEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "prj-xxxx",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePodRequest": {
+      "document": "DeletePod请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePodResponse": {
+      "document": "DeletePod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTraitRequest": {
+      "document": "DeleteTrait请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTraitResponse": {
+      "document": "DeleteTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregatedConfigsRequest": {
+      "document": "DescribeAggregatedConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Filters",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表长度",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表偏移\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggregatedConfigsResponse": {
+      "document": "DescribeAggregatedConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置聚合信息",
+          "example": "无",
+          "member": "AggregatedConfig",
+          "name": "AggregatedConfigs",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "可选过滤器名称及可选值\t",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationRequest": {
+      "document": "DescribeApplication请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeApplicationResourceRequest": {
+      "document": "DescribeApplicationResource请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeApplicationResourceResponse": {
+      "document": "DescribeApplicationResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationResourcesRequest": {
+      "document": "DescribeApplicationResources请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeApplicationResourcesResponse": {
+      "document": "DescribeApplicationResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationResponse": {
+      "document": "DescribeApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationStatusRequest": {
+      "document": "DescribeApplicationStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeApplicationStatusResponse": {
+      "document": "DescribeApplicationStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsRequest": {
+      "document": "DescribeApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsResponse": {
+      "document": "DescribeApplications返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComponentStatusRequest": {
+      "document": "DescribeComponentStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComponentStatusResponse": {
+      "document": "DescribeComponentStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComponentsStatusRequest": {
+      "document": "DescribeComponentsStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComponentsStatusResponse": {
+      "document": "DescribeComponentsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRequest": {
+      "document": "DescribeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "ConfigType为RAINBOW时，需要填写该字段",
+          "example": "无",
+          "member": "RainbowMetaConfig",
+          "name": "Rainbow",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigResponse": {
+      "document": "DescribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigsRequest": {
+      "document": "DescribeConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Filters",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表长度",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表偏移\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigsResponse": {
+      "document": "DescribeConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "可选过滤器名称及可选值\t",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDepartmentsRequest": {
+      "document": "DescribeDepartments请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDepartmentsResponse": {
+      "document": "DescribeDepartments返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentRequest": {
+      "document": "DescribeEnvironment请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEnvironmentResponse": {
+      "document": "DescribeEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRequest": {
+      "document": "DescribeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceResponse": {
+      "document": "DescribeInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatusRequest": {
+      "document": "DescribeInstanceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatusResponse": {
+      "document": "DescribeInstanceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModulesRequest": {
+      "document": "DescribeModules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModulesResponse": {
+      "document": "DescribeModules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodEventsRequest": {
+      "document": "DescribePodEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodEventsResponse": {
+      "document": "DescribePodEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodLogRequest": {
+      "document": "DescribePodLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodLogResponse": {
+      "document": "DescribePodLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodRequest": {
+      "document": "DescribePod请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodResponse": {
+      "document": "DescribePod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodsRequest": {
+      "document": "DescribePods请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodsResponse": {
+      "document": "DescribePods返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePoliciesRequest": {
+      "document": "DescribePolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表，支持按 Type、ComponentName 过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表长度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表偏移\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePoliciesResponse": {
+      "document": "DescribePolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policies",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRequest": {
+      "document": "DescribePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyResponse": {
+      "document": "DescribePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policy",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectConfigRequest": {
+      "document": "DescribeProjectConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProjectConfigResponse": {
+      "document": "DescribeProjectConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectRequest": {
+      "document": "DescribeProject请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProjectResponse": {
+      "document": "DescribeProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "csig",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Region",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoriesRequest": {
+      "document": "DescribeRepositories请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRepositoriesResponse": {
+      "document": "DescribeRepositories返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplatesRequest": {
+      "document": "DescribeTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "限值",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplatesResponse": {
+      "document": "DescribeTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Template",
+          "name": "Templates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitRequest": {
+      "document": "DescribeTrait请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitResponse": {
+      "document": "DescribeTrait返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Trait 信息",
+          "example": "无",
+          "member": "Trait",
+          "name": "Trait",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitStatusRequest": {
+      "document": "DescribeTraitStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitStatusResponse": {
+      "document": "DescribeTraitStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Trait 信息",
+          "example": "无",
+          "member": "TraitStatus",
+          "name": "TraitStatus",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitsRequest": {
+      "document": "DescribeTraits请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表，支持按 Type、ComponentName 过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表长度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "列表偏移\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraitsResponse": {
+      "document": "DescribeTraits返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Trait 列表信息，包含 Component 信息",
+          "example": "无",
+          "member": "TraitOnComponent",
+          "name": "TraitOnComponents",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersRequest": {
+      "document": "DescribeUsers请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUsersResponse": {
+      "document": "DescribeUsers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "值列表",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"id name\"",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "FilterValues": {
+      "document": "过滤器可选值",
+      "members": [],
+      "usage": "out"
+    },
+    "ListInstancesRequest": {
+      "document": "ListInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListInstancesResponse": {
+      "document": "ListInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationRequest": {
+      "document": "ModifyApplication请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyApplicationResponse": {
+      "document": "ModifyApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComponentRequest": {
+      "document": "ModifyComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件信息",
+          "example": "无",
+          "member": "Component",
+          "name": "Component",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "平台实例",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComponentResponse": {
+      "document": "ModifyComponent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigRequest": {
+      "document": "ModifyConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置类型",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置内容",
+          "example": "无",
+          "member": "ConfigContent",
+          "name": "Content",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigResponse": {
+      "document": "ModifyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvironmentRequest": {
+      "document": "ModifyEnvironment请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyEnvironmentResponse": {
+      "document": "ModifyEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policies",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyRequest": {
+      "document": "ModifyPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policy",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyResponse": {
+      "document": "ModifyPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开发者列表",
+          "example": "无",
+          "member": "User",
+          "name": "Developers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "查看者列表",
+          "example": "无",
+          "member": "User",
+          "name": "Viewers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraitRequest": {
+      "document": "ModifyTrait请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait 信息",
+          "example": "无",
+          "member": "Trait",
+          "name": "Trait",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraitResponse": {
+      "document": "ModifyTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Policy": {
+      "document": "部署策略",
+      "members": [],
+      "usage": "both"
+    },
+    "RainbowMetaConfig": {
+      "document": "七彩石元配置信息",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "七彩石配置AppID",
+          "example": "test",
+          "member": "string",
+          "name": "AppID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "七彩石配置Group",
+          "example": "dev",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "七彩石配置环境",
+          "example": "env",
+          "member": "string",
+          "name": "EnvName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "Region": {
+      "document": "地域信息",
+      "members": [],
+      "usage": "out"
+    },
+    "Template": {
+      "document": "模板，如应用模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模板内容，json 字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "TencentUser": {
+      "document": "用户信息",
+      "members": [],
+      "usage": "both"
+    },
+    "Trait": {
+      "document": "运维操作",
+      "members": [],
+      "usage": "both"
+    },
+    "TraitOnComponent": {
+      "document": "携带 Component 信息的 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "trait 所属 component\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "trait 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Trait",
+          "name": "Trait",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "TraitStatus": {
+      "document": "Trait状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否已完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Complete",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TencentUser",
+          "name": "Tencent",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ValidateCreateComponentRequest": {
+      "document": "ValidateCreateComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "组件信息",
+          "example": "无",
+          "member": "Component",
+          "name": "Component",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "平台实例",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ValidateCreateComponentResponse": {
+      "document": "ValidateCreateComponent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

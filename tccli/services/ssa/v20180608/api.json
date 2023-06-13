@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DescribeDomainList": {
-      "document": "域名列表信息啊",
+      "document": "域名列表信息",
       "input": "DescribeDomainListRequest",
       "name": "域名列表",
       "output": "DescribeDomainListResponse",
@@ -3977,9 +3977,8 @@
       "document": "DescribeDomainList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "起始，从0开始(只支持32位)",
           "example": "-",
           "member": "uint64",
           "name": "Offset",
@@ -3988,9 +3987,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "limit,最大值200(只支持32位)",
           "example": "-",
           "member": "uint64",
           "name": "Limit",
@@ -3999,9 +3997,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "资产大类，根据此字段时返回不同的子结构,AssetBasicType(只支持32位)",
           "example": "-",
           "member": "uint64",
           "name": "AssetBasicType",
@@ -4010,9 +4007,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "过滤条件",
           "example": "-",
           "member": "QueryFilterV3",
           "name": "Filter",
@@ -4021,9 +4017,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "排序",
           "example": "-",
           "member": "string",
           "name": "Order",
@@ -4032,9 +4027,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "排序字段",
           "example": "-",
           "member": "string",
           "name": "By",
@@ -4043,9 +4037,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "导出字段",
           "example": "-",
           "member": "string",
           "name": "Field",
@@ -4054,9 +4047,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "时间范围(只支持32位)",
           "example": "-",
           "member": "uint64",
           "name": "TimeRange",
@@ -4065,9 +4057,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "逻辑字段(只支持32位)",
           "example": "-",
           "member": "uint64",
           "name": "Logic",
@@ -4076,9 +4067,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "聚合字段  ",
           "example": "-",
           "member": "string",
           "name": "GroupByField",
@@ -4087,7 +4077,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "-",
           "example": "-",
@@ -4098,9 +4087,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-",
+          "document": "0:cfw 1:vss 2.soc 3.waf 4.cwp",
           "example": "-",
           "member": "uint64",
           "name": "RequestFrom",
@@ -4120,7 +4108,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4131,7 +4118,6 @@
           "example": "无",
           "member": "DomainInfo",
           "name": "DomainInfoCollection",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5195,7 +5181,6 @@
       "document": "域名列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5207,7 +5192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5219,7 +5203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5231,7 +5214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5243,7 +5225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5255,7 +5236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5267,7 +5247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂马暗链\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -5279,7 +5258,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网页篡改",
           "example": "-",
@@ -5291,7 +5269,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次扫描时间",
           "example": "-",
@@ -5303,7 +5280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近发现时间",
           "example": "-",
@@ -5315,7 +5291,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描次数",
           "example": "-",
@@ -5327,7 +5302,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
           "example": "-",
@@ -5339,7 +5313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弱口令",
           "example": "-",
@@ -5351,14 +5324,145 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资产归属\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
           "name": "AssetLocation",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网络风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkRisk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网络攻击\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkAttack",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "bot访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "BotVisit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网络访问\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkAccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资产创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "waf状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "WafStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "LastScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetName",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否核心资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "IsNotCore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否云外资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "IsCloud",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -5826,7 +5930,6 @@
       "document": "过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "-",
@@ -5838,7 +5941,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有无子条件",
           "example": "-",
@@ -5850,7 +5952,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件",
           "example": "-",
@@ -5862,7 +5963,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "逻辑操作(只支持32位)",
           "example": "-",
@@ -5874,7 +5974,7 @@
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "QuerySort": {
       "document": "排序的字段",

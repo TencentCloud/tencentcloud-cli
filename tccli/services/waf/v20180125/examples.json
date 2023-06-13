@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AccessSpartaProtection": [
+      {
+        "document": "一键接入 waf",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AccessSpartaProtection\n<公共请求参数>\n\n{\n    \"Domains\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"AppIdInner\": 0,\n    \"UinInner\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "一键接入"
+      }
+    ],
     "AddCustomRule": [
       {
         "document": "增加访问控制（自定义策略）",

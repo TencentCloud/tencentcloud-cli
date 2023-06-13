@@ -906,7 +906,6 @@
       "document": "获取短信模板信息响应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID。",
           "example": "1110",
@@ -914,10 +913,10 @@
           "name": "TemplateId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。",
           "example": "0",
@@ -925,21 +924,21 @@
           "name": "International",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。",
+          "document": "申请模板状态，其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
           "example": "0",
           "member": "int64",
           "name": "StatusCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
           "example": "xxx",
@@ -947,10 +946,10 @@
           "name": "ReviewReply",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。",
           "example": "xxx",
@@ -958,10 +957,10 @@
           "name": "TemplateName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
           "example": "1620640474",
@@ -969,10 +968,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板内容。",
           "example": "验证码是{1}",
@@ -980,7 +979,8 @@
           "name": "TemplateContent",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

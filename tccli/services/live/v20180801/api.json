@@ -889,6 +889,13 @@
       "output": "ModifyPullStreamStatusResponse",
       "status": "online"
     },
+    "RestartLivePullStreamTask": {
+      "document": "将正在运行的拉流转推任务进行重启。\n注意：\n1. 重启任务会造成推流中断。\n2. 点播源任务的重启，会根据VodRefreshType决定是续播还是从头开始播。",
+      "input": "RestartLivePullStreamTaskRequest",
+      "name": "重启直播拉流任务",
+      "output": "RestartLivePullStreamTaskResponse",
+      "status": "online"
+    },
     "ResumeDelayLiveStream": {
       "document": "取消直播流设置的延时配置，恢复实时直播画面。",
       "input": "ResumeDelayLiveStreamRequest",
@@ -14760,6 +14767,44 @@
         }
       ],
       "usage": "out"
+    },
+    "RestartLivePullStreamTaskRequest": {
+      "document": "RestartLivePullStreamTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务 Id。",
+          "example": "123",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "操作人备注名称。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartLivePullStreamTaskResponse": {
+      "document": "RestartLivePullStreamTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResumeDelayLiveStreamRequest": {
       "document": "ResumeDelayLiveStream请求参数结构体",
