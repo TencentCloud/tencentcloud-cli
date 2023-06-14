@@ -168,6 +168,22 @@
 
 
 
+## 标签(tag) 版本：2018-08-13
+
+### 第 6 次发布
+
+发布时间：2023-06-14 14:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)
+
+
+
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
 ### 第 51 次发布
@@ -48737,6 +48753,18 @@
 
 
 ## 标签(tag) 版本：2018-08-13
+
+### 第 6 次发布
+
+发布时间：2023-06-14 14:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 5 次发布
 
