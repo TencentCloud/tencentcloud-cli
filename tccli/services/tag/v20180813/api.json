@@ -2121,6 +2121,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "目标Uin，腾讯云用户身份唯一标识符",
+          "example": "10000",
+          "member": "string",
+          "name": "TargetUin",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"

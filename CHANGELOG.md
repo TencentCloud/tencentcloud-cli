@@ -1,3 +1,268 @@
+# Release 3.0.786.1
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 19 次发布
+
+发布时间：2023-06-14 01:22:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceStatus](http://document.tencentcloudapi.woa.com/document/product/607/35375#ServiceStatus)
+
+	* 新增成员：TextTranslate
+
+
+
+
+## 物联网通信(iotcloud) 版本：2021-04-08
+
+### 第 12 次发布
+
+发布时间：2023-06-14 01:23:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/634/71973#DeviceInfo)
+
+	* 新增成员：CreateUserId
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/634/71973#FirmwareInfo)
+
+	* 新增成员：FwType, CreateUserId
+
+
+
+
+## 物联网通信(iotcloud) 版本：2018-06-14
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 38 次发布
+
+发布时间：2023-06-14 01:25:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RestartLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/78023)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 21 次发布
+
+发布时间：2023-06-14 01:28:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeOrganizationFinancialByMember](http://document.tencentcloudapi.woa.com/document/product/850/78027)
+* [DescribeOrganizationFinancialByMonth](http://document.tencentcloudapi.woa.com/document/product/850/78026)
+* [DescribeOrganizationFinancialByProduct](http://document.tencentcloudapi.woa.com/document/product/850/78025)
+
+新增数据结构：
+
+* [OrgFinancialByMonth](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgFinancialByMonth)
+* [OrgMemberFinancial](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMemberFinancial)
+* [OrgProductFinancial](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgProductFinancial)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 8 次发布
+
+发布时间：2023-06-14 01:29:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAgentDealsCache
+* DescribeAgentPayDeals
+* DescribeAgentSelfPayDeals
+* DescribeClientBalance
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AgentDealElem
+* DealGoodsPriceElem
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 23 次发布
+
+发布时间：2023-06-14 01:29:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+
+	* 新增入参：SyncMode
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 13 次发布
+
+发布时间：2023-06-14 01:29:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteEndPoint](http://document.tencentcloudapi.woa.com/document/product/1338/78028)
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 14 次发布
+
+发布时间：2023-06-14 01:32:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/664/51406#DomainInfo)
+
+	* 新增成员：NetworkRisk, NetworkAttack, BotVisit, NetworkAccess, CreateTime, WafStatus, LastScanTime, AssetId, AssetName, SourceType, IsNotCore, IsCloud
+
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 7 次发布
+
+发布时间：2023-06-14 16:40:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)
+
+	* 新增入参：TargetUin
+
+
+### 第 6 次发布
+
+发布时间：2023-06-14 14:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 51 次发布
+
+发布时间：2023-06-14 01:34:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyAMQPVHost
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 94 次发布
+
+发布时间：2023-06-14 01:38:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEniAllInternal](http://document.tencentcloudapi.woa.com/document/product/215/75116)
+
+	* <font color="#dd0000">**修改入参**：</font>Owner
+
+	* <font color="#dd0000">**修改出参**：</font>Total, EniSet
+
+
+新增数据结构：
+
+* [VpcOssSafeGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssSafeGroup)
+
+修改数据结构：
+
+* [VpcOssEniForDescribeEniAllInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssEniForDescribeEniAllInternal)
+
+	* 新增成员：SafeGroup
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 39 次发布
+
+发布时间：2023-06-14 01:40:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AccessSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78029)
+
+
+
 # Release 3.0.785.1
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11

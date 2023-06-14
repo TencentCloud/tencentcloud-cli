@@ -170,6 +170,21 @@
 
 ## 标签(tag) 版本：2018-08-13
 
+### 第 7 次发布
+
+发布时间：2023-06-14 16:40:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)
+
+	* 新增入参：TargetUin
+
+
 ### 第 6 次发布
 
 发布时间：2023-06-14 14:20:46
@@ -48753,6 +48768,21 @@
 
 
 ## 标签(tag) 版本：2018-08-13
+
+### 第 7 次发布
+
+发布时间：2023-06-14 16:40:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetResourcesForEB](http://document.tencentcloudapi.woa.com/document/product/651/78030)
+
+	* 新增入参：TargetUin
+
 
 ### 第 6 次发布
 

@@ -5,7 +5,9 @@ EB侧查询绑定了标签的资源列表
 Input: 
 
 ```
-tccli tag GetResourcesForEB --cli-unfold-argument ```
+tccli tag GetResourcesForEB --cli-unfold-argument  \
+    --TargetUin 1000135******
+```
 
 Output: 
 ```

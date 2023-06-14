@@ -201,7 +201,7 @@
     "GetResourcesForEB": [
       {
         "document": "EB侧查询绑定了标签的资源列表",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetResourcesForEB\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetResourcesForEB\n<公共请求参数>\n\n{\n    \"TargetUin\": \"1000135******\"\n}",
         "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"8g6eL-RZPznZ******\",\n        \"RequestId\": \"56989b******\",\n        \"ResourceTagMappingList\": [\n            {\n                \"Resource\": \"qcs::cam::uin/1000135******:role/4611****\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"test\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "EB侧查询绑定了标签的资源列表"
       }

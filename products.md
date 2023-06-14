@@ -135,7 +135,7 @@
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | 2023-05-18 01:38:39 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | 2023-05-18 01:38:48 |
 | taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2023-05-24 01:42:50 |
-| tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2023-06-14 14:20:46 |
+| tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2023-06-14 16:40:42 |
 | tat | [自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | 2023-05-18 01:39:08 |
 | tbaas | [腾讯云区块链服务平台 TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2023-05-18 01:39:17 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2023-06-06 01:41:05 |
