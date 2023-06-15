@@ -1,3 +1,43 @@
+# Release 3.0.788.1
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 70 次发布
+
+发布时间：2023-06-16 01:36:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/457/78057)
+* [DisableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78056)
+* [EnableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78055)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 66 次发布
+
+发布时间：2023-06-16 01:37:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ExtractCopyRightWatermark](http://document.tencentcloudapi.woa.com/document/product/266/78058)
+
+
+
 # Release 3.0.787.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

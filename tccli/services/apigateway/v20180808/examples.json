@@ -352,7 +352,7 @@
     ],
     "DescribeExclusiveInstancesStatus": [
       {
-        "document": "",
+        "document": "查询当前用户专享实例列表",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeExclusiveInstancesStatus\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"InstanceSet\": [\n                {\n                    \"InstanceId\": \"instance-9ot9druo\",\n                    \"InstanceName\": \"\",\n                    \"InstanceDescription\": \"\",\n                    \"InstanceChargeType\": \"POSTPAID\",\n                    \"CreatedTime\": \"2022-06-10T01:41:24Z\",\n                    \"InstanceType\": \"basic\",\n                    \"InstanceState\": \"RUNNING\",\n                    \"DealName\": \"20220610784016110174871\"\n                },\n                {\n                    \"InstanceId\": \"instance-17hzlblu\",\n                    \"InstanceName\": \"\",\n                    \"InstanceDescription\": \"\",\n                    \"InstanceChargeType\": \"POSTPAID\",\n                    \"CreatedTime\": \"2022-06-10T01:41:07Z\",\n                    \"InstanceType\": \"basic\",\n                    \"InstanceState\": \"RUNNING\",\n                    \"DealName\": \"20220610784016110117441\"\n                }\n            ]\n        },\n        \"RequestId\": \"06737236380502816\"\n    }\n}",
         "title": "查询独享实例列表"

@@ -742,6 +742,13 @@
       "output": "DescribeEnableVpcCniProgressResponse",
       "status": "online"
     },
+    "DescribeEncryptionStatus": {
+      "document": "查询etcd数据是否进行加密",
+      "input": "DescribeEncryptionStatusRequest",
+      "name": "查询信息加密状态",
+      "output": "DescribeEncryptionStatusResponse",
+      "status": "online"
+    },
     "DescribeExistedInstances": {
       "document": "查询已经存在的节点，判断是否可以加入集群",
       "input": "DescribeExistedInstancesRequest",
@@ -994,6 +1001,13 @@
       "output": "DisableClusterDeletionProtectionResponse",
       "status": "online"
     },
+    "DisableEncryptionProtection": {
+      "document": "关闭加密信息保护",
+      "input": "DisableEncryptionProtectionRequest",
+      "name": "关闭加密信息保护",
+      "output": "DisableEncryptionProtectionResponse",
+      "status": "online"
+    },
     "DisableEventPersistence": {
       "document": "关闭事件持久化功能",
       "input": "DisableEventPersistenceRequest",
@@ -1027,6 +1041,13 @@
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
       "output": "EnableClusterDeletionProtectionResponse",
+      "status": "online"
+    },
+    "EnableEncryptionProtection": {
+      "document": "开启加密数据保护",
+      "input": "EnableEncryptionProtectionRequest",
+      "name": "开启加密数据保护",
+      "output": "EnableEncryptionProtectionResponse",
       "status": "online"
     },
     "EnableEventPersistence": {
@@ -11526,6 +11547,23 @@
       ],
       "type": "object"
     },
+    "DescribeEncryptionStatusRequest": {
+      "document": "DescribeEncryptionStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEncryptionStatusResponse": {
+      "document": "DescribeEncryptionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExistedInstancesRequest": {
       "document": "DescribeExistedInstances请求参数结构体",
       "members": [
@@ -13934,6 +13972,23 @@
       ],
       "type": "object"
     },
+    "DisableEncryptionProtectionRequest": {
+      "document": "DisableEncryptionProtection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DisableEncryptionProtectionResponse": {
+      "document": "DisableEncryptionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableEventPersistenceRequest": {
       "document": "DisableEventPersistence请求参数结构体",
       "members": [
@@ -15236,6 +15291,23 @@
     },
     "EnableClusterDeletionProtectionResponse": {
       "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEncryptionProtectionRequest": {
+      "document": "EnableEncryptionProtection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "EnableEncryptionProtectionResponse": {
+      "document": "EnableEncryptionProtection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

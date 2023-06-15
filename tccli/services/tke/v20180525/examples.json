@@ -872,6 +872,14 @@
         "title": "查看开启vpc-cni的任务进度，查询到任务失败"
       }
     ],
+    "DescribeEncryptionStatus": [
+      {
+        "document": "查询kms加密状态",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptionStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "查询kms加密状态"
+      }
+    ],
     "DescribeExistedInstances": [
       {
         "document": "查询已经存在的节点，判断是否可以加入集群",
@@ -1166,6 +1174,14 @@
         "title": "关闭集群删除保护"
       }
     ],
+    "DisableEncryptionProtection": [
+      {
+        "document": "关闭加密信息保护",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "关闭加密信息保护"
+      }
+    ],
     "DisableEventPersistence": [
       {
         "document": "关闭事件持久化功能",
@@ -1204,6 +1220,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启用集群删除保护"
+      }
+    ],
+    "EnableEncryptionProtection": [
+      {
+        "document": "开启加密数据保护",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "开启加密数据保护"
       }
     ],
     "EnableEventPersistence": [
