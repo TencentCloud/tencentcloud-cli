@@ -1,3 +1,208 @@
+# Release 3.0.787.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 26 次发布
+
+发布时间：2023-06-15 01:07:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EnhancedService](http://document.tencentcloudapi.woa.com/document/product/377/20453#EnhancedService)
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 64 次发布
+
+发布时间：2023-06-15 01:10:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)
+
+	* 新增入参：ConnectionPoolType
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 39 次发布
+
+发布时间：2023-06-15 01:25:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateLivePadRule](http://document.tencentcloudapi.woa.com/document/product/267/78048)
+* [CreateLivePadTemplate](http://document.tencentcloudapi.woa.com/document/product/267/78047)
+* [CreateLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78039)
+* [DeleteLivePadRule](http://document.tencentcloudapi.woa.com/document/product/267/78046)
+* [DeleteLivePadTemplate](http://document.tencentcloudapi.woa.com/document/product/267/78045)
+* [DeleteLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78038)
+* [DescribeLivePadRules](http://document.tencentcloudapi.woa.com/document/product/267/78044)
+* [DescribeLivePadTemplate](http://document.tencentcloudapi.woa.com/document/product/267/78043)
+* [DescribeLivePadTemplates](http://document.tencentcloudapi.woa.com/document/product/267/78042)
+* [DescribeLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78037)
+* [DescribeLiveStreamMonitorList](http://document.tencentcloudapi.woa.com/document/product/267/78036)
+* [DescribeMonitorReport](http://document.tencentcloudapi.woa.com/document/product/267/78035)
+* [ModifyLivePadTemplate](http://document.tencentcloudapi.woa.com/document/product/267/78041)
+* [ModifyLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78034)
+* [StartLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78033)
+* [StopLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78032)
+
+新增数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#DiagnoseResult)
+* [LiveStreamMonitorInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorInfo)
+* [LiveStreamMonitorInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorInputInfo)
+* [LiveStreamMonitorNotifyPolicy](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorNotifyPolicy)
+* [LiveStreamMonitorOutputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorOutputInfo)
+* [MPSResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#MPSResult)
+* [PadTemplate](http://document.tencentcloudapi.woa.com/document/product/267/20474#PadTemplate)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 65 次发布
+
+发布时间：2023-06-15 01:37:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloneCDNDomain](http://document.tencentcloudapi.woa.com/document/product/266/78054)
+* [CreateCDNDomain](http://document.tencentcloudapi.woa.com/document/product/266/78053)
+* [DeleteCDNDomain](http://document.tencentcloudapi.woa.com/document/product/266/78052)
+* [DescribeCDNDomains](http://document.tencentcloudapi.woa.com/document/product/266/78051)
+* [ModifyCDNDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/78050)
+* [StartCDNDomain](http://document.tencentcloudapi.woa.com/document/product/266/78049)
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/266/33431)
+
+	* 新增出参：ExtractCopyRightWatermarkTask
+
+
+新增数据结构：
+
+* [Authentication](http://document.tencentcloudapi.woa.com/document/product/266/31773#Authentication)
+* [AuthenticationTypeA](http://document.tencentcloudapi.woa.com/document/product/266/31773#AuthenticationTypeA)
+* [AuthenticationTypeB](http://document.tencentcloudapi.woa.com/document/product/266/31773#AuthenticationTypeB)
+* [AuthenticationTypeC](http://document.tencentcloudapi.woa.com/document/product/266/31773#AuthenticationTypeC)
+* [AuthenticationTypeD](http://document.tencentcloudapi.woa.com/document/product/266/31773#AuthenticationTypeD)
+* [AwsPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/266/31773#AwsPrivateAccess)
+* [CDNCertInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#CDNCertInfo)
+* [CDNDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#CDNDomainConfig)
+* [CDNDomainConfigForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#CDNDomainConfigForUpdate)
+* [CDNDomainInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#CDNDomainInfo)
+* [Cache](http://document.tencentcloudapi.woa.com/document/product/266/31773#Cache)
+* [CacheConfigCache](http://document.tencentcloudapi.woa.com/document/product/266/31773#CacheConfigCache)
+* [CacheConfigFollowOrigin](http://document.tencentcloudapi.woa.com/document/product/266/31773#CacheConfigFollowOrigin)
+* [CacheConfigNoCache](http://document.tencentcloudapi.woa.com/document/product/266/31773#CacheConfigNoCache)
+* [CopyRightWatermarkInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#CopyRightWatermarkInput)
+* [ExtractCopyRightWatermarkTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#ExtractCopyRightWatermarkTask)
+* [ExtractCopyRightWatermarkTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ExtractCopyRightWatermarkTaskInput)
+* [ExtractCopyRightWatermarkTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ExtractCopyRightWatermarkTaskOutput)
+* [FollowRedirect](http://document.tencentcloudapi.woa.com/document/product/266/31773#FollowRedirect)
+* [ForceRedirect](http://document.tencentcloudapi.woa.com/document/product/266/31773#ForceRedirect)
+* [HeuristicCache](http://document.tencentcloudapi.woa.com/document/product/266/31773#HeuristicCache)
+* [HeuristicCacheConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#HeuristicCacheConfig)
+* [HttpHeaderPathRule](http://document.tencentcloudapi.woa.com/document/product/266/31773#HttpHeaderPathRule)
+* [Https](http://document.tencentcloudapi.woa.com/document/product/266/31773#Https)
+* [HwPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/266/31773#HwPrivateAccess)
+* [IpFilter](http://document.tencentcloudapi.woa.com/document/product/266/31773#IpFilter)
+* [IpFilterPathRule](http://document.tencentcloudapi.woa.com/document/product/266/31773#IpFilterPathRule)
+* [Ipv6Access](http://document.tencentcloudapi.woa.com/document/product/266/31773#Ipv6Access)
+* [MaxAge](http://document.tencentcloudapi.woa.com/document/product/266/31773#MaxAge)
+* [MaxAgeRule](http://document.tencentcloudapi.woa.com/document/product/266/31773#MaxAgeRule)
+* [Origin](http://document.tencentcloudapi.woa.com/document/product/266/31773#Origin)
+* [OssPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/266/31773#OssPrivateAccess)
+* [OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/266/31773#OthersPrivateAccess)
+* [Quic](http://document.tencentcloudapi.woa.com/document/product/266/31773#Quic)
+* [Referer](http://document.tencentcloudapi.woa.com/document/product/266/31773#Referer)
+* [RefererRule](http://document.tencentcloudapi.woa.com/document/product/266/31773#RefererRule)
+* [RequestHeader](http://document.tencentcloudapi.woa.com/document/product/266/31773#RequestHeader)
+* [ResponseHeader](http://document.tencentcloudapi.woa.com/document/product/266/31773#ResponseHeader)
+* [RuleCache](http://document.tencentcloudapi.woa.com/document/product/266/31773#RuleCache)
+* [RuleCacheConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RuleCacheConfig)
+* [UserAgentFilter](http://document.tencentcloudapi.woa.com/document/product/266/31773#UserAgentFilter)
+* [UserAgentFilterRule](http://document.tencentcloudapi.woa.com/document/product/266/31773#UserAgentFilterRule)
+
+修改数据结构：
+
+* [AdaptiveDynamicStreamingInfoItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#AdaptiveDynamicStreamingInfoItem)
+
+	* 新增成员：CopyRightWatermarkText
+
+* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#AdaptiveDynamicStreamingTaskInput)
+
+	* 新增成员：CopyRightWatermark
+
+* [EventContent](http://document.tencentcloudapi.woa.com/document/product/266/31773#EventContent)
+
+	* 新增成员：ExtractCopyRightWatermarkCompleteEvent
+
+* [MediaTranscodeItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaTranscodeItem)
+
+	* 新增成员：CopyRightWatermarkText
+
+* [TranscodeTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#TranscodeTaskInput)
+
+	* 新增成员：CopyRightWatermark
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 95 次发布
+
+发布时间：2023-06-15 01:38:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/36721)
+
+	* 新增入参：StrictSnatMode, SmartScheduleMode
+
+* [ModifyNatGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/36715)
+
+	* 新增入参：SmartScheduleMode
+
+
+修改数据结构：
+
+* [NatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGateway)
+
+	* 新增成员：StrictSnatMode, SmartScheduleMode
+
+
+
+
 # Release 3.0.786.1
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11

@@ -3084,7 +3084,6 @@
       "document": "订单数据对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单号",
           "example": "20210920187006321686341",
@@ -3092,21 +3091,21 @@
           "name": "OrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "订单状态",
+          "document": "订单的状态 1：未支付 2：已支付3：发货中 4：已发货 5：发货失败 6：已退款 7：已关单 8：订单过期 9：订单已失效 10：产品已失效 11：代付拒绝 12：支付中",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付者",
           "example": "1234567",
@@ -3114,10 +3113,10 @@
           "name": "Payer",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2022-01-07 12:01:01",
@@ -3125,10 +3124,10 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人",
           "example": "1234567",
@@ -3136,10 +3135,10 @@
           "name": "Creator",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实际支付金额（分）",
           "example": "10000",
@@ -3147,10 +3146,10 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券抵扣金额（分）",
           "example": "10000",
@@ -3158,10 +3157,10 @@
           "name": "VoucherDecline",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "12345",
@@ -3169,10 +3168,10 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品分类ID",
           "example": "1234567",
@@ -3180,10 +3179,10 @@
           "name": "GoodsCategoryId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品详情",
           "example": "p_xxxx",
@@ -3191,10 +3190,10 @@
           "name": "ProductInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时长",
           "example": "1",
@@ -3202,10 +3201,10 @@
           "name": "TimeSpan",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间单位",
           "example": "m",
@@ -3213,10 +3212,10 @@
           "name": "TimeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "货币单位",
           "example": "CNY",
@@ -3224,10 +3223,10 @@
           "name": "Currency",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折扣率",
           "example": "100",
@@ -3235,10 +3234,10 @@
           "name": "Policy",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单价（分）",
           "example": "10000",
@@ -3246,10 +3245,10 @@
           "name": "Price",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价（分）",
           "example": "10000",
@@ -3257,10 +3256,10 @@
           "name": "TotalCost",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p_xxxx",
@@ -3268,10 +3267,10 @@
           "name": "ProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品编码",
           "example": "sp_xxxx",
@@ -3279,10 +3278,10 @@
           "name": "SubProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大订单号",
           "example": "20210920187006321686342",
@@ -3290,10 +3289,10 @@
           "name": "BigDealId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退费公式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
@@ -3301,10 +3300,10 @@
           "name": "Formula",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退费涉及订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20210920187006321686342",
@@ -3312,10 +3311,10 @@
           "name": "RefReturnDeals",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式：prePay 预付费 postPay后付费 riPay预留实例",
           "example": "prePay",
@@ -3323,10 +3322,10 @@
           "name": "PayMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易类型\nmodifyNetworkMode 调整带宽模式\nmodifyNetworkSize 调整带宽大小\nrefund 退款\ndowngrade 降配\nupgrade 升配\nrenew 续费\npurchase 购买\npreMoveOut 包年包月迁出资源\npreMoveIn 包年包月迁入资源\npreToPost 预付费转后付费\npostMoveOut 按量计费迁出资源\npostMoveIn 按量计费迁入资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "purchase",
@@ -3334,10 +3333,10 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品编码中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云服务器",
@@ -3345,10 +3344,10 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品编码中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云服务器-s5",
@@ -3356,10 +3355,10 @@
           "name": "SubProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单对应的资源id, 查询参数Limit超过200，将返回null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ins-12454fgd\"]",
@@ -3367,7 +3366,8 @@
           "name": "ResourceId",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

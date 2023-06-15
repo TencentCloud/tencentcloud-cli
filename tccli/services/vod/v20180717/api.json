@@ -21,6 +21,13 @@
       "output": "BackUpMediaForXiaoeResponse",
       "status": "online"
     },
+    "CloneCDNDomain": {
+      "document": "克隆CDN域名。",
+      "input": "CloneCDNDomainRequest",
+      "name": "克隆CDN域名",
+      "output": "CloneCDNDomainResponse",
+      "status": "online"
+    },
     "CommitUpload": {
       "document": "该接口用于确认媒体文件（和封面文件）上传到腾讯云点播的结果，并存储媒体信息，返回文件的播放地址和文件 ID。",
       "input": "CommitUploadRequest",
@@ -68,6 +75,13 @@
       "input": "CreateAnimatedGraphicsTemplateRequest",
       "name": "创建转动图模板",
       "output": "CreateAnimatedGraphicsTemplateResponse",
+      "status": "online"
+    },
+    "CreateCDNDomain": {
+      "document": "该接口用于将域名添加到点播，一个用户最多添加20个域名。 1.域名添加成功后点播会进行域名的部署，域名由部署状态变为在线状态大概需要2分钟的时间。",
+      "input": "CreateCDNDomainRequest",
+      "name": "添加CDN域名",
+      "output": "CreateCDNDomainResponse",
       "status": "online"
     },
     "CreateClass": {
@@ -238,6 +252,13 @@
       "output": "DeleteAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "DeleteCDNDomain": {
+      "document": "删除CDN域名",
+      "input": "DeleteCDNDomainRequest",
+      "name": "删除CDN域名",
+      "output": "DeleteCDNDomainResponse",
+      "status": "online"
+    },
     "DeleteClass": {
       "document": "* 仅当待删分类无子分类且无媒体关联情况下，可删除分类；\n* 否则，请先执行[删除媒体](/document/product/266/31764)及子分类，再删除该分类；",
       "input": "DeleteClassRequest",
@@ -404,6 +425,13 @@
       "input": "DescribeAnimatedGraphicsTemplatesRequest",
       "name": "获取转动图模板列表",
       "output": "DescribeAnimatedGraphicsTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeCDNDomains": {
+      "document": "查询点播域名。",
+      "input": "DescribeCDNDomainsRequest",
+      "name": "查询CDN域名",
+      "output": "DescribeCDNDomainsResponse",
       "status": "online"
     },
     "DescribeCDNStatDetails": {
@@ -784,6 +812,13 @@
       "output": "ModifyAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "ModifyCDNDomainConfig": {
+      "document": "修改CDN域名配置。",
+      "input": "ModifyCDNDomainConfigRequest",
+      "name": "修改CDN域名配置",
+      "output": "ModifyCDNDomainConfigResponse",
+      "status": "online"
+    },
     "ModifyClass": {
       "document": "修改媒体分类属性。",
       "input": "ModifyClassRequest",
@@ -1083,6 +1118,13 @@
       "input": "SplitMediaRequest",
       "name": "视频拆条",
       "output": "SplitMediaResponse",
+      "status": "online"
+    },
+    "StartCDNDomain": {
+      "document": "该接口用于启用/停用CDN加速域名。",
+      "input": "StartCDNDomainRequest",
+      "name": "启用CDN域名",
+      "output": "StartCDNDomainResponse",
       "status": "online"
     },
     "WeChatMiniProgramPublish": {
@@ -1451,7 +1493,7 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
@@ -1468,6 +1510,17 @@
           "name": "SubStreamSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "CopyRightWatermarkText",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -1505,6 +1558,17 @@
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "版权水印。",
+          "example": "无",
+          "member": "CopyRightWatermarkInput",
+          "name": "CopyRightWatermark",
           "required": false,
           "type": "object",
           "value_allowed_null": false,
@@ -7616,6 +7680,427 @@
       ],
       "usage": "both"
     },
+    "Authentication": {
+      "document": "时间戳防盗链配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防盗链配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链模式 A 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthenticationTypeA",
+          "name": "TypeA",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链模式 B 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthenticationTypeB",
+          "name": "TypeB",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链模式 C 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthenticationTypeC",
+          "name": "TypeC",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链模式 D 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthenticationTypeD",
+          "name": "TypeD",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthenticationTypeA": {
+      "document": "时间戳防盗链模式 A 配置；\n时间戳防盗链模式 A 的访问 URL 格式为：http://DomainName/Filename?sign=timestamp-rand-uid-md5hash；\n其中 timestamp 为十进制 UNIX 时间戳；\nrand 为随机字符串，0 ~ 100 位大小写字母与数字组成；\nuid 为 0；\nmd5hash：MD5（文件路径-timestamp-rand-uid-自定义密钥）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算签名的密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名参数名设置；\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头。",
+          "example": "无",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名过期时间设置；\n单位为秒，最大可设置为 630720000。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "鉴权/不做鉴权的文件扩展名列表设置；\n如果包含字符 * 则表示所有文件。",
+          "example": "无",
+          "member": "string",
+          "name": "FileExtensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权；\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计算签名的备用密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthenticationTypeB": {
+      "document": "时间戳防盗链模式 B 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算签名的密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名过期时间设置；\n单位为秒，最大可设置为 630720000。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "鉴权/不做鉴权的文件扩展名列表设置；\n如果包含字符 * 则表示所有文件。",
+          "example": "无",
+          "member": "string",
+          "name": "FileExtensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权；\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计算签名的备用密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthenticationTypeC": {
+      "document": "时间戳防盗链模式 C 配置；\n时间戳防盗链模式 C 的访问 URL 格式为：http://DomainName/md5hash/timestamp/FileName；\n其中 timestamp 为十六进制 UNIX 时间戳；\nmd5hash：MD5（自定义密钥 + 文件路径 + timestamp）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算签名的密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名过期时间设置；\n单位为秒，最大可设置为 630720000。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "鉴权/不做鉴权的文件扩展名列表设置；\n如果包含字符 * 则表示所有文件。",
+          "example": "无",
+          "member": "string",
+          "name": "FileExtensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权；\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳进制设置：\n<li>dec：十进制</li>\n<li>hex：十六进制</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计算签名的备用密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthenticationTypeD": {
+      "document": "时间戳防盗链模式 D 配置；\n时间戳防盗链模式 D 的访问 URL 格式为：http://DomainName/FileName?sign=md5hash&t=timestamp；\n其中 timestamp 为十进制或十六进制 UNIX 时间戳；\nmd5hash：MD5（自定义密钥 + 文件路径 + timestamp）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算签名的密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名过期时间设置；\n单位为秒，最大可设置为 630720000。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "鉴权/不做鉴权的文件扩展名列表设置；\n如果包含字符 * 则表示所有文件。",
+          "example": "无",
+          "member": "string",
+          "name": "FileExtensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "whitelist：白名单，表示对除了 FileExtensions 列表之外的所有类型进行鉴权；\nblacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签名参数名设置；\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头。",
+          "example": "无",
+          "member": "string",
+          "name": "SignParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳参数名设置；\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳进制设置：\n<li>dec：十进制</li>\n<li>hex：十六进制</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计算签名的备用密钥；\n仅允许大小写字母与数字，长度 6~32 位。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AwsPrivateAccess": {
+      "document": "Aws S3 回源鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Aws S3 回源鉴权配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Bucket名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "BackUpMediaForXiaoeRequest": {
       "document": "BackUpMediaForXiaoe请求参数结构体",
       "members": [
@@ -7678,38 +8163,716 @@
       ],
       "type": "object"
     },
+    "CDNCertInfo": {
+      "document": "域名 https 加速配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "证书信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Certificate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密钥信息。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "证书过期时间；\n作为入参配置时无需填充。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CDNDomainConfig": {
+      "document": "Cdn域名配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名加速区域：\n<li>mainland：中国境内加速；</li>\n<li>overseas：中国境外加速；</li>\n<li>global：全球加速。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Origin",
+          "name": "Origin",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpFilter",
+          "name": "IpFilter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "UA 黑白名单配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserAgentFilter",
+          "name": "UserAgentFilter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "301/302 回源跟随配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FollowRedirect",
+          "name": "FollowRedirect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "请求头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RequestHeader",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "响应头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResponseHeader",
+          "name": "ResponseHeader",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "缓存过期时间配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Cache",
+          "name": "Cache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Https 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Https",
+          "name": "Https",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Authentication",
+          "name": "Authentication",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问协议强制跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirect",
+          "name": "ForceRedirect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Referer 防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Referer",
+          "name": "Referer",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "浏览器缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAge",
+          "name": "MaxAge",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6 访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6Access",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Quic访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Quic",
+          "name": "Quic",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "AWS S3 回源鉴权配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AwsPrivateAccess",
+          "name": "AwsPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "阿里云 OSS 回源鉴权配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "华为云对象存储回源鉴权配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "其他厂商对象存储回源鉴权配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OthersPrivateAccess",
+          "name": "OthersPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CDNDomainConfigForUpdate": {
+      "document": "Cdn域名配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名加速区域：\n<li>mainland：中国境内加速；</li>\n<li>overseas：中国境外加速；</li>\n<li>global：全球加速。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "源站配置。",
+          "example": "无",
+          "member": "Origin",
+          "name": "Origin",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单配置。",
+          "example": "无",
+          "member": "IpFilter",
+          "name": "IpFilter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "UA 黑白名单配置。",
+          "example": "无",
+          "member": "UserAgentFilter",
+          "name": "UserAgentFilter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "301/302 回源跟随配置。",
+          "example": "无",
+          "member": "FollowRedirect",
+          "name": "FollowRedirect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "请求头部配置。",
+          "example": "无",
+          "member": "RequestHeader",
+          "name": "RequestHeader",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "响应头部配置。",
+          "example": "无",
+          "member": "ResponseHeader",
+          "name": "ResponseHeader",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "缓存过期时间配置。",
+          "example": "无",
+          "member": "Cache",
+          "name": "Cache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Https 配置。",
+          "example": "无",
+          "member": "Https",
+          "name": "Https",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间戳防盗链配置。",
+          "example": "无",
+          "member": "Authentication",
+          "name": "Authentication",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问协议强制跳转配置。",
+          "example": "无",
+          "member": "ForceRedirect",
+          "name": "ForceRedirect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Referer 防盗链配置。",
+          "example": "无",
+          "member": "Referer",
+          "name": "Referer",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "浏览器缓存配置。",
+          "example": "无",
+          "member": "MaxAge",
+          "name": "MaxAge",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6 访问配置。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6Access",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Quic访问配置。",
+          "example": "无",
+          "member": "Quic",
+          "name": "Quic",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "AWS S3 回源鉴权配置。",
+          "example": "无",
+          "member": "AwsPrivateAccess",
+          "name": "AwsPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "阿里云 OSS 回源鉴权配置。",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "华为云对象存储回源鉴权配置。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "其他厂商对象存储回源鉴权配置。",
+          "example": "无",
+          "member": "OthersPrivateAccess",
+          "name": "OthersPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "CDNDomainInfo": {
+      "document": "cdn域名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "部署状态。",
+          "example": "无",
+          "member": "string",
+          "name": "DeployStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Cname记录。",
+          "example": "无",
+          "member": "string",
+          "name": "Cname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "cdn域名配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CDNDomainConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Cache": {
+      "document": "节点缓存过期时间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径缓存配置。",
+          "example": "无",
+          "member": "RuleCache",
+          "name": "RuleCache",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigCache": {
+      "document": "路径缓存配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径缓存配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "缓存过期时间设置，单位为秒，最大可设置为 365 天。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CacheTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "高级缓存过期配置，开启时会对比源站返回的 max-age 值与 CacheRules 中设置的缓存过期时间，取最小值在节点进行缓存，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "CompareMaxAge",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "强制缓存，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "IgnoreCacheControl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当源站返回 Set-Cookie 头部时，节点是否缓存该头部及 body：\n<li>on：开启，不缓存该头部及body；</li>\n<li>off：关闭，遵循用户自定义的节点缓存规则。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "IgnoreSetCookie",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigFollowOrigin": {
+      "document": "路径缓存遵循源站配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径缓存遵循源站配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "启发式缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeuristicCache",
+          "name": "HeuristicCache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigNoCache": {
+      "document": "路径缓存不缓存配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径缓存不缓存配置配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总是回源站校验，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Revalidate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Canvas": {
       "document": "画布信息。制作视频时，如果源素材（视频或者图片）不能填满输出的视频窗口，将用设置的画布进行背景绘制。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "背景颜色，取值有：\n<li>Black：黑色背景</li>\n<li>White：白色背景</li>\n默认值：Black。",
+          "example": "无",
           "member": "string",
           "name": "Color",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "画布宽度，即输出视频的宽度，取值范围：0~ 4096，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频宽度一致。",
+          "document": "画布宽度，即输出视频的宽度，取值范围：0~ 3840，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频宽度一致。",
+          "example": "无",
           "member": "int64",
           "name": "Width",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "画布高度，即输出视频的高度（或长边），取值范围：0~ 4096，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频高度一致。",
+          "document": "画布高度，即输出视频的高度（或长边），取值范围：0~ 3840，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频高度一致。",
+          "example": "无",
           "member": "int64",
           "name": "Height",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -7898,6 +9061,54 @@
         }
       ],
       "usage": "out"
+    },
+    "CloneCDNDomainRequest": {
+      "document": "CloneCDNDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "被克隆域名。",
+          "example": "无",
+          "member": "string",
+          "name": "ReferenceDomain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CloneCDNDomainResponse": {
+      "document": "CloneCDNDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ColorEnhanceInfo": {
       "document": "色彩增强控制参数",
@@ -8821,6 +10032,23 @@
       ],
       "usage": "out"
     },
+    "CopyRightWatermarkInput": {
+      "document": "版权水印参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版权信息，最大长度为 200 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "CoverBySnapshotTaskInput": {
       "document": "对视频截图做封面任务输入参数类型",
       "members": [
@@ -9438,6 +10666,54 @@
           "value_allowed_null": false,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCDNDomainRequest": {
+      "document": "CreateCDNDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名配置。",
+          "example": "无",
+          "member": "CDNDomainConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCDNDomainResponse": {
+      "document": "CreateCDNDomain返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11753,6 +13029,44 @@
       ],
       "type": "object"
     },
+    "DeleteCDNDomainRequest": {
+      "document": "DeleteCDNDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCDNDomainResponse": {
+      "document": "DeleteCDNDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClassRequest": {
       "document": "DeleteClass请求参数结构体",
       "members": [
@@ -12894,6 +14208,84 @@
           "name": "AnimatedGraphicsTemplateSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCDNDomainsRequest": {
+      "document": "DescribeCDNDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表。当该字段不填时，则默认列出所有域名信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取的最大返回结果数。默认值：20。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取的起始偏移量。默认值：0。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCDNDomainsResponse": {
+      "document": "DescribeCDNDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名信息列表。",
+          "example": "无",
+          "member": "CDNDomainInfo",
+          "name": "DomainSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前应用下的总CDN域名数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -15959,7 +17351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -16153,6 +17545,16 @@
           "example": "无",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkTask",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTask",
+          "name": "ExtractCopyRightWatermarkTask",
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -17724,7 +19126,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -17933,6 +19335,17 @@
         },
         {
           "disabled": false,
+          "document": "版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTask",
+          "name": "ExtractCopyRightWatermarkCompleteEvent",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReviewAudioVideoTask",
@@ -18061,6 +19474,145 @@
         }
       ],
       "type": "object"
+    },
+    "ExtractCopyRightWatermarkTask": {
+      "document": "提取版权水印任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTaskInput",
+          "name": "Input",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTaskOutput",
+          "name": "Output",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractCopyRightWatermarkTaskInput": {
+      "document": "提取版权水印任务输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要提取水印的媒体 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractCopyRightWatermarkTaskOutput": {
+      "document": "提取版权水印输出信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ExtractTraceWatermarkRequest": {
       "document": "ExtractTraceWatermark请求参数结构体",
@@ -18656,6 +20208,23 @@
       ],
       "usage": "out"
     },
+    "FollowRedirect": {
+      "document": "回源 301/302 状态码自动跟随配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源跟随配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ForbidMediaDistributionRequest": {
       "document": "ForbidMediaDistribution请求参数结构体",
       "members": [
@@ -18717,6 +20286,56 @@
         }
       ],
       "type": "object"
+    },
+    "ForceRedirect": {
+      "document": "访问协议强制跳转配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问强制跳转配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问强制跳转类型：\n<li>http：强制 http 跳转</li>\n<li>https：强制 https 跳转</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RedirectType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "强制跳转时返回状态码，支持 301、302。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RedirectStatusCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "强制跳转时是否返回增加的头部。",
+          "example": "无",
+          "member": "string",
+          "name": "CarryHeaders",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "FrameTagConfigureInfo": {
       "document": "智能按帧标签任务控制参数",
@@ -18941,6 +20560,62 @@
       ],
       "usage": "out"
     },
+    "HeuristicCache": {
+      "document": "启发式缓存配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启发式缓存配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义启发式缓存时间配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeuristicCacheConfig",
+          "name": "CacheConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "HeuristicCacheConfig": {
+      "document": "启发式自定义时间缓存配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启发式自定义时间缓存配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "HeuristicCacheTimeSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HeuristicCacheTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "HighlightSegmentItem": {
       "document": "智能精彩集锦片段列表。",
       "members": [
@@ -19008,6 +20683,156 @@
         }
       ],
       "usage": "in"
+    },
+    "HttpHeaderPathRule": {
+      "document": "Http 头部设置规则，最多可设置 100 条",
+      "members": [
+        {
+          "disabled": false,
+          "document": "http 头部设置方式：\n<li>set：设置。变更指定头部参数的取值为设置后的值；若设置的头部不存在，则会增加该头部；若存在多个重复的头部参数，则会全部变更，同时合并为一个头部；</li>\n<li>del：删除。删除指定的头部参数；</li>\n<li>add：增加。增加指定的头部参数，默认允许重复添加，即重复添加相同的头部（注：重复添加可能会影响浏览器响应，请优先使用set操作）。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "HeaderMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "http 头部名称，最多可设置 100 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "HeaderName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "http 头部值，最多可设置 1000 个字符；\nMode 为 del 时非必填；\nMode 为 add/set 时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "HeaderValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "RuleType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "Https": {
+      "document": "域名 https 加速配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "https 配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "http2 配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Http2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "证书配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CDNCertInfo",
+          "name": "CertInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "HwPrivateAccess": {
+      "document": "华为云对象存储回源鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "华为云对象存储回源鉴权配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Bucket名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "ImageBlur": {
       "document": "图片模糊处理。",
@@ -19767,6 +21592,123 @@
       ],
       "usage": "out"
     },
+    "IpFilter": {
+      "document": "IP 黑白名单配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 黑白名单配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单类型：\n<li>whitelist：白名单；</li>\n<li>blacklist：黑名单。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单列表，支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段；\n最多可填充 50 个白名单或 50 个黑名单。",
+          "example": "无",
+          "member": "string",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单分路径配置。",
+          "example": "无",
+          "member": "IpFilterPathRule",
+          "name": "FilterRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "IpFilterPathRule": {
+      "document": "IP黑白名单分路径配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 黑白名单类型：\n<li>whitelist：白名单；</li>\n<li>blacklist：黑名单。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP 黑白名单列表，支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段；\n最多可填充 50 个白名单或 50 个黑名单。",
+          "example": "无",
+          "member": "string",
+          "name": "Filters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "RuleType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "Ipv6Access": {
+      "document": "Ipv6访问配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名开启ipv6访问配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "LicenseUsageDataItem": {
       "document": "License 请求次数统计数据。",
       "members": [
@@ -20160,6 +22102,73 @@
         }
       ],
       "type": "object"
+    },
+    "MaxAge": {
+      "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MaxAge 规则。",
+          "example": "无",
+          "member": "MaxAgeRule",
+          "name": "MaxAgeRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "MaxAgeRule": {
+      "document": "MagAge 规则配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaxAgeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "MaxAgeType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>\n<b>注意：all规则不可删除，默认遵循源站，可修改。</b>",
+          "example": "无",
+          "member": "string",
+          "name": "MaxAgeContents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "MaxAge 时间设置，单位秒；\n<b>注意：时间为0，即不缓存。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxAgeTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否遵循源站，on或off，开启时忽略时间设置。",
+          "example": "无",
+          "member": "string",
+          "name": "FollowOrigin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "MediaAdaptiveDynamicStreamingInfo": {
       "document": "转自适应码流信息",
@@ -23394,11 +25403,22 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "CopyRightWatermarkText",
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -24015,6 +26035,54 @@
     },
     "ModifyAnimatedGraphicsTemplateResponse": {
       "document": "ModifyAnimatedGraphicsTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCDNDomainConfigRequest": {
+      "document": "ModifyCDNDomainConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名配置。",
+          "example": "无",
+          "member": "CDNDomainConfigForUpdate",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCDNDomainConfigResponse": {
+      "document": "ModifyCDNDomainConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -26545,6 +28613,222 @@
         }
       ],
       "usage": "in"
+    },
+    "Origin": {
+      "document": "源站配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主源站列表。\n修改主源站时，需要同时填充对应的 OriginType。",
+          "example": "无",
+          "member": "string",
+          "name": "Origins",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主源站类型，入参支持以下几种类型：\n<li>domain：域名类型；</li>\n<li>ip：IP 列表作为源站；</li>\n<li>third_party：第三方存储源站。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "OriginType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回源主源站时 Host 头部，不填充则默认为加速域名；\n当源站类型为对象存储时，ServerName 字段必填。",
+          "example": "无",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回源协议配置：\n<li>http：强制 http 回源；</li>\n<li>follow：协议跟随回源；</li>\n<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "OriginPullProtocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备源站列表。\n修改备源站时，需要同时填充对应的 OriginType。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupOrigins",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备源站类型，入参支持以下几种类型：\n<li>domain：域名类型；</li>\n<li>ip：IP 列表作为源站；</li>\n<li>third_party：第三方存储源站。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "BackupOriginType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回源备源站时 Host 头部，不填充则默认为主源站的 ServerName。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupServerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "对象存储回源厂商，当源站类型为第三方存储源站（third_party）时必填，可选值包括以下:\n<li>aws_s3：AWS S3；</li>\n<li>ali_oss：阿里云 OSS；</li>\n<li>hw_obs：华为 OBS；</li>\n<li>others：其它厂商对象存储,仅支持兼容以AWS签名算法的对象存储，如腾讯云COS。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "OriginCompany",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "OssPrivateAccess": {
+      "document": "阿里云 OSS 回源鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "阿里云 OSS 回源鉴权配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Bucket名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "OthersPrivateAccess": {
+      "document": "其他厂商对象存储回源鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "其他厂商对象存储回源鉴权配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "访问ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Bucket名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "OutputAudioStream": {
       "document": "输出的音频流信息",
@@ -29312,6 +31596,23 @@
       ],
       "type": "object"
     },
+    "Quic": {
+      "document": "Quic配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Quic功能配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "RebuildAudioInfo": {
       "document": "音画质重生音频控制控制信息。",
       "members": [
@@ -31012,6 +33313,34 @@
       ],
       "usage": "out"
     },
+    "Referer": {
+      "document": "Referer 黑白名单配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "referer 黑白名单配置开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "referer 黑白名单配置规则",
+          "example": "无",
+          "member": "RefererRule",
+          "name": "RefererRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "RefererAuthPolicy": {
       "document": "Referer 防盗链配置",
       "members": [
@@ -31058,6 +33387,67 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RefererRule": {
+      "document": "Referer 黑白名单配置规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "RuleType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "referer 配置类型，取值：\n<li>whitelist：白名单；</li>\n<li>blacklist：黑名单。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RefererType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "referer 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Referers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否允许空 referer：\n防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；\n防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer。",
+          "example": "无",
+          "member": "bool",
+          "name": "AllowEmpty",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -31410,6 +33800,34 @@
       ],
       "usage": "both"
     },
+    "RequestHeader": {
+      "document": "自定义请求头配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义请求头配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义请求头配置规则。",
+          "example": "无",
+          "member": "HttpHeaderPathRule",
+          "name": "HeaderRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ResetProcedureTemplateRequest": {
       "document": "ResetProcedureTemplate请求参数结构体",
       "members": [
@@ -31559,6 +33977,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ResponseHeader": {
+      "document": "自定义响应头配置，默认为关闭状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义响应头配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义响应头规则。",
+          "example": "无",
+          "member": "HttpHeaderPathRule",
+          "name": "HeaderRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "RestoreMediaRequest": {
       "document": "RestoreMedia请求参数结构体",
@@ -32673,6 +35119,84 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleCache": {
+      "document": "分路径缓存配置。\n默认情况下所有文件缓存过期时间为 30 天。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "RuleType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleCacheConfig",
+          "name": "CacheConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleCacheConfig": {
+      "document": "路径缓存缓存配置（三种缓存模式中选取一种）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigCache",
+          "name": "Cache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "不缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigNoCache",
+          "name": "NoCache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "遵循源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigFollowOrigin",
+          "name": "FollowOrigin",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -34290,6 +36814,54 @@
       ],
       "usage": "out"
     },
+    "StartCDNDomainRequest": {
+      "document": "StartCDNDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名操作，取值：\n<li>start：启用；</li>\n<li>stop：停用。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "StartCDNDomainResponse": {
+      "document": "StartCDNDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StatDataItem": {
       "document": "统计数据",
       "members": [
@@ -35729,6 +38301,17 @@
         },
         {
           "disabled": false,
+          "document": "版权水印。",
+          "example": "无",
+          "member": "CopyRightWatermarkInput",
+          "name": "CopyRightWatermark",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "马赛克列表，最大可支持 10 张。",
           "example": "无",
           "member": "MosaicInput",
@@ -36042,6 +38625,84 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserAgentFilter": {
+      "document": "UserAgent黑白名单配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UserAgent 黑白名单配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "UserAgent 黑白名单生效规则列表。",
+          "example": "无",
+          "member": "UserAgentFilterRule",
+          "name": "FilterRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "UserAgentFilterRule": {
+      "document": "UserAgent黑白名单规则配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UA 黑白名单类型： <li>whitelist：白名单；</li> <li>blacklist：黑名单。</li>\t",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "UserAgent列表。",
+          "example": "无",
+          "member": "string",
+          "name": "UserAgents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "规则类型：\n<li>all：所有文件生效；</li>\n<li>file：指定文件后缀生效；</li>\n<li>directory：指定路径生效；</li>\n<li>path：指定绝对路径生效。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "RuleType 对应类型下的匹配内容：\n<li>all 时填充 *；</li>\n<li>file 时填充后缀名，如 jpg、txt；</li>\n<li>directory 时填充路径，如 /xxx/test/；</li>\n<li>path 时填充绝对路径，如 /xxx/test.html。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

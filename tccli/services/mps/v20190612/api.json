@@ -1497,44 +1497,48 @@
       "document": "自适应转码流参数模板",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频参数信息。",
+          "example": "null",
           "member": "VideoTemplateInfo",
           "name": "Video",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数信息。",
+          "example": "null",
           "member": "AudioTemplateInfo",
           "name": "Audio",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否移除音频流，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveAudio",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否移除视频流，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveVideo",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

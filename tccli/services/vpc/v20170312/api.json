@@ -5248,34 +5248,34 @@
       "document": "AssociateDirectConnectGatewayNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "专线网关ID。",
+          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-8xpno8ee",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID。",
           "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "专线网关ID。",
           "example": "dcg-fxa6gh5t",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5296,74 +5296,74 @@
       "document": "AssociateNatGatewayAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-mdbjfr0y",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP, 其中AddressCount和PublicAddresses至少传递一个。",
           "example": "1",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
           "example": "[\"139.199.232.212\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP可用区，自动分配弹性IP时传递。",
           "example": "10003",
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
           "example": "77",
           "member": "uint64",
           "name": "StockPublicIpAddressesBandwidthOut",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
           "example": "77",
           "member": "uint64",
           "name": "PublicIpAddressesBandwidthOut",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。",
           "example": "true",
           "member": "bool",
           "name": "PublicIpFromSameZone",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9135,7 +9135,6 @@
       "document": "CreateNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关名称",
           "example": "test_name",
@@ -9146,7 +9145,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-abcdefgh",
@@ -9157,7 +9155,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。",
           "example": "10",
@@ -9168,7 +9165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。",
           "example": "1000000",
@@ -9179,7 +9175,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。",
           "example": "1",
@@ -9190,7 +9185,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
           "example": "[\"139.199.232.119\\n\"]",
@@ -9201,7 +9195,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区，形如：`ap-guangzhou-1`。",
           "example": "ap-guangzhou-1",
@@ -9212,7 +9205,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "example": "无",
@@ -9223,7 +9215,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关所属子网",
           "example": "1215354",
@@ -9234,7 +9225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
           "example": "77",
@@ -9245,7 +9235,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
           "example": "77",
@@ -9256,7 +9245,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。",
           "example": "false",
@@ -9267,7 +9255,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定所创建NAT网关的类型是否为共享型。",
           "example": "false",
@@ -9278,7 +9265,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关大版本号，默认值`1`",
           "example": "1",
@@ -9286,6 +9272,26 @@
           "name": "NatProductVersion",
           "required": false,
           "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "未匹配SNAT规则的请求是否禁止转发。true为禁止转发，false为随机选择NAT实例上的eip转发。\t",
+          "example": "false",
+          "member": "bool",
+          "name": "StrictSnatMode",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否启用根据目的网段选择SNAT使用的EIP功能\t",
+          "example": "false",
+          "member": "string",
+          "name": "SmartScheduleMode",
+          "required": false,
+          "type": "string",
           "visibility": 2
         }
       ],
@@ -9300,7 +9306,6 @@
           "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -9311,7 +9316,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -34486,7 +34490,6 @@
       "document": "ModifyNatGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-ig8xpno8",
@@ -34497,7 +34500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的名称，形如：`test_nat`。",
           "example": "测试nat网关",
@@ -34508,7 +34510,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关最大外网出带宽(单位:Mbps)。",
           "example": "500",
@@ -34519,7 +34520,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否修改NAT网关绑定的安全组。",
           "example": "true",
@@ -34530,7 +34530,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`",
           "example": "['sg-1n232323']",
@@ -34541,12 +34540,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未匹配SNAT规则的请求是否禁止转发。true为禁止转发，false为随机选择NAT实例上的eip转发。",
           "example": "false",
           "member": "bool",
           "name": "StrictSnatMode",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否启用根据目的网段选择SNAT使用的EIP功能",
+          "example": "false",
+          "member": "bool",
+          "name": "SmartScheduleMode",
           "required": false,
           "type": "bool",
           "visibility": 2
@@ -36151,7 +36159,6 @@
       "document": "NAT网关对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID。",
           "example": "\"nat-12345678\"",
@@ -36163,7 +36170,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的名称。",
           "example": "\"test\"",
@@ -36175,7 +36181,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关创建的时间。",
           "example": "\"2021-05-24 19:28:31\"",
@@ -36187,7 +36192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的状态。\n 'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，\n‘FAILED’：失败。",
           "example": "\"AVAILABLE\"",
@@ -36199,7 +36203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关最大外网出带宽(单位:Mbps)。",
           "example": "10",
@@ -36211,7 +36214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关并发连接上限。",
           "example": "10000000",
@@ -36223,7 +36225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定NAT网关的公网IP对象数组。",
           "example": " 无",
@@ -36235,7 +36236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关网络状态。“AVAILABLE”:运行中, “UNAVAILABLE”:不可用, “INSUFFICIENT”:欠费停服。",
           "example": "\"AVAILABLE\"",
@@ -36247,7 +36247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的端口转发规则。",
           "example": "无",
@@ -36259,7 +36258,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "\"vpc-12345678\"",
@@ -36271,7 +36269,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关所在的可用区。",
           "example": "\"ap-guangzhou-2\"",
@@ -36283,7 +36280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的专线网关ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"dcg-12345678\"]",
@@ -36295,7 +36291,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"subnet-12345678\"",
@@ -36307,7 +36302,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对。",
           "example": "无",
@@ -36319,7 +36313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关绑定的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-12345678\"]",
@@ -36331,7 +36324,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的SNAT转发规则。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -36343,7 +36335,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否独享型NAT。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -36355,7 +36346,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50000",
@@ -36367,7 +36357,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
@@ -36379,14 +36368,35 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "NAT网关大版本号，默认值`1`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关大版本号，传统型=1，标准型=2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否仅允许匹配SNAT规则的流量进行转发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "StrictSnatMode",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否启用根据目的网段选择SNAT使用的EIP功能\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SmartScheduleMode",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 2
         }
@@ -41592,92 +41602,110 @@
         {
           "default": "",
           "disabled": false,
-          "document": "资源ID",
+          "document": "资源ID，如果ResourceType为USERDEFINED，可以为空",
+          "example": "subnet-7aed90al",
           "member": "string",
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
-          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUBNET",
           "member": "string",
           "name": "ResourceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "源IP/网段",
+          "example": "172.168.100.0/24",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "弹性IP地址池",
+          "example": "['180.12.59.43']",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "Snat规则ID",
+          "example": "snat-3nptcfvp",
           "member": "string",
           "name": "NatGatewaySnatId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nat-3nptcfvp",
           "member": "string",
           "name": "NatGatewayId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-oty76xyl",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "disabled": false,
           "document": "NAT网关SNAT规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-14 13:59:00",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

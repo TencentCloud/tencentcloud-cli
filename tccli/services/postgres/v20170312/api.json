@@ -232,9 +232,9 @@
       "status": "online"
     },
     "DescribeDBInstanceParameters": {
-      "document": "获取实例可修改参数列表",
+      "document": "本接口（DescribeDBInstanceAttribute）用于查询实例的参数信息。",
       "input": "DescribeDBInstanceParametersRequest",
-      "name": "获取实例可修改参数列表",
+      "name": "查询实例参数",
       "output": "DescribeDBInstanceParametersResponse",
       "status": "online"
     },
@@ -2292,7 +2292,7 @@
         },
         {
           "disabled": false,
-          "document": "主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async",
+          "document": "主从同步方式，可取值： \n1、Semi-sync：半同步\n2、Async：异步 \n当前只支持Semi-sync",
           "example": "Async",
           "member": "string",
           "name": "SyncMode",
@@ -5104,7 +5104,6 @@
       "document": "DescribeDBInstanceParameters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "postgres-xxx",
@@ -5115,7 +5114,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询指定参数详情。ParamName为空或不传，默认返回全部参数列表",
           "example": "wal_level",
@@ -5137,7 +5135,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5148,7 +5145,6 @@
           "example": "无",
           "member": "ParamInfo",
           "name": "Detail",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

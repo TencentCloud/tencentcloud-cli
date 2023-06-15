@@ -4425,7 +4425,6 @@
       "document": "CreateCdbProxyAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "代理组ID",
           "example": "proxy-test",
@@ -4436,7 +4435,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重分配模式，\n系统自动分配：\"system\"， 自定义：\"custom\"",
           "example": "system",
@@ -4447,7 +4445,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
           "example": "true",
@@ -4458,7 +4455,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小保留数量，最小取值：0",
           "example": "2",
@@ -4469,7 +4465,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟剔除阈值，最小取值：0",
           "example": "100",
@@ -4480,7 +4475,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启故障转移，取值：\"true\" | \"false\"",
           "example": "true",
@@ -4491,7 +4485,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动添加RO，取值：\"true\" | \"false\"",
           "example": "true",
@@ -4502,7 +4495,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是只读，取值：\"true\" | \"false\"",
           "example": "true",
@@ -4513,7 +4505,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启事务分离，取值：\"true\" | \"false\"",
           "example": "true",
@@ -4524,7 +4515,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权重分配",
           "example": "无",
@@ -4535,7 +4525,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-ixw3ll2d",
@@ -4546,7 +4535,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有子网ID",
           "example": "subnet-0z3r56vq",
@@ -4557,7 +4545,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启连接池",
           "example": "true",
@@ -4568,7 +4555,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "test",
@@ -4579,7 +4565,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "192.0.0.1",
@@ -4590,7 +4575,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
           "example": "80",
@@ -4601,7 +4585,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组",
           "example": "无",
@@ -4609,6 +4592,16 @@
           "name": "SecurityGroup",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。",
+          "example": "connection",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -4623,7 +4616,6 @@
           "example": "1312",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -15774,7 +15766,6 @@
       "document": "ModifyRemoteBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
@@ -15785,7 +15776,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地数据备份开关，off - 关闭异地备份，on-开启异地备份",
           "example": "on",
@@ -15796,7 +15786,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地日志备份开关，off - 关闭异地备份，on-开启异地备份，只有在参数RemoteBackupSave为on时，RemoteBinlogSave参数才可设置为on",
           "example": "on",
@@ -15807,7 +15796,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户设置异地备份地域列表",
           "example": "[\"ap-guangzhou\"]",
@@ -15818,7 +15806,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地备份保留时间，单位为天",
           "example": "7",
