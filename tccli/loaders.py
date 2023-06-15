@@ -394,7 +394,7 @@ class Loader(object):
 
             param_type = res["type"]
             type_name = res["type_name"]
-            required = res["required"]
+            required = res.get("required")
             document = res["document"]
 
             for idx, item in enumerate(tmp_param[1:]):
@@ -403,6 +403,7 @@ class Loader(object):
                 else:
                     res = res["members"][item]
 
+                # ?? seriously ??
                 if required == "Required" and res["required"] == "Optional":
                     required = "Optional"
 

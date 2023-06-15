@@ -255,7 +255,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
 
     def _doc_title(self, option, param, param_info):
         if option == "Available Parameters":
-            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info["required"]))
+            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info.get("required")))
         else:
             self.doc.doc_title('%s -> (%s)' % (param, self._param_type(param_info)))
 
