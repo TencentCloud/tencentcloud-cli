@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tccli"
-version = "3.0.894.1"
+version = "3.0.894.3"
 authors = [
   { name="tencentcloudapi", email="tencentcloudapi@tencent.com" },
 ]
@@ -18,7 +18,16 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
 ]
+dependencies = [
+    "jmespath==0.10.0",
+    "six==1.16.0",
+    "tencentcloud-sdk-python>=3.0.894",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/TencentCloud/tencentcloud-cli"
 "Bug Tracker" = "https://github.com/TencentCloud/tencentcloud-cli/issues"
+
+[project.scripts]
+tccli = "tccli.main:main"
+tccli_completer = "tccli.completer:complete"
