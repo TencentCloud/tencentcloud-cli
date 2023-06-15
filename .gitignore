@@ -4,8 +4,11 @@
 
 # twine
 dist/
+build/
 
 # tox
 .tox/
 tccli.egg-info/
 .idea/
+
+.python-version
