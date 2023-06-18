@@ -364,6 +364,13 @@
       "output": "DescribeGovernDefaultPolicyResponse",
       "status": "online"
     },
+    "DescribeGovernEventRule": {
+      "document": "查询数据治理事件阈值",
+      "input": "DescribeGovernEventRuleRequest",
+      "name": "查询数据治理事件阈值",
+      "output": "DescribeGovernEventRuleResponse",
+      "status": "online"
+    },
     "DescribeLakeFsDirSummary": {
       "document": "查询托管存储指定目录的Summary",
       "input": "DescribeLakeFsDirSummaryRequest",
@@ -6927,6 +6934,56 @@
     "DescribeGovernDefaultPolicyResponse": {
       "document": "DescribeGovernDefaultPolicy返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "数据值里规则默认值",
+          "example": "无",
+          "member": "DataGovernPolicy",
+          "name": "Threshold",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernEventRuleRequest": {
+      "document": "DescribeGovernEventRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据治理事件阈值名称",
+          "example": "DataLakeCatalog.test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernEventRuleResponse": {
+      "document": "DescribeGovernEventRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户的数据治理事件阈值",
+          "example": "无",
+          "member": "TenantGovernEventRules",
+          "name": "RuleThreshold",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13813,6 +13870,72 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "TenantGovernEventRules": {
+      "document": "用户数据治理事件阈值",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件阈值ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件阈值类型",
+          "example": "iceberg",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户AppId",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "治理事件阈值名称",
+          "example": "DataLakeCatalog.test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据治理时间阈值",
+          "example": "无",
+          "member": "RuleThreshold",
+          "name": "Rule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"

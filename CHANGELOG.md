@@ -1,3 +1,109 @@
+# Release 3.0.789.1
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 53 次发布
+
+发布时间：2023-06-19 01:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PayeeAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeAccountBalanceResult)
+
+	* 新增成员：PaidIncomeTax, InPayIncomeTax, PaidValueAddedTax, InPayValueAddedTax, PaidAttachTax, InPayAttachTax
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 45 次发布
+
+发布时间：2023-06-19 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78069)
+* [CreateProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78068)
+* [CreateProxyEndPoint](http://document.tencentcloudapi.woa.com/document/product/1003/78067)
+* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/1003/78066)
+* [DescribeProxyNodes](http://document.tencentcloudapi.woa.com/document/product/1003/78065)
+* [ModifyProxyDesc](http://document.tencentcloudapi.woa.com/document/product/1003/78064)
+* [ModifyProxyRwSplit](http://document.tencentcloudapi.woa.com/document/product/1003/78063)
+* [ReloadBalanceProxyNode](http://document.tencentcloudapi.woa.com/document/product/1003/78062)
+* [UpgradeProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78061)
+* [UpgradeProxyVersion](http://document.tencentcloudapi.woa.com/document/product/1003/78060)
+
+新增数据结构：
+
+* [ProxyConnectionPoolInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyConnectionPoolInfo)
+* [ProxyGroup](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroup)
+* [ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupInfo)
+* [ProxyGroupRwInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupRwInfo)
+* [ProxyInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyInstanceWeight)
+* [ProxyNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyNodeInfo)
+* [ProxyZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyZone)
+* [QueryParamFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryParamFilter)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 54 次发布
+
+发布时间：2023-06-19 01:18:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGovernEventRule](http://document.tencentcloudapi.woa.com/document/product/1342/78070)
+
+修改接口：
+
+* [DescribeGovernDefaultPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/77316)
+
+	* 新增出参：Threshold
+
+
+新增数据结构：
+
+* [TenantGovernEventRules](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TenantGovernEventRules)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 26 次发布
+
+发布时间：2023-06-19 01:28:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeWorkSpaces](http://document.tencentcloudapi.woa.com/document/product/849/78072)
+
+新增数据结构：
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+* [RoleAuth](http://document.tencentcloudapi.woa.com/document/product/849/52010#RoleAuth)
+* [WorkSpaceSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#WorkSpaceSetItem)
+
+
+
 # Release 3.0.788.1
 
 ## 容器服务(tke) 版本：2022-05-01

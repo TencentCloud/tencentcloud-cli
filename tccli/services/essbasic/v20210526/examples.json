@@ -19,8 +19,8 @@
     "ChannelCancelMultiFlowSignQRCode": [
       {
         "document": "ChannelCancelMultiFlowSignQRCode",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"QrCodeId\": \"test\",\n    \"Agent\": {\n        \"ProxyAppId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"AppId\": \"test\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"id\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"QrCodeId\": \"test\",\n    \"Agent\": {\n        \"ProxyAppId\": \"yDxxxxxxx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"自定义\"\n        },\n        \"ProxyOrganizationOpenId\": \"自定义\",\n        \"AppId\": \"yDxxxxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c75e86d-xxxxxxxxxx6f330a05e\"\n    }\n}",
         "title": "ChannelCancelMultiFlowSignQRCode"
       }
     ],

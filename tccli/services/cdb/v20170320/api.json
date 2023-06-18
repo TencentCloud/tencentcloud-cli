@@ -8189,7 +8189,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37",
+          "document": "binlog最早开始时间，时间格式：2016-03-17 02:10:37",
           "example": "\"\"",
           "member": "string",
           "name": "MinStartTime",
@@ -8199,7 +8199,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37",
+          "document": "binlog最晚开始时间，时间格式：2016-03-17 02:10:37",
           "example": "\"\"",
           "member": "string",
           "name": "MaxStartTime",

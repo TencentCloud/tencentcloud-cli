@@ -1,14 +1,29 @@
 # 本版本更新包含以下内容：
 
-## 容器服务(tke) 版本：2022-05-01
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 53 次发布
+
+发布时间：2023-06-19 01:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PayeeAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeAccountBalanceResult)
+
+	* 新增成员：PaidIncomeTax, InPayIncomeTax, PaidValueAddedTax, InPayValueAddedTax, PaidAttachTax, InPayAttachTax
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 70 次发布
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-发布时间：2023-06-16 01:36:01
+### 第 45 次发布
+
+发布时间：2023-06-19 01:16:32
 
 本次发布包含了以下内容：
 
@@ -16,17 +31,35 @@
 
 新增接口：
 
-* [DescribeEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/457/78057)
-* [DisableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78056)
-* [EnableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78055)
+* [CloseProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78069)
+* [CreateProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78068)
+* [CreateProxyEndPoint](http://document.tencentcloudapi.woa.com/document/product/1003/78067)
+* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/1003/78066)
+* [DescribeProxyNodes](http://document.tencentcloudapi.woa.com/document/product/1003/78065)
+* [ModifyProxyDesc](http://document.tencentcloudapi.woa.com/document/product/1003/78064)
+* [ModifyProxyRwSplit](http://document.tencentcloudapi.woa.com/document/product/1003/78063)
+* [ReloadBalanceProxyNode](http://document.tencentcloudapi.woa.com/document/product/1003/78062)
+* [UpgradeProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78061)
+* [UpgradeProxyVersion](http://document.tencentcloudapi.woa.com/document/product/1003/78060)
+
+新增数据结构：
+
+* [ProxyConnectionPoolInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyConnectionPoolInfo)
+* [ProxyGroup](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroup)
+* [ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupInfo)
+* [ProxyGroupRwInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupRwInfo)
+* [ProxyInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyInstanceWeight)
+* [ProxyNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyNodeInfo)
+* [ProxyZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyZone)
+* [QueryParamFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryParamFilter)
 
 
 
-## 云点播(vod) 版本：2018-07-17
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 66 次发布
+### 第 54 次发布
 
-发布时间：2023-06-16 01:37:44
+发布时间：2023-06-19 01:18:46
 
 本次发布包含了以下内容：
 
@@ -34,7 +67,40 @@
 
 新增接口：
 
-* [ExtractCopyRightWatermark](http://document.tencentcloudapi.woa.com/document/product/266/78058)
+* [DescribeGovernEventRule](http://document.tencentcloudapi.woa.com/document/product/1342/78070)
+
+修改接口：
+
+* [DescribeGovernDefaultPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/77316)
+
+	* 新增出参：Threshold
+
+
+新增数据结构：
+
+* [TenantGovernEventRules](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TenantGovernEventRules)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 26 次发布
+
+发布时间：2023-06-19 01:28:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeWorkSpaces](http://document.tencentcloudapi.woa.com/document/product/849/78072)
+
+新增数据结构：
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+* [RoleAuth](http://document.tencentcloudapi.woa.com/document/product/849/52010#RoleAuth)
+* [WorkSpaceSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#WorkSpaceSetItem)
 
 
 
@@ -15433,6 +15499,21 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 53 次发布
+
+发布时间：2023-06-19 01:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PayeeAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeAccountBalanceResult)
+
+	* 新增成员：PaidIncomeTax, InPayIncomeTax, PaidValueAddedTax, InPayValueAddedTax, PaidAttachTax, InPayAttachTax
+
+
 ### 第 52 次发布
 
 发布时间：2023-05-01 01:13:10
@@ -19959,6 +20040,38 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 45 次发布
+
+发布时间：2023-06-19 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CloseProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78069)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78068)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateProxyEndPoint](http://document.tencentcloudapi.woa.com/document/product/1003/78067)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/1003/78066)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeProxyNodes](http://document.tencentcloudapi.woa.com/document/product/1003/78065)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyProxyDesc](http://document.tencentcloudapi.woa.com/document/product/1003/78064)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyProxyRwSplit](http://document.tencentcloudapi.woa.com/document/product/1003/78063)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ReloadBalanceProxyNode](http://document.tencentcloudapi.woa.com/document/product/1003/78062)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpgradeProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78061)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpgradeProxyVersion](http://document.tencentcloudapi.woa.com/document/product/1003/78060)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ProxyConnectionPoolInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyConnectionPoolInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyConnectionPoolInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyConnectionPoolInfo))
+* [[ProxyGroup](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroup)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyGroup](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroup))
+* [[ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupInfo))
+* [[ProxyGroupRwInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupRwInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyGroupRwInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupRwInfo))
+* [[ProxyInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyInstanceWeight)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyInstanceWeight))
+* [[ProxyNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyNodeInfo))
+* [[ProxyZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyZone)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ProxyZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyZone))
+* [[QueryParamFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryParamFilter)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[QueryParamFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryParamFilter))
+
 ### 第 44 次发布
 
 发布时间：2023-06-09 01:16:02
@@ -22725,6 +22838,29 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 54 次发布
+
+发布时间：2023-06-19 01:18:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeGovernEventRule](http://document.tencentcloudapi.woa.com/document/product/1342/78070)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeGovernDefaultPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/77316)
+
+	* 新增出参：Threshold
+
+
+新增数据结构：
+
+* [[TenantGovernEventRules](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TenantGovernEventRules)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[TenantGovernEventRules](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TenantGovernEventRules))
 
 ### 第 53 次发布
 
@@ -40107,6 +40243,24 @@
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
+### 第 26 次发布
+
+发布时间：2023-06-19 01:28:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeWorkSpaces](http://document.tencentcloudapi.woa.com/document/product/849/78072)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem))
+* [[RoleAuth](http://document.tencentcloudapi.woa.com/document/product/849/52010#RoleAuth)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[RoleAuth](http://document.tencentcloudapi.woa.com/document/product/849/52010#RoleAuth))
+* [[WorkSpaceSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#WorkSpaceSetItem)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[WorkSpaceSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#WorkSpaceSetItem))
+
 ### 第 25 次发布
 
 发布时间：2023-05-29 01:25:23
@@ -54693,9 +54847,9 @@
 
 新增接口：
 
-* [[DescribeEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/457/78057)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DisableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78056)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[EnableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78055)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/457/78057)
+* [DisableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78056)
+* [EnableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78055)
 
 ### 第 69 次发布
 
@@ -59365,7 +59519,7 @@
 
 新增接口：
 
-* [[ExtractCopyRightWatermark](http://document.tencentcloudapi.woa.com/document/product/266/78058)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ExtractCopyRightWatermark](http://document.tencentcloudapi.woa.com/document/product/266/78058)
 
 ### 第 65 次发布
 

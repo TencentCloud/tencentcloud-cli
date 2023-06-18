@@ -410,9 +410,17 @@
     ],
     "DescribeGovernDefaultPolicy": [
       {
-        "document": "",
+        "document": "查询默认数据治理规则",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernDefaultPolicy\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Threshold\": {\n            \"RewriteDataPolicy\": {\n                \"RewriteDataEnable\": \"abc\",\n                \"Engine\": \"abc\",\n                \"MinInputFiles\": 0,\n                \"TargetFileSizeBytes\": 0,\n                \"IntervalMin\": 0\n            },\n            \"ExpiredSnapshotsPolicy\": {\n                \"ExpiredSnapshotsEnable\": \"abc\",\n                \"Engine\": \"abc\",\n                \"RetainLast\": 0,\n                \"BeforeDays\": 0,\n                \"MaxConcurrentDeletes\": 0,\n                \"IntervalMin\": 0\n            },\n            \"RemoveOrphanFilesPolicy\": {\n                \"RemoveOrphanFilesEnable\": \"abc\",\n                \"Engine\": \"abc\",\n                \"BeforeDays\": 0,\n                \"MaxConcurrentDeletes\": 0,\n                \"IntervalMin\": 0\n            },\n            \"MergeManifestsPolicy\": {\n                \"MergeManifestsEnable\": \"abc\",\n                \"Engine\": \"abc\",\n                \"IntervalMin\": 0\n            },\n            \"InheritDataBase\": \"abc\",\n            \"RuleType\": \"abc\",\n            \"GovernEngine\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询默认数据治理规则"
+      }
+    ],
+    "DescribeGovernEventRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernEventRule\n<公共请求参数>\n\n{\n    \"Name\": \"DataLakeCatalog.tes_db\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleThreshold\": {\n            \"Id\": 1,\n            \"Type\": \"iceberg\",\n            \"AppId\": \"123456\",\n            \"Name\": \"DataLakeCatalog.test_db\",\n            \"Rule\": {\n                \"AddDataFiles\": 1000,\n                \"AddEqualityDeletes\": 1000,\n                \"AddPositionDeletes\": 1000,\n                \"AddDeleteFiles\": 1000\n            }\n        }\n    }\n}",
         "title": "示例一"
       }
     ],
