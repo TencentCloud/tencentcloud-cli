@@ -1,6 +1,6 @@
-**Example 1: 获取Session Statement详情列表**
+**Example 1: 查询Session中执行的任务列表**
 
-本接口用于获取Session Statement详情列表。
+本接口用于查询Session中执行的任务列表
 
 Input: 
 

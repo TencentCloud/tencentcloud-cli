@@ -1,6 +1,6 @@
-**Example 1: 日志列表**
+**Example 1: 查询日志详情**
 
-日志列表
+查询spark 作业任务的日志详情
 
 Input: 
 

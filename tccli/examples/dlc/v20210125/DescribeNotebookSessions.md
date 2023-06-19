@@ -1,17 +1,17 @@
-**Example 1: 获取notebook livy session列表**
+**Example 1: 查询交互式 session列表**
 
-
+查询交互式 session列表
 
 Input: 
 
 ```
 tccli dlc DescribeNotebookSessions --cli-unfold-argument  \
-    --SortFields createTime \
+    --DataEngineName abc \
+    --State abc \
+    --SortFields abc \
     --Asc True \
-    --State not_started \
-    --Limit 10 \
-    --DataEngineName xx \
-    --Offset 10
+    --Limit 1 \
+    --Offset 1
 ```
 
 Output: 

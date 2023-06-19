@@ -246,9 +246,9 @@
     ],
     "DeleteGrafanaInstance": [
       {
-        "document": "",
+        "document": "删除指定实例",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceIDs\": [\n        \"grafana-abcdefgh\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除指定实例"
       }
     ],

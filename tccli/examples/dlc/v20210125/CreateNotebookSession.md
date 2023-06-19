@@ -1,6 +1,6 @@
-**Example 1: 创建notebook livy session**
+**Example 1: 创建交互式session（notebook）**
 
-创建notebook session
+创建交互式session（notebook）
 
 Input: 
 
@@ -27,10 +27,10 @@ Output:
 ```
 {
     "Response": {
-        "SparkAppId": "xx",
-        "SessionId": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
-        "State": "not_started",
-        "RequestId": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1"
+        "SessionId": "abc",
+        "SparkAppId": "abc",
+        "State": "abc",
+        "RequestId": "abc"
     }
 }
 ```

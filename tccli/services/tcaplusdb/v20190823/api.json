@@ -864,22 +864,24 @@
       "document": "ClearTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属集群实例ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待清理表信息列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -890,18 +892,22 @@
         {
           "disabled": false,
           "document": "清除表结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "清除表结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1772,40 +1778,44 @@
       "document": "CreateTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待创建表格所属集群ID",
+          "example": " 123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户选定的建表格IDL文件列表",
+          "example": " null",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建表格信息列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格标签列表",
+          "example": "null",
           "member": "TagInfoUnit",
           "name": "ResourceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1816,18 +1826,22 @@
         {
           "disabled": false,
           "document": "批量创建表格结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "批量创建表格结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2038,24 +2052,24 @@
       "document": "DeleteTableDataFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群实例ID",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除分布式索引的表格列表",
           "example": "无",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2069,9 +2083,9 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2079,9 +2093,9 @@
           "example": "无",
           "member": "TableResultNew",
           "name": "TableResults",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2140,22 +2154,24 @@
       "document": "DeleteTableIndex请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群实例ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除分布式索引的表格列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2166,18 +2182,22 @@
         {
           "disabled": false,
           "document": "删除表格分布式索引结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "删除表格分布式索引结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2192,22 +2212,24 @@
       "document": "DeleteTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除表所在集群ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除表信息列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2218,18 +2240,22 @@
         {
           "disabled": false,
           "document": "删除表结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "删除表结果详情列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3078,64 +3104,64 @@
       "document": "DescribeTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询表格所属集群ID",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待查询表格所属表格组ID列表",
           "example": "1",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "待查询表格信息列表",
+          "document": "待查询表格信息列表，用户不用关注，过滤请使用filter",
           "example": "无",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，本接口支持：TableName，TableInstanceId",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果偏移量",
           "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果返回记录数量",
           "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3149,9 +3175,9 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3159,9 +3185,9 @@
           "example": "无",
           "member": "TableInfoNew",
           "name": "TableInfos",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3280,13 +3306,14 @@
       "document": "DisableRestProxy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对应appid",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3297,18 +3324,22 @@
         {
           "disabled": false,
           "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "example": "0",
           "member": "uint64",
           "name": "RestProxyStatus",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "example": "123",
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3323,14 +3354,14 @@
       "document": "EnableRestProxy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对应于appid",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3344,9 +3375,9 @@
           "example": "1",
           "member": "uint64",
           "name": "RestProxyStatus",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3354,9 +3385,9 @@
           "example": "838418134-44",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3614,74 +3645,74 @@
       "document": "ImportSnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属的集群id",
           "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于导入的快照信息",
           "example": "无",
           "member": "SnapshotInfo",
           "name": "Snapshots",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否导入部分记录，TRUE表示导入部分记录，FALSE表示全表导入",
           "example": "无",
           "member": "string",
           "name": "ImportSpecialKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否导入到当前表，TRUE表示导入到当前表，FALSE表示导入到新表",
           "example": "无",
           "member": "string",
           "name": "ImportOriginTable",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部分记录的key文件",
           "example": "无",
           "member": "KeyFile",
           "name": "KeyFile",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果导入到新表，此为新表所属的表格组id",
           "example": "无",
           "member": "string",
           "name": "NewTableGroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果导入到新表，此为新表的表名，系统会以该名称自动创建一张结构相同的空表",
           "example": "无",
           "member": "string",
           "name": "NewTableName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3695,9 +3726,19 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationId",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3906,24 +3947,24 @@
       "document": "MergeTablesData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "选取的表格",
           "example": "无",
           "member": "MergeTablesInfo",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true只做对比，false既对比又执行",
           "example": "无",
           "member": "bool",
           "name": "IsOnlyCompare",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3937,9 +3978,9 @@
           "example": "无",
           "member": "MergeTableResult",
           "name": "Results",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4442,22 +4483,24 @@
       "document": "ModifyTableMemos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属集群实例ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选定表详情列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "TableMemos",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4468,18 +4511,22 @@
         {
           "disabled": false,
           "document": "表备注修改结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "表备注修改结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4494,22 +4541,24 @@
       "document": "ModifyTableQuotas请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带扩缩容表所属集群ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已选中待修改的表配额列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "TableQuotas",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4520,18 +4569,22 @@
         {
           "disabled": false,
           "document": "扩缩容结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "扩缩容结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4546,40 +4599,44 @@
       "document": "ModifyTableTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改标签表格所属集群ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改标签表格列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待增加或修改的标签列表",
+          "example": "null",
           "member": "TagInfoUnit",
           "name": "ReplaceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的标签列表",
+          "example": "null",
           "member": "TagInfoUnit",
           "name": "DeleteTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4590,18 +4647,22 @@
         {
           "disabled": false,
           "document": "返回结果总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "返回结果",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4616,31 +4677,34 @@
       "document": "ModifyTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改表格所在集群ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选中的改表IDL文件",
+          "example": "null",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待改表格列表",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4651,18 +4715,22 @@
         {
           "disabled": false,
           "document": "修改表结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "修改表结果列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5036,22 +5104,24 @@
       "document": "RecoverRecycleTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所在集群ID",
+          "example": "123",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待恢复表信息",
+          "example": "null",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5062,18 +5132,22 @@
         {
           "disabled": false,
           "document": "恢复表结果数量",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
           "document": "恢复表信息列表",
+          "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5611,24 +5685,24 @@
       "document": "SetTableDataFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属集群实例ID",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建分布式索引表格列表",
           "example": "无",
           "member": "SelectedTableWithField",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5642,9 +5716,9 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -5652,9 +5726,9 @@
           "example": "无",
           "member": "TableResultNew",
           "name": "TableResults",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5669,24 +5743,24 @@
       "document": "SetTableIndex请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属集群实例ID",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建分布式索引表格列表",
           "example": "无",
           "member": "SelectedTableWithField",
           "name": "SelectedTables",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5700,9 +5774,9 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -5710,9 +5784,9 @@
           "example": "无",
           "member": "TableResultNew",
           "name": "TableResults",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7059,14 +7133,14 @@
       "document": "UpdateApply请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "申请单状态",
           "example": "无",
           "member": "ApplyStatus",
           "name": "ApplyStatus",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7080,9 +7154,9 @@
           "example": "无",
           "member": "ApplyResult",
           "name": "ApplyResults",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -7090,9 +7164,9 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

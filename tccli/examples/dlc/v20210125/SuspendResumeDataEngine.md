@@ -1,21 +1,21 @@
-**Example 1: test**
+**Example 1: 挂起或启动数据引擎**
 
-
+挂起或启动数据引擎
 
 Input: 
 
 ```
 tccli dlc SuspendResumeDataEngine --cli-unfold-argument  \
-    --Operate xx \
-    --DataEngineName xx
+    --DataEngineName abc \
+    --Operate suspend
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DataEngineName": "xx",
-        "RequestId": "xx"
+        "DataEngineName": "abc",
+        "RequestId": "abc"
     }
 }
 ```

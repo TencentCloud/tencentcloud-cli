@@ -6,28 +6,29 @@ Input:
 
 ```
 tccli tcaplusdb ImportSnapshots --cli-unfold-argument  \
-    --ClusterId xx \
-    --Snapshots.SnapshotName xx \
-    --Snapshots.TableGroupId xx \
+    --ClusterId abc \
+    --Snapshots.TableGroupId abc \
+    --Snapshots.TableName abc \
+    --Snapshots.SnapshotName abc \
     --Snapshots.SnapshotTime 2020-09-22 00:00:00 \
-    --Snapshots.TableName xx \
     --Snapshots.SnapshotDeadTime 2020-09-22 00:00:00 \
-    --NewTableGroupId xx \
-    --ImportOriginTable xx \
-    --KeyFile.FileExtType xx \
+    --ImportSpecialKey abc \
+    --KeyFile.FileName abc \
+    --KeyFile.FileExtType abc \
+    --KeyFile.FileContent abc \
     --KeyFile.FileSize 0 \
-    --KeyFile.FileContent xx \
-    --KeyFile.FileName xx \
-    --ImportSpecialKey xx \
-    --NewTableName xx
+    --ImportOriginTable abc \
+    --NewTableGroupId abc \
+    --NewTableName abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "TaskId": "abc",
+        "ApplicationId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

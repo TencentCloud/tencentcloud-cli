@@ -1,21 +1,21 @@
 **Example 1: 合并指定表格**
 
-
+合并指定表格
 
 Input: 
 
 ```
 tccli tcaplusdb MergeTablesData --cli-unfold-argument  \
-    --IsOnlyCompare False \
-    --SelectedTables.0.MergeTables.DstTableClusterId xx \
-    --SelectedTables.0.MergeTables.DstTableName xx \
-    --SelectedTables.0.MergeTables.SrcTableGroupId xx \
-    --SelectedTables.0.MergeTables.SrcTableInstanceId xx \
-    --SelectedTables.0.MergeTables.SrcTableName xx \
-    --SelectedTables.0.MergeTables.SrcTableClusterId xx \
-    --SelectedTables.0.MergeTables.DstTableGroupId xx \
-    --SelectedTables.0.MergeTables.DstTableInstanceId xx \
-    --SelectedTables.0.CheckIndex False
+    --SelectedTables.0.MergeTables.SrcTableClusterId abc \
+    --SelectedTables.0.MergeTables.SrcTableGroupId abc \
+    --SelectedTables.0.MergeTables.SrcTableName abc \
+    --SelectedTables.0.MergeTables.DstTableClusterId abc \
+    --SelectedTables.0.MergeTables.DstTableGroupId abc \
+    --SelectedTables.0.MergeTables.DstTableName abc \
+    --SelectedTables.0.MergeTables.SrcTableInstanceId abc \
+    --SelectedTables.0.MergeTables.DstTableInstanceId abc \
+    --SelectedTables.0.CheckIndex True \
+    --IsOnlyCompare True
 ```
 
 Output: 

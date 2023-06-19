@@ -1,6 +1,6 @@
-**Example 1: 创建session statement**
+**Example 1: 在session中执行代码片段**
 
-本接口用于创建session statement。
+本接口用于在session中执行代码片段
 
 Input: 
 

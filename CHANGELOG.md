@@ -1,3 +1,153 @@
+# Release 3.0.790.1
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 14 次发布
+
+发布时间：2023-06-20 01:11:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoSnapshotPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#AutoSnapshotPolicyInfo)
+
+	* 新增成员：CrossRegionsAliveDays
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 55 次发布
+
+发布时间：2023-06-20 01:22:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CommonMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CommonMetrics)
+* [PrestoMonitorMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#PrestoMonitorMetrics)
+* [SparkMonitorMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkMonitorMetrics)
+
+修改数据结构：
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：CommonMetrics, SparkMonitorMetrics, PrestoMonitorMetrics
+
+
+
+
+## 安全凭证服务(sts) 版本：2018-08-13
+
+### 第 8 次发布
+
+发布时间：2023-06-20 01:37:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetFederationTokenForHighConcurrency](http://document.tencentcloudapi.woa.com/document/product/1312/78073)
+
+
+
+## 腾讯云区块链服务平台 TBaaS(tbaas) 版本：2018-04-16
+
+### 第 5 次发布
+
+发布时间：2023-06-20 01:37:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetLatestTransactionList](http://document.tencentcloudapi.woa.com/document/product/663/78074)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DeployDynamicBcosContract
+* GetBcosBlockByNumber
+* GetBcosBlockList
+* GetBcosTransByHash
+* GetBcosTransList
+* InvokeBcosTrans
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 9 次发布
+
+发布时间：2023-06-20 01:37:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportSnapshots](http://document.tencentcloudapi.woa.com/document/product/596/54347)
+
+	* 新增出参：ApplicationId
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 52 次发布
+
+发布时间：2023-06-20 01:39:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SendRocketMQMessage](http://document.tencentcloudapi.woa.com/document/product/1179/78075)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 71 次发布
+
+发布时间：2023-06-20 01:40:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteAddon](http://document.tencentcloudapi.woa.com/document/product/457/78080)
+* [DescribeAddon](http://document.tencentcloudapi.woa.com/document/product/457/78079)
+* [DescribeAddonValues](http://document.tencentcloudapi.woa.com/document/product/457/78078)
+* [InstallAddon](http://document.tencentcloudapi.woa.com/document/product/457/78077)
+* [UpdateAddon](http://document.tencentcloudapi.woa.com/document/product/457/78076)
+
+新增数据结构：
+
+* [Addon](http://document.tencentcloudapi.woa.com/document/product/457/31866#Addon)
+
+
+
 # Release 3.0.789.1
 
 ## 企业收付平台(cpdp) 版本：2019-08-20

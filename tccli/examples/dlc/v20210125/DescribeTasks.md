@@ -1,6 +1,6 @@
-**Example 1: 任务列表展示**
+**Example 1: 查询任务列表**
 
-
+查询任务列表
 
 Input: 
 
@@ -23,49 +23,55 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "TaskList": [
             {
-                "Error": "xx",
-                "UiUrl": "xx",
-                "CanDownload": true,
-                "DataSet": "xx",
-                "State": 2,
-                "DataAmount": 1024,
-                "SparkJobId": "xx",
-                "Percentage": 100,
-                "SQLType": "xx",
-                "SparkJobFile": "xx",
-                "RowAffectInfo": "xx",
-                "InputConf": "xx",
-                "DataEngineId": "xx",
-                "UpdateTime": "xx",
-                "SparkJobName": "xx",
-                "TaskType": "xx",
-                "ProgressDetail": "xx",
-                "InputType": "xx",
-                "UserAlias": "xx",
-                "DataNumber": 100,
+                "DatabaseName": "abc",
+                "DataAmount": 0,
+                "Id": "abc",
+                "UsedTime": 0,
+                "OutputPath": "abc",
+                "CreateTime": "abc",
+                "State": 0,
+                "SQLType": "abc",
+                "SQL": "abc",
                 "ResultExpired": true,
-                "OutputPath": "xx",
-                "DataEngineName": "xx",
-                "OperateUin": "xx",
-                "OutputMessage": "xx",
-                "CreateTime": "xx",
-                "UsedTime": 60000,
-                "TotalTime": 80000,
-                "DatabaseName": "xx",
-                "SQL": "xx",
-                "Id": "xx"
+                "RowAffectInfo": "abc",
+                "DataSet": "abc",
+                "Error": "abc",
+                "Percentage": 0,
+                "OutputMessage": "abc",
+                "TaskType": "abc",
+                "ProgressDetail": "abc",
+                "UpdateTime": "abc",
+                "DataEngineId": "abc",
+                "OperateUin": "abc",
+                "DataEngineName": "abc",
+                "InputType": "abc",
+                "InputConf": "abc",
+                "DataNumber": 0,
+                "CanDownload": true,
+                "UserAlias": "abc",
+                "SparkJobName": "abc",
+                "SparkJobId": "abc",
+                "SparkJobFile": "abc",
+                "UiUrl": "abc",
+                "TotalTime": 0,
+                "CmdArgs": "abc",
+                "ImageVersion": "abc",
+                "DriverSize": "abc",
+                "ExecutorSize": "abc",
+                "ExecutorNums": 1,
+                "ExecutorMaxNumbers": 1
             }
         ],
-        "RequestId": "xx",
+        "TotalCount": 1,
         "TasksOverview": {
             "TaskQueuedCount": 0,
             "TaskInitCount": 0,
             "TaskRunningCount": 0,
-            "TotalTaskCount": 1888
-        }
+            "TotalTaskCount": 0
+        },
+        "RequestId": "abc"
     }
 }
 ```

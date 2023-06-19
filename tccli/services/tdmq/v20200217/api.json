@@ -819,6 +819,13 @@
       "output": "SendMsgResponse",
       "status": "online"
     },
+    "SendRocketMQMessage": {
+      "document": "发送RocketMQ消息",
+      "input": "SendRocketMQMessageRequest",
+      "name": "发送RocketMQ消息",
+      "output": "SendRocketMQMessageResponse",
+      "status": "online"
+    },
     "SetCMQRegionMigrate": {
       "document": "设置全地域迁移状态",
       "input": "SetCMQRegionMigrateRequest",
@@ -15868,6 +15875,112 @@
     "SendMsgResponse": {
       "document": "SendMsg返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRocketMQMessageRequest": {
+      "document": "SendRocketMQMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "信息内容",
+          "example": "message",
+          "member": "string",
+          "name": "MsgBody",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息key信息",
+          "example": "key",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息tag信息",
+          "example": "tag",
+          "member": "string",
+          "name": "MsgTag",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SendRocketMQMessageResponse": {
+      "document": "SendRocketMQMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发送结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7F0000013AEC18B4AAC278B640D30002",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

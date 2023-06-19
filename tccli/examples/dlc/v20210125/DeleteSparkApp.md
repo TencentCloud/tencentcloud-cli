@@ -1,6 +1,6 @@
-**Example 1: 删除spark应用**
+**Example 1: 删除spark作业**
 
-
+删除spark作业
 
 Input: 
 

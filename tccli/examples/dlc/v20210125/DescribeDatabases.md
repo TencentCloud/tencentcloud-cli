@@ -1,4 +1,4 @@
-**Example 1: 示例1**
+**Example 1: 查询数据库列表**
 
 查询数据库列表
 
@@ -15,25 +15,58 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1068a137-ed80-4cbd-a7e6-1cd0341db332",
-        "TotalCount": 1,
         "DatabaseList": [
             {
-                "DatabaseName": "testdb",
-                "Comment": "create by nick",
+                "DatabaseName": "abc",
+                "Comment": "abc",
                 "Properties": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "CreateTime": "1630486408000",
-                "ModifiedTime": "1630486408000",
-                "UserAlias": "testUser",
-                "UserSubUin": "100019878767",
-                "Location": ""
+                "CreateTime": "abc",
+                "ModifiedTime": "abc",
+                "Location": "abc",
+                "UserAlias": "abc",
+                "UserSubUin": "abc",
+                "GovernPolicy": {
+                    "RewriteDataPolicy": {
+                        "RewriteDataEnable": "abc",
+                        "Engine": "abc",
+                        "MinInputFiles": 0,
+                        "TargetFileSizeBytes": 0,
+                        "IntervalMin": 0
+                    },
+                    "ExpiredSnapshotsPolicy": {
+                        "ExpiredSnapshotsEnable": "abc",
+                        "Engine": "abc",
+                        "RetainLast": 0,
+                        "BeforeDays": 0,
+                        "MaxConcurrentDeletes": 0,
+                        "IntervalMin": 0
+                    },
+                    "RemoveOrphanFilesPolicy": {
+                        "RemoveOrphanFilesEnable": "abc",
+                        "Engine": "abc",
+                        "BeforeDays": 0,
+                        "MaxConcurrentDeletes": 0,
+                        "IntervalMin": 0
+                    },
+                    "MergeManifestsPolicy": {
+                        "MergeManifestsEnable": "abc",
+                        "Engine": "abc",
+                        "IntervalMin": 0
+                    },
+                    "InheritDataBase": "abc",
+                    "RuleType": "abc",
+                    "GovernEngine": "abc"
+                },
+                "DatabaseId": "abc"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

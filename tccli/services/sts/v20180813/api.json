@@ -35,6 +35,13 @@
       "output": "GetFederationTokenResponse",
       "status": "online"
     },
+    "GetFederationTokenForHighConcurrency": {
+      "document": "获取联合身份临时访问凭证（高并发场景使用）",
+      "input": "GetFederationTokenForHighConcurrencyRequest",
+      "name": "获取联合身份临时访问凭证（高并发场景使用）",
+      "output": "GetFederationTokenForHighConcurrencyResponse",
+      "status": "online"
+    },
     "GetSaaSAccessToken": {
       "document": "SaaS登录token换临时证书",
       "input": "GetSaaSAccessTokenRequest",
@@ -511,6 +518,84 @@
           "name": "Type",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFederationTokenForHighConcurrencyRequest": {
+      "document": "GetFederationTokenForHighConcurrency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "您可以自定义调用方英文名称，由英文数字下划线组成，最长128。",
+          "example": "session",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "授予该临时证书权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"sts:AssumeRole\",\"resource\":\"*\"}]}",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "指定临时证书的有效期，单位：秒，默认1800秒，主账号最长可设定有效期为7200秒，子账号最长可设定有效期为129600秒。",
+          "example": "1800",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetFederationTokenForHighConcurrencyResponse": {
+      "document": "GetFederationTokenForHighConcurrency返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时证书",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "临时证书有效的时间，返回 Unix 时间戳，精确到秒",
+          "example": "1686664553",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-13T13:55:53Z",
+          "member": "string",
+          "name": "Expiration",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

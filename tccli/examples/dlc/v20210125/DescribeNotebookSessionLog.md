@@ -1,6 +1,6 @@
-**Example 1: 获取notebook livy session日志**
+**Example 1: 查询交互式 session日志**
 
-
+查询交互式 session日志
 
 Input: 
 

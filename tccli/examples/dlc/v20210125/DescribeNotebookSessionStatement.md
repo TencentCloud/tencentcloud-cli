@@ -1,6 +1,6 @@
-**Example 1: 获取session statement信息**
+**Example 1: 查询session 中执行任务的详情**
 
-本接口用于获取session statement详情；
+本接口用于查询session 中执行任务的详情
 
 Input: 
 

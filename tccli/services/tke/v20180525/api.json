@@ -252,6 +252,13 @@
       "output": "CreateTKEEdgeClusterResponse",
       "status": "online"
     },
+    "DeleteAddon": {
+      "document": "删除一个addon",
+      "input": "DeleteAddonRequest",
+      "name": "删除addon",
+      "output": "DeleteAddonResponse",
+      "status": "online"
+    },
     "DeleteBackupStorageLocation": {
       "document": "删除备份仓库",
       "input": "DeleteBackupStorageLocationRequest",
@@ -439,6 +446,20 @@
       "input": "DeleteTKEEdgeClusterRequest",
       "name": "删除边缘计算集群",
       "output": "DeleteTKEEdgeClusterResponse",
+      "status": "online"
+    },
+    "DescribeAddon": {
+      "document": "获取addon列表",
+      "input": "DescribeAddonRequest",
+      "name": "获取addon列表",
+      "output": "DescribeAddonResponse",
+      "status": "online"
+    },
+    "DescribeAddonValues": {
+      "document": "获取一个addon的参数",
+      "input": "DescribeAddonValuesRequest",
+      "name": "获取addon的参数",
+      "output": "DescribeAddonValuesResponse",
       "status": "online"
     },
     "DescribeAvailableClusterVersion": {
@@ -1106,6 +1127,13 @@
       "output": "GetUpgradeInstanceProgressResponse",
       "status": "online"
     },
+    "InstallAddon": {
+      "document": "为目标集群安装一个addon",
+      "input": "InstallAddonRequest",
+      "name": "安装addon",
+      "output": "InstallAddonResponse",
+      "status": "online"
+    },
     "InstallEdgeLogAgent": {
       "document": "在tke@edge集群的边缘节点上安装日志采集组件",
       "input": "InstallEdgeLogAgentRequest",
@@ -1342,6 +1370,13 @@
       "input": "UninstallLogAgentRequest",
       "name": "卸载日志采集组件",
       "output": "UninstallLogAgentResponse",
+      "status": "online"
+    },
+    "UpdateAddon": {
+      "document": "更新一个addon的参数和版本",
+      "input": "UpdateAddonRequest",
+      "name": "更新addon",
+      "output": "UpdateAddonResponse",
       "status": "online"
     },
     "UpdateClusterKubeconfig": {
@@ -1764,6 +1799,67 @@
         }
       ],
       "type": "object"
+    },
+    "Addon": {
+      "document": "addon的具体描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon的版本",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "AppChart": {
       "document": "app所支持的chart",
@@ -7623,6 +7719,44 @@
       ],
       "usage": "out"
     },
+    "DeleteAddonRequest": {
+      "document": "DeleteAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAddonResponse": {
+      "document": "DeleteAddon返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBackupStorageLocationRequest": {
       "document": "DeleteBackupStorageLocation请求参数结构体",
       "members": [
@@ -8706,6 +8840,112 @@
     "DeleteTKEEdgeClusterResponse": {
       "document": "DeleteTKEEdgeCluster返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonRequest": {
+      "document": "DescribeAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon名称（不传时会返回集群下全部的addon）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonResponse": {
+      "document": "DescribeAddon返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "addon列表",
+          "example": "无",
+          "member": "Addon",
+          "name": "Addons",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonValuesRequest": {
+      "document": "DescribeAddonValues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonValuesResponse": {
+      "document": "DescribeAddonValues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数列表，如果addon已安装，会使用已设置的的参数做渲染，是一个json格式的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon支持的参数列表，使用默认值，是一个json格式的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValues",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16852,6 +17092,64 @@
       ],
       "usage": "both"
     },
+    "InstallAddonRequest": {
+      "document": "InstallAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon版本（不传默认安装最新版本）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "InstallAddonResponse": {
+      "document": "InstallAddon返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstallEdgeLogAgentRequest": {
       "document": "InstallEdgeLogAgent请求参数结构体",
       "members": [
@@ -23724,6 +24022,64 @@
     },
     "UninstallLogAgentResponse": {
       "document": "UninstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAddonRequest": {
+      "document": "UpdateAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon版本（不传默认不更新）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAddonResponse": {
+      "document": "UpdateAddon返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

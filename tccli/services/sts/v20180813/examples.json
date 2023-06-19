@@ -52,6 +52,14 @@
         "title": "获取临时证书"
       }
     ],
+    "GetFederationTokenForHighConcurrency": [
+      {
+        "document": "获取联合身份临时证书",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFederationTokenForHighConcurrency\n<公共请求参数>\n\n{\n    \"Name\": \"123\",\n    \"Policy\": \"%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22deny%22%2C%22action%22%3A%22*%22%2C%22resource%22%3A%22*%22%7D%5D%7D\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"TmpSecretId\": \"AKID***l-t9oz\",\n            \"TmpSecretKey\": \"pvfd***cMzjsY=\",\n            \"Token\": \"KXZV***Dih2azlSQ\"\n        },\n        \"Expiration\": \"2023-06-14T05:06:57Z\",\n        \"ExpiredTime\": 1686719217,\n        \"RequestId\": \"db80656b-dcda-4d8f-971f-0dfa3ab88b1b\"\n    }\n}",
+        "title": "获取联合身份临时证书"
+      }
+    ],
     "GetSaaSAccessToken": [
       {
         "document": "",

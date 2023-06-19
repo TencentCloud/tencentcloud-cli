@@ -948,6 +948,14 @@
         "title": "发送一个消息"
       }
     ],
+    "SendRocketMQMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRocketMQMessage\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgKey\": \"xx\",\n    \"MsgTag\": \"xx\",\n    \"MsgBody\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Result\": true,\n        \"MsgId\": \"7F0000013AEC18B4AAC278B640D30002\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "SetCMQRegionMigrate": [
       {
         "document": "设置地域级迁移完成",

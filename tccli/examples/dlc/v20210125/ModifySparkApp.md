@@ -1,6 +1,6 @@
-**Example 1: 更新spark应用**
+**Example 1: 更新spark作业**
 
-本接口用于更新spark应用。
+本接口用于更新spark作业
 
 Input: 
 

@@ -1,6 +1,6 @@
-**Example 1: 取消session statement**
+**Example 1: 取消session中执行的任务**
 
-
+取消session中执行的任务
 
 Input: 
 

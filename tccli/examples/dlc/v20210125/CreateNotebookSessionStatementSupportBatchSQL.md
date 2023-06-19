@@ -1,6 +1,6 @@
-**Example 1: 创建Session Statement批量运行SQL**
+**Example 1: 创建交互式session并执行SQL任务**
 
-本接口用于创建Session Statement批量运行SQL。
+本接口用于创建交互式session并执行SQL任务
 
 Input: 
 

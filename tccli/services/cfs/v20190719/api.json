@@ -469,6 +469,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "跨地域复制的快照保留时间",
+          "example": "10",
+          "member": "uint64",
+          "name": "CrossRegionsAliveDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
