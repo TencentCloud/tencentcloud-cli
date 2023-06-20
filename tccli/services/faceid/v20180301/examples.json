@@ -11,7 +11,7 @@
     "ApplySdkVerificationToken": [
       {
         "document": "获取核验 token",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"NeedVerifyIdCard\": true,\n    \"Extra\": \"fewfewf\",\n    \"IdCardType\": \"HK\"\n}",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"CheckMode\": 1,\n    \"SecurityLevel\": 4,\n    \"NeedVerifyIdCard\": true,\n    \"Extra\": \"fewfewf\",\n    \"IdCardType\": \"HK\"\n}",
         "output": "{\n    \"Response\": {\n        \"SdkToken\": \"A561B769-C347-4724-A69A-6C3B3483E107\",\n        \"RequestId\": \"d73c0c05-f7ff-419c-84cb-0756303b1925\"\n    }\n}",
         "title": "获取Token成功"
       }
@@ -138,6 +138,14 @@
         "title": "认证通过示例"
       }
     ],
+    "FaceMotionDetection": [
+      {
+        "document": "点头使用场景：慧眼意愿核身产品目前使用语音方式确认用户意愿，但语音较容易受到各种因素的干扰(口音、语速、周边噪音等)，产品侧计划预研其它确认方式(如点头等)，用于提升用户体验及线上业务通过率。\n说话使用场景：AI双录质检、意愿核身产品中需要进行用户语音确认，为避免语音是他人代答，需要加上张嘴说话动作的识别。\n",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FaceMotionDetection\n<公共请求参数>\n\n{\n    \"VideoBase64\": \"xxx\",\n    \"VideoUrl\": \"xxxx\",\n    \"ActionType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"abc\",\n        \"Description\": \"abc\",\n        \"RequestId\": \"abc\",\n        \"ActionFlag\": true,\n        \"BestFrameBase64\": \"abc\"\n    }\n}",
+        "title": "点头/唇动检测"
+      }
+    ],
     "GenerateReflectSequence": [
       {
         "document": "",
@@ -242,7 +250,7 @@
     ],
     "GetSdkVerificationResult": [
       {
-        "document": "",
+        "document": "获取结果",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSdkVerificationResult\n<公共请求参数>\n\n{\n    \"SdkToken\": \"D2B55F0C-FB5D-4FB6-8765-3E931EBBFC79\"\n}",
         "output": "{\n    \"Response\": {\n        \"CardVerifyResults\": [\n            {\n                \"IsPass\": true,\n                \"CardVideo\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"682e24b207acf1825286c1fceef5631c\",\n                    \"Size\": 9430792\n                },\n                \"CardImage\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"667c2448b10b09ee9ec14ab2b0d36608\",\n                    \"Size\": 232267\n                },\n                \"CardInfoOcrJson\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"0ae50935bb50cd70e6e34f81ff2e3fbd\",\n                    \"Size\": 224\n                },\n                \"RequestId\": \"8e510d65-c26e-4de7-991d-e07ef0ad953d\"\n            }\n        ],\n        \"CompareResults\": [\n            {\n                \"ErrorCode\": \"1001\",\n                \"ErrorMsg\": \"Failed to call the liveness engine\",\n                \"LiveData\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"f624d26bfb45e149b293097037819feb\",\n                    \"Size\": 719585\n                },\n                \"LiveVideo\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"e87070d8eb95f64bc01b12e03cc8f533\",\n                    \"Size\": 887224\n                },\n                \"LiveErrorCode\": \"1001\",\n                \"LiveErrorMsg\": \"Failed to call the liveness engine\",\n                \"CompareErrorCode\": \"\",\n                \"CompareErrorMsg\": \"\",\n                \"BestFrame\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"c4f217871aaeb0180e40152f61658835\",\n                    \"Size\": 122984\n                },\n                \"ProfileImage\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"d51df99b25d87785ea5e2dfb0d6e920f\",\n                    \"Size\": 23091\n                },\n                \"Sim\": 0,\n                \"IsNeedCharge\": true,\n                \"CardInfoInputJson\": {\n                    \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n                    \"MD5\": \"02497f445dc72a330b468fa24529315b\",\n                    \"Size\": 219\n                },\n                \"RequestId\": \"6e498069-4d51-4032-82a8-9adb53cda85b\"\n            }\n        ],\n        \"ChargeCount\": 4,\n        \"Description\": \"Failed to call the liveness engine\",\n        \"Extra\": \"\",\n        \"RequestId\": \"b8cb2269-08b2-426c-8be8-c7142c7e64e4\",\n        \"Result\": \"1001\"\n    }\n}",
         "title": "拉取结果"

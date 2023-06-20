@@ -1,3 +1,302 @@
+# Release 3.0.792.1
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 5 次发布
+
+发布时间：2023-06-21 01:07:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApmInstances](http://document.tencentcloudapi.woa.com/document/product/1463/65103)
+
+	* 新增入参：AllRegionsFlag
+
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 21 次发布
+
+发布时间：2023-06-21 01:07:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19182)
+
+	* 新增入参：PayerUin
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 65 次发布
+
+发布时间：2023-06-21 01:12:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTopicFlowRanking](http://document.tencentcloudapi.woa.com/document/product/597/77772)
+
+	* 新增入参：BrokerIp
+
+
+新增数据结构：
+
+* [BrokerTopicData](http://document.tencentcloudapi.woa.com/document/product/597/40861#BrokerTopicData)
+
+修改数据结构：
+
+* [TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult)
+
+	* 新增成员：BrokerIp, BrokerTopicData
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 37 次发布
+
+发布时间：2023-06-21 01:17:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBTmpInstances](http://document.tencentcloudapi.woa.com/document/product/557/78081)
+
+新增数据结构：
+
+* [TmpInstance](http://document.tencentcloudapi.woa.com/document/product/557/16142#TmpInstance)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 24 次发布
+
+发布时间：2023-06-21 01:18:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchRecordInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#BatchRecordInfo)
+
+	* 新增成员：Remark
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 61 次发布
+
+发布时间：2023-06-21 01:21:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelDescribeFlowComponents](http://document.tencentcloudapi.woa.com/document/product/1595/78082)
+
+新增数据结构：
+
+* [FilledComponent](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FilledComponent)
+* [RecipientComponentInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RecipientComponentInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 30 次发布
+
+发布时间：2023-06-21 01:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FaceMotionDetection](http://document.tencentcloudapi.woa.com/document/product/1007/78089)
+
+修改接口：
+
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+
+	* 新增入参：CheckMode, SecurityLevel, CompareImage
+
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：UseIDType
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：IsSupportHMTResidentPermitOCR
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 40 次发布
+
+发布时间：2023-06-21 01:26:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLivePullStreamTaskStatus](http://document.tencentcloudapi.woa.com/document/product/267/78092)
+
+新增数据结构：
+
+* [TaskStatusInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TaskStatusInfo)
+
+修改数据结构：
+
+* [StreamOnlineInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#StreamOnlineInfo)
+
+	* 新增成员：PushToDelay
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 34 次发布
+
+发布时间：2023-06-21 01:26:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBTmpInstances](http://document.tencentcloudapi.woa.com/document/product/237/78093)
+
+新增数据结构：
+
+* [TmpInstance](http://document.tencentcloudapi.woa.com/document/product/237/16191#TmpInstance)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 22 次发布
+
+发布时间：2023-06-21 01:29:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeOrganizationOverView](http://document.tencentcloudapi.woa.com/document/product/850/76851)
+
+	* 新增出参：IdentityNum, LoginSubAccountNum, LoginMemberNum, HostAuthName, AuthRelationNum
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 9 次发布
+
+发布时间：2023-06-21 01:30:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
+
+	* 新增成员：ResourceIds
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 34 次发布
+
+发布时间：2023-06-21 01:38:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateApiRateLimitRuleWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78104)
+* [CreateConfigTemplateWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78107)
+* [CreateConfigWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78097)
+* [CreateFileConfigWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78096)
+* [CreatePathRewritesWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78103)
+* [CreatePublicConfigWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78095)
+* [CreateUnitNamespaces](http://document.tencentcloudapi.woa.com/document/product/649/78102)
+* [CreateUnitRuleWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78101)
+* [DeleteApiRateLimitRule](http://document.tencentcloudapi.woa.com/document/product/649/78100)
+* [DeleteGatewayApi](http://document.tencentcloudapi.woa.com/document/product/649/78099)
+* [DescribeContainerGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/649/78106)
+* [DescribeResourceTaskStatus](http://document.tencentcloudapi.woa.com/document/product/649/78105)
+* [DescribeUnitRulesV2](http://document.tencentcloudapi.woa.com/document/product/649/78098)
+* [ReleaseConfigWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/78094)
+
+新增数据结构：
+
+* [ContainerGroupOther](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupOther)
+* [ResourceTaskStatusResult](http://document.tencentcloudapi.woa.com/document/product/649/36099#ResourceTaskStatusResult)
+* [TsfPageUnitRuleV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageUnitRuleV2)
+
+修改数据结构：
+
+* [UnitRuleItem](http://document.tencentcloudapi.woa.com/document/product/649/36099#UnitRuleItem)
+
+	* 新增成员：ItemIndex, CreatedTime, UpdatedTime
+
+
+
+
 # Release 3.0.791.1
 
 ## 文件存储(cfs) 版本：2019-07-19

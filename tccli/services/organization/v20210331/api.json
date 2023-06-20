@@ -1637,14 +1637,14 @@
       "document": "DescribeOrganizationOverView请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "不传默认获取前一天数据。格式：yyyy-mm-dd，示例：2021-06-10。\n数据按天统计，当天可以获取前一天之前的数据。",
           "example": "2021-06-09",
           "member": "string",
           "name": "Day",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1658,9 +1658,9 @@
           "example": "10",
           "member": "int64",
           "name": "MemberNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1668,9 +1668,9 @@
           "example": "10",
           "member": "int64",
           "name": "NodeNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1678,9 +1678,9 @@
           "example": "2",
           "member": "int64",
           "name": "SubAccountNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1688,9 +1688,59 @@
           "example": "2",
           "member": "int64",
           "name": "RoleNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员登录权限数。",
+          "example": "5",
+          "member": "int64",
+          "name": "IdentityNum",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "可登录成员控制台的子用户数。仅主账号查询时有效",
+          "example": "2",
+          "member": "int64",
+          "name": "LoginSubAccountNum",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "可登录的成员数。仅子账号查询时有效",
+          "example": "4",
+          "member": "int64",
+          "name": "LoginMemberNum",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集团管理主体名称。",
+          "example": "test",
+          "member": "string",
+          "name": "HostAuthName",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "互信主体数量。",
+          "example": "2",
+          "member": "int64",
+          "name": "AuthRelationNum",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

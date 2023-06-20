@@ -162,9 +162,9 @@
     ],
     "DescribeOrganizationOverView": [
       {
-        "document": "",
+        "document": "获取组织总览数据",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationOverView\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"MemberNum\": 2,\n        \"NodeNum\": 7,\n        \"RequestId\": \"23047bb6-80a1-459e-8482-8396883e68a7\",\n        \"RoleNum\": 10,\n        \"SubAccountNum\": 101\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MemberNum\": 2,\n        \"NodeNum\": 7,\n        \"RoleNum\": 10,\n        \"SubAccountNum\": 101,\n        \"IdentityNum\": 5,\n        \"LoginSubAccountNum\": 3,\n        \"LoginMemberNum\": 4,\n        \"HostAuthName\": \"test\",\n        \"AuthRelationNum\": 2,\n        \"RequestId\": \"23047bb6-80a1-459e-8482-8396883e68a7\"\n    }\n}",
         "title": "获取组织总览数据"
       }
     ],

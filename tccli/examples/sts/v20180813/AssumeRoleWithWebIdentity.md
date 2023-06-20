@@ -1,15 +1,15 @@
-**Example 1: 申请OIDC角色临时密钥**
+**Example 1: 申请OIDC角色临时访问凭证**
 
-
+申请OIDC角色临时访问凭证
 
 Input: 
 
 ```
 tccli sts AssumeRoleWithWebIdentity --cli-unfold-argument  \
-    --DurationSeconds 5000 \
+    --DurationSeconds 1800 \
     --RoleSessionName test_OIDC \
     --WebIdentityToken eyJraWQiOiJkT**********CNOQ \
-    --RoleArn qcs::cam::uin/798950673:roleName/OneLogin-Role \
+    --RoleArn qcs::cam::uin/7989***:roleName/OneLogin-Role \
     --ProviderId OIDC
 ```
 

@@ -1,6 +1,6 @@
-**Example 1: 删除notebook livy session**
+**Example 1: 删除交互式session（notebook）**
 
-
+删除交互式session（notebook）
 
 Input: 
 

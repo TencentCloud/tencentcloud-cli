@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli faceid ApplySdkVerificationToken --cli-unfold-argument  \
+    --CheckMode 1 \
+    --SecurityLevel 4 \
     --NeedVerifyIdCard True \
     --Extra fewfewf \
     --IdCardType HK

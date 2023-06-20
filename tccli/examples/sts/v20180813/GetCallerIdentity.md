@@ -1,6 +1,6 @@
 **Example 1: 使用AssumeRole生成的临时凭证调用**
 
-
+使用AssumeRole生成的临时凭证调用
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
 
 **Example 2: 使用GetFederationToken生成的临时凭据调用**
 
-
+使用GetFederationToken生成的临时凭据调用
 
 Input: 
 
@@ -46,7 +46,7 @@ Output:
 
 **Example 3: 使用子账号长期密钥调用**
 
-
+使用子账号长期密钥调用
 
 Input: 
 

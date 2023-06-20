@@ -169,9 +169,9 @@
       "status": "online"
     },
     "StartStopServiceOrMonitor": {
-      "document": "用于启动或停止监控或服务",
+      "document": "用于启停服务 重启服务等功能",
       "input": "StartStopServiceOrMonitorRequest",
-      "name": "启动或停止监控或服务",
+      "name": "执行服务操作",
       "output": "StartStopServiceOrMonitorResponse",
       "status": "online"
     },
