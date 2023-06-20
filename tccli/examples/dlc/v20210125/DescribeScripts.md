@@ -1,6 +1,6 @@
-**Example 1: 获取所有sql查询**
+**Example 1: 查询SQL脚本列表**
 
-
+查询SQL脚本列表
 
 Input: 
 
@@ -16,18 +16,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5ebcba6f-38bf-4023-80d0-2023d51e9b1e",
         "Scripts": [
             {
-                "ScriptId": "644980fb-09f3-467a-847f-b9d628c9663d",
-                "UpdateTime": 1630498019026,
-                "ScriptName": "Script1",
-                "ScriptDesc": "create by nick",
-                "SQLStatement": "SELECT * FROM `testdb`.`table1` LIMIT 10",
-                "DatabaseName": ""
+                "ScriptId": "abc",
+                "ScriptName": "abc",
+                "ScriptDesc": "abc",
+                "DatabaseName": "abc",
+                "SQLStatement": "abc",
+                "UpdateTime": 0
             }
         ],
-        "TotalCount": 3
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

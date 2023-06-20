@@ -7,17 +7,17 @@ Input:
 ```
 tccli essbasic ChannelCancelMultiFlowSignQRCode --cli-unfold-argument  \
     --QrCodeId test \
-    --Agent.ProxyAppId test \
-    --Agent.ProxyOperator.OpenId test \
-    --Agent.ProxyOrganizationOpenId test \
-    --Agent.AppId test
+    --Agent.ProxyAppId yDxxxxxxx \
+    --Agent.ProxyOperator.OpenId 自定义 \
+    --Agent.ProxyOrganizationOpenId 自定义 \
+    --Agent.AppId yDxxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "id"
+        "RequestId": "1c75e86d-xxxxxxxxxx6f330a05e"
     }
 }
 ```

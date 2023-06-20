@@ -9,9 +9,7 @@ tccli ess DescribeIntegrationRoles --cli-unfold-argument  \
     --Filters.0.Key RoleType \
     --Filters.0.Values 1 \
     --Agent.ProxyOrganizationId y**********************J \
-    --Operator.ClientIp 0.0.0.1 \
     --Operator.UserId y******************5 \
-    --Operator.Channel YUFU \
     --Limit 1 \
     --Offset 0
 ```
@@ -47,9 +45,7 @@ Input:
 tccli ess DescribeIntegrationRoles --cli-unfold-argument  \
     --Filters.0.Key RoleType \
     --Filters.0.Values 1 \
-    --Operator.ClientIp 0.0.0.1 \
     --Operator.UserId y******************5 \
-    --Operator.Channel YUFU \
     --Limit 5 \
     --Offset 0
 ```

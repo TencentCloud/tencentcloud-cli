@@ -1298,7 +1298,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1308,7 +1307,6 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

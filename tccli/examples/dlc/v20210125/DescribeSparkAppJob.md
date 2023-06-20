@@ -1,6 +1,6 @@
-**Example 1: 查询具体的spark应用**
+**Example 1: 查询spark作业信息**
 
-本接口用于查询具体的spark应用。
+查询spark作业信息
 
 Input: 
 

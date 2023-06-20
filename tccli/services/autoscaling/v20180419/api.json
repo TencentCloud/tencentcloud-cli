@@ -309,7 +309,7 @@
       "status": "online"
     },
     "ScaleOutInstances": {
-      "document": "为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围\n* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数\n* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量",
+      "document": "为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围\n* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数\n* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量\n* 竞价混合模式中一次扩容可能触发多个伸缩活动，该接口仅返回第一个伸缩活动的 ActivityId",
       "input": "ScaleOutInstancesRequest",
       "name": "指定数量扩容实例",
       "output": "ScaleOutInstancesResponse",
@@ -559,7 +559,6 @@
       "document": "伸缩配置建议。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "问题描述。",
           "example": "DiskSoldOut",
@@ -570,7 +569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "问题详情。",
           "example": "无",
@@ -581,13 +579,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建议解决方案。",
           "example": "无",
           "member": "string",
           "name": "Solution",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伸缩建议警告级别。取值范围：<br>\n<li>WARNING：警告级别<br>\n<li>CRITICAL：严重级别<br>",
+          "example": "WARNING",
+          "member": "string",
+          "name": "Level",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2742,7 +2749,6 @@
       "document": "DescribeAutoScalingAdvices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的伸缩组列表，上限100。",
           "example": "[\"asg-2pvrsyog\", \"asg-4wtj6aeq\"]",
@@ -2763,7 +2769,6 @@
           "example": "无",
           "member": "AutoScalingAdvice",
           "name": "AutoScalingAdviceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3603,7 +3608,6 @@
       "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控，自动化助手等实例 Agent。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开启云安全服务。若不指定该参数，则默认开启云安全服务。",
           "example": "{\"Enabled\": True}",
@@ -3614,7 +3618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启云监控服务。若不指定该参数，则默认开启云监控服务。",
           "example": "{\"Enabled\": True}",
@@ -3625,8 +3628,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，查询时会返回空值，请勿使用。",
           "example": "{\"Enabled\": True}",
           "member": "RunAutomationServiceEnabled",
@@ -3636,7 +3638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Enabled\": True}",
@@ -6149,7 +6150,6 @@
       "document": "ScaleOutInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩组ID。",
           "example": "asg-12yqet78",
@@ -6159,7 +6159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "希望扩容的实例数量。",
           "example": "1",
@@ -6180,7 +6179,6 @@
           "example": "asa-n6w01f6m",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

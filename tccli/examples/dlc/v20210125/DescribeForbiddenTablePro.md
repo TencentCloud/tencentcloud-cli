@@ -1,6 +1,6 @@
-**Example 1: example**
+**Example 1: 查询被禁用的表属性列表（新）**
 
-example
+查询被禁用的表属性列表（新）
 
 Input: 
 

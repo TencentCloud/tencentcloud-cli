@@ -1,6 +1,6 @@
-**Example 1: 创建spark应用**
+**Example 1: 创建spark作业**
 
-本接口用于创建spark应用。
+本接口用于创建spark作业
 
 Input: 
 

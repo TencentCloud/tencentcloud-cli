@@ -792,7 +792,7 @@
       "status": "online"
     },
     "DescribeInovcationIndicators": {
-      "document": "查询调用监控指标",
+      "document": "废弃",
       "input": "DescribeInovcationIndicatorsRequest",
       "name": "查询调用监控指标",
       "output": "DescribeInovcationIndicatorsResponse",
@@ -13963,108 +13963,108 @@
       "document": "DescribeInovcationIndicators请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度",
+          "example": "1",
           "member": "string",
           "name": "Dimension",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
+          "example": "1",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
+          "example": "1",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间ID",
+          "example": "1",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微服务ID",
+          "example": "1",
           "member": "string",
           "name": "ServiceId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用方服务名",
+          "example": "1",
           "member": "string",
           "name": "CallerServiceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被调方服务名",
+          "example": "1",
           "member": "string",
           "name": "CalleeServiceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用方接口名",
+          "example": "1",
           "member": "string",
           "name": "CallerInterfaceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被调方接口名",
+          "example": "1",
           "member": "string",
           "name": "CalleeInterfaceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
+          "example": "1",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署组ID",
+          "example": "1",
           "member": "string",
           "name": "GroupId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
+          "example": "1",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -14079,6 +14079,7 @@
         {
           "disabled": false,
           "document": "服务调用监控指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "InvocationIndicator",
           "name": "Result",
           "type": "object",

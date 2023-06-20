@@ -30,23 +30,23 @@ Output:
         "TotalCount": 1,
         "TableResults": [
             {
-                "TableIdlType": "xx",
-                "TableGroupId": "xx",
-                "TaskIds": [
-                    "xx"
-                ],
-                "TableInstanceId": "xx",
-                "TableName": "xx",
-                "TaskId": "xx",
+                "TableInstanceId": "abc",
+                "TaskId": "abc",
+                "TableName": "abc",
+                "TableType": "abc",
+                "TableIdlType": "abc",
+                "TableGroupId": "abc",
                 "Error": {
-                    "Message": "xx",
-                    "Code": "xx"
+                    "Code": "abc",
+                    "Message": "abc"
                 },
-                "ApplicationId": "xx",
-                "TableType": "xx"
+                "TaskIds": [
+                    "abc"
+                ],
+                "ApplicationId": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

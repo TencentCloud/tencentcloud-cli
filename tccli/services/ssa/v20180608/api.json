@@ -70,6 +70,13 @@
       "output": "DescribeConfigListResponse",
       "status": "online"
     },
+    "DescribeDomainList": {
+      "document": "域名列表信息",
+      "input": "DescribeDomainListRequest",
+      "name": "域名列表",
+      "output": "DescribeDomainListResponse",
+      "status": "online"
+    },
     "DescribeEventDetail": {
       "document": "获取安全事件详情",
       "input": "DescribeEventDetailRequest",
@@ -3843,6 +3850,150 @@
       ],
       "type": "object"
     },
+    "DescribeDomainListRequest": {
+      "document": "DescribeDomainList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始，从0开始(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "limit,最大值200(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产大类，根据此字段时返回不同的子结构,AssetBasicType(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "AssetBasicType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "-",
+          "member": "QueryFilterV3",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "-",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "-",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导出字段",
+          "example": "-",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "TimeRange",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "逻辑字段(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "Logic",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "聚合字段  ",
+          "example": "-",
+          "member": "string",
+          "name": "GroupByField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "-",
+          "example": "-",
+          "member": "string",
+          "name": "Task",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:cfw 1:vss 2.soc 3.waf 4.cwp",
+          "example": "-",
+          "member": "uint64",
+          "name": "RequestFrom",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainListResponse": {
+      "document": "DescribeDomainList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "DomainInfo",
+          "name": "DomainInfoCollection",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventDetailRequest": {
       "document": "DescribeEventDetail请求参数结构体",
       "members": [
@@ -4882,6 +5033,272 @@
       ],
       "type": "object"
     },
+    "DomainInfo": {
+      "document": "域名列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ResolveAddr",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "RiskVulCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏感内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "SensitiveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂马暗链\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "HorseLinkCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网页篡改",
+          "example": "-",
+          "member": "uint64",
+          "name": "WebModifyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次扫描时间",
+          "example": "-",
+          "member": "string",
+          "name": "ScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近发现时间",
+          "example": "-",
+          "member": "string",
+          "name": "DiscoverTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描次数",
+          "example": "-",
+          "member": "uint64",
+          "name": "ScanTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "-",
+          "member": "uint64",
+          "name": "PortRisk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弱口令",
+          "example": "-",
+          "member": "uint64",
+          "name": "WeekPwdCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产归属\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetLocation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkRisk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络攻击\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkAttack",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "bot访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "BotVisit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络访问\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "NetworkAccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "waf状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "WafStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "LastScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AssetName",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否核心资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "IsNotCore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否云外资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "IsCloud",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -5304,6 +5721,52 @@
         }
       ],
       "usage": "in"
+    },
+    "QueryFilterV3": {
+      "document": "过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "-",
+          "member": "QueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有无子条件",
+          "example": "-",
+          "member": "bool",
+          "name": "HasSub",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "-",
+          "member": "QueryFilter",
+          "name": "SubFilters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑操作(只支持32位)",
+          "example": "-",
+          "member": "uint64",
+          "name": "Logic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "QuerySort": {
       "document": "排序的字段",

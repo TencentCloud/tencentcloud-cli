@@ -1,6 +1,6 @@
 **Example 1: 删除指定实例**
 
-
+删除指定实例
 
 Input: 
 
@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

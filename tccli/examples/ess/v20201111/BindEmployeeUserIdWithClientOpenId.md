@@ -8,8 +8,8 @@ Input:
 tccli ess BindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
     --Operator.Channel INTEGRATE \
     --Operator.OpenId 12345 \
-    --UserId ************ \
-    --OpenId ***********
+    --UserId *yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --OpenId open_user1
 ```
 
 Output: 
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli ess BindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
-    --Operator.UserId ************** \
-    --UserId ************ \
-    --OpenId ***********
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQxx2u1 \
+    --UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --OpenId open_user2
 ```
 
 Output: 

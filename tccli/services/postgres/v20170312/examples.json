@@ -18,18 +18,18 @@
     ],
     "CloseDBExtranetAccess": [
       {
-        "document": "",
+        "document": "关闭实例postgres-apzvwncr外网。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1234,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "关闭实例外网链接"
+        "title": "关闭实例外网"
       }
     ],
     "CloseServerlessDBExtranetAccess": [
       {
-        "document": "",
+        "document": "关闭serverless公网地址",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"test\",\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "关闭serverless外网"
+        "title": "关闭serverless公网地址"
       }
     ],
     "CreateBaseBackup": [
@@ -42,15 +42,15 @@
     ],
     "CreateDBInstanceNetworkAccess": [
       {
-        "document": "",
+        "document": "创建实例网络",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"IsAssignVip\": \"false\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
-        "title": "添加实例网络"
+        "title": "创建实例网络"
       }
     ],
     "CreateDBInstances": [
       {
-        "document": "",
+        "document": "新购实例",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": \"1\",\n    \"AutoRenewFlag\": \"1\",\n    \"Zone\": \"ap-guangzhou-5\",\n    \"DBVersion\": \"12.4\",\n    \"Storage\": \"10\",\n    \"Period\": \"1\",\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxx\"\n        ],\n        \"BillId\": \"xxxxxxxxx\"\n    }\n}",
         "title": "创建PostgreSQL实例"
@@ -102,10 +102,10 @@
     ],
     "CreateReadOnlyGroupNetworkAccess": [
       {
-        "document": "",
+        "document": "创建RO组网络",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyGroupNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"ReadOnlyGroupId\": \"pgro-4t9c6g7k\",\n    \"IsAssignVip\": \"false\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
-        "title": "添加RO组网络"
+        "title": "创建RO组网络"
       }
     ],
     "CreateServerlessDBInstance": [
@@ -180,7 +180,7 @@
     ],
     "DescribeAccounts": [
       {
-        "document": "",
+        "document": "获取实例postgres-apzvwncr的用户列表",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Details\": [\n            {\n                \"UserName\": \"root\",\n                \"Status\": 2,\n                \"Remark\": \"（测试）这个账户是无效的\",\n                \"DBInstanceId\": \"postgres-apzvwncr\",\n                \"UpdateTime\": \"2018-06-12 17:21:57\",\n                \"CreateTime\": \"2018-06-12 17:21:54\"\n            }\n        ]\n    }\n}",
         "title": "获取实例postgres-apzvwncr的用户列表"
@@ -252,7 +252,7 @@
     ],
     "DescribeCloneDBInstanceSpec": [
       {
-        "document": "",
+        "document": "查询创建实例postgres-apzvwncr的克隆实例需要的最小规格",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloneDBInstanceSpec\n<公共请求参数>\n\n{\n    \"RecoveryTargetTime\": \"2021-12-24 03:41:50\",\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"MinSpecCode\": \"cdb.pg.sh1.2g\",\n        \"MinStorage\": 10\n    }\n}",
         "title": "查询实例克隆需要的最小规格"
@@ -260,15 +260,15 @@
     ],
     "DescribeDBBackups": [
       {
-        "document": "",
+        "document": "查询postgres-6fego161数据库实例在2018-06-10 17:06:38至2018-06-11 17:06:38时间内的全量备份列表。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBBackups\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6fego161\",\n    \"Limit\": \"20\",\n    \"StartTime\": \"2018-06-10 17:06:38\",\n    \"Offset\": \"0\",\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"Type\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"BackupList\": [\n            {\n                \"SetId\": \"xx\",\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"StartTime\": \"2018-06-22 01:56:01.181971\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db1\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-22 01:56:55.071181\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654968\n            },\n            {\n                \"SetId\": \"xx\",\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"StartTime\": \"2018-06-21 01:55:04.199169\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db2\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-21 01:55:58.477232\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654991\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"BackupList\": [\n            {\n                \"SetId\": \"f77ecd1a-087c-5c66-8c35-95c835d7ec24\",\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"StartTime\": \"2018-06-22 01:56:01.181971\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db1\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-22 01:56:55.071181\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654968\n            },\n            {\n                \"SetId\": \"f6yecd1a-087c-5c66-cdas-95c835d7ec24\",\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"StartTime\": \"2018-06-21 01:55:04.199169\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db2\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-21 01:55:58.477232\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654991\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "查询实例postgres-6fego161备份列表"
       }
     ],
     "DescribeDBErrlogs": [
       {
-        "document": "",
+        "document": "获取指定时间范围内实例的错误日志。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBErrlogs\n<公共请求参数>\n\n{\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"StartTime\": \"2018-06-10 17:06:38\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"061bdcc0-6845-431a-a85e-ff591a352760\",\n        \"Details\": [\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:09\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:29\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:01\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.orders\\\" \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:10\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.partsupp\\\" \",\n                \"Database\": \"dee\"\n            }\n        ]\n    }\n}",
         "title": "获取错误日志"
@@ -284,21 +284,21 @@
     ],
     "DescribeDBInstanceParameters": [
       {
-        "document": "查看实例当前可修改该参数列表",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceParameters\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"xx\",\n    \"ParamName\": \"default_transaction_read_only\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Detail\": [\n            {\n                \"Advanced\": true,\n                \"ClassificationCN\": \"Client Connection Defaults\",\n                \"ClassificationEN\": \"Sets the default read-only status of new transactions.\",\n                \"CurrentValue\": \"\",\n                \"DefaultValue\": \"off\",\n                \"EnumValue\": [\n                    \"on\",\n                    \"off\"\n                ],\n                \"ID\": 59,\n                \"LastModifyTime\": \"\",\n                \"Max\": 0,\n                \"Min\": 0,\n                \"Name\": \"default_transaction_read_only\",\n                \"NeedReboot\": false,\n                \"ParamDescriptionCH\": \"此参数控制每个新事务的是否为默认只读状态 。默认是off（读/写）\",\n                \"ParamDescriptionEN\": \"Sets the default read-only status of new transactions.\",\n                \"ParamValueType\": \"bool\",\n                \"SpecRelated\": false,\n                \"Unit\": \"\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "获取实例参数列表"
+        "document": "查询实例postgres-lzrwgg6d的max_connecions参数信息",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceParameters\n<公共请求参数>\n\n{\n    \"ParamName\": \"max_connections\",\n    \"DBInstanceId\": \"postgres-lzrwgg6d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": [\n            {\n                \"Advanced\": false,\n                \"ClassificationCN\": \"连接和认证\",\n                \"ClassificationEN\": \"Connections and Authentication\",\n                \"CurrentValue\": \"2048\",\n                \"DefaultValue\": \"2048\",\n                \"EnumValue\": null,\n                \"ID\": 15124,\n                \"LastModifyTime\": \"\",\n                \"Max\": 2048,\n                \"Min\": 100,\n                \"Name\": \"max_connections\",\n                \"NeedReboot\": true,\n                \"ParamDescriptionCH\": \"实例最大连接数\",\n                \"ParamDescriptionEN\": \"Sets the maximum number of concurrent connections.\",\n                \"ParamValueType\": \"integer\",\n                \"SpecRelated\": true,\n                \"SpecRelationSet\": null,\n                \"StandbyRelated\": 0,\n                \"Unit\": \"\",\n                \"VersionRelationSet\": null\n            }\n        ],\n        \"RequestId\": \"ce4ecf74-b26f-44e7-9340-539032e92b9f\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询实例指定参数信息"
       }
     ],
     "DescribeDBInstanceSecurityGroups": [
       {
-        "document": "",
+        "document": "查询只读组安全组",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-nqwpkjb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"47e3764e-bce4-477a-a293-49ffa1bfb447\",\n        \"SecurityGroupSet\": [\n            {\n                \"CreateTime\": \"2022-08-30 21:36:58\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义222\",\n                \"SecurityGroupId\": \"sg-116auwb1\",\n                \"SecurityGroupName\": \"自定义222-202208302136517989\"\n            },\n            {\n                \"CreateTime\": \"2022-10-20 21:38:20\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmpv6\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"172.16.0.0/12\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"192.168.0.0/16\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义模板\",\n                \"SecurityGroupId\": \"sg-91jbmkp1\",\n                \"SecurityGroupName\": \"自定义模板-20221020213819279\"\n            },\n            {\n                \"CreateTime\": \"2022-08-22 17:34:08\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通入站规则\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22,3389,80,443,20,21\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通入站规则\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通出站规则\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"拒绝所有\",\n                \"SecurityGroupId\": \"sg-mpkb1net\",\n                \"SecurityGroupName\": \"自定义-2022082217335427078\"\n            }\n        ]\n    }\n}",
         "title": "查询只读组安全组"
       },
       {
-        "document": "",
+        "document": "查询实例安全组",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-i2q4utnp\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"770234c2-8a51-4d06-b3f7-4454664848b1\",\n        \"SecurityGroupSet\": [\n            {\n                \"CreateTime\": \"2022-10-20 21:38:20\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmpv6\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"172.16.0.0/12\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"192.168.0.0/16\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义模板\",\n                \"SecurityGroupId\": \"sg-91jbmkp1\",\n                \"SecurityGroupName\": \"自定义模板-20221020213819279\"\n            }\n        ]\n    }\n}",
         "title": "查询实例安全组"
@@ -320,9 +320,9 @@
     ],
     "DescribeDBSlowlogs": [
       {
-        "document": "",
+        "document": "获取实例postgres-apzvwncr慢查询日志",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSlowlogs\n<公共请求参数>\n\n{\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"StartTime\": \"2018-06-10 17:06:38\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Detail\": {\n            \"TotalTime\": 0.0,\n            \"NormalQueries\": [\n                {\n                    \"UserName\": \"user\",\n                    \"MaxCostTime\": 0.0,\n                    \"Rows\": 0,\n                    \"CostTime\": 0.0,\n                    \"SharedReadBlks\": 0,\n                    \"Calls\": 0,\n                    \"WriteCostTime\": 0,\n                    \"ReadCostTime\": 0,\n                    \"CallsGrids\": [\n                        0\n                    ],\n                    \"NormalQuery\": \"xx\",\n                    \"MinCostTime\": 0.0,\n                    \"DatabaseName\": \"xx\",\n                    \"FirstTime\": \"xx\",\n                    \"LastTime\": \"xx\",\n                    \"SharedWriteBlks\": 0\n                }\n            ],\n            \"TotalCalls\": 0\n        },\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Detail\": {\n            \"TotalTime\": 0.0,\n            \"NormalQueries\": [\n                {\n                    \"UserName\": \"user\",\n                    \"MaxCostTime\": 0.0,\n                    \"Rows\": 0,\n                    \"CostTime\": 0.0,\n                    \"SharedReadBlks\": 0,\n                    \"Calls\": 0,\n                    \"WriteCostTime\": 0,\n                    \"ReadCostTime\": 0,\n                    \"CallsGrids\": [\n                        0\n                    ],\n                    \"NormalQuery\": \"select 1;\",\n                    \"MinCostTime\": 0.0,\n                    \"DatabaseName\": \"postgres-apzvwncr\",\n                    \"FirstTime\": \"2018-06-10 17:06:38\",\n                    \"LastTime\": \"2018-06-11 17:06:38\",\n                    \"SharedWriteBlks\": 0\n                }\n            ],\n            \"TotalCalls\": 0\n        },\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "获取实例慢查询日志"
       }
     ],
@@ -336,7 +336,7 @@
     ],
     "DescribeDBXlogs": [
       {
-        "document": "",
+        "document": "获取实例postgres-apzvwncr在2018-06-10 17:06:38至2018-06-11 17:06:38时间内的Xlog列表。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBXlogs\n<公共请求参数>\n\n{\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"StartTime\": \"2018-06-10 17:06:38\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"XlogList\": [\n            {\n                \"StartTime\": \"2018-06-22 01:56:46\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"EndTime\": \"2018-06-22 01:56:53\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"Id\": 450,\n                \"Size\": 247967\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:17\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"EndTime\": \"2018-06-22 01:56:45\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"Id\": 450,\n                \"Size\": 899618\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:10\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"EndTime\": \"2018-06-22 01:56:10\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"Id\": 450,\n                \"Size\": 41749\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:49\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"EndTime\": \"2018-06-21 01:55:57\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"Id\": 450,\n                \"Size\": 247941\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:20\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"EndTime\": \"2018-06-21 01:55:48\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"Id\": 450,\n                \"Size\": 899646\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:13\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"EndTime\": \"2018-06-21 01:55:13\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"Id\": 450,\n                \"Size\": 41744\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "获取实例postgres-apzvwncr的Xlog列表"
@@ -344,7 +344,7 @@
     ],
     "DescribeDatabases": [
       {
-        "document": "",
+        "document": "拉取数据库列表",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86eb714c-500f-412e-8090-3b3f76843d86\",\n        \"Items\": [\n            \"postgres\",\n            \"testdatabase\"\n        ]\n    }\n}",
         "title": "拉取数据库列表"
@@ -368,18 +368,18 @@
     ],
     "DescribeLogBackups": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogBackups\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"OrderByType\": \"desc\",\n    \"MaxFinishTime\": \"\",\n    \"MinFinishTime\": \"\"\n}",
+        "document": "查询最新一条日志备份记录",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogBackups\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"OrderBy\": \"FinishTime\",\n    \"OrderByType\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"LogBackupSet\": [\n            {\n                \"BackupMethod\": \"physical\",\n                \"BackupMode\": \"automatic\",\n                \"DBInstanceId\": \"postgres-jdlmoll9\",\n                \"ExpireTime\": \"2023-02-22 21:10:52\",\n                \"FinishTime\": \"2023-02-15 21:10:52\",\n                \"Id\": \"2628bcde-ce13-554a-b47d-2b15187a02ec\",\n                \"Name\": \"******.tar.gz\",\n                \"Size\": 16783360,\n                \"StartTime\": \"2023-02-15 21:10:52\",\n                \"State\": \"finished\"\n            }\n        ],\n        \"RequestId\": \"c716c175-6037-4bdd-a35b-2c05399489f3\",\n        \"TotalCount\": 10\n    }\n}",
         "title": "查询日志备份列表"
       }
     ],
     "DescribeOrders": [
       {
-        "document": "",
+        "document": "查询订单信息",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrders\n<公共请求参数>\n\n{\n    \"DealNames\": [\n        \"20180615110033\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Deals\": [\n            {\n                \"Count\": 1,\n                \"OwnerUin\": \"909619400\",\n                \"DBInstanceIdSet\": [\n                    \"postgres-2uepfuz1\"\n                ],\n                \"PayMode\": 1,\n                \"FlowId\": 36,\n                \"DealName\": \"20180615110033\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "获取订单信息"
+        "title": "查询订单信息"
       }
     ],
     "DescribeParameterTemplateAttributes": [
@@ -408,7 +408,7 @@
     ],
     "DescribeProductConfig": [
       {
-        "document": "",
+        "document": "查询广州二区的售卖规格信息",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductConfig\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaa0a364-08c9-42f6-888e-4e3b7e99b50d\",\n        \"SpecInfoList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"SupportKMSRegions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SpecItemInfoList\": [\n                    {\n                        \"SpecCode\": \"cdb.pg.z1.2g\",\n                        \"Version\": \"10.4\",\n                        \"VersionName\": \"PostgreSQL 10\",\n                        \"Cpu\": 1,\n                        \"Memory\": 2048,\n                        \"MaxStorage\": 1000,\n                        \"MinStorage\": 10,\n                        \"Qps\": 2100,\n                        \"Pid\": 11004,\n                        \"Type\": \"TS85\",\n                        \"KernelVersion\": \"v10.4_r1.0\",\n                        \"MajorVersion\": \"10\",\n                        \"IsSupportTDE\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询某个地域某个可用区的售卖规格信息"
@@ -464,7 +464,7 @@
     ],
     "DestroyDBInstance": [
       {
-        "document": "",
+        "document": "销毁postgres-19nmz2xb实例",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-19nmz2xb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
         "title": "销毁PostgreSQL实例"
@@ -494,7 +494,7 @@
     ],
     "InquiryPriceCreateDBInstances": [
       {
-        "document": "",
+        "document": "查询实例的售卖价格",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceCreateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"Storage\": \"100\",\n    \"Pid\": \"11004\",\n    \"Period\": \"1\",\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"InstanceChargeType\": \"PREPAID\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"OriginalPrice\": 27600,\n        \"Price\": 27600,\n        \"Currency\": \"CNY\"\n    }\n}",
         "title": "查询实例的售卖价格"
@@ -550,7 +550,7 @@
     ],
     "ModifyBaseBackupExpireTime": [
       {
-        "document": "",
+        "document": "修改实例postgres-9n26zs6n下基础备份集88d3a71e-b822-5728-9d41-d8cfc0d0556e的过期时间为“2023-02-18 23:59:59”。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaseBackupExpireTime\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\",\n    \"NewExpireTime\": \"2023-02-18 23:59:59\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
         "title": "修改基础备份过期时间"
@@ -594,10 +594,10 @@
     ],
     "ModifyDBInstanceParameters": [
       {
-        "document": "批量修改数据库实例参数",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceParameters\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nbvqjlhf\",\n    \"ParamList\": [\n        {\n            \"Name\": \"vacuum_freeze_table_age\",\n            \"ExpectedValue\": \"1500000\"\n        },\n        {\n            \"Name\": \"autovacuum_multixact_freeze_max_age\",\n            \"ExpectedValue\": \"40000000\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13123123123123\"\n    }\n}",
-        "title": "批量修改数据库实例参数"
+        "document": "修改实例max_replication_slots参数值为20",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceParameters\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-lzrwgg6d\",\n    \"ParamList\": [\n        {\n            \"Name\": \"max_replication_slots\",\n            \"ExpectedValue\": \"20\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec555918-0c22-42ea-aa23-730167195708\"\n    }\n}",
+        "title": "修改实例单个参数"
       }
     ],
     "ModifyDBInstanceReadOnlyGroup": [
@@ -624,7 +624,7 @@
     ],
     "ModifyDBInstanceSpec": [
       {
-        "document": "",
+        "document": "修改实例postgres-6bwgamo3配置为内存2GB、存储200GB。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"Storage\": \"200\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"123\"\n    }\n}",
         "title": "修改实例配置。"
@@ -632,16 +632,10 @@
     ],
     "ModifyDBInstancesProject": [
       {
-        "document": "",
+        "document": "批量修改实例项目",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"10467\",\n    \"DBInstanceIdSet\": [\n        \"postgres-lnp6j6172\",\n        \"postgres-6bwgamo3\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Count\": 2\n    }\n}",
-        "title": "将实例转至其他项目"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"10467\",\n    \"DBInstanceIdSet\": [\n        \"postgres-6bwgamo3\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "将实例postgres-6bwgamo3转移至项目ID为10467的项目里面去"
+        "title": "批量修改实例项目"
       }
     ],
     "ModifyParameterTemplate": [
@@ -670,21 +664,21 @@
     ],
     "OpenDBExtranetAccess": [
       {
-        "document": "",
+        "document": "开通实例postgres-apzvwncr外网。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1234,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "开启外网地址"
+        "title": "开通实例外网"
       }
     ],
     "OpenServerlessDBExtranetAccess": [
       {
-        "document": "",
+        "document": "根据实例ID开通serverless实例外网",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "根据实例ID开通serverless实例外网"
       },
       {
-        "document": "",
+        "document": "根据实例名开通serverless实例外网",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"db-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "根据实例名开通serverless实例外网"
@@ -746,7 +740,7 @@
     ],
     "UpgradeDBInstance": [
       {
-        "document": "",
+        "document": "调整实例postgres-6bwgamo3规格为内存2GB、存储100GB。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"Storage\": \"200\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"123\"\n    }\n}",
         "title": "升级实例"

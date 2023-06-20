@@ -1,6 +1,6 @@
 **Example 1: 销毁PostgreSQL实例**
 
-
+销毁postgres-19nmz2xb实例
 
 Input: 
 

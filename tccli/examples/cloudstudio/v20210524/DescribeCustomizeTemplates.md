@@ -34,7 +34,6 @@ Output:
                 "UserVersionControlRefType": null,
                 "DevFile": null,
                 "PluginFile": null,
-                "PrebuildFile": null,
                 "Marked": false,
                 "MarkAt": 0,
                 "CreateDate": "2022-06-07T23:49:53Z",

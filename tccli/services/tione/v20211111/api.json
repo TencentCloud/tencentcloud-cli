@@ -9947,7 +9947,6 @@
       "document": "StopTrainingTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务ID",
           "example": "train-123311",

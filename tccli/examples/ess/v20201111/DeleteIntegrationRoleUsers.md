@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli ess DeleteIntegrationRoleUsers --cli-unfold-argument  \
-    --Operator.UserId abc \
-    --RoleId abc \
-    --Users.0.UserId abc
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --RoleId yDwgKUUcXXXXXXXXXXXXXXXXXXQZxjcvkf \
+    --Users.0.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZD2cds
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RoleId": "abc",
+        "RoleId": "yDwgKUUcXXXXXXXXXXXXXXXXXXQZxjcvkf",
         "RequestId": "abc"
     }
 }

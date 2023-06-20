@@ -437,7 +437,6 @@
       "document": "ApplyCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。",
           "example": "无",
@@ -447,7 +446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名。",
           "example": "无",
@@ -457,7 +455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID。",
           "example": "无",
@@ -467,7 +464,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。",
           "example": "无",
@@ -477,7 +473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱。",
           "example": "无",
@@ -487,7 +482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机。",
           "example": "无",
@@ -497,7 +491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期，默认12个月，目前仅支持12个月。",
           "example": "无",
@@ -507,9 +500,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "加密算法，仅支持 RSA。",
+          "document": "加密算法，支持 RSA及ECC。",
           "example": "无",
           "member": "string",
           "name": "CsrEncryptAlgo",
@@ -517,9 +509,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "密钥对参数，仅支持2048。",
+          "document": "密钥对参数，RSA仅支持2048。ECC仅支持prime256v1",
           "example": "无",
           "member": "string",
           "name": "CsrKeyParameter",
@@ -527,7 +518,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSR 的加密密码。",
           "example": "无",
@@ -537,7 +527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注名称。",
           "example": "无",
@@ -547,7 +536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原证书 ID，用于重新申请。",
           "example": "无",
@@ -557,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益包ID，用于免费证书扩容包使用",
           "example": "无",
@@ -567,7 +554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参",
           "example": "无",
@@ -588,7 +574,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4674,13 +4659,30 @@
       "document": "DescribeHostUpdateRecordDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待部署的证书ID",
           "example": "无",
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
           "type": "string"
         }
       ],
@@ -4695,7 +4697,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4705,7 +4706,6 @@
           "example": "无",
           "member": "UpdateRecordDetails",
           "name": "RecordDetailList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4715,7 +4715,6 @@
           "example": "无",
           "member": "int64",
           "name": "SuccessTotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4725,7 +4724,6 @@
           "example": "无",
           "member": "int64",
           "name": "FailedTotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4735,7 +4733,6 @@
           "example": "无",
           "member": "int64",
           "name": "RunningTotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7642,7 +7639,6 @@
       "document": "更新记录详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "详情记录id",
           "example": "无",
@@ -7653,7 +7649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新证书ID",
           "example": "无",
@@ -7664,7 +7659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旧证书ID",
           "example": "无",
@@ -7675,7 +7669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7686,7 +7679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型",
           "example": "无",
@@ -7697,7 +7689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7708,7 +7699,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署状态",
           "example": "无",
@@ -7719,7 +7709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7730,7 +7719,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署时间",
           "example": "无",
@@ -7741,7 +7729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次更新时间",
           "example": "无",
@@ -7752,7 +7739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7763,7 +7749,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7774,9 +7759,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "部署监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署监听器ID（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ListenerId",
@@ -7785,9 +7769,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "部署监听器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署监听器名称（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ListenerName",
@@ -7796,7 +7779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7807,9 +7789,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启SNI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启SNI（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "SniSwitch",
@@ -7818,13 +7799,42 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "bucket名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "bucket名称（COS专用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Bucket",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间（TKE专用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "secret名称（TKE专用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7835,7 +7845,6 @@
       "document": "更新记录详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型",
           "example": "无",
@@ -7846,7 +7855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源详情列表",
           "example": "无",
@@ -7854,6 +7862,16 @@
           "name": "List",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该部署资源总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

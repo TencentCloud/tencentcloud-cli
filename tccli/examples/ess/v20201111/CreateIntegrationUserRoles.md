@@ -9,9 +9,7 @@ tccli ess CreateIntegrationUserRoles --cli-unfold-argument  \
     --Agent.ProxyOrganizationId yDwcwUUgxxxxxb2eQRA5tb3wCvJ \
     --UserIds yDwcwUUgyg3xxxx2eQS1BsaTeVDP \
     --RoleIds 6fad1903xxxx6921046819037 \
-    --Operator.UserId yDwnHUUxxxxMR3gQvehewF4C5 \
-    --Operator.ClientIp 0.0.0.1 \
-    --Operator.Channel YUFU
+    --Operator.UserId yDwnHUUxxxxMR3gQvehewF4C5
 ```
 
 Output: 

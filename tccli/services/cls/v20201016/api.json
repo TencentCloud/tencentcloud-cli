@@ -2568,7 +2568,6 @@
       "document": "CreateConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "采集配置名称",
           "example": "testname",
@@ -2578,7 +2577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采集配置所属日志主题ID即TopicId",
           "example": "xxxxxx-xxx-xxxxxx",
@@ -2588,7 +2586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志采集路径,包含文件名",
           "example": "/data/nginx/log/**/access.log",
@@ -2598,7 +2595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "delimiter_log",
@@ -2608,7 +2604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
@@ -2618,7 +2613,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采集黑名单路径列表",
           "example": "无",
@@ -2628,12 +2622,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
           "name": "UserDefineRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级采集配置",
+          "example": "无",
+          "member": "string",
+          "name": "AdvancedConfig",
           "required": false,
           "type": "string"
         }
@@ -2649,7 +2651,6 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "ConfigId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3198,7 +3199,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
+          "document": "投递的文件的最大值，单位 MB，默认256，范围 5-256",
           "example": "256",
           "member": "uint64",
           "name": "MaxSize",
@@ -4536,7 +4537,6 @@
       "document": "DescribeLogContext请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
@@ -4546,7 +4546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF",
           "example": "2021-04-25 14:25:00.000",
@@ -4556,7 +4555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志包序号",
           "example": "528C1318606EFEB8-1A7",
@@ -4566,7 +4564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志包内一条日志的序号",
           "example": "65536",
@@ -4576,7 +4573,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上文日志条数,  默认值10",
           "example": "10",
@@ -4586,7 +4582,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下文日志条数,  默认值10",
           "example": "10",
@@ -4607,7 +4602,6 @@
           "example": "无",
           "member": "LogContextInfo",
           "name": "LogContextInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4617,7 +4611,6 @@
           "example": "true",
           "member": "bool",
           "name": "PrevOver",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4627,7 +4620,6 @@
           "example": "true",
           "member": "bool",
           "name": "NextOver",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7526,7 +7518,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
+          "document": "投递的文件的最大值，单位 MB，默认256，范围 5-256",
           "example": "256",
           "member": "uint64",
           "name": "MaxSize",
@@ -7726,6 +7718,32 @@
         }
       ],
       "usage": "both"
+    },
+    "MultiTopicSearchInformation": {
+      "document": "多日志主题检索相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要检索分析的日志主题ID",
+          "example": "682d0718-07bb-4ec0-xxxx-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "NoticeReceiver": {
       "document": "告警通知接收者信息",
@@ -8138,7 +8156,7 @@
         },
         {
           "disabled": false,
-          "document": "要检索分析的日志主题ID",
+          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -8198,6 +8216,15 @@
           "name": "SyntaxRule",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- 要检索分析的日志主题列表，最大支持20个日志主题。\n- 检索单个日志主题时请使用TopicId。\n- 不能同时使用TopicId和Topics。",
+          "example": "无",
+          "member": "MultiTopicSearchInformation",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

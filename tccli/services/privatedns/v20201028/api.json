@@ -21,6 +21,13 @@
       "output": "CreatePrivateZoneRecordResponse",
       "status": "online"
     },
+    "DeleteEndPoint": {
+      "document": "删除终端节点",
+      "input": "DeleteEndPointRequest",
+      "name": "删除终端节点",
+      "output": "DeleteEndPointResponse",
+      "status": "online"
+    },
     "DeletePrivateDNSAccount": {
       "document": "删除私有域解析账号",
       "input": "DeletePrivateDNSAccountRequest",
@@ -645,6 +652,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteEndPointRequest": {
+      "document": "DeleteEndPoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-juygvf672i",
+          "member": "string",
+          "name": "EndPointId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEndPointResponse": {
+      "document": "DeleteEndPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeletePrivateDNSAccountRequest": {
       "document": "DeletePrivateDNSAccount请求参数结构体",

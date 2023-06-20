@@ -14,50 +14,76 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
         "TableInfos": [
             {
-                "UpdatedTime": "xx",
-                "ReservedVolume": 1,
-                "ReservedWriteQps": 26,
-                "KeyStruct": "xx",
-                "ValueStruct": "xx",
-                "CreatedTime": "xx",
-                "Status": "xx",
-                "TableGroupId": "xx",
-                "TableSize": 48566336,
-                "Memo": "xx",
-                "ClusterId": "xx",
+                "TableName": "abc",
+                "TableInstanceId": "abc",
+                "TableType": "abc",
+                "TableIdlType": "abc",
+                "ClusterId": "abc",
+                "ClusterName": "abc",
+                "TableGroupId": "abc",
+                "TableGroupName": "abc",
+                "KeyStruct": "abc",
+                "ValueStruct": "abc",
+                "ShardingKeySet": "abc",
+                "IndexStruct": "abc",
                 "ListElementNum": 1,
-                "DbClusterInfoStruct": "xx",
-                "ApiAccessId": "xx",
-                "TableGroupName": "xx",
-                "IndexStruct": "xx",
-                "ShardingKeySet": "xx",
-                "ReservedReadQps": 80,
                 "IdlFiles": [
                     {
-                        "FileExtType": "xx",
-                        "FileType": "xx",
-                        "FileName": "xx",
-                        "FileSize": 266,
-                        "FileContent": "xx",
-                        "FileId": 551
+                        "FileName": "abc",
+                        "FileType": "abc",
+                        "FileExtType": "abc",
+                        "FileSize": 0,
+                        "FileId": 0,
+                        "FileContent": "abc"
                     }
                 ],
+                "ReservedVolume": 0,
+                "ReservedReadQps": 0,
+                "ReservedWriteQps": 0,
+                "TableSize": 0,
+                "Status": "abc",
+                "CreatedTime": "abc",
+                "UpdatedTime": "abc",
+                "Memo": "abc",
                 "Error": {
-                    "Message": "xx",
-                    "Code": "xx"
+                    "Code": "abc",
+                    "Message": "abc"
                 },
-                "TableType": "xx",
-                "TableIdlType": "xx",
-                "ClusterName": "xx",
-                "TableInstanceId": "xx",
+                "ApiAccessId": "abc",
+                "SortFieldNum": 0,
                 "SortRule": 0,
-                "TableName": "xx",
-                "SortFieldNum": 0
+                "DbClusterInfoStruct": "abc",
+                "TxhBackupExpireDay": 1,
+                "SyncTableInfo": {
+                    "TargetTableSplitNum": 1,
+                    "TargetTableNamePrefix": [
+                        "abc"
+                    ],
+                    "TargetSyncDBInstanceId": "abc",
+                    "TargetDatabaseName": "abc",
+                    "Status": 0,
+                    "ClusterId": "abc",
+                    "TableGroupId": 1,
+                    "TableName": "abc",
+                    "TableId": "abc",
+                    "KeyFieldMapping": [
+                        {
+                            "SourceName": "abc",
+                            "TargetName": "abc"
+                        }
+                    ],
+                    "ValueFieldMapping": [
+                        {
+                            "SourceName": "abc",
+                            "TargetName": "abc"
+                        }
+                    ]
+                }
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

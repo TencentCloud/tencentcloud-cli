@@ -714,6 +714,13 @@
       "output": "ExecuteFunctionResponse",
       "status": "online"
     },
+    "ExtractCopyRightWatermark": {
+      "document": "提取版权水印信息。",
+      "input": "ExtractCopyRightWatermarkRequest",
+      "name": "提取版权水印",
+      "output": "ExtractCopyRightWatermarkResponse",
+      "status": "online"
+    },
     "ExtractTraceWatermark": {
       "document": "用于提取溯源水印。",
       "input": "ExtractTraceWatermarkRequest",
@@ -1432,7 +1439,7 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
@@ -1448,6 +1455,16 @@
           "name": "SubStreamSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "CopyRightWatermarkText",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1482,6 +1499,16 @@
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版权水印。",
+          "example": "无",
+          "member": "CopyRightWatermarkInput",
+          "name": "CopyRightWatermark",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -7312,9 +7339,9 @@
       "document": "画布信息。制作视频时，如果源素材（视频或者图片）不能填满输出的视频窗口，将用设置的画布进行背景绘制。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "背景颜色，取值有：\n<li>Black：黑色背景</li>\n<li>White：白色背景</li>\n默认值：Black。",
+          "example": "无",
           "member": "string",
           "name": "Color",
           "required": false,
@@ -7322,9 +7349,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "画布宽度，即输出视频的宽度，取值范围：0~ 4096，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频宽度一致。",
+          "document": "画布宽度，即输出视频的宽度，取值范围：0~ 3840，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频宽度一致。",
+          "example": "无",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -7332,9 +7359,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "画布高度，即输出视频的高度（或长边），取值范围：0~ 4096，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频高度一致。",
+          "document": "画布高度，即输出视频的高度（或长边），取值范围：0~ 3840，单位：px。\n默认值：0，表示和第一个视频轨的第一个视频片段的视频高度一致。",
+          "example": "无",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -8421,6 +8448,22 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyRightWatermarkInput": {
+      "document": "版权水印参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版权信息，最大长度为 200 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CoverBySnapshotTaskInput": {
       "document": "对视频截图做封面任务输入参数类型",
@@ -15067,7 +15110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -15242,6 +15285,15 @@
           "example": "无",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkTask",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTask",
+          "name": "ExtractCopyRightWatermarkTask",
           "type": "object",
           "value_allowed_null": true
         },
@@ -16720,7 +16772,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -16910,6 +16962,16 @@
         },
         {
           "disabled": false,
+          "document": "版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTask",
+          "name": "ExtractCopyRightWatermarkCompleteEvent",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReviewAudioVideoTask",
@@ -17028,6 +17090,215 @@
         }
       ],
       "type": "object"
+    },
+    "ExtractCopyRightWatermarkRequest": {
+      "document": "ExtractCopyRightWatermark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要提取水印的媒体 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识来源上下文，用于透传用户请求信息，在 ExtractCopyRightWatermarkComplete 回调和任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractCopyRightWatermarkResponse": {
+      "document": "ExtractCopyRightWatermark返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractCopyRightWatermarkTask": {
+      "document": "提取版权水印任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTaskInput",
+          "name": "Input",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提取版权水印任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractCopyRightWatermarkTaskOutput",
+          "name": "Output",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractCopyRightWatermarkTaskInput": {
+      "document": "提取版权水印任务输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要提取水印的媒体 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractCopyRightWatermarkTaskOutput": {
+      "document": "提取版权水印输出信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ExtractTraceWatermarkRequest": {
       "document": "ExtractTraceWatermark请求参数结构体",
@@ -22044,11 +22315,21 @@
         },
         {
           "disabled": false,
-          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
+          "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>CopyRight 表示经过版权水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
           "name": "DigitalWatermarkType",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版权信息。",
+          "example": "无",
+          "member": "string",
+          "name": "CopyRightWatermarkText",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -33594,6 +33875,16 @@
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版权水印。",
+          "example": "无",
+          "member": "CopyRightWatermarkInput",
+          "name": "CopyRightWatermark",
           "required": false,
           "type": "object",
           "value_allowed_null": false

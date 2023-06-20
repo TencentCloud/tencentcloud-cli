@@ -1299,7 +1299,6 @@
       "document": "CreateSqlFilter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
@@ -1309,17 +1308,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cAuth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。",
           "example": "SELECT",
@@ -1329,7 +1317,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字，用于筛选SQL语句，多个关键字用英文逗号分隔，逗号不能作为关键词，多个关键词之间的关系为“逻辑与”。",
           "example": "test",
@@ -1339,7 +1326,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大并发度，取值不能小于0，如果该值设为 0，则表示限制所有匹配的SQL执行。",
           "example": "1",
@@ -1349,7 +1335,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流时长，单位秒，支持-1和小于2147483647的正整数，-1表示永不过期。",
           "example": "300",
@@ -1359,7 +1344,15 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cAuth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
@@ -1380,7 +1373,6 @@
           "example": "123",
           "member": "int64",
           "name": "FilterId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1563,21 +1555,21 @@
         },
         {
           "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cauth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "限流任务ID列表。",
           "example": "1234",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3576,7 +3568,7 @@
         },
         {
           "disabled": false,
-          "document": "SOL模板的MD5值",
+          "document": "SQL模板的MD5值",
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",
@@ -5586,7 +5578,6 @@
       "document": "ModifySqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
@@ -5596,17 +5587,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cauth",
-          "member": "string",
-          "name": "SessionToken",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "SQL限流任务ID列表。",
           "example": "1234",
@@ -5616,7 +5596,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流任务状态，取值支持TERMINATED - 终止。",
           "example": "TERMINATED",
@@ -5626,7 +5605,15 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
           "example": "mysql",
@@ -6778,7 +6765,6 @@
       "document": "慢日志TopSql",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "sql总锁等待时间，单位秒",
           "example": "0.00008",
@@ -6789,7 +6775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大锁等待时间，单位秒",
           "example": "0.000096",
@@ -6800,7 +6785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小锁等待时间，单位秒",
           "example": "0.000041",
@@ -6811,7 +6795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总扫描行数",
           "example": "584832",
@@ -6822,7 +6805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大扫描行数",
           "example": "101782",
@@ -6833,7 +6815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小扫描行数",
           "example": "584832",
@@ -6844,7 +6825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总耗时，单位秒",
           "example": "0.513363",
@@ -6855,7 +6835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大执行时间，单位秒",
           "example": "0.765213",
@@ -6866,7 +6845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小执行时间，单位秒",
           "example": "0.629921",
@@ -6877,7 +6855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总返回行数",
           "example": "292416",
@@ -6888,7 +6865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回行数",
           "example": "292416",
@@ -6899,7 +6875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小返回行数",
           "example": "292416",
@@ -6910,7 +6885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行次数",
           "example": "37",
@@ -6921,7 +6895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql模板",
           "example": "select * from t;",
@@ -6932,7 +6905,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带参数SQL（随机）",
           "example": "SELECT * FROM t;",
@@ -6943,7 +6915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test_center",
@@ -6954,7 +6925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总耗时占比，单位%",
           "example": "2.44",
@@ -6965,7 +6935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql总锁等待时间占比，单位%",
           "example": "1.92",
@@ -6976,7 +6945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总扫描行数占比，单位%",
           "example": "2.3",
@@ -6987,7 +6955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总返回行数占比，单位%",
           "example": "18.67",
@@ -6998,7 +6965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均执行时间，单位秒",
           "example": "0.513363",
@@ -7009,7 +6975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均返回行数",
           "example": "26518.0",
@@ -7020,7 +6985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均锁等待时间，单位秒",
           "example": "0.000096",
@@ -7031,7 +6995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均扫描行数",
           "example": "584832.0",
@@ -7042,9 +7005,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SOL模板的MD5值",
+          "document": "SQL模板的MD5值",
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",

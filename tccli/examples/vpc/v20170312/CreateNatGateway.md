@@ -1,6 +1,6 @@
 **Example 1: 创建NAT网关**
 
-
+创建一个传统型NAT网关并自动分配一个EIP
 
 Input: 
 
@@ -48,6 +48,7 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "ExclusiveGatewayBandwidth": 1,
                 "IsExclusive": true,
+                "RestrictState": "NORMAL",
                 "SourceIpTranslationNatRuleSet": [],
                 "SubnetId": "1215354",
                 "TagSet": [
@@ -66,7 +67,7 @@ Output:
 
 **Example 2: 创建标准型NAT网关**
 
-
+创建一个标准型NAT网关并自动分配一个EIP
 
 Input: 
 
@@ -101,6 +102,7 @@ Output:
                 "SecurityGroupSet": [],
                 "SourceIpTranslationNatRuleSet": [],
                 "IsExclusive": false,
+                "RestrictState": "NORMAL",
                 "ExclusiveGatewayBandwidth": null
             }
         ],

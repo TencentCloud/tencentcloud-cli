@@ -154,7 +154,6 @@
       "document": "GetBpaasApproveDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审批id",
           "example": "1",
@@ -175,7 +174,6 @@
           "example": "123123",
           "member": "uint64",
           "name": "ApplyUin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -185,7 +183,6 @@
           "example": "123123",
           "member": "uint64",
           "name": "ApplyOwnUin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -195,7 +192,6 @@
           "example": "a",
           "member": "string",
           "name": "ApplyUinNick",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -205,7 +201,6 @@
           "example": "1",
           "member": "uint64",
           "name": "BpaasId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -215,7 +210,6 @@
           "example": "test",
           "member": "string",
           "name": "BpaasName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -225,7 +219,6 @@
           "example": "无",
           "member": "ApplyParam",
           "name": "ApplicationParams",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -235,7 +228,6 @@
           "example": "test",
           "member": "string",
           "name": "Reason",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -245,7 +237,6 @@
           "example": "2021-12-12 10:12:10",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -255,7 +246,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -265,7 +255,6 @@
           "example": "无",
           "member": "StatusNode",
           "name": "Nodes",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -275,7 +264,15 @@
           "example": "1",
           "member": "string",
           "name": "ApprovingNodeId",
-          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，时间格式：2021-12-12 10:12:10\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-12 10:12:10",
+          "member": "string",
+          "name": "ModifyTime",
           "type": "string",
           "value_allowed_null": true
         },
@@ -645,6 +642,26 @@
           "example": "3-4",
           "member": "string",
           "name": "ParallelNodes",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "scf拒绝时返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RejectedCloudFunctionMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上一个节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PrevNode",
           "required": false,
           "type": "string",
           "value_allowed_null": true

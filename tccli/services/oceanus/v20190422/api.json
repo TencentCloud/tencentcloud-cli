@@ -147,6 +147,13 @@
       "output": "DescribeTreeResourcesResponse",
       "status": "online"
     },
+    "DescribeWorkSpaces": {
+      "document": "授权工作空间列表",
+      "input": "DescribeWorkSpacesRequest",
+      "name": "授权工作空间列表",
+      "output": "DescribeWorkSpacesResponse",
+      "status": "online"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
@@ -669,6 +676,202 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterGroupSetItem": {
+      "document": "工作空间集群组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "clusterGroup 的 SerialId",
+          "example": "cluster-sdhd0vtz",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "MyClusterName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区",
+          "example": "ap-beijing-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号 APPID",
+          "example": "3435324",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN",
+          "example": "123456",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建账号 UIN",
+          "example": "123456",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CU 数量",
+          "example": "2",
+          "member": "int64",
+          "name": "CuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CU 内存规格",
+          "example": "2",
+          "member": "int64",
+          "name": "CuMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态, 1 未初始化,，3 初始化中，2 运行中",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态描述",
+          "example": "description",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群创建时间",
+          "example": "xxxx-xx-xx-xxxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次操作集群的时间",
+          "example": "xxxx-xx-xx-xxxx",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络",
+          "example": "2",
+          "member": "int64",
+          "name": "NetEnvironmentType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲 CU",
+          "example": "1",
+          "member": "int64",
+          "name": "FreeCuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "细粒度资源下的空闲CU",
+          "example": "2.5",
+          "member": "float",
+          "name": "FreeCu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行中CU",
+          "example": "2.5",
+          "member": "float",
+          "name": "RunningCu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2666,6 +2869,78 @@
       ],
       "usage": "out"
     },
+    "DescribeWorkSpacesRequest": {
+      "document": "DescribeWorkSpaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1 按照创建时间降序排序(默认) 2.按照创建时间升序排序，3. 按照状态降序排序 4. 按照状态升序排序 默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求的集群数量，默认 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤规则",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkSpacesResponse": {
+      "document": "DescribeWorkSpaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkSpaceSetItem",
+          "name": "WorkSpaceSetItem",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询作业列表时的过滤器",
       "members": [
@@ -3890,6 +4165,132 @@
       ],
       "usage": "out"
     },
+    "RoleAuth": {
+      "document": "角色授权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 AppID",
+          "example": "1234567",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "1327",
+          "member": "string",
+          "name": "WorkSpaceSerialId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN",
+          "example": "34553634",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者 UIN",
+          "example": "34553634",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定授权的 UIN",
+          "example": "34553634",
+          "member": "string",
+          "name": "AuthSubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应 role表的id",
+          "example": "2",
+          "member": "int64",
+          "name": "Permission",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-01-21 01:00:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次操作时间",
+          "example": "2020-01-21 01:00:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2 启用 1 停用",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RunJobDescription": {
       "document": "作业启动详情",
       "members": [
@@ -4559,6 +4960,162 @@
           "name": "ProjectIdStr",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkSpaceSetItem": {
+      "document": "工作空间详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "spc-xxx",
+          "member": "string",
+          "name": "SerialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 APPID",
+          "example": "32442423",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN",
+          "example": "424244",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者 UIN",
+          "example": "5345343",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "myspace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-01-21 00:00:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2020-01-21 00:00:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 未初始化 2 可用  -1 已删除",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间包含集群信息",
+          "example": "无",
+          "member": "ClusterGroupSetItem",
+          "name": "ClusterGroupSetItem",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间角色的信息",
+          "example": "无",
+          "member": "RoleAuth",
+          "name": "RoleAuth",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间成员数量",
+          "example": "12",
+          "member": "int64",
+          "name": "RoleAuthCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "spc_xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobsCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

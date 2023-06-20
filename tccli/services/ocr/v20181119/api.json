@@ -330,7 +330,7 @@
       "status": "online"
     },
     "RecognizeGeneralInvoice": {
-      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "RecognizeGeneralInvoiceRequest",
       "name": "通用票据识别（高级版）",
       "output": "RecognizeGeneralInvoiceResponse",
@@ -4970,7 +4970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "识别结果。\nOK：表示识别成功；FailedOperation.UnsupportedInvioce：表示不支持识别；\nFailedOperation.UnKnowError：表示识别失败；\n其它错误码见各个票据接口的定义。",
+          "document": "识别结果。\nOK：表示识别成功；FailedOperation.UnsupportedInvoice：表示不支持识别；\nFailedOperation.UnKnowError：表示识别失败；\n其它错误码见各个票据接口的定义。",
           "example": "无",
           "member": "string",
           "name": "Code",
@@ -4980,7 +4980,7 @@
         },
         {
           "disabled": false,
-          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票",
+          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票",
           "example": "无",
           "member": "int64",
           "name": "Type",
@@ -5030,7 +5030,7 @@
         },
         {
           "disabled": false,
-          "document": "发票详细类型，详见下方 SubType 返回值说明",
+          "document": "发票详细类型，详见上方 SubType 返回值说明",
           "example": "VatSpecialInvoice",
           "member": "string",
           "name": "SubType",
@@ -5040,7 +5040,7 @@
         },
         {
           "disabled": false,
-          "document": "发票类型描述，详见下方 TypeDescription  返回值说明",
+          "document": "发票类型描述，详见上方 TypeDescription  返回值说明",
           "example": "增值税发票",
           "member": "string",
           "name": "TypeDescription",
@@ -5060,7 +5060,7 @@
         },
         {
           "disabled": false,
-          "document": "发票详细类型描述，详见下方 SubType 返回值说明",
+          "document": "发票详细类型描述，详见上方 SubType 返回值说明",
           "example": "无",
           "member": "string",
           "name": "SubTypeDescription",
@@ -6129,6 +6129,102 @@
         }
       ],
       "type": "object"
+    },
+    "MedicalInvoice": {
+      "document": "医疗票据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票代码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价税合计（小写）",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价税合计（大写）",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开票日期",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验码",
+          "example": "无",
+          "member": "string",
+          "name": "CheckCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票属地",
+          "example": "无",
+          "member": "string",
+          "name": "Place",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复核人",
+          "example": "无",
+          "member": "string",
+          "name": "Reviewer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MedicalInvoiceInfo": {
       "document": "医疗发票识别结果",
@@ -8695,7 +8791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -8704,7 +8800,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -8713,7 +8809,7 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n-1：其他发票\n\n默认为空，识别所有类型发票。\n当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n-1：其他发票",
           "example": "无",
           "member": "int64",
           "name": "Types",
@@ -10165,7 +10261,7 @@
         },
         {
           "disabled": false,
-          "document": "首次领用日期",
+          "document": "签发日期",
           "example": "9ธ.ค.2559",
           "member": "string",
           "name": "IssueDate",
@@ -10174,7 +10270,7 @@
         },
         {
           "disabled": false,
-          "document": "签发日期",
+          "document": "到期日期",
           "example": "13ธ.ค.2567",
           "member": "string",
           "name": "ExpirationDate",
@@ -11437,6 +11533,26 @@
           "example": "无",
           "member": "TrainTicket",
           "name": "TrainTicket",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "医疗门诊收费票据（电子）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MedicalInvoice",
+          "name": "MedicalOutpatientInvoice",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "医疗住院收费票据（电子）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MedicalInvoice",
+          "name": "MedicalHospitalizedInvoice",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15742,6 +15858,36 @@
           "example": "无",
           "member": "string",
           "name": "Receiptor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有全电纸质票（0：没有，1：有）",
+          "example": "无",
+          "member": "int64",
+          "name": "ElectronicFullMark",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全电号码",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicFullNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票联名",
+          "example": "无",
+          "member": "string",
+          "name": "FormName",
           "required": false,
           "type": "string",
           "value_allowed_null": false

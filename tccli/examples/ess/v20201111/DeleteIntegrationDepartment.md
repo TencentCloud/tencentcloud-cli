@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ess DeleteIntegrationDepartment --cli-unfold-argument  \
-    --Operator.UserId XXXXXX \
-    --DeptId XXXXXXXXXXXXX \
-    --ReceiveDeptId xxx
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --DeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9 \
+    --ReceiveDeptId yDRIoUUgygzzzzzzzzzzSXSVVSJ1z
 ```
 
 Output: 

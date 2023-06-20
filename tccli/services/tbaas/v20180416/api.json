@@ -22,11 +22,11 @@
       "status": "online"
     },
     "DeployDynamicBcosContract": {
-      "document": "动态部署并发布Bcos合约",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\n动态部署并发布Bcos合约",
       "input": "DeployDynamicBcosContractRequest",
       "name": "动态部署并发布Bcos合约",
       "output": "DeployDynamicBcosContractResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DownloadUserCert": {
       "document": "下载用户证书",
@@ -36,32 +36,32 @@
       "status": "online"
     },
     "GetBcosBlockByNumber": {
-      "document": "使用块高查询Bcos区块信息",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\n使用块高查询Bcos区块信息",
       "input": "GetBcosBlockByNumberRequest",
       "name": "使用块高查询区块信息",
       "output": "GetBcosBlockByNumberResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetBcosBlockList": {
-      "document": "Bcos分页查询当前群组下的区块列表",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\nBcos分页查询当前群组下的区块列表",
       "input": "GetBcosBlockListRequest",
       "name": "分页查询Bcos区块列表",
       "output": "GetBcosBlockListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetBcosTransByHash": {
-      "document": "Bcos根据交易哈希查看交易详细信息",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\nBcos根据交易哈希查看交易详细信息",
       "input": "GetBcosTransByHashRequest",
       "name": "使用交易哈希查询Bcos交易信息",
       "output": "GetBcosTransByHashResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetBcosTransList": {
-      "document": "Bcos分页查询当前群组的交易信息列表",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\nBcos分页查询当前群组的交易信息列表",
       "input": "GetBcosTransListRequest",
       "name": "分页查询Bcos交易列表",
       "output": "GetBcosTransListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetBlockList": {
       "document": "查看当前网络下的所有区块列表，分页展示",
@@ -127,10 +127,17 @@
       "status": "online"
     },
     "GetLatesdTransactionList": {
-      "document": "获取最新交易列表",
+      "document": "获取最新交易列表（已废弃）",
       "input": "GetLatesdTransactionListRequest",
-      "name": "获取最新交易列表",
+      "name": "获取最新交易列表（已废弃）",
       "output": "GetLatesdTransactionListResponse",
+      "status": "online"
+    },
+    "GetLatestTransactionList": {
+      "document": "获取fabric最新交易列表",
+      "input": "GetLatestTransactionListRequest",
+      "name": "获取fabric最新交易列表",
+      "output": "GetLatestTransactionListResponse",
       "status": "online"
     },
     "GetPeerLogForUser": {
@@ -162,11 +169,11 @@
       "status": "online"
     },
     "InvokeBcosTrans": {
-      "document": "执行Bcos交易，支持动态部署的合约",
+      "document": "Bcos区块链引擎已下线，请选用其他区块链引擎\n\n执行Bcos交易，支持动态部署的合约",
       "input": "InvokeBcosTransRequest",
       "name": "执行Bcos交易",
       "output": "InvokeBcosTransResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "InvokeChainMakerContract": {
       "document": "调用长安链合约执行交易",
@@ -2526,90 +2533,90 @@
       "document": "GetLatesdTransactionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名称，固定字段：transaction",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名称，固定字段：latest_transaction_list",
+          "example": "latest_transaction_list",
           "member": "string",
           "name": "Operation",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织ID，固定字段：0",
+          "example": "0",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID，固定字段：0",
+          "example": "0",
           "member": "uint64",
           "name": "ChannelId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "获取的最新交易的区块数量，取值范围1~5",
+          "example": "5",
           "member": "uint64",
           "name": "LatestBlockNumber",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "liulanOrg",
           "member": "string",
           "name": "GroupName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的通道名称，可在通道详情或列表中获取",
+          "example": "kylotst",
           "member": "string",
           "name": "ChannelName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746bc0f03q8u93j",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取的起始交易偏移",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取的交易数量",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2624,6 +2631,7 @@
         {
           "disabled": false,
           "document": "交易总数量",
+          "example": "5",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -2632,6 +2640,133 @@
         {
           "disabled": false,
           "document": "交易列表",
+          "example": "无",
+          "member": "TransactionItem",
+          "name": "TransactionList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLatestTransactionListRequest": {
+      "document": "GetLatestTransactionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名称，固定字段：transaction",
+          "example": "transaction",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作名称，固定字段：latest_transaction_list",
+          "example": "latest_transaction_list",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织ID，固定字段：0",
+          "example": "0",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID，固定字段：0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取的最新交易的区块数量，取值范围1~5",
+          "example": "5",
+          "member": "uint64",
+          "name": "LatestBlockNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
+          "example": "liulanOrg",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的通道名称，可在通道详情或列表中获取",
+          "example": "kylotst",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区块链网络ID，可在区块链网络详情或列表中获取",
+          "example": "251005746bc0f03q8u93j",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取的起始交易偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取的交易数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLatestTransactionListResponse": {
+      "document": "GetLatestTransactionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易总数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易列表",
+          "example": "无",
           "member": "TransactionItem",
           "name": "TransactionList",
           "type": "list",

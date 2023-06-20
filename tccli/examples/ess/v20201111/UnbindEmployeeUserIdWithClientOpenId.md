@@ -6,18 +6,17 @@ Input:
 
 ```
 tccli ess UnbindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
-    --Operator.ClientIp 0.0.0.1 \
     --Operator.Channel INTEGRATE \
     --Operator.OpenId 12345 \
-    --UserId ************ \
-    --OpenId ***********
+    --UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --OpenId open_user1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s1665384640598336866",
+        "RequestId": "s16653xxxxx98336866",
         "Status": 1
     }
 }
@@ -31,17 +30,16 @@ Input:
 
 ```
 tccli ess UnbindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
-    --Operator.ClientIp 0.0.0.1 \
-    --Operator.UserId ************** \
-    --UserId ************ \
-    --OpenId ***********
+    --Operator.UserId *yDwgKUUcXXXXXXXXXXXXXXXXXXQZxxs32 \
+    --UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --OpenId open_user1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s1665218558695032958",
+        "RequestId": "s16652185xxx032958",
         "Status": 1
     }
 }

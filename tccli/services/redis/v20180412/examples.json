@@ -712,8 +712,8 @@
     ],
     "UpgradeInstanceVersion": [
       {
-        "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeInstanceVersion\n&InstanceId=crs-5qlrlhux\n&SwitchOption=2\n&TargetInstanceType=6\n&<公共请求参数>",
+        "document": "升级当前实例至Redis 4.0 集群架构",
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeInstanceVersion\n&InstanceId=crs-5qlr****\n&SwitchOption=2\n&TargetInstanceType=7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "示例"
       }

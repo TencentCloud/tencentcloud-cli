@@ -76,6 +76,22 @@
         "title": "请求示例"
       }
     ],
+    "CreateLivePadRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLivePadRule\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1000\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\",\n    \"DomainName\": \"5000.livepush.myqcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateLivePadTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLivePadTemplate\n<公共请求参数>\n\n{\n    \"Url\": \"xx\",\n    \"WaitDuration\": 1,\n    \"Description\": \"xx\",\n    \"MaxDuration\": 1,\n    \"TemplateName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateLivePullStreamTask": [
       {
         "document": "用于创建直播拉流任务。",
@@ -134,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "CreateLiveStreamMonitor": [
+      {
+        "document": "用户创建监播场次调用该接口。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"OutputInfo\": {\n        \"OutputStreamWidth\": 1920,\n        \"OutputStreamHeight\": 1080\n    },\n    \"InputList\": [\n        {\n            \"InputStreamName\": \"example\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": \"3d5738dd-1ca2-4601-a6e9-004c5ec75c0b\",\n        \"RequestId\": \"6c838ac2-a878-4609-bdc7-0145e4023340\"\n    }\n}",
+        "title": "创建监播任务"
       }
     ],
     "CreateLiveTimeShiftRule": [
@@ -224,6 +248,22 @@
         "title": "删除域名"
       }
     ],
+    "DeleteLivePadRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLivePadRule\n<公共请求参数>\n\n{\n    \"TemplateId\": 1,\n    \"DomainName\": \"xx\",\n    \"StreamName\": \"xx\",\n    \"AppName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteLivePadTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLivePadTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DeleteLivePullStreamTask": [
       {
         "document": "",
@@ -270,6 +310,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DeleteLiveStreamMonitor": [
+      {
+        "document": "删除直播流监播任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"ea158cd9-d551-429d-acea-c9b51ce84cf5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b283e0e5-ad96-4692-a4f9-f304260e9eb7\"\n    }\n}",
+        "title": "删除直播流监播任务"
       }
     ],
     "DeleteLiveTimeShiftRule": [
@@ -520,6 +568,30 @@
         "title": "查询直播套餐包信息"
       }
     ],
+    "DescribeLivePadRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLivePadRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"AppName\": \"xx\",\n                \"DomainName\": \"xx\",\n                \"StreamName\": \"xx\",\n                \"TemplateId\": 1000,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLivePadTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLivePadTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"UpdateTime\": \"xx\",\n            \"Description\": \"xx\",\n            \"TemplateName\": \"xx\",\n            \"Url\": \"xx\",\n            \"TemplateId\": 1,\n            \"CreateTime\": \"xx\",\n            \"WaitDuration\": 1,\n            \"MaxDuration\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLivePadTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLivePadTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"TemplateName\": \"xx\",\n                \"Url\": \"xx\",\n                \"TemplateId\": 1,\n                \"CreateTime\": \"xx\",\n                \"WaitDuration\": 1,\n                \"MaxDuration\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLivePlayAuthKey": [
       {
         "document": "",
@@ -598,6 +670,22 @@
         "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamEventList\n&DomainName=yourdomain.test.com\n&AppName=live\n&StreamName=stream\n&StartTime=2019-01-04T12:00:00Z\n&EndTime=2019-01-04T20:00:00Z\n&PageNum=1\n&PageSize=10\n&IsFilter=1\n&IsStrict=0\n&IsAsc=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EventList\": [\n            {\n                \"AppName\": \"live\",\n                \"ClientIp\": \"180.163.8.244\",\n                \"DomainName\": \"yourdomain.test.com\",\n                \"Duration\": 0,\n                \"Resolution\": \"640*352\",\n                \"StopReason\": \"客户端主动断流\",\n                \"StreamEndTime\": \"2019-01-04T11:59:58Z\",\n                \"StreamName\": \"stream\",\n                \"StreamStartTime\": \"2019-01-04T11:59:58Z\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeLiveStreamMonitor": [
+      {
+        "document": "查询某个监播场次，返回该场次的基本配置信息。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveStreamMonitor\": {\n            \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\",\n            \"MonitorName\": \"example_monitor_name\",\n            \"OutputInfo\": {\n                \"OutputStreamName\": \"example_output_stream_name\",\n                \"OutputStreamWidth\": 1920,\n                \"OutputStreamHeight\": 1080,\n                \"OutputDomain\": \"\",\n                \"OutputApp\": \"\"\n            },\n            \"InputList\": [\n                {\n                    \"InputStreamName\": \"example_stream_name\",\n                    \"InputDomain\": \"\",\n                    \"InputApp\": \"\",\n                    \"InputUrl\": \"\",\n                    \"Description\": \"\"\n                }\n            ],\n            \"Status\": 1,\n            \"CreateTime\": 1640694582,\n            \"UpdateTime\": 1640591812,\n            \"NotifyPolicy\": {\n                \"NotifyPolicyType\": 1,\n                \"CallbackUrl\": \"xx\"\n            },\n            \"AudibleInputIndexList\": [\n                1\n            ],\n            \"AiAsrInputIndexList\": [\n                1\n            ],\n            \"CheckStreamBroken\": 1,\n            \"CheckStreamLowFrameRate\": 1,\n            \"AsrLanguage\": 1,\n            \"OcrLanguage\": 1\n        },\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "查询某个监播任务配置"
+      }
+    ],
+    "DescribeLiveStreamMonitorList": [
+      {
+        "document": "返回所有监播场次列表，包含各监播场次的基本信息",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveStreamMonitorList\n<公共请求参数>\n\n{\n    \"Index\": 0,\n    \"Count\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveStreamMonitors\": [\n            {\n                \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\",\n                \"MonitorName\": \"\",\n                \"OutputInfo\": {\n                    \"OutputStreamName\": \"example_output_stream_name\",\n                    \"OutputStreamWidth\": 1920,\n                    \"OutputStreamHeight\": 1080,\n                    \"OutputDomain\": \"\",\n                    \"OutputApp\": \"\"\n                },\n                \"Status\": 1,\n                \"StartTime\": 1640694582,\n                \"StopTime\": 1640591812,\n                \"InputList\": [\n                    {\n                        \"InputStreamName\": \"example_stream_name\",\n                        \"Description\": \"\",\n                        \"InputDomain\": \"\",\n                        \"InputApp\": \"\",\n                        \"InputUrl\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"TotalNum\": 7,\n        \"RequestId\": \"3f3fd3ae-23a1-44dc-94d6-35380052b4f4\"\n    }\n}",
+        "title": "查询所有的直播流监播任务"
       }
     ],
     "DescribeLiveStreamOnlineList": [
@@ -734,6 +822,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogDownloadList\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-12 12:00:00\",\n    \"StartTime\": \"2019-03-12 00:00:00\",\n    \"PlayDomains\": [\n        \"5000.liveplay.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogInfoList\": [\n            {\n                \"LogName\": \"test\",\n                \"LogUrl\": \"http://test.log.com\",\n                \"LogTime\": \"2019-03-13 00:00:00\",\n                \"FileSize\": 1000\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeMonitorReport": [
+      {
+        "document": "调用该接口，返回7天内所有报告信息",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorReport\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"MPSResult\": {\n            \"AiAsrResults\": [],\n            \"AiOcrResults\": []\n        },\n        \"DiagnoseResult\": {\n            \"StreamBrokenResults\": []\n        }\n    }\n}",
+        "title": "查询某个监播报告"
       }
     ],
     "DescribePlayErrorCodeDetailInfoList": [
@@ -936,6 +1032,14 @@
         "title": "请求示例"
       }
     ],
+    "ModifyLivePadTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLivePadTemplate\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"TemplateName\": \"xx\",\n    \"Url\": \"xx\",\n    \"WaitDuration\": 1,\n    \"TemplateId\": 1,\n    \"MaxDuration\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ModifyLivePlayAuthKey": [
       {
         "document": "",
@@ -984,6 +1088,14 @@
         "title": "请求示例"
       }
     ],
+    "ModifyLiveStreamMonitor": [
+      {
+        "document": "用户修改监播场次配置参数。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"abc\",\n    \"MonitorName\": \"abc\",\n    \"OutputInfo\": {\n        \"OutputStreamName\": \"abc\",\n        \"OutputStreamWidth\": 1,\n        \"OutputStreamHeight\": 1,\n        \"OutputDomain\": \"abc\",\n        \"OutputApp\": \"abc\"\n    },\n    \"InputList\": [\n        {\n            \"InputStreamName\": \"abc\",\n            \"InputDomain\": \"abc\",\n            \"InputApp\": \"abc\",\n            \"InputUrl\": \"abc\",\n            \"Description\": \"abc\"\n        }\n    ],\n    \"NotifyPolicy\": {\n        \"NotifyPolicyType\": 1,\n        \"CallbackUrl\": \"abc\"\n    },\n    \"AsrLanguage\": 1,\n    \"OcrLanguage\": 1,\n    \"AiAsrInputIndexList\": [\n        1\n    ],\n    \"AiOcrInputIndexList\": [\n        1\n    ],\n    \"CheckStreamBroken\": 1,\n    \"CheckStreamLowFrameRate\": 1,\n    \"AllowMonitorReport\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff29075a-ef7a-4742-9268-f7a1980dafc5\"\n    }\n}",
+        "title": "修改直播流监播任务"
+      }
+    ],
     "ModifyLiveTimeShiftTemplate": [
       {
         "document": "",
@@ -1016,6 +1128,14 @@
         "title": "请求示例"
       }
     ],
+    "RestartLivePullStreamTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartLivePullStreamTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"123\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ResumeDelayLiveStream": [
       {
         "document": "",
@@ -1032,12 +1152,28 @@
         "title": "请求示例"
       }
     ],
+    "StartLiveStreamMonitor": [
+      {
+        "document": "开启一个监播场次。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a795652-629c-4915-910c-2b220eaaaf91\"\n    }\n}",
+        "title": "启动一个直播监播任务"
+      }
+    ],
     "StopLiveRecord": [
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=StopLiveRecord\r\n&StreamName=test1\r\n&TaskId=123\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "StopLiveStreamMonitor": [
+      {
+        "document": "停止监播任务",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0d37553-319f-407d-a998-2047d7e5cbb7\"\n    }\n}",
+        "title": "停止直播流监播任务"
       }
     ],
     "StopRecordTask": [

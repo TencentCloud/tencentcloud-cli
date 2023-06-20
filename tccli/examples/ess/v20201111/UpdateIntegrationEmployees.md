@@ -6,19 +6,11 @@ Input:
 
 ```
 tccli ess UpdateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId abc \
-    --Operator.Channel abc \
-    --Operator.OpenId abc \
-    --Operator.ClientIp abc \
-    --Operator.ProxyIp abc \
-    --Agent.AppId abc \
-    --Agent.ProxyAppId abc \
-    --Agent.ProxyOrganizationId abc \
-    --Agent.ProxyOperator abc \
-    --Employees.0.UserId abc \
-    --Employees.0.DisplayName abc \
-    --Employees.0.Mobile abc \
-    --Employees.0.Email abc
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --Employees.0.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZD123 \
+    --Employees.0.DisplayName 张三 \
+    --Employees.0.Mobile 187XXXX0000 \
+    --Employees.0.Email ess@qq.com
 ```
 
 Output: 
@@ -27,9 +19,9 @@ Output:
     "Response": {
         "SuccessEmployeeData": [
             {
-                "DisplayName": "abc",
-                "Mobile": "abc",
-                "UserId": "abc"
+                "DisplayName": "张三",
+                "Mobile": "187XXXX0000",
+                "UserId": "yDwgKUUcXXXXXXXXXXXXXXXXXXQZD123"
             }
         ],
         "FailedEmployeeData": [],

@@ -6,44 +6,43 @@ Input:
 
 ```
 tccli vpc DescribeIp6Translators --cli-unfold-argument  \
-    --Ip6TranslatorId ip6-90pt7p9q
+    --Ip6TranslatorIds abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Offset 0 \
+    --Limit 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 3,
+        "TotalCount": 0,
         "Ip6TranslatorSet": [
             {
-                "Ip6TranslatorId": "ip6-ml2hm2dg",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-10T06:05:37Z",
-                "Ip6RuleCount": 0
-            },
-            {
-                "Ip6TranslatorId": "ip6-90pt7p9q",
-                "Ip6TranslatorName": "kkkk",
-                "Vip6": "2402:4e00:20:100::2:1011",
-                "IspName": "",
-                "TranslatorStatus": "RUNNING",
-                "CreatedTime": "2019-01-10T01:33:32Z",
-                "Ip6RuleCount": 5
-            },
-            {
-                "Ip6TranslatorId": "ip6-8svxwtts",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0
+                "Ip6TranslatorId": "abc",
+                "Ip6TranslatorName": "abc",
+                "Vip6": "abc",
+                "IspName": "abc",
+                "TranslatorStatus": "abc",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "Ip6RuleCount": 0,
+                "IP6RuleSet": [
+                    {
+                        "Ip6RuleId": "abc",
+                        "Ip6RuleName": "abc",
+                        "Vip6": "abc",
+                        "Vport6": 0,
+                        "Protocol": "abc",
+                        "Vip": "abc",
+                        "Vport": 0,
+                        "RuleStatus": "abc",
+                        "CreatedTime": "2020-09-22T00:00:00+00:00"
+                    }
+                ]
             }
         ],
-        "RequestId": "fb44e0a1-1827-4d3d-abde-9514e884dbeb"
+        "RequestId": "abc"
     }
 }
 ```
@@ -56,27 +55,43 @@ Input:
 
 ```
 tccli vpc DescribeIp6Translators --cli-unfold-argument  \
-    --Filters.0.Name ip6-translator-uid \
-    --Filters.0.Values ip6-8svxwtts
+    --Ip6TranslatorIds abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Offset 0 \
+    --Limit 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "Ip6TranslatorSet": [
             {
-                "Ip6TranslatorId": "ip6-8svxwtts",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0
+                "Ip6TranslatorId": "abc",
+                "Ip6TranslatorName": "abc",
+                "Vip6": "abc",
+                "IspName": "abc",
+                "TranslatorStatus": "abc",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "Ip6RuleCount": 0,
+                "IP6RuleSet": [
+                    {
+                        "Ip6RuleId": "abc",
+                        "Ip6RuleName": "abc",
+                        "Vip6": "abc",
+                        "Vport6": 0,
+                        "Protocol": "abc",
+                        "Vip": "abc",
+                        "Vport": 0,
+                        "RuleStatus": "abc",
+                        "CreatedTime": "2020-09-22T00:00:00+00:00"
+                    }
+                ]
             }
         ],
-        "RequestId": "cbf8a954-d135-4b52-9935-89e9ec88b536"
+        "RequestId": "abc"
     }
 }
 ```

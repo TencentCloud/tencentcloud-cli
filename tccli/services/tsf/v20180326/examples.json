@@ -918,7 +918,7 @@
     ],
     "DescribeInovcationIndicators": [
       {
-        "document": "",
+        "document": "1",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInovcationIndicators\r\n&Dimension=service\r\n&StartTime=2019-05-28 17:33:47\r\n&EndTime=2019-05-29 17:33:47\r\n&NamespaceId=namespace-by8j6mak\r\n&ServiceId=ms-opy5kjy4\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"af44be89-38f9-4103-a6d1-0869e450012a\",\n        \"Result\": {\n            \"InvocationQuantity\": null,\n            \"InvocationSuccessRate\": null,\n            \"InvocationAvgDuration\": null,\n            \"InvocationQuantityDistribution\": null,\n            \"InvocationSuccessDistribution\": null,\n            \"InvocationFailedDistribution\": null,\n            \"InvocationStatusDistribution\": null,\n            \"InvocationDurationDistribution\": null\n        }\n    }\n}",
         "title": "查询调用监控指标"

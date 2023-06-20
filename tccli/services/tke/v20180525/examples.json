@@ -304,6 +304,14 @@
         "title": "创建边缘计算集群示例"
       }
     ],
+    "DeleteAddon": [
+      {
+        "document": "删除一个addon",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除addon"
+      }
+    ],
     "DeleteBackupStorageLocation": [
       {
         "document": "删除备份仓库，注意，此接口不会清理备份仓库底层存储数据",
@@ -518,6 +526,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteTKEEdgeCluster\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除边缘计算集群"
+      }
+    ],
+    "DescribeAddon": [
+      {
+        "document": "获取一个或多个addon列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Addons\": [\n            {\n                \"AddonName\": \"cbs\",\n                \"AddonVersion\": \"1.1.0\",\n                \"RawValues\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取addon列表"
+      }
+    ],
+    "DescribeAddonValues": [
+      {
+        "document": "获取一个addon的参数",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddonValues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"eniipamd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Values\": \"\",\n        \"DefaultValues\": \"\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取addon的参数"
       }
     ],
     "DescribeAvailableClusterVersion": [
@@ -864,6 +888,14 @@
         "title": "查看开启vpc-cni的任务进度，查询到任务失败"
       }
     ],
+    "DescribeEncryptionStatus": [
+      {
+        "document": "查询kms加密状态",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptionStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "查询kms加密状态"
+      }
+    ],
     "DescribeExistedInstances": [
       {
         "document": "查询已经存在的节点，判断是否可以加入集群",
@@ -1150,6 +1182,14 @@
         "title": "关闭集群删除保护"
       }
     ],
+    "DisableEncryptionProtection": [
+      {
+        "document": "关闭加密信息保护",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "关闭加密信息保护"
+      }
+    ],
     "DisableEventPersistence": [
       {
         "document": "关闭事件持久化功能",
@@ -1188,6 +1228,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启用集群删除保护"
+      }
+    ],
+    "EnableEncryptionProtection": [
+      {
+        "document": "开启加密数据保护",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "title": "开启加密数据保护"
       }
     ],
     "EnableEventPersistence": [
@@ -1252,6 +1300,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClusterStatus\": {\n            \"PodTotal\": 0,\n            \"NotReadyPod\": 0\n        },\n        \"Done\": 0,\n        \"Instances\": [\n            {\n                \"CheckResult\": {\n                    \"CheckPass\": false,\n                    \"Items\": [\n                        {\n                            \"After\": 0,\n                            \"Before\": 2,\n                            \"Namespace\": \"default\",\n                            \"Pods\": [\n                                \"kubernetes-proxy-67fd23cf4d-2tcxw\",\n                                \"kubernetes-proxy-67fd23cf4d-qd99j\"\n                            ],\n                            \"WorkLoadKind\": \"ReplicaSet\",\n                            \"WorkLoadName\": \"kubernetes-proxy-67fd23cf4d\"\n                        }\n                    ],\n                    \"SinglePods\": []\n                },\n                \"Detail\": [\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"precheck failed\",\n                        \"LifeState\": \"failed\",\n                        \"StartAt\": \"2023-02-08T08:29:51Z\",\n                        \"Step\": \"preCheck\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"drain\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"remove\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"reset\"\n                    },\n                    {\n                        \"EndAt\": null,\n                        \"FailedMsg\": \"\",\n                        \"LifeState\": \"pending\",\n                        \"StartAt\": null,\n                        \"Step\": \"postCheck\"\n                    }\n                ],\n                \"EndAt\": null,\n                \"InstanceID\": \"ins-wggphft5\",\n                \"LifeState\": \"paused\",\n                \"StartAt\": \"2023-02-08T16:29:46+08:00\"\n            }\n        ],\n        \"LifeState\": \"aborted\",\n        \"RequestId\": \"b224fa4b-fedf-4061-baa9-d547ew858df\",\n        \"Total\": 1\n    }\n}",
         "title": "查询升级状态"
+      }
+    ],
+    "InstallAddon": [
+      {
+        "document": "为目标集群安装一个addon",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "安装addon"
       }
     ],
     "InstallEdgeLogAgent": [
@@ -1522,6 +1578,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=UninstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "卸载日志插件"
+      }
+    ],
+    "UpdateAddon": [
+      {
+        "document": "获取一个addon的版本和参数",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\",\n    \"AddonVersion\": \"1.1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新一个addon"
       }
     ],
     "UpdateClusterKubeconfig": [

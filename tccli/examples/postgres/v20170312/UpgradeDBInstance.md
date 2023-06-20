@@ -1,6 +1,6 @@
 **Example 1: 升级实例**
 
-
+调整实例postgres-6bwgamo3规格为内存2GB、存储100GB。
 
 Input: 
 

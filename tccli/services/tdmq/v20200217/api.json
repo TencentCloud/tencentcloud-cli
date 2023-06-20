@@ -245,6 +245,20 @@
       "output": "DeleteEnvironmentsResponse",
       "status": "online"
     },
+    "DeleteRabbitMQUser": {
+      "document": "删除RabbitMQ的用户",
+      "input": "DeleteRabbitMQUserRequest",
+      "name": "删除RabbitMQ的用户",
+      "output": "DeleteRabbitMQUserResponse",
+      "status": "online"
+    },
+    "DeleteRabbitMQVirtualHost": {
+      "document": "删除RabbitMQ的vhost",
+      "input": "DeleteRabbitMQVirtualHostRequest",
+      "name": "删除RabbitMQ的vhost",
+      "output": "DeleteRabbitMQVirtualHostResponse",
+      "status": "online"
+    },
     "DeleteRocketMQCluster": {
       "document": "删除RocketMQ集群",
       "input": "DeleteRocketMQClusterRequest",
@@ -490,6 +504,13 @@
       "output": "DescribeRabbitMQNodeListResponse",
       "status": "online"
     },
+    "DescribeRabbitMQUser": {
+      "document": "查询RabbitMQ用户列表",
+      "input": "DescribeRabbitMQUserRequest",
+      "name": "查询RabbitMQ用户列表",
+      "output": "DescribeRabbitMQUserResponse",
+      "status": "online"
+    },
     "DescribeRabbitMQVipInstance": {
       "document": "获取单个RabbitMQ专享实例信息",
       "input": "DescribeRabbitMQVipInstanceRequest",
@@ -502,6 +523,20 @@
       "input": "DescribeRabbitMQVipInstancesRequest",
       "name": "查询RabbitMQ专享实例列表",
       "output": "DescribeRabbitMQVipInstancesResponse",
+      "status": "online"
+    },
+    "DescribeRabbitMQVirtualHost": {
+      "document": "查询RabbitMQ vhost列表",
+      "input": "DescribeRabbitMQVirtualHostRequest",
+      "name": "查询RabbitMQ vhost列表",
+      "output": "DescribeRabbitMQVirtualHostResponse",
+      "status": "online"
+    },
+    "DescribeRabbitMQVirtualHostList": {
+      "document": "RabbitMQ专享版查询虚拟主机列表",
+      "input": "DescribeRabbitMQVirtualHostListRequest",
+      "name": "RabbitMQ专享版查询虚拟主机列表",
+      "output": "DescribeRabbitMQVirtualHostListResponse",
       "status": "online"
     },
     "DescribeRocketMQCluster": {
@@ -602,13 +637,6 @@
       "output": "ModifyAMQPQueueResponse",
       "status": "deprecated"
     },
-    "ModifyAMQPVHost": {
-      "document": "产品下线了，对应的接口也要下线。\n\n更新Vhost",
-      "input": "ModifyAMQPVHostRequest",
-      "name": "更新Vhost",
-      "output": "ModifyAMQPVHostResponse",
-      "status": "deprecated"
-    },
     "ModifyCluster": {
       "document": "更新集群信息",
       "input": "ModifyClusterRequest",
@@ -651,11 +679,25 @@
       "output": "ModifyEnvironmentRoleResponse",
       "status": "online"
     },
+    "ModifyRabbitMQUser": {
+      "document": "修改RabbitMQ的用户",
+      "input": "ModifyRabbitMQUserRequest",
+      "name": "修改RabbitMQ的用户",
+      "output": "ModifyRabbitMQUserResponse",
+      "status": "online"
+    },
     "ModifyRabbitMQVipInstance": {
       "document": "修改RabbitMQ专享版实例",
       "input": "ModifyRabbitMQVipInstanceRequest",
       "name": "修改RabbitMQ专享版实例",
       "output": "ModifyRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
+    "ModifyRabbitMQVirtualHost": {
+      "document": "修改RabbitMQ的vhost",
+      "input": "ModifyRabbitMQVirtualHostRequest",
+      "name": "修改RabbitMQ的vhost",
+      "output": "ModifyRabbitMQVirtualHostResponse",
       "status": "online"
     },
     "ModifyRocketMQCluster": {
@@ -768,6 +810,13 @@
       "input": "SendMsgRequest",
       "name": "发送消息",
       "output": "SendMsgResponse",
+      "status": "online"
+    },
+    "SendRocketMQMessage": {
+      "document": "发送RocketMQ消息",
+      "input": "SendRocketMQMessageRequest",
+      "name": "发送RocketMQ消息",
+      "output": "SendRocketMQMessageResponse",
       "status": "online"
     },
     "UnbindCmqDeadLetter": {
@@ -5220,6 +5269,78 @@
       ],
       "type": "object"
     },
+    "DeleteRabbitMQUserRequest": {
+      "document": "DeleteRabbitMQUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQUserResponse": {
+      "document": "DeleteRabbitMQUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQVirtualHostRequest": {
+      "document": "DeleteRabbitMQVirtualHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQVirtualHostResponse": {
+      "document": "DeleteRabbitMQVirtualHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRocketMQClusterRequest": {
       "document": "DeleteRocketMQCluster请求参数结构体",
       "members": [
@@ -7870,6 +7991,104 @@
       ],
       "type": "object"
     },
+    "DescribeRabbitMQUserRequest": {
+      "document": "DescribeRabbitMQUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户名检索，支持前缀匹配，后缀匹配",
+          "example": "test_user",
+          "member": "string",
+          "name": "SearchUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户名，精确查询",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标签，根据标签过滤列表",
+          "example": "[\"tag1\",\"tag2\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQUserResponse": {
+      "document": "DescribeRabbitMQUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的User数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前已创建的RabbitMQ用户列表",
+          "example": "无",
+          "member": "RabbitMQUser",
+          "name": "RabbitMQUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRabbitMQVipInstanceRequest": {
       "document": "DescribeRabbitMQVipInstance请求参数结构体",
       "members": [
@@ -8024,6 +8243,155 @@
           "member": "RabbitMQVipInstance",
           "name": "Instances",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVirtualHostListRequest": {
+      "document": "DescribeRabbitMQVirtualHostList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "不适用，默认参数",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一页限制",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVirtualHostListResponse": {
+      "document": "DescribeRabbitMQVirtualHostList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群列表数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RabbitMQPrivateVirtualHost",
+          "name": "VirtualHostList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVirtualHostRequest": {
+      "document": "DescribeRabbitMQVirtualHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vhost名,不传则查询全部",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配",
+          "example": "查询条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVirtualHostResponse": {
+      "document": "DescribeRabbitMQVirtualHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回vhost数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vhost详情列表",
+          "example": "无",
+          "member": "RabbitMQVirtualHostInfo",
+          "name": "VirtualHostList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -9811,64 +10179,6 @@
       ],
       "type": "object"
     },
-    "ModifyAMQPVHostRequest": {
-      "document": "ModifyAMQPVHost请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "集群ID",
-          "example": "amqp-xxxxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”",
-          "example": "test",
-          "member": "string",
-          "name": "VHostId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
-          "example": "8000",
-          "member": "uint64",
-          "name": "MsgTtl",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "说明，最大128个字符",
-          "example": "无",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyAMQPVHostResponse": {
-      "document": "ModifyAMQPVHost返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyClusterRequest": {
       "document": "ModifyCluster请求参数结构体",
       "members": [
@@ -10417,6 +10727,87 @@
       ],
       "type": "object"
     },
+    "ModifyRabbitMQUserRequest": {
+      "document": "ModifyRabbitMQUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，登录时使用",
+          "example": "abc123",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述，不传则不修改",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围，不传则不修改",
+          "example": "monitoring",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "该用户的最大连接数，不传则不修改",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnections",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该用户的最大channel数，不传则不修改",
+          "example": "2000",
+          "member": "int64",
+          "name": "MaxChannels",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQUserResponse": {
+      "document": "ModifyRabbitMQUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRabbitMQVipInstanceRequest": {
       "document": "ModifyRabbitMQVipInstance请求参数结构体",
       "members": [
@@ -10462,6 +10853,64 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQVirtualHostRequest": {
+      "document": "ModifyRabbitMQVirtualHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息轨迹开关,true打开,false关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "TraceFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQVirtualHostResponse": {
+      "document": "ModifyRabbitMQVirtualHost返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12242,6 +12691,120 @@
       ],
       "usage": "out"
     },
+    "RabbitMQPrivateVirtualHost": {
+      "document": "RabbitMQ专享版虚拟机",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "虚拟主机的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp_xxx",
+          "member": "string",
+          "name": "VirtualHostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "虚拟主机的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQUser": {
+      "document": "RabbitMQ用户实体详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码，登录时使用",
+          "example": "abc123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试账号",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "monitoring",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户创建时间",
+          "example": "2022-11-11 11:11:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户最后修改时间",
+          "example": "2022-11-11 11:11:11",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型，System：系统创建，User：用户创建",
+          "example": "System",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RabbitMQVipInstance": {
       "document": "RabbitMQ专享实例信息",
       "members": [
@@ -12401,6 +12964,145 @@
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQVirtualHostInfo": {
+      "document": "RabbitMQ的vhost详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vhost描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vhost标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shop,account",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-11 11:11:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-11 11:11:11",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vhost概览统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RabbitMQVirtualHostStatistics",
+          "name": "VirtualHostStatistics",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQVirtualHostStatistics": {
+      "document": "vhost概览统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前vhost的queue数量",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentQueues",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前vhost的exchange数量",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentExchanges",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前vhost的连接数量",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentConnections",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前vhost的channel数量",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentChannels",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前vhost的用户数量",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentUsers",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -14238,6 +14940,104 @@
     "SendMsgResponse": {
       "document": "SendMsg返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRocketMQMessageRequest": {
+      "document": "SendRocketMQMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群id",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "信息内容",
+          "example": "message",
+          "member": "string",
+          "name": "MsgBody",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息key信息",
+          "example": "key",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息tag信息",
+          "example": "tag",
+          "member": "string",
+          "name": "MsgTag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRocketMQMessageResponse": {
+      "document": "SendRocketMQMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发送结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7F0000013AEC18B4AAC278B640D30002",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

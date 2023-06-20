@@ -617,9 +617,9 @@
       "status": "online"
     },
     "UpgradeInstanceVersion": {
-      "document": "将原本实例升级到高版本实例，或者将主从版实例升级到集群版实例",
+      "document": "将当前实例升级到更高版本，或者将当前标准架构升级至集群架构。",
       "input": "UpgradeInstanceVersionRequest",
-      "name": "升级实例版本或者结构",
+      "name": "升级实例架构",
       "output": "UpgradeInstanceVersionResponse",
       "status": "online"
     },
@@ -10594,9 +10594,8 @@
       "document": "UpgradeInstanceVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型",
+          "document": "目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。\n- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。\n- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。\n- 不支持 Redis 2.8 版本升级架构。\n- 不支持从集群架构降级至标准架构。\n",
           "example": "6",
           "member": "string",
           "name": "TargetInstanceType",
@@ -10604,9 +10603,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "切换模式：1-维护时间窗切换，2-立即切换",
+          "document": "切换时间。\n- 1：维护时间窗切换。\n- 2：立即切换。",
           "example": "2",
           "member": "int64",
           "name": "SwitchOption",
@@ -10614,9 +10612,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例ID",
+          "document": "指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。",
           "example": "crs-5qlrlhux",
           "member": "string",
           "name": "InstanceId",
@@ -10635,7 +10632,6 @@
           "example": "6954227",
           "member": "string",
           "name": "DealId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

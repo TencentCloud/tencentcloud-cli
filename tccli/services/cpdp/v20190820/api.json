@@ -24323,7 +24323,6 @@
       "document": "账户余额信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24334,7 +24333,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24345,7 +24343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24356,7 +24353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24367,7 +24363,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人工冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24378,7 +24373,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可提现余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24389,7 +24383,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已提现余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24400,7 +24393,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提现中余额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -24411,13 +24403,72 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "累计结算金额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SumSettlementAmount",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已缴个税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaidIncomeTax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提现中个税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InPayIncomeTax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已缴增值税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaidValueAddedTax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提现中增值税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InPayValueAddedTax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已缴附加税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaidAttachTax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提现中附加税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InPayAttachTax",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

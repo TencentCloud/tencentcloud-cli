@@ -245,6 +245,13 @@
       "output": "CreateTKEEdgeClusterResponse",
       "status": "online"
     },
+    "DeleteAddon": {
+      "document": "删除一个addon",
+      "input": "DeleteAddonRequest",
+      "name": "删除addon",
+      "output": "DeleteAddonResponse",
+      "status": "online"
+    },
     "DeleteBackupStorageLocation": {
       "document": "删除备份仓库",
       "input": "DeleteBackupStorageLocationRequest",
@@ -432,6 +439,20 @@
       "input": "DeleteTKEEdgeClusterRequest",
       "name": "删除边缘计算集群",
       "output": "DeleteTKEEdgeClusterResponse",
+      "status": "online"
+    },
+    "DescribeAddon": {
+      "document": "获取addon列表",
+      "input": "DescribeAddonRequest",
+      "name": "获取addon列表",
+      "output": "DescribeAddonResponse",
+      "status": "online"
+    },
+    "DescribeAddonValues": {
+      "document": "获取一个addon的参数",
+      "input": "DescribeAddonValuesRequest",
+      "name": "获取addon的参数",
+      "output": "DescribeAddonValuesResponse",
       "status": "online"
     },
     "DescribeAvailableClusterVersion": {
@@ -735,6 +756,13 @@
       "output": "DescribeEnableVpcCniProgressResponse",
       "status": "online"
     },
+    "DescribeEncryptionStatus": {
+      "document": "查询etcd数据是否进行加密",
+      "input": "DescribeEncryptionStatusRequest",
+      "name": "查询信息加密状态",
+      "output": "DescribeEncryptionStatusResponse",
+      "status": "online"
+    },
     "DescribeExistedInstances": {
       "document": "查询已经存在的节点，判断是否可以加入集群",
       "input": "DescribeExistedInstancesRequest",
@@ -980,6 +1008,13 @@
       "output": "DisableClusterDeletionProtectionResponse",
       "status": "online"
     },
+    "DisableEncryptionProtection": {
+      "document": "关闭加密信息保护",
+      "input": "DisableEncryptionProtectionRequest",
+      "name": "关闭加密信息保护",
+      "output": "DisableEncryptionProtectionResponse",
+      "status": "online"
+    },
     "DisableEventPersistence": {
       "document": "关闭事件持久化功能",
       "input": "DisableEventPersistenceRequest",
@@ -1013,6 +1048,13 @@
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
       "output": "EnableClusterDeletionProtectionResponse",
+      "status": "online"
+    },
+    "EnableEncryptionProtection": {
+      "document": "开启加密数据保护",
+      "input": "EnableEncryptionProtectionRequest",
+      "name": "开启加密数据保护",
+      "output": "EnableEncryptionProtectionResponse",
       "status": "online"
     },
     "EnableEventPersistence": {
@@ -1069,6 +1111,13 @@
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse",
+      "status": "online"
+    },
+    "InstallAddon": {
+      "document": "为目标集群安装一个addon",
+      "input": "InstallAddonRequest",
+      "name": "安装addon",
+      "output": "InstallAddonResponse",
       "status": "online"
     },
     "InstallEdgeLogAgent": {
@@ -1300,6 +1349,13 @@
       "input": "UninstallLogAgentRequest",
       "name": "卸载日志采集组件",
       "output": "UninstallLogAgentResponse",
+      "status": "online"
+    },
+    "UpdateAddon": {
+      "document": "更新一个addon的参数和版本",
+      "input": "UpdateAddonRequest",
+      "name": "更新addon",
+      "output": "UpdateAddonResponse",
       "status": "online"
     },
     "UpdateClusterKubeconfig": {
@@ -1699,6 +1755,62 @@
         }
       ],
       "type": "object"
+    },
+    "Addon": {
+      "document": "addon的具体描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "addon的版本",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "addon的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "addon失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AppChart": {
       "document": "app所支持的chart",
@@ -6711,6 +6823,42 @@
       ],
       "usage": "out"
     },
+    "DeleteAddonRequest": {
+      "document": "DeleteAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAddonResponse": {
+      "document": "DeleteAddon返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBackupStorageLocationRequest": {
       "document": "DeleteBackupStorageLocation请求参数结构体",
       "members": [
@@ -7766,6 +7914,105 @@
     "DeleteTKEEdgeClusterResponse": {
       "document": "DeleteTKEEdgeCluster返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonRequest": {
+      "document": "DescribeAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon名称（不传时会返回集群下全部的addon）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonResponse": {
+      "document": "DescribeAddon返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "addon列表",
+          "example": "无",
+          "member": "Addon",
+          "name": "Addons",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonValuesRequest": {
+      "document": "DescribeAddonValues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddonValuesResponse": {
+      "document": "DescribeAddonValues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数列表，如果addon已安装，会使用已设置的的参数做渲染，是一个json格式的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "addon支持的参数列表，使用默认值，是一个json格式的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValues",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10468,6 +10715,23 @@
       ],
       "type": "object"
     },
+    "DescribeEncryptionStatusRequest": {
+      "document": "DescribeEncryptionStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEncryptionStatusResponse": {
+      "document": "DescribeEncryptionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExistedInstancesRequest": {
       "document": "DescribeExistedInstances请求参数结构体",
       "members": [
@@ -12712,6 +12976,23 @@
       ],
       "type": "object"
     },
+    "DisableEncryptionProtectionRequest": {
+      "document": "DisableEncryptionProtection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DisableEncryptionProtectionResponse": {
+      "document": "DisableEncryptionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableEventPersistenceRequest": {
       "document": "DisableEventPersistence请求参数结构体",
       "members": [
@@ -13964,6 +14245,23 @@
     },
     "EnableClusterDeletionProtectionResponse": {
       "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEncryptionProtectionRequest": {
+      "document": "EnableEncryptionProtection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "EnableEncryptionProtectionResponse": {
+      "document": "EnableEncryptionProtection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15452,6 +15750,60 @@
         }
       ],
       "usage": "both"
+    },
+    "InstallAddonRequest": {
+      "document": "InstallAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon版本（不传默认安装最新版本）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallAddonResponse": {
+      "document": "InstallAddon返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstallEdgeLogAgentRequest": {
       "document": "InstallEdgeLogAgent请求参数结构体",
@@ -21992,6 +22344,60 @@
     },
     "UninstallLogAgentResponse": {
       "document": "UninstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAddonRequest": {
+      "document": "UpdateAddon请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon名称",
+          "example": "无",
+          "member": "string",
+          "name": "AddonName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon版本（不传默认不更新）",
+          "example": "无",
+          "member": "string",
+          "name": "AddonVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）",
+          "example": "无",
+          "member": "string",
+          "name": "RawValues",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAddonResponse": {
+      "document": "UpdateAddon返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -2480,7 +2480,6 @@
       "document": "资源及关联的标签(键和值)。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源六段式。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
@@ -2491,7 +2490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源关联的标签列表",
           "example": "无",

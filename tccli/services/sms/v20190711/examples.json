@@ -106,7 +106,7 @@
     ],
     "SendSms": [
       {
-        "document": "",
+        "document": "请求示例",
         "input": "https://sms.tencentcloudapi.com/?Action=SendSms\n&PhoneNumberSet.0=+8618511122233\n&PhoneNumberSet.1=+8618511122266\n&TemplateID=1234\n&Sign=腾讯云\n&TemplateParamSet.0=12345\n&SmsSdkAppid=1400006666\n&SessionContext=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"PhoneNumber\": \"+8618511122233\",\n                \"Fee\": 1,\n                \"SessionContext\": \"test\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            },\n            {\n                \"SerialNo\": \"5000:104571066915705365784949619\",\n                \"PhoneNumber\": \"+8618511122266\",\n                \"Fee\": 1,\n                \"SessionContext\": \"test\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
         "title": "请求示例"

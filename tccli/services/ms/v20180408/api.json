@@ -525,7 +525,6 @@
       "document": "CreateCosSecKeyInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。",
           "example": "ap-guangzhou",
@@ -535,7 +534,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥有效时间，默认为1小时。",
           "example": "1111",
@@ -556,7 +554,6 @@
           "example": "123456",
           "member": "uint64",
           "name": "CosAppid",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -566,7 +563,6 @@
           "example": "ms-shield",
           "member": "string",
           "name": "CosBucket",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -576,7 +572,6 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CosRegion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -586,7 +581,6 @@
           "example": "3600",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -596,7 +590,6 @@
           "example": "XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
           "member": "string",
           "name": "CosId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -606,17 +599,15 @@
           "example": "55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz",
           "member": "string",
           "name": "CosKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "密钥TOCKEN信息",
           "example": "13606435fd46b2765dd01aa4eaf356dfca88817030001",
           "member": "string",
           "name": "CosTocken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -626,7 +617,15 @@
           "example": "pctool/123456789/1542613158",
           "member": "string",
           "name": "CosPrefix",
-          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥TOCKEN信息",
+          "example": "13606435fd46b2765dd01aa4eaf356dfca88817030001",
+          "member": "string",
+          "name": "CosToken",
           "type": "string",
           "value_allowed_null": false
         },

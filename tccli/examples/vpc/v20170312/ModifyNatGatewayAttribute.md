@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 变更NAT实例的SNAT模式**
 
-
+修改NAT网关的StrictSnatMode开关
 
 Input: 
 

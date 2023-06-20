@@ -10,9 +10,9 @@
     ],
     "CreateCosSecKeyInstance": [
       {
-        "document": "",
+        "document": "获取COS临时密钥",
         "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosSecKeyInstance\n<公共请求参数>\n\n{\n    \"CosRegion\": \"ap-guangzhou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CosAppid\": 123456,\n        \"CosBucket\": \"ms-shield\",\n        \"CosId\": \"XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi\",\n        \"CosKey\": \"55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz\",\n        \"CosPrefix\": \"pctool/123456789/1542613158\",\n        \"CosRegion\": \"ap-guangzhou\",\n        \"CosTocken\": \"13606435fd46b2765dd01aa4eaf356dfca88817030001\",\n        \"ExpireTime\": 3600,\n        \"RequestId\": \"ce5e66e0-aab5-4d31-9b98-c52caf0fdfae\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CosAppid\": 1,\n        \"CosBucket\": \"abc\",\n        \"CosRegion\": \"abc\",\n        \"ExpireTime\": 1,\n        \"CosId\": \"abc\",\n        \"CosKey\": \"abc\",\n        \"CosTocken\": \"abc\",\n        \"CosPrefix\": \"abc\",\n        \"CosToken\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取COS临时密钥"
       }
     ],

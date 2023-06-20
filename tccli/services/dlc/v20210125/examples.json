@@ -66,18 +66,18 @@
     ],
     "CancelNotebookSessionStatement": [
       {
-        "document": "",
+        "document": "取消session中执行的任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "取消session statement"
+        "title": "取消session中执行的任务"
       }
     ],
     "CancelNotebookSessionStatementBatch": [
       {
-        "document": "本接口用于按批取消session statement。",
+        "document": "本接口用于批量取消Session 中执行的任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelNotebookSessionStatementBatch\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"BatchId\": \"kdsesad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "按批取消session statement"
+        "title": "批量取消Session 中执行的任务"
       }
     ],
     "CancelSparkSessionBatchSQL": [
@@ -90,10 +90,10 @@
     ],
     "CancelTask": [
       {
-        "document": "",
+        "document": "取消任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48d09166-9ddc-4734-8cea-0cdf69c7d685\"\n    }\n}",
-        "title": "取消任务执行"
+        "title": "取消任务"
       }
     ],
     "CheckLockMetaData": [
@@ -122,10 +122,10 @@
     ],
     "CreateDataEngine": [
       {
-        "document": "创建引擎的",
+        "document": "创建数据引擎",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataEngine\n<公共请求参数>\n\n{\n    \"EngineType\": \"spark\",\n    \"DataEngineName\": \"test\",\n    \"ClusterType\": \"spark\",\n    \"MinClusters\": 0,\n    \"MaxClusters\": 0,\n    \"DefaultDataEngine\": true,\n    \"CidrBlock\": \"10.255.255.0/16\",\n    \"Mode\": 0,\n    \"Message\": \"test\",\n    \"AutoResume\": true,\n    \"Size\": 0,\n    \"PayMode\": 0,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"h\",\n    \"AutoRenew\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key\",\n            \"TagValue\": \"value\"\n        }\n    ],\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspend\": 0,\n    \"CrontabResumeSuspendStrategy\": {\n        \"ResumeTime\": \"10\",\n        \"SuspendTime\": \"10\",\n        \"SuspendStrategy\": 0\n    },\n    \"EngineExecType\": \"BATCH\",\n    \"MaxConcurrency\": 0,\n    \"TolerableQueueTime\": 0,\n    \"AutoSuspendTime\": 0,\n    \"ResourceType\": \"standard_cu\",\n    \"ImageVersionName\": \"SuperSQL-P 1.1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataEngineId\": \"DataEngine-abc123\",\n        \"RequestId\": \"sd01m2-fasfki-231safas\"\n    }\n}",
-        "title": "创建引擎"
+        "title": "创建数据引擎"
       }
     ],
     "CreateDatabase": [
@@ -162,26 +162,26 @@
     ],
     "CreateNotebookSession": [
       {
-        "document": "创建notebook session",
+        "document": "创建交互式session（notebook）",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSession\n<公共请求参数>\n\n{\n    \"Kind\": \"spark\",\n    \"Name\": \"session1\",\n    \"ProxyUser\": \"root\",\n    \"ProgramDependentPython\": [\n        \"cosn://xxx\"\n    ],\n    \"ProgramDependentFiles\": [\n        \"cosn://xxx\"\n    ],\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"DataEngineName\": \"data_engine_1\",\n    \"ProgramDependentJars\": [\n        \"cosn://xxx\"\n    ],\n    \"Arguments\": [\n        {\n            \"Value\": \"eni\",\n            \"Key\": \"test_eni\"\n        }\n    ],\n    \"TimeoutInSecond\": 3600,\n    \"ProgramArchives\": [\n        \"cosn://xxx\"\n    ],\n    \"DriverSize\": \"small\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"xx\",\n        \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n        \"State\": \"not_started\",\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "创建notebook livy session"
+        "output": "{\n    \"Response\": {\n        \"SessionId\": \"abc\",\n        \"SparkAppId\": \"abc\",\n        \"State\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建交互式session（notebook）"
       }
     ],
     "CreateNotebookSessionStatement": [
       {
-        "document": "本接口用于创建session statement。",
+        "document": "本接口用于在session中执行代码片段",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Code\": \"select 1\",\n    \"Kind\": \"sql\"\n}",
         "output": "{\n    \"Response\": {\n        \"NotebookSessionStatement\": {\n            \"Started\": 1662635695652,\n            \"Completed\": 1662635695652,\n            \"State\": \"running\",\n            \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"Progress\": 100,\n            \"OutPut\": {\n                \"ExecutionCount\": 1,\n                \"Data\": [\n                    {\n                        \"Value\": \"value\",\n                        \"Key\": \"key\"\n                    }\n                ],\n                \"Status\": \"ok\",\n                \"ErrorName\": \"testErr\",\n                \"ErrorValue\": \"Error\",\n                \"ErrorMessage\": [\n                    \"Error\"\n                ],\n                \"SQLResult\": \"result\"\n            }\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "创建session statement"
+        "title": "在session中执行代码片段"
       }
     ],
     "CreateNotebookSessionStatementSupportBatchSQL": [
       {
-        "document": "本接口用于创建Session Statement批量运行SQL。",
+        "document": "本接口用于创建交互式session并执行SQL任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSessionStatementSupportBatchSQL\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Code\": \"select 1;\",\n    \"Kind\": \"sql\",\n    \"SaveResult\": true\n}",
         "output": "{\n    \"Response\": {\n        \"NotebookSessionStatementBatches\": {\n            \"NotebookSessionStatementBatch\": [\n                {\n                    \"Completed\": 0,\n                    \"Started\": 0,\n                    \"Progress\": 0,\n                    \"StatementId\": \"ksiked7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n                    \"State\": \"available\",\n                    \"OutPut\": {\n                        \"ExecutionCount\": 0,\n                        \"Data\": [\n                            {\n                                \"Key\": \"testKey\",\n                                \"Value\": \"testValue\"\n                            }\n                        ],\n                        \"Status\": \"available\",\n                        \"ErrorName\": \"testErrorName\",\n                        \"ErrorValue\": \"testErrorValue\",\n                        \"ErrorMessage\": [\n                            \"testErrorMessage\"\n                        ],\n                        \"SQLResult\": \"result\"\n                    }\n                }\n            ],\n            \"IsAvailable\": true,\n            \"SessionId\": \"ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "创建Session Statement批量运行SQL"
+        "title": "创建交互式session并执行SQL任务"
       }
     ],
     "CreateResultDownload": [
@@ -202,18 +202,18 @@
     ],
     "CreateSparkApp": [
       {
-        "document": "本接口用于创建spark应用。",
+        "document": "本接口用于创建spark作业",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"2aedsa7a-9f72-44aa-9fd4-65cb739d6301\",\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
-        "title": "创建spark应用"
+        "title": "创建spark作业"
       }
     ],
     "CreateSparkAppTask": [
       {
-        "document": "",
+        "document": "启动Spark作业",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateSparkAppTask\n<公共请求参数>\n\n{\n    \"JobName\": \"spark-app-test\",\n    \"CmdArgs\": \"10 test 20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"BatchId\": \"batch-9vsx3lh0\",\n        \"TaskId\": \"4a7cad6bb86211ec9c616e6f30623d72\"\n    }\n}",
-        "title": "创建spark任务"
+        "title": "启动Spark作业"
       }
     ],
     "CreateSparkSessionBatchSQL": [
@@ -242,18 +242,18 @@
     ],
     "CreateTask": [
       {
-        "document": "",
+        "document": "创建并执行SQL任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs=\",\n            \"Config\": [\n                {\n                    \"Key\": \"\",\n                    \"Value\": \"\"\n                }\n            ]\n        },\n        \"SparkSQLTask\": {\n            \"SQL\": \"\",\n            \"Config\": [\n                {\n                    \"Key\": \"\",\n                    \"Value\": \"\"\n                }\n            ]\n        }\n    },\n    \"DatabaseName\": \"testdb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13bfd2b2-b92e-4c49-9c7e-3662b5f32165\",\n        \"TaskId\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n    }\n}",
-        "title": "创建sql任务"
+        "title": "创建并执行SQL任务"
       }
     ],
     "CreateTasks": [
       {
-        "document": "批量创建任务",
+        "document": "批量创建并执行SQL任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasks\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"TaskType\": \"SQLTask\",\n        \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs=\",\n        \"Config\": [\n            {\n                \"Key\": \"\",\n                \"Value\": \"\"\n            }\n        ],\n        \"FailureTolerance\": \"Proceed\"\n    },\n    \"DatabaseName\": \"testdb\",\n    \"DatasourceConnectionName\": \"DataLakeCatalog\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"batch-45nyt3ee\",\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"TaskIdSet\": [\n            \"e9663251-3a14-423a-b003-13c77c3fae11\"\n        ]\n    }\n}",
-        "title": "批量创建任务"
+        "title": "批量创建并执行SQL任务"
       }
     ],
     "CreateTasksInOrder": [
@@ -298,10 +298,10 @@
     ],
     "DeleteSparkApp": [
       {
-        "document": "",
+        "document": "删除spark作业",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-app\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
-        "title": "删除spark应用"
+        "title": "删除spark作业"
       }
     ],
     "DeleteUser": [
@@ -362,34 +362,34 @@
     ],
     "DescribeDataEngines": [
       {
-        "document": "获取DataEngines信息列表",
+        "document": "查询DataEngines信息列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngines\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"Limit\": 10,\n    \"SortBy\": \"create-time\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"engine-type\"\n            ],\n            \"Name\": \"presto\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataEngines\": [\n            {\n                \"MaxClusters\": 10,\n                \"DefaultDataEngine\": true,\n                \"UpdateTime\": 1635320563,\n                \"SpendAfter\": 10,\n                \"DataEngineId\": \"****\",\n                \"CidrBlock\": \"10.255.252.0/22\",\n                \"SubAccountUin\": \"****\",\n                \"AutoResume\": true,\n                \"ClusterType\": \"presto_private\",\n                \"QuotaId\": \"****\",\n                \"State\": 0,\n                \"DataEngineName\": \"shared_presto\",\n                \"Mode\": 0,\n                \"Message\": \"测试资源\",\n                \"CreateTime\": 1635320563,\n                \"EngineType\": \"presto\",\n                \"MinClusters\": 0,\n                \"Size\": 64\n            }\n        ],\n        \"RequestId\": \"2f67771a-a384-4b4e-86a5-146d8829ae2d\"\n    }\n}",
-        "title": "获取DataEngines信息列表"
+        "title": "查询DataEngines信息列表"
       }
     ],
     "DescribeDatabases": [
       {
         "document": "查询数据库列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"DataLakeCatalog\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1068a137-ed80-4cbd-a7e6-1cd0341db332\",\n        \"TotalCount\": 1,\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"testdb\",\n                \"Comment\": \"create by nick\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"1630486408000\",\n                \"ModifiedTime\": \"1630486408000\",\n                \"UserAlias\": \"testUser\",\n                \"UserSubUin\": \"100019878767\",\n                \"Location\": \"\"\n            }\n        ]\n    }\n}",
-        "title": "示例1"
+        "output": "{\n    \"Response\": {\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"abc\",\n                \"Comment\": \"abc\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"CreateTime\": \"abc\",\n                \"ModifiedTime\": \"abc\",\n                \"Location\": \"abc\",\n                \"UserAlias\": \"abc\",\n                \"UserSubUin\": \"abc\",\n                \"GovernPolicy\": {\n                    \"RuleType\": \"abc\",\n                    \"GovernEngine\": \"abc\"\n                },\n                \"DatabaseId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询数据库列表"
       }
     ],
     "DescribeEngineUsageInfo": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineUsageInfo\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 128,\n        \"Used\": 64,\n        \"Available\": 64,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "example"
+        "document": "查询数据引擎资源使用情况",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineUsageInfo\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Used\": 0,\n        \"Available\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询数据引擎资源使用情况"
       }
     ],
     "DescribeForbiddenTablePro": [
       {
-        "document": "example",
+        "document": "查询被禁用的表属性列表（新）",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForbiddenTablePro\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "example"
+        "title": "查询被禁用的表属性列表（新）"
       }
     ],
     "DescribeLakeFsDirSummary": [
@@ -410,26 +410,26 @@
     ],
     "DescribeNotebookSession": [
       {
-        "document": "查询Session详情。",
+        "document": "查询交互式 session详情信息",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"DriverSize\": \"small\",\n            \"Kind\": \"spark\",\n            \"Name\": \"session1\",\n            \"SparkUiUrl\": \"xx\",\n            \"ProxyUser\": \"root\",\n            \"CreateTime\": \"2006-01-02 15:04:05\",\n            \"ProgramDependentPython\": [\n                \"cosn://xxx\"\n            ],\n            \"ProgramDependentFiles\": [\n                \"cosn://xxx\"\n            ],\n            \"ExecutorSize\": \"small\",\n            \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n            \"ExecutorNumbers\": 1,\n            \"ExecutorMaxNumbers\": 1,\n            \"DataEngineName\": \"data_engine_1\",\n            \"ProgramDependentJars\": [\n                \"cosn://xxx\"\n            ],\n            \"SparkAppId\": \"spark-4ke6a46618d24e9c7yh2b62f0ddebdks\",\n            \"TimeoutInSecond\": 3600,\n            \"AppInfo\": [\n                {\n                    \"Value\": \"\",\n                    \"Key\": \"\"\n                }\n            ],\n            \"State\": \"not_started\",\n            \"ProgramArchives\": [\n                \"cosn://xxx\"\n            ],\n            \"Arguments\": [\n                {\n                    \"Value\": \"eni\",\n                    \"Key\": \"test_eni\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"Name\": \"abc\",\n            \"Kind\": \"abc\",\n            \"DataEngineName\": \"abc\",\n            \"Arguments\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"ProgramDependentFiles\": [\n                \"abc\"\n            ],\n            \"ProgramDependentJars\": [\n                \"abc\"\n            ],\n            \"ProgramDependentPython\": [\n                \"abc\"\n            ],\n            \"ProgramArchives\": [\n                \"abc\"\n            ],\n            \"DriverSize\": \"abc\",\n            \"ExecutorSize\": \"abc\",\n            \"ExecutorNumbers\": 1,\n            \"ProxyUser\": \"abc\",\n            \"TimeoutInSecond\": 0,\n            \"SparkAppId\": \"abc\",\n            \"SessionId\": \"abc\",\n            \"State\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"AppInfo\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"SparkUiUrl\": \"abc\",\n            \"ExecutorMaxNumbers\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeNotebookSession"
       }
     ],
     "DescribeNotebookSessionLog": [
       {
-        "document": "",
+        "document": "查询交互式 session日志",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionLog\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Limit\": 200,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Logs\": [\n            \"log\"\n        ],\n        \"Limit\": 200,\n        \"Offset\": 0,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "获取notebook livy session日志"
+        "title": "查询交互式 session日志"
       }
     ],
     "DescribeNotebookSessionStatement": [
       {
-        "document": "本接口用于获取session statement详情；",
+        "document": "本接口用于查询session 中执行任务的详情",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
         "output": "{\n    \"Response\": {\n        \"NotebookSessionStatement\": {\n            \"Completed\": 1662635695652,\n            \"Started\": 1662635695652,\n            \"Progress\": 100,\n            \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"State\": \"running\",\n            \"OutPut\": {\n                \"ExecutionCount\": 1,\n                \"Data\": [\n                    {\n                        \"Key\": \"key\",\n                        \"Value\": \"value\"\n                    }\n                ],\n                \"Status\": \"ok\",\n                \"ErrorName\": \"testErr\",\n                \"ErrorValue\": \"Error\",\n                \"ErrorMessage\": [\n                    \"Error\"\n                ],\n                \"SQLResult\": \"result\"\n            },\n            \"BatchId\": \"bdsad7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"Code\": \"selelct 1;\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "获取session statement信息"
+        "title": "查询session 中执行任务的详情"
       }
     ],
     "DescribeNotebookSessionStatementSqlResult": [
@@ -442,18 +442,18 @@
     ],
     "DescribeNotebookSessionStatements": [
       {
-        "document": "本接口用于获取Session Statement详情列表。",
+        "document": "本接口用于查询Session中执行的任务列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionStatements\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n}",
         "output": "{\n    \"Response\": {\n        \"NotebookSessionStatements\": {\n            \"NotebookSessionStatementBatch\": [\n                {\n                    \"Completed\": 0,\n                    \"Started\": 0,\n                    \"Progress\": 0,\n                    \"StatementId\": \"ksiked7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n                    \"State\": \"available\",\n                    \"OutPut\": {\n                        \"ExecutionCount\": 0,\n                        \"Data\": [\n                            {\n                                \"Key\": \"testKey\",\n                                \"Value\": \"testValue\"\n                            }\n                        ],\n                        \"Status\": \"available\",\n                        \"ErrorName\": \"testErrorName\",\n                        \"ErrorValue\": \"testErrorValue\",\n                        \"ErrorMessage\": [\n                            \"testErrorMessage\"\n                        ],\n                        \"SQLResult\": \"result\"\n                    },\n                    \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n                }\n            ],\n            \"IsAvailable\": true,\n            \"SessionId\": \"ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "获取Session Statement详情列表"
+        "title": "查询Session中执行的任务列表"
       }
     ],
     "DescribeNotebookSessions": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessions\n<公共请求参数>\n\n{\n    \"SortFields\": [\n        \"createTime\"\n    ],\n    \"Asc\": true,\n    \"State\": [\n        \"not_started\"\n    ],\n    \"Limit\": 10,\n    \"DataEngineName\": \"xx\",\n    \"Offset\": 10\n}",
+        "document": "查询交互式 session列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessions\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"abc\",\n    \"State\": [\n        \"abc\"\n    ],\n    \"SortFields\": [\n        \"abc\"\n    ],\n    \"Asc\": true,\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"Kind\": \"spark\",\n                \"Name\": \"session1\",\n                \"ProxyUser\": \"root\",\n                \"State\": \"not_started\",\n                \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n                \"SparkAppId\": \"spark-4ke6a46618d24e9c7yh2b62f0ddebdks\",\n                \"CreateTime\": \"2006-01-02 15:04:05\",\n                \"DataEngineName\": \"data_engin_1\",\n                \"LastRunningTime\": \"2006-01-02 15:04:05\",\n                \"SparkUiUrl\": \"http://xx\",\n                \"Creator\": \"232132443\"\n            }\n        ],\n        \"TotalPages\": 2,\n        \"TotalElements\": 20,\n        \"Page\": 1,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"Size\": 10\n    }\n}",
-        "title": "获取notebook livy session列表"
+        "title": "查询交互式 session列表"
       }
     ],
     "DescribeResultDownload": [
@@ -466,34 +466,34 @@
     ],
     "DescribeScripts": [
       {
-        "document": "",
+        "document": "查询SQL脚本列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"update-time\",\n    \"Limit\": 1,\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebcba6f-38bf-4023-80d0-2023d51e9b1e\",\n        \"Scripts\": [\n            {\n                \"ScriptId\": \"644980fb-09f3-467a-847f-b9d628c9663d\",\n                \"UpdateTime\": 1630498019026,\n                \"ScriptName\": \"Script1\",\n                \"ScriptDesc\": \"create by nick\",\n                \"SQLStatement\": \"SELECT * FROM `testdb`.`table1` LIMIT 10\",\n                \"DatabaseName\": \"\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
-        "title": "获取所有sql查询"
+        "output": "{\n    \"Response\": {\n        \"Scripts\": [\n            {\n                \"ScriptId\": \"abc\",\n                \"ScriptName\": \"abc\",\n                \"ScriptDesc\": \"abc\",\n                \"DatabaseName\": \"abc\",\n                \"SQLStatement\": \"abc\",\n                \"UpdateTime\": 0\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询SQL脚本列表"
       }
     ],
     "DescribeSparkAppJob": [
       {
-        "document": "本接口用于查询具体的spark应用。",
+        "document": "查询spark作业信息",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJob\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"JobName\": \"spark_app\"\n}",
         "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"JobId\": \"batch_e6c5ae75-fb02-4831-a5b8-88999d09003c\",\n            \"JobName\": \"abc\",\n            \"JobType\": 1,\n            \"DataEngine\": \"testjar3\",\n            \"Eni\": \"testeni2\",\n            \"IsLocal\": \"cos\",\n            \"JobFile\": \"cosn://danierwei-test-1305424723/sparkjar/spark-ckafka-1.0-SNAPSHOT.jar\",\n            \"RoleArn\": 3,\n            \"MainClass\": \"org.apache.spark.examples.SparkPi\",\n            \"CmdArgs\": \"testArgs\",\n            \"JobConf\": \"\",\n            \"IsLocalJars\": \"abc\",\n            \"JobJars\": \"lakefs://4000002928ef2638d7ab6aabb088bd51b7db914729a5c43b13a998ffa9750511f511d0ab@dlcda57-100018379117-1636704841-100017307912-1304028854/1305424723/.system/sparkAppJar/20220513/dd3c6ad3-a746-40d8-806c-fa8b15b5e9f9/spark-examples_2.12-3.1.2.jar\",\n            \"IsLocalFiles\": \"lakefs\",\n            \"JobFiles\": \"\",\n            \"JobDriverSize\": \"small\",\n            \"JobExecutorSize\": \"small\",\n            \"JobExecutorNums\": 1,\n            \"JobMaxAttempts\": 1,\n            \"JobCreator\": \"admin\",\n            \"JobCreateTime\": 1652769991248,\n            \"JobUpdateTime\": 1652769991248,\n            \"CurrentTaskId\": \"2aedsa7a-9ds2-44ds-9fdd-65cbds9d6301\",\n            \"JobStatus\": 1,\n            \"StreamingStat\": {\n                \"StartTime\": \"2022-01-01 12:12:12\",\n                \"Receivers\": 0,\n                \"NumActiveReceivers\": 0,\n                \"NumInactiveReceivers\": 0,\n                \"NumActiveBatches\": 0,\n                \"NumRetainedCompletedBatches\": 0,\n                \"NumTotalCompletedBatches\": 0,\n                \"AverageInputRate\": 0,\n                \"AverageSchedulingDelay\": 0,\n                \"AverageProcessingTime\": 0,\n                \"AverageTotalDelay\": 0\n            },\n            \"DataSource\": \"DataLakeCatalog\",\n            \"IsLocalPythonFiles\": \"cos\",\n            \"AppPythonFiles\": \"\",\n            \"IsLocalArchives\": \"cos\",\n            \"JobArchives\": \"\",\n            \"SparkImage\": \"Spark 3.2\",\n            \"JobPythonFiles\": \"cos\",\n            \"TaskNum\": 1,\n            \"DataEngineStatus\": 0,\n            \"JobExecutorMaxNumbers\": 1,\n            \"SessionId\": \"xxssd-dsakjj-dkslk-doeks\"\n        },\n        \"IsExists\": true,\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
-        "title": "查询具体的spark应用"
+        "title": "查询spark作业信息"
       }
     ],
     "DescribeSparkAppJobs": [
       {
-        "document": "本接口用于获取spark应用列表。",
+        "document": "本接口用于查询spark作业列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJobs\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"SortBy\": \"create-time\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 00:00:00\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"value\"\n            ],\n            \"Name\": \"key\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"SparkAppJobs\": [],\n        \"TotalCount\": 0\n    }\n}",
-        "title": "获取spark应用列表"
+        "title": "查询spark作业列表"
       }
     ],
     "DescribeSparkAppTasks": [
       {
-        "document": "",
+        "document": "查询Spark作业的运行任务列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SparkAppTasks\": [\n            {\n                \"CanDownload\": true,\n                \"DataSet\": \"{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}\",\n                \"State\": 2,\n                \"DataAmount\": 1024,\n                \"Percentage\": 100,\n                \"SQLType\": \"DDL\",\n                \"RowAffectInfo\": \"500 rows selected (0.077 seconds)\",\n                \"InputConf\": \"[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]\",\n                \"DataEngineId\": \"resource-1gghpd1t\",\n                \"UpdateTime\": \"1611646962000\",\n                \"TaskType\": \"presto\",\n                \"ProgressDetail\": \"[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]\",\n                \"InputType\": \"local\",\n                \"DataNumber\": 100,\n                \"ResultExpired\": true,\n                \"OutputPath\": \"cosn://test-bucket-123434324234/result/\",\n                \"DataEngineName\": \"shared_presto\",\n                \"Error\": \"****\",\n                \"OperateUin\": \"****\",\n                \"OutputMessage\": \"****\",\n                \"CreateTime\": \"1611646962000\",\n                \"UsedTime\": 60000,\n                \"DatabaseName\": \"database1\",\n                \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGA7\",\n                \"Id\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\"\n            }\n        ],\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"Tasks\": {\n            \"CanDownload\": true,\n            \"DataSet\": \"{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}\",\n            \"State\": 2,\n            \"DataAmount\": 1024,\n            \"Percentage\": 100,\n            \"SQLType\": \"DDL\",\n            \"RowAffectInfo\": \"500 rows selected (0.077 seconds)\",\n            \"InputConf\": \"[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]\",\n            \"DataEngineId\": \"resource-1gghpd1t\",\n            \"UpdateTime\": \"1611646962000\",\n            \"TaskType\": \"presto\",\n            \"ProgressDetail\": \"[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]\",\n            \"InputType\": \"local\",\n            \"DataNumber\": 100,\n            \"ResultExpired\": true,\n            \"OutputPath\": \"cosn://test-bucket-123434324234/result/\",\n            \"DataEngineName\": \"shared_presto\",\n            \"Error\": \"****\",\n            \"OperateUin\": \"****\",\n            \"OutputMessage\": \"****\",\n            \"CreateTime\": \"1611646962000\",\n            \"UsedTime\": 60000,\n            \"DatabaseName\": \"database1\",\n            \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGA7\",\n            \"Id\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\"\n        }\n    }\n}",
-        "title": "查询spark应用的运行任务实例列表"
+        "output": "{\n    \"Response\": {\n        \"Tasks\": {\n            \"DatabaseName\": \"abc\",\n            \"DataAmount\": 0,\n            \"Id\": \"abc\",\n            \"UsedTime\": 0,\n            \"OutputPath\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"State\": 0,\n            \"SQLType\": \"abc\",\n            \"SQL\": \"abc\",\n            \"ResultExpired\": true,\n            \"RowAffectInfo\": \"abc\",\n            \"DataSet\": \"abc\",\n            \"Error\": \"abc\",\n            \"Percentage\": 0,\n            \"OutputMessage\": \"abc\",\n            \"TaskType\": \"abc\",\n            \"ProgressDetail\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"DataEngineId\": \"abc\",\n            \"OperateUin\": \"abc\",\n            \"DataEngineName\": \"abc\",\n            \"InputType\": \"abc\",\n            \"InputConf\": \"abc\",\n            \"DataNumber\": 0,\n            \"CanDownload\": true,\n            \"UserAlias\": \"abc\",\n            \"SparkJobName\": \"abc\",\n            \"SparkJobId\": \"abc\",\n            \"SparkJobFile\": \"abc\",\n            \"UiUrl\": \"abc\",\n            \"TotalTime\": 0,\n            \"CmdArgs\": \"abc\",\n            \"ImageVersion\": \"abc\",\n            \"DriverSize\": \"abc\",\n            \"ExecutorSize\": \"abc\",\n            \"ExecutorNums\": 1,\n            \"ExecutorMaxNumbers\": 1\n        },\n        \"TotalCount\": 0,\n        \"SparkAppTasks\": [\n            {\n                \"DatabaseName\": \"abc\",\n                \"DataAmount\": 0,\n                \"Id\": \"abc\",\n                \"UsedTime\": 0,\n                \"OutputPath\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"State\": 0,\n                \"SQLType\": \"abc\",\n                \"SQL\": \"abc\",\n                \"ResultExpired\": true,\n                \"RowAffectInfo\": \"abc\",\n                \"DataSet\": \"abc\",\n                \"Error\": \"abc\",\n                \"Percentage\": 0,\n                \"OutputMessage\": \"abc\",\n                \"TaskType\": \"abc\",\n                \"ProgressDetail\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"DataEngineId\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"DataEngineName\": \"abc\",\n                \"InputType\": \"abc\",\n                \"InputConf\": \"abc\",\n                \"DataNumber\": 0,\n                \"CanDownload\": true,\n                \"UserAlias\": \"abc\",\n                \"SparkJobName\": \"abc\",\n                \"SparkJobId\": \"abc\",\n                \"SparkJobFile\": \"abc\",\n                \"UiUrl\": \"abc\",\n                \"TotalTime\": 0,\n                \"CmdArgs\": \"abc\",\n                \"ImageVersion\": \"abc\",\n                \"DriverSize\": \"abc\",\n                \"ExecutorSize\": \"abc\",\n                \"ExecutorNums\": 1,\n                \"ExecutorMaxNumbers\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询Spark作业的运行任务列表"
       }
     ],
     "DescribeSparkSessionBatchSqlLog": [
@@ -538,10 +538,10 @@
     ],
     "DescribeTasks": [
       {
-        "document": "",
+        "document": "查询任务列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"e386471f-139a-4e59-877f-50ece8135b99\"\n            ],\n            \"Name\": \"task-id\"\n        },\n        {\n            \"Values\": [\n                \"e386471f-139a-4e59-877f-50ece8135b98\"\n            ],\n            \"Name\": \"task-id\"\n        }\n    ],\n    \"Limit\": 10,\n    \"SortBy\": \"create-time\",\n    \"StartTime\": \"2019-01-21 00:00:00\",\n    \"Offset\": 0,\n    \"EndTime\": \"2019-01-22 00:00:00\",\n    \"DataEngineName\": \"shared_presto\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"Error\": \"xx\",\n                \"UiUrl\": \"xx\",\n                \"CanDownload\": true,\n                \"DataSet\": \"xx\",\n                \"State\": 2,\n                \"DataAmount\": 1024,\n                \"SparkJobId\": \"xx\",\n                \"Percentage\": 100,\n                \"SQLType\": \"xx\",\n                \"SparkJobFile\": \"xx\",\n                \"RowAffectInfo\": \"xx\",\n                \"InputConf\": \"xx\",\n                \"DataEngineId\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"SparkJobName\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"ProgressDetail\": \"xx\",\n                \"InputType\": \"xx\",\n                \"UserAlias\": \"xx\",\n                \"DataNumber\": 100,\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"DataEngineName\": \"xx\",\n                \"OperateUin\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"UsedTime\": 60000,\n                \"TotalTime\": 80000,\n                \"DatabaseName\": \"xx\",\n                \"SQL\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TasksOverview\": {\n            \"TaskQueuedCount\": 0,\n            \"TaskInitCount\": 0,\n            \"TaskRunningCount\": 0,\n            \"TotalTaskCount\": 1888\n        }\n    }\n}",
-        "title": "任务列表展示"
+        "output": "{\n    \"Response\": {\n        \"TaskList\": [\n            {\n                \"DatabaseName\": \"abc\",\n                \"DataAmount\": 0,\n                \"Id\": \"abc\",\n                \"UsedTime\": 0,\n                \"OutputPath\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"State\": 0,\n                \"SQLType\": \"abc\",\n                \"SQL\": \"abc\",\n                \"ResultExpired\": true,\n                \"RowAffectInfo\": \"abc\",\n                \"DataSet\": \"abc\",\n                \"Error\": \"abc\",\n                \"Percentage\": 0,\n                \"OutputMessage\": \"abc\",\n                \"TaskType\": \"abc\",\n                \"ProgressDetail\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"DataEngineId\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"DataEngineName\": \"abc\",\n                \"InputType\": \"abc\",\n                \"InputConf\": \"abc\",\n                \"DataNumber\": 0,\n                \"CanDownload\": true,\n                \"UserAlias\": \"abc\",\n                \"SparkJobName\": \"abc\",\n                \"SparkJobId\": \"abc\",\n                \"SparkJobFile\": \"abc\",\n                \"UiUrl\": \"abc\",\n                \"TotalTime\": 0,\n                \"CmdArgs\": \"abc\",\n                \"ImageVersion\": \"abc\",\n                \"DriverSize\": \"abc\",\n                \"ExecutorSize\": \"abc\",\n                \"ExecutorNums\": 1,\n                \"ExecutorMaxNumbers\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"TasksOverview\": {\n            \"TaskQueuedCount\": 0,\n            \"TaskInitCount\": 0,\n            \"TaskRunningCount\": 0,\n            \"TotalTaskCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询任务列表"
       }
     ],
     "DescribeUsers": [
@@ -618,10 +618,10 @@
     ],
     "ListTaskJobLogDetail": [
       {
-        "document": "日志列表",
+        "document": "查询spark 作业任务的日志详情",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTaskJobLogDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"StartTime\": 0,\n    \"EndTime\": 0,\n    \"Limit\": 0,\n    \"Context\": \"abc\",\n    \"Asc\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"BatchId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Context\": \"abc\",\n        \"ListOver\": true,\n        \"Results\": [\n            {\n                \"Time\": 0,\n                \"TopicId\": \"abc\",\n                \"TopicName\": \"abc\",\n                \"LogJson\": \"abc\"\n            }\n        ],\n        \"LogUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "日志列表"
+        "title": "查询日志详情"
       }
     ],
     "LockMetaData": [
@@ -642,10 +642,10 @@
     ],
     "ModifySparkApp": [
       {
-        "document": "本接口用于更新spark应用。",
+        "document": "本接口用于更新spark作业",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"SparkAppId\": \"batch_sadfafd\",\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
-        "title": "更新spark应用"
+        "title": "更新spark作业"
       }
     ],
     "ModifySparkAppBatch": [
@@ -682,10 +682,10 @@
     ],
     "SuspendResumeDataEngine": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendResumeDataEngine\n<公共请求参数>\n\n{\n    \"Operate\": \"xx\",\n    \"DataEngineName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataEngineName\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "test"
+        "document": "挂起或启动数据引擎",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendResumeDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"abc\",\n    \"Operate\": \"suspend\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "挂起或启动数据引擎"
       }
     ],
     "SwitchDataEngine": [

@@ -49,6 +49,13 @@
       "output": "CloseClusterPasswordComplexityResponse",
       "status": "online"
     },
+    "CloseProxy": {
+      "document": "关闭数据库代理",
+      "input": "CloseProxyRequest",
+      "name": "关闭数据库代理",
+      "output": "CloseProxyResponse",
+      "status": "online"
+    },
     "CloseWan": {
       "document": "本接口（CloseWan）用于关闭外网",
       "input": "CloseWanRequest",
@@ -110,6 +117,20 @@
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
+      "status": "online"
+    },
+    "CreateProxy": {
+      "document": "创建数据库代理",
+      "input": "CreateProxyRequest",
+      "name": "创建数据库代理",
+      "output": "CreateProxyResponse",
+      "status": "online"
+    },
+    "CreateProxyEndPoint": {
+      "document": "创建数据库代理连接点",
+      "input": "CreateProxyEndPointRequest",
+      "name": "创建数据库代理连接点",
+      "output": "CreateProxyEndPointResponse",
       "status": "online"
     },
     "CreateResourcePackage": {
@@ -385,6 +406,20 @@
       "output": "DescribeProjectSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeProxies": {
+      "document": "查询数据库代理列表",
+      "input": "DescribeProxiesRequest",
+      "name": "查询数据库代理列表",
+      "output": "DescribeProxiesResponse",
+      "status": "online"
+    },
+    "DescribeProxyNodes": {
+      "document": "本接口（DescribeProxyNodes）用于查询代理接口列表。",
+      "input": "DescribeProxyNodesRequest",
+      "name": "查询代理节点列表",
+      "output": "DescribeProxyNodesResponse",
+      "status": "online"
+    },
     "DescribeResourcePackageDetail": {
       "document": "查询资源包使用详情",
       "input": "DescribeResourcePackageDetailRequest",
@@ -630,6 +665,20 @@
       "output": "ModifyParamTemplateResponse",
       "status": "online"
     },
+    "ModifyProxyDesc": {
+      "document": "修改数据库代理描述",
+      "input": "ModifyProxyDescRequest",
+      "name": "修改数据库代理描述",
+      "output": "ModifyProxyDescResponse",
+      "status": "online"
+    },
+    "ModifyProxyRwSplit": {
+      "document": "配置数据库代理读写分离",
+      "input": "ModifyProxyRwSplitRequest",
+      "name": "配置数据库代理读写分离",
+      "output": "ModifyProxyRwSplitResponse",
+      "status": "online"
+    },
     "ModifyResourcePackageClusters": {
       "document": "给资源包绑定集群",
       "input": "ModifyResourcePackageClustersRequest",
@@ -705,6 +754,13 @@
       "input": "RefundResourcePackageRequest",
       "name": "退款资源包",
       "output": "RefundResourcePackageResponse",
+      "status": "online"
+    },
+    "ReloadBalanceProxyNode": {
+      "document": "负载均衡数据库代理",
+      "input": "ReloadBalanceProxyNodeRequest",
+      "name": "负载均衡数据库代理",
+      "output": "ReloadBalanceProxyNodeResponse",
       "status": "online"
     },
     "RemoveClusterSlaveZone": {
@@ -810,6 +866,20 @@
       "input": "UpgradeInstanceRequest",
       "name": "升级实例",
       "output": "UpgradeInstanceResponse",
+      "status": "online"
+    },
+    "UpgradeProxy": {
+      "document": "升级数据库代理配置",
+      "input": "UpgradeProxyRequest",
+      "name": "升级数据库代理配置",
+      "output": "UpgradeProxyResponse",
+      "status": "online"
+    },
+    "UpgradeProxyVersion": {
+      "document": "升级数据库代理版本",
+      "input": "UpgradeProxyVersionRequest",
+      "name": "升级数据库代理版本",
+      "output": "UpgradeProxyVersionResponse",
       "status": "online"
     }
   },
@@ -2173,6 +2243,69 @@
       ],
       "type": "object"
     },
+    "CloseProxyRequest": {
+      "document": "CloseProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只关闭读写分离，取值：是 \"true\",\"false\"",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlyCloseRW",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseProxyResponse": {
+      "document": "CloseProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloseWanRequest": {
       "document": "CloseWan请求参数结构体",
       "members": [
@@ -3290,6 +3423,348 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyEndPointRequest": {
+      "document": "CreateProxyEndPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，默认与集群私有网络ID保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网ID，默认与集群子网ID保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "example": "SessionConnectionPool",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启连接池,yes-开启，no-不开启",
+          "example": "yes",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池阀值：单位（秒）",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述说明",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vip信息",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重模式：\nsystem-系统分配，custom-自定义",
+          "example": "无",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "example": "无",
+          "member": "string",
+          "name": "AutoAddRo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启故障转移",
+          "example": "无",
+          "member": "string",
+          "name": "FailOver",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性类型：\neventual,global,session",
+          "example": "无",
+          "member": "string",
+          "name": "ConsistencyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "读写属性：\nREADWRITE,READONLY",
+          "example": "无",
+          "member": "string",
+          "name": "RwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性超时时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsistencyTimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事务拆分",
+          "example": "无",
+          "member": "bool",
+          "name": "TransSplit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "连接模式：\nnearby,balance",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例权重",
+          "example": "无",
+          "member": "ProxyInstanceWeight",
+          "name": "InstanceWeights",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyEndPointResponse": {
+      "document": "CreateProxyEndPoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyRequest": {
+      "document": "CreateProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，默认与集群私有网络ID保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网ID，默认与集群子网ID保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组节点个数",
+          "example": "2",
+          "member": "int64",
+          "name": "ProxyCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "example": "SessionConnectionPool",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启连接池,yes-开启，no-不开启",
+          "example": "yes",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池阀值：单位（秒）",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述说明",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点信息",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyResponse": {
+      "document": "CreateProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
@@ -8428,6 +8903,193 @@
       ],
       "type": "object"
     },
+    "DescribeProxiesRequest": {
+      "document": "DescribeProxies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "记录偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
+          "example": "\"CREATETIME\"",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
+          "example": "\"DESC\"",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "无",
+          "member": "QueryParamFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxiesResponse": {
+      "document": "DescribeProxies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理组数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyGroupInfo",
+          "name": "ProxyGroupInfos",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyNodeInfo",
+          "name": "ProxyNodeInfos",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxyNodesRequest": {
+      "document": "DescribeProxyNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "记录偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
+          "example": "\"CREATETIME\"",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxyNodesResponse": {
+      "document": "DescribeProxyNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理节点总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点列表",
+          "example": "无",
+          "member": "ProxyNodeInfo",
+          "name": "ProxyNodeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourcePackageDetailRequest": {
       "document": "DescribeResourcePackageDetail请求参数结构体",
       "members": [
@@ -11298,6 +11960,225 @@
       ],
       "type": "object"
     },
+    "ModifyProxyDescRequest": {
+      "document": "ModifyProxyDesc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProxyDescResponse": {
+      "document": "ModifyProxyDesc返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProxyRwSplitRequest": {
+      "document": "ModifyProxyRwSplit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性类型；“eventual\"-最终一致性, \"session\"-会话一致性, \"global\"-全局一致性",
+          "example": "无",
+          "member": "string",
+          "name": "ConsistencyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性超时时间",
+          "example": "无",
+          "member": "string",
+          "name": "ConsistencyTimeOut",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "读写权重分配模式；系统自动分配：\"system\"， 自定义：\"custom\"",
+          "example": "无",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例只读权重",
+          "example": "无",
+          "member": "ProxyInstanceWeight",
+          "name": "InstanceWeights",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"yes\" , \"no\"",
+          "example": "无",
+          "member": "string",
+          "name": "FailOver",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动添加只读实例，取值：\"yes\" , \"no\"",
+          "example": "无",
+          "member": "string",
+          "name": "AutoAddRo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开读写分离",
+          "example": "无",
+          "member": "string",
+          "name": "OpenRw",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "读写类型：\nREADWRITE,READONLY",
+          "example": "无",
+          "member": "string",
+          "name": "RwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事务拆分",
+          "example": "无",
+          "member": "bool",
+          "name": "TransSplit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "连接模式：\nnearby,balance",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开连接池：\nyes,no",
+          "example": "无",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池类型：\nSessionConnectionPool",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProxyRwSplitResponse": {
+      "document": "ModifyProxyRwSplit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步FlowId",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyResourcePackageClustersRequest": {
       "document": "ModifyResourcePackageClusters请求参数结构体",
       "members": [
@@ -13086,6 +13967,479 @@
       ],
       "usage": "out"
     },
+    "ProxyConnectionPoolInfo": {
+      "document": "数据库代理连接池信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "连接池保持阈值：单位（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启了连接池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "连接池类型：SessionConnectionPool（会话级别连接池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SessionConnectionPool",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProxyGroup": {
+      "document": "proxy组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组节点个数",
+          "example": "0",
+          "member": "int64",
+          "name": "ProxyNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前代理版本",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentProxyVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读写节点开通数据库代理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenRw",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyGroupInfo": {
+      "document": "数据库代理组详细信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyGroup",
+          "name": "ProxyGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理组读写分离信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyGroupRwInfo",
+          "name": "ProxyGroupRwInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyNodeInfo",
+          "name": "ProxyNodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理连接池信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyConnectionPoolInfo",
+          "name": "ConnectionPool",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetAddr",
+          "name": "NetAddrInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理任务集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyGroupRwInfo": {
+      "document": "数据库代理组读写分离信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性",
+          "example": "无",
+          "member": "string",
+          "name": "ConsistencyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一致性超时时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsistencyTimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重模式 system-系统分配，custom-自定义",
+          "example": "无",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启故障转移",
+          "example": "无",
+          "member": "string",
+          "name": "FailOver",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "example": "无",
+          "member": "string",
+          "name": "AutoAddRo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例权重数组",
+          "example": "无",
+          "member": "ProxyInstanceWeight",
+          "name": "InstanceWeights",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开通读写节点，yse-是，no-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenRw",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读写属性，可选值：READWRITE,READONLY",
+          "example": "无",
+          "member": "string",
+          "name": "RwType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事务拆分",
+          "example": "无",
+          "member": "bool",
+          "name": "TransSplit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接模式，可选值：balance，nearby",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProxyInstanceWeight": {
+      "document": "数据库代理，读写分离实例权重",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例Id",
+          "example": "cynosdbmysql-ins-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例权重",
+          "example": "0",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProxyNodeInfo": {
+      "document": "数据库代理组节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理节点ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点当前连接数, DescribeProxyNodes接口此字段值不返回",
+          "example": "无",
+          "member": "int64",
+          "name": "ProxyNodeConnections",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点cpu",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点内存",
+          "example": "无",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户AppID",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyZone": {
+      "document": "proxy节点可用区内个数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "proxy节点可用区",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyNodeZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "proxy节点数量",
+          "example": "无",
+          "member": "int64",
+          "name": "ProxyNodeCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "QueryFilter": {
       "document": "查询过滤器",
       "members": [
@@ -13147,6 +14501,45 @@
       ],
       "usage": "in"
     },
+    "QueryParamFilter": {
+      "document": "查询参数过滤器",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否精确匹配",
+          "example": "无",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "RefundResourcePackageRequest": {
       "document": "RefundResourcePackage请求参数结构体",
       "members": [
@@ -13172,6 +14565,64 @@
           "member": "string",
           "name": "DealNames",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReloadBalanceProxyNodeRequest": {
+      "document": "ReloadBalanceProxyNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReloadBalanceProxyNodeResponse": {
+      "document": "ReloadBalanceProxyNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14989,6 +16440,195 @@
           "name": "DealNames",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyRequest": {
+      "document": "UpgradeProxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组节点个数",
+          "example": "2",
+          "member": "int64",
+          "name": "ProxyCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID（已废弃）",
+          "example": "cynosdbmysql-proxy-xxxxxxx",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重新负载均衡：auto（自动），manual（手动）",
+          "example": "manual",
+          "member": "string",
+          "name": "ReloadBalance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级时间 ：no（升级完成时）yes（实例维护时间）",
+          "example": "no",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点信息",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyResponse": {
+      "document": "UpgradeProxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyVersionRequest": {
+      "document": "UpgradeProxyVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理当前版本",
+          "example": "无",
+          "member": "string",
+          "name": "SrcProxyVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理升级版本",
+          "example": "无",
+          "member": "string",
+          "name": "DstProxyVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级时间 ：no（升级完成时）yes（实例维护时间）",
+          "example": "no",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyVersionResponse": {
+      "document": "UpgradeProxyVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
           "value_allowed_null": false
         },
         {

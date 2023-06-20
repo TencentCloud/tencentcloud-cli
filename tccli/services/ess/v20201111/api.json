@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传",
+      "document": "创建员工,此接口会发送提醒员工实名的短信",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -161,6 +161,13 @@
       "output": "CreateSchemeUrlResponse",
       "status": "online"
     },
+    "CreateSeal": {
+      "document": "创建电子印章",
+      "input": "CreateSealRequest",
+      "name": "创建电子印章",
+      "output": "CreateSealResponse",
+      "status": "online"
+    },
     "CreateSealPolicy": {
       "document": "对企业员工进行印章授权",
       "input": "CreateSealPolicyRequest",
@@ -203,6 +210,13 @@
       "output": "DeleteSealPoliciesResponse",
       "status": "online"
     },
+    "DescribeExtendedServiceAuthInfos": {
+      "document": "查询企业扩展服务授权信息，目前支持查询：企业静默签，企业与港澳台居民签署合同，使用手机号验证签署方身份，骑缝章，批量签署能力是否已经开通",
+      "input": "DescribeExtendedServiceAuthInfosRequest",
+      "name": "查询企业扩展服务授权信息",
+      "output": "DescribeExtendedServiceAuthInfosResponse",
+      "status": "online"
+    },
     "DescribeFileUrls": {
       "document": "查询文件下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。",
       "input": "DescribeFileUrlsRequest",
@@ -211,7 +225,7 @@
       "status": "online"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程摘要\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n日调用量默认10W",
+      "document": "查询流程摘要\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n日调用量限制：10W",
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse",
@@ -337,7 +351,7 @@
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "更新员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号",
+      "document": "更新员工信息(姓名，手机号，邮件、部门)，用户实名后无法更改姓名与手机号",
       "input": "UpdateIntegrationEmployeesRequest",
       "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
@@ -1110,7 +1124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "如果是Component填写控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分割；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；\n\n如果是SignComponent签署控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component填写控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；\n\n如果是SignComponent签署控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -1220,7 +1234,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙钟的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\",",
+          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\",",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -1230,13 +1244,13 @@
         },
         {
           "disabled": false,
-          "document": "是否是表单域类型，默认不false-不是",
+          "document": "是否是表单域类型，默认不false-不是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsFormType",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1280,23 +1294,23 @@
         },
         {
           "disabled": false,
-          "document": "指定关键字时横坐标偏移量，单位pt",
+          "document": "指定关键字时横坐标偏移量，单位pt\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "OffsetX",
           "required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "指定关键字时纵坐标偏移量，单位pt",
+          "document": "指定关键字时纵坐标偏移量，单位pt\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "OffsetY",
           "required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1349,7 +1363,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateBatchCancelFlowUrlRequest": {
       "document": "CreateBatchCancelFlowUrl请求参数结构体",
@@ -1819,6 +1833,15 @@
         },
         {
           "disabled": false,
+          "document": "合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemindedOn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签）",
           "example": "无",
           "member": "bool",
@@ -2097,20 +2120,20 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "暂未开放",
-          "example": "xxx",
-          "member": "string",
-          "name": "RelatedFlowId",
-          "required": false,
-          "type": "string"
-        },
-        {
           "disabled": false,
           "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "1604912664",
           "member": "int64",
           "name": "DeadLine",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemindedOn",
           "required": false,
           "type": "int"
         },
@@ -2160,15 +2183,6 @@
           "type": "bool"
         },
         {
-          "disabled": true,
-          "document": "暂未开放",
-          "example": "无",
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
@@ -2192,6 +2206,24 @@
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "暂未开放",
+          "example": "xxx",
+          "member": "string",
+          "name": "RelatedFlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "暂未开放",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
           "required": false,
           "type": "string"
         }
@@ -2449,7 +2481,7 @@
         },
         {
           "disabled": false,
-          "document": "待创建员工的信息，Mobile和DisplayName必填",
+          "document": "待创建员工的信息，不超过20个。\nMobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -2835,7 +2867,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "印章图片的base64\n注：已废弃\n请先通过UploadFiles接口上传文件，获取 FileId",
           "example": "无",
           "member": "string",
@@ -3182,6 +3214,159 @@
       ],
       "type": "object"
     },
+    "CreateSealRequest": {
+      "document": "CreateSeal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章名字",
+          "example": "公司印章",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章",
+          "example": "OFFICIAL",
+          "member": "string",
+          "name": "SealType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章图片文件名称",
+          "example": "印章图片.png",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章图片base64编码\n参数Image,FileToken或GenerateSource=SealGenerateSourceSystem三选一。",
+          "example": "imagecontentbase64",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章宽度,单位px\n参数不再启用，系统会设置印章大小为标准尺寸。",
+          "example": "10",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章高度,单位px\n参数不再启用，系统会设置印章大小为标准尺寸。",
+          "example": "20",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章印章颜色(默认红色RED),RED-红色\n\n系统目前只支持红色印章创建。",
+          "example": "Red",
+          "member": "string",
+          "name": "Color",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章生成时的横向文字。",
+          "example": "横向文字",
+          "member": "string",
+          "name": "SealHorizontalText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章下弦文字",
+          "example": "下弦文字",
+          "member": "string",
+          "name": "SealChordText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星\n系统生成的印章只支持STAR",
+          "example": "Star",
+          "member": "string",
+          "name": "SealCentralType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通过文件上传时，服务端生成的电子印章上传图片的token\n",
+          "example": "无",
+          "member": "string",
+          "name": "FileToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章生成来源方式\n取值：\nSealGenerateSourceSystem 表示系统生成企业印章",
+          "example": "SealGenerateSourceSystem",
+          "member": "string",
+          "name": "GenerateSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealResponse": {
+      "document": "CreateSeal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电子印章编号",
+          "example": "429b82b40900a9f870a90d45c715bad7",
+          "member": "string",
+          "name": "SealId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaffResult": {
       "document": "创建员工的结果",
       "members": [
@@ -3368,7 +3553,7 @@
         },
         {
           "disabled": false,
-          "document": "交接部门ID。待删除部门中的合同、印章和模版数据，交接至该部门ID下，未填写交接至公司根部门。",
+          "document": "交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。",
           "example": "无",
           "member": "string",
           "name": "ReceiveDeptId",
@@ -3625,6 +3810,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeExtendedServiceAuthInfosRequest": {
+      "document": "DescribeExtendedServiceAuthInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩展服务类型，默认为空，查询目前支持的所有扩展服务信息，单个指定则查询单个扩展服务开通信息，取值：\nOPEN_SERVER_SIGN：开通企业静默签署\nOVERSEA_SIGN：企业与港澳台居民签署合同\nMOBILE_CHECK_APPROVER：使用手机号验证签署方身份\nPAGING_SEAL：骑缝章\nBATCH_SIGN：批量签署",
+          "example": "无",
+          "member": "string",
+          "name": "ExtendServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendedServiceAuthInfosResponse": {
+      "document": "DescribeExtendedServiceAuthInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权服务信息列表",
+          "example": "无",
+          "member": "ExtendAuthInfo",
+          "name": "AuthInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeFileUrlsRequest": {
       "document": "DescribeFileUrls请求参数结构体",
@@ -3986,7 +4225,7 @@
         },
         {
           "disabled": false,
-          "document": "这个参数跟下面的IsChannel参数配合使用。\nIsChannel=false时，ApplicationId参数不起任何作用。\nIsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表\nApplicationId为空，查询所有应用下的模板列表",
+          "document": "ApplicationId不为空，查询指定应用下的模板列表\nApplicationId为空，查询所有应用下的模板列表",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -3994,7 +4233,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "默认为false，查询SaaS模板库列表；\n为true，查询第三方应用集成平台企业模板库管理列表",
           "example": "无",
           "member": "bool",
@@ -4256,7 +4495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "操作人信息，UserId必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4729,6 +4968,72 @@
         }
       ],
       "type": "object"
+    },
+    "ExtendAuthInfo": {
+      "document": "授权服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权服务类型\nOPEN_SERVER_SIGN：开通企业静默签署\nOVERSEA_SIGN：企业与港澳台居民签署合同\nMOBILE_CHECK_APPROVER：使用手机号验证签署方身份\nPAGING_SEAL：骑缝章\nBATCH_SIGN：批量签署",
+          "example": "BATCH_SIGN",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权服务名称",
+          "example": "批量签署",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权服务状态，ENABLE：开通\nDISABLE：未开通",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权人用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OperateOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被授权用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HasAuthUser",
+          "name": "HasAuthUserList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "FailedCreateRoleData": {
       "document": "绑定角色失败信息",
@@ -5866,6 +6171,32 @@
       ],
       "usage": "out"
     },
+    "HasAuthUser": {
+      "document": "被授权用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户归属\nMainOrg：主企业\nCurrentOrg：当前企业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BelongTo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IntegrateRole": {
       "document": "企业角色数据信息",
       "members": [
@@ -6741,6 +7072,11 @@
       ],
       "usage": "out"
     },
+    "SealInfo": {
+      "document": "模板结构体中的印章信息",
+      "members": [],
+      "usage": "out"
+    },
     "SignQrCode": {
       "document": "一码多扫签署二维码对象",
       "members": [
@@ -7087,7 +7423,7 @@
         },
         {
           "disabled": false,
-          "document": "提示，当创建已存在未实名用户时，改字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示，当创建已存在未实名用户时，该字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Note",
@@ -7375,6 +7711,26 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板内部指定的印章列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SealInfo",
+          "name": "TemplateSeals",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "模板内部指定的印章列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SealInfo",
+          "name": "Seals",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7384,7 +7740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定",
+          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定(参数用法参考示例)",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7438,7 +7794,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "操作人信息，userId必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7447,7 +7803,7 @@
         },
         {
           "disabled": false,
-          "document": "员工信息",
+          "document": "员工信息，不超过100个。\n根据UserId或OpenId更新员工，必填一个，优先UserId。\n可更新Mobile、DisplayName、Email和Department.DepartmentId字段，其他字段暂不支持",
           "example": "无",
           "member": "Staff",
           "name": "Employees",

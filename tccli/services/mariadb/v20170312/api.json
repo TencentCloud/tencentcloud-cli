@@ -4042,6 +4042,15 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "是否支持物理复制",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPhysicalReplicationSupported",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

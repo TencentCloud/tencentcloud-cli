@@ -8,7 +8,7 @@
       "status": "online"
     },
     "ApplyInstanceSnapshot": {
-      "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
+      "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
       "input": "ApplyInstanceSnapshotRequest",
       "name": "回滚实例快照",
       "output": "ApplyInstanceSnapshotResponse",
@@ -608,7 +608,6 @@
       "document": "ApplyInstanceSnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-k31c771o",
@@ -618,7 +617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照 ID。",
           "example": "lhsnap-nv6aqcv6",
@@ -796,34 +794,34 @@
       "document": "自动挂载并初始化该数据盘。",
       "members": [
         {
-          "ValueAllowedNull": true,
           "disabled": false,
-          "document": "待挂载的实例ID。指定的实例必须处于“运行中”状态。",
+          "document": "待挂载的实例ID。指定的实例必须与指定的数据盘处于同一可用区，实例状态必须处于“运行中”状态，且实例必须支持[自动化助手](https://cloud.tencent.com/document/product/1340/50752)。",
           "example": "lhins-xxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。",
           "example": "/data/disk",
           "member": "string",
           "name": "MountPoint",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。",
           "example": "ext4",
           "member": "string",
           "name": "FileSystemType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -7057,7 +7055,6 @@
       "document": "ResetInstancesPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
           "example": "[\"lhins-ruy9d2tw\"]",
@@ -7067,9 +7064,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n`LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/</li>\n`WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n`LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li>\n`WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。",
           "example": "xxxxxxxxxxx",
           "member": "string",
           "name": "Password",
@@ -7077,7 +7073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待重置密码的实例操作系统用户名。不得超过 64 个字符。",
           "example": "root",

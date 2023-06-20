@@ -1,6 +1,6 @@
-**Example 1: 按批取消session statement**
+**Example 1: 批量取消Session 中执行的任务**
 
-本接口用于按批取消session statement。
+本接口用于批量取消Session 中执行的任务
 
 Input: 
 

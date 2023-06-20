@@ -80,6 +80,30 @@
         "title": "获取已设置管理员的互信主体关系列表"
       }
     ],
+    "DescribeOrganizationFinancialByMember": [
+      {
+        "document": "按成员维度获取企业财务信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationFinancialByMember\n<公共请求参数>\n\n{\n    \"Month\": \"2021-04\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"MemberName\": \"test2\",\n                \"MemberUin\": 111111111111,\n                \"TotalCost\": 99,\n                \"Ratio\": \"79.5\"\n            },\n            {\n                \"MemberName\": \"test1\",\n                \"MemberUin\": 222222222222,\n                \"TotalCost\": 12.22,\n                \"Ratio\": \"20.5\"\n            }\n        ],\n        \"RequestId\": \"dd729295-1586-4395-9286-598dadccc88d\",\n        \"TotalCost\": 1002.1,\n        \"Total\": 2\n    }\n}",
+        "title": "按成员维度获取企业财务信息"
+      }
+    ],
+    "DescribeOrganizationFinancialByMonth": [
+      {
+        "document": "按月维度获取企业财务趋势",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationFinancialByMonth\n<公共请求参数>\n\n{\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Id\": 7,\n                \"Month\": \"2021-06\",\n                \"TotalCost\": 10232.1\n            },\n            {\n                \"Id\": 5,\n                \"Month\": \"2021-05\",\n                \"TotalCost\": 1002.1\n            },\n            {\n                \"Id\": 3,\n                \"Month\": \"2021-04\",\n                \"TotalCost\": 1002.1\n            }\n        ],\n        \"RequestId\": \"89c5de68-2306-48df-9e81-ad2953447e7a\"\n    }\n}",
+        "title": "按月维度获取企业财务趋势"
+      }
+    ],
+    "DescribeOrganizationFinancialByProduct": [
+      {
+        "document": "以产品维度获取企业财务信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationFinancialByProduct\n<公共请求参数>\n\n{\n    \"Month\": \"2021-04\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ProductCode\": \"e-cdb\",\n                \"ProductName\": \"mysql\",\n                \"TotalCost\": 33.23,\n                \"Ratio\": \"70\"\n            },\n            {\n                \"ProductCode\": \"e-cos\",\n                \"ProductName\": \"cos对象存储\",\n                \"TotalCost\": 10.12,\n                \"Ratio\": \"30\"\n            }\n        ],\n        \"RequestId\": \"d581d282-3acf-496f-b7ba-0fe640648183\",\n        \"TotalCost\": 1002.1,\n        \"Total\": 2\n    }\n}",
+        "title": "以产品维度获取企业财务信息"
+      }
+    ],
     "DescribeOrganizationMemberAuthAccounts": [
       {
         "document": "",

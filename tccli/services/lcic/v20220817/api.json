@@ -1337,7 +1337,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳。",
+          "document": "预定的房间开始时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -1346,7 +1346,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳。",
+          "document": "预定的房间结束时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳。",
+          "document": "预定的房间开始时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳。",
+          "document": "预定的房间结束时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -4388,7 +4388,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳。直播开始后不允许修改。",
+          "document": "预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -4397,7 +4397,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳。直播开始后不允许修改。",
+          "document": "预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",

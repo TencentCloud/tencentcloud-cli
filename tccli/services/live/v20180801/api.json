@@ -56,8 +56,22 @@
       "output": "CreateLiveCallbackTemplateResponse",
       "status": "online"
     },
+    "CreateLivePadRule": {
+      "document": "创建直播垫片规则。",
+      "input": "CreateLivePadRuleRequest",
+      "name": "创建直播垫片规则",
+      "output": "CreateLivePadRuleResponse",
+      "status": "online"
+    },
+    "CreateLivePadTemplate": {
+      "document": "创建直播垫片模板。",
+      "input": "CreateLivePadTemplateRequest",
+      "name": "创建直播垫片模板",
+      "output": "CreateLivePadTemplateResponse",
+      "status": "online"
+    },
     "CreateLivePullStreamTask": {
-      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
+      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。\n注意：\n1. 默认支持任务数上限200个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
       "input": "CreateLivePullStreamTaskRequest",
       "name": "创建直播拉流任务",
       "output": "CreateLivePullStreamTaskResponse",
@@ -96,6 +110,13 @@
       "input": "CreateLiveSnapshotTemplateRequest",
       "name": "创建截图模板",
       "output": "CreateLiveSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "CreateLiveStreamMonitor": {
+      "document": "该接口用来创建直播流监播任务。",
+      "input": "CreateLiveStreamMonitorRequest",
+      "name": "创建直播流监播任务",
+      "output": "CreateLiveStreamMonitorResponse",
       "status": "online"
     },
     "CreateLiveTimeShiftRule": {
@@ -175,6 +196,20 @@
       "output": "DeleteLiveDomainResponse",
       "status": "online"
     },
+    "DeleteLivePadRule": {
+      "document": "删除直播垫片规则。",
+      "input": "DeleteLivePadRuleRequest",
+      "name": "删除直播垫片规则",
+      "output": "DeleteLivePadRuleResponse",
+      "status": "online"
+    },
+    "DeleteLivePadTemplate": {
+      "document": "删除直播垫片模板。",
+      "input": "DeleteLivePadTemplateRequest",
+      "name": "删除直播垫片模板",
+      "output": "DeleteLivePadTemplateResponse",
+      "status": "online"
+    },
     "DeleteLivePullStreamTask": {
       "document": "删除接口 CreateLivePullStreamTask 创建的拉流任务。\n注意：\n1. 入参中的 TaskId 为 CreateLivePullStreamTask 接口创建时返回的TaskId。\n2. 也可通过 DescribeLivePullStreamTasks 进行查询创建的任务。",
       "input": "DeleteLivePullStreamTaskRequest",
@@ -215,6 +250,13 @@
       "input": "DeleteLiveSnapshotTemplateRequest",
       "name": "删除截图模板",
       "output": "DeleteLiveSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "DeleteLiveStreamMonitor": {
+      "document": "该接口用来删除直播流监播任务。",
+      "input": "DeleteLiveStreamMonitorRequest",
+      "name": "删除直播流监播任务",
+      "output": "DeleteLiveStreamMonitorResponse",
       "status": "online"
     },
     "DeleteLiveTimeShiftRule": {
@@ -434,6 +476,27 @@
       "output": "DescribeLivePackageInfoResponse",
       "status": "online"
     },
+    "DescribeLivePadRules": {
+      "document": "获取直播垫片规则列表。",
+      "input": "DescribeLivePadRulesRequest",
+      "name": "获取直播垫片规则列表",
+      "output": "DescribeLivePadRulesResponse",
+      "status": "online"
+    },
+    "DescribeLivePadTemplate": {
+      "document": "获取单个直播垫片模板",
+      "input": "DescribeLivePadTemplateRequest",
+      "name": "获取单个直播垫片模板",
+      "output": "DescribeLivePadTemplateResponse",
+      "status": "online"
+    },
+    "DescribeLivePadTemplates": {
+      "document": "获取直播垫片模板。",
+      "input": "DescribeLivePadTemplatesRequest",
+      "name": "获取直播垫片模板",
+      "output": "DescribeLivePadTemplatesResponse",
+      "status": "online"
+    },
     "DescribeLivePlayAuthKey": {
       "document": "查询播放鉴权key。",
       "input": "DescribeLivePlayAuthKeyRequest",
@@ -502,6 +565,20 @@
       "input": "DescribeLiveStreamEventListRequest",
       "name": "查询推断流事件",
       "output": "DescribeLiveStreamEventListResponse",
+      "status": "online"
+    },
+    "DescribeLiveStreamMonitor": {
+      "document": "该接口用来查询某个特定监播任务的配置。",
+      "input": "DescribeLiveStreamMonitorRequest",
+      "name": "查询直播流监播任务",
+      "output": "DescribeLiveStreamMonitorResponse",
+      "status": "online"
+    },
+    "DescribeLiveStreamMonitorList": {
+      "document": "该接口用来查询直播流监播任务配置的列表信息。",
+      "input": "DescribeLiveStreamMonitorListRequest",
+      "name": "查询直播流监播任务配置列表",
+      "output": "DescribeLiveStreamMonitorListResponse",
       "status": "online"
     },
     "DescribeLiveStreamOnlineList": {
@@ -621,6 +698,13 @@
       "input": "DescribeLogDownloadListRequest",
       "name": "批量获取日志URL",
       "output": "DescribeLogDownloadListResponse",
+      "status": "online"
+    },
+    "DescribeMonitorReport": {
+      "document": "用来查询监播场次7天内的智能识别、断流、低帧率等信息的汇总报告。",
+      "input": "DescribeMonitorReportRequest",
+      "name": "查询监播报告",
+      "output": "DescribeMonitorReportResponse",
       "status": "online"
     },
     "DescribePlayErrorCodeDetailInfoList": {
@@ -798,6 +882,13 @@
       "output": "ModifyLiveDomainRefererResponse",
       "status": "online"
     },
+    "ModifyLivePadTemplate": {
+      "document": "修改直播垫片模板。",
+      "input": "ModifyLivePadTemplateRequest",
+      "name": "修改直播垫片模板",
+      "output": "ModifyLivePadTemplateResponse",
+      "status": "online"
+    },
     "ModifyLivePlayAuthKey": {
       "document": "修改播放鉴权key",
       "input": "ModifyLivePlayAuthKeyRequest",
@@ -840,6 +931,13 @@
       "output": "ModifyLiveSnapshotTemplateResponse",
       "status": "online"
     },
+    "ModifyLiveStreamMonitor": {
+      "document": "该接口用来修改直播流监播任务的配置。",
+      "input": "ModifyLiveStreamMonitorRequest",
+      "name": "修改直播流监播任务",
+      "output": "ModifyLiveStreamMonitorResponse",
+      "status": "online"
+    },
     "ModifyLiveTimeShiftTemplate": {
       "document": "修改直播时移模板。",
       "input": "ModifyLiveTimeShiftTemplateRequest",
@@ -868,6 +966,13 @@
       "output": "ModifyPullStreamStatusResponse",
       "status": "online"
     },
+    "RestartLivePullStreamTask": {
+      "document": "将正在运行的拉流转推任务进行重启。\n注意：\n1. 重启任务会造成推流中断。\n2. 点播源任务的重启，会根据VodRefreshType决定是续播还是从头开始播。",
+      "input": "RestartLivePullStreamTaskRequest",
+      "name": "重启直播拉流任务",
+      "output": "RestartLivePullStreamTaskResponse",
+      "status": "online"
+    },
     "ResumeDelayLiveStream": {
       "document": "取消直播流设置的延时配置，恢复实时直播画面。",
       "input": "ResumeDelayLiveStreamRequest",
@@ -882,11 +987,25 @@
       "output": "ResumeLiveStreamResponse",
       "status": "online"
     },
+    "StartLiveStreamMonitor": {
+      "document": "该接口用来启动直播流监播任务。",
+      "input": "StartLiveStreamMonitorRequest",
+      "name": "启动直播流监播任务",
+      "output": "StartLiveStreamMonitorResponse",
+      "status": "online"
+    },
     "StopLiveRecord": {
       "document": "说明：录制后的文件存放于点播平台。用户如需使用录制功能，需首先自行开通点播账号并确保账号可用。录制文件存放后，相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，请参考对应文档。",
       "input": "StopLiveRecordRequest",
       "name": "终止录制任务(已废弃,请使用新接口)",
       "output": "StopLiveRecordResponse",
+      "status": "online"
+    },
+    "StopLiveStreamMonitor": {
+      "document": "该接口用来停止直播流监播任务。",
+      "input": "StopLiveStreamMonitorRequest",
+      "name": "停止直播流监播任务",
+      "output": "StopLiveStreamMonitorResponse",
       "status": "online"
     },
     "StopRecordTask": {
@@ -2487,6 +2606,152 @@
       ],
       "type": "object"
     },
+    "CreateLivePadRuleRequest": {
+      "document": "CreateLivePadRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推流域名。",
+          "example": "xxx.xx.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板 ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流名称。\n注：如果本参数设置为非空字符串，规则将只对此推流起作用。",
+          "example": "s",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLivePadRuleResponse": {
+      "document": "CreateLivePadRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLivePadTemplateRequest": {
+      "document": "CreateLivePadTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容。",
+          "example": "https://test.com/a.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WaitDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容类型：\n1：图片，2：视频。\n默认值：1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLivePadTemplateResponse": {
+      "document": "CreateLivePadTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板Id。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLivePullStreamTaskRequest": {
       "document": "CreateLivePullStreamTask请求参数结构体",
       "members": [
@@ -2537,7 +2802,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "开始时间。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时。",
           "example": "2021-02-07T08:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -2546,7 +2811,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于七天。\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时。",
           "example": "2021-02-09T08:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -2669,6 +2934,15 @@
           "name": "VodLocalMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3192,6 +3466,132 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveStreamMonitorRequest": {
+      "document": "CreateLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务的输出信息。",
+          "example": "无",
+          "member": "LiveStreamMonitorOutputInfo",
+          "name": "OutputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流信息列表。",
+          "example": "无",
+          "member": "LiveStreamMonitorInputInfo",
+          "name": "InputList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监播任务名称。字段长度小于128字节（一个汉字两个字节）。",
+          "example": "ExampleMonitorName",
+          "member": "string",
+          "name": "MonitorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监播事件通知策略。\n不填默认为没有任何通知。",
+          "example": "无",
+          "member": "LiveStreamMonitorNotifyPolicy",
+          "name": "NotifyPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智能语音识别语种设置：\n0 关闭 1 中文 2 英文 3 日文 4 韩文。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AsrLanguage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能文字识别语种设置：\n0 关闭 1 中、英文。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OcrLanguage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能语音识别的输入列表，若开启语音识别则必填。\n（第1条输入流index为1）",
+          "example": "[1, 2]",
+          "member": "uint64",
+          "name": "AiAsrInputIndexList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "智能文字识别的输入列表，若开启文字识别则必填。\n（第1条输入流index为1）",
+          "example": "[1, 2]",
+          "member": "uint64",
+          "name": "AiOcrInputIndexList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启断流检测。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamBroken",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启低帧率检测。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamLowFrameRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否存储监播事件到监播报告，以及是否允许查询监播报告。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AllowMonitorReport",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveStreamMonitorResponse": {
+      "document": "CreateLiveStreamMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4233,6 +4633,92 @@
       ],
       "type": "object"
     },
+    "DeleteLivePadRuleRequest": {
+      "document": "DeleteLivePadRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推流域名。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "yourdomain.test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流名称。\n域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "stream",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "直播垫片模板id。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLivePadRuleResponse": {
+      "document": "DeleteLivePadRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLivePadTemplateRequest": {
+      "document": "DeleteLivePadTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板 ID。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLivePadTemplateResponse": {
+      "document": "DeleteLivePadTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLivePullStreamTaskRequest": {
       "document": "DeleteLivePullStreamTask请求参数结构体",
       "members": [
@@ -4446,6 +4932,33 @@
     },
     "DeleteLiveSnapshotTemplateResponse": {
       "document": "DeleteLiveSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveStreamMonitorRequest": {
+      "document": "DeleteLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveStreamMonitorResponse": {
+      "document": "DeleteLiveStreamMonitor返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6230,6 +6743,98 @@
       ],
       "type": "object"
     },
+    "DescribeLivePadRulesRequest": {
+      "document": "DescribeLivePadRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLivePadRulesResponse": {
+      "document": "DescribeLivePadRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则信息列表。",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadTemplateRequest": {
+      "document": "DescribeLivePadTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadTemplateResponse": {
+      "document": "DescribeLivePadTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播垫片模板信息。",
+          "example": "无",
+          "member": "PadTemplate",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadTemplatesRequest": {
+      "document": "DescribeLivePadTemplates请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLivePadTemplatesResponse": {
+      "document": "DescribeLivePadTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播垫片模板信息。",
+          "example": "无",
+          "member": "PadTemplate",
+          "name": "Templates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLivePlayAuthKeyRequest": {
       "document": "DescribeLivePlayAuthKey请求参数结构体",
       "members": [
@@ -6758,6 +7363,96 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamMonitorListRequest": {
+      "document": "DescribeLiveStreamMonitorList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询列表时的起始偏移。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Index",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "本次查询的记录个数。最小值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamMonitorListResponse": {
+      "document": "DescribeLiveStreamMonitorList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号下的直播流监播任务个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播流监播任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamMonitorInfo",
+          "name": "LiveStreamMonitors",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamMonitorRequest": {
+      "document": "DescribeLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamMonitorResponse": {
+      "document": "DescribeLiveStreamMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播监播任务相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamMonitorInfo",
+          "name": "LiveStreamMonitor",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7823,6 +8518,51 @@
           "name": "TotalNum",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorReportRequest": {
+      "document": "DescribeMonitorReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMonitorReportResponse": {
+      "document": "DescribeMonitorReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体处理结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MPSResult",
+          "name": "MPSResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体诊断结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagnoseResult",
+          "name": "DiagnoseResult",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9822,6 +10562,32 @@
       ],
       "type": "object"
     },
+    "DiagnoseResult": {
+      "document": "媒体诊断结果，包含断流信息、低帧率信息等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "断流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamBrokenResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低帧率信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LowFrameRateResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DomainCertInfo": {
       "document": "域名证书信息",
       "members": [
@@ -10770,6 +11536,330 @@
       ],
       "usage": "out"
     },
+    "LiveStreamMonitorInfo": {
+      "document": "直播监播任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务名称。128字节以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ExampleMonitorName",
+          "member": "string",
+          "name": "MonitorName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " output_info",
+          "member": "LiveStreamMonitorOutputInfo",
+          "name": "OutputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " input_list",
+          "member": "LiveStreamMonitorInputInfo",
+          "name": "InputList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务状态。\n0： 代表空闲\n1： 代表监播中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上一次的启动时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1640763135",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上一次的停止时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1640763135",
+          "member": "uint64",
+          "name": "StopTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务创建时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1640763135",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务更新时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1640763135",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播事件通知策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamMonitorNotifyPolicy",
+          "name": "NotifyPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出音频的输入Index列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AudibleInputIndexList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启智能语音识别的输入Index列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AiAsrInputIndexList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启断流检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamBroken",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启低帧率检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamLowFrameRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能语音识别语种：\n0 关闭 1 中文 2 英文 3日文 4 韩文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AsrLanguage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能文字识别语种：\n0 关闭 1 中、英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OcrLanguage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启智能文字识别的输入Index列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AiOcrInputIndexList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否存储监播事件到监播报告，以及是否允许查询监播报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AllowMonitorReport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LiveStreamMonitorInputInfo": {
+      "document": "直播监播功能输入流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ExampleStreamName",
+          "member": "string",
+          "name": "InputStreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ExampleDomain",
+          "member": "string",
+          "name": "InputDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Live",
+          "member": "string",
+          "name": "InputApp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流推流url。一般场景下，无需该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://ExampleDomain/Live/ExampleStreamName",
+          "member": "string",
+          "name": "InputUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述。256字节以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Input1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LiveStreamMonitorNotifyPolicy": {
+      "document": "直播流监播通知策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知策略类型：范围[0,1]\n0:代表不使用任何通知策略\n1:代表使用全局回调策略，所有事件通知到CallbackUrl。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "NotifyPolicyType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回调URL：长度[0,512]\n只支持http和https类型的url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://notify.example.com/notify",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LiveStreamMonitorOutputInfo": {
+      "document": "直播流监播输出流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "uint64",
+          "name": "OutputStreamWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "OutputStreamHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务输出流名称。\n不填时，系统会自动生成。\n256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OutputExampleName",
+          "member": "string",
+          "name": "OutputStreamName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OutputExampleDomain",
+          "member": "string",
+          "name": "OutputDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Live",
+          "member": "string",
+          "name": "OutputApp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LogInfo": {
       "document": "日志url信息。",
       "members": [
@@ -10812,6 +11902,32 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MPSResult": {
+      "document": "媒体处理结果，包含智能语音识别、智能文字识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能语音识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AiAsrResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AiOcrResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11079,6 +12195,94 @@
     },
     "ModifyLiveDomainRefererResponse": {
       "document": "ModifyLiveDomainReferer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLivePadTemplateRequest": {
+      "document": "ModifyLivePadTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容。",
+          "example": "https://test.com/a.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WaitDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLivePadTemplateResponse": {
+      "document": "ModifyLivePadTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11690,6 +12894,132 @@
       ],
       "type": "object"
     },
+    "ModifyLiveStreamMonitorRequest": {
+      "document": "ModifyLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播任务ID。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监播任务的名称。长度128字节以内（一个汉字两个字节）。",
+          "example": "ExampleMonitorName",
+          "member": "string",
+          "name": "MonitorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监播任务输出信息。",
+          "example": "无",
+          "member": "LiveStreamMonitorOutputInfo",
+          "name": "OutputInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "待监播的输入流信息。",
+          "example": "无",
+          "member": "LiveStreamMonitorInputInfo",
+          "name": "InputList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监播事件通知策略。",
+          "example": "无",
+          "member": "LiveStreamMonitorNotifyPolicy",
+          "name": "NotifyPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智能语音识别语种：\n0 关闭 1 中文 2 英文 3 日文 4 韩文。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AsrLanguage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能文字识别语种：\n0 关闭 1 中、英文。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OcrLanguage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音识别输入流列表，1代表第一条输入流。",
+          "example": "[1, 2]",
+          "member": "uint64",
+          "name": "AiAsrInputIndexList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文字识别输入流列表，1代表第一条输入流。",
+          "example": "[1, 2]",
+          "member": "uint64",
+          "name": "AiOcrInputIndexList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启断流检测。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamBroken",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启低帧率检测。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckStreamLowFrameRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否存储监播事件到监播报告，以及是否允许查询监播报告。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AllowMonitorReport",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveStreamMonitorResponse": {
+      "document": "ModifyLiveStreamMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLiveTimeShiftTemplateRequest": {
       "document": "ModifyLiveTimeShiftTemplate请求参数结构体",
       "members": [
@@ -12196,6 +13526,111 @@
         }
       ],
       "usage": "out"
+    },
+    "PadTemplate": {
+      "document": "直播垫片模板。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板名称。",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容。",
+          "example": "https://test.com/a.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板创建时间。",
+          "example": "2020-01-01 08:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板修改时间。",
+          "example": "2020-01-01 08:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板描述。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "断流等待时间。\n取值范围：0-30000。\n单位：ms。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WaitDuration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大垫片时长。\n取值范围：0 - 正无穷。\n单位：ms。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxDuration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "垫片内容类型： 1：图片，2：视频。 默认值：1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PlayAuthKeyInfo": {
       "document": "播放鉴权key信息。",
@@ -13877,6 +15312,44 @@
       ],
       "usage": "out"
     },
+    "RestartLivePullStreamTaskRequest": {
+      "document": "RestartLivePullStreamTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务 Id。",
+          "example": "123",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "操作人备注名称。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartLivePullStreamTaskResponse": {
+      "document": "RestartLivePullStreamTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResumeDelayLiveStreamRequest": {
       "document": "ResumeDelayLiveStream请求参数结构体",
       "members": [
@@ -14268,6 +15741,42 @@
       ],
       "usage": "out"
     },
+    "StartLiveStreamMonitorRequest": {
+      "document": "StartLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播ID。",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监播画面声音InputIndex,支持多个输入声音。\n取值范围 InputIndex必须已经存在。\n不填默认无声音输出。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AudibleInputIndexList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLiveStreamMonitorResponse": {
+      "document": "StartLiveStreamMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopLiveRecordRequest": {
       "document": "StopLiveRecord请求参数结构体",
       "members": [
@@ -14294,6 +15803,33 @@
     },
     "StopLiveRecordResponse": {
       "document": "StopLiveRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLiveStreamMonitorRequest": {
+      "document": "StopLiveStreamMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监播ID",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "member": "string",
+          "name": "MonitorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLiveStreamMonitorResponse": {
+      "document": "StopLiveStreamMonitor返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

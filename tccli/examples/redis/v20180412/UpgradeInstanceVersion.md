@@ -1,14 +1,14 @@
 **Example 1: 示例**
 
-
+升级当前实例至Redis 4.0 集群架构
 
 Input: 
 
 ```
 tccli redis UpgradeInstanceVersion --cli-unfold-argument  \
-    --InstanceId crs-5qlrlhux \
+    --InstanceId crs-5qlr**** \
     --SwitchOption 2 \
-    --TargetInstanceType 6
+    --TargetInstanceType 7
 ```
 
 Output: 

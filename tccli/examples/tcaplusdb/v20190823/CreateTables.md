@@ -6,29 +6,20 @@ Input:
 
 ```
 tccli tcaplusdb CreateTables --cli-unfold-argument  \
-    --ResourceTags.0.TagKey xx \
-    --ResourceTags.0.TagValue xx \
     --ClusterId 22762983670 \
-    --IdlFiles.0.FileExtType proto \
-    --IdlFiles.0.FileType PROTO \
     --IdlFiles.0.FileName table_test_2_modify \
-    --IdlFiles.0.FileSize 0 \
-    --IdlFiles.0.FileContent xx \
-    --IdlFiles.0.FileId 0 \
+    --IdlFiles.0.FileSize 673 \
+    --IdlFiles.0.FileExtType proto \
+    --IdlFiles.0.FileId 46 \
+    --IdlFiles.0.FileType PROTO \
     --SelectedTables.0.TableIdlType PROTO \
+    --SelectedTables.0.ReservedReadQps 80 \
+    --SelectedTables.0.ReservedWriteQps 26 \
+    --SelectedTables.0.ReservedVolume 1 \
     --SelectedTables.0.TableGroupId 2 \
-    --SelectedTables.0.FileExtType xx \
-    --SelectedTables.0.TableInstanceId xx \
-    --SelectedTables.0.Memo test \
     --SelectedTables.0.TableName PLAYERONLINECNT \
-    --SelectedTables.0.ReservedReadQps 0 \
-    --SelectedTables.0.ListElementNum 0 \
-    --SelectedTables.0.ReservedVolume 0 \
-    --SelectedTables.0.ReservedWriteQps 0 \
-    --SelectedTables.0.FileSize 0 \
-    --SelectedTables.0.FileContent xx \
-    --SelectedTables.0.FileName xx \
-    --SelectedTables.0.TableType GENERIC
+    --SelectedTables.0.TableType GENERIC \
+    --SelectedTables.0.Memo test
 ```
 
 Output: 

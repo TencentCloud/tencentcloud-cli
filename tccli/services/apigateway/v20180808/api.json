@@ -6498,7 +6498,6 @@
       "document": "DescribeExclusiveInstancesStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询，limit",
           "example": "10",
@@ -6508,7 +6507,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询，offset",
           "example": "1",
@@ -6518,7 +6516,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -6539,7 +6536,6 @@
           "example": "无",
           "member": "InstanceSummary",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

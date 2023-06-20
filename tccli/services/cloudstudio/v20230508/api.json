@@ -1,0 +1,791 @@
+{
+  "actions": {
+    "CreateWorkspace": {
+      "document": "创建工作空间",
+      "input": "CreateWorkspaceRequest",
+      "name": "创建工作空间",
+      "output": "CreateWorkspaceResponse",
+      "status": "online"
+    },
+    "CreateWorkspaceToken": {
+      "document": "为工作空间创建临时访问凭证，重复调用会创建新的 Token，旧的 Token 将会自动失效",
+      "input": "CreateWorkspaceTokenRequest",
+      "name": "为工作空间创建临时访问凭证",
+      "output": "CreateWorkspaceTokenResponse",
+      "status": "online"
+    },
+    "DescribeConfig": {
+      "document": "获取用户配置",
+      "input": "DescribeConfigRequest",
+      "name": "获取用户配置",
+      "output": "DescribeConfigResponse",
+      "status": "online"
+    },
+    "DescribeImages": {
+      "document": "获取基础镜像列表",
+      "input": "DescribeImagesRequest",
+      "name": "获取基础镜像列表",
+      "output": "DescribeImagesResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaces": {
+      "document": "获取用户工作空间列表",
+      "input": "DescribeWorkspacesRequest",
+      "name": "获取用户工作空间列表",
+      "output": "DescribeWorkspacesResponse",
+      "status": "online"
+    },
+    "ModifyWorkspace": {
+      "document": "修改工作空间",
+      "input": "ModifyWorkspaceRequest",
+      "name": "修改工作空间",
+      "output": "ModifyWorkspaceResponse",
+      "status": "online"
+    },
+    "RemoveWorkspace": {
+      "document": "删除工作空间",
+      "input": "RemoveWorkspaceRequest",
+      "name": "删除工作空间",
+      "output": "RemoveWorkspaceResponse",
+      "status": "online"
+    },
+    "RunWorkspace": {
+      "document": "运行空间",
+      "input": "RunWorkspaceRequest",
+      "name": "运行空间",
+      "output": "RunWorkspaceResponse",
+      "status": "online"
+    },
+    "StopWorkspace": {
+      "document": "停止运行空间",
+      "input": "StopWorkspaceRequest",
+      "name": "停止运行空间",
+      "output": "StopWorkspaceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-05-08",
+    "api_brief": "提供对 云端 IDE 工作空间和空间模板相关的操作，包括创建工作空间、启动工作空间、停止工作空间、删除工作空间、拉取工作空间模板列表、置顶工作空间模板等。",
+    "serviceNameCN": "Cloud Studio（云端 IDE）",
+    "serviceShortName": "cloudstudio"
+  },
+  "objects": {
+    "CreateWorkspaceRequest": {
+      "document": "CreateWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "workspace-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述",
+          "example": "this is a worksapce",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。",
+          "example": "Standard",
+          "member": "string",
+          "name": "Specs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间基础镜像名称, 默认会使用 All In One 镜像",
+          "example": "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/go-1.20:2023-04-25.0943",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Git 仓库. 工作空间启动时会自动克隆该仓库",
+          "example": "{         \"url\": \"https://github.com/koajs/koa.git\",         \"branch\": \"v0.0.1\"     }",
+          "member": "GitRepository",
+          "name": "Repository",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量. 会被注入到工作空间中",
+          "example": "[{\"name\": \"test\", \"value\": \"test\"}]",
+          "member": "Env",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预装插件. 工作空间启动时, 会自动安装这些插件 ",
+          "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
+          "member": "string",
+          "name": "Extensions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
+          "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
+          "member": "LifeCycle",
+          "name": "Lifecycle",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceResponse": {
+      "document": "CreateWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "worksapce-name",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceTokenRequest": {
+      "document": "CreateWorkspaceToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey",
+          "example": "knhwex",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token过期时间，单位是秒，默认 3600",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TokenExpiredLimitSec",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceTokenResponse": {
+      "document": "CreateWorkspaceToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问工作空间临时凭证",
+          "example": "83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973",
+          "member": "string",
+          "name": "Token",
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token 过期时间",
+          "example": "2023-02-13T12:33:48 GMT+08:00",
+          "member": "string",
+          "name": "ExpiredTime",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRequest": {
+      "document": "DescribeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置名称",
+          "example": "codeAssistXEnabled",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigResponse": {
+      "document": "DescribeConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像列表",
+          "example": "[       {         \"Name\": \"All in one\",         \"Repository\": \"cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/full-1.0.0\",         \"Tag\": [           \"abc\"         ]       }     ]",
+          "member": "Image",
+          "name": "Images",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspacesRequest": {
+      "document": "DescribeWorkspaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间名称过滤条件",
+          "example": "worksapce-name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspacesResponse": {
+      "document": "DescribeWorkspaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间列表",
+          "example": "[]",
+          "member": "WorkspaceStatusInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Env": {
+      "document": "环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量 key",
+          "example": "env_key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境变量 value",
+          "example": "env_value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "GitRepository": {
+      "document": "Git 仓库",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "Git 仓库地址",
+          "example": "https://github.com/koajs/koa.git",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "Git 仓库分支名或 Tag 名",
+          "example": "main",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Image": {
+      "document": "基础镜像",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "All In One",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库",
+          "example": "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/full-1.0.0",
+          "member": "string",
+          "name": "Repository",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag 列表",
+          "example": "2023-04-25.0943",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LifeCycle": {
+      "document": "工作空间生命周期自动执行脚本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间首次初始化时执行",
+          "example": "[{\"Name\": \"init\", \"Command\": \"echo 'init workspace'\"}]",
+          "member": "LifeCycleCommand",
+          "name": "Init",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次工作空间启动时执行",
+          "example": "[{\"Name\": \"start\", \"Command\": \"echo 'start workspace'\"}]",
+          "member": "LifeCycleCommand",
+          "name": "Start",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次工作空间关闭时执行",
+          "example": "[{\"Name\": \"destroy\", \"Command\": \"echo 'destroy workspace'\"}]",
+          "member": "LifeCycleCommand",
+          "name": "Destroy",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "LifeCycleCommand": {
+      "document": "工作空间生命周期执行指令",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指令描述",
+          "example": "init",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "具体命令",
+          "example": "echo 'init workspace'",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyWorkspaceRequest": {
+      "document": "ModifyWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey. 更新该工作空间的属性",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "workspace-name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述",
+          "example": "this is a worksapce",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Specs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量. 会被注入到工作空间中",
+          "example": "[{\"name\": \"test\", \"value\": \"test\"}]",
+          "member": "Env",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预装插件. 工作空间启动时, 会自动安装这些插件 ",
+          "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
+          "member": "string",
+          "name": "Extensions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
+          "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
+          "member": "LifeCycle",
+          "name": "Lifecycle",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspaceResponse": {
+      "document": "ModifyWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceRequest": {
+      "document": "RemoveWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceResponse": {
+      "document": "RemoveWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunWorkspaceRequest": {
+      "document": "RunWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunWorkspaceResponse": {
+      "document": "RunWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkspaceRequest": {
+      "document": "StopWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SpaceKey",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkspaceResponse": {
+      "document": "StopWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WorkspaceStatusInfo": {
+      "document": "获取用户工作空间返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "workspace-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间标识",
+          "example": "ubbyfp",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU数量",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cs-res-1258344699.file.myqcloud.com/workspace/assets/icons/all-in-one.svg",
+          "member": "string",
+          "name": "Icon",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间状态, 异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OK",
+          "member": "string",
+          "name": "StatusReason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "this is a workspace",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "WorkspaceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Git 仓库 HTTPS 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github.com/example/example.git",
+          "member": "string",
+          "name": "VersionControlUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/refs/heads/main",
+          "member": "string",
+          "name": "VersionControlRef",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-11T08:37:43.109+00:00",
+          "member": "string",
+          "name": "LastOpsDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-11T08:37:43.109+00:00",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

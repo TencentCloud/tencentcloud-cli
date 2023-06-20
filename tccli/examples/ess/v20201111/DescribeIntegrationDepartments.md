@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ess DescribeIntegrationDepartments --cli-unfold-argument  \
-    --Operator.UserId XXXXXX \
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
     --QueryType 0 \
-    --DeptId XXXXXXXXXXXXXXX
+    --DeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9
 ```
 
 Output: 
@@ -17,11 +17,11 @@ Output:
     "Response": {
         "Departments": [
             {
-                "DeptId": "XXXXXXXXXXXXXXX",
+                "DeptId": "yDwgIUUckp1gxxxxxxxxE8xOm12b9",
                 "DeptName": "测试企业",
-                "DeptOpenId": "xxx",
+                "DeptOpenId": "open_dept1",
                 "OrderNo": 2,
-                "ParentDeptId": "xxxxx"
+                "ParentDeptId": "yDwgIUUckp1gxxxxxxxxE8xOm1221"
             }
         ],
         "RequestId": "s168603XXXXXXX44722"
@@ -37,9 +37,9 @@ Input:
 
 ```
 tccli ess DescribeIntegrationDepartments --cli-unfold-argument  \
-    --Operator.UserId XXXXXX \
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
     --QueryType 1 \
-    --DeptId XXXXXXXXXXXXXXX
+    --DeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9
 ```
 
 Output: 
@@ -48,25 +48,25 @@ Output:
     "Response": {
         "Departments": [
             {
-                "DeptId": "XXXXXXXXXXXXXXX",
+                "DeptId": "yDwgIUUckp1gxxxxxxxxE8xOm12b9",
                 "DeptName": "测试企业",
-                "DeptOpenId": "xxx",
+                "DeptOpenId": "open_dept1",
                 "OrderNo": 2,
-                "ParentDeptId": "xxxxx"
+                "ParentDeptId": "yDwgIUUckp1gxxxxxxxxE8xOm1221"
             },
             {
-                "DeptId": "AAAAA",
+                "DeptId": "yDwgIUUckp1gxxxxxxxxE8xOm5679",
                 "DeptName": "AAAAA",
                 "DeptOpenId": "12347",
                 "OrderNo": 3,
-                "ParentDeptId": "XXXXXXXXXXXXXXX"
+                "ParentDeptId": "yDwgIUUckp1gxxxxxxxxE8xOm12b9"
             },
             {
-                "DeptId": "BBBBB",
+                "DeptId": "yDwgIU2331gxxxxxxxxE8xOm12n9",
                 "DeptName": "BBBBB",
                 "DeptOpenId": "12344",
                 "OrderNo": 2,
-                "ParentDeptId": "XXXXXXXXXXXXXXX"
+                "ParentDeptId": "yDwgIUUckp1gxxxxxxxxE8xOm12b9"
             }
         ],
         "RequestId": "s168603XXXXXXX44722"

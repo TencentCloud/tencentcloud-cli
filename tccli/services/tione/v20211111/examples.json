@@ -434,9 +434,9 @@
     ],
     "StopTrainingTask": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "停止训练任务",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "停止训练任务"
       }
     ]

@@ -338,10 +338,10 @@
     ],
     "KickUserFromRoom": [
       {
-        "document": "获取课堂房间信息",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"SdkAppId\": 1,\n    \"UserId\": \"abc\",\n    \"KickType\": 1,\n    \"Duration\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test\"\n    }\n}",
-        "title": "房间信息"
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KickUserFromRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 313337981,\n    \"SdkAppId\": 3520371,\n    \"UserId\": \"2PMcgEVHi9CMWq6tmfNnPGUkEGn\",\n    \"KickType\": 2,\n    \"Duration\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f156f86-9939-4ea0-aee7-81d32fa46c3f\"\n    }\n}",
+        "title": "永久踢除用户"
       }
     ],
     "LoginOriginId": [

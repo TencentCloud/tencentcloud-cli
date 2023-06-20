@@ -70,6 +70,27 @@
       "output": "DescribeOrganizationAuthNodeResponse",
       "status": "online"
     },
+    "DescribeOrganizationFinancialByMember": {
+      "document": "以成员维度获取组织财务信息",
+      "input": "DescribeOrganizationFinancialByMemberRequest",
+      "name": "以成员维度获取组织财务信息",
+      "output": "DescribeOrganizationFinancialByMemberResponse",
+      "status": "online"
+    },
+    "DescribeOrganizationFinancialByMonth": {
+      "document": "以月维度获取组织财务信息趋势",
+      "input": "DescribeOrganizationFinancialByMonthRequest",
+      "name": "以月维度获取组织财务信息趋势",
+      "output": "DescribeOrganizationFinancialByMonthResponse",
+      "status": "online"
+    },
+    "DescribeOrganizationFinancialByProduct": {
+      "document": "以产品维度获取组织财务信息",
+      "input": "DescribeOrganizationFinancialByProductRequest",
+      "name": "以产品维度获取组织财务信息",
+      "output": "DescribeOrganizationFinancialByProductResponse",
+      "status": "online"
+    },
     "DescribeOrganizationMemberAuthAccounts": {
       "document": "获取组织成员被绑定授权关系的子账号列表",
       "input": "DescribeOrganizationMemberAuthAccountsRequest",
@@ -703,6 +724,267 @@
           "member": "AuthNode",
           "name": "Items",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByMemberRequest": {
+      "document": "DescribeOrganizationFinancialByMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始月份。格式：yyyy-mm，例如：2021-01。",
+          "example": "2021-01",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~50，默认值：10\t",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍，默认值 : 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束月份。格式：yyyy-mm，例如：2021-01,默认值为查询开始月份。",
+          "example": "无",
+          "member": "string",
+          "name": "EndMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询成员列表。 最大100个",
+          "example": "[]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询产品列表。 最大100个",
+          "example": "[]",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByMemberResponse": {
+      "document": "DescribeOrganizationFinancialByMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当月总消耗。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.01",
+          "member": "float",
+          "name": "TotalCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员消耗详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgMemberFinancial",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByMonthRequest": {
+      "document": "DescribeOrganizationFinancialByMonth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询月数。取值范围：1~6，默认值：6",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束月份。格式：yyyy-mm，例如：2021-01",
+          "example": "2023-01",
+          "member": "string",
+          "name": "EndMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询成员列表。 最大100个",
+          "example": "[]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询产品列表。 最大100个",
+          "example": "[]",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByMonthResponse": {
+      "document": "DescribeOrganizationFinancialByMonth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品消耗详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgFinancialByMonth",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByProductRequest": {
+      "document": "DescribeOrganizationFinancialByProduct请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询开始月份。格式：yyyy-mm，例如：2021-01",
+          "example": "2021-01",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~50，默认值：10\t",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍，默认值 : 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束月份。格式：yyyy-mm，例如：2021-01,默认值为查询开始月份",
+          "example": "2021-01",
+          "member": "string",
+          "name": "EndMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询成员列表。 最大100个",
+          "example": "[]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询产品列表。 最大100个",
+          "example": "[]",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationFinancialByProductResponse": {
+      "document": "DescribeOrganizationFinancialByProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当月总消耗。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.01",
+          "member": "float",
+          "name": "TotalCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品消耗详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgProductFinancial",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -1600,6 +1882,52 @@
       ],
       "type": "object"
     },
+    "OrgFinancialByMonth": {
+      "document": "按月获取组织财务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "月份，格式：yyyy-mm，示例：2021-01。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗金额，单元：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12.23",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "比上月增长率%。正数增长，负数下降，空值无法统计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "string",
+          "name": "GrowthRate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OrgIdentity": {
       "document": "组织身份",
       "members": [
@@ -2029,6 +2357,52 @@
       ],
       "usage": "out"
     },
+    "OrgMemberFinancial": {
+      "document": "组织成员财务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000001",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "MemberName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗金额，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.23",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "占比%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "string",
+          "name": "Ratio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OrgMemberPolicy": {
       "document": "组织成员被授权的策略",
       "members": [
@@ -2219,6 +2593,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgProductFinancial": {
+      "document": "组织产品财务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品Code。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cos",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS对象存储",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品消耗，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23.22",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "占比%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "34",
+          "member": "string",
+          "name": "Ratio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

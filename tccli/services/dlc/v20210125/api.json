@@ -57,16 +57,16 @@
       "status": "online"
     },
     "CancelNotebookSessionStatement": {
-      "document": "本接口（CancelNotebookSessionStatement）用于取消session statement",
+      "document": "本接口（CancelNotebookSessionStatement）用于取消session中执行的任务",
       "input": "CancelNotebookSessionStatementRequest",
-      "name": "取消session statement",
+      "name": "取消session中执行的任务",
       "output": "CancelNotebookSessionStatementResponse",
       "status": "online"
     },
     "CancelNotebookSessionStatementBatch": {
-      "document": "本接口（CancelNotebookSessionStatementBatch）用于按批取消Session statement。",
+      "document": "本接口（CancelNotebookSessionStatementBatch）用于批量取消Session 中执行的任务",
       "input": "CancelNotebookSessionStatementBatchRequest",
-      "name": "按批取消Session statement.",
+      "name": "批量取消Session 中执行的任务",
       "output": "CancelNotebookSessionStatementBatchResponse",
       "status": "online"
     },
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "CancelTask": {
-      "document": "本接口（CancelTask），用于取消任务执行",
+      "document": "本接口（CancelTask），用于取消任务",
       "input": "CancelTaskRequest",
-      "name": "取消任务执行",
+      "name": "取消任务",
       "output": "CancelTaskResponse",
       "status": "online"
     },
@@ -108,7 +108,7 @@
     "CreateDataEngine": {
       "document": "为用户创建数据引擎",
       "input": "CreateDataEngineRequest",
-      "name": "数据引擎创建",
+      "name": "创建数据引擎.",
       "output": "CreateDataEngineResponse",
       "status": "online"
     },
@@ -141,23 +141,23 @@
       "status": "online"
     },
     "CreateNotebookSession": {
-      "document": "本接口（CreateNotebookSession）用于创建notebook livy session",
+      "document": "本接口（CreateNotebookSession）用于创建交互式session（notebook）",
       "input": "CreateNotebookSessionRequest",
-      "name": "创建notebook livy session",
+      "name": "创建交互式session（notebook）",
       "output": "CreateNotebookSessionResponse",
       "status": "online"
     },
     "CreateNotebookSessionStatement": {
-      "document": "本接口（CreateNotebookSessionStatement）用于创建session statement",
+      "document": "本接口（CreateNotebookSessionStatement）用于在session中执行代码片段",
       "input": "CreateNotebookSessionStatementRequest",
-      "name": "创建session statement",
+      "name": "在session中执行代码片段",
       "output": "CreateNotebookSessionStatementResponse",
       "status": "online"
     },
     "CreateNotebookSessionStatementSupportBatchSQL": {
-      "document": "本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建Statement批量运行SQL任务。",
+      "document": "本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建交互式session并执行SQL任务",
       "input": "CreateNotebookSessionStatementSupportBatchSQLRequest",
-      "name": "创建Statement批量运行SQL任务",
+      "name": "创建交互式session并执行SQL任务",
       "output": "CreateNotebookSessionStatementSupportBatchSQLResponse",
       "status": "online"
     },
@@ -176,16 +176,16 @@
       "status": "online"
     },
     "CreateSparkApp": {
-      "document": "创建spark应用",
+      "document": "创建spark作业",
       "input": "CreateSparkAppRequest",
-      "name": "创建spark应用",
+      "name": "创建spark作业",
       "output": "CreateSparkAppResponse",
       "status": "online"
     },
     "CreateSparkAppTask": {
-      "document": "创建spark任务",
+      "document": "启动Spark作业",
       "input": "CreateSparkAppTaskRequest",
-      "name": "创建spark任务",
+      "name": "启动Spark作业",
       "output": "CreateSparkAppTaskResponse",
       "status": "online"
     },
@@ -211,16 +211,16 @@
       "status": "online"
     },
     "CreateTask": {
-      "document": "本接口（CreateTask）用于创建sql查询任务。（推荐使用CreateTasks接口）",
+      "document": "本接口（CreateTask）用于创建并执行SQL任务。（推荐使用CreateTasks接口）",
       "input": "CreateTaskRequest",
-      "name": "任务创建",
+      "name": "创建并执行SQL任务",
       "output": "CreateTaskResponse",
       "status": "online"
     },
     "CreateTasks": {
-      "document": "本接口（CreateTasks），用于批量创建任务",
+      "document": "本接口（CreateTasks），用于批量创建并执行SQL任务",
       "input": "CreateTasksRequest",
-      "name": "批量创建任务",
+      "name": "批量创建并执行SQL任务",
       "output": "CreateTasksResponse",
       "status": "online"
     },
@@ -260,9 +260,9 @@
       "status": "online"
     },
     "DeleteSparkApp": {
-      "document": "删除spark应用",
+      "document": "删除spark作业",
       "input": "DeleteSparkAppRequest",
-      "name": "删除spark应用",
+      "name": "删除spark作业",
       "output": "DeleteSparkAppResponse",
       "status": "online"
     },
@@ -316,9 +316,9 @@
       "status": "online"
     },
     "DescribeDataEngines": {
-      "document": "本接口（DescribeDataEngines）用于获取DataEngines信息列表",
+      "document": "本接口（DescribeDataEngines）用于查询DataEngines信息列表",
       "input": "DescribeDataEnginesRequest",
-      "name": "获取DataEngines列表",
+      "name": "查询DataEngines列表",
       "output": "DescribeDataEnginesResponse",
       "status": "online"
     },
@@ -330,16 +330,16 @@
       "status": "online"
     },
     "DescribeEngineUsageInfo": {
-      "document": "本接口根据引擎ID获取数据引擎资源使用情况",
+      "document": "本接口根据引擎ID查询数据引擎资源使用情况",
       "input": "DescribeEngineUsageInfoRequest",
-      "name": "获取数据引擎资源使用情况",
+      "name": "查询数据引擎资源使用情况",
       "output": "DescribeEngineUsageInfoResponse",
       "status": "online"
     },
     "DescribeForbiddenTablePro": {
-      "document": "本接口（DescribeForbiddenTablePro）用于获取被禁用的表属性列表",
+      "document": "本接口（DescribeForbiddenTablePro）用于查询被禁用的表属性列表（新）",
       "input": "DescribeForbiddenTableProRequest",
-      "name": "获取被禁用的表属性列表（新）",
+      "name": "查询被禁用的表属性列表（新）",
       "output": "DescribeForbiddenTableProResponse",
       "status": "online"
     },
@@ -358,23 +358,23 @@
       "status": "online"
     },
     "DescribeNotebookSession": {
-      "document": "本接口（DescribeNotebookSession）用于获取notebook livy session详情信息",
+      "document": "本接口（DescribeNotebookSession）用于查询交互式 session详情信息",
       "input": "DescribeNotebookSessionRequest",
-      "name": "获取notebook livy session详情信息",
+      "name": "查询交互式 session详情信息",
       "output": "DescribeNotebookSessionResponse",
       "status": "online"
     },
     "DescribeNotebookSessionLog": {
-      "document": "本接口（DescribeNotebookSessionLog）用于获取notebook livy session日志",
+      "document": "本接口（DescribeNotebookSessionLog）用于查询交互式 session日志",
       "input": "DescribeNotebookSessionLogRequest",
-      "name": "获取notebook livy session日志",
+      "name": "查询交互式 session日志",
       "output": "DescribeNotebookSessionLogResponse",
       "status": "online"
     },
     "DescribeNotebookSessionStatement": {
-      "document": "本接口（DescribeNotebookSessionStatement）用于获取session statement信息",
+      "document": "本接口（DescribeNotebookSessionStatement）用于查询session 中执行任务的详情",
       "input": "DescribeNotebookSessionStatementRequest",
-      "name": "获取session statement信息",
+      "name": "查询session 中执行任务的详情",
       "output": "DescribeNotebookSessionStatementResponse",
       "status": "online"
     },
@@ -386,16 +386,16 @@
       "status": "online"
     },
     "DescribeNotebookSessionStatements": {
-      "document": "本接口（DescribeNotebookSessionStatements）用于获取Session Statement列表。",
+      "document": "本接口（DescribeNotebookSessionStatements）用于查询Session中执行的任务列表",
       "input": "DescribeNotebookSessionStatementsRequest",
-      "name": "获取Session Statement列表",
+      "name": "查询Session中执行的任务列表",
       "output": "DescribeNotebookSessionStatementsResponse",
       "status": "online"
     },
     "DescribeNotebookSessions": {
-      "document": "本接口（DescribeNotebookSessions）用于获取notebook livy session列表",
+      "document": "本接口（DescribeNotebookSessions）用于查询交互式 session列表",
       "input": "DescribeNotebookSessionsRequest",
-      "name": "获取notebook livy session列表",
+      "name": "查询交互式 session列表",
       "output": "DescribeNotebookSessionsResponse",
       "status": "online"
     },
@@ -407,28 +407,28 @@
       "status": "online"
     },
     "DescribeScripts": {
-      "document": "该接口（DescribeScripts）用于获取所有SQL查询。",
+      "document": "该接口（DescribeScripts）用于查询SQL脚本列表",
       "input": "DescribeScriptsRequest",
-      "name": "查询script列表",
+      "name": "查询SQL脚本列表",
       "output": "DescribeScriptsResponse",
       "status": "online"
     },
     "DescribeSparkAppJob": {
-      "document": "查询具体的spark应用",
+      "document": "查询spark作业信息",
       "input": "DescribeSparkAppJobRequest",
-      "name": "查询具体的spark应用",
+      "name": "查询spark作业信息",
       "output": "DescribeSparkAppJobResponse",
       "status": "online"
     },
     "DescribeSparkAppJobs": {
-      "document": "获取spark应用列表。",
+      "document": "查询spark作业列表",
       "input": "DescribeSparkAppJobsRequest",
-      "name": "获取spark应用列表",
+      "name": "查询spark作业列表",
       "output": "DescribeSparkAppJobsResponse",
       "status": "online"
     },
     "DescribeSparkAppTasks": {
-      "document": "查询spark应用的运行任务实例列表",
+      "document": "查询Spark作业的运行任务列表",
       "input": "DescribeSparkAppTasksRequest",
       "name": "查询spark应用的运行任务实例列表",
       "output": "DescribeSparkAppTasksResponse",
@@ -540,9 +540,9 @@
       "status": "online"
     },
     "ListTaskJobLogDetail": {
-      "document": "本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表",
+      "document": "本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情",
       "input": "ListTaskJobLogDetailRequest",
-      "name": "日志列表",
+      "name": "查询日志详情",
       "output": "ListTaskJobLogDetailResponse",
       "status": "online"
     },
@@ -561,9 +561,9 @@
       "status": "online"
     },
     "ModifySparkApp": {
-      "document": "更新spark应用",
+      "document": "更新spark作业",
       "input": "ModifySparkAppRequest",
-      "name": "更新spark应用",
+      "name": "更新spark作业",
       "output": "ModifySparkAppResponse",
       "status": "online"
     },
@@ -596,9 +596,9 @@
       "status": "online"
     },
     "SuspendResumeDataEngine": {
-      "document": "本接口用于控制暂停或恢复数据引擎",
+      "document": "本接口用于控制挂起或启动数据引擎",
       "input": "SuspendResumeDataEngineRequest",
-      "name": "暂停或恢复数据引擎",
+      "name": "挂起或启动数据引擎",
       "output": "SuspendResumeDataEngineResponse",
       "status": "online"
     },
@@ -1421,7 +1421,6 @@
       "document": "CancelNotebookSessionStatement请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Session唯一标识",
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
@@ -1431,7 +1430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session Statement唯一标识",
           "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
@@ -1486,7 +1484,6 @@
       "document": "CancelTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id，全局唯一",
           "example": "“”",
@@ -1703,6 +1700,122 @@
         }
       ],
       "usage": "both"
+    },
+    "CommonMetrics": {
+      "document": "任务公共指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建任务时长，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CreateTaskTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预处理总时长，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ProcessTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排队时长，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "QueueTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时长，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ExecutionTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否命中结果缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsResultCacheHit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配物化视图数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MatchedMVBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配物化视图列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MatchedMVs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AffectedBytes",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\t结果行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AffectedRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProcessedBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\t扫描行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProcessedRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateDMSDatabaseRequest": {
       "document": "CreateDMSDatabase请求参数结构体",
@@ -2116,8 +2229,8 @@
         },
         {
           "disabled": false,
-          "document": "引擎执行任务类型，默认为SQL",
-          "example": "SQL/STREAM/BATCH",
+          "document": "引擎执行任务类型，有效值：SQL/BATCH，默认为SQL",
+          "example": "SQL/BATCH",
           "member": "string",
           "name": "EngineExecType",
           "required": false,
@@ -2737,7 +2850,7 @@
         },
         {
           "disabled": false,
-          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "document": "类型，当前支持：sql",
           "example": "sql",
           "member": "string",
           "name": "Kind",
@@ -2898,7 +3011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "spark应用名",
+          "document": "spark作业名",
           "example": "app-test",
           "member": "string",
           "name": "AppName",
@@ -2907,7 +3020,7 @@
         },
         {
           "disabled": false,
-          "document": "1代表spark jar应用，2代表spark streaming应用",
+          "document": "spark作业类型，1代表spark jar作业，2代表spark streaming作业",
           "example": "1,2",
           "member": "int64",
           "name": "AppType",
@@ -2916,7 +3029,7 @@
         },
         {
           "disabled": false,
-          "document": "执行spark作业的数据引擎",
+          "document": "执行spark作业的数据引擎名称",
           "example": "spark-engine",
           "member": "string",
           "name": "DataEngine",
@@ -2925,7 +3038,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用的执行入口",
+          "document": "spark作业程序包文件路径",
           "example": "test.jar",
           "member": "string",
           "name": "AppFile",
@@ -2934,7 +3047,7 @@
         },
         {
           "disabled": false,
-          "document": "执行spark作业的角色ID",
+          "document": "数据访问策略，CAM Role arn",
           "example": "12",
           "member": "int64",
           "name": "RoleArn",
@@ -2943,7 +3056,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
+          "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
           "member": "string",
           "name": "AppDriverSize",
@@ -2952,7 +3065,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
+          "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
           "member": "string",
           "name": "AppExecutorSize",
@@ -2979,7 +3092,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地上传，可去cos,lakefs",
+          "document": "spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocal",
@@ -2988,7 +3101,7 @@
         },
         {
           "disabled": false,
-          "document": "spark jar作业时的主类",
+          "document": "spark作业主类",
           "example": "org.test.WordCount",
           "member": "string",
           "name": "MainClass",
@@ -3006,7 +3119,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地上传，包含cos,lakefs",
+          "document": "spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalJars",
@@ -3015,7 +3128,7 @@
         },
         {
           "disabled": false,
-          "document": "spark jar作业依赖jars，以逗号分隔",
+          "document": "spark 作业依赖jar包（--jars），以逗号分隔",
           "example": "com.test.jar",
           "member": "string",
           "name": "AppJars",
@@ -3024,7 +3137,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地上传，包含cos,lakefs",
+          "document": "spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalFiles",
@@ -3033,7 +3146,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业依赖资源，以逗号分隔",
+          "document": "spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔",
           "example": "spark-default.properties",
           "member": "string",
           "name": "AppFiles",
@@ -3042,7 +3155,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业命令行参数",
+          "document": "spark作业程序入参，空格分割",
           "example": "10",
           "member": "string",
           "name": "CmdArgs",
@@ -3051,7 +3164,7 @@
         },
         {
           "disabled": false,
-          "document": "只对spark流任务生效",
+          "document": "最大重试次数，只对spark流任务生效",
           "example": "1",
           "member": "int64",
           "name": "MaxRetries",
@@ -3060,7 +3173,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源名",
+          "document": "数据源名称",
           "example": "kafka-datasource",
           "member": "string",
           "name": "DataSource",
@@ -3069,7 +3182,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalPythonFiles",
@@ -3078,7 +3191,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "document": "pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔",
           "example": "test.py",
           "member": "string",
           "name": "AppPythonFiles",
@@ -3087,7 +3200,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalArchives",
@@ -3096,7 +3209,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖资源",
+          "document": "spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔",
           "example": "file1.tar.gz#abc",
           "member": "string",
           "name": "AppArchives",
@@ -3105,7 +3218,7 @@
         },
         {
           "disabled": false,
-          "document": "Spark Image 版本",
+          "document": "Spark Image 版本号",
           "example": "1.0",
           "member": "string",
           "name": "SparkImage",
@@ -3176,7 +3289,6 @@
       "document": "CreateSparkAppTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "spark作业名",
           "example": "spark-test-app",
@@ -3186,9 +3298,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "spark作业的命令行参数，以空格分隔；一般用于周期性调用使用",
+          "document": "spark作业程序入参，以空格分隔；一般用于周期性调用使用",
           "example": "10",
           "member": "string",
           "name": "CmdArgs",
@@ -3207,7 +3318,6 @@
           "example": "batch-9vsx3lh0",
           "member": "string",
           "name": "BatchId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3217,7 +3327,6 @@
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3417,7 +3526,6 @@
       "document": "CreateTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计算任务，该参数中包含任务类型及其相关配置信息",
           "example": "无",
@@ -3427,7 +3535,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。",
           "example": "database1",
@@ -3437,7 +3544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认数据源名称。",
           "example": "CosDataCatalog",
@@ -3447,7 +3553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据引擎名称，不填提交到默认集群",
           "example": "无",
@@ -3468,7 +3573,6 @@
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3553,7 +3657,6 @@
       "document": "CreateTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库（注：当提交建库sql时，该字段传空字符串）。",
           "example": "database1",
@@ -3563,7 +3666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL任务信息",
           "example": "无",
@@ -3573,7 +3675,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称，默认为DataLakeCatalog",
           "example": "DataLakeCatalog",
@@ -3583,7 +3684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算引擎名称，不填任务提交到默认集群",
           "example": "shared_presto",
@@ -3604,7 +3704,6 @@
           "example": "batch-xxxxxxxx",
           "member": "string",
           "name": "BatchId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3614,7 +3713,6 @@
           "example": "[alcas,asdfasd]",
           "member": "string",
           "name": "TaskIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5238,9 +5336,8 @@
       "document": "DeleteSparkApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "spark应用名",
+          "document": "spark作业名",
           "example": "spark-app",
           "member": "string",
           "name": "AppName",
@@ -6042,7 +6139,7 @@
         },
         {
           "disabled": false,
-          "document": "滤类型，传参Name应为以下其中一个,\ndata-engine-name - String \nengine-type - String\nstate - String \nmode - String \ncreate-time - String \nmessage - String",
+          "document": "过滤类型，支持如下的过滤类型，传参Name应为以下其中一个, data-engine-name - String（数据引擎名称）：engine-type - String（引擎类型：spark：spark 引擎，presto：presto引擎），state - String (数据引擎状态 -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中) ， mode - String（计费模式 0共享模式 1按量计费 2包年包月） ， create-time - String（创建时间，10位时间戳） message - String （描述信息），cluster-type - String (集群资源类型 spark_private/presto_private/presto_cu/spark_cu)，engine-id - String（数据引擎ID），key-word - String（数据引擎名称或集群资源类型或描述信息模糊搜索），engine-exec-type - String（引擎执行任务类型，SQL/BATCH）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6105,7 +6202,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎执行任务类型，有效值：SQL/BATCH",
+          "document": "引擎执行任务类型，有效值：SQL/BATCH，默认为SQL",
           "example": "SQL",
           "member": "string",
           "name": "EngineExecType",
@@ -6167,7 +6264,6 @@
       "document": "DescribeDatabases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为10，最大值为100。",
           "example": "20",
@@ -6177,7 +6273,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，从0开始，默认为0。",
           "example": "0",
@@ -6187,7 +6282,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊匹配，库名关键字。",
           "example": "\"data\"",
@@ -6197,7 +6291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog",
           "example": "DataLakeCatalog",
@@ -6207,9 +6300,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "排序字段，当前版本仅支持按库名排序",
+          "document": "排序字段，CreateTime：创建时间，Name：数据库名称",
           "example": "DatabaseName",
           "member": "string",
           "name": "Sort",
@@ -6217,7 +6309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序类型：false：降序（默认）、true：升序",
           "example": "false",
@@ -6238,7 +6329,6 @@
           "example": "无",
           "member": "DatabaseResponseInfo",
           "name": "DatabaseList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6248,7 +6338,6 @@
           "example": "21",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6265,9 +6354,8 @@
       "document": "DescribeEngineUsageInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "House Id",
+          "document": "数据引擎ID",
           "example": "无",
           "member": "string",
           "name": "DataEngineId",
@@ -6286,7 +6374,6 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6296,7 +6383,6 @@
           "example": "无",
           "member": "int64",
           "name": "Used",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6306,7 +6392,6 @@
           "example": "无",
           "member": "int64",
           "name": "Available",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6374,7 +6459,6 @@
       "document": "DescribeNotebookSessionLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Session唯一标识",
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
@@ -6384,7 +6468,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，默认200",
           "example": "200",
@@ -6394,7 +6477,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，默认0",
           "example": "0",
@@ -6415,7 +6497,6 @@
           "example": "[\"log\"]",
           "member": "string",
           "name": "Logs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6425,7 +6506,6 @@
           "example": "200",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6435,7 +6515,6 @@
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6677,7 +6756,6 @@
       "document": "DescribeNotebookSessions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DLC Spark作业引擎名称",
           "example": "data_engine_1",
@@ -6687,7 +6765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
           "example": "[“not_started”]",
@@ -6697,7 +6774,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段（默认按创建时间）",
           "example": "[\"createTime\"]",
@@ -6707,7 +6783,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段：true：升序、false：降序（默认）",
           "example": "true",
@@ -6717,9 +6792,8 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页字段",
+          "document": "分页参数，默认10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6727,9 +6801,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页字段",
+          "document": "分页参数，默认0",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
@@ -6748,7 +6821,6 @@
           "example": "20",
           "member": "int64",
           "name": "TotalElements",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6758,7 +6830,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalPages",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6768,7 +6839,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Page",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6778,7 +6848,6 @@
           "example": "10",
           "member": "uint64",
           "name": "Size",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6788,7 +6857,6 @@
           "example": "复杂类型",
           "member": "NotebookSessions",
           "name": "Sessions",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6893,7 +6961,6 @@
       "document": "DescribeScripts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为10，最大值为100。",
           "example": "20",
@@ -6903,7 +6970,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -6913,7 +6979,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按字段排序，支持如下字段类型，update-time",
           "example": "update-time",
@@ -6923,7 +6988,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc表示正序，asc表示反序，默认asc",
           "example": "desc",
@@ -6933,7 +6997,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\nscript-id - String - （过滤条件）script-id取值形如：157de0d1-26b4-4df2-a2d0-b64afc406c25。\nscript-name-keyword - String - （过滤条件）数据表名称,形如：script-test。",
           "example": "无",
@@ -6954,7 +7017,6 @@
           "example": "无",
           "member": "Script",
           "name": "Scripts",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6964,7 +7026,6 @@
           "example": "21",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6982,7 +7043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "spark作业Id，与JobName同时存在时，JobName无效",
+          "document": "spark作业Id，与JobName同时存在时，JobName无效，JobId与JobName至少存在一个",
           "example": "batch_133e005d-6486-4517-8ea7-b6b97b183a6b",
           "member": "string",
           "name": "JobId",
@@ -7054,7 +7115,7 @@
         },
         {
           "disabled": false,
-          "document": "按照该参数过滤,支持spark-job-name",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7134,7 +7195,6 @@
       "document": "DescribeSparkAppTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "spark作业Id",
           "example": "batch_133e005d-6486-4517-8ea7-b6b97b183a6b",
@@ -7144,7 +7204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询偏移量",
           "example": "0",
@@ -7154,7 +7213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询Limit",
           "example": "10",
@@ -7164,7 +7222,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行实例id",
           "example": "无",
@@ -7174,9 +7231,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "更新时间起始点",
+          "document": "更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss",
           "example": "2022-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7184,9 +7240,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "更新时间截止点",
+          "document": "更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss",
           "example": "2022-01-02 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7194,7 +7249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照该参数过滤,支持task-state",
           "example": "无",
@@ -7215,7 +7269,6 @@
           "example": "无",
           "member": "TaskResponseInfo",
           "name": "Tasks",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7225,7 +7278,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7235,7 +7287,6 @@
           "example": "无",
           "member": "TaskResponseInfo",
           "name": "SparkAppTasks",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7382,7 +7433,6 @@
       "document": "DescribeTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "列出该数据库下所属数据表。",
           "example": "database1",
@@ -7392,7 +7442,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为10，最大值为100。",
           "example": "20",
@@ -7402,7 +7451,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，从0开始，默认为0。",
           "example": "0",
@@ -7412,7 +7460,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\ntable-name - String - （过滤条件）数据表名称,形如：table-001。\ntable-id - String - （过滤条件）table id形如：12342。",
           "example": "无",
@@ -7422,7 +7469,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定查询的数据源名称，默认为DataLakeCatalog",
           "example": "DataLakeCatalog",
@@ -7432,9 +7478,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "起始时间：用于对更新时间的筛选",
+          "document": "起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "StartTime",
@@ -7442,9 +7487,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "终止时间：用于对更新时间的筛选",
+          "document": "终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
@@ -7452,9 +7496,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）",
+          "document": "排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）",
           "example": "UpdateTime",
           "member": "string",
           "name": "Sort",
@@ -7462,7 +7505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，false：降序（默认）；true：升序",
           "example": "false",
@@ -7472,7 +7514,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW",
           "example": "Table",
@@ -7482,7 +7523,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；",
           "example": "HIVE",
@@ -7503,7 +7543,6 @@
           "example": "无",
           "member": "TableResponseInfo",
           "name": "TableList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7513,7 +7552,6 @@
           "example": "21",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7588,7 +7626,6 @@
       "document": "DescribeTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为10，最大值为100。",
           "example": "20",
@@ -7598,7 +7635,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -7608,7 +7644,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）\ntask-kind - string （任务类型过滤）",
           "example": "无",
@@ -7618,7 +7653,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）",
           "example": "create-time",
@@ -7628,7 +7662,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
           "example": "desc",
@@ -7638,7 +7671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻",
           "example": "2019-01-21 00:00:00",
@@ -7648,7 +7680,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
           "example": "2019-01-22 00:00:00",
@@ -7658,9 +7689,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "支持计算资源名字筛选",
+          "document": "数据引擎名称，用于筛选",
           "example": "shared_presto",
           "member": "string",
           "name": "DataEngineName",
@@ -7679,7 +7709,6 @@
           "example": "无",
           "member": "TaskResponseInfo",
           "name": "TaskList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7689,7 +7718,6 @@
           "example": "21",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7699,7 +7727,6 @@
           "example": "无",
           "member": "TasksOverview",
           "name": "TasksOverview",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8916,7 +8943,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "spark应用名",
+          "document": "spark作业名",
           "example": "app-test",
           "member": "string",
           "name": "AppName",
@@ -8925,7 +8952,7 @@
         },
         {
           "disabled": false,
-          "document": "1代表spark jar应用，2代表spark streaming应用",
+          "document": "spark作业类型，1代表spark jar作业，2代表spark streaming作业",
           "example": "1,2",
           "member": "int64",
           "name": "AppType",
@@ -8934,7 +8961,7 @@
         },
         {
           "disabled": false,
-          "document": "执行spark作业的数据引擎",
+          "document": "执行spark作业的数据引擎名称",
           "example": "spark-engine",
           "member": "string",
           "name": "DataEngine",
@@ -8943,7 +8970,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用的执行入口",
+          "document": "spark作业程序包文件路径",
           "example": "test.jar",
           "member": "string",
           "name": "AppFile",
@@ -8952,7 +8979,7 @@
         },
         {
           "disabled": false,
-          "document": "执行spark作业的角色ID",
+          "document": "数据访问策略，CAM Role arn",
           "example": "12",
           "member": "int64",
           "name": "RoleArn",
@@ -8961,7 +8988,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
+          "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
           "member": "string",
           "name": "AppDriverSize",
@@ -8970,7 +8997,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
+          "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
           "member": "string",
           "name": "AppExecutorSize",
@@ -8988,7 +9015,7 @@
         },
         {
           "disabled": false,
-          "document": "spark应用Id",
+          "document": "spark作业Id",
           "example": "batch_ssta",
           "member": "string",
           "name": "SparkAppId",
@@ -9006,7 +9033,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地上传，可取cos,lakefs",
+          "document": "spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocal",
@@ -9015,7 +9042,7 @@
         },
         {
           "disabled": false,
-          "document": "spark jar作业时的主类",
+          "document": "spark作业主类",
           "example": "org.test.WordCount",
           "member": "string",
           "name": "MainClass",
@@ -9033,7 +9060,7 @@
         },
         {
           "disabled": false,
-          "document": "jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalJars",
@@ -9042,7 +9069,7 @@
         },
         {
           "disabled": false,
-          "document": "spark jar作业依赖jars，以逗号分隔",
+          "document": "spark 作业依赖jar包（--jars），以逗号分隔",
           "example": "com.test.jar",
           "member": "string",
           "name": "AppJars",
@@ -9051,7 +9078,7 @@
         },
         {
           "disabled": false,
-          "document": "file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalFiles",
@@ -9060,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业依赖资源，以逗号分隔",
+          "document": "spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔",
           "example": "spark-default.properties",
           "member": "string",
           "name": "AppFiles",
@@ -9069,7 +9096,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalPythonFiles",
@@ -9078,7 +9105,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "document": "pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔",
           "example": "test.py",
           "member": "string",
           "name": "AppPythonFiles",
@@ -9087,7 +9114,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业命令行参数",
+          "document": "spark作业程序入参",
           "example": "10",
           "member": "string",
           "name": "CmdArgs",
@@ -9096,7 +9123,7 @@
         },
         {
           "disabled": false,
-          "document": "只对spark流任务生效",
+          "document": "最大重试次数，只对spark流任务生效",
           "example": "1",
           "member": "int64",
           "name": "MaxRetries",
@@ -9114,7 +9141,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "document": "spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalArchives",
@@ -9123,7 +9150,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖资源",
+          "document": "spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔",
           "example": "file1.tar.gz#abc",
           "member": "string",
           "name": "AppArchives",
@@ -9132,7 +9159,7 @@
         },
         {
           "disabled": false,
-          "document": "Spark Image 版本",
+          "document": "Spark Image 版本号",
           "example": "1.0",
           "member": "string",
           "name": "SparkImage",
@@ -10227,6 +10254,32 @@
       ],
       "usage": "both"
     },
+    "PrestoMonitorMetrics": {
+      "document": "Presto监控指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\tAlluxio本地缓存命中率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "LocalCacheHitRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Fragment缓存命中率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "FragmentCacheHitRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Property": {
       "document": "数据库和数据表属性信息",
       "members": [
@@ -10855,6 +10908,32 @@
       ],
       "usage": "out"
     },
+    "SparkMonitorMetrics": {
+      "document": "Spark监控数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "shuffle写溢出到COS数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ShuffleWriteBytesCos",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "shuffle写数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ShuffleWriteBytesTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SparkSessionBatchLog": {
       "document": "SparkSQL批任务运行日志",
       "members": [
@@ -11144,7 +11223,6 @@
       "document": "SuspendResumeDataEngine请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群名称",
           "example": "testHouse",
@@ -11154,7 +11232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型 suspend/resume",
           "example": "suspend",
@@ -11175,7 +11252,6 @@
           "example": "无",
           "member": "string",
           "name": "DataEngineName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12091,6 +12167,36 @@
           "name": "ExecutorMaxNumbers",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务公共指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonMetrics",
+          "name": "CommonMetrics",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparkMonitorMetrics",
+          "name": "SparkMonitorMetrics",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "presto任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrestoMonitorMetrics",
+          "name": "PrestoMonitorMetrics",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -36,6 +36,14 @@
         "title": "私有域-添加PTR记录"
       }
     ],
+    "DeleteEndPoint": [
+      {
+        "document": "删除终端节点",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEndPoint\n<公共请求参数>\n\n{\n    \"EndPointId\": \"eid-juygvf672i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
+        "title": "删除终端节点"
+      }
+    ],
     "DeletePrivateDNSAccount": [
       {
         "document": "",

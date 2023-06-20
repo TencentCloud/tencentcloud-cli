@@ -2211,7 +2211,6 @@
       "document": "会话数据详单（按设备区分）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型：field或remote",
           "example": "remote",
@@ -2222,7 +2221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始点位时间，单位：秒",
           "example": "1650000000",
@@ -2233,7 +2231,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束点位时间，单位：秒",
           "example": "1650000100",
@@ -2244,7 +2241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "xxxx",
@@ -2255,7 +2251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "码率，单位：kbps",
           "example": "[10,20,30]",
@@ -2266,7 +2261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帧率",
           "example": "[10,20,30]",
@@ -2277,7 +2271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "丢包率，单位：%",
           "example": "[10,20,30]",
@@ -2288,7 +2281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络时延，单位：ms",
           "example": "[10,20,30]",
@@ -2299,7 +2291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时延，单位：ms",
           "example": "[10,20,30]",
@@ -2310,7 +2301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU使用率，单位：%",
           "example": "[10,20,30]",
@@ -2321,7 +2311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存使用率，单位：%",
           "example": "[10,20,30]",
@@ -2332,7 +2321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间偏移量，单位：秒",
           "example": "[0,2,4,6,8,10]",
@@ -2343,7 +2331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "xxx",
@@ -2354,7 +2341,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "xxx",

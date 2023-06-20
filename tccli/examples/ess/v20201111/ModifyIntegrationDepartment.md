@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ess ModifyIntegrationDepartment --cli-unfold-argument  \
-    --Operator.UserId XXXXXX \
+    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
     --DeptName 运营部 \
-    --DeptId XXXXXXXXXXXXX \
-    --DeptOpenId xxx \
+    --DeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9 \
+    --DeptOpenId open_dept1 \
     --OrderNo 1
 ```
 

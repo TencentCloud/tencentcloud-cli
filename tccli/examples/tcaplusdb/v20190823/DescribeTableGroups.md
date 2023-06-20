@@ -6,12 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb DescribeTableGroups --cli-unfold-argument  \
-    --TableGroupIds xx \
-    --ClusterId 6179109757 \
-    --Limit 0 \
-    --Filters.0.Name xx \
-    --Filters.0.Value xx \
-    --Offset 0
+    --ClusterId 6179109757
 ```
 
 Output: 

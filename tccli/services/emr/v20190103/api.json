@@ -8415,7 +8415,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，当前支持\n<li>StartService：启动服务</li>\n<li>StopService：停止服务</li>\n<li>StartMonitor：退出维护</li>\n<li>StopMonitor：进入维护</li>\n<li>RestartService：重启服务</li>",
+          "document": "操作类型，当前支持\n<li>StartService：启动服务</li>\n<li>StopService：停止服务</li>\n<li>StartMonitor：退出维护</li>\n<li>StopMonitor：进入维护</li>\n<li>RestartService：重启服务 如果操作类型选择重启服务 StrategyConfig操作策略则是必填项</li>",
           "example": "StartService",
           "member": "string",
           "name": "OpType",

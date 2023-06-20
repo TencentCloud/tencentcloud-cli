@@ -4124,6 +4124,17 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4666,6 +4677,28 @@
           "name": "ProductId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "固件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CreateUserId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

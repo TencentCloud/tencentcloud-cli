@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ess CancelMultiFlowSignQRCode --cli-unfold-argument  \
-    --Operator.UserId test \
-    --QrCodeId test
+    --Operator.UserId yDxxxxxxx \
+    --QrCodeId yDRvQxxxxxKC
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "test"
+        "RequestId": "1c75e86d-xxxxxxxxxx6f330a05e"
     }
 }
 ```
