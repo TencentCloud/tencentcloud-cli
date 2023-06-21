@@ -1,3 +1,104 @@
+# Release 3.0.793.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 65 次发布
+
+发布时间：2023-06-22 01:13:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDatabase](http://document.tencentcloudapi.woa.com/document/product/236/78108)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 46 次发布
+
+发布时间：2023-06-22 01:23:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProxySpecs](http://document.tencentcloudapi.woa.com/document/product/1003/78109)
+
+新增数据结构：
+
+* [ProxySpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxySpec)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 67 次发布
+
+发布时间：2023-06-22 01:59:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateQualityInspectTemplate](http://document.tencentcloudapi.woa.com/document/product/266/78114)
+* [DeleteQualityInspectTemplate](http://document.tencentcloudapi.woa.com/document/product/266/78113)
+* [DescribeQualityInspectTemplates](http://document.tencentcloudapi.woa.com/document/product/266/78112)
+* [InspectMediaQuality](http://document.tencentcloudapi.woa.com/document/product/266/78110)
+* [ModifyQualityInspectTemplate](http://document.tencentcloudapi.woa.com/document/product/266/78111)
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/266/33431)
+
+	* 新增出参：QualityInspectTask
+
+
+新增数据结构：
+
+* [AbnormalLightingConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#AbnormalLightingConfigureInfo)
+* [AbnormalLightingConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#AbnormalLightingConfigureInfoForUpdate)
+* [BlackWhiteEdgeConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#BlackWhiteEdgeConfigureInfo)
+* [BlackWhiteEdgeConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#BlackWhiteEdgeConfigureInfoForUpdate)
+* [BlurConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#BlurConfigureInfo)
+* [BlurConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#BlurConfigureInfoForUpdate)
+* [CrashScreenConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#CrashScreenConfigureInfo)
+* [CrashScreenConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#CrashScreenConfigureInfoForUpdate)
+* [JitterConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#JitterConfigureInfo)
+* [JitterConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#JitterConfigureInfoForUpdate)
+* [MosaicConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#MosaicConfigureInfo)
+* [MosaicConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#MosaicConfigureInfoForUpdate)
+* [NoiseConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#NoiseConfigureInfo)
+* [NoiseConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#NoiseConfigureInfoForUpdate)
+* [QRCodeConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#QRCodeConfigureInfo)
+* [QRCodeConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#QRCodeConfigureInfoForUpdate)
+* [QualityEvaluationConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityEvaluationConfigureInfo)
+* [QualityEvaluationConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityEvaluationConfigureInfoForUpdate)
+* [QualityInspectItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectItem)
+* [QualityInspectResultItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectResultItem)
+* [QualityInspectTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectTask)
+* [QualityInspectTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectTaskInput)
+* [QualityInspectTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectTaskOutput)
+* [QualityInspectTemplateItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#QualityInspectTemplateItem)
+* [VoiceConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VoiceConfigureInfo)
+* [VoiceConfigureInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#VoiceConfigureInfoForUpdate)
+
+修改数据结构：
+
+* [EventContent](http://document.tencentcloudapi.woa.com/document/product/266/31773#EventContent)
+
+	* 新增成员：QualityInspectCompleteEvent
+
+
+
+
 # Release 3.0.792.1
 
 ## 应用性能监控(apm) 版本：2021-06-22

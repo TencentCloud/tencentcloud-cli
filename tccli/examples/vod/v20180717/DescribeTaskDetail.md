@@ -84,6 +84,7 @@ Output:
         "ExtractCopyRightWatermarkTask": null,
         "DescribeFileAttributesTask": null,
         "RebuildMediaTask": null,
+        "QualityInspectTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -152,6 +153,7 @@ Output:
         "ExtractCopyRightWatermarkTask": null,
         "DescribeFileAttributesTask": null,
         "RebuildMediaTask": null,
+        "QualityInspectTask": null,
         "RequestId": "62597d15-3fad-4234-af1a-ed33602a6118"
     }
 }
@@ -229,6 +231,7 @@ Output:
         "ExtractCopyRightWatermarkTask": null,
         "DescribeFileAttributesTask": null,
         "RebuildMediaTask": null,
+        "QualityInspectTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -281,6 +284,7 @@ Output:
         "ExtractCopyRightWatermarkTask": null,
         "DescribeFileAttributesTask": null,
         "RebuildMediaTask": null,
+        "QualityInspectTask": null,
         "RequestId": "04db7d25-f590-414a-a341-8f1584f15f84"
     }
 }
