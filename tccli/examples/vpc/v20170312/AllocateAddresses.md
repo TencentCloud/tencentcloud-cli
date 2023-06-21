@@ -25,7 +25,7 @@ Output:
 
 **Example 2: 创建常规IP**
 
-
+创建常规IP。
 
 Input: 
 

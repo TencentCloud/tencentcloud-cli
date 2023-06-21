@@ -72,7 +72,7 @@
         "title": "创建加速IP"
       },
       {
-        "document": "",
+        "document": "创建常规IP。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-m44ku5d2\"\n        ],\n        \"TaskId\": \"61531421\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建常规IP"
@@ -1006,7 +1006,7 @@
     ],
     "DescribeAddressQuota": [
       {
-        "document": "",
+        "document": "查询弹性公网IP配额。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressQuota\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_EIP_QUOTA\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 20\n            },\n            {\n                \"QuotaId\": \"DAILY_EIP_APPLY\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 40\n            },\n            {\n                \"QuotaId\": \"DAILY_EIP_ASSIGN\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 40\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询弹性公网IP配额"
@@ -1066,7 +1066,7 @@
     ],
     "DescribeBandwidthPackageQuota": [
       {
-        "document": "",
+        "document": "查询带宽包配额。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthPackageQuota\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_BANDWIDTHPKG_QUOTA\",\n                \"QuotaCurrent\": 1,\n                \"QuotaLimit\": 20\n            }\n        ],\n        \"RequestId\": \"8882b478-0d3a-4fe2-bae3-ff93865a199c\"\n    }\n}",
         "title": "查询带宽包配额"
@@ -1654,13 +1654,13 @@
     ],
     "DescribeTrafficPackages": [
       {
-        "document": "",
+        "document": "查询某个账号所有的共享流量包信息。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",
         "title": "查询某个账号所有的共享流量包信息"
       },
       {
-        "document": "",
+        "document": "查询某一个账号所有的共享流量包信息。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",
         "title": "查询某一个账号所有的共享流量包信息"

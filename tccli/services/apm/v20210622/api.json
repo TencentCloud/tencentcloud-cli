@@ -746,7 +746,6 @@
       "document": "DescribeApmInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Tag列表",
           "example": "无",
@@ -756,7 +755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索实例名",
           "example": "云监控-测试",
@@ -766,7 +764,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤实例ID",
           "example": "无",
@@ -776,12 +773,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否查询官方demo实例",
           "example": "无",
           "member": "int64",
           "name": "DemoInstanceFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询全地域实例",
+          "example": "1",
+          "member": "int64",
+          "name": "AllRegionsFlag",
           "required": false,
           "type": "int"
         }
@@ -797,7 +802,6 @@
           "example": "无",
           "member": "ApmInstanceDetail",
           "name": "Instances",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

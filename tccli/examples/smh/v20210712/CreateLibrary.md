@@ -1,16 +1,14 @@
 **Example 1: 创建媒体库**
 
-
+创建媒体库
 
 Input: 
 
 ```
 tccli smh CreateLibrary --cli-unfold-argument  \
-    --BucketRegion ap-guangzhou \
     --Name 名称 \
     --Remark 备注 \
-    --LibraryExtension.IsFileLibrary true \
-    --BucketName examplebucket-1250000000
+    --LibraryExtension.IsFileLibrary true
 ```
 
 Output: 

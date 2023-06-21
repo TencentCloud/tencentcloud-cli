@@ -246,9 +246,9 @@
       "status": "online"
     },
     "DeleteNotebookSession": {
-      "document": "本接口（DeleteNotebookSession）用于删除notebook livy session",
+      "document": "本接口（DeleteNotebookSession）用于删除交互式session（notebook）",
       "input": "DeleteNotebookSessionRequest",
-      "name": "删除notebook livy session",
+      "name": "删除交互式session（notebook）",
       "output": "DeleteNotebookSessionResponse",
       "status": "online"
     },
@@ -5270,7 +5270,6 @@
       "document": "DeleteNotebookSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Session唯一标识",
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",

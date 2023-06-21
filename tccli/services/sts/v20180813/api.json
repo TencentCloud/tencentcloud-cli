@@ -1,35 +1,35 @@
 {
   "actions": {
     "AssumeRole": {
-      "document": "申请扮演角色",
+      "document": "申请扮演角色临时访问凭证。",
       "input": "AssumeRoleRequest",
-      "name": "申请扮演角色",
+      "name": "申请扮演角色临时访问凭证",
       "output": "AssumeRoleResponse",
       "status": "online"
     },
     "AssumeRoleWithSAML": {
-      "document": "本接口（AssumeRoleWithSAML）用于根据 SAML 断言申请角色临时凭证。",
+      "document": "本接口（AssumeRoleWithSAML）用于根据 SAML 断言申请角色临时访问凭证。\n\n注意：当使用签名方法 V3 调用本接口时，请求头无须传入 X-TC-Token, 但 Authorization 需要传入值 SKIP。",
       "input": "AssumeRoleWithSAMLRequest",
-      "name": "根据 SAML 断言申请角色临时凭证",
+      "name": "根据 SAML 断言申请角色临时访问凭证",
       "output": "AssumeRoleWithSAMLResponse",
       "status": "online"
     },
     "AssumeRoleWithWebIdentity": {
-      "document": "申请OIDC角色临时密钥",
+      "document": "申请OIDC角色临时访问凭证。\n\n注意：当使用签名方法 V3 调用本接口时，请求头无须传入 X-TC-Token, 但 Authorization 需要传入值 SKIP。",
       "input": "AssumeRoleWithWebIdentityRequest",
-      "name": "申请OIDC角色临时密钥",
+      "name": "申请OIDC角色临时访问凭证",
       "output": "AssumeRoleWithWebIdentityResponse",
       "status": "online"
     },
     "GetCallerIdentity": {
-      "document": "获取当前调用者的身份信息。\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时凭据的身份获取。",
+      "document": "获取当前调用者的身份信息。\n\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时访问凭证身份获取。",
       "input": "GetCallerIdentityRequest",
       "name": "获取当前调用者的身份信息",
       "output": "GetCallerIdentityResponse",
       "status": "online"
     },
     "GetFederationToken": {
-      "document": "获取联合身份临时访问凭证",
+      "document": "**使用说明**\n\n返回一组临时访问凭证，典型的应用场景是代理应用程序集中申请临时访问凭证，下发给企业网络内其他分布式终端应用，比如终端应用上传文件到COS场景，本接口仅支持永久密钥调用。\n\n**最佳实践**\n\n1. 临时访问凭据在有效期内都可以使用，建议在有效期内重复使用，以避免业务请求速率上升后被限频\n2. 授予临时访问凭证权限的CAM策略，建议按权限最小化原则\n3. 调用接口的永久密钥，建议不要使用主账号",
       "input": "GetFederationTokenRequest",
       "name": "获取联合身份临时访问凭证",
       "output": "GetFederationTokenResponse",
@@ -90,7 +90,6 @@
       "document": "AssumeRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n普通角色：\nqcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName\n服务角色：\nqcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName",
           "example": "qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919",
@@ -100,7 +99,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时会话名称，由用户自定义名称。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\\w+=,.@_-]*",
           "example": "cts",
@@ -110,9 +108,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "document": "指定临时访问凭证的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "example": "test",
           "member": "uint64",
           "name": "DurationSeconds",
@@ -120,7 +117,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n3、策略中不能包含 principal 元素。",
           "example": "无",
@@ -130,7 +126,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:\\/-]*",
           "example": "role-1232",
@@ -140,7 +135,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。",
           "example": "无",
@@ -150,7 +144,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用者身份uin",
           "example": "1000001",
@@ -167,31 +160,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "临时安全证书",
+          "document": "临时访问凭证",
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "document": "临时访问凭证的过期时间，返回 Unix 时间戳，精确到秒",
           "example": "1543914376",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书无效的时间，以 iso8601 格式的 UTC 时间表示",
+          "document": "临时访问凭证的过期时间，以 iso8601 格式的 UTC 时间表示",
           "example": "2018-12-04T09:06:16Z",
           "member": "string",
           "name": "Expiration",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -208,45 +198,45 @@
       "document": "AssumeRoleWithSAML请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "base64 编码的 SAML 断言信息",
+          "example": "c2FtbC***Rpb24=",
           "member": "string",
           "name": "SAMLAssertion",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扮演者访问描述名",
+          "example": "qcs::cam::uin/7989***:saml-provider/OneLogin",
           "member": "string",
           "name": "PrincipalArn",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色访问描述名",
+          "example": "qcs::cam::uin/7989***:roleName/OneLogin-Role",
           "member": "string",
           "name": "RoleArn",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话名称",
+          "example": "test",
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "document": "指定临时访问凭证的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "example": "1800",
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
@@ -261,6 +251,7 @@
         {
           "disabled": false,
           "document": "对象里面包含 Token，TmpSecretId，TmpSecretKey 三元组",
+          "example": "无",
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
@@ -268,7 +259,8 @@
         },
         {
           "disabled": false,
-          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "document": "临时访问凭证的过期时间，返回 Unix 时间戳，精确到秒",
+          "example": "1543914376",
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
@@ -276,7 +268,8 @@
         },
         {
           "disabled": false,
-          "document": "证书无效的时间，以 ISO8601 格式的 UTC 时间表示",
+          "document": "临时访问凭证的过期时间，以 ISO8601 格式的 UTC 时间表示",
+          "example": "2018-12-04T09:06:16Z",
           "member": "string",
           "name": "Expiration",
           "type": "string",
@@ -295,7 +288,6 @@
       "document": "AssumeRoleWithWebIdentity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "身份提供商名称",
           "example": "OIDC",
@@ -305,39 +297,35 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IdP签发的OIDC令牌",
-          "example": "XXXXX",
+          "example": "eyJraWQiOiJkT**********CNOQ",
           "member": "string",
           "name": "WebIdentityToken",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色访问描述名",
-          "example": "qcs::cam::uin/798950673:roleName/OneLogin-Role",
+          "example": "qcs::cam::uin/7989***:roleName/OneLogin-Role",
           "member": "string",
           "name": "RoleArn",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话名称",
-          "example": "XXXXX",
+          "example": "test_OIDC",
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "document": "指定临时访问凭证的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "example": "3600",
           "member": "int64",
           "name": "DurationSeconds",
@@ -352,31 +340,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "临时密钥过期时间(时间戳)",
+          "document": "临时访问凭证过期时间(时间戳)",
           "example": "123456789",
           "member": "uint64",
           "name": "ExpiredTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "临时密钥过期时间",
+          "document": "临时访问凭证过期时间",
           "example": "2010-12-10",
           "member": "string",
           "name": "Expiration",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "临时密钥",
+          "document": "临时访问凭证",
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -436,6 +421,7 @@
         {
           "disabled": false,
           "document": "当前调用者ARN。",
+          "example": "qcs::sts:1000262***:federated-user/1000261****",
           "member": "string",
           "name": "Arn",
           "type": "string",
@@ -444,6 +430,7 @@
         {
           "disabled": false,
           "document": "当前调用者所属主账号Uin。",
+          "example": "1000262***",
           "member": "string",
           "name": "AccountId",
           "type": "string",
@@ -452,6 +439,7 @@
         {
           "disabled": false,
           "document": "身份标识。\n1. 调用者是云账号时，返回的是当前账号Uin\n2. 调用者是角色时，返回的是roleId:roleSessionName\n3. 调用者是联合身份时，返回的是uin:federatedUserName",
+          "example": "1000261****:federatedUserName",
           "member": "string",
           "name": "UserId",
           "type": "string",
@@ -460,6 +448,7 @@
         {
           "disabled": false,
           "document": "密钥所属账号Uin。\n1. 调用者是云账号，返回的当前账号Uin\n2, 调用者是角色，返回的申请角色密钥的账号Uin",
+          "example": "1000261****",
           "member": "string",
           "name": "PrincipalId",
           "type": "string",
@@ -468,6 +457,7 @@
         {
           "disabled": false,
           "document": "身份类型。",
+          "example": "CAMUser",
           "member": "string",
           "name": "Type",
           "type": "string",
@@ -486,27 +476,27 @@
       "document": "GetFederationToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "您可以自定义调用方英文名称，由字母组成。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "授予该临时证书权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
+          "document": "授予该临时访问凭证权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"sts:AssumeRole\",\"resource\":\"*\"}]}",
           "member": "string",
           "name": "Policy",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认1800秒，主账号最长可设定有效期为7200秒，子账号最长可设定有效期为129600秒。",
+          "example": "1800",
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
@@ -520,7 +510,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "临时证书",
+          "document": "临时访问凭证",
+          "example": "无",
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
@@ -528,7 +519,8 @@
         },
         {
           "disabled": false,
-          "document": "临时证书有效的时间，返回 Unix 时间戳，精确到秒",
+          "document": "临时访问凭证有效的时间，返回 Unix 时间戳，精确到秒",
+          "example": "1686664553",
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
@@ -536,7 +528,8 @@
         },
         {
           "disabled": false,
-          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时访问凭证有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-13T13:55:53Z",
           "member": "string",
           "name": "Expiration",
           "type": "string",

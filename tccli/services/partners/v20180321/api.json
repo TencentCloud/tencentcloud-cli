@@ -603,7 +603,6 @@
       "document": "描述代理商代付的订单信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单自增 ID【请勿依赖该字段作为唯一标识】",
           "example": "123456",
@@ -614,7 +613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单号【订单唯一键】",
           "example": "202008124664564",
@@ -625,7 +623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品类型 ID",
           "example": "123456",
@@ -636,7 +633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单所有者",
           "example": "123456",
@@ -647,7 +643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单所有者对应 appId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -658,7 +653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -669,7 +663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -680,7 +673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下单人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -691,7 +683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下单时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-03 11:11:12",
@@ -702,7 +693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-03 11:11:12",
@@ -713,7 +703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扣费流水号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345615882524264",
@@ -724,7 +713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -735,7 +723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单状态，中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "未支付",
@@ -746,7 +733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -757,7 +743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
@@ -768,7 +753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -779,7 +763,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单操作类型，\"purchase\":\"新购\",\"upgrade\":\"升配\",\"upConvertExpire\":\"升配\",\"downgrade\":\"降配\",\"downConvertExpire\":\"降配\",\"renew\":\"续费\",\"refund\":\"退货\",\"modifyNetworkMode\":\"调整带宽模式\",\"modifyNetworkSize\":\"调整带宽大小\",\"preMoveOut\":\"资源迁出\",\"preMoveIn\":\"资源迁入\",\"preToPost\":\"包年包月转按量\",\"modify\":\"变配\",\"postMoveOut\":\"资源迁出\",\"postMoveIn\":\"资源迁入\",\"recoverRefundForward\":\"调账补偿\",\"recoverPayReserve\":\"调账补偿\",\"recoverPayForward\":\"调账扣费\",\"recoverRefundReserve\":\"调账扣费\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "renew",
@@ -790,7 +773,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券抵扣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
@@ -801,7 +783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -812,7 +793,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "new",
@@ -823,7 +803,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目类型（self：自拓；repeat：直销；platform：官网合作）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "self",
@@ -834,7 +813,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -845,7 +823,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付方式，0：自付；1：代付\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -856,7 +833,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10001",
@@ -867,7 +843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-03 11:11:12",
@@ -878,7 +853,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -889,7 +863,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付款方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "按月：3个月",
@@ -900,7 +873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 00:00:00",
@@ -908,6 +880,16 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

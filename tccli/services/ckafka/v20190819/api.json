@@ -400,7 +400,7 @@
       "status": "online"
     },
     "DescribeTopicFlowRanking": {
-      "document": "获取Topic流量排行，消费者流量排行\n",
+      "document": "获取Topic流量排行，消费者流量排行",
       "input": "DescribeTopicFlowRankingRequest",
       "name": "Topic 流量排行",
       "output": "DescribeTopicFlowRankingResponse",
@@ -1435,6 +1435,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BrokerTopicData": {
+      "document": "主题占用Broker磁盘大小",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckx",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "inter-topic-hwz9",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题占用Broker 容量大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "DataSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7974,7 +8010,6 @@
       "document": "DescribeTopicFlowRanking请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "ckafka-gt2ty",
@@ -7984,7 +8019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排行类别(PRO-Topic生产流量/CON-Topic消费流量)",
           "example": "PRO/CON",
@@ -7994,7 +8028,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排行起始日期",
           "example": "2021-05-13T07:23:11+08:00",
@@ -8004,12 +8037,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排行结束日期",
           "example": "2021-05-14T07:23:11+08:00",
           "member": "datetime_iso",
           "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Broker IP 地址",
+          "example": "10.0.0.14",
+          "member": "string",
+          "name": "BrokerIp",
           "required": false,
           "type": "string"
         }
@@ -8025,7 +8066,6 @@
           "example": "无",
           "member": "TopicFlowRankingResult",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16239,7 +16279,6 @@
       "document": "topic 生产消息数据，消费者数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Topic 流量数组",
           "example": "无",
@@ -16250,7 +16289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者组消费速度排行速度",
           "example": "无",
@@ -16261,13 +16299,32 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic 消息堆积/占用磁盘排行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "五",
           "member": "TopicMessageHeapRanking",
           "name": "TopicMessageHeap",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Broker Ip 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrokerIp",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单个broker 节点 Topic占用的数据大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BrokerTopicData",
+          "name": "BrokerTopicData",
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }

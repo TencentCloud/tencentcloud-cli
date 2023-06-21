@@ -231,6 +231,13 @@
       "output": "DescribeFlowBriefsResponse",
       "status": "online"
     },
+    "DescribeFlowComponents": {
+      "document": "查询流程填写控件内容，可以根据流程Id查询该流程相关联的填写控件信息",
+      "input": "DescribeFlowComponentsRequest",
+      "name": "查询流程填写控件内容",
+      "output": "DescribeFlowComponentsResponse",
+      "status": "online"
+    },
     "DescribeFlowEvidenceReport": {
       "document": "查询出证报告，返回报告 URL。",
       "input": "DescribeFlowEvidenceReportRequest",
@@ -1234,7 +1241,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\",",
+          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例： \"ComponentExtra\":\"{\\\"PageRanges\\\":[\\\"PageRange\\\":{\\\"BeginPage\\\":1,\\\"EndPage\\\":-1}]}\"",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -4054,6 +4061,60 @@
       ],
       "type": "object"
     },
+    "DescribeFlowComponentsRequest": {
+      "document": "DescribeFlowComponents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "电子签流程的Id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowComponentsResponse": {
+      "document": "DescribeFlowComponents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程关联的填写控件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecipientComponentInfo",
+          "name": "RecipientComponentInfos",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowEvidenceReportRequest": {
       "document": "DescribeFlowEvidenceReport请求参数结构体",
       "members": [
@@ -5302,6 +5363,72 @@
         }
       ],
       "usage": "in"
+    },
+    "FilledComponent": {
+      "document": "文档内的填充控件返回结构体，返回控件的基本信息和填写内容值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "控件Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控件填写状态；0-未填写；1-已填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentFillStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控件填写内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控件所属参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentRecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "查询过滤条件",
@@ -6905,6 +7032,52 @@
         }
       ],
       "usage": "both"
+    },
+    "RecipientComponentInfo": {
+      "document": "参与方填写控件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参与方填写状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientFillStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否发起方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPromoter",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "填写控件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilledComponent",
+          "name": "Components",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RegisterInfo": {
       "document": "发起流程快速注册相关信息",

@@ -504,6 +504,13 @@
       "output": "DescribeLivePlayAuthKeyResponse",
       "status": "online"
     },
+    "DescribeLivePullStreamTaskStatus": {
+      "document": "查询直播拉流任务状态信息。",
+      "input": "DescribeLivePullStreamTaskStatusRequest",
+      "name": "查询直播拉流任务状态",
+      "output": "DescribeLivePullStreamTaskStatusResponse",
+      "status": "online"
+    },
     "DescribeLivePullStreamTasks": {
       "document": "查询使用 CreateLivePullStreamTask 接口创建的直播拉流任务。\n排序方式：默认按更新时间 倒序排列。",
       "input": "DescribeLivePullStreamTasksRequest",
@@ -6858,6 +6865,44 @@
           "document": "播放鉴权key信息。",
           "member": "PlayAuthKeyInfo",
           "name": "PlayAuthKeyInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePullStreamTaskStatusRequest": {
+      "document": "DescribeLivePullStreamTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "12345",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePullStreamTaskStatusResponse": {
+      "document": "DescribeLivePullStreamTaskStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态信息。",
+          "example": "无",
+          "member": "TaskStatusInfo",
+          "name": "TaskStatusInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16101,7 +16146,6 @@
       "document": "查询当前正在推流的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流名称。",
           "example": "test",
@@ -16112,7 +16156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流时间列表",
           "example": "[{\"PublishTime\":\"2022-07-11T08:56:36Z\"}]",
@@ -16123,7 +16166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "live",
@@ -16134,12 +16176,104 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流域名。",
           "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流是否推送到延播。\n0 - 无延播，\n1 - 有延播。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PushToDelay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskStatusInfo": {
+      "document": "直播拉流任务状态信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前使用的源 URL。",
+          "example": "http://live.push.com/live/stream.flv",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "点播源任务的轮播次数。",
+          "example": "2",
+          "member": "int64",
+          "name": "LoopedTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "点播源的播放偏移，单位：秒。",
+          "example": "1500",
+          "member": "int64",
+          "name": "OffsetTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最新心跳上报时间。UTC时间，例如：\n2022-02-11T10:00:00Z。\n注意：UTC时间与北京时间相差八小时。",
+          "example": "2022-02-11T10:00:00Z",
+          "member": "string",
+          "name": "ReportTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实际运行状态：\nactive - 活跃，\ninactive - 不活跃。",
+          "example": "active",
+          "member": "string",
+          "name": "RunStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "点播源的文件时长，单位：秒。",
+          "example": "56000",
+          "member": "int64",
+          "name": "FileDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "下一进度点播文件 URL。",
+          "example": "http://vod.play.com/live/stream.flv",
+          "member": "string",
+          "name": "NextFileUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -600,6 +600,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLivePullStreamTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLivePullStreamTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57ff5d4c-f864-41bb-93d8-17d215d3359e\",\n        \"TaskStatusInfo\": {\n            \"FileUrl\": \"\",\n            \"LoopedTimes\": -1,\n            \"OffsetTime\": 0,\n            \"ReportTime\": \"\",\n            \"FileDuration\": 0,\n            \"NextFileUrl\": \"\",\n            \"RunStatus\": \"inactive\"\n        }\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLivePullStreamTasks": [
       {
         "document": "",

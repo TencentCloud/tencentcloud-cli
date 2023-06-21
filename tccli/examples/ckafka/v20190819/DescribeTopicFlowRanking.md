@@ -1,15 +1,15 @@
 **Example 1: Topic 流量排行**
 
-
+检查当前实例的主题流量top 情况
 
 Input: 
 
 ```
 tccli ckafka DescribeTopicFlowRanking --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId ckafka-3inxiic \
     --BeginDate 2020-09-22T00:00:00+00:00 \
     --EndDate 2020-09-22T00:00:00+00:00 \
-    --RankingType xx
+    --RankingType PRO
 ```
 
 Output: 
@@ -19,126 +19,42 @@ Output:
         "Result": {
             "TopicFlow": [
                 {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
+                    "TopicId": "abc",
+                    "TopicName": "abc",
                     "PartitionNum": 1,
-                    "TopicTraffic": "xx",
                     "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
-                },
-                {
-                    "MessageHeap": 1,
-                    "TopicId": "xx",
-                    "PartitionNum": 1,
-                    "TopicTraffic": "xx",
-                    "ReplicaNum": 1,
-                    "TopicName": "xx"
+                    "TopicTraffic": "abc",
+                    "MessageHeap": 1
                 }
             ],
             "ConsumeSpeed": [
                 {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
+                    "ConsumerGroupName": "abc",
+                    "Speed": 1
+                }
+            ],
+            "TopicMessageHeap": [
                 {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
+                    "TopicId": "abc",
+                    "TopicName": "abc",
+                    "PartitionNum": 1,
+                    "ReplicaNum": 1,
+                    "TopicTraffic": "abc",
+                    "MessageHeap": 1
+                }
+            ],
+            "BrokerIp": [
+                "abc"
+            ],
+            "BrokerTopicData": [
                 {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
-                },
-                {
-                    "Speed": 1,
-                    "ConsumerGroupName": "xx"
+                    "TopicName": "abc",
+                    "TopicId": "abc",
+                    "DataSize": 1
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

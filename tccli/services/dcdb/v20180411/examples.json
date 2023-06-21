@@ -168,6 +168,14 @@
         "title": "查询云数据库同步模式"
       }
     ],
+    "DescribeDBTmpInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBTmpInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-21dfpcv1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0cf21c76-0382-491d-b634-f3d1ae1a4547\",\n        \"TmpInstances\": []\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeDCDBInstanceDetail": [
       {
         "document": "查询分布式实例 dcdbt-21dfpcv1 的详细信息",

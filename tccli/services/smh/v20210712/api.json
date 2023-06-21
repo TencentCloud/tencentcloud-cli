@@ -82,7 +82,6 @@
       "document": "CreateLibrary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体库名称，最多 50 个字符",
           "example": "家庭云盘",
@@ -92,37 +91,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "存储桶全名，新建后不可更改",
-          "example": "smh-1250000000",
-          "member": "string",
-          "name": "BucketName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "存储桶所在地域，新建后不可更改",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "BucketRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "媒体库配置项，部分参数新建后不可更改",
-          "example": "无",
-          "member": "LibraryExtension",
-          "name": "LibraryExtension",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "备注，最多 250 个字符",
           "example": "用于家庭内部共享",
@@ -130,6 +98,33 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。",
+          "example": "无",
+          "member": "string",
+          "name": "BucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。",
+          "example": "无",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体库配置项，部分参数新建后不可更改",
+          "example": "无",
+          "member": "LibraryExtension",
+          "name": "LibraryExtension",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -143,7 +138,6 @@
           "example": "smhfoobar",
           "member": "string",
           "name": "LibraryId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -188,7 +182,6 @@
       "document": "DescribeLibraries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个媒体库 ID 查询，每次请求的上限为 100 个。",
           "example": "[ 'smh3ptyc9mscifdi', 'smh2dugfmc1jrnzd' ]",
@@ -198,7 +191,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，整型，配合 PageSize 使用，默认值为 1。",
           "example": "2",
@@ -208,7 +200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数目，整型，配合 PageNumber 使用，默认值为 20，最大值为 100。",
           "example": "20",
@@ -229,7 +220,6 @@
           "example": "无",
           "member": "Library",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -239,7 +229,6 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

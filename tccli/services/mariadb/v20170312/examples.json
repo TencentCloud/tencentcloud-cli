@@ -192,6 +192,14 @@
         "title": "查询慢查询日志列表"
       }
     ],
+    "DescribeDBTmpInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBTmpInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TmpInstances\": [\n            {\n                \"Status\": 0,\n                \"SrcInstanceId\": \"xx\",\n                \"Zone\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"TempType\": 0,\n                \"InstanceRemark\": \"xx\",\n                \"Vip\": \"xx\",\n                \"AppId\": 0,\n                \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n                \"Ipv6Flag\": 1,\n                \"Vport\": 0,\n                \"StatusDesc\": \"xx\",\n                \"Vipv6\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeDatabaseObjects": [
       {
         "document": "",
