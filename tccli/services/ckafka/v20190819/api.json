@@ -11911,6 +11911,7 @@
           "example": "false",
           "member": "bool",
           "name": "SelfBuilt",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -11921,6 +11922,7 @@
           "example": "ckafka-xxx",
           "member": "string",
           "name": "Resource",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11931,6 +11933,7 @@
           "example": "test",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11941,6 +11944,7 @@
           "example": "timestamp",
           "member": "string",
           "name": "OffsetType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11951,6 +11955,7 @@
           "example": "1635339533",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11961,6 +11966,7 @@
           "example": "MyCkafkaName",
           "member": "string",
           "name": "ResourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11971,6 +11977,7 @@
           "example": "200005",
           "member": "int64",
           "name": "ZoneId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11981,6 +11988,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11991,6 +11999,7 @@
           "example": "1",
           "member": "int64",
           "name": "PartitionNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12001,6 +12010,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableToleration",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -12011,6 +12021,7 @@
           "example": "4000",
           "member": "uint64",
           "name": "QpsLimit",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12021,6 +12032,7 @@
           "example": "xxx",
           "member": "TableMapping",
           "name": "TableMappings",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12031,6 +12043,7 @@
           "example": "false",
           "member": "bool",
           "name": "UseTableMapping",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -12041,6 +12054,7 @@
           "example": "false",
           "member": "bool",
           "name": "UseAutoCreateTopic",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -12051,6 +12065,7 @@
           "example": "none",
           "member": "string",
           "name": "CompressionType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12061,6 +12076,7 @@
           "example": "1",
           "member": "int64",
           "name": "MsgMultiple",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12071,6 +12087,7 @@
           "example": "DATA_SYNC_TYPE",
           "member": "string",
           "name": "ConnectorSyncType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12081,6 +12098,7 @@
           "example": "false",
           "member": "bool",
           "name": "KeepPartition",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -16529,78 +16547,78 @@
       "document": "Topic配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单独售卖Topic的Topic名称",
           "example": "1234-xxx",
           "member": "string",
           "name": "Resource",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "timestamp",
           "member": "string",
           "name": "OffsetType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1635339533",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic的TopicId【出参】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "写入Topic时是否进行压缩，不开启填\"none\"，开启的话，可选择\"gzip\", \"snappy\", \"lz4\"中的一个进行填写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
           "member": "string",
           "name": "CompressionType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "UseAutoCreateTopic",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MsgMultiple",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true

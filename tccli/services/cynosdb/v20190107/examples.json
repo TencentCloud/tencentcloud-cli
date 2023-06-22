@@ -486,6 +486,20 @@
         "title": "查询数据库代理节点列表"
       }
     ],
+    "DescribeProxySpecs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Mem\": 0,\n                \"Cpu\": 0\n            }\n        ],\n        \"RequestId\": \"request-756112\"\n    }\n}",
+        "title": "查询数据库代理规格"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Cpu\": 2,\n                \"Mem\": 4000\n            },\n            {\n                \"Cpu\": 4,\n                \"Mem\": 8000\n            },\n            {\n                \"Cpu\": 8,\n                \"Mem\": 16000\n            }\n        ],\n        \"RequestId\": \"f4479b74-e428-40d9-a81f-e34cac00ae70\"\n    }\n}",
+        "title": "查询proxy规格"
+      }
+    ],
     "DescribeResourcePackageDetail": [
       {
         "document": "查询资源包使用详情\n",

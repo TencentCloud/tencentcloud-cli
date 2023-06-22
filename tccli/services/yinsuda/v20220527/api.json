@@ -28,6 +28,13 @@
       "output": "DescribeKTVMatchMusicsResponse",
       "status": "online"
     },
+    "DescribeKTVMusicAccompanySegmentUrl": {
+      "document": "获取歌曲伴奏片段链接，可用于抢唱",
+      "input": "DescribeKTVMusicAccompanySegmentUrlRequest",
+      "name": "获取歌曲伴奏片段链接",
+      "output": "DescribeKTVMusicAccompanySegmentUrlResponse",
+      "status": "online"
+    },
     "DescribeKTVMusicsByTag": {
       "document": "通过标签过滤歌曲列表。",
       "input": "DescribeKTVMusicsByTagRequest",
@@ -501,6 +508,132 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlRequest": {
+      "document": "DescribeKTVMusicAccompanySegmentUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "歌曲 Id 。",
+          "example": "mid-test",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "Chat",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间Id",
+          "example": "4324556",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlResponse": {
+      "document": "DescribeKTVMusicAccompanySegmentUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲状态。\n0：可用\n1：下线\n2：没权限\n3：没伴奏\n当返回2时，其他参数有可能全部为空",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伴奏链接",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伴奏类型，如mkv，mp3等",
+          "example": "mkv",
+          "member": "string",
+          "name": "ExtName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高潮开始时间",
+          "example": "12452323",
+          "member": "int64",
+          "name": "SegmentBegin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高潮结束时间",
+          "example": "1234566",
+          "member": "int64",
+          "name": "SegmentEnd",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接文件大小 单位 字节",
+          "example": "100",
+          "member": "int64",
+          "name": "FileSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其它片段时间（可用于抢唱）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KTVOtherSegments",
+          "name": "OtherSegments",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1546,6 +1679,32 @@
           "name": "BPMInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVOtherSegments": {
+      "document": "其它片段时间（可用于抢唱）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "片段开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SegmentBegin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "片段结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SegmentEnd",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

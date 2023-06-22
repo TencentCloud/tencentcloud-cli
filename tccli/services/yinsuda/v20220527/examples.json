@@ -38,6 +38,20 @@
         "title": "匹配 AME 歌曲"
       }
     ],
+    "DescribeKTVMusicAccompanySegmentUrl": [
+      {
+        "document": "获取歌曲伴奏链接",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicAccompanySegmentUrl\n<公共请求参数>\n\n{\n    \"AppName\": \"abc\",\n    \"UserId\": \"abc\",\n    \"MusicId\": \"abc\",\n    \"PlayScene\": \"abc\",\n    \"RoomId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Url\": \"abc\",\n        \"ExtName\": \"abc\",\n        \"SegmentBegin\": 0,\n        \"SegmentEnd\": 0,\n        \"FileSize\": 0,\n        \"OtherSegments\": [\n            {\n                \"SegmentBegin\": 0,\n                \"SegmentEnd\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取歌曲伴奏链接"
+      },
+      {
+        "document": "脱敏的实际请求",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicAccompanySegmentUrl\n<公共请求参数>\n\n{\n    \"AppName\": \"monk_dev\",\n    \"UserId\": \"monk\",\n    \"MusicId\": \"mid-9Eyb67xe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExtName\": \"mkv\",\n        \"FileSize\": 1087189,\n        \"OtherSegments\": [\n            {\n                \"SegmentBegin\": 91798,\n                \"SegmentEnd\": 120177\n            }\n        ],\n        \"RequestId\": \"865e06ab-1aae-42e1-ae29-3137f143fb01\",\n        \"SegmentBegin\": 91798,\n        \"SegmentEnd\": 120177,\n        \"Status\": 0,\n        \"Url\": \"http://****/202306151716/****/0db8f1208ee298295cc6c81bac448751\"\n    }\n}",
+        "title": "获取歌曲伴奏链接(脱敏)"
+      }
+    ],
     "DescribeKTVMusicsByTag": [
       {
         "document": "获取标签歌曲信息",

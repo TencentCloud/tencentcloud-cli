@@ -259,8 +259,8 @@
           "example": "无",
           "member": "Group",
           "name": "GroupList",
-          "required": false,
-          "type": "object",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -411,20 +411,20 @@
         },
         {
           "disabled": false,
-          "document": "机器人应答。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ResponseMessage",
-          "name": "ResponseMessage",
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResultType",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器人应答。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResponseMessage",
+          "name": "ResponseMessage",
+          "type": "object",
           "value_allowed_null": true
         },
         {

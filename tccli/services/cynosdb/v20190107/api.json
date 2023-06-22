@@ -420,6 +420,13 @@
       "output": "DescribeProxyNodesResponse",
       "status": "online"
     },
+    "DescribeProxySpecs": {
+      "document": "查询数据库代理规格",
+      "input": "DescribeProxySpecsRequest",
+      "name": "查询数据库代理规格",
+      "output": "DescribeProxySpecsResponse",
+      "status": "online"
+    },
     "DescribeResourcePackageDetail": {
       "document": "查询资源包使用详情",
       "input": "DescribeResourcePackageDetailRequest",
@@ -9090,6 +9097,33 @@
       ],
       "type": "object"
     },
+    "DescribeProxySpecsRequest": {
+      "document": "DescribeProxySpecs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProxySpecsResponse": {
+      "document": "DescribeProxySpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理规格列表",
+          "example": "无",
+          "member": "ProxySpec",
+          "name": "ProxySpecs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourcePackageDetailRequest": {
       "document": "DescribeResourcePackageDetail请求参数结构体",
       "members": [
@@ -14409,6 +14443,34 @@
           "name": "Zone",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxySpec": {
+      "document": "数据库代理规格",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理cpu核数",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理内存",
+          "example": "无",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

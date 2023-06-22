@@ -2784,7 +2784,7 @@
         },
         {
           "disabled": false,
-          "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。",
+          "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，不区分大小写，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。",
           "example": "IPV4",
           "member": "string",
           "name": "AddressIPVersion",
@@ -2965,6 +2965,7 @@
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2974,6 +2975,7 @@
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

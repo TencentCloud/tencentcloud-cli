@@ -119,6 +119,13 @@
       "output": "CreateProcedureTemplateResponse",
       "status": "online"
     },
+    "CreateQualityInspectTemplate": {
+      "document": "创建音画质检测模板。",
+      "input": "CreateQualityInspectTemplateRequest",
+      "name": "创建音画质检测模板",
+      "output": "CreateQualityInspectTemplateResponse",
+      "status": "online"
+    },
     "CreateRebuildMediaTemplate": {
       "document": "创建音画质重生模板。",
       "input": "CreateRebuildMediaTemplateRequest",
@@ -292,6 +299,13 @@
       "input": "DeleteProcedureTemplateRequest",
       "name": "删除任务流模板",
       "output": "DeleteProcedureTemplateResponse",
+      "status": "online"
+    },
+    "DeleteQualityInspectTemplate": {
+      "document": "删除音画质检测模板。",
+      "input": "DeleteQualityInspectTemplateRequest",
+      "name": "删除音画质检测模板",
+      "output": "DeleteQualityInspectTemplateResponse",
       "status": "online"
     },
     "DeleteRebuildMediaTemplate": {
@@ -574,6 +588,13 @@
       "output": "DescribeProcedureTemplatesResponse",
       "status": "online"
     },
+    "DescribeQualityInspectTemplates": {
+      "document": "获取音画质检测模板列表。",
+      "input": "DescribeQualityInspectTemplatesRequest",
+      "name": "获取音画质检测模板列表",
+      "output": "DescribeQualityInspectTemplatesResponse",
+      "status": "online"
+    },
     "DescribeRebuildMediaTemplates": {
       "document": "获取音画质重生模板列表。",
       "input": "DescribeRebuildMediaTemplatesRequest",
@@ -735,6 +756,13 @@
       "output": "ForbidMediaDistributionResponse",
       "status": "online"
     },
+    "InspectMediaQuality": {
+      "document": "对点播中的音视频媒体发起音画质检测任务。",
+      "input": "InspectMediaQualityRequest",
+      "name": "音画质检测",
+      "output": "InspectMediaQualityResponse",
+      "status": "online"
+    },
     "LiveRealTimeClip": {
       "document": "直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种即时剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段**长久保存**的场景；\n- 剪辑不固化：剪辑得到的视频附属于直播录制文件，没有独立 FileId；适用于将精彩片段**临时分享**的场景。\n\n注意：\n- 使用直播即时剪辑功能的前提是：目标直播流开启了[时移回看](https://cloud.tencent.com/document/product/267/32742)功能。\n- 直播即时剪辑是基于直播录制生成的 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n- 由于直播过程中可能存在断流的情况，所以有可能导致剪辑生成的实际视频时长与期望不一致。例如剪辑某个直播流的时间区间为 2018-09-20T10:30:00Z 到 2018-09-20T10:40:00Z ，如果在该时间区间中发生过断流，那么返回的媒资文件的时长将少于 10 分钟，在这种情况下，可以通过输出参数 <a href=\"#p_segmentset\">SegmentSet</a> 感知到。\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频是保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始直播录制视频影响（即使原始录制视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，直播录制出来的原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于直播即时剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择直播即时剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始录制视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与直播录制视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与直播录制的完整视频有效期是一致的。一旦直播录制出来的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。\n",
       "input": "LiveRealTimeClipRequest",
@@ -845,6 +873,13 @@
       "input": "ModifyPersonSampleRequest",
       "name": "修改素材样本",
       "output": "ModifyPersonSampleResponse",
+      "status": "online"
+    },
+    "ModifyQualityInspectTemplate": {
+      "document": "修改音画质检测模板。",
+      "input": "ModifyQualityInspectTemplateRequest",
+      "name": "修改音画质检测模板",
+      "output": "ModifyQualityInspectTemplateResponse",
       "status": "online"
     },
     "ModifyRebuildMediaTemplate": {
@@ -1344,6 +1379,38 @@
         }
       ],
       "usage": "out"
+    },
+    "AbnormalLightingConfigureInfo": {
+      "document": "视频画面低光、过曝检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面低光、过曝检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AbnormalLightingConfigureInfoForUpdate": {
+      "document": "视频画面低光、过曝检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面低光、过曝检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "AccelerateAreaInfo": {
       "document": "域名的地区加速信息",
@@ -7335,6 +7402,70 @@
       ],
       "usage": "both"
     },
+    "BlackWhiteEdgeConfigureInfo": {
+      "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面黑边、白边、黑屏、白屏检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BlackWhiteEdgeConfigureInfoForUpdate": {
+      "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面黑边、白边、黑屏、白屏检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "BlurConfigureInfo": {
+      "document": "视频画面模糊检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面模糊检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BlurConfigureInfoForUpdate": {
+      "document": "视频画面模糊检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面模糊检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "Canvas": {
       "document": "画布信息。制作视频时，如果源素材（视频或者图片）不能填满输出的视频窗口，将用设置的画布进行背景绘制。",
       "members": [
@@ -8555,6 +8686,38 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CrashScreenConfigureInfo": {
+      "document": "视频画面花屏检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面花屏检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CrashScreenConfigureInfoForUpdate": {
+      "document": "视频画面花屏检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面花屏检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -9897,6 +10060,160 @@
     "CreateProcedureTemplateResponse": {
       "document": "CreateProcedureTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQualityInspectTemplateRequest": {
+      "document": "CreateQualityInspectTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "截帧间隔，单位为秒，最小值为 1。当不填时，默认截帧间隔为 1 秒。",
+          "example": "无",
+          "member": "float",
+          "name": "ScreenshotInterval",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面抖动重影检测的控制参数。",
+          "example": "无",
+          "member": "JitterConfigureInfo",
+          "name": "JitterConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面模糊检测的控制参数。",
+          "example": "无",
+          "member": "BlurConfigureInfo",
+          "name": "BlurConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面低光、过曝检测的控制参数。",
+          "example": "无",
+          "member": "AbnormalLightingConfigureInfo",
+          "name": "AbnormalLightingConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面花屏检测的控制参数。",
+          "example": "无",
+          "member": "CrashScreenConfigureInfo",
+          "name": "CrashScreenConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。",
+          "example": "无",
+          "member": "BlackWhiteEdgeConfigureInfo",
+          "name": "BlackWhiteEdgeConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面噪点检测的控制参数。",
+          "example": "无",
+          "member": "NoiseConfigureInfo",
+          "name": "NoiseConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面马赛克检测的控制参数。",
+          "example": "无",
+          "member": "MosaicConfigureInfo",
+          "name": "MosaicConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面二维码检测的控制参数。",
+          "example": "无",
+          "member": "QRCodeConfigureInfo",
+          "name": "QRCodeConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评价的控制参数。",
+          "example": "无",
+          "member": "QualityEvaluationConfigureInfo",
+          "name": "QualityEvaluationConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音频（静音、低音、爆音）检测的控制参数。",
+          "example": "无",
+          "member": "VoiceConfigureInfo",
+          "name": "VoiceConfigure",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQualityInspectTemplateResponse": {
+      "document": "CreateQualityInspectTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质检测模板 ID。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11527,6 +11844,42 @@
     },
     "DeleteProcedureTemplateResponse": {
       "document": "DeleteProcedureTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQualityInspectTemplateRequest": {
+      "document": "DeleteQualityInspectTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质检测模板号。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQualityInspectTemplateResponse": {
+      "document": "DeleteQualityInspectTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14217,6 +14570,87 @@
       ],
       "type": "object"
     },
+    "DescribeQualityInspectTemplatesRequest": {
+      "document": "DescribeQualityInspectTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板列表。长度限制：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityInspectTemplatesResponse": {
+      "document": "DescribeQualityInspectTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板详情列表。",
+          "example": "无",
+          "member": "QualityInspectTemplateItem",
+          "name": "QualityInspectTemplateSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRebuildMediaTemplatesRequest": {
       "document": "DescribeRebuildMediaTemplates请求参数结构体",
       "members": [
@@ -15110,7 +15544,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务；</li>\n<li>QualityInspect：音画质检测任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -15321,6 +15755,15 @@
           "example": "无",
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesTask",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityInspectTask",
+          "name": "QualityInspectTask",
           "type": "object",
           "value_allowed_null": true
         },
@@ -16772,7 +17215,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -16997,6 +17440,16 @@
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesCompleteEvent",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityInspectTask",
+          "name": "QualityInspectCompleteEvent",
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -18887,6 +19340,128 @@
         }
       ],
       "usage": "out"
+    },
+    "InspectMediaQualityRequest": {
+      "document": "InspectMediaQuality请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质检测完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InspectMediaQualityResponse": {
+      "document": "InspectMediaQuality返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质检测任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "JitterConfigureInfo": {
+      "document": "视频画面抖动重影检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面抖动重影检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JitterConfigureInfoForUpdate": {
+      "document": "视频画面抖动重影检测的控制参数。",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "视频画面抖动重影检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "LicenseUsageDataItem": {
       "document": "License 请求次数统计数据。",
@@ -23888,6 +24463,159 @@
       ],
       "type": "object"
     },
+    "ModifyQualityInspectTemplateRequest": {
+      "document": "ModifyQualityInspectTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "截帧间隔，单位为秒，最小值为 1。",
+          "example": "无",
+          "member": "float",
+          "name": "ScreenshotInterval",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面抖动重影检测的控制参数。",
+          "example": "无",
+          "member": "JitterConfigureInfoForUpdate",
+          "name": "JitterConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面模糊检测的控制参数。",
+          "example": "无",
+          "member": "BlurConfigureInfoForUpdate",
+          "name": "BlurConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面低光、过曝检测的控制参数。",
+          "example": "无",
+          "member": "AbnormalLightingConfigureInfoForUpdate",
+          "name": "AbnormalLightingConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面花屏检测的控制参数。",
+          "example": "无",
+          "member": "CrashScreenConfigureInfoForUpdate",
+          "name": "CrashScreenConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。",
+          "example": "无",
+          "member": "BlackWhiteEdgeConfigureInfoForUpdate",
+          "name": "BlackWhiteEdgeConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面噪点检测的控制参数。",
+          "example": "无",
+          "member": "NoiseConfigureInfoForUpdate",
+          "name": "NoiseConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面马赛克检测的控制参数。",
+          "example": "无",
+          "member": "MosaicConfigureInfoForUpdate",
+          "name": "MosaicConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面二维码检测的控制参数。",
+          "example": "无",
+          "member": "QRCodeConfigureInfoForUpdate",
+          "name": "QRCodeConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评价的控制参数。",
+          "example": "无",
+          "member": "QualityEvaluationConfigureInfoForUpdate",
+          "name": "QualityEvaluationConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音频（静音、低音、爆音）检测的控制参数。",
+          "example": "无",
+          "member": "VoiceConfigureInfoForUpdate",
+          "name": "VoiceConfigure",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyQualityInspectTemplateResponse": {
+      "document": "ModifyQualityInspectTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRebuildMediaTemplateRequest": {
       "document": "ModifyRebuildMediaTemplate请求参数结构体",
       "members": [
@@ -25042,6 +25770,38 @@
       ],
       "type": "object"
     },
+    "MosaicConfigureInfo": {
+      "document": "视频画面马赛克检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面马赛克检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MosaicConfigureInfoForUpdate": {
+      "document": "视频画面马赛克检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面马赛克检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "MosaicInput": {
       "document": "视频处理任务中的马赛克参数类型",
       "members": [
@@ -25117,6 +25877,38 @@
         }
       ],
       "usage": "both"
+    },
+    "NoiseConfigureInfo": {
+      "document": "视频画面噪点检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面噪点检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NoiseConfigureInfoForUpdate": {
+      "document": "视频画面噪点检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面噪点检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "ObjectConfigureInfo": {
       "document": "物体识别任务控制参数",
@@ -27854,6 +28646,526 @@
         }
       ],
       "type": "object"
+    },
+    "QRCodeConfigureInfo": {
+      "document": "视频画面二维码检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面二维码检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QRCodeConfigureInfoForUpdate": {
+      "document": "视频画面二维码检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面二维码检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "QualityEvaluationConfigureInfo": {
+      "document": "视频画面质量评价的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面质量评价检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评价过滤阈值，结果只返回低于该值的时间段，默认值为 60。",
+          "example": "无",
+          "member": "int64",
+          "name": "Score",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QualityEvaluationConfigureInfoForUpdate": {
+      "document": "视频画面质量评价的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频画面质量评价开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评价过滤阈值，结果只返回低于该值的时间段。",
+          "example": "无",
+          "member": "int64",
+          "name": "Score",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "QualityInspectItem": {
+      "document": "音画质检测异常片段信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "置信度，取值范围：[0, 100]。\n<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：\n<li>Mosaic：马赛克；</li>\n<li>QRCode：二维码；</li>\n<li>AppletCode：小程序码；</li>\n<li>BarCode：条形码。</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "Confidence",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常片段起始的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常片段终止的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测出异常的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。\n<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：\n<li>BlackWhiteEdge：黑白边；</li>\n<li>Mosaic：马赛克；</li>\n<li>QRCode：二维码；</li>\n<li>AppletCode：小程序码；</li>\n<li>BarCode：条形码。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityInspectResultItem": {
+      "document": "音画质检测异常结果信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异常类型，取值范围：\n<li>Jitter：抖动；</li>\n<li>Blur：模糊；</li>\n<li>LowLighting：低光照；</li>\n<li>HighLighting：过曝；</li>\n<li>CrashScreen：花屏；</li>\n<li>BlackWhiteEdge：黑白边；</li>\n<li>SolidColorScreen：纯色屏；</li>\n<li>Noise：噪点；</li>\n<li>Mosaic：马赛克；</li>\n<li>QRCode：二维码；</li>\n<li>AppletCode：小程序码；</li>\n<li>BarCode：条形码；</li>\n<li>LowVoice：低音；</li>\n<li>HighVoice：爆音；</li>\n<li>NoVoice：静音；</li>\n<li>LowEvaluation：无参考打分低于阈值。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常片段列表。\n<font color=red>注意：</font> 该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
+          "member": "QualityInspectItem",
+          "name": "SegmentSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常片段列表文件 URL。文件 内容 为  JSON，数据结构与 SegmentSet 字段一致。（文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityInspectTask": {
+      "document": "音画质检测任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测输入音视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测任务输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityInspectTaskInput",
+          "name": "Input",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityInspectTaskOutput",
+          "name": "Output",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质检测完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityInspectTaskInput": {
+      "document": "音画质检测任务的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityInspectTaskOutput": {
+      "document": "音画质检测任务的输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件是否无音频轨，取值范围：\n<li>0：否，即有音频轨；</li>\n<li>1：是，即无音频轨。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "NoAudio",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件是否无视频轨，取值范围：\n<li>0：否，即有视频轨；</li>\n<li>1：是，即无视频轨。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "NoVideo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评分，取值范围：[0, 100]。",
+          "example": "无",
+          "member": "uint64",
+          "name": "QualityEvaluationScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质检测出的异常项列表。",
+          "example": "无",
+          "member": "QualityInspectResultItem",
+          "name": "QualityInspectResultSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityInspectTemplateItem": {
+      "document": "音画质检测模板详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截帧间隔，单位为秒。",
+          "example": "无",
+          "member": "float",
+          "name": "ScreenshotInterval",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频画面抖动重影检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JitterConfigureInfo",
+          "name": "JitterConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面模糊检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlurConfigureInfo",
+          "name": "BlurConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面低光、过曝检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AbnormalLightingConfigureInfo",
+          "name": "AbnormalLightingConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面花屏检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrashScreenConfigureInfo",
+          "name": "CrashScreenConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面黑边、白边、黑屏、白屏检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlackWhiteEdgeConfigureInfo",
+          "name": "BlackWhiteEdgeConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面噪点检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoiseConfigureInfo",
+          "name": "NoiseConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面马赛克检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MosaicConfigureInfo",
+          "name": "MosaicConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面二维码检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QRCodeConfigureInfo",
+          "name": "QRCodeConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频画面质量评价的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityEvaluationConfigureInfo",
+          "name": "QualityEvaluationConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频（静音、低音、爆音）检测的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoiceConfigureInfo",
+          "name": "VoiceConfigure",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RebuildAudioInfo": {
       "document": "音画质重生音频控制控制信息。",
@@ -34998,6 +36310,38 @@
         }
       ],
       "usage": "both"
+    },
+    "VoiceConfigureInfo": {
+      "document": "音频（静音、低音、爆音）检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频（静音、低音、爆音）检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoiceConfigureInfoForUpdate": {
+      "document": "音频（静音、低音、爆音）检测的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频（静音、低音、爆音）检测开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "WatermarkCycleConfigForUpdate": {
       "document": "水印周期配置。",

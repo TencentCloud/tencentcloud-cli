@@ -140,6 +140,13 @@
       "output": "CreateDBInstanceHourResponse",
       "status": "online"
     },
+    "CreateDatabase": {
+      "document": "本接口(CreateDatabase)用于在云数据库实例中创建数据库。",
+      "input": "CreateDatabaseRequest",
+      "name": "创建数据库",
+      "output": "CreateDatabaseResponse",
+      "status": "online"
+    },
     "CreateDeployGroup": {
       "document": "本接口(CreateDeployGroup)用于创建放置实例的置放群组",
       "input": "CreateDeployGroupRequest",
@@ -5628,6 +5635,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseRequest": {
+      "document": "CreateDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "db_test",
+          "member": "string",
+          "name": "DBName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字符集，可选值：utf8，gbk，latin1，utf8mb4。",
+          "example": "utf8",
+          "member": "string",
+          "name": "CharacterSetName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseResponse": {
+      "document": "CreateDatabase返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
