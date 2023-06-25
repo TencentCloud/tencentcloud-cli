@@ -158,6 +158,26 @@
         "title": "增加主题分区"
       }
     ],
+    "CreatePostPaidInstance": [
+      {
+        "document": "创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版后付费实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "创建后付费专业版实例"
+      },
+      {
+        "document": "同时创建三个后付费专业版实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test58\",\n    \"VpcId\": \"vpc-rmcg5cpf\",\n    \"SubnetId\": \"subnet-mnzcs7gk\",\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"BandWidth\": 20,\n    \"DiskSize\": 200,\n    \"Partition\": 400,\n    \"TopicNum\": 200,\n    \"ZoneId\": 450001,\n    \"InstanceNum\": 3,\n    \"PublicNetworkMonthly\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cda79237-6424-482a-b2d2-97d4853b33b4\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033915320000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-bz4dxxxx\",\n                            \"ckafka-o9gdxxxx\",\n                            \"ckafka-aj5gxxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"20230608002033915320000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-bz4dxxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "批量创建后付费专业版实例"
+      },
+      {
+        "document": "创建一个三可用区的专业版实例",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"MultiZoneFlag\": true,\n    \"ZoneIds\": [\n        450001,\n        450002,\n        450003\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "title": "创建后付费多可用区专业版实例"
+      }
+    ],
     "CreateRoute": [
       {
         "document": "",

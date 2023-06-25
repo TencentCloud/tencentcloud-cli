@@ -3507,9 +3507,8 @@
       "document": "CreateCmqQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test",
           "member": "string",
           "name": "QueueName",
@@ -3518,7 +3517,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
           "example": "0",
@@ -3529,7 +3527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
           "example": "0",
@@ -3540,7 +3537,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
           "example": "0",
@@ -3551,7 +3547,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
           "example": "0",
@@ -3562,7 +3557,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
           "example": "0",
@@ -3573,7 +3567,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。",
           "example": "0",
@@ -3584,7 +3577,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1 表示事务队列，0 表示普通队列",
           "example": "0",
@@ -3595,7 +3587,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第一次回查间隔",
           "example": "0",
@@ -3606,7 +3597,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大回查次数",
           "example": "0",
@@ -3617,7 +3607,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列名称",
           "example": "xxx",
@@ -3628,7 +3617,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信策略。0为消息被多次消费未删除，1为Time-To-Live过期",
           "example": "0",
@@ -3639,7 +3627,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大接收次数 1-1000",
           "example": "0",
@@ -3650,7 +3637,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间msgRetentionSeconds",
           "example": "0",
@@ -3661,7 +3647,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消息轨迹追踪，当不设置字段时，默认为不开启，该字段为true表示开启，为false表示不开启",
           "example": "false",
@@ -3672,7 +3657,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "无",
@@ -3683,7 +3667,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0",
           "example": "0",
@@ -3694,7 +3677,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定专享实例创建",
           "example": "instance-auashas",
@@ -3716,7 +3698,7 @@
           "example": "queue-xxx",
           "member": "string",
           "name": "QueueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

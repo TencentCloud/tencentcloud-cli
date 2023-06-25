@@ -1,3 +1,197 @@
+# Release 3.0.794.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 50 次发布
+
+发布时间：2023-06-26 01:08:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDomainConfig](http://document.tencentcloudapi.woa.com/document/product/228/78115)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 66 次发布
+
+发布时间：2023-06-26 01:11:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePostPaidInstance](http://document.tencentcloudapi.woa.com/document/product/597/78116)
+
+新增数据结构：
+
+* [CreateInstancePostData](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePostData)
+* [CreateInstancePostResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#CreateInstancePostResp)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 47 次发布
+
+发布时间：2023-06-26 01:18:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSupportProxyVersion](http://document.tencentcloudapi.woa.com/document/product/1003/78117)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 22 次发布
+
+发布时间：2023-06-26 01:42:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：TDEConfig
+
+* [DescribeDBs](http://document.tencentcloudapi.woa.com/document/product/238/19968)
+
+	* 新增入参：Encryption
+
+
+新增数据结构：
+
+* [TDEConfigAttribute](http://document.tencentcloudapi.woa.com/document/product/238/19976#TDEConfigAttribute)
+
+修改数据结构：
+
+* [DBDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBDetail)
+
+	* 新增成员：Encryption
+
+
+
+
+## 腾讯云区块链服务平台 TBaaS(tbaas) 版本：2018-04-16
+
+### 第 6 次发布
+
+发布时间：2023-06-26 01:44:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeployDynamicBcosContract
+* GetBcosBlockByNumber
+* GetBcosBlockList
+* GetBcosTransByHash
+* GetBcosTransList
+* InvokeBcosTrans
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* BcosBlockObj
+* BcosTransInfo
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 6 次发布
+
+发布时间：2023-06-26 01:46:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CancelAuthorityIssuer
+* CheckDidDeploy
+* CreateDidService
+* CreateLabel
+* DeployByName
+* DownCpt
+* EnableHash
+* GetAuthoritiesList
+* GetCptList
+* GetCredentialIssueRank
+* GetCredentialIssueTrend
+* GetDataPanel
+* GetDeployInfo
+* GetDeployList
+* GetDidDetail
+* GetDidList
+* GetDidRegisterTrend
+* GetDidServiceDetail
+* GetDidServiceList
+* GetGroupList
+* GetLabelList
+* GetPolicyList
+* GetPublicKey
+* QueryPolicy
+* RecognizeAuthorityIssuer
+* RegisterClaimPolicy
+* RegisterIssuer
+* RemoveHash
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Authority
+* Contract
+* CptListData
+* DidData
+* DidServiceInfo
+* Group
+* Label
+* Policy
+* Task
+* Trend
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 26 次发布
+
+发布时间：2023-06-26 01:48:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CFSConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#CFSConfig)
+
+	* 新增成员：MountType, Protocol
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.793.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

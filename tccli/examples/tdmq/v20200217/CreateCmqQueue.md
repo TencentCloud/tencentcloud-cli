@@ -1,6 +1,6 @@
 **Example 1: 创建队列**
 
-
+创建队列
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 示例**
 
-
+创建队列
 
 Input: 
 

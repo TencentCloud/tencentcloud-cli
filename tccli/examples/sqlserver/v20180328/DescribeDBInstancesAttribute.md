@@ -1,6 +1,6 @@
 **Example 1: 查询实例mssql-j8kv137v的附属属性**
 
-实例附属属性
+查询实例附属属性
 
 Input: 
 
@@ -21,6 +21,11 @@ Output:
         "RegularBackupStrategy": "months",
         "RegularBackupStartTime": "2022-10-10",
         "EventSaveDays": 0,
+        "TDEConfig": {
+            "Encryption": "disable",
+            "CertificateAttribution": "self",
+            "QuoteUin": ""
+        },
         "BlockedThreshold": 6
     }
 }

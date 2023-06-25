@@ -276,7 +276,7 @@
     "DescribeDBInstancesAttribute": {
       "document": "本接口（DescribeDBInstancesAttribute）用于查询实例附属属性",
       "input": "DescribeDBInstancesAttributeRequest",
-      "name": "实例附属属性",
+      "name": "查询实例附属属性",
       "output": "DescribeDBInstancesAttributeResponse",
       "status": "online"
     },
@@ -4084,74 +4084,92 @@
       "document": "数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符集",
+          "example": "无",
           "member": "string",
           "name": "Charset",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号权限信息",
+          "example": "无",
           "member": "AccountPrivilege",
           "name": "Accounts",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内部状态。ONLINE表示运行中",
+          "example": "无",
           "member": "string",
           "name": "InternalStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启TDE加密，enable-已加密，disable-未加密",
+          "example": "disable",
+          "member": "string",
+          "name": "Encryption",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6888,6 +6906,16 @@
           "visibility": 1
         },
         {
+          "disabled": false,
+          "document": "TDE透明数据加密配置",
+          "example": "无",
+          "member": "TDEConfigAttribute",
+          "name": "TDEConfig",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7202,7 +7230,6 @@
       "document": "DescribeDBs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "[\"mssql-njj2mtpl\\r\\n\"]",
@@ -7213,7 +7240,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
           "example": "10",
@@ -7224,7 +7250,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -7235,7 +7260,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "test_db",
@@ -7246,12 +7270,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则（desc-降序，asc-升序），默认desc",
           "example": "desc",
           "member": "string",
           "name": "OrderByType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启TDE加密，enable-已加密，disable-未加密",
+          "example": "disable",
+          "member": "string",
+          "name": "Encryption",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -7268,7 +7301,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7279,7 +7311,6 @@
           "example": "无",
           "member": "InstanceDBDetail",
           "name": "DBInstances",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -14104,6 +14135,45 @@
         }
       ],
       "type": "object"
+    },
+    "TDEConfigAttribute": {
+      "document": "TDE透明数据加密配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否已开通TDE加密，enable-已开通，disable-未开通",
+          "example": "disable",
+          "member": "string",
+          "name": "Encryption",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，none-表示没有证书",
+          "example": "self",
+          "member": "string",
+          "name": "CertificateAttribution",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开通TDE加密时引用的其他主账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QuoteUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "TerminateDBInstanceRequest": {
       "document": "TerminateDBInstance请求参数结构体",

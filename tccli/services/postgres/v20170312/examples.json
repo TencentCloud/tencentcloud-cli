@@ -86,7 +86,7 @@
     ],
     "CreateReadOnlyDBInstance": [
       {
-        "document": "",
+        "document": "创建只读实例",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyDBInstance\n<公共请求参数>\n\n{\n    \"InstanceCount\": \"1\",\n    \"AutoRenewFlag\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"MasterDBInstanceId\": \"Postgres-testmaster\",\n    \"DBVersion\": \"9.3.5\",\n    \"Storage\": \"10\",\n    \"Period\": \"1\",\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"123\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
         "title": "CreateReadOnlyDBInstance"
@@ -748,7 +748,7 @@
     ],
     "UpgradeDBInstanceKernelVersion": [
       {
-        "document": "",
+        "document": "升级实例内核小版本",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstanceKernelVersion\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"pgro-g7w4itfg\",\n    \"TargetDBKernelVersion\": \"v12.7_r1.5\",\n    \"DryRun\": \"true\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b376d28-d5fd-40b0-9bdc-d992f8fed15d\"\n    }\n}",
         "title": "升级版本号"

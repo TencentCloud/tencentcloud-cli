@@ -24,52 +24,12 @@
         "title": "CreateChaincodeAndInstallForUser"
       }
     ],
-    "DeployDynamicBcosContract": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployDynamicBcosContract\n<公共请求参数>\n\n{\n    \"ClusterId\": \"251005746bc987bojjue8\",\n    \"SignUserId\": \"2SSS200021\",\n    \"AbiInfo\": \"[{\\\"constant\\\":false,\\\"inputs\\\":[{\\\"name\\\":\\\"n\\\",\\\"type\\\":\\\"string\\\"}],\\\"name\\\":\\\"set\\\",\\\"outputs\\\":[],\\\"payable\\\":false,\\\"stateMutability\\\":\\\"nonpayable\\\",\\\"type\\\":\\\"function\\\"},{\\\"constant\\\":true,\\\"inputs\\\":[],\\\"name\\\":\\\"get\\\",\\\"outputs\\\":[{\\\"name\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"}],\\\"payable\\\":false,\\\"stateMutability\\\":\\\"view\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[],\\\"payable\\\":false,\\\"stateMutability\\\":\\\"nonpayable\\\",\\\"type\\\":\\\"constructor\\\"}]\",\n    \"ByteCodeBin\": \"608060405234801561001057600080fd5b506040805190810160405280600d81526020017f48656c6c6f2c20576f726c6421000000000000000000000000000000000000008152506000908051906020019061005c929190610062565b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b6102d7806101166000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e146100515780636d4ce63c146100ba575b600080fd5b34801561005d57600080fd5b506100b8600480360381019080803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929050505061014a565b005b3480156100c657600080fd5b506100cf610164565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561010f5780820151818401526020810190506100f4565b50505050905090810190601f16801561013c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b8060009080519060200190610160929190610206565b5050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101fc5780601f106101d1576101008083540402835291602001916101fc565b820191906000526020600020905b8154815290600101906020018083116101df57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061024757805160ff1916838001178555610275565b82800160010185558215610275579182015b82811115610274578251825591602001919060010190610259565b5b5090506102829190610286565b5090565b6102a891905b808211156102a457600081600090555060010161028c565b5090565b905600a165627a7a72305820238c9f89165d4c9f808f6cb79037607be9c38a0f9bb8bdfb9ec4cce69b7371180029\",\n    \"GroupId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cfd9111-1954-4c2e-9564-975ce1d9ad2b\",\n        \"ContractAddress\": \"0xasdfasdf23fasdfas2Qreffasfaefad\"\n    }\n}",
-        "title": "动态部署Bcos合约"
-      }
-    ],
     "DownloadUserCert": [
       {
         "document": "",
         "input": "https://tbaas.tencentcloudapi.com/?Action=DownloadUserCert\n&Module=cert_mng\n&Operation=cert_download_for_user\n&CertId=171781\n&CertDn=C=CN,ST=ShenZhen,L=4ShenZhen,O=youtuOrg,OU=client,CN=kyloz@youtuorg.bckuobc41mpu@client\n&ClusterId=251005746bckuobc41mpu\n&GroupName=youtuOrg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertCtx\": \"-----BEGIN CERTIFICATE-----\\nMIIC4DCCAoagAwIBAgIBBzAKBggqhkjOPQQDAjBpMQswCQYDVQQGEwJDTjERMA8G\\nA1UECAwIU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0\\ndU9yZzEhMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1MB4XDTE5MTAx\\nNjA2NDY0NVoXDTIyMDkzMDA2NDY0NVowgYUxCzAJBgNVBAYTAkNOMREwDwYDVQQI\\nEwhTaGVuWmhlbjESMBAGA1UEBxMJNFNoZW5aaGVuMREwDwYDVQQKEwh5b3V0dU9y\\nZzEPMA0GA1UECxMGY2xpZW50MSswKQYDVQQDFCJreWxvekB5b3V0dW9yZy5iY2t1\\nb2JjNDFtcHVAY2xpZW50MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwitZ4tmO\\nK9tMvDLP4kx+ZmM8QnzHgfxr8KeoEjBwJomODlwyo6L5XIUeQIz1K/gwU6o8Arus\\nTrab1cWzgHyF8qOCAQAwgf0wCQYDVR0TBAIwADARBglghkgBhvhCAQEEBAMCBkAw\\nHQYDVR0OBBYEFNeW9zH7j/rxDklNBz4OB5aWVY66MIGbBgNVHSMEgZMwgZCAFDdP\\n92WahmfoPabh45gYaozILIVooW2kazBpMQswCQYDVQQGEwJDTjERMA8GA1UECAwI\\nU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0dU9yZzEh\\nMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1ggkA+Nat6MctlAowCwYD\\nVR0PBAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAoGCCqGSM49BAMCA0gAMEUC\\nIQDquRCXMx6T1QUi9YviE6cpGfQyIQIJ+SAp/6u5EhgzjgIgaf9eX823ZRWLG+S7\\nCdWSk/oVVeSoelyUDYqTvYYqXtI=\\n-----END CERTIFICATE-----\\n\",\n        \"CertName\": \"kyloz@youtuorg.bckuobc41mpu@client.pem\",\n        \"RequestId\": \"5f6192d9-fbcd-4d1d-9b52-61006f33543b\"\n    }\n}",
         "title": "用户证书下载"
-      }
-    ],
-    "GetBcosBlockByNumber": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBcosBlockByNumber\n<公共请求参数>\n\n{\n    \"ClusterId\": \"251005746bc987bojjue8\",\n    \"GroupId\": 0,\n    \"BlockNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BlockJson\": \"{\\\"Sealer\\\": \\\"8c4affffccda617e4e16274df0e550012e94f8dcf34b2e138313bd965d08215807a90766690f6a4606f180447601d433b77a7783cfcc43b20eea7b4b5cd31eb3\\\", \\\"BlockHash\\\": \\\"0xb30403facf6f7a65150fadc00cdfe2d27d1b7b672b382175af26bcd52b552ef8\\\", \\\"BlockTimestamp\\\": \\\"2019-10-04 10:17:28\\\", \\\"BlockNumber\\\": 1, \\\"TransCount\\\": 1, \\\"ModifyTime\\\": \\\"2019-10-04 10:20:16\\\", \\\"SealerIndex\\\": 2, \\\"CreateTime\\\": \\\"2019-10-04 10:20:16\\\"}\",\n        \"RequestId\": \"50986c54-6010-4f2e-adbe-766563597bbc\"\n    }\n}",
-        "title": "按块高查询区块信息"
-      }
-    ],
-    "GetBcosBlockList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBcosBlockList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"251005746bc987bojjue8\",\n    \"GroupId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"BlockHash\": \"0xb30403facf6f7a65150fadc00cdfe2d27d1b7b672b382175af26bcd52b552ef8\",\n                \"BlockNumber\": 1,\n                \"BlockTimestamp\": \"2019-10-04 10:17:28\",\n                \"CreateTime\": \"2019-10-04 10:20:16\",\n                \"ModifyTime\": \"2019-10-04 10:20:16\",\n                \"Sealer\": \"8c4affffccda617e4e16274df0e550012e94f8dcf34b2e138313bd965d08215807a90766690f6a4606f180447601d433b77a7783cfcc43b20eea7b4b5cd31eb3\",\n                \"SealerIndex\": 2,\n                \"TransCount\": 1\n            },\n            {\n                \"BlockHash\": \"0x6ae08948b5c0385a0393f688271291b5806edce462eb67a8382528a6d757e525\",\n                \"BlockNumber\": 0,\n                \"BlockTimestamp\": \"2019-10-03 22:31:52\",\n                \"CreateTime\": \"2019-10-03 22:34:57\",\n                \"ModifyTime\": \"2019-10-03 22:34:57\",\n                \"Sealer\": \"388a58a628c3dbb2aba593c7dc557ac36d386e931f15049ad8c5a3b2ea253e3edf25ccc80ac3012b6b78534889255cee2ac6f9b2dac80b47f75b52be0e4e8bb3\",\n                \"SealerIndex\": 0,\n                \"TransCount\": 0\n            }\n        ],\n        \"RequestId\": \"d124dbd0-b0e5-4762-9ca1-37a99bd63a0f\",\n        \"TotalCount\": 2\n    }\n}",
-        "title": "查询区块列表"
-      }
-    ],
-    "GetBcosTransByHash": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBcosTransByHash\n<公共请求参数>\n\n{\n    \"TransHash\": \"0x950ee123437c4ebf115c94212b61ab759e56f2e2d1dd25b78de7383f16b40d72\",\n    \"ClusterId\": \"bcos-d292gp0toy\",\n    \"GroupId\": \"15\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51083339-ffaa-42d4-a272-51f354c14759\",\n        \"TransactionJson\": \"{\\\"blockHash\\\":\\\"0x8be0f6288e887c84db48c48248f5e3cd41be81417c3294b0359f4b739beb661c\\\",\\\"blockNumber\\\":12,\\\"blockNumberRaw\\\":\\\"12\\\",\\\"creates\\\":null,\\\"from\\\":\\\"0x1aa8003024e222205bfed0fc4786c3945dfe6090\\\",\\\"gas\\\":100000000,\\\"gasPrice\\\":100000000,\\\"gasPriceRaw\\\":\\\"100000000\\\",\\\"gasRaw\\\":\\\"100000000\\\",\\\"hash\\\":\\\"0x950ee123437c4ebf115c94212b61ab759e56f2e2d1dd25b78de7383f16b40d72\\\",\\\"input\\\":\\\"0x4ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000573746f6e65000000000000000000000000000000000000000000000000000000\\\",\\\"nonce\\\":3.0404523452847157e+74,\\\"nonceRaw\\\":\\\"304045234528471549282051329892726108126972099205346767472045445814934456175\\\",\\\"publicKey\\\":null,\\\"r\\\":null,\\\"raw\\\":null,\\\"s\\\":null,\\\"to\\\":\\\"0x1b5fda9060597595afb818ee344499cf030ac445\\\",\\\"transactionIndex\\\":0,\\\"transactionIndexRaw\\\":\\\"0\\\",\\\"v\\\":0,\\\"value\\\":0,\\\"valueRaw\\\":\\\"0\\\"}\"\n    }\n}",
-        "title": "使用Hash查询交易"
-      }
-    ],
-    "GetBcosTransList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBcosTransList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"251005746bc987bojjue8\",\n    \"GroupId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"BlockNumber\": 12,\n                \"BlockTimestamp\": \"2019-07-27 17:13:48\",\n                \"CreateTime\": \"2019-07-27 10:58:04\",\n                \"ModifyTime\": \"2019-07-27 10:58:04\",\n                \"TransFrom\": \"0xe3726c02f48acbb2e0d1810af437d2f69af2f00d\",\n                \"TransHash\": \"0xfdd42c44b46df34be8f40598a35c585d5f1eb234541d25f8e1398a0d5dc074d1\",\n                \"TransTo\": null\n            },\n            {\n                \"BlockNumber\": 21,\n                \"BlockTimestamp\": \"2019-07-27 17:33:37\",\n                \"CreateTime\": \"2019-07-27 10:58:12\",\n                \"ModifyTime\": \"2019-07-27 10:58:12\",\n                \"TransFrom\": \"0xf1585b8d0e08a0a00fff662e24d67ba95a438256\",\n                \"TransHash\": \"0xf4cadb78d6cbc5b4daa42a47fafe288a448912ca662a4494817d679d54b695d8\",\n                \"TransTo\": \"0x0000000000000000000000000000000000001004\"\n            }\n        ],\n        \"RequestId\": \"d124dbd0-b0e5-4762-9ca1-37a99bd63a0f\",\n        \"TotalCount\": 2\n    }\n}",
-        "title": "获取交易列表"
       }
     ],
     "GetBlockList": [
@@ -196,14 +156,6 @@
         "input": "https://tbaas.tencentcloudapi.com/?Action=Invoke\n&Module=transaction\n&Operation=invoke\n&ClusterId=251005746envnew\n&Peers.0.PeerName=peer0.neworg02.envnew\n&Peers.0.OrgName=NewOrg02\n&ChannelName=ch042103\n&ChaincodeName=cc050301\n&FuncName=createCar\n&Args.0=CAR92\n&Args.1=Chevy\n&Args.2=Volt\n&Args.3=Black\n&Args.4=Nick\n&AsyncFlag=1\n&GroupName=NewOrg02\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Events\": \"\",\n        \"RequestId\": \"51ad1047-30c0-4397-b672-37e8ffd65d9f\",\n        \"Txid\": \"280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c\"\n    }\n}",
         "title": "创建汽车信息——异步模式"
-      }
-    ],
-    "InvokeBcosTrans": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeBcosTrans\n<公共请求参数>\n\n{\n    \"ContractAddress\": \"0xec17aa9c9d530108529c68b41701231b9ae458ef\",\n    \"ClusterId\": \"251005746bc987bojjue8\",\n    \"SignUserId\": \"2SSS200021\",\n    \"FuncName\": \"set\",\n    \"AbiInfo\": \"[{\\\"constant\\\":false,\\\"inputs\\\":[{\\\"name\\\":\\\"n\\\",\\\"type\\\":\\\"string\\\"}],\\\"name\\\":\\\"set\\\",\\\"outputs\\\":[],\\\"payable\\\":false,\\\"stateMutability\\\":\\\"nonpayable\\\",\\\"type\\\":\\\"function\\\"}]\",\n    \"GroupId\": 1,\n    \"FuncParam\": \"[10]\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5461dfd7-ca9e-486d-9655-843bfa7bd9b8\",\n        \"TransactionRsp\": \"{\\\"blockHash\\\":\\\"0x8be0f6288e887c84db48c48248f5e3cd41be81417c3294b0359f4b739beb661c\\\",\\\"blockNumber\\\":12,\\\"constant\\\":false,\\\"from\\\":\\\"0x1aa8003024e222205bfed0fc4786c3945dfe6090\\\",\\\"gasUsed\\\":23964,\\\"input\\\":\\\"0x4ed3885e0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000573746f6e65000000000000000000000000000000000000000000000000000000\\\",\\\"output\\\":\\\"0x\\\",\\\"queryInfo\\\":null,\\\"status\\\":\\\"0x0\\\",\\\"to\\\":\\\"0x1b5fda9060597595afb818ee344499cf030ac445\\\",\\\"transactionHash\\\":\\\"0x950ee123437c4ebf115c94212b61ab759e56f2e2d1dd25b78de7383f16b40d72\\\"}\"\n    }\n}",
-        "title": "发送Bcos合约交易"
       }
     ],
     "InvokeChainMakerContract": [
