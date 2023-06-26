@@ -161,6 +161,13 @@
       "output": "PutBreakdownEventsResponse",
       "status": "online"
     },
+    "PutCloudEvents": {
+      "document": "用于Event事件投递，仅供内部云产品服务使用",
+      "input": "PutCloudEventsRequest",
+      "name": "云产品事件投递",
+      "output": "PutCloudEventsResponse",
+      "status": "online"
+    },
     "PutEvents": {
       "document": "用于Event事件投递",
       "input": "PutEventsRequest",
@@ -2991,6 +2998,44 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutCloudEventsRequest": {
+      "document": "PutCloudEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件列表",
+          "example": "EventList",
+          "member": "Event",
+          "name": "EventList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件集ID",
+          "example": "EventBusId",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutCloudEventsResponse": {
+      "document": "PutCloudEvents返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

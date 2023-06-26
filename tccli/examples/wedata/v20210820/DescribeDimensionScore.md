@@ -1,6 +1,6 @@
 **Example 1: 查询维度评分**
 
-
+查询维度评分
 
 Input: 
 
@@ -15,8 +15,20 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f2a131b8-0de7-4cb8-a354-9bbfc5d3a028",
-        "Data": {}
+        "Data": {
+            "DimensionScoreList": [
+                {
+                    "Name": "abc",
+                    "Weight": 0,
+                    "UserId": 0,
+                    "UserName": "abc",
+                    "UpdateTime": 0,
+                    "JoinTableNumber": 0,
+                    "Score": 0
+                }
+            ]
+        },
+        "RequestId": "abc"
     }
 }
 ```

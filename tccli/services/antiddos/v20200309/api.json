@@ -968,7 +968,7 @@
           "example": "无",
           "member": "InstanceRelation",
           "name": "InstanceDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -979,7 +979,7 @@
           "example": "无",
           "member": "BGPIPInstanceSpecification",
           "name": "SpecificationLimit",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -990,7 +990,7 @@
           "example": "无",
           "member": "BGPIPInstanceUsages",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -1001,7 +1001,7 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -1012,7 +1012,7 @@
           "example": "idle",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1023,7 +1023,7 @@
           "example": "2020-06-09 23:12:23",
           "member": "datetime",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1034,7 +1034,7 @@
           "example": "2020-05-09 23:12:23",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1045,7 +1045,7 @@
           "example": "Test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1056,7 +1056,7 @@
           "example": "无",
           "member": "PackInfo",
           "name": "PackInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -1067,7 +1067,7 @@
           "example": "无",
           "member": "StaticPackRelation",
           "name": "StaticPackRelation",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -1078,7 +1078,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1089,7 +1089,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Tgw",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1100,7 +1100,7 @@
           "example": "UNBIND",
           "member": "string",
           "name": "EipAddressStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1111,7 +1111,7 @@
           "example": "1",
           "member": "int64",
           "name": "EipFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1122,7 +1122,7 @@
           "example": "无",
           "member": "EipAddressPackRelation",
           "name": "EipAddressPackRelation",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -1133,7 +1133,7 @@
           "example": "无",
           "member": "EipAddressRelation",
           "name": "EipAddressInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -1144,7 +1144,7 @@
           "example": "www.8cname.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1155,7 +1155,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DamDDoSStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1166,7 +1166,7 @@
           "example": "0",
           "member": "uint64",
           "name": "V6Flag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1177,7 +1177,7 @@
           "example": "0",
           "member": "uint64",
           "name": "BGPIPChannelFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1188,7 +1188,7 @@
           "example": "null",
           "member": "TagInfo",
           "name": "TagInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -1199,7 +1199,7 @@
           "example": "无",
           "member": "AnycastOutPackRelation",
           "name": "AnycastOutPackRelation",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -1210,7 +1210,7 @@
           "example": "0",
           "member": "uint64",
           "name": "InstanceVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1221,7 +1221,7 @@
           "example": "无",
           "member": "string",
           "name": "ConvoyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1232,7 +1232,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "ElasticBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1243,7 +1243,7 @@
           "example": "0",
           "member": "uint64",
           "name": "EOFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1590,6 +1590,17 @@
           "name": "ModifyTime",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否是基础防护加强版 0: 不是 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BasicPlusFlag",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -6979,6 +6990,16 @@
           "name": "FilterAssetIpList",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否包含基础防护增强版 0: 不包含 1: 包含",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterBasicPlusFlag",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],

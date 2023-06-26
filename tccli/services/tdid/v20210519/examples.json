@@ -112,22 +112,6 @@
         "title": "CreateLabel"
       }
     ],
-    "GetDidClusterDetail": [
-      {
-        "document": "网络基本信息",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsortiumName\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ChainAgency\": \"xx\"\n    }\n}",
-        "title": "ClusterName"
-      }
-    ],
-    "GetDidClusterList": [
-      {
-        "document": "网络基本信息",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidClusterList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"DidClusterList\": [\n            {\n                \"ChainId\": 590,\n                \"ChainName\": \"DCDC\",\n                \"AgencyCount\": 2,\n                \"ConsortiumId\": 661,\n                \"CreateTime\": \"2021-08-06 20:43:05\",\n                \"ExpireTime\": \"2021-09-06 20:57:20\",\n                \"ChainStatus\": 1,\n                \"ResourceId\": \"tbaas-ijfnnzqhg6\",\n                \"ClusterId\": \"bcos-8o0v0fpj12\",\n                \"ConsortiumName\": \"\",\n                \"AgencyId\": 301,\n                \"AutoRenewFlag\": 1,\n                \"TotalNetworkNode\": 5,\n                \"TotalCreateNode\": 4,\n                \"TotalGroups\": 1,\n                \"DidCount\": 5\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
-        "title": "ClusterName"
-      }
-    ],
     "GetDidDocument": [
       {
         "document": "查看DID文档",

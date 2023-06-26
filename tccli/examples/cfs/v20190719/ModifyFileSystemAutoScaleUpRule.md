@@ -1,4 +1,4 @@
-**Example 1: ModifyCFSFileSystemAutoScaleRule**
+**Example 1: 更新文件系统自动扩容策略**
 
 更新文件系统自动扩容策略
 
