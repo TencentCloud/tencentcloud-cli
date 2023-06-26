@@ -548,6 +548,14 @@
         "title": "查询指定时间点是否看回档"
       }
     ],
+    "DescribeSupportProxyVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SupportProxyVersions\": [\n            \"xx\"\n        ],\n        \"CurrentProxyVersion\": \"0.0\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询支持的数据库代理版本"
+      }
+    ],
     "DescribeZones": [
       {
         "document": "仅查看用户有权限的可用区",

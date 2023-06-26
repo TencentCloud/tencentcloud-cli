@@ -462,6 +462,13 @@
       "output": "ManageClsTopicDomainsResponse",
       "status": "online"
     },
+    "ModifyDomainConfig": {
+      "document": "ModifyDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：\nRoute 字段，使用点分隔，最后一段称为叶子节点，非叶子节点配置保持不变；\nValue 字段，使用 json 进行序列化，其中固定 update 作为 key，配置路径值参考 https://cloud.tencent.com/document/product/228/41116 接口各配置项复杂类型，为配置路径对应复杂类型下的节点。\n云审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到云审计。",
+      "input": "ModifyDomainConfigRequest",
+      "name": "变更加速域名配置",
+      "output": "ModifyDomainConfigResponse",
+      "status": "online"
+    },
     "ModifyPurgeFetchTaskStatus": {
       "document": "ModifyPurgeFetchTaskStatus 用于上报定时刷新预热任务执行状态",
       "input": "ModifyPurgeFetchTaskStatusRequest",
@@ -12724,6 +12731,51 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyDomainConfigRequest": {
+      "document": "ModifyDomainConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置路径",
+          "example": "Https.CertInfo.CertId",
+          "member": "string",
+          "name": "Route",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置路径值，使用 json 进行序列化，其中固定 update 作为 key",
+          "example": "{\\\"update\\\":\\\"0VpOXiPz\\\"}",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainConfigResponse": {
+      "document": "ModifyDomainConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyPurgeFetchTaskStatusRequest": {
       "document": "ModifyPurgeFetchTaskStatus请求参数结构体",

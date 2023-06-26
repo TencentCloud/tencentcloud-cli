@@ -6,18 +6,24 @@ Input:
 
 ```
 tccli trp CreateCodeBatch --cli-unfold-argument  \
-    --BatchId xx \
+    --MerchantId abc \
+    --ProductId abc \
     --BatchType 1 \
-    --MerchantId xx \
-    --ProductId xx
+    --BatchId abc \
+    --Remark abc \
+    --MpTpl abc \
+    --CloneId abc \
+    --BatchCode abc \
+    --ValidDate abc \
+    --ProductionDate abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BatchId": "xx",
-        "RequestId": "xx"
+        "BatchId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

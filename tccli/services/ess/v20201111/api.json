@@ -1135,6 +1135,7 @@
           "example": "无",
           "member": "string",
           "name": "ComponentType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1145,6 +1146,7 @@
           "example": "无",
           "member": "int64",
           "name": "FileIndex",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1155,6 +1157,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1165,6 +1168,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentWidth",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1175,6 +1179,7 @@
           "example": "无",
           "member": "int64",
           "name": "ComponentPage",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1185,6 +1190,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentPosX",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1195,6 +1201,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentPosY",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -1205,6 +1212,7 @@
           "example": "无",
           "member": "string",
           "name": "ComponentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1215,6 +1223,7 @@
           "example": "无",
           "member": "string",
           "name": "ComponentName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1225,6 +1234,7 @@
           "example": "无",
           "member": "bool",
           "name": "ComponentRequired",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1235,16 +1245,18 @@
           "example": "无",
           "member": "string",
           "name": "ComponentRecipientId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例： \"ComponentExtra\":\"{\\\"PageRanges\\\":[\\\"PageRange\\\":{\\\"BeginPage\\\":1,\\\"EndPage\\\":-1}]}\"",
+          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例：\"ComponentExtra\":\"{\\\"PageRanges\\\":[{\\\"BeginPage\\\":1,\\\"EndPage\\\":-1}]}\"",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1255,6 +1267,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsFormType",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1265,6 +1278,7 @@
           "example": "无",
           "member": "string",
           "name": "ComponentValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1275,6 +1289,7 @@
           "example": "无",
           "member": "string",
           "name": "GenerateMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1285,6 +1300,7 @@
           "example": "无",
           "member": "int64",
           "name": "ComponentDateFontSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1295,6 +1311,7 @@
           "example": "无",
           "member": "string",
           "name": "ChannelComponentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1305,6 +1322,7 @@
           "example": "无",
           "member": "float",
           "name": "OffsetX",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -1315,6 +1333,7 @@
           "example": "无",
           "member": "float",
           "name": "OffsetY",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -1325,6 +1344,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ChannelComponentSource",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1335,6 +1355,7 @@
           "example": "Positive\\Reverse",
           "member": "string",
           "name": "KeywordOrder",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1345,6 +1366,7 @@
           "example": "无",
           "member": "int64",
           "name": "KeywordPage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1355,6 +1377,7 @@
           "example": "无",
           "member": "string",
           "name": "RelativeLocation",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1365,6 +1388,7 @@
           "example": "无",
           "member": "int64",
           "name": "KeywordIndexes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1691,7 +1715,6 @@
       "document": "CreateFlowApprovers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
@@ -1701,7 +1724,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署流程编号",
           "example": "无",
@@ -1711,7 +1733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "补充签署人信息",
           "example": "无",
@@ -1721,7 +1742,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企微消息中的发起人",
           "example": "无",
@@ -2381,6 +2401,7 @@
           "example": "无",
           "member": "FlowApproverUrlInfo",
           "name": "FlowApproverUrlInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2813,6 +2834,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3011,6 +3033,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3480,6 +3503,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3489,6 +3513,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3498,6 +3523,7 @@
           "example": "无",
           "member": "string",
           "name": "AppOriginalId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3507,6 +3533,7 @@
           "example": "无",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3516,6 +3543,7 @@
           "example": "无",
           "member": "string",
           "name": "QrCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3525,6 +3553,7 @@
           "example": "无",
           "member": "string",
           "name": "UrlType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3986,6 +4015,7 @@
           "example": "无",
           "member": "FileUrl",
           "name": "FileUrls",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3995,6 +4025,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4119,7 +4150,6 @@
       "document": "DescribeFlowEvidenceReport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
@@ -4129,7 +4159,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出证报告编号",
           "example": "无",
@@ -4150,7 +4179,6 @@
           "example": "https://file.xxx",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4160,7 +4188,6 @@
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4879,7 +4906,6 @@
       "document": "DescribeThirdPartyAuthCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电子签小程序跳转客户小程序时携带的授权查看码",
           "example": "yDxMhUyKQDMFdnUyxgEv8yhSdo0ZFs8I",
@@ -4900,7 +4926,7 @@
           "example": "VERIFIED｜UNVERIFIED",
           "member": "string",
           "name": "VerifyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4955,6 +4981,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsOpen",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4964,6 +4991,7 @@
           "example": "1684412179",
           "member": "int64",
           "name": "LicenseFrom",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4973,6 +5001,7 @@
           "example": "1715948179",
           "member": "int64",
           "name": "LicenseTo",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8131,6 +8160,7 @@
           "example": "d54e3caec25ad0ea6be24406762b7562",
           "member": "string",
           "name": "FileIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8140,6 +8170,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

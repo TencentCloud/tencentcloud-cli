@@ -112,6 +112,13 @@
       "output": "CreatePartitionResponse",
       "status": "online"
     },
+    "CreatePostPaidInstance": {
+      "document": "当前接口用来替代 CreateInstancePost 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。",
+      "input": "CreatePostPaidInstanceRequest",
+      "name": "创建按量计费实例（新）",
+      "output": "CreatePostPaidInstanceResponse",
+      "status": "online"
+    },
     "CreateRoute": {
       "document": "添加实例路由",
       "input": "CreateRouteRequest",
@@ -3407,6 +3414,52 @@
       ],
       "type": "object"
     },
+    "CreateInstancePostData": {
+      "document": "创建后付费接口返回的 Data 数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20230608002033882210000\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Id，当购买多个实例时，默认返回购买的第一个实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-e5vjxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单和购买实例对应映射列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DealInstanceDTO",
+          "name": "DealNameInstanceIdMapping",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateInstancePostRequest": {
       "document": "CreateInstancePost请求参数结构体",
       "members": [
@@ -3574,6 +3627,42 @@
         }
       ],
       "type": "object"
+    },
+    "CreateInstancePostResp": {
+      "document": "后付费实例相关接口返回结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的code，0为正常，非0为错误",
+          "example": "0",
+          "member": "string",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口返回消息，当接口报错时提示错误信息",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateInstancePostData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateInstancePostResponse": {
       "document": "CreateInstancePost返回参数结构体",
@@ -3926,6 +4015,195 @@
           "disabled": false,
           "document": "返回的结果集",
           "member": "JgwOperateResponse",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostPaidInstanceRequest": {
+      "document": "CreatePostPaidInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "testInstance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网id。创建实例默认接入点所在的子网对应的子网 id",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例规格。当创建标准版实例时必填，创建专业版实例时不需要填写。1：入门型；2：标准型；3：进阶型；4：容量型；5：高阶型1；6：高阶性2；7：高阶型3；8：高阶型4；9 ：独占型",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例日志的默认最长保留时间，单位分钟。不传入该参数时默认为 1440 分钟（1天），最大30天。当 topic 显式设置消息保留时间时，以 topic 保留时间为准",
+          "example": "1440",
+          "member": "int64",
+          "name": "MsgRetentionTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建实例时可以选择集群Id, 该入参表示集群Id。不指定实例所在集群则不传入该参数",
+          "example": "5914",
+          "member": "int64",
+          "name": "ClusterId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.2\",\"2.8.1\"",
+          "example": "2.4.2",
+          "member": "string",
+          "name": "KafkaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。\"standard\"：标准版，\"profession\"：专业版",
+          "example": "profession",
+          "member": "string",
+          "name": "SpecificationsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例硬盘类型，\"CLOUD_BASIC\"：云硬盘，\"CLOUD_SSD\"：高速云硬盘。不传默认为 \"CLOUD_BASIC\"",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例内网峰值带宽。单位 MB/s。标准版需传入当前实例规格所对应的峰值带宽。注意如果创建的实例为专业版实例，峰值带宽，分区数等参数配置需要满足专业版的计费规格。",
+          "example": "20",
+          "member": "int64",
+          "name": "BandWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例硬盘大小，需要满足当前实例的计费规格",
+          "example": "200",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例最大分区数量，需要满足当前实例的计费规格",
+          "example": "400",
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例最大 topic 数量，需要满足当前实例的计费规格",
+          "example": "200",
+          "member": "int64",
+          "name": "TopicNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id",
+          "example": "100006",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前实例是否为多可用区实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "MultiZoneFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "当实例为多可用区实例时，多可用区 id 列表。注意参数 ZoneId 对应的多可用区需要包含在该参数数组中",
+          "example": "[100006,100007]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。非必填，默认值为 1。当传入该参数时，会创建多个 instanceName 加后缀区分的实例",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1",
+          "example": "12",
+          "member": "int64",
+          "name": "PublicNetworkMonthly",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostPaidInstanceResponse": {
+      "document": "CreatePostPaidInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "CreateInstancePostResp",
           "name": "Result",
           "type": "object",
           "value_allowed_null": false

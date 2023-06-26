@@ -11,8 +11,8 @@
     "CreateCodeBatch": [
       {
         "document": "新增批次",
-        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"BatchType\": 1,\n    \"MerchantId\": \"xx\",\n    \"ProductId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCodeBatch\n<公共请求参数>\n\n{\n    \"MerchantId\": \"abc\",\n    \"ProductId\": \"abc\",\n    \"BatchType\": 1,\n    \"BatchId\": \"abc\",\n    \"Remark\": \"abc\",\n    \"MpTpl\": \"abc\",\n    \"CloneId\": \"abc\",\n    \"BatchCode\": \"abc\",\n    \"ValidDate\": \"abc\",\n    \"ProductionDate\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "新增批次"
       }
     ],
@@ -242,7 +242,7 @@
     ],
     "DescribeScanLogs": [
       {
-        "document": "查询扫描记录",
+        "document": "查询扫描明细，查询参数 Code, Openid 至少需要一个",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanLogs\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz70000243813742005003\"\n}",
         "output": "{\n    \"Response\": {\n        \"Products\": [],\n        \"ScanLogs\": [\n            {\n                \"LogId\": 2,\n                \"Openid\": \"abc\",\n                \"Nickname\": \"demo\",\n                \"CreateTime\": \"2021-12-06T07:13:35.000Z\",\n                \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz70000243813742005003\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"\",\n                \"ProductId\": \"\",\n                \"Ip\": \"127.0.0.1\",\n                \"Country\": \"\",\n                \"Province\": \"广东\",\n                \"City\": \"广州\",\n                \"District\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ee4f0117-953f-4a5b-9a3f-6a1831ac3c0a\"\n    }\n}",
         "title": "查询扫描记录"
@@ -268,7 +268,7 @@
       {
         "document": "根据ID查询码",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraceCodeById\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TraceCode\": {\n            \"Status\": 1,\n            \"UpdateTime\": \"xx\",\n            \"Code\": \"xx\",\n            \"MerchantName\": \"xx\",\n            \"CorpId\": 1,\n            \"PackId\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"BatchId\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"MerchantId\": \"xx\",\n            \"ProductId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceCode\": {\n            \"Code\": \"abc\",\n            \"CorpId\": 1,\n            \"PackId\": \"abc\",\n            \"BatchId\": \"abc\",\n            \"MerchantId\": \"abc\",\n            \"ProductId\": \"abc\",\n            \"Status\": 1,\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"MerchantName\": \"abc\",\n            \"ProductName\": \"abc\",\n            \"AgentId\": 1,\n            \"Level\": 1\n        },\n        \"CodePath\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据ID查询码"
       }
     ],
@@ -307,8 +307,8 @@
     "ModifyCodeBatch": [
       {
         "document": "激活批次",
-        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"Status\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"abc\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改批次状态"
       }
     ],

@@ -344,6 +344,92 @@
     "serviceShortName": "trp"
   },
   "objects": {
+    "AttrItem": {
+      "document": "通用属性\n\nType 的枚举值\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n\n具体组合如下\n- Type: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\n- Type: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\n- Type: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\n- Type: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\n- Type: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\n- Type: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "商品名称2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "demo",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\ntext:文本类型, \nlongtext:长文本类型, banner:单图片类型, image:多图片类型,\nvideo:视频类型,\nmp:小程序类型",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫码展示",
+          "example": "false",
+          "member": "bool",
+          "name": "Hidden",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多个值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型标识",
+          "example": "ID",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段",
+          "example": "无",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AuthorizedTransferRequest": {
       "document": "AuthorizedTransfer请求参数结构体",
       "members": [
@@ -588,6 +674,36 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-12",
+          "member": "string",
+          "name": "ProductionDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展属性",
+          "example": "无",
+          "member": "AttrItem",
+          "name": "Attrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -930,7 +1046,6 @@
       "document": "CreateCodeBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业ID",
           "example": "1000",
@@ -940,7 +1055,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商户ID",
           "example": "商户ID",
@@ -950,7 +1064,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "产品ID",
@@ -960,7 +1073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批次类型 0:溯源 1:营销",
           "example": "1",
@@ -970,7 +1082,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批次ID，留空时系统自动生成",
           "example": "批次ID",
@@ -980,7 +1091,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -990,7 +1100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版ID，或者活动ID",
           "example": "1",
@@ -1000,7 +1109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "克隆批次ID，同时会复制溯源信息",
           "example": "10000",
@@ -1010,12 +1118,29 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批次编号，业务字段不判断唯一性",
           "example": "202210",
           "member": "string",
           "name": "BatchCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生产日期",
+          "example": "2022-05-01",
+          "member": "string",
+          "name": "ProductionDate",
           "required": false,
           "type": "string"
         }
@@ -1031,7 +1156,6 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3269,24 +3393,49 @@
       "document": "DescribeScanLogs请求参数结构体",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "码",
-          "example": "aba",
-          "member": "string",
-          "name": "Code",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安心码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "Openid",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3295,14 +3444,13 @@
       "document": "DescribeScanLogs返回参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "【弃用】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "【弃用】",
           "example": "无",
           "member": "ScanLog",
           "name": "Products",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3310,7 +3458,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3320,7 +3467,6 @@
           "example": "无",
           "member": "ScanLog",
           "name": "ScanLogs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3463,7 +3609,6 @@
       "document": "DescribeTraceCodeById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业ID",
           "example": "1000",
@@ -3473,7 +3618,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码",
           "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
@@ -3494,8 +3638,16 @@
           "example": "无",
           "member": "TraceCode",
           "name": "TraceCode",
-          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "码路径，如level是2，则为 [1级, 2级]",
+          "example": "无",
+          "member": "string",
+          "name": "CodePath",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4053,6 +4205,24 @@
           "example": "202210",
           "member": "string",
           "name": "BatchCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生产日期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ProductionDate",
           "required": false,
           "type": "string"
         }
@@ -4943,29 +5113,6 @@
       "document": "商品信息",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "商品id",
-          "example": "\"eqdmnz7020bmtvi9\"",
-          "member": "string",
-          "name": "ProductId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "企业id",
-          "example": "0",
-          "member": "int64",
-          "name": "CorpId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "商户标识码",
           "example": "\"85tfp1sn78r9m1568i\"",
@@ -4976,18 +5123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "商品编号",
-          "example": "\"85tfp1sn78r9m1568i\"",
-          "member": "string",
-          "name": "ProductCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "商品名称",
           "example": "\"demo5\"",
@@ -4998,84 +5133,107 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "商品id",
+          "example": "\"eqdmnz7020bmtvi9\"",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业id",
+          "example": "0",
+          "member": "int64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品编号",
+          "example": "\"85tfp1sn78r9m1568i\"",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”100ml“",
           "member": "string",
           "name": "Specification",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "”“",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品图片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Logo",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "\"2021-11-30T09:00:33.000Z\"",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "\"2021-12-07T02:14:37.000Z\"",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预留字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Ext",
           "name": "Ext",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商户名称",
           "example": "\"demo\"",
           "member": "string",
           "name": "MerchantName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Quota": {
       "document": "企业配额信息",
@@ -5253,18 +5411,16 @@
       "document": "扫码明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行ID",
           "example": "1000",
           "member": "int64",
           "name": "LogId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
@@ -5275,7 +5431,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
@@ -5286,7 +5441,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
@@ -5297,7 +5451,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -5308,7 +5461,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
@@ -5319,7 +5471,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5330,7 +5481,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5341,7 +5491,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -5352,7 +5501,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5363,7 +5511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东省",
@@ -5374,7 +5521,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州市",
@@ -5385,7 +5531,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "天河区",
@@ -5396,7 +5541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信 unionid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5407,7 +5551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首次扫码 0:否, 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5418,12 +5561,41 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5768,16 +5940,6 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
-          "member": "TraceItem",
-          "name": "TraceItems",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
@@ -5835,6 +5997,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "TraceItems",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5874,26 +6046,6 @@
         },
         {
           "disabled": false,
-          "document": "只读",
-          "example": "false",
-          "member": "bool",
-          "name": "ReadOnly",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "扫码展示",
-          "example": "false",
-          "member": "bool",
-          "name": "Hidden",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "多个值",
           "example": "无",
           "member": "string",
@@ -5904,11 +6056,31 @@
         },
         {
           "disabled": false,
+          "document": "只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫码展示",
+          "example": "false",
+          "member": "bool",
+          "name": "Hidden",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "类型标识",
           "example": "ID",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5918,7 +6090,7 @@
           "example": "无",
           "member": "string",
           "name": "Ext",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },

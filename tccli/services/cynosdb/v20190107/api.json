@@ -469,6 +469,13 @@
       "output": "DescribeRollbackTimeValidityResponse",
       "status": "online"
     },
+    "DescribeSupportProxyVersion": {
+      "document": "查询支持的数据库代理版本",
+      "input": "DescribeSupportProxyVersionRequest",
+      "name": "查询支持的数据库代理版本",
+      "output": "DescribeSupportProxyVersionResponse",
+      "status": "online"
+    },
     "DescribeZones": {
       "document": "本接口(DescribeZones)用于查询可售卖地域可用区信息。",
       "input": "DescribeZonesRequest",
@@ -3313,6 +3320,7 @@
           "example": "20190522160000003106844584180998",
           "member": "string",
           "name": "TranId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3322,6 +3330,7 @@
           "example": "[\"20190522112283\"]",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3331,6 +3340,7 @@
           "example": "[\"cynosdbpg-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3340,6 +3350,7 @@
           "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3349,6 +3360,7 @@
           "example": "[\"xxx\"]",
           "member": "string",
           "name": "BigDealIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9595,6 +9607,64 @@
       ],
       "type": "object"
     },
+    "DescribeSupportProxyVersionRequest": {
+      "document": "DescribeSupportProxyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupportProxyVersionResponse": {
+      "document": "DescribeSupportProxyVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的数据库代理版本集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SupportProxyVersions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前proxy版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentProxyVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [
@@ -14811,6 +14881,7 @@
           "example": "package-123456",
           "member": "string",
           "name": "PackageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14821,6 +14892,7 @@
           "example": "CCU",
           "member": "string",
           "name": "PackageType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

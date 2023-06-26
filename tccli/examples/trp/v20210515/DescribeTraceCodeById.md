@@ -14,19 +14,24 @@ Output:
 {
     "Response": {
         "TraceCode": {
-            "Status": 1,
-            "UpdateTime": "xx",
-            "Code": "xx",
-            "MerchantName": "xx",
+            "Code": "abc",
             "CorpId": 1,
-            "PackId": "xx",
-            "ProductName": "xx",
-            "BatchId": "xx",
-            "CreateTime": "xx",
-            "MerchantId": "xx",
-            "ProductId": "xx"
+            "PackId": "abc",
+            "BatchId": "abc",
+            "MerchantId": "abc",
+            "ProductId": "abc",
+            "Status": 1,
+            "CreateTime": "abc",
+            "UpdateTime": "abc",
+            "MerchantName": "abc",
+            "ProductName": "abc",
+            "AgentId": 1,
+            "Level": 1
         },
-        "RequestId": "xx"
+        "CodePath": [
+            "abc"
+        ],
+        "RequestId": "abc"
     }
 }
 ```

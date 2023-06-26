@@ -78,9 +78,9 @@
       "status": "online"
     },
     "CreateClusterEndpointVip": {
-      "document": "创建托管集群外网访问端口（老的方式，仅支持托管集群外网端口）",
+      "document": "创建托管集群外网访问端口（不再维护，准备下线）请使用新接口：CreateClusterEndpoint",
       "input": "CreateClusterEndpointVipRequest",
-      "name": "创建托管集群外网访问端口",
+      "name": "创建托管集群外网访问端口（不再维护，准备下线）",
       "output": "CreateClusterEndpointVipResponse",
       "status": "online"
     },
@@ -4455,7 +4455,7 @@
         },
         {
           "disabled": false,
-          "document": "创建lb参数，只有外网访问需要设置，是一个json格式化后的字符串：{\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":\"200\"},\"VipIsp\":\"\",\"BandwidthPackageId\":\"\"}。\n各个参数意义：\nInternetAccessible.InternetChargeType含义：TRAFFIC_POSTPAID_BY_HOUR按流量按小时后计费;BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;InternetAccessible.BANDWIDTH_PACKAGE 按带宽包计费。\nInternetMaxBandwidthOut含义：最大出带宽，单位Mbps，范围支持0到2048，默认值10。\nVipIsp含义：CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。\nBandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE。",
+          "document": "创建lb参数，只有外网访问需要设置，是一个json格式化后的字符串：{\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":200},\"VipIsp\":\"\",\"BandwidthPackageId\":\"\"}。\n各个参数意义：\nInternetAccessible.InternetChargeType含义：TRAFFIC_POSTPAID_BY_HOUR按流量按小时后计费;BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;InternetAccessible.BANDWIDTH_PACKAGE 按带宽包计费。\nInternetMaxBandwidthOut含义：最大出带宽，单位Mbps，范围支持0到2048，默认值10。\nVipIsp含义：CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费BANDWIDTH_PACKAGE。\nBandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式InternetAccessible.InternetChargeType只支持按带宽包计费BANDWIDTH_PACKAGE。",
           "example": "无",
           "member": "string",
           "name": "ExtensiveParameters",
@@ -4481,7 +4481,6 @@
       "document": "CreateClusterEndpointVip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxxxxxx",
@@ -4491,7 +4490,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
           "example": "0.0.0.0/0",
@@ -4512,7 +4510,7 @@
           "example": "100000",
           "member": "int64",
           "name": "RequestFlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
