@@ -3528,7 +3528,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.2\",\"2.8.1\"",
+          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.1\",\"2.4.2\",\"2.8.1\"。\"2.4.1\" 与 \"2.4.2\" 属于同一个版本，传任意一个均可。",
           "example": "2.4.2",
           "member": "string",
           "name": "KafkaVersion",
@@ -3618,7 +3618,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1",
+          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 6Mbps 公网带宽，此处传 3。需要保证传入参数为 3 的整数倍",
           "example": "12",
           "member": "int64",
           "name": "PublicNetworkMonthly",
@@ -3673,6 +3673,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3772,7 +3773,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcId，不填默认基础网络",
+          "document": "vpcId必填",
           "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
@@ -3817,8 +3818,8 @@
         },
         {
           "disabled": false,
-          "document": "CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1",
-          "example": "0.10.2/1.1.1/2.4.1",
+          "document": "CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。",
+          "example": "1.1.1",
           "member": "string",
           "name": "KafkaVersion",
           "required": false,
@@ -3898,10 +3899,19 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0",
+          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 6Mbps 公网带宽，此处传 3。默认值为 0。需要保证传入参数为 3 的整数倍",
           "example": "12",
           "member": "int64",
           "name": "PublicNetworkMonthly",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。非必填，默认值为 1。当传入该参数时，会创建多个 instanceName 加后缀区分的实例",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceNum",
           "required": false,
           "type": "int"
         }
@@ -3963,6 +3973,7 @@
           "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4087,7 +4098,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.2\",\"2.8.1\"",
+          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.1\",\"2.4.2\",\"2.8.1\"。\"2.4.1\" 与 \"2.4.2\" 属于同一个版本，传任意一个均可。",
           "example": "2.4.2",
           "member": "string",
           "name": "KafkaVersion",
@@ -4186,7 +4197,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1",
+          "document": "公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 6Mbps 公网带宽，此处传 3。需要保证传入参数为 3 的整数倍",
           "example": "12",
           "member": "int64",
           "name": "PublicNetworkMonthly",
@@ -4205,6 +4216,7 @@
           "example": "无",
           "member": "CreateInstancePostResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

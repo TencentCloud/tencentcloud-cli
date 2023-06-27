@@ -6400,7 +6400,6 @@
       "document": "DescribeLiveDomains请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名状态过滤。0-停用，1-启用。",
           "example": "1",
@@ -6410,7 +6409,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名类型过滤。0-推流，1-播放。",
           "example": "1",
@@ -6420,7 +6418,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，范围：10~100。默认10。",
           "example": "10",
@@ -6430,7 +6427,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取第几页，范围：1~100000。默认1。",
           "example": "1",
@@ -6440,7 +6436,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0 普通直播 1慢直播 默认0。",
           "example": "0",
@@ -6450,7 +6445,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名前缀。",
           "example": "qq",
@@ -6460,7 +6454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放区域，只在 DomainType=1 时该参数有意义。\n1: 国内。\n2: 全球。\n3: 海外。",
           "example": "1",
@@ -6481,7 +6474,7 @@
           "example": "2",
           "member": "uint64",
           "name": "AllCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6491,7 +6484,7 @@
           "example": "无",
           "member": "DomainInfo",
           "name": "DomainList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6501,7 +6494,7 @@
           "example": "77",
           "member": "int64",
           "name": "CreateLimitCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6511,7 +6504,7 @@
           "example": "[1,0,3]",
           "member": "int64",
           "name": "PlayTypeCount",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

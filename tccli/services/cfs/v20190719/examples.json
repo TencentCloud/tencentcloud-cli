@@ -50,7 +50,7 @@
     ],
     "CreateMigrationTask": [
       {
-        "document": "用于创建数据迁移任务，需开启白名单后才能使用。",
+        "document": "用于创建数据迁移任务",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationTask\n<公共请求参数>\n\n{\n    \"BucketRegion\": \"ap-nanjing\",\n    \"SrcService\": \"COS\",\n    \"CoverType\": \"1\",\n    \"SrcSecretKey\": \"*****************************\",\n    \"BucketPath\": \"cos/\",\n    \"MigrationMode\": \"0\",\n    \"FileSystemId\": \"cfs-8dd58fd7\",\n    \"BucketName\": \"test-1-1256238147\",\n    \"FsPath\": \"/test/\",\n    \"MigrationType\": \"0\",\n    \"TaskName\": \"test\",\n    \"SrcSecretId\": \"**************************************************\",\n    \"FsName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"cfsmigrate-dfe9b1f2\",\n        \"RequestId\": \"91cd4a08-a105-4c59-b229-82f0fs7363b8\"\n    }\n}",
         "title": "创建迁移任务"
@@ -101,7 +101,7 @@
         "document": "用于删除数据迁移任务",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMigrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"cfsmigrate-4e78dae8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b72e3de2-6770-4388-af42-7e511935ad8e\"\n    }\n}",
-        "title": "删除迁移"
+        "title": "删除迁移任务"
       }
     ],
     "DeleteMountTarget": [
@@ -237,7 +237,7 @@
         "document": "更新文件系统自动扩容策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCFSFileSystemAutoScaleRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agaga\",\n    \"Status\": 1,\n    \"ScaleUpThreshold\": 85,\n    \"TargetThreshold\": 70\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"gagagagad-xdx\",\n        \"FileSystemId\": \"cfs-agaga\",\n        \"Status\": 1,\n        \"ScaleUpThreshold\": 85,\n        \"TargetThreshold\": 70\n    }\n}",
-        "title": "ModifyCFSFileSystemAutoScaleRule"
+        "title": "更新文件系统自动扩容策略"
       }
     ],
     "ScaleUpFileSystem": [
@@ -245,7 +245,7 @@
         "document": "扩容文件系统",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCFSFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agagag\",\n    \"TargetCapacity\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"agagaga-tatatatata-tatata\",\n        \"FileSystemId\": \"cfs-agagag\",\n        \"TargetCapacity\": 10\n    }\n}",
-        "title": "UpgradeCFSFileSystem"
+        "title": "扩容文件系统"
       }
     ],
     "SetUserQuota": [

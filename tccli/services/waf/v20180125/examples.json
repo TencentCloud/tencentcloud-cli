@@ -354,6 +354,32 @@
         "title": "更改某一条规则"
       }
     ],
+    "ModifySpartaProtection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LoadBalance\": \"0\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
+        "title": "修改域名配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"lucas0407-1.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"InstanceID\": \"waf_2kuj60v200b09bsr\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"11.148.84.137\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"eb454223185451fe8b255a82b9d4bf94\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"IsGray\": \"0\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"62094\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c553d61-526a-44cf-a874-b24956033973\"\n    }\n}",
+        "title": "修改域名接入配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"IsGray\": \"0\",\n    \"Domain\": \"lucas0407-1.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"CipherTemplate\": \"0\",\n    \"InstanceID\": \"waf_2kuj60v200b09bsr\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"114.132.223.23\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"eb454223185451fe8b255a82b9d4bf94\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"62094\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b8a309-3e7d-4393-91a4-271bf6d5dd71\"\n    }\n}",
+        "title": "ts"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"IsGray\": \"0\",\n    \"Domain\": \"lucas0919.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"CipherTemplate\": \"0\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"114.132.223.23\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"e801733b69605960a17388999868512a\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"63953\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6bd6f14-926e-4a3e-9a34-bb1dd7d9a51d\"\n    }\n}",
+        "title": "Modify-Host-1"
+      }
+    ],
     "ModifyWafAutoDenyRules": [
       {
         "document": "修改ip惩罚配置",

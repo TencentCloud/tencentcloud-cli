@@ -10503,6 +10503,7 @@
           "example": "1",
           "member": "int64",
           "name": "ExpireDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10512,6 +10513,7 @@
           "example": "on",
           "member": "string",
           "name": "RemoteBackupSave",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10521,6 +10523,7 @@
           "example": "on",
           "member": "string",
           "name": "RemoteBinlogSave",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10530,6 +10533,7 @@
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RemoteRegion",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10539,6 +10543,7 @@
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16167,78 +16172,78 @@
       "document": "代理实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "master",
-          "member": "string",
+          "document": "实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
           "name": "InstanceType",
+          "output_required": true,
           "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读权重,如果权重为系统自动分配，改值不生效，只代表是否启用该实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

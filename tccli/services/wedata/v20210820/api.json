@@ -7882,7 +7882,6 @@
       "document": "DescribeDimensionScore请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计日期 时间戳",
           "example": "1679414400",
@@ -7892,7 +7891,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -7902,7 +7900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源id",
           "example": "12eq",
@@ -7910,6 +7907,15 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7923,7 +7929,6 @@
           "example": "无",
           "member": "DimensionScore",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10563,7 +10568,6 @@
       "document": "DescribeQualityScore请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计日期",
           "example": "1679414400",
@@ -10573,7 +10577,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -10583,7 +10586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源id",
           "example": "12",
@@ -10591,6 +10593,24 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1",
+          "example": "1",
+          "member": "string",
+          "name": "ScoreType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10604,7 +10624,6 @@
           "example": "无",
           "member": "QualityScore",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10621,7 +10640,6 @@
       "document": "DescribeQualityScoreTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始日期",
           "example": "1679414400",
@@ -10631,7 +10649,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束日期",
           "example": "1679414400",
@@ -10641,7 +10658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "12",
@@ -10651,7 +10667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源id",
           "example": "12",
@@ -10659,6 +10674,24 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1",
+          "example": "1",
+          "member": "string",
+          "name": "ScoreType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10672,7 +10705,6 @@
           "example": "无",
           "member": "QualityScoreTrend",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12767,7 +12799,6 @@
       "document": "DescribeTableQualityDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计日期",
           "example": "1679414400",
@@ -12777,7 +12808,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -12787,7 +12817,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页序号",
           "example": "1",
@@ -12797,7 +12826,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "11",
@@ -12807,7 +12835,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName",
           "example": "无",
@@ -12817,7 +12844,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore",
           "example": "无",
@@ -12827,12 +12853,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源id",
           "example": "qe123",
           "member": "string",
           "name": "DatasourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1",
+          "example": "1",
+          "member": "string",
+          "name": "ScoreType",
           "required": false,
           "type": "string"
         }
@@ -12848,7 +12882,6 @@
           "example": "无",
           "member": "TableQualityDetailPage",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12953,7 +12986,6 @@
       "document": "DescribeTableScoreTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -12963,7 +12995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间 秒级时间戳",
           "example": "1652415150",
@@ -12973,7 +13004,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间 秒级时间戳",
           "example": "1652415150",
@@ -12983,13 +13013,21 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表id",
           "example": "qweqasd",
           "member": "string",
           "name": "TableId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1",
+          "example": "1",
+          "member": "string",
+          "name": "ScoreType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -13004,7 +13042,6 @@
           "example": "无",
           "member": "QualityScoreTrend",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14238,8 +14275,7 @@
       "document": "维度统计业务视图",
       "members": [
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -14249,12 +14285,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
           "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "QualityDim",
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -22229,7 +22274,6 @@
       "document": "规则执行结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22240,7 +22284,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22251,7 +22294,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22262,7 +22304,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22273,7 +22314,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule1",
@@ -22284,7 +22324,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -22295,7 +22334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段详细类型，int string\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "int",
@@ -22306,10 +22344,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "SourceObjectValue",
           "required": false,
@@ -22317,7 +22354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件扫描WHERE条件表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dt=1",
@@ -22328,7 +22364,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测结果（1:检测通过，2：触发规则，3：检测失败）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -22339,7 +22374,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发结果，告警发送成功, 阻断任务成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "告警发送成功, 阻断任务成功",
@@ -22350,7 +22384,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -22361,10 +22394,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -22372,7 +22404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "质量维度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -22383,7 +22414,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表-库表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "defaule.person",
@@ -22394,7 +22424,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表-字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "city",
@@ -22405,7 +22434,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表-字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "string",
@@ -22416,7 +22444,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模版sql表达式参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -22427,7 +22454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源字段与目标字段关联条件on表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a=b",
@@ -22435,6 +22461,26 @@
           "name": "RelConditionExpr",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-10 01:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1/2/3:低/中/高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "告警级别",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -22444,7 +22490,6 @@
       "document": "规则执行结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22455,10 +22500,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "DatasourceName",
           "required": false,
@@ -22466,7 +22510,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库guid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22477,10 +22520,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "DatabaseName",
           "required": false,
@@ -22488,7 +22530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22499,7 +22540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表guid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22510,7 +22550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "person",
@@ -22521,7 +22560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则执行记录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -22532,12 +22570,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表负责人userId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
           "name": "TableOwnerUserId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "2.HIVE 3.DLC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据源类型",
+          "member": "uint64",
+          "name": "DatasourceType",
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -22787,7 +22834,6 @@
       "document": "数据质量规则组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22798,7 +22844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22809,7 +22854,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mysql_test",
@@ -22820,7 +22864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -22831,7 +22874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型 1.未配置, 2.关联生产调度, 3.离线周期检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -22842,7 +22884,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-02-08 14:30:30",
@@ -22853,7 +22894,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联数据表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "person",
@@ -22864,7 +22904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联数据表Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22875,7 +22914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联数据表负责人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "park",
@@ -22886,7 +22924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -22897,7 +22934,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -22908,7 +22944,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22919,7 +22954,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "base1",
@@ -22930,7 +22964,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -22941,7 +22974,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已经配置的规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
@@ -22952,7 +22984,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -22963,7 +22994,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表负责人UserId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -22971,6 +23001,16 @@
           "name": "TableOwnerUserId",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qxd324",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -25134,8 +25174,7 @@
       "document": "数据质量数据对象",
       "members": [
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "源字段详细类型，int、string\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "int",
           "member": "string",
@@ -25145,14 +25184,43 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "源字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "SourceObjectValue",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源字段详细类型，int、string\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectDataTypeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象类型 1.常量  2.离线表级   3.离线字段级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ObjectType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

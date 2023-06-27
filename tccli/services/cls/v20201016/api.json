@@ -183,9 +183,9 @@
       "status": "online"
     },
     "DeleteShipper": {
-      "document": "删除投递规则",
+      "document": "删除投递COS任务",
       "input": "DeleteShipperRequest",
-      "name": "删除投递规则",
+      "name": "删除投递COS任务",
       "output": "DeleteShipperResponse",
       "status": "online"
     },
@@ -416,7 +416,7 @@
     "ModifyShipper": {
       "document": "修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。",
       "input": "ModifyShipperRequest",
-      "name": "修改投递规则",
+      "name": "修改投递COS任务",
       "output": "ModifyShipperResponse",
       "status": "online"
     },
@@ -3812,7 +3812,6 @@
       "document": "DeleteShipper请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",

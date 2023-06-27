@@ -15,11 +15,11 @@
       "status": "online"
     },
     "CreateChaincodeAndInstallForUser": {
-      "document": "创建并安装合约",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n创建并安装合约",
       "input": "CreateChaincodeAndInstallForUserRequest",
       "name": "创建并安装合约",
       "output": "CreateChaincodeAndInstallForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DownloadUserCert": {
       "document": "下载用户证书",
@@ -43,39 +43,39 @@
       "status": "online"
     },
     "GetChaincodeCompileLogForUser": {
-      "document": "获取合约编译日志",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n获取合约编译日志",
       "input": "GetChaincodeCompileLogForUserRequest",
       "name": "获取合约编译日志",
       "output": "GetChaincodeCompileLogForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetChaincodeInitializeResultForUser": {
-      "document": "实例化结果查询",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n实例化结果查询",
       "input": "GetChaincodeInitializeResultForUserRequest",
       "name": "实例化结果查询",
       "output": "GetChaincodeInitializeResultForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetChaincodeLogForUser": {
-      "document": "获取合约容器日志",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n获取合约容器日志",
       "input": "GetChaincodeLogForUserRequest",
       "name": "获取合约容器日志",
       "output": "GetChaincodeLogForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetChannelListForUser": {
-      "document": "获取通道列表",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n获取通道列表",
       "input": "GetChannelListForUserRequest",
       "name": "获取通道列表",
       "output": "GetChannelListForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetClusterListForUser": {
-      "document": "获取该用户的网络列表。网络信息中包含组织信息，但仅包含该用户所在组织的信息。",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n获取该用户的网络列表。网络信息中包含组织信息，但仅包含该用户所在组织的信息。",
       "input": "GetClusterListForUserRequest",
       "name": "获取网络列表",
       "output": "GetClusterListForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetClusterSummary": {
       "document": "获取区块链网络概要",
@@ -106,11 +106,11 @@
       "status": "online"
     },
     "GetPeerLogForUser": {
-      "document": "获取节点日志",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n获取节点日志",
       "input": "GetPeerLogForUserRequest",
       "name": "获取节点日志",
       "output": "GetPeerLogForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetTransactionDetailForUser": {
       "document": "获取交易详情",
@@ -120,11 +120,11 @@
       "status": "online"
     },
     "InitializeChaincodeForUser": {
-      "document": "实例化合约",
+      "document": "接口已废弃，请通过控制台查询或操作\n\n实例化合约",
       "input": "InitializeChaincodeForUserRequest",
       "name": "实例化合约",
       "output": "InitializeChaincodeForUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "Invoke": {
       "document": "新增交易",

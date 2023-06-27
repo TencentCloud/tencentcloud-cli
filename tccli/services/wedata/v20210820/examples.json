@@ -522,9 +522,9 @@
     ],
     "DescribeDimensionScore": [
       {
-        "document": "",
+        "document": "查询维度评分",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDimensionScore\n<公共请求参数>\n\n{\n    \"StatisticsDate\": 1647878400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"qwe\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a131b8-0de7-4cb8-a354-9bbfc5d3a028\",\n        \"Data\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DimensionScoreList\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Weight\": 0,\n                    \"UserId\": 0,\n                    \"UserName\": \"abc\",\n                    \"UpdateTime\": 0,\n                    \"JoinTableNumber\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询维度评分"
       }
     ],
@@ -804,7 +804,7 @@
     ],
     "DescribeQualityScore": [
       {
-        "document": "",
+        "document": "查询质量评分",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityScore\n<公共请求参数>\n\n{\n    \"StatisticsDate\": 1647878400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"232\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cb20a58-a110-48ed-b539-0807e9af05d6\",\n        \"Data\": {\n            \"CompositeScore\": 17.76,\n            \"TotalTableNumber\": 1,\n            \"ScoringDistribution\": [\n                {\n                    \"Level\": 1,\n                    \"TableNumber\": 1,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 2,\n                    \"TableNumber\": 1,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 3,\n                    \"TableNumber\": 0,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 4,\n                    \"TableNumber\": 0,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 5,\n                    \"TableNumber\": 1,\n                    \"Scale\": 100\n                }\n            ]\n        }\n    }\n}",
         "title": "查询质量评分"
@@ -812,9 +812,9 @@
     ],
     "DescribeQualityScoreTrend": [
       {
-        "document": "",
+        "document": "质量评分趋势",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityScoreTrend\n<公共请求参数>\n\n{\n    \"StatisticsStartDate\": 1679414400,\n    \"StatisticsEndDate\": 1679414400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {\n            \"AverageScore\": 0.0,\n            \"DailyScoreList\": [\n                {\n                    \"StatisticsDate\": 0,\n                    \"Score\": 0.0\n                }\n            ]\n        }\n    }\n}",
         "title": "质量评分趋势"
       }
     ],
@@ -1074,7 +1074,7 @@
     ],
     "DescribeTableQualityDetails": [
       {
-        "document": "",
+        "document": "分页查询表数据质量详情",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableQualityDetails\n<公共请求参数>\n\n{\n    \"PageSize\": 0,\n    \"ProjectId\": \"0\",\n    \"StatisticsDate\": 0,\n    \"DatasourceId\": \"\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"DESC\",\n            \"Name\": \"TableScore\"\n        }\n    ],\n    \"PageNumber\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"TableName\"\n            ],\n            \"Name\": \"test\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a131b8-0de7-4cb8-a354-9bbfc5d3a028\",\n        \"Data\": {\n            \"TotalCount\": 4,\n            \"Items\": [\n                {\n                    \"DatabaseId\": \"\",\n                    \"DatabaseName\": \"\",\n                    \"TableId\": \"\",\n                    \"TableName\": \"\",\n                    \"OwnerUserId\": 1234,\n                    \"OwnerUserName\": \"\",\n                    \"DatabaseScore\": 0.0,\n                    \"TableScore\": 0.0,\n                    \"LastPeriodRatio\": 0.0\n                }\n            ]\n        }\n    }\n}",
         "title": "分页查询表数据质量详情"
@@ -1090,9 +1090,9 @@
     ],
     "DescribeTableScoreTrend": [
       {
-        "document": "",
+        "document": "查询表得分趋势",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableScoreTrend\n<公共请求参数>\n\n{\n    \"StatisticsStartDate\": 1679414400,\n    \"StatisticsEndDate\": 1679414400,\n    \"ProjectId\": \"1\",\n    \"TableId\": \"23f\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {\n            \"AverageScore\": 0.0,\n            \"DailyScoreList\": [\n                {\n                    \"StatisticsDate\": 0,\n                    \"Score\": 0.0\n                }\n            ]\n        }\n    }\n}",
         "title": "查询表得分趋势"
       }
     ],

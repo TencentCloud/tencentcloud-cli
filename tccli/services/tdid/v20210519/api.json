@@ -8,46 +8,46 @@
       "status": "deprecated"
     },
     "CheckChain": {
-      "document": "检查区块链信息",
+      "document": "该接口不再使用\n\n检查区块链信息",
       "input": "CheckChainRequest",
       "name": "检查区块链信息",
       "output": "CheckChainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCredential": {
-      "document": "创建凭证",
+      "document": "该接口不再使用\n\n创建凭证",
       "input": "CreateCredentialRequest",
       "name": "创建凭证",
       "output": "CreateCredentialResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateSelectiveCredential": {
-      "document": "创建选择性批露凭证",
+      "document": "该接口不再使用\n\n创建选择性批露凭证",
       "input": "CreateSelectiveCredentialRequest",
       "name": "创建选择性批露凭证",
       "output": "CreateSelectiveCredentialResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTDid": {
-      "document": "创建机构DID",
+      "document": "该接口不再使用\n\n创建机构DID",
       "input": "CreateTDidRequest",
       "name": "创建机构DID",
       "output": "CreateTDidResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTDidByPrivateKey": {
-      "document": "新建DID根据私钥生成Tdid",
+      "document": "该接口不再使用\n\n新建DID根据私钥生成Tdid",
       "input": "CreateTDidByPrivateKeyRequest",
       "name": "新建DID根据私钥生成Tdid",
       "output": "CreateTDidByPrivateKeyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTDidByPublicKey": {
-      "document": " 新建DID根据公钥生成Tdid",
+      "document": "该接口不再使用\n\n 新建DID根据公钥生成Tdid",
       "input": "CreateTDidByPublicKeyRequest",
       "name": "新建DID根据公钥生成Tdid",
       "output": "CreateTDidByPublicKeyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetAgencyTDid": {
       "document": "该接口已废弃\n\n本机构DID详情",
@@ -57,11 +57,11 @@
       "status": "deprecated"
     },
     "GetAuthorityIssuer": {
-      "document": "获取权威机构信息",
+      "document": "该接口不再使用\n\n获取权威机构信息",
       "input": "GetAuthorityIssuerRequest",
       "name": "获取权威机构信息",
       "output": "GetAuthorityIssuerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetConsortiumClusterList": {
       "document": "下线已有内测接口，待上线正式版本的接口\n\n获取联盟bcos网络列表",
@@ -78,11 +78,11 @@
       "status": "deprecated"
     },
     "GetCptInfo": {
-      "document": "凭证模版详情",
+      "document": "该接口不再使用\n\n凭证模版详情",
       "input": "GetCptInfoRequest",
       "name": "凭证模版详情",
       "output": "GetCptInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCredentialCptRank": {
       "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证颁发按机构排行",
@@ -92,53 +92,39 @@
       "status": "deprecated"
     },
     "GetCredentialStatus": {
-      "document": "获取凭证链上状态信息",
+      "document": "该接口不再使用\n\n获取凭证链上状态信息",
       "input": "GetCredentialStatusRequest",
       "name": "获取凭证链上状态",
       "output": "GetCredentialStatusResponse",
-      "status": "online"
-    },
-    "GetDidClusterDetail": {
-      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取DID区块链网络详情",
-      "input": "GetDidClusterDetailRequest",
-      "name": "获取DID网络详情",
-      "output": "GetDidClusterDetailResponse",
-      "status": "deprecated"
-    },
-    "GetDidClusterList": {
-      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取用户的DID网络列表",
-      "input": "GetDidClusterListRequest",
-      "name": "获取DID网络列表",
-      "output": "GetDidClusterListResponse",
       "status": "deprecated"
     },
     "GetDidDocument": {
-      "document": "查看DID文档\n",
+      "document": "该接口不再使用\n\n查看DID文档\n",
       "input": "GetDidDocumentRequest",
       "name": "查看DID文档",
       "output": "GetDidDocumentResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RegisterCpt": {
-      "document": "凭证模版新建",
+      "document": "该接口不再使用\n\n凭证模版新建",
       "input": "RegisterCptRequest",
       "name": "凭证模版新建",
       "output": "RegisterCptResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetCredentialStatus": {
-      "document": "设置凭证链上状态",
+      "document": "该接口不再使用\n\n设置凭证链上状态",
       "input": "SetCredentialStatusRequest",
       "name": "设置凭证链上状态",
       "output": "SetCredentialStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "VerifyCredential": {
-      "document": "验证凭证",
+      "document": "该接口不再使用\n\n验证凭证",
       "input": "VerifyCredentialRequest",
       "name": "验证凭证",
       "output": "VerifyCredentialResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {
@@ -896,188 +882,6 @@
       ],
       "usage": "both"
     },
-    "DidCluster": {
-      "document": "did区块链网络信息",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "链ID",
-          "example": "590",
-          "member": "uint64",
-          "name": "ChainId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "链名称",
-          "example": "DCDC",
-          "member": "string",
-          "name": "ChainName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "组织数量",
-          "example": "2",
-          "member": "uint64",
-          "name": "AgencyCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "联盟ID",
-          "example": "661",
-          "member": "uint64",
-          "name": "ConsortiumId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2021-08-06 20:43:05",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "过期时间",
-          "example": "2021-09-06 20:57:20",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "网络状态",
-          "example": "1",
-          "member": "uint64",
-          "name": "ChainStatus",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "资源ID",
-          "example": "tbaas-ijfnnzqhg6",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "网络ID",
-          "example": "bcos-8o0v0fpj12",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "联盟名称",
-          "example": "test",
-          "member": "string",
-          "name": "ConsortiumName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "组织ID",
-          "example": "301",
-          "member": "uint64",
-          "name": "AgencyId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "自动续费",
-          "example": "1",
-          "member": "uint64",
-          "name": "AutoRenewFlag",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "网络节点总数",
-          "example": "5",
-          "member": "uint64",
-          "name": "TotalNetworkNode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "本机构节点数",
-          "example": "4",
-          "member": "uint64",
-          "name": "TotalCreateNode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "总群组数",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalGroups",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "DID总数",
-          "example": "5",
-          "member": "uint64",
-          "name": "DidCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "FunctionArg": {
       "document": "创建凭证入参的FunctionArg",
       "members": [
@@ -1462,91 +1266,6 @@
           "name": "CredentialStatus",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDidClusterDetailRequest": {
-      "document": "GetDidClusterDetail请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "DID网络ID",
-          "example": "1",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDidClusterDetailResponse": {
-      "document": "GetDidClusterDetail返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "网络ID",
-          "example": "无",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "组织名称",
-          "example": "无",
-          "member": "string",
-          "name": "ConsortiumName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "区块链组织名称",
-          "example": "无",
-          "member": "string",
-          "name": "ChainAgency",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDidClusterListRequest": {
-      "document": "GetDidClusterList请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "GetDidClusterListResponse": {
-      "document": "GetDidClusterList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "DID网络列表",
-          "example": "aaa",
-          "member": "DidCluster",
-          "name": "DidClusterList",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {

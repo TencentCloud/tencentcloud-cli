@@ -8033,6 +8033,7 @@
           "example": "无",
           "member": "SuccessUpdateStaffData",
           "name": "SuccessEmployeeData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8042,6 +8043,7 @@
           "example": "无",
           "member": "FailedUpdateStaffData",
           "name": "FailedEmployeeData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

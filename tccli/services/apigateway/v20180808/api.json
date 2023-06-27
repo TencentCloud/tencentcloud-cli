@@ -1372,12 +1372,12 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RelationBuniessApiIds",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5253,12 +5253,12 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "RelationBuniessApiIds",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6322,7 +6322,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
@@ -11688,123 +11688,112 @@
       "document": "独享实例配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "服务QPS上限",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "10",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "10",
           "member": "int64",
           "name": "Default",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位",
           "example": "次/秒",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型, integer|string",
           "example": "integer",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小",
           "example": "0",
           "member": "int64",
           "name": "Minimum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大",
           "example": "10",
           "member": "int64",
           "name": "Maximum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
+          "disabled": true,
           "document": "修改时间",
           "example": "2018-10-30 04:24:19",
           "member": "datetime_iso",
           "name": "ModifedTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符类型的值，当Type为string时才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TLSv1",
           "member": "string",
           "name": "ValueString",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符类型的默认值，当Type为string时才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TLSv1",
           "member": "string",
           "name": "DefaultValueString",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可调整范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[TLSv1,TLSv1.1,TLSv1.2]",
           "member": "string",
           "name": "Range",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -294,6 +294,13 @@
       "output": "ModifyDomainWhiteRuleResponse",
       "status": "online"
     },
+    "ModifySpartaProtection": {
+      "document": "修改域名配置",
+      "input": "ModifySpartaProtectionRequest",
+      "name": "修改域名配置",
+      "output": "ModifySpartaProtectionResponse",
+      "status": "online"
+    },
     "ModifyWafAutoDenyRules": {
       "document": "修改ip惩罚规则",
       "input": "ModifyWafAutoDenyRulesRequest",
@@ -6268,6 +6275,344 @@
       ],
       "type": "object"
     },
+    "ModifySpartaProtectionRequest": {
+      "document": "ModifySpartaProtection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名ID",
+          "example": "s2dfd342dfd34423sdfs",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
+          "example": "0",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CertType=1时，需要填次参数，表示证书内容",
+          "example": "sdfdfdf",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CertType=1时，需要填次参数，表示证书的私钥",
+          "example": "sdfsdfs",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "CertType=2时，需要填次参数，表示证书的ID",
+          "example": "3434",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "表示是否开启了CDN代理",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCdn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "HTTPS回源协议",
+          "example": "https",
+          "member": "string",
+          "name": "UpstreamScheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
+          "example": "\"80,443\"",
+          "member": "string",
+          "name": "HttpsUpstreamPort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "表示是否强制跳转到HTTPS，1表示开启，0表示不开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "HttpsRewrite",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "UpstreamType=1时，填次字段表示回源域名",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "UpstreamDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "UpstreamType=0时，填次字段表示回源ip",
+          "example": "[\"1.1.1.1\\n\"]",
+          "member": "string",
+          "name": "SrcList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启HTTP2，1表示开启，0表示不开启http2。开启HTTP2需要HTTPS支持",
+          "example": "0",
+          "member": "int64",
+          "name": "IsHttp2",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启WebSocket， 1：开启WebSocket，0：不开启WebSocket",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWebsocket",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "负载均衡策略，0表示轮徇，1表示IP hash",
+          "example": "0",
+          "member": "int64",
+          "name": "LoadBalance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否灰度",
+          "example": "0",
+          "member": "int64",
+          "name": "IsGray",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "WAF版本",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "端口信息",
+          "example": "无",
+          "member": "SpartaProtectionPort",
+          "name": "Ports",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "长短连接标志，仅IP回源时有效",
+          "example": "1",
+          "member": "string",
+          "name": "IsKeepAlive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例id",
+          "example": "waf-sdjfksl",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否为Anycast ip类型：1 Anycast 0 普通ip",
+          "example": "0",
+          "member": "int64",
+          "name": "Anycast",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "src的权重",
+          "example": "[1.1.1]",
+          "member": "int64",
+          "name": "Weights",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否开启源站的主动健康检测，1表示开启，0表示不开启",
+          "example": "0",
+          "member": "int64",
+          "name": "ActiveCheck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "TLS版本信息",
+          "example": "0",
+          "member": "int64",
+          "name": "TLSVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "加密套件信息",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "Ciphers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
+          "example": "0",
+          "member": "int64",
+          "name": "CipherTemplate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "300s",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxyReadTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "300s",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxySendTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
+          "example": "1",
+          "member": "int64",
+          "name": "SniType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "SniType=3时，需要填此参数，表示自定义的host；",
+          "example": "test.com",
+          "member": "string",
+          "name": "SniHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IsCdn=3时，需要填此参数，表示自定义header",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySpartaProtectionResponse": {
+      "document": "ModifySpartaProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWafAutoDenyRulesRequest": {
       "document": "ModifyWafAutoDenyRules请求参数结构体",
       "members": [
@@ -7210,6 +7555,62 @@
         }
       ],
       "type": "object"
+    },
+    "SpartaProtectionPort": {
+      "document": "waf斯巴达-编辑防护域名中的端口结构",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "nginx Id",
+          "member": "uint64",
+          "name": "NginxServerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "端口",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "后端端口",
+          "member": "string",
+          "name": "UpstreamPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "后端协议",
+          "member": "string",
+          "name": "UpstreamProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Strategy": {
       "document": "自定义规则的匹配条件结构体",

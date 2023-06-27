@@ -1,4 +1,4 @@
-**Example 1: UpgradeCFSFileSystem**
+**Example 1: 扩容文件系统**
 
 扩容文件系统
 

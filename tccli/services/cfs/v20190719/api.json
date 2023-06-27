@@ -1436,6 +1436,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3304,6 +3305,7 @@
           "example": "cfs-x",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3313,6 +3315,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3322,6 +3325,7 @@
           "example": "85",
           "member": "uint64",
           "name": "ScaleUpThreshold",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3331,6 +3335,7 @@
           "example": "75",
           "member": "uint64",
           "name": "TargetThreshold",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3652,6 +3657,7 @@
           "example": "cfs-x",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3661,6 +3667,7 @@
           "example": "10240",
           "member": "uint64",
           "name": "TargetCapacity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
