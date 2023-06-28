@@ -10932,6 +10932,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启HTTP公网访问",
+          "example": "无",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11146,6 +11155,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网访问",
+          "example": "无",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

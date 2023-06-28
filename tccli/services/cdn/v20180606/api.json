@@ -533,7 +533,7 @@
       "status": "online"
     },
     "UpdateDomainConfig": {
-      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。\n云审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到云审计。",
+      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。\n云审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到云审计。",
       "input": "UpdateDomainConfigRequest",
       "name": "更新加速域名配置",
       "output": "UpdateDomainConfigResponse",
@@ -8183,7 +8183,7 @@
           "example": "cdn-00001x",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8193,7 +8193,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8203,7 +8203,7 @@
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8213,7 +8213,7 @@
           "example": "www.test.com.cdn.dnsv1.com",
           "member": "string",
           "name": "Cname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8223,7 +8223,7 @@
           "example": "online",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8233,7 +8233,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8243,7 +8243,7 @@
           "example": "web",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8253,7 +8253,7 @@
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8263,7 +8263,7 @@
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8273,7 +8273,7 @@
           "example": "无",
           "member": "Origin",
           "name": "Origin",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8283,7 +8283,7 @@
           "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8293,7 +8293,7 @@
           "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8303,7 +8303,7 @@
           "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8313,7 +8313,7 @@
           "example": "无",
           "member": "Compression",
           "name": "Compression",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8323,7 +8323,7 @@
           "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8333,7 +8333,7 @@
           "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8343,7 +8343,7 @@
           "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8353,7 +8353,7 @@
           "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8363,7 +8363,7 @@
           "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8373,7 +8373,7 @@
           "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8383,7 +8383,7 @@
           "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8393,7 +8393,7 @@
           "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8403,7 +8403,7 @@
           "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8413,7 +8413,7 @@
           "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8423,7 +8423,7 @@
           "example": "无",
           "member": "Cache",
           "name": "Cache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8433,7 +8433,7 @@
           "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8443,7 +8443,7 @@
           "example": "无",
           "member": "Https",
           "name": "Https",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8453,7 +8453,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentication",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8463,7 +8463,7 @@
           "example": "无",
           "member": "Seo",
           "name": "Seo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8473,7 +8473,7 @@
           "example": "normal",
           "member": "string",
           "name": "Disable",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8483,7 +8483,7 @@
           "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8493,7 +8493,7 @@
           "example": "无",
           "member": "Referer",
           "name": "Referer",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8503,7 +8503,7 @@
           "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8513,7 +8513,7 @@
           "example": "无",
           "member": "Ipv6",
           "name": "Ipv6",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8523,7 +8523,7 @@
           "example": "无",
           "member": "Compatibility",
           "name": "Compatibility",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8533,7 +8533,7 @@
           "example": "无",
           "member": "SpecificConfig",
           "name": "SpecificConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8543,7 +8543,7 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8553,7 +8553,7 @@
           "example": "normal",
           "member": "string",
           "name": "Readonly",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8563,7 +8563,7 @@
           "example": "无",
           "member": "OriginPullTimeout",
           "name": "OriginPullTimeout",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8573,7 +8573,7 @@
           "example": "无",
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8583,7 +8583,7 @@
           "example": "无",
           "member": "SecurityConfig",
           "name": "SecurityConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8593,7 +8593,7 @@
           "example": "无",
           "member": "ImageOptimization",
           "name": "ImageOptimization",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8603,7 +8603,7 @@
           "example": "无",
           "member": "UserAgentFilter",
           "name": "UserAgentFilter",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8613,7 +8613,7 @@
           "example": "无",
           "member": "AccessControl",
           "name": "AccessControl",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8623,7 +8623,7 @@
           "example": "on",
           "member": "string",
           "name": "Advance",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8633,7 +8633,7 @@
           "example": "无",
           "member": "UrlRedirect",
           "name": "UrlRedirect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8643,7 +8643,7 @@
           "example": "[80,8080,443]",
           "member": "int64",
           "name": "AccessPort",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8653,7 +8653,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8663,7 +8663,7 @@
           "example": "无",
           "member": "AdvancedAuthentication",
           "name": "AdvancedAuthentication",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8673,7 +8673,7 @@
           "example": "无",
           "member": "OriginAuthentication",
           "name": "OriginAuthentication",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8683,7 +8683,7 @@
           "example": "无",
           "member": "Ipv6Access",
           "name": "Ipv6Access",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8693,7 +8693,7 @@
           "example": "无",
           "member": "AdvanceConfig",
           "name": "AdvanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8703,7 +8703,7 @@
           "example": "无",
           "member": "OfflineCache",
           "name": "OfflineCache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8713,7 +8713,7 @@
           "example": "无",
           "member": "OriginCombine",
           "name": "OriginCombine",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8723,7 +8723,7 @@
           "example": "无",
           "member": "PostSize",
           "name": "PostMaxSize",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8733,7 +8733,7 @@
           "example": "无",
           "member": "Quic",
           "name": "Quic",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8743,7 +8743,7 @@
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8753,7 +8753,7 @@
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8763,7 +8763,7 @@
           "example": "无",
           "member": "RemoteAuthentication",
           "name": "RemoteAuthentication",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8773,7 +8773,7 @@
           "example": "无",
           "member": "ShareCname",
           "name": "ShareCname",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8783,7 +8783,7 @@
           "example": "无",
           "member": "RuleEngine",
           "name": "RuleEngine",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8793,7 +8793,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8803,7 +8803,7 @@
           "example": "无",
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8813,7 +8813,7 @@
           "example": "无",
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8823,7 +8823,7 @@
           "example": "无",
           "member": "HttpsBilling",
           "name": "HttpsBilling",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8833,7 +8833,7 @@
           "example": "无",
           "member": "OthersPrivateAccess",
           "name": "OthersPrivateAccess",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -12860,6 +12860,7 @@
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Origins",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12870,6 +12871,7 @@
           "example": "ip",
           "member": "string",
           "name": "OriginType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12880,6 +12882,7 @@
           "example": "www.test.com",
           "member": "string",
           "name": "ServerName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12890,6 +12893,7 @@
           "example": "off",
           "member": "string",
           "name": "CosPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12900,6 +12904,7 @@
           "example": "http",
           "member": "string",
           "name": "OriginPullProtocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12910,6 +12915,7 @@
           "example": "[\"2.2.2.2\"]",
           "member": "string",
           "name": "BackupOrigins",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12920,6 +12926,7 @@
           "example": "ip",
           "member": "string",
           "name": "BackupOriginType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12930,6 +12937,7 @@
           "example": "www.test2.com",
           "member": "string",
           "name": "BackupServerName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12940,6 +12948,7 @@
           "example": "/",
           "member": "string",
           "name": "BasePath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12950,6 +12959,7 @@
           "example": "[]",
           "member": "PathRule",
           "name": "PathRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12960,6 +12970,7 @@
           "example": "[]",
           "member": "PathBasedOriginRule",
           "name": "PathBasedOrigin",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12970,6 +12981,7 @@
           "example": "{\"Switch\":\"on\",\"ServerName\":\"abc.com\"}",
           "member": "OriginSni",
           "name": "Sni",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12980,6 +12992,7 @@
           "example": "null",
           "member": "AdvanceHttps",
           "name": "AdvanceHttps",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12990,6 +13003,7 @@
           "example": "hw-oss",
           "member": "string",
           "name": "OriginCompany",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16642,6 +16656,7 @@
           "example": "无",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16652,6 +16667,7 @@
           "example": "无",
           "member": "StatusCodeCacheRule",
           "name": "CacheRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -17366,7 +17382,7 @@
         },
         {
           "disabled": false,
-          "document": "请求头部配置",
+          "document": "回源请求头部配置",
           "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",

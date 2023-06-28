@@ -35,6 +35,13 @@
       "output": "CreateApplicationTriggerPersonalResponse",
       "status": "online"
     },
+    "CreateCustomAccount": {
+      "document": "创建自定义账户",
+      "input": "CreateCustomAccountRequest",
+      "name": "创建自定义账户",
+      "output": "CreateCustomAccountResponse",
+      "status": "online"
+    },
     "CreateImageAccelerationService": {
       "document": "创建镜像加速服务",
       "input": "CreateImageAccelerationServiceRequest",
@@ -180,6 +187,13 @@
       "input": "DeleteApplicationTriggerPersonalRequest",
       "name": "删除应用更新触发器",
       "output": "DeleteApplicationTriggerPersonalResponse",
+      "status": "online"
+    },
+    "DeleteCustomAccount": {
+      "document": "删除自定义账号",
+      "input": "DeleteCustomAccountRequest",
+      "name": "删除自定义账号",
+      "output": "DeleteCustomAccountResponse",
       "status": "online"
     },
     "DeleteImage": {
@@ -348,6 +362,13 @@
       "input": "DescribeChartDownloadInfoRequest",
       "name": "查询Chart包下载信息",
       "output": "DescribeChartDownloadInfoResponse",
+      "status": "online"
+    },
+    "DescribeCustomAccounts": {
+      "document": "查询自定义账号",
+      "input": "DescribeCustomAccountsRequest",
+      "name": "查询自定义账号",
+      "output": "DescribeCustomAccountsResponse",
       "status": "online"
     },
     "DescribeExternalEndpointStatus": {
@@ -642,6 +663,13 @@
       "input": "ModifyApplicationTriggerPersonalRequest",
       "name": "修改应用更新触发器",
       "output": "ModifyApplicationTriggerPersonalResponse",
+      "status": "online"
+    },
+    "ModifyCustomAccount": {
+      "document": "更新自定义账户",
+      "input": "ModifyCustomAccountRequest",
+      "name": "更新自定义账户",
+      "output": "ModifyCustomAccountResponse",
       "status": "online"
     },
     "ModifyImmutableTagRules": {
@@ -1160,6 +1188,123 @@
     "CreateApplicationTriggerPersonalResponse": {
       "document": "CreateApplicationTriggerPersonal返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomAccountRequest": {
+      "document": "CreateCustomAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户名",
+          "example": "robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户描述",
+          "example": "for namespace library",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户过期时间（时间戳，单位:毫秒）",
+          "example": "1676897989000",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用自定义的账户",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomAccountResponse": {
+      "document": "CreateCustomAccount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义用户名（会自动加上前缀tcr$）",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义用户密码，仅展示一次，请注意留存",
+          "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
+          "member": "string",
+          "name": "Password",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义用户失效时间（时间戳）",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义用户创建时间",
+          "example": "2023-02-20T17:30:00+8:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2407,6 +2552,82 @@
       ],
       "type": "object"
     },
+    "CustomAccount": {
+      "document": "自定义账户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义账户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-14T07:14:43+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-14T07:14:43+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {       \"Resource\": \"library\",       \"Actions\": [         \"tcr:PushRepository\",          \"tcr:PullRepository\"       ]     }   ]",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CustomizedDomainInfo": {
       "document": "自定义域名信息",
       "members": [
@@ -2474,6 +2695,42 @@
     },
     "DeleteApplicationTriggerPersonalResponse": {
       "document": "DeleteApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomAccountRequest": {
+      "document": "DeleteCustomAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id\t",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户名",
+          "example": "robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomAccountResponse": {
+      "document": "DeleteCustomAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3614,6 +3871,96 @@
           "name": "PreSignedDownloadURL",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomAccountsRequest": {
+      "document": "DescribeCustomAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列出所有自定义账户",
+          "example": "无",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "填充策略",
+          "example": "false",
+          "member": "bool",
+          "name": "EmbedPermission",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomAccountsResponse": {
+      "document": "DescribeCustomAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义账户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomAccount",
+          "name": "CustomAccounts",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义账户数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6702,6 +7049,87 @@
       ],
       "type": "object"
     },
+    "ModifyCustomAccountRequest": {
+      "document": "ModifyCustomAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户名",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义的账户过期时间（时间戳）",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用自定义的账户",
+          "example": "true",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomAccountResponse": {
+      "document": "ModifyCustomAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyImmutableTagRulesRequest": {
       "document": "ModifyImmutableTagRules请求参数结构体",
       "members": [
@@ -7428,6 +7856,32 @@
         }
       ],
       "usage": "in"
+    },
+    "Permission": {
+      "document": "策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源路径，目前仅支持Namespace\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "library",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作，目前仅支持：tcr:PushRepository、tcr:PullRepository\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tcr:PushRepository\", \"tcr:PullRepository\"]",
+          "member": "string",
+          "name": "Actions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Region": {
       "document": "地域信息",

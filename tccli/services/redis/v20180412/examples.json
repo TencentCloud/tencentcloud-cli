@@ -42,8 +42,8 @@
     ],
     "ChangeMasterInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeMasterInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
+        "document": "复制组内只读实例设置为主实例",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeMasterInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5****\",\n    \"GroupId\": \"crs-rpl-sa5****\",\n    \"ForceSwitch\": false\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
         "title": "请求示例"
       }
@@ -120,10 +120,10 @@
     ],
     "CreateReplicationGroup": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReplicationGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5qlrlhux\",\n    \"GroupName\": \"name\"\n}",
+        "document": "创建复制组实例",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReplicationGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5qlr****\",\n    \"GroupName\": \"name\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
-        "title": "创建复制组实例"
+        "title": "请求示例"
       }
     ],
     "DeleteInstanceAccount": [
@@ -432,7 +432,7 @@
     ],
     "DescribeTaskInfo": [
       {
-        "document": "",
+        "document": "查询实例任务执行结果。",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskInfo\n&TaskId=18215\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"succeed\",\n        \"StartTime\": \"2018-11-01 17:25:14\",\n        \"TaskType\": \"redis缓存清空流程\",\n        \"InstanceId\": \"crs-09u2u96z\",\n        \"TaskMessage\": \"\",\n        \"RequestId\": \"81120ab8-fea0-41ab-af7e-283c0348c4fc\"\n    }\n}",
         "title": "请求示例"

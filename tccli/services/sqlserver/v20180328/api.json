@@ -518,6 +518,13 @@
       "output": "ModifyBackupStrategyResponse",
       "status": "online"
     },
+    "ModifyDBEncryptAttributes": {
+      "document": "本接口（ModifyDBEncryptAttributes）用于开启、关闭数据库的TDE加密功能。",
+      "input": "ModifyDBEncryptAttributesRequest",
+      "name": "开启、关闭数据库的TDE加密功能",
+      "output": "ModifyDBEncryptAttributesResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改实例名字。",
       "input": "ModifyDBInstanceNameRequest",
@@ -593,6 +600,13 @@
       "input": "ModifyIncrementalMigrationRequest",
       "name": "修改增量备份导入任务",
       "output": "ModifyIncrementalMigrationResponse",
+      "status": "online"
+    },
+    "ModifyInstanceEncryptAttributes": {
+      "document": "本接口（ModifyInstanceEncryptAttributes）用于开通实例的TDE加密功能。",
+      "input": "ModifyInstanceEncryptAttributesRequest",
+      "name": "开通实例的TDE加密功能",
+      "output": "ModifyInstanceEncryptAttributesResponse",
       "status": "online"
     },
     "ModifyInstanceParam": {
@@ -4603,6 +4617,32 @@
         }
       ],
       "usage": "out"
+    },
+    "DBTDEEncrypt": {
+      "document": "开启、关闭TDE数据库加密",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "enable-开启加密，disable-关闭加密",
+          "example": "enable",
+          "member": "string",
+          "name": "Encryption",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "DatabaseTuple": {
       "document": "该数据结构表示具有发布订阅关系的两个数据库。",
@@ -10440,6 +10480,51 @@
       ],
       "type": "object"
     },
+    "ModifyDBEncryptAttributesRequest": {
+      "document": "ModifyDBEncryptAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-182jha8a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启、关闭数据库TDE加密",
+          "example": "无",
+          "member": "DBTDEEncrypt",
+          "name": "DBTDEEncrypt",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBEncryptAttributesResponse": {
+      "document": "ModifyDBEncryptAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceNameRequest": {
       "document": "ModifyDBInstanceName请求参数结构体",
       "members": [
@@ -11017,6 +11102,60 @@
           "name": "IncrementalMigrationId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceEncryptAttributesRequest": {
+      "document": "ModifyInstanceEncryptAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-182jha8a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认self。",
+          "example": "none",
+          "member": "string",
+          "name": "CertificateAttribution",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引用的其他主账号ID，当CertificateAttribution 为others时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "QuoteUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceEncryptAttributesResponse": {
+      "document": "ModifyInstanceEncryptAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
           "value_allowed_null": false
         },
         {

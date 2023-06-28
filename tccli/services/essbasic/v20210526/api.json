@@ -1031,7 +1031,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程",
+          "document": "WEB嵌入资源类型。\nCREATE_SEAL: 创建印章\nCREATE_TEMPLATE：创建模版\nMODIFY_TEMPLATE：修改模版\nPREVIEW_TEMPLATE：预览模版\nPREVIEW_FLOW：预览合同文档\nPREVIEW_FLOW_DETAIL：预览合同详情\nPREVIEW_SEAL_LIST：预览印章列表\nPREVIEW_SEAL_DETAIL：预览印章详情\nEXTEND_SERVICE：扩展服务",
           "example": "无",
           "member": "string",
           "name": "EmbedType",
@@ -1040,7 +1040,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填",
+          "document": "WEB嵌入的业务资源ID\nEmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id\nPREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id\nPREVIEW_SEAL_DETAIL，必填，取值为印章id",
           "example": "无",
           "member": "string",
           "name": "BusinessId",
@@ -1077,6 +1077,7 @@
           "example": "无",
           "member": "string",
           "name": "WebUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

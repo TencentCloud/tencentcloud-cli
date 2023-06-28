@@ -138,7 +138,7 @@
     ],
     "SmsPackagesStatistics": [
       {
-        "document": "",
+        "document": "请求示例",
         "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SmsPackagesStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"EndTime\": \"2021043023\",\n    \"Limit\": 2,\n    \"BeginTime\": \"2021040113\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SmsPackagesStatisticsSet\": [\n            {\n                \"PackageCreateTime\": 1617292800,\n                \"PackageExpiredTime\": 1617292800,\n                \"PackageEffectiveTime\": 1619884800,\n                \"PackageType\": 1,\n                \"CurrentUsage\": 1000,\n                \"PackageId\": 1000791745,\n                \"PackageAmount\": 1000\n            },\n            {\n                \"PackageCreateTime\": 1617379200,\n                \"PackageExpiredTime\": 1617379200,\n                \"PackageEffectiveTime\": 1619971200,\n                \"PackageType\": 1,\n                \"CurrentUsage\": 100,\n                \"PackageId\": 1000876572,\n                \"PackageAmount\": 1000\n            }\n        ],\n        \"RequestId\": \"3314836f-0b10-45cb-b7be-593e84c1c197\"\n    }\n}",
         "title": "请求示例"

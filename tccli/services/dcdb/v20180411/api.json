@@ -1619,6 +1619,15 @@
         },
         {
           "disabled": false,
+          "document": "安全组ID列表",
+          "example": "[\"sg-xxxx\",\"sg-xxxx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "DCN源实例ID",
           "example": "tdsqlshard-xxxx",
           "member": "string",
@@ -1728,6 +1737,7 @@
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1737,6 +1747,7 @@
           "example": "1122",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -6837,45 +6837,45 @@
       "document": "DescribeConsumerGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka实例id。",
+          "example": "ckafka-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，用户需要查询的group名称。",
+          "example": " ",
           "member": "string",
           "name": "GroupName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。",
+          "example": " ",
           "member": "string",
           "name": "TopicName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次返回个数限制",
+          "document": "本次返回个数限制，最大支持50",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移位置",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6890,8 +6890,10 @@
         {
           "disabled": false,
           "document": "返回的消费分组信息",
+          "example": " ",
           "member": "ConsumerGroupResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10594,9 +10596,8 @@
       "document": "InquireCkafkaPrice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "国内站标准版填写standards2, 专业版填写profession",
+          "document": "国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession",
           "example": "profession",
           "member": "string",
           "name": "InstanceType",
@@ -10604,7 +10605,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买/续费付费类型(购买时不填的话, 默认获取购买包年包月一个月的费用)",
           "example": "{\"InstanceChargeType\":\"PREPAID\", \"InstanceChargePeriod\": 1}",
@@ -10614,7 +10614,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买/续费时购买的实例数量(不填时, 默认为1个)",
           "example": "1",
@@ -10624,9 +10623,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例内网带宽大小, 单位MB/s (购买时必填)",
+          "document": "实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)",
           "example": "40",
           "member": "int64",
           "name": "Bandwidth",
@@ -10634,9 +10632,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例的硬盘购买类型以及大小 (购买时必填)",
+          "document": "实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)",
           "example": "{\"DiskType\":\"SSD\", \"DiskSize\": 500}",
           "member": "InquiryDiskParam",
           "name": "InquiryDiskParam",
@@ -10644,7 +10641,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例消息保留时间大小, 单位小时 (购买时必填)",
           "example": "1",
@@ -10654,7 +10650,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例topic数, 单位个 (购买时必填)",
           "example": "40",
@@ -10664,9 +10659,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "购买实例分区数, 单位个 (购买时必填)",
+          "document": "购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)",
           "example": "40",
           "member": "int64",
           "name": "Partition",
@@ -10674,7 +10668,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买地域, 可通过查看DescribeCkafkaZone这个接口获取ZoneId",
           "example": "[100001]",
@@ -10684,7 +10677,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标记操作, 新购填写purchase, 续费填写renew, (不填时, 默认为purchase)",
           "example": "purchase",
@@ -10694,7 +10686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国内站购买的版本, sv_ckafka_instance_s2_1(入门型), sv_ckafka_instance_s2_2(标准版), sv_ckafka_instance_s2_3(进阶型), 如果instanceType为standards2, 但该参数为空, 则默认值为sv_ckafka_instance_s2_1",
           "example": "sv_ckafka_instance_s2_1",
@@ -10704,7 +10695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)",
           "example": "\"\"",
@@ -10714,7 +10704,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费时的实例id, 续费时填写",
           "example": "ckafka-xxxxx",
@@ -10763,7 +10752,7 @@
           "example": "xxx",
           "member": "InquireCkafkaPriceResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

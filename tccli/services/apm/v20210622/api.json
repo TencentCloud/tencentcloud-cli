@@ -946,7 +946,6 @@
       "document": "DescribeMetricRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -956,7 +955,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标列表",
           "example": "无",
@@ -966,7 +964,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合维度",
           "example": "无",
@@ -976,7 +973,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序",
           "example": "无",
@@ -986,7 +982,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "52Dpv13GR",
@@ -996,7 +991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页大小",
           "example": "10",
@@ -1006,7 +1000,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "1618361193",
@@ -1016,7 +1009,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始点",
           "example": "1",
@@ -1026,7 +1018,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "1618361193",
@@ -1036,7 +1027,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务名称（默认值：taw）",
           "example": "taw",
@@ -1046,7 +1036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "1",
@@ -1056,7 +1045,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页长",
           "example": "10",
@@ -1064,6 +1052,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Or过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "OrFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1077,7 +1074,7 @@
           "example": "无",
           "member": "ApmMetricRecord",
           "name": "Records",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1087,7 +1084,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
