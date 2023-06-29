@@ -2801,8 +2801,7 @@
           "member": "bool",
           "name": "NotChannelOrganization",
           "required": true,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2811,8 +2810,7 @@
           "member": "int64",
           "name": "ApproverType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2821,8 +2819,7 @@
           "member": "string",
           "name": "OrganizationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2831,8 +2828,7 @@
           "member": "string",
           "name": "OrganizationOpenId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2841,8 +2837,7 @@
           "member": "string",
           "name": "OrganizationName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2851,8 +2846,7 @@
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2861,8 +2855,7 @@
           "member": "string",
           "name": "OpenId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2871,8 +2864,7 @@
           "member": "string",
           "name": "ApproverName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2881,8 +2873,7 @@
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2891,8 +2882,7 @@
           "member": "string",
           "name": "RecipientId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2901,8 +2891,7 @@
           "member": "int64",
           "name": "PreReadTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2911,18 +2900,16 @@
           "member": "bool",
           "name": "IsFullText",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS",
           "example": "无",
           "member": "string",
           "name": "NotifyType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2931,8 +2918,7 @@
           "member": "CommonApproverOption",
           "name": "ApproverOption",
           "required": false,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
         }
       ],
       "usage": "in"

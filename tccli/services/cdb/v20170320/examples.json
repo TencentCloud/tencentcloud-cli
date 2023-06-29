@@ -354,7 +354,7 @@
     ],
     "DescribeBackupDecryptionKey": [
       {
-        "document": "",
+        "document": "查询备份文件解密密钥",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDecryptionKey\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-XXXX\",\n    \"BackupId\": 12345\n}",
         "output": "{\n    \"Response\": {\n        \"DecryptionKey\": \"XXXXXXXXXXX\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份文件解密密钥"
@@ -370,7 +370,7 @@
     ],
     "DescribeBackupEncryptionStatus": [
       {
-        "document": "",
+        "document": "查询实例的备份加密状态",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupEncryptionStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-XXXX\"\n}",
         "output": "{\n    \"Response\": {\n        \"EncryptionStatus\": \"on\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询实例的备份加密状态"
@@ -880,7 +880,7 @@
     ],
     "ModifyBackupEncryptionStatus": [
       {
-        "document": "",
+        "document": "开启实例备份加密",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupEncryptionStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-XXXX\",\n    \"EncryptionStatus\": \"on\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "开启实例备份加密"

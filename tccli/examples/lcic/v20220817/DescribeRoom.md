@@ -36,3 +36,41 @@ Output:
 }
 ```
 
+**Example 2: 示例**
+
+获取房间信息
+
+Input: 
+
+```
+tccli lcic DescribeRoom --cli-unfold-argument  \
+    --RoomId 331450358
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Assistants": [],
+        "AudioQuality": 0,
+        "AutoMic": 0,
+        "DisableRecord": 0,
+        "EnableDirectControl": 0,
+        "EndTime": 1687943391,
+        "GroupId": "",
+        "InteractionMode": 1,
+        "MaxMicNumber": 2,
+        "Name": "测试1",
+        "RecordUrl": "",
+        "RequestId": "a8dea9b9-5172-4c01-a53d-5a53437f7fdf",
+        "Resolution": 1,
+        "SdkAppId": 3923193,
+        "StartTime": 1687943339,
+        "Status": 0,
+        "SubType": "video",
+        "TeacherId": "2O2bjPEXxStIac3NC9kfH3mHeBC",
+        "VideoOrientation": 1
+    }
+}
+```
+

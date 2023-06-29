@@ -122,7 +122,7 @@
     ],
     "CreateForwardRule": [
       {
-        "document": "",
+        "document": "创建转发规则",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"ProductID\": \"TIUHIHHII\",\n    \"MsgType\": 3,\n    \"QueueRegion\": \"ap-guangzhou\",\n    \"QueueType\": 1,\n    \"QueueName\": \"hub_test_topic\",\n    \"InstanceId\": \"ckafka-cy614eit\",\n    \"InstanceName\": \"iot_test_no_delete\"\n}",
         "output": "{\n    \"Response\": {\n        \"ProductID\": \"TDCZ2WD29Z\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"\",\n        \"Endpoint\": \"100004557990\",\n        \"Result\": 0,\n        \"QueueRegion\": \"ap-guangzhou\",\n        \"QueueName\": \"hub_test_topic\",\n        \"RoleName\": \"cmqIOTRole100004557990_1522374592\",\n        \"MsgType\": 3,\n        \"RoleID\": 16576,\n        \"ErrMsg\": \"\",\n        \"QueueType\": 1,\n        \"RequestId\": \"d5c0b643-8a2d-4f03-8207-40c4602c652d\"\n    }\n}",
         "title": "创建转发规则"
@@ -466,7 +466,7 @@
     ],
     "DescribeForwardRule": [
       {
-        "document": "",
+        "document": "获取产品转发规则",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"1213123\",\n    \"QueueType\": 1,\n    \"Consecretid\": \"fawefwe\",\n    \"ProductID\": \"PTROMP3AOB\"\n}",
         "output": "{\n    \"Response\": {\n        \"Endpoint\": \"1234141234\",\n        \"QueueType\": 1,\n        \"InstanceId\": \"topic-123aw\",\n        \"RoleID\": 123,\n        \"Result\": 1,\n        \"MsgType\": 1,\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\",\n        \"QueueRegion\": \"gz\",\n        \"RoleName\": \"role-fawe\",\n        \"InstanceName\": \"kafka-test\",\n        \"QueueName\": \"kafka-t1132\",\n        \"ErrMsg\": \"\",\n        \"ProductID\": \"PTROMP3AOB\"\n    }\n}",
         "title": "获取产品转发规则"

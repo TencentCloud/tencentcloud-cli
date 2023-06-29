@@ -1822,7 +1822,6 @@
       "document": "CreateForwardRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "PTROMP3AOB",
@@ -1832,7 +1831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息类型",
           "example": "1",
@@ -1842,7 +1840,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台Skey",
           "example": "xrnWgKu0fCz7q8JIQYFiNP",
@@ -1852,7 +1849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列区域",
           "example": "gz",
@@ -1862,7 +1858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列类型 0.CMQ  1.Ckafka",
           "example": "1",
@@ -1872,7 +1867,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥",
           "example": "safawef",
@@ -1882,7 +1876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "ins-epc65t7i",
@@ -1892,7 +1885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "hub_test_ins",
@@ -1902,7 +1894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列或主题ID",
           "example": "topic-epc65t7i",
@@ -1912,7 +1903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列或主题名称",
           "example": "hub_test_topic",
@@ -1933,7 +1923,7 @@
           "example": "1242345132",
           "member": "string",
           "name": "Endpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1943,7 +1933,7 @@
           "example": "hub_test_topic",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1953,7 +1943,7 @@
           "example": "PTROMP3AOB",
           "member": "string",
           "name": "ProductID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1963,7 +1953,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MsgType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1973,7 +1963,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1983,7 +1973,7 @@
           "example": "role-test",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1993,7 +1983,7 @@
           "example": "1212523451",
           "member": "uint64",
           "name": "RoleID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2003,37 +1993,37 @@
           "example": "gz",
           "member": "string",
           "name": "QueueRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息队列的类型。 0：CMQ，1：CKafaka",
+          "document": "消息队列的类型。 0：CMQ，1：Ckafka",
           "example": "1",
           "member": "uint64",
           "name": "QueueType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例id， 目前只有Ckafaka会用到",
+          "document": "实例id， 目前只有Ckafka会用到",
           "example": "ins-epc65t7i",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称，目前只有Ckafaka会用到",
+          "document": "实例名称，目前只有Ckafka会用到",
           "example": "hub_test_ins",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2043,7 +2033,7 @@
           "example": "ok",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5090,7 +5080,6 @@
       "document": "DescribeForwardRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "PTROMP3AOB",
@@ -5100,7 +5089,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台Skey",
           "example": "safaweffawef",
@@ -5110,7 +5098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列类型，0：CMQ，1：Ckafka",
           "example": "1",
@@ -5120,7 +5107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥",
           "example": "safawef",
@@ -5141,7 +5127,7 @@
           "example": "1242345132",
           "member": "string",
           "name": "Endpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5151,7 +5137,7 @@
           "example": "topic-fawe",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5161,7 +5147,7 @@
           "example": "PTROMP3AOB",
           "member": "string",
           "name": "ProductID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5171,7 +5157,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MsgType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5181,7 +5167,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5191,7 +5177,7 @@
           "example": "role",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5201,7 +5187,7 @@
           "example": "123",
           "member": "uint64",
           "name": "RoleID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5211,7 +5197,7 @@
           "example": "gz",
           "member": "string",
           "name": "QueueRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5221,27 +5207,27 @@
           "example": "1",
           "member": "uint64",
           "name": "QueueType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例id， 目前只有Ckafaka会用到",
+          "document": "实例id， 目前只有Ckafka会用到",
           "example": "kafka-f123fasef",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称，目前只有Ckafaka会用到",
+          "document": "实例名称，目前只有Ckafka会用到",
           "example": "kafka-test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5251,7 +5237,7 @@
           "example": "ok",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -1,5 +1,6 @@
 **Example 1: 删除自定义域名的路径映射**
 
+删除自定义域名的路径映射
 
 
 Input: 
@@ -7,7 +8,7 @@ Input:
 ```
 tccli apigateway DeleteServiceSubDomainMapping --cli-unfold-argument  \
     --ServiceId service-19c5fnhy \
-    --SubDomain xxxxxxx \
+    --SubDomain doagkfrf.flyfly.wang \
     --Environment test
 ```
 

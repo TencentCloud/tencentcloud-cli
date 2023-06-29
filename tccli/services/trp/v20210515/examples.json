@@ -128,6 +128,14 @@
         "title": "删除溯源信息"
       }
     ],
+    "DescribeAgentCorps": [
+      {
+        "document": "查询渠道企业列表",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentCorps\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询渠道企业列表"
+      }
+    ],
     "DescribeCodeBatchById": [
       {
         "document": "",

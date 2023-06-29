@@ -1,6 +1,6 @@
 **Example 1: DescribeServiceForApiApp**
 
-
+应用使用者查询服务详情
 
 Input: 
 
@@ -14,74 +14,73 @@ Output:
 ```
 {
     "Response": {
-        "ServiceDesc": "xx",
+        "ServiceId": "abc",
+        "AvailableEnvironments": [
+            "abc"
+        ],
+        "ServiceName": "abc",
+        "ServiceDesc": "abc",
+        "Protocol": "abc",
         "CreatedTime": "2020-09-22T00:00:00+00:00",
-        "SetId": 1,
-        "InnerHttpsPort": 0,
-        "InnerHttpPort": 0,
-        "Tags": [
-            {
-                "Value": "xx",
-                "Key": "xx"
-            }
-        ],
+        "ModifiedTime": "2020-09-22T00:00:00+00:00",
         "NetTypes": [
-            "OUTER"
+            "abc"
         ],
-        "IpVersion": "xx",
-        "UserType": "xx",
-        "UsagePlanList": [
-            {
-                "MaxRequestNumPreSec": 0,
-                "UsagePlanId": "xx",
-                "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                "UsagePlanDesc": "xx",
-                "Environment": "xx",
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "UsagePlanName": "xx"
-            }
-        ],
-        "OuterSubDomain": "xx",
-        "UsagePlanTotalCount": 0,
+        "InternalSubDomain": "abc",
+        "OuterSubDomain": "abc",
+        "InnerHttpPort": 0,
+        "InnerHttpsPort": 0,
+        "ApiTotalCount": 0,
         "ApiIdStatusSet": [
             {
-                "AuthType": "xx",
-                "Protocol": "xx",
-                "UniqVpcId": "xx",
-                "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                "OauthConfig": {
-                    "PublicKey": "xx",
-                    "LoginRedirectUrl": "xx",
-                    "TokenLocation": "xx"
-                },
-                "ApiId": "xx",
-                "AuthRelationApiId": "xx",
-                "ApiDesc": "xx",
-                "ApiType": "xx",
-                "ApiBusinessType": "xx",
-                "ServiceId": "xx",
-                "ApiName": "xx",
-                "Path": "xx",
+                "ServiceId": "abc",
+                "ApiId": "abc",
+                "ApiDesc": "abc",
+                "Path": "abc",
+                "Method": "abc",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "ApiName": "abc",
+                "UniqVpcId": "abc",
+                "ApiType": "abc",
+                "Protocol": "abc",
+                "IsDebugAfterCharge": true,
+                "AuthType": "abc",
+                "ApiBusinessType": "abc",
+                "AuthRelationApiId": "abc",
                 "RelationBuniessApiIds": [
-                    "xx"
+                    "abc"
                 ],
-                "IsDebugAfterCharge": false,
-                "Method": "xx",
-                "TokenLocation": "xx"
+                "OauthConfig": {
+                    "PublicKey": "abc",
+                    "TokenLocation": "abc",
+                    "LoginRedirectUrl": "abc"
+                },
+                "TokenLocation": "abc"
             }
         ],
-        "ServiceName": "xx",
-        "RequestId": "xx",
-        "Protocol": "xx",
-        "ApiTotalCount": 1,
-        "ModifiedTime": "2020-09-22T00:00:00+00:00",
-        "ExclusiveSetName": "xx",
-        "AvailableEnvironments": [
-            "release"
+        "UsagePlanTotalCount": 0,
+        "UsagePlanList": [
+            {
+                "Environment": "abc",
+                "UsagePlanId": "abc",
+                "UsagePlanName": "abc",
+                "UsagePlanDesc": "abc",
+                "MaxRequestNumPreSec": 0,
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00"
+            }
         ],
-        "ServiceId": "xx",
-        "InternalSubDomain": "xx"
+        "IpVersion": "abc",
+        "UserType": "abc",
+        "SetId": 0,
+        "Tags": [
+            {
+                "Key": "abc",
+                "Value": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

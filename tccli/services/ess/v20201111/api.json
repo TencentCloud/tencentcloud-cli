@@ -468,8 +468,7 @@
           "member": "int64",
           "name": "ApproverType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -478,8 +477,7 @@
           "member": "string",
           "name": "ApproverName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -488,8 +486,7 @@
           "member": "string",
           "name": "ApproverMobile",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -498,8 +495,7 @@
           "member": "Component",
           "name": "SignComponents",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -508,8 +504,7 @@
           "member": "string",
           "name": "OrganizationName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -518,8 +513,7 @@
           "member": "string",
           "name": "ApproverIdCardNumber",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -528,8 +522,7 @@
           "member": "string",
           "name": "ApproverIdCardType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -538,8 +531,7 @@
           "member": "string",
           "name": "NotifyType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -548,8 +540,7 @@
           "member": "int64",
           "name": "ApproverRole",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -558,8 +549,7 @@
           "member": "string",
           "name": "VerifyChannel",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -568,8 +558,7 @@
           "member": "int64",
           "name": "PreReadTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -578,8 +567,7 @@
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -588,8 +576,7 @@
           "member": "string",
           "name": "ApproverSource",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -598,8 +585,7 @@
           "member": "string",
           "name": "CustomApproverTag",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -608,8 +594,7 @@
           "member": "ApproverOption",
           "name": "ApproverOption",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -618,8 +603,7 @@
           "member": "int64",
           "name": "ApproverVerifyTypes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -628,8 +612,16 @@
           "member": "int64",
           "name": "ApproverSignTypes",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。\t",
+          "example": "无",
+          "member": "bool",
+          "name": "ApproverNeedSignReview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -1090,8 +1082,7 @@
           "member": "string",
           "name": "Mobile",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1100,8 +1091,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1110,8 +1100,7 @@
           "member": "int64",
           "name": "CcType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1120,8 +1109,16 @@
           "member": "int64",
           "name": "CcPermission",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关注方通知类型：sms--短信，none--不通知",
+          "example": "sms",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1969,6 +1966,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1978,6 +1976,7 @@
           "example": "无",
           "member": "string",
           "name": "PreviewUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2266,6 +2265,7 @@
           "example": "流程编号",
           "member": "string",
           "name": "FlowId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5783,8 +5783,7 @@
           "member": "int64",
           "name": "ApproverType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5793,8 +5792,7 @@
           "member": "string",
           "name": "OrganizationName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5803,8 +5801,7 @@
           "member": "string",
           "name": "ApproverName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5813,8 +5810,7 @@
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5823,8 +5819,7 @@
           "member": "string",
           "name": "ApproverIdCardType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5833,8 +5828,7 @@
           "member": "string",
           "name": "ApproverIdCardNumber",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5843,8 +5837,7 @@
           "member": "string",
           "name": "RecipientId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5853,8 +5846,7 @@
           "member": "string",
           "name": "VerifyChannel",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5863,8 +5855,7 @@
           "member": "string",
           "name": "NotifyType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5873,8 +5864,7 @@
           "member": "bool",
           "name": "IsFullText",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -5883,8 +5873,7 @@
           "member": "uint64",
           "name": "PreReadTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5893,8 +5882,7 @@
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5903,8 +5891,7 @@
           "member": "bool",
           "name": "Required",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -5913,8 +5900,7 @@
           "member": "string",
           "name": "ApproverSource",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5923,8 +5909,7 @@
           "member": "string",
           "name": "CustomApproverTag",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5933,8 +5918,7 @@
           "member": "RegisterInfo",
           "name": "RegisterInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5943,8 +5927,7 @@
           "member": "ApproverOption",
           "name": "ApproverOption",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": true,
@@ -5953,8 +5936,7 @@
           "member": "string",
           "name": "JumpUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5963,8 +5945,16 @@
           "member": "string",
           "name": "SignId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。",
+          "example": "无",
+          "member": "bool",
+          "name": "ApproverNeedSignReview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

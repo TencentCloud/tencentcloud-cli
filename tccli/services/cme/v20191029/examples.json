@@ -504,12 +504,6 @@
         "title": "修改输出的媒体配置"
       },
       {
-        "document": "停止点播转直播。停止操作将停止输入源的播放并断开直播流，项目状态变为 Idle 状态。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Stop。",
-        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Stop\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
-        "title": "停止点播转直播"
-      },
-      {
         "document": "项目状态是 Working 状态时，停止输出源将断开该输出源的直播流。\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DisableDestination。\nDestinationInfos| 是 | Array of [MediaCastDestinationInfo](https://cloud.tencent.com/document/api/1156/40360#MediaCastDestinationInfo) | 输出源信息。只需要带上输出源的 Id 参数。一次只能停止一个输出源。",
         "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DisableDestination\",\n    \"DestinationInfos\": [\n        {\n            \"Id\": \"dt_01\"\n        }\n    ],\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
@@ -534,22 +528,10 @@
         "title": "删除输出源"
       },
       {
-        "document": "启动点播转直播。启动成功后项目状态变为 Working 状态，从输入源列表的第一个输入源开始播放，向输出源列表推送直播流。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Start。",
-        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Start\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
-        "title": "启动点播转直播"
-      },
-      {
         "document": "重新启动已经停止的输出源，项目状态是 Working 状态时进行操作。\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 EnableDestination。\nDestinationInfos| 是 | Array of [MediaCastDestinationInfo](https://cloud.tencent.com/document/api/1156/40360#MediaCastDestinationInfo)| 输出源信息。只需要带上输出源的 Id 参数。一次只能启动一个输出源。",
         "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"EnableDestination\",\n    \"DestinationInfos\": [\n        {\n            \"Id\": \"dt_02\"\n        }\n    ],\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "启动输出源"
-      },
-      {
-        "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DescribePlayInfo。",
-        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DescribePlayInfo\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PlayInfo\": {\n            \"Status\": \"Working\",\n            \"CurrentSourceId\": \"st_0123\",\n            \"CurrentSourcePosition\": 100,\n            \"CurrentSourceDuration\": 3490,\n            \"LoopCount\": 1,\n            \"DestinationStatusSet\": [\n                {\n                    \"Id\": \"dt_123\",\n                    \"PushUrl\": \"rtmp://test.com/live/aa?t=xx\",\n                    \"Status\": \"Working\"\n                }\n            ]\n        },\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
-        "title": "查询点播转直播项目的播放信息"
       },
       {
         "document": "新添加的输入源加到输入源列表的后面。\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddSource。\nPosition | 否 | Integer | 输入源列表中的位置，0表示第一个位置。默认添加到输入源列表的后面。\nSourceInfos | 是 | Array of [MediaCastSourceInfo](https://cloud.tencent.com/document/api/1156/40360#MediaCastSourceInfo) | 输入源信息。输入源个数最大为100个。",
@@ -562,6 +544,36 @@
         "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddDestination\",\n    \"DestinationInfos\": [\n        {\n            \"Name\": \"test\",\n            \"PushUrl\": \"rtmp://test.com/live/abc?t=xxx\"\n        }\n    ],\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [\n            {\n                \"Id\": \"dt_02\",\n                \"PushUrl\": \"rtmp://test.com/live/aa?t=xx\"\n            }\n        ],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "添加输出源"
+      },
+      {
+        "document": "停止媒体转推。停止操作将停止输入源的播放并断开直播流，项目状态变为 Idle 状态。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Stop。",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Stop\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "停止媒体转推"
+      },
+      {
+        "document": "启动媒体转推。启动成功后项目状态变为 Working 状态，从输入源列表的第一个输入源开始播放，向输出源列表推送直播流。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Start。",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Start\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "启动媒体转推"
+      },
+      {
+        "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DescribePlayInfo。",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DescribePlayInfo\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayInfo\": {\n            \"Status\": \"Working\",\n            \"CurrentSourceId\": \"st_0123\",\n            \"CurrentSourcePosition\": 100,\n            \"CurrentSourceDuration\": 3490,\n            \"LoopCount\": 1,\n            \"DestinationStatusSet\": [\n                {\n                    \"Id\": \"dt_123\",\n                    \"PushUrl\": \"rtmp://test.com/live/aa?t=xx\",\n                    \"Status\": \"Working\"\n                }\n            ]\n        },\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "查询媒体转推项目的播放信息"
+      },
+      {
+        "document": "发起 Start 操作成功后， 媒体转推项目开始启动，在30秒内还需要发起 Confirm 操作进行确认。如果超时没有确认，该项目会被自动停止掉。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Confirm。",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Confirm\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "确认媒体转推项目启动"
+      },
+      {
+        "document": "项目需要是 Idle 状态，设置自动转推时间后在指定时间内启动项目进行转推。\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyPlaySetting。\nPlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleMediaCastProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"ModifyPlaySetting\",\n    \"PlaySetting\": {\n        \"AutoStartTime\": \"2022-12-20T20:00:00Z\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayInfo\": null,\n        \"SourceInfoSet\": [],\n        \"DestinationInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "title": "设置定时转推"
       }
     ],
     "HandleStreamConnectProject": [

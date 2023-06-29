@@ -1383,7 +1383,7 @@
         {
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
-          "example": "abc",
+          "example": "videodoc",
           "member": "string",
           "name": "SubType",
           "required": true,
@@ -1446,7 +1446,7 @@
         {
           "disabled": false,
           "document": "rtc人数。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
@@ -1454,8 +1454,8 @@
         },
         {
           "disabled": false,
-          "document": "观看类型，互动直播（默认）。",
-          "example": "1",
+          "document": "观看类型。互动观看 （默认）",
+          "example": "0",
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
@@ -1487,6 +1487,24 @@
           "name": "EnableDirectControl",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1500,6 +1518,7 @@
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2688,6 +2707,7 @@
           "example": "房间名称",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2697,6 +2717,7 @@
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2706,6 +2727,7 @@
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2715,6 +2737,7 @@
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2724,6 +2747,7 @@
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2733,6 +2757,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2742,6 +2767,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2751,6 +2777,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2760,6 +2787,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AudioQuality",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2769,6 +2797,7 @@
           "example": "video",
           "member": "string",
           "name": "SubType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2778,6 +2807,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2787,6 +2817,7 @@
           "example": "无",
           "member": "string",
           "name": "Assistants",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2796,6 +2827,7 @@
           "example": "abc",
           "member": "string",
           "name": "RecordUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2805,6 +2837,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2814,6 +2847,7 @@
           "example": "abc",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2823,6 +2857,27 @@
           "example": "0",
           "member": "uint64",
           "name": "EnableDirectControl",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4180,6 +4235,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CurrentState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4460,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师\n直播开始后不允许修改。",
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\n直播开始后不允许修改。",
           "example": "video",
           "member": "string",
           "name": "SubType",
@@ -4487,7 +4552,7 @@
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID",
+          "document": "房间绑定的群组ID。直播开始后不允许修改。",
           "example": "abc",
           "member": "string",
           "name": "GroupId",
@@ -4496,10 +4561,28 @@
         },
         {
           "disabled": false,
-          "document": "打开学生麦克风/摄像头的授权开关",
+          "document": "打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。",
           "example": "0",
           "member": "uint64",
           "name": "EnableDirectControl",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "uint64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
           "required": false,
           "type": "int"
         }
@@ -4707,8 +4790,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4717,8 +4799,7 @@
           "member": "uint64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4727,8 +4808,7 @@
           "member": "uint64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4737,8 +4817,7 @@
           "member": "uint64",
           "name": "Resolution",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4747,8 +4826,7 @@
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4757,8 +4835,7 @@
           "member": "string",
           "name": "SubType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4767,8 +4844,7 @@
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4777,8 +4853,7 @@
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4787,8 +4862,7 @@
           "member": "uint64",
           "name": "TurnOffMic",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4797,8 +4871,7 @@
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4807,8 +4880,7 @@
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4817,8 +4889,7 @@
           "member": "string",
           "name": "Assistants",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4827,8 +4898,7 @@
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4837,8 +4907,7 @@
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4847,8 +4916,7 @@
           "member": "uint64",
           "name": "RecordLayout",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4857,8 +4925,7 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4867,8 +4934,25 @@
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoOrientation",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

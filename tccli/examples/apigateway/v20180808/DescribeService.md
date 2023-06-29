@@ -77,7 +77,6 @@ Output:
         "Protocol": "",
         "ApiTotalCount": 1,
         "ModifiedTime": "2020-09-22T00:00:00+00:00",
-        "ExclusiveSetName": "",
         "DeploymentType": "DEFAULT",
         "SpecialUse": "DEFAULT",
         "InstanceId": "",

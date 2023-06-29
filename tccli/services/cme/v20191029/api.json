@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateProject": {
-      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>\n<li>点播转直播项目：用于点播文件转直播输出。</li>",
+      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推<font color=red>（废弃，可使用媒体转推项目替代）</font>；</li>\n<li>媒体转推项目：用于媒体文件转直播输出。</li>",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
@@ -246,16 +246,16 @@
       "status": "online"
     },
     "HandleMediaCastProject": {
-      "document": "对点播转直播项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddSource`（添加输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B12-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `DeleteSource`（删除输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B7-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `SwitchSource`（切换当前播放的输入源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B6-.E5.88.87.E6.8D.A2.E5.BD.93.E5.89.8D.E6.92.AD.E6.94.BE.E7.9A.84.E8.BE.93.E5.85.A5.E6.BA.90)\n- `AddDestination`（ 添加输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B13-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteDestination`（删除输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `EnableDestination`（启动输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B10-.E5.90.AF.E5.8A.A8.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DisableDestination`（停止输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B5-.E5.81.9C.E6.AD.A2.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyDestination`（修改输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（启动点播转直播），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B9-.E5.90.AF.E5.8A.A8.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)；\n- `Stop`（停止点播转直播），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B4-.E5.81.9C.E6.AD.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)；\n- `ModifyOutputMediaSetting`（修改媒体输出配置），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E7.9A.84.E5.AA.92.E4.BD.93.E9.85.8D.E7.BD.AE)；\n- `ModifyPlaySetting`（修改播放结束时间），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B1-.E4.BF.AE.E6.94.B9.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribePlayInfo`（查询播放信息），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B11-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD.E9.A1.B9.E7.9B.AE.E7.9A.84.E6.92.AD.E6.94.BE.E4.BF.A1.E6.81.AF)。",
+      "document": "对媒体转推项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddSource`（添加输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B12-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `DeleteSource`（删除输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B7-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `SwitchSource`（切换当前播放的输入源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B6-.E5.88.87.E6.8D.A2.E5.BD.93.E5.89.8D.E6.92.AD.E6.94.BE.E7.9A.84.E8.BE.93.E5.85.A5.E6.BA.90)\n- `AddDestination`（ 添加输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B13-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteDestination`（删除输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `EnableDestination`（启动输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B10-.E5.90.AF.E5.8A.A8.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DisableDestination`（停止输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B5-.E5.81.9C.E6.AD.A2.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyDestination`（修改输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（启动媒体转推），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B9-.E5.90.AF.E5.8A.A8.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)。发起 Start 请求成功后，媒体转推项目开始启动，30秒内还需要再进行一次 Confirm操作进行确认；\n- `Confirm`（确认媒体转推项目启动），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B14-.E7.A1.AE.E8.AE.A4.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD.E9.A1.B9.E7.9B.AE.E5.90.AF.E5.8A.A8)；\n- `Stop`（停止媒体转推），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B4-.E5.81.9C.E6.AD.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)；\n- `ModifyOutputMediaSetting`（修改媒体输出配置），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E7.9A.84.E5.AA.92.E4.BD.93.E9.85.8D.E7.BD.AE)；\n- `ModifyPlaySetting`（修改播放结束时间），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B1-.E4.BF.AE.E6.94.B9.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribePlayInfo`（查询播放信息），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B11-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD.E9.A1.B9.E7.9B.AE.E7.9A.84.E6.92.AD.E6.94.BE.E4.BF.A1.E6.81.AF)。",
       "input": "HandleMediaCastProjectRequest",
-      "name": "操作点播转直播项目",
+      "name": "操作媒体转推项目",
       "output": "HandleMediaCastProjectResponse",
       "status": "online"
     },
     "HandleStreamConnectProject": {
-      "document": "对云转推项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribeInputPlayInfo`（查询播放进度），参见 [示例14](#.E7.A4.BA.E4.BE.8B14-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BE.93.E5.85.A5.E6.BA.90.E6.92.AD.E6.94.BE.E8.BF.9B.E5.BA.A6)。",
+      "document": "<font color=red>本接口废弃，可创建媒体转推项目替代，操作媒体转推项目可使用 <b>[HandleMediaCastProject 接口](/document/product/1156/87841) </b>实现。</font>\n\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribeInputPlayInfo`（查询播放进度），参见 [示例14](#.E7.A4.BA.E4.BE.8B14-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BE.93.E5.85.A5.E6.BA.90.E6.92.AD.E6.94.BE.E8.BF.9B.E5.BA.A6)。",
       "input": "HandleStreamConnectProjectRequest",
-      "name": "操作云转推项目",
+      "name": "操作云转推项目 (废弃)",
       "output": "HandleStreamConnectProjectResponse",
       "status": "online"
     },
@@ -1307,7 +1307,7 @@
         },
         {
           "disabled": false,
-          "document": "点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。",
+          "document": "媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。",
           "example": "无",
           "member": "MediaCastProjectInput",
           "name": "MediaCastProjectInput",
@@ -3901,7 +3901,6 @@
       "document": "HandleMediaCastProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -3911,9 +3910,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "点播转直播项目 Id 。",
+          "document": "媒体转推项目 Id 。",
           "example": "project_id",
           "member": "string",
           "name": "ProjectId",
@@ -3921,7 +3919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请参考 [操作类型](#Operation)。",
           "example": "AddSource",
@@ -3931,7 +3928,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。",
           "example": "无",
@@ -3941,7 +3937,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。",
           "example": "无",
@@ -3951,7 +3946,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 ModfiyOutputSetting 时必填。",
           "example": "无",
@@ -3961,7 +3955,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 ModifyPlaySetting 时必填。",
           "example": "无",
@@ -3971,7 +3964,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddSource 时必填。",
           "example": "无",
@@ -3981,9 +3973,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
@@ -4002,7 +3993,6 @@
           "example": "无",
           "member": "MediaCastPlayInfo",
           "name": "PlayInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4012,7 +4002,6 @@
           "example": "无",
           "member": "MediaCastSourceInfo",
           "name": "SourceInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4022,7 +4011,6 @@
           "example": "无",
           "member": "MediaCastDestinationInfo",
           "name": "DestinationInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5474,7 +5462,6 @@
       "document": "播放控制参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。",
           "example": "1",
@@ -5485,12 +5472,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2022-12-10T15:00:00Z",
           "member": "string",
           "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2022-12-10T15:00:00Z",
+          "member": "string",
+          "name": "AutoStartTime",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5635,45 +5631,78 @@
       "document": "点播转直播输入源信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入源 Id，由系统分配。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "输入源的媒体类型，取值有：\n<li>CME：多媒体创作引擎的媒体文件；</li>\n<li>VOD：云点播的媒资文件。</li>",
+          "document": "输入源的媒体类型，取值有：\n<li>CME：多媒体创作引擎的媒体文件；</li>\n<li>VOD：云点播的媒资文件。</li>\n<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>",
           "example": "CME",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播媒体文件 ID。当 Type = VOD 时必填。",
           "example": "无",
           "member": "string",
           "name": "FileId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多媒体创作引擎的媒体 ID。当 Type = CME  时必填。",
           "example": "无",
           "member": "string",
           "name": "MaterialId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。",
+          "example": "无",
+          "member": "float",
+          "name": "Offset",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。",
+          "example": "无",
+          "member": "float",
+          "name": "Duration",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -1,13 +1,13 @@
 **Example 1: 服务修改自定义域名**
 
-
+服务修改自定义域名
 
 Input: 
 
 ```
 tccli apigateway ModifySubDomain --cli-unfold-argument  \
     --ServiceId service-19c5fnhy \
-    --SubDomain xxxxxx \
+    --SubDomain doagkfrf.flyfly.wang \
     --CertificateId '' \
     --IsDefaultMapping false \
     --Protocol http \

@@ -565,62 +565,62 @@
       "document": "ACL对象实体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，",
+          "example": "无",
           "member": "int64",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称",
+          "example": "无",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Principal",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)",
+          "example": "无",
           "member": "int64",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)",
+          "example": "无",
           "member": "int64",
           "name": "PermissionType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -806,48 +806,40 @@
       "document": "表示ACL 规则的四元组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)",
           "example": "Read",
           "member": "string",
           "name": "Operation",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限类型，(Deny，Allow)",
           "example": "Allow",
           "member": "string",
           "name": "PermissionType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段",
+          "document": "默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段",
           "example": "*",
           "member": "string",
           "name": "Host",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。",
           "example": "User:*",
           "member": "string",
           "name": "Principal",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3764,7 +3756,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格说明 专业版实例[所有规格]填写1.\n标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶性2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。",
+          "document": "实例规格说明 专业版实例[所有规格]填写1.\n标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
@@ -11622,7 +11614,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11632,7 +11624,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11642,7 +11634,7 @@
           "example": "1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11652,7 +11644,7 @@
           "example": "1",
           "member": "string",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11662,7 +11654,7 @@
           "example": "1",
           "member": "VipEntity",
           "name": "VipList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11672,7 +11664,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11682,7 +11674,7 @@
           "example": "1",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11692,7 +11684,7 @@
           "example": "1",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11702,7 +11694,7 @@
           "example": "1",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11712,7 +11704,7 @@
           "example": "1",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11722,7 +11714,7 @@
           "example": "1",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11732,7 +11724,7 @@
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11742,7 +11734,7 @@
           "example": "1",
           "member": "int64",
           "name": "Healthy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11752,17 +11744,17 @@
           "example": "1",
           "member": "string",
           "name": "HealthyMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例创建时间时间",
+          "document": "实例创建时间",
           "example": "1",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11772,7 +11764,7 @@
           "example": "1",
           "member": "int64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11782,7 +11774,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsInternal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11792,7 +11784,7 @@
           "example": "1",
           "member": "int64",
           "name": "TopicNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11802,7 +11794,7 @@
           "example": "1",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11812,7 +11804,7 @@
           "example": "1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11822,7 +11814,7 @@
           "example": "1",
           "member": "int64",
           "name": "ZoneIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11832,7 +11824,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cvm",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11842,7 +11834,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11852,7 +11844,7 @@
           "example": "1",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11862,7 +11854,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxTopicNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11872,7 +11864,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxPartitionNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11882,7 +11874,7 @@
           "example": "'yyyy-MM-dd HH:mm:ss'",
           "member": "string",
           "name": "RebalanceTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11892,7 +11884,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PartitionNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11902,7 +11894,7 @@
           "example": "1",
           "member": "string",
           "name": "PublicNetworkChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11912,7 +11904,7 @@
           "example": "1",
           "member": "int64",
           "name": "PublicNetwork",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11922,7 +11914,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11932,7 +11924,7 @@
           "example": "无",
           "member": "string",
           "name": "Features",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -13142,34 +13134,31 @@
       "document": "修改实例属性的配置对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自动创建 true 表示开启，false 表示不开启",
+          "example": "无",
           "member": "bool",
           "name": "AutoCreateTopicEnable",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3",
+          "example": "无",
           "member": "int64",
           "name": "DefaultNumPartitions",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2",
+          "document": "如果auto.create.topic.enable设置为true没有指定该值时默认设置为2",
+          "example": "无",
           "member": "int64",
           "name": "DefaultReplicationFactor",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -13178,7 +13167,6 @@
       "document": "ModifyInstanceAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "10",
@@ -13188,7 +13176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例日志的最长保留时间，单位分钟，最大30天，0代表不开启日志保留时间回收策略",
           "example": "无",
@@ -13198,7 +13185,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
           "example": "无",
@@ -13208,7 +13194,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例配置",
           "example": "无",
@@ -13218,7 +13203,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动态消息保留策略配置",
           "example": "无",
@@ -13228,9 +13212,8 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "修改升配置rebalance时间",
+          "document": "升配Rebalance时间",
           "example": "无",
           "member": "int64",
           "name": "RebalanceTime",
@@ -13238,7 +13221,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽",
           "example": "无",
@@ -13248,7 +13230,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动态硬盘扩容策略配置",
           "example": "无",
@@ -13258,7 +13239,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例级别单条消息大小（单位byte)",
           "example": "8388680",
@@ -13279,7 +13259,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

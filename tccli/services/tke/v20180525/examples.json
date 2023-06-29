@@ -891,8 +891,8 @@
     "DescribeEncryptionStatus": [
       {
         "document": "查询kms加密状态",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptionStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptionStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-mu2or8b8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Opened\",\n        \"ErrorMsg\": \" \",\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
         "title": "查询kms加密状态"
       }
     ],
@@ -1185,7 +1185,7 @@
     "DisableEncryptionProtection": [
       {
         "document": "关闭加密信息保护",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableEncryptionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-mu2or8b8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
         "title": "关闭加密信息保护"
       }
@@ -1233,7 +1233,7 @@
     "EnableEncryptionProtection": [
       {
         "document": "开启加密数据保护",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-mu2or8b8\",\n    \"KMSConfiguration\": {}\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
         "title": "开启加密数据保护"
       }

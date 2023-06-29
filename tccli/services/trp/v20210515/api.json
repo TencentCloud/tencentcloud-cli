@@ -112,6 +112,13 @@
       "output": "DeleteTraceDataResponse",
       "status": "online"
     },
+    "DescribeAgentCorps": {
+      "document": "查询渠道企业列表",
+      "input": "DescribeAgentCorpsRequest",
+      "name": "查询渠道企业列表",
+      "output": "DescribeAgentCorpsResponse",
+      "status": "online"
+    },
     "DescribeCodeBatchById": {
       "document": "查询批次信息",
       "input": "DescribeCodeBatchByIdRequest",
@@ -2428,6 +2435,60 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCorpsRequest": {
+      "document": "DescribeAgentCorps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "渠道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCorpsResponse": {
+      "document": "DescribeAgentCorps返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -12633,7 +12633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>\n<li>Requests：请求数。</li>\n<li>QUICRequests：QUIC 请求数。</li>",
+          "document": "查询指标，取值有：\n<li>Traffic：流量，单位为 Byte。</li>\n<li>Bandwidth：带宽，单位为 Bps。</li>\n<li>Requests：请求数。</li>\n<li>QUICRequests：QUIC 请求数。</li>\n<li>IpVisit：IP 访问数。</li>",
           "example": "无",
           "member": "string",
           "name": "Metric",

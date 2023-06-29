@@ -743,7 +743,7 @@
       "status": "online"
     },
     "ModifyBackupEncryptionStatus": {
-      "document": "本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。 ",
+      "document": "本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。",
       "input": "ModifyBackupEncryptionStatusRequest",
       "name": "设置实例备份文件是否加密",
       "output": "ModifyBackupEncryptionStatusResponse",
@@ -2799,7 +2799,7 @@
           "example": "XXX",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2809,7 +2809,7 @@
           "example": "1024",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2819,7 +2819,7 @@
           "example": "2016-03-17 02:11:37",
           "member": "datetime",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2829,7 +2829,7 @@
           "example": "https://XXX",
           "member": "string",
           "name": "IntranetUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2839,7 +2839,7 @@
           "example": "https://XXX",
           "member": "string",
           "name": "InternetUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2849,7 +2849,7 @@
           "example": "binlog",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2859,7 +2859,7 @@
           "example": "2016-03-17 02:08:37",
           "member": "string",
           "name": "BinlogStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2869,7 +2869,7 @@
           "example": "2016-03-17 02:10:37",
           "member": "string",
           "name": "BinlogFinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2879,7 +2879,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2889,7 +2889,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2899,7 +2899,7 @@
           "example": "无",
           "member": "RemoteBackupInfo",
           "name": "RemoteInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2909,7 +2909,7 @@
           "example": "无",
           "member": "int64",
           "name": "CosStorageType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2919,7 +2919,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7299,7 +7299,6 @@
       "document": "DescribeBackupDecryptionKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-XXXX",
@@ -7309,7 +7308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的备份ID，可通过DescribeBackups接口查询备份的ID。",
           "example": "12345",
@@ -7330,7 +7328,7 @@
           "example": "XXXX",
           "member": "string",
           "name": "DecryptionKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7414,7 +7412,6 @@
       "document": "DescribeBackupEncryptionStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-XXXX",
@@ -7435,7 +7432,7 @@
           "example": "on",
           "member": "string",
           "name": "EncryptionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13904,7 +13901,6 @@
       "document": "ModifyBackupEncryptionStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-XXXX",
@@ -13914,7 +13910,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。",
           "example": "on",
@@ -16823,68 +16818,62 @@
       "document": "异地备份信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异地备份子任务的ID",
           "example": "123",
           "member": "int64",
           "name": "SubBackupId",
-          "required": true,
-          "type": "list",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地备份所在地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务状态。可能的值有 \"SUCCESS\": 备份成功， \"FAILED\": 备份失败， \"RUNNING\": 备份进行中。",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地备份任务的开始时间",
           "example": "2016-03-17 02:00:37",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异地备份任务的结束时间",
           "example": "2016-03-17 02:00:37",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载地址",
           "example": "https://XXX",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
