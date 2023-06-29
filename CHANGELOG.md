@@ -1,3 +1,226 @@
+# Release 3.0.797.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 37 次发布
+
+发布时间：2023-06-30 01:11:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateExtension](http://document.tencentcloudapi.woa.com/document/product/679/76472)
+
+	* 新增入参：SkillGroupIds, Relation
+
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：VoicemailAsrURL
+
+	* <font color="#dd0000">**修改成员**：</font>Caller, Callee, Time, Direction, Duration, RecordURL, SeatUser, EndStatus, SkillGroup, CallerLocation, IVRDuration, RingTimestamp, AcceptTimestamp, EndedTimestamp, IVRKeyPressed, HungUpSide, ServeParticipants, SkillGroupId, EndStatusString, StartTimestamp, QueuedTimestamp, PostIVRKeyPressed, QueuedSkillGroupId, SessionId, ProtectedCaller, ProtectedCallee, Uui, IVRKeyPressedEx, AsrUrl, CustomRecordURL, Remark, QueuedSkillGroupName, VoicemailRecordURL
+
+
+
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 2 次发布
+
+发布时间：2023-06-30 01:13:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1667/79281)
+
+	* 新增出参：ErrorMsg
+
+* [DescribeInstancesNew](http://document.tencentcloudapi.woa.com/document/product/1667/79272)
+
+	* 新增入参：IsSimple
+
+
+修改数据结构：
+
+* [BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1667/79282#BackupTableContent)
+
+	* 新增成员：ZooPath, Rip
+
+* [ScheduleStrategy](http://document.tencentcloudapi.woa.com/document/product/1667/79282#ScheduleStrategy)
+
+	* 新增成员：NextBackupTime
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 28 次发布
+
+发布时间：2023-06-30 01:14:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
+
+	* 新增出参：SourceList
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#InstanceInfo)
+
+	* 新增成员：RegionKey
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 48 次发布
+
+发布时间：2023-06-30 01:20:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78068)
+
+	* 新增出参：ProxyGroupId
+
+* [CreateProxyEndPoint](http://document.tencentcloudapi.woa.com/document/product/1003/78067)
+
+	* 新增出参：ProxyGroupId
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 3 次发布
+
+发布时间：2023-06-30 01:26:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79340)
+
+	* 新增入参：Agent
+
+* [CreateFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79297)
+
+	* 新增入参：Agent
+
+* [CreateFlowReminds](http://document.tencentcloudapi.woa.com/document/product/1668/79338)
+
+	* 新增入参：Agent
+
+* [DescribeFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79296)
+
+	* 新增入参：Agent
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 23 次发布
+
+发布时间：2023-06-30 01:37:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 23 次发布
+
+发布时间：2023-06-30 01:43:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateImageLifecyclePersonal
+* DeleteImageLifecyclePersonal
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 2 次发布
+
+发布时间：2023-06-30 01:43:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ComplianceHostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceHostDetailInfo)
+
+	* 新增成员：ContainerdVersion
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 73 次发布
+
+发布时间：2023-06-30 01:47:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KMSConfiguration](http://document.tencentcloudapi.woa.com/document/product/457/31866#KMSConfiguration)
+
+	* 新增成员：KeyId, KmsRegion
+
+
+
+
 # Release 3.0.796.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

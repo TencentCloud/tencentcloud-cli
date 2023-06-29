@@ -1438,7 +1438,6 @@
       "document": "CreateExtension请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
@@ -1449,7 +1448,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
@@ -1460,13 +1458,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机名称",
           "example": "分机1",
           "member": "string",
           "name": "ExtensionName",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定的技能组列表",
+          "example": "无",
+          "member": "uint64",
+          "name": "SkillGroupIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定的坐席邮箱",
+          "example": "aaa@bbb.com",
+          "member": "string",
+          "name": "Relation",
+          "required": false,
           "type": "string",
           "visibility": 1
         }
@@ -6112,7 +6129,7 @@
           "example": "008613012345678",
           "member": "string",
           "name": "Caller",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6123,7 +6140,7 @@
           "example": "008613012345670",
           "member": "string",
           "name": "Callee",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6134,7 +6151,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "Time",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6145,7 +6162,7 @@
           "example": "0",
           "member": "int64",
           "name": "Direction",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6156,7 +6173,7 @@
           "example": "120",
           "member": "int64",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6167,7 +6184,7 @@
           "example": "https://xxxxx",
           "member": "string",
           "name": "RecordURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6178,7 +6195,7 @@
           "example": "0",
           "member": "SeatUserInfo",
           "name": "SeatUser",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -6189,7 +6206,7 @@
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6200,7 +6217,7 @@
           "example": "tel",
           "member": "string",
           "name": "SkillGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6211,7 +6228,7 @@
           "example": "广东深圳",
           "member": "string",
           "name": "CallerLocation",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6222,7 +6239,7 @@
           "example": "5",
           "member": "int64",
           "name": "IVRDuration",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6233,7 +6250,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "RingTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6244,7 +6261,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "AcceptTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6255,7 +6272,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "EndedTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6266,7 +6283,7 @@
           "example": "[\"1\",\"2\",\"3\"]",
           "member": "string",
           "name": "IVRKeyPressed",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6277,7 +6294,7 @@
           "example": "user",
           "member": "string",
           "name": "HungUpSide",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6288,7 +6305,7 @@
           "example": "0",
           "member": "ServeParticipant",
           "name": "ServeParticipants",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6299,7 +6316,7 @@
           "example": "110",
           "member": "int64",
           "name": "SkillGroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6310,7 +6327,7 @@
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6321,7 +6338,7 @@
           "example": "1611631891",
           "member": "int64",
           "name": "StartTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6332,7 +6349,7 @@
           "example": "1611631891",
           "member": "int64",
           "name": "QueuedTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6343,7 +6360,7 @@
           "example": "0",
           "member": "IVRKeyPressedElement",
           "name": "PostIVRKeyPressed",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6354,7 +6371,7 @@
           "example": "110",
           "member": "int64",
           "name": "QueuedSkillGroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6365,7 +6382,7 @@
           "example": "c2b303a5-7814-42f4-ab7d-573b7f195d30",
           "member": "string",
           "name": "SessionId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6376,7 +6393,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCaller",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6387,7 +6404,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCallee",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6398,7 +6415,7 @@
           "example": "whatever",
           "member": "string",
           "name": "Uui",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6409,7 +6426,7 @@
           "example": "0",
           "member": "IVRKeyPressedElement",
           "name": "IVRKeyPressedEx",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6420,7 +6437,7 @@
           "example": "https://api.tccc.qcloud.com/tcccadmin/cdr/getAsrText?session_id=",
           "member": "string",
           "name": "AsrUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6431,7 +6448,7 @@
           "example": "https://xxxxx",
           "member": "string",
           "name": "CustomRecordURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6442,7 +6459,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6453,7 +6470,7 @@
           "example": "销售组",
           "member": "string",
           "name": "QueuedSkillGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6464,7 +6481,18 @@
           "example": "[\"https://xxxxx\"]",
           "member": "string",
           "name": "VoicemailRecordURL",
-          "required": false,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "通话中语音留言ASR文本信息地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailAsrURL",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

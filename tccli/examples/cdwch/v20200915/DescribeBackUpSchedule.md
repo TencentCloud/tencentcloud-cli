@@ -1,42 +1,45 @@
 **Example 1: 示例**
 
-
+查询备份策略信息
 
 Input: 
 
 ```
 tccli cdwch DescribeBackUpSchedule --cli-unfold-argument  \
-    --InstanceId 0
+    --InstanceId cdwch-1a1xfbc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DataStrategy": [
+        "BackUpOpened": true,
+        "MetaStrategy": {
+            "CosBucketName": "pa-cold-test-1258142303",
+            "RetainDays": 1,
+            "WeekDays": "2",
+            "ExecuteHour": 5,
+            "ScheduleId": 1
+        },
+        "DataStrategy": {
+            "CosBucketName": "pa-cold-test-1268142801",
+            "RetainDays": 2,
+            "WeekDays": "1",
+            "ExecuteHour": 8,
+            "ScheduleId": 13
+        },
+        "BackUpContents": [
             {
-                "ExecuteHour": 0,
-                "CosBucketName": "xx",
-                "RetainDays": 0,
-                "WeekDays": "xx"
+                "VCluster": "default_cluster",
+                "Database": "default",
+                "Table": "stemp",
+                "TotalBytes": 1231270,
+                "Ips": "10.0.1.23"
             }
         ],
-        "BackUpOpened": true,
         "BackUpStatus": 0,
-        "MetaStrategy": {
-            "ExecuteHour": 0,
-            "CosBucketName": "xx",
-            "RetainDays": 0,
-            "WeekDays": "xx"
-        },
-        "BackUpContents": {
-            "Table": "xx",
-            "Ips": "xx",
-            "VCluster": "xx",
-            "TotalBytes": 0,
-            "Database": "xx"
-        },
-        "RequestId": "xx"
+        "ErrorMsg": "",
+        "RequestId": "asdfaes-xad12x-123axafg"
     }
 }
 ```

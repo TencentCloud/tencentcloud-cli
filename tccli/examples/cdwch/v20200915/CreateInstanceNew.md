@@ -1,6 +1,6 @@
 **Example 1: test**
 
-
+创建集群API
 
 Input: 
 
@@ -27,10 +27,10 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "xx",
-        "FlowId": "xx",
-        "RequestId": "xx",
-        "ErrorMsg": "xx"
+        "InstanceId": "cdwch-aijqera",
+        "FlowId": "1231",
+        "RequestId": "lweinasd-28kamasd-xasdas",
+        "ErrorMsg": ""
     }
 }
 ```

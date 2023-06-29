@@ -5042,24 +5042,24 @@
       "document": "DeleteService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除服务的唯一 ID。",
           "example": "service-kaghtzi4",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跳过删除前置条件校验（仅支持独享实例上的服务）",
           "example": "0",
           "member": "int64",
           "name": "SkipVerification",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5073,9 +5073,10 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6365,6 +6366,7 @@
           "example": "无",
           "member": "DescribeApisStatusResultInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -7871,34 +7873,34 @@
       "document": "DescribeServiceReleaseVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的服务唯一 ID。",
           "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "xx",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "xx",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7912,9 +7914,10 @@
           "example": "无",
           "member": "ServiceReleaseVersion",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11388,54 +11391,54 @@
       "document": "ModifyService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改服务的唯一 Id。",
           "example": "service-0c96l2bo",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的服务名称。",
           "example": "test_https",
           "member": "string",
           "name": "ServiceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的服务描述。",
           "example": "https",
           "member": "string",
           "name": "ServiceDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的服务前端请求类型，如 http、https和 http&https。",
           "example": "https",
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。",
           "example": "无",
           "member": "string",
           "name": "NetTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

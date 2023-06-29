@@ -1368,7 +1368,7 @@
           "name": "AutoDeployClsTopicIndex",
           "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1378,7 +1378,7 @@
           "name": "AutoCreateClsTopic",
           "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,

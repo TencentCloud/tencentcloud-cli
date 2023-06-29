@@ -267,62 +267,84 @@
       "document": "备份表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "数据库",
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"123\"",
           "member": "string",
           "name": "Database",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "表",
+          "document": "表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"123\"",
           "member": "string",
           "name": "Table",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "表总字节数",
+          "document": "表总字节数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
           "member": "int64",
           "name": "TotalBytes",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "虚拟cluster",
+          "document": "虚拟cluster\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"cluster-XXX\"",
           "member": "string",
           "name": "VCluster",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "表ip",
+          "document": "表ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"10.0.0.10\"",
           "member": "string",
           "name": "Ips",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "zk路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZooPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "cvm的ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Rip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Charge": {
       "document": "集群计费相关信息\n",
@@ -642,7 +664,6 @@
       "document": "CreateInstanceNew请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-beijing-2",
@@ -653,7 +674,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否高可用",
           "example": "false",
@@ -664,7 +684,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络",
           "example": "vpc-8visjoh9",
@@ -675,7 +694,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网",
           "example": "subnet-03ij1dki",
@@ -686,7 +704,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本",
           "example": "21.8.12.29",
@@ -697,7 +714,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费方式",
           "example": "无",
@@ -708,10 +724,9 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
-          "example": "doris-test",
+          "example": "cdwch-test",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -719,7 +734,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据节点",
           "example": "无",
@@ -730,7 +744,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "无",
@@ -741,7 +754,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题ID",
           "example": "xx",
@@ -752,10 +764,9 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS桶名称",
-          "example": "doris-cos",
+          "example": "cdwch-cos",
           "member": "string",
           "name": "CosBucketName",
           "required": false,
@@ -763,7 +774,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是裸盘挂载",
           "example": "xx",
@@ -774,7 +784,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是ZK高可用",
           "example": "false",
@@ -785,7 +794,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ZK节点",
           "example": "无",
@@ -807,7 +815,7 @@
           "example": "123",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -818,7 +826,7 @@
           "example": "cdwch-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -829,7 +837,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -847,14 +855,14 @@
       "document": "DescribeBackUpSchedule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "\"cdwch-xxxx\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -868,9 +876,10 @@
           "example": "true",
           "member": "bool",
           "name": "BackUpOpened",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -878,9 +887,10 @@
           "example": "无",
           "member": "ScheduleStrategy",
           "name": "MetaStrategy",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -888,9 +898,10 @@
           "example": "无",
           "member": "ScheduleStrategy",
           "name": "DataStrategy",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -898,9 +909,10 @@
           "example": "无",
           "member": "BackupTableContent",
           "name": "BackUpContents",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -908,9 +920,21 @@
           "example": "0",
           "member": "int64",
           "name": "BackUpStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1370,6 +1394,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "信息详细与否",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSimple",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1383,6 +1417,7 @@
           "example": "18",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1393,6 +1428,7 @@
           "example": "-",
           "member": "InstanceInfo",
           "name": "InstancesList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1597,6 +1633,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1607,6 +1644,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1617,6 +1655,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2513,64 +2552,64 @@
       "document": "ModifyInstanceKeyValConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增配置列表",
           "example": "[]",
           "member": "InstanceConfigItem",
           "name": "AddItems",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新配置列表",
           "example": "[]",
           "member": "InstanceConfigItem",
           "name": "UpdateItems",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除配置列表",
           "example": "[]",
           "member": "InstanceConfigItem",
           "name": "DeleteItems",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除配置列表",
           "example": "[]",
           "member": "InstanceConfigItem",
           "name": "DelItems",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2584,9 +2623,10 @@
           "example": "xx",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2594,9 +2634,10 @@
           "example": "11",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2878,7 +2919,6 @@
       "document": "ResizeDisk请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例唯一ID",
           "example": "cdwch-sdf34dsf",
@@ -2889,7 +2929,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点",
           "example": "DATA",
@@ -2900,7 +2939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘扩容后容量，不能小于原有用量。clickhouse最小200，且为100的整数倍。 zk最小100，且为10的整数倍；",
           "example": "300",
@@ -2922,7 +2960,7 @@
           "example": "123",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2933,7 +2971,7 @@
           "example": "cdwch-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2944,7 +2982,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3302,59 +3340,70 @@
       "document": "策略详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份桶列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"cos-bucket\"",
           "member": "string",
           "name": "CosBucketName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份保留天数",
           "example": "7",
           "member": "int64",
           "name": "RetainDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的天",
           "example": "\"1,2\"",
           "member": "string",
           "name": "WeekDays",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份小时",
           "example": "3",
           "member": "int64",
           "name": "ExecuteHour",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略id",
           "example": "1",
           "member": "int64",
           "name": "ScheduleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "下次备份时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NextBackupTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

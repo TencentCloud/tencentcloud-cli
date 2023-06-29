@@ -1,12 +1,12 @@
 **Example 1: 示例**
 
-
+查询cluster列表
 
 Input: 
 
 ```
 tccli cdwch DescribeInstanceClusters --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId cdwch-asdf8max
 ```
 
 Output: 
@@ -15,13 +15,13 @@ Output:
     "Response": {
         "Clusters": [
             {
-                "ClusterName": "xx",
+                "ClusterName": "default_cluster",
                 "NodeIps": [
-                    "xx"
+                    "10.2.23.43"
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "asdfa-xa1dads-8amsad"
     }
 }
 ```

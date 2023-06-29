@@ -1,6 +1,6 @@
 **Example 1: 查询API状态**
 
-查询API状态
+用于查看一个服务下的某个 API 或所有 API 列表及其相关信息。
 
 Input: 
 
@@ -14,40 +14,40 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 1,
+            "TotalCount": 0,
             "ApiIdStatusSet": [
                 {
-                    "RelationBuniessApiIds": [
-                        "123"
-                    ],
+                    "ServiceId": "abc",
+                    "ApiId": "abc",
+                    "ApiDesc": "abc",
                     "CreatedTime": "2020-09-22T00:00:00+00:00",
-                    "Method": "123",
-                    "VpcId": 0,
-                    "Tags": [
-                        "123"
-                    ],
-                    "IsDebugAfterCharge": false,
-                    "ApiBusinessType": "1",
-                    "ApiName": "1",
-                    "Path": "1",
-                    "AuthType": "1",
-                    "ApiDesc": "1",
-                    "OauthConfig": {
-                        "PublicKey": "1",
-                        "LoginRedirectUrl": "1",
-                        "TokenLocation": "1"
-                    },
-                    "AuthRelationApiId": "1",
-                    "Protocol": "1",
                     "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                    "UniqVpcId": "1",
-                    "ApiId": "1",
-                    "ApiType": "1",
-                    "ServiceId": "1"
+                    "ApiName": "abc",
+                    "VpcId": 0,
+                    "UniqVpcId": "abc",
+                    "ApiType": "abc",
+                    "Protocol": "abc",
+                    "IsDebugAfterCharge": true,
+                    "AuthType": "abc",
+                    "ApiBusinessType": "abc",
+                    "AuthRelationApiId": "abc",
+                    "OauthConfig": {
+                        "PublicKey": "abc",
+                        "TokenLocation": "abc",
+                        "LoginRedirectUrl": "abc"
+                    },
+                    "RelationBuniessApiIds": [
+                        "abc"
+                    ],
+                    "Tags": [
+                        {}
+                    ],
+                    "Path": "abc",
+                    "Method": "abc"
                 }
             ]
         },
-        "RequestId": "1"
+        "RequestId": "abc"
     }
 }
 ```
