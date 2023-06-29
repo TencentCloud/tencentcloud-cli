@@ -1,0 +1,229 @@
+{
+  "actions": {
+    "CreateBPFakeURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFakeURL\n<公共请求参数>\n\n{\n    \"ProtectURLId\": 123,\n    \"FakeURL\": \"xxx\",\n    \"SnapshotNames\": [\n        \"xxx\",\n        \"yyy\"\n    ],\n    \"Note\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加仿冒链接（举报）"
+      }
+    ],
+    "CreateBPFalseTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFalseTicket\n<公共请求参数>\n\n{\n    \"FakeURL\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加误报工单"
+      }
+    ],
+    "CreateBPOfflineAttachment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPOfflineAttachment\n<公共请求参数>\n\n{\n    \"BrandName\": \"xxx\",\n    \"BrandCertificateName\": \"xxx\",\n    \"TransferName\": \"xxx\",\n    \"AuthorizationName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加下线材料"
+      }
+    ],
+    "CreateBPOfflineTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPOfflineTicket\n<公共请求参数>\n\n{\n    \"FakeURLId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加下线工单"
+      }
+    ],
+    "CreateBPProtectURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPProtectURLs\n<公共请求参数>\n\n{\n    \"CompanyName\": \"xxx\",\n    \"Phone\": \"xxx\",\n    \"LicenseName\": \"xxx\",\n    \"ProtectURLs\": [\n        \"qq.com\",\n        \"baidu.com\"\n    ],\n    \"ProtectWebs\": [\n        \"腾讯网\",\n        \"百度网\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加保护网站（用户需在第一次提交保护网站时携带企业信息）"
+      }
+    ],
+    "CreateCRBlock": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRBlock\n<公共请求参数>\n\n{\n    \"ValidStartDate\": \"xx\",\n    \"ValidEndDate\": \"xx\",\n    \"WorkId\": 0,\n    \"TortUrl\": \"xx\",\n    \"TortTitle\": \"xx\",\n    \"TortPlat\": \"xx\",\n    \"FileUrl\": \"xx\",\n    \"BlockUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"TortNum\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建拦截"
+      }
+    ],
+    "CreateCRCompanyVerify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRCompanyVerify\n<公共请求参数>\n\n{\n    \"CompanyName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Note\": \"xxx\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "企业认证接口"
+      }
+    ],
+    "CreateCRDesktopCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRDesktopCode\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"DesktopCode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建过程取证码"
+      }
+    ],
+    "CreateCRRight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRRight\n<公共请求参数>\n\n{\n    \"ValidStartDate\": \"xx\",\n    \"ValidEndDate\": \"xx\",\n    \"WorkId\": 0,\n    \"TortUrl\": \"xx\",\n    \"RightUrl\": \"xx\",\n    \"TortTitle\": \"xx\",\n    \"TortPlat\": \"xx\",\n    \"FileUrl\": \"xx\",\n    \"IsProducer\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"TortNum\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建发函"
+      }
+    ],
+    "CreateCRRightFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRRightFile\n<公共请求参数>\n\n{\n    \"WorkId\": 1,\n    \"FileList\": [\n        {\n            \"FileUrl\": \"xxx\",\n            \"FileType\": 1,\n            \"ValidStartDate\": \"xxx\",\n            \"ValidEndDate\": \"xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"FileIds\": [\n            1,\n            2,\n            3\n        ]\n    }\n}",
+        "title": "权属文件添加"
+      }
+    ],
+    "CreateCRTort": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRTort\n<公共请求参数>\n\n{\n    \"WorkId\": 123,\n    \"TortURL\": \"侵权链接\",\n    \"TortPlat\": \"侵权平台\",\n    \"TortTitle\": \"侵权标题\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkId\": 1,\n        \"TortId\": 123,\n        \"TortTitle\": \"xxx\",\n        \"TortPlat\": \"xxx\",\n        \"TortURL\": \"xxx\",\n        \"TortDomain\": \"侵权域名\",\n        \"TortBodyName\": \"侵权主体\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "举报侵权链接"
+      }
+    ],
+    "CreateCRUserVerify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRUserVerify\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"Type\": \"xx\",\n    \"UserPhone\": \"xx\",\n    \"UserID\": \"xx\",\n    \"VerificationCode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Note\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "个人认证"
+      }
+    ],
+    "CreateCRWork": [
+      {
+        "document": "新建作品",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRWork\n<公共请求参数>\n\n{\n    \"WhiteLists\": [\n        \"xx\"\n    ],\n    \"IsMonitor\": \"xx\",\n    \"MonitorUrl\": \"xx\",\n    \"IsOriginal\": \"xx\",\n    \"SampleDownloadURL\": \"xx\",\n    \"ProducerID\": 0,\n    \"IsRelease\": \"xx\",\n    \"WorkCategory\": \"xx\",\n    \"WorkDesc\": \"xx\",\n    \"WorkName\": \"xx\",\n    \"SamplePublicURL\": \"xx\",\n    \"ProduceTime\": \"xx\",\n    \"CertUrl\": \"xx\",\n    \"ProduceType\": \"xx\",\n    \"IsCert\": \"xx\",\n    \"SampleContentURL\": \"xx\",\n    \"GrantType\": \"xx\",\n    \"WorkSign\": \"xx\",\n    \"WorkPic\": \"xx\",\n    \"WorkType\": \"xx\",\n    \"ProducerName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": 0,\n        \"RequestId\": \"xx\",\n        \"WorkId\": 0\n    }\n}",
+        "title": "新建作品"
+      }
+    ],
+    "DescribeBPCompanyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPCompanyInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CompanyName\": \"xx\",\n        \"LicenseNote\": \"xx\",\n        \"CompanyId\": 0,\n        \"AuthorizationNote\": \"xx\",\n        \"Phone\": \"xx\",\n        \"LicenseName\": \"xx\",\n        \"BrandDatas\": [\n            {\n                \"BrandStatus\": 1,\n                \"BrandCertificateName\": \"xx\",\n                \"TransferNote\": \"xx\",\n                \"BrandName\": \"xx\",\n                \"TransferName\": \"xx\",\n                \"TransferStatus\": 1,\n                \"BrandNote\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AuthorizationName\": \"xx\",\n        \"LicenseStatus\": 1,\n        \"AuthorizationStatus\": 1\n    }\n}",
+        "title": "查询企业信息"
+      }
+    ],
+    "DescribeBPFakeURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPFakeURLs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {},\n        {},\n        {}\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"ExportURL\": \"xx\",\n        \"FakeURLInfos\": [\n            {\n                \"DetectTime\": \"xx\",\n                \"Status\": 1,\n                \"FakeURLId\": 123,\n                \"FakeURLExpireTime\": \"xx\",\n                \"FakeURL\": \"xx\",\n                \"FakeURLCreateTime\": \"xx\",\n                \"ProtectWeb\": \"xx\",\n                \"Note\": \"xx\",\n                \"Heat\": 123,\n                \"Snapshot\": \"xx\",\n                \"FakeURLCompany\": \"xx\",\n                \"IP\": \"xx\",\n                \"FakeURLAttr\": \"xx\",\n                \"FakeURLICP\": \"xx\",\n                \"FakeURLName\": \"xx\",\n                \"IPLoc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询仿冒链接"
+      }
+    ],
+    "DescribeBPProtectURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPProtectURLs\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectURLInfos\": [\n            {\n                \"ProtectURLId\": 123,\n                \"ProtectURL\": \"xxx\",\n                \"ProtectWeb\": \"xxx\",\n                \"ProtectURLStatus\": 1,\n                \"ProtectURLNote\": \"xxx\",\n                \"CreateTime\": \"xxx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询保护网站"
+      }
+    ],
+    "DescribeBPReportFakeURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPReportFakeURLs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {},\n        {},\n        {}\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportFakeURLInfos\": [\n            {\n                \"DetectTime\": \"xx\",\n                \"Status\": 1,\n                \"FakeURLId\": 123,\n                \"FakeURLExpireTime\": \"xx\",\n                \"FakeURL\": \"xx\",\n                \"FakeURLCreateTime\": \"xx\",\n                \"Heat\": 123,\n                \"ProtectWeb\": \"xx\",\n                \"Note\": \"xx\",\n                \"BlockTime\": \"xx\",\n                \"ProtectURL\": \"xx\",\n                \"Snapshot\": \"xx\",\n                \"FakeURLCompany\": \"xx\",\n                \"IP\": \"xx\",\n                \"FakeURLAttr\": \"xx\",\n                \"FakeURLICP\": \"xx\",\n                \"FakeURLName\": \"xx\",\n                \"IPLoc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "DescribeBPReportFakeURLs"
+      }
+    ],
+    "DescribeCRMonitorDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRMonitorDetail\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"WorkId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ExportURL\": \"xx\",\n        \"MonitorStatus\": 0,\n        \"RequestId\": \"xx\",\n        \"Torts\": [\n            {\n                \"IsOverseas\": 0,\n                \"WorkTitle\": \"xx\",\n                \"RightNote\": \"xx\",\n                \"Author\": \"xx\",\n                \"ObtainType\": 0,\n                \"BlockNote\": \"xx\",\n                \"TortNum\": \"xx\",\n                \"AuthStatus\": 0,\n                \"DetectTime\": \"xx\",\n                \"EvidenceStatus\": 0,\n                \"TortTitle\": \"xx\",\n                \"PubTime\": \"xx\",\n                \"TortPlat\": \"xx\",\n                \"TortId\": 0,\n                \"RightStatus\": 0,\n                \"WorkId\": 0,\n                \"TortURL\": \"xx\",\n                \"ICP\": \"xx\",\n                \"ObtainStatus\": 0,\n                \"IPLoc\": \"xx\",\n                \"BlockStatus\": 0,\n                \"IsProducer\": 0,\n                \"WorkName\": \"xx\",\n                \"TortSite\": \"xx\",\n                \"ObtainNote\": \"xx\",\n                \"CommStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询作品监测详情"
+      }
+    ],
+    "DescribeCRMonitors": [
+      {
+        "document": "查询监测列表",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRMonitors\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {},\n        {},\n        {},\n        {},\n        {},\n        {},\n        {},\n        {}\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"ExportURL\": \"xx\",\n        \"Monitors\": [\n            {\n                \"TortURLNum\": 0,\n                \"EvidenceNote\": \"xx\",\n                \"MonitorStatus\": 1,\n                \"EvidenceStatus\": 0,\n                \"WorkId\": 39,\n                \"WorkCategoryAll\": \"xx\",\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"TortSiteNum\": 0,\n                \"WorkCategory\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkType\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 0,\n                \"EvidenceNote\": \"xx\",\n                \"MonitorStatus\": 1,\n                \"EvidenceStatus\": 0,\n                \"WorkId\": 38,\n                \"WorkCategoryAll\": \"xx\",\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"TortSiteNum\": 0,\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 0,\n                \"EvidenceNote\": \"xx\",\n                \"MonitorStatus\": 1,\n                \"EvidenceStatus\": 0,\n                \"WorkId\": 37,\n                \"WorkCategoryAll\": \"xx\",\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"TortSiteNum\": 0,\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 4,\n                \"EvidenceNote\": \"xx\",\n                \"MonitorStatus\": 1,\n                \"EvidenceStatus\": 0,\n                \"WorkId\": 36,\n                \"WorkCategoryAll\": \"xx\",\n                \"TortPlatNum\": 4,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"TortSiteNum\": 0,\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询监测列表"
+      }
+    ],
+    "DescribeCRObtainDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRObtainDetail\n<公共请求参数>\n\n{\n    \"TortId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"ObtainTime\": \"xx\",\n        \"DepositPdfCert\": \"xx\",\n        \"ObtainDuration\": \"xx\",\n        \"ObtainType\": \"xx\",\n        \"DepositCert\": \"xx\",\n        \"ObtainNum\": \"xx\",\n        \"TortURL\": \"xx\",\n        \"WorkName\": \"xx\",\n        \"WorkCategory\": \"xx\",\n        \"ObtainName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TortNum\": \"xx\",\n        \"ObtainNote\": \"xx\",\n        \"DepositFile\": \"xx\",\n        \"ObtainStatus\": 0,\n        \"WorkType\": \"xx\"\n    }\n}",
+        "title": "查询取证详情"
+      }
+    ],
+    "DescribeCRWorkInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRWorkInfo\n<公共请求参数>\n\n{\n    \"WorkId\": 111\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceStatus\": 0,\n        \"MonitorStatus\": 1,\n        \"AuthorizationEndTime\": \"xx\",\n        \"Commission\": \"xx\",\n        \"AuthStatus\": 1,\n        \"Authorization\": \"xx\",\n        \"AuthorizationStartTime\": \"xx\",\n        \"IsOriginal\": \"xx\",\n        \"EvidenceStartTime\": \"xx\",\n        \"CommissionStartTime\": \"xx\",\n        \"EvidenceEndTime\": \"xx\",\n        \"IsRelease\": \"xx\",\n        \"WorkDesc\": \"xx\",\n        \"EvidenceUrl\": \"xx\",\n        \"ProduceTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ProducerName\": \"xx\",\n        \"IsProducer\": 0,\n        \"WhiteLists\": [\n            \"xx\"\n        ],\n        \"WorkName\": \"xx\",\n        \"CommissionEndTime\": \"xx\",\n        \"CommStatus\": 1,\n        \"WorkCategory\": \"xx\"\n    }\n}",
+        "title": "查询作品基本信息"
+      }
+    ],
+    "ModifyBPOfflineAttachment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBPOfflineAttachment\n<公共请求参数>\n\n{\n    \"LicenseName\": \"xxx\",\n    \"AuthorizationName\": \"xxx\",\n    \"BrandName\": \"xxx\",\n    \"BrandCertificateName\": \"xxx\",\n    \"TransferName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "修改下线材料"
+      }
+    ],
+    "ModifyCRBlockStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRBlockStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"BlockUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拦截申请"
+      }
+    ],
+    "ModifyCRMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRMonitor\n<公共请求参数>\n\n{\n    \"MonitorStatus\": \"xx\",\n    \"WorkId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "开启/关闭监测"
+      }
+    ],
+    "ModifyCRObtainStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRObtainStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"ObtainType\": 0,\n    \"ObtainDuration\": 0,\n    \"ObtainUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取证申请"
+      }
+    ],
+    "ModifyCRRightStatus": [
+      {
+        "document": "发函申请",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRRightStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"RightUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "发函申请"
+      }
+    ],
+    "ModifyCRWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRWhiteList\n<公共请求参数>\n\n{\n    \"PlatForm\": \"xx\",\n    \"AuthorId\": \"xx\",\n    \"PlatUrl\": \"xx\",\n    \"WorksId\": 0,\n    \"WhiteListId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "白名单修改"
+      }
+    ],
+    "UpdateCRWork": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCRWork\n<公共请求参数>\n\n{\n    \"WorkId\": 123,\n    \"ContentType\": \"txt\",\n    \"Content\": \"xxx\",\n    \"CertType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": 0,\n        \"RequestId\": \"xx\",\n        \"WorkId\": 123\n    }\n}",
+        "title": "更新作品"
+      }
+    ]
+  },
+  "version": "1.0"
+}

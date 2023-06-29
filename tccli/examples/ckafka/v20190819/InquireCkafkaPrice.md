@@ -1,6 +1,6 @@
 **Example 1: Ckafka询价**
 
-
+ 
 
 Input: 
 
@@ -28,57 +28,88 @@ Output:
     "Response": {
         "Result": {
             "InstancePrice": {
-                "DiscountPrice": 0.0,
-                "GoodsNum": 0,
-                "TimeSpan": 0,
                 "DetailPrices": {
-                    "TopicPrice": {
-                        "DiscountPrice": 0.0,
-                        "Value": 0,
-                        "Discount": 0.0,
-                        "OriginalPrice": 0.0,
-                        "UnitPriceDiscount": 0.0,
-                        "UnitPrice": 0.0
+                    "BandwidthPrice": {
+                        "UnitPrice": 0,
+                        "UnitPriceDiscount": 0,
+                        "OriginalPrice": 0,
+                        "DiscountPrice": 0,
+                        "Discount": 100,
+                        "GoodsNum": null,
+                        "Currency": null,
+                        "DiskType": null,
+                        "TimeSpan": null,
+                        "TimeUnit": null,
+                        "Value": 0
+                    },
+                    "DiskPrice": {
+                        "UnitPrice": 175,
+                        "UnitPriceDiscount": 50.1,
+                        "OriginalPrice": 175,
+                        "DiscountPrice": 50.1,
+                        "Discount": 28.3,
+                        "GoodsNum": null,
+                        "Currency": null,
+                        "DiskType": "CLOUD_BASIC",
+                        "TimeSpan": null,
+                        "TimeUnit": null,
+                        "Value": 500
                     },
                     "PartitionPrice": {
-                        "DiscountPrice": 0.0,
-                        "Value": 0,
-                        "Discount": 0.0,
-                        "OriginalPrice": 0.0,
-                        "UnitPriceDiscount": 0.0,
-                        "UnitPrice": 0.0
+                        "UnitPrice": 0,
+                        "UnitPriceDiscount": 0,
+                        "OriginalPrice": 0,
+                        "DiscountPrice": 0,
+                        "Discount": 100,
+                        "GoodsNum": null,
+                        "Currency": null,
+                        "DiskType": null,
+                        "TimeSpan": null,
+                        "TimeUnit": null,
+                        "Value": 0
                     },
-                    "BandwidthPrice": {
-                        "DiscountPrice": 0.0,
-                        "Value": 0,
-                        "Discount": 0.0,
-                        "OriginalPrice": 0.0,
-                        "UnitPriceDiscount": 0.0,
-                        "UnitPrice": 0.0
+                    "TopicPrice": {
+                        "UnitPrice": 0,
+                        "UnitPriceDiscount": 0,
+                        "OriginalPrice": 0,
+                        "DiscountPrice": 0,
+                        "Discount": 100,
+                        "GoodsNum": null,
+                        "Currency": null,
+                        "DiskType": null,
+                        "TimeSpan": null,
+                        "TimeUnit": null,
+                        "Value": 0
+                    },
+                    "InstanceTypePrice": {
+                        "UnitPrice": 190,
+                        "UnitPriceDiscount": 57.56,
+                        "OriginalPrice": 190,
+                        "DiscountPrice": 7.56,
+                        "Discount": 30.3,
+                        "GoodsNum": null,
+                        "Currency": null,
+                        "DiskType": null,
+                        "TimeSpan": null,
+                        "TimeUnit": null,
+                        "Value": 1
                     }
                 },
-                "Discount": 0.0,
-                "OriginalPrice": 0.0,
-                "TimeUnit": "xx",
-                "UnitPriceDiscount": 0.0,
-                "Currency": "xx",
-                "UnitPrice": 0.0
+                "UnitPrice": 265,
+                "UnitPriceDiscount": 647.7,
+                "OriginalPrice": 265,
+                "DiscountPrice": 67.67,
+                "Discount": 29.92,
+                "GoodsNum": 1,
+                "Currency": "CNY",
+                "DiskType": null,
+                "TimeSpan": 1,
+                "TimeUnit": "m",
+                "Value": null
             },
-            "PublicNetworkBandwidthPrice": {
-                "DiscountPrice": 0.0,
-                "GoodsNum": 0,
-                "TimeSpan": 0,
-                "DetailPrices": {},
-                "Value": 0,
-                "Discount": 0.0,
-                "OriginalPrice": 0.0,
-                "TimeUnit": "xx",
-                "UnitPriceDiscount": 0.0,
-                "Currency": "xx",
-                "UnitPrice": 0.0
-            }
+            "PublicNetworkBandwidthPrice": null
         },
-        "RequestId": "xx"
+        "RequestId": "xxxx"
     }
 }
 ```

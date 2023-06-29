@@ -1,0 +1,1017 @@
+{
+  "actions": {
+    "DescribeDownloadTask": {
+      "document": "获取扫描报告下载链接",
+      "input": "DescribeDownloadTaskRequest",
+      "name": "获取扫描报告下载链接",
+      "output": "DescribeDownloadTaskResponse",
+      "status": "online"
+    },
+    "DescribeStrategies": {
+      "document": "用于查询评估项的信息",
+      "input": "DescribeStrategiesRequest",
+      "name": "查询评估项信息",
+      "output": "DescribeStrategiesResponse",
+      "status": "online"
+    },
+    "DescribeTaskStrategyRisks": {
+      "document": "查询评估项风险实例列表",
+      "input": "DescribeTaskStrategyRisksRequest",
+      "name": "查询评估项风险实例列表",
+      "output": "DescribeTaskStrategyRisksResponse",
+      "status": "online"
+    },
+    "DescribeTaskSummary": {
+      "document": "查询任务执行的结果总览",
+      "input": "DescribeTaskSummaryRequest",
+      "name": "查询任务执行的结果总览",
+      "output": "DescribeTaskSummaryResponse",
+      "status": "online"
+    },
+    "DownloadReportFileAsync": {
+      "document": "创建下载扫描报告任务",
+      "input": "DownloadReportFileAsyncRequest",
+      "name": "创建下载扫描报告任务",
+      "output": "DownloadReportFileAsyncResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-21",
+    "api_brief": null,
+    "serviceNameCN": "云顾问",
+    "serviceShortName": "advisor"
+  },
+  "objects": {
+    "DescribeDownloadTaskRequest": {
+      "document": "DescribeDownloadTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "excel下载结果的唯一id，由DownloadReportFileAsync接口生成。",
+          "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
+          "member": "string",
+          "name": "ResultId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadTaskResponse": {
+      "document": "DescribeDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储扫描结果的Cos链接。",
+          "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生成Excel任务执行情况: init：初始化，running：进行中，success：成功，fail：失败。",
+          "example": "success",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "存储扫描结果pdf的Cos链接。",
+          "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
+          "member": "string",
+          "name": "CosUrlPdf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategie": {
+      "document": "评估项信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云数据库（Redis）跨可用区部署",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项对应产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项对应产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云数据库（Redis）",
+          "member": "string",
+          "name": "ProductDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项优化建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tenc",
+          "member": "string",
+          "name": "Repair",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项类别ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项类别名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "可靠",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ConditionId\":178,\"Level\":2,\"LevelDesc\":\"中风险\",\"Desc\":\"Redis 实例",
+          "member": "DescribeStrategiesCondition",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeStrategiesCondition": {
+      "document": "评估项警告条件",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "警告条件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConditionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "警告级别，2:中风险，3:高风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "警告级别描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中风险",
+          "member": "string",
+          "name": "LevelDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "警告条件描述",
+          "example": "Redis 实例未跨可用区部署",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeStrategiesRequest": {
+      "document": "DescribeStrategies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "巡检类型",
+          "example": "public/private",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStrategiesResponse": {
+      "document": "DescribeStrategies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "评估项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeStrategie",
+          "name": "Strategies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStrategyRisksRequest": {
+      "document": "DescribeTaskStrategyRisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估项ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量,默认值为100,最大值为200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境",
+          "example": "\"public\"",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务类型",
+          "example": "\"allTaskType\"",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStrategyRisksResponse": {
+      "document": "DescribeTaskStrategyRisks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据此配置，匹配风险实例列表（Risks）对应字段，例如:\n{\"Response\":{\"RequestId\":\"111\",\"RiskFieldsDesc\":[{\"Field\":\"InstanceId\",\"FieldName\":\"ID\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceName\",\"FieldName\":\"名称\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"InstanceState\",\"FieldName\":\"状态\",\"FieldType\":\"string\",\"FieldDict\":{\"LAUNCH_FAILED\":\"创建失败\",\"PENDING\":\"创建中\",\"REBOOTING\":\"重启中\",\"RUNNING\":\"运行中\",\"SHUTDOWN\":\"停止待销毁\",\"STARTING\":\"开机中\",\"STOPPED\":\"关机\",\"STOPPING\":\"关机中\",\"TERMINATING\":\"销毁中\"}},{\"Field\":\"Zone\",\"FieldName\":\"可用区\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"PrivateIPAddresses\",\"FieldName\":\"IP地址(内)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"PublicIPAddresses\",\"FieldName\":\"IP地址(公)\",\"FieldType\":\"stringSlice\",\"FieldDict\":{}},{\"Field\":\"Region\",\"FieldName\":\"地域\",\"FieldType\":\"string\",\"FieldDict\":{}},{\"Field\":\"Tags\",\"FieldName\":\"标签\",\"FieldType\":\"tags\",\"FieldDict\":{}}],\"RiskTotalCount\":3,\"Risks\":\"[{\\\"InstanceId\\\":\\\"ins-xxx1\\\",\\\"InstanceName\\\":\\\"xxx1\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.2\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"},{\\\"InstanceId\\\":\\\"ins-xxx2\\\",\\\"InstanceName\\\":\\\"xxx2\\\",\\\"InstanceState\\\":\\\"RUNNING\\\",\\\"PrivateIPAddresses\\\":[\\\"1.17.64.11\\\"],\\\"PublicIPAddresses\\\":null,\\\"Region\\\":\\\"ap-shanghai\\\",\\\"Tags\\\":null,\\\"Zone\\\":\\\"ap-shanghai-2\\\"}]\",\"StrategyId\":9}}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RiskFieldsDesc",
+          "name": "RiskFieldsDesc",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "风险实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "RiskTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "风险实例详情列表，需要json decode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Risks",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "巡检资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "ResourceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskSummaryRequest": {
+      "document": "DescribeTaskSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务的ID",
+          "example": "e9ea4f2a-98c5-47ed-9706-a7446a06ad1a",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "filter",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境",
+          "example": "\"public\"",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务类型",
+          "example": "\"allTaskType\"",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "云架构id",
+          "example": "1",
+          "member": "uint64",
+          "name": "CloudMapID",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "判断报告类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskSummaryResponse": {
+      "document": "DescribeTaskSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略扫描执行的结果（只包含未忽略的策略信息）。注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StrategySummary",
+          "name": "StrategySummaries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分组扫描执行的结果。注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupSummary",
+          "name": "GroupSummaries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务的开始时间，按照ISO8601标准表示，格式为\"YYYY-MM-DDThh:mm:ssZ\"。任务尚未结束，返回\"1970-01-01T00:00:00+00:00\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05+07:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务的结束时间，按照ISO8601标准表示，格式为\"YYYY-MM-DDThh:mm:ssZ\"。为\"1970-01-01T00:00:00+00:00\"时表示任务尚未结束。",
+          "example": "2006-01-02T15:04:05+07:00",
+          "member": "datetime_iso",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "dadasdasdsa",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否有最后一次成功的任务id",
+          "example": "false",
+          "member": "bool",
+          "name": "Has",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务是否完成",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFinish",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最后一次成功的任务id",
+          "example": "dadasdasdsa",
+          "member": "string",
+          "name": "LastSuccessTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadReportFileAsyncRequest": {
+      "document": "DownloadReportFileAsync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评估结果对应产品的Id，与Type字段配合使用。当Type为Group时，表示类别Id（-1：总览，1：安全，2：可靠，3：服务限制），当Type为Strategy时，表示策略Id。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品类型，可为Group（类别）和Strategy（策略）。",
+          "example": "Group",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务Id。",
+          "example": "a0b7cfdd-83e6-49c5-b156-37272bada0da",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境",
+          "example": "\"public\"",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务类型",
+          "example": "\"allTaskType\"",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "传0走tsa页面下载，传1走架构巡检下载",
+          "example": "0",
+          "member": "int64",
+          "name": "TopicType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadReportFileAsyncResponse": {
+      "document": "DownloadReportFileAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据上述的参数，返回的唯一id，用于后续excel下载。",
+          "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
+          "member": "string",
+          "name": "ResultId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filters": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤名称",
+          "example": "aaa",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤值",
+          "example": "[a,b]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "GroupSummary": {
+      "document": "分组的扫描结果概览。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分组Id，-1：总览，1：安全，2：可靠，3：服务限制，4：成本，5：性能。",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该分组下高风险的策略数量(不包括忽略策略数量)。",
+          "member": "int64",
+          "name": "HighRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该分组下中风险的策略数量(不包括忽略策略数量)。",
+          "member": "int64",
+          "name": "MediumRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该分组下低风险的策略数量(不包括忽略策略数量)。",
+          "member": "int64",
+          "name": "LowRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该分组下无风险的策略数量(不包括忽略策略数量)。",
+          "member": "int64",
+          "name": "NoRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyValue": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "键名",
+          "example": "aaa",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "键名对应值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RiskFieldsDesc": {
+      "document": "风险实例字段描述",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段ID",
+          "example": "InstanceState",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段名称",
+          "example": "状态",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段类型, \nstring: 字符串类型，例如\"aa\"\nint: 整形，例如 111\nstringSlice : 字符串数组类型，例如[\"a\", \"b\"]\ntags: 标签类型, 例如: [{\"Key\":\"kkk\",\"Value\":\"vvv\"},{\"Key\":\"kkk2\",\"Value\":\"vvv2\"}]",
+          "example": "string",
+          "member": "string",
+          "name": "FieldType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段值对应字典\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "FieldDict",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StrategySummary": {
+      "document": "策略下实例的扫描结果概览。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略Id",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略的扫描状态。策略执行情况: init 初始化 running 进行中 success 成功 fail失败。",
+          "example": "success",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略对应的分类Id。",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该策略下高风险的实例数量(不包括忽略实例数量)。",
+          "example": "1",
+          "member": "int64",
+          "name": "HighRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该策略下中风险的实例数量(不包括忽略实例数量)",
+          "example": "1",
+          "member": "int64",
+          "name": "MediumRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该策略下低风险的实例数量(不包括忽略实例数量)。",
+          "example": "1",
+          "member": "int64",
+          "name": "LowRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该策略下无风险的实例数量(不包括忽略实例数量)。",
+          "example": "1",
+          "member": "int64",
+          "name": "NoRiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "该策略下被忽略的实例数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "IgnoredInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "对象存储（COS）未设置子账号访问",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "高风险+中风险+无风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tags": {
+      "document": "查询tag对应的类型",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Tag对应的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "tag对应的values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[a,b]",
+          "member": "string",
+          "name": "TagValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

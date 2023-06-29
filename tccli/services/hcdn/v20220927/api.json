@@ -1,0 +1,502 @@
+{
+  "actions": {
+    "DescribeCacheTask": {
+      "document": "该接口（DescribeCacheTask）可根据指定条件实时查询刷新/预热的任务状态。",
+      "input": "DescribeCacheTaskRequest",
+      "name": "查询刷新预热任务状态",
+      "output": "DescribeCacheTaskResponse",
+      "status": "online"
+    },
+    "DescribeDomains": {
+      "document": "该接口（DescribeDomains）可按条件查询本账号下HCDN的域名列表。",
+      "input": "DescribeDomainsRequest",
+      "name": "查询域名列表",
+      "output": "DescribeDomainsResponse",
+      "status": "online"
+    },
+    "PreloadCache": {
+      "document": "本接口（PreloadCache）用于提交URL预热任务，HCDN节点将URL资源提前缓存。",
+      "input": "PreloadCacheRequest",
+      "name": "预热资源",
+      "output": "PreloadCacheResponse",
+      "status": "online"
+    },
+    "RefreshCache": {
+      "document": "本接口（RefreshCache）用于提交URL刷新任务，HCDN节点将该URL对应的资源缓存清除，任务执行结果可通过接口（DescribeCacheTask）查询。",
+      "input": "RefreshCacheRequest",
+      "name": "刷新资源",
+      "output": "RefreshCacheResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-09-27",
+    "api_brief": "介绍如何使用混合分发加速API接口，实现数据查询、刷新预热等操作",
+    "serviceNameCN": "混合分发加速",
+    "serviceShortName": "hcdn"
+  },
+  "objects": {
+    "DescribeCacheTaskRequest": {
+      "document": "DescribeCacheTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20830af4-3d4d-46f3-b06b-88f15028aaec",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待查询的URL资源数组",
+          "example": "[\"https://www.xxx1.com/xxx1.flv\"]",
+          "member": "string",
+          "name": "FileUrlSet",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开始时间，采用YYYY-MM-DD HH:mm:ss的时间格式。",
+          "example": "2022-10-09 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间，采用YYYY-MM-DD HH:mm:ss的时间格式。",
+          "example": "2022-10-10 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询状态：\n0，刷新/预热成功；\n1，刷新/预热中；\n2，刷新/预热失败；\n3，未刷新/预热。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务类型：\n1，刷新任务；\n2，预热任务。",
+          "example": "2",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCacheTaskResponse": {
+      "document": "DescribeCacheTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务状态结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileStatus",
+          "name": "TaskResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainsRequest": {
+      "document": "DescribeDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件。\n每次请求的Filters的上限为10，Filter.Values的上限为5。\nStatus - String - 是否必填：否 - （过滤条件）按照域名状态过滤，值包含：状态:1, 已启用; 2, 启用中; 3,  删除中。注意：状态值为字符串类型。\nDomain - String - 是否必填：否 - （过滤条件）按照域名过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainsResponse": {
+      "document": "DescribeDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainInfo",
+          "name": "DomainSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DomainInfo": {
+      "document": "域名信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "www.xxx1.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "状态，1, 已启用; 2, 启用中; 3, 删除中",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间。采用YYYY-MM-DD HH:mm:ss的时间格式。",
+          "example": "2022-10-10 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "FileItem": {
+      "document": "待预热资源列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待预热资源URL",
+          "example": "https://www.xxx1.com/xxx1.flv",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源大小，单位BYTE",
+          "example": "10240",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源shasum值，按照sha1计算",
+          "example": "0b5d7ed54bee16756a7579c6718ab01e3d1b75eb",
+          "member": "string",
+          "name": "FileShaSum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "FileStatus": {
+      "document": "刷新/预热文件状态",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件访问URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.xxx1.com/xxx1.flv",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "0, 预热/刷新成功; 1，预热中; 2, 预热/刷新失败; 3, 未预热/刷新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "83c3688b-0c01-4d4b-8f45-64d2c71e21f7",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间，如2022-08-08 00:00:00。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-08 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务类型：1，刷新任务；2，预热任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件Name",
+          "example": "domain",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件Value",
+          "example": "[\"www.xxx1.com\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "PreloadCacheRequest": {
+      "document": "PreloadCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待预热资源列表，不超过50个。",
+          "example": "无",
+          "member": "FileItem",
+          "name": "FileItemSet",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "PreloadCacheResponse": {
+      "document": "PreloadCache返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，可根据该任务ID实时查询预热任务结果。",
+          "example": "20830af4-3d4d-46f3-b06b-88f15028aaec",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshCacheRequest": {
+      "document": "RefreshCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "待刷新的URL资源列表， 不超过50个。",
+          "example": "[\"https://www.xxx1.com/xxx1.flv\"]",
+          "member": "string",
+          "name": "FileUrlSet",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshCacheResponse": {
+      "document": "RefreshCache返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，可根据该任务ID实时查询刷新任务结果。",
+          "example": "20830af4-3d4d-46f3-b06b-88f15028aaec",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

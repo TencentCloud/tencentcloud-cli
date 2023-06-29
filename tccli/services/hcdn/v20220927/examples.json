@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "DescribeCacheTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hcdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCacheTask\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-09-29 17:17:38\",\n    \"EndTime\": \"2022-09-29 17:37:38\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"edd43e1f-e192-4541-a07d-e4c0da17d9c6\",\n        \"TotalCount\": 4,\n        \"TaskResult\": [\n            {\n                \"FileUrl\": \"https://www.xxx1.com/xxx1.flv\",\n                \"Status\": 3,\n                \"TaskId\": \"83c3688b-0c01-4d4b-8f45-64d2c71e21f7\",\n                \"CreateTime\": \"2022-10-09 10:53:45\",\n                \"TaskType\": 2\n            },\n            {\n                \"FileUrl\": \"https://www.xxx2.com/xxx2.flv\",\n                \"Status\": 3,\n                \"TaskId\": \"83c3688b-0c01-4d4b-8f45-64d2c71e21f7\",\n                \"CreateTime\": \"2022-10-09 10:53:45\",\n                \"TaskType\": 2\n            },\n            {\n                \"FileUrl\": \"https://www.xxx3.com/xxx3.flv\",\n                \"Status\": 3,\n                \"TaskId\": \"20830af4-3d4d-46f3-b06b-88f15028aaec\",\n                \"CreateTime\": \"2022-10-09 10:54:08\",\n                \"TaskType\": 2\n            },\n            {\n                \"FileUrl\": \"https://www.xxx4.com/xxx4.flv\",\n                \"Status\": 3,\n                \"TaskId\": \"20830af4-3d4d-46f3-b06b-88f15028aaec\",\n                \"CreateTime\": \"2022-10-09 10:54:08\",\n                \"TaskType\": 2\n            }\n        ]\n    }\n}",
+        "title": "查询刷新预热任务状态"
+      }
+    ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hcdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"3\"\n            ]\n        },\n        {\n            \"Name\": \"Domain\",\n            \"Values\": [\n                \"www.qq.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"edd43e1f-e192-4541-a07d-e4c0da17d9c6\",\n        \"TotalCount\": 4,\n        \"DomainSet\": [\n            {\n                \"Domain\": \"www.qq.com\",\n                \"Status\": 3,\n                \"CreateTime\": \"2022-10-09 10:53:45\"\n            }\n        ]\n    }\n}",
+        "title": "查询域名列表"
+      }
+    ],
+    "PreloadCache": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hcdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreloadCache\n<公共请求参数>\n\n{\n    \"FileItemSet\": [\n        {\n            \"FileUrl\": \"https://www.qq.com/xx1.flv\",\n            \"FileSize\": 1024000,\n            \"FileShaSum\": \"8f10270495ce790a2f9140600d57fc1251976244\"\n        },\n        {\n            \"FileUrl\": \"https://www.qq.com/xx2.flv\",\n            \"FileSize\": 1024000,\n            \"FileShaSum\": \"8f10270495ce790a2f9140600d57fc1251976245\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4db38754-c2f4-4190-862f-557ff1654317\",\n        \"TaskId\": \"20830af4-3d4d-46f3-b06b-88f15028aaec\"\n    }\n}",
+        "title": "预热资源"
+      }
+    ],
+    "RefreshCache": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hcdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshCache\n<公共请求参数>\n\n{\n    \"FileUrlSet\": [\n        \"https://www.qq.com/xxx.flv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4db38754-c2f4-4190-862f-557ff1654317\",\n        \"TaskId\": \"20830af4-3d4d-46f3-b06b-88f15028aaec\"\n    }\n}",
+        "title": "刷新资源"
+      }
+    ]
+  },
+  "version": "1.0"
+}

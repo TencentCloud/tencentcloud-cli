@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "GetPerformanceDispatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPerformanceDispatch\n<公共请求参数>\n\n{\n    \"Command\": \"xx\",\n    \"PerformanceParams\": \"xx\",\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"xx\",\n            \"Code\": 0,\n            \"Values\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "压测分发接口"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPerformanceDispatch\n<公共请求参数>\n\n{\n    \"Command\": \"getProjectUserList\",\n    \"PerformanceParams\": \"U2FsdGVkX1/2GZgxJiiYXkprs3iMwe9yQZuyAZ0o+50\",\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Values\": \"U2FsdGVkX1/j5F3AAf9E6JD5vXucaMMM+C9aW+FRauzn2bNx/1OeeDBS+QtZdCHTa8NyvwQkURrcsNWFiz79Hy//pjXWvWlC+0udb6Oafyc84VvrWx8xmw2An/ncE0+oAROWQr3Y2F03VVeP/gnsqJZ63sici/eRoqbTUmix7H1xOQoI8VUcp00jD6ePDguVtODavRI+MkhOV10RODAB5970rhysYiO5abFUhCUzgmzFi7zqH26xUvpL6fjVsxylNfwvpyy1h/KrSVIZ0RqJ3HHWfrZBoIyOfVYSjD2Sz8SvsLYLGZOVYtvzTCQ3jVMmFDjrjk0VE6luIzf4fgOtWOYc5GA+7BSeb7x10Kq/upXBSBweAfl8mdTLLa2xBaCX8V/bcOk6mKATuRGdSZWtl61Cdof82sCg5NbX6ma4qNdJ1sPhWQxlM60Q+e3DkL9yffotpCIBpt1e6ZGoFLFCa4O+ZdECA1k6UazFegf9DohZ8Ea19/83uYcsOKdJuvNPzosAFIpmRl/5hpLqLdpCdz4RjFj1oNU/NsPELpXh8tSbw6flAVaWb6pJ6d8sv9O0g/oH8jt4wPFWhzRu3+fmN6hsh2a5moVUy4q5MpeaY6t5ZlfdFyiZXFKphn01udPaa0uhliaAxLuencxYjuT96fxsDbbAE0jyW+U8RFSh3agvayMR37CgWAZymfTZsfNaBOds5EDEOWEfi4nnv5CMY23kgSAkeuy4A8FxWMvJKsuxmC4XV9HmTJH1PMX0KWrAiN94nITTNTTlTwmOqkYDOe+mf6jIOLvVdUHFE9Ot1vIFtSBFNq49SPoINvY+2NP8uSAN7T5Ky1QShItOuIxMGrGTlZ1GSk0X2R4S8nNoWcnY44/jfHUeaK+HN6nFRjq+6n4+O4XLeMfFpXJRBE/ef8ZwdX11RBeZ5yfVo1fAZrsxuEIyrpq+NU4TqdegGa5WXYUaebr5NcpORp2FPepc1Q==\"\n        },\n        \"RequestId\": \"29994669-3663-4db2-8acd-7c6e6a41cec6\"\n    }\n}",
+        "title": "压测转发接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

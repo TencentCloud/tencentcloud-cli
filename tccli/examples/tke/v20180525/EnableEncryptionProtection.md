@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tke EnableEncryptionProtection --cli-unfold-argument ```
+tccli tke EnableEncryptionProtection --cli-unfold-argument  \
+    --ClusterId cls-mu2or8b8
+```
 
 Output: 
 ```

@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "ReceiveAIMarkNotice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveAIMarkNotice\n<公共请求参数>\n\n{\n    \"BucketName\": \"“100001-2xxxxx“\",\n    \"Path\": \"“data/predict/xxxx”\",\n    \"SeriesUid\": \"“0020000e”\",\n    \"TaskId\": \"“xxxxxxx”\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fbc75d5-d081-453a-b00b-6ff3a5d8c206\",\n        \"Result\": \"success\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ReceiveAIRaceScoreNotice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveAIRaceScoreNotice\n<公共请求参数>\n\n{\n    \"BucketName\": \"“100001-2xxxxx“\",\n    \"Path\": \"“data/predict/xxxx”\",\n    \"TaskId\": \"“xxxxxxx”\",\n    \"Score\": \"“0.12”\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fbc75d5-d081-453a-b00b-6ff3a5d8c206\",\n        \"Result\": \"success\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ReceiveAIRunNotice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveAIRunNotice\n<公共请求参数>\n\n{\n    \"Src\": \"1\",\n    \"Code\": \"0\",\n    \"Mem\": \"0\",\n    \"GpuNum\": \"0\",\n    \"BucketName\": \"taop-251199828-251010749\",\n    \"TaskId\": \"uoio-dkjfksa-dkfna-nddj\",\n    \"Msg\": \"success\",\n    \"Path\": \"\",\n    \"EndTime\": \"2021-07-12 10:48:00\",\n    \"GpuType\": \"TI.8XLARGE64.32core64g\",\n    \"BeginTime\": \"2021-07-12 10:45:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a1cb6bb-92d3-48fa-8d5d-b4dcd636868f\",\n        \"Result\": \"success\"\n    }\n}",
+        "title": "ReceiveAiNotice"
+      }
+    ]
+  },
+  "version": "1.0"
+}

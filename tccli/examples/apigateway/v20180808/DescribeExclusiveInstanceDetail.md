@@ -1,12 +1,12 @@
 **Example 1: DescribeExclusiveInstanceDetail**
 
-
+查询独享实例详情
 
 Input: 
 
 ```
 tccli apigateway DescribeExclusiveInstanceDetail --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId instance-90v2ohwp
 ```
 
 Output: 
@@ -14,51 +14,54 @@ Output:
 {
     "Response": {
         "Result": {
-            "InstanceId": "instance-0c96l2bo",
-            "Zone": "ap-guangzhou-1",
-            "Zones": [
-                "ap-guangzhou-1"
-            ],
-            "InstanceName": "test_instance",
-            "InstanceDescription": "",
-            "InstanceChargeType": "PREPAID",
-            "InstanceState": "RUNNING",
+            "InstanceId": "abc",
+            "Zone": "abc",
+            "InstanceName": "abc",
+            "InstanceDescription": "abc",
+            "InstanceChargeType": "abc",
+            "InstanceState": "abc",
             "InstanceChargePrepaid": {
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "ExpiredTime": "2018-10-30T04:24:19"
+                "RenewFlag": "abc",
+                "ExpiredTime": "2020-09-22T00:00:00+00:00"
             },
-            "InstanceType": "BASIC",
+            "InstanceType": "abc",
             "NetworkConfig": {
-                "InternetMaxBandwidthOut": 10,
+                "InternetMaxBandwidthOut": 0,
                 "EnableInternetInbound": true,
                 "EnableInternetOutbound": true,
                 "InboundIpAddresses": [
-                    "10.10.10.10"
+                    "abc"
                 ],
                 "OutboundIpAddresses": [
-                    "10.10.10.11"
+                    "abc"
                 ]
             },
             "VpcConfig": {
-                "UniqVpcId": "vpc-12345",
-                "UniqSubnetId": "subnet-12345"
+                "UniqVpcId": "abc",
+                "UniqSubnetId": "abc"
             },
             "Parameters": [
                 {
-                    "Name": "ServiceRequestNumPreSec",
-                    "Value": 500,
-                    "Default": 500,
-                    "Unit": "次/秒",
-                    "Type": "integer",
+                    "Name": "abc",
+                    "Value": 0,
+                    "Default": 0,
+                    "Unit": "abc",
+                    "Type": "abc",
                     "Minimum": 0,
-                    "Maximum": 500,
-                    "ModifedTime": "2018-10-30T04:24:19"
+                    "Maximum": 0,
+                    "ModifedTime": "2020-09-22T00:00:00+00:00",
+                    "ValueString": "abc",
+                    "DefaultValueString": "abc",
+                    "Range": "abc"
                 }
             ],
-            "IsolationStartedTime": "2018-10-30T04:24:19Z",
-            "CreatedTime": "2018-10-30T04:24:19Z"
+            "IsolationStartedTime": "2020-09-22T00:00:00+00:00",
+            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "Zones": [
+                "abc"
+            ]
         },
-        "RequestId": "e3705d00-bfe0-4fde-942c-cebd6b12431b"
+        "RequestId": "abc"
     }
 }
 ```

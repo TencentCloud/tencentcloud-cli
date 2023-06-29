@@ -1,0 +1,178 @@
+{
+  "actions": {
+    "DescribeRenewResourceParams": {
+      "document": "获取续费集群入参",
+      "input": "DescribeRenewResourceParamsRequest",
+      "name": "获取续费集群入参",
+      "output": "DescribeRenewResourceParamsResponse",
+      "status": "online"
+    },
+    "OffLineCluster": {
+      "document": "下线集群",
+      "input": "OffLineClusterRequest",
+      "name": "下线集群",
+      "output": "OffLineClusterResponse",
+      "status": "online"
+    },
+    "SetRenewFlag": {
+      "document": "设置自动续费",
+      "input": "SetRenewFlagRequest",
+      "name": "设置自动续费",
+      "output": "SetRenewFlagResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-04-20",
+    "api_brief": "提供对lighthousedb产品的管控，如创建，销毁，查看等能力；提供防火墙，内外网，监控管理等相关功能。",
+    "serviceNameCN": "轻量数据库服务LighthouseDB",
+    "serviceShortName": "lighthousedb"
+  },
+  "objects": {
+    "DescribeRenewResourceParamsRequest": {
+      "document": "DescribeRenewResourceParams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "lhdbmysql-oy59wlur",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "续费时长,与TimeUnit组合才能生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "续费时长单位，默认m, 与TimeSpan组合生效，可选:日:d,月:m, 年:y",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRenewResourceParamsResponse": {
+      "document": "DescribeRenewResourceParams返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费续费参数",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OffLineClusterRequest": {
+      "document": "OffLineCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "lhdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OffLineClusterResponse": {
+      "document": "OffLineCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRenewFlagRequest": {
+      "document": "SetRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需操作的实例ID",
+          "example": "cynosdbmysql-ins-xxxxxxx",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "自动续费标志位",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRenewFlagResponse": {
+      "document": "SetRenewFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作成功数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

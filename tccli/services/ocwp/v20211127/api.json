@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "ExportAssetWebServiceInfoList": {
+      "document": "导出资产管理Web服务列表",
+      "input": "ExportAssetWebServiceInfoListRequest",
+      "name": "导出资产管理Web服务列表",
+      "output": "ExportAssetWebServiceInfoListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-11-27",
+    "api_brief": "主机安全运营端接口（内部）",
+    "serviceNameCN": "T-Sec 主机安全服务（内部）",
+    "serviceShortName": "ocwp"
+  },
+  "objects": {
+    "ExportAssetWebServiceInfoListRequest": {
+      "document": "ExportAssetWebServiceInfoList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ExportAssetWebServiceInfoListResponse": {
+      "document": "ExportAssetWebServiceInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

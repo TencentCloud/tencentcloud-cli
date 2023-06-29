@@ -1,0 +1,86 @@
+{
+  "actions": {
+    "BatchPubMessage": {
+      "document": "API数据源接口",
+      "input": "BatchPubMessageRequest",
+      "name": "API数据源接口",
+      "output": "BatchPubMessageResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-12-16",
+    "api_brief": "腾讯云物联网设备洞察为用户提供IoT设备数据管道、时序数据存储、时序分析&SQL离线分析以及可视化仪表盘能力。用户可以使用本文档介绍的 API，并参照相应的示例，对数据源、数据管道、数据存储、数据分析、可视化仪表盘等进行相关操作；如创建、删除、修改等；支持的全部操作可参见 API 概览。",
+    "serviceNameCN": "物联网设备洞察",
+    "serviceShortName": "iotinsight"
+  },
+  "objects": {
+    "BatchPubMessageRequest": {
+      "document": "BatchPubMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据源Id",
+          "example": "fc565e33-e9a4-4380-a32d-4a93ea1de07b",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息",
+          "example": "无",
+          "member": "SourceMessage",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchPubMessageResponse": {
+      "document": "BatchPubMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SourceMessage": {
+      "document": "消息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息Id",
+          "example": "fc565e33-e9a4-4380-a32d-4a93ea1de07b",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息内容，json字符串",
+          "example": " \"{\\\"test\\\":\\\"1111\\\"}\"",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

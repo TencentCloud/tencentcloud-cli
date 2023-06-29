@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "CreateFastLiveCourse": [
+      {
+        "document": "该API用于为特定老师发布一门直播课",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFastLiveCourse\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"TeacherId\": \"2007051\",\n    \"VisibleScope\": 0,\n    \"Name\": \"moon\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TermId\": \"100187514\",\n        \"LiveUrl\": \"https://ke.qq.com/webcourse/100187514/1001875141#taid=1001875143&lite=1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "发布直播课"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFastLiveCourse\n<公共请求参数>\n\n{\n    \"TeacherId\": \"2007051\",\n    \"Name\": \"moon\",\n    \"VisibleScope\": \"0\",\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TermId\": \"1000035819\",\n        \"LiveUrl\": \"https://ke.qq.com/webcourse/1016064/1000035819#taid=245942713286912&lite=1\",\n        \"RequestId\": \"e3362314-d89b-4f35-a3b4-e0bd0318d31d\"\n    }\n}",
+        "title": "正确返回"
+      }
+    ],
+    "DescribeFastReplayDownloads": [
+      {
+        "document": "该API获取直播课回放下载地址",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFastReplayDownloads\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"VId\": \"1000030510\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ke.qq.com/1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播课回放下载"
+      }
+    ],
+    "DescribeFastReplays": [
+      {
+        "document": "该API获取一门直播课的回放列表",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFastReplays\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"TermId\": 1000030510,\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PageNext\": 100,\n        \"ReplayList\": [\n            {\n                \"Name\": \"第一讲\",\n                \"VId\": \"1628843523\",\n                \"TaskId\": \"1\",\n                \"Timelen\": \"3600\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取直播课回放列表"
+      }
+    ],
+    "ModifyFastLiveCourse": [
+      {
+        "document": "该API用于修改直播课程名字和课程公开标记",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFastLiveCourse\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"TermId\": 1000030510,\n    \"VisibleScope\": 0,\n    \"Name\": \"moon\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改直播课"
+      }
+    ]
+  },
+  "version": "1.0"
+}

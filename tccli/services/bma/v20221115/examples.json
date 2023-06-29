@@ -1,0 +1,93 @@
+{
+  "actions": {
+    "CreateBPBrand": [
+      {
+        "document": "添加品牌",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPBrand\n<公共请求参数>\n\n{\n    \"CompanyName\": \"企业名称\",\n    \"BrandName\": \"品牌名称\",\n    \"BrandLogo\": \"品牌Logo\",\n    \"Phone\": \"联系电话\",\n    \"License\": \"营业执照\",\n    \"Authorization\": \"授权书\",\n    \"TrademarkNames\": [\n        \"商标名称\"\n    ],\n    \"Trademarks\": [\n        \"商标证明\"\n    ],\n    \"IsTransfers\": [\n        \"1\"\n    ],\n    \"Transfers\": [\n        \"转让证明\"\n    ],\n    \"ProtectURLs\": [\n        \"qq.com\",\n        \"baidu.com\"\n    ],\n    \"ProtectAPPs\": [\n        \"王者荣耀\",\n        \"和平精英\"\n    ],\n    \"ProtectOfficialAccounts\": [\n        \"人民日报\",\n        \"广东日报\"\n    ],\n    \"ProtectMiniPrograms\": [\n        \"粤省事\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CompanyId\": 123,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加品牌"
+      }
+    ],
+    "CreateBPFakeAPP": [
+      {
+        "document": "仿冒应用举报",
+        "input": "{\n  \"CompanyId\": 123,\n  \"FakeAPPName\": \"仿冒应用名称\",\n  \"APPChan\": \"仿冒来源\",\n  \"FakeAPPPackageName\": \"仿冒应用包名\",\n  \"FakeAPPCert\": \"仿冒应用证书\",\n  \"FakeAPPSize\": \"仿冒应用大小\",\n  \"FakeAPPSnapshots\": [\n    \"仿冒截图\"\n  ],\n  \"Note\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "仿冒应用举报"
+      }
+    ],
+    "CreateBPFakeAPPList": [
+      {
+        "document": "批量仿冒应用举报",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFakeAPPList\n<公共请求参数>\n\n{\n    \"FakeAPPs\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "批量仿冒应用举报"
+      }
+    ],
+    "CreateBPFakeURL": [
+      {
+        "document": "仿冒网址举报",
+        "input": "{\n  \"CompanyId\": 123,\n  \"FakeURL\": \"举报网址\",\n  \"FakeURLSnapshots\": [\n    \"仿冒截图\"\n  ],\n  \"Note\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "仿冒网址举报"
+      }
+    ],
+    "CreateBPFakeURLs": [
+      {
+        "document": "批量仿冒网址举报",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFakeURLs\n<公共请求参数>\n\n{\n    \"FakeURLs\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "批量仿冒网址举报"
+      }
+    ],
+    "CreateBPWhiteList": [
+      {
+        "document": "添加白名单",
+        "input": "{\n  \"CompanyId\": 123,\n  \"WhiteListType\": 0,\n  \"WhiteLists\": [\n    \"xxx\"\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加白名单"
+      }
+    ],
+    "DeleteBPWhiteList": [
+      {
+        "document": "删除白名单",
+        "input": "{\n  \"WhiteListId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除白名单"
+      }
+    ],
+    "DescribeBPBrands": [
+      {
+        "document": "查询品牌列表",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPBrands\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Brands\": [\n            {\n                \"Uin\": \"abc\",\n                \"CompanyId\": 0,\n                \"CompanyName\": \"abc\",\n                \"BrandName\": \"abc\",\n                \"Phone\": \"abc\",\n                \"License\": \"abc\",\n                \"LicenseStatus\": 0,\n                \"LicenseNote\": \"abc\",\n                \"Authorization\": \"abc\",\n                \"AuthorizationStatus\": 0,\n                \"AuthorizationNote\": \"abc\",\n                \"Trademarks\": [\n                    {\n                        \"Trademark\": \"abc\",\n                        \"TrademarkStatus\": 0,\n                        \"TrademarkNote\": \"abc\",\n                        \"TrademarkId\": 0,\n                        \"Transfer\": \"abc\",\n                        \"TransferStatus\": 0,\n                        \"TransferNote\": \"abc\",\n                        \"TrademarkName\": \"abc\"\n                    }\n                ],\n                \"InsertTime\": \"abc\",\n                \"Services\": {\n                    \"ProtectURLCount\": 0,\n                    \"ProtectURLExpireTime\": \"abc\",\n                    \"ProtectAPPCount\": 0,\n                    \"ProtectAPPExpireTime\": \"abc\",\n                    \"ProtectOfficialAccountCount\": 0,\n                    \"ProtectOfficialAccountExpireTime\": \"abc\",\n                    \"ProtectMiniProgramCount\": 0,\n                    \"ProtectMiniProgramExpireTime\": \"abc\",\n                    \"OfflineCount\": 0\n                }\n            }\n        ],\n        \"NoticeStatus\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询品牌列表"
+      }
+    ],
+    "DescribeBPFakeAPPList": [
+      {
+        "document": "查询仿冒应用列表",
+        "input": "{\n  \"Filters\": [\n    {\n      \"Name\": \"BrandName\",\n      \"Value\": \"品牌名称\"\n    },\n    {\n      \"Name\": \"Origin\",\n      \"Value\": \"0\"\n    },\n    {\n      \"Name\": \"BlockStatus\",\n      \"Value\": \"0\"\n    },\n    {\n      \"Name\": \"OfflineStatus\",\n      \"Value\": \"0\"\n    },\n    {\n      \"Name\": \"FakeAPP\",\n      \"Value\": \"xxx\"\n    },\n    {\n      \"Name\": \"StartTime\",\n      \"Value\": \"2022-10-01 00:00:00\"\n    },\n    {\n      \"Name\": \"EndTime\",\n      \"Value\": \"2022-10-01 23:59:59\"\n    }\n  ],\n  \"PageSize\": 10,\n  \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FakeAPPList\": [\n            {\n                \"FakeAPPId\": 123,\n                \"BrandName\": \"品牌名称\",\n                \"Origin\": 0,\n                \"FakeAPPName\": \"仿冒应用名称\",\n                \"FakeAPPPackageName\": \"仿冒应用包名\",\n                \"FakeAPPCert\": \"仿冒应用证书\",\n                \"FakeAPPSize\": \"仿冒应用大小\",\n                \"Heat\": 100,\n                \"BlockStatus\": 0,\n                \"BlockNote\": \"协助处置状态说明\",\n                \"OfflineStatus\": 0,\n                \"OfflineNote\": \"下架状态说明\",\n                \"DownloadWay\": \"app来源\",\n                \"InsertTime\": \"2022-10-01 00:00:00\",\n                \"DownloadCosURL\": \"cos下载链接\"\n            }\n        ],\n        \"TotalCount\": 100,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询仿冒应用列表"
+      }
+    ],
+    "DescribeBPFakeURLs": [
+      {
+        "document": "查询仿冒网址列表",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPFakeURLs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"BrandName\",\n            \"Value\": \"品牌名称\"\n        },\n        {\n            \"Name\": \"Origin\",\n            \"Value\": \"0\"\n        },\n        {\n            \"Name\": \"BlockStatus\",\n            \"Value\": \"0\"\n        },\n        {\n            \"Name\": \"OfflineStatus\",\n            \"Value\": \"0\"\n        },\n        {\n            \"Name\": \"FakeURL\",\n            \"Value\": \"仿冒网址\"\n        },\n        {\n            \"Name\": \"StartTime\",\n            \"Value\": \"2022-10-01 00:00:00\"\n        },\n        {\n            \"Name\": \"EndTime\",\n            \"Value\": \"2022-10-01 23:59:59\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FakeURLs\": [\n            {\n                \"FakeURLId\": 123,\n                \"BrandName\": \"品牌名称\",\n                \"Origin\": 0,\n                \"FakeURL\": \"仿冒网址\",\n                \"FakeDomain\": \"仿冒域名\",\n                \"Snapshot\": \"网址截图\",\n                \"Heat\": 100,\n                \"BlockStatus\": 0,\n                \"BlockNote\": \"协助处置状态说明\",\n                \"OfflineStatus\": 0,\n                \"OfflineNote\": \"关停状态说明\",\n                \"IP\": \"ip地址\",\n                \"IPLocation\": \"ip地理位置\",\n                \"WebCompany\": \"网站所属单位\",\n                \"WebAttribute\": \"网站性质\",\n                \"WebName\": \"网站名称\",\n                \"WebICP\": \"备案号\",\n                \"WebCreateTime\": \"2022-10-01 00:00:00\",\n                \"WebExpireTime\": \"2022-10-01 00:00:00\",\n                \"InsertTime\": \"2022-10-01 00:00:00\",\n                \"CertificationStatus\": 0,\n                \"AccountStatus\": 0\n            }\n        ],\n        \"TotalCount\": 100,\n        \"RequestId\": \"请求id\"\n    }\n}",
+        "title": "查询仿冒网址列表"
+      }
+    ],
+    "DescribeBPWhiteLists": [
+      {
+        "document": "查询白名单列表",
+        "input": "{\n  \"Filters\": [\n    {\n      \"Name\": \"CompanyId\",\n      \"Value\": \"123\"\n    },\n    {\n      \"Name\": \"AssetsType\",\n      \"Value\": \"0\"\n    },\n    {\n      \"Name\": \"WhiteList\",\n      \"Value\": \"白名单名称\"\n    },\n    {\n      \"Name\": \"StartTime\",\n      \"Value\": \"2022-10-01 00:00:00\"\n    },\n    {\n      \"Name\": \"EndTime\",\n      \"Value\": \"2022-10-01 23:59:59\"\n    }\n  ],\n  \"PageSize\": 10,\n  \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"WhiteLists\": [\n            {\n                \"WhiteListId\": 123,\n                \"CompanyId\": 123,\n                \"BrandName\": \"品牌名称\",\n                \"AssetsType\": 0,\n                \"WhiteList\": \"白名单名称\",\n                \"InsertTime\": \"2022-10-01 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询白名单列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "Create5GInstance": [
+      {
+        "document": "创建5G入云服务",
+        "input": "POST / HTTP/1.1\nHost: csxg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Create5GInstance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6e65196-8d0e-4b27-983d-21a70c1edfe0\"\n    }\n}",
+        "title": "创建5G入云服务"
+      }
+    ],
+    "Delete5GInstance": [
+      {
+        "document": "删除5G入云服务",
+        "input": "POST / HTTP/1.1\nHost: csxg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Delete5GInstance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6ca2d7f-9093-4d69-babd-557eac9b93c3\"\n    }\n}",
+        "title": "删除5G入云服务"
+      }
+    ],
+    "Describe5GAPNs": [
+      {
+        "document": "查询APN信息",
+        "input": "POST / HTTP/1.1\nHost: csxg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Describe5GAPNs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b76783a4-dbb7-4c9c-9b9c-932165a67460\"\n    }\n}",
+        "title": "查询APN信息"
+      }
+    ],
+    "Describe5GInstances": [
+      {
+        "document": "查询5G入云服务",
+        "input": "POST / HTTP/1.1\nHost: csxg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Describe5GInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"985345e2-f595-4064-9d27-1274548645e4\"\n    }\n}",
+        "title": "查询5G入云服务"
+      }
+    ],
+    "Modify5GInstanceAttribute": [
+      {
+        "document": "修改5G入云服务",
+        "input": "POST / HTTP/1.1\nHost: csxg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: Modify5GInstanceAttribute\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcda57f1-40d9-4272-b2b7-2286b9d1a492\"\n    }\n}",
+        "title": "修改5G入云服务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

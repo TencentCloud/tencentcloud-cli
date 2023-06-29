@@ -98,6 +98,20 @@
       "output": "DescribeLogTagValueResponse",
       "status": "online"
     },
+    "GetCloudEventTemplate": {
+      "document": "查询云产品事件模版",
+      "input": "GetCloudEventTemplateRequest",
+      "name": "查询云产品事件模版",
+      "output": "GetCloudEventTemplateResponse",
+      "status": "online"
+    },
+    "GetConnectorEventTemplate": {
+      "document": "获取连接器事件模版",
+      "input": "GetConnectorEventTemplateRequest",
+      "name": "获取连接器事件模版",
+      "output": "GetConnectorEventTemplateResponse",
+      "status": "online"
+    },
     "GetEventBus": {
       "document": "获取事件集详情",
       "input": "GetEventBusRequest",
@@ -119,11 +133,53 @@
       "output": "GetTransformationResponse",
       "status": "online"
     },
+    "ListCloudEventNames": {
+      "document": "获取云产品事件名称",
+      "input": "ListCloudEventNamesRequest",
+      "name": "获取云产品事件名称",
+      "output": "ListCloudEventNamesResponse",
+      "status": "online"
+    },
+    "ListCloudEventPatterns": {
+      "document": "查询事件匹配规则",
+      "input": "ListCloudEventPatternsRequest",
+      "name": "查询事件匹配规则",
+      "output": "ListCloudEventPatternsResponse",
+      "status": "online"
+    },
+    "ListCloudProducts": {
+      "document": "获取云产品列表",
+      "input": "ListCloudProductsRequest",
+      "name": "获取云产品列表",
+      "output": "ListCloudProductsResponse",
+      "status": "online"
+    },
     "ListConnections": {
       "document": "获取事件连接器列表",
       "input": "ListConnectionsRequest",
       "name": "获取事件连接器列表",
       "output": "ListConnectionsResponse",
+      "status": "online"
+    },
+    "ListConnectorEventNames": {
+      "document": "获取连接器事件名称",
+      "input": "ListConnectorEventNamesRequest",
+      "name": "获取连接器事件名称",
+      "output": "ListConnectorEventNamesResponse",
+      "status": "online"
+    },
+    "ListConnectorEventPatterns": {
+      "document": "查询连接器事件匹配规则",
+      "input": "ListConnectorEventPatternsRequest",
+      "name": "查询连接器事件匹配规则",
+      "output": "ListConnectorEventPatternsResponse",
+      "status": "online"
+    },
+    "ListConnectors": {
+      "document": "查询连接器",
+      "input": "ListConnectorsRequest",
+      "name": "查询连接器",
+      "output": "ListConnectorsResponse",
       "status": "online"
     },
     "ListEventBuses": {
@@ -387,7 +443,6 @@
           "name": "Instances",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -398,7 +453,6 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -409,7 +463,6 @@
           "name": "ExternalReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -420,7 +473,6 @@
           "name": "InternalReason",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -431,7 +483,6 @@
           "name": "RecoverAdvise",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -442,7 +493,6 @@
           "name": "LocationTool",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -453,7 +503,6 @@
           "name": "Follower",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -464,7 +513,6 @@
           "name": "Handler",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
           "visibility": 2
         },
         {
@@ -475,7 +523,16 @@
           "name": "Owner",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障标题：必填",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
           "visibility": 2
         }
       ],
@@ -626,6 +683,45 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudProduct": {
+      "document": "云产品基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "云产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件集类型(自定义/云服务)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Cloud",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -818,6 +914,34 @@
           "name": "DTSParams",
           "required": false,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "Connector": {
+      "document": "连接器简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka连接器",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "连接器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka",
+          "member": "string",
+          "name": "ConnectorType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -1895,6 +2019,45 @@
       ],
       "usage": "out"
     },
+    "EventDetail": {
+      "document": "事件概要",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "磁盘只读",
+          "member": "string",
+          "name": "EventName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "EventOps": {
       "document": "腾讯内部平台级事件结构，比如各云产品可用性的事件",
       "members": [
@@ -2011,6 +2174,45 @@
       ],
       "usage": "in"
     },
+    "EventSummary": {
+      "document": "事件概要",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "磁盘只读",
+          "member": "string",
+          "name": "EventName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventPattern",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Extraction": {
       "document": "描述如何提取数据",
       "members": [
@@ -2077,6 +2279,82 @@
         }
       ],
       "usage": "in"
+    },
+    "GetCloudEventTemplateRequest": {
+      "document": "GetCloudEventTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件类型",
+          "example": "cvm:ErrorEvent:DiskReadonly",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetCloudEventTemplateResponse": {
+      "document": "GetCloudEventTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventTemplate",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetConnectorEventTemplateRequest": {
+      "document": "GetConnectorEventTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件类型",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetConnectorEventTemplateResponse": {
+      "document": "GetConnectorEventTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventTemplate",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetEventBusRequest": {
       "document": "GetEventBus请求参数结构体",
@@ -2422,6 +2700,112 @@
       ],
       "type": "object"
     },
+    "ListCloudEventNamesRequest": {
+      "document": "ListCloudEventNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品类型",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListCloudEventNamesResponse": {
+      "document": "ListCloudEventNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件中文名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventDetail",
+          "name": "EventNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCloudEventPatternsRequest": {
+      "document": "ListCloudEventPatterns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品类型",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListCloudEventPatternsResponse": {
+      "document": "ListCloudEventPatterns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件规则样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventSummary",
+          "name": "EventPatterns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCloudProductsRequest": {
+      "document": "ListCloudProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListCloudProductsResponse": {
+      "document": "ListCloudProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudProduct",
+          "name": "CloudProducts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListConnectionsRequest": {
       "document": "ListConnections请求参数结构体",
       "members": [
@@ -2500,6 +2884,112 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectorEventNamesRequest": {
+      "document": "ListConnectorEventNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器类型",
+          "example": "ckafka",
+          "member": "string",
+          "name": "ConnectorType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectorEventNamesResponse": {
+      "document": "ListConnectorEventNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器事件中文名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventDetail",
+          "name": "EventNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectorEventPatternsRequest": {
+      "document": "ListConnectorEventPatterns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器类型",
+          "example": "ckafka",
+          "member": "string",
+          "name": "ConnectorType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectorEventPatternsResponse": {
+      "document": "ListConnectorEventPatterns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件规则样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventSummary",
+          "name": "EventPatterns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectorsRequest": {
+      "document": "ListConnectors请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListConnectorsResponse": {
+      "document": "ListConnectors返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Connector",
+          "name": "Connectors",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2994,6 +3484,7 @@
           "example": "无",
           "member": "PutEventsRespEventList",
           "name": "EventList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

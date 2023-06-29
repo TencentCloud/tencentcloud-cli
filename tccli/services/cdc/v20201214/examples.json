@@ -1,0 +1,165 @@
+{
+  "actions": {
+    "CreateDedicatedCluster": [
+      {
+        "document": "创建专用集群",
+        "input": "https://cdc.tencentcloudapi.com/?Action=CreateDedicatedCluster\n&SiteId=site-98dj3kd\n&Name=my-site\n&Zone=ap-guangzhou \n&Description=site\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterId\": \"cluster-gbo27yc4\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "创建专用集群"
+      }
+    ],
+    "CreateDedicatedClusterOrder": [
+      {
+        "document": "创建专用集群订单",
+        "input": "https://cdc.tencentcloudapi.com/?Action=CreateDedicatedClusterOrder\n&DedicatedClusterId=cluster-gbo27yc4\n&DedicatedClusterTypes.0.Id=cluster-gbo27yc4\n&DedicatedClusterTypes.0.Count=1\n&CosInfo.Size=1\n&CosInfo.Type=COS\n&CbsInfo.Size=1\n&CbsInfo.Type=SSD\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterOrderId\": \"ord-0yq4a8ia\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "创建专用集群订单"
+      }
+    ],
+    "CreateSite": [
+      {
+        "document": "创建站点",
+        "input": "https://cdc.tencentcloudapi.com/?Action=CreateSite\n&Name=my-site\n&Description=firstsite\n&Note=newsite\n&FiberType=MM\n&OpticalStandard=1000Base-SX\n&PowerConnectors=2\n&PowerFeedDrop=above\n&MaxWeight=500\n&PowerDrawKva=3000\n&UplinkSpeedGbps=10\n&UplinkCount=2\n&ConditionRequirement=True\n&DimensionRequirement=True\n&RedundantNetworking=True\n&Country=China\n&Province=Guangdong\n&City=Shenzhen\n&PostalCode=51800\n&AddressLine=nanshan\n&OptionalAddressLine=tengda\n&BreakerRequirement=True\n&RedundantPower=True\n&NeedHelp=True\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SiteId\": \"site-c738dj\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc16\"\n    }\n}",
+        "title": "创建站点"
+      }
+    ],
+    "DeleteDedicatedClusters": [
+      {
+        "document": "删除专用集群",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DeleteDedicatedClusters\n&DedicatedClusterIds.0=cluster-gbo27yc4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "删除专用集群"
+      }
+    ],
+    "DeleteSites": [
+      {
+        "document": "删除站点",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DeleteSites\n&SiteIds.0=site-98dj3kd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "删除站点"
+      }
+    ],
+    "DescribeDedicatedClusterCosCapacity": [
+      {
+        "document": "查询专用集群内cos的容量信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterCosCapacity\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CosCapacity\": {\n            \"TotalCapacity\": 3394.92,\n            \"TotalFreeCapacity\": 3367.41,\n            \"TotalUsedCapacity\": 27.51\n        },\n        \"RequestId\": \"41aa48c2-477b-43c0-9d93-04ef3f529e5f\"\n    }\n}",
+        "title": "查询专用集群内cos的容量信息"
+      }
+    ],
+    "DescribeDedicatedClusterHostStatistics": [
+      {
+        "document": "查询专用集群内宿主机的信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterHostStatistics\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HostStatisticSet\": [\n            {\n                \"HostType\": \"S5.21XLARGE320\",\n                \"HostFamily\": \"S5\",\n                \"Cpu\": 84,\n                \"Memory\": 320,\n                \"Count\": 240\n            },\n            {\n                \"HostType\": \"GN7.20XLARGE320\",\n                \"HostFamily\": \"GN7\",\n                \"Cpu\": 80,\n                \"Memory\": 320,\n                \"Count\": 30\n            },\n            {\n                \"HostType\": \"M5.21XLARGE320\",\n                \"HostFamily\": \"M5\",\n                \"Cpu\": 84,\n                \"Memory\": 320,\n                \"Count\": 128\n            }\n        ],\n        \"RequestId\": \"41aa48c2-477b-43c0-9d93-04ef3f529e5f\"\n    }\n}",
+        "title": "查询专用集群内宿主机的信息"
+      }
+    ],
+    "DescribeDedicatedClusterHosts": [
+      {
+        "document": "专用集群宿主机信息",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterHosts\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-nk6e8j6c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HostInfoSet\": [\n            {\n                \"HostIp\": \"50.4.2.2\",\n                \"ServiceType\": \"云服务器宿主机\",\n                \"HostStatus\": \"PENDING\",\n                \"HostType\": \"标准型S5.21XLARGE320\",\n                \"RunTime\": \"2022-03-29 16:37:01\",\n                \"ExpireTime\": \"2025-03-29 16:37:01\",\n                \"CpuAvailable\": 24,\n                \"CpuTotal\": 24,\n                \"MemAvailable\": 96,\n                \"MemTotal\": 96\n            },\n            {\n                \"HostIp\": \"50.4.2.3\",\n                \"ServiceType\": \"云服务器宿主机\",\n                \"HostStatus\": \"PENDING\",\n                \"HostType\": \"标准型S5.21XLARGE320\",\n                \"RunTime\": \"2022-03-30 16:37:01\",\n                \"ExpireTime\": \"2025-03-30 16:37:01\",\n                \"CpuAvailable\": 24,\n                \"CpuTotal\": 24,\n                \"MemAvailable\": 96,\n                \"MemTotal\": 96\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"7ffc723c-49d2-45ae-82cc-270aa35d3c59\"\n    }\n}",
+        "title": "专用集群宿主机信息"
+      }
+    ],
+    "DescribeDedicatedClusterInstanceTypes": [
+      {
+        "document": "查询专用集群支持的实例规格列表",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterInstanceTypes\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterInstanceTypeSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceType\": \"S1.SMALL1\",\n                \"NetworkCard\": 0,\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"InstanceFamily\": \"S1\",\n                \"TypeName\": \"Standard S1\",\n                \"StorageBlockAmount\": 0,\n                \"InstanceBandwidth\": 0,\n                \"InstancePps\": 0,\n                \"CpuType\": \"\",\n                \"Gpu\": 0,\n                \"Fpga\": 0,\n                \"Remark\": \"\",\n                \"Status\": \"SOLD_OUT\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceType\": \"S3.SMALL1\",\n                \"NetworkCard\": 0,\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"InstanceFamily\": \"S3\",\n                \"TypeName\": \"Standard S3\",\n                \"StorageBlockAmount\": 0,\n                \"InstanceBandwidth\": 0,\n                \"InstancePps\": 0,\n                \"CpuType\": \"\",\n                \"Gpu\": 0,\n                \"Fpga\": 0,\n                \"Remark\": \"\",\n                \"Status\": \"SOLD_OUT\"\n            }\n        ],\n        \"RequestId\": \"90ddf8cf-168b-4175-99f0-28858e90634a\"\n    }\n}",
+        "title": "查询专用集群支持的实例规格列表"
+      }
+    ],
+    "DescribeDedicatedClusterOrders": [
+      {
+        "document": "查询专用集群订单列表",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterOrders\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterOrderSet\": [\n            {\n                \"DedicatedClusterId\": \"xx\",\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"SupportedUplinkSpeed\": [\n                    0\n                ],\n                \"SupportedInstanceFamily\": [\n                    \"xx\"\n                ],\n                \"Weight\": 0,\n                \"PowerDraw\": 0,\n                \"OrderStatus\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"Action\": \"xx\",\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"Weight\": 0,\n                        \"PowerDraw\": 0,\n                        \"SubOrderStatus\": \"xx\",\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"SubOrderId\": \"xx\",\n                        \"Count\": 0,\n                        \"Name\": \"xx\",\n                        \"Description\": \"xx\",\n                        \"TotalCpu\": 0,\n                        \"TotalMem\": 0,\n                        \"TotalGpu\": 0,\n                        \"TypeName\": \"xx\",\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeFamily\": \"xx\",\n                        \"SubOrderPayStatus\": 0\n                    }\n                ],\n                \"Cpu\": 0,\n                \"Mem\": 0,\n                \"Gpu\": 0,\n                \"PayStatus\": 0,\n                \"PayType\": \"xx\",\n                \"TimeUnit\": \"xx\",\n                \"TimeSpan\": 0,\n                \"OrderType\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询专用集群订单列表"
+      }
+    ],
+    "DescribeDedicatedClusterOverview": [
+      {
+        "document": "专用集群概览信息",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterOverview\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-nk6e8j6c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CvmCount\": 36,\n        \"HostCount\": 2,\n        \"VpnConnectionState\": \"AVAILABLE\",\n        \"VpngwBandwidthData\": {},\n        \"LocalNetInfo\": {},\n        \"VpnConnectionBandwidthData\": [],\n        \"RequestId\": \"ab5e5574-121b-4b5a-992c-fab691ac6737\"\n    }\n}",
+        "title": "专用集群概览信息"
+      }
+    ],
+    "DescribeDedicatedClusterTypes": [
+      {
+        "document": "查询专用集群订单配置列表。",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterTypes\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"DedicatedClusterTypeIds\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"IsCompute\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterTypeSet\": [\n            {\n                \"DedicatedClusterTypeId\": \"dctype-lkm17jbu\",\n                \"Description\": \"first type\",\n                \"Name\": \"yuan dedicated\",\n                \"CreateTime\": \"2020-12-16T06:21:41Z\",\n                \"SupportedStorageType\": [],\n                \"SupportedUplinkGiB\": [\n                    40,\n                    100\n                ],\n                \"SupportedInstanceFamily\": [\n                    \"S5\"\n                ],\n                \"Weight\": 3000,\n                \"PowerDrawKva\": \"2000.800000\",\n                \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"dctype-1yo16f1a\",\n                \"Description\": \"seco type\",\n                \"Name\": \"abc dedicated\",\n                \"CreateTime\": \"2020-12-16T06:33:49Z\",\n                \"SupportedStorageType\": [],\n                \"SupportedUplinkGiB\": [\n                    13,\n                    100\n                ],\n                \"SupportedInstanceFamily\": [\n                    \"S1\",\n                    \"S5\"\n                ],\n                \"Weight\": 3273,\n                \"PowerDrawKva\": \"4156.700000\",\n                \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"dctype-b38d7sl6\",\n                \"Description\": \"heynew\",\n                \"Name\": \"type und\",\n                \"CreateTime\": \"2020-12-16T06:33:49Z\",\n                \"SupportedStorageType\": [],\n                \"SupportedUplinkGiB\": [\n                    10,\n                    40\n                ],\n                \"SupportedInstanceFamily\": [\n                    \"S3\"\n                ],\n                \"Weight\": 3724,\n                \"PowerDrawKva\": \"3829.100000\",\n                \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"dctype-z387eu8j\",\n                \"Description\": \"third one\",\n                \"Name\": \"unknow\",\n                \"CreateTime\": \"2020-12-16T06:33:49Z\",\n                \"SupportedStorageType\": [],\n                \"SupportedUplinkGiB\": [\n                    10,\n                    40\n                ],\n                \"SupportedInstanceFamily\": [],\n                \"Weight\": 3724,\n                \"PowerDrawKva\": \"3829.100000\",\n                \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"66221c03-1429-4b8b-b66a-dffa2771536e\"\n    }\n}",
+        "title": "查询专有集群配置列表"
+      }
+    ],
+    "DescribeDedicatedClusters": [
+      {
+        "document": "查询专用集群列表",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusters\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterSet\": [\n            {\n                \"DedicatedClusterId\": \"cluster-e88qh1ue\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:15:43Z\",\n                \"SiteId\": \"site-38d9ck\"\n            },\n            {\n                \"DedicatedClusterId\": \"cluster-1hza0fbu\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:15:50Z\",\n                \"SiteId\": \"site-38d9ck\"\n            },\n            {\n                \"DedicatedClusterId\": \"cluster-ptrfvhyw\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:17:26Z\",\n                \"SiteId\": \"site-38d9ck\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"92b47775-2f39-4ad0-b5dd-0a93a8f12636\"\n    }\n}",
+        "title": "查询专用集群列表"
+      }
+    ],
+    "DescribeDedicatedSupportedZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedSupportedZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"RegionId\": 1,\n                \"Zones\": [\n                    {\n                        \"Zone\": \"ap-guangzhou-1\",\n                        \"ZoneName\": \"广州一区\",\n                        \"ZoneId\": \"100001\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"ZoneName\": \"广州二区\",\n                        \"ZoneId\": \"100002\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-3\",\n                        \"ZoneName\": \"广州三区\",\n                        \"ZoneId\": \"100003\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-4\",\n                        \"ZoneName\": \"广州四区\",\n                        \"ZoneId\": \"100004\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e3d77a1b-dc45-49b0-a9ee-2e97807b8f8e\"\n    }\n}",
+        "title": "查询专用集群支持的可用区列表"
+      }
+    ],
+    "DescribeSites": [
+      {
+        "document": "查询站点列表",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeSites\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SiteSet\": [\n            {\n                \"SiteId\": \"site-98dj3kd\",\n                \"Name\": \"my-site\",\n                \"Description\": \"my first site\",\n                \"CreateTime\": \"2020-12-25T08:39:57Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"60f56861-42af-4778-96c2-018d35141a7f\"\n    }\n}",
+        "title": "查询站点列表"
+      }
+    ],
+    "DescribeSitesDetail": [
+      {
+        "document": "查询站点详情",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeSitesDetail\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SiteDetailSet\": [\n            {\n                \"SiteId\": \"site-98dj3kd\",\n                \"Name\": \"\",\n                \"Description\": \"\",\n                \"CreateTime\": \"2020-12-25T08:39:57Z\",\n                \"FiberType\": \"MM\",\n                \"UplinkSpeedGbps\": 0,\n                \"UplinkCount\": 0,\n                \"OpticalStandard\": \"MM\",\n                \"RedundantNetworking\": false,\n                \"PowerConnectors\": \"1000Base-SX\",\n                \"PowerFeedDrop\": \"above\",\n                \"PowerDrawKva\": 0.0,\n                \"ConditionRequirement\": false,\n                \"DimensionRequirement\": false,\n                \"NeedHelp\": false,\n                \"BreakerRequirement\": false,\n                \"RedundantPower\": false,\n                \"MaxWeight\": 0,\n                \"AddressLine\": \"Nanshan Road\",\n                \"OptionalAddressLine\": \"\",\n                \"Country\": \"China\",\n                \"Province\": \"guangdong\",\n                \"City\": \"shenzhen\",\n                \"PostalCode\": 518000\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a07a5f9c-277c-4f03-a338-c2863982b1a6\"\n    }\n}",
+        "title": "查询站点详情"
+      }
+    ],
+    "ModifyDedicatedClusterInfo": [
+      {
+        "document": "修改本地专用集群信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=ModifyDedicatedClusterInfo\n&DedicatedClusterId=cluster-dfaf323\n&Description=专用集群\n&Zone=site3\n&Name=专用集群\n&SiteId=1000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-3461376xxc2f\"\n    }\n}",
+        "title": "修改本地专用集群信息"
+      }
+    ],
+    "ModifyOrderStatus": [
+      {
+        "document": "修改订单状态",
+        "input": "https://cdc.tencentcloudapi.com/?Action=ModifyOrderStatus\n&DedicatedClusterOrderId=ord-aijx4ets\n&SubOrderIds.0=sord-aijxdfasdf\n&Status=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1097ff7-eead-47de-bb86-2b9d88d29175\"\n    }\n}",
+        "title": "修改订单状态"
+      }
+    ],
+    "ModifySiteDeviceInfo": [
+      {
+        "document": "修改机房设备信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=ModifySiteDeviceInfo\n&SiteId=site-eilhrmr2\n&FiberType=SM\n&OpticalStandard=MM\n&PowerConnectors=220VAC50HZ\n&PowerFeedDrop=UP\n&MaxWeight=800\n&PowerDrawKva=5\n&UplinkSpeedGbps=10\n&UplinkCount=2\n&ConditionRequirement=true\n&DimensionRequirement=true\n&RedundantNetworking=true\n&NeedHelp=true\n&RedundantPower=true\n&BreakerRequirement=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-346137682c2f\"\n    }\n}",
+        "title": "修改机房设备信息"
+      }
+    ],
+    "ModifySiteInfo": [
+      {
+        "document": "修改机房信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=ModifySiteInfo\n&SiteId=site-xxxx\n&Name=new_name\n&Description=new_description\n&Note=new_note\n&Country=China\n&Province=Guangdong\n&City=Shenzhen\n&PostalCode=14353\n&AddressLine=腾讯滨海大厦\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-346137682c3f\"\n    }\n}",
+        "title": "修改机房信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

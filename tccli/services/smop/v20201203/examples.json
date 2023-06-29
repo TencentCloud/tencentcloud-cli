@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "SubmitTaskEvent": [
+      {
+        "document": "提交任务事件",
+        "input": "POST / HTTP/1.1\nHost: smop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTaskEvent\n<公共请求参数>\n\n{\n    \"AccountId\": \"abc\",\n    \"DeviceId\": \"abc\",\n    \"OrderId\": \"abc\",\n    \"Code\": \"abc\",\n    \"Async\": 0,\n    \"NotifyURL\": \"abc\",\n    \"ProductId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"abc\",\n        \"Code\": 0,\n        \"Message\": \"abc\",\n        \"Data\": [\n            {\n                \"Code\": 0,\n                \"Message\": \"abc\",\n                \"TaskId\": 0,\n                \"TaskOrderId\": \"abc\",\n                \"TaskCode\": 0,\n                \"TaskCoinNumber\": 0,\n                \"TaskType\": 0,\n                \"TotalCoin\": 0,\n                \"Attach\": \"abc\",\n                \"DoneTimes\": 0,\n                \"TotalTimes\": 0,\n                \"TaskName\": \"abc\",\n                \"GrowScore\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "SubmitTaskEvent"
+      }
+    ]
+  },
+  "version": "1.0"
+}

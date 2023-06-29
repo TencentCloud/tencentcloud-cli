@@ -1,0 +1,205 @@
+{
+  "actions": {
+    "CloneClusterToPointInTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneClusterToPointInTime\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"AutoRenewFlag\": 0,\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ClusterName\": \"MyClusterName\",\n    \"DBVersion\": \"10.17\",\n    \"Period\": 12,\n    \"CPU\": 1,\n    \"PayMode\": \"PREPAID\",\n    \"VpcId\": \"vpc-xxxx\",\n    \"Memory\": 2,\n    \"SubnetId\": \"subnet-xxxx\",\n    \"Port\": 5432,\n    \"SourceClusterId\": \"tdcpg-xx\",\n    \"SourceDataPoint\": \"2021-11-18T18:10:25+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNameSet\": [\n            \"20211028111234680033121\"\n        ],\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "克隆集群"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCluster\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"AutoRenewFlag\": 0,\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ClusterName\": \"MyClusterName\",\n    \"ProjectId\": 0,\n    \"DBVersion\": \"10.17\",\n    \"Period\": 12,\n    \"MasterUserPassword\": \"111@abc\",\n    \"CPU\": 1,\n    \"PayMode\": \"PREPAID\",\n    \"VpcId\": \"vpc-xxxx\",\n    \"Memory\": 2,\n    \"SubnetId\": \"subnet-xxxx\",\n    \"Port\": 5432\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNameSet\": [\n            \"20211028111234680033121\"\n        ],\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "CreateClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": 1,\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"InstanceName\": \"MyInstanceName\",\n    \"CPU\": 1,\n    \"Memory\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNameSet\": [\n            \"20211028111234680033121\"\n        ],\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "隔离集群"
+      }
+    ],
+    "DeleteClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"InstanceIdSet\": [\n        \"tdcpg-ins-xxx\",\n        \"tdcpg-ins-xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "删除实例"
+      }
+    ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountSet\": [],\n        \"TotalCount\": 26,\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "查询数据库账号信息"
+      }
+    ],
+    "DescribeClusterBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterBackups\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xx\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"BackupDataSize\": 10,\n                \"BackupDataTime\": \"2022-01-05T22:26:31+08:00\",\n                \"BackupId\": 288051,\n                \"BackupMethod\": \"AUTO\",\n                \"BackupTaskEndTime\": \"2022-01-05T22:34:09+08:00\",\n                \"BackupTaskStartTime\": \"2022-01-05T00:00:00+08:00\",\n                \"BackupTaskStatus\": \"SUCCESS\",\n                \"BackupType\": \"SNAPSHOT\"\n            }\n        ],\n        \"RequestId\": \"e7ec1877-12b9-42b9-93b2-55041f0c1c5f\",\n        \"TotalCount\": 7\n    }\n}",
+        "title": "查询集群的备份集"
+      }
+    ],
+    "DescribeClusterEndpoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterEndpoints\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndpointSet\": [\n            {\n                \"ClusterId\": \"tdcpg-77iesdqa\",\n                \"EndpointId\": \"tdcpg-ep-6c6xs52r\",\n                \"EndpointName\": \"tdcpg-ep-6c6xs52r\",\n                \"EndpointType\": \"RW\",\n                \"PrivateIp\": \"10.0.64.20\",\n                \"PrivatePort\": 5432,\n                \"SubnetId\": \"subnet-5wnhtsmw\",\n                \"VpcId\": \"vpc-l0ee2prd\",\n                \"WanDomain\": \"\",\n                \"WanIp\": \"\",\n                \"WanPort\": 0\n            },\n            {\n                \"ClusterId\": \"tdcpg-77iesdqa\",\n                \"EndpointId\": \"tdcpg-ep-ffscxj6f\",\n                \"EndpointName\": \"tdcpg-ep-ffscxj6f\",\n                \"EndpointType\": \"RO\",\n                \"PrivateIp\": \"10.0.64.24\",\n                \"PrivatePort\": 5432,\n                \"SubnetId\": \"subnet-5wnhtsmw\",\n                \"VpcId\": \"vpc-l0ee2prd\",\n                \"WanDomain\": \"\",\n                \"WanIp\": \"\",\n                \"WanPort\": 0\n            }\n        ],\n        \"RequestId\": \"d355225a-3ac6-4ef0-a606-feab5d8a45c0\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询集群接入点"
+      }
+    ],
+    "DescribeClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-77iesdqa\",\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"DESC\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"tdcpg-ins-6c6xs52r\"\n            ],\n            \"Name\": \"InstanceId\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"CPU\": 1,\n                \"ClusterId\": \"tdcpg-77iesdqa\",\n                \"CreateTime\": \"2021-12-08T19:50:56+08:00\",\n                \"DBVersion\": \"10.17\",\n                \"EndpointId\": \"tdcpg-ep-6c6xs52r\",\n                \"InstanceId\": \"tdcpg-ins-pzu77n6e\",\n                \"InstanceName\": \"tdcpg-ins-pzu77n6e\",\n                \"InstanceType\": \"RW\",\n                \"Memory\": 1,\n                \"PayMode\": \"PREPAID\",\n                \"PayPeriodEndTime\": \"2022-01-08T19:50:54+08:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"Zone\": \"ap-guangzhou-2\"\n            }\n        ],\n        \"RequestId\": \"e0ef1b06-405f-48cc-863f-185dbb6eb037\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询实例"
+      }
+    ],
+    "DescribeClusterRecoveryTimeRange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRecoveryTimeRange\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"DataPoint\": \"2022-01-08T19:50:54+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableRecoveryTimeRangeSet\": [\n            {\n                \"AvailableBeginTime\": \"2022-01-08T19:50:54+08:00\",\n                \"AvailableEndTime\": \"2022-01-08T19:50:54+08:00\"\n            }\n        ],\n        \"RequestId\": \"e0ef1b06-405f-48cc-863f-185dbb6eb037\"\n    }\n}",
+        "title": "查询集群可回档时间范围"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"DESC\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"tdcpg-77iesdqa\"\n            ],\n            \"Name\": \"ClusterId\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"AutoRenewFlag\": 0,\n                \"ClusterId\": \"tdcpg-77iesdqa\",\n                \"ClusterName\": \"tdcpg-77iesdqa\",\n                \"CreateTime\": \"2021-12-08T19:50:55+08:00\",\n                \"DBCharset\": \"UTF8\",\n                \"DBMajorVersion\": \"10\",\n                \"DBVersion\": \"10.17\",\n                \"DBKernelVersion\": \"v10.17_r1.4\",\n                \"EndpointSet\": [\n                    {\n                        \"ClusterId\": \"tdcpg-77iesdqa\",\n                        \"EndpointId\": \"tdcpg-ep-6c6xs52r\",\n                        \"EndpointName\": \"tdcpg-ep-6c6xs52r\",\n                        \"EndpointType\": \"RW\",\n                        \"PrivateIp\": \"10.0.64.20\",\n                        \"PrivatePort\": 5432,\n                        \"SubnetId\": \"subnet-5wnhtsmw\",\n                        \"VpcId\": \"vpc-l0ee2prd\",\n                        \"WanDomain\": \"\",\n                        \"WanIp\": \"\",\n                        \"WanPort\": 0\n                    },\n                    {\n                        \"ClusterId\": \"tdcpg-77iesdqa\",\n                        \"EndpointId\": \"tdcpg-ep-ffscxj6f\",\n                        \"EndpointName\": \"tdcpg-ep-ffscxj6f\",\n                        \"EndpointType\": \"RO\",\n                        \"PrivateIp\": \"10.0.64.24\",\n                        \"PrivatePort\": 5432,\n                        \"SubnetId\": \"subnet-5wnhtsmw\",\n                        \"VpcId\": \"vpc-l0ee2prd\",\n                        \"WanDomain\": \"\",\n                        \"WanIp\": \"\",\n                        \"WanPort\": 0\n                    }\n                ],\n                \"InstanceCount\": 2,\n                \"PayMode\": \"PREPAID\",\n                \"PayPeriodEndTime\": \"2022-01-08T19:50:54+08:00\",\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"StorageLimit\": 2048,\n                \"StorageUsed\": 0.14,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"c644d6ec-0743-4ba3-916a-e30c5a00ada1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询集群"
+      }
+    ],
+    "DescribeResourcesByDealName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesByDealName\n<公共请求参数>\n\n{\n    \"DealName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIdInfoSet\": [\n            {\n                \"ClusterId\": \"tdcpg-xxx\",\n                \"InstanceIdSet\": [\n                    \"tdcpg-ins-xxx\",\n                    \"tdcpg-ins-xxxx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\n    }\n}",
+        "title": "根据订单号获取资源信息"
+      }
+    ],
+    "IsolateCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "隔离集群"
+      }
+    ],
+    "IsolateClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateClusterInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"InstanceIdSet\": [\n        \"tdcpg-ins-xxx\",\n        \"tdcpg-ins-xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0ef1b06-405f-48cc-863f-185dbb6eb037\"\n    }\n}",
+        "title": "隔离实例"
+      }
+    ],
+    "ModifyAccountDescription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountDescription\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"AccountName\": \"root\",\n    \"AccountDescription\": \"我的账号\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "修改数据库账号描述"
+      }
+    ],
+    "ModifyClusterEndpointWanStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterEndpointWanStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"EndpointId\": \"tdcpg-ep-xxx\",\n    \"WanStatus\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "修改接入点外网状态"
+      }
+    ],
+    "ModifyClusterInstancesSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterInstancesSpec\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdsqlcpg-xxx\",\n    \"InstanceIdSet\": [\n        \"tdcpg-ins-xxx\"\n    ],\n    \"CPU\": 2,\n    \"Memory\": 4,\n    \"OperationTiming\": \"IMMIDIATE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "修改实例规格"
+      }
+    ],
+    "ModifyClusterName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterName\n<公共请求参数>\n\n{\n    \"ClusterName\": \"tdcpg-xxx\",\n    \"ClusterId\": \"MyClusterName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "修改集群名字"
+      }
+    ],
+    "ModifyClustersAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClustersAutoRenewFlag\n<公共请求参数>\n\n{\n    \"ClusterIdSet\": [\n        \"tdcpg-xxx\"\n    ],\n    \"AutoRenewFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "修改集群自动续费"
+      }
+    ],
+    "RecoverCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-77iesdqa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "隔离集群"
+      }
+    ],
+    "RecoverClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverClusterInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-77iesdqa\",\n    \"InstanceIdSet\": [\n        \"tdcpg-ins-pzu77n6e\",\n        \"tdcpg-ins-7llxkcbg\"\n    ],\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0ef1b06-405f-48cc-863f-185dbb6eb037\"\n    }\n}",
+        "title": "恢复实例"
+      }
+    ],
+    "RenewCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "续费集群"
+      }
+    ],
+    "ResetAccountPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAccountPassword\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"AccountName\": \"account\",\n    \"AccountPassword\": \"1234@abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "重置数据库账号密码"
+      }
+    ],
+    "RestartClusterInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"InstanceIdSet\": [\n        \"tdcpg-ins-xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0ef1b06-405f-48cc-863f-185dbb6eb037\"\n    }\n}",
+        "title": "重启"
+      }
+    ],
+    "TransformClusterPayMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdcpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransformClusterPayMode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"tdcpg-xxx\",\n    \"Period\": 1,\n    \"CurrentPayMode\": \"POSTPAID_BY_HOUR\",\n    \"TargetPayMode\": \"PREPAID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "转换集群付费模式"
+      }
+    ]
+  },
+  "version": "1.0"
+}

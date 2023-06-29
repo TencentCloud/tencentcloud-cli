@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeRenewResourceParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRenewResourceParams\n<公共请求参数>\n\n{\n    \"ClusterId\": \"lhdbmysql-0mc0efsx\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Param\": \"{\\\"raw_goodsData\\\":[{\\\"regionId\\\":1,\\\"zoneId\\\":100003,\\\"payMode\\\":1,\\\"GoodsCategoryId\\\":0,\\\"goodsDetail\\\":{\\\"pid\\\":1007359,\\\"productCode\\\":\\\"p_lighthousedb\\\",\\\"subProductCode\\\":\\\"sp_lighthousedb_mysql\\\",\\\"curDeadline\\\":\\\"2021-05-07 17:35:05\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\",\\\"sv_lighthousedb_cpu_mysql\\\":1,\\\"sv_lighthousedb_memory_mysql\\\":1,\\\"sv_lighthousedb_storage_mysql\\\":1000,\\\"productInfo\\\":[{\\\"name\\\":\\\"集群名称\\\",\\\"value\\\":\\\"cynosdbmysql-3ou4g46j\\\"},{\\\"name\\\":\\\"配置\\\",\\\"value\\\":\\\"1核1GB内存1000G存储，MYSQL5.7\\\"},{\\\"name\\\":\\\"地域\\\",\\\"value\\\":\\\"广州\\\"},{\\\"name\\\":\\\"可用区\\\",\\\"value\\\":\\\"广州三区\\\"}],\\\"resourceId\\\":\\\"lhdbmysql-ins-0mc0efsx\\\"}}]}\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取续费集群入参"
+      }
+    ],
+    "OffLineCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OffLineCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"lhdbmysql-oy59wlur\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "下线集群"
+      }
+    ],
+    "SetRenewFlag": [
+      {
+        "document": "",
+        "input": "https://lighthousedb.tencentcloudapi.com/?Action=SetRenewFlag\n&ResourceIds.0=cynosdbmysql-ins-xxxxxxx\n&AutoRenewFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": 123123123\n    }\n}",
+        "title": "设置自动续费标识"
+      }
+    ]
+  },
+  "version": "1.0"
+}

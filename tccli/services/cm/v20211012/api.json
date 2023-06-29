@@ -1,0 +1,126 @@
+{
+  "actions": {
+    "RegisterTable": {
+      "document": "预注册表结构",
+      "input": "RegisterTableRequest",
+      "name": "预注册表结构",
+      "output": "RegisterTableResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-10-12",
+    "api_brief": "一站式监控、告警、可视化数据分析和 Prometheus 托管服务",
+    "serviceNameCN": "云监控",
+    "serviceShortName": "cm"
+  },
+  "objects": {
+    "Fields": {
+      "document": "表结构字段集合",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段名",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "字段类型，子类型由@符与主类型分隔，维度类型为tag",
+          "example": "[\"histogram@count\",\"histogram@+Inf\",\"histogram@1000_0000\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RegisterTableRequest": {
+      "document": "RegisterTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "命名空间",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "视图",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Measurement",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "注册字段。Name为字段名，值为字段类型，子类型由@符与主类型分隔，维度类型为tag",
+          "example": "无",
+          "member": "Fields",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "默认为mc，当trace业务注册时，填trace",
+          "example": "\"mc\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "排序键,clickhouse表索引",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "OrderKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTableResponse": {
+      "document": "RegisterTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息返回体",
+          "example": "\"success.\"",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

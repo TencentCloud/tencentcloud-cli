@@ -1,0 +1,371 @@
+{
+  "actions": {
+    "ReceiveAIMarkNotice": {
+      "document": "接收AI标注通知",
+      "input": "ReceiveAIMarkNoticeRequest",
+      "name": "接收AI标注通知",
+      "output": "ReceiveAIMarkNoticeResponse",
+      "status": "online"
+    },
+    "ReceiveAIRaceScoreNotice": {
+      "document": "接收AI大赛评分通知",
+      "input": "ReceiveAIRaceScoreNoticeRequest",
+      "name": "接收AI大赛评分通知",
+      "output": "ReceiveAIRaceScoreNoticeResponse",
+      "status": "online"
+    },
+    "ReceiveAIRunNotice": {
+      "document": "接收AI运行结果通知",
+      "input": "ReceiveAIRunNoticeRequest",
+      "name": "接收AI运行结果通知",
+      "output": "ReceiveAIRunNoticeResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-11-09",
+    "api_brief": "介绍如何使用API对开放实验平台进行操作，包括创建项目、上传数据、批量标注、训练模型、评测效果、应用模型等",
+    "serviceNameCN": "腾讯觅影开放实验平台",
+    "serviceShortName": "taop"
+  },
+  "objects": {
+    "ReceiveAIMarkNoticeRequest": {
+      "document": "ReceiveAIMarkNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前处理的桶名称：机构对应的桶 或者 桶下的项目目录。 ”example-12345/10001“",
+          "example": "无",
+          "member": "string",
+          "name": "BucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "具体的文件路径，预标注的结果文件地址",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID （必须返回调用时传递的TaskId）",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "废弃",
+          "example": "0020000e",
+          "member": "string",
+          "name": "SeriesUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "code码  1:处理成功、0:处理失败、2：开始处理；其他code暂不约定",
+          "example": "1",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息（主要用于异常时返回错误信息）",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Msg",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiveAIMarkNoticeResponse": {
+      "document": "ReceiveAIMarkNotice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiveAIRaceScoreNoticeRequest": {
+      "document": "ReceiveAIRaceScoreNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID （必须返回调用时传递的TaskId）",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评分",
+          "example": "无",
+          "member": "string",
+          "name": "Score",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前处理的桶名称：机构对应的桶 或者 桶下的项目目录。 ”example-12345/10001“",
+          "example": "无",
+          "member": "string",
+          "name": "BucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "具体的文件路径，预标注的结果文件地址",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "code码  1:处理成功、0:处理失败、2：开始处理；其他code暂不约定",
+          "example": "1",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息（主要用于异常时返回错误信息）",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Msg",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiveAIRaceScoreNoticeResponse": {
+      "document": "ReceiveAIRaceScoreNotice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiveAIRunNoticeRequest": {
+      "document": "ReceiveAIRunNotice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前任务处理id，如果没有任务id，则传入uuid即可",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据来源：1：Tione；2：Tiems",
+          "example": "1",
+          "member": "string",
+          "name": "Src",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前任务处理的桶名称：机构对应的桶 ”example-12345“",
+          "example": "100159-123345",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前任务处理的文件路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务处理码：1:处理成功、0:处理失败、2：开始处理、3：处理进行中",
+          "example": "1",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处理结果说明。成功 或者 失败原因",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Msg",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处理任务所用机型",
+          "example": "TI.8XLARGE64.32core64g",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处理任务所用核数/卡数， 可以为0，则表示使用该机型全部gpu",
+          "example": "100",
+          "member": "string",
+          "name": "GpuNum",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务开始时间，格式：2021-05-07 01:00:00",
+          "example": "2021-05-07 01:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务结束时间，格式：2021-05-07 01:00:00",
+          "example": "2021-05-07 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "处理任务所用内存，单位MB，为0 ，则表示使用机型全部内存",
+          "example": "64",
+          "member": "string",
+          "name": "Mem",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "计费所用的主账号Uin",
+          "example": "333333",
+          "member": "string",
+          "name": "AccountUin",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiveAIRunNoticeResponse": {
+      "document": "ReceiveAIRunNotice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接收结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

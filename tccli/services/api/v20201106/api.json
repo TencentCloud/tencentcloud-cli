@@ -1,14 +1,21 @@
 {
   "actions": {
+    "DescribeProducts": {
+      "document": "本接口(DescribeProducts)用于查询各个支持地域列表查询的产品信息。",
+      "input": "DescribeProductsRequest",
+      "name": "查询支持地域列表查询的产品",
+      "output": "DescribeProductsResponse",
+      "status": "online"
+    },
     "DescribeRegions": {
-      "document": "本接口(DescribeRegions)用于查询各个产品支持地域信息，当前只支持cvm。",
+      "document": "本接口(DescribeRegions)用于查询各个产品支持地域信息。",
       "input": "DescribeRegionsRequest",
       "name": "查询产品支持的地域列表",
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
     "DescribeZones": {
-      "document": "本接口(DescribeZones)用于查询产品可用区信息，当前只支持cvm。",
+      "document": "本接口(DescribeZones)用于查询产品可用区信息。",
       "input": "DescribeZonesRequest",
       "name": "查询产品可用区列表",
       "output": "DescribeZonesResponse",
@@ -22,12 +29,71 @@
     "serviceShortName": "api"
   },
   "objects": {
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品详细信息列表。",
+          "example": "无",
+          "member": "RegionProduct",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "待查询产品的名称，例如cvm",
+          "disabled": false,
+          "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
           "name": "Product",
@@ -41,6 +107,7 @@
       "document": "DescribeRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "地域数量",
           "example": "1",
           "member": "uint64",
@@ -50,6 +117,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "地域列表信息",
           "example": "参考输出示例",
           "member": "RegionInfo",
@@ -72,12 +140,14 @@
       "members": [
         {
           "default": "",
-          "document": "待查询产品的名称，例如cvm",
+          "disabled": false,
+          "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -86,22 +156,26 @@
       "document": "DescribeZones返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可用区数量。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
+          "disabled": false,
           "document": "可用区列表信息。",
           "example": "参开输出示例",
           "member": "ZoneInfo",
           "name": "ZoneSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -116,28 +190,95 @@
       "document": "地域信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "地域名称，例如，ap-guangzhou",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域描述，例如，华南地区(广州)",
+          "example": "华南地区(广州)",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域是否可用状态",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "控制台类型，api调用时默认null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionTypeMC",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "不同语言的地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "South China",
+          "member": "string",
+          "name": "LocationMC",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "控制台展示的地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionNameMC",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "控制台展示的RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RegionIdMC",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionProduct": {
+      "document": "地域管理系统支持的产品信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品名称，如cvm",
+          "example": "cvm",
+          "member": "string",
+          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -150,39 +291,123 @@
       "members": [
         {
           "default": "",
+          "disabled": false,
           "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1 </li>\n<li> ap-hongkong-2 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1 </li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区描述，例如，广州三区",
+          "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区ID",
+          "example": "1",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
+          "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "父级可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "父级可用区描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "zone类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ZoneType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "控制台类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "公有云",
+          "member": "string",
+          "name": "MachineRoomTypeMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "和ZoneId一样，适用于控制台调用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ZoneIdMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

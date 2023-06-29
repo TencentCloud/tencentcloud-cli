@@ -1,0 +1,68 @@
+{
+  "actions": {
+    "UploadData": {
+      "document": "通用的上报数据场景",
+      "input": "UploadDataRequest",
+      "name": "上报数据",
+      "output": "UploadDataResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-01-07",
+    "api_brief": "商机生命周期管理平台对外提供接口调用",
+    "serviceNameCN": "商机生命周期管理平台",
+    "serviceShortName": "cem"
+  },
+  "objects": {
+    "UploadDataRequest": {
+      "document": "UploadData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要找cem提供",
+          "example": "9d1ae925319c76b8301ec572f37c5cfc",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "根据实际业务数据字段上报",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UploadDataResponse": {
+      "document": "UploadData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的数据id组合",
+          "example": "[2668489752758298]",
+          "member": "int64",
+          "name": "Response",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

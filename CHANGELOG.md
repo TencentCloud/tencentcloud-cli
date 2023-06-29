@@ -1,3 +1,333 @@
+# Release 3.0.796.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:11:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增入参：ProjectID, ApplicationID, Platform, EnvironmentName, Filters, Limit, Offset
+
+	* 新增出参：Pods, TotalCount
+
+
+新增数据结构：
+
+* [Container](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Container)
+* [PVC](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PVC)
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Pod)
+* [PodStatus](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodStatus)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 67 次发布
+
+发布时间：2023-06-29 01:12:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>SubBackupId
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:13:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplateList](http://document.tencentcloudapi.woa.com/document/product/1694/79896)
+
+	* 新增入参：TemplateSource, TemplateIdList
+
+
+修改数据结构：
+
+* [TaskListItem](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskListItem)
+
+	* 新增成员：TaskExpect
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1694/79907#Template)
+
+	* 新增成员：TemplateSource
+
+* [TemplateListItem](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TemplateListItem)
+
+	* 新增成员：TemplateSource
+
+
+
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 20 次发布
+
+发布时间：2023-06-29 01:16:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaCastPlaySetting](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastPlaySetting)
+
+	* 新增成员：AutoStartTime
+
+* [MediaCastSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastSourceInfo)
+
+	* 新增成员：Offset, Duration, Url
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 7 次发布
+
+发布时间：2023-06-29 01:24:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetCloudEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/80991)
+* [GetConnectorEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/80990)
+* [ListCloudEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/80989)
+* [ListCloudEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/80988)
+* [ListCloudProducts](http://document.tencentcloudapi.woa.com/document/product/1359/80987)
+* [ListConnectorEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/80986)
+* [ListConnectorEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/80985)
+* [ListConnectors](http://document.tencentcloudapi.woa.com/document/product/1359/80984)
+
+新增数据结构：
+
+* [CloudProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#CloudProduct)
+* [Connector](http://document.tencentcloudapi.woa.com/document/product/1359/67704#Connector)
+* [EventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#EventDetail)
+* [EventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#EventSummary)
+
+修改数据结构：
+
+* [BreakdownEventData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#BreakdownEventData)
+
+	* 新增成员：Title
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:26:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* 新增成员：ApproverNeedSignReview
+
+* [CcInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CcInfo)
+
+	* 新增成员：NotifyType
+
+* [FlowCreateApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowCreateApprover)
+
+	* 新增成员：ApproverNeedSignReview
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 62 次发布
+
+发布时间：2023-06-29 01:27:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:33:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80652)
+
+	* 新增入参：InteractionMode, VideoOrientation
+
+* [DescribeRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80647)
+
+	* 新增出参：InteractionMode, VideoOrientation
+
+* [ModifyRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80640)
+
+	* 新增入参：InteractionMode, VideoOrientation
+
+
+修改数据结构：
+
+* [MemberRecord](http://document.tencentcloudapi.woa.com/document/product/1720/80671#MemberRecord)
+
+	* 新增成员：CurrentState
+
+* [RoomInfo](http://document.tencentcloudapi.woa.com/document/product/1720/80671#RoomInfo)
+
+	* 新增成员：InteractionMode, VideoOrientation
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 32 次发布
+
+发布时间：2023-06-29 01:33:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstancesDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesDetail)
+
+	* 新增成员：ErrorCode
+
+
+
+
+## 服务管理平台(smp) 版本：2023-06-02
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:40:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InputJsonData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#InputJsonData)
+
+	* 新增成员：Unit
+
+	* <font color="#dd0000">**修改成员**：</font>InputType, FieldKey, DataType, Name, Enum, Required, Default
+
+* [Resources](http://document.tencentcloudapi.woa.com/document/product/1736/80965#Resources)
+
+	* 新增成员：FailedRequest
+
+* [SlaInputType](http://document.tencentcloudapi.woa.com/document/product/1736/80965#SlaInputType)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, ProductCode, TypeName, InputJson
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 72 次发布
+
+发布时间：2023-06-29 01:47:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/457/78057)
+
+	* 新增入参：ClusterId
+
+	* 新增出参：Status, ErrorMsg
+
+* [DisableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78056)
+
+	* 新增入参：ClusterId
+
+* [EnableEncryptionProtection](http://document.tencentcloudapi.woa.com/document/product/457/78055)
+
+	* 新增入参：ClusterId, KMSConfiguration
+
+
+新增数据结构：
+
+* [KMSConfiguration](http://document.tencentcloudapi.woa.com/document/product/457/31866#KMSConfiguration)
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 2 次发布
+
+发布时间：2023-06-29 01:49:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAgentCorps](http://document.tencentcloudapi.woa.com/document/product/1685/80992)
+
+
+
 # Release 3.0.795.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

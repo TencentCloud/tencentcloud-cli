@@ -1,0 +1,1686 @@
+{
+  "actions": {
+    "CreateBPBrand": {
+      "document": "添加品牌",
+      "input": "CreateBPBrandRequest",
+      "name": "添加品牌",
+      "output": "CreateBPBrandResponse",
+      "status": "online"
+    },
+    "CreateBPFakeAPP": {
+      "document": "仿冒应用举报",
+      "input": "CreateBPFakeAPPRequest",
+      "name": "仿冒应用举报",
+      "output": "CreateBPFakeAPPResponse",
+      "status": "online"
+    },
+    "CreateBPFakeAPPList": {
+      "document": "批量仿冒应用举报",
+      "input": "CreateBPFakeAPPListRequest",
+      "name": "批量仿冒应用举报",
+      "output": "CreateBPFakeAPPListResponse",
+      "status": "online"
+    },
+    "CreateBPFakeURL": {
+      "document": "仿冒网址举报",
+      "input": "CreateBPFakeURLRequest",
+      "name": "仿冒网址举报",
+      "output": "CreateBPFakeURLResponse",
+      "status": "online"
+    },
+    "CreateBPFakeURLs": {
+      "document": "批量仿冒网址举报",
+      "input": "CreateBPFakeURLsRequest",
+      "name": "批量仿冒网址举报",
+      "output": "CreateBPFakeURLsResponse",
+      "status": "online"
+    },
+    "CreateBPWhiteList": {
+      "document": "添加白名单",
+      "input": "CreateBPWhiteListRequest",
+      "name": "添加白名单",
+      "output": "CreateBPWhiteListResponse",
+      "status": "online"
+    },
+    "DeleteBPWhiteList": {
+      "document": "删除白名单",
+      "input": "DeleteBPWhiteListRequest",
+      "name": "删除白名单",
+      "output": "DeleteBPWhiteListResponse",
+      "status": "online"
+    },
+    "DescribeBPBrands": {
+      "document": "查询品牌列表",
+      "input": "DescribeBPBrandsRequest",
+      "name": "查询品牌列表",
+      "output": "DescribeBPBrandsResponse",
+      "status": "online"
+    },
+    "DescribeBPFakeAPPList": {
+      "document": "查询仿冒应用列表",
+      "input": "DescribeBPFakeAPPListRequest",
+      "name": "查询仿冒应用列表",
+      "output": "DescribeBPFakeAPPListResponse",
+      "status": "online"
+    },
+    "DescribeBPFakeURLs": {
+      "document": "查询仿冒网址列表",
+      "input": "DescribeBPFakeURLsRequest",
+      "name": "查询仿冒网址列表",
+      "output": "DescribeBPFakeURLsResponse",
+      "status": "online"
+    },
+    "DescribeBPWhiteLists": {
+      "document": "查询白名单列表",
+      "input": "DescribeBPWhiteListsRequest",
+      "name": "查询白名单列表",
+      "output": "DescribeBPWhiteListsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-11-15",
+    "api_brief": "",
+    "serviceNameCN": "品牌经营管家",
+    "serviceShortName": "bma"
+  },
+  "objects": {
+    "BrandData": {
+      "document": "品牌响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "品牌Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业名称",
+          "example": "腾讯科技有限公司",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌名称",
+          "example": "腾讯安全管家",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联系电话",
+          "example": "13000000000",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "License",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "营业执照审核状态",
+          "example": "2",
+          "member": "int64",
+          "name": "LicenseStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "营业执照审核状态说明",
+          "example": "审核成功",
+          "member": "string",
+          "name": "LicenseNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "授权书",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "Authorization",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "授权书审核状态",
+          "example": "2",
+          "member": "int64",
+          "name": "AuthorizationStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "授权书审核状态说明",
+          "example": "审核成功",
+          "member": "string",
+          "name": "AuthorizationNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标信息",
+          "example": "无",
+          "member": "TrademarkData",
+          "name": "Trademarks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "新增时间",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "InsertTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务信息",
+          "example": "无",
+          "member": "ServiceData",
+          "name": "Services",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "账号id",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBPBrandRequest": {
+      "document": "CreateBPBrand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "品牌名称",
+          "example": "腾讯安全管家",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业名称",
+          "example": "腾讯科技有限公司",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌logo",
+          "example": "品牌logo",
+          "member": "string",
+          "name": "BrandLogo",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联系电话",
+          "example": "13012345678",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "License",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "授权书",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "Authorization",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标名称",
+          "example": "[\"https://test.com\"]",
+          "member": "string",
+          "name": "TrademarkNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标证明",
+          "example": "[\"https://test.com\"]",
+          "member": "string",
+          "name": "Trademarks",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否涉及转让: 0-不转让 1-转让",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "IsTransfers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转让证明",
+          "example": "[\"https://test.com\"]",
+          "member": "string",
+          "name": "Transfers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "保护网址",
+          "example": "[\"qq.com\"]",
+          "member": "string",
+          "name": "ProtectURLs",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "保护应用",
+          "example": "[\"腾讯安全管家\"]",
+          "member": "string",
+          "name": "ProtectAPPs",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "保护公众号",
+          "example": "[\"腾讯安全管家\"]",
+          "member": "string",
+          "name": "ProtectOfficialAccounts",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "保护小程序",
+          "example": "[\"腾讯安全管家\"]",
+          "member": "string",
+          "name": "ProtectMiniPrograms",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "请求来源：0-反钓鱼 2-反假冒",
+          "example": "0",
+          "member": "int64",
+          "name": "APISource",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPBrandResponse": {
+      "document": "CreateBPBrand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPListRequest": {
+      "document": "CreateBPFakeAPPList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量模板",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPs",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPListResponse": {
+      "document": "CreateBPFakeAPPList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPRequest": {
+      "document": "CreateBPFakeAPP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业id",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒来源",
+          "example": "无",
+          "member": "string",
+          "name": "APPChan",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用包名",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPPackageName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用证书",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPCert",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用大小",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPSize",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒截图",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPSnapshots",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPResponse": {
+      "document": "CreateBPFakeAPP返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLRequest": {
+      "document": "CreateBPFakeURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业id",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网址",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网址截图",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURLSnapshots",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLResponse": {
+      "document": "CreateBPFakeURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLsRequest": {
+      "document": "CreateBPFakeURLs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量模板",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURLs",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLsResponse": {
+      "document": "CreateBPFakeURLs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPWhiteListRequest": {
+      "document": "CreateBPWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白名单类型：0-网站 1-应用 2-公众号 3-小程",
+          "example": "无",
+          "member": "int64",
+          "name": "WhiteListType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白名单名称",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteLists",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPWhiteListResponse": {
+      "document": "CreateBPWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBPWhiteListRequest": {
+      "document": "DeleteBPWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单id",
+          "example": "无",
+          "member": "int64",
+          "name": "WhiteListId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBPWhiteListResponse": {
+      "document": "DeleteBPWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPBrandsRequest": {
+      "document": "DescribeBPBrands请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBPBrandsResponse": {
+      "document": "DescribeBPBrands返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "品牌信息",
+          "example": "无",
+          "member": "BrandData",
+          "name": "Brands",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌审核通知栏状态：0 不显示 1 显示",
+          "example": "无",
+          "member": "int64",
+          "name": "NoticeStatus",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeAPPListRequest": {
+      "document": "DescribeBPFakeAPPList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeAPPListResponse": {
+      "document": "DescribeBPFakeAPPList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仿冒应用列表",
+          "example": "无",
+          "member": "FakeAPPData",
+          "name": "FakeAPPList",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsRequest": {
+      "document": "DescribeBPFakeURLs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsResponse": {
+      "document": "DescribeBPFakeURLs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仿冒网址列表",
+          "example": "无",
+          "member": "FakeURLData",
+          "name": "FakeURLs",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网址总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPWhiteListsRequest": {
+      "document": "DescribeBPWhiteLists请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPWhiteListsResponse": {
+      "document": "DescribeBPWhiteLists返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单列表",
+          "example": "无",
+          "member": "WhiteListData",
+          "name": "WhiteLists",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白名单总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FakeAPPData": {
+      "document": "仿冒应用数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仿冒应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FakeAPPId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒来源：0-系统检测 1-人工举报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Origin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPPackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPCert",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Heat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BlockStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "协助处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BlockNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OfflineStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关停状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OfflineNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "app来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadWay",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsertTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "App下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadCosURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资质证明状态:0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CertificationStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "FakeURLData": {
+      "document": "仿冒网址数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仿冒网址id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FakeURLId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒来源：0-系统检测 1-人工举报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Origin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "仿冒域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Heat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BlockStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "协助处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BlockNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OfflineStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关停状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OfflineNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "ip地理位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IPLocation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站所属单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebCompany",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站性质\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebAttribute",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备案号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebICP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebCreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsertTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资质证明状态：0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CertificationStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网址截图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Snapshot",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "账户资源状态：0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AccountStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤参数键",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceData": {
+      "document": "服务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网站保护关联资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectURLCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网站保护服务到期时间",
+          "example": "2022-10-01 00:00:00\"",
+          "member": "string",
+          "name": "ProtectURLExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用保护关联资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectAPPCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用保护服务到期时间",
+          "example": "2022-10-01 00:00:00\"",
+          "member": "string",
+          "name": "ProtectAPPExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "公众号保护关联资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectOfficialAccountCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "公众号保护服务到期时间",
+          "example": "2022-10-01 00:00:00\"",
+          "member": "string",
+          "name": "ProtectOfficialAccountExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序保护关联资产数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectMiniProgramCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序保护服务到期时间",
+          "example": "2022-10-01 00:00:00\"",
+          "member": "string",
+          "name": "ProtectMiniProgramExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关停下架使用次数",
+          "example": "1",
+          "member": "int64",
+          "name": "OfflineCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "TrademarkData": {
+      "document": "商标响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商标证明",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "Trademark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标审核状态",
+          "example": "2",
+          "member": "int64",
+          "name": "TrademarkStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标审核状态说明",
+          "example": "审核成功",
+          "member": "string",
+          "name": "TrademarkNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标id",
+          "example": "123",
+          "member": "int64",
+          "name": "TrademarkId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标转让书",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "Transfer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标转让书审核状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TransferStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标转让书审核状态说明",
+          "example": "审核中",
+          "member": "string",
+          "name": "TransferNote",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商标名称",
+          "example": "商标名称",
+          "member": "string",
+          "name": "TrademarkName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "WhiteListData": {
+      "document": "白名单数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WhiteListId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资产类型：0-网站 1-app 2-公众号 3-小程序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AssetsType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteList",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "新增时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsertTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

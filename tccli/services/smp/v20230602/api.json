@@ -1,0 +1,530 @@
+{
+  "actions": {
+    "DescribeProductInputType": {
+      "document": "查询云产品交互类型",
+      "input": "DescribeProductInputTypeRequest",
+      "name": "查询云产品交互类型",
+      "output": "DescribeProductInputTypeResponse",
+      "status": "online"
+    },
+    "DescribeResourcesSLAPayment": {
+      "document": "SLA赔付金额计算\n\n\n## 参数示例\n\n```\n{\n    \"ProductCode\": \"p_cvm\",\n    \"SubProductCode\"：\"\",\n    \"PayerUin\": \"客户UIN\",\n    \"Operator\": \"rockyjiepan\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"资源ID\",\n            \"DownMonth\": \"2023-05\",\n            \"DownTime\": 10\n        }\n    ]\n}\n```\n\n## 响应示例\n\n```\n{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87\n        }\n    }\n}\n```",
+      "input": "DescribeResourcesSLAPaymentRequest",
+      "name": "SLA赔付金额计算",
+      "output": "DescribeResourcesSLAPaymentResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-06-02",
+    "api_brief": "POST DescribeResourcesSLAPayment\n查询对应产品，资源的赔付金额\n\nGET  DescribeProductInputType\n查询对应产品的前端交互协议",
+    "serviceNameCN": "服务管理平台",
+    "serviceShortName": "smp"
+  },
+  "objects": {
+    "DescribeProductInputTypeRequest": {
+      "document": "DescribeProductInputType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品编码（一级）",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductInputTypeResponse": {
+      "document": "DescribeProductInputType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "前端交互协议数据",
+          "example": "无",
+          "member": "SlaInputType",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesSLAPaymentRequest": {
+      "document": "DescribeResourcesSLAPayment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品编码（一级）",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "客户账号UIN",
+          "example": "无",
+          "member": "string",
+          "name": "PayerUin",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "赔付资源列表",
+          "example": "无",
+          "member": "Resources",
+          "name": "Resources",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "云产品编码（二级）",
+          "example": "无",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "操作人",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesSLAPaymentResponse": {
+      "document": "DescribeResourcesSLAPayment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算赔付结果数据",
+          "example": "无",
+          "member": "SLAPaymentData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtraPara": {
+      "document": "特殊场景参数：\n例如\n- 负载均衡CLB-域名化\n- 云数据库Redis-部署架构\n- 云数据库Mysql-部署方式\n- 云联网CCN-服务等级\n- ...",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下拉框扩展",
+          "example": "Default",
+          "member": "string",
+          "name": "SelectExtend",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "InputJsonData": {
+      "document": "InputJsonData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "字段Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FieldKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "字段中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputJsonEnumData",
+          "name": "Enum",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Required",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Default",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "InputJsonEnumData": {
+      "document": "InputJsonEnumData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "枚举值key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnumKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "枚举值Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnumValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "PaymentInfos": {
+      "document": "计算结果数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "赔付结果类型：1:满足，2：不满足，3：不支持当前场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PaymentResType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应赔付金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PaymentAmount",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "可用性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Availability",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对应赔偿比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PaymentRatio",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "异常消息：当赔付结果类型为3不支持时，返回异常消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExceptionMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "Resources": {
+      "document": "Resources",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "故障发生月份",
+          "example": "2023-04",
+          "member": "string",
+          "name": "DownMonth",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "不可用服务时间",
+          "example": "无",
+          "member": "int64",
+          "name": "DownTime",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "单位时间错误率之和",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrorSum",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "单位服务时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ServiceUnitTime",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "错误请求",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedRequest",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "月度赔付比例",
+          "example": "无",
+          "member": "int64",
+          "name": "MonthSlaRatio",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "计算方式说明",
+          "example": "无",
+          "member": "string",
+          "name": "SlaDescription",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "特殊场景参数",
+          "example": "无",
+          "member": "ExtraPara",
+          "name": "ExtraPara",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "SLAPaymentData": {
+      "document": "SLAPaymentData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "赔付计算信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PaymentInfos",
+          "name": "PaymentInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "赔付总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PaymentAmountTotal",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SlaInputType": {
+      "document": "云产品交互类型数据\n## InpuJson示例：\n### 通用\n\n```\n[{\n\t\"InputType\": \"Input\",\n\t\"DataType\": \"String\",\n\t\"Name\": \"资源ID\",\n\t\"FieldKey\": \"ResourceId\",\n\t\"Required\": true,\n\t\"Default\": \"\",\n\t\"Unit\": \"\"\n}, {\n\t\"InputType\": \"MonthDate\",\n\t\"DataType\": \"String\",\n\t\"FieldKey\": \"DownMonth\",\n\t\"Name\": \"故障发生月份\",\n\t\"Required\": true,\n\t\"Default\": \"\",\n\t\"Unit\": \"\"\n}, {\n\t\"InputType\": \"Input\",\n\t\"DataType\": \"Integer\",\n\t\"FieldKey\": \"DownTime\",\n\t\"Name\": \"不可用服务时间\",\n\t\"Required\": true,\n\t\"Default\": 0,\n\t\"Unit\": \"分钟\"\n}]\n\n```\n\n### 无SLA\n\n```\n[{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t}, {\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"MonthSlaRatio\",\n\t\t\"Name\": \"月度赔付比例\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"%\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"SlaDescription\",\n\t\t\"Name\": \"计算方式说明\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t}\n]\n```\n\n### 对象存储 COS\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"StorageType\",\n\t\t\"Name\": \"存储类型\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"标准存储\"\n\n\t\t}, {\n\t\t\t\"EnumKey\": \"InfrequentAccess\",\n\t\t\t\"EnumValue\": \"低频存储\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t}, {\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"ErrorSum\",\n\t\t\"Name\": \"单位时间错误率之和\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"ServiceUnitTime\",\n\t\t\"Name\": \"单位服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 5,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n\n```\n\n### 负载均衡CLB\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"Domain\",\n\t\t\"Name\": \"域名化\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"是\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"OtherClb\",\n\t\t\t\"EnumValue\": \"否\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```\n\n### 云数据库Redis\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"DeployArchitecture\",\n\t\t\"Name\": \"部署架构\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"同地域单可用区\"\n\n\t\t}, {\n\t\t\t\"EnumKey\": \"SingleRegionMultiZone\",\n\t\t\t\"EnumValue\": \"同地域多可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"MultiRegionMultiZone\",\n\t\t\t\"EnumValue\": \"多地域多可用区\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n\n```\n\n### 云数据库Mysql \n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"DeployMethod\",\n\t\t\"Name\": \"部署方式\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"ThreeNodeMultiZone\",\n\t\t\t\"EnumValue\": \"三节点多可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"双节点多可用区/三节点单可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"DualNodeSingleZone\",\n\t\t\t\"EnumValue\": \"双节点单可用区\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```\n\n### 云联网CCN\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"ServiceLevel\",\n\t\t\"Name\": \"服务等级\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"金\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Platinum\",\n\t\t\t\"EnumValue\": \"白金\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Silver\",\n\t\t\t\"EnumValue\": \"银\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "云产品编码（一级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "类型标识名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "前端交互协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputJsonData",
+          "name": "InputJson",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

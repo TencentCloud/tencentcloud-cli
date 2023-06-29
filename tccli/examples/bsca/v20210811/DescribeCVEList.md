@@ -17,17 +17,22 @@ Output:
     "Response": {
         "CVESet": [
             {
+                "VulId": "pcmgr-105847",
                 "CVEId": "CVE-2018-1000500",
                 "Name": "Busybox 安全漏洞",
                 "CVSSRank": "HIGH",
                 "Category": "web应用漏洞",
                 "CVSS": 8.1,
-                "CnnvdId": "CVE-2018-1000500",
+                "CnnvdId": "CNNVD-201806-1296",
+                "CnvdId": "CNNVD-201806-1296",
+                "CWEId": "CWE-295",
                 "Status": "NONE",
                 "FileList": [
                     "/path/busybox"
                 ],
                 "Description": "Busybox contains a Missing SSL certificate validation vulnerability in The \"busybox wget\" applet that can result in arbitrary code execution. This attack appear to be exploitable via Simply download any file over HTTPS using \"busybox wget https://compromised-domain.com/important-file\".",
+                "FixedVersion": "1.30.1",
+                "AffectedVersion": "1.32.0",
                 "Solution": "升级到最新无漏洞版本",
                 "Defense": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://git.busybox.net/busybox/tree/networking/wget.c?id=8bc418f07eab79a9c8d26594629799f6157a9466#n74",
                 "ReferenceList": [

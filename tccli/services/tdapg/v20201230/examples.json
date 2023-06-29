@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeUserTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdapg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserTasks\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"tdapg-lhoplocc\"\n            ],\n            \"Name\": \"InstanceIds\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8b8cc55-a0b8-46c6-b265-85f7ad71a43c\",\n        \"TaskList\": [\n            {\n                \"AppId\": 1251966477,\n                \"CreateTime\": \"2021-03-29 11:06:13\",\n                \"EndTime\": \"2021-03-29 11:06:15\",\n                \"ErrMsg\": \"\",\n                \"Id\": 1533,\n                \"InstanceId\": \"tdapg-lhoplocc\",\n                \"InstanceName\": \"tdapg-lhoplocc\",\n                \"Progress\": 100,\n                \"Status\": \"success\",\n                \"TaskType\": \"modifyParams\"\n            },\n            {\n                \"AppId\": 1251966477,\n                \"CreateTime\": \"2021-03-26 14:17:02\",\n                \"EndTime\": \"2021-03-26 14:21:06\",\n                \"ErrMsg\": \"\",\n                \"Id\": 1531,\n                \"InstanceId\": \"tdapg-lhoploccc\",\n                \"InstanceName\": \"tdapg-lhoplocc\",\n                \"Progress\": 100,\n                \"Status\": \"success\",\n                \"TaskType\": \"create\"\n            }\n        ],\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询任务列表和详情"
+      }
+    ]
+  },
+  "version": "1.0"
+}

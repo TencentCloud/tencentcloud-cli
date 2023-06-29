@@ -537,6 +537,67 @@
       "members": [],
       "usage": "both"
     },
+    "Container": {
+      "document": "容器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "工作目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkingDir",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
       "members": [
@@ -2176,12 +2237,82 @@
       "members": [
         {
           "disabled": false,
+          "document": "项目ID",
+          "example": "prj-xxxxx",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "app-xxxxx",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "实例ID",
           "example": "无",
           "member": "string",
           "name": "InstanceID",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "平台实例标识",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "列表限值，最大值50",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "列表偏移",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -2190,6 +2321,28 @@
     "DescribePodsResponse": {
       "document": "DescribePods返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "应用状态",
+          "example": "无",
+          "member": "Pod",
+          "name": "Pods",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3387,6 +3540,199 @@
         }
       ],
       "type": "object"
+    },
+    "PVC": {
+      "document": "PVC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "PVC name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CBS盘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CBS",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Pod": {
+      "document": "k8s Pod",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "nginx-1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "web",
+          "member": "string",
+          "name": "ComponentName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "pod包含的容器列表",
+          "example": "无",
+          "member": "Container",
+          "name": "Containers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "阶段",
+          "example": "Running",
+          "member": "string",
+          "name": "Phase",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-11-16T04:03:38+00:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "pod UID",
+          "example": "300c3800-ac28-410d-816c-fd2a35ea1a39",
+          "member": "string",
+          "name": "UID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "状态信息",
+          "example": "无",
+          "member": "PodStatus",
+          "name": "Status",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "PVC信息",
+          "example": "无",
+          "member": "PVC",
+          "name": "PVCs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "PodStatus": {
+      "document": "Pod状态信息",
+      "members": [],
+      "usage": "out"
     },
     "Policy": {
       "document": "部署策略",

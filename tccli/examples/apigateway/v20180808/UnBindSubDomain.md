@@ -1,13 +1,13 @@
 **Example 1: 解绑自定义域名**
 
-
+服务解绑自定义域名
 
 Input: 
 
 ```
 tccli apigateway UnBindSubDomain --cli-unfold-argument  \
     --ServiceId service-19c5fnhy \
-    --SubDomain xxxxxxxx
+    --SubDomain app01.sevenlayer23.com
 ```
 
 Output: 

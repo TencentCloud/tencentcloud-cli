@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ListUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroups\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Page\": 0,\n    \"Condition\": \"xx\",\n    \"Size\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserStoreId\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"Description\": \"xx\",\n                \"UserGroupId\": \"xx\",\n                \"TenantId\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ]
+  },
+  "version": "1.0"
+}

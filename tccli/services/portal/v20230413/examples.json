@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CorrectText": [
+      {
+        "document": "对于一段中英文混杂文本中的错别字和单词拼写进行检查",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CorrectText\n<公共请求参数>\n\n{\n    \"Text\": \"接口返回检茶,tosql\",\n    \"ScanPolicy\": [\n        {},\n        {}\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Offset\": 7,\n                \"Len\": 5,\n                \"WrongSegment\": \"tosql\",\n                \"Correct\": \"tdsql\"\n            },\n            {\n                \"Offset\": 5,\n                \"Len\": 1,\n                \"WrongSegment\": \"茶\",\n                \"Correct\": \"查\",\n                \"Policy\": \"ZhErrCharacters\",\n                \"PolicyDesc\": \"错别字\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "错别字及单词拼写检查"
+      }
+    ],
+    "GetCurrentPolicy": [
+      {
+        "document": "纠错系统当前支持的所有检查策略",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCurrentPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Instruction\": \"敏感数据\",\n                \"Policy\": \"sensitiveNumber\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"错别字\",\n                \"Policy\": \"zhErrCharacters\",\n                \"Props\": \"gpt,botong\"\n            },\n            {\n                \"Instruction\": \"链接\",\n                \"Policy\": \"link\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"代码\",\n                \"Policy\": \"code\",\n                \"Props\": \"php,go\"\n            },\n            {\n                \"Instruction\": \"黑名单检测\",\n                \"Policy\": \"blackList\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"标点符号\",\n                \"Policy\": \"symbols\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"单词拼写\",\n                \"Policy\": \"word\",\n                \"Props\": \"\"\n            }\n        ],\n        \"RequestId\": \"8483c40e-ddb5-4d45-84c2-a36041d14055\"\n    }\n}",
+        "title": "当前支持策略"
+      }
+    ],
+    "SeparateText": [
+      {
+        "document": "对长文本按照一定规则分割示范",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentLongText\n<公共请求参数>\n\n{\n    \"Text\": \"什么是腾讯云云服务器？\\n腾讯云云服务器（Cloud Virtual Machine，CVM）是腾讯云提供的可扩展的计算服务。使用云服务器 CVM 避免了使用传统服务器时需要预估资源用量及前期投入的问题，帮助您在短时间内快速启动任意数量的云服务器并即时部署应用程序。\\n云服务器 CVM 支持用户自定义一切资源：CPU、内存、硬盘、网络、安全等，并可以在需求发生变化时轻松地调整它们。\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Len\": 10,\n                \"Start\": 0,\n                \"Str\": \"什么是腾讯云云服务器\"\n            },\n            {\n                \"Len\": 50,\n                \"Start\": 11,\n                \"Str\": \"\\n腾讯云云服务器（Cloud Virtual Machine，CVM）是腾讯云提供的可扩展的计算服务\"\n            },\n            {\n                \"Len\": 69,\n                \"Start\": 62,\n                \"Str\": \"使用云服务器 CVM 避免了使用传统服务器时需要预估资源用量及前期投入的问题，帮助您在短时间内快速启动任意数量的云服务器并即时部署应用程序\"\n            },\n            {\n                \"Len\": 57,\n                \"Start\": 132,\n                \"Str\": \"\\n云服务器 CVM 支持用户自定义一切资源：CPU、内存、硬盘、网络、安全等，并可以在需求发生变化时轻松地调整它们\"\n            }\n        ],\n        \"RequestId\": \"98789355-6587-4815-a3a7-a242855fb4e5\"\n    }\n}",
+        "title": "长文本分割"
+      }
+    ]
+  },
+  "version": "1.0"
+}

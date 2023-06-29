@@ -1,0 +1,125 @@
+{
+  "actions": {
+    "CreateAppScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"AppPackage\": \"wx66e50f1e*******6f\",\n    \"Source\": \"0\",\n    \"Platform\": \"2\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "创建小程序隐私合规基础诊断任务"
+      }
+    ],
+    "CreateAppScanTaskRepeat": [
+      {
+        "document": "原任务失败后，重新提交隐私合规诊断基础版任务",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"AppPackage\": \"wx66e50f1e*******6f\",\n    \"Source\": \"0\",\n    \"OrgTaskID\": \"170143813*******360\",\n    \"Platform\": \"2\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "创建小程序隐私合规诊断重试任务"
+      }
+    ],
+    "CreateFlySecMiniAppProfessionalScanTask": [
+      {
+        "document": "对小程序全面的进行诊断，包括后台服务安全，UGC合规等",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppProfessionalScanTask\n<公共请求参数>\n\n{\n    \"MiniAppName\": \"测试小程序\",\n    \"Remark\": \"thanks\",\n    \"Mobile\": \"13800138000\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"2\",\n    \"CorpName\": \"微信小程序有限公司\",\n    \"Email\": \"wechat@tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0\n    }\n}",
+        "title": "创建小程序安全的深度诊断任务"
+      }
+    ],
+    "CreateFlySecMiniAppScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTask\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"Mobile\": \"13800138000\",\n    \"Industry\": \"电商\",\n    \"SurveyContent\": \"{\\\"wx66e50f1e*******6f\\\":{\\\"1\\\":[\\\"B\\\"],\\\"n\\\":[\\\"A\\\",\\\"B\\\",\\\"D\\\"]}}\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"SalesPerson\": \"王某\",\n    \"ScanVersion\": \"0\",\n    \"Email\": \"wechat@tencent.com\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Ret\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "创建小程序翼扬安全基础诊断任务"
+      }
+    ],
+    "CreateFlySecMiniAppScanTaskRepeat": [
+      {
+        "document": "原任务失败后，重新提交基础诊断任务",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"OrgTaskID\": \"170143813*******360\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"ScanVersion\": \"0\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Ret\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "重新创建小程序翼扬安全基础诊断任务"
+      }
+    ],
+    "DescribeBasicDiagnosisResourceUsageInfo": [
+      {
+        "document": "查询当前用户的基础诊断资源使用情况",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeBasicDiagnosisResourceUsageInfo\n&Mode=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"ResourceName\": \"sv_mps_safety_diagnosis_basic_diagnosis\",\n        \"Total\": 10,\n        \"UnusedCount\": 5\n    }\n}",
+        "title": "查询基础诊断资源使用情况"
+      }
+    ],
+    "DescribeFlySecMiniAppReportUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlySecMiniAppReportUrl\n<公共请求参数>\n\n{\n    \"ReportType\": \"0\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"TaskID\": \"1701438134******0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Url\": \"诊断报告下载链接\"\n    }\n}",
+        "title": "获取小程序的诊断报告链接"
+      }
+    ],
+    "DescribeFlySecMiniAppScanReportList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlySecMiniAppScanReportList\n<公共请求参数>\n\n{\n    \"Status\": \"1\",\n    \"MiniAppVersion\": \"V125\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"Size\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"1701438134******0\",\n                \"MiniAppID\": \"wx66e50f1e*******6f\",\n                \"MiniAppName\": \"测试小程序\",\n                \"MiniAppVersion\": \"V125\",\n                \"Mode\": 1,\n                \"Status\": 1,\n                \"CreateTime\": 1617796174,\n                \"RiskScore\": \"62.1\",\n                \"RiskLevel\": 1,\n                \"RiskItems\": {\n                    \"RiskItem1Score\": 0,\n                    \"RiskItem2Score\": 30,\n                    \"RiskItem3Score\": 70,\n                    \"RiskItem4Score\": 40,\n                    \"RiskItem5Score\": 50,\n                    \"RiskItem6Score\": 100,\n                    \"RiskItem7Score\": 80,\n                    \"RiskItem8Score\": 100\n                }\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询当前用户指定小程序的诊断安全得分情况"
+      }
+    ],
+    "DescribeFlySecMiniAppScanTaskList": [
+      {
+        "document": "",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppScanTaskList\n&MiniAppID=wx66e50f1e*******6f\n&Mode=1\n&Status=1\n&Size=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"1701438134******0\",\n                \"MiniAppID\": \"wx66e50f1e*******6f\",\n                \"MiniAppName\": \"测试小程序\",\n                \"MiniAppVersion\": \"V125\",\n                \"Mode\": 1,\n                \"CreateTime\": 1617796174,\n                \"Status\": 2,\n                \"Error\": 100010\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "获取诊断任务列表"
+      }
+    ],
+    "DescribeFlySecMiniAppScanTaskParam": [
+      {
+        "document": "获取当前用户提交诊断时的参数信息",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppScanTaskParam\n&TaskID=1701438134******0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"MiniAppID\": \"wx66e50f1e*******6f\",\n        \"Mode\": 1,\n        \"ScanVersion\": 0,\n        \"MiniAppTestAccount\": \"Test\",\n        \"MiniAppTestPwd\": \"TestPwd\"\n    }\n}",
+        "title": "获取基础诊断任务参数信息"
+      }
+    ],
+    "DescribeFlySecMiniAppScanTaskStatus": [
+      {
+        "document": "任务失败情况",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppScanTaskStatus\n&TaskID=1701438134******0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Status\": 2,\n        \"Errno\": 100010,\n        \"MiniAppName\": \"测试小程序\",\n        \"MiniAppVersion\": \"V125\"\n    }\n}",
+        "title": "查询诊断任务状态"
+      }
+    ],
+    "DescribeResourceUsageInfo": [
+      {
+        "document": "查询当前用户的安全资源使用情况",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeResourceUsageInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Data\": [\n            {\n                \"ResourceName\": \"sv_mps_detection_public_basic\",\n                \"Total\": 10,\n                \"UnusedCount\": 5\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询安全资源使用情况"
+      }
+    ],
+    "DescribeScanTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"\\\"0,1,2\\\"\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"TaskTypes\": \"\\\"0,1\\\"\",\n    \"Source\": \"-1\",\n    \"Platform\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235414610411261952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"\",\n                    \"ReportTitle\": \"\",\n                    \"BehaviorUrl\": \"\",\n                    \"BehaviorTitle\": \"\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "获取隐私合规诊断任务列表"
+      }
+    ],
+    "DescribeScanTaskReportUrl": [
+      {
+        "document": "任务完成",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"0\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"TaskID\": \"1701438134******0\",\n    \"Platform\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\",\n        \"ReportResult\": \"诊断json结果内容\"\n    }\n}",
+        "title": "查询小程序隐私合规诊断任务状态"
+      }
+    ],
+    "DescribeScanTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskStatus\n<公共请求参数>\n\n{\n    \"Platform\": \"2\",\n    \"Source\": \"0\",\n    \"TaskID\": \"273051273836630016\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1c3418e-fe02-45be-9de0-498b4dfb7907\",\n        \"Result\": 0,\n        \"Status\": 5,\n        \"FlowSteps\": [],\n        \"ErrMsg\": \"FAIL GENERATE REPORT.\"\n    }\n}",
+        "title": "获取小程序隐私诊断任务状态(失败)"
+      }
+    ]
+  },
+  "version": "1.0"
+}

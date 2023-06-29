@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "BindAutoScalingGroup": [
+      {
+        "document": "",
+        "input": "https://thpc.tencentcloudapi.com/?Action=BindAutoScalingGroup\n&ClusterId=hpc-5lyv94lq\n&LaunchConfigurationId=asc-jhf9c1gi\n&AutoScalingGroupId=asg-aesc6pcq\n&ExpansionBusyTime=120\n&ShrinkIdleTime=300\n&DryRun=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4d90874-f565-463d-ba1d-c707517eeaa1\"\n    }\n}",
+        "title": "绑定弹性伸缩组"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "",
+        "input": "https://thpc.tencentcloudapi.com/?Action=CreateCluster\n&Placement.Zone=ap-guangzhou-2\n&SchedulerType=SLURM\n&ImageId=img-3la7wgnt\n&ManagerNode.InstanceType=S2.SMALL2\n&ManagerNodeCount=1\n&ComputeNode.InstanceType=S2.SMALL2\n&ComputeNode.InstanceChargeType=SPOTPAID\n&ComputeNodeCount=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-5lyv94lq\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DeleteCluster\n&ClusterId=hpc-5lyv94lq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b71050a-55c1-4f3b-bf66-5e4f8510a5a0\"\n    }\n}",
+        "title": "删除集群"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DescribeClusters\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"hpc-qrb7ybn0\",\n                \"ClusterName\": \"unnamed\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"CreateTime\": \"2021-12-07T03:29:09Z\",\n                \"SchedulerType\": \"SGE\",\n                \"ComputeNodeCount\": 1,\n                \"ComputeNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-jfhc307q\"\n                    }\n                ],\n                \"ManagerNodeCount\": 1,\n                \"ManagerNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-cv6ygpkq\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8a39c8e3-129b-4628-b763-ef96caaa2f4d\"\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

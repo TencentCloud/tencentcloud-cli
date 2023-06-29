@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "GetUserAccessToken": [
+      {
+        "document": "",
+        "input": "https://open.tencentcloudapi.com/?Action=GetUserAccessToken\r\n&UserAuthCode=aaa&OpenAccessToken=bbb\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"100005604499\",\n        \"UserOpenId\": \"391f920b807ecbaa38f7e77ef5260cd4\",\n        \"UserUnionId\": \"438344612f5e181dbb76d2fcf2634a7b\",\n        \"UserAccessToken\": \"a649830709416d07be8f0dba1c7675ce\",\n        \"ExpiresAt\": 1581670707,\n        \"UserRefreshToken\": \"607202ece53c20a8ad91fa3512fa8ac7\",\n        \"Scope\": \"login\",\n        \"RequestId\": \"5bc7a27e-ba54-4b68-b37e-aaee60a2c5e2\"\n    }\n}",
+        "title": "获取用户第三方开放平台的access token"
+      }
+    ],
+    "GetUserAuthInfo": [
+      {
+        "document": "",
+        "input": "https://open.tencentcloudapi.com/?Action=GetUserAuthInfo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Nickname\": \"test\",\n        \"IsAuth\": 1,\n        \"UserType\": -1,\n        \"RequestId\": \"e18dbc4d-b414-4242-a242-513ef9c95f1d\"\n    }\n}",
+        "title": "获取用户认证信息"
+      }
+    ],
+    "GetUserOwnerInfo": [
+      {
+        "document": "",
+        "input": "https://open.tencentcloudapi.com/?Action=GetUserOwnerInfo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"OwnerUin\": 100011675311,\n        \"Mail\": null,\n        \"MailStatus\": 1,\n        \"OwnerName\": \"Ling\",\n        \"RequestId\": \"4fe12f98-9f0d-4d81-9f69-762129a8512e\"\n    }\n}",
+        "title": "获取用户开发商信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

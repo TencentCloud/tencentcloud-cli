@@ -19,22 +19,26 @@ Output:
             {
                 "Name": "apex",
                 "Description": " The APEX Boot Loader is a modular and retargetable firmware loader\n suitable for embedded systems.\n .\n This package is a version of APEX configured for the Linksys NSLU2\n network appliance.  In this case, APEX is used as a second stage\n loader so that Redboot, as installed by the manufacturer, may remain.\n .\n The APEX command line offers a comfortable (e.g. command line editing\n and history) and extensible platform for development and production\n uses.\n .\n <http://wiki.buici.com/wiki/Apex_Bootloader>\n",
+                "FileCount": 5,
                 "LicenseInfoSet": [
                     {
                         "Name": "GPL-2.0",
                         "Risk": "HighRisk"
                     }
-                ]
+                ],
+                "NormalizedLicenseExpression": "gpl-2.0 or bsd-new"
             },
             {
                 "Name": "arptables",
                 "Description": "The arptables is a user space tool used to set up and maintain\nthe tables of ARP rules in the Linux kernel. These rules inspect\nthe ARP frames which they see. arptables is analogous to the iptables\nuser space tool, but is less complicated.",
+                "FileCount": 10,
                 "LicenseInfoSet": [
                     {
                         "Name": "GPL-2.0",
                         "Risk": "HighRisk"
                     }
-                ]
+                ],
+                "NormalizedLicenseExpression": "gpl-2.0 or bsd-new"
             }
         ],
         "FieldValuesSet": [

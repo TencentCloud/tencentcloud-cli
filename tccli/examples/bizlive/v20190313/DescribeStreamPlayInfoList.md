@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bizlive DescribeStreamPlayInfoList --cli-unfold-argument  \
-    --PlayDomain 5000.playdomain.com \
-    --StreamName stream1 \
-    --StartTime '2019-03-01 00:00:00' \
-    --EndTime '2019-03-01 12:00:00'
+    --PlayDomain xx \
+    --EndTime xx \
+    --StartTime xx \
+    --StreamName xx
 ```
 
 Output: 

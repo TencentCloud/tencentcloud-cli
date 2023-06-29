@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "CreateInstanceHour": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceHour\n<公共请求参数>\n\n{\n    \"DnNode\": {\n        \"NodeCount\": 0,\n        \"SyncType\": \"xx\",\n        \"Storage\": 0,\n        \"SetCount\": 0,\n        \"SpecCode\": \"xx\"\n    },\n    \"VpcId\": \"xx\",\n    \"Zone\": \"xx\",\n    \"GoodsNum\": 0,\n    \"AdminPassword\": \"xx\",\n    \"Recovery\": {\n        \"RecoveryInstanceId\": \"xx\",\n        \"RecoveryTime\": \"xx\",\n        \"RecoveryTimePoint\": \"xx\",\n        \"RecoveryTaskId\": 0\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"NetType\": \"xx\",\n    \"EngineVersion\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"CnNode\": {\n        \"NodeCount\": 0,\n        \"SyncType\": \"xx\",\n        \"Storage\": 0,\n        \"SetCount\": 0,\n        \"SpecCode\": \"xx\"\n    },\n    \"Charset\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"SecurityGroupIdList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"InstanceIds\": [\n            \"xx\"\n        ],\n        \"BillId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "TbaseV2后付费创建实例"
+      }
+    ],
+    "DescribeAvailableRecoveryTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecoveryStatus\": \"xx\",\n        \"EndTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"StartTime\": \"xx\",\n        \"RecoveryTaskId\": 0\n    }\n}",
+        "title": "TbaseV2获取回档时间"
+      }
+    ],
+    "DescribeBackupSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSpace\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"OrderByType\": \"xx\",\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"BackupSpaces\": [\n            {\n                \"WALBackupCount\": 1,\n                \"InstanceId\": \"tdpg-test123\",\n                \"EngineType\": \"TbaseV2\",\n                \"AutoBackupCount\": 1,\n                \"ManualBackupCount\": 1,\n                \"InstanceName\": \"tdpg-test123\",\n                \"WALBackupSize\": \"1\",\n                \"AutoBackupSize\": \"1\",\n                \"ManualBackupSize\": \"1\",\n                \"BackupTotalSize\": \"4\",\n                \"BaseBackupSize\": \"1\",\n                \"Status\": \"online\",\n                \"BaseBackupCount\": 4\n            }\n        ]\n    }\n}",
+        "title": "查询备份空间信息"
+      }
+    ],
+    "DescribeBaseBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaseBackups\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"BackupStrategy\": \"xx\",\n    \"PageSize\": 0,\n    \"InstanceId\": \"xx\",\n    \"BackupType\": \"xx\",\n    \"PageNumber\": 0,\n    \"StartTime\": \"xx\",\n    \"OrderByType\": \"xx\",\n    \"EndTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"BaseBackups\": [\n            {\n                \"BackupStrategy\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"BackupPattern\": \"xx\",\n                \"FileDir\": \"xx\",\n                \"BackupType\": \"xx\",\n                \"FileSize\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"BackupId\": 0,\n                \"EndTime\": \"xx\",\n                \"InstanceName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询数据备份"
+      }
+    ],
+    "DescribeDBTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBTables\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdpg-xxx\",\n    \"PageNumber\": 1,\n    \"DBName\": \"dbName\",\n    \"PageSize\": 1,\n    \"Schemas\": [\n        \"schema1\",\n        \"schema2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"SchemaName\": \"schema1\",\n                \"TableNames\": [\n                    \"table1\",\n                    \"table2\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询Schema下的表名"
+      }
+    ],
+    "DescribeUserTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserTasks\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"tdpg-oobic9i0\",\n                \"tdpg-oobic9i1\"\n            ],\n            \"Name\": \"InstanceIds\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"2977eea7ae5012774f1464c1f\",\n        \"TaskList\": [\n            {\n                \"Status\": \"success\",\n                \"InstanceId\": \"tdpg-oobic9i0\",\n                \"AppId\": 12345678,\n                \"Id\": 1,\n                \"TaskType\": \"create\",\n                \"Progress\": 100,\n                \"EndTime\": \"2021-03-20 15:00:00\",\n                \"InstanceName\": \"tdpg-oobic9i0\",\n                \"CreateTime\": \"2021-03-20 14:58:00\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询任务列表和详情"
+      }
+    ],
+    "ModifyInstanceHour": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceHour\n<公共请求参数>\n\n{\n    \"ModifyType\": 3,\n    \"NodeType\": 1,\n    \"Zone\": \"ap-guangzhou-2\",\n    \"InstanceId\": \"tdpg-taagd2g3\",\n    \"Storage\": 100,\n    \"SetCount\": 3,\n    \"SpecCode\": \"dev.cn.1\",\n    \"NodeCount\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"BillId\": \"20201128129000007109331\",\n        \"RequestId\": \"4fe4c3b6-87f6-49b2-adee-3e604cf7b016\"\n    }\n}",
+        "title": "TbaseV2后付费变配实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeUserInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcv.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取用户信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

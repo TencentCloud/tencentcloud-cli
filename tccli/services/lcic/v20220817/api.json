@@ -1,0 +1,6158 @@
+{
+  "actions": {
+    "AddGroupMember": {
+      "document": "此接口用于添加成员列表到指定群组",
+      "input": "AddGroupMemberRequest",
+      "name": "新增成员到群组",
+      "output": "AddGroupMemberResponse",
+      "status": "online"
+    },
+    "BatchAddGroupMember": {
+      "document": "此接口用于批量添加成员列表到指定群组",
+      "input": "BatchAddGroupMemberRequest",
+      "name": "批量新增成员到群组",
+      "output": "BatchAddGroupMemberResponse",
+      "status": "online"
+    },
+    "BatchCreateGroupWithMembers": {
+      "document": "此接口用于批量创建群组",
+      "input": "BatchCreateGroupWithMembersRequest",
+      "name": "批量创建群组",
+      "output": "BatchCreateGroupWithMembersResponse",
+      "status": "online"
+    },
+    "BatchCreateRoom": {
+      "document": "批量创建房间接口",
+      "input": "BatchCreateRoomRequest",
+      "name": "批量创建房间",
+      "output": "BatchCreateRoomResponse",
+      "status": "online"
+    },
+    "BatchDeleteGroupMember": {
+      "document": "此接口用于批量删除成员列表到指定群组列表",
+      "input": "BatchDeleteGroupMemberRequest",
+      "name": "批量删除群组成员",
+      "output": "BatchDeleteGroupMemberResponse",
+      "status": "online"
+    },
+    "BatchDeleteRecord": {
+      "document": "批量删除多个房间的录制文件",
+      "input": "BatchDeleteRecordRequest",
+      "name": "批量删除多个房间的录制文件",
+      "output": "BatchDeleteRecordResponse",
+      "status": "online"
+    },
+    "BatchDescribeDocument": {
+      "document": "批量获取文档详情",
+      "input": "BatchDescribeDocumentRequest",
+      "name": "批量获取文档详情",
+      "output": "BatchDescribeDocumentResponse",
+      "status": "online"
+    },
+    "BatchRegister": {
+      "document": "如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒",
+      "input": "BatchRegisterRequest",
+      "name": "用户批量注册",
+      "output": "BatchRegisterResponse",
+      "status": "online"
+    },
+    "BigCustomerIsolate": {
+      "document": "后付费大客户限制创建",
+      "input": "BigCustomerIsolateRequest",
+      "name": "后付费大客户限制创建",
+      "output": "BigCustomerIsolateResponse",
+      "status": "online"
+    },
+    "BindDocumentToRoom": {
+      "document": "绑定文档到房间",
+      "input": "BindDocumentToRoomRequest",
+      "name": "绑定文档到房间",
+      "output": "BindDocumentToRoomResponse",
+      "status": "online"
+    },
+    "CreateDocument": {
+      "document": "创建房间内可以使用的文档。",
+      "input": "CreateDocumentRequest",
+      "name": "创建文档",
+      "output": "CreateDocumentResponse",
+      "status": "online"
+    },
+    "CreateGroupWithMembers": {
+      "document": "此接口根据成员列表创建群组",
+      "input": "CreateGroupWithMembersRequest",
+      "name": "创建群组",
+      "output": "CreateGroupWithMembersResponse",
+      "status": "online"
+    },
+    "CreateGroupWithSubGroup": {
+      "document": "此接口会聚合子群组创建联合群组",
+      "input": "CreateGroupWithSubGroupRequest",
+      "name": "创建联合群组",
+      "output": "CreateGroupWithSubGroupResponse",
+      "status": "online"
+    },
+    "CreateRoom": {
+      "document": "创建房间",
+      "input": "CreateRoomRequest",
+      "name": "创建房间",
+      "output": "CreateRoomResponse",
+      "status": "online"
+    },
+    "CreateSupervisor": {
+      "document": "创建巡课",
+      "input": "CreateSupervisorRequest",
+      "name": "创建巡课",
+      "output": "CreateSupervisorResponse",
+      "status": "online"
+    },
+    "DeleteAppCustomContent": {
+      "document": "删除设置自定义元素。如果参数scenes为空则删除所有自定义元素，否则删除指定的scene自定义元素。",
+      "input": "DeleteAppCustomContentRequest",
+      "name": "删除应用自定义内容",
+      "output": "DeleteAppCustomContentResponse",
+      "status": "online"
+    },
+    "DeleteDocument": {
+      "document": "删除文档",
+      "input": "DeleteDocumentRequest",
+      "name": "删除文档",
+      "output": "DeleteDocumentResponse",
+      "status": "online"
+    },
+    "DeleteGroup": {
+      "document": "此接口用于删除指定群组，支持批量操作。",
+      "input": "DeleteGroupRequest",
+      "name": "删除群组",
+      "output": "DeleteGroupResponse",
+      "status": "online"
+    },
+    "DeleteGroupMember": {
+      "document": "此接口用于删除群组中指定成员",
+      "input": "DeleteGroupMemberRequest",
+      "name": "删除群组成员",
+      "output": "DeleteGroupMemberResponse",
+      "status": "online"
+    },
+    "DeleteRecord": {
+      "document": "删除指定房间的录制文件",
+      "input": "DeleteRecordRequest",
+      "name": "删除指定房间的录制文件",
+      "output": "DeleteRecordResponse",
+      "status": "online"
+    },
+    "DeleteRoom": {
+      "document": "删除房间",
+      "input": "DeleteRoomRequest",
+      "name": "删除房间",
+      "output": "DeleteRoomResponse",
+      "status": "online"
+    },
+    "DeleteSupervisor": {
+      "document": "删除巡课",
+      "input": "DeleteSupervisorRequest",
+      "name": "删除巡课",
+      "output": "DeleteSupervisorResponse",
+      "status": "online"
+    },
+    "DescribeAnswerList": {
+      "document": "获取房间答题详情",
+      "input": "DescribeAnswerListRequest",
+      "name": "获取房间答题详情",
+      "output": "DescribeAnswerListResponse",
+      "status": "online"
+    },
+    "DescribeAppDetail": {
+      "document": "获取应用详情",
+      "input": "DescribeAppDetailRequest",
+      "name": "获取应用详情",
+      "output": "DescribeAppDetailResponse",
+      "status": "online"
+    },
+    "DescribeCurrentMemberList": {
+      "document": "获取当前房间的成员列表，房间结束或过期后无法使用。",
+      "input": "DescribeCurrentMemberListRequest",
+      "name": "获取当前房间的成员列表",
+      "output": "DescribeCurrentMemberListResponse",
+      "status": "online"
+    },
+    "DescribeDeveloper": {
+      "document": "开发商信息获取",
+      "input": "DescribeDeveloperRequest",
+      "name": "开发商信息获取",
+      "output": "DescribeDeveloperResponse",
+      "status": "online"
+    },
+    "DescribeDocument": {
+      "document": "获取文档信息",
+      "input": "DescribeDocumentRequest",
+      "name": "获取文档信息",
+      "output": "DescribeDocumentResponse",
+      "status": "online"
+    },
+    "DescribeDocuments": {
+      "document": "有新接口替换\n\n批量获取文档信息（已废弃，替代接口BatchDescribeDocument）",
+      "input": "DescribeDocumentsRequest",
+      "name": "批量获取文档信息",
+      "output": "DescribeDocumentsResponse",
+      "status": "deprecated"
+    },
+    "DescribeDocumentsByRoom": {
+      "document": "此接口获取指定房间下课件列表",
+      "input": "DescribeDocumentsByRoomRequest",
+      "name": "获取指定房间下文档",
+      "output": "DescribeDocumentsByRoomResponse",
+      "status": "online"
+    },
+    "DescribeGroup": {
+      "document": "此接口用于获取群组详情",
+      "input": "DescribeGroupRequest",
+      "name": "获取群组详情",
+      "output": "DescribeGroupResponse",
+      "status": "online"
+    },
+    "DescribeGroupList": {
+      "document": "获取群组列表",
+      "input": "DescribeGroupListRequest",
+      "name": "获取群组列表",
+      "output": "DescribeGroupListResponse",
+      "status": "online"
+    },
+    "DescribeGroupMemberList": {
+      "document": "此接口用于获取群组成员列表",
+      "input": "DescribeGroupMemberListRequest",
+      "name": "获取群组成员列表",
+      "output": "DescribeGroupMemberListResponse",
+      "status": "online"
+    },
+    "DescribeQuestionList": {
+      "document": "获取房间提问列表",
+      "input": "DescribeQuestionListRequest",
+      "name": "获取课堂提问列表",
+      "output": "DescribeQuestionListResponse",
+      "status": "online"
+    },
+    "DescribeRoom": {
+      "document": "获取房间信息",
+      "input": "DescribeRoomRequest",
+      "name": "获取房间信息",
+      "output": "DescribeRoomResponse",
+      "status": "online"
+    },
+    "DescribeRoomStatistics": {
+      "document": "获取房间统计信息，仅可在房间结束后调用。",
+      "input": "DescribeRoomStatisticsRequest",
+      "name": "获取房间统计信息",
+      "output": "DescribeRoomStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeSdkAppIdUsers": {
+      "document": "此接口用于获取指定应用ID下用户列表",
+      "input": "DescribeSdkAppIdUsersRequest",
+      "name": "获取应用ID下用户列表",
+      "output": "DescribeSdkAppIdUsersResponse",
+      "status": "online"
+    },
+    "DescribeSupervisors": {
+      "document": "获取巡课列表",
+      "input": "DescribeSupervisorsRequest",
+      "name": "获取巡课列表",
+      "output": "DescribeSupervisorsResponse",
+      "status": "online"
+    },
+    "DescribeUser": {
+      "document": "获取用户信息",
+      "input": "DescribeUserRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserResponse",
+      "status": "online"
+    },
+    "EndRoom": {
+      "document": "结束房间的直播",
+      "input": "EndRoomRequest",
+      "name": "结束房间",
+      "output": "EndRoomResponse",
+      "status": "online"
+    },
+    "GetRoomEvent": {
+      "document": "获取房间事件,仅在课堂结束1小时内有效。",
+      "input": "GetRoomEventRequest",
+      "name": "获取房间事件",
+      "output": "GetRoomEventResponse",
+      "status": "online"
+    },
+    "GetRoomMessage": {
+      "document": "获取房间历史消息(房间历史消息保存7天)",
+      "input": "GetRoomMessageRequest",
+      "name": "获取房间历史消息",
+      "output": "GetRoomMessageResponse",
+      "status": "online"
+    },
+    "GetRooms": {
+      "document": "获取房间列表",
+      "input": "GetRoomsRequest",
+      "name": "获取房间列表",
+      "output": "GetRoomsResponse",
+      "status": "online"
+    },
+    "GetWatermark": {
+      "document": "获取水印设置",
+      "input": "GetWatermarkRequest",
+      "name": "获取水印设置",
+      "output": "GetWatermarkResponse",
+      "status": "online"
+    },
+    "KickUserFromRoom": {
+      "document": "从房间里面踢出用户",
+      "input": "KickUserFromRoomRequest",
+      "name": "踢出房间用户",
+      "output": "KickUserFromRoomResponse",
+      "status": "online"
+    },
+    "LoginOriginId": {
+      "document": "使用源账号登录，源账号为注册时填入的originId",
+      "input": "LoginOriginIdRequest",
+      "name": "源账号登录",
+      "output": "LoginOriginIdResponse",
+      "status": "online"
+    },
+    "LoginUser": {
+      "document": "登录",
+      "input": "LoginUserRequest",
+      "name": "登录",
+      "output": "LoginUserResponse",
+      "status": "online"
+    },
+    "ModifyApp": {
+      "document": "修改应用",
+      "input": "ModifyAppRequest",
+      "name": "修改应用",
+      "output": "ModifyAppResponse",
+      "status": "online"
+    },
+    "ModifyGroup": {
+      "document": "此接口修改群组信息",
+      "input": "ModifyGroupRequest",
+      "name": "修改群组",
+      "output": "ModifyGroupResponse",
+      "status": "online"
+    },
+    "ModifyRoom": {
+      "document": "修改房间",
+      "input": "ModifyRoomRequest",
+      "name": "修改房间",
+      "output": "ModifyRoomResponse",
+      "status": "online"
+    },
+    "ModifyUserProfile": {
+      "document": "此接口用于修改用户配置，如头像，昵称/用户名等。",
+      "input": "ModifyUserProfileRequest",
+      "name": "修改用户配置",
+      "output": "ModifyUserProfileResponse",
+      "status": "online"
+    },
+    "RegisterUser": {
+      "document": "注册用户",
+      "input": "RegisterUserRequest",
+      "name": "注册用户",
+      "output": "RegisterUserResponse",
+      "status": "online"
+    },
+    "SetAppCustomContent": {
+      "document": "设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口",
+      "input": "SetAppCustomContentRequest",
+      "name": "设置应用自定义内容",
+      "output": "SetAppCustomContentResponse",
+      "status": "online"
+    },
+    "SetWatermark": {
+      "document": "设置水印",
+      "input": "SetWatermarkRequest",
+      "name": "设置水印",
+      "output": "SetWatermarkResponse",
+      "status": "online"
+    },
+    "StartRoom": {
+      "document": "开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。",
+      "input": "StartRoomRequest",
+      "name": "开始房间",
+      "output": "StartRoomResponse",
+      "status": "online"
+    },
+    "UnbindDocumentFromRoom": {
+      "document": "文档从房间解绑",
+      "input": "UnbindDocumentFromRoomRequest",
+      "name": "文档从房间解绑",
+      "output": "UnbindDocumentFromRoomResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-08-17",
+    "api_brief": "介绍如何使用API对低代码互动课堂进行操作，包括课堂管理，用户管理，应用管理等",
+    "serviceNameCN": "低代码互动课堂",
+    "serviceShortName": "lcic"
+  },
+  "objects": {
+    "AddGroupMemberRequest": {
+      "document": "AddGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员列表，最大值200",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AddGroupMemberResponse": {
+      "document": "AddGroupMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AnswerInfo": {
+      "document": "房间问答答案详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Answer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "答题用时",
+          "example": "1",
+          "member": "uint64",
+          "name": "CostTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "答案是否正确（1正确0错误）",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCorrect",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "AnswerStat": {
+      "document": "每个选项答题人数统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "int64",
+          "name": "Answer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "答题人数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "AppConfig": {
+      "document": "应用配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用介绍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Introduce",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用状态 1正常 2停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "应用绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "后付费 1开启 2关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PostPaid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "1试用 2轻量版 3标准版 4尊享版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "回调\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Callback",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "回调Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "AppCustomContent": {
+      "document": "应用自定义内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景参数，一个应用下可以设置多个不同场景。",
+          "example": "abc",
+          "member": "string",
+          "name": "Scene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。",
+          "example": "abc",
+          "member": "string",
+          "name": "LogoUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。",
+          "example": "abc",
+          "member": "string",
+          "name": "HomeUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。",
+          "example": "abc",
+          "member": "string",
+          "name": "JsUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。",
+          "example": "abc",
+          "member": "string",
+          "name": "CssUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "BackgroundPictureConfig": {
+      "document": "背景图片配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "背景图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchAddGroupMemberRequest": {
+      "document": "BatchAddGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待添加群组ID列表，最大值100",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "待添加成员列表，最大值200",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAddGroupMemberResponse": {
+      "document": "BatchAddGroupMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateGroupWithMembersRequest": {
+      "document": "BatchCreateGroupWithMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "12345678",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批量创建群组基础信息，最大长度限制256",
+          "example": "无",
+          "member": "GroupBaseInfo",
+          "name": "GroupBaseInfos",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组绑定的成员列表，一次性最多200个",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateGroupWithMembersResponse": {
+      "document": "BatchCreateGroupWithMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新创建群组ID列表，与输入创建参数顺序一致",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateRoomRequest": {
+      "document": "BatchCreateRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码平台的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建房间ID列表",
+          "example": "无",
+          "member": "RoomInfo",
+          "name": "RoomInfos",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateRoomResponse": {
+      "document": "BatchCreateRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功课堂ID，与传入课堂信息顺序一致",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIds",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteGroupMemberRequest": {
+      "document": "BatchDeleteGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待添加群组ID列表，最大值100",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "待添加成员列表，最大值256",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteGroupMemberResponse": {
+      "document": "BatchDeleteGroupMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRecordRequest": {
+      "document": "BatchDeleteRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID列表",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRecordResponse": {
+      "document": "BatchDeleteRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次操作删除成功的房间ID列表。如果入参列表中某个房间ID的录制文件已经删除，则出参列表中无对应的房间ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomIds",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeDocumentRequest": {
+      "document": "BatchDescribeDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
+          "example": "无",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件所有者的user_id，不填默认获取SdkAppId下所有课件",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件名称搜索词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件id列表，从列表中查询，忽略错误的id",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeDocumentResponse": {
+      "document": "BatchDescribeDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件文档总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRegisterRequest": {
+      "document": "BatchRegister请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量注册用户信息列表",
+          "example": "无",
+          "member": "BatchUserRequest",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRegisterResponse": {
+      "document": "BatchRegister返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchUserInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchUserInfo": {
+      "document": "批量注册用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchUserRequest": {
+      "document": "用户注册请求信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户名称。\n",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。\n",
+          "example": "无",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户头像。\n",
+          "example": "无",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "BigCustomerIsolateRequest": {
+      "document": "BigCustomerIsolate请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BigCustomerIsolateResponse": {
+      "document": "BigCustomerIsolate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否隔离",
+          "example": "false",
+          "member": "bool",
+          "name": "Isolate",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDocumentToRoomRequest": {
+      "document": "BindDocumentToRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BindType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BindDocumentToRoomResponse": {
+      "document": "BindDocumentToRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocumentRequest": {
+      "document": "CreateDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档地址。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档名称。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档所有者的Id",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "权限，可以有如下取值：\n0 私有文档（默认）\n1 公共文档",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档后缀名。",
+          "example": "doc",
+          "member": "string",
+          "name": "DocumentType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档大小，单位 字节",
+          "example": "123",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocumentResponse": {
+      "document": "CreateDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupWithMembersRequest": {
+      "document": "CreateGroupWithMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待创建群组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认绑定主讲老师ID",
+          "example": "adfgdsfgdf",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组成员列表,一次性最多200个",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupWithMembersResponse": {
+      "document": "CreateGroupWithMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功群组ID",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupWithSubGroupRequest": {
+      "document": "CreateGroupWithSubGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待创建的新群组名",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "12345678",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子群组ID列表，子群组ID不能重复，最多40个",
+          "example": "无",
+          "member": "string",
+          "name": "SubGroupIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组默认主讲老师ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupWithSubGroupResponse": {
+      "document": "CreateGroupWithSubGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新创建群组ID",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoomRequest": {
+      "document": "CreateRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间开始时间，unix时间戳（秒）。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间结束时间，unix时间戳（秒）。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
+          "example": "videodoc",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "声音音质。可以有以下取值：\n0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。\n1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "rtc人数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RTCAudienceNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "观看类型。互动观看 （默认）",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudienceType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordLayout",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间绑定的群组ID,非空时限制组成员进入",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoomResponse": {
+      "document": "CreateRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSupervisorRequest": {
+      "document": "CreateSupervisor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSupervisorResponse": {
+      "document": "CreateSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppCustomContentRequest": {
+      "document": "DeleteAppCustomContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "指定需要删除的已设置的scene场景自定义元素，如果为空则删除应用下已设置的所有自定义元素。",
+          "example": "无",
+          "member": "string",
+          "name": "Scenes",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppCustomContentResponse": {
+      "document": "DeleteAppCustomContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDocumentRequest": {
+      "document": "DeleteDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档ID。",
+          "example": "xx",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDocumentResponse": {
+      "document": "DeleteDocument返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupMemberRequest": {
+      "document": "DeleteGroupMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID，联合群组无法删除群组成员",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员列表，最大值200",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupMemberResponse": {
+      "document": "DeleteGroupMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除群组ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordRequest": {
+      "document": "DeleteRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordResponse": {
+      "document": "DeleteRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoomRequest": {
+      "document": "DeleteRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoomResponse": {
+      "document": "DeleteRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSupervisorRequest": {
+      "document": "DeleteSupervisor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSupervisorResponse": {
+      "document": "DeleteSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnswerListRequest": {
+      "document": "DescribeAnswerList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题ID",
+          "example": "0491cbde-opd4-4d4c-a063-96864eccc73c",
+          "member": "string",
+          "name": "QuestionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "分页查询当前页数，从1开始递增，默认值为1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "100",
+          "example": "每页数据量，最大1000，默认值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnswerListResponse": {
+      "document": "DescribeAnswerList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的房间答案总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间提问答案列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnswerInfo",
+          "name": "AnswerInfo",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppDetailRequest": {
+      "document": "DescribeAppDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID。低代码互动课堂的SdkAppId。\n",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开发商ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeveloperId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppDetailResponse": {
+      "document": "DescribeAppDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDK 对应的AppId ",
+          "example": "无",
+          "member": "string",
+          "name": "SdkAppId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用配置",
+          "example": "无",
+          "member": "AppConfig",
+          "name": "AppConfig",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "场景配置",
+          "example": "无",
+          "member": "SceneItem",
+          "name": "SceneConfig",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCurrentMemberListRequest": {
+      "document": "DescribeCurrentMemberList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCurrentMemberListResponse": {
+      "document": "DescribeCurrentMemberList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数。当前房间的总人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员记录列表。",
+          "example": "无",
+          "member": "MemberRecord",
+          "name": "MemberRecords",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeveloperRequest": {
+      "document": "DescribeDeveloper请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeveloperResponse": {
+      "document": "DescribeDeveloper返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开发商ID",
+          "example": "123",
+          "member": "string",
+          "name": "DeveloperId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentRequest": {
+      "document": "DescribeDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档Id（唯一id）",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentResponse": {
+      "document": "DescribeDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档Id",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档原址url",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档所有者UserId",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档权限",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码进度， 0 - 100 表示（0% - 100%）",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码失败后的错误信息",
+          "example": "abc",
+          "member": "string",
+          "name": "TranscodeInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档类型",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档大小，单位：字节",
+          "example": "1",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "更新的UNIX时间戳",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsByRoomRequest": {
+      "document": "DescribeDocumentsByRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大1000，默认值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件权限。\n[0]：获取owner的私有课件；\n[1]：获取owner的公开课件;\n[0,1]：则获取owner的私有课件和公开课件；\n[2]：获取owner的私有课件和所有人(包括owner)的公开课件。\n默认值为[2]",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档所有者的user_id，不填默认获取SdkAppId下所有课件",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsByRoomResponse": {
+      "document": "DescribeDocumentsByRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "符合查询条件文档总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsRequest": {
+      "document": "DescribeDocuments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校id",
+          "example": "1234",
+          "member": "uint64",
+          "name": "SchoolId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
+          "example": "无",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件所有者的user_id，不填默认获取school_id下所有课件",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件名称搜索词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件id列表，从列表中查询，忽略错误的id",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsResponse": {
+      "document": "DescribeDocuments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件文档总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupListRequest": {
+      "document": "DescribeGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，默认从1开始递增。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，默认20，最大1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取",
+          "example": "abc",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员ID刷选群组，与TeacherId有且只有一个",
+          "example": "abc",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupListResponse": {
+      "document": "DescribeGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数。当前匹配群组总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "GroupInfos",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupMemberListRequest": {
+      "document": "DescribeGroupMemberList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页值，默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，默认20，最大1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupMemberListResponse": {
+      "document": "DescribeGroupMemberList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "查询成员列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MemberIds",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupRequest": {
+      "document": "DescribeGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID",
+          "example": "dfgsdgsg",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupResponse": {
+      "document": "DescribeGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群主主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TeacherId",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组类型\n0-基础群组\n1-组合群组，若为1时会返回子群组ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupType",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子群组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubGroupIds",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionListRequest": {
+      "document": "DescribeQuestionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionListResponse": {
+      "document": "DescribeQuestionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的房间问答问题总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间问答问题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "课堂回答问题列表",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomRequest": {
+      "document": "DescribeRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomResponse": {
+      "document": "DescribeRoom返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间开始时间，unix时间戳（秒）。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间结束时间，unix时间戳（秒）。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师的UserId。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "观看类型。可以有如下取值：\n1 互动观看\n2 标准观看",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
+          "example": "video",
+          "member": "string",
+          "name": "SubType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "助教UserId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "RecordUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间绑定的群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomStatisticsRequest": {
+      "document": "DescribeRoomStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomStatisticsResponse": {
+      "document": "DescribeRoomStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "峰值在线成员人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PeakMemberNumber",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "累计在线人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MemberNumber",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "记录总数。包含进入房间或者应到未到的。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成员记录列表。",
+          "example": "无",
+          "member": "MemberRecord",
+          "name": "MemberRecords",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "秒级unix时间戳，实际房间开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1675677337",
+          "member": "uint64",
+          "name": "RealStartTime",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "秒级unix时间戳，实际房间结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1675677337",
+          "member": "uint64",
+          "name": "RealEndTime",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间消息总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MessageCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间连麦总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MicCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSdkAppIdUsersRequest": {
+      "document": "DescribeSdkAppIdUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页数据限制，默认值为20",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSdkAppIdUsersResponse": {
+      "document": "DescribeSdkAppIdUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前获取用户信息数组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupervisorsRequest": {
+      "document": "DescribeSupervisors请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量，最大100。 不填默认20.",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增，不填默认为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupervisorsResponse": {
+      "document": "DescribeSupervisors返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前页数据量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "巡课列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRequest": {
+      "document": "DescribeUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户Id。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResponse": {
+      "document": "DescribeUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称。",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户头像Url。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DocumentInfo": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档原址url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档所有者UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档权限，0：私有课件 1：公共课件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码进度， 0 - 100 表示（0% - 100%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeProgress",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TranscodeState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "转码失败后的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "DocumentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档大小，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "更新的UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Pages",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "宽，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "高，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "封面，仅转码的课件会生成封面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Cover",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "EndRoomRequest": {
+      "document": "EndRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "EndRoomResponse": {
+      "document": "EndRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EventDataInfo": {
+      "document": "房间事件对应的信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件发生的房间号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件发生的用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "EventInfo": {
+      "document": "房间事件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件发生的秒级unix时间戳。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束\nCamera0n: 摄像头打开\nCamera0ff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
+          "example": "RoomStart",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件详细内容，包含房间号,成员类型事件包含用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"RoomId\":1234}",
+          "member": "EventDataInfo",
+          "name": "EventData",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GetRoomEventRequest": {
+      "document": "GetRoomEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用Id。",
+          "example": "12345",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "起始页，1开始。keyword为空时有效。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页个数。keyword为空时有效。一次性最多200条。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "搜索事件类型。有以下事件类型:\nRoomStart:房间开始\nRoomEnd:房间结束\nMemberJoin:成员加入\nMemberQuit:成员退出\nRecordFinish:录制结束",
+          "example": "RoomStart",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomEventResponse": {
+      "document": "GetRoomEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该房间的事件总数，keyword搜索不影响该值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "详细事件内容。包含相应的类型、发生的时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Timestamp\":1234,\"EventType\":\"RoomStart\",\"EventData\":{\"RoomId\":123456}}]",
+          "member": "EventInfo",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomMessageRequest": {
+      "document": "GetRoomMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间Id。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息序列。获取该序列以前的消息(不包含该seq消息)",
+          "example": "无",
+          "member": "int64",
+          "name": "Seq",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息拉取的条数。最大数量不能超过套餐包限制。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomMessageResponse": {
+      "document": "GetRoomMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息列表",
+          "example": "无",
+          "member": "MessageList",
+          "name": "Messages",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomsRequest": {
+      "document": "GetRooms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码平台的SdkAppId。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。默认以当前时间减去半小时作为开始时间。",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。默认以当前时间加上半小时作为结束时间。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认是10条",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomsResponse": {
+      "document": "GetRooms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间列表",
+          "example": "无",
+          "member": "RoomItem",
+          "name": "Rooms",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWatermarkRequest": {
+      "document": "GetWatermark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetWatermarkResponse": {
+      "document": "GetWatermark返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "老师视频区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WatermarkConfig",
+          "name": "TeacherLogo",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WatermarkConfig",
+          "name": "BoardLogo",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackgroundPictureConfig",
+          "name": "BackgroundPicture",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文字水印配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextMarkConfig",
+          "name": "Text",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupBaseInfo": {
+      "document": "批量创建群组基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待创建群组名",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组主讲人ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "GroupInfo": {
+      "document": "获取群组列表返回的群组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fdghdhdfh",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "群组类型 \n0-基础群组 \n1-组合群组，若为1时会返回子群组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "群组类型",
+          "member": "uint64",
+          "name": "GroupType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子群组ID列表，如有。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubGroupIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KickUserFromRoomRequest": {
+      "document": "KickUserFromRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台的SdkAppId。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "需要踢出成员Id",
+          "example": "dfgsadffg",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "踢出类型：\n1：临时踢出，可以使用Duration参数指定污点时间，污点时间间隔内用户无法进入房间。\n2：永久踢出",
+          "example": "1",
+          "member": "uint64",
+          "name": "KickType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "污点时间(单位秒)，KickType = 1时生效，默认为0",
+          "example": "10",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "KickUserFromRoomResponse": {
+      "document": "KickUserFromRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOriginIdRequest": {
+      "document": "LoginOriginId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。",
+          "example": "userid",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOriginIdResponse": {
+      "document": "LoginOriginId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abae3faef12345",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserRequest": {
+      "document": "LoginUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "注册获取的用户id。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserResponse": {
+      "document": "LoginUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abc",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MemberRecord": {
+      "document": "成员记录信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户名称。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "在线时长，单位秒。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PresentTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启摄像头。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Camera",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启麦克风。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否禁言。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Silence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回答问题数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AnswerQuestions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "举手数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandUps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "首次进入房间的unix时间戳。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "FirstJoinTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最后一次退出房间的unix时间戳。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "LastQuitTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "奖励次数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rewords",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IPAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户位置信息。",
+          "example": "城市(国家)",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）",
+          "example": "5",
+          "member": "int64",
+          "name": "Device",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每个成员上麦次数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PerMemberMicCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每个成员发送消息数量。\n",
+          "example": "2",
+          "member": "int64",
+          "name": "PerMemberMessageCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户角色。0代表学生；1代表老师； 2助教；3巡课。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Role",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上课班号",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子上课班号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubGroupId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户的上台状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Stage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CurrentState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageItem": {
+      "document": "单条消息体内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息类型。0表示文本消息，1表示图片消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MessageType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文本消息内容。message type为0时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "TextMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "图片消息URL。 message type为1时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "ImageMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageList": {
+      "document": "历史消息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676879993",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息发送者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FromAccount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息序列号，当前课堂内唯一且单调递增\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Seq",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "历史消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MessageItem",
+          "name": "MessageBody",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAppRequest": {
+      "document": "ModifyApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回调地址。",
+          "example": "abc",
+          "member": "string",
+          "name": "Callback",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "回调key。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppResponse": {
+      "document": "ModifyApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupRequest": {
+      "document": "ModifyGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的群组ID",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码平台应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认绑定主讲老师ID",
+          "example": "adfgdsfgdf",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "待修改的群组名称",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupResponse": {
+      "document": "ModifyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomRequest": {
+      "document": "ModifyRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师ID。直播开始后不允许修改。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "观看类型。可以有如下取值：\n1 互动观看\n2 标准观看\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\n直播开始后不允许修改。",
+          "example": "video",
+          "member": "string",
+          "name": "SubType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "助教Id列表。直播开始后不允许修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "rtc人数。直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RTCAudienceNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "房间绑定的群组ID。直播开始后不允许修改。",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
+          "example": "0",
+          "member": "uint64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoOrientation",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomResponse": {
+      "document": "ModifyRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserProfileRequest": {
+      "document": "ModifyUserProfile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待修改用户ID",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "待修改的用户名",
+          "example": "abc",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "待修改头像url",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserProfileResponse": {
+      "document": "ModifyUserProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QuestionInfo": {
+      "document": "房间问答问题详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题ID",
+          "example": "a304828e-c109-436e-aada-59aec20b7aab",
+          "member": "string",
+          "name": "QuestionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "问题内容",
+          "example": "测试题",
+          "member": "string",
+          "name": "QuestionContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "倒计时答题设置的秒数（0 表示不计时）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "正确答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "int64",
+          "name": "CorrectAnswer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每个选项答题人数统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnswerStat",
+          "name": "AnswerStats",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisterUserRequest": {
+      "document": "RegisterUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户名称。",
+          "example": "nickname",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。",
+          "example": "id12345",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户头像。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterUserResponse": {
+      "document": "RegisterUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abae3faef12345",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoomInfo": {
+      "document": "批量创建房间的房间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间开始时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预定的房间结束时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。可以有如下取值： 1 标清 2 高清 3 全高清",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频",
+          "example": "videodoc",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师ID。通过[注册用户]接口获取的UserId。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进入课堂时是否自动连麦。可以有以下取值： 0 不自动连麦（需要手动申请上麦，默认值） 1 自动连麦",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值： 0 自动取消连麦（默认值） 1 保持连麦状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "高音质模式。可以有以下取值： 0 不开启高音质（默认值） 1 开启高音质",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上课后是否禁止自动录制。可以有以下取值： 0 不禁止录制（自动开启录制，默认值） 1 禁止录制 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "rtc人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RTCAudienceNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "观看类型。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "录制布局。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordLayout",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间绑定的群组ID",
+          "example": "xfdfgdf",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教",
+          "example": "0",
+          "member": "int64",
+          "name": "InteractionMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoOrientation",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "RoomItem": {
+      "document": "房间列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "room",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间状态。0 未开始 ；1进行中  ；2 已结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实际开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RealStartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实际结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RealEndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分辨率。1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大允许连麦人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxRTCMember",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间录制地址。已废弃，使用新字段 RecordUrl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReplayUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最高房间内人数（包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "打开学生麦克风/摄像头的授权开关 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "SceneItem": {
+      "document": "场景配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景名称",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "logo地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogoUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "主页地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HomeUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "自定义的js\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "自定义的css\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CSSUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SetAppCustomContentRequest": {
+      "document": "SetAppCustomContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义内容。",
+          "example": "无",
+          "member": "AppCustomContent",
+          "name": "CustomContent",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SetAppCustomContentResponse": {
+      "document": "SetAppCustomContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWatermarkRequest": {
+      "document": "SetWatermark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "12333",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师视频区域的水印参数地址，设置为空字符串表示删除",
+          "example": "url",
+          "member": "string",
+          "name": "TeacherUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板视频区域的水印参数地址，设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "BoardUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频默认图片（在没有视频流的时候显示），设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "BoardW",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "BoardH",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "BoardX",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "白板区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "BoardY",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师视频区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherW",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师视频区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherH",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师视频区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherX",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "老师视频区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherY",
+          "required": false,
+          "type": "float",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文字水印内容，设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文字水印颜色",
+          "example": "无",
+          "member": "string",
+          "name": "TextColor",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SetWatermarkResponse": {
+      "document": "SetWatermark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRoomRequest": {
+      "document": "StartRoom请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "StartRoomResponse": {
+      "document": "StartRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "应用绑定的标签",
+      "members": [],
+      "usage": "out"
+    },
+    "TextMarkConfig": {
+      "document": "文字水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文字水印内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文字水印颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Color",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "UnbindDocumentFromRoomRequest": {
+      "document": "UnbindDocumentFromRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDocumentFromRoomResponse": {
+      "document": "UnbindDocumentFromRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserInfo": {
+      "document": "用户信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户头像Url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "WatermarkConfig": {
+      "document": "水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "水印宽。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Width",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "水印高。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Height",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "LocationX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "LocationY",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

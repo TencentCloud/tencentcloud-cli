@@ -1,0 +1,3438 @@
+{
+  "actions": {
+    "AddBatch": {
+      "document": "创建批次",
+      "input": "AddBatchRequest",
+      "name": "创建批次",
+      "output": "AddBatchResponse",
+      "status": "online"
+    },
+    "AuditActivity": {
+      "document": "审核代金劵活动，有白名单限制，需要的童鞋，请联系hansonwchen 或 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "input": "AuditActivityRequest",
+      "name": "审核代金劵活动",
+      "output": "AuditActivityResponse",
+      "status": "online"
+    },
+    "CreateLabelsToCustomer": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "CreateLabelsToCustomerRequest",
+      "name": "批量客户打标",
+      "output": "CreateLabelsToCustomerResponse",
+      "status": "online"
+    },
+    "CreateLead": {
+      "document": "TCC导创建线索，有白名单限制，需要的童鞋，请联系joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "input": "CreateLeadRequest",
+      "name": "创建线索",
+      "output": "CreateLeadResponse",
+      "status": "online"
+    },
+    "CreateProductPatch": {
+      "document": "产研接口--推送产品补丁包信息接口\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
+      "input": "CreateProductPatchRequest",
+      "name": "推送产品补丁包",
+      "output": "CreateProductPatchResponse",
+      "status": "online"
+    },
+    "DeleteBatch": {
+      "document": "删除批次",
+      "input": "DeleteBatchRequest",
+      "name": "删除批次",
+      "output": "DeleteBatchResponse",
+      "status": "online"
+    },
+    "DeleteMarkCustomerLabel": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DeleteMarkCustomerLabelRequest",
+      "name": "删除打标客户标签",
+      "output": "DeleteMarkCustomerLabelResponse",
+      "status": "online"
+    },
+    "DescribeCompanyInfoByKeyword": {
+      "document": "有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DescribeCompanyInfoByKeywordRequest",
+      "name": "搜素企业名称",
+      "output": "DescribeCompanyInfoByKeywordResponse",
+      "status": "online"
+    },
+    "DescribeCorpCustomer": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DescribeCorpCustomerRequest",
+      "name": "通过关键字搜索集团数据",
+      "output": "DescribeCorpCustomerResponse",
+      "status": "online"
+    },
+    "DescribeCorpCustomerList": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DescribeCorpCustomerListRequest",
+      "name": "集团客户列表",
+      "output": "DescribeCorpCustomerListResponse",
+      "status": "online"
+    },
+    "DescribeCustomerProtections": {
+      "document": "获取客户保护池数据",
+      "input": "DescribeCustomerProtectionsRequest",
+      "name": "获取客户保护池数据",
+      "output": "DescribeCustomerProtectionsResponse",
+      "status": "online"
+    },
+    "DescribeGoodsProductList": {
+      "document": "查询极光产品列表",
+      "input": "DescribeGoodsProductListRequest",
+      "name": "查询极光产品列表",
+      "output": "DescribeGoodsProductListResponse",
+      "status": "online"
+    },
+    "DescribeHuman": {
+      "document": "查询天途人力资源信息\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=847009213",
+      "input": "DescribeHumanRequest",
+      "name": "天途人力资源接口",
+      "output": "DescribeHumanResponse",
+      "status": "online"
+    },
+    "DescribeMarkCustomerLabelList": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DescribeMarkCustomerLabelListRequest",
+      "name": "客户打标标签列表",
+      "output": "DescribeMarkCustomerLabelListResponse",
+      "status": "online"
+    },
+    "DescribeOrganizationInfo": {
+      "document": "查询云启基地机构信息，有白名单限制，需要的童鞋，请联系 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "input": "DescribeOrganizationInfoRequest",
+      "name": "查询云启基地机构信息",
+      "output": "DescribeOrganizationInfoResponse",
+      "status": "online"
+    },
+    "DescribeProductProjectInfo": {
+      "document": "产研接口--获取产品项目信息\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
+      "input": "DescribeProductProjectInfoRequest",
+      "name": "获取产品项目信息",
+      "output": "DescribeProductProjectInfoResponse",
+      "status": "online"
+    },
+    "DescribeProductVersion": {
+      "document": "产研接口--获取产品信息接口\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
+      "input": "DescribeProductVersionRequest",
+      "name": "获取产品信息接口",
+      "output": "DescribeProductVersionResponse",
+      "status": "online"
+    },
+    "DescribeProjectInfo": {
+      "document": "根据项目编码获取项目简要信息【如果需要额外的信息，请联系vanliao或barrymliang，更多接入问题请查看公共接入部分文档。",
+      "input": "DescribeProjectInfoRequest",
+      "name": "查询pms单项目信息",
+      "output": "DescribeProjectInfoResponse",
+      "status": "online"
+    },
+    "DescribeQflowConfig": {
+      "document": "交付中心与安灯数据对接接口--获取交付配置信息\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
+      "input": "DescribeQflowConfigRequest",
+      "name": "查询交付配置信息",
+      "output": "DescribeQflowConfigResponse",
+      "status": "online"
+    },
+    "DescribeQflowProject": {
+      "document": "交付中心与安灯数据对接接口--获取项目信息\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
+      "input": "DescribeQflowProjectRequest",
+      "name": "查询项目信息",
+      "output": "DescribeQflowProjectResponse",
+      "status": "online"
+    },
+    "DescribeQflowToAndon": {
+      "document": "交付中心与安灯数据对接接口\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
+      "input": "DescribeQflowToAndonRequest",
+      "name": "查询交付中心项目信息",
+      "output": "DescribeQflowToAndonResponse",
+      "status": "online"
+    },
+    "DescribeQueryGroupCustomersList": {
+      "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
+      "input": "DescribeQueryGroupCustomersListRequest",
+      "name": "查询集团客户",
+      "output": "DescribeQueryGroupCustomersListResponse",
+      "status": "online"
+    },
+    "GetBatchList": {
+      "document": "获取批次列表",
+      "input": "GetBatchListRequest",
+      "name": "获取批次列表",
+      "output": "GetBatchListResponse",
+      "status": "online"
+    },
+    "ImportOfflineProduct": {
+      "document": "导入线下产品，有白名单限制，需要的童鞋，请联系hansonwchen 或 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "input": "ImportOfflineProductRequest",
+      "name": "导入线下产品",
+      "output": "ImportOfflineProductResponse",
+      "status": "online"
+    },
+    "ModifyProductMaterial": {
+      "document": "产研接口--推送产品物料\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
+      "input": "ModifyProductMaterialRequest",
+      "name": "推送产品物料",
+      "output": "ModifyProductMaterialResponse",
+      "status": "online"
+    },
+    "SendOutsideEmailAndSms": {
+      "document": "给外部客户发送短信和邮件，有白名单限制，需要的童鞋，请联系 joshuadu 或billxu配置白名单 更多接入问题请看 http://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "input": "SendOutsideEmailAndSmsRequest",
+      "name": "给外部客户发送短信和邮件",
+      "output": "SendOutsideEmailAndSmsResponse",
+      "status": "online"
+    },
+    "UpdateBatch": {
+      "document": "更新批次",
+      "input": "UpdateBatchRequest",
+      "name": "更新批次",
+      "output": "UpdateBatchResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-08-30",
+    "api_brief": "磐石系统，云API接口",
+    "serviceNameCN": "磐石",
+    "serviceShortName": "clouddc"
+  },
+  "objects": {
+    "AddBatchRequest": {
+      "document": "AddBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次名称",
+          "example": "官网企业认证",
+          "member": "string",
+          "name": "BatchName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索下发方标识",
+          "example": "dianshi",
+          "member": "string",
+          "name": "LeadReleaseSource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索下发方原始信息",
+          "example": "官网企业认证",
+          "member": "string",
+          "name": "LeadReleaseOriginMsg",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBatchResponse": {
+      "document": "AddBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "{\"batchId\":5}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditActivityRequest": {
+      "document": "AuditActivity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ActId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "登录态token",
+          "example": "1",
+          "member": "string",
+          "name": "AccessToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "审核备注",
+          "example": "1",
+          "member": "string",
+          "name": "AuditRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境变量，dev请求到开发环境，默认当前环境",
+          "example": "dev",
+          "member": "string",
+          "name": "ENV",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "组织机构类型",
+          "example": "1",
+          "member": "int64",
+          "name": "OrganizationType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditActivityResponse": {
+      "document": "AuditActivity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包数据",
+          "example": "{}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLabelsToCustomerRequest": {
+      "document": "CreateLabelsToCustomer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户标签唯一标识",
+          "example": "GUOQI",
+          "member": "string",
+          "name": "LabelKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一级行业id，-1：全部行业",
+          "example": "1",
+          "member": "int64",
+          "name": "Industry",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid，上限200个",
+          "example": "[\"507eafdb04d5579c5b06d37cc9784ff5\\n\"]",
+          "member": "string",
+          "name": "Cids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "打标类型，1：后台打标，2：前台打标",
+          "example": "1",
+          "member": "int64",
+          "name": "RequestFrom",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二级行业id，默认全行业，-1：全部行业",
+          "example": "2",
+          "member": "int64",
+          "name": "SubIndustry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境变量，dev开发环境，idc线上环境，不传默认是idc",
+          "example": "dev",
+          "member": "string",
+          "name": "ENV",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLabelsToCustomerResponse": {
+      "document": "CreateLabelsToCustomer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "{\"affected_rows\":1,\"insert_id\":96}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLeadRequest": {
+      "document": "CreateLead请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一级来源标签id",
+          "example": "1",
+          "member": "int64",
+          "name": "SourcePrimaryTagId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二级来源标签id",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceSecondaryTagId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "扩展字段格式为[[\"Key\":\"province\", \"KeyName\":\"省份\", \"KeyValue\":\"广东省\" ]]",
+          "example": "1",
+          "member": "Extend",
+          "name": "Extend",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "申请的批次id",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索来源方标识",
+          "example": "1",
+          "member": "string",
+          "name": "LeadReleaseSource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索来源方唯一id",
+          "example": "1",
+          "member": "string",
+          "name": "LeadReleaseSourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "0非属任何模块1saas电销2渠道经理",
+          "example": "1",
+          "member": "int64",
+          "name": "BelongModule",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索贡献人",
+          "example": "1",
+          "member": "string",
+          "name": "Contributor",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "qq号",
+          "example": "1",
+          "member": "string",
+          "name": "Qq",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号",
+          "example": "1",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮箱",
+          "example": "1",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "qss参数",
+          "example": "1",
+          "member": "string",
+          "name": "QssParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系人姓名",
+          "example": "1",
+          "member": "string",
+          "name": "ContactName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系人职位",
+          "example": "1",
+          "member": "string",
+          "name": "ContactPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系人微信",
+          "example": "1",
+          "member": "string",
+          "name": "ContactWechat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "UIN",
+          "example": "1",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "意向度",
+          "example": "1",
+          "member": "string",
+          "name": "IntentionLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "付费类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PayType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLeadResponse": {
+      "document": "CreateLead返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "1",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductPatchRequest": {
+      "document": "CreateProductPatch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateProductPatchResponse": {
+      "document": "CreateProductPatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据",
+          "member": "string",
+          "name": "JsonData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchRequest": {
+      "document": "DeleteBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BatchId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchResponse": {
+      "document": "DeleteBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "{\"AffectedRows\":1}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMarkCustomerLabelRequest": {
+      "document": "DeleteMarkCustomerLabel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "example": "507eafdb04d5579c5b06d37cc9784ff5",
+          "member": "string",
+          "name": "Cid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户标签唯一标识",
+          "example": "GUOQI",
+          "member": "string",
+          "name": "LabelKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一级行业id，-1：全部",
+          "example": "1",
+          "member": "int64",
+          "name": "Industry",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二级行业id，-1：全部",
+          "example": "2",
+          "member": "int64",
+          "name": "SubIndustry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境变量，dev开发环境，idc线上环境，不传默认是idc",
+          "example": "dev",
+          "member": "string",
+          "name": "ENV",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMarkCustomerLabelResponse": {
+      "document": "DeleteMarkCustomerLabel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "{\"affected_rows\":1,\"insert_id\":96}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyInfoByKeywordRequest": {
+      "document": "DescribeCompanyInfoByKeyword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业名称",
+          "example": "拼多多",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数，默认10",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyInfoByKeywordResponse": {
+      "document": "DescribeCompanyInfoByKeyword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "无",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpCustomerListRequest": {
+      "document": "DescribeCorpCustomerList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "父级cid，要获取下级所有客户时，传列表里的对应的 cid 即可",
+          "member": "string",
+          "name": "ParentCid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "member": "string",
+          "name": "Cid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集团客户名称，筛选出客户所在根节点的所有节点",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数，默认一页20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否格式化成树级结构，0：否，1：是，默认是",
+          "member": "int64",
+          "name": "NeedFormat",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpCustomerListResponse": {
+      "document": "DescribeCorpCustomerList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "member": "string",
+          "name": "JsonString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpCustomerRequest": {
+      "document": "DescribeCorpCustomer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要搜索的关键字",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页页码，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小，1 到100之间，默认为20",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "example": "无",
+          "member": "string",
+          "name": "Cids",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否获取国内+国际地域的数据，0-否，1-是，默认为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "GetAllAreaData",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpCustomerResponse": {
+      "document": "DescribeCorpCustomer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "无",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerProtectionsRequest": {
+      "document": "DescribeCustomerProtections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "区域id",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "销售中心",
+          "example": "政务民生拓展中心",
+          "member": "string",
+          "name": "SaleCenter",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "销售组名",
+          "example": "广东拓展四组",
+          "member": "string",
+          "name": "SalesGroupName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名（默认模糊查询）",
+          "example": "经营测试账号39",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户查询类型，like模糊，equal精确",
+          "example": "like",
+          "member": "string",
+          "name": "SearchType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户简称",
+          "example": "经营测试账号",
+          "member": "string",
+          "name": "CustomerShortName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "行业id",
+          "example": "6",
+          "member": "int64",
+          "name": "IndustryId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "主销售名",
+          "example": "serenatian",
+          "member": "string",
+          "name": "BusinessManager",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建人",
+          "example": "serenatian",
+          "member": "string",
+          "name": "AddUser",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "example": "156ab9d0d3ddfcd62cda069d6a559d2c",
+          "member": "string",
+          "name": "Cid",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页条数，默认20条",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护池类型",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ProtectionType",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerProtectionsResponse": {
+      "document": "DescribeCustomerProtections返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包数据",
+          "example": "{}",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGoodsProductListRequest": {
+      "document": "DescribeGoodsProductList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页显示条数，默认50",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索参数，单次最多搜索100条",
+          "example": "无",
+          "member": "GoodsParams",
+          "name": "SearchArray",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "参数为0时：取维表 dc100796 下所有收入聚合下的产品；\n参数为1时：取维表 dc100510 配置的产品，并且此时search_array 字段无效。",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedDimension",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGoodsProductListResponse": {
+      "document": "DescribeGoodsProductList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回总数",
+          "example": "100",
+          "member": "int64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回产品详细信息",
+          "example": "无",
+          "member": "GoodsBaseInfoWithPriceAndMaterial",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHumanRequest": {
+      "document": "DescribeHuman请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "大区 （南区，北区，西区，东区）",
+          "example": "南区",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "中文姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号码",
+          "example": "18512341234",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业微信账号",
+          "example": "v_vxyhe",
+          "member": "string",
+          "name": "WechatAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "区技p账号",
+          "example": "p_qzqxiao",
+          "member": "string",
+          "name": "Enterprise",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页面条目",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHumanResponse": {
+      "document": "DescribeHuman返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json 数据，具体对应值查看文档",
+          "example": "无",
+          "member": "string",
+          "name": "JsonData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMarkCustomerLabelListRequest": {
+      "document": "DescribeMarkCustomerLabelList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当Id为空时，该参数必填",
+          "member": "string",
+          "name": "Cid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当Cid为空时，该参数必填",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户标签唯一标识",
+          "member": "string",
+          "name": "LabelKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一级行业id，当二级行业id存在时，该必填",
+          "member": "int64",
+          "name": "IndustryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二级行业id",
+          "member": "int64",
+          "name": "SubIndustryId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMarkCustomerLabelListResponse": {
+      "document": "DescribeMarkCustomerLabelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "member": "string",
+          "name": "JsonString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationInfoRequest": {
+      "document": "DescribeOrganizationInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机构uin",
+          "member": "int64",
+          "name": "OrganizationUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境变量，dev请求到开发环境，默认当前环境",
+          "member": "string",
+          "name": "ENV",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationInfoResponse": {
+      "document": "DescribeOrganizationInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包信息",
+          "member": "string",
+          "name": "JsonString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductProjectInfoRequest": {
+      "document": "DescribeProductProjectInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductProjectInfoResponse": {
+      "document": "DescribeProductProjectInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据，解析后为具体返回信息",
+          "member": "string",
+          "name": "JsonData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductVersionRequest": {
+      "document": "DescribeProductVersion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductVersionResponse": {
+      "document": "DescribeProductVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据，解析后为具体返回信息",
+          "member": "string",
+          "name": "JsonData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectInfoRequest": {
+      "document": "DescribeProjectInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目编码",
+          "example": "barry_risk_001",
+          "member": "string",
+          "name": "ProjectCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectInfoResponse": {
+      "document": "DescribeProjectInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "JSON格式项目信息",
+          "example": "无",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQflowConfigRequest": {
+      "document": "DescribeQflowConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeQflowConfigResponse": {
+      "document": "DescribeQflowConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据",
+          "member": "string",
+          "name": "JsonData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQflowProjectRequest": {
+      "document": "DescribeQflowProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ltc立项编号",
+          "member": "string",
+          "name": "LtcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ltc立项名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户CID",
+          "member": "string",
+          "name": "CustomerCid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户UIN",
+          "member": "string",
+          "name": "CustomerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名称",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "承接公司名称",
+          "member": "string",
+          "name": "ServerProvider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "QQ群",
+          "member": "string",
+          "name": "QqGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQflowProjectResponse": {
+      "document": "DescribeQflowProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据 解析后对应具体的项目信息",
+          "member": "string",
+          "name": "JsonData",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQflowToAndonRequest": {
+      "document": "DescribeQflowToAndon请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ltc立项编号",
+          "example": "2018091401522",
+          "member": "string",
+          "name": "LtcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ltc立项名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户CID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerCid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户UIN",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名称",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "承接公司名称",
+          "example": "无",
+          "member": "string",
+          "name": "ServerProvider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "服务大类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceStage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "服务子类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品简称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "承接公司id   华南-1；西南-2；华北-3；华东-4",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "区域spmo",
+          "example": "无",
+          "member": "string",
+          "name": "RegionSinoProfessionalManager",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "区技spmo",
+          "example": "无",
+          "member": "string",
+          "name": "RegionTechnologySinoProfessionalManager",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "QQ群",
+          "example": "无",
+          "member": "string",
+          "name": "QqGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务名",
+          "example": "无",
+          "member": "string",
+          "name": "SplitTaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "局点id ,多个以;分号分割",
+          "example": "无",
+          "member": "string",
+          "name": "GamePointId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQflowToAndonResponse": {
+      "document": "DescribeQflowToAndon返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "json数据 解析后二维数组 children中对应具体的项目信息",
+          "example": "[{\"ltc_id\":\"2018070901321\",\"project_name\":\"\\u6d77\\u901a\\u8bc1\\u5",
+          "member": "string",
+          "name": "JsonData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryGroupCustomersListRequest": {
+      "document": "DescribeQueryGroupCustomersList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "example": "无",
+          "member": "string",
+          "name": "Cids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集体id",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数，默认20",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueryGroupCustomersListResponse": {
+      "document": "DescribeQueryGroupCustomersList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "无",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Extend": {
+      "document": "TCC扩展字段",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "扩展字段key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "扩展字段Name",
+          "member": "string",
+          "name": "KeyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "扩展字段Value",
+          "member": "string",
+          "name": "KeyValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetBatchListRequest": {
+      "document": "GetBatchList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次名称",
+          "example": "官网企业认证",
+          "member": "string",
+          "name": "BatchName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索下发方标识",
+          "example": "dianshi",
+          "member": "string",
+          "name": "LeadReleaseSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索下发方原始信息",
+          "example": "官网企业认证",
+          "member": "string",
+          "name": "LeadReleaseOriginMsg",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小（页码和分页大小不填，则拉取全部数据）",
+          "example": "15",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBatchListResponse": {
+      "document": "GetBatchList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包",
+          "example": "{\"List\":[{\"AccountId\":\"1234\",\"BatchId\":1,\"BatchName\":\"mhy name22",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GoodsBaseInfoWithPriceAndMaterial": {
+      "document": "线下产品/临时产品详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "10001",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "产品名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否已认证",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCertificated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "30008",
+          "member": "int64",
+          "name": "GoodsId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品版本",
+          "example": "3",
+          "member": "int64",
+          "name": "GoodsVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品一级形态",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品二级形态",
+          "example": "service",
+          "member": "string",
+          "name": "PropertyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品三级形态",
+          "example": "service",
+          "member": "string",
+          "name": "PropertyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费一层code",
+          "example": "p_tce_service",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费二层code",
+          "example": "sp_tce_service_deliver",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费三层code",
+          "example": "v_tce_service_sell",
+          "member": "string",
+          "name": "BillingItemCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费四层code",
+          "example": "sv_tce_service_sell_deliver_lan4_330",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费一层中文名称",
+          "example": "TCE服务",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费二层中文名称",
+          "example": "TCE-交付实施服务",
+          "member": "string",
+          "name": "SubProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费三层中文名称",
+          "example": "TCE-服务销售",
+          "member": "string",
+          "name": "BillingItemName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费四层中文名称",
+          "example": "TCE服务-内网4层负载均衡（CLB）-交付实施服务",
+          "member": "string",
+          "name": "SubBillingItemName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费一层英文名称",
+          "example": "tce_service",
+          "member": "string",
+          "name": "ProductEnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费二层英文名称",
+          "example": "deliver",
+          "member": "string",
+          "name": "SubProductEnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费三层英文名称",
+          "example": "tce_service_sell",
+          "member": "string",
+          "name": "BillingItemEnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "计费四层英文名称",
+          "example": "tce_service_sell",
+          "member": "string",
+          "name": "SubBillingItemEnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "short名称",
+          "example": "TCE",
+          "member": "string",
+          "name": "ShortName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属云类型",
+          "example": "IAAS",
+          "member": "string",
+          "name": "GoodsLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否是临时产品",
+          "example": "0",
+          "member": "int64",
+          "name": "IsTmp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "客户Cid",
+          "example": "111",
+          "member": "string",
+          "name": "Cid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品简介",
+          "example": "TCE-交付实施服务",
+          "member": "string",
+          "name": "Brief",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品属性",
+          "example": "service_labor",
+          "member": "string",
+          "name": "GoodsProperty",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "self",
+          "member": "string",
+          "name": "GoodsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产业子类",
+          "example": "CD1001",
+          "member": "string",
+          "name": "IndustryTreeCd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "考核标签（旧）",
+          "example": "A1",
+          "member": "string",
+          "name": "FinanceAssessLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "考核标签",
+          "example": "server",
+          "member": "string",
+          "name": "AssessmentLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品计收规则",
+          "example": "chanp",
+          "member": "string",
+          "name": "ProductIncome",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "行销计收规则",
+          "example": "sale",
+          "member": "string",
+          "name": "SalesIncome",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "测算单是否纳入自研占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no_included",
+          "member": "string",
+          "name": "SelfResearchInCalculation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "渠道类型",
+          "example": "channel",
+          "member": "string",
+          "name": "ChannelType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属中心ID",
+          "example": "27821",
+          "member": "int64",
+          "name": "FeatureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属部门ID",
+          "example": "22989",
+          "member": "int64",
+          "name": "DepartmentId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "收入部门ID",
+          "example": "0",
+          "member": "int64",
+          "name": "IncomeDepartmentId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "收入中心ID",
+          "example": "0",
+          "member": "int64",
+          "name": "IncomeFeatureId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结算组ID",
+          "example": "12451",
+          "member": "string",
+          "name": "SettGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结算组名称",
+          "example": "云服务收入",
+          "member": "string",
+          "name": "SettGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "渠道组ID",
+          "example": "0794",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "渠道组名称",
+          "example": "国内云-云服务费",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "交付团队",
+          "example": "区域交付中心交付",
+          "member": "string",
+          "name": "DeliveryTeam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "收入聚合ID1",
+          "example": "278",
+          "member": "int64",
+          "name": "IncomeGroupIdOne",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "收入聚合ID2",
+          "example": "279",
+          "member": "int64",
+          "name": "IncomeGroupIdTwo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成本聚合ID1",
+          "example": "14",
+          "member": "int64",
+          "name": "CostAggIdOne",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成本聚合ID2",
+          "example": "1033",
+          "member": "int64",
+          "name": "CostAggIdTwo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成本聚合ID3",
+          "example": "268",
+          "member": "int64",
+          "name": "CostAggIdThree",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "成本聚合ID4",
+          "example": "1911",
+          "member": "int64",
+          "name": "CostAggIdFour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "售卖模式",
+          "example": "one_time_mode",
+          "member": "string",
+          "name": "SaleModes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品经理1",
+          "example": "wannahuang,tompyzhang,yolandaylwu,v_xtianxu",
+          "member": "string",
+          "name": "ProductManagerOne",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品经理2",
+          "example": "wannahuang",
+          "member": "string",
+          "name": "ProductManagerTwo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "运营经理",
+          "example": "wannahuang",
+          "member": "string",
+          "name": "ProductOperationManager",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品状态",
+          "example": "30",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "临时产品阶段",
+          "example": "1",
+          "member": "int64",
+          "name": "TmpStep",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否最新版本",
+          "example": "1",
+          "member": "int64",
+          "name": "IsLastVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订阅模式",
+          "example": "non-subscription",
+          "member": "string",
+          "name": "SubscriptionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "价格json数组",
+          "example": "价格json数组1",
+          "member": "GoodsPriceInfo",
+          "name": "Price",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "物料清单json",
+          "example": "物料清单json1",
+          "member": "GoodsBillOfMaterialListInfo",
+          "name": "BillOfMaterialList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "TCE维表中的产品属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service",
+          "member": "string",
+          "name": "DimensionGoodsProperty",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "TCE维表中的产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "owner",
+          "member": "string",
+          "name": "DimensionGoodsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GoodsBillOfMaterialListInfo": {
+      "document": "线下产品/临时产品 BOM清单信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品ID",
+          "example": "30008",
+          "member": "int64",
+          "name": "GoodsId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品版本",
+          "example": "3",
+          "member": "int64",
+          "name": "GoodsVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "售卖模式",
+          "example": "one_time_mode",
+          "member": "string",
+          "name": "SaleMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "名称",
+          "example": "24408one_time_mode1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "物料信息",
+          "example": " {                                 \"id\": 103111,                ",
+          "member": "GoodsMaterialListInfo",
+          "name": "MaterialList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GoodsList": {
+      "document": "云启基地产品列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户uin",
+          "member": "int64",
+          "name": "CustomerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名称",
+          "member": "string",
+          "name": "CustomerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "金额",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品名称",
+          "member": "string",
+          "name": "GoodsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "评论",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GoodsMaterialListInfo": {
+      "document": "线下产品/临时产品 物料基本信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "物料ID",
+          "example": "8300978",
+          "member": "int64",
+          "name": "MaterialId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "物料版本",
+          "example": "3",
+          "member": "int64",
+          "name": "MaterialVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "物料数量",
+          "example": "2",
+          "member": "string",
+          "name": "MaterialNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GoodsParams": {
+      "document": "线下产品/临时产品入参",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品ID",
+          "example": "1001",
+          "member": "int64",
+          "name": "GoodsId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品版本",
+          "example": "2",
+          "member": "int64",
+          "name": "GoodsVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "GoodsPriceInfo": {
+      "document": "线下产品/临时产品 价格信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品ID",
+          "example": "30008",
+          "member": "int64",
+          "name": "GoodsId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品版本",
+          "example": "3",
+          "member": "int64",
+          "name": "GoodsVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "售卖模式",
+          "example": "one_time_mode",
+          "member": "string",
+          "name": "SaleMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "定价模式",
+          "example": "ratio",
+          "member": "string",
+          "name": "PriceMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "定价比例",
+          "example": "25.0",
+          "member": "string",
+          "name": "PriceRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关联产品ID",
+          "example": "30765",
+          "member": "string",
+          "name": "RelationGoodsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "刊例价",
+          "example": "1000000000.000000",
+          "member": "string",
+          "name": "PublishedPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Discount价格",
+          "example": "700000000.000000",
+          "member": "string",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "DiscountLow价格",
+          "example": "600000000.000000",
+          "member": "string",
+          "name": "DiscountLowPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "LeaderLow价格",
+          "example": "800000000.000000",
+          "member": "string",
+          "name": "LeaderLowPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2019-10-31",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-10-31",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品单位",
+          "example": "节点",
+          "member": "string",
+          "name": "GoodNumUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时长单位",
+          "example": "p",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Leader折扣线",
+          "example": "1.00",
+          "member": "string",
+          "name": "LeaderDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Director折扣线",
+          "example": "1.00",
+          "member": "string",
+          "name": "DirectorDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Gm折扣线",
+          "example": "1.00",
+          "member": "string",
+          "name": "GmDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Control折扣线",
+          "example": "1.00",
+          "member": "string",
+          "name": "ControlDiscount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "成本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "40000000",
+          "member": "string",
+          "name": "Cost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "税率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "string",
+          "name": "TaxRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "利润率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "ProfitRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ImportOfflineProductRequest": {
+      "document": "ImportOfflineProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "组织uin",
+          "member": "int64",
+          "name": "OrganizationUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "产品列表",
+          "member": "GoodsList",
+          "name": "GoodsList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "登录态token",
+          "member": "string",
+          "name": "AccessToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环境变量，dev请求到开发环境，默认当前环境",
+          "member": "string",
+          "name": "ENV",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportOfflineProductResponse": {
+      "document": "ImportOfflineProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包数据",
+          "member": "string",
+          "name": "JsonString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductMaterialRequest": {
+      "document": "ModifyProductMaterial请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyProductMaterialResponse": {
+      "document": "ModifyProductMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendOutsideEmailAndSmsRequest": {
+      "document": "SendOutsideEmailAndSms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户cid",
+          "member": "string",
+          "name": "Cid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "销售易上的用户类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "在经营维表维护的模板id",
+          "member": "int64",
+          "name": "ThemeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "短信模板参数",
+          "member": "string",
+          "name": "SmsTemplate",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮件模板参数",
+          "member": "string",
+          "name": "EmailTemplate",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendOutsideEmailAndSmsResponse": {
+      "document": "SendOutsideEmailAndSms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包数据",
+          "member": "string",
+          "name": "JsonString",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBatchRequest": {
+      "document": "UpdateBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BatchId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次名称",
+          "example": "官网企业认证",
+          "member": "string",
+          "name": "BatchName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "线索下发方原始信息",
+          "example": "test",
+          "member": "string",
+          "name": "LeadReleaseOriginMsg",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBatchResponse": {
+      "document": "UpdateBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "JsonString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

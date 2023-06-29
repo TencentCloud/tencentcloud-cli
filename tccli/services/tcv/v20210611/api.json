@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "DescribeUserInfo": {
+      "document": "获取用户信息，购买状态等",
+      "input": "DescribeUserInfoRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserInfoResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-06-11",
+    "api_brief": "可获取大屏列表数据，数据源数据，访问密钥等",
+    "serviceNameCN": "腾讯云图数据可视化",
+    "serviceShortName": "tcv"
+  },
+  "objects": {
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

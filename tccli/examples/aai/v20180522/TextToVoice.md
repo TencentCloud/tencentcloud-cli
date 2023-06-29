@@ -7,14 +7,14 @@ Input:
 ```
 tccli aai TextToVoice --cli-unfold-argument  \
     --Text 你好 \
-    --SessionId session-1234 \
-    --Volume 1 \
-    --Speed 1 \
-    --ProjectId 0 \
     --ModelType 1 \
-    --PrimaryLanguage 1 \
+    --Volume 1 \
+    --SessionId session-1234 \
+    --Codec wav \
+    --ProjectId 0 \
     --SampleRate 16000 \
-    --Codec wav
+    --PrimaryLanguage 1 \
+    --Speed 1
 ```
 
 Output: 

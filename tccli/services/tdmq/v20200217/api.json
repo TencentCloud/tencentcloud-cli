@@ -11605,6 +11605,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启HTTP公网访问",
+          "example": "无",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11835,6 +11845,16 @@
           "name": "Remark",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网访问",
+          "example": "无",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],

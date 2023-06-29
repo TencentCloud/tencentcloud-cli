@@ -1,0 +1,857 @@
+{
+  "actions": {
+    "ApplyMarketComponent": [
+      {
+        "document": "从组件市场选中组件并添加到应用模板列表",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyMarketComponent\n<公共请求参数>\n\n{\n    \"ID\": 8367274\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "使用组件市场中的组件"
+      }
+    ],
+    "BuildMessageRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildMessageRoute\n<公共请求参数>\n\n{\n    \"SourceUnitIDList\": [\n        0\n    ],\n    \"TopicFilter\": \"0event\",\n    \"Descript\": \"\",\n    \"RouteName\": \"test\",\n    \"SourceDeviceNameList\": [\n        \"link02\"\n    ],\n    \"Mode\": \"topic-datasource\",\n    \"SourceProductID\": \"SA4RZ3NLIM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "BuildMessageRoute"
+      }
+    ],
+    "CreateApplicationVisualization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationVisualization\n<公共请求参数>\n\n{\n    \"BasicInfo\": {\n        \"Name\": \"app\",\n        \"Description\": \"test\"\n    },\n    \"BasicConfig\": {\n        \"Name\": \"app\",\n        \"Namespace\": \"Default\",\n        \"WorkflowKind\": \"Deployment\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ApplicationId\": 1\n    }\n}",
+        "title": "创建应用模板"
+      }
+    ],
+    "CreateConfigMap": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigMap\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"ConfigMapName\": \"test\",\n    \"ConfigMapNamespace\": \"default\",\n    \"ConfigMapData\": [\n        {\n            \"Key\": \"username\",\n            \"Value\": \"iecp\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\"\n    }\n}",
+        "title": "CreateConfigMap"
+      }
+    ],
+    "CreateEdgeNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNode\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9deb87cc-82c5-4384-aa94-ad99c42e74d9\"\n    }\n}",
+        "title": "创建边缘节点"
+      }
+    ],
+    "CreateEdgeNodeBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeBatch\n<公共请求参数>\n\n{\n    \"Nodes\": [\n        {\n            \"Remark\": \"20220911\",\n            \"SN\": \"SN2232323\",\n            \"Name\": \"snnode\"\n        }\n    ],\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82b8436a-1d51-4e33-8036-6a6c5b854056\"\n    }\n}",
+        "title": "批量预添加节点"
+      }
+    ],
+    "CreateEdgeNodeGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeGroup\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"434b1d81-c4d7-4136-8dec-efc0fa86475b\"\n    }\n}",
+        "title": "创建NodeGroup"
+      }
+    ],
+    "CreateEdgeNodeUnitTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeUnitTemplate\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"Name\": \"auto-code1\",\n    \"Namespace\": \"default\",\n    \"Nodes\": [\n        \"logofox\",\n        \"node2\",\n        \"dev00311\"\n    ],\n    \"Description\": \"Description\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "创建边缘单元NodeUnit模板"
+      }
+    ],
+    "CreateEdgeUnitApplicationVisualization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitApplicationVisualization\n<公共请求参数>\n\n{\n    \"BasicInfo\": {\n        \"Name\": \"app\",\n        \"Description\": \"test\"\n    },\n    \"BasicConfig\": {\n        \"Name\": \"app\",\n        \"Namespace\": \"Default\",\n        \"WorkflowKind\": \"Deployment\"\n    },\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ApplicationId\": 1\n    }\n}",
+        "title": "CreateEdgeUnitApplicationVisualization"
+      }
+    ],
+    "CreateEdgeUnitApplicationYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitApplicationYaml\n<公共请求参数>\n\n{\n    \"BasicInfo\": {\n        \"Name\": \"app\",\n        \"Description\": \"test\"\n    },\n    \"EdgeUnitId\": 1,\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ApplicationId\": 1\n    }\n}",
+        "title": "CreateEdgeUnitApplicationYaml"
+      }
+    ],
+    "CreateEdgeUnitCloud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"Name\": \"console-api-2\",\n    \"K8sVersion\": \"1.18.2\",\n    \"VpcId\": \"vpc-aib5u94x\",\n    \"Description\": \"from console api\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ClusterId\": \"cls-1dc9nu0m\",\n        \"EdgeUnitId\": 100003\n    }\n}",
+        "title": "创建集群"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"VpcId\": \"\",\n    \"ServiceCIDR\": \"\",\n    \"Name\": \"test\",\n    \"K8sVersion\": \"1.16.7\",\n    \"PodCIDR\": \"\",\n    \"Description\": \"测试字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9db252c-5dd2-448c-a440-86310ca3df22\",\n        \"ClusterId\": \"cls-f3cj2nxz\",\n        \"EdgeUnitId\": 3\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"Name\": \"ddddqq\",\n    \"K8sVersion\": \"1.18.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbcda022-d686-4972-a359-9707eeaca26d\",\n        \"ClusterId\": \"cls-jpc2ub99\",\n        \"EdgeUnitId\": 100027\n    }\n}",
+        "title": "创建边缘集群"
+      }
+    ],
+    "CreateEdgeUnitDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"DeviceNames\": [\n        \"link02\",\n        \"link01\"\n    ],\n    \"EdgeUnitId\": 100067,\n    \"ProductId\": \"SA4RZ3NLIM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1ba65ee-80cd-4462-80ff-79620c149c12\"\n    }\n}",
+        "title": "CreateEdgeUnitDevices"
+      }
+    ],
+    "CreateIotDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIotDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"link\",\n    \"Description\": \"测试\",\n    \"ProductId\": \"SA4RZ3NLIM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "创建子设备"
+      }
+    ],
+    "CreateMessageRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageRoute\n<公共请求参数>\n\n{\n    \"RouteName\": \"\",\n    \"Descript\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6b8f9ff-b3c2-4faa-af7c-4574ac612f89\",\n        \"RouteID\": 1000008\n    }\n}",
+        "title": "CreateMessageRoute"
+      }
+    ],
+    "CreateNamespace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\"\n    }\n}",
+        "title": "CreateNamespace"
+      }
+    ],
+    "CreateSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecret\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"SecretName\": \"iecp\",\n    \"SecretNamespace\": \"default\",\n    \"SecretType\": \"DockerConfigJson\",\n    \"DockerConfigJson\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\"\n    }\n}",
+        "title": "CreateSecret"
+      }
+    ],
+    "CreateUpdateNodeUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUpdateNodeUnit\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Namespace\": \"default\",\n    \"NodeGroupName\": \"test\",\n    \"NodeUnitName\": \"testunit\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb461dbc-de1a-4618-9536-f1d3d18a2e1e\"\n    }\n}",
+        "title": "创建NodeUnit"
+      }
+    ],
+    "CreateUserToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserToken\n<公共请求参数>\n\n{\n    \"Second\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateUserToken"
+      }
+    ],
+    "DeleteApplications": [
+      {
+        "document": "删除应用",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        123,\n        234\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DeleteConfigMap": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigMap\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"ConfigMapName\": \"iecp\",\n    \"ConfigMapNamespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\"\n    }\n}",
+        "title": "DeleteConfigMap"
+      }
+    ],
+    "DeleteEdgeNodeGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeNodeGroup\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d76da5da-4f06-4271-8263-5ec55931c444\"\n    }\n}",
+        "title": "删除边缘单元NodeGroup"
+      }
+    ],
+    "DeleteEdgeNodeUnitTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeNodeUnitTemplates\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeUnitTemplateIDs\": [\n        100000,\n        100003\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "删除边缘单元NodeUnit模板"
+      }
+    ],
+    "DeleteEdgeNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeNodes\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100055,\n    \"NodeIds\": [\n        100153\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91d152c8-849c-438e-bf90-d2154dde7a03\"\n    }\n}",
+        "title": "批量删除边缘节点"
+      }
+    ],
+    "DeleteEdgeUnitApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitApplications\n<公共请求参数>\n\n{\n    \"ApplicationIDs\": [\n        1\n    ],\n    \"EdgeUnitID\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "DeleteEdgeUnitApplications"
+      }
+    ],
+    "DeleteEdgeUnitCloud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c37f7877-9e94-48e6-8b0e-877a54dfea11\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteEdgeUnitDeployGridItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitDeployGridItem\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"GridItemName\": \"logo-dg-privileged1111-logofox\",\n    \"Namespace\": \"default\",\n    \"WorkloadKind\": \"DeploymentGrid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "重新部署边缘单元指定Grid下应用"
+      }
+    ],
+    "DeleteEdgeUnitDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100067,\n    \"Devices\": [\n        {\n            \"DeviceName\": \"link02\",\n            \"ProductId\": \"SA4RZ3NLIM\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa02c8e-6f5f-4b7d-819a-4d1ef1ad210f\"\n    }\n}",
+        "title": "DeleteEdgeUnitDevices"
+      }
+    ],
+    "DeleteEdgeUnitPod": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitPod\n<公共请求参数>\n\n{\n    \"ClusterID\": \"ap-xxx#cls-xxxx\",\n    \"PodName\": \"aaa-aa\",\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "删除指定pod"
+      }
+    ],
+    "DeleteIotDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIotDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": 1002012\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "DeleteIotDevice"
+      }
+    ],
+    "DeleteIotDeviceBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIotDeviceBatch\n<公共请求参数>\n\n{\n    \"DeviceIDList\": [\n        100048\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"857cc235-24f6-47aa-a8af-278cb22c6a60\"\n    }\n}",
+        "title": "DeleteIotDeviceBatch"
+      }
+    ],
+    "DeleteMessageRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageRoute\n<公共请求参数>\n\n{\n    \"RouteID\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "DeleteMessageRoute"
+      }
+    ],
+    "DeleteNamespace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNamespace\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\"\n    }\n}",
+        "title": "DeleteNamespace"
+      }
+    ],
+    "DeleteNodeUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodeUnit\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"NodeGroupName\": \"test\",\n    \"NodeUnitName\": \"testunit\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68a6c8c4-7395-46ae-9774-d343c243c401\"\n    }\n}",
+        "title": "删除边缘单元NodeUnit"
+      }
+    ],
+    "DeleteSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecret\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"SecretName\": \"iecp\",\n    \"SecretNamespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\"\n    }\n}",
+        "title": "DeleteSecret"
+      }
+    ],
+    "DescribeApplicationVisualization": [
+      {
+        "document": "可视化配置",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationVisualization\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e85dcda2-a3cb-4bea-a6e3-e5250bc43baf\",\n        \"BasicInfo\": {\n            \"Name\": \"teset1213\",\n            \"ManageUrl\": \"\",\n            \"Description\": \"\",\n            \"CreateTime\": \"2021-11-23 20:29:17\"\n        },\n        \"BasicConfig\": {\n            \"Name\": \"teset1213\",\n            \"Namespace\": \"default\",\n            \"Labels\": [\n                {\n                    \"Key\": \"qcloud-app\",\n                    \"Value\": \"teset1213\"\n                },\n                {\n                    \"Key\": \"k8s-app\",\n                    \"Value\": \"teset1213\"\n                }\n            ],\n            \"WorkflowKind\": \"Deployment\",\n            \"GridUniqKey\": \"\",\n            \"NodeSelector\": null,\n            \"EnableServiceLinks\": true,\n            \"Replicas\": 1,\n            \"AvailableReplicas\": null\n        },\n        \"Volumes\": [],\n        \"InitContainers\": null,\n        \"Containers\": [\n            {\n                \"Name\": \"test\",\n                \"ImageName\": \"123\",\n                \"ImageVersion\": \"test\",\n                \"ImagePullPolicy\": \"IfNotPresent\",\n                \"VolumeMounts\": null,\n                \"CpuRequest\": \"0.25\",\n                \"CpuLimit\": \"0.5\",\n                \"GpuLimit\": \"0\",\n                \"ResourceMapCloud\": null,\n                \"MemoryRequest\": \"256\",\n                \"MemoryLimit\": \"1024\",\n                \"MemoryUnit\": \"MiB\",\n                \"Envs\": null,\n                \"WorkingDir\": \"\",\n                \"Commands\": null,\n                \"Args\": null,\n                \"SecurityContext\": {\n                    \"Privilege\": false\n                },\n                \"ReadinessProbe\": null\n            }\n        ],\n        \"Service\": null,\n        \"Job\": null,\n        \"CronJob\": null,\n        \"RestartPolicy\": null,\n        \"HorizontalPodAutoscaler\": null,\n        \"ImagePullSecrets\": null\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeApplicationYaml": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationYaml\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7df34382-cc91-4cef-b551-4a065eb70c0b\",\n        \"Yaml\": \"YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGNyZWF0aW9uVGltZXN0YW1wOiBudWxsCiAgbGFiZWxzOgogICAgazhzLWFwcDogdGVzZXQxMjEzCiAgICBxY2xvdWQtYXBwOiB0ZXNldDEyMTMKICBuYW1lOiB0ZXNldDEyMTMKICBuYW1lc3BhY2U6IGRlZmF1bHQKc3BlYzoKICByZXBsaWNhczogMQogIHNlbGVjdG9yOgogICAgbWF0Y2hMYWJlbHM6CiAgICAgIGs4cy1hcHA6IHRlc2V0MTIxMwogICAgICBxY2xvdWQtYXBwOiB0ZXNldDEyMTMKICBzdHJhdGVneToKICAgIHJvbGxpbmdVcGRhdGU6CiAgICAgIG1heFN1cmdlOiAyNSUKICAgICAgbWF4VW5hdmFpbGFibGU6IDI1JQogICAgdHlwZTogUm9sbGluZ1VwZGF0ZQogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGNyZWF0aW9uVGltZXN0YW1wOiBudWxsCiAgICAgIGxhYmVsczoKICAgICAgICBrOHMtYXBwOiB0ZXNldDEyMTMKICAgICAgICBxY2xvdWQtYXBwOiB0ZXNldDEyMTMKICAgIHNwZWM6CiAgICAgIGNvbnRhaW5lcnM6CiAgICAgIC0gZW52OgogICAgICAgIC0gbmFtZTogTlZJRElBX1ZJU0lCTEVfREVWSUNFUwogICAgICAgIGltYWdlOiAxMjM6dGVzdAogICAgICAgIGltYWdlUHVsbFBvbGljeTogSWZOb3RQcmVzZW50CiAgICAgICAgbmFtZTogdGVzdAogICAgICAgIHJlc291cmNlczoKICAgICAgICAgIGxpbWl0czoKICAgICAgICAgICAgY3B1OiA1MDBtCiAgICAgICAgICAgIG1lbW9yeTogMUdpCiAgICAgICAgICByZXF1ZXN0czoKICAgICAgICAgICAgY3B1OiAyNTBtCiAgICAgICAgICAgIG1lbW9yeTogMjU2TWkKICAgICAgICBzZWN1cml0eUNvbnRleHQ6CiAgICAgICAgICBwcml2aWxlZ2VkOiBmYWxzZQpzdGF0dXM6IHt9CgoKLS0tCgoKCi0tLQoK\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeApplicationYamlError": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationYamlError\n<公共请求参数>\n\n{\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"CheckPass\": true,\n        \"ErrType\": 0,\n        \"ErrInfo\": \"\"\n    }\n}",
+        "title": "DescribeApplicationYamlError"
+      }
+    ],
+    "DescribeApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"NamePattern\": \"\",\n    \"Limit\": \"0\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35d6452e-32df-4ced-9095-25a4baaa009e\",\n        \"TotalCount\": 2,\n        \"ApplicationSet\": [\n            {\n                \"Id\": 100000,\n                \"Name\": \"test\",\n                \"Source\": 1,\n                \"ManageUrl\": \"\",\n                \"DistributeTime\": \"2021-10-26 14:38:41\",\n                \"WorkloadKind\": \"Deployment\"\n            },\n            {\n                \"Id\": 100001,\n                \"Name\": \"test-garry\",\n                \"Source\": 1,\n                \"ManageUrl\": \"\",\n                \"DistributeTime\": \"2021-10-26 14:42:12\",\n                \"WorkloadKind\": \"StatefulSet\"\n            }\n        ]\n    }\n}",
+        "title": "test"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"NamePattern\": \"\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43681fb3-2af9-4e4a-8f0d-04fbeaf87079\",\n        \"TotalCount\": 1,\n        \"ApplicationSet\": [\n            {\n                \"Id\": 100000,\n                \"Name\": \"test\",\n                \"Source\": 1,\n                \"ManageUrl\": \"\",\n                \"DistributeTime\": \"2021-10-26 14:38:41\",\n                \"WorkloadKind\": \"Deployment\"\n            }\n        ]\n    }\n}",
+        "title": "test2"
+      }
+    ],
+    "DescribeConfigMap": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigMap\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"ConfigMapName\": \"iecp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"Name\": \"test\",\n        \"Namespace\": \"default\",\n        \"Yaml\": \"\",\n        \"Json\": \"\",\n        \"CreateTime\": \"2021-01-01 00:00:00\"\n    }\n}",
+        "title": "DescribeConfigMap"
+      }
+    ],
+    "DescribeConfigMapYamlError": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigMapYamlError\n<公共请求参数>\n\n{\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\",\n        \"CheckPass\": false,\n        \"ErrType\": 1,\n        \"ErrInfo\": \"\"\n    }\n}",
+        "title": "DescribeConfigMapYamlError"
+      }
+    ],
+    "DescribeConfigMaps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigMaps\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"NamePattern\": \"test\",\n    \"ConfigMapNamespace\": \"default\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Sort\": {\n        \"Field\": \"CreateTime\",\n        \"Order\": \"ASC\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"Items\": [\n            {\n                \"Name\": \"test\",\n                \"Namespace\": \"default\",\n                \"CreateTime\": \"2021-01-01 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeConfigMaps"
+      }
+    ],
+    "DescribeDracoEdgeNodeInstaller": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDracoEdgeNodeInstaller\n<公共请求参数>\n\n{\n    \"SN\": \"SN2232323\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"115d57b3-6936-42a3-a9b7-1d84667c4e66\",\n        \"OnlineInstallationCommand\": \"wget --header=\\\"x-cos-token:9h7Mq2zHoDK5mx3B\\\" https://tke-edge-1253687700.cos.accelerate.myqcloud.com/user-pkgs%2Fcls-9ab5x7749100009935455ap-guangzhou%2Fedgectl?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDUnpa4HDtIQHsDH4g15sOedLlvoQlpc8N%26q-sign-time%3D1647844231%3B1647847831%26q-key-time%3D1647844231%3B1647847831%26q-header-list%3Dx-cos-token%26q-url-param-list%3D%26q-signature%3D8345b0e5625d05bafa06bd2a898cf -O edgectl && chmod +x edgectl && ./edgectl install -n dddd\"\n    }\n}",
+        "title": "获取draco设备安装脚本"
+      }
+    ],
+    "DescribeEdgeAgentNodeInstaller": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeAgentNodeInstaller\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100055,\n    \"NodeId\": 100153\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91d152c8-849c-438e-bf90-d2154dde7a03\",\n        \"Online\": {\n            \"ScriptName\": \"edgectl\",\n            \"ScriptDownloadUrl\": \"\",\n            \"Guide\": \"\"\n        }\n    }\n}",
+        "title": "获取节点安装信息"
+      }
+    ],
+    "DescribeEdgeDefaultVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeDefaultVpc\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"439a95cd-46d7-4c04-a896-141f9198f0fd\",\n        \"VpcId\": \"vpc-44crlhxe\",\n        \"VpcCidrBlock\": \"10.0.0.0/16\",\n        \"SubnetId\": \"subnet-d52egb92\",\n        \"SubnetCidrBlock\": \"10.0.0.0/24\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeEdgeNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNode\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b6f5a4f-35d3-4cb4-8282-34d7062b30a3\",\n        \"Id\": 100154,\n        \"Kind\": \"Agent\",\n        \"Name\": \"test01\",\n        \"Status\": 4,\n        \"CpuArchitecture\": \"\",\n        \"AiChipArchitecture\": \"\",\n        \"Ip\": \"\",\n        \"Labels\": [\n            {\n                \"Key\": \"beta.kubernetes.io/arch\",\n                \"Value\": \"amd64\",\n                \"Protected\": true\n            },\n            {\n                \"Key\": \"beta.kubernetes.io/os\",\n                \"Value\": \"linux\",\n                \"Protected\": true\n            }\n        ],\n        \"Resource\": {\n            \"AllocatedCPU\": \"3800m\",\n            \"TotalCPU\": \"4\",\n            \"AllocatedMemory\": \"6887172Ki\",\n            \"TotalMemory\": \"8013572Ki\",\n            \"AllocatedGPU\": null,\n            \"TotalGPU\": null,\n            \"AvailableCPU\": null,\n            \"AvailableMemory\": null,\n            \"AvailableGPU\": null\n        }\n    }\n}",
+        "title": "获取边缘节点信息"
+      }
+    ],
+    "DescribeEdgeNodePodContainers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNodePodContainers\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"NodeId\": 1,\n    \"PodName\": \"aaa-aa\",\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ContainerSet\": [\n            {\n                \"Name\": \"aaa-aa\",\n                \"Id\": \"aaa\",\n                \"Image\": \"nginx:latest\",\n                \"CpuRequest\": \"250m\",\n                \"CpuLimit\": \"500m\",\n                \"MemoryRequest\": \"512Mi\",\n                \"MemoryLimit\": \"1Gi\",\n                \"RestartCount\": 0,\n                \"Status\": \"Running\"\n            }\n        ]\n    }\n}",
+        "title": "查询节点Pod内的容器列表"
+      }
+    ],
+    "DescribeEdgeNodePods": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNodePods\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"NodeId\": 1,\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"PodSet\": [\n            {\n                \"Name\": \"aaa-aaa\",\n                \"Status\": \"Running\",\n                \"NodeIp\": \"1.2.3.4\",\n                \"Ip\": \"1.2.3.5\",\n                \"CpuRequest\": \"250m\",\n                \"MemoryRequest\": \"512Mi\",\n                \"WorkloadType\": \"Deployment\",\n                \"WorkloadName\": \"aaa\",\n                \"StartTime\": \"2020-01-01 00:00:00\",\n                \"RestartCount\": 0,\n                \"ClusterID\": \"cls-xxxxx\"\n            }\n        ]\n    }\n}",
+        "title": "查询节点Pod列表"
+      }
+    ],
+    "DescribeEdgeNodeRemarkList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNodeRemarkList\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b15640f7-a4e4-4ce4-b418-1b864ba7569d\",\n        \"Remarks\": [\n            \"20220911\"\n        ]\n    }\n}",
+        "title": "获取边缘集群节点备注列表"
+      }
+    ],
+    "DescribeEdgeNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNodes\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"Sort\": [\n        {\n            \"Field\": \"Name\",\n            \"Order\": \"ASC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c815bfa-0a61-4676-91c7-452ad56a373a\",\n        \"TotalCount\": 1,\n        \"NodeSet\": [\n            {\n                \"Id\": 100152,\n                \"Name\": \"test-test01\",\n                \"Status\": 1,\n                \"CpuArchitecture\": \"amd64\",\n                \"Resource\": {\n                    \"AllocatedCPU\": \"120m\",\n                    \"TotalCPU\": \"4000m\",\n                    \"AllocatedMemory\": \"0.15\",\n                    \"TotalMemory\": \"7.64\",\n                    \"AllocatedGPU\": \"\",\n                    \"TotalGPU\": \"\",\n                    \"AvailableCPU\": \"\",\n                    \"AvailableMemory\": \"6.42\",\n                    \"AvailableGPU\": \"0\"\n                },\n                \"Ip\": \"192.168.8.102\",\n                \"CreateTime\": \"2021-01-01 11:00:00\",\n                \"OperatingSystem\": \"CentOS Linux 7 (Core)\",\n                \"NodeUnits\": null\n            }\n        ]\n    }\n}",
+        "title": "查询边缘节点列表"
+      }
+    ],
+    "DescribeEdgeOperationLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeOperationLogs\n<公共请求参数>\n\n{\n    \"BeginTime\": \"2021-01-01 00:00:00\",\n    \"EndTime\": \"2021-01-02 00:00:00\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Sort\": [\n        {\n            \"Field\": \"OPERATETIME\",\n            \"Order\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"TotalCount\": 0,\n        \"OperationLogSet\": []\n    }\n}",
+        "title": "DescribeEdgeOperationLogs"
+      }
+    ],
+    "DescribeEdgePod": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePod\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Name\": \"aaa-apex\",\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cfcaee48-cac8-43e0-8dfe-fa3d5a38809f\",\n        \"Pod\": {\n            \"Name\": \"aaa-apex\",\n            \"Status\": \"Running\",\n            \"NodeIp\": \"10.0.0.0\",\n            \"Ip\": \"172.0.0.1\",\n            \"CpuRequest\": \"250m\",\n            \"MemoryRequest\": \"256Mi\",\n            \"Namespace\": \"default\",\n            \"WorkloadType\": \"ReplicaSet\",\n            \"WorkloadName\": \"aaa-apex\",\n            \"StartTime\": \"2021-01-01 00:00:00\",\n            \"RestartCount\": 0,\n            \"ClusterID\": \"cls-xxxxxx\"\n        }\n    }\n}",
+        "title": "查询边缘单元Pod"
+      }
+    ],
+    "DescribeEdgeSnNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeSnNodes\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9f0bda5-0644-4eac-8d95-f4732eb78e8d\",\n        \"TotalCount\": 1,\n        \"NodeSet\": [\n            {\n                \"Id\": 91,\n                \"Name\": \"snnode\",\n                \"IsUsed\": false,\n                \"CreateTime\": \"2022-03-09 17:48:15\",\n                \"Remark\": \"20220911\",\n                \"SN\": \"SN2232323\"\n            }\n        ]\n    }\n}",
+        "title": "查询预添加节点"
+      }
+    ],
+    "DescribeEdgeUnitApplicationEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationEvents\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"EventSet\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationEvents"
+      }
+    ],
+    "DescribeEdgeUnitApplicationLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationLogs\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1,\n    \"Limit\": 10,\n    \"PodName\": \"Pod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"LogSet\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationLogs"
+      }
+    ],
+    "DescribeEdgeUnitApplicationPodContainers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationPodContainers\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1,\n    \"PodName\": \"Pod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"ContainerSet\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationPodContainers"
+      }
+    ],
+    "DescribeEdgeUnitApplicationPods": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationPods\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"PodSet\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationPods"
+      }
+    ],
+    "DescribeEdgeUnitApplicationVisualization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationVisualization\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"BasicInfo\": null,\n        \"BasicConfig\": null,\n        \"Volumes\": [],\n        \"InitContainers\": [],\n        \"Containers\": [],\n        \"Service\": null,\n        \"Job\": null,\n        \"CronJob\": null,\n        \"RestartPolicy\": null,\n        \"HorizontalPodAutoscaler\": null,\n        \"ImagePullSecrets\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationVisualization"
+      }
+    ],
+    "DescribeEdgeUnitApplicationYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationYaml\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Yaml\": \"\"\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationYaml"
+      }
+    ],
+    "DescribeEdgeUnitApplicationYamlError": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplicationYamlError\n<公共请求参数>\n\n{\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"CheckPass\": true,\n        \"ErrType\": 0,\n        \"ErrInfo\": \"\"\n    }\n}",
+        "title": "DescribeEdgeUnitApplicationYamlError"
+      }
+    ],
+    "DescribeEdgeUnitApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitApplications\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Sort\": [\n        {\n            \"Field\": \"StartTime\",\n            \"Order\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"TotalCount\": 0,\n        \"ApplicationSet\": []\n    }\n}",
+        "title": "DescribeEdgeUnitApplications"
+      }
+    ],
+    "DescribeEdgeUnitCloud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61abe8f0-ef42-4432-ad55-6092baaec209\",\n        \"Name\": \"test-11\",\n        \"Description\": \"字符串\",\n        \"CreateTime\": \"2021-10-09 15:49:37\",\n        \"UpdateTime\": \"2021-10-09 15:49:37\",\n        \"LiveTime\": \"2021-10-09 16:15:40\",\n        \"MasterStatus\": \"Running\",\n        \"K8sVersion\": \"1.16.7\",\n        \"PodCIDR\": \"10.1.0.0/16\",\n        \"ServiceCIDR\": \"10.2.0.0/16\",\n        \"APIServerAddress\": \"11.38.56.131:11302\",\n        \"APIServerExposeAddress\": \"211.159.144.178:443\",\n        \"UID\": \"600000559632\",\n        \"UnitID\": 5,\n        \"Cluster\": \"cls-g6uuoeez\",\n        \"Node\": {\n            \"NotActive\": 0,\n            \"Offline\": 0,\n            \"Total\": 1,\n            \"Abnormal\": 0,\n            \"Online\": 1\n        },\n        \"Grid\": {\n            \"NotActive\": 0,\n            \"Offline\": 0,\n            \"Total\": 0,\n            \"Abnormal\": 0,\n            \"Online\": 0\n        },\n        \"Workload\": {\n            \"NotActive\": 1,\n            \"Offline\": 1,\n            \"Total\": 1,\n            \"Abnormal\": 1,\n            \"Online\": 1\n        },\n        \"SubDevice\": null\n    }\n}",
+        "title": "获取集群详细实例"
+      }
+    ],
+    "DescribeEdgeUnitDeployGrid": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitDeployGrid\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NamePattern\": \"\",\n    \"Limit\": 30,\n    \"Offset\": 0,\n    \"Order\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03a1b60d-4125-4618-8a52-93a3148be20d\",\n        \"TotalCount\": 2,\n        \"GridSet\": [\n            {\n                \"Id\": 100166,\n                \"Name\": \"deploy-grid\",\n                \"GridUniqKey\": \"logo-group\",\n                \"Description\": \"deploy\",\n                \"WorkloadKind\": \"DeploymentGrid\",\n                \"StartTime\": \"2021-07-20 11:31:35\",\n                \"Replicas\": 0\n            },\n            {\n                \"Id\": 100165,\n                \"Name\": \"sts-grid\",\n                \"GridUniqKey\": \"logo-group\",\n                \"Description\": \"\",\n                \"WorkloadKind\": \"StatefulSetGrid\",\n                \"StartTime\": \"2021-07-20 11:30:42\",\n                \"Replicas\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元Grid列表"
+      }
+    ],
+    "DescribeEdgeUnitDeployGridItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitDeployGridItem\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"GridName\": \"logo-dg-privileged1111\",\n    \"Namespace\": \"default\",\n    \"WorkloadKind\": \"DeploymentGrid\",\n    \"Order\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"TotalCount\": 2,\n        \"DeploySet\": [\n            {\n                \"Name\": \"logo-dg-privileged1111-logofox\",\n                \"Replicas\": 1,\n                \"AvailableReplicas\": 1,\n                \"StartTime\": \"2021-07-06 10:43:00\",\n                \"WorkloadKind\": \"Deployment\"\n            },\n            {\n                \"Name\": \"logo-dg-privileged1111-dev005\",\n                \"Replicas\": 1,\n                \"AvailableReplicas\": 1,\n                \"StartTime\": \"2021-07-06 14:03:46\",\n                \"WorkloadKind\": \"Deployment\"\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元指定Grid下的部署列表"
+      }
+    ],
+    "DescribeEdgeUnitDeployGridItemYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitDeployGridItemYaml\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"GridItemName\": \"logo-dg-privileged1111-logofox\",\n    \"WorkloadKind\": \"DeploymentGrid\",\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Yaml\": \"XXXX\",\n        \"Replicas\": 7\n    }\n}",
+        "title": "查询指定Grid部署项的Yaml"
+      }
+    ],
+    "DescribeEdgeUnitExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitExtra\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c0bd6aa9-7b4f-43cd-a5e2-28ce6a1c8327\",\n        \"APIServerType\": \"IP\",\n        \"APIServerURL\": \"10.0.0.5\",\n        \"APIServerURLPort\": \"4321\",\n        \"APIServerResolveIP\": \"\",\n        \"APIServerExposeAddress\": \"x.x.x.x:4321\",\n        \"IsCreatePrometheus\": false\n    }\n}",
+        "title": "查询边缘单元额外信息"
+      }
+    ],
+    "DescribeEdgeUnitGridEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitGridEvents\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100020,\n    \"GridName\": \"qqq-grid\",\n    \"Namespace\": \"default\",\n    \"WorkloadKind\": \"DeploymentGrid\",\n    \"NodeUnit\": \"asda-zone\",\n    \"PodName\": \"qqq-grid-asda-zone-67fbb86b76-92cpf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"EventSet\": [\n            {\n                \"FirstTime\": \"2021-08-11 21:41:52\",\n                \"LastTime\": \"2021-08-17 15:06:57\",\n                \"InvolvedObjectKind\": \"Pod\",\n                \"InvolvedObjectName\": \"qqq-grid-asda-zone-67fbb86b76-92cpf\",\n                \"Type\": \"Normal\",\n                \"Reason\": \"Pulling\",\n                \"Message\": \"Pulling image \\\"1.com/ssss:1.3\\\"\",\n                \"Count\": 1614,\n                \"NodeName\": \"dev-node-1\"\n            },\n            {\n                \"FirstTime\": \"2021-08-11 21:41:53\",\n                \"LastTime\": \"2021-08-17 15:02:00\",\n                \"InvolvedObjectKind\": \"Pod\",\n                \"InvolvedObjectName\": \"qqq-grid-asda-zone-67fbb86b76-92cpf\",\n                \"Type\": \"Normal\",\n                \"Reason\": \"BackOff\",\n                \"Message\": \"Back-off pulling image \\\"1.com/ssss:1.3\\\"\",\n                \"Count\": 36335,\n                \"NodeName\": \"dev-node-1\"\n            },\n            {\n                \"FirstTime\": \"2021-08-11 21:41:53\",\n                \"LastTime\": \"2021-08-17 15:57:00\",\n                \"InvolvedObjectKind\": \"Pod\",\n                \"InvolvedObjectName\": \"qqq-grid-asda-zone-67fbb86b76-92cpf\",\n                \"Type\": \"Warning\",\n                \"Reason\": \"Failed\",\n                \"Message\": \"Error: ImagePullBackOff\",\n                \"Count\": 36578,\n                \"NodeName\": \"dev-node-1\"\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元Grid事件列表"
+      }
+    ],
+    "DescribeEdgeUnitGridPods": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitGridPods\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100020,\n    \"GridName\": \"sasas-grid\",\n    \"Namespace\": \"default\",\n    \"WorkloadKind\": \"DeploymentGrid\",\n    \"NodeUnit\": \"sasas-grid-ddd-zone\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"PodSet\": [\n            {\n                \"Name\": \"test2-grid-test1-zone-cb5b845f7-sk8qw\",\n                \"NameSpace\": \"default\",\n                \"Status\": \"Pending\",\n                \"NodeName\": \"node3\",\n                \"NodeIP\": \"172.21.7.3\",\n                \"PodIP\": \"\",\n                \"StartTime\": \"2021-08-23 16:49:18\",\n                \"RunSec\": 2004,\n                \"RestartCount\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元Grid的Pod列表"
+      }
+    ],
+    "DescribeEdgeUnitMonitorStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitMonitorStatus\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21eaa108-8ffd-40a9-ad01-9272799baf8e\",\n        \"MonitorStatus\": \"running\",\n        \"IsAvailable\": true\n    }\n}",
+        "title": "查询边缘集群监控状态1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitMonitorStatus\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21eaa108-8ffd-40a9-ad01-9272799baf8e\",\n        \"MonitorStatus\": \"deploying\",\n        \"IsAvailable\": false\n    }\n}",
+        "title": "查询边缘集群监控状态2"
+      }
+    ],
+    "DescribeEdgeUnitNodeGroup": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitNodeGroup\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"EdgeUnitId\": 75,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"NameFilter\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a40873bd-dad3-4dd6-b3cc-5e939f467df6\",\n        \"Total\": 3,\n        \"NodeGroupInfo\": [\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2021-11-23 16:35:57\",\n                \"NodeGroupName\": \"ddd2-group-ecp\",\n                \"DeploymentGridList\": [\n                    {\n                        \"Name\": \"ccc\",\n                        \"Id\": 100553\n                    }\n                ],\n                \"StatefulSetGridList\": [],\n                \"Protect\": false\n            },\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2021-11-23 16:35:48\",\n                \"NodeGroupName\": \"ddd-group-ecp\",\n                \"DeploymentGridList\": [],\n                \"StatefulSetGridList\": [],\n                \"Protect\": false\n            },\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2021-11-19 14:46:46\",\n                \"NodeGroupName\": \"aa-group-ecp\",\n                \"DeploymentGridList\": [],\n                \"StatefulSetGridList\": [\n                    {\n                        \"Name\": \"aaa\",\n                        \"Id\": 100552\n                    }\n                ],\n                \"Protect\": false\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeEdgeUnitNodeUnitTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitNodeUnitTemplates\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"Namespace\": \"default\",\n    \"NameFilter\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Total\": 2,\n        \"NodeUnitTemplates\": [\n            {\n                \"ID\": 100003,\n                \"Name\": \"auto-code1\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeGroups\": [\n                    \"dsdsdsd-group\"\n                ],\n                \"NodeList\": [\n                    {\n                        \"ID\": 82955,\n                        \"NodeName\": \"test-node1\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    },\n                    {\n                        \"ID\": 82957,\n                        \"NodeName\": \"dev005\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:52:40\",\n                \"CreateTime\": \"2021-08-11 08:52:40\"\n            },\n            {\n                \"ID\": 100002,\n                \"Name\": \"auto-code\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeGroups\": [\n                    \"dsdsdsd-group\"\n                ],\n                \"NodeList\": [\n                    {\n                        \"ID\": 82958,\n                        \"NodeName\": \"logofox\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:50:27\",\n                \"CreateTime\": \"2021-08-11 08:50:27\"\n            }\n        ]\n    }\n}",
+        "title": "创建边缘单元EdgeUnit模板"
+      }
+    ],
+    "DescribeEdgeUnitsCloud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitsCloud\n<公共请求参数>\n\n{\n    \"NamePattern\": \"\",\n    \"Limit\": \"10\",\n    \"Order\": \"\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ce2926-eea5-4b6d-b03b-e25abefb28e8\",\n        \"TotalCount\": 1,\n        \"EdgeUnitSet\": [\n            {\n                \"EdgeId\": 2,\n                \"ClusterId\": \"cls-lny263r1\",\n                \"Region\": \"ap-beijing\",\n                \"ClusterName\": \"logossss\",\n                \"K8SVersion\": \"1.16.7\",\n                \"PodCIDR\": \"10.1.0.0/16\",\n                \"ServiceCIDR\": \"10.2.0.0/16\",\n                \"VpcId\": \"vpc-44crlhxe\",\n                \"ClusterDesc\": \"字符串\",\n                \"Status\": \"Running\",\n                \"CreateTime\": \"2021-10-09 11:05:18\",\n                \"EdgeClusterVersion\": \"2.2\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitsCloud\n<公共请求参数>\n\n{\n    \"NamePattern\": \"\",\n    \"Limit\": \"10\",\n    \"Order\": \"\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa5f617e-36b4-499a-bb4f-b6ed5269780e\",\n        \"TotalCount\": 1,\n        \"EdgeUnitSet\": [\n            {\n                \"EdgeId\": 2,\n                \"ClusterId\": \"cls-lny263r1\",\n                \"Region\": \"ap-beijing\",\n                \"ClusterName\": \"logossss\",\n                \"K8SVersion\": \"1.16.7\",\n                \"PodCIDR\": \"10.1.0.0/16\",\n                \"ServiceCIDR\": \"10.2.0.0/16\",\n                \"VpcId\": \"vpc-44crlhxe\",\n                \"ClusterDesc\": \"字符串\",\n                \"Status\": \"Running\",\n                \"CreateTime\": \"2021-10-09 11:05:18\",\n                \"EdgeClusterVersion\": \"2.2\"\n            }\n        ]\n    }\n}",
+        "title": "获取边缘集群列表"
+      }
+    ],
+    "DescribeIotDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": 100049\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"SA4RZ3NLIMlink01;21010406;MPWMB;1965121722\",\n        \"Psk\": \"TTM5RjJCRTdSQUxOQkk3SA==\",\n        \"Version\": \"\",\n        \"Name\": \"link01\",\n        \"UnitName\": \"ccccx\",\n        \"LogLevel\": 1,\n        \"Region\": \"ap-guangzhou\",\n        \"PrivateKey\": \"\",\n        \"ClientID\": \"SA4RZ3NLIMlink01\",\n        \"Status\": 1,\n        \"Disabled\": true,\n        \"Cert\": \"\",\n        \"PskHex\": \"4d3339463242453752414c4e42493748\",\n        \"LogSetting\": 1,\n        \"RequestId\": \"50f25270-9083-4e99-ae16-3ebd172bf89c\",\n        \"UnitID\": 0,\n        \"Password\": \"2dace9889aaa987ba1975d76b90eaed5cfa28d3d7337c83df56028d76e0359ba;hmacsha256\",\n        \"Id\": 100049,\n        \"Description\": \"测试\"\n    }\n}",
+        "title": "DescribeIotDevice"
+      }
+    ],
+    "DescribeIotDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevices\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"NamePattern\": \"01\",\n    \"ProductId\": \"SA4RZ3NLIM\",\n    \"Limit\": 10,\n    \"Versions\": [\n        \"xx\",\n        \"yy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"bd51b03d-e10e-4c8f-a3f9-e773fd9e4a18\",\n        \"DeviceSet\": [\n            {\n                \"Status\": 0,\n                \"LastOnlineTime\": \"-\",\n                \"Description\": \"测试\",\n                \"IsBound\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"UnitName\": \"ccccx\",\n                \"Id\": 0,\n                \"Disabled\": true,\n                \"Version\": \"\",\n                \"UnitID\": 100067,\n                \"CreateTime\": \"2022-04-12 18:51:34\",\n                \"Name\": \"link01\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeIotDevices"
+      }
+    ],
+    "DescribeMessageRouteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageRouteList\n<公共请求参数>\n\n{\n    \"Filter\": \"a\",\n    \"Limit\": 10,\n    \"StartTime\": \"xx\",\n    \"Offset\": 0,\n    \"EndTime\": \"-\",\n    \"Order\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RouteList\": [\n            {\n                \"Status\": \"off\",\n                \"SourceUnitIDList\": [],\n                \"SourceUnitNameList\": [],\n                \"MessageCount\": 0,\n                \"TopicFilter\": \"0data\",\n                \"SourceProductName\": \"cp\",\n                \"Descript\": \"\",\n                \"MessageLastTime\": \"\",\n                \"RouteID\": 1000000,\n                \"Healthy\": \"yes\",\n                \"RouteName\": \"a\",\n                \"SourceProductID\": \"KMUOZ5EOXH\",\n                \"Mode\": \"topic-datasource\",\n                \"TargetOptions\": \"{\\\"DataSourceId\\\":1000000}\",\n                \"SourceDeviceNameList\": [\n                    \"cpp\"\n                ],\n                \"CreateTime\": \"2022-02-25 11:31:00\"\n            }\n        ],\n        \"RequestId\": \"6aab2bdf-5f76-464b-859f-470e765d29e8\"\n    }\n}",
+        "title": "DescribeMessageRouteList"
+      }
+    ],
+    "DescribeMonitorMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorMetrics\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100000,\n    \"QueryType\": \"node\",\n    \"NodeName\": \"cvm-1m8veowe\",\n    \"StartTime\": 1635388144,\n    \"EndTime\": 1635391744,\n    \"Interval\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Metrics\": [\n            {\n                \"ColumnName\": \"node_disk_usage\",\n                \"ColumnData\": [\n                    \"9.691727257938775\",\n                    \"9.692490297224907\",\n                    \"9.693220866754183\",\n                    \"9.693935201405031\",\n                    \"9.694665770934307\",\n                    \"9.695315166071442\",\n                    \"9.695988913526218\",\n                    \"9.696662660980996\",\n                    \"9.697368878192629\",\n                    \"9.698083212843477\",\n                    \"9.698838134690396\",\n                    \"9.6995849390981\",\n                    \"9.70024245167445\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 9.70024245167445,\n                \"MinValue\": 9.691727257938775,\n                \"AvgValue\": 9.696009519333455\n            },\n            {\n                \"ColumnName\": \"node_disk_total_bytes\",\n                \"ColumnData\": [\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\",\n                    \"52709240832\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 52709240832,\n                \"MinValue\": 52709240832,\n                \"AvgValue\": 52709240832\n            },\n            {\n                \"ColumnName\": \"node_disk_write_bytes\",\n                \"ColumnData\": [\n                    \"80008.53333333334\",\n                    \"78643.2\",\n                    \"58982.4\",\n                    \"74001.06666666667\",\n                    \"61166.933333333334\",\n                    \"54613.333333333336\",\n                    \"57890.13333333333\",\n                    \"63624.53333333333\",\n                    \"79735.46666666666\",\n                    \"56797.86666666667\",\n                    \"79189.33333333333\",\n                    \"54340.26666666667\",\n                    \"62259.2\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 80008.53333333334,\n                \"MinValue\": 54340.26666666667,\n                \"AvgValue\": 66250.17435897436\n            },\n            {\n                \"ColumnName\": \"node_network_receive_bps\",\n                \"ColumnData\": [\n                    \"64728.53333333333\",\n                    \"73516.26666666666\",\n                    \"69508.26666666666\",\n                    \"74443.73333333334\",\n                    \"64478.4\",\n                    \"64844.8\",\n                    \"67715.73333333334\",\n                    \"72483.2\",\n                    \"69330.13333333333\",\n                    \"69224\",\n                    \"69659.2\",\n                    \"64447.46666666667\",\n                    \"66977.6\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 74443.73333333334,\n                \"MinValue\": 64447.46666666667,\n                \"AvgValue\": 68565.94871794872\n            },\n            {\n                \"ColumnName\": \"node_cpu_usage\",\n                \"ColumnData\": [\n                    \"2.307017543843304\",\n                    \"2.4210526315871284\",\n                    \"2.3403508772076975\",\n                    \"2.3350877192672037\",\n                    \"2.410526315787842\",\n                    \"2.343859649099933\",\n                    \"2.3491228069995707\",\n                    \"2.3438596491407893\",\n                    \"2.4087719298621524\",\n                    \"2.333333333341514\",\n                    \"2.3543859649400645\",\n                    \"2.3543859649400645\",\n                    \"2.331578947374968\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 2.4210526315871284,\n                \"MinValue\": 2.307017543843304,\n                \"AvgValue\": 2.356410256414787\n            },\n            {\n                \"ColumnName\": \"node_memory_usage\",\n                \"ColumnData\": [\n                    \"16.271007823621233\",\n                    \"16.233623556045686\",\n                    \"16.257574479562052\",\n                    \"16.244453538853087\",\n                    \"16.25143054700785\",\n                    \"16.251326412557777\",\n                    \"16.25278429485878\",\n                    \"16.26382254656632\",\n                    \"16.272778109272444\",\n                    \"16.262677067615538\",\n                    \"16.310995452448562\",\n                    \"16.270070613570596\",\n                    \"16.273090512622655\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 16.310995452448562,\n                \"MinValue\": 16.233623556045686,\n                \"AvgValue\": 16.262741150354046\n            },\n            {\n                \"ColumnName\": \"node_disk_read_bytes\",\n                \"ColumnData\": [\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\",\n                    \"0\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 0,\n                \"MinValue\": 0,\n                \"AvgValue\": 0\n            },\n            {\n                \"ColumnName\": \"node_network_transmit_bps\",\n                \"ColumnData\": [\n                    \"143381.86666666667\",\n                    \"149166.93333333332\",\n                    \"144343.46666666667\",\n                    \"147204.8\",\n                    \"140089.06666666668\",\n                    \"141895.46666666667\",\n                    \"142944\",\n                    \"145191.46666666667\",\n                    \"143062.4\",\n                    \"142919.46666666667\",\n                    \"143495.46666666667\",\n                    \"142087.46666666667\",\n                    \"142670.93333333332\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 149166.93333333332,\n                \"MinValue\": 140089.06666666668,\n                \"AvgValue\": 143727.13846153847\n            },\n            {\n                \"ColumnName\": \"node_pod_num\",\n                \"ColumnData\": [\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\",\n                    \"8\"\n                ],\n                \"ColumnTime\": [\n                    1635388144,\n                    1635388444,\n                    1635388744,\n                    1635389044,\n                    1635389344,\n                    1635389644,\n                    1635389944,\n                    1635390244,\n                    1635390544,\n                    1635390844,\n                    1635391144,\n                    1635391444,\n                    1635391744\n                ],\n                \"ColumnBelong\": \"\",\n                \"MaxValue\": 8,\n                \"MinValue\": 8,\n                \"AvgValue\": 8\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元节点监控数据"
+      }
+    ],
+    "DescribeNamespace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespace\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"Status\": \"Active\",\n        \"Description\": \"\",\n        \"Namespace\": \"test\",\n        \"CreateTime\": \"2021-01-01 00:00:00\",\n        \"Protected\": false,\n        \"Yaml\": \"\"\n    }\n}",
+        "title": "DescribeNamespace"
+      }
+    ],
+    "DescribeNamespaceResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaceResources\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"Namespace\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"Resources\": [\n            {\n                \"Type\": \"workload\",\n                \"Count\": 4,\n                \"Names\": [\n                    \"test\",\n                    \"test-replace\",\n                    \"test-deployment\",\n                    \"wwww\"\n                ]\n            },\n            {\n                \"Type\": \"grid\",\n                \"Count\": 1,\n                \"Names\": [\n                    \"hrq-test\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "DescribeNamespaceResources"
+      }
+    ],
+    "DescribeNamespaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaces\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"NamePattern\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"Items\": [\n            {\n                \"Status\": \"Active\",\n                \"Description\": \"\",\n                \"Namespace\": \"test\",\n                \"CreateTime\": \"2021-01-01 00:00:00\",\n                \"Protected\": false,\n                \"Yaml\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取命名空间列表"
+      }
+    ],
+    "DescribeNodeUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeUnit\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"NodeGroupName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\",\n        \"TotalCount\": 1,\n        \"NodeGridInfo\": [\n            {\n                \"Id\": 0,\n                \"NodeUnitName\": \"testunit\",\n                \"NodeList\": []\n            }\n        ]\n    }\n}",
+        "title": "查询边缘单元NodeUnit列表"
+      }
+    ],
+    "DescribeNodeUnitTemplateOnNodeGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeUnitTemplateOnNodeGroup\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeGroupName\": \"test-group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Total\": 2,\n        \"NodeUnitTemplates\": [\n            {\n                \"ID\": 100003,\n                \"Name\": \"auto-code1\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeList\": [\n                    {\n                        \"ID\": 82955,\n                        \"NodeName\": \"test-node1\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    },\n                    {\n                        \"ID\": 82957,\n                        \"NodeName\": \"dev005\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:52:40\",\n                \"CreateTime\": \"2021-08-11 08:52:40\",\n                \"Relation\": true\n            },\n            {\n                \"ID\": 100002,\n                \"Name\": \"auto-code\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeList\": [\n                    {\n                        \"ID\": 82958,\n                        \"NodeName\": \"logofox\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:50:27\",\n                \"CreateTime\": \"2021-08-11 08:50:27\",\n                \"Relation\": true\n            }\n        ]\n    }\n}",
+        "title": "查询指定NodeGroup下NodeUnit模板列表"
+      }
+    ],
+    "DescribeSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecret\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"SecretName\": \"iecp\",\n    \"SecretNamespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\",\n        \"Name\": \"iecp\",\n        \"Namespace\": \"default\",\n        \"CreateTime\": \"2021-01-01 00:00:00\",\n        \"Yaml\": \"\",\n        \"Json\": \"\"\n    }\n}",
+        "title": "DescribeSecret"
+      }
+    ],
+    "DescribeSecretYamlError": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecretYamlError\n<公共请求参数>\n\n{\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\",\n        \"CheckPass\": false,\n        \"ErrType\": 1,\n        \"ErrInfo\": \"\"\n    }\n}",
+        "title": "DescribeSecretYamlError"
+      }
+    ],
+    "DescribeSecrets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecrets\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"Offset\": \"0\",\n    \"Limit\": \"1\",\n    \"Sort\": {\n        \"Field\": \"CreateTime\",\n        \"Order\": \"ASC\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Name\": \"iecp\",\n                \"Namespace\": \"default\",\n                \"CreateTime\": \"2021-01-01 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeSecrets"
+      }
+    ],
+    "DescribeYeheResourceLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeYeheResourceLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Uin\": \"12345\",\n        \"CreateNodeLimit\": 3,\n        \"CreateClusterLimit\": 2551,\n        \"EnablePermMonitor\": false,\n        \"EnablePermAdminNode\": false\n    }\n}",
+        "title": "获取用户配置限制"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeYeheResourceLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c17c5e2-61a7-4428-8778-b9051e4ef042\",\n        \"Uin\": \"600000559632\",\n        \"CreateNodeLimit\": 200,\n        \"CreateClusterLimit\": 1,\n        \"EnablePermMonitor\": false,\n        \"EnablePermAdminNode\": false\n    }\n}",
+        "title": "获取用户限制列表"
+      }
+    ],
+    "GetMarketComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMarketComponent\n<公共请求参数>\n\n{\n    \"ID\": 839900\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"AppName\": \"xxx\",\n        \"ID\": 70008,\n        \"Author\": \"xxx\",\n        \"ReleaseTime\": \"xxx\",\n        \"Outline\": \"xxx\",\n        \"Detail\": \"xxx\",\n        \"Icon\": \"xxx\",\n        \"Version\": \"x.y.z\",\n        \"WorkloadVisualConfig\": \"xxx\"\n    }\n}",
+        "title": "获取组件市场组件信息"
+      }
+    ],
+    "GetMarketComponentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMarketComponentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filter\": \"test\",\n    \"Order\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ComponentList\": [\n            {\n                \"Outline\": \"xx\",\n                \"Author\": \"xx\",\n                \"AppName\": \"xx\",\n                \"Detail\": \"xx\",\n                \"ReleaseTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "title": "获取组件市场组件列表"
+      }
+    ],
+    "ModifyApplicationBasicInfo": [
+      {
+        "document": "修改应用名称",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationBasicInfo\n<公共请求参数>\n\n{\n    \"ApplicationId\": 1000,\n    \"BasicInfo\": {\n        \"Name\": \"test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ModifyApplicationVisualization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationVisualization\n<公共请求参数>\n\n{\n    \"BasicConfig\": {\n        \"Name\": \"app\",\n        \"Namespace\": \"Default\",\n        \"WorkflowKind\": \"Deployment\"\n    },\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "ModifyEdgeUnitApplicationVisualization"
+      }
+    ],
+    "ModifyConfigMap": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigMap\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"ConfigMapName\": \"test\",\n    \"ConfigMapNamespace\": \"default\",\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72d540a0-ed11-4370-b977-96c6c224a1d8\"\n    }\n}",
+        "title": "ModifyConfigMap"
+      }
+    ],
+    "ModifyEdgeDracoNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeDracoNode\n<公共请求参数>\n\n{\n    \"IsReset\": \"true\",\n    \"EdgeUnitId\": \"100026\",\n    \"NodeId\": \"91\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9070f725-d837-450e-b95e-115dd41accbb\"\n    }\n}",
+        "title": "修改draco设备信息"
+      }
+    ],
+    "ModifyEdgeNodeLabels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeNodeLabels\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeId\": 2,\n    \"Labels\": [\n        {\n            \"Key\": \"nvidia-device-enable\",\n            \"Value\": \"true\"\n        },\n        {\n            \"Key\": \"superedge.io/edge-node\",\n            \"Value\": \"enable\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c59b432-1f22-4442-8f18-85d2a4bd4a90\"\n    }\n}",
+        "title": "编辑边缘节点标签"
+      }
+    ],
+    "ModifyEdgeUnit": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnit\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 75,\n    \"Name\": \"testunit2\",\n    \"Description\": \"1ddd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fbf2325-dc37-4b51-97a3-fc0fac187870\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyEdgeUnitApplicationBasicInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitApplicationBasicInfo\n<公共请求参数>\n\n{\n    \"BasicInfo\": {\n        \"Name\": \"app\",\n        \"Description\": \"test\"\n    },\n    \"ApplicationId\": 1,\n    \"EdgeUnitId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "ModifyEdgeUnitApplicationBasicInfo"
+      }
+    ],
+    "ModifyEdgeUnitApplicationVisualization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitApplicationVisualization\n<公共请求参数>\n\n{\n    \"BasicConfig\": {\n        \"Name\": \"app\",\n        \"Namespace\": \"Default\",\n        \"WorkflowKind\": \"Deployment\"\n    },\n    \"EdgeUnitId\": 1,\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "ModifyEdgeUnitApplicationVisualization"
+      }
+    ],
+    "ModifyEdgeUnitApplicationYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitApplicationYaml\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"ApplicationId\": 1,\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "ModifyEdgeUnitApplicationYaml"
+      }
+    ],
+    "ModifyEdgeUnitCloudApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitCloudApi\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100022\",\n    \"Name\": \"wwww11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f1f5564-b038-4c8c-b965-f91c0a394f88\"\n    }\n}",
+        "title": "修改单元名称"
+      }
+    ],
+    "ModifyEdgeUnitDeployGridItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitDeployGridItem\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"GridItemName\": \"logo-dg-privileged1111-logofox\",\n    \"WorkloadKind\": \"DeploymentGrid\",\n    \"Namespace\": \"default\",\n    \"Replicas\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "修改边缘单元Grid部署项副本数"
+      }
+    ],
+    "ModifyIotDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIotDevice\n<公共请求参数>\n\n{\n    \"Disabled\": true,\n    \"LogSetting\": 0,\n    \"LogLevel\": 0,\n    \"Description\": \"测试\",\n    \"DeviceId\": 100049\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "ModifyIotDevice"
+      }
+    ],
+    "ModifyNodeUnitTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeUnitTemplate\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeUnitTemplateID\": 100003,\n    \"Nodes\": [\n        \"test-node1\",\n        \"dev00311\",\n        \"dev005\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "修改边缘单元NodeUnit模板"
+      }
+    ],
+    "ModifySecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecret\n<公共请求参数>\n\n{\n    \"EdgeUnitID\": 1,\n    \"SecretName\": \"iecp\",\n    \"SecretNamespace\": \"default\",\n    \"Yaml\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"137ac961-6173-4250-995f-4769cd41c945\"\n    }\n}",
+        "title": "ModifySecret"
+      }
+    ],
+    "RedeployEdgeUnitApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RedeployEdgeUnitApplication\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"ApplicationId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "RedeployEdgeUnitApplication"
+      }
+    ],
+    "SetRouteOnOff": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetRouteOnOff\n<公共请求参数>\n\n{\n    \"Status\": \"off\",\n    \"RouteID\": 1000001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
+        "title": "SetRouteOnOff"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,78 @@
+{
+  "actions": {
+    "ReportBusinessData": {
+      "document": "上报业务数据",
+      "input": "ReportBusinessDataRequest",
+      "name": "上报业务数据",
+      "output": "ReportBusinessDataResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-27",
+    "api_brief": "企业罗盘云API",
+    "serviceNameCN": "企业罗盘",
+    "serviceShortName": "cdata"
+  },
+  "objects": {
+    "ReportBusinessDataRequest": {
+      "document": "ReportBusinessData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "接入标识",
+          "example": "无",
+          "member": "string",
+          "name": "ReportTag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "上报数据",
+          "example": "[{\"Id\":14038,\"Name\":\"测试01\",\"Desc\":\"测试描述\",\"Status\":1}]",
+          "member": "string",
+          "name": "DataStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "上报总条数（对账使用，离线数据接入方式时，必填）",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportBusinessDataResponse": {
+      "document": "ReportBusinessData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上报成功",
+          "example": "上报成功",
+          "member": "string",
+          "name": "ResultMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

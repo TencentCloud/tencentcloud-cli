@@ -1,0 +1,159 @@
+{
+  "actions": {
+    "CreateAppScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"AppPackage\": \"com.test.app\",\n    \"Source\": \"2\",\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "创建App隐私合规基础诊断任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"Platform\": \"2\",\n    \"Source\": \"0\",\n    \"AppPackage\": \"wxe***97c684\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d9fc265-a647-4f3c-b188-3b98e064e905\",\n        \"Result\": 0,\n        \"TaskID\": \"267***400\"\n    }\n}",
+        "title": "创建小程序基本检测任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"Remark\": \"备注信息啦\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"10086\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"老王\",\n    \"TaskType\": \"2\",\n    \"CorpName\": \"测试有限公司\",\n    \"Email\": \"test@test.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c296e5b-48ad-4cfb-a90d-8010c9951341\",\n        \"Result\": 0,\n        \"TaskID\": \"271***520\"\n    }\n}",
+        "title": "本地化任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"腾讯iOA隐私保护指引.txt\",\n    \"AppDownloadUrl\": \"https://bm****OYpo8YKRrbnTofaB.apk\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"10086\",\n    \"AppName\": \"ioa\",\n    \"PrivacyTextUrl\": \"https://bm****jc7yrar9xIKPYyvpEgVA.txt\",\n    \"AppPackage\": \"com.***.i**oa\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"老王\",\n    \"TaskType\": \"1\",\n    \"CorpName\": \"测试有限企业\",\n    \"Email\": \"test@test.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab653763-5494-42db-b7d3-4afd9eb76410\",\n        \"Result\": 0,\n        \"TaskID\": \"271***344\"\n    }\n}",
+        "title": "App专家版隐私合规诊断示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"腾讯iOA隐私保护指引.txt\",\n    \"AppDownloadUrl\": \"https://bm***8YKRrbnTofaB.apk\",\n    \"Platform\": \"0\",\n    \"TelNumber\": \"10086\",\n    \"AppName\": \"ioa\",\n    \"PrivacyTextUrl\": \"https://bm****cxjc7yrar9xIKPYyvpEgVA.txt\",\n    \"AppPackage\": \"com.***.i**oa\",\n    \"Source\": \"2\",\n    \"SalesPerson\": \"张三\",\n    \"ContactName\": \"老王\",\n    \"TaskType\": \"0\",\n    \"CorpName\": \"测试有限企业\",\n    \"Email\": \"test@test.com\",\n    \"IsAgreePrivacy\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a9ed2aa-a7a9-4a29-90dc-235d8ee83040\",\n        \"Result\": 0,\n        \"TaskID\": \"271****296\"\n    }\n}",
+        "title": "App自动化版隐私合规诊断示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"Source\": \"3\",\n    \"AppDownloadUrl\": \"https://bm***berJdezPIV926.apk\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b496234-892d-4f58-8261-9eb7ac3062a9\",\n        \"Result\": 0,\n        \"TaskID\": \"347***496\"\n    }\n}",
+        "title": "提交漏洞扫描app任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"隐私文本.txt\",\n    \"AppSha1\": \"fbcb5873fedaeec4f4c2d2d09be117eb\",\n    \"Source\": \"2\",\n    \"AppName\": \"测试app\",\n    \"PrivacyTextUrl\": \"https://privacy.e.qq.com/inner?appid\",\n    \"Platform\": \"0\",\n    \"PrivacyTextMD5\": \"a8c8890dec7496ef0514a976a984a1c7\",\n    \"AppDownloadUrl\": \"https://union.gdtimg.com/apk/unionAppPkg/fbcb5873fedaeec4f4c2d2d09be117eb.apk\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8bf4b3***5500e49fb8\",\n        \"Result\": 0,\n        \"TaskID\": \"357***816\"\n    }\n}",
+        "title": "提交app隐私诊断任务(appSha1和隐私文本md5值)"
+      }
+    ],
+    "CreateAppScanTaskRepeat": [
+      {
+        "document": "原任务失败后，重新提交隐私合规诊断基础版任务",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"AppPackage\": \"com.test.app\",\n    \"Source\": \"2\",\n    \"OrgTaskID\": \"170143813*******360\",\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "title": "创建App隐私合规诊断重试任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"Platform\": \"2\",\n    \"Source\": \"0\",\n    \"OrgTaskID\": \"2673***400\",\n    \"AppPackage\": \"wxec***97c684\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c2cde1b-8226-4ab9-a6da-52edc66af0af\",\n        \"Result\": 0,\n        \"TaskID\": \"2673***638272\"\n    }\n}",
+        "title": "重新提交小程序基础版诊断任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"Platform\": \"2\",\n    \"Source\": \"0\",\n    \"OrgTaskID\": \"2673***638272\",\n    \"AppPackage\": \"wxec0b921a4d97c684\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb9d4e07-11f6-4d04-8e55-d6121c72ad4c\",\n        \"Result\": 0,\n        \"TaskID\": \"269***584\"\n    }\n}",
+        "title": "重新小程序基础诊断任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"Source\": \"3\",\n    \"OrgTaskID\": \"347***22496\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc2*******2b2ffd0\",\n        \"Result\": 0,\n        \"TaskID\": \"347*********16\"\n    }\n}",
+        "title": "重新提交漏洞扫描任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"PrivacyTextName\": \"隐私.txt\",\n    \"AppSha1\": \"fbcb5873fedaeec4f4c2d2d09be117eb\",\n    \"Source\": \"2\",\n    \"AppName\": \"测试app\",\n    \"PrivacyTextUrl\": \"https://privacy.e.qq.com/inner?appid\",\n    \"Platform\": \"0\",\n    \"OrgTaskID\": \"357944078337314816\",\n    \"PrivacyTextMD5\": \"a8c8890dec7496ef0514a976a984a1c7\",\n    \"AppDownloadUrl\": \"https://union.gdtimg.com/apk/unionAppPkg/fbcb5873fedaeec4f4c2d2d09be117eb.apk\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61cfc***8119\",\n        \"Result\": 0,\n        \"TaskID\": \"357***48\"\n    }\n}",
+        "title": "重新提交诊断任务(appSha1和PrivacyTextMD5不为空)"
+      }
+    ],
+    "DescribeChannelTaskReportUrl": [
+      {
+        "document": "获取诊断报告",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\",\n    \"TaskID\": \"170******340\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"AppMD5\": \"12xxxxxxx03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5*********3e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\"\n    }\n}",
+        "title": "查询子渠道的App合规诊断任务报告url"
+      }
+    ],
+    "DescribeFileTicket": [
+      {
+        "document": "获取app隐私诊断上传url",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTicket\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://priva***d35\"\n    }\n}",
+        "title": "获取App隐私诊断上传url"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTicket\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79fd20b9-211d-4121-b2ad-1929c047c17e\",\n        \"Result\": 0,\n        \"UploadUrl\": \"https://evi***s?non***58&secr***N6dL&token=76b***1e3&ts=164***35\",\n        \"UploadSign\": \"\",\n        \"FildID\": \"\"\n    }\n}",
+        "title": "获取App隐私诊断文件上传url"
+      }
+    ],
+    "DescribeResourceUsageInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUsageInfo\n<公共请求参数>\n\n{\n    \"PriceName\": \"sv_011886_testing_service_per_use\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2950685b-6235-4e37-96c3-0238feb44c29\",\n        \"Result\": 0,\n        \"Data\": {\n            \"ResourceName\": \"sv_011886_testing_service_per_use\",\n            \"Total\": 0,\n            \"UnusedCount\": 0\n        }\n    }\n}",
+        "title": "获取当前用户资源使用情况"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUsageInfo\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e417380-6596-4e49-b1eb-ac96d567ae0f\",\n        \"Result\": 0,\n        \"Data\": {\n            \"ResourceName\": \"sv_011886_ab_p\",\n            \"Total\": 0,\n            \"UnusedCount\": 0\n        }\n    }\n}",
+        "title": "获取应用合规基础版资源使用情况"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUsageInfo\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"Source\": \"3\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5251f818-f384-49f0-8681-d4dba6d12826\",\n        \"Result\": 0,\n        \"Data\": {\n            \"ResourceName\": \"sv_011886_keen_p\",\n            \"Total\": 0,\n            \"UnusedCount\": 0\n        }\n    }\n}",
+        "title": "获取漏洞扫描资源使用情况"
+      }
+    ],
+    "DescribeScanTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"\\\"0,1,2\\\"\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"TaskTypes\": \"\\\"0,1\\\"\",\n    \"Source\": \"-1\",\n    \"Platform\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235***952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"\",\n                    \"ReportTitle\": \"\",\n                    \"BehaviorUrl\": \"\",\n                    \"BehaviorTitle\": \"\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "获取应用合规诊断任务列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"0,1,2\",\n    \"PageSize\": \"10\",\n    \"PageNo\": \"1\",\n    \"Platform\": \"0\",\n    \"TaskTypes\": \"0,1\",\n    \"Source\": \"-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7c3b1d4-a45b-4a45-be38-49565552a871\",\n        \"Result\": 0,\n        \"Total\": 0,\n        \"Data\": null\n    }\n}",
+        "title": "获取诊断任务为空的情况"
+      }
+    ],
+    "DescribeScanTaskReportUrl": [
+      {
+        "document": "任务完成",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"TaskID\": \"170******340\",\n    \"Platform\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5*********3e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\",\n        \"ReportResult\": \"诊断报告内容\"\n    }\n}",
+        "title": "查询App隐私合规诊断任务状态"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskReportUrl\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"Source\": \"3\",\n    \"ReportType\": \"0\",\n    \"TaskID\": \"347***496\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9357*********a512b39ee\",\n        \"Result\": 0,\n        \"ReportUrl\": \"http://apk***f3x_00yY\",\n        \"ReportTitle\": \"\",\n        \"ReportResult\": \"\"\n    }\n}",
+        "title": "获取漏洞扫描诊断报告url"
+      }
+    ],
+    "DescribeScanTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskStatus\n<公共请求参数>\n\n{\n    \"Platform\": \"0\",\n    \"Source\": \"2\",\n    \"TaskID\": \"299***256\",\n    \"TaskType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cf11eaf-e62d-40bd-ba61-4de8c7bfe14c\",\n        \"Result\": 0,\n        \"Status\": 2,\n        \"FlowSteps\": [\n            {\n                \"FlowNo\": \"1.1\",\n                \"FlowName\": \"APK 下载\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 16:31:39\",\n                \"EndTime\": \"2022-04-06 18:25:27\"\n            },\n            {\n                \"FlowNo\": \"1.2\",\n                \"FlowName\": \"APK 校验\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 16:31:39\",\n                \"EndTime\": \"2022-04-06 18:25:27\"\n            },\n            {\n                \"FlowNo\": \"2.1\",\n                \"FlowName\": \"隐私文本下载\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 16:59:40\",\n                \"EndTime\": \"2022-04-06 16:59:40\"\n            },\n            {\n                \"FlowNo\": \"2.1.1\",\n                \"FlowName\": \"隐私文本解析\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 17:01:42\",\n                \"EndTime\": \"2022-04-06 17:06:46\"\n            },\n            {\n                \"FlowNo\": \"2.1\",\n                \"FlowName\": \"自研引擎(APK)\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 17:01:42\",\n                \"EndTime\": \"2022-04-06 18:18:21\"\n            },\n            {\n                \"FlowNo\": \"2.2\",\n                \"FlowName\": \"自研引擎(APK+隐私文本)\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 18:18:21\",\n                \"EndTime\": \"2022-04-06 18:23:23\"\n            },\n            {\n                \"FlowNo\": \"3.1\",\n                \"FlowName\": \"隐私检测综合判定\",\n                \"FlowStatus\": 2,\n                \"FlowStateDesc\": \"成功\",\n                \"StartTime\": \"2022-04-06 18:23:23\",\n                \"EndTime\": \"2022-04-06 18:25:27\"\n            }\n        ],\n        \"ErrMsg\": \"成功\"\n    }\n}",
+        "title": "获取任务状态(增加任务流信息)"
+      }
+    ]
+  },
+  "version": "1.0"
+}

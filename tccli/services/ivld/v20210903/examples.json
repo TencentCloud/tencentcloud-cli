@@ -1,0 +1,241 @@
+{
+  "actions": {
+    "AddCustomPersonImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomPersonImage\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/%E6%B2%88%E8%85%BE.jpeg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageInfo\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMsg\": \"OK\",\n            \"ImageId\": \"image-Axgo3FYc-GOeV\",\n            \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-GOeV.jpeg\"\n        },\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"f7efda76-2d0d-487d-9e8c-4c198555cc1f\"\n    }\n}",
+        "title": "新增自定义人物图片"
+      }
+    ],
+    "CreateCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomCategory\n<公共请求参数>\n\n{\n    \"L1Category\": \"公众人物\",\n    \"L2Category\": \"知名医生\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"10\",\n        \"RequestId\": \"dffc5c7b-b742-4075-a9a6-9c41d51d6337\"\n    }\n}",
+        "title": "创建自定义人物分类"
+      }
+    ],
+    "CreateCustomGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomGroup\n<公共请求参数>\n\n{\n    \"Bucket\": \"test-251202813.cos.ap-guangzhou.myqcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bb0c9a0f-7cb2-4df7-a91f-fbb43eeec80c\"\n    }\n}",
+        "title": "成功创建自定义人物库"
+      }
+    ],
+    "CreateCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomPerson\n<公共请求参数>\n\n{\n    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/%E6%B2%88%E8%85%BE.jpeg\",\n    \"BasicInfo\": \"测试基本信息\",\n    \"Name\": \"测试姓名\",\n    \"CategoryId\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageInfo\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMsg\": \"OK\",\n            \"ImageId\": \"image-Axgo3FYc-egMN\",\n            \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n        },\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\"\n    }\n}",
+        "title": "成功创建自定义人物"
+      }
+    ],
+    "CreateDefaultCategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDefaultCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"400ceb0d-ab84-4108-99df-9ce07c56522b\"\n    }\n}",
+        "title": "创建默认自定义人物分类信息"
+      }
+    ],
+    "CreateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"MediaPreknownInfo\": {\n        \"MediaLang\": 1,\n        \"MediaSecondLabel\": 0,\n        \"MediaLabel\": 1,\n        \"MediaType\": 2\n    },\n    \"TaskName\": \"demo-task-0\",\n    \"MediaId\": \"media-a1b2c3d4\",\n    \"UploadVideo\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2713de41-b294-429b-ac13-2c3f5c49b1db\",\n        \"TaskId\": \"task-g8lqk737\"\n    }\n}",
+        "title": "输入普通话新闻素材，发起智能标签任务"
+      }
+    ],
+    "DeleteCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomCategory\n<公共请求参数>\n\n{\n    \"CategoryId\": \"99\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"99\",\n        \"RequestId\": \"94efe9e4-1381-43b4-992b-f3f731ff3387\"\n    }\n}",
+        "title": "成功删除自定义人物分类"
+      }
+    ],
+    "DeleteCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomPerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"c3679728-cd86-4bd9-a829-579e9e885c7c\"\n    }\n}",
+        "title": "删除自定义人物"
+      }
+    ],
+    "DeleteCustomPersonImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomPersonImage\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"ImageId\": \"image-Axgo3FYc-GOeV\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageId\": \"image-Axgo3FYc-GOeV\",\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"88ca11c5-3ab8-4069-b2b9-723f6143d6aa\"\n    }\n}",
+        "title": "删除自定义人物图片"
+      }
+    ],
+    "DeleteMedia": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d608fa8-66a3-4a25-94ce-1b904d4807f3\"\n    }\n}",
+        "title": "成功删除媒资文件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d608fa8-66a3-4a25-94ce-1b904d4807f3\"\n    }\n}",
+        "title": "删除媒资文件失败-媒资文件不存在"
+      }
+    ],
+    "DeleteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-kRB7j9e6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d04776d-f95c-4c7e-be5b-f3bd8ece7219\"\n    }\n}",
+        "title": "成功删除任务"
+      }
+    ],
+    "DescribeCustomCategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [],\n        \"RequestId\": \"d8461ee7-c4eb-429e-8609-3fa727e5f064\"\n    }\n}",
+        "title": "未创建任何分类，返回空数组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [\n            {\n                \"CategoryId\": \"13\",\n                \"L1Category\": \"公众人物\",\n                \"L2Category\": \"知名律师\"\n            }\n        ],\n        \"RequestId\": \"2759b810-ad36-4936-93b4-7b374a878e6a\"\n    }\n}",
+        "title": "描述自定义人物类型"
+      }
+    ],
+    "DescribeCustomGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomGroup\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"test-251202813.cos.ap-guangzhou.myqcloud.com\",\n        \"GroupSize\": 0,\n        \"RequestId\": \"dc5b7d40-2210-4298-8809-085a43f64e60\"\n    }\n}",
+        "title": "成功描述自定义人物库"
+      }
+    ],
+    "DescribeCustomPersonDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersonDetail\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfo\": {\n            \"BasicInfo\": \"测试基本信息\",\n            \"CreateTime\": \"2022-01-25 10:35:47\",\n            \"ImageInfoSet\": [\n                {\n                    \"ErrorCode\": \"OK\",\n                    \"ErrorMsg\": \"OK\",\n                    \"ImageId\": \"image-Axgo3FYc-egMN\",\n                    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n                }\n            ],\n            \"L1Category\": \"明星\",\n            \"L2Category\": \"巨星\",\n            \"Name\": \"测试姓名\",\n            \"PersonId\": \"person-Axgo3FYc\"\n        },\n        \"RequestId\": \"db04f25b-0d68-4cba-9171-254abc8ff3ac\",\n        \"TaskIdSet\": []\n    }\n}",
+        "title": "成功描述人物详细信息(包括出现这个人物的任务ID列表)"
+      }
+    ],
+    "DescribeCustomPersons": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersons\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"15\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [],\n        \"RequestId\": \"802f88a4-3c8f-4aff-8328-bc7591fdacc1\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "批量描述自定义人物"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersons\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"50\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [\n            {\n                \"BasicInfo\": \"测试基本信息\",\n                \"CreateTime\": \"2022-01-25 10:35:47\",\n                \"ImageInfoSet\": [\n                    {\n                        \"ErrorCode\": \"OK\",\n                        \"ErrorMsg\": \"OK\",\n                        \"ImageId\": \"image-Axgo3FYc-egMN\",\n                        \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n                    }\n                ],\n                \"L1Category\": \"明星\",\n                \"L2Category\": \"巨星\",\n                \"Name\": \"测试姓名\",\n                \"PersonId\": \"person-Axgo3FYc\"\n            }\n        ],\n        \"RequestId\": \"9f5bc011-fa0b-4ad9-a4a1-2481343e9428\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "成功批量描述人物信息"
+      }
+    ],
+    "DescribeMedia": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-ly5qgk6j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 0,\n                \"Duration\": 0,\n                \"FPS\": 0,\n                \"FileSize\": 0,\n                \"Height\": 0,\n                \"MD5\": \"\",\n                \"NumFrames\": 0,\n                \"Width\": 0\n            },\n            \"Name\": \"demo-video.mp4\",\n            \"Progress\": 0,\n            \"Status\": 5\n        },\n        \"RequestId\": \"7f415981-cba6-426d-92df-331f29f3bb16\"\n    }\n}",
+        "title": "导入中(正在进行转码)，此时返回的视频元信息没有意义"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-ly5qgk6j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 1420,\n                \"Duration\": 356.024,\n                \"FPS\": 25,\n                \"FileSize\": 63195585,\n                \"Height\": 720,\n                \"MD5\": \"b67489b0f5ca7822c94f4b6102ac7d13\",\n                \"NumFrames\": 8900,\n                \"Width\": 1280\n            },\n            \"Name\": \"demo-video-0\",\n            \"Progress\": 0,\n            \"Status\": 8\n        },\n        \"RequestId\": \"d4c8bf8e-43ba-482a-a257-b6ac7a6296ec\"\n    }\n}",
+        "title": "导入完成，返回媒资视频元信息"
+      }
+    ],
+    "DescribeMedias": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMedias\n<公共请求参数>\n\n{\n    \"MediaFilter\": {\n        \"StatusSet\": [\n            8\n        ]\n    },\n    \"PageNumber\": 1,\n    \"PageSize\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaInfoSet\": [\n            {\n                \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test-news.mov\",\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-es88zd2m\",\n                \"Metadata\": {\n                    \"BitRate\": 258778,\n                    \"Duration\": 43.211,\n                    \"FPS\": 30,\n                    \"FileSize\": 1397761,\n                    \"Height\": 480,\n                    \"MD5\": \"6348474d783a56de32b4b2ac42e74d79\",\n                    \"NumFrames\": 0,\n                    \"Width\": 848\n                },\n                \"Name\": \"demo-video-1\",\n                \"Progress\": 0,\n                \"Status\": 8\n            },\n            {\n                \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test-news-1.mov\",\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-t9Igr9jf\",\n                \"Metadata\": {\n                    \"BitRate\": 258778,\n                    \"Duration\": 43.211,\n                    \"FPS\": 30,\n                    \"FileSize\": 1397761,\n                    \"Height\": 480,\n                    \"MD5\": \"6348474d783a56de32b4b2ac42e74d79\",\n                    \"NumFrames\": 0,\n                    \"Width\": 848\n                },\n                \"Name\": \"demo-video-3.mov\",\n                \"Progress\": 0,\n                \"Status\": 8\n            }\n        ],\n        \"RequestId\": \"d56d17ca-fa6f-4040-8627-328a08e7a857\",\n        \"TotalCount\": 11\n    }\n}",
+        "title": "列举前2个成功完成的媒资文件"
+      }
+    ],
+    "DescribeTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-g8lqk734\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a3010447-5003-4358-9b85-7c81a98b1c8d\",\n        \"TaskInfo\": {\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-a1b2c3d4\",\n            \"MediaPreknownInfo\": {\n                \"MediaLabel\": 1,\n                \"MediaLang\": 1,\n                \"MediaSecondLabel\": 0,\n                \"MediaType\": 2\n            },\n            \"TaskCreateTime\": 1634092320,\n            \"TaskId\": \"task-g8lqk734\",\n            \"TaskName\": \"demo-task-0\",\n            \"TaskProgress\": 2,\n            \"TaskStartTime\": 1634092324,\n            \"TaskStatus\": 2,\n            \"TaskTimeCost\": 0\n        }\n    }\n}",
+        "title": "任务执行中"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-g8lqk734\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af5fa625-286e-431d-b52c-6c577048e987\",\n        \"TaskInfo\": {\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-a1b2c3d4\",\n            \"MediaPreknownInfo\": {\n                \"MediaLabel\": 1,\n                \"MediaLang\": 1,\n                \"MediaSecondLabel\": 0,\n                \"MediaType\": 2\n            },\n            \"TaskCreateTime\": 1634092320,\n            \"TaskId\": \"task-g8lqk734\",\n            \"TaskName\": \"demo-task-0\",\n            \"TaskProgress\": 0,\n            \"TaskStartTime\": 1634092324,\n            \"TaskStatus\": 8,\n            \"TaskTimeCost\": 114\n        }\n    }\n}",
+        "title": "任务执行完成"
+      }
+    ],
+    "DescribeTaskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-l0ae7t96\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioTaskData\": null,\n        \"ImageTaskData\": null,\n        \"TextTaskData\": null,\n        \"RequestId\": \"a18b2219-445f-43b9-b844-077d72ebcb85\",\n        \"TaskData\": {\n            \"ShowInfo\": {\n                \"AudioInfoSet\": [\n                    {\n                        \"Content\": \"这是我一四年的一件作品，制作的运行是济南的一处职工宿舍楼，材料主要是泡沫板，木板完了指导制作，周期两个月时间。\",\n                        \"EndTimeStamp\": 51.882,\n                        \"StartTimeStamp\": 0.36,\n                        \"Tag\": \"\"\n                    }\n                ],\n                \"ClassifiedPersonInfoSet\": [],\n                \"Column\": \"\",\n                \"CoverImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/show_g8rktHiE.jpg\",\n                \"Date\": \"\",\n                \"FrameTagSet\": {\n                    \"AppearInfo\": {\n                        \"AudioAppearSet\": [],\n                        \"TextAppearSet\": [],\n                        \"VideoAppearSet\": [\n                            {\n                                \"EndTimeStamp\": 34.84,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_popjK1fY.jpg\",\n                                \"StartTimeStamp\": 32.56\n                            },\n                            {\n                                \"EndTimeStamp\": 39.52,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_7Mu2jPLZ.jpg\",\n                                \"StartTimeStamp\": 34.88\n                            },\n                            {\n                                \"EndTimeStamp\": 41.64,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_KHT2pnwl.jpg\",\n                                \"StartTimeStamp\": 39.56\n                            },\n                            {\n                                \"EndTimeStamp\": 45.44,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_GGvu3x4d.jpg\",\n                                \"StartTimeStamp\": 41.68\n                            },\n                            {\n                                \"EndTimeStamp\": 49.56,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_QAt3s6nW.jpg\",\n                                \"StartTimeStamp\": 45.48\n                            },\n                            {\n                                \"EndTimeStamp\": 39.52,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_7Mu2jPLZ.jpg\",\n                                \"StartTimeStamp\": 34.88\n                            },\n                            {\n                                \"EndTimeStamp\": 39.52,\n                                \"ImageURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/lens_7Mu2jPLZ.jpg\",\n                                \"StartTimeStamp\": 34.88\n                            }\n                        ]\n                    },\n                    \"TagSet\": [\n                        {\n                            \"AppearIndexPairSet\": [],\n                            \"FirstAppear\": 0,\n                            \"L2TagSet\": [\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 0\n                                                },\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 1\n                                                },\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 2\n                                                },\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 3\n                                                },\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 4\n                                                }\n                                            ],\n                                            \"FirstAppear\": 3,\n                                            \"Name\": \"建筑物\"\n                                        }\n                                    ],\n                                    \"Name\": \"城市景观\"\n                                },\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 5\n                                                }\n                                            ],\n                                            \"FirstAppear\": 3,\n                                            \"Name\": \"农村风貌\"\n                                        }\n                                    ],\n                                    \"Name\": \"农业场景\"\n                                }\n                            ],\n                            \"Name\": \"场景\"\n                        },\n                        {\n                            \"AppearIndexPairSet\": [],\n                            \"FirstAppear\": 0,\n                            \"L2TagSet\": [\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 3,\n                                                    \"Index\": 6\n                                                }\n                                            ],\n                                            \"FirstAppear\": 3,\n                                            \"Name\": \"自行车\"\n                                        }\n                                    ],\n                                    \"Name\": \"陆地交通工具\"\n                                }\n                            ],\n                            \"Name\": \"交通工具\"\n                        }\n                    ]\n                },\n                \"Logo\": \"\",\n                \"MediaClassifierSet\": [\n                    \"知识科普\"\n                ],\n                \"Source\": \"\",\n                \"SummarySet\": [],\n                \"SummaryTagSet\": [],\n                \"TextInfoSet\": [\n                    {\n                        \"Content\": \"这是我2014年的一个作品\",\n                        \"EndTimeStamp\": 39.52,\n                        \"StartTimeStamp\": 34.88,\n                        \"Tag\": \"字幕\"\n                    },\n                    {\n                        \"Content\": \"制作的原型是济南的一处宿舍楼\",\n                        \"EndTimeStamp\": 39.52,\n                        \"StartTimeStamp\": 34.88,\n                        \"Tag\": \"字幕\"\n                    },\n                    {\n                        \"Content\": \"材料主要是泡沫板木板瓦楞制等\",\n                        \"EndTimeStamp\": 45.44,\n                        \"StartTimeStamp\": 41.68,\n                        \"Tag\": \"字幕\"\n                    },\n                    {\n                        \"Content\": \"制作周期2个月时间\",\n                        \"EndTimeStamp\": 49.56,\n                        \"StartTimeStamp\": 45.48,\n                        \"Tag\": \"字幕\"\n                    }\n                ],\n                \"TextTagSet\": {\n                    \"AppearInfo\": {\n                        \"AudioAppearSet\": [\n                            {\n                                \"EndPosition\": 37,\n                                \"Index\": 0,\n                                \"StartPosition\": 34\n                            },\n                            {\n                                \"EndPosition\": 28,\n                                \"Index\": 0,\n                                \"StartPosition\": 25\n                            },\n                            {\n                                \"EndPosition\": 25,\n                                \"Index\": 0,\n                                \"StartPosition\": 23\n                            },\n                            {\n                                \"EndPosition\": 20,\n                                \"Index\": 0,\n                                \"StartPosition\": 18\n                            }\n                        ],\n                        \"TextAppearSet\": [],\n                        \"VideoAppearSet\": []\n                    },\n                    \"TagSet\": [\n                        {\n                            \"AppearIndexPairSet\": [],\n                            \"FirstAppear\": 0,\n                            \"L2TagSet\": [\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 1,\n                                                    \"Index\": 0\n                                                }\n                                            ],\n                                            \"FirstAppear\": 1,\n                                            \"Name\": \"泡沫板\"\n                                        },\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 1,\n                                                    \"Index\": 1\n                                                }\n                                            ],\n                                            \"FirstAppear\": 1,\n                                            \"Name\": \"宿舍楼\"\n                                        }\n                                    ],\n                                    \"Name\": \"关键词\"\n                                },\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 1,\n                                                    \"Index\": 2\n                                                }\n                                            ],\n                                            \"FirstAppear\": 1,\n                                            \"Name\": \"职工\"\n                                        }\n                                    ],\n                                    \"Name\": \"身份职位\"\n                                },\n                                {\n                                    \"AppearIndexPairSet\": [],\n                                    \"FirstAppear\": 0,\n                                    \"L3TagSet\": [\n                                        {\n                                            \"AppearIndexPairSet\": [\n                                                {\n                                                    \"AppearIndex\": 1,\n                                                    \"Index\": 3\n                                                }\n                                            ],\n                                            \"FirstAppear\": 1,\n                                            \"Name\": \"济南\"\n                                        }\n                                    ],\n                                    \"Name\": \"地点\"\n                                }\n                            ],\n                            \"Name\": \"\"\n                        }\n                    ]\n                },\n                \"TitleSet\": [],\n                \"WebMediaURL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4\"\n            }\n        },\n        \"TaskInfo\": {\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-tqakf1vs\",\n            \"MediaName\": \"星视频\",\n            \"MediaPreknownInfo\": {\n                \"MediaLabel\": 3,\n                \"MediaLang\": 1,\n                \"MediaSecondLabel\": 0,\n                \"MediaType\": 2\n            },\n            \"TaskCreateTime\": \"2021-11-04T12:14:17+08:00\",\n            \"TaskId\": \"task-l0ae7t96\",\n            \"TaskName\": \"\",\n            \"TaskProgress\": 0,\n            \"TaskStartTime\": \"2021-11-04T12:14:18+08:00\",\n            \"TaskStatus\": 8,\n            \"TaskTimeCost\": 110,\n            \"CallbackURL\": \"xx\",\n            \"Label\": \"xxx\"\n        }\n    }\n}",
+        "title": "描述任务与任务结果"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 5,\n    \"TaskFilter\": {\n        \"TaskStatusSet\": [\n            8\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcbd578a-caea-487a-b761-d49c9b7f2ac3\",\n        \"TaskInfoSet\": [\n            {\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-fdk9hp2v\",\n                \"MediaPreknownInfo\": {\n                    \"MediaLabel\": 1,\n                    \"MediaLang\": 1,\n                    \"MediaSecondLabel\": 1,\n                    \"MediaType\": 2\n                },\n                \"TaskCreateTime\": 1634014749,\n                \"TaskId\": \"task-ctl3bk8k\",\n                \"TaskName\": \"TaskNameTest\",\n                \"TaskProgress\": 0,\n                \"TaskStartTime\": 1634014751,\n                \"TaskStatus\": 8,\n                \"TaskTimeCost\": 111\n            },\n            {\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-t9Igr9jf\",\n                \"MediaPreknownInfo\": {\n                    \"MediaLabel\": 1,\n                    \"MediaLang\": 1,\n                    \"MediaSecondLabel\": 0,\n                    \"MediaType\": 2\n                },\n                \"TaskCreateTime\": 1634017967,\n                \"TaskId\": \"task-wodahg5t\",\n                \"TaskName\": \"test-task-0\",\n                \"TaskProgress\": 0,\n                \"TaskStartTime\": 1634017971,\n                \"TaskStatus\": 8,\n                \"TaskTimeCost\": 131\n            },\n            {\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-fdk9hp2u\",\n                \"MediaPreknownInfo\": {\n                    \"MediaLabel\": 1,\n                    \"MediaLang\": 1,\n                    \"MediaSecondLabel\": 1,\n                    \"MediaType\": 2\n                },\n                \"TaskCreateTime\": 1634019460,\n                \"TaskId\": \"task-qq38azcb\",\n                \"TaskName\": \"TaskNameTest\",\n                \"TaskProgress\": 0,\n                \"TaskStartTime\": 1634019464,\n                \"TaskStatus\": 8,\n                \"TaskTimeCost\": 138\n            },\n            {\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-fdk9hp2u\",\n                \"MediaPreknownInfo\": {\n                    \"MediaLabel\": 1,\n                    \"MediaLang\": 1,\n                    \"MediaSecondLabel\": 1,\n                    \"MediaType\": 2\n                },\n                \"TaskCreateTime\": 1634019990,\n                \"TaskId\": \"task-kzjesg12\",\n                \"TaskName\": \"TaskNameTest\",\n                \"TaskProgress\": 0,\n                \"TaskStartTime\": 1634019994,\n                \"TaskStatus\": 8,\n                \"TaskTimeCost\": 148\n            },\n            {\n                \"FailedReason\": \"\",\n                \"MediaId\": \"media-ly5qgk6j\",\n                \"MediaPreknownInfo\": {\n                    \"MediaLabel\": 1,\n                    \"MediaLang\": 1,\n                    \"MediaSecondLabel\": 1,\n                    \"MediaType\": 2\n                },\n                \"TaskCreateTime\": 1634021166,\n                \"TaskId\": \"task-krmtkhia\",\n                \"TaskName\": \"demo-task-0\",\n                \"TaskProgress\": 0,\n                \"TaskStartTime\": 1634021170,\n                \"TaskStatus\": 8,\n                \"TaskTimeCost\": 111\n            }\n        ],\n        \"TotalCount\": 17\n    }\n}",
+        "title": "描述前5个完成的任务"
+      }
+    ],
+    "ImportMedia": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-news-6mins.mp4\",\n    \"Name\": \"demo-video-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-a1b2c3d4\",\n        \"RequestId\": \"50f3df82-beae-4f5f-9b47-23e8302f62ae\"\n    }\n}",
+        "title": "发起导入任务成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/phye-debug/male.png\",\n    \"Name\": \"male.png\",\n    \"MediaType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-9DfyyCOZ\",\n        \"RequestId\": \"a642b499-9ebd-4601-a57e-a8cf5c2bee49\"\n    }\n}",
+        "title": "导入图片"
+      }
+    ],
+    "ModifyCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCallback\n<公共请求参数>\n\n{\n    \"TaskFinishNotifyURL\": \"https://callback.com\",\n    \"MediaFinishNotifyURL\": \"https://callback.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\"\n    }\n}",
+        "title": "成功设置回调地址"
+      }
+    ],
+    "QueryCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCallback\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\",\n        \"TaskFinishNotifyURL\": \"https://callback.com\",\n        \"MediaFinishNotifyURL\": \"https://callback.com\"\n    }\n}",
+        "title": "成功查询用户回调地址"
+      }
+    ],
+    "UpdateCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomCategory\n<公共请求参数>\n\n{\n    \"L1Category\": \"公众人物\",\n    \"L2Category\": \"娱乐明星\",\n    \"CategoryId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"2\",\n        \"RequestId\": \"0f3d2270-90f4-4d5d-9670-3bd44ac8efa2\"\n    }\n}",
+        "title": "成功更新自定义人物类型"
+      }
+    ],
+    "UpdateCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomPerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"BasicInfo\": \"新测试基本信息\",\n    \"Name\": \"测试姓名B\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"78b360f1-fe7a-4576-8ab4-d48d06d44572\"\n    }\n}",
+        "title": "更新人物姓名与基本信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,173 @@
+{
+  "actions": {
+    "CreateCustomDomain": {
+      "document": "绑定自定义域名",
+      "input": "CreateCustomDomainRequest",
+      "name": "绑定自定义域名",
+      "output": "CreateCustomDomainResponse",
+      "status": "online"
+    },
+    "ModifyCustomDomain": {
+      "document": "修改自定义域名",
+      "input": "ModifyCustomDomainRequest",
+      "name": "修改自定义域名",
+      "output": "ModifyCustomDomainResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-19",
+    "api_brief": "介绍如何通过api， 查看应用中心列表，操作应用中心的创建，销毁等。",
+    "serviceNameCN": "开源应用中心",
+    "serviceShortName": "oac"
+  },
+  "objects": {
+    "CreateCustomDomainRequest": {
+      "document": "CreateCustomDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "服务Id",
+          "example": "oac-1620874672-3g8z1od8",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "绑定域名",
+          "example": "default.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地域编号",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书编号",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "DnsPod登录密钥",
+          "example": "xxx",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomDomainResponse": {
+      "document": "CreateCustomDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomDomainRequest": {
+      "document": "ModifyCustomDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "服务Id",
+          "example": "oac-1620874672-3g8z1od8",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "default.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改证书",
+          "example": "ModifyCert",
+          "member": "string",
+          "name": "OptionsKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证书Id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "OptionsValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "DnsPod登录密钥",
+          "example": "xxx",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomDomainResponse": {
+      "document": "ModifyCustomDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

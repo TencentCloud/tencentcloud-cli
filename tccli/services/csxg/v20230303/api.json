@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "Create5GInstance": {
+      "document": "创建5G入云服务接口",
+      "input": "Create5GInstanceRequest",
+      "name": "创建5G入云服务",
+      "output": "Create5GInstanceResponse",
+      "status": "online"
+    },
+    "Delete5GInstance": {
+      "document": "删除5G入云服务",
+      "input": "Delete5GInstanceRequest",
+      "name": "删除5G入云服务",
+      "output": "Delete5GInstanceResponse",
+      "status": "online"
+    },
+    "Describe5GAPNs": {
+      "document": "查询APN信息",
+      "input": "Describe5GAPNsRequest",
+      "name": "查询APN信息",
+      "output": "Describe5GAPNsResponse",
+      "status": "online"
+    },
+    "Describe5GInstances": {
+      "document": "查询5G入云服务",
+      "input": "Describe5GInstancesRequest",
+      "name": "查询5G入云服务",
+      "output": "Describe5GInstancesResponse",
+      "status": "online"
+    },
+    "Modify5GInstanceAttribute": {
+      "document": "修改5G入云服务",
+      "input": "Modify5GInstanceAttributeRequest",
+      "name": "修改5G入云服务",
+      "output": "Modify5GInstanceAttributeResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-03-03",
+    "api_brief": "高可用可扩展安全的5G接入服务",
+    "serviceNameCN": "5G入云服务",
+    "serviceShortName": "csxg"
+  },
+  "objects": {
+    "Create5GInstanceRequest": {
+      "document": "Create5GInstance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "Create5GInstanceResponse": {
+      "document": "Create5GInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Delete5GInstanceRequest": {
+      "document": "Delete5GInstance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "Delete5GInstanceResponse": {
+      "document": "Delete5GInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Describe5GAPNsRequest": {
+      "document": "Describe5GAPNs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "Describe5GAPNsResponse": {
+      "document": "Describe5GAPNs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Describe5GInstancesRequest": {
+      "document": "Describe5GInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "Describe5GInstancesResponse": {
+      "document": "Describe5GInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Modify5GInstanceAttributeRequest": {
+      "document": "Modify5GInstanceAttribute请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "Modify5GInstanceAttributeResponse": {
+      "document": "Modify5GInstanceAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

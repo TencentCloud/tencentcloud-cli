@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ChangeMasterInstance": {
-      "document": "复制组实例切主",
+      "document": "该接口（ChangeMasterInstance）用于将复制组内只读实例设置为主实例。",
       "input": "ChangeMasterInstanceRequest",
       "name": "复制组实例切主",
       "output": "ChangeMasterInstanceResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateReplicationGroup": {
-      "document": "创建复制组",
+      "document": "该接口（CreateReplicationGroup）用于创建复制组。",
       "input": "CreateReplicationGroupRequest",
       "name": "创建复制组接口",
       "output": "CreateReplicationGroupResponse",
@@ -351,7 +351,7 @@
       "status": "online"
     },
     "DescribeReplicationGroup": {
-      "document": "本接口（DescribeReplicationGroup）查询复制组。",
+      "document": "本接口（DescribeReplicationGroup）用于查询复制组。",
       "input": "DescribeReplicationGroupRequest",
       "name": "查询复制组",
       "output": "DescribeReplicationGroupResponse",
@@ -372,7 +372,7 @@
       "status": "online"
     },
     "DescribeTaskInfo": {
-      "document": "用于查询任务结果",
+      "document": "本接口（DescribeTaskInfo）用于获取指定任务的执行情况。",
       "input": "DescribeTaskInfoRequest",
       "name": "Redis查询任务结果",
       "output": "DescribeTaskInfoResponse",
@@ -1175,24 +1175,44 @@
       "document": "ChangeMasterInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "复制组ID",
+          "document": "复制组ID。创建复制组时，系统自动分配的 ID，是复制组的唯一标识。例如：crs-rpl-m3zt****，请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。\n",
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例ID",
+          "document": "指定待提升为主实例的只读实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n\n",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标识是否强制提主。\n- true：强制提主。\n- false：不强制提主。",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceSwitch",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "适用于复制组开启北极星服务时：\n北极星是否隔离原主实例",
+          "example": "true",
+          "member": "bool",
+          "name": "IsolateOldMaster",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -1202,13 +1222,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步流程ID",
+          "document": "异步流程ID。",
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2105,7 +2126,6 @@
       "document": "CreateReplicationGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定复制组中的主实例ID。",
           "example": "crs-dvchdv5",
@@ -2116,9 +2136,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "复制组名称。",
+          "document": "复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。",
           "example": "无",
           "member": "string",
           "name": "GroupName",
@@ -2127,7 +2146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息。",
           "example": "无",
@@ -2136,6 +2154,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "启用北极星注册服务：0 不启用，1启用",
+          "example": "无",
+          "member": "uint64",
+          "name": "EnablePolaris",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2149,7 +2177,7 @@
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4903,7 +4931,7 @@
         },
         {
           "disabled": false,
-          "document": "复制组ID。",
+          "document": "指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。",
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
@@ -4913,7 +4941,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。",
+          "document": "模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "SearchKey",
@@ -4933,6 +4961,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4943,6 +4972,7 @@
           "example": "无",
           "member": "Groups",
           "name": "Groups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5146,14 +5176,14 @@
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务 ID。",
           "example": "18215",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5163,53 +5193,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态preparing:待执行，running：执行中，succeed：成功，failed：失败，error 执行出错",
+          "document": "任务状态。\n- preparing：待执行。\n- running：执行中。\n- succeed：成功。\n- failed：失败。\n- error：执行出错。",
           "example": "succeed",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
-          "document": "任务开始时间",
+          "document": "任务开始时间。",
           "example": "2018-11-01 17:25:14",
           "member": "string",
           "name": "StartTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "任务类型。常见的类型包含：新建类型、配置变更、关闭实例、清空实例、重置密码、版本升级、备份实例、改变网络类型、实例可用区迁移、手动提主等。",
           "example": "redis缓存清空流程",
           "member": "string",
           "name": "TaskType",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
-          "document": "实例的ID",
+          "document": "实例的 ID。",
           "example": "crs-09u2u96z",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
-          "document": "任务信息，错误时显示错误信息。执行中与成功则为空",
+          "document": "任务执行返回的信息，执行错误时显示错误信息。执行中或执行成功则为空。",
           "example": "ok",
           "member": "string",
           "name": "TaskMessage",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5708,18 +5738,18 @@
           "example": "100001",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "地域ID 。\n- 1：广州 \n- 4：上海 \n- 5：中国香港 \n- 6：多伦多 \n- 7：上海金融 \n- 8：北京 \n- 9：新加坡\n- 11：深圳金融\n- 15：美西（硅谷）\n- 16：成都 \n- 17：德国 \n- 18：韩国 \n- 19：重庆 \n- 21：印度 \n- 22：美东（弗吉尼亚）\n- 23：泰国 \n- 24：俄罗斯 \n- 25：日本",
+          "document": "地域ID 。\n- 1：广州 \n- 4：上海 \n- 5：中国香港 \n- 6：多伦多 \n- 7：上海金融 \n- 8：北京 \n- 9：新加坡\n- 11：深圳金融\n- 15：美西（硅谷）\n- 16：成都 \n- 17：德国 \n- 18：韩国 \n- 19：重庆 \n- 21：印度 \n- 22：美东（弗吉尼亚）\n- 23：泰国 \n- 25：日本",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5730,7 +5760,7 @@
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5741,7 +5771,7 @@
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -5752,7 +5782,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5763,7 +5793,7 @@
           "example": "20",
           "member": "int64",
           "name": "InstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5774,7 +5804,7 @@
           "example": "复制组实例",
           "member": "Instances",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -5785,7 +5815,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -7735,7 +7765,7 @@
           "example": "100001",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7746,7 +7776,7 @@
           "example": "crs-deindi7de",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7757,7 +7787,7 @@
           "example": "crs-deindi7de-name",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7768,7 +7798,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7779,7 +7809,7 @@
           "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7790,7 +7820,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RedisReplicasNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7801,7 +7831,7 @@
           "example": "3",
           "member": "int64",
           "name": "RedisShardNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7812,18 +7842,18 @@
           "example": "16",
           "member": "int64",
           "name": "RedisShardSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "实例的磁盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的磁盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -7834,7 +7864,7 @@
           "example": "社区版Redis",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7845,7 +7875,7 @@
           "example": "rw",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7856,7 +7886,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7867,7 +7897,7 @@
           "example": "IPv6",
           "member": "string",
           "name": "Vip6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -7878,7 +7908,7 @@
           "example": "1",
           "member": "int64",
           "name": "VpcID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7889,7 +7919,7 @@
           "example": "6379",
           "member": "int64",
           "name": "VPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7900,7 +7930,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7911,7 +7941,7 @@
           "example": "15007",
           "member": "int64",
           "name": "GrocerySysId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7922,7 +7952,7 @@
           "example": "7",
           "member": "int64",
           "name": "ProductType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7933,7 +7963,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7944,10 +7974,43 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实例北极星服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PolarisServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例北极星是否隔离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PolarisIsolateStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实例是否启用北极星故障转移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PolarisFailover",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

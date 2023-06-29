@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ms DescribeShieldInstances --cli-unfold-argument  \
-    --Filters.0.Name AppName \
-    --Filters.0.Value wechat \
-    --Filters.1.Name AppPkgName \
-    --Filters.1.Value com.tencent.mm \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Filters.0.Name AppPkgName \
+    --Filters.0.Value com.tencent.mm \
+    --Filters.1.Name AppName \
+    --Filters.1.Value wechat \
+    --Offset 0
 ```
 
 Output: 
@@ -32,6 +32,7 @@ Output:
                 "ShieldCode": 0,
                 "AppUrl": "https://www.example.com/a.apk",
                 "AppIconUrl": "https://wwww.example.com/12334",
+                "ClientIp": "xx",
                 "ShieldMd5": "ae5df985a27b07f56d8c670fef70d7c9",
                 "ShieldSize": 1193311,
                 "TaskStatus": 1,

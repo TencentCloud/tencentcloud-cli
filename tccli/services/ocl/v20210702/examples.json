@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeConsumptionRecord": [
+      {
+        "document": "获取消费记录",
+        "input": "POST / HTTP/1.1\nHost: ocl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumptionRecord\n<公共请求参数>\n\n{\n    \"OrgId\": 12345,\n    \"CostType\": 1,\n    \"PageNo\": 0,\n    \"PageSize\": 1,\n    \"EndDay\": \"2020-09-22\",\n    \"StartDay\": \"2020-09-22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"Data\": [\n            {\n                \"OrgId\": 25110000,\n                \"ClassId\": 11630000,\n                \"ClassName\": \"k8s分享\",\n                \"ClassType\": 1,\n                \"Used\": 1234.56,\n                \"SubType\": 1,\n                \"UsedType\": 1,\n                \"CostType\": 1,\n                \"CreateTime\": \"2021-04-20 08:08:08\",\n                \"DealName\": \"K0000102301225\"\n            }\n        ],\n        \"RequestId\": \"ddgdgaadfgddfa\"\n    }\n}",
+        "title": "获取消费记录"
+      }
+    ],
+    "DescribeOrg": [
+      {
+        "document": "查询创建者手机号码下的所有机构",
+        "input": "POST / HTTP/1.1\nHost: ocl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrg\n<公共请求参数>\n\n{\n    \"Phone\": \"13688888888\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"OrgName\": \"whoami\"\n            },\n            {\n                \"OrgName\": \"whoami11\"\n            }\n        ],\n        \"RequestId\": \"ddgdgaadfgddfa\"\n    }\n}",
+        "title": "查询创建者手机号码下的所有机构"
+      }
+    ]
+  },
+  "version": "1.0"
+}

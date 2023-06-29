@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeResources": [
+      {
+        "document": "查询资源列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,353 @@
+{
+  "actions": {
+    "CreateFastLiveCourse": {
+      "document": "为特定老师发布一门直播课",
+      "input": "CreateFastLiveCourseRequest",
+      "name": "废弃发布直播课",
+      "output": "CreateFastLiveCourseResponse",
+      "status": "online"
+    },
+    "DescribeFastReplayDownloads": {
+      "document": "废弃该API获取直播课回放下载地址",
+      "input": "DescribeFastReplayDownloadsRequest",
+      "name": "废弃直播课回放下载",
+      "output": "DescribeFastReplayDownloadsResponse",
+      "status": "online"
+    },
+    "DescribeFastReplays": {
+      "document": "该API获取一门直播课的回放列表",
+      "input": "DescribeFastReplaysRequest",
+      "name": "废弃获取直播课回放列表",
+      "output": "DescribeFastReplaysResponse",
+      "status": "online"
+    },
+    "ModifyFastLiveCourse": {
+      "document": "该API用于修改直播课程名字和课程公开标记",
+      "input": "ModifyFastLiveCourseRequest",
+      "name": "废弃修改直播课",
+      "output": "ModifyFastLiveCourseResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-10",
+    "api_brief": "提供给第三方机构、政企快速发排课、课程管理、学员信息管理、ISV的SRCM工具等服务",
+    "serviceNameCN": "腾讯云可观测平台",
+    "serviceShortName": "tcop"
+  },
+  "objects": {
+    "CreateFastLiveCourseRequest": {
+      "document": "CreateFastLiveCourse请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "老师id（接入方通讯录中的老师id）",
+          "example": "2007051",
+          "member": "string",
+          "name": "TeacherId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课程学习可见范围属性，0：公开 1：班级内\t2：组织内 3：授权列表内",
+          "example": "0",
+          "member": "int64",
+          "name": "VisibleScope",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课程名",
+          "example": "测试课程",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开放平台分配给第三方的千帆id",
+          "example": "tn-c65190017f394836863e83ca429b500c",
+          "member": "string",
+          "name": "IdaasOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFastLiveCourseResponse": {
+      "document": "CreateFastLiveCourse返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"100187514\"",
+          "member": "string",
+          "name": "TermId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"https://ke.qq.com/webcourse/%d/%d#taid=%d&lite=1",
+          "member": "string",
+          "name": "LiveUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFastReplayDownloadsRequest": {
+      "document": "DescribeFastReplayDownloads请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "视频id",
+          "example": "10002",
+          "member": "string",
+          "name": "VId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开放平台分配给第三方的千帆id",
+          "example": "tn-c65190017f394836863e83ca429b500c",
+          "member": "string",
+          "name": "IdaasOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFastReplayDownloadsResponse": {
+      "document": "DescribeFastReplayDownloads返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFastReplaysRequest": {
+      "document": "DescribeFastReplays请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "直播间id",
+          "example": "1000030510",
+          "member": "uint64",
+          "name": "TermId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页序号，第一页序号为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小，最大分页50",
+          "example": "50",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开放平台分配给第三方的千帆id",
+          "example": "tn-c65190017f394836863e83ca429b500c",
+          "member": "string",
+          "name": "IdaasOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFastReplaysResponse": {
+      "document": "DescribeFastReplays返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下一页序号，当为0时表示没有下一页了",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageNext",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回放列表",
+          "example": "无",
+          "member": "Replay",
+          "name": "ReplayList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFastLiveCourseRequest": {
+      "document": "ModifyFastLiveCourse请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "直播间id",
+          "example": "1000030510",
+          "member": "uint64",
+          "name": "TermId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课程学习可见范围属性，0：公开 1：班级内\t2：组织内 3：授权列表内",
+          "example": "0",
+          "member": "int64",
+          "name": "VisibleScope",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课程名",
+          "example": "测试课程",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开放平台分配给第三方的千帆id",
+          "example": "tn-c65190017f394836863e83ca429b500c",
+          "member": "string",
+          "name": "IdaasOrgId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFastLiveCourseResponse": {
+      "document": "ModifyFastLiveCourse返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Replay": {
+      "document": "直播回放",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "视频名字",
+          "example": "第一课",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "视频id",
+          "example": "1002",
+          "member": "string",
+          "name": "VId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回放时长，单位秒",
+          "example": "3600",
+          "member": "string",
+          "name": "Timelen",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务id",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ExportPrOrder": [
+      {
+        "document": "导出PO单",
+        "input": "POST / HTTP/1.1\nHost: subcontract.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportPrOrder\n<公共请求参数>\n\n{\n    \"PoId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PoId\": \"xx\",\n        \"Url\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "导出PO单"
+      }
+    ],
+    "RefusePrOrder": [
+      {
+        "document": "供应商拒单示例",
+        "input": "POST / HTTP/1.1\nHost: subcontract.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefusePrOrder\n<公共请求参数>\n\n{\n    \"PoId\": \"PO11211023112631921661\",\n    \"Reason\": \"拒单PO11211023112631921661\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PoId\": \"PO11211023112631921661\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "供应商拒单示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeRiskDnsEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: otcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskDnsEventDetail\n<公共请求参数>\n\n{\n    \"EventID\": 1,\n    \"CurrentAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"xx\",\n        \"City\": \"xx\",\n        \"ProcessAuthority\": \"xx\",\n        \"ImageID\": \"xx\",\n        \"ProcessParam\": \"xx\",\n        \"EventStatus\": \"xx\",\n        \"LatestFoundTime\": \"xx\",\n        \"ParentProcessPath\": \"xx\",\n        \"Description\": \"xx\",\n        \"ParentProcessUserGroup\": \"xx\",\n        \"HostName\": \"xx\",\n        \"ParentProcessParam\": \"xx\",\n        \"Address\": \"xx\",\n        \"MatchRuleType\": \"xx\",\n        \"ParentProcessStartUser\": \"xx\",\n        \"AncestorProcessStartUser\": \"xx\",\n        \"OperationTime\": \"xx\",\n        \"AncestorProcessParam\": \"xx\",\n        \"Remark\": \"xx\",\n        \"HostID\": \"xx\",\n        \"ProcessTree\": \"xx\",\n        \"ContainerID\": \"xx\",\n        \"EventCount\": 1,\n        \"Solution\": \"xx\",\n        \"ProcessUserGroup\": \"xx\",\n        \"PublicIP\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"HostIP\": \"xx\",\n        \"ProcessStartUser\": \"xx\",\n        \"EventType\": \"xx\",\n        \"ContainerNetStatus\": \"xx\",\n        \"EventID\": 1,\n        \"FeatureLabel\": \"xx\",\n        \"ContainerStatus\": \"xx\",\n        \"Reference\": [\n            \"xx\"\n        ],\n        \"AncestorProcessUserGroup\": \"xx\",\n        \"ContainerNetSubStatus\": \"xx\",\n        \"AncestorProcessPath\": \"xx\",\n        \"FoundTime\": \"xx\",\n        \"ProcessPath\": \"xx\",\n        \"ProcessMd5\": \"xx\",\n        \"PodName\": \"xx\",\n        \"ContainerIsolateOperationSrc\": \"xx\"\n    }\n}",
+        "title": "查询恶意请求事件详情"
+      }
+    ]
+  },
+  "version": "1.0"
+}

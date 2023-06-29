@@ -1,0 +1,296 @@
+{
+  "actions": {
+    "DescribeConsumptionRecord": {
+      "document": "查询消耗、用量记录",
+      "input": "DescribeConsumptionRecordRequest",
+      "name": "查询消耗、用量记录",
+      "output": "DescribeConsumptionRecordResponse",
+      "status": "online"
+    },
+    "DescribeOrg": {
+      "document": "查询创建者手机号码下的所有机构",
+      "input": "DescribeOrgRequest",
+      "name": "查询创建者手机号码下的所有机构",
+      "output": "DescribeOrgResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-07-02",
+    "api_brief": "介绍如何使用api对云课堂进行操作",
+    "serviceNameCN": "云课堂",
+    "serviceShortName": "ocl"
+  },
+  "objects": {
+    "Cost": {
+      "document": "用量消耗记录",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机构id",
+          "example": "2221234",
+          "member": "int64",
+          "name": "OrgId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课堂id，云课堂订单号",
+          "example": "100",
+          "member": "int64",
+          "name": "ClassId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课堂名称",
+          "example": "k8s分享",
+          "member": "string",
+          "name": "ClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "课堂类型 1、1v1     2、1vn   3、直播课    4、转码     5、存储",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "used  消费量（单位对齐  课时 分钟   转码 分钟  存储 mb）",
+          "example": "100.00",
+          "member": "float",
+          "name": "Used",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "清晰度/计费项 1：1v1-320   2:1v1-640  3:1v1-720  4:1vn-320  5:1vn-640                                  \t\t     6:1vn-720   7:直播课540   8 直播课720   9 直播课1080 10：转码 11：存储",
+          "example": "1",
+          "member": "int64",
+          "name": "SubType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消费类型 1、课时费 2、转码  3存储",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "1:预付费  2:后付费  3：转码 4:存储",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间",
+          "example": "2021-04-20 08:08:08",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "K+0000+课堂ID",
+          "example": "K0000102301225",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeConsumptionRecordRequest": {
+      "document": "DescribeConsumptionRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机构id、企业id",
+          "example": "2221234",
+          "member": "int64",
+          "name": "OrgId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消费类型  ：1:预付费  2:后付费  3：转码 4:存储",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询范围：开始时间",
+          "example": "2020-09-22",
+          "member": "string",
+          "name": "StartDay",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询范围：结束时间",
+          "example": "2020-09-22",
+          "member": "string",
+          "name": "EndDay",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码 默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页显示条数  默认10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumptionRecordResponse": {
+      "document": "DescribeConsumptionRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "log",
+          "example": "array",
+          "member": "Cost",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgRequest": {
+      "document": "DescribeOrg请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号码",
+          "example": "13688888888",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgResponse": {
+      "document": "DescribeOrg返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机构列表",
+          "example": "array",
+          "member": "Organization",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Organization": {
+      "document": "云课堂 机构列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机构名称",
+          "example": "转码",
+          "member": "string",
+          "name": "OrgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

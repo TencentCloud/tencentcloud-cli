@@ -1,0 +1,230 @@
+{
+  "actions": {
+    "DescribeFullBackupSets": {
+      "document": "本接口（DescribeFullBackupSets）用于查询全量备份集列表。",
+      "input": "DescribeFullBackupSetsRequest",
+      "name": "查询全量备份集列表",
+      "output": "DescribeFullBackupSetsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-11-08",
+    "api_brief": "用户可以使用本文档介绍的 API 对数据库备份服务进行相关操作，如创建数据库备份计划、下载备份日志、恢复备份日志到新实例等，请确保在使用这些接口前，已充分了解数据库备份服务的产品功能、特性及收费方式",
+    "serviceNameCN": "数据库备份服务",
+    "serviceShortName": "dbs"
+  },
+  "objects": {
+    "DescribeFullBackupSetsRequest": {
+      "document": "DescribeFullBackupSets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份计划 ID。",
+          "example": "dbs-xxxxxxxx",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤条件，备份集 ID。",
+          "example": "backupset-xxxx",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页参数。取值范围为(0, 100]，默认值为20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页参数。默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFullBackupSetsResponse": {
+      "document": "DescribeFullBackupSets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量备份集数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "全量备份集信息。",
+          "example": "无",
+          "member": "FullBackup",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FullBackup": {
+      "document": "全量备份集信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份集 ID。",
+          "example": "backup-xxxxxxxx",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "源实例信息。",
+          "example": "127.0.0.1:8888",
+          "member": "string",
+          "name": "SourceInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份集状态。可能的取值为：\n\"running\" - 运行中;\n\"finished\" - 已完成;\n\"failed\" - 已失败;\n\"stopped\" - 已终止。",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2022-02-22 14:13:20",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2022-02-23 14:13:20",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过期时间。",
+          "example": "2022-02-28 14:13:20",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份集大小，单位为 Bytes。",
+          "example": "23323323",
+          "member": "int64",
+          "name": "BackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份方式。可能的取值为：\n\"logical\" - 逻辑备份；\n\"physical\" - 物理备份。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "存储类型。目前仅支持 \"DBSStorage\"，即 DBS 内置存储。",
+          "example": "DBSStorage",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备份池类型。目前仅支持 \"DefaultPool\"，即默认存储池。",
+          "example": "DefaultPool",
+          "member": "string",
+          "name": "BackupPool",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

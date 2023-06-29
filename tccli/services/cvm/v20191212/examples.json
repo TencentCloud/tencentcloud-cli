@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeTaskInfo": [
+      {
+        "document": "根据指定过滤条件查询云服务器维修任务列表及详细信息。",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInfo\n<公共请求参数>\n\n{\n    \"StartDate\": \"2023-01-01 00:00:00\",\n    \"EndDate\": \"2023-02-01 00:00:00\",\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"OrderField\": \"CreateTime\",\n    \"Order\": 1,\n    \"TaskStatus\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RepairTaskInfoSet\": [\n            {\n                \"TaskId\": \"rep-xxxxxxxx\",\n                \"InstanceId\": \"ins-xxxxxxxx\",\n                \"Alias\": \"test\",\n                \"TaskTypeId\": \"107\",\n                \"TaskStatus\": 3,\n                \"CreateTime\": \"2023-01-12 21:00:00\",\n                \"AuthTime\": \"2023-01-14 21:00:00\",\n                \"EndTime\": \"2023-01-14 22:00:00\",\n                \"TaskDetail\": \"监控到您的云服务器存在隐患，可能导致云服务器高负载或宕机。为尽快修复隐患，需要您授权我们在线迁移。感谢您的支持与理解。\",\n                \"DeviceStatus\": 3,\n                \"OperateStatus\": 3,\n                \"Zone\": \"ap-guangzhou-7\",\n                \"Region\": \"ap-guangzhou\",\n                \"VpcId\": \"vpc-xxxxxxxx\",\n                \"SubnetId\": \"subnet-xxxxxxxx\",\n                \"SubnetName\": \"Default-Subnet\",\n                \"VpcName\": \"Default-VPC\",\n                \"AuthSource\": \"System_mandatory_auth\",\n                \"WanIp\": \"xxx.xx.xx.xx\",\n                \"LanIp\": \"xxx.xx.xx.xx\",\n                \"TaskTypeName\": \"实例维护升级\",\n                \"TaskSubType\": null,\n                \"AuthType\": 2,\n                \"Product\": \"CVM\"\n            }\n        ],\n        \"RequestId\": \"3ec66f17-0f5c-43df-85dd-6be2929dbef1\"\n    }\n}",
+        "title": "查询维修任务列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

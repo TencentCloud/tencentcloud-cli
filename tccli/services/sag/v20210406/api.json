@@ -1,0 +1,1280 @@
+{
+  "actions": {
+    "AddAttrGroup": {
+      "document": "增加属性组",
+      "input": "AddAttrGroupRequest",
+      "name": "增加属性组",
+      "output": "AddAttrGroupResponse",
+      "status": "online"
+    },
+    "DeleteAttrGroup": {
+      "document": "删除用户属性组",
+      "input": "DeleteAttrGroupRequest",
+      "name": "删除用户属性组",
+      "output": "DeleteAttrGroupResponse",
+      "status": "online"
+    },
+    "DescribeAttrOptionList": {
+      "document": "获取属性选项列表",
+      "input": "DescribeAttrOptionListRequest",
+      "name": "获取属性选项列表",
+      "output": "DescribeAttrOptionListResponse",
+      "status": "online"
+    },
+    "DescribeAttrUserList": {
+      "document": "获取用户属性列表",
+      "input": "DescribeAttrUserListRequest",
+      "name": "获取用户属性列表",
+      "output": "DescribeAttrUserListResponse",
+      "status": "online"
+    },
+    "DescribeCompliance": {
+      "document": "获取合规配置",
+      "input": "DescribeComplianceRequest",
+      "name": "获取合规配置",
+      "output": "DescribeComplianceResponse",
+      "status": "online"
+    },
+    "DescribeComplianceKbList": {
+      "document": "获取合规补丁列表",
+      "input": "DescribeComplianceKbListRequest",
+      "name": "获取合规补丁列表",
+      "output": "DescribeComplianceKbListResponse",
+      "status": "online"
+    },
+    "DescribeComplianceOptionList": {
+      "document": "展示合规选项卡",
+      "input": "DescribeComplianceOptionListRequest",
+      "name": "展示合规选项卡",
+      "output": "DescribeComplianceOptionListResponse",
+      "status": "online"
+    },
+    "DescribeComplianceOriginIoaList": {
+      "document": "获取合规IOA源配置",
+      "input": "DescribeComplianceOriginIoaListRequest",
+      "name": "获取合规IOA源配置",
+      "output": "DescribeComplianceOriginIoaListResponse",
+      "status": "online"
+    },
+    "DescribeComplianceOriginKbList": {
+      "document": "获取合规源补丁列表",
+      "input": "DescribeComplianceOriginKbListRequest",
+      "name": "获取合规源补丁列表",
+      "output": "DescribeComplianceOriginKbListResponse",
+      "status": "online"
+    },
+    "DescribeComplianceOs": {
+      "document": "获取合规系统版本信息",
+      "input": "DescribeComplianceOsRequest",
+      "name": "获取合规系统版本信息",
+      "output": "DescribeComplianceOsResponse",
+      "status": "online"
+    },
+    "DescribeDepartmentDirectUsers": {
+      "document": "获取部门直属用户",
+      "input": "DescribeDepartmentDirectUsersRequest",
+      "name": "获取部门直属用户",
+      "output": "DescribeDepartmentDirectUsersResponse",
+      "status": "online"
+    },
+    "DescribeOrderInfo": {
+      "document": "获取订单信息",
+      "input": "DescribeOrderInfoRequest",
+      "name": "获取订单信息",
+      "output": "DescribeOrderInfoResponse",
+      "status": "online"
+    },
+    "ModifyAttrGroup": {
+      "document": "更改属性组",
+      "input": "ModifyAttrGroupRequest",
+      "name": "更改属性组",
+      "output": "ModifyAttrGroupResponse",
+      "status": "online"
+    },
+    "ModifyCompliance": {
+      "document": "更改合规配置",
+      "input": "ModifyComplianceRequest",
+      "name": "更改合规配置",
+      "output": "ModifyComplianceResponse",
+      "status": "online"
+    },
+    "ModifyComplianceAv": {
+      "document": "更改合规杀软配置",
+      "input": "ModifyComplianceAvRequest",
+      "name": "更改合规杀软配置",
+      "output": "ModifyComplianceAvResponse",
+      "status": "online"
+    },
+    "ModifyComplianceKb": {
+      "document": "更改合规补丁配置",
+      "input": "ModifyComplianceKbRequest",
+      "name": "更改合规补丁配置",
+      "output": "ModifyComplianceKbResponse",
+      "status": "online"
+    },
+    "ModifyComplianceOption": {
+      "document": "修改合规选项卡配置",
+      "input": "ModifyComplianceOptionRequest",
+      "name": "修改合规选项卡配置",
+      "output": "ModifyComplianceOptionResponse",
+      "status": "online"
+    },
+    "OpenOrderTrial": {
+      "document": "开通试用订单",
+      "input": "OpenOrderTrialRequest",
+      "name": "开通试用订单",
+      "output": "OpenOrderTrialResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-04-06",
+    "api_brief": "腾讯应用级智能网关（Smart Application Gateway，SAG）是一款稳定、安全、高性能、易用的应用级智能网关，让用户更高效快捷的访问企业应用和服务。本产品基于零信任策略，对企业应用和服务提供集中管控，统一防控和统一审计，保障企业应用和服务更安全、更可靠。",
+    "serviceNameCN": "应用级智能网关",
+    "serviceShortName": "sag"
+  },
+  "objects": {
+    "AddAttrGroupRequest": {
+      "document": "AddAttrGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAttrGroupResponse": {
+      "document": "AddAttrGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户属性组ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttrAndCond": {
+      "document": "用户属性名以及条件名",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标志",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AttrUser": {
+      "document": "用户属性",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "属性选项，1任意属性，2部门名称，3账户名称，4手机号，5邮箱，6企业微信标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Attr",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条件选项，1任意条件，2等于，3不等于，4包含关键字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Cond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ComplianceData": {
+      "document": "合规配置",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "周期性检查开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CycleCheck",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "周期性检查时间，分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CycleInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{min:分钟|hour:小时|day:天|week:周}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hour",
+          "member": "string",
+          "name": "IntervalUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{1:不是自定义2:是自定义}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsCustomInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "未合规时客户端修复提醒开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FixRemind",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplianceIoa": {
+      "document": "合规IOA参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IOA版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.4.2",
+          "member": "string",
+          "name": "IoaVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplianceKb": {
+      "document": "补丁信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "补丁号",
+          "example": "KB2028551",
+          "member": "string",
+          "name": "Kb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "补丁简介",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "补丁发布时间",
+          "example": "无",
+          "member": "string",
+          "name": "PubTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplianceOption": {
+      "document": "合规检查选项",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{ioa|os|av|kb}",
+          "example": "ioa",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检查开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检查风险等级，2低，3中，4高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检查项子数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ComplianceOs": {
+      "document": "操作系统版本信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "操作系统版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6.1.7600",
+          "member": "string",
+          "name": "OsVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "系统名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Windows 7",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteAttrGroupRequest": {
+      "document": "DeleteAttrGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户属性组ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAttrGroupResponse": {
+      "document": "DeleteAttrGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttrOptionListRequest": {
+      "document": "DescribeAttrOptionList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAttrOptionListResponse": {
+      "document": "DescribeAttrOptionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttrAndCond",
+          "name": "AttrList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttrAndCond",
+          "name": "CondList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttrUserListRequest": {
+      "document": "DescribeAttrUserList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttrUserListResponse": {
+      "document": "DescribeAttrUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户属性列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttrUser",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceKbListRequest": {
+      "document": "DescribeComplianceKbList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Windows/macOS/Linux",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceKbListResponse": {
+      "document": "DescribeComplianceKbList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表条目总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceKb",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOptionListRequest": {
+      "document": "DescribeComplianceOptionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{Windows|macOS|Linux}",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOptionListResponse": {
+      "document": "DescribeComplianceOptionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceOption",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOriginIoaListRequest": {
+      "document": "DescribeComplianceOriginIoaList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Windows/macOS/Linux",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOriginIoaListResponse": {
+      "document": "DescribeComplianceOriginIoaList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IOA版本名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceIoa",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOriginKbListRequest": {
+      "document": "DescribeComplianceOriginKbList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{Windows|macOS|Linux}",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "补丁号",
+          "example": "无",
+          "member": "string",
+          "name": "Kb",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOriginKbListResponse": {
+      "document": "DescribeComplianceOriginKbList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表条目总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceKb",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOsRequest": {
+      "document": "DescribeComplianceOs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Windows/macOS/Linux",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceOsResponse": {
+      "document": "DescribeComplianceOs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作系统信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceOs",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceRequest": {
+      "document": "DescribeCompliance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{Windows|macOS|Linux}",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeComplianceResponse": {
+      "document": "DescribeCompliance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合理配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComplianceData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDepartmentDirectUsersRequest": {
+      "document": "DescribeDepartmentDirectUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDepartmentDirectUsersResponse": {
+      "document": "DescribeDepartmentDirectUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrderInfoRequest": {
+      "document": "DescribeOrderInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOrderInfoResponse": {
+      "document": "DescribeOrderInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrderInfo",
+          "name": "Order",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAttrGroupRequest": {
+      "document": "ModifyAttrGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "属性组ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "属性组I名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAttrGroupResponse": {
+      "document": "ModifyAttrGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceAvRequest": {
+      "document": "ModifyComplianceAv请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Windows/macOS/Linux",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "杀软程序名称",
+          "example": "无",
+          "member": "string",
+          "name": "AvName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "杀软最低版本，或任意版本",
+          "example": "无",
+          "member": "string",
+          "name": "AvVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "病毒库最低版本，或任意版本",
+          "example": "无",
+          "member": "string",
+          "name": "LibVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开关，1关，2开",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckEnable",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceAvResponse": {
+      "document": "ModifyComplianceAv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceKbRequest": {
+      "document": "ModifyComplianceKb请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Windows/macOS/Linux",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要改动的kb号列表",
+          "example": "无",
+          "member": "string",
+          "name": "Kbs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceKbResponse": {
+      "document": "ModifyComplianceKb返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceOptionRequest": {
+      "document": "ModifyComplianceOption请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{Windows|macOS|Linux}",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{ioa|os|av|kb}",
+          "example": "ioa",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检查开关，1关，2开",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckEnable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检查风险等级，2低，3中，4高",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceOptionResponse": {
+      "document": "ModifyComplianceOption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceRequest": {
+      "document": "ModifyCompliance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{Windows|macOS|Linux}",
+          "example": "Windows",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "周期性检查开关，1关，2开",
+          "example": "1",
+          "member": "int64",
+          "name": "CycleCheck",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "周期性检查时间，分钟",
+          "example": "无",
+          "member": "int64",
+          "name": "CycleInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{min|hour|day|week}",
+          "example": "hour",
+          "member": "string",
+          "name": "IntervalUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "{1:不是自定义2:是自定义}",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCustomInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "未合规时客户端修复提醒开关，1关，2开",
+          "example": "1",
+          "member": "int64",
+          "name": "FixRemind",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyComplianceResponse": {
+      "document": "ModifyCompliance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenOrderTrialRequest": {
+      "document": "OpenOrderTrial请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "OpenOrderTrialResponse": {
+      "document": "OpenOrderTrial返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderInfo": {
+      "document": "定单信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InquireNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

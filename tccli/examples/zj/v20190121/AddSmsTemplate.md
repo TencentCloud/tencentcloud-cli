@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli zj AddSmsTemplate --cli-unfold-argument  \
+    --Remark “xxx” \
     --License xsdf \
-    --SignID 2222222 \
     --TemplateName 腾讯云 \
-    --TemplateContent "xxx" \
     --SmsType 0 \
     --International 0 \
-    --Remark “xxx”
+    --SignID 2222222 \
+    --TemplateContent "xxx"
 ```
 
 Output: 

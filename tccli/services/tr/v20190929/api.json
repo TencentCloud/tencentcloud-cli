@@ -1,0 +1,99 @@
+{
+  "actions": {
+    "ModifyMail": {
+      "document": "修改邮寄地址",
+      "input": "ModifyMailRequest",
+      "name": "修改邮寄地址",
+      "output": "ModifyMailResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-29",
+    "api_brief": "商标注册",
+    "serviceNameCN": "腾讯权益",
+    "serviceShortName": "tr"
+  },
+  "objects": {
+    "ModifyMailRequest": {
+      "document": "ModifyMail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮寄信息ID",
+          "member": "string",
+          "name": "MailID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "收件人",
+          "member": "string",
+          "name": "Recipient",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系电话",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "省份",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系地址",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMailResponse": {
+      "document": "ModifyMail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "member": "bool",
+          "name": "Flag",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果提示语",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

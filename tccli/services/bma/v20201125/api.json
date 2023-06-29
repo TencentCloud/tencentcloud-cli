@@ -1,0 +1,1524 @@
+{
+  "actions": {
+    "CreateBPFakeURL": {
+      "document": "添加仿冒上报链接",
+      "input": "CreateBPFakeURLRequest",
+      "name": "添加仿冒上报链接",
+      "output": "CreateBPFakeURLResponse",
+      "status": "online"
+    },
+    "CreateBPFalseTicket": {
+      "document": "添加误报工单",
+      "input": "CreateBPFalseTicketRequest",
+      "name": "添加误报工单",
+      "output": "CreateBPFalseTicketResponse",
+      "status": "online"
+    },
+    "CreateBPOfflineAttachment": {
+      "document": "补充下线资料",
+      "input": "CreateBPOfflineAttachmentRequest",
+      "name": "补充下线资料",
+      "output": "CreateBPOfflineAttachmentResponse",
+      "status": "online"
+    },
+    "CreateBPOfflineTicket": {
+      "document": "添加下线工单",
+      "input": "CreateBPOfflineTicketRequest",
+      "name": "添加下线工单",
+      "output": "CreateBPOfflineTicketResponse",
+      "status": "online"
+    },
+    "CreateBPProtectURLs": {
+      "document": "添加保护网站",
+      "input": "CreateBPProtectURLsRequest",
+      "name": "添加保护网站",
+      "output": "CreateBPProtectURLsResponse",
+      "status": "online"
+    },
+    "DescribeBPCompanyInfo": {
+      "document": "查询企业信息",
+      "input": "DescribeBPCompanyInfoRequest",
+      "name": "查询企业信息",
+      "output": "DescribeBPCompanyInfoResponse",
+      "status": "online"
+    },
+    "DescribeBPFakeURLs": {
+      "document": "查询仿冒链接列表",
+      "input": "DescribeBPFakeURLsRequest",
+      "name": "查询仿冒链接列表",
+      "output": "DescribeBPFakeURLsResponse",
+      "status": "online"
+    },
+    "DescribeBPOfflineTickets": {
+      "document": "查询下线工单列表",
+      "input": "DescribeBPOfflineTicketsRequest",
+      "name": "查询下线工单列表",
+      "output": "DescribeBPOfflineTicketsResponse",
+      "status": "online"
+    },
+    "DescribeBPProtectURLs": {
+      "document": "查询保护网站",
+      "input": "DescribeBPProtectURLsRequest",
+      "name": "查询保护网站",
+      "output": "DescribeBPProtectURLsResponse",
+      "status": "online"
+    },
+    "DescribeBPReportFakeURLs": {
+      "document": "查询仿冒上报链接列表",
+      "input": "DescribeBPReportFakeURLsRequest",
+      "name": "查询仿冒上报链接列表",
+      "output": "DescribeBPReportFakeURLsResponse",
+      "status": "online"
+    },
+    "ModifyBPOfflineAttachment": {
+      "document": "修改资质证明",
+      "input": "ModifyBPOfflineAttachmentRequest",
+      "name": "修改资质证明",
+      "output": "ModifyBPOfflineAttachmentResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-11-25",
+    "api_brief": "",
+    "serviceNameCN": "品牌经营管家",
+    "serviceShortName": "bma"
+  },
+  "objects": {
+    "BrandData": {
+      "document": "商标信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标证明",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标审核状态",
+          "member": "uint64",
+          "name": "BrandStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标审核信息",
+          "member": "string",
+          "name": "BrandNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转让证明",
+          "member": "string",
+          "name": "TransferName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转让证明状态",
+          "member": "uint64",
+          "name": "TransferStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转让证明审核信息",
+          "member": "string",
+          "name": "TransferNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBPFakeURLRequest": {
+      "document": "CreateBPFakeURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护url id",
+          "example": "123",
+          "member": "uint64",
+          "name": "ProtectURLId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "截图",
+          "example": "[\"xxx\",\"yyy\"]",
+          "member": "string",
+          "name": "SnapshotNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLResponse": {
+      "document": "CreateBPFakeURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFalseTicketRequest": {
+      "document": "CreateBPFalseTicket请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFalseTicketResponse": {
+      "document": "CreateBPFalseTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineAttachmentRequest": {
+      "document": "CreateBPOfflineAttachment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标证明",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标转让证明",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "授权书",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineAttachmentResponse": {
+      "document": "CreateBPOfflineAttachment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineTicketRequest": {
+      "document": "CreateBPOfflineTicket请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineTicketResponse": {
+      "document": "CreateBPOfflineTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPProtectURLsRequest": {
+      "document": "CreateBPProtectURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司名",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "手机号",
+          "example": "xxx",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "验证码",
+          "example": "xxx",
+          "member": "string",
+          "name": "VerificationCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "营业执照",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护网址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectURLs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "xx",
+          "example": "x x x",
+          "member": "string",
+          "name": "ProtectWebs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPProtectURLsResponse": {
+      "document": "CreateBPProtectURLs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPCompanyInfoRequest": {
+      "document": "DescribeBPCompanyInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPCompanyInfoResponse": {
+      "document": "DescribeBPCompanyInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "xxx",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "营业执照",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "营业执照状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "营业执照审核信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权书",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权书状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthorizationStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权书审核信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商标信息",
+          "example": "无",
+          "member": "BrandData",
+          "name": "BrandDatas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公司id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsRequest": {
+      "document": "DescribeBPFakeURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsResponse": {
+      "document": "DescribeBPFakeURLs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仿冒url信息",
+          "example": "无",
+          "member": "FakeURLInfo",
+          "name": "FakeURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒url总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ExportURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPOfflineTicketsRequest": {
+      "document": "DescribeBPOfflineTickets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPOfflineTicketsResponse": {
+      "document": "DescribeBPOfflineTickets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下线工单信息",
+          "example": "xxx",
+          "member": "Ticket",
+          "name": "Tickets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "下线工单总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPProtectURLsRequest": {
+      "document": "DescribeBPProtectURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPProtectURLsResponse": {
+      "document": "DescribeBPProtectURLs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保护网站信息",
+          "example": "无",
+          "member": "ProtectURLInfo",
+          "name": "ProtectURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保护网站总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPReportFakeURLsRequest": {
+      "document": "DescribeBPReportFakeURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPReportFakeURLsResponse": {
+      "document": "DescribeBPReportFakeURLs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "举报仿冒url信息",
+          "example": "无",
+          "member": "ReportFakeURLInfo",
+          "name": "ReportFakeURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "举报仿冒url总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FakeURLInfo": {
+      "document": "仿冒URL信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url id",
+          "member": "uint64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发现时间",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip位置",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url 热度",
+          "member": "uint64",
+          "name": "Heat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url审核信息",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url所属公司",
+          "member": "string",
+          "name": "FakeURLCompany",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司属性",
+          "member": "string",
+          "name": "FakeURLAttr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司名称",
+          "member": "string",
+          "name": "FakeURLName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司备案",
+          "member": "string",
+          "name": "FakeURLICP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司信息创建时间",
+          "member": "string",
+          "name": "FakeURLCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司信息过期时间",
+          "member": "string",
+          "name": "FakeURLExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤字段",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过滤值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyBPOfflineAttachmentRequest": {
+      "document": "ModifyBPOfflineAttachment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "营业执照",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "授权书",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商标证明",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "转让证明",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "公司id",
+          "example": "123",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBPOfflineAttachmentResponse": {
+      "document": "ModifyBPOfflineAttachment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProtectURLInfo": {
+      "document": "保护网站信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "插入时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护网站",
+          "member": "string",
+          "name": "ProtectURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护网站id",
+          "member": "uint64",
+          "name": "ProtectURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护网站审核状态",
+          "member": "uint64",
+          "name": "ProtectURLStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护网站审核信息",
+          "member": "string",
+          "name": "ProtectURLNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportFakeURLInfo": {
+      "document": "仿冒上报链接",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url id",
+          "member": "uint64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发现时间",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "保护url",
+          "member": "string",
+          "name": "ProtectURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip位置",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url热度",
+          "member": "uint64",
+          "name": "Heat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url审核信息",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司名称",
+          "member": "string",
+          "name": "FakeURLCompany",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司属性",
+          "member": "string",
+          "name": "FakeURLAttr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url网站名称",
+          "member": "string",
+          "name": "FakeURLName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司备案",
+          "member": "string",
+          "name": "FakeURLICP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司信息创建时间",
+          "member": "string",
+          "name": "FakeURLCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url公司信息过期时间",
+          "member": "string",
+          "name": "FakeURLExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Ticket": {
+      "document": "下线工单",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "下线时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "申诉工单号",
+          "example": "xxx",
+          "member": "string",
+          "name": "AppealNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url ip位置",
+          "example": "xxx",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "下线信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "仿冒url id",
+          "example": "1",
+          "member": "uint64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "SUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "ProtectWeb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

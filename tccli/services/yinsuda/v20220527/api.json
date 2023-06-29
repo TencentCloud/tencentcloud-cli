@@ -1,0 +1,2960 @@
+{
+  "actions": {
+    "ApplyChorus": {
+      "document": "申请合唱相关信息，用于标记用户的演唱是在合唱场景下。",
+      "input": "ApplyChorusRequest",
+      "name": "申请合唱",
+      "output": "ApplyChorusResponse",
+      "status": "online"
+    },
+    "BatchDescribeKTVMusicDetails": {
+      "document": "批量获取歌曲详细信息，包括：歌词下载链接、播放凭证、音高数据下载链接信息等。",
+      "input": "BatchDescribeKTVMusicDetailsRequest",
+      "name": "批量获取歌曲详情",
+      "output": "BatchDescribeKTVMusicDetailsResponse",
+      "status": "online"
+    },
+    "CreateKTVRobot": {
+      "document": "创建机器人，支持进入 RTC 房间，播放曲库歌曲。",
+      "input": "CreateKTVRobotRequest",
+      "name": "创建机器人",
+      "output": "CreateKTVRobotResponse",
+      "status": "online"
+    },
+    "DescribeKTVMatchMusics": {
+      "document": "根据输入的规则匹配曲库中的歌曲。",
+      "input": "DescribeKTVMatchMusicsRequest",
+      "name": "匹配歌曲",
+      "output": "DescribeKTVMatchMusicsResponse",
+      "status": "online"
+    },
+    "DescribeKTVMusicAccompanySegmentUrl": {
+      "document": "获取歌曲伴奏片段链接，可用于抢唱",
+      "input": "DescribeKTVMusicAccompanySegmentUrlRequest",
+      "name": "获取歌曲伴奏片段链接",
+      "output": "DescribeKTVMusicAccompanySegmentUrlResponse",
+      "status": "online"
+    },
+    "DescribeKTVMusicsByTag": {
+      "document": "通过标签过滤歌曲列表。",
+      "input": "DescribeKTVMusicsByTagRequest",
+      "name": "获取标签歌曲",
+      "output": "DescribeKTVMusicsByTagResponse",
+      "status": "online"
+    },
+    "DescribeKTVPlaylistDetail": {
+      "document": "根据歌单 Id 获取歌单详情。",
+      "input": "DescribeKTVPlaylistDetailRequest",
+      "name": "获取歌单详情",
+      "output": "DescribeKTVPlaylistDetailResponse",
+      "status": "online"
+    },
+    "DescribeKTVPlaylists": {
+      "document": "获取歌单列表。",
+      "input": "DescribeKTVPlaylistsRequest",
+      "name": "获取推荐歌单列表",
+      "output": "DescribeKTVPlaylistsResponse",
+      "status": "online"
+    },
+    "DescribeKTVRobots": {
+      "document": "获取机器人列表，支持 Id、状态等过滤条件。",
+      "input": "DescribeKTVRobotsRequest",
+      "name": "获取机器人信息",
+      "output": "DescribeKTVRobotsResponse",
+      "status": "online"
+    },
+    "DescribeKTVSuggestions": {
+      "document": "根据关键词获取联想词列表。",
+      "input": "DescribeKTVSuggestionsRequest",
+      "name": "获取联想词",
+      "output": "DescribeKTVSuggestionsResponse",
+      "status": "online"
+    },
+    "DescribeKTVTags": {
+      "document": "获取标签分组及分组下的标签列表信息。",
+      "input": "DescribeKTVTagsRequest",
+      "name": "获取标签列表",
+      "output": "DescribeKTVTagsResponse",
+      "status": "online"
+    },
+    "DescribeLiveVipTradeInfos": {
+      "document": "批量获取直播会员充值流水详细信息，包括：流水号，订单状态，下订单时间等",
+      "input": "DescribeLiveVipTradeInfosRequest",
+      "name": "获取直播会员充值记录信息列表",
+      "output": "DescribeLiveVipTradeInfosResponse",
+      "status": "online"
+    },
+    "DescribeUserInfo": {
+      "document": "获取用户信息，包括是否为直播会员，及直播会员信息等",
+      "input": "DescribeUserInfoRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserInfoResponse",
+      "status": "online"
+    },
+    "DestroyKTVRobot": {
+      "document": "销毁机器人，机器人退出 RTC 房间。",
+      "input": "DestroyKTVRobotRequest",
+      "name": "销毁机器人",
+      "output": "DestroyKTVRobotResponse",
+      "status": "online"
+    },
+    "RechargeLiveVip": {
+      "document": "充值直播会员，使该用户可以在直播场景使用",
+      "input": "RechargeLiveVipRequest",
+      "name": "充值直播会员",
+      "output": "RechargeLiveVipResponse",
+      "status": "online"
+    },
+    "SearchKTVMusics": {
+      "document": "根据关键词搜索歌曲，返回相关歌曲列表。",
+      "input": "SearchKTVMusicsRequest",
+      "name": "搜索歌曲",
+      "output": "SearchKTVMusicsResponse",
+      "status": "online"
+    },
+    "SyncKTVRobotCommand": {
+      "document": "下发操作机器人指令，支持播放、暂停、恢复、歌单设置等操作指令，实现对机器人行为的控制。",
+      "input": "SyncKTVRobotCommandRequest",
+      "name": "同步机器人指令",
+      "output": "SyncKTVRobotCommandResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-05-27",
+    "api_brief": "音速达直播音乐版权引擎服务基于是基于腾讯音乐娱乐集团（TME）海量线上直播音乐版权资源，结合腾讯云存储、内容加速分发等基础能力，搭配演唱评分、声音美化等智能音乐功能，为解决直播语聊场景中的正版音乐应用设计的 PaaS 产品。您可以前往API概览了解详情。",
+    "serviceNameCN": "音速达直播音乐版权引擎",
+    "serviceShortName": "yinsuda"
+  },
+  "objects": {
+    "AMEMusicBaseInfo": {
+      "document": "AME 曲库歌曲基础信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲 Id。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌手列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyChorusRequest": {
+      "document": "ApplyChorus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "房间号。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最大合唱人数，默认值为 8，最大值为 20。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxChorusNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "合唱用户标识列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ChorusUserIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyChorusResponse": {
+      "document": "ApplyChorus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合唱 Token。",
+          "example": "无",
+          "member": "string",
+          "name": "ChorusToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeKTVMusicDetailsRequest": {
+      "document": "BatchDescribeKTVMusicDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "歌曲 Id 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "玩家用户标识",
+          "example": "无",
+          "member": "string",
+          "name": "GuestUserId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间Id",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeKTVMusicDetailsResponse": {
+      "document": "BatchDescribeKTVMusicDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲详细信息列表。",
+          "example": "无",
+          "member": "KTVMusicDetailInfo",
+          "name": "KTVMusicDetailInfoSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "不存在歌曲Id列表。",
+          "example": "无",
+          "member": "string",
+          "name": "NotExistMusicIdSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChorusClip": {
+      "document": "副歌片段信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开始时间，单位：毫秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间，单位：毫秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateKTVRobotRequest": {
+      "document": "CreateKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "进房参数。",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建机器人时初始化参数。",
+          "example": "无",
+          "member": "SyncRobotCommand",
+          "name": "SyncRobotCommands",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKTVRobotResponse": {
+      "document": "CreateKTVRobot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人Id。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMatchMusicsRequest": {
+      "document": "DescribeKTVMatchMusics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配规则列表。",
+          "example": "无",
+          "member": "KTVMatchRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMatchMusicsResponse": {
+      "document": "DescribeKTVMatchMusics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配到的歌曲列表。",
+          "example": "\"\"",
+          "member": "KTVMatchMusic",
+          "name": "MatchMusicSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "未匹配的规则列表。",
+          "example": "\"\"",
+          "member": "KTVMatchRule",
+          "name": "NotMatchRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlRequest": {
+      "document": "DescribeKTVMusicAccompanySegmentUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "歌曲 Id 。",
+          "example": "mid-test",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "Chat",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间Id",
+          "example": "4324556",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlResponse": {
+      "document": "DescribeKTVMusicAccompanySegmentUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲状态。\n0：可用\n1：下线\n2：没权限\n3：没伴奏\n当返回2时，其他参数有可能全部为空",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "伴奏链接",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "伴奏类型，如mkv，mp3等",
+          "example": "mkv",
+          "member": "string",
+          "name": "ExtName",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "高潮开始时间",
+          "example": "12452323",
+          "member": "int64",
+          "name": "SegmentBegin",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "高潮结束时间",
+          "example": "1234566",
+          "member": "int64",
+          "name": "SegmentEnd",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "链接文件大小 单位 字节",
+          "example": "100",
+          "member": "int64",
+          "name": "FileSize",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "其它片段时间（可用于抢唱）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KTVOtherSegments",
+          "name": "OtherSegments",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicsByTagRequest": {
+      "document": "DescribeKTVMusicsByTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回条数限制，默认 20，最大 50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicsByTagResponse": {
+      "document": "DescribeKTVMusicsByTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistDetailRequest": {
+      "document": "DescribeKTVPlaylistDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "歌单 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回条数，默认：20，最大：50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistDetailResponse": {
+      "document": "DescribeKTVPlaylistDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsRequest": {
+      "document": "DescribeKTVPlaylists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "类型列表，取值有：\n<li>OfficialRec：官方推荐；</li>\n<li>Customize：自定义。</li>\n默认值为 OfficialRec。",
+          "example": "无",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页返回的记录条数，默认值：20，最大值：50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsResponse": {
+      "document": "DescribeKTVPlaylists返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌单基础信息。",
+          "example": "无",
+          "member": "KTVPlaylistBaseInfo",
+          "name": "PlaylistBaseInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "歌单总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVRobotsRequest": {
+      "document": "DescribeKTVRobots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人Id列表。",
+          "example": "无",
+          "member": "string",
+          "name": "RobotIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVRobotsResponse": {
+      "document": "DescribeKTVRobots返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "机器人信息集合。",
+          "example": "无",
+          "member": "KTVRobotInfo",
+          "name": "KTVRobotInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsRequest": {
+      "document": "DescribeKTVSuggestions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索词。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsResponse": {
+      "document": "DescribeKTVSuggestions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "联想词信息列表。",
+          "example": "无",
+          "member": "KTVSuggestionInfo",
+          "name": "KTVSuggestionInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTagsRequest": {
+      "document": "DescribeKTVTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTagsResponse": {
+      "document": "DescribeKTVTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签分组列表。",
+          "example": "无",
+          "member": "KTVTagGroupInfo",
+          "name": "TagGroupInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveVipTradeInfosRequest": {
+      "document": "DescribeLiveVipTradeInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "直播会员充值下单起始时间，格式为 ISO。默认为当前时间前一天。",
+          "example": "2022-06-06T18:29:33Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "直播会员充值下单截止时间，格式为 ISO。默认为当前时间。 EndTime不能小于StartTime",
+          "example": "2022-07-06T18:29:33Z\t",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "交易流水号集合，匹配集合指定所有流水号 。\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNos",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识集合，匹配集合指定所有用户标识 。\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的记录条数，默认值：20，最大值：50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveVipTradeInfosResponse": {
+      "document": "DescribeLiveVipTradeInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播会员充值流水信息列表",
+          "example": "无",
+          "member": "LiveVipTradeInfo",
+          "name": "LiveVipTradeInfoSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "直播会员充值流水总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyKTVRobotRequest": {
+      "document": "DestroyKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人Id。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyKTVRobotResponse": {
+      "document": "DestroyKTVRobot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "JoinRoomInput": {
+      "document": "直播进房输入参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "TRTC进房参数",
+          "example": "无",
+          "member": "TRTCJoinRoomInput",
+          "name": "TRTCJoinRoomInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "KTVBPMInfo": {
+      "document": "节拍信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "节拍类型，取值有：\n<li>Slow：慢；</li>\n<li>Middle：中等；</li>\n<li>Fast：快；</li>\n<li>Unknown：未知。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "BPM 值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMatchMusic": {
+      "document": "匹配歌曲信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配到的歌曲基础信息。",
+          "example": "\"\"",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "命中规则。",
+          "example": "\"\"",
+          "member": "KTVMatchRule",
+          "name": "MatchRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "AMEMusicBaseInfo",
+          "name": "AMEMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMatchRule": {
+      "document": "歌曲匹配规则。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "AME 曲库 Id。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AMEMusicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "KTVMatchRuleMusicInfo",
+          "name": "MusicInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "音速达歌曲 Id，用于匹配 AME 曲库歌曲。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicIdToMatchAME",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "KTVMatchRuleMusicInfo": {
+      "document": "歌曲信息匹配。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌手列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "KTVMusicBaseInfo": {
+      "document": "歌曲基础信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌手名称。",
+          "example": "无",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放时长。",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌手图片链接。",
+          "example": "无",
+          "member": "string",
+          "name": "SingerImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MusicAlbumInfo",
+          "name": "AlbumInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RecommendType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicDetailInfo": {
+      "document": "歌曲详细信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲基础信息。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放凭证。",
+          "example": "无",
+          "member": "string",
+          "name": "PlayToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌词下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "LyricsUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "音高数据下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "MidiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "副歌片段信息。",
+          "example": "无",
+          "member": "ChorusClip",
+          "name": "ChorusClipSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "前奏间隔。",
+          "example": "0",
+          "member": "int64",
+          "name": "PreludeInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲流派列表。",
+          "example": "无",
+          "member": "string",
+          "name": "GenreSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KTVBPMInfo",
+          "name": "BPMInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVOtherSegments": {
+      "document": "其它片段时间（可用于抢唱）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "片段开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SegmentBegin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "片段结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SegmentEnd",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVPlaylistBaseInfo": {
+      "document": "歌单基础信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌单Id。",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌单标题。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVRobotInfo": {
+      "document": "机器人信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人Id。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "Play",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Playlists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前歌单索引位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放进度，单位：毫秒。",
+          "example": "120000",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "音频参数。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "进房信息。",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSuggestionInfo": {
+      "document": "联想词信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联想词。",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVTagGroupInfo": {
+      "document": "标签分组信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分组 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分组名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签列表。",
+          "example": "无",
+          "member": "KTVTagInfo",
+          "name": "TagInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVTagInfo": {
+      "document": "标签信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveVipTradeInfo": {
+      "document": "充值直播会员流水信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易流水号。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "充值会员天数。\n取值有： \n<li>31</li> <li>93</li><li>186</li> <li>372</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "VipDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "订单状态。 \n取值有： \n<li>Success：成功</li><li>Fail：失败</li><li>Processing：订单处理中</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveVipUserInfo": {
+      "document": "直播会员用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "直播会员结束时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "LiveVipEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "会员生效状态\n<li>Valid：生效</li><li>Invalid：无效</li>",
+          "example": "无",
+          "member": "string",
+          "name": "LiveVipStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicAlbumCoverInfo": {
+      "document": "歌曲专辑封面信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "尺寸规格，取值有：\n<li>Mini：150 x 150 尺寸；</li>\n<li>Small：240 x 240 尺寸；</li>\n<li>Medium：480 x 480 尺寸。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicAlbumInfo": {
+      "document": "歌曲专辑信息。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "专辑名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "封面列表。",
+          "example": "无",
+          "member": "MusicAlbumCoverInfo",
+          "name": "CoverInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "PlayCommandInput": {
+      "document": "播放指令输入参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲位置索引。",
+          "example": "2",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "RechargeLiveVipRequest": {
+      "document": "RechargeLiveVip请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "交易流水号，用于标记此次充值记录，多次充值记录传入相同的 TradeSerialNo 会判断为失败，可用于防止重提提交造成重复计费。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "充值会员天数。\n取值有：\n<li>31</li>\n<li>93</li>\n<li>186</li>\n<li>372</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "VipDays",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "充值分类。取值有：room_card-包月房卡; 其他-保留。",
+          "example": "无",
+          "member": "string",
+          "name": "GiveType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Live\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RechargeLiveVipResponse": {
+      "document": "RechargeLiveVip返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播会员信息。",
+          "example": "无",
+          "member": "LiveVipUserInfo",
+          "name": "LiveVipUserInfo",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKTVMusicsRequest": {
+      "document": "SearchKTVMusics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "关键词。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回条数限制，默认 20，最大 50.",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKTVMusicsResponse": {
+      "document": "SearchKTVMusics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SeekCommandInput": {
+      "document": "调整播放进度指令参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放位置，单位：毫秒。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SendMessageCommandInput": {
+      "document": "发送自定义信息指令参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "自定义消息，json格式字符串。",
+          "example": "{\"field\":\"value\"}",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "消息重复次数，默认为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Repeat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SetAudioParamCommandInput": {
+      "document": "音频参数信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
+          "example": "Original",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SetDestroyModeCommandInput": {
+      "document": "设置销毁模式",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "销毁模式，取值有：\n<li>Auto：房间没人时自动销毁</li>\n<li>Expire：房间没人时过期自动销毁</li>\n<li>Never：不自动销毁，需手动销毁</li>默认为：Auto。",
+          "example": "Auto",
+          "member": "string",
+          "name": "DestroyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "过期销毁时间，单位：秒，当DestroyMode取Expire时必填。",
+          "example": "120",
+          "member": "int64",
+          "name": "DestroyExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SetPlayModeCommandInput": {
+      "document": "设置播放模式",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "RepeatPlaylist",
+          "member": "string",
+          "name": "PlayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SetPlaylistCommandInput": {
+      "document": "设置播放列表指令参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>\n<li>ClearList：清空歌曲列表</li>\n<li>Move：移动歌曲</li>",
+          "example": "Add",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示待删除歌曲的位置；\n当 Type 取 Move 时，表示待调整歌曲的位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当 Type 取 Move 时，必填，表示移动歌曲的目标位置。",
+          "example": "2",
+          "member": "int64",
+          "name": "ChangedIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "MusicIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SyncKTVRobotCommandRequest": {
+      "document": "SyncKTVRobotCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "100001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人Id。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "指令及指令参数数组。",
+          "example": "无",
+          "member": "SyncRobotCommand",
+          "name": "SyncRobotCommands",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SyncKTVRobotCommandResponse": {
+      "document": "SyncKTVRobotCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncRobotCommand": {
+      "document": "KTV 机器人初始化参数，在创建后自动完成相关初始化工作。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放参数。",
+          "example": "无",
+          "member": "PlayCommandInput",
+          "name": "PlayCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
+          "example": "无",
+          "member": "SetPlaylistCommandInput",
+          "name": "SetPlaylistCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放进度，当Command取Seek时，必填。",
+          "example": "无",
+          "member": "SeekCommandInput",
+          "name": "SeekCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "音频参数，当Command取SetAudioParam时，必填。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "自定义消息，当Command取SendMessage时，必填。",
+          "example": "无",
+          "member": "SendMessageCommandInput",
+          "name": "SendMessageCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "播放模式，当Command取SetPlayMode时，必填。",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "销毁模式，当Command取SetDestroyMode时，必填。",
+          "example": "无",
+          "member": "SetDestroyModeCommandInput",
+          "name": "SetDestroyModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "TRTCJoinRoomInput": {
+      "document": "TRTC推流进房信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "签名。",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "房间号。",
+          "example": "1234",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "推流应用ID。",
+          "example": "140000001",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户唯一标识。",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TimeRange": {
+      "document": "时间范围",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "Before",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "After",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "UserInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "直播会员详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveVipUserInfo",
+          "name": "LiveVipUserInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n<li>Normal：普通用户</li>\n<li>LiveVip：直播会员用户</li>",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

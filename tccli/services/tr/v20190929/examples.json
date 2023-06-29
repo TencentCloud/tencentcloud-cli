@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ModifyMail": [
+      {
+        "document": "",
+        "input": "https://tr.tencentcloudapi.com/?Action=ModifyMail\r\n&MailID=23456sdv\r\n&Recipient=aa\r\n&Phone=186559278653\r\n&Province=福建省\r\n&Address=厦门海沧\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Flag\": true,\n        \"Msg\": \"修改成功\",\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "修改邮寄地址"
+      }
+    ]
+  },
+  "version": "1.0"
+}

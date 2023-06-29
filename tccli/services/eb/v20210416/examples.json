@@ -118,6 +118,22 @@
         "title": "查询日志索引字段值"
       }
     ],
+    "GetCloudEventTemplate": [
+      {
+        "document": "查询事件模版",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCloudEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"cvm:ErrorEvent:DiskReadonly\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
+        "title": "查询事件模版"
+      }
+    ],
+    "GetConnectorEventTemplate": [
+      {
+        "document": "查询连接器事件模版",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConnectorEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"ckafka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
+        "title": "查询连接器事件模版"
+      }
+    ],
     "GetEventBus": [
       {
         "document": "获取事件集",
@@ -142,6 +158,30 @@
         "title": "获取转换器详情"
       }
     ],
+    "ListCloudEventNames": [
+      {
+        "document": "查询事件中文名称",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCloudEventNames\n<公共请求参数>\n\n{\n    \"ProductType\": \"cvm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventNames\": [\n            {\n                \"EventName\": \"磁盘只读\",\n                \"EventType\": \"cvm:ErrorEvent:DiskReadonly\"\n            }\n        ]\n    }\n}",
+        "title": "查询事件中文名称"
+      }
+    ],
+    "ListCloudEventPatterns": [
+      {
+        "document": "查询事件匹配规则样式",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCloudEventPatterns\n<公共请求参数>\n\n{\n    \"ProductType\": \"cvm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventPatterns\": [\n            {\n                \"EventName\": \"磁盘只读\",\n                \"EventPattern\": \"{\\n  \\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n  \\\"type\\\": [\\n    \\\"cvm:ErrorEvent:DiskReadonly\\\"\\n  ],\\n  \\\"subject\\\": [{\\n    \\\"anything-but\\\": [\\\"ins-jy9g0ekp\\\",\\\"ins-cipufxfl\\\"]\\n  }]\\n}\"\n            }\n        ]\n    }\n}",
+        "title": "查询事件匹配规则样式"
+      }
+    ],
+    "ListCloudProducts": [
+      {
+        "document": "获取云产品列表",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCloudProducts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"CloudProducts\": [\n            {\n                \"ProductName\": \"云服务器\",\n                \"ProductType\": \"cvm\"\n            }\n        ]\n    }\n}",
+        "title": "获取云产品列表"
+      }
+    ],
     "ListConnections": [
       {
         "document": "",
@@ -154,6 +194,30 @@
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnections\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
         "output": "{\n    \"Response\": {\n        \"Connections\": [\n            {\n                \"AddTime\": \"2021-04-29T13:13:43+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-5t492ybt\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T13:13:44+08:00\",\n                \"Status\": \"Active\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T13:00:32+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-7mpfojtt\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T13:00:33+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T12:58:24+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-il11bb0h\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T12:58:24+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T12:01:34+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-6s29eqob\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T12:01:35+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:46:27+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-dka58wiv\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:46:28+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:42:44+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-r1o76r2d\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:42:44+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:35:12+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-ay3ix129\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:35:13+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:24:45+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-heno97b7\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:24:45+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            }\n        ],\n        \"RequestId\": \"e576a375-88ae-4c3f-84a9-0bf28dc7b0ee\",\n        \"TotalCount\": 8\n    }\n}",
         "title": "获取连接器列表1"
+      }
+    ],
+    "ListConnectorEventNames": [
+      {
+        "document": "查询连接器事件中文名称",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnectorEventNames\n<公共请求参数>\n\n{\n    \"ConnectorType\": \"ckafka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventNames\": [\n            {\n                \"EventName\": \"kafka连接器模版\",\n                \"EventType\": \"connector:apigw\"\n            }\n        ]\n    }\n}",
+        "title": "查询连接器事件中文名称"
+      }
+    ],
+    "ListConnectorEventPatterns": [
+      {
+        "document": "查询连接器事件匹配规则样式",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnectorEventPatterns\n<公共请求参数>\n\n{\n    \"ConnectorType\": \"ckafka\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventPatterns\": [\n            {\n                \"EventName\": \"连接器事件\",\n                \"EventPattern\": \"{\\n  \\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n  \\\"type\\\": [\\n    \\\"cvm:ErrorEvent:DiskReadonly\\\"\\n  ],\\n  \\\"subject\\\": [{\\n    \\\"anything-but\\\": [\\\"ins-jy9g0ekp\\\",\\\"ins-cipufxfl\\\"]\\n  }]\\n}\"\n            }\n        ]\n    }\n}",
+        "title": "查询连接器事件匹配规则样式"
+      }
+    ],
+    "ListConnectors": [
+      {
+        "document": "查询连接器列表",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnectors\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Connectors\": [\n            {\n                \"ConnectorName\": \"kafka连接器\",\n                \"ConnectorType\": \"ckafka\"\n            }\n        ]\n    }\n}",
+        "title": "查询连接器列表"
       }
     ],
     "ListEventBuses": [

@@ -1,0 +1,124 @@
+{
+  "actions": {
+    "GetPerformanceDispatch": {
+      "document": "获取压测模块任务分发接口",
+      "input": "GetPerformanceDispatchRequest",
+      "name": "获取压测模块任务分发接口",
+      "output": "GetPerformanceDispatchResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-08-23",
+    "api_brief": "根据产品能力不同，支持根据ID查询游戏名称\r\n\r\n支持创建压测任务等",
+    "serviceNameCN": "游戏应用安全",
+    "serviceShortName": "gas"
+  },
+  "objects": {
+    "DebugResponseData": {
+      "document": "业务返回体封装",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "调试信息",
+          "example": "perfdebug/debug_d0b84269-4d89-4ee7-a32b-aa352afafcd7",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "业务状态码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回值",
+          "example": "text",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GetPerformanceDispatchRequest": {
+      "document": "GetPerformanceDispatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "业务请求参数",
+          "example": "无",
+          "member": "string",
+          "name": "PerformanceParams",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "接口命令字",
+          "example": "getPressureSources",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetPerformanceDispatchResponse": {
+      "document": "GetPerformanceDispatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务接口统一响应体",
+          "example": "无",
+          "member": "DebugResponseData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

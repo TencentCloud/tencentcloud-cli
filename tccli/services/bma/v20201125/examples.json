@@ -1,0 +1,93 @@
+{
+  "actions": {
+    "CreateBPFakeURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFakeURL\n<公共请求参数>\n\n{\n    \"ProtectURLId\": 123,\n    \"FakeURL\": \"xxx\",\n    \"SnapshotNames\": [\n        \"xxx\",\n        \"yyy\"\n    ],\n    \"Note\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加仿冒上报链接"
+      }
+    ],
+    "CreateBPFalseTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPFalseTicket\n<公共请求参数>\n\n{\n    \"FakeURL\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加误报工单"
+      }
+    ],
+    "CreateBPOfflineAttachment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPOfflineAttachment\n<公共请求参数>\n\n{\n    \"CompanyId\": 123,\n    \"BrandName\": \"xxx\",\n    \"BrandCertificateName\": \"xxx\",\n    \"TransferName\": \"xxx\",\n    \"AuthorizationName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "补充下线资料"
+      }
+    ],
+    "CreateBPOfflineTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPOfflineTicket\n<公共请求参数>\n\n{\n    \"FakeURLId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加下线工单"
+      }
+    ],
+    "CreateBPProtectURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPProtectURLs\n<公共请求参数>\n\n{\n    \"CompanyId\": 123,\n    \"CompanyName\": \"xxx\",\n    \"Phone\": \"xxx\",\n    \"VerificationCode\": \"xxx\",\n    \"LicenseName\": \"xxx\",\n    \"ProtectURLs\": [\n        \"xxx\",\n        \"yyy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加保护网站"
+      }
+    ],
+    "DescribeBPCompanyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPCompanyInfo\n<公共请求参数>\n\n{\n    \"CompanyId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"CompanyName\": \"xx\",\n        \"LicenseNote\": \"xx\",\n        \"CompanyId\": 0,\n        \"AuthorizationNote\": \"xx\",\n        \"Phone\": \"xx\",\n        \"LicenseName\": \"xx\",\n        \"BrandDatas\": [\n            {\n                \"BrandStatus\": 1,\n                \"BrandCertificateName\": \"xx\",\n                \"TransferNote\": \"xx\",\n                \"BrandName\": \"xx\",\n                \"TransferName\": \"xx\",\n                \"TransferStatus\": 1,\n                \"BrandNote\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AuthorizationName\": \"xx\",\n        \"LicenseStatus\": 1,\n        \"AuthorizationStatus\": 1\n    }\n}",
+        "title": "查询企业信息"
+      }
+    ],
+    "DescribeBPFakeURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPFakeURLs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Value\": \"xxx\"\n        },\n        {\n            \"Name\": \"StartTime\",\n            \"Value\": \"2020-06-01 00:00:00\"\n        },\n        {\n            \"Name\": \"EndTime\",\n            \"Value\": \"2020-12-01 00:00:00\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FakeURLInfos\": [\n            {\n                \"FakeURLId\": 123,\n                \"DetectTime\": \"xxx\",\n                \"FakeURL\": \"xxx\",\n                \"IP\": \"xxx\",\n                \"IPLoc\": \"xxx\",\n                \"Heat\": 123,\n                \"Status\": 1,\n                \"Note\": \"xxx\",\n                \"FakeURLCompany\": \"xxx\",\n                \"FakeURLAttr\": \"xxx\",\n                \"FakeURLName\": \"xxx\",\n                \"FakeURLICP\": \"xxx\",\n                \"FakeURLCreateTime\": \"xxx\",\n                \"FakeURLExpireTime\": \"xxx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\",\n        \"ExportURL\": \"xxx\"\n    }\n}",
+        "title": "查询仿冒链接列表"
+      }
+    ],
+    "DescribeBPOfflineTickets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPOfflineTickets\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Value\": \"xxx\"\n        },\n        {\n            \"Name\": \"StartTime\",\n            \"Value\": \"2020-06-01 00:00:00\"\n        },\n        {\n            \"Name\": \"EndTime\",\n            \"Value\": \"2020-12-01 00:00:00\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Tickets\": [\n            {\n                \"Status\": 1,\n                \"DetectTime\": \"xx\",\n                \"FakeURL\": \"xx\",\n                \"FakeURLId\": 1,\n                \"OfflineTime\": \"xx\",\n                \"SUin\": \"xx\",\n                \"AppealNumber\": \"xx\",\n                \"ProtectWeb\": \"xx\",\n                \"Note\": \"xx\",\n                \"IP\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"IPLoc\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询下线工单列表"
+      }
+    ],
+    "DescribeBPProtectURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPProtectURLs\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"CompanyId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectURLInfos\": [\n            {\n                \"CreateTime\": \"xxx\",\n                \"ProtectURL\": \"xxx\",\n                \"ProtectURLId\": 123,\n                \"ProtectURLStatus\": 1,\n                \"ProtectURLNote\": \"xxx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询保护网站"
+      }
+    ],
+    "DescribeBPReportFakeURLs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPReportFakeURLs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"URL\",\n            \"Value\": \"xxx\"\n        },\n        {\n            \"Name\": \"Status\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Name\": \"StartTime\",\n            \"Value\": \"2020-06-01 00:00:00\"\n        },\n        {\n            \"Name\": \"EndTime\",\n            \"Value\": \"2020-12-01 00:00:00\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportFakeURLInfos\": [\n            {\n                \"FakeURLId\": 123,\n                \"DetectTime\": \"xxx\",\n                \"ProtectURL\": \"xxx\",\n                \"FakeURL\": \"xxx\",\n                \"IP\": \"xxx\",\n                \"IPLoc\": \"xxx\",\n                \"Heat\": 123,\n                \"Status\": 1,\n                \"Note\": \"xxx\",\n                \"FakeURLCompany\": \"xxx\",\n                \"FakeURLAttr\": \"xxx\",\n                \"FakeURLName\": \"xxx\",\n                \"FakeURLICP\": \"xxx\",\n                \"FakeURLCreateTime\": \"xxx\",\n                \"FakeURLExpireTime\": \"xxx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "DescribeBPReportFakeURLs"
+      }
+    ],
+    "ModifyBPOfflineAttachment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBPOfflineAttachment\n<公共请求参数>\n\n{\n    \"CompanyId\": 123,\n    \"LicenseName\": \"xxx\",\n    \"AuthorizationName\": \"xxx\",\n    \"BrandName\": \"xxx\",\n    \"BrandCertificateName\": \"xxx\",\n    \"TransferName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "修改资质证明"
+      }
+    ]
+  },
+  "version": "1.0"
+}

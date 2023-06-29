@@ -1,0 +1,47 @@
+{
+  "actions": {
+    "DescribeReconciliationDirection": {
+      "document": "腾讯联通跨境对账系统-方向",
+      "input": "DescribeReconciliationDirectionRequest",
+      "name": "腾讯联通跨境对账系统-方向",
+      "output": "DescribeReconciliationDirectionResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-02",
+    "api_brief": "提供给网络守护神的API接口能力",
+    "serviceNameCN": "网络守护神",
+    "serviceShortName": "vpcdefensor"
+  },
+  "objects": {
+    "DescribeReconciliationDirectionRequest": {
+      "document": "DescribeReconciliationDirection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeReconciliationDirectionResponse": {
+      "document": "DescribeReconciliationDirection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "方向",
+          "example": "无",
+          "member": "string",
+          "name": "Direction",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

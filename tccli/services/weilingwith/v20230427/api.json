@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "DescribeResources": {
+      "document": "查询资源列表接口",
+      "input": "DescribeResourcesRequest",
+      "name": "查询资源列表",
+      "output": "DescribeResourcesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-04-27",
+    "api_brief": "该云API提供控制台-项目空间管理相关操作接口。",
+    "serviceNameCN": "微瓴同业开放平台",
+    "serviceShortName": "weilingwith"
+  },
+  "objects": {
+    "DescribeResourcesRequest": {
+      "document": "DescribeResources请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeResourcesResponse": {
+      "document": "DescribeResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

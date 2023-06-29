@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "CreateDataRepositoryTask": [
+      {
+        "document": "创建上传文件系统数据到存储桶任务",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRepositoryTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"my_test_task\",\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"Bucket\": \"mybucket-1250000\",\n    \"TaskPath\": \"aaa/bbb\",\n    \"TaskType\": \"FS_TO_BUCKET\",\n    \"RepositoryType\": \"MSP_AFM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c1a2b3f4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "创建上传文件系统数据到存储桶任务"
+      }
+    ],
+    "DescribeDataRepositoryTaskStatus": [
+      {
+        "document": "创建数据流通任务后, 获取任务的状态",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRepositoryTaskStatus\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"TaskId\": \"x_task_xxf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"FinishedFileNumber\": 1,\n        \"FinishedCapacity\": 1,\n        \"TaskId\": \"x_task_xxf4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "获取数据流通任务实时状态"
+      }
+    ]
+  },
+  "version": "1.0"
+}

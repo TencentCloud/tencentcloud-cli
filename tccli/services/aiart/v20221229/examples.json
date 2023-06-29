@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ImageToImage": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageToImage\n<公共请求参数>\n\n{\n    \"InputImage\": \"/asoaisjdio\",\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"201\"\n    ],\n    \"ResultConfig\": {\n        \"Resolution\": \"768:768\"\n    },\n    \"Strength\": 0.5\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"/asjdioajsdoi\",\n        \"RequestId\": \"301bfc25-61ca-4ece-b03e-f6aefb547969\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "TextToImage": [
+      {
+        "document": "正常调用场景",
+        "input": "POST / HTTP/1.1\nHost: ft.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImage\n<公共请求参数>\n\n{\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"101\",\n        \"102\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"/ashadaisojdad\",\n        \"RequestId\": \"b429894a-d0e5-4d5c-8dcf-6be8d05ef484\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

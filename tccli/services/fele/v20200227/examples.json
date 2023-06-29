@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeFdlRiskPlus": [
+      {
+        "document": "默认成功调用示例",
+        "input": "POST / HTTP/1.1\nHost: fele.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFdlRiskPlus\n<公共请求参数>\n\n{\n    \"RequestData\": {\n        \"Scene\": 0,\n        \"PhoneCryptoType\": \"0\",\n        \"PhoneNumber\": \"13211111111\",\n        \"Imei\": \"\",\n        \"Imsi\": \"\",\n        \"IP\": \"\",\n        \"Addr\": \"\",\n        \"CardNo\": \"\",\n        \"IdCryptoType\": \"0\",\n        \"IdNum\": \"123456789012345678\",\n        \"NameCryptoType\": \"0\",\n        \"Name\": \"张三\",\n        \"Wechat\": \"\",\n        \"QQ\": \"\",\n        \"Email\": \"\",\n        \"SubScene\": 0,\n        \"ModelVersion\": 0,\n        \"FederatedModelId\": 0,\n        \"FederatedModelIds\": [\n            0\n        ],\n        \"SubAppid\": 0,\n        \"CustomerUin\": \"\",\n        \"CustomerAppid\": \"\",\n        \"CustomerSubUin\": \"\",\n        \"Authorization\": \"\",\n        \"ExtensionId\": \"\",\n        \"ExtensionIn\": \"\",\n        \"USCI\": \"\",\n        \"OldResponseType\": \"\"\n    },\n    \"ResourceId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResponseData\": {\n            \"Score\": 0,\n            \"Tags\": \"\",\n            \"Extra\": \"\",\n            \"FederatedScore\": 0,\n            \"FederatedScores\": \"\",\n            \"FederatedTrees\": \"\",\n            \"ExtensionOut\": \"\"\n        },\n        \"RequestId\": \"test-id\",\n        \"OldResponseData\": \"\"\n    }\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

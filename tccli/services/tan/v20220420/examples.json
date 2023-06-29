@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "CreateBlockNodeRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockNodeRecords\n<公共请求参数>\n\n{\n    \"Records\": \"[{\\\"key1\\\":1,\\\"key2\\\":\\\"value2\\\"},{\\\"key1\\\":2,\\\"key2\\\":\\\"value2\\\"}]\",\n    \"GroupId\": \"tan-xxxx\",\n    \"NodeId\": \"b5fd85a5-033a-4f28-ab87-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "推送节点数据（支持多条数据推送，最大不超过100条）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockNodeRecords\n<公共请求参数>\n\n{\n    \"Records\": \"[{\\\"key1\\\":123,\\\"key2\\\":\\\"string\\\"}]\",\n    \"GroupId\": \"tan-xxxx\",\n    \"NodeId\": \"b5fd85a5-033a-4f28-ab87-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "推送节点数据（value支持数值字符串）"
+      }
+    ]
+  },
+  "version": "1.0"
+}

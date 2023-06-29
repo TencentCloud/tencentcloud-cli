@@ -1,4 +1,4 @@
-**Example 1: Sending template emails**
+**Example 1: 发送模板邮件**
 
 
 

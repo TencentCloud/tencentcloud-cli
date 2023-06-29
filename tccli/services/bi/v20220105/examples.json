@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ApplyEmbedInterval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyEmbedInterval\n<公共请求参数>\n\n{\n    \"Scope\": \"page\",\n    \"BIToken\": \"246cbf0d-aa6c-445d-895d-b368f59159e8\",\n    \"ExtraParam\": \"\",\n    \"PageId\": \"1\",\n    \"ProjectId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"e60a2172-715b-4305-beb2-40792ae53856\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "申请Token延期接口实例"
+      }
+    ],
+    "CreateEmbedToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmbedToken\n<公共请求参数>\n\n{\n    \"ExpireTime\": \"10\",\n    \"Scope\": \"panel\",\n    \"ExtraParam\": \"\",\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"adfacf71-c59c-4569-897d-955a1e41ee89\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 11,\n            \"ProjectId\": \"1\",\n            \"PageId\": null,\n            \"ExtraParam\": \"\",\n            \"Scope\": \"panel\",\n            \"ExpireTime\": 10,\n            \"CreatedUser\": null,\n            \"CreatedAt\": \"2022-04-28 14:26:01\",\n            \"UpdatedUser\": null,\n            \"UpdatedAt\": \"2022-04-28 14:26:01\",\n            \"BIToken\": \"300cf2a4-cfb8-47b8-9bc0-4a1f1f74bc1d\"\n        }\n    }\n}",
+        "title": "报表嵌出创建Token接口示例-强鉴权"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,216 @@
+{
+  "actions": {
+    "GetUserAccessToken": {
+      "document": "获取用户第三方开放平台的access token",
+      "input": "GetUserAccessTokenRequest",
+      "name": "获取用户第三方开放平台的access token",
+      "output": "GetUserAccessTokenResponse",
+      "status": "online"
+    },
+    "GetUserAuthInfo": {
+      "document": "获取用户认证信息",
+      "input": "GetUserAuthInfoRequest",
+      "name": "获取用户认证信息",
+      "output": "GetUserAuthInfoResponse",
+      "status": "online"
+    },
+    "GetUserOwnerInfo": {
+      "document": "获取用户开发商信息",
+      "input": "GetUserOwnerInfoRequest",
+      "name": "获取用户开发商信息",
+      "output": "GetUserOwnerInfoResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-25",
+    "api_brief": "腾讯云账号开放平台，第三方账号登录块",
+    "serviceNameCN": "腾讯云账号开放平台",
+    "serviceShortName": "open"
+  },
+  "objects": {
+    "GetUserAccessTokenRequest": {
+      "document": "GetUserAccessToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "auth code",
+          "member": "string",
+          "name": "UserAuthCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "第三方access token",
+          "member": "string",
+          "name": "OpenAccessToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserAccessTokenResponse": {
+      "document": "GetUserAccessToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "member": "string",
+          "name": "AppId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方openId",
+          "member": "string",
+          "name": "UserOpenId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方unionId",
+          "member": "string",
+          "name": "UserUnionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方access token",
+          "member": "string",
+          "name": "UserAccessToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "refresh token",
+          "member": "string",
+          "name": "UserRefreshToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权范围",
+          "member": "string",
+          "name": "Scope",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserAuthInfoRequest": {
+      "document": "GetUserAuthInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserAuthInfoResponse": {
+      "document": "GetUserAuthInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "昵称",
+          "member": "string",
+          "name": "Nickname",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否认证",
+          "member": "int64",
+          "name": "IsAuth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型",
+          "member": "int64",
+          "name": "UserType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserOwnerInfoRequest": {
+      "document": "GetUserOwnerInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserOwnerInfoResponse": {
+      "document": "GetUserOwnerInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号uin",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Mail",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MailStatus",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号名",
+          "member": "string",
+          "name": "OwnerName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

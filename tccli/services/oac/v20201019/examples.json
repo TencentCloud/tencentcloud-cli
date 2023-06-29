@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "CreateCustomDomain": [
+      {
+        "document": "",
+        "input": "https://oac.tencentcloudapi.com/?Action=CreateCustomDomain\n&ServiceId=1\n&Domain=1\n&RegionId=1\n&CertId=1\n&Skey=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2c3d65d-ec30-4f8a-b10c-b4a24ffcd58d\",\n        \"ServiceId\": \"xxxxx\"\n    }\n}",
+        "title": "绑定自定义绑定域名"
+      }
+    ],
+    "ModifyCustomDomain": [
+      {
+        "document": "",
+        "input": "https://oac.tencentcloudapi.com/?Action=ModifyCustomDomain\n&ServiceId=1\n&Domain=1\n&OptionsKey=1\n&OptionsValue=1\n&Skey=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2c3d65d-ec30-4f8a-b10c-b4a24ffcd58d\"\n    }\n}",
+        "title": "修改自定义绑定域名"
+      }
+    ]
+  },
+  "version": "1.0"
+}

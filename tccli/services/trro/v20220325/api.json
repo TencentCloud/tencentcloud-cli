@@ -1,0 +1,2706 @@
+{
+  "actions": {
+    "BatchDeleteDevices": {
+      "document": "用于批量删除设备",
+      "input": "BatchDeleteDevicesRequest",
+      "name": "批量删除设备",
+      "output": "BatchDeleteDevicesResponse",
+      "status": "online"
+    },
+    "BatchDeletePolicy": {
+      "document": "用于批量删除修改权限配置",
+      "input": "BatchDeletePolicyRequest",
+      "name": "批量删除权限",
+      "output": "BatchDeletePolicyResponse",
+      "status": "online"
+    },
+    "BoundLicenses": {
+      "document": "为推流设备绑定license，优先绑定到期时间最近的，到期时间相同优先绑定月包",
+      "input": "BoundLicensesRequest",
+      "name": "设备绑定license",
+      "output": "BoundLicensesResponse",
+      "status": "online"
+    },
+    "CreateDevice": {
+      "document": "用于创建设备",
+      "input": "CreateDeviceRequest",
+      "name": "创建设备",
+      "output": "CreateDeviceResponse",
+      "status": "online"
+    },
+    "CreateProject": {
+      "document": "用于创建项目",
+      "input": "CreateProjectRequest",
+      "name": "创建项目",
+      "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "DeleteProject": {
+      "document": "用于删除项目",
+      "input": "DeleteProjectRequest",
+      "name": "删除项目",
+      "output": "DeleteProjectResponse",
+      "status": "online"
+    },
+    "DescribeDeviceInfo": {
+      "document": "用于获取指定设备信息",
+      "input": "DescribeDeviceInfoRequest",
+      "name": "查询设备信息",
+      "output": "DescribeDeviceInfoResponse",
+      "status": "online"
+    },
+    "DescribeDeviceList": {
+      "document": "用于获取设备信息列表",
+      "input": "DescribeDeviceListRequest",
+      "name": "获取设备列表",
+      "output": "DescribeDeviceListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceSessionDetails": {
+      "document": "获取设备会话数据详单",
+      "input": "DescribeDeviceSessionDetailsRequest",
+      "name": "获取设备会话数据详单",
+      "output": "DescribeDeviceSessionDetailsResponse",
+      "status": "online"
+    },
+    "DescribeDeviceSessionList": {
+      "document": "获取设备会话列表",
+      "input": "DescribeDeviceSessionListRequest",
+      "name": "获取设备会话列表",
+      "output": "DescribeDeviceSessionListResponse",
+      "status": "online"
+    },
+    "DescribePolicy": {
+      "document": "用于查看权限配置",
+      "input": "DescribePolicyRequest",
+      "name": "查看权限配置",
+      "output": "DescribePolicyResponse",
+      "status": "online"
+    },
+    "DescribeProjectInfo": {
+      "document": "用于获取项目信息",
+      "input": "DescribeProjectInfoRequest",
+      "name": "查询项目信息",
+      "output": "DescribeProjectInfoResponse",
+      "status": "online"
+    },
+    "DescribeProjectList": {
+      "document": "用于获取项目列表",
+      "input": "DescribeProjectListRequest",
+      "name": "获取项目列表",
+      "output": "DescribeProjectListResponse",
+      "status": "online"
+    },
+    "DescribeRecentSessionList": {
+      "document": "获取最新设备会话列表",
+      "input": "DescribeRecentSessionListRequest",
+      "name": "获取最新设备会话列表",
+      "output": "DescribeRecentSessionListResponse",
+      "status": "online"
+    },
+    "DescribeSessionStatistics": {
+      "document": "获取会话统计值",
+      "input": "DescribeSessionStatisticsRequest",
+      "name": "获取会话统计值",
+      "output": "DescribeSessionStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeSessionStatisticsByInterval": {
+      "document": "获取各时间段的会话统计值",
+      "input": "DescribeSessionStatisticsByIntervalRequest",
+      "name": "获取各时间段的会话统计值",
+      "output": "DescribeSessionStatisticsByIntervalResponse",
+      "status": "online"
+    },
+    "GetDeviceLicense": {
+      "document": "获取设备已经绑定的可用授权数量",
+      "input": "GetDeviceLicenseRequest",
+      "name": "获取设备授权数量",
+      "output": "GetDeviceLicenseResponse",
+      "status": "online"
+    },
+    "GetDevices": {
+      "document": "查询用户设备的授权绑定情况",
+      "input": "GetDevicesRequest",
+      "name": "设备的授权列表",
+      "output": "GetDevicesResponse",
+      "status": "online"
+    },
+    "GetLicenseStat": {
+      "document": "统计license类型数量",
+      "input": "GetLicenseStatRequest",
+      "name": "licenses统计",
+      "output": "GetLicenseStatResponse",
+      "status": "online"
+    },
+    "GetLicenses": {
+      "document": "按授权查看license列表",
+      "input": "GetLicensesRequest",
+      "name": "查看license列表",
+      "output": "GetLicensesResponse",
+      "status": "online"
+    },
+    "ModifyDevice": {
+      "document": "用于修改设备信息",
+      "input": "ModifyDeviceRequest",
+      "name": "修改设备信息",
+      "output": "ModifyDeviceResponse",
+      "status": "online"
+    },
+    "ModifyPolicy": {
+      "document": "用于修改权限配置",
+      "input": "ModifyPolicyRequest",
+      "name": "修改权限",
+      "output": "ModifyPolicyResponse",
+      "status": "online"
+    },
+    "ModifyProject": {
+      "document": "用于修改项目信息",
+      "input": "ModifyProjectRequest",
+      "name": "修改项目",
+      "output": "ModifyProjectResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-03-25",
+    "api_brief": "介绍如果使用API创建远程操控项目，并对现场设备和远端设备进行管理，查看远控会话数据等",
+    "serviceNameCN": "远程实时操控",
+    "serviceShortName": "trro"
+  },
+  "objects": {
+    "BatchDeleteDevicesRequest": {
+      "document": "BatchDeleteDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标删除设备所属项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标删除设备的设备ID数组",
+          "example": "[\"dev1\",\"dev2\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteDevicesResponse": {
+      "document": "BatchDeleteDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除失败的设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"dev1\"]",
+          "member": "string",
+          "name": "FailedDeviceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeletePolicyRequest": {
+      "document": "BatchDeletePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "删除权限配置的项目ID",
+          "example": "f3glr49rc96pralw",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "删除权限配置的远端设备ID列表",
+          "example": "[\"test1\",\"test2\"]",
+          "member": "string",
+          "name": "RemoteDeviceIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "删除权限配置的权限模式, black为黑名单，white为白名单",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeletePolicyResponse": {
+      "document": "BatchDeletePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除权限配置失败的远端设备ID列表",
+          "example": "[\"test1\"]",
+          "member": "string",
+          "name": "FailedRemoteDeviceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BoundLicensesRequest": {
+      "document": "BoundLicenses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "license数量",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BoundLicensesResponse": {
+      "document": "BoundLicenses返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceRequest": {
+      "document": "CreateDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建设备所归属的项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18",
+          "example": "test_device1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线",
+          "example": "vin123",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field",
+          "example": "field",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备认证口令，由大小写英文字母和数字构成，须为16位",
+          "example": "abcd1234abcd1234",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceResponse": {
+      "document": "CreateDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目名称，长度不超过24个字符",
+          "example": "project1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目描述，长度不超过120个字符，不填默认为空",
+          "example": "test project",
+          "member": "string",
+          "name": "ProjectDescription",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "权限模式，black为黑名单，white为白名单，不填默认为black",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID，长度为16位",
+          "example": "f3glr49rc96pralw",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "f3glr49r3axn0fu2",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceInfoRequest": {
+      "document": "DescribeDeviceInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标设备所属项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标设备ID",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceInfoResponse": {
+      "document": "DescribeDeviceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "test device1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，field为现场设备（被控方），remote为远端设备（操控方）",
+          "example": "field",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备状态，offline为离线，ready为在线准备，connected为会话中",
+          "example": "offline",
+          "member": "string",
+          "name": "DeviceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备状态最后更新时间",
+          "example": "2022-03-12T09:20:20+08:00",
+          "member": "datetime_iso",
+          "name": "LastReportTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备信息最后修改时间",
+          "example": "2022-03-12T08:20:20+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceListRequest": {
+      "document": "DescribeDeviceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备所属项目ID",
+          "example": "\"f3glr49ry0i0xlm7\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备类型筛选，不填默认为全部设备类型",
+          "example": "field",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "对设备ID或Name按关键字进行模糊匹配，不填则不进行模糊匹配",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "SearchWords",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页返回的最大设备数，不填默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页码，不填默认为1（首页）",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceListResponse": {
+      "document": "DescribeDeviceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备信息列表",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备总数",
+          "example": "16",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "本次返回的设备数",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceSessionDetailsRequest": {
+      "document": "DescribeDeviceSessionDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceSessionDetailsResponse": {
+      "document": "DescribeDeviceSessionDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按设备区分的会话详细数据",
+          "example": "无",
+          "member": "SessionDeviceDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceSessionListRequest": {
+      "document": "DescribeDeviceSessionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备ID",
+          "example": "xx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1650000050",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceSessionListResponse": {
+      "document": "DescribeDeviceSessionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总个数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "会话列表",
+          "example": "无",
+          "member": "SessionInfo",
+          "name": "DeviceSessionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "本页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRequest": {
+      "document": "DescribePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查看权限的项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查看的权限模式，black为黑名单，white为白名单，不填默认为当前项目生效的权限模式",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模糊匹配模式，remoteMatch为远端设备ID匹配，fieldMatch为现场ID匹配，不填默认为remoteMatch",
+          "example": "remoteMatch",
+          "member": "string",
+          "name": "SearchMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模糊匹配关键字，不填默认不进行模糊匹配",
+          "example": "test",
+          "member": "string",
+          "name": "SearchWords",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页返回的最大数量，不填默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页码，不填默认为1（首页）",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyResponse": {
+      "document": "DescribePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限模式",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "返回的权限模式是否为当前生效的权限模式",
+          "example": "true",
+          "member": "bool",
+          "name": "PolicyEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "权限信息列表",
+          "example": "无",
+          "member": "PolicyInfo",
+          "name": "PolicyInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "本次返回的权限信息数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "权限信息总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectInfoRequest": {
+      "document": "DescribeProjectInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标项目ID",
+          "example": "f3glr49r3axn0fu2",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectInfoResponse": {
+      "document": "DescribeProjectInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目名称",
+          "example": "project1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目描述",
+          "example": "test project",
+          "member": "string",
+          "name": "ProjectDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目权限模式，black为黑名单，white为白名单",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目信息修改时间",
+          "example": "2022-03-22T09:25:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectListRequest": {
+      "document": "DescribeProjectList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页返回的最大项目数量，不填默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前页码，不填默认为1（首页）",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectListResponse": {
+      "document": "DescribeProjectList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目信息数组",
+          "example": "无",
+          "member": "ProjectInfo",
+          "name": "Projects",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目总数",
+          "example": "16",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "本次返回的项目数",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecentSessionListRequest": {
+      "document": "DescribeRecentSessionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备ID，支持过滤远端设备或现场设备",
+          "example": "xx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算",
+          "example": "1650000050",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecentSessionListResponse": {
+      "document": "DescribeRecentSessionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总个数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "会话列表",
+          "example": "无",
+          "member": "RecentSessionInfo",
+          "name": "RecentSessionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "本页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionStatisticsByIntervalRequest": {
+      "document": "DescribeSessionStatisticsByInterval请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "统计时间间隔：hour|day|month",
+          "example": "hour",
+          "member": "string",
+          "name": "StatisticInterval",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备ID",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "起始时间，单位：秒",
+          "example": "1600000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间，单位：秒",
+          "example": "1610000000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionStatisticsByIntervalResponse": {
+      "document": "DescribeSessionStatisticsByInterval返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "各时间段的会话统计数据",
+          "example": "无",
+          "member": "SessionIntervalStatistic",
+          "name": "SessionStatistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionStatisticsRequest": {
+      "document": "DescribeSessionStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备ID",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "起始时间，单位：秒",
+          "example": "1600000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间，单位：秒",
+          "example": "1610000000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionStatisticsResponse": {
+      "document": "DescribeSessionStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "SessionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "通话时长，单位：分钟",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "活跃现场设备数",
+          "example": "30",
+          "member": "uint64",
+          "name": "ActiveFieldDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "活跃远端设备数",
+          "example": "60",
+          "member": "uint64",
+          "name": "ActiveRemoteDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "优良会话占比，单位：%",
+          "example": "90",
+          "member": "uint64",
+          "name": "NotBadSessionRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Device": {
+      "document": "查询用户设备的授权绑定情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "已经绑定license数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "LicenseCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "剩余天数：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "RemainDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过期时间：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "167840945",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务时长：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86400",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "已经绑定licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceInfo": {
+      "document": "设备信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备ID",
+          "example": "“dev1”",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备名称",
+          "example": "\"test device\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备状态，offline为离线，ready为在线准备，connected为会话中",
+          "example": "offline",
+          "member": "string",
+          "name": "DeviceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备类型，field为现场设备（受控方），remote为远端设备（操控方）",
+          "example": "\"field\"",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备信息最近修改时间",
+          "example": "2022-03-21T08:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备状态最近更新时间",
+          "example": "2022-03-21T09:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "LastReportTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "设备所属项目Id",
+          "example": "m82k54bp7n9rjhai",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "GetDeviceLicenseRequest": {
+      "document": "GetDeviceLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标设备所属项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "目标设备ID",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceLicenseResponse": {
+      "document": "GetDeviceLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定设备已经绑定的可用license数量",
+          "example": "12",
+          "member": "int64",
+          "name": "AvailableCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesRequest": {
+      "document": "GetDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页面数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目 ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesResponse": {
+      "document": "GetDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备授权列表",
+          "example": "无",
+          "member": "Device",
+          "name": "Devices",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "列表数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicenseStatRequest": {
+      "document": "GetLicenseStat请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetLicenseStatResponse": {
+      "document": "GetLicenseStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效授权",
+          "example": "10",
+          "member": "int64",
+          "name": "Valid",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "已绑定授权",
+          "example": "8",
+          "member": "int64",
+          "name": "Bound",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "未绑定授权",
+          "example": "2",
+          "member": "int64",
+          "name": "UnBound",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过期授权",
+          "example": "1",
+          "member": "int64",
+          "name": "Expire",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicensesRequest": {
+      "document": "GetLicenses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页面数量",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "projectId",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "DeviceId",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicensesResponse": {
+      "document": "GetLicenses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "license列表",
+          "example": "无",
+          "member": "License",
+          "name": "Licenses",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "license列表项数量",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "License": {
+      "document": "按授权查看的license列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该类型的license个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "license状态：0:未绑定；1:已绑定；2:已停服；3:已退费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "到期时间戳：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1678503945",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务时长：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86400",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "剩余天数：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "RemainDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "该类型的licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDeviceRequest": {
+      "document": "ModifyDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要修改设备归属项目的项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要修改设备的设备ID",
+          "example": "dev_1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改后的设备名称，不填则不修改",
+          "example": "testdevice1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改后的设备认证口令，不填则不修改",
+          "example": "abcd1234ABCD5678",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceResponse": {
+      "document": "ModifyDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyRequest": {
+      "document": "ModifyPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改权限配置的项目ID",
+          "example": "f3glr49rc96pralw",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改权限配置的远端设备ID",
+          "example": "test1",
+          "member": "string",
+          "name": "RemoteDeviceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "权限修改涉及的现场设备ID数组",
+          "example": "[\"dev1\",\"dev2\"]",
+          "member": "string",
+          "name": "FieldDeviceIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改的目标权限模式，black为黑名单，white为白名单",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）",
+          "example": "add",
+          "member": "string",
+          "name": "ModifyMode",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPolicyResponse": {
+      "document": "ModifyPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加关联失败的现场设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedInsertIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "解除关联失败的现场设备ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedDeleteIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标修改项目的项目ID",
+          "example": "f3glr49rc96pralw",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改后的项目名称，不填则不修改",
+          "example": "mytest",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改后的项目描述，不填则不修改",
+          "example": "test project",
+          "member": "string",
+          "name": "ProjectDescription",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改后的权限模式，black为黑名单，white为白名单,不填则不修改",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PolicyInfo": {
+      "document": "权限信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "远端设备ID",
+          "example": "\"test1\"",
+          "member": "string",
+          "name": "RemoteDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关联的现场设备ID",
+          "example": "[\"dev1\",\"dev2\"]",
+          "member": "string",
+          "name": "FieldDeviceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最近添加时间",
+          "example": "2022-03-22T08:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectInfo": {
+      "document": "项目信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "f3glr49rc96pralw",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目名称",
+          "example": "project1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目描述",
+          "example": "test",
+          "member": "string",
+          "name": "ProjectDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目权限模式，black为黑名单，white为白名单",
+          "example": "black",
+          "member": "string",
+          "name": "PolicyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目信息修改时间",
+          "example": "2022-03-25T09:12:11+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecentSessionInfo": {
+      "document": "最新会话信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "远端设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RemoteDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "现场设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "FieldDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分辨率",
+          "example": "1920*1080",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话开始时间",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最后更新时间",
+          "example": "1650000060",
+          "member": "uint64",
+          "name": "LatestUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionDeviceDetail": {
+      "document": "会话数据详单（按设备区分）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备类型：field或remote",
+          "example": "remote",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "起始点位时间，单位：秒",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "结束点位时间，单位：秒",
+          "example": "1650000100",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码率，单位：kbps",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "帧率",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "丢包率，单位：%",
+          "example": "[10,20,30]",
+          "member": "float",
+          "name": "Lost",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "网络时延，单位：ms",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "NetworkLatency",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "视频时延，单位：ms",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "VideoLatency",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CPU使用率，单位：%",
+          "example": "[10,20,30]",
+          "member": "float",
+          "name": "CpuUsed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "内存使用率，单位：%",
+          "example": "[10,20,30]",
+          "member": "float",
+          "name": "MemUsed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间偏移量，单位：秒",
+          "example": "[0,2,4,6,8,10]",
+          "member": "uint64",
+          "name": "TimeOffset",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "设备ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionInfo": {
+      "document": "会话信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "远端设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RemoteDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "现场设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "FieldDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分辨率",
+          "example": "1920*1080",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话开始时间",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话结束时间",
+          "example": "1650000060",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "通话质量：good|normal|bad，对应优良差",
+          "example": "good",
+          "member": "string",
+          "name": "Quality",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionIntervalStatistic": {
+      "document": "单位时间间隔的会话统计数据",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活跃现场设备数",
+          "example": "10",
+          "member": "uint64",
+          "name": "ActiveFieldDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活跃远端设备数",
+          "example": "20",
+          "member": "uint64",
+          "name": "ActiveRemoteDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话数量",
+          "example": "50",
+          "member": "uint64",
+          "name": "SessionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "会话时长，单位：分钟",
+          "example": "30",
+          "member": "uint64",
+          "name": "TotalDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间戳，单位：秒",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间戳，单位：秒",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "优良会话占比，单位：%",
+          "example": "30",
+          "member": "uint64",
+          "name": "NotBadSessionRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

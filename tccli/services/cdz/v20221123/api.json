@@ -1,0 +1,172 @@
+{
+  "actions": {
+    "DescribeCloudDedicatedZoneWhiteList": {
+      "document": "分页返回专属可用区信息及其白名单",
+      "input": "DescribeCloudDedicatedZoneWhiteListRequest",
+      "name": "查询专属可用区白名单信息",
+      "output": "DescribeCloudDedicatedZoneWhiteListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-11-23",
+    "api_brief": "介绍如何使用API对专属可用区进行操作，包括查看专属可用区的基本信息和订单数据，以及获取专属可用区内可用资源情况等。",
+    "serviceNameCN": "专属可用区",
+    "serviceShortName": "cdz"
+  },
+  "objects": {
+    "CloudDedicatedZoneWhiteListInfo": {
+      "document": "专属可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区的唯一标识",
+          "example": "cdz-8wbc41r9",
+          "member": "string",
+          "name": "CdzId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域系统中的可用区ID\n",
+          "example": "10001",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区归属者Uin",
+          "example": "700000376338",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区归属者AppId",
+          "example": "251227744",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区访问者的白名单Key",
+          "example": "CDZ__ZONE_TEST_1",
+          "member": "string",
+          "name": "WhiteListKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域系统中的地域ID",
+          "example": "4",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区名称",
+          "example": "XX科技CDZ北京二区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区访问者白名单列表",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCloudDedicatedZoneWhiteListRequest": {
+      "document": "DescribeCloudDedicatedZoneWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneWhiteListResponse": {
+      "document": "DescribeCloudDedicatedZoneWhiteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区包含白名单的详情",
+          "example": "无",
+          "member": "CloudDedicatedZoneWhiteListInfo",
+          "name": "ZoneSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

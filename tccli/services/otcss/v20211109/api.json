@@ -1,0 +1,533 @@
+{
+  "actions": {
+    "DescribeRiskDnsEventDetail": {
+      "document": "查询恶意请求事件详情",
+      "input": "DescribeRiskDnsEventDetailRequest",
+      "name": "查询恶意请求事件详情",
+      "output": "DescribeRiskDnsEventDetailResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-11-09",
+    "api_brief": "介绍如何使用API对防护列表、策略和运行时事件进行操作，包括查看防护列表与明细信息；开启或关闭防护功能；策略的查看/添加/修改/删除；运行时事件图形显示接口逃逸检测 / 高危系统调用 / 文件异常检测 / 环境检测 / 逃逸检测 / 高危系统调用 / 文件异常检测等。",
+    "serviceNameCN": "T-Sec 容器安全服务（内部）",
+    "serviceShortName": "otcss"
+  },
+  "objects": {
+    "DescribeRiskDnsEventDetailRequest": {
+      "document": "DescribeRiskDnsEventDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "事件ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventID",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前appID",
+          "example": "10",
+          "member": "uint64",
+          "name": "CurrentAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDnsEventDetailResponse": {
+      "document": "DescribeRiskDnsEventDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件类型，恶意域名请求：DOMAIN，恶意IP请求：IP",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "恶意请求次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "首次发现时间",
+          "example": "无",
+          "member": "string",
+          "name": "FoundTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最近生成时间",
+          "example": "无",
+          "member": "string",
+          "name": "LatestFoundTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器ID",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "隔离状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器隔离操作来源",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "无",
+          "member": "string",
+          "name": "ImageID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "无",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主机名称",
+          "example": "无",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "无",
+          "member": "string",
+          "name": "HostIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "外网IP",
+          "example": "无",
+          "member": "string",
+          "name": "PublicIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "参考链接",
+          "example": "无",
+          "member": "string",
+          "name": "Reference",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "恶意域名或IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "恶意IP所属城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "命中规则类型\nSYSTEM：系统规则\n USER：用户自定义",
+          "example": "无",
+          "member": "string",
+          "name": "MatchRuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签特征",
+          "example": "无",
+          "member": "string",
+          "name": "FeatureLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程权限",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessAuthority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程md5",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程启动用户",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程用户组",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程路径",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程树",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessTree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "进程命令行参数",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "父进程启动用户",
+          "example": "无",
+          "member": "string",
+          "name": "ParentProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "父进程用户组",
+          "example": "无",
+          "member": "string",
+          "name": "ParentProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "父进程路径",
+          "example": "无",
+          "member": "string",
+          "name": "ParentProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "父进程命令行参数",
+          "example": "无",
+          "member": "string",
+          "name": "ParentProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "祖先进程启动用户",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "祖先进程用户组",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "祖先进程路径",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "祖先进程命令行参数",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主机ID",
+          "example": "无",
+          "member": "string",
+          "name": "HostID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "事件状态\nEVENT_UNDEAL： 待处理\nEVENT_DEALED：已处理\nEVENT_IGNORE： 已忽略\nEVENT_ADD_WHITE：已加白",
+          "example": "无",
+          "member": "string",
+          "name": "EventStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

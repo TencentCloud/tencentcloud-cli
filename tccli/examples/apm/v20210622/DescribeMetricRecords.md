@@ -1,6 +1,6 @@
 **Example 1: 通用指标列表接口**
 
-
+场景2
 
 Input: 
 
@@ -28,31 +28,37 @@ Output:
             {
                 "Fields": [
                     {
-                        "CompareVal": "xx",
-                        "Unit": "xx",
+                        "LastPeriodValue": [
+                            {
+                                "Key": "abc",
+                                "Value": 0
+                            }
+                        ],
+                        "CompareVal": "abc",
+                        "Unit": "s",
                         "Value": 691.42,
-                        "Key": "xx",
+                        "Key": "ab",
                         "CompareVals": [
                             {
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Value": "v1",
+                                "Key": "k1"
                             },
                             {
-                                "Key": "xx",
-                                "Value": "xx"
+                                "Key": "k2",
+                                "Value": "v2"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "v1",
+                        "Key": "k1"
                     }
                 ]
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "re",
         "TotalCount": 0
     }
 }
@@ -60,7 +66,7 @@ Output:
 
 **Example 2: 请求参数实例**
 
-
+场景一
 
 Input: 
 
@@ -93,32 +99,34 @@ Output:
             {
                 "Fields": [
                     {
-                        "CompareVal": "xx",
-                        "Unit": "xx",
-                        "Value": 0.0,
-                        "Key": "xx",
+                        "CompareVal": "abc",
                         "CompareVals": [
                             {
-                                "Value": "xx",
-                                "Key": "xx"
-                            },
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Value": 0,
+                        "Unit": "abc",
+                        "Key": "abc",
+                        "LastPeriodValue": [
                             {
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Key": "abc",
+                                "Value": 0
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ]
             }
         ],
-        "RequestId": "xx",
-        "TotalCount": 0
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

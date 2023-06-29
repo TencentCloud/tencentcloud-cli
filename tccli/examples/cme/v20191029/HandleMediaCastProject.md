@@ -102,39 +102,7 @@ Output:
 }
 ```
 
-**Example 4: 停止点播转直播**
-
-停止点播转直播。停止操作将停止输入源的播放并断开直播流，项目状态变为 Idle 状态。
-
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 Stop。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation Stop \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": null,
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 5: 停止输出源**
+**Example 4: 停止输出源**
 
 项目状态是 Working 状态时，停止输出源将断开该输出源的直播流。
 **输入参数：**
@@ -167,7 +135,7 @@ Output:
 }
 ```
 
-**Example 6: 切换当前播放的输入源**
+**Example 5: 切换当前播放的输入源**
 
 项目状态为 Working 状态时切换生效，切换后从该输入源开始播放。
 **输入参数：**
@@ -200,7 +168,7 @@ Output:
 }
 ```
 
-**Example 7: 删除输入源**
+**Example 6: 删除输入源**
 
 如果项目状态是 Working 状态，不能删除正在播放的输入源。
 
@@ -234,7 +202,7 @@ Output:
 }
 ```
 
-**Example 8: 删除输出源**
+**Example 7: 删除输出源**
 
 项目状态是 Working 状态时，删除输出源将停止该输出源的直播输出。
 **输入参数：**
@@ -267,39 +235,7 @@ Output:
 }
 ```
 
-**Example 9: 启动点播转直播**
-
-启动点播转直播。启动成功后项目状态变为 Working 状态，从输入源列表的第一个输入源开始播放，向输出源列表推送直播流。
-
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 Start。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation Start \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": null,
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 10: 启动输出源**
+**Example 8: 启动输出源**
 
 重新启动已经停止的输出源，项目状态是 Working 状态时进行操作。
 **输入参数：**
@@ -332,50 +268,7 @@ Output:
 }
 ```
 
-**Example 11: 查询点播转直播项目的播放信息**
-
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 DescribePlayInfo。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation DescribePlayInfo \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": {
-            "Status": "Working",
-            "CurrentSourceId": "st_0123",
-            "CurrentSourcePosition": 100,
-            "CurrentSourceDuration": 3490,
-            "LoopCount": 1,
-            "DestinationStatusSet": [
-                {
-                    "Id": "dt_123",
-                    "PushUrl": "rtmp://test.com/live/aa?t=xx",
-                    "Status": "Working"
-                }
-            ]
-        },
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 12: 添加输入源**
+**Example 9: 添加输入源**
 
 新添加的输入源加到输入源列表的后面。
 **输入参数：**
@@ -424,7 +317,7 @@ Output:
 }
 ```
 
-**Example 13: 添加输出源**
+**Example 10: 添加输出源**
 
 项目状态为 Working 状态时，添加输出源后，将向新的输出源推送直播流。
 **输入参数：**
@@ -458,6 +351,178 @@ Output:
                 "PushUrl": "rtmp://test.com/live/aa?t=xx"
             }
         ],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 11: 停止媒体转推**
+
+停止媒体转推。停止操作将停止输入源的播放并断开直播流，项目状态变为 Idle 状态。
+
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 Stop。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation Stop \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 12: 启动媒体转推**
+
+启动媒体转推。启动成功后项目状态变为 Working 状态，从输入源列表的第一个输入源开始播放，向输出源列表推送直播流。
+
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 Start。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation Start \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 13: 查询媒体转推项目的播放信息**
+
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 DescribePlayInfo。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation DescribePlayInfo \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": {
+            "Status": "Working",
+            "CurrentSourceId": "st_0123",
+            "CurrentSourcePosition": 100,
+            "CurrentSourceDuration": 3490,
+            "LoopCount": 1,
+            "DestinationStatusSet": [
+                {
+                    "Id": "dt_123",
+                    "PushUrl": "rtmp://test.com/live/aa?t=xx",
+                    "Status": "Working"
+                }
+            ]
+        },
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 14: 确认媒体转推项目启动**
+
+发起 Start 操作成功后， 媒体转推项目开始启动，在30秒内还需要发起 Confirm 操作进行确认。如果超时没有确认，该项目会被自动停止掉。
+
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 Confirm。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation Confirm \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 15: 设置定时转推**
+
+项目需要是 Idle 状态，设置自动转推时间后在指定时间内启动项目进行转推。
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 ModifyPlaySetting。
+PlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation ModifyPlaySetting \
+    --PlaySetting.AutoStartTime 2022-12-20T20:00:00Z \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }

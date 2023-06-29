@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "DescribeFraudBase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudBase\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v2:s6kBRbiOKZp/kenOxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询设备风险"
+      }
+    ],
+    "DescribeFraudPremium": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudPremium\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v2:s6kBRbiOKZp/kenOxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"Openid\": \"A10254A0046CEA0448A387BF\"\n    }\n}",
+        "title": "查询设备标识及风险"
+      }
+    ],
+    "DescribeFraudUltimate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudUltimate\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v2:s6kBRbiOKZp/kenOxxxxxxxxx\",\n    \"SceneCode\": \"login\",\n    \"UserId\": \"user1\",\n    \"EventTime\": 1666684836384,\n    \"ElapsedTime\": 1,\n    \"WeChatOpenId\": \"oEsXuszxxxxxxxxxxxxxxxx4qvEk\",\n    \"PhoneNumber\": \"15800000000\",\n    \"ClientIP\": \"223.73.63.151\",\n    \"QQOpenId\": \"ECA1B7XXXXXXXXXXXXXXXXXXXX06625D\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"Openid\": \"A10254A0046CEA0448A387BF\",\n        \"SceneRiskInfos\": [\n            {\n                \"Type\": 100101,\n                \"Level\": 1\n            }\n        ],\n        \"SuggestionLevel\": 1\n    }\n}",
+        "title": "查询设备标识及风险（旗舰版）"
+      }
+    ],
+    "DescribeTrustedID": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrustedID\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"v2:s6kBRbiOKZp/kenOxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Openid\": \"A10254A0046CEA0448A387BF\",\n        \"Brand\": \"HONOR\",\n        \"SdkBuildNo\": \"75\",\n        \"AppVersion\": \"1.0.0\",\n        \"Platform\": \"2\",\n        \"SystemVersion\": \"10\",\n        \"RequestId\": \"19a13dc5-1c2c-4d0e-bd08-13534b53c8f4\",\n        \"NetworkType\": \"0\",\n        \"Model\": \"LLD-AL20\",\n        \"PackageName\": \"a.b.c\",\n        \"ClientIp\": \"223.73.63.151\"\n    }\n}",
+        "title": "查询设备标识"
+      }
+    ]
+  },
+  "version": "1.0"
+}

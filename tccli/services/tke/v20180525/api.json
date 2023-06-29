@@ -11790,12 +11790,45 @@
     },
     "DescribeEncryptionStatusRequest": {
       "document": "DescribeEncryptionStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cls-7ph3twqe",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeEncryptionStatusResponse": {
       "document": "DescribeEncryptionStatus返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "加密状态",
+          "example": "Closed",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "加密错误信息",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14215,7 +14248,18 @@
     },
     "DisableEncryptionProtectionRequest": {
       "document": "DisableEncryptionProtection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-7ph3twqe",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DisableEncryptionProtectionResponse": {
@@ -15544,7 +15588,28 @@
     },
     "EnableEncryptionProtectionRequest": {
       "document": "EnableEncryptionProtection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-7ph3twqe",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "kms加密配置",
+          "example": "无",
+          "member": "KMSConfiguration",
+          "name": "KMSConfiguration",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "EnableEncryptionProtectionResponse": {
@@ -17717,6 +17782,11 @@
         }
       ],
       "usage": "out"
+    },
+    "KMSConfiguration": {
+      "document": "kms加密参数",
+      "members": [],
+      "usage": "in"
     },
     "KubeJarvisStateCatalogue": {
       "document": "集群巡检诊断的默认目录类型",

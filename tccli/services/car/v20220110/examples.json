@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "ApplyConcurrent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyConcurrent\n<公共请求参数>\n\n{\n    \"UserIp\": \"125.127.178.228\",\n    \"ProjectId\": \"cap-abcdefgh\",\n    \"UserId\": \"cg_user\",\n    \"ApplicationVersionId\": \"ver-1a2b3c4d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
+        "title": "ApplyConcurrent示例"
+      }
+    ],
+    "CreateSession": [
+      {
+        "document": "CreateSession示例",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"UserIp\": \"125.127.178.228\",\n    \"ClientSession\": \"eyJhYmMiOjEyM30=\",\n    \"UserId\": \"cg_user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ServerSession\": \"eyJ4dHoiOjc4OX0=\",\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
+        "title": "CreateSession示例"
+      }
+    ],
+    "DestroySession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"cg_user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
+        "title": "DestroySession示例"
+      }
+    ],
+    "StartPublishStream": [
+      {
+        "document": "开始云端推流",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "开始云端推流"
+      }
+    ],
+    "StopPublishStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "停止云端推流"
+      }
+    ]
+  },
+  "version": "1.0"
+}

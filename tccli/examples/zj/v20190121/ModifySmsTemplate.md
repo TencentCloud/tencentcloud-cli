@@ -7,7 +7,7 @@ Input:
 ```
 tccli zj ModifySmsTemplate --cli-unfold-argument  \
     --License xsdf \
-    --TemplageId 123 \
+    --TemplateId 123 \
     --SignID 2222222 \
     --TemplateName 腾讯云 \
     --TemplateContent "xxx" \

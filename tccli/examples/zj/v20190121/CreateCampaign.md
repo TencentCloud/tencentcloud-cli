@@ -13,7 +13,9 @@ tccli zj CreateCampaign --cli-unfold-argument  \
     --Strategies.0.Items.0.Id 1486 \
     --Strategies.0.Items.0.ContentType 1 \
     --Strategies.0.Items.1.Id 569943 \
-    --Strategies.0.Items.1.ContentType 1
+    --Strategies.0.Items.1.ContentType 1 \
+    --SecSendTime 123 \
+    --FirstProp 20
 ```
 
 Output: 

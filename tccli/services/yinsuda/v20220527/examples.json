@@ -1,0 +1,189 @@
+{
+  "actions": {
+    "ApplyChorus": [
+      {
+        "document": "申请合唱相关信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyChorus\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"AppName\": \"test\",\n    \"RoomId\": \"100832\",\n    \"MusicId\": \"mid-112ddff\",\n    \"ChorusUserIds\": [\n        \"user1\",\n        \"user2\"\n    ],\n    \"MaxChorusNum\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ChorusToken\": \"chid-9hh33x\",\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\"\n    }\n}",
+        "title": "申请合唱"
+      }
+    ],
+    "BatchDescribeKTVMusicDetails": [
+      {
+        "document": "批量获取曲目详情",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDescribeKTVMusicDetails\n<公共请求参数>\n\n{\n    \"UserId\": \"userid1\",\n    \"MusicIds\": [\n        \"mid-47n6qwV1\",\n        \"testdddd\"\n    ],\n    \"AppName\": \"AppName1\",\n    \"PlayScene\": \"Live\",\n    \"GuestUserId\": \"userid2\",\n    \"RoomId\": \"1883\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVMusicDetailInfoSet\": [\n            {\n                \"ChorusClipSet\": [\n                    {\n                        \"EndTime\": 55206,\n                        \"StartTime\": 37988\n                    }\n                ],\n                \"KTVMusicBaseInfo\": {\n                    \"AlbumInfo\": {\n                        \"CoverInfoSet\": [\n                            {\n                                \"Dimension\": \"Mini\",\n                                \"Url\": \"http://imge.xxxx.com/stdmusic/150/20220521/20220521000237730193.jpg\"\n                            },\n                            {\n                                \"Dimension\": \"Small\",\n                                \"Url\": \"http://imge.xxxx.com/stdmusic/240/20220521/20220521000237730193.jpg\"\n                            },\n                            {\n                                \"Dimension\": \"Medium\",\n                                \"Url\": \"http://imge.xxxx.com/stdmusic/480/20220521/20220521000237730193.jpg\"\n                            }\n                        ],\n                        \"Name\": \"予·君\"\n                    },\n                    \"Duration\": 210051,\n                    \"MusicId\": \"mid-47n6qwV1\",\n                    \"Name\": \"踏雪\",\n                    \"RightSet\": [\n                        \"Play\",\n                        \"Sing\"\n                    ],\n                    \"SingerImageUrl\": \"http://singerimg.xxxx.com/uploadpic/softhead/150/20220329/20220329151558179.jpg\",\n                    \"SingerSet\": [\n                        \"等什么君(邓寓君)\",\n                        \"FOX胡天渝\"\n                    ],\n                    \"RecommendType\": \"Other\"\n                },\n                \"LyricsUrl\": \"https://mcetest.ame.qcloud.com/download?sign=xxxxx&source=%2FLyrics%2F47n6qwV1%2Fsubtitle.vtt&t=1653897260&us=1300054767_test_1111\",\n                \"MidiUrl\": \"https://mcetest.ame.qcloud.com/download?sign=xxxx&source=%2FPitch%2F47n6qwV1%2Fmusic.pitch&t=1653897260&us=1300054767_test_1111\",\n                \"PlayToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJZCI6MTMwMDA1NDc2NywiQXBwTmFtZSI6InRlc3QiLCJDdXJUaW1lIjowLCJFeHBpcmVUaW1lIjoxNjUzOTA0NDYwLCJNdXNpY0lkIjoibWlkLTQ3bjZxd1YxIiwiVXNlcklkIjoiMTExMSJ9.xxxxxiwlc\",\n                \"GenreSet\": [\n                    \"fg\"\n                ],\n                \"PreludeInterval\": 12,\n                \"BPMInfo\": {\n                    \"Type\": \"axx\",\n                    \"Value\": 12\n                }\n            }\n        ],\n        \"NotExistMusicIdSet\": [\n            \"testdddd\"\n        ],\n        \"RequestId\": \"8319127f-4284-4ac1-af40-8b195582256a\"\n    }\n}",
+        "title": "批量获取曲目详情"
+      }
+    ],
+    "CreateKTVRobot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKTVRobot\n<公共请求参数>\n\n{\n    \"RTCSystem\": \"TRTC\",\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"JoinRoomInput\": {\n        \"TRTCJoinRoomInput\": {\n            \"Sign\": \"xxxxxxxxxxx\",\n            \"RoomId\": \"12345\",\n            \"SdkAppId\": \"140000001\",\n            \"UserId\": \"tom\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RobotId\": \"12500-robot-xxxxxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建机器人"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKTVRobot\n<公共请求参数>\n\n{\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetPlaylist\",\n            \"SetPlaylistCommandInput\": {\n                \"Type\": \"Add\",\n                \"MusicIds\": [\n                    \"xxxxxxx\"\n                ],\n                \"Index\": -1\n            }\n        },\n        {\n            \"Command\": \"SetVolume\"\n        },\n        {\n            \"Command\": \"Play\",\n            \"PlayCommandInput\": {\n                \"Index\": 0\n            }\n        }\n    ],\n    \"RTCSystem\": \"TRTC\",\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"JoinRoomInput\": {\n        \"TRTCJoinRoomInput\": {\n            \"Sign\": \"xxxxxxxxxxx\",\n            \"RoomId\": \"12345\",\n            \"SdkAppId\": \"140000001\",\n            \"UserId\": \"tom\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RobotId\": \"12500-robot-xxxxxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建机器人并初始化"
+      }
+    ],
+    "DescribeKTVMatchMusics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMatchMusics\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"AMEMusicId\": \"1111003-xxx2-2edd\"\n        }\n    ],\n    \"UserId\": \"10087\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NotMatchRuleSet\": [],\n        \"MatchMusicSet\": [\n            {\n                \"MatchRule\": {\n                    \"AMEMusicId\": \"1111003-xxx2-2edd\"\n                },\n                \"KTVMusicBaseInfo\": {\n                    \"SingerImageUrl\": \"http://yinsuda.qcloud.com/1.jpg\",\n                    \"Name\": \"一千年以后\",\n                    \"MusicId\": \"mid-did2iixxx\",\n                    \"RightSet\": [\n                        \"Sing\"\n                    ],\n                    \"AlbumInfo\": null,\n                    \"RecommendType\": \"Othter\",\n                    \"SingerSet\": [\n                        \"林俊杰\"\n                    ],\n                    \"Duration\": 240000\n                }\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\"\n    }\n}",
+        "title": "匹配 AME 歌曲"
+      }
+    ],
+    "DescribeKTVMusicAccompanySegmentUrl": [
+      {
+        "document": "获取歌曲伴奏链接",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicAccompanySegmentUrl\n<公共请求参数>\n\n{\n    \"AppName\": \"abc\",\n    \"UserId\": \"abc\",\n    \"MusicId\": \"abc\",\n    \"PlayScene\": \"abc\",\n    \"RoomId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Url\": \"abc\",\n        \"ExtName\": \"abc\",\n        \"SegmentBegin\": 0,\n        \"SegmentEnd\": 0,\n        \"FileSize\": 0,\n        \"OtherSegments\": [\n            {\n                \"SegmentBegin\": 0,\n                \"SegmentEnd\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取歌曲伴奏链接"
+      },
+      {
+        "document": "脱敏的实际请求",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicAccompanySegmentUrl\n<公共请求参数>\n\n{\n    \"AppName\": \"monk_dev\",\n    \"UserId\": \"monk\",\n    \"MusicId\": \"mid-9Eyb67xe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExtName\": \"mkv\",\n        \"FileSize\": 1087189,\n        \"OtherSegments\": [\n            {\n                \"SegmentBegin\": 91798,\n                \"SegmentEnd\": 120177\n            }\n        ],\n        \"RequestId\": \"865e06ab-1aae-42e1-ae29-3137f143fb01\",\n        \"SegmentBegin\": 91798,\n        \"SegmentEnd\": 120177,\n        \"Status\": 0,\n        \"Url\": \"http://****/202306151716/****/0db8f1208ee298295cc6c81bac448751\"\n    }\n}",
+        "title": "获取歌曲伴奏链接(脱敏)"
+      }
+    ],
+    "DescribeKTVMusicsByTag": [
+      {
+        "document": "获取标签歌曲信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicsByTag\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"Limit\": 10,\n    \"TagId\": \"id1111\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVMusicInfoSet\": [\n            {\n                \"AlbumInfo\": {\n                    \"CoverInfoSet\": [\n                        {\n                            \"Dimension\": \"Mini\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/150/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Small\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/240/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Medium\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/480/20191125/20191125163409414057.jpg\"\n                        }\n                    ],\n                    \"Name\": \"等\"\n                },\n                \"Duration\": 216000,\n                \"MusicId\": \"mid-11x9dj3\",\n                \"Name\": \"等\",\n                \"SingerImageUrl\": \"http://singerimg.xxxxx.com/uploadpic/softhead/150/20210326/20210326145830248137.jpg\",\n                \"SingerSet\": [\n                    \"贾振峰\"\n                ],\n                \"RecommendType\": \"Other\",\n                \"RightSet\": [\n                    \"Play\",\n                    \"Sing\"\n                ]\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\",\n        \"ScrollToken\": \"eyJDdXJQYWdlTnVtIjozLCJDdXJJbmRleCI6MH0=\"\n    }\n}",
+        "title": "获取标签歌曲"
+      }
+    ],
+    "DescribeKTVPlaylistDetail": [
+      {
+        "document": "获取歌单详情",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylistDetail\n<公共请求参数>\n\n{\n    \"UserId\": \"10087\",\n    \"PlaylistId\": \"pid-3dd22\",\n    \"Limit\": 10,\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\",\n        \"ScrollToken\": \"eyJDdXJQYWdlTnVtIjozLCJDdXJJbmRleCI6MH0=\",\n        \"KTVMusicInfoSet\": [\n            {\n                \"AlbumInfo\": {\n                    \"CoverInfoSet\": [\n                        {\n                            \"Dimension\": \"Mini\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/150/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Small\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/240/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Medium\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/480/20191125/20191125163409414057.jpg\"\n                        }\n                    ],\n                    \"Name\": \"等\"\n                },\n                \"Duration\": 216000,\n                \"MusicId\": \"mid-11x9dj3\",\n                \"Name\": \"等\",\n                \"RecommendType\": \"Other\",\n                \"SingerImageUrl\": \"http://singerimg.xxxxx.com/uploadpic/softhead/150/20210326/20210326145830248137.jpg\",\n                \"SingerSet\": [\n                    \"贾振峰\"\n                ],\n                \"RightSet\": [\n                    \"Play\",\n                    \"Sing\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取歌单详情"
+      }
+    ],
+    "DescribeKTVPlaylists": [
+      {
+        "document": "获取曲库歌单",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylists\n<公共请求参数>\n\n{\n    \"UserId\": \"11113451\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"PlaylistBaseInfoSet\": [\n            {\n                \"PlaylistId\": \"pid-8888\",\n                \"Title\": \"热歌推荐\"\n            },\n            {\n                \"PlaylistId\": \"pid-23784\",\n                \"Title\": \"网络红歌\"\n            },\n            {\n                \"PlaylistId\": \"pid-24971\",\n                \"Title\": \"动感DJ\"\n            },\n            {\n                \"PlaylistId\": \"pid-6666\",\n                \"Title\": \"最新飙升\"\n            }\n        ],\n        \"RequestId\": \"81c684e1-4b88-4c08-ba8e-16d3459893dc\"\n    }\n}",
+        "title": "获取曲库歌单"
+      }
+    ],
+    "DescribeKTVRobots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVRobots\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotIds\": [\n        \"ame-xxxxx1\"\n    ],\n    \"Statuses\": [\n        \"Play\"\n    ],\n    \"CreateTime\": {\n        \"After\": \"2022-01-10T07:25:52Z\",\n        \"Before\": \"2022-01-11T07:25:52Z\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVRobotInfoSet\": [\n            {\n                \"RobotId\": \"ame-xxxxx1\",\n                \"Status\": \"Play\",\n                \"Playlists\": [\n                    \"xxxx1\",\n                    \"xxxx2\",\n                    \"xxxx3\",\n                    \"xxxx4\"\n                ],\n                \"CurIndex\": 2,\n                \"Position\": 120,\n                \"RTCSystem\": \"TRTC\",\n                \"JoinRoomInput\": {\n                    \"TRTCJoinRoomInput\": {\n                        \"Sign\": \"xxxxxxxxxxx\",\n                        \"RoomId\": \"12345\",\n                        \"SdkAppId\": \"140000001\",\n                        \"UserId\": \"tom\"\n                    }\n                },\n                \"SetAudioParamInput\": {\n                    \"Type\": \"Original\"\n                },\n                \"SetPlayModeInput\": {\n                    \"PlayMode\": \"Order\"\n                }\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询机器人信息"
+      }
+    ],
+    "DescribeKTVSuggestions": [
+      {
+        "document": "获取曲库联想词",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSuggestions\n<公共请求参数>\n\n{\n    \"UserId\": \"11113451\",\n    \"KeyWord\": \"等\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVSuggestionInfoSet\": [\n            {\n                \"Suggestion\": \"等\"\n            },\n            {\n                \"Suggestion\": \"等一分钟\"\n            },\n            {\n                \"Suggestion\": \"等的太久\"\n            },\n            {\n                \"Suggestion\": \"等你归来\"\n            },\n            {\n                \"Suggestion\": \"等不来花开\"\n            },\n            {\n                \"Suggestion\": \"等你等了那么久\"\n            },\n            {\n                \"Suggestion\": \"等你下课\"\n            },\n            {\n                \"Suggestion\": \"等什么君\"\n            },\n            {\n                \"Suggestion\": \"等不到花开\"\n            },\n            {\n                \"Suggestion\": \"等风来\"\n            }\n        ],\n        \"RequestId\": \"bddc6a88-eec8-485b-aa12-6a133cd3268d\"\n    }\n}",
+        "title": "获取曲库联想词"
+      }
+    ],
+    "DescribeKTVTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVTags\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TagGroupInfoSet\": [\n            {\n                \"GroupId\": \"1\",\n                \"TagInfoSet\": [\n                    {\n                        \"TagId\": \"11\",\n                        \"Name\": \"嘻哈\"\n                    }\n                ],\n                \"Name\": \"风格\"\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\"\n    }\n}",
+        "title": "获取标签列表"
+      }
+    ],
+    "DescribeLiveVipTradeInfos": [
+      {
+        "document": "获取直播会员充值记录信息列表",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVipTradeInfos\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"StartTime\": \"2023-01-22T00:00:00+00:00\",\n    \"EndTime\": \"2023-02-22T00:00:00+00:00\",\n    \"TradeSerialNos\": [\n        \"no1\"\n    ],\n    \"UserIds\": [\n        \"user1\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveVipTradeInfoSet\": [\n            {\n                \"TradeSerialNo\": \"no1\",\n                \"AppName\": \"test1\",\n                \"UserId\": \"1\",\n                \"RoomId\": \"12\",\n                \"VipDays\": 31,\n                \"Status\": \"Success\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取直播会员充值记录信息列表"
+      }
+    ],
+    "DescribeUserInfo": [
+      {
+        "document": "获取用户详细信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVipUserInfo\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"AppName\": \"test\",\n            \"UserId\": \"111\",\n            \"LiveVipUserInfo\": {\n                \"RoomId\": \"321\",\n                \"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\n                \"LiveVipStatus\": \"Valid\"\n            },\n            \"UserType\": \"Normal\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取用户信息"
+      }
+    ],
+    "DestroyKTVRobot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyKTVRobot\n<公共请求参数>\n\n{\n    \"RobotId\": \"125001-robot-xxxxx1\",\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "销毁机器人"
+      }
+    ],
+    "RechargeLiveVip": [
+      {
+        "document": "为用户充值直播会员",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RechargeLiveVip\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"test\",\n    \"TradeSerialNo\": \"TradeSerialNo1\",\n    \"RoomId\": \"123\",\n    \"VipDays\": 31,\n    \"GiveType\": \"room_card\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveVipUserInfo\": {\n            \"LiveVipEndTime\": \"2023-07-10T18:17:37+08:00\",\n            \"LiveVipStatus\": \"LiveVip\"\n        },\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "充值直播会员"
+      }
+    ],
+    "SearchKTVMusics": [
+      {
+        "document": "搜索歌曲",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"Limit\": 10,\n    \"KeyWord\": \"等\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVMusicInfoSet\": [\n            {\n                \"AlbumInfo\": {\n                    \"CoverInfoSet\": [\n                        {\n                            \"Dimension\": \"Mini\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/150/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Small\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/240/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Medium\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/480/20191125/20191125163409414057.jpg\"\n                        }\n                    ],\n                    \"Name\": \"等\"\n                },\n                \"RecommendType\": \"Featured\",\n                \"Duration\": 216000,\n                \"MusicId\": \"mid-11x9dj3\",\n                \"Name\": \"等\",\n                \"SingerImageUrl\": \"http://singerimg.xxxxx.com/uploadpic/softhead/150/20210326/20210326145830248137.jpg\",\n                \"SingerSet\": [\n                    \"贾振峰\"\n                ],\n                \"RightSet\": [\n                    \"Play\",\n                    \"Sing\"\n                ]\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\",\n        \"ScrollToken\": \"eyJDdXJQYWdlTnVtIjozLCJDdXJJbmRleCI6MH0=\"\n    }\n}",
+        "title": "搜索歌曲"
+      }
+    ],
+    "SyncKTVRobotCommand": [
+      {
+        "document": "播放第2首歌曲",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"Play\",\n            \"PlayCommandInput\": {\n                \"Index\": 1\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "播放指定音乐"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetAudioParam\",\n            \"SetAudioParamCommandInput\": {\n                \"Type\": \"Accompaniment\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "变更歌曲音频参数"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SwitchNext\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "切换下一首歌曲"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SendMessage\",\n            \"SendMessageCommandInput\": {\n                \"Message\": \"{\\\"Field1\\\":\\\"Value1\\\"}\",\n                \"Repeat\": 2\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "发送自定义消息"
+      },
+      {
+        "document": "设置播放模式为随机播放。",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetPlayMode\",\n            \"SetPlayModeCommandInput\": {\n                \"PlayMode\": \"Shuffle\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "设置播放模式"
+      },
+      {
+        "document": "设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetDestroyMode\",\n            \"SetDestroyModeCommandInput\": {\n                \"DestroyMode\": \"Expire\",\n                \"DestroyExpireTime\": 120\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "设置销毁模式"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetPlaylist\",\n            \"SetPlaylistCommandInput\": {\n                \"Type\": \"Add\",\n                \"MusicIds\": [\n                    \"xxxxxxx\"\n                ],\n                \"Index\": -1\n            }\n        },\n        {\n            \"Command\": \"Play\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "播放列表添加歌曲并播放"
+      }
+    ]
+  },
+  "version": "1.0"
+}

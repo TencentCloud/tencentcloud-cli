@@ -15,7 +15,6 @@ Output:
 {
     "Response": {
         "Data": {
-            "ExpireTime": 1565768870,
             "SessionToken": "#######",
             "TmpSecretId": "########",
             "TmpSecretKey": "########",

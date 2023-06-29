@@ -1,0 +1,196 @@
+{
+  "actions": {
+    "SendEmail": {
+      "document": "发送普通邮件",
+      "input": "SendEmailRequest",
+      "name": "发送普通邮件",
+      "output": "SendEmailResponse",
+      "status": "online"
+    },
+    "SendTemplatedEmail": {
+      "document": "发送模板邮件",
+      "input": "SendTemplatedEmailRequest",
+      "name": "发送模板邮件",
+      "output": "SendTemplatedEmailResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-08-19",
+    "api_brief": "使用腾讯云 DMS 提供的 API 灵活创建和管理发信域名、邮件模板以及邮件发送任务，您也可以使用 API 获取邮件任务的统计数据并使用事件推送实时监控有风险的事件。",
+    "serviceNameCN": "邮件发送服务",
+    "serviceShortName": "dms"
+  },
+  "objects": {
+    "SendEmailRequest": {
+      "document": "SendEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发件人",
+          "member": "string",
+          "name": "FromAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "收件人",
+          "member": "string",
+          "name": "ToAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮件摘要",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发件人名字",
+          "member": "string",
+          "name": "FromName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回信地址",
+          "member": "string",
+          "name": "ReplyAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮件html内容",
+          "member": "string",
+          "name": "HtmlContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "邮件text内容",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailResponse": {
+      "document": "SendEmail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "邮件任务创建结果",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTemplatedEmailRequest": {
+      "document": "SendTemplatedEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发信地址。",
+          "member": "string",
+          "name": "FromAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "收件地址，多个地址使用';'分隔, 最多100个收件地址。",
+          "member": "string",
+          "name": "ToAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "提前创建好的模板名称。",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板中变量的取值，为json格式字符串。",
+          "member": "string",
+          "name": "TemplateValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "发件人名称。",
+          "member": "string",
+          "name": "FromName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回信地址。",
+          "member": "string",
+          "name": "ReplyAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTemplatedEmailResponse": {
+      "document": "SendTemplatedEmail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板邮件任务创建结果",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

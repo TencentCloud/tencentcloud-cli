@@ -11,6 +11,8 @@ from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.cvm.v20191212 import cvm_client as cvm_client_v20191212
+from tencentcloud.cvm.v20191212 import models as models_v20191212
 from tencentcloud.cvm.v20170312 import cvm_client as cvm_client_v20170312
 from tencentcloud.cvm.v20170312 import models as models_v20170312
 
@@ -4958,11 +4960,13 @@ def doDescribeChcHosts(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20191212": cvm_client_v20191212,
     "v20170312": cvm_client_v20170312,
 
 }
 
 MODELS_MAP = {
+    "v20191212": models_v20191212,
     "v20170312": models_v20170312,
 
 }
@@ -5067,6 +5071,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20191212",
     "v20170312",
 
 ]

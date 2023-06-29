@@ -1,13 +1,14 @@
-**Example 1: 创建复制组实例**
+**Example 1: 请求示例**
 
-
+创建复制组实例
 
 Input: 
 
 ```
 tccli redis CreateReplicationGroup --cli-unfold-argument  \
-    --InstanceId crs-5qlrlhux \
-    --GroupName name
+    --InstanceId crs-5qlr**** \
+    --GroupName name \
+    --EnablePolaris 0
 ```
 
 Output: 

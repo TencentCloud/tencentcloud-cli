@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeReconciliationDirection": [
+      {
+        "document": "腾讯联通跨境对账系统-方向",
+        "input": "POST / HTTP/1.1\nHost: vpcdefensor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReconciliationDirection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Direction\": [\n            \"中国-香港\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "腾讯联通跨境对账系统-方向"
+      }
+    ]
+  },
+  "version": "1.0"
+}

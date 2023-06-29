@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli camp DescribePods --cli-unfold-argument  \
+    --ProjectID prj-27np9q4t \
+    --ApplicationID app-wchnr4pv \
     --InstanceID ins-xxxx
 ```
 
@@ -13,7 +15,43 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "67580ea3-66a3-4826-a589-6fa567ed544e"
+        "Pods": [
+            {
+                "Name": "abc",
+                "ComponentName": "abc",
+                "Containers": [
+                    {
+                        "Name": "abc",
+                        "Image": "abc",
+                        "Command": [
+                            "abc"
+                        ],
+                        "Args": [
+                            "abc"
+                        ],
+                        "WorkingDir": "abc"
+                    }
+                ],
+                "Region": "abc",
+                "ClusterID": "abc",
+                "ClusterType": "abc",
+                "Zone": "abc",
+                "IP": "abc",
+                "Phase": "abc",
+                "State": "abc",
+                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "UID": "abc",
+                "Status": {},
+                "PVCs": [
+                    {
+                        "Name": "abc",
+                        "CBS": "abc"
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

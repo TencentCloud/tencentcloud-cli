@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ResetAuthUserPassword": [
+      {
+        "document": "",
+        "input": "https://goa.tencentcloudapi.com/?Action=ResetAuthUserPassword\n&UserName=qwe\n&Password=123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
+        "title": "重置用户密码"
+      }
+    ]
+  },
+  "version": "1.0"
+}

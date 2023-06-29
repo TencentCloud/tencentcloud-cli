@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeProductInputType": [
+      {
+        "document": "查询云产品交互类型",
+        "input": "POST / HTTP/1.1\nHost: smp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductInputType\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_ccn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02667663-b109-4ec0-a325-62deeb4e4ca1\",\n        \"Data\": {\n            \"Id\": \"7\",\n            \"ProductCode\": \"p_ccn\",\n            \"TypeName\": \"t_ccn\",\n            \"InputJson\": [\n                {\n                    \"InputType\": \"Select\",\n                    \"FieldKey\": \"ServiceLevel\",\n                    \"DataType\": \"Enum\",\n                    \"Name\": \"服务等级\",\n                    \"Enum\": [\n                        {\n                            \"EnumKey\": \"Default\",\n                            \"EnumValue\": \"金\"\n                        },\n                        {\n                            \"EnumKey\": \"Platinum\",\n                            \"EnumValue\": \"白金\"\n                        },\n                        {\n                            \"EnumKey\": \"Silver\",\n                            \"EnumValue\": \"银\"\n                        }\n                    ],\n                    \"Required\": true,\n                    \"Default\": \"Default\",\n                    \"Unit\": \"\"\n                },\n                {\n                    \"InputType\": \"Input\",\n                    \"FieldKey\": \"ResourceId\",\n                    \"DataType\": \"String\",\n                    \"Name\": \"资源ID\",\n                    \"Enum\": [],\n                    \"Required\": true,\n                    \"Default\": \"\",\n                    \"Unit\": \"\"\n                },\n                {\n                    \"InputType\": \"MonthDate\",\n                    \"FieldKey\": \"DownMonth\",\n                    \"DataType\": \"String\",\n                    \"Name\": \"故障发生月份\",\n                    \"Enum\": [],\n                    \"Required\": true,\n                    \"Default\": \"\",\n                    \"Unit\": \"\"\n                },\n                {\n                    \"InputType\": \"Input\",\n                    \"FieldKey\": \"DownTime\",\n                    \"DataType\": \"Integer\",\n                    \"Name\": \"不可用服务时间\",\n                    \"Enum\": [],\n                    \"Required\": true,\n                    \"Default\": \"\",\n                    \"Unit\": \"分钟\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询云产品交互类型"
+      }
+    ],
+    "DescribeResourcesSLAPayment": [
+      {
+        "document": "SLA赔付金额计算",
+        "input": "POST / HTTP/1.1\nHost: smp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesSLAPayment\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_cvm\",\n    \"SubProductCode\": \"\",\n    \"PayerUin\": \"客户UIN\",\n    \"Operator\": \"abc\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"资源ID\",\n            \"DownMonth\": \"2023-05\",\n            \"DownTime\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87\n        }\n    }\n}",
+        "title": "SLA赔付金额计算"
+      }
+    ]
+  },
+  "version": "1.0"
+}

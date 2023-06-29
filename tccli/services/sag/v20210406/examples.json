@@ -1,0 +1,149 @@
+{
+  "actions": {
+    "AddAttrGroup": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=AddAttrGroup\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"Id\": 1\n    }\n}",
+        "title": "增加属性组"
+      }
+    ],
+    "DeleteAttrGroup": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DeleteAttrGroup\n&Id=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除用户属性组"
+      }
+    ],
+    "DescribeAttrOptionList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeAttrOptionList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AttrList\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"任意属性\"\n            }\n        ],\n        \"CondList\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"任意条件\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取属性选项列表"
+      }
+    ],
+    "DescribeAttrUserList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeAttrUserList\n&GroupId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Attr\": 1,\n                \"Cond\": 1\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取用户属性列表"
+      }
+    ],
+    "DescribeCompliance": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeCompliance\n&Os=Windows\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CycleCheck\": 1,\n            \"CycleInterval\": 10,\n            \"FixRemind\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取合规配置"
+      }
+    ],
+    "DescribeComplianceKbList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeComplianceKbList\n&Os=Windows\n&Offset=1\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"List\": [\n            {\n                \"Kb\": \"KB2207566\",\n                \"Desc\": \"现已确认有一个安全问题，未通过身份验证的远程攻击者可能会利用此问题导致受影响的系统停止响应。\",\n                \"PubTime\": \"2010.10.25\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取合规补丁列表"
+      }
+    ],
+    "DescribeComplianceOptionList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeComplianceOptionList\n&Os=Windows\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"ioa\",\n                \"CheckEnable\": 1,\n                \"RiskLevel\": 1,\n                \"CheckCount\": 2\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "展示合规选项卡"
+      }
+    ],
+    "DescribeComplianceOriginIoaList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeComplianceOriginIoaList\n&Os=Windows\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IoaVersion\": \"2.4.2\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取合规IOA源配置"
+      }
+    ],
+    "DescribeComplianceOriginKbList": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeComplianceOriginKbList\n&Os=Windows\n&Offset=1\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"List\": [\n            {\n                \"Kb\": \"KB2207566\",\n                \"Desc\": \"现已确认有一个安全问题，未通过身份验证的远程攻击者可能会利用此问题导致受影响的系统停止响应。\",\n                \"PubTime\": \"2010.10.25\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取合规源补丁列表"
+      }
+    ],
+    "DescribeComplianceOs": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeComplianceOs\n&Os=Windows\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OsName\": \"Windwos 7\",\n            \"OsVersion\": \"6.1.7600\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取合规系统版本信息"
+      }
+    ],
+    "DescribeDepartmentDirectUsers": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeDepartmentDirectUsers\n&DepartmentId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": \"1\",\n                \"Name\": \"张三\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取部门直属用户"
+      }
+    ],
+    "DescribeOrderInfo": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=DescribeOrderInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Order\": {\n            \"ResourceId\": \"11111\",\n            \"EndTime\": \"2222\",\n            \"InquireNum\": 6666\n        }\n    }\n}",
+        "title": "获取订单信息"
+      }
+    ],
+    "ModifyAttrGroup": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=ModifyAttrGroup\n&Id=1\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "更改属性组"
+      }
+    ],
+    "ModifyCompliance": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=ModifyCompliance\n&Os=Windows\n&CycleCheck=1\n&CycleInterval=30\n&FixRemind=1\n&IntervalUnit=hour\n&IsCustomInterval=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "更改合规配置"
+      }
+    ],
+    "ModifyComplianceAv": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=ModifyComplianceAv\n&Os=Windows\n&AvName=\"MSE\"\n&AvVersion=\"\"\n&LibVersion=\"\"\n&CheckEnable=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "更改合规杀软配置"
+      }
+    ],
+    "ModifyComplianceKb": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=ModifyComplianceKb\n&Os=Windows\n&Kbs.0=\"aaa\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "更改合规补丁配置"
+      }
+    ],
+    "ModifyComplianceOption": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=ModifyComplianceOption\n&Os=Windows\n&Name=\"ioa\"\n&CheckEnable=1\n&RiskLevel=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "修改合规选项卡配置"
+      }
+    ],
+    "OpenOrderTrial": [
+      {
+        "document": "",
+        "input": "https://sag.tencentcloudapi.com/?Action=OpenOrderTrial\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "开通试用订单"
+      }
+    ]
+  },
+  "version": "1.0"
+}

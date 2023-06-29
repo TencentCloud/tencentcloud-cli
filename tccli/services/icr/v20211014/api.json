@@ -1,0 +1,639 @@
+{
+  "actions": {
+    "GetIndustryV1HomeMembers": {
+      "document": "获取成员列表接口",
+      "input": "GetIndustryV1HomeMembersRequest",
+      "name": "获取成员列表",
+      "output": "GetIndustryV1HomeMembersResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-10-14",
+    "api_brief": "目前API接口仅供控制台使用，主要能力包括：\r\n查询机器人信息、发送验证码、绑定账号、获取购买记录",
+    "serviceNameCN": "对话机器人",
+    "serviceShortName": "icr"
+  },
+  "objects": {
+    "GetIndustryV1HomeMembersReqPayload": {
+      "document": "获取成员列表入参payload",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetIndustryV1HomeMembersRequest": {
+      "document": "GetIndustryV1HomeMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersReqPayload",
+          "name": "Payload",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "ReqMetadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetIndustryV1HomeMembersRespData": {
+      "document": "获取成员列表回包DataList",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EditTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespFeature",
+          "name": "FeatureList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户行业分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndustryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MemberNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespProduct",
+          "name": "ProductList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespType",
+          "name": "TypeList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersRespFeature": {
+      "document": "获取成员列表接口回包Feature",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeatureName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "功能ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersRespIndustry": {
+      "document": "获取成员列表回包Industry",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "行业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "行业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndustryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersRespPayload": {
+      "document": "获取成员列表回包Payload",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespData",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页偏移量，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersRespProduct": {
+      "document": "获取成员列表接口回包ProductList",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EditTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人ID（AppKey信息）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "行业信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespIndustry",
+          "name": "Industry",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "操作员列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "机器人名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersRespType": {
+      "document": "获取成员列表接口回包TypeList",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetIndustryV1HomeMembersResponse": {
+      "document": "GetIndustryV1HomeMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RspMetadata",
+          "name": "Metadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetIndustryV1HomeMembersRespPayload",
+          "name": "Payload",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReqMetadata": {
+      "document": "请求的Metadata",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "渠道",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "GUID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "AppKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "位置定位服务",
+          "example": "无",
+          "member": "ReqMetadataLBS",
+          "name": "LBS",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "透传字段",
+          "example": "无",
+          "member": "ReqMetadataVagrant",
+          "name": "Vagrants",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ReqMetadataLBS": {
+      "document": "请求参数的lbs",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "纬度",
+          "example": "无",
+          "member": "float",
+          "name": "Latitude",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "经度",
+          "example": "无",
+          "member": "float",
+          "name": "Longitude",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ReqMetadataVagrant": {
+      "document": "请求参数Vagrant",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RspMetadata": {
+      "document": "回包的meta data",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SessionID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SessionDelta",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

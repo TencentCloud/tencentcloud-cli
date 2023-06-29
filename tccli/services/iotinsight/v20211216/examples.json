@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "BatchPubMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotinsight.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchPubMessage\n<公共请求参数>\n\n{\n    \"SourceId\": \"865618bf-85ba-42da-89a2-613764820aa7\",\n    \"Messages\": [\n        {\n            \"MessageId\": \"1234\",\n            \"Payload\": \"{\\\"test\\\":\\\"1111\\\"}\"\n        },\n        {\n            \"MessageId\": \"34567\",\n            \"Payload\": \"{\\\"test\\\":\\\"2222\\\"}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb6dabbc-ee60-453c-956b-45acc018793c\"\n    }\n}",
+        "title": "API数据源接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

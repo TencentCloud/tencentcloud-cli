@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "UploadData": [
+      {
+        "document": "适用于在cem已有实体，然后通过该接口上报数据。\n流程： 沟通需求 -> cem建立实体 -> 配置字段映射 -> 提供业务唯一码，上报数据 \n\nData参数是一个序列化的数组",
+        "input": "POST / HTTP/1.1\nHost: cem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadData\n<公共请求参数>\n\n{\n    \"Business\": \"xxxx\",\n    \"Data\": \"[{\\\"LicenseId\\\":\\\"1673424067\\\",\\\"UserFullName\\\":\\\"测试\\\",\\\"ProductSpec\\\":\\\"basic\\\",\\\"NodeCount\\\":200,\\\"StartTime\\\":1673424067,\\\"Duration\\\":5184000,\\\"EndTime\\\":1673424067,\\\"DeployEnv\\\":\\\"容器部署\\\",\\\"Status\\\":2,\\\"IsGenerate\\\":1,\\\"GranteeName\\\":\\\"test\\\"}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Response\": [\n            2680693150681112\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "上报数据到cem"
+      }
+    ]
+  },
+  "version": "1.0"
+}

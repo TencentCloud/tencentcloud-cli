@@ -1,0 +1,117 @@
+{
+  "actions": {
+    "SearchEnterprise": {
+      "document": "匹配与输入最接近的企业名称",
+      "input": "SearchEnterpriseRequest",
+      "name": "企业名称智能提示",
+      "output": "SearchEnterpriseResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-17",
+    "api_brief": "提供城市宏观经济分析，地方重点企业评估和监控服务，洞察企业风险和价值",
+    "serviceNameCN": "企业画像",
+    "serviceShortName": "ep"
+  },
+  "objects": {
+    "EnterpriseName": {
+      "document": "企业名称智能匹配响应",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业名称",
+          "example": "腾讯科技（深圳）有限公司",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检索命中名称类型，admin: 工商注册名; history: 历史注册名; abbr: 缩写; product: 产品名",
+          "example": "abbr",
+          "member": "string",
+          "name": "SearchNameType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "检索命中名称",
+          "example": "腾讯",
+          "member": "string",
+          "name": "SearchName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchEnterpriseRequest": {
+      "document": "SearchEnterprise请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业名称",
+          "example": "腾讯",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "限制数目",
+          "example": "3",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchEnterpriseResponse": {
+      "document": "SearchEnterprise返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业名称列表",
+          "example": "-",
+          "member": "EnterpriseName",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

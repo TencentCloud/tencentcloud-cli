@@ -1,0 +1,6817 @@
+{
+  "actions": {
+    "AuthorizedTransfer": {
+      "document": "接收客户侧的用户已授权的号码。",
+      "input": "AuthorizedTransferRequest",
+      "name": "授权数据上报接口",
+      "output": "AuthorizedTransferResponse",
+      "status": "online"
+    },
+    "CreateCodeBatch": {
+      "document": "新增批次",
+      "input": "CreateCodeBatchRequest",
+      "name": "新增批次",
+      "output": "CreateCodeBatchResponse",
+      "status": "online"
+    },
+    "CreateCodePack": {
+      "document": "生成普通码包",
+      "input": "CreateCodePackRequest",
+      "name": "生成普通码包",
+      "output": "CreateCodePackResponse",
+      "status": "online"
+    },
+    "CreateCorporationOrder": {
+      "document": "以订单方式新建企业信息/配额信息",
+      "input": "CreateCorporationOrderRequest",
+      "name": "以订单方式新建企业",
+      "output": "CreateCorporationOrderResponse",
+      "status": "online"
+    },
+    "CreateCustomPack": {
+      "document": "生成自定义码包",
+      "input": "CreateCustomPackRequest",
+      "name": "生成自定义码包",
+      "output": "CreateCustomPackResponse",
+      "status": "online"
+    },
+    "CreateCustomRule": {
+      "document": "新建自定义码规则",
+      "input": "CreateCustomRuleRequest",
+      "name": "新建自定义码规则",
+      "output": "CreateCustomRuleResponse",
+      "status": "online"
+    },
+    "CreateMerchant": {
+      "document": "新建商户",
+      "input": "CreateMerchantRequest",
+      "name": "新建商户",
+      "output": "CreateMerchantResponse",
+      "status": "online"
+    },
+    "CreateProduct": {
+      "document": "新建商品",
+      "input": "CreateProductRequest",
+      "name": "新建商品",
+      "output": "CreateProductResponse",
+      "status": "online"
+    },
+    "CreateTraceChain": {
+      "document": "上链溯源信息",
+      "input": "CreateTraceChainRequest",
+      "name": "上链溯源信息",
+      "output": "CreateTraceChainResponse",
+      "status": "online"
+    },
+    "CreateTraceCodes": {
+      "document": "批量绑定指定批次并激活二维码，只支持平台发的码，且只会激活没有使用过的码",
+      "input": "CreateTraceCodesRequest",
+      "name": "批量导入二维码",
+      "output": "CreateTraceCodesResponse",
+      "status": "online"
+    },
+    "CreateTraceCodesAsync": {
+      "document": "异步导入激活码包，如果是第三方码包，需要域名跟配置的匹配",
+      "input": "CreateTraceCodesAsyncRequest",
+      "name": "异步导入激活码包",
+      "output": "CreateTraceCodesAsyncResponse",
+      "status": "online"
+    },
+    "CreateTraceData": {
+      "document": "新增溯源信息",
+      "input": "CreateTraceDataRequest",
+      "name": "新增溯源信息",
+      "output": "CreateTraceDataResponse",
+      "status": "online"
+    },
+    "DeleteCodeBatch": {
+      "document": "删除批次",
+      "input": "DeleteCodeBatchRequest",
+      "name": "删除批次",
+      "output": "DeleteCodeBatchResponse",
+      "status": "online"
+    },
+    "DeleteMerchant": {
+      "document": "删除商户",
+      "input": "DeleteMerchantRequest",
+      "name": "删除商户",
+      "output": "DeleteMerchantResponse",
+      "status": "online"
+    },
+    "DeleteProduct": {
+      "document": "删除商品，如果商品被使用，则不可删除",
+      "input": "DeleteProductRequest",
+      "name": "删除商品",
+      "output": "DeleteProductResponse",
+      "status": "online"
+    },
+    "DeleteTraceData": {
+      "document": "删除溯源信息，如果已经上链则不可删除",
+      "input": "DeleteTraceDataRequest",
+      "name": "删除溯源信息",
+      "output": "DeleteTraceDataResponse",
+      "status": "online"
+    },
+    "DescribeAgentCorps": {
+      "document": "查询渠道企业列表",
+      "input": "DescribeAgentCorpsRequest",
+      "name": "查询渠道企业列表",
+      "output": "DescribeAgentCorpsResponse",
+      "status": "online"
+    },
+    "DescribeCodeBatchById": {
+      "document": "查询批次信息",
+      "input": "DescribeCodeBatchByIdRequest",
+      "name": "查询批次信息",
+      "output": "DescribeCodeBatchByIdResponse",
+      "status": "online"
+    },
+    "DescribeCodeBatchs": {
+      "document": "查询批次列表",
+      "input": "DescribeCodeBatchsRequest",
+      "name": "查询批次列表",
+      "output": "DescribeCodeBatchsResponse",
+      "status": "online"
+    },
+    "DescribeCodePackStatus": {
+      "document": "查询码包状态",
+      "input": "DescribeCodePackStatusRequest",
+      "name": "查询码包状态",
+      "output": "DescribeCodePackStatusResponse",
+      "status": "online"
+    },
+    "DescribeCodePackUrl": {
+      "document": "查询码包地址",
+      "input": "DescribeCodePackUrlRequest",
+      "name": "查询码包地址",
+      "output": "DescribeCodePackUrlResponse",
+      "status": "online"
+    },
+    "DescribeCodePacks": {
+      "document": "查询码包列表",
+      "input": "DescribeCodePacksRequest",
+      "name": "查询码包列表",
+      "output": "DescribeCodePacksResponse",
+      "status": "online"
+    },
+    "DescribeCodesByPack": {
+      "document": "查询码包的二维码列表，上限 3 万",
+      "input": "DescribeCodesByPackRequest",
+      "name": "查询码包的二维码列表",
+      "output": "DescribeCodesByPackResponse",
+      "status": "online"
+    },
+    "DescribeCorpQuotas": {
+      "document": "查询渠道商下属企业额度使用情况",
+      "input": "DescribeCorpQuotasRequest",
+      "name": "查询渠道商下属企业额度使用情况",
+      "output": "DescribeCorpQuotasResponse",
+      "status": "online"
+    },
+    "DescribeCustomRuleById": {
+      "document": "查自定义码规则",
+      "input": "DescribeCustomRuleByIdRequest",
+      "name": "查自定义码规则",
+      "output": "DescribeCustomRuleByIdResponse",
+      "status": "online"
+    },
+    "DescribeCustomRules": {
+      "document": "查自定义码规则列表",
+      "input": "DescribeCustomRulesRequest",
+      "name": "查自定义码规则列表",
+      "output": "DescribeCustomRulesResponse",
+      "status": "online"
+    },
+    "DescribeJobFileUrl": {
+      "document": "获取异步任务的输出地址",
+      "input": "DescribeJobFileUrlRequest",
+      "name": "获取异步任务的输出地址",
+      "output": "DescribeJobFileUrlResponse",
+      "status": "online"
+    },
+    "DescribeMerchantById": {
+      "document": "查询商户信息",
+      "input": "DescribeMerchantByIdRequest",
+      "name": "查询商户信息",
+      "output": "DescribeMerchantByIdResponse",
+      "status": "online"
+    },
+    "DescribeMerchants": {
+      "document": "查询商户列表",
+      "input": "DescribeMerchantsRequest",
+      "name": "查询商户列表",
+      "output": "DescribeMerchantsResponse",
+      "status": "online"
+    },
+    "DescribeProductById": {
+      "document": "查询商品信息",
+      "input": "DescribeProductByIdRequest",
+      "name": "查询商品信息",
+      "output": "DescribeProductByIdResponse",
+      "status": "online"
+    },
+    "DescribeProducts": {
+      "document": "查询商品列表",
+      "input": "DescribeProductsRequest",
+      "name": "查询商品列表",
+      "output": "DescribeProductsResponse",
+      "status": "online"
+    },
+    "DescribeScanLogs": {
+      "document": "查询扫码日志明细",
+      "input": "DescribeScanLogsRequest",
+      "name": "查询扫码日志明细",
+      "output": "DescribeScanLogsResponse",
+      "status": "online"
+    },
+    "DescribeScanStats": {
+      "document": "查询扫码的统计信息列表，支持按照商户ID，产品ID，批次ID，安心码筛选，筛选条件至少有一个\n没有被扫过的不会返回",
+      "input": "DescribeScanStatsRequest",
+      "name": "查询扫码统计列表",
+      "output": "DescribeScanStatsResponse",
+      "status": "online"
+    },
+    "DescribeTmpToken": {
+      "document": "查询临时Token，主要用于上传接口",
+      "input": "DescribeTmpTokenRequest",
+      "name": "查询临时Token",
+      "output": "DescribeTmpTokenResponse",
+      "status": "online"
+    },
+    "DescribeTraceCodeById": {
+      "document": "查询二维码信息",
+      "input": "DescribeTraceCodeByIdRequest",
+      "name": "查询二维码信息",
+      "output": "DescribeTraceCodeByIdResponse",
+      "status": "online"
+    },
+    "DescribeTraceCodes": {
+      "document": "查询二维码列表",
+      "input": "DescribeTraceCodesRequest",
+      "name": "查询二维码列表",
+      "output": "DescribeTraceCodesResponse",
+      "status": "online"
+    },
+    "DescribeTraceDataById": {
+      "document": "查询溯源ID查溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的",
+      "input": "DescribeTraceDataByIdRequest",
+      "name": "根据溯源ID查溯源信息",
+      "output": "DescribeTraceDataByIdResponse",
+      "status": "online"
+    },
+    "DescribeTraceDataList": {
+      "document": "查询溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的",
+      "input": "DescribeTraceDataListRequest",
+      "name": "查询溯源信息",
+      "output": "DescribeTraceDataListResponse",
+      "status": "online"
+    },
+    "EffectFeedback": {
+      "document": "接收客户反馈的各环节数据",
+      "input": "EffectFeedbackRequest",
+      "name": "效果数据反馈",
+      "output": "EffectFeedbackResponse",
+      "status": "online"
+    },
+    "ModifyCodeBatch": {
+      "document": "修改批次",
+      "input": "ModifyCodeBatchRequest",
+      "name": "修改批次",
+      "output": "ModifyCodeBatchResponse",
+      "status": "online"
+    },
+    "ModifyCustomRule": {
+      "document": "修改自定义码规则",
+      "input": "ModifyCustomRuleRequest",
+      "name": "修改自定义码规则",
+      "output": "ModifyCustomRuleResponse",
+      "status": "online"
+    },
+    "ModifyCustomRuleStatus": {
+      "document": "更新自定义码规则状态",
+      "input": "ModifyCustomRuleStatusRequest",
+      "name": "更新自定义码规则状态",
+      "output": "ModifyCustomRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyMerchant": {
+      "document": "编辑商户",
+      "input": "ModifyMerchantRequest",
+      "name": "编辑商户",
+      "output": "ModifyMerchantResponse",
+      "status": "online"
+    },
+    "ModifyProduct": {
+      "document": "编辑商品",
+      "input": "ModifyProductRequest",
+      "name": "编辑商品",
+      "output": "ModifyProductResponse",
+      "status": "online"
+    },
+    "ModifyTraceCode": {
+      "document": "冻结或者激活二维码，所属的批次的冻结状态优先级大于单个二维码的状态，即如果批次是冻结的，那么该批次下二维码的状态都是冻结的",
+      "input": "ModifyTraceCodeRequest",
+      "name": "修改二维码的状态",
+      "output": "ModifyTraceCodeResponse",
+      "status": "online"
+    },
+    "ModifyTraceCodeUnlink": {
+      "document": "解绑溯源码和批次的关系，让溯源码重置为未关联的状态，以便关联其他批次\n注意：溯源码必须属于指定的批次才会解绑",
+      "input": "ModifyTraceCodeUnlinkRequest",
+      "name": "解绑溯源码和批次的关系",
+      "output": "ModifyTraceCodeUnlinkResponse",
+      "status": "online"
+    },
+    "ModifyTraceData": {
+      "document": "修改溯源信息",
+      "input": "ModifyTraceDataRequest",
+      "name": "修改溯源信息",
+      "output": "ModifyTraceDataResponse",
+      "status": "online"
+    },
+    "ModifyTraceDataRanks": {
+      "document": "修改溯源信息的排序",
+      "input": "ModifyTraceDataRanksRequest",
+      "name": "修改溯源信息的排序",
+      "output": "ModifyTraceDataRanksResponse",
+      "status": "online"
+    },
+    "ReportBatchCallbackStatus": {
+      "document": "接收离线筛选包回执，用于效果统计和分析。",
+      "input": "ReportBatchCallbackStatusRequest",
+      "name": "离线筛选包数据推送",
+      "output": "ReportBatchCallbackStatusResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-05-15",
+    "api_brief": "实现安心平台在业务过程中创建企业、查询付费状态、查询账号权限、二维码信息同步、二维码上链、查询商品溯源信息、数据上报等能力",
+    "serviceNameCN": "T-Sec-安心平台(RP)",
+    "serviceShortName": "trp"
+  },
+  "objects": {
+    "AttrItem": {
+      "document": "通用属性\n\nType 的枚举值\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n\n具体组合如下\n- Type: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\n- Type: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\n- Type: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\n- Type: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\n- Type: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\n- Type: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "商品名称2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "demo",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\ntext:文本类型, \nlongtext:长文本类型, banner:单图片类型, image:多图片类型,\nvideo:视频类型,\nmp:小程序类型",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫码展示",
+          "example": "false",
+          "member": "bool",
+          "name": "Hidden",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "多个值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "类型标识",
+          "example": "ID",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段",
+          "example": "无",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthorizedTransferRequest": {
+      "document": "AuthorizedTransfer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AuthorizedTransferResponse": {
+      "document": "AuthorizedTransfer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChainData": {
+      "document": "上链数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区块hash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0xfc7f37ba117bb01afd237c6949f7d6a0b0d4a4c785b3fb90cd9004e0335a9d",
+          "member": "string",
+          "name": "BlockHash",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "区块高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "28102",
+          "member": "string",
+          "name": "BlockHeight",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "区块时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021",
+          "member": "string",
+          "name": "BlockTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CodeBatch": {
+      "document": "批次",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20121212000001",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次编码(未使用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20121212000001",
+          "member": "string",
+          "name": "BatchCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CodeCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eqdmnz7020bmtvi9",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "85tfp1sn78r9m1568i",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BatchType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "微信模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信模板",
+          "member": "string",
+          "name": "MpTpl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-01T06:48:45.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-01T06:48:45.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "所属商户名称",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "扩展字段",
+          "member": "Ext",
+          "name": "Ext",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模板名称",
+          "member": "string",
+          "name": "TplName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "调度任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Job",
+          "name": "Job",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生产日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-12",
+          "member": "string",
+          "name": "ProductionDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扩展属性",
+          "example": "无",
+          "member": "AttrItem",
+          "name": "Attrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "CodeItem": {
+      "document": "码类型",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_02135114982303292",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CodePack": {
+      "document": "码包类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[time] xx",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "防伪码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否暗码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cipher",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[弃用] 文字码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "TextUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[弃用] 二维码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "PackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码规则类型 0: 默认, 1: 自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码包类型 0: 普通码包 1: 层级码包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PackType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生码层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "层级码配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " 无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否有流水码 0:无 1:有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "字符长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CharLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "关联批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "CodePart": {
+      "document": "码段配置",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "码段",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "str",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "CorpQuota": {
+      "document": "渠道商的子企业额度使用情况",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业名称",
+          "example": "渠道商企业",
+          "member": "string",
+          "name": "CorpName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "额度",
+          "example": "{}",
+          "member": "Quota",
+          "name": "Quota",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "额度使用量",
+          "example": "{}",
+          "member": "UsageQuota",
+          "name": "UsageQuota",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCodeBatchRequest": {
+      "document": "CreateCodeBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户ID",
+          "example": "商户ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次类型 0:溯源 1:营销",
+          "example": "1",
+          "member": "uint64",
+          "name": "BatchType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID，留空时系统自动生成",
+          "example": "批次ID",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模版ID，或者活动ID",
+          "example": "1",
+          "member": "string",
+          "name": "MpTpl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "克隆批次ID，同时会复制溯源信息",
+          "example": "10000",
+          "member": "string",
+          "name": "CloneId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次编号，业务字段不判断唯一性",
+          "example": "202210",
+          "member": "string",
+          "name": "BatchCode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生产日期",
+          "example": "2022-05-01",
+          "member": "string",
+          "name": "ProductionDate",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCodeBatchResponse": {
+      "document": "CreateCodeBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCodePackRequest": {
+      "document": "CreateCodePack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码长度",
+          "example": "18",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码类型 alphabet 字母, number 数字, mixin 混合",
+          "example": "number",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "生码数量 普通码包时必填",
+          "example": "10",
+          "member": "int64",
+          "name": "Amount",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包类型 0: 普通码包 1: 层级码包",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包层级",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackLevel",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包规格",
+          "example": "无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
+          "example": "id",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCodePackResponse": {
+      "document": "CreateCodePack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码包ID",
+          "example": "abc",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorporationOrderRequest": {
+      "document": "CreateCorporationOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业名称",
+          "example": "安心",
+          "member": "string",
+          "name": "CorpName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "所有者ID",
+          "example": "1000",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源码额度",
+          "example": "100000",
+          "member": "uint64",
+          "name": "CodeQuota",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "额度过期时间",
+          "example": "2021-05-05 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "金额",
+          "example": "10000",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "联系电话",
+          "example": "13912345678",
+          "member": "string",
+          "name": "ContactNumber",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "张三创建企业",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorporationOrderResponse": {
+      "document": "CreateCorporationOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPackRequest": {
+      "document": "CreateCustomPack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "生码数量, 普通码包时必填",
+          "example": "10",
+          "member": "uint64",
+          "name": "Amount",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包类型 0: 普通码包 1: 层级码包",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包层级",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackLevel",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "层级码包规则",
+          "example": "无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID,  和CodeParts二选一必填",
+          "example": "customidx",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段配置，和CustomId二选一必填",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
+          "example": "id",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPackResponse": {
+      "document": "CreateCustomPack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码包ID",
+          "example": "abc",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomRuleRequest": {
+      "document": "CreateCustomRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "MerchantId",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码长度",
+          "example": "36",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段配置",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomRuleResponse": {
+      "document": "CreateCustomRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMerchantRequest": {
+      "document": "CreateMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户名称",
+          "example": "商户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包来源 0:自建, 1:第三发",
+          "example": "1",
+          "member": "int64",
+          "name": "CodeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包前缀地址 第三方码包时必填",
+          "example": "https://anxin.m.qq.com",
+          "member": "string",
+          "name": "CodeUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMerchantResponse": {
+      "document": "CreateMerchant返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ng3de73t",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductRequest": {
+      "document": "CreateProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品名称",
+          "example": "商品名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "商户ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户名称",
+          "example": "商户名称",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品规格",
+          "example": "100ml",
+          "member": "string",
+          "name": "Specification",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品图片",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "预留字段",
+          "example": "无",
+          "member": "Ext",
+          "name": "Ext",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductResponse": {
+      "document": "CreateProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tz6jpscwky41u23o9b",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceChainRequest": {
+      "document": "CreateTraceChain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "TraceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceChainResponse": {
+      "document": "CreateTraceChain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceCodesAsyncRequest": {
+      "document": "CreateTraceCodesAsync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "batchid",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "上传文件Key，仅支持 csv 或者 zip 类型",
+          "example": "anxin/filename.zip",
+          "member": "string",
+          "name": "FileKey",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceCodesAsyncResponse": {
+      "document": "CreateTraceCodesAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batchid",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceCodesRequest": {
+      "document": "CreateTraceCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码",
+          "example": "无",
+          "member": "CodeItem",
+          "name": "Codes",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码绑定激活策略，默认  0\n0: 传什么码就激活什么码\n1: 层级码 + 层级子码",
+          "example": "0",
+          "member": "uint64",
+          "name": "CodeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误检查类型，默认 0\n0: 没有新导入码时正常返回\n1: 没有新导入码时报错，并返回没有导入成功的原因",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceCodesResponse": {
+      "document": "CreateTraceCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "导入成功码数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActiveCnt",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次码数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "CodeCnt",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceDataRequest": {
+      "document": "CreateTraceData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
+          "example": "1",
+          "member": "uint64",
+          "name": "Phase",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源阶段名称",
+          "example": "名称",
+          "member": "string",
+          "name": "PhaseName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "[无效] 上链状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "[无效] 码类型 0: 批次, 1: 码, 2: 生产任务, 3: 物流信息",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "[无效] 溯源ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TraceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源信息",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "TraceItems",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源状态 0: 无效, 1: 有效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "环节数据",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceDataResponse": {
+      "document": "CreateTraceData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomRule": {
+      "document": "码规则",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID",
+          "example": "xxxid",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MerchantId",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码ID长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "规则状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段配置",
+          "example": "[]",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-19T11:46:53.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-09-19T11:46:53.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteCodeBatchRequest": {
+      "document": "DeleteCodeBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCodeBatchResponse": {
+      "document": "DeleteCodeBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMerchantRequest": {
+      "document": "DeleteMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户标识码",
+          "example": "awai9jd37ng3de7p3t",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMerchantResponse": {
+      "document": "DeleteMerchant返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"awai9jd37ng3de7p3t\"",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductRequest": {
+      "document": "DeleteProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品ID",
+          "example": "u0wa46ggyvtgzoen6r",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductResponse": {
+      "document": "DeleteProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ng3de7p3t",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTraceDataRequest": {
+      "document": "DeleteTraceData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "u0wa46ggyvtgzoen6r",
+          "member": "string",
+          "name": "TraceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTraceDataResponse": {
+      "document": "DeleteTraceData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"awai9jd37ng3de7p3t\"",
+          "member": "string",
+          "name": "TraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCorpsRequest": {
+      "document": "DescribeAgentCorps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "渠道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCorpsResponse": {
+      "document": "DescribeAgentCorps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeBatchByIdRequest": {
+      "document": "DescribeCodeBatchById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeBatchByIdResponse": {
+      "document": "DescribeCodeBatchById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次",
+          "example": "无",
+          "member": "CodeBatch",
+          "name": "CodeBatch",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeBatchsRequest": {
+      "document": "DescribeCodeBatchs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询商户ID",
+          "example": "商户ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询商品ID",
+          "example": "商品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询关键字",
+          "example": "关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次类型 0:溯源 1:营销",
+          "example": "无",
+          "member": "string",
+          "name": "BatchType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeBatchsResponse": {
+      "document": "DescribeCodeBatchs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodeBatch",
+          "name": "CodeBatchs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackStatusRequest": {
+      "document": "DescribeCodePackStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包ID",
+          "example": "PackId",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackStatusResponse": {
+      "document": "DescribeCodePackStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码包状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackUrlRequest": {
+      "document": "DescribeCodePackUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包ID",
+          "example": "PackId",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackUrlResponse": {
+      "document": "DescribeCodePackUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文字码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "图片码包地址，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "ImgUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文字码包Key，用于上传导入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "anxin/xxx.zip",
+          "member": "string",
+          "name": "FileKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePacksRequest": {
+      "document": "DescribeCodePacks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "7999",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询关键字",
+          "example": "安心",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePacksResponse": {
+      "document": "DescribeCodePacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CodePack",
+          "name": "CodePacks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "131",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodesByPackRequest": {
+      "document": "DescribeCodesByPack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包ID",
+          "example": "码包ID",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodesByPackResponse": {
+      "document": "DescribeCodesByPack返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodeItem",
+          "name": "Codes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpQuotasRequest": {
+      "document": "DescribeCorpQuotas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "渠道商ID，不要传",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索企业ID",
+          "example": "10000",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpQuotasResponse": {
+      "document": "DescribeCorpQuotas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子企业额度使用情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CorpQuota",
+          "name": "CorpQuotas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "记录总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleByIdRequest": {
+      "document": "DescribeCustomRuleById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID",
+          "example": "xxxxid",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleByIdResponse": {
+      "document": "DescribeCustomRuleById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomRule",
+          "name": "CustomRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesRequest": {
+      "document": "DescribeCustomRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索关键字",
+          "example": "关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "商户ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesResponse": {
+      "document": "DescribeCustomRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomRule",
+          "name": "CustomRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFileUrlRequest": {
+      "document": "DescribeJobFileUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "调度ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFileUrlResponse": {
+      "document": "DescribeJobFileUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMerchantByIdRequest": {
+      "document": "DescribeMerchantById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户标识码",
+          "example": "eqdmnz7020bmtvi9",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMerchantByIdResponse": {
+      "document": "DescribeMerchantById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Merchant",
+          "name": "Merchant",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMerchantsRequest": {
+      "document": "DescribeMerchants请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索商户名称",
+          "example": "关键字",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码来源类型 0:自建, 1:第三方",
+          "example": "1",
+          "member": "int64",
+          "name": "CodeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMerchantsResponse": {
+      "document": "DescribeMerchants返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Merchant",
+          "name": "Merchants",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductByIdRequest": {
+      "document": "DescribeProductById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品ID",
+          "example": "eqdmnz7020bmtvie9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductByIdResponse": {
+      "document": "DescribeProductById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Product",
+          "name": "Product",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品名称",
+          "example": "商品名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品ID",
+          "example": "商品ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Product",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanLogsRequest": {
+      "document": "DescribeScanLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "安心码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "Openid",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanLogsResponse": {
+      "document": "DescribeScanLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": true,
+          "document": "【弃用】",
+          "example": "无",
+          "member": "ScanLog",
+          "name": "Products",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫描记录",
+          "example": "无",
+          "member": "ScanLog",
+          "name": "ScanLogs",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatsRequest": {
+      "document": "DescribeScanStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户ID",
+          "example": "mid",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "pid",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "bid",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "安心码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatsResponse": {
+      "document": "DescribeScanStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计记录",
+          "example": "无",
+          "member": "ScanStat",
+          "name": "ScanStats",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTmpTokenRequest": {
+      "document": "DescribeTmpToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTmpTokenResponse": {
+      "document": "DescribeTmpToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AbXtx",
+          "member": "string",
+          "name": "Token",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceCodeByIdRequest": {
+      "document": "DescribeTraceCodeById请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceCodeByIdResponse": {
+      "document": "DescribeTraceCodeById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "TraceCode",
+          "name": "TraceCode",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码路径，如level是2，则为 [1级, 2级]",
+          "example": "无",
+          "member": "string",
+          "name": "CodePath",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceCodesRequest": {
+      "document": "DescribeTraceCodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索关键字 码标识，或者批次ID",
+          "example": "code",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID，弃用",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceCodesResponse": {
+      "document": "DescribeTraceCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TraceCode",
+          "name": "TraceCodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataByIdRequest": {
+      "document": "DescribeTraceDataById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataByIdResponse": {
+      "document": "DescribeTraceDataById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "TraceData",
+          "name": "TraceData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataListRequest": {
+      "document": "DescribeTraceDataList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID 用于外部溯源",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二维码",
+          "example": "xfetmgoiky2nms6nk8",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源",
+          "example": "0",
+          "member": "uint64",
+          "name": "Phase",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataListResponse": {
+      "document": "DescribeTraceDataList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "TraceData",
+          "name": "TraceDataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EffectFeedbackRequest": {
+      "document": "EffectFeedback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "EffectFeedbackResponse": {
+      "document": "EffectFeedback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Ext": {
+      "document": "预留字段",
+      "members": [],
+      "usage": "out"
+    },
+    "InputEncryptData": {
+      "document": "业务加密入参",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "加密方式，0：AES加密；\n",
+          "example": "1",
+          "member": "int64",
+          "name": "EncryptMethod",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式",
+          "example": "1",
+          "member": "int64",
+          "name": "EncryptMode",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "填充模式，0：ZeroPadding；1：PKCS5Padding；2：\nPKCS7Padding。",
+          "example": "1",
+          "member": "int64",
+          "name": "PaddingType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。",
+          "example": "abc",
+          "member": "string",
+          "name": "EncryptData",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "用户是否授权，本接口取值：1，已授权。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuthorized",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "Job": {
+      "document": "通用调度任务",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "调度ID",
+          "example": "1000",
+          "member": "int64",
+          "name": "JobId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败",
+          "example": "init",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Merchant": {
+      "document": "商户信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户标识码",
+          "example": "\"eqdmnz7020bmtvi9\"",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业id",
+          "example": "10000",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户名称",
+          "example": "\"demo\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"abcdd\"",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2021-11-30T08:19:40.000Z\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "更新时间",
+          "example": "\"2021-12-06T08:09:17.000Z\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户码规则",
+          "example": "\"^https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_(.*)\"",
+          "member": "string",
+          "name": "CodeRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码来源类型 0: 安心平台 1: 第三方码",
+          "example": "0",
+          "member": "int64",
+          "name": "CodeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "第三方码域名前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://anxin.m.qq.com",
+          "member": "string",
+          "name": "CodeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyCodeBatchRequest": {
+      "document": "ModifyCodeBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "状态 0: 未激活 1: 已激活 -1: 已冻结",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模板ID，或者活动ID",
+          "example": "abc",
+          "member": "string",
+          "name": "MpTpl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户ID",
+          "example": "1",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品ID",
+          "example": "1",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "abc",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次编码，业务字段不判断唯一性",
+          "example": "202210",
+          "member": "string",
+          "name": "BatchCode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ValidDate",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生产日期",
+          "example": "2023-05-01",
+          "member": "string",
+          "name": "ProductionDate",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCodeBatchResponse": {
+      "document": "ModifyCodeBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleRequest": {
+      "document": "ModifyCustomRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID",
+          "example": "CustomId",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码长度",
+          "example": "36",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段配置",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleResponse": {
+      "document": "ModifyCustomRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusRequest": {
+      "document": "ModifyCustomRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID",
+          "example": "CustomId",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusResponse": {
+      "document": "ModifyCustomRuleStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMerchantRequest": {
+      "document": "ModifyMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户名称",
+          "example": "商户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户标识码",
+          "example": "商户标识码",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包来源 0:自建, 1:第三码包，暂不支持修改",
+          "example": "0",
+          "member": "int64",
+          "name": "CodeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码包前缀地址 第三方码包时必填",
+          "example": "https://anxin.m.qq.com",
+          "member": "string",
+          "name": "CodeUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMerchantResponse": {
+      "document": "ModifyMerchant返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ng3de7p3t",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductRequest": {
+      "document": "ModifyProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品名称",
+          "example": "商品名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品ID",
+          "example": "85tfp1sn78r9m1568i",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品规格",
+          "example": "100ml",
+          "member": "string",
+          "name": "Specification",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品图片",
+          "example": "[]",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "预留字段",
+          "example": "无",
+          "member": "Ext",
+          "name": "Ext",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户ID",
+          "example": "''",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductResponse": {
+      "document": "ModifyProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "85tfp1sn78r9m1568i",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeRequest": {
+      "document": "ModifyTraceCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "二维码",
+          "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "状态 0: 冻结 1: 激活",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeResponse": {
+      "document": "ModifyTraceCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeUnlinkRequest": {
+      "document": "ModifyTraceCodeUnlink请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源码列表",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "Codes",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeUnlinkResponse": {
+      "document": "ModifyTraceCodeUnlink返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功解绑溯源码的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnlinkCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前批次的码数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "CodeCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "xx",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceDataRanksRequest": {
+      "document": "ModifyTraceDataRanks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "批次ID",
+          "example": "aa",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "生产任务ID",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "['abc']",
+          "member": "string",
+          "name": "TraceIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceDataRanksResponse": {
+      "document": "ModifyTraceDataRanks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceDataRequest": {
+      "document": "ModifyTraceData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "VyKxxkmi_myRD6ulG6HFo",
+          "member": "string",
+          "name": "TraceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "生产溯源任务ID",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源信息",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "TraceItems",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源阶段名称",
+          "example": "名称",
+          "member": "string",
+          "name": "PhaseName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环节数据",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源状态 0: 无效, 1: 有效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rank",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 溯源码",
+          "example": "xfetmgoiky2nms6nk8",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
+          "example": "1",
+          "member": "uint64",
+          "name": "Phase",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 溯源时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "TraceTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 创建时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 上链状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 上链时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "ChainTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "[无效] 上链数据",
+          "example": "无",
+          "member": "ChainData",
+          "name": "ChainData",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceDataResponse": {
+      "document": "ModifyTraceData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "abc",
+          "member": "string",
+          "name": "TraceId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OutputAuthorizedTransfer": {
+      "document": "业务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推送状态，0表示成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误信息描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "PackSpec": {
+      "document": "层级码配置",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "层级",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "比例",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxid",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "码段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "PhaseData": {
+      "document": "环节数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启用头",
+          "example": "false",
+          "member": "bool",
+          "name": "HeadEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "标题",
+          "member": "string",
+          "name": "HeadTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标识符",
+          "example": "product",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序AppId",
+          "example": "AppId",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序AppPath",
+          "example": "AppPath",
+          "member": "string",
+          "name": "AppPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称AppName",
+          "example": "AppName",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "Product": {
+      "document": "商品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商户标识码",
+          "example": "\"85tfp1sn78r9m1568i\"",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品名称",
+          "example": "\"demo5\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品id",
+          "example": "\"eqdmnz7020bmtvi9\"",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业id",
+          "example": "0",
+          "member": "int64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品编号",
+          "example": "\"85tfp1sn78r9m1568i\"",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”100ml“",
+          "member": "string",
+          "name": "Specification",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”“",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "\"2021-11-30T09:00:33.000Z\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "\"2021-12-07T02:14:37.000Z\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "预留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Ext",
+          "name": "Ext",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户名称",
+          "example": "\"demo\"",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "Quota": {
+      "document": "企业配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "021-05-11T16:00:00.000Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "021-05-11T16:00:00.000Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配额ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "QuotaId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开通服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"track\"]",
+          "member": "string",
+          "name": "Services",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "FactoryQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ItemQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "TrackQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "销售码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "SaleQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上链配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ChainQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "风控配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "RiskQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TrackType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "开通版本 lite:轻量版, basic:基础版, standard:标准版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ReportBatchCallbackStatusRequest": {
+      "document": "ReportBatchCallbackStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ReportBatchCallbackStatusResponse": {
+      "document": "ReportBatchCallbackStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanLog": {
+      "document": "扫码明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行ID",
+          "example": "1000",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Openid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "微信昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "天河区",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "微信 unionid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unionid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "首次扫码 0:否, 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "First",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanStat": {
+      "document": "扫码统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安心码",
+          "example": "https://anxin.m.qq.com/qr/bmy7uus50t54",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户ID",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫码次数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Pv",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫码人数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uv",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户名称",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "TraceCode": {
+      "document": "溯源码",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码包ID",
+          "example": "z1vt4ma2jpladh362o",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "批次ID",
+          "example": "xfetmgoiky2nms6nk8",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "所属商户ID",
+          "example": "eqdmnz7020bmtvi9",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "85tfp1sn78r9m1568i",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码状态 0: 冻结 1: 激活",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-12-01T09:04:50.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2021-12-01T09:04:50.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "商户名称",
+          "example": "商户名称",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "渠道商ID",
+          "example": "100",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码层级 0: 最小级, 1: 一级, 2: 二级",
+          "example": "0",
+          "member": "uint64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "TraceData": {
+      "document": "溯源数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "VyKxxkmi_myRD6ulG6HFo",
+          "member": "string",
+          "name": "TraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码类型 0: 批次, 1: 码, 2: 生产任务",
+          "example": "码类型",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "码值，跟码类型一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xfetmgoiky2nms6nk8",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序，在Phase相同情况下，值越小排名靠前",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rank",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
+          "example": "0",
+          "member": "uint64",
+          "name": "Phase",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源环节名称",
+          "example": "环节名称",
+          "member": "string",
+          "name": "PhaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "TraceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T09:20:57.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上链时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T09:20:57.000Z",
+          "member": "string",
+          "name": "ChainTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChainData",
+          "name": "ChainData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源阶段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "溯源阶段状态 0: 无效, 1: 有效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "TraceItems",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TraceItem": {
+      "document": "溯源数据项 Type 的枚举值\n\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n\n具体组合如下\n- Type: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\n- Type: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\n- Type: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\n- Type: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\n- Type: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\n- Type: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "商品名称2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "demo",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\ntext:文本类型, \nlongtext:长文本类型, banner:单图片类型, image:多图片类型,\nvideo:视频类型,\nmp:小程序类型",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "多个值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扫码展示",
+          "example": "false",
+          "member": "bool",
+          "name": "Hidden",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "类型标识",
+          "example": "ID",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段",
+          "example": "无",
+          "member": "string",
+          "name": "Ext",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "额外属性",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "Attrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子页面，只读",
+          "example": "无",
+          "member": "TraceData",
+          "name": "List",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "UsageQuota": {
+      "document": "付费信息使用量",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FactoryCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ItemCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "溯源码量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TrackCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "营销码额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SaleCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "区块链上链次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ChainCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "营销风控次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RiskCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-05-20",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -90,9 +90,9 @@
     ],
     "CreateIPStrategy": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\n&ServiceId=service-ody35h5e\n&StrategyName=xx\n&StrategyType=WHITE\n&StrategyData=1.1.1.1\\n2.2.2.2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ServiceId\": \"service-ody35h5e\",\n            \"StrategyId\": \"IPStrategy-4xj4r1ou\",\n            \"StrategyName\": \"xx\",\n            \"StrategyType\": \"WHITE\",\n            \"StrategyData\": \"1.1.1.1\\n2.2.2.2\",\n            \"CreatedTime\": \"2020-02-24T19:02:00Z\",\n            \"ModifiedTime\": \"2020-02-24T19:02:00Z\",\n            \"BindApiTotalCount\": null,\n            \"BindApis\": null\n        },\n        \"RequestId\": \"4336cff4-1d75-433b-8823-bcf8fa8773c6\"\n    }\n}",
+        "document": "创建服务IP策略",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateIPStrategy\n&ServiceId=service-ody35h5e\n&StrategyName=auto_CreateAndUpdateIPStrategy_Test_eldFAThl\n&StrategyType=WHITE\n&StrategyData=1.1.1.1\\n2.2.2.2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ServiceId\": \"service-ody35h5e\",\n            \"StrategyId\": \"IPStrategy-4xj4r1ou\",\n            \"StrategyName\": \"auto_CreateAndUpdateIPStrategy_Test_eldFAThl\",\n            \"StrategyType\": \"WHITE\",\n            \"StrategyData\": \"1.1.1.1\\n2.2.2.2\",\n            \"CreatedTime\": \"2020-02-24T19:02:00Z\",\n            \"ModifiedTime\": \"2020-02-24T19:02:00Z\",\n            \"BindApiTotalCount\": null,\n            \"BindApis\": null\n        },\n        \"RequestId\": \"4336cff4-1d75-433b-8823-bcf8fa8773c6\"\n    }\n}",
         "title": "CreateIPStrategy"
       }
     ],
@@ -112,7 +112,7 @@
     ],
     "CreateService": [
       {
-        "document": "",
+        "document": "创建服务时使用",
         "input": "https://apigateway.tencentcloudapi.com/?Action=CreateService\n&ServiceName=test_https\n&ServiceDesc=https\n&Protocol=https\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ServiceId\": \"service-0c96l2bo\",\n        \"ServiceName\": \"test_https\",\n        \"ServiceDesc\": \"https\",\n        \"OuterSubDomain\": \"service-0c96l2bo-1251006373.ap-guangzhou.apigateway.myqcloud.com\",\n        \"InnerSubDomain\": \"\",\n        \"IpVersion\": \"IPv4\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
         "title": "CreateService"
@@ -128,9 +128,9 @@
     ],
     "CreateUsagePlan": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\n&UsagePlanName=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\n            \"UsagePlanName\": \"xx\",\n            \"UsagePlanDesc\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\n    }\n}",
+        "document": "用户在使用 API 网关时，需要创建使用计划并将其绑定到服务的环境中使用。",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=CreateUsagePlan\n&UsagePlanName=auto_CreateAndUpdateUsageplan_Test_yu2hLs4d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UsagePlanId\": \"usagePlan-quqxvett\",\n            \"UsagePlanName\": \"auto_CreateAndUpdateUsageplan_Test_yu2hLs4d\",\n            \"UsagePlanDesc\": null,\n            \"MaxRequestNumPreSec\": null,\n            \"MaxRequestNum\": null,\n            \"CreatedTime\": \"2020-02-17T11:26:42Z\",\n            \"ModifiedTime\": \"2020-02-17T11:26:42Z\",\n            \"BindSecretIdTotalCount\": 0,\n            \"BindSecretIds\": null,\n            \"BindEnvironmentTotalCount\": 0,\n            \"BindEnvironments\": null\n        },\n        \"RequestId\": \"b30900ef-72e9-4076-a2bd-dc8caab1ef6f\"\n    }\n}",
         "title": "创建使用计划"
       }
     ],
@@ -192,8 +192,8 @@
     ],
     "DeleteServiceSubDomainMapping": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteServiceSubDomainMapping\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxxx\n&Environment=test\n&<公共请求参数>",
+        "document": "删除自定义域名的路径映射\n",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteServiceSubDomainMapping\n&ServiceId=service-19c5fnhy\n&SubDomain=doagkfrf.flyfly.wang \n&Environment=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"1ab681ab-545a-4e71-91f1-8f1ea8ef13ad\"\n    }\n}",
         "title": "删除自定义域名的路径映射"
       }
@@ -336,9 +336,9 @@
     ],
     "DescribeExclusiveInstanceDetail": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExclusiveInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"InstanceId\": \"instance-0c96l2bo\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Zones\": [\n                \"ap-guangzhou-1\"\n            ],\n            \"InstanceName\": \"test_instance\",\n            \"InstanceDescription\": \"\",\n            \"InstanceChargeType\": \"PREPAID\",\n            \"InstanceState\": \"RUNNING\",\n            \"InstanceChargePrepaid\": {\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"ExpiredTime\": \"2018-10-30T04:24:19\"\n            },\n            \"InstanceType\": \"BASIC\",\n            \"NetworkConfig\": {\n                \"InternetMaxBandwidthOut\": 10,\n                \"EnableInternetInbound\": true,\n                \"EnableInternetOutbound\": true,\n                \"InboundIpAddresses\": [\n                    \"10.10.10.10\"\n                ],\n                \"OutboundIpAddresses\": [\n                    \"10.10.10.11\"\n                ]\n            },\n            \"VpcConfig\": {\n                \"UniqVpcId\": \"vpc-12345\",\n                \"UniqSubnetId\": \"subnet-12345\"\n            },\n            \"Parameters\": [\n                {\n                    \"Name\": \"ServiceRequestNumPreSec\",\n                    \"Value\": 500,\n                    \"Default\": 500,\n                    \"Unit\": \"次/秒\",\n                    \"Type\": \"integer\",\n                    \"Minimum\": 0,\n                    \"Maximum\": 500,\n                    \"ModifedTime\": \"2018-10-30T04:24:19\"\n                }\n            ],\n            \"IsolationStartedTime\": \"2018-10-30T04:24:19Z\",\n            \"CreatedTime\": \"2018-10-30T04:24:19Z\"\n        },\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
+        "document": "查询独享实例详情",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExclusiveInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance-90v2ohwp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"InstanceId\": \"abc\",\n            \"Zone\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"InstanceDescription\": \"abc\",\n            \"InstanceChargeType\": \"abc\",\n            \"InstanceState\": \"abc\",\n            \"InstanceChargePrepaid\": {\n                \"RenewFlag\": \"abc\",\n                \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\"\n            },\n            \"InstanceType\": \"abc\",\n            \"NetworkConfig\": {\n                \"InternetMaxBandwidthOut\": 0,\n                \"EnableInternetInbound\": true,\n                \"EnableInternetOutbound\": true,\n                \"InboundIpAddresses\": [\n                    \"abc\"\n                ],\n                \"OutboundIpAddresses\": [\n                    \"abc\"\n                ]\n            },\n            \"VpcConfig\": {\n                \"UniqVpcId\": \"abc\",\n                \"UniqSubnetId\": \"abc\"\n            },\n            \"Parameters\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Value\": 0,\n                    \"Default\": 0,\n                    \"Unit\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Minimum\": 0,\n                    \"Maximum\": 0,\n                    \"ModifedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ValueString\": \"abc\",\n                    \"DefaultValueString\": \"abc\",\n                    \"Range\": \"abc\"\n                }\n            ],\n            \"IsolationStartedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Zones\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeExclusiveInstanceDetail"
       }
     ],
@@ -432,7 +432,7 @@
       {
         "document": "无",
         "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"service-rypiqi13\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"sesrxx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"test\",\n                \"Key\": \"test\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"\",\n        \"UserType\": \"\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"test\",\n                \"Environment\": \"test\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"sdfafxx\"\n            }\n        ],\n        \"OuterSubDomain\": \"domain.com\",\n        \"UsagePlanTotalCount\": 0,\n        \"SetType\": \"\",\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"\",\n                \"Protocol\": \"\",\n                \"UniqVpcId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"\",\n                    \"LoginRedirectUrl\": \"\",\n                    \"TokenLocation\": \"\"\n                },\n                \"ApiId\": \"\",\n                \"AuthRelationApiId\": \"\",\n                \"ApiDesc\": \"\",\n                \"ApiType\": \"\",\n                \"ApiBusinessType\": \"\",\n                \"ServiceId\": \"\",\n                \"ApiName\": \"\",\n                \"Path\": \"\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"\",\n                \"TokenLocation\": \"\"\n            }\n        ],\n        \"ServiceName\": \"\",\n        \"RequestId\": \"\",\n        \"InstanceName\": \"\",\n        \"Protocol\": \"\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ExclusiveSetName\": \"\",\n        \"DeploymentType\": \"DEFAULT\",\n        \"SpecialUse\": \"DEFAULT\",\n        \"InstanceId\": \"\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"\",\n        \"InternalSubDomain\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"sesrxx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"test\",\n                \"Key\": \"test\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"\",\n        \"UserType\": \"\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"test\",\n                \"Environment\": \"test\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"sdfafxx\"\n            }\n        ],\n        \"OuterSubDomain\": \"domain.com\",\n        \"UsagePlanTotalCount\": 0,\n        \"SetType\": \"\",\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"\",\n                \"Protocol\": \"\",\n                \"UniqVpcId\": \"\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"\",\n                    \"LoginRedirectUrl\": \"\",\n                    \"TokenLocation\": \"\"\n                },\n                \"ApiId\": \"\",\n                \"AuthRelationApiId\": \"\",\n                \"ApiDesc\": \"\",\n                \"ApiType\": \"\",\n                \"ApiBusinessType\": \"\",\n                \"ServiceId\": \"\",\n                \"ApiName\": \"\",\n                \"Path\": \"\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"\",\n                \"TokenLocation\": \"\"\n            }\n        ],\n        \"ServiceName\": \"\",\n        \"RequestId\": \"\",\n        \"InstanceName\": \"\",\n        \"Protocol\": \"\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"DeploymentType\": \"DEFAULT\",\n        \"SpecialUse\": \"DEFAULT\",\n        \"InstanceId\": \"\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"\",\n        \"InternalSubDomain\": \"\"\n    }\n}",
         "title": "用于查询服务详情"
       }
     ],
@@ -462,9 +462,9 @@
     ],
     "DescribeServiceForApiApp": [
       {
-        "document": "",
+        "document": "应用使用者查询服务详情",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceForApiApp\n&ServiceId=service-rypiqi13\n&ApiRegion=ap-guangzhou\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceDesc\": \"xx\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"SetId\": 1,\n        \"InnerHttpsPort\": 0,\n        \"InnerHttpPort\": 0,\n        \"Tags\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"NetTypes\": [\n            \"OUTER\"\n        ],\n        \"IpVersion\": \"xx\",\n        \"UserType\": \"xx\",\n        \"UsagePlanList\": [\n            {\n                \"MaxRequestNumPreSec\": 0,\n                \"UsagePlanId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanDesc\": \"xx\",\n                \"Environment\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UsagePlanName\": \"xx\"\n            }\n        ],\n        \"OuterSubDomain\": \"xx\",\n        \"UsagePlanTotalCount\": 0,\n        \"ApiIdStatusSet\": [\n            {\n                \"AuthType\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"UniqVpcId\": \"xx\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"OauthConfig\": {\n                    \"PublicKey\": \"xx\",\n                    \"LoginRedirectUrl\": \"xx\",\n                    \"TokenLocation\": \"xx\"\n                },\n                \"ApiId\": \"xx\",\n                \"AuthRelationApiId\": \"xx\",\n                \"ApiDesc\": \"xx\",\n                \"ApiType\": \"xx\",\n                \"ApiBusinessType\": \"xx\",\n                \"ServiceId\": \"xx\",\n                \"ApiName\": \"xx\",\n                \"Path\": \"xx\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"RelationBuniessApiIds\": [\n                    \"xx\"\n                ],\n                \"IsDebugAfterCharge\": false,\n                \"Method\": \"xx\",\n                \"TokenLocation\": \"xx\"\n            }\n        ],\n        \"ServiceName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"ApiTotalCount\": 1,\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ExclusiveSetName\": \"xx\",\n        \"AvailableEnvironments\": [\n            \"release\"\n        ],\n        \"ServiceId\": \"xx\",\n        \"InternalSubDomain\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"abc\",\n        \"AvailableEnvironments\": [\n            \"abc\"\n        ],\n        \"ServiceName\": \"abc\",\n        \"ServiceDesc\": \"abc\",\n        \"Protocol\": \"abc\",\n        \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n        \"NetTypes\": [\n            \"abc\"\n        ],\n        \"InternalSubDomain\": \"abc\",\n        \"OuterSubDomain\": \"abc\",\n        \"InnerHttpPort\": 0,\n        \"InnerHttpsPort\": 0,\n        \"ApiTotalCount\": 0,\n        \"ApiIdStatusSet\": [\n            {\n                \"ServiceId\": \"abc\",\n                \"ApiId\": \"abc\",\n                \"ApiDesc\": \"abc\",\n                \"Path\": \"abc\",\n                \"Method\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ApiName\": \"abc\",\n                \"UniqVpcId\": \"abc\",\n                \"ApiType\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"IsDebugAfterCharge\": true,\n                \"AuthType\": \"abc\",\n                \"ApiBusinessType\": \"abc\",\n                \"AuthRelationApiId\": \"abc\",\n                \"RelationBuniessApiIds\": [\n                    \"abc\"\n                ],\n                \"OauthConfig\": {\n                    \"PublicKey\": \"abc\",\n                    \"TokenLocation\": \"abc\",\n                    \"LoginRedirectUrl\": \"abc\"\n                },\n                \"TokenLocation\": \"abc\"\n            }\n        ],\n        \"UsagePlanTotalCount\": 0,\n        \"UsagePlanList\": [\n            {\n                \"Environment\": \"abc\",\n                \"UsagePlanId\": \"abc\",\n                \"UsagePlanName\": \"abc\",\n                \"UsagePlanDesc\": \"abc\",\n                \"MaxRequestNumPreSec\": 0,\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"IpVersion\": \"abc\",\n        \"UserType\": \"abc\",\n        \"SetId\": 0,\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeServiceForApiApp"
       }
     ],
@@ -534,7 +534,7 @@
     ],
     "DescribeUsagePlanEnvironments": [
       {
-        "document": "",
+        "document": "用户在绑定了某个使用计划到环境后，可使用本接口查询这个使用计划绑定的所有服务的环境。",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeUsagePlanEnvironments\n&UsagePlanId=usagePlan-quqxvett\n&BindType=API\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"EnvironmentList\": [\n                {\n                    \"ServiceId\": \"service-ody35h5e\",\n                    \"ServiceName\": null,\n                    \"ApiId\": \"api-e92i2jds\",\n                    \"ApiName\": \"test2\",\n                    \"Path\": \"/users\",\n                    \"Method\": \"POST\",\n                    \"Environment\": \"test\",\n                    \"InUseRequestNum\": 0,\n                    \"MaxRequestNum\": -1,\n                    \"MaxRequestNumPreSec\": 0,\n                    \"CreatedTime\": \"2019-12-23T09:15:17Z\",\n                    \"ModifiedTime\": null\n                }\n            ]\n        },\n        \"RequestId\": \"6c405f2c-ae4b-4d83-a155-522c4d3c7d3c\"\n    }\n}",
         "title": "展示使用计划绑定详情"
@@ -606,8 +606,8 @@
     ],
     "ModifyApi": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApi\n&ServiceId=service-ody35h5e\n&ApiId=api-lqd35zzq\n&ApiName=xxx\n&RequestConfig.Path=/xxxx\n&RequestConfig.Method=get\n&ServiceType=MOCK\n&ServiceMockReturnMessage=test\n&<公共请求参数>",
+        "document": "可调用此接口对已经配置的 API 接口进行编辑修改。修改后的 API 需要重新发布 API 所在的服务到对应环境方能生效",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApi\n&ServiceId=service-ody35h5e\n&ApiId=api-lqd35zzq\n&ApiName=http_api\n&RequestConfig.Path=/\n&RequestConfig.Method=ANY\n&ServiceType=MOCK\n&ServiceMockReturnMessage=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e00553a-8158-4f70-ad43-e1b046af1502\"\n    }\n}",
         "title": "ModifyApi"
       }
@@ -684,8 +684,8 @@
     ],
     "ModifySubDomain": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifySubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxx\n&CertificateId=''\n&IsDefaultMapping=false\n&Protocol=http\n&NetType=OUTER\n&PathMappingSet.0.Path=/\n&PathMappingSet.0.Environment=release\n&<公共请求参数>",
+        "document": "服务修改自定义域名",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifySubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=doagkfrf.flyfly.wang\n&CertificateId=''\n&IsDefaultMapping=false\n&Protocol=http\n&NetType=OUTER\n&PathMappingSet.0.Path=/\n&PathMappingSet.0.Environment=release\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"d7f6116b-8184-4bdd-8fbe-1ecbcfa1ea30\"\n    }\n}",
         "title": "服务修改自定义域名"
       }
@@ -708,9 +708,9 @@
     ],
     "ReleaseService": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ReleaseService\n&ServiceId=service-ody35h5e\n&EnvironmentName=prepub\n&ReleaseDesc=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReleaseDesc\": \"xx\",\n            \"ReleaseVersion\": \"2020022502411672fae6e9-9726-4caa-8867-6366cd3f1ba5\"\n        },\n        \"RequestId\": \"c5b4711b-8044-43eb-97cc-e755c5df1420\"\n    }\n}",
+        "document": "发布服务\n",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ReleaseService\n&ServiceId=service-ody35h5e\n&EnvironmentName=prepub\n&ReleaseDesc=Released By Serverless\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReleaseDesc\": \"Released By Serverless\",\n            \"ReleaseVersion\": \"2020022502411672fae6e9-9726-4caa-8867-6366cd3f1ba5\"\n        },\n        \"RequestId\": \"c5b4711b-8044-43eb-97cc-e755c5df1420\"\n    }\n}",
         "title": "ReleaseService"
       }
     ],
@@ -748,8 +748,8 @@
     ],
     "UnBindSubDomain": [
       {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=UnBindSubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=xxxxxxxx\n&<公共请求参数>",
+        "document": "服务解绑自定义域名",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=UnBindSubDomain\n&ServiceId=service-19c5fnhy\n&SubDomain=app01.sevenlayer23.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"b3197c48-53fb-46df-b721-df4424cf8be9\"\n    }\n}",
         "title": "解绑自定义域名"
       }

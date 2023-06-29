@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ExportAssetWebServiceInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetWebServiceInfoList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02aec5ac-93fb-47e4-983e-e8245cfe7a7e\"\n    }\n}",
+        "title": "ExportAssetWebServiceInfoList"
+      }
+    ]
+  },
+  "version": "1.0"
+}

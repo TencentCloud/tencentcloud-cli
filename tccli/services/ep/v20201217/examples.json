@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "SearchEnterprise": [
+      {
+        "document": "",
+        "input": "https://ep.tencentcloudapi.com/?Action=SearchEnterprise\n&Name=腾讯\n&Limit=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7151cd8f-0cd7-43ca-9c60-062ad0da4dcf\",\n        \"Data\": [\n            {\n                \"Name\": \"深圳市腾讯计算机系统有限公司\",\n                \"SearchName\": \"深圳市腾讯计算机系统有限公司\",\n                \"SearchNameType\": \"admin\"\n            },\n            {\n                \"Name\": \"深圳市腾讯网域计算机网络有限公司\",\n                \"SearchName\": \"深圳市腾讯网域计算机网络有限公司\",\n                \"SearchNameType\": \"admin\"\n            },\n            {\n                \"Name\": \"广州市腾讯计算机系统有限公司\",\n                \"SearchName\": \"广州市腾讯计算机系统有限公司\",\n                \"SearchNameType\": \"admin\"\n            }\n        ],\n        \"TotalCount\": 35\n    }\n}",
+        "title": "企业名称智能匹配示例代码"
+      }
+    ]
+  },
+  "version": "1.0"
+}

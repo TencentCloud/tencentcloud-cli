@@ -1,0 +1,56 @@
+{
+  "actions": {
+    "ResetAuthUserPassword": {
+      "document": "重置用户密码",
+      "input": "ResetAuthUserPasswordRequest",
+      "name": "重置用户密码",
+      "output": "ResetAuthUserPasswordResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-08-04",
+    "api_brief": null,
+    "serviceNameCN": "全球办公访问",
+    "serviceShortName": "goa"
+  },
+  "objects": {
+    "ResetAuthUserPasswordRequest": {
+      "document": "ResetAuthUserPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "userid(用户唯一标识)",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAuthUserPasswordResponse": {
+      "document": "ResetAuthUserPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

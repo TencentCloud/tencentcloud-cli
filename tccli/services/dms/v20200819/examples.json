@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "SendEmail": [
+      {
+        "document": "",
+        "input": "https://dms.tencentcloudapi.com/?Action=SendEmail\n&FromAddress=test@example.com\n&ToAddress=to@example.com\n&ReplyAdress=reply@example.com\n&Subject=subject\n&<公共请求参数>",
+        "output": "{\r\n  \"result\": true\r\n}",
+        "title": "发送普通邮件"
+      }
+    ],
+    "SendTemplatedEmail": [
+      {
+        "document": "",
+        "input": "https://dms.tencentcloudapi.com/?Action=SendTemplatedEmail\n&FromAddress=test@example.com\n&ToAddress=to@example.com\n&TemplateName=templateName1\n&TemplateValue=templateValue1\n&<公共请求参数>",
+        "output": "{\r\n  \"result\": true\r\n}",
+        "title": "发送模板邮件"
+      }
+    ]
+  },
+  "version": "1.0"
+}

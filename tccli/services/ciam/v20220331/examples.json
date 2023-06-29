@@ -1,0 +1,125 @@
+{
+  "actions": {
+    "CreateApiImportUserJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiImportUserJob\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"DataFlowUserCreateList\": [\n        {\n            \"UserName\": \"xx\",\n            \"Zone\": \"xx\",\n            \"ResidentIdentityCard\": \"xx\",\n            \"WechatOpenId\": \"xx\",\n            \"Email\": \"xx\",\n            \"CustomizationAttributes\": [\n                {\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Description\": \"xx\",\n            \"Job\": \"xx\",\n            \"Address\": \"xx\",\n            \"Nationality\": \"xx\",\n            \"Password\": \"xx\",\n            \"Nickname\": \"xx\",\n            \"QqOpenId\": \"xx\",\n            \"Name\": \"xx\",\n            \"Gender\": \"xx\",\n            \"IdentityVerificationMethod\": \"xx\",\n            \"AlipayUserId\": \"xx\",\n            \"Birthdate\": \"2020-09-22\",\n            \"PhoneNumber\": \"xx\",\n            \"UserGroup\": [\n                \"xx\"\n            ],\n            \"PasswordEncryptTypeEnum\": \"xx\",\n            \"Salt\": {\n                \"SaltLocation\": {\n                    \"SaltLocationRule\": {\n                        \"Regex\": \"xx\"\n                    },\n                    \"SaltLocationTypeEnum\": \"xx\"\n                },\n                \"SaltValue\": \"xx\"\n            },\n            \"QqUnionId\": \"xx\",\n            \"Locale\": \"xx\",\n            \"IdentityVerified\": true,\n            \"WechatUnionId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"Status\": \"xx\",\n            \"Format\": \"xx\",\n            \"ErrorDetails\": [\n                {\n                    \"UserId\": \"xx\",\n                    \"Error\": \"xx\"\n                }\n            ],\n            \"Location\": \"xx\",\n            \"CreatedDate\": 0,\n            \"FailedUsers\": [\n                {\n                    \"FailedUserIdentification\": \"xx\",\n                    \"FailedReason\": \"xx\"\n                }\n            ],\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建接口导入用户任务"
+      }
+    ],
+    "CreateFileExportUserJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileExportUserJob\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"ExportPropertyMaps\": [\n        {\n            \"ColumnName\": \"xx\",\n            \"UserPropertyCode\": \"xx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ],\n    \"Format\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"Status\": \"xx\",\n            \"Format\": \"xx\",\n            \"ErrorDetails\": [\n                {\n                    \"UserId\": \"xx\",\n                    \"Error\": \"xx\"\n                }\n            ],\n            \"Location\": \"xx\",\n            \"CreatedDate\": 0,\n            \"FailedUsers\": [\n                {\n                    \"FailedUserIdentification\": \"xx\",\n                    \"FailedReason\": \"xx\"\n                }\n            ],\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建文件导出用户任务"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"UserStoreId\": \"xx\",\n    \"UserGroup\": [\n        \"xxx\"\n    ],\n    \"Birthdate\": 0,\n    \"PhoneNumber\": \"xx\",\n    \"Address\": \"xx\",\n    \"Password\": \"xx\",\n    \"Nickname\": \"xx\",\n    \"Email\": \"xx\",\n    \"CustomizationAttributes\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"User\": null\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
+    "DeleteUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsers\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"xxx\"\n    ],\n    \"UserStoreId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "批量删除用户"
+      }
+    ],
+    "DescribeUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"PropertyKey\": \"xx\",\n            \"PropertyValue\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ResidentIdentityCard\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"WechatOpenId\": \"xx\",\n                \"Email\": \"xx\",\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Job\": \"xx\",\n                \"Address\": \"xx\",\n                \"Nationality\": \"xx\",\n                \"Nickname\": \"xx\",\n                \"UserStoreId\": \"xx\",\n                \"QqOpenId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Gender\": \"xx\",\n                \"IdentityVerificationMethod\": \"xx\",\n                \"AlipayUserId\": \"xx\",\n                \"LastSignOn\": \"xx\",\n                \"PhoneNumber\": \"xx\",\n                \"QqUnionId\": \"xx\",\n                \"Locale\": \"xx\",\n                \"Primary\": true,\n                \"IdentityVerified\": true,\n                \"WechatUnionId\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户信息"
+      }
+    ],
+    "DescribeUserById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserById\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"UserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"User\": {\n            \"UserName\": \"xx\",\n            \"Zone\": \"xx\",\n            \"UserId\": \"xx\",\n            \"ResidentIdentityCard\": \"xx\",\n            \"TenantId\": \"xx\",\n            \"CustomAttributes\": [\n                {\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Version\": 0,\n            \"WechatOpenId\": \"xx\",\n            \"Email\": \"xx\",\n            \"Status\": \"xx\",\n            \"Description\": \"xx\",\n            \"LastModifiedDate\": 0,\n            \"AlreadyFirstLogin\": true,\n            \"Job\": \"xx\",\n            \"Address\": \"xx\",\n            \"Nationality\": \"xx\",\n            \"Nickname\": \"xx\",\n            \"UserStoreId\": \"xx\",\n            \"QqOpenId\": \"xx\",\n            \"Name\": \"xx\",\n            \"UserDataSourceEnum\": \"xx\",\n            \"Gender\": \"xx\",\n            \"IdentityVerificationMethod\": \"xx\",\n            \"AlipayUserId\": \"xx\",\n            \"LastSignOn\": 0,\n            \"PhoneNumber\": \"xx\",\n            \"Birthdate\": 0,\n            \"QqUnionId\": \"xx\",\n            \"UserGroups\": [\n                \"xx\"\n            ],\n            \"Locale\": \"xx\",\n            \"Primary\": true,\n            \"IdentityVerified\": true,\n            \"CreatedDate\": 0,\n            \"LockTime\": 0,\n            \"LockType\": \"xx\",\n            \"WechatUnionId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据ID查询用户信息"
+      }
+    ],
+    "LinkAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LinkAccount\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"PrimaryUserId\": \"xx\",\n    \"UserLinkedOnAttribute\": \"xx\",\n    \"SecondaryUserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "账号融合"
+      }
+    ],
+    "ListJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListJobs\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"Status\": \"xx\",\n                \"Format\": \"xx\",\n                \"FailedUsers\": [\n                    {\n                        \"FailedUserIdentification\": \"xx\",\n                        \"FailedReason\": \"xx\"\n                    }\n                ],\n                \"Location\": \"xx\",\n                \"Type\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务详情"
+      }
+    ],
+    "ListLogMessageByCondition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLogMessageByCondition\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"StartTime\": 0,\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserStoreId\": \"xx\",\n                \"ApplicationName\": \"xx\",\n                \"Participant\": \"xx\",\n                \"Description\": \"xx\",\n                \"EventCode\": \"xx\",\n                \"Ip\": \"xx\",\n                \"ApplicationClientId\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Detail\": \"xx\",\n                \"AuthSourceName\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"LogId\": \"xx\",\n                \"AuthSourceId\": \"xx\",\n                \"AuthSourceType\": \"xx\",\n                \"UserAgent\": \"xx\",\n                \"AuthSourceCategory\": \"xx\",\n                \"EventDate\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询日志信息"
+      }
+    ],
+    "ListUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUser\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ResidentIdentityCard\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"WechatOpenId\": \"xx\",\n                \"Email\": \"xx\",\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Job\": \"xx\",\n                \"Address\": \"xx\",\n                \"Nationality\": \"xx\",\n                \"Nickname\": \"xx\",\n                \"UserStoreId\": \"xx\",\n                \"QqOpenId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Gender\": \"xx\",\n                \"IdentityVerificationMethod\": \"xx\",\n                \"AlipayUserId\": \"xx\",\n                \"LastSignOn\": \"xx\",\n                \"PhoneNumber\": \"xx\",\n                \"QqUnionId\": \"xx\",\n                \"Locale\": \"xx\",\n                \"Primary\": true,\n                \"IdentityVerified\": true,\n                \"WechatUnionId\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户列表"
+      }
+    ],
+    "ListUserByProperty": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserByProperty\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"PropertyCode\": \"xx\",\n    \"PropertyValue\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"UserName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"UserId\": \"xx\",\n                \"ResidentIdentityCard\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"CustomAttributes\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Version\": 0,\n                \"WechatOpenId\": \"xx\",\n                \"Email\": \"xx\",\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"LastModifiedDate\": 0,\n                \"AlreadyFirstLogin\": true,\n                \"Job\": \"xx\",\n                \"Address\": \"xx\",\n                \"Nationality\": \"xx\",\n                \"Nickname\": \"xx\",\n                \"UserStoreId\": \"xx\",\n                \"QqOpenId\": \"xx\",\n                \"Name\": \"xx\",\n                \"UserDataSourceEnum\": \"xx\",\n                \"Gender\": \"xx\",\n                \"IdentityVerificationMethod\": \"xx\",\n                \"AlipayUserId\": \"xx\",\n                \"LastSignOn\": 0,\n                \"PhoneNumber\": \"xx\",\n                \"Birthdate\": 0,\n                \"QqUnionId\": \"xx\",\n                \"UserGroups\": [\n                    \"xx\"\n                ],\n                \"Locale\": \"xx\",\n                \"Primary\": true,\n                \"IdentityVerified\": true,\n                \"CreatedDate\": 0,\n                \"LockTime\": 0,\n                \"LockType\": \"xx\",\n                \"WechatUnionId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户列表"
+      }
+    ],
+    "ResetPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"UserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Password\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重置用户密码"
+      }
+    ],
+    "SetPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPassword\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Password\": \"xx\",\n    \"UserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设置用户密码"
+      }
+    ],
+    "UpdateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"UserStoreId\": \"xx\",\n    \"UserGroup\": [\n        \"xxx\"\n    ],\n    \"UserId\": \"xx\",\n    \"Birthdate\": 0,\n    \"PhoneNumber\": \"xx\",\n    \"Address\": \"xx\",\n    \"Nickname\": \"xx\",\n    \"Email\": \"xx\",\n    \"CustomizationAttributes\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\",\n            \"Type\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"User\": null\n    }\n}",
+        "title": "更新用户"
+      }
+    ],
+    "UpdateUserStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserStatus\n<公共请求参数>\n\n{\n    \"UserId\": \"xxx\",\n    \"Status\": \"xxx\",\n    \"UserStoreId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新用户状态"
+      }
+    ]
+  },
+  "version": "1.0"
+}

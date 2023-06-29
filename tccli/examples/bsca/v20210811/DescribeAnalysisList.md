@@ -24,6 +24,16 @@ Output:
                 "FileSize": 20408884,
                 "AnalysisState": "SUCCESS",
                 "Star": false,
+                "Tags": [
+                    {
+                        "Key": "tagKey1",
+                        "Value": "tagValue1"
+                    },
+                    {
+                        "Key": "tagKey2",
+                        "Value": "tagValue2"
+                    }
+                ],
                 "UpdatedTime": "2021-10-29T11:52:40Z",
                 "CVECount": {
                     "CriticalCount": 11,

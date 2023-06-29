@@ -1,0 +1,68 @@
+{
+  "actions": {
+    "DeleteFilterInstance": {
+      "document": "删除实例，保留ExcludePolicyIds参数中策略的解析记录。此接口为高危接口，需要申请白名单才能调用",
+      "input": "DeleteFilterInstanceRequest",
+      "name": "删除实例资源",
+      "output": "DeleteFilterInstanceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-09-07",
+    "api_brief": "介绍如何使用API对只能全局流量管理进行操作，包括创建策略，分配策略，创建地址池等等。",
+    "serviceNameCN": "智能全局流量管理",
+    "serviceShortName": "igtm"
+  },
+  "objects": {
+    "DeleteFilterInstanceRequest": {
+      "document": "DeleteFilterInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id，必填参数",
+          "example": "gtm-Ul65AOsdfDvxVD",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "需要保留解析记录的策略，不传值或值为空，则删除所有策略的解析记录",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "ExcludePolicyIds",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFilterInstanceResponse": {
+      "document": "DeleteFilterInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功放回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,244 @@
+{
+  "actions": {
+    "DescribeSdkAppid": {
+      "document": "获取云通信IM中腾讯云账号对应的SDKAppID",
+      "input": "DescribeSdkAppidRequest",
+      "name": "获取云通信 IM 的 SDKAppid",
+      "output": "DescribeSdkAppidResponse",
+      "status": "online"
+    },
+    "UpdateTPNSInfo": {
+      "document": "更新tpns应用信息",
+      "input": "UpdateTPNSInfoRequest",
+      "name": "更新tpns信息",
+      "output": "UpdateTPNSInfoResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-18",
+    "api_brief": "介绍如何使用API对即时通信 IM进行操作，包括Android、iOS、Windows、Web 的 SDK 组件、服务端集成 REST API 接口、第三方回调接口等，您可以简单快捷地构建高可靠且稳定的即时通信产品。",
+    "serviceNameCN": "即时通信 IM",
+    "serviceShortName": "im"
+  },
+  "objects": {
+    "DescribeSdkAppidRequest": {
+      "document": "DescribeSdkAppid请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSdkAppidResponse": {
+      "document": "DescribeSdkAppid返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示 appid 对应的 SdkAppid 的数据",
+          "member": "int64",
+          "name": "SdkAppids",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TPNSAccessInfo": {
+      "document": "tpns应用信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "tpns应用id",
+          "example": "1234",
+          "member": "uint64",
+          "name": "AccessId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "secret key",
+          "example": "abc",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "15 - android, 16 - ios, 17 - mac",
+          "example": "15",
+          "member": "uint64",
+          "name": "Platform",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "access key",
+          "example": "ccc",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地址",
+          "example": "https://api.tpns.tencent.com",
+          "member": "string",
+          "name": "ZoneUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TPNSUpdateRes": {
+      "document": "tpns信息更新结果",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "0成功，非0失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错误信息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "tpns应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "AccessId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "secret key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "15 - android, 16 - ios, 17 - mac\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "uint64",
+          "name": "Platform",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "access key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://api.tpns.tencent.com",
+          "member": "string",
+          "name": "ZoneUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateTPNSInfoRequest": {
+      "document": "UpdateTPNSInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "im应用id",
+          "example": "1400001001",
+          "member": "uint64",
+          "name": "IMAccessId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "tpns应用信息列表",
+          "example": "无",
+          "member": "TPNSAccessInfo",
+          "name": "TPNSAccessInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTPNSInfoResponse": {
+      "document": "UpdateTPNSInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新结果列表",
+          "example": "无",
+          "member": "TPNSUpdateRes",
+          "name": "TPNSUpdateRes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

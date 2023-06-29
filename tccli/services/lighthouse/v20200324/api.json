@@ -6552,37 +6552,48 @@
       "document": "实例概览详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例概览。",
           "example": "无",
           "member": "InstancesOverview",
           "name": "InstancesOverview",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配额概览。",
           "example": "无",
           "member": "QuotaOverview",
           "name": "QuotaOverview",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误码。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
