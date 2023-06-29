@@ -17,14 +17,14 @@ def test_help_detail():
 
 
 def test_cvm_help():
-    cmd = 'tccli cvm help'
+    cmd = 'tccli cvm help --version 2017-03-12'
     expect = '<DescribeRegions>'
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
 
 
 def test_cvm_help_detail():
-    cmd = 'tccli cvm help --detail'
+    cmd = 'tccli cvm help --detail --version 2017-03-12'
     expect = 'AVAILABLE ACTIONS\n    AllocateHosts'
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
