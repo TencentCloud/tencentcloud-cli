@@ -3631,6 +3631,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3640,7 +3641,18 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3775,6 +3787,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3784,7 +3797,18 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理组ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

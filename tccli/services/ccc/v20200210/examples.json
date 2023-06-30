@@ -50,7 +50,7 @@
     ],
     "CreateExtension": [
       {
-        "document": "",
+        "document": "创建话机账号示例",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "创建话机账号"

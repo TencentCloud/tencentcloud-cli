@@ -5,7 +5,7 @@
 Input: 
 
 ```
-tccli tcb DescribeCurveData --cli-unfold-argument  \
+tccli tcb DescribeGraphData --cli-unfold-argument  \
     --MetricName StorageRead \
     --StartTime 2019-04-0209:00:00 \
     --EndTime 2019-04-0419:00:00 \
@@ -30,13 +30,12 @@ Output:
             1554895200
         ],
         "Values": [
-            20,
-            100,
-            180,
-            240,
-            260
-        ],
-        "NewValues": 0
+            20.5,
+            100.5,
+            180.5,
+            240.5,
+            260.5
+        ]
     }
 }
 ```

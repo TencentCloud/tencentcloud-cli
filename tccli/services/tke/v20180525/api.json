@@ -16407,7 +16407,26 @@
     },
     "KMSConfiguration": {
       "document": "kms加密参数",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "kms id",
+          "example": "38098f4c-f5ef-11ed-8c28-525400b4ad52",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kms 地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "usage": "in"
     },
     "KubeJarvisStateCatalogue": {

@@ -1233,7 +1233,7 @@
     "EnableEncryptionProtection": [
       {
         "document": "开启加密数据保护",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-mu2or8b8\",\n    \"KMSConfiguration\": {}\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableEncryptionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-mu2or8b8\",\n    \"KMSConfiguration\": {\n        \"KeyId\": \"38098f4c-f5ef-11ed-8c28-525400b4ad52\",\n        \"KmsRegion\": \"ap-guangzhou\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73779803-e28b-481a-a350-eab5bada499b\"\n    }\n}",
         "title": "开启加密数据保护"
       }

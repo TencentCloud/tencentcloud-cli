@@ -184,7 +184,7 @@
     ],
     "DeleteService": [
       {
-        "document": "",
+        "document": "用于删除 API 网关中某个服务。",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DeleteService\n&ServiceId=service-kaghtzi4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"8ef5ccb0-4207-468b-bb07-a03e6a772caf\"\n    }\n}",
         "title": "删除服务"
@@ -328,9 +328,9 @@
     ],
     "DescribeApisStatus": [
       {
-        "document": "查询API状态",
+        "document": "用于查看一个服务下的某个 API 或所有 API 列表及其相关信息。",
         "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApisStatus\n<公共请求参数>\n\n{\n    \"ServiceId\": \"service-ody35h5e\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ApiIdStatusSet\": [\n                {\n                    \"RelationBuniessApiIds\": [\n                        \"123\"\n                    ],\n                    \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Method\": \"123\",\n                    \"VpcId\": 0,\n                    \"Tags\": [\n                        \"123\"\n                    ],\n                    \"IsDebugAfterCharge\": false,\n                    \"ApiBusinessType\": \"1\",\n                    \"ApiName\": \"1\",\n                    \"Path\": \"1\",\n                    \"AuthType\": \"1\",\n                    \"ApiDesc\": \"1\",\n                    \"OauthConfig\": {\n                        \"PublicKey\": \"1\",\n                        \"LoginRedirectUrl\": \"1\",\n                        \"TokenLocation\": \"1\"\n                    },\n                    \"AuthRelationApiId\": \"1\",\n                    \"Protocol\": \"1\",\n                    \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"UniqVpcId\": \"1\",\n                    \"ApiId\": \"1\",\n                    \"ApiType\": \"1\",\n                    \"ServiceId\": \"1\"\n                }\n            ]\n        },\n        \"RequestId\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"ApiIdStatusSet\": [\n                {\n                    \"ServiceId\": \"abc\",\n                    \"ApiId\": \"abc\",\n                    \"ApiDesc\": \"abc\",\n                    \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ApiName\": \"abc\",\n                    \"VpcId\": 0,\n                    \"UniqVpcId\": \"abc\",\n                    \"ApiType\": \"abc\",\n                    \"Protocol\": \"abc\",\n                    \"IsDebugAfterCharge\": true,\n                    \"AuthType\": \"abc\",\n                    \"ApiBusinessType\": \"abc\",\n                    \"AuthRelationApiId\": \"abc\",\n                    \"OauthConfig\": {\n                        \"PublicKey\": \"abc\",\n                        \"TokenLocation\": \"abc\",\n                        \"LoginRedirectUrl\": \"abc\"\n                    },\n                    \"RelationBuniessApiIds\": [\n                        \"abc\"\n                    ],\n                    \"Tags\": [\n                        {}\n                    ],\n                    \"Path\": \"abc\",\n                    \"Method\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询API状态"
       }
     ],
@@ -470,9 +470,9 @@
     ],
     "DescribeServiceReleaseVersion": [
       {
-        "document": "",
+        "document": "用户在发布服务时，常有多个版本发布，可使用本接口查询已发布的版本。",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceReleaseVersion\n&ServiceId=service-ody35h5e\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 5,\n            \"VersionList\": [\n                {\n                    \"VersionName\": \"202002140201231eee121d-058a-4c0c-a2b1-bc25325d42d5\",\n                    \"VersionDesc\": \"xxx\"\n                },\n                {\n                    \"VersionName\": \"20200214020300d0eab0c5-e124-4705-bc61-81545361cc0d\",\n                    \"VersionDesc\": \"xxx\"\n                },\n                {\n                    \"VersionName\": \"202002140204057f8dbac2-1b0e-4ce5-975e-f1d82618e008\",\n                    \"VersionDesc\": \"xxx\"\n                },\n                {\n                    \"VersionName\": \"20200214020506aac44ade-6657-4c7f-b15a-59fa1e4252e7\",\n                    \"VersionDesc\": \"xxx\"\n                },\n                {\n                    \"VersionName\": \"202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215\",\n                    \"VersionDesc\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"4d712ae3-9fb7-467b-a3aa-eaa17ada621c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"VersionList\": [\n                {\n                    \"VersionName\": \"abc\",\n                    \"VersionDesc\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeServiceReleaseVersion"
       }
     ],
@@ -668,7 +668,7 @@
     ],
     "ModifyService": [
       {
-        "document": "",
+        "document": "用于修改服务的相关信息。",
         "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyService\n&ServiceId=service-0c96l2bo\n&ServiceName=test_https\n&ServiceDesc=https\n&Protocol=https\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
         "title": "用于修改服务"

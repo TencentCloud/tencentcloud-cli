@@ -168,6 +168,14 @@
         "title": "移动成员到指定企业组织节点"
       }
     ],
+    "UpdateOrganizationMember": [
+      {
+        "document": "更新组织成员信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"tt\",\n    \"MemberUin\": 111111111111,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a1f4733-a2ff-406d-9ff6-44c1d2d3f33a\"\n    }\n}",
+        "title": "更新组织成员信息"
+      }
+    ],
     "UpdateOrganizationMemberEmailBind": [
       {
         "document": "",

@@ -56,14 +56,6 @@
         "title": "创建镜像加速服务"
       }
     ],
-    "CreateImageLifecyclePersonal": [
-      {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateImageLifecyclePersonal\n&RepoName=dockerhub/test\n&Type=keep_last_days\n&Val=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "设置个人版仓库tag清理策略"
-      }
-    ],
     "CreateImmutableTagRules": [
       {
         "document": "",
@@ -252,14 +244,6 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImageLifecycleGlobalPersonal\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除个人版镜像全局自动清理策略"
-      }
-    ],
-    "DeleteImageLifecyclePersonal": [
-      {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImageLifecyclePersonal\n&RepoName=dockerhub/test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "删除个人版镜像仓库Tag自动清理策略"
       }
     ],
     "DeleteImagePersonal": [

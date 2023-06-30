@@ -154,7 +154,7 @@
       {
         "document": "创建数据库代理连接点",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyEndPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"UniqueVpcId\": \"abc\",\n    \"UniqueSubnetId\": \"abc\",\n    \"ConnectionPoolType\": \"abc\",\n    \"OpenConnectionPool\": \"abc\",\n    \"ConnectionPoolTimeOut\": 0,\n    \"SecurityGroupIds\": [\n        \"abc\"\n    ],\n    \"Description\": \"abc\",\n    \"Vip\": \"abc\",\n    \"WeightMode\": \"abc\",\n    \"AutoAddRo\": \"abc\",\n    \"FailOver\": \"abc\",\n    \"ConsistencyType\": \"abc\",\n    \"RwType\": \"abc\",\n    \"ConsistencyTimeOut\": 0,\n    \"TransSplit\": true,\n    \"AccessMode\": \"abc\",\n    \"InstanceWeights\": [\n        {\n            \"InstanceId\": \"abc\",\n            \"Weight\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"ProxyGroupId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建数据库代理连接点"
       }
     ],

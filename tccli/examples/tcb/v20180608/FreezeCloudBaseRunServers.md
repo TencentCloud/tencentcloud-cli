@@ -1,13 +1,13 @@
 **Example 1: 批量冻结**
 
-
+批量冻结
 
 Input: 
 
 ```
 tccli tcb FreezeCloudBaseRunServers --cli-unfold-argument  \
-    --EnvId xx \
-    --ServerNameList xx
+    --EnvId env-abc \
+    --ServerNameList abc
 ```
 
 Output: 
@@ -15,10 +15,10 @@ Output:
 {
     "Response": {
         "FailServerList": [
-            "xx"
+            "abc"
         ],
-        "Result": "xx",
-        "RequestId": "xx"
+        "Result": "abc",
+        "RequestId": "aa"
     }
 }
 ```

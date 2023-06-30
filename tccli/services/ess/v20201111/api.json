@@ -1413,6 +1413,15 @@
           "name": "FlowIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\n",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1426,6 +1435,7 @@
           "example": "无",
           "member": "string",
           "name": "BatchCancelFlowUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1435,6 +1445,7 @@
           "example": "无",
           "member": "string",
           "name": "FailMessages",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1444,6 +1455,7 @@
           "example": "无",
           "member": "string",
           "name": "UrlExpireOn",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2009,6 +2021,15 @@
           "name": "FlowId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\n",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2022,6 +2043,7 @@
           "example": "无",
           "member": "string",
           "name": "ReportId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2031,6 +2053,7 @@
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2040,6 +2063,7 @@
           "example": "https://file.xxx",
           "member": "string",
           "name": "ReportUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2072,6 +2096,15 @@
           "name": "FlowIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2085,6 +2118,7 @@
           "example": "无",
           "member": "RemindFlowRecords",
           "name": "RemindFlowRecords",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4166,6 +4200,15 @@
           "name": "ReportId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\n",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4179,6 +4222,7 @@
           "example": "https://file.xxx",
           "member": "string",
           "name": "ReportUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4188,6 +4232,7 @@
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

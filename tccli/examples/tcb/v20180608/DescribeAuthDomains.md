@@ -1,6 +1,6 @@
 **Example 1: DescribeAuthDomains**
 
-
+DescribeAuthDomains 
 
 Input: 
 

@@ -1224,6 +1224,24 @@
         },
         {
           "disabled": false,
+          "document": "是否自动创建cls索引，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoDeployClsTopicIndex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动创建cls主题，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoCreateClsTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS",
           "example": "WS",
           "member": "string",

@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli tke EnableEncryptionProtection --cli-unfold-argument  \
-    --ClusterId cls-mu2or8b8
+    --ClusterId cls-mu2or8b8 \
+    --KMSConfiguration.KeyId 38098f4c-f5ef-11ed-8c28-525400b4ad52 \
+    --KMSConfiguration.KmsRegion ap-guangzhou
 ```
 
 Output: 

@@ -140,6 +140,14 @@
         "title": "删除终端用户"
       }
     ],
+    "DeleteGatewayVersion": [
+      {
+        "document": "根据网关ID和版本名称删除版本",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\",\n    \"VersionName\": \"gw-002-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "删除网关某版本接口示例"
+      }
+    ],
     "DeleteWxGatewayRoute": [
       {
         "document": "",
@@ -166,7 +174,7 @@
     ],
     "DescribeAuthDomains": [
       {
-        "document": "",
+        "document": "DescribeAuthDomains ",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeAuthDomains\n&EnvId=test-23\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Domains\": [\n            {\n                \"Status\": \"ENABLE\",\n                \"Domain\": \"localhost\",\n                \"UpdateTime\": \"2020-03-02 17:16:39\",\n                \"CreateTime\": \"2020-03-02 17:16:39\",\n                \"Type\": \"USER\",\n                \"Id\": \"38e5c159-c715-4887-9a15-453e6749e949\"\n            }\n        ]\n    }\n}",
         "title": "DescribeAuthDomains"
@@ -178,6 +186,22 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaasPackageList\n<公共请求参数>\n\n{\n    \"Source\": \"miniapp\"\n}",
         "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"PackageName\": \"personal_calculation\",\n                \"PackageTitle\": \"个人版-计算型\",\n                \"GroupName\": \"calculation\",\n                \"GroupTitle\": \"套餐分组中文名\",\n                \"BillTags\": \"{\\\"pid\\\":0, \\\"cids\\\":{\\\"create\\\":0, \\\"renew\\\":0, \\\"modify\\\":0}, \\\"productCode\\\":0, \\\"subProductCode\\\":0}\",\n                \"ResourceLimit\": \"{\\\"Capacity\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"Flux\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"CalculationTime\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"s\\\", \\\"MaxSize\\\": 100}, \\\"InvokeNum\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"次\\\", \\\"MaxSize\\\": 100}}\",\n                \"AdvanceLimit\": \"{\\\"CMSEnable\\\":false,\\\"ProvisionedConcurrencyMem\\\":512000, \\\"PictureProcessing\\\":false, \\\"SecurityAudit\\\":false, \\\"RealTimePush\\\":false, \\\"TemplateMessageBatchPush\\\":false, \\\"Payment\\\":false}\",\n                \"PackageDescription\": \"xxx\",\n                \"IsExternal\": true\n            }\n        ],\n        \"RequestId\": \"2e992b19-7906-44a4-a8bb-5a71672b0ec9\"\n    }\n}",
         "title": "获取套餐"
+      }
+    ],
+    "DescribeBillingInfo": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeBillingInfo\r\n&EnvId=tnt-j715s5gda\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvBillingInfoList\": [\n            {\n                \"EnvId\": \"tnt-j715s5gda\",\n                \"PackageId\": \"professional\",\n                \"IsAutoRenew\": true,\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"PREPAYMENT\",\n                \"IsolatedTime\": \"2011-5-16 12:15:01\",\n                \"ExpireTime\": \"2019-5-25 12:15:01\",\n                \"CreateTime\": \"2016-5-25 12:15:01\",\n                \"UpdateTime\": \"2019-4-25 12:15:01\"\n            }\n        ],\n        \"RequestId\": \"ec5dde6a-6c21-4777-bf4a-99e1f910247e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCbrServerVersion": [
+      {
+        "document": "查询服务版本的详情",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCbrServerVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"ServerName\": \"abc\",\n    \"VersionName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionName\": \"abc\",\n        \"Remark\": \"abc\",\n        \"DockerfilePath\": \"abc\",\n        \"BuildDir\": \"abc\",\n        \"Cpu\": 0,\n        \"Mem\": 0,\n        \"MinNum\": 0,\n        \"MaxNum\": 0,\n        \"EnvParams\": \"abc\",\n        \"CreatedTime\": \"abc\",\n        \"UpdatedTime\": \"abc\",\n        \"VersionIP\": \"abc\",\n        \"VersionPort\": 0,\n        \"Status\": \"abc\",\n        \"UploadType\": \"abc\",\n        \"ServerName\": \"abc\",\n        \"IsPublic\": true,\n        \"VpcId\": \"abc\",\n        \"SubnetIds\": [\n            \"abc\"\n        ],\n        \"CustomLogs\": \"abc\",\n        \"ContainerPort\": 0,\n        \"InitialDelaySeconds\": 0,\n        \"ImageUrl\": \"abc\",\n        \"HasDockerfile\": 0,\n        \"BaseImage\": \"abc\",\n        \"EntryPoint\": \"abc\",\n        \"PolicyDetail\": [\n            {\n                \"PolicyType\": \"abc\",\n                \"PolicyThreshold\": 0\n            }\n        ],\n        \"TkeClusterInfo\": {\n            \"ClusterId\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"VersionClbSubnetId\": \"abc\"\n        },\n        \"TkeWorkloadType\": \"abc\",\n        \"PackageInfo\": {\n            \"PackageName\": \"abc\",\n            \"PackageVersion\": \"abc\"\n        },\n        \"RepoInfo\": {\n            \"Repo\": \"abc\",\n            \"RepoType\": \"abc\",\n            \"RepoLanguage\": \"abc\",\n            \"Branch\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeCloudBaseBuildService": [
@@ -312,7 +336,7 @@
       {
         "document": "根据用户传入的指标, 拉取一段时间内的监控数据",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCurveData\n&MetricName=StorageRead\n&StartTime=2019-04-0209:00:00\n&EndTime=2019-04-0419:00:00\n&ResourceID=3\n&EnvId=lotestapi100004\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2019-04-04 19:00:00\",\n        \"MetricName\": \"StorageRead\",\n        \"Period\": 3600,\n        \"RequestId\": \"6702e6bd-858d-4b19-89bb-5b183540186d\",\n        \"StartTime\": \"2019-04-02 09:00:00\",\n        \"Time\": [\n            1554894000,\n            1554894300,\n            1554894600,\n            1554894900,\n            1554895200\n        ],\n        \"Values\": [\n            20,\n            100,\n            180,\n            240,\n            260\n        ],\n        \"NewValues\": [\n            20,\n            100,\n            180,\n            240,\n            260\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2019-04-04 19:00:00\",\n        \"MetricName\": \"StorageRead\",\n        \"Period\": 3600,\n        \"RequestId\": \"6702e6bd-858d-4b19-89bb-5b183540186d\",\n        \"StartTime\": \"2019-04-02 09:00:00\",\n        \"Time\": [\n            1554894000,\n            1554894300,\n            1554894600,\n            1554894900,\n            1554895200\n        ],\n        \"Values\": [\n            20,\n            100,\n            180,\n            240,\n            260\n        ],\n        \"NewValues\": 0\n    }\n}",
         "title": "示例"
       }
     ],
@@ -420,6 +444,22 @@
         "title": "查询网关监控数据实例"
       }
     ],
+    "DescribeGatewayVersions": [
+      {
+        "document": "根据网关ID查询版本信息",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayVersions\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayId\": \"gw-xxx\",\n        \"TotalCount\": 1,\n        \"GatewayVersionItems\": [\n            {\n                \"VersionName\": \"versionName-xxx\",\n                \"Weight\": 100\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "查询网关版本信息接口实例"
+      }
+    ],
+    "DescribeGraphData": [
+      {
+        "document": "根据用户传入的指标, 拉取一段时间内的监控数据",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCurveData\n&MetricName=StorageRead\n&StartTime=2019-04-0209:00:00\n&EndTime=2019-04-0419:00:00\n&ResourceID=3\n&EnvId=lotestapi100004\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2019-04-04 19:00:00\",\n        \"MetricName\": \"StorageRead\",\n        \"Period\": 3600,\n        \"RequestId\": \"6702e6bd-858d-4b19-89bb-5b183540186d\",\n        \"StartTime\": \"2019-04-02 09:00:00\",\n        \"Time\": [\n            1554894000,\n            1554894300,\n            1554894600,\n            1554894900,\n            1554895200\n        ],\n        \"Values\": [\n            20.5,\n            100.5,\n            180.5,\n            240.5,\n            260.5\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeHostingDomainTask": [
       {
         "document": "",
@@ -508,6 +548,22 @@
         "title": "DescribeWxCloudBaseRunSubNets"
       }
     ],
+    "DescribeWxGatewayRoutes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxGatewayRoutes\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"GatewayVersion\": \"xx\",\n    \"GatewayRouteName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WxGatewayRouteSet\": [\n            {\n                \"GatewayRouteAddr\": \"xx\",\n                \"GatewayRouteDesc\": \"xx\",\n                \"GatewayRouteProtocol\": \"xx\",\n                \"GatewayRouteName\": \"xx\",\n                \"GatewayVersion\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看容器托管的所有服务"
+      }
+    ],
+    "DescribeWxGateways": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxGateways\n<公共请求参数>\n\n{\n    \"EnvId\": \"lotestapi100004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Gateways\": [\n            {\n                \"Status\": \"xx\",\n                \"L5Addr\": \"xx\",\n                \"EnvId\": \"xx\",\n                \"GatewayName\": \"xx\",\n                \"AllowUncertified\": 0,\n                \"SubnetIds\": [\n                    \"xx\"\n                ],\n                \"UpdateTime\": \"xx\",\n                \"GatewayDesc\": \"xx\",\n                \"Uin\": \"xx\",\n                \"ExpireTime\": \"xx\",\n                \"GatewayType\": \"xx\",\n                \"IsolateTime\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"PackageId\": 1,\n                \"AppId\": 1,\n                \"GatewayId\": \"xx\",\n                \"PackageVersion\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Region\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看容器托管的所有服务"
+      }
+    ],
     "DestroyEnv": [
       {
         "document": "",
@@ -550,9 +606,9 @@
     ],
     "FreezeCloudBaseRunServers": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ServerNameList\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"xx\"\n        ],\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "批量冻结",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-abc\",\n    \"ServerNameList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"abc\"\n        ],\n        \"Result\": \"abc\",\n        \"RequestId\": \"aa\"\n    }\n}",
         "title": "批量冻结"
       }
     ],
@@ -604,6 +660,14 @@
         "title": "修改环境备注名示例"
       }
     ],
+    "ModifyGatewayVersionTraffic": [
+      {
+        "document": "设置安全网关不同版本流量比例",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayVersionTraffic\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayId\": \"gw-002\",\n    \"VersionsWeight\": [\n        {\n            \"VersionName\": \"versionName-xxx\",\n            \"Weight\": 50\n        },\n        {\n            \"VersionName\": \"versionName-yyy\",\n            \"Weight\": 50\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "设置网关版本的流量比例接口实例"
+      }
+    ],
     "ReinstateEnv": [
       {
         "document": "",
@@ -630,8 +694,8 @@
     ],
     "SearchClsLog": [
       {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=xx\n&EndTime=xx\n&Limit=10\n&QueryString=x\n&Sort=desc\n&<公共请求参数>",
+        "document": "搜索CLS日志",
+        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=abc\n&EndTime=def\n&Limit=10\n&QueryString=x\n&Sort=desc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
         "title": "搜索CLS日志"
       }

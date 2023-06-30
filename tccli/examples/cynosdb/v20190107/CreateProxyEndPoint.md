@@ -33,6 +33,7 @@ Output:
     "Response": {
         "FlowId": 0,
         "TaskId": 0,
+        "ProxyGroupId": "abc",
         "RequestId": "abc"
     }
 }

@@ -1,14 +1,14 @@
 **Example 1: 搜索CLS日志**
 
-
+搜索CLS日志
 
 Input: 
 
 ```
 tccli tcb SearchClsLog --cli-unfold-argument  \
     --EnvId test-12323 \
-    --StartTime xx \
-    --EndTime xx \
+    --StartTime abc \
+    --EndTime def \
     --Limit 10 \
     --QueryString x \
     --Sort desc

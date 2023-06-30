@@ -17282,126 +17282,115 @@
       "usage": "out"
     },
     "XP2PDetailInfo": {
-      "document": "央视P2P流信息。",
+      "document": "P2P流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CDN流量。",
           "example": "2825",
           "member": "int64",
           "name": "CdnBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P2P流量。",
           "example": "4785",
           "member": "int64",
           "name": "P2pBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卡播人数。",
           "example": "23",
           "member": "int64",
           "name": "StuckPeople",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卡播次数。",
           "example": "75",
           "member": "int64",
           "name": "StuckTimes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在线人数。",
           "example": "28",
           "member": "int64",
           "name": "OnlinePeople",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起播请求次数",
           "example": "66",
           "member": "int64",
           "name": "Request",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起播成功次数",
           "example": "21",
           "member": "int64",
           "name": "RequestSuccess",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间，一分钟粒度，utc格式：yyyy-mm-ddTHH:MM:SSZ，参考https://cloud.tencent.com/document/product/266/11732#I。。",
           "example": "2022-08-03T16:00:00Z",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型，分live和vod两种。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "live",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7852921",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AppId。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "appidtest",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

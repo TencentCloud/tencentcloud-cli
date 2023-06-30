@@ -3219,6 +3219,15 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "安全事件来源下拉框",
+          "example": "无",
+          "member": "string",
+          "name": "SourceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5419,6 +5428,16 @@
           "name": "Server",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "上海",
+          "member": "string",
+          "name": "RegionKey",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
