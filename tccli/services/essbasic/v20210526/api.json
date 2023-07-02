@@ -2013,6 +2013,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后",
+          "example": "1604912664",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2026,6 +2036,7 @@
           "example": "xxx",
           "member": "string",
           "name": "FlowId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6693,7 +6704,7 @@
       "usage": "out"
     },
     "ReleasedApprover": {
-      "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n\n如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：\nApproverNumber, OrganizationName, ApproverType必传。\n对于其他身份标识\n- 子客企业指定经办人：OpenId必传，OrganizationOpenId必传；\n- 非子客企业：Name、Mobile必传。",
+      "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n注意：目前不支持替换C端（个人身份类型）签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n注意：当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只参数ApproverSignRole。\n\n如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：\nApproverNumber, OrganizationName, ApproverType必传。\n对于其他身份标识\n- 子客企业指定经办人：OpenId必传，OrganizationOpenId必传；\n- 非子客企业：Name、Mobile必传。",
       "members": [
         {
           "disabled": false,
@@ -6703,7 +6714,6 @@
           "name": "OrganizationName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6714,7 +6724,6 @@
           "name": "ApproverNumber",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6725,7 +6734,6 @@
           "name": "ApproverType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6736,7 +6744,6 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6747,7 +6754,6 @@
           "name": "IdCardType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6758,7 +6764,6 @@
           "name": "IdCardNumber",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6769,7 +6774,6 @@
           "name": "Mobile",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6780,7 +6784,6 @@
           "name": "OrganizationOpenId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -6791,7 +6794,26 @@
           "name": "OpenId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”\n- SIGN_SEAL-默认为印章控件类型\n- SIGN_SIGNATURE-手写签名控件类型",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSignComponentType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签署方自定义控件别名，最大长度20个字符",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSignRole",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -7770,7 +7792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填",
+          "document": "应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7816,21 +7838,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件id数组，有效期一个小时；有效期内此文件id可以反复使用",
-          "example": "无",
-          "member": "string",
-          "name": "FileIds",
-          "type": "list",
+          "document": "上传成功文件数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "上传成功文件数量",
-          "example": "20",
-          "member": "int64",
-          "name": "TotalCount",
-          "type": "int",
+          "document": "文件id数组，有效期一个小时；有效期内此文件id可以反复使用",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -7840,6 +7864,7 @@
           "example": "无",
           "member": "string",
           "name": "FileUrls",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

@@ -542,8 +542,8 @@
     ],
     "ModifyBackupPlan": [
       {
-        "document": "将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留3天",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPeriod\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"3\",\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\"\n}",
+        "document": "将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留7天",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPeriod\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"7\",\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "修改实例备份计划"
       }

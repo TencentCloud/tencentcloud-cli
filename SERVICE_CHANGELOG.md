@@ -1,152 +1,67 @@
 # 本版本更新包含以下内容：
 
-## 云呼叫中心(ccc) 版本：2020-02-10
-
-### 第 37 次发布
-
-发布时间：2023-06-30 01:11:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateExtension](http://document.tencentcloudapi.woa.com/document/product/679/76472)
-
-	* 新增入参：SkillGroupIds, Relation
-
-
-修改数据结构：
-
-* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
-
-	* 新增成员：VoicemailAsrURL
-
-	* <font color="#dd0000">**修改成员**：</font>Caller, Callee, Time, Direction, Duration, RecordURL, SeatUser, EndStatus, SkillGroup, CallerLocation, IVRDuration, RingTimestamp, AcceptTimestamp, EndedTimestamp, IVRKeyPressed, HungUpSide, ServeParticipants, SkillGroupId, EndStatusString, StartTimestamp, QueuedTimestamp, PostIVRKeyPressed, QueuedSkillGroupId, SessionId, ProtectedCaller, ProtectedCallee, Uui, IVRKeyPressedEx, AsrUrl, CustomRecordURL, Remark, QueuedSkillGroupName, VoicemailRecordURL
-
-
-
-
-## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
-
-### 第 2 次发布
-
-发布时间：2023-06-30 01:13:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBackUpSchedule](http://document.tencentcloudapi.woa.com/document/product/1667/79281)
-
-	* 新增出参：ErrorMsg
-
-* [DescribeInstancesNew](http://document.tencentcloudapi.woa.com/document/product/1667/79272)
-
-	* 新增入参：IsSimple
-
-
-修改数据结构：
-
-* [BackupTableContent](http://document.tencentcloudapi.woa.com/document/product/1667/79282#BackupTableContent)
-
-	* 新增成员：ZooPath, Rip
-
-* [ScheduleStrategy](http://document.tencentcloudapi.woa.com/document/product/1667/79282#ScheduleStrategy)
-
-	* 新增成员：NextBackupTime
-
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 28 次发布
-
-发布时间：2023-06-30 01:14:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
-
-	* 新增出参：SourceList
-
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#InstanceInfo)
-
-	* 新增成员：RegionKey
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 48 次发布
-
-发布时间：2023-06-30 01:20:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateProxy](http://document.tencentcloudapi.woa.com/document/product/1003/78068)
-
-	* 新增出参：ProxyGroupId
-
-* [CreateProxyEndPoint](http://document.tencentcloudapi.woa.com/document/product/1003/78067)
-
-	* 新增出参：ProxyGroupId
-
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 3 次发布
-
-发布时间：2023-06-30 01:26:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79340)
-
-	* 新增入参：Agent
-
-* [CreateFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79297)
-
-	* 新增入参：Agent
-
-* [CreateFlowReminds](http://document.tencentcloudapi.woa.com/document/product/1668/79338)
-
-	* 新增入参：Agent
-
-* [DescribeFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79296)
-
-	* 新增入参：Agent
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
+## 费用中心(billing) 版本：2018-07-09
 
 ### 第 23 次发布
 
-发布时间：2023-06-30 01:37:19
+发布时间：2023-07-03 01:08:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：RealTotalMeasure, DeductedMeasure
+
+	* <font color="#dd0000">**修改成员**：</font>SpecifiedPrice, TransferPayAmount, SPDeduction
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 27 次发布
+
+发布时间：2023-07-03 01:11:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/15648)
+
+	* 新增入参：ClientToken
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 56 次发布
+
+发布时间：2023-07-03 01:22:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 25 次发布
+
+发布时间：2023-07-03 01:23:28
 
 本次发布包含了以下内容：
 
@@ -154,69 +69,101 @@
 
 新增接口：
 
-* [UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)
+* [DeleteRecordBatch](http://document.tencentcloudapi.woa.com/document/product/1427/80994)
+
+新增数据结构：
+
+* [DeleteRecordBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteRecordBatchDetail)
 
 
 
-## 集团账号管理(organization) 版本：2018-12-25
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 4 次发布
 
-
-## 容器镜像服务(tcr) 版本：2019-09-24
-
-### 第 23 次发布
-
-发布时间：2023-06-30 01:43:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CreateImageLifecyclePersonal
-* DeleteImageLifecyclePersonal
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 2 次发布
-
-发布时间：2023-06-30 01:43:54
+发布时间：2023-07-03 01:26:45
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [CreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79336)
+
+	* 新增入参：Deadline
+
 
 修改数据结构：
 
-* [ComplianceHostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ComplianceHostDetailInfo)
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ReleasedApprover)
 
-	* 新增成员：ContainerdVersion
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
+	* 新增成员：ApproverSignComponentType, ApproverSignRole
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 73 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2023-06-30 01:47:56
+### 第 63 次发布
+
+发布时间：2023-07-03 01:27:05
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
+
+	* 新增入参：Deadline
+
+
 修改数据结构：
 
-* [KMSConfiguration](http://document.tencentcloudapi.woa.com/document/product/457/31866#KMSConfiguration)
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
 
-	* 新增成员：KeyId, KmsRegion
+	* 新增成员：ApproverSignComponentType, ApproverSignRole
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 9 次发布
+
+发布时间：2023-07-03 01:59:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryArrivalList](http://document.tencentcloudapi.woa.com/document/product/1318/80996)
+* [QueryFollowList](http://document.tencentcloudapi.woa.com/document/product/1318/80995)
+
+新增数据结构：
+
+* [ArrivalInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ArrivalInfo)
+* [FollowInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#FollowInfo)
+
+修改数据结构：
+
+* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+
+	* 新增成员：WxId, BrandCode, BuildTime, OrderTime, ArrivalTime, DeliveryTime, FollowTime, NextFollowTime, OrgId, OrgName, Introducer, IntroducerPhone, IsBindWx, IsMerge, IsInvalid, InvalidType, InvalidTypeName, InvalidRemark, InvalidTime, DealerName, ShopId, ShopName, Position
+
+	* <font color="#dd0000">**修改成员**：</font>LeadUserType, LeadType, ChannelId, ChannelName, SourceChannelName, Gender, CreateTime, LeadStatus, LevelCode, ImportAtTime, DistributeTime, CreateAtTime
+
+* [CorpUserInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#CorpUserInfo)
+
+	* 新增成员：JobNumber
 
 
 
@@ -4573,6 +4520,23 @@
 
 ## 费用中心(billing) 版本：2018-07-09
 
+### 第 23 次发布
+
+发布时间：2023-07-03 01:08:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：RealTotalMeasure, DeductedMeasure
+
+	* <font color="#dd0000">**修改成员**：</font>SpecifiedPrice, TransferPayAmount, SPDeduction
+
+
 ### 第 22 次发布
 
 发布时间：2023-06-28 01:09:15
@@ -6907,6 +6871,21 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 27 次发布
+
+发布时间：2023-07-03 01:11:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/15648)
+
+	* 新增入参：ClientToken
+
 
 ### 第 26 次发布
 
@@ -24576,6 +24555,19 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 56 次发布
+
+发布时间：2023-07-03 01:22:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+
 ### 第 55 次发布
 
 发布时间：2023-06-20 01:22:40
@@ -25886,6 +25878,22 @@
 
 
 ## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 25 次发布
+
+发布时间：2023-07-03 01:23:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteRecordBatch](http://document.tencentcloudapi.woa.com/document/product/1427/80994)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DeleteRecordBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteRecordBatchDetail)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[DeleteRecordBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteRecordBatchDetail))
 
 ### 第 24 次发布
 
@@ -29760,6 +29768,28 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 4 次发布
+
+发布时间：2023-07-03 01:26:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79336)
+
+	* 新增入参：Deadline
+
+
+修改数据结构：
+
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ReleasedApprover)
+
+	* 新增成员：ApproverSignComponentType, ApproverSignRole
+
+
 ### 第 3 次发布
 
 发布时间：2023-06-30 01:26:27
@@ -30062,6 +30092,28 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 63 次发布
+
+发布时间：2023-07-03 01:27:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
+
+	* 新增入参：Deadline
+
+
+修改数据结构：
+
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
+
+	* 新增成员：ApproverSignComponentType, ApproverSignRole
+
 
 ### 第 62 次发布
 
@@ -45639,7 +45691,7 @@
 
 新增接口：
 
-* [[UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)
 
 ### 第 22 次发布
 
@@ -70753,6 +70805,37 @@
 
 
 ## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 9 次发布
+
+发布时间：2023-07-03 01:59:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryArrivalList](http://document.tencentcloudapi.woa.com/document/product/1318/80996)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryFollowList](http://document.tencentcloudapi.woa.com/document/product/1318/80995)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ArrivalInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ArrivalInfo)](http://document.tencentcloudapi.woa.com/document/product/1318/56791#[ArrivalInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ArrivalInfo))
+* [[FollowInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#FollowInfo)](http://document.tencentcloudapi.woa.com/document/product/1318/56791#[FollowInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#FollowInfo))
+
+修改数据结构：
+
+* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+
+	* 新增成员：WxId, BrandCode, BuildTime, OrderTime, ArrivalTime, DeliveryTime, FollowTime, NextFollowTime, OrgId, OrgName, Introducer, IntroducerPhone, IsBindWx, IsMerge, IsInvalid, InvalidType, InvalidTypeName, InvalidRemark, InvalidTime, DealerName, ShopId, ShopName, Position
+
+	* <font color="#dd0000">**修改成员**：</font>LeadUserType, LeadType, ChannelId, ChannelName, SourceChannelName, Gender, CreateTime, LeadStatus, LevelCode, ImportAtTime, DistributeTime, CreateAtTime
+
+* [CorpUserInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#CorpUserInfo)
+
+	* 新增成员：JobNumber
+
 
 ### 第 8 次发布
 

@@ -48,6 +48,14 @@
         "title": "查询活码列表"
       }
     ],
+    "QueryArrivalList": [
+      {
+        "document": "查询指定时间范围内发生过到店的潜客到店信息",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryArrivalList\n<公共请求参数>\n\n{\n    \"Cursor\": \"2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\",\n    \"Limit\": 100,\n    \"BeginTime\": 1618322621,\n    \"EndTime\": 1618322621\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\",\n        \"PageData\": [\n            {\n                \"ClueId\": 1348080105398452200,\n                \"CustomerId\": 1348080105398452200,\n                \"UserName\": \"张三\",\n                \"Phone\": \"134xxxx4321\",\n                \"FirstArrival\": 1,\n                \"ArrivalTime\": 1618322621,\n                \"EventType\": 1,\n                \"EventTypeName\": \"首次到店\",\n                \"FollowRecord\": \"\"\n            }\n        ],\n        \"HasMore\": 1,\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询指定时间范围内发生过到店的潜客到店信息"
+      }
+    ],
     "QueryChannelCodeList": [
       {
         "document": "",
@@ -68,7 +76,7 @@
       {
         "document": "用于查询线索列表",
         "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClueInfoList\n<公共请求参数>\n\n{\n    \"Cursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n    \"Limit\": 100,\n    \"BeginTime\": 1647187200,\n    \"EndTime\": 1647273600\n}",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": \"1,3,5\",\n                \"ClueId\": \"1348080105398452226\",\n                \"EnquireTime\": 1618556502,\n                \"UnionId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"Name\": \"微信昵称\",\n                \"UserName\": \"李四\",\n                \"Phone\": \"134xxxx1234\",\n                \"SeriesCode\": \"车系编号\",\n                \"ModelCode\": \"车型编号\",\n                \"ProvinceCode\": \"省份编号\",\n                \"CityCode\": \"城市编号\",\n                \"SalesName\": \"顾问名称\",\n                \"SalesPhone\": \"134xxxx6789\",\n                \"Remark\": \"备注\",\n                \"TagList\": [\n                    \"标签1\",\n                    \"标签2\"\n                ],\n                \"LeadUserType\": 0,\n                \"LeadType\": 1,\n                \"ChannelId\": 1,\n                \"ChannelName\": \"渠道1\",\n                \"SourceChannelName\": \"渠道1\",\n                \"Gender\": 1,\n                \"CreateTime\": \"2023-01-01 00:00:00\",\n                \"LeadStatus\": 101,\n                \"LevelCode\": \"101\",\n                \"ImportAtTime\": 1618322621,\n                \"DistributeTime\": 1618322621,\n                \"CreateAtTime\": 1618322621\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": \"1,3,5\",\n                \"ClueId\": \"1348080105398452226\",\n                \"EnquireTime\": 1618556502,\n                \"UnionId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"Name\": \"微信昵称\",\n                \"UserName\": \"李四\",\n                \"Phone\": \"134xxxx1234\",\n                \"SeriesCode\": \"车系编号\",\n                \"ModelCode\": \"车型编号\",\n                \"ProvinceCode\": \"省份编号\",\n                \"CityCode\": \"城市编号\",\n                \"SalesName\": \"顾问名称\",\n                \"SalesPhone\": \"134xxxx6789\",\n                \"Remark\": \"备注\",\n                \"TagList\": [\n                    \"标签1\",\n                    \"标签2\"\n                ],\n                \"LeadUserType\": 0,\n                \"LeadType\": 1,\n                \"ChannelId\": 1,\n                \"ChannelName\": \"渠道1\",\n                \"SourceChannelName\": \"渠道1\",\n                \"Gender\": 1,\n                \"CreateTime\": \"2023-01-01 00:00:00\",\n                \"LeadStatus\": 101,\n                \"LevelCode\": \"101\",\n                \"ImportAtTime\": 1618322621,\n                \"DistributeTime\": 1618322621,\n                \"CreateAtTime\": 1618322621,\n                \"WxId\": \"李四_1234\",\n                \"BrandCode\": \"abc\",\n                \"BuildTime\": 1618322621,\n                \"OrderTime\": 1618322621,\n                \"ArrivalTime\": 1618322621,\n                \"DeliveryTime\": 1618322621,\n                \"FollowTime\": 1618322621,\n                \"NextFollowTime\": 1618322621,\n                \"OrgId\": 1,\n                \"OrgName\": \"org1\",\n                \"Introducer\": \"introducer\",\n                \"IntroducerPhone\": \"134xxxx1234\",\n                \"IsBindWx\": 0,\n                \"IsMerge\": 0,\n                \"IsInvalid\": 0,\n                \"InvalidType\": \"1\",\n                \"InvalidTypeName\": \"空错号\",\n                \"InvalidRemark\": \"无效记录\",\n                \"InvalidTime\": 1618322621,\n                \"DealerName\": \"dealer1\",\n                \"ShopId\": 1234567890,\n                \"ShopName\": \"shop1\",\n                \"Position\": \"销售\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询线索列表接口"
       }
     ],
@@ -144,6 +152,14 @@
         "title": "外部联系人转换接口"
       }
     ],
+    "QueryFollowList": [
+      {
+        "document": "查询指定时间范围内发生过跟进的潜客信息",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFollowList\n<公共请求参数>\n\n{\n    \"Cursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n    \"Limit\": 100,\n    \"BeginTime\": 1647187200,\n    \"EndTime\": 1647187200\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"PageData\": [\n            {\n                \"ClueId\": 1348080105398452200,\n                \"CustomerId\": 1348080105398452200,\n                \"UserName\": \"张三\",\n                \"Phone\": \"134xxxx1234\",\n                \"IsOverdue\": 0,\n                \"OverdueTime\": 1618322621,\n                \"EventType\": 1,\n                \"EventTypeName\": \"逾期\",\n                \"FollowWayType\": \"1\",\n                \"FollowWayName\": \"自然逾期\",\n                \"FollowTime\": 1618322621,\n                \"NextFollowTime\": 1618322621,\n                \"FollowRecord\": \"abc\"\n            }\n        ],\n        \"HasMore\": 1,\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询指定时间范围内发生过跟进的潜客信息"
+      }
+    ],
     "QueryLicenseInfo": [
       {
         "document": "",
@@ -178,9 +194,9 @@
     ],
     "QueryUserInfoList": [
       {
-        "document": "",
+        "document": "查询企业成员信息列表",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryUserInfoList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"UserId\": 0,\n                \"UserName\": \"杨过\",\n                \"UserOpenId\": \"YangGuo\",\n                \"DealerId\": 0,\n                \"ShopId\": 0,\n                \"Phone\": \"134****1234\",\n                \"OrgIds\": \"2,3\",\n                \"MainDepartment\": \"1\",\n                \"IsLeaderInDept\": \"1,0\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"UserId\": 0,\n                \"UserName\": \"杨过\",\n                \"UserOpenId\": \"YangGuo\",\n                \"DealerId\": 0,\n                \"ShopId\": 0,\n                \"Phone\": \"134****1234\",\n                \"OrgIds\": \"2,3\",\n                \"MainDepartment\": \"1\",\n                \"IsLeaderInDept\": \"1,0\",\n                \"Status\": 0,\n                \"JobNumber\": \"12345678\"\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
         "title": "查询企业成员信息列表"
       }
     ],

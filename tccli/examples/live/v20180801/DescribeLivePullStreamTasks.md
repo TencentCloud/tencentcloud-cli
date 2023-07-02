@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+查询直播拉流任务。
 
 Input: 
 
@@ -35,7 +35,7 @@ Output:
                 "StartTime": "2020-04-20T00:30:00Z",
                 "Status": "enable",
                 "StreamName": "teststream",
-                "Comment": "xx",
+                "Comment": "abc",
                 "TaskId": "10054",
                 "UpdateBy": "",
                 "UpdateTime": "2020-04-23T05:07:43Z",

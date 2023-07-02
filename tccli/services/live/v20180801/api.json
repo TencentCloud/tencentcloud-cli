@@ -7421,7 +7421,6 @@
       "document": "DescribeLivePullStreamTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID。 \n来源：调用 CreateLivePullStreamTask 接口时返回。\n不填默认查询所有任务，按更新时间倒序排序。",
           "example": "123",
@@ -7432,7 +7431,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取得第几页，默认值：1。",
           "example": "1",
@@ -7443,7 +7441,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认值：10。\n取值范围：1~20 之前的任意整数。",
           "example": "10",
@@ -7465,7 +7462,6 @@
           "example": "无",
           "member": "PullStreamTaskInfo",
           "name": "TaskInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -7476,7 +7472,6 @@
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7487,7 +7482,6 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7498,7 +7492,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7509,7 +7502,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7520,7 +7512,6 @@
           "example": "20",
           "member": "uint64",
           "name": "LimitTaskNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

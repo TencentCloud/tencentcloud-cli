@@ -617,7 +617,7 @@
           "example": "内存",
           "member": "string",
           "name": "ComponentCodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -628,7 +628,7 @@
           "example": "高效云系统盘",
           "member": "string",
           "name": "ItemCodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -639,7 +639,7 @@
           "example": "0.35000000",
           "member": "string",
           "name": "SinglePrice",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -650,7 +650,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "SpecifiedPrice",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -661,7 +661,7 @@
           "example": "元/GB/月",
           "member": "string",
           "name": "PriceUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -672,7 +672,7 @@
           "example": "50.00000000",
           "member": "string",
           "name": "UsedAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -683,9 +683,31 @@
           "example": "GB",
           "member": "string",
           "name": "UsedAmountUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "原始用量/时长：组件被资源包抵扣前的原始用量/时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RealTotalMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "DeductedMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -694,7 +716,7 @@
           "example": "1.00000000",
           "member": "string",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -705,7 +727,7 @@
           "example": "月",
           "member": "string",
           "name": "TimeUnitName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -716,7 +738,7 @@
           "example": "17.50000000",
           "member": "string",
           "name": "Cost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -727,7 +749,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -738,7 +760,7 @@
           "example": "折扣",
           "member": "string",
           "name": "ReduceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -749,7 +771,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "RealCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -760,7 +782,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -771,7 +793,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "CashPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -782,7 +804,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -793,7 +815,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -804,7 +826,7 @@
           "example": "sv_cvm_rootdisk_cbspremium",
           "member": "string",
           "name": "ItemCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -815,7 +837,7 @@
           "example": "v_cvm_rootdisk",
           "member": "string",
           "name": "ComponentCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -826,7 +848,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "ContractPrice",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -837,7 +859,7 @@
           "example": "RI",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -848,7 +870,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "RiTimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -859,7 +881,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "OriginalCostWithRI",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -870,7 +892,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "SPDeductionRate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -881,7 +903,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "SPDeduction",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -892,7 +914,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "OriginalCostWithSP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -903,7 +925,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "BlendedDiscount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1

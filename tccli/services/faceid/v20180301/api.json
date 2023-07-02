@@ -716,54 +716,54 @@
       "document": "BankCardVerification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
           "example": "440111201903211111",
           "member": "string",
           "name": "IdCard",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡",
           "example": "6222222222222222222",
           "member": "string",
           "name": "BankCard",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型需求可以添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行确认。",
+          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型暂不支持。",
           "example": "0",
           "member": "int64",
           "name": "CertType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -777,9 +777,10 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -787,9 +788,10 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3355,7 +3357,7 @@
       "type": "object"
     },
     "GetEidTokenConfig": {
-      "document": "获取token时的的配置",
+      "document": "获取token时的配置",
       "members": [
         {
           "disabled": false,
@@ -3365,7 +3367,6 @@
           "name": "InputType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3376,7 +3377,6 @@
           "name": "UseIntentionVerify",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3387,7 +3387,6 @@
           "name": "IntentionMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3398,7 +3397,6 @@
           "name": "IntentionVerifyText",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3409,7 +3407,6 @@
           "name": "IntentionQuestions",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3420,7 +3417,6 @@
           "name": "IntentionRecognition",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -3431,7 +3427,6 @@
           "name": "IsSupportHMTResidentPermitOCR",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
           "visibility": 1
         }
       ],
