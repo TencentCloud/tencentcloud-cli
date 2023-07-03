@@ -1366,6 +1366,7 @@
           "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

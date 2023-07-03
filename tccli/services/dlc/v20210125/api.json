@@ -2077,7 +2077,7 @@
         {
           "disabled": false,
           "document": "集群类型 spark_private/presto_private/presto_cu/spark_cu",
-          "example": "presto_private",
+          "example": "presto_cu/spark_cu",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -2120,8 +2120,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "是否为默虚拟集群",
+          "disabled": true,
+          "document": "是否为默认虚拟集群",
           "example": "true",
           "member": "bool",
           "name": "DefaultDataEngine",
@@ -2149,7 +2149,7 @@
         {
           "disabled": false,
           "document": "集群规模",
-          "example": "1",
+          "example": "64",
           "member": "int64",
           "name": "Size",
           "required": false,
@@ -2292,7 +2292,7 @@
         },
         {
           "disabled": false,
-          "document": "主集群名称",
+          "document": "主集群名称，创建容灾集群时指定",
           "example": "test",
           "member": "string",
           "name": "MainClusterName",
@@ -2338,6 +2338,7 @@
           "example": "xx",
           "member": "string",
           "name": "DataEngineId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -7547,7 +7547,6 @@
       "document": "DescribeBackupSummaries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
           "example": "mysql",
@@ -7557,7 +7556,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询数据的偏移量，默认为0。",
           "example": "0",
@@ -7567,7 +7565,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。",
           "example": "1",
@@ -7577,7 +7574,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。",
           "example": "BackupVolume",
@@ -7587,7 +7583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。",
           "example": "ASC",
@@ -7608,7 +7603,7 @@
           "example": "无",
           "member": "BackupSummaryItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7618,7 +7613,7 @@
           "example": "50",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

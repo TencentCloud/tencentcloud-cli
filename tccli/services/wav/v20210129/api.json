@@ -42,6 +42,13 @@
       "output": "QueryActivityLiveCodeListResponse",
       "status": "online"
     },
+    "QueryArrivalList": {
+      "document": "查询指定时间范围内发生过到店的潜客到店信息",
+      "input": "QueryArrivalListRequest",
+      "name": "查询指定时间范围内发生过到店的潜客到店信息",
+      "output": "QueryArrivalListResponse",
+      "status": "online"
+    },
     "QueryChannelCodeList": {
       "document": "根据游标拉取渠道活码列表信息",
       "input": "QueryChannelCodeListRequest",
@@ -124,6 +131,13 @@
       "input": "QueryExternalUserMappingInfoRequest",
       "name": "外部联系人转换接口",
       "output": "QueryExternalUserMappingInfoResponse",
+      "status": "online"
+    },
+    "QueryFollowList": {
+      "document": "查询指定时间范围内发生过跟进的潜客信息",
+      "input": "QueryFollowListRequest",
+      "name": "查询指定时间范围内发生过跟进的潜客信息",
+      "output": "QueryFollowListResponse",
       "status": "online"
     },
     "QueryLicenseInfo": {
@@ -470,6 +484,102 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ArrivalInfo": {
+      "document": "发生过到店的潜客到店信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "线索id",
+          "example": "1348080105398452226",
+          "member": "uint64",
+          "name": "ClueId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户id",
+          "example": "1348080105398452226",
+          "member": "uint64",
+          "name": "CustomerId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户的手机号",
+          "example": "134xxxx4321",
+          "member": "string",
+          "name": "Phone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否首次到店，0否，1是",
+          "example": "1",
+          "member": "int64",
+          "name": "FirstArrival",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到店时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\t1618322621",
+          "member": "uint64",
+          "name": "ArrivalTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发生事件",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发生事件名称",
+          "example": "首次到店",
+          "member": "string",
+          "name": "EventTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跟进记录",
+          "example": "无",
+          "member": "string",
+          "name": "FollowRecord",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -835,17 +945,17 @@
           "example": "1348080105398452226",
           "member": "string",
           "name": "ClueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接待客户经销商顾问所属组织id,多个组织使用逗号分割",
-          "example": "1,5,9",
+          "document": "接待客户经销商顾问所属经销商code",
+          "example": "P1234",
           "member": "string",
           "name": "DealerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -855,7 +965,7 @@
           "example": "1618556502",
           "member": "uint64",
           "name": "EnquireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -865,7 +975,7 @@
           "example": "ozynqsulJFCZ2z1aYeS8h",
           "member": "string",
           "name": "UnionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -875,7 +985,7 @@
           "example": "文",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -885,7 +995,7 @@
           "example": "134xxxx3232",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -895,7 +1005,7 @@
           "example": "无",
           "member": "string",
           "name": "SeriesCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -905,7 +1015,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -915,7 +1025,7 @@
           "example": "无",
           "member": "string",
           "name": "ProvinceCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -925,7 +1035,7 @@
           "example": "无",
           "member": "string",
           "name": "CityCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -935,7 +1045,7 @@
           "example": "张三",
           "member": "string",
           "name": "SalesName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -945,7 +1055,7 @@
           "example": "134xxxx4321",
           "member": "string",
           "name": "SalesPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -955,7 +1065,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -965,7 +1075,7 @@
           "example": "[\"标签1\",\"标签2\"]",
           "member": "string",
           "name": "TagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -975,7 +1085,7 @@
           "example": "李四",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -985,7 +1095,7 @@
           "example": "0",
           "member": "int64",
           "name": "LeadUserType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -995,7 +1105,7 @@
           "example": "1",
           "member": "int64",
           "name": "LeadType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1005,7 +1115,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ChannelId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1015,7 +1125,7 @@
           "example": "渠道1",
           "member": "string",
           "name": "ChannelName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1025,7 +1135,7 @@
           "example": "渠道1",
           "member": "string",
           "name": "SourceChannelName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1035,7 +1145,7 @@
           "example": "1",
           "member": "int64",
           "name": "Gender",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1045,7 +1155,7 @@
           "example": "1618322621",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1055,7 +1165,7 @@
           "example": "101",
           "member": "int64",
           "name": "LeadStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1065,7 +1175,7 @@
           "example": "101",
           "member": "string",
           "name": "LevelCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1075,7 +1185,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "ImportAtTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1085,7 +1195,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "DistributeTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1095,8 +1205,238 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "CreateAtTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户微信id",
+          "example": "无",
+          "member": "string",
+          "name": "WxId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "意向车型对应品牌code",
+          "example": "无",
+          "member": "string",
+          "name": "BrandCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建档时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "BuildTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下订时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "OrderTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "到店时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "ArrivalTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交车时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "DeliveryTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次跟进时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "FollowTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下次跟进时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "NextFollowTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "线索所属组织id",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrgId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线索所属组织名称",
+          "example": "org1",
+          "member": "string",
+          "name": "OrgName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍人姓名",
+          "example": "introducer",
+          "member": "string",
+          "name": "Introducer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍人电话",
+          "example": "134xxxx4321",
+          "member": "string",
+          "name": "IntroducerPhone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否关联微信 1 是 0 否",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBindWx",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否经过合并 1 是 0 否",
+          "example": "1",
+          "member": "int64",
+          "name": "IsMerge",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否无效  1 是 0 否",
+          "example": "0",
+          "member": "int64",
+          "name": "IsInvalid",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效类型",
+          "example": "1",
+          "member": "string",
+          "name": "InvalidType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效类型枚举：\n无意向购买、空错号、未接听、其他",
+          "example": "空错号",
+          "member": "string",
+          "name": "InvalidTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "由顾问手动输入的无效原因文字",
+          "example": "无",
+          "member": "string",
+          "name": "InvalidRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "InvalidTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "经销商名称",
+          "example": "dealer1",
+          "member": "string",
+          "name": "DealerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经销商下级门店ID",
+          "example": "1234567890",
+          "member": "uint64",
+          "name": "ShopId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经销商下级门店名称",
+          "example": "shop1",
+          "member": "string",
+          "name": "ShopName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "职位",
+          "example": "销售",
+          "member": "string",
+          "name": "Position",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1106,114 +1446,114 @@
       "document": "企业成员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业成员UserId",
           "example": "1323253932850728968",
           "member": "uint64",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业成员在SaaS名片内填写的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "杨过",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业成员在企微原生通讯录内的id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "YangGuo",
           "member": "string",
           "name": "UserOpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员所属经销商id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1438427185617956866",
           "member": "uint64",
           "name": "DealerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员所属门店id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381564121059749890",
           "member": "uint64",
           "name": "ShopId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业成员手机号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "134****1234",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3,5",
           "member": "string",
           "name": "OrgIds",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主部门，仅当应用对主部门有查看权限时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "MainDepartment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0,1",
           "member": "string",
           "name": "IsLeaderInDept",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "激活状态: 0=已激活，1=已禁用，-1=退出企业\"",
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345678",
+          "member": "string",
+          "name": "JobNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2554,6 +2894,142 @@
       ],
       "usage": "out"
     },
+    "FollowInfo": {
+      "document": "发生过跟进的潜客信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "线索id",
+          "example": "1348080105398452226",
+          "member": "uint64",
+          "name": "ClueId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户档案id",
+          "example": "1348080105398452226",
+          "member": "uint64",
+          "name": "CustomerId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户的手机号",
+          "example": "134xxxx4321",
+          "member": "string",
+          "name": "Phone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否逾期",
+          "example": "0",
+          "member": "int64",
+          "name": "IsOverdue",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逾期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "OverdueTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发生事件",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发生事件名称",
+          "example": "再次到店",
+          "member": "string",
+          "name": "EventTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跟进方式",
+          "example": "1",
+          "member": "string",
+          "name": "FollowWayType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跟进方式名称",
+          "example": "线上跟进",
+          "member": "string",
+          "name": "FollowWayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次跟进时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "FollowTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下次跟进时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "NextFollowTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跟进记录",
+          "example": "无",
+          "member": "string",
+          "name": "FollowRecord",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FollowUser": {
       "document": "添加了此外部联系人的企业成员信息",
       "members": [
@@ -3275,6 +3751,90 @@
       ],
       "type": "object"
     },
+    "QueryArrivalListRequest": {
+      "document": "QueryArrivalList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页，预期请求的数据量，取值范围 1 ~ 1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间， 单位秒",
+          "example": "1647187200",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryArrivalListResponse": {
+      "document": "QueryArrivalList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "潜客客户存档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArrivalInfo",
+          "name": "PageData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasMore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryChannelCodeListRequest": {
       "document": "QueryChannelCodeList请求参数结构体",
       "members": [
@@ -3442,6 +4002,7 @@
           "example": "无",
           "member": "ClueInfoDetail",
           "name": "PageData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3451,6 +4012,7 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3460,6 +4022,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4101,6 +4664,90 @@
       ],
       "type": "object"
     },
+    "QueryFollowListRequest": {
+      "document": "QueryFollowList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页，预期请求的数据量，取值范围 1 ~ 1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间， 单位秒",
+          "example": "1647187200",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFollowListResponse": {
+      "document": "QueryFollowList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "潜客客户存档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FollowInfo",
+          "name": "PageData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasMore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryLicenseInfoRequest": {
       "document": "QueryLicenseInfo请求参数结构体",
       "members": [
@@ -4347,7 +4994,6 @@
       "document": "QueryUserInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4357,7 +5003,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4378,7 +5023,7 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4388,7 +5033,7 @@
           "example": "无",
           "member": "CorpUserInfo",
           "name": "PageData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

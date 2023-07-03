@@ -30,13 +30,13 @@
     ],
     "BankCardVerification": [
       {
-        "document": "",
+        "document": "认证通过场景",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCardVerification\n&IdCard=440111201903211111\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
         "title": "认证通过示例 [前往调试工具]（https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig"
       },
       {
-        "document": "",
+        "document": "认证失败场景",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCardVerification\n&IdCard=440111201903211111\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"-1\",\n        \"Description\": \"认证未通过\",\n        \"RequestId\": \"89f695b2-18fd-44b6-bffc-96972052666f\"\n    }\n}",
         "title": "认证失败示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCardVerification&Sig"

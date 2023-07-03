@@ -7205,7 +7205,6 @@
       "document": "ModifyBackupPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "postgres-xxxxxxxx",
@@ -7215,7 +7214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最早开始备份时间",
           "example": "01:00:00",
@@ -7225,7 +7223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最晚开始备份时间",
           "example": "02:00:00",
@@ -7235,9 +7232,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例备份保留时长，取值范围为3-7，单位是天",
+          "document": "实例备份保留时长，取值范围为7-1830，单位是天",
           "example": "7",
           "member": "uint64",
           "name": "BaseBackupRetentionPeriod",
@@ -7245,7 +7241,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例备份周期，按照星期维度，格式为小写星期英文单词",
           "example": "[\"monday\", \"tuesday\", \"wednesday\"]",

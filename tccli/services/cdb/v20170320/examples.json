@@ -386,7 +386,7 @@
     ],
     "DescribeBackupSummaries": [
       {
-        "document": "",
+        "document": "查询备份实时统计",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSummaries\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"Limit\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AutoBackupCount\": 5,\n                \"AutoBackupVolume\": 10000,\n                \"BackupVolume\": 50000,\n                \"BinlogBackupCount\": 2,\n                \"BinlogBackupVolume\": 20000,\n                \"DataBackupCount\": 15,\n                \"DataBackupVolume\": 30000,\n                \"InstanceId\": \"cdb-01wa5l0v\",\n                \"ManualBackupCount\": 10,\n                \"ManualBackupVolume\": 20000\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 50\n    }\n}",
         "title": "查询备份实时统计"

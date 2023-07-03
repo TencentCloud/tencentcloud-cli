@@ -105,6 +105,13 @@
       "output": "DeleteRecordResponse",
       "status": "online"
     },
+    "DeleteRecordBatch": {
+      "document": "批量删除解析记录",
+      "input": "DeleteRecordBatchRequest",
+      "name": "批量删除解析记录",
+      "output": "DeleteRecordBatchResponse",
+      "status": "online"
+    },
     "DeleteRecordGroup": {
       "document": "删除记录分组",
       "input": "DeleteRecordGroupRequest",
@@ -2083,6 +2090,123 @@
     "DeleteDomainResponse": {
       "document": "DeleteDomain返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordBatchDetail": {
+      "document": "批量删除记录详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名 ID",
+          "example": "12124",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "域名",
+          "example": "domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "Error",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "删除状态",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "操作",
+          "example": "remove",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "解析记录列表，json 序列化之后的字符串形式",
+          "example": "无",
+          "member": "string",
+          "name": "RecordList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteRecordBatchRequest": {
+      "document": "DeleteRecordBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析记录 ID 数组",
+          "example": "[111, 101]",
+          "member": "uint64",
+          "name": "RecordIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordBatchResponse": {
+      "document": "DeleteRecordBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量任务 ID",
+          "example": "1212",
+          "member": "uint64",
+          "name": "JobId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详情",
+          "example": "无",
+          "member": "DeleteRecordBatchDetail",
+          "name": "DetailList",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

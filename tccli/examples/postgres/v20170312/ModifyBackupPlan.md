@@ -1,13 +1,13 @@
 **Example 1: 修改实例备份计划**
 
-将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留3天
+将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留7天
 
 Input: 
 
 ```
 tccli postgres ModifyBackupPlan --cli-unfold-argument  \
     --BackupPeriod tuesday monday \
-    --BaseBackupRetentionPeriod 3 \
+    --BaseBackupRetentionPeriod 7 \
     --DBInstanceId postgres-xxxxxxxx \
     --MinBackupStartTime 01:00:00 \
     --MaxBackupStartTime 02:00:00

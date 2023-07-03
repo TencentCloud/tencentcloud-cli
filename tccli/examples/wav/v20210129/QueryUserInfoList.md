@@ -1,6 +1,6 @@
 **Example 1: 查询企业成员信息列表**
 
-
+查询企业成员信息列表
 
 Input: 
 
@@ -26,7 +26,8 @@ Output:
                 "OrgIds": "2,3",
                 "MainDepartment": "1",
                 "IsLeaderInDept": "1,0",
-                "Status": 0
+                "Status": 0,
+                "JobNumber": "12345678"
             }
         ],
         "RequestId": "4d48312c-a062-4875-a5d5-69f0f11baf96"

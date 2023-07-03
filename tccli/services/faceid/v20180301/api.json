@@ -409,7 +409,6 @@
       "document": "BankCardVerification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
           "example": "440111201903211111",
@@ -419,7 +418,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
@@ -429,7 +427,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡",
           "example": "6222222222222222222",
@@ -439,9 +436,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型需求可以添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行确认。",
+          "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型暂不支持。",
           "example": "0",
           "member": "int64",
           "name": "CertType",
@@ -449,7 +445,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
@@ -470,7 +465,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -480,7 +475,7 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2352,7 +2347,7 @@
       "type": "object"
     },
     "GetEidTokenConfig": {
-      "document": "获取token时的的配置",
+      "document": "获取token时的配置",
       "members": [
         {
           "disabled": false,
@@ -2361,8 +2356,7 @@
           "member": "string",
           "name": "InputType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2371,8 +2365,7 @@
           "member": "bool",
           "name": "UseIntentionVerify",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2381,8 +2374,7 @@
           "member": "string",
           "name": "IntentionMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2391,8 +2383,7 @@
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2401,8 +2392,7 @@
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2411,8 +2401,7 @@
           "member": "bool",
           "name": "IntentionRecognition",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2421,8 +2410,7 @@
           "member": "bool",
           "name": "IsSupportHMTResidentPermitOCR",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         }
       ],
       "usage": "in"
