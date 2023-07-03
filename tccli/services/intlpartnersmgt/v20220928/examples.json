@@ -56,6 +56,22 @@
         "title": "DescribeCustomerBillSummary"
       }
     ],
+    "DescribeCustomerInfo": [
+      {
+        "document": "查询子客信息",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerInfo\n<公共请求参数>\n\n{\n    \"CustomerUin\": [\n        200000000000,\n        200000000001,\n        200000000002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": \"abc\",\n                \"Email\": \"abc\",\n                \"Phone\": \"abc\",\n                \"Mark\": \"abc\",\n                \"Name\": \"abc\",\n                \"BindTime\": \"abc\",\n                \"AccountStatus\": \"abc\",\n                \"AuthStatus\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询子客信息"
+      }
+    ],
+    "DescribeCustomerUin": [
+      {
+        "document": "查询子客uin列表",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerUin\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": \"123\"\n            }\n        ],\n        \"Total\": \"123\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询子客uin列表"
+      }
+    ],
     "GetCountryCodes": [
       {
         "document": "",

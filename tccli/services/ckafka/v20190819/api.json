@@ -28,6 +28,20 @@
       "output": "BatchModifyTopicAttributesResponse",
       "status": "online"
     },
+    "BurnCPU": {
+      "document": "混沌演练CPU高负载",
+      "input": "BurnCPURequest",
+      "name": "混沌演练CPU高负载",
+      "output": "BurnCPUResponse",
+      "status": "online"
+    },
+    "BurnDiskIO": {
+      "document": "混沌演练磁盘高负载",
+      "input": "BurnDiskIORequest",
+      "name": "混沌演练磁盘高负载",
+      "output": "BurnDiskIOResponse",
+      "status": "online"
+    },
     "CancelAuthorizationToken": {
       "document": "取消授权token",
       "input": "CancelAuthorizationTokenRequest",
@@ -154,6 +168,20 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "DelayMessage": {
+      "document": "混沌演练生产消费延迟",
+      "input": "DelayMessageRequest",
+      "name": "混沌演练生产消费延迟",
+      "output": "DelayMessageResponse",
+      "status": "online"
+    },
+    "DelayMessageRollback": {
+      "document": "混沌演练生产消费延迟恢复",
+      "input": "DelayMessageRollbackRequest",
+      "name": "混沌演练生产消费延迟恢复",
+      "output": "DelayMessageRollbackResponse",
+      "status": "online"
+    },
     "DeleteAcl": {
       "document": "删除ACL",
       "input": "DeleteAclRequest",
@@ -257,6 +285,13 @@
       "input": "DescribeAppInfoRequest",
       "name": "查询用户列表",
       "output": "DescribeAppInfoResponse",
+      "status": "online"
+    },
+    "DescribeAsyncResult": {
+      "document": "查询混沌演练任务执行结果",
+      "input": "DescribeAsyncResultRequest",
+      "name": "查询混沌演练任务执行结果",
+      "output": "DescribeAsyncResultResponse",
       "status": "online"
     },
     "DescribeAttackAsyncRequestResult": {
@@ -1529,6 +1564,178 @@
         }
       ],
       "usage": "out"
+    },
+    "BurnCPURequest": {
+      "document": "BurnCPU请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka实例ID",
+          "example": "ckafka-asdgbds",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "内部密码",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "CPU使用率",
+          "example": "90",
+          "member": "uint64",
+          "name": "LoadRate",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "执行时长",
+          "example": "60",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "BurnCPUResponse": {
+      "document": "BurnCPU返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "响应描述",
+          "example": "注入成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "2323214234",
+          "example": "任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BurnDiskIORequest": {
+      "document": "BurnDiskIO请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka实例ID",
+          "example": "ckafka-asdgbds",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "内部密码",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "执行时长",
+          "example": "60",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "BurnDiskIOResponse": {
+      "document": "BurnDiskIO返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "响应描述",
+          "example": "注入成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "2323214234",
+          "example": "任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CancelAuthorizationTokenRequest": {
       "document": "CancelAuthorizationToken请求参数结构体",
@@ -5677,6 +5884,168 @@
       ],
       "usage": "out"
     },
+    "DelayMessageRequest": {
+      "document": "DelayMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka实例ID",
+          "example": "ckafka-asdgbds",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "内部密码",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "接入点vipport",
+          "example": "127.0.0.1:9092",
+          "member": "string",
+          "name": "AccessPoint",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "延迟时长，单位毫秒",
+          "example": "10",
+          "member": "uint64",
+          "name": "DelayDuration",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DelayMessageResponse": {
+      "document": "DelayMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "响应描述",
+          "example": "注入成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "2323214234",
+          "example": "任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DelayMessageRollbackRequest": {
+      "document": "DelayMessageRollback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka实例ID",
+          "example": "ckafka-asdgbds",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "内部密码",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DelayMessageRollbackResponse": {
+      "document": "DelayMessageRollback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "响应描述",
+          "example": "注入成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "2323214234",
+          "example": "任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAclRequest": {
       "document": "DeleteAcl请求参数结构体",
       "members": [
@@ -6454,6 +6823,66 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncResultRequest": {
+      "document": "DescribeAsyncResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "2231041243",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "内部密码",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsyncResultResponse": {
+      "document": "DescribeAsyncResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "响应说明",
+          "example": "正在关机",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

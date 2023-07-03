@@ -121,8 +121,8 @@
     "EvaluateSentenceSimilarity": [
       {
         "document": "分析句子相似度",
-        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EvaluateSentenceSimilarity\n<公共请求参数>\n\n{\n    \"SentencePairList\": [\n        {\n            \"SourceText\": \"北京到上海的火车票\",\n            \"TargetText\": \"上海到北京的火车票\"\n        },\n        {\n            \"SourceText\": \"北京到上海的火车票\",\n            \"TargetText\": \"北京到上海的高铁票\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd4ea683-422a-4149-8ba8-501458bd826e\",\n        \"ScoreList\": [\n            0.965566,\n            0.798171\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EvaluateSentenceSimilarity\n<公共请求参数>\n\n{\n    \"SentencePairList\": [\n        {\n            \"SourceText\": \"北京到上海的火车票\",\n            \"TargetText\": \"上海到北京的火车票\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d37e6fc7-aa12-42e4-b68a-e74dbe7548cb\",\n        \"ScoreList\": [\n            0.903129852566213\n        ]\n    }\n}",
         "title": "句子相似度调用示例"
       }
     ],

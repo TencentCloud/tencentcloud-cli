@@ -132,6 +132,13 @@
       "name": "执行命令",
       "output": "RunCommandResponse",
       "status": "online"
+    },
+    "StartSessionWithMFA": {
+      "document": "开始一次Webshell会话。",
+      "input": "StartSessionWithMFARequest",
+      "name": "使用MFA开始会话",
+      "output": "StartSessionWithMFAResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -2732,6 +2739,56 @@
         }
       ],
       "usage": "both"
+    },
+    "StartSessionWithMFARequest": {
+      "document": "StartSessionWithMFA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-zcewfho0, lhins-qr8vzait",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "StartSessionWithMFAResponse": {
+      "document": "StartSessionWithMFA返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次Webshell会话ID",
+          "example": "b896c8ff-a593-4534-984a-2377555f4caf",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "websocket连接地址",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StreamUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "标签",

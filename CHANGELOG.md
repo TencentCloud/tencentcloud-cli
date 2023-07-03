@@ -1,3 +1,97 @@
+# Release 3.0.799.1
+
+## 账号风控平台(ciam) 版本：2022-03-31
+
+### 第 2 次发布
+
+发布时间：2023-07-04 01:15:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1683/81001)
+* [CreateUserStore](http://document.tencentcloudapi.woa.com/document/product/1683/81006)
+* [DeleteUserGroups](http://document.tencentcloudapi.woa.com/document/product/1683/81000)
+* [DeleteUserStore](http://document.tencentcloudapi.woa.com/document/product/1683/81005)
+* [ListUserGroups](http://document.tencentcloudapi.woa.com/document/product/1683/80999)
+* [ListUserStore](http://document.tencentcloudapi.woa.com/document/product/1683/81004)
+* [UpdateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1683/80998)
+* [UpdateUserStore](http://document.tencentcloudapi.woa.com/document/product/1683/81003)
+
+新增数据结构：
+
+* [AppAssociatedUserGroupIds](http://document.tencentcloudapi.woa.com/document/product/1683/79620#AppAssociatedUserGroupIds)
+* [UserGroup](http://document.tencentcloudapi.woa.com/document/product/1683/79620#UserGroup)
+* [UserGroupDeleteResp](http://document.tencentcloudapi.woa.com/document/product/1683/79620#UserGroupDeleteResp)
+* [UserStore](http://document.tencentcloudapi.woa.com/document/product/1683/79620#UserStore)
+
+
+
+## 账号风控平台(ciam) 版本：2021-04-20
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 68 次发布
+
+发布时间：2023-07-04 01:15:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BurnCPU](http://document.tencentcloudapi.woa.com/document/product/597/81011)
+* [BurnDiskIO](http://document.tencentcloudapi.woa.com/document/product/597/81010)
+* [DelayMessage](http://document.tencentcloudapi.woa.com/document/product/597/81009)
+* [DelayMessageRollback](http://document.tencentcloudapi.woa.com/document/product/597/81008)
+* [DescribeAsyncResult](http://document.tencentcloudapi.woa.com/document/product/597/81007)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 2 次发布
+
+发布时间：2023-07-04 01:30:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCustomerInfo](http://document.tencentcloudapi.woa.com/document/product/1724/81012)
+* [DescribeCustomerUin](http://document.tencentcloudapi.woa.com/document/product/1724/81014)
+
+新增数据结构：
+
+* [DescribeCustomerInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#DescribeCustomerInfoData)
+* [DescribeCustomerUinData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#DescribeCustomerUinData)
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 8 次发布
+
+发布时间：2023-07-04 01:43:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartSessionWithMFA](http://document.tencentcloudapi.woa.com/document/product/1340/81015)
+
+
+
 # Release 3.0.798.1
 
 ## 费用中心(billing) 版本：2018-07-09

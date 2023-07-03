@@ -49,6 +49,20 @@
       "output": "DescribeCustomerBillSummaryResponse",
       "status": "online"
     },
+    "DescribeCustomerInfo": {
+      "document": "查询子客信息",
+      "input": "DescribeCustomerInfoRequest",
+      "name": "查询子客信息",
+      "output": "DescribeCustomerInfoResponse",
+      "status": "online"
+    },
+    "DescribeCustomerUin": {
+      "document": "查询子客uin列表",
+      "input": "DescribeCustomerUinRequest",
+      "name": "查询子客uin列表",
+      "output": "DescribeCustomerUinResponse",
+      "status": "online"
+    },
     "GetCountryCodes": {
       "document": "获取国家和地区的代码",
       "input": "GetCountryCodesRequest",
@@ -1169,6 +1183,216 @@
           "member": "float",
           "name": "TotalCost",
           "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerInfoData": {
+      "document": "子客信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200000000000",
+          "member": "string",
+          "name": "CustomerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联系邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc@xxx.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联系手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1888888888",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Mark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000-01-01 19:17:18",
+          "member": "string",
+          "name": "BindTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "账号状态\n0：未冻结\n1：冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AccountStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AuthStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCustomerInfoRequest": {
+      "document": "DescribeCustomerInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客uin列表",
+          "example": "[200000000000, 200000000001]",
+          "member": "int64",
+          "name": "CustomerUin",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerInfoResponse": {
+      "document": "DescribeCustomerInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeCustomerInfoData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerUinData": {
+      "document": "子客uin列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200000000000",
+          "member": "string",
+          "name": "CustomerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCustomerUinRequest": {
+      "document": "DescribeCustomerUin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "每页数据量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerUinResponse": {
+      "document": "DescribeCustomerUin返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"200000000000\",\" 200000000001\"]",
+          "member": "DescribeCustomerUinData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子客数量",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },

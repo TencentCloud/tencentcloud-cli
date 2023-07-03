@@ -32,6 +32,22 @@
         "title": "批量设置主题属性"
       }
     ],
+    "BurnCPU": [
+      {
+        "document": "CPU高负载",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BurnCPU\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"LoadRate\": 60,\n    \"Duration\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CPU高负载"
+      }
+    ],
+    "BurnDiskIO": [
+      {
+        "document": "磁盘IO高负载",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BurnDiskIO\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Duration\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "磁盘IO高负载"
+      }
+    ],
     "CancelAuthorizationToken": [
       {
         "document": "",
@@ -218,6 +234,22 @@
         "title": "添加用户"
       }
     ],
+    "DelayMessage": [
+      {
+        "document": "生产消费延迟",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DelayMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"AccessPoint\": \"127.0.0.1:9092\",\n    \"DelayDuration\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "生产消费延迟"
+      }
+    ],
+    "DelayMessageRollback": [
+      {
+        "document": "生产消费延迟恢复",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DelayMessageRollback\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "生产消费延迟恢复"
+      }
+    ],
     "DeleteAcl": [
       {
         "document": "",
@@ -336,6 +368,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAppInfo\r\n&Limit=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 11,\n            \"AppIdList\": [\n                1251000011,\n                1255426940,\n                251000873,\n                251000691,\n                251006545,\n                1251762227,\n                1256134262,\n                251006131,\n                1251006288,\n                1251006373\n            ]\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
         "title": "查询用户列表"
+      }
+    ],
+    "DescribeAsyncResult": [
+      {
+        "document": "RequestPassword",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncResult\n<公共请求参数>\n\n{\n    \"AsyncRequestId\": \"abc\",\n    \"RequestPassword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询混沌演练任务执行结果"
       }
     ],
     "DescribeAttackAsyncRequestResult": [

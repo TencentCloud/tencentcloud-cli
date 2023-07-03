@@ -5429,7 +5429,6 @@
       "document": "描述防火墙规则信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议，取值：TCP，UDP，ICMP，ALL。",
           "example": "TCP",
@@ -5437,10 +5436,10 @@
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
           "example": "80",
@@ -5448,10 +5447,10 @@
           "name": "Port",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
           "example": "0.0.0.0/0",
@@ -5459,10 +5458,10 @@
           "name": "CidrBlock",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
           "example": "ACCEPT",
@@ -5470,10 +5469,10 @@
           "name": "Action",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙规则描述。",
           "example": "''",
@@ -5481,10 +5480,11 @@
           "name": "FirewallRuleDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "FirewallRuleInfo": {
       "document": "描述防火墙规则详细信息。",
@@ -7129,34 +7129,34 @@
       "document": "ModifyFirewallRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-12345678",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙规则列表。",
           "example": "无",
           "member": "FirewallRule",
           "name": "FirewallRules",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "1",
           "member": "uint64",
           "name": "FirewallVersion",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

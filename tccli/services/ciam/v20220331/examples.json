@@ -24,6 +24,38 @@
         "title": "创建用户"
       }
     ],
+    "CreateUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xxx\",\n    \"DisplayName\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "创建用户组"
+      }
+    ],
+    "CreateUserStore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserStore\n<公共请求参数>\n\n{\n    \"UserPoolDesc\": \"xx\",\n    \"UserPoolName\": \"xx\",\n    \"UserPoolLogo\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建用户目录"
+      }
+    ],
+    "DeleteUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroups\n<公共请求参数>\n\n{\n    \"UserGroupIds\": [\n        \"xxx\"\n    ],\n    \"UserStoreId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserGroupDeletedInfo\": {\n            \"AppAssociatedUserGroupIds\": [\n                {\n                    \"ApplicationName\": \"xx\",\n                    \"ApplicationId\": \"xx\",\n                    \"UserGroupId\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量删除用户组"
+      }
+    ],
+    "DeleteUserStore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserStore\n<公共请求参数>\n\n{\n    \"UserPoolId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户目录"
+      }
+    ],
     "DeleteUsers": [
       {
         "document": "",
@@ -88,6 +120,22 @@
         "title": "查询用户列表"
       }
     ],
+    "ListUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroups\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserStoreId\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"Description\": \"xx\",\n                \"UserGroupId\": \"xx\",\n                \"TenantId\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户组列表"
+      }
+    ],
+    "ListUserStore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserStore\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UserStoreSet\": [\n            {\n                \"UserStoreName\": \"xx\",\n                \"UserStoreId\": \"xx\",\n                \"UserStoreDesc\": \"xx\",\n                \"UserNum\": 0,\n                \"TenantId\": \"xx\",\n                \"AppNum\": 0,\n                \"UserStoreLogo\": \"xx\",\n                \"LastStatus\": false,\n                \"DefaultStatus\": false,\n                \"CreateDate\": 1630328714604,\n                \"LastStatusTime\": 1630328714604\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户目录列表"
+      }
+    ],
     "ResetPassword": [
       {
         "document": "",
@@ -112,12 +160,28 @@
         "title": "更新用户"
       }
     ],
+    "UpdateUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserGroup\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xxx\",\n    \"UserGroupId\": \"xxx\",\n    \"DisplayName\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "更新用户组"
+      }
+    ],
     "UpdateUserStatus": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserStatus\n<公共请求参数>\n\n{\n    \"UserId\": \"xxx\",\n    \"Status\": \"xxx\",\n    \"UserStoreId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新用户状态"
+      }
+    ],
+    "UpdateUserStore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserStore\n<公共请求参数>\n\n{\n    \"UserPoolDesc\": \"xx\",\n    \"UserPoolName\": \"xx\",\n    \"UserPoolLogo\": \"xx\",\n    \"UserPoolId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新用户目录"
       }
     ]
   },
