@@ -16,6 +16,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "CheckRechargeKafkaServer": [
+      {
+        "document": "校验用户输入Kafka服务地址是否可访问",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"est.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Status\": 0\n    }\n}",
+        "title": "校验用户输入Kafka服务地址是否可访问"
+      }
+    ],
     "CloseKafkaConsumer": [
       {
         "document": "",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"3edc8551-111b-473b-9fc4-ed66e20dfa8a\",\n    \"Status\": true,\n    \"Rule\": {\n        \"FullText\": {\n            \"CaseSensitive\": true,\n            \"Tokenizer\": \"*\"\n        },\n        \"KeyValue\": {\n            \"CaseSensitive\": true,\n            \"KeyValues\": [\n                {\n                    \"Key\": \"age\",\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"Tokenizer\": \"_\",\n                        \"SqlFlag\": false\n                    }\n                }\n            ]\n        },\n        \"Tag\": {\n            \"CaseSensitive\": true,\n            \"KeyValues\": [\n                {\n                    \"Key\": \"tag\",\n                    \"Value\": {\n                        \"Type\": \"string\",\n                        \"Tokenizer\": \"**\",\n                        \"SqlFlag\": false\n                    }\n                }\n            ]\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建索引"
+      }
+    ],
+    "CreateKafkaRecharge": [
+      {
+        "document": "创建Kafka导入规则",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKafkaRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx-xxxx\",\n    \"Name\": \"test\",\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"abc\",\n    \"IsEncryptionAddr\": true,\n    \"UserKafkaTopics\": \"abc\",\n    \"ConsumerGroupName\": \"abc\",\n    \"Offset\": -1,\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"TimeKey\": \"abc\",\n        \"TimeFormat\": \"abc\",\n        \"LogRegex\": \"abc\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"abc\",\n        \"DefaultTimeSwitch\": true,\n        \"EncodingFormat\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Id\": \"xxx-xx-xx\"\n    }\n}",
+        "title": "创建Kafka导入规则"
       }
     ],
     "CreateLogset": [
@@ -182,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除索引配置"
+      }
+    ],
+    "DeleteKafkaRecharge": [
+      {
+        "document": "删除Kafka导入配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"TopicId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除Kafka导入配置"
       }
     ],
     "DeleteLogset": [
@@ -302,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\",\n        \"Status\": true,\n        \"Rule\": {\n            \"FullText\": {\n                \"CaseSensitive\": false,\n                \"Tokenizer\": \"-=/?\"\n            },\n            \"KeyValue\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"age\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"SqlFlag\": true\n                        }\n                    }\n                ]\n            },\n            \"Tag\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"__TAG__.timestamp\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"SqlFlag\": true\n                        }\n                    }\n                ]\n            }\n        },\n        \"ModifyTime\": \"2021-01-13 21:00:08\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"IncludeInternalFields\": true,\n        \"MetadataFlag\": 1\n    }\n}",
         "title": "获取索引信息"
+      }
+    ],
+    "DescribeKafkaRecharges": [
+      {
+        "document": "获取Kafka导入配置信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"abc\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Id\": \"abc\",\n                \"TopicId\": \"abc\",\n                \"Name\": \"abc\",\n                \"ServerAddr\": \"test.cls.tencentyun.com:9095\",\n                \"UserKafkaTopics\": \"topic1,topic2\",\n                \"ConsumerGroupName\": \"\",\n                \"Status\": 1,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"LogRechargeRule\": {\n                    \"RechargeType\": \"json_log\",\n                    \"TimeKey\": \"abc\",\n                    \"TimeFormat\": \"abc\",\n                    \"LogRegex\": \"abc\",\n                    \"UnMatchLogSwitch\": true,\n                    \"UnMatchLogKey\": \"abc\",\n                    \"EncodingFormat\": 0,\n                    \"DefaultTimeSwitch\": true\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取Kafka导入配置信息"
       }
     ],
     "DescribeLogContext": [
@@ -456,6 +488,14 @@
         "title": "修改索引"
       }
     ],
+    "ModifyKafkaRecharge": [
+      {
+        "document": "修改Kafka导入配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"xxx-xxx-xx\",\n    \"TopicId\": \"abc\",\n    \"Name\": \"abc\",\n    \"ServerAddr\": \"abc\",\n    \"IsEncryptionAddr\": true,\n    \"UserKafkaTopics\": \"abc\",\n    \"ConsumerGroupName\": \"abc\",\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"TimeKey\": \"abc\",\n        \"TimeFormat\": \"abc\",\n        \"LogRegex\": \"abc\",\n        \"UnMatchLogSwitch\": true,\n        \"DefaultTimeSwitch\": true,\n        \"UnMatchLogKey\": \"abc\",\n        \"EncodingFormat\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改Kafka导入配置"
+      }
+    ],
     "ModifyLogset": [
       {
         "document": "",
@@ -494,6 +534,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TopicID\": \"out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "打开Kafka协议消费功能"
+      }
+    ],
+    "PreviewKafkaRecharge": [
+      {
+        "document": "Kafka导入数据预览",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 1,\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"test.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false,\n    \"UserKafkaTopics\": \"topic1,topic2\",\n    \"Offset\": 0,\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"TimeKey\": \"abc\",\n        \"TimeFormat\": \"abc\",\n        \"LogRegex\": \"abc\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"abc\",\n        \"EncodingFormat\": 0,\n        \"DefaultTimeSwitch\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"LogData\": \"xxxxxxx\",\n        \"LogSample\": \"abc\"\n    }\n}",
+        "title": "Kafka导入数据预览"
       }
     ],
     "RetryShipperTask": [

@@ -520,7 +520,7 @@
     ],
     "ModifyFirewallRules": [
       {
-        "document": "",
+        "document": "修改防火墙规则",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifyFirewallRules\n&InstanceId=lhins-aglzynfg\n&FirewallRules.0.Protocol=TCP\n&FirewallRules.0.Port=80\n&FirewallRules.1.Protocol=UDP\n&FirewallRules.1.Port=22,443\n&FirewallRules.2.Protocol=TCP\n&FirewallRules.2.Port=8000-8081\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f927b1f4-5734-4ada-ab76-6b2bb0614c6d\"\n    }\n}",
         "title": "修改防火墙规则"

@@ -376,15 +376,13 @@
       "document": "签署人个性化能力信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否隐藏一键签署 false-不隐藏,默认 true-隐藏",
+          "document": "是否隐藏一键签署 默认false-不隐藏true-隐藏",
           "example": "true",
           "member": "bool",
           "name": "HideOneKeySign",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"

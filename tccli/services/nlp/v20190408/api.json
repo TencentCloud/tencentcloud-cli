@@ -1568,7 +1568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。",
+          "document": "待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。",
           "example": "无",
           "member": "SentencePair",
           "name": "SentencePairList",
@@ -1587,6 +1587,7 @@
           "example": "无",
           "member": "float",
           "name": "ScoreList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

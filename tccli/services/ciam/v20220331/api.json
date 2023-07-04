@@ -21,6 +21,34 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "CreateUserGroup": {
+      "document": "创建用户组",
+      "input": "CreateUserGroupRequest",
+      "name": "创建用户组",
+      "output": "CreateUserGroupResponse",
+      "status": "online"
+    },
+    "CreateUserStore": {
+      "document": "创建用户目录",
+      "input": "CreateUserStoreRequest",
+      "name": "创建用户目录",
+      "output": "CreateUserStoreResponse",
+      "status": "online"
+    },
+    "DeleteUserGroups": {
+      "document": "批量删除用户组",
+      "input": "DeleteUserGroupsRequest",
+      "name": "批量删除用户组",
+      "output": "DeleteUserGroupsResponse",
+      "status": "online"
+    },
+    "DeleteUserStore": {
+      "document": "删除用户目录",
+      "input": "DeleteUserStoreRequest",
+      "name": "删除用户目录",
+      "output": "DeleteUserStoreResponse",
+      "status": "online"
+    },
     "DeleteUsers": {
       "document": "批量删除用户",
       "input": "DeleteUsersRequest",
@@ -77,6 +105,20 @@
       "output": "ListUserByPropertyResponse",
       "status": "online"
     },
+    "ListUserGroups": {
+      "document": "查询用户组列表",
+      "input": "ListUserGroupsRequest",
+      "name": "查询用户组列表",
+      "output": "ListUserGroupsResponse",
+      "status": "online"
+    },
+    "ListUserStore": {
+      "document": "查询用户目录列表",
+      "input": "ListUserStoreRequest",
+      "name": "查询用户目录列表",
+      "output": "ListUserStoreResponse",
+      "status": "online"
+    },
     "ResetPassword": {
       "document": "重置用户密码",
       "input": "ResetPasswordRequest",
@@ -98,11 +140,25 @@
       "output": "UpdateUserResponse",
       "status": "online"
     },
+    "UpdateUserGroup": {
+      "document": "更新用户组",
+      "input": "UpdateUserGroupRequest",
+      "name": "更新用户组",
+      "output": "UpdateUserGroupResponse",
+      "status": "online"
+    },
     "UpdateUserStatus": {
       "document": "更新用户状态",
       "input": "UpdateUserStatusRequest",
       "name": "更新用户状态",
       "output": "UpdateUserStatusResponse",
+      "status": "online"
+    },
+    "UpdateUserStore": {
+      "document": "更新用户目录",
+      "input": "UpdateUserStoreRequest",
+      "name": "更新用户目录",
+      "output": "UpdateUserStoreResponse",
       "status": "online"
     }
   },
@@ -113,6 +169,45 @@
     "serviceShortName": "ciam"
   },
   "objects": {
+    "AppAssociatedUserGroupIds": {
+      "document": "用户组删除时关联的应用信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateApiImportUserJobRequest": {
       "document": "CreateApiImportUserJob请求参数结构体",
       "members": [
@@ -220,6 +315,54 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupRequest": {
+      "document": "CreateUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupResponse": {
+      "document": "CreateUserGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -398,6 +541,130 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserStoreRequest": {
+      "document": "CreateUserStore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池名字",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池logo",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolLogo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserStoreResponse": {
+      "document": "CreateUserStore返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsRequest": {
+      "document": "DeleteUserGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组ID数组",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsResponse": {
+      "document": "DeleteUserGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的用户组关联的应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "UserGroupDeleteResp",
+          "name": "UserGroupDeletedInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserStoreRequest": {
+      "document": "DeleteUserStore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserStoreResponse": {
+      "document": "DeleteUserStore返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1427,6 +1694,84 @@
       ],
       "type": "object"
     },
+    "ListUserGroupsRequest": {
+      "document": "ListUserGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Key可选值为condition\n\n<li> **condition** </li>\tValues = 查询条件，用户组ID或用户组名称",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserGroupsResponse": {
+      "document": "ListUserGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroup",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListUserRequest": {
       "document": "ListUser请求参数结构体",
       "members": [
@@ -1502,6 +1847,33 @@
           "example": "无",
           "member": "User",
           "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserStoreRequest": {
+      "document": "ListUserStore请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListUserStoreResponse": {
+      "document": "ListUserStore返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户目录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserStore",
+          "name": "UserStoreSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -2022,6 +2394,64 @@
       ],
       "usage": "in"
     },
+    "UpdateUserGroupRequest": {
+      "document": "UpdateUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserGroupResponse": {
+      "document": "UpdateUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateUserRequest": {
       "document": "UpdateUser请求参数结构体",
       "members": [
@@ -2238,6 +2668,64 @@
     },
     "UpdateUserStatusResponse": {
       "document": "UpdateUserStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStoreRequest": {
+      "document": "UpdateUserStore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池名字",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池logo",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPoolLogo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStoreResponse": {
+      "document": "UpdateUserStore返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2698,6 +3186,255 @@
           "example": "xxx",
           "member": "string",
           "name": "IndexedAttribute5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserGroup": {
+      "document": "用户组",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XXX",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "租户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间",
+          "example": "10",
+          "member": "int64",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "最近更新时间",
+          "example": "10",
+          "member": "int64",
+          "name": "LastModifyDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserGroupDeleteResp": {
+      "document": "删除用户组信息时返回的详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户组关联的应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AppAssociatedUserGroupIds",
+          "name": "AppAssociatedUserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserStore": {
+      "document": "用户池",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "租户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreLogo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户数量",
+          "example": "10",
+          "member": "int64",
+          "name": "UserNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户池ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "应用数量",
+          "example": "10",
+          "member": "int64",
+          "name": "AppNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "上次切换的用户池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "LastStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "默认用户池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CreateDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "上次切换时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "LastStatusTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "用户目录域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreProtocolHost",
           "required": true,
           "type": "string",
           "value_allowed_null": true

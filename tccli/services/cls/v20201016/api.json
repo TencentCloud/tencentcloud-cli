@@ -14,6 +14,13 @@
       "output": "ApplyConfigToMachineGroupResponse",
       "status": "online"
     },
+    "CheckRechargeKafkaServer": {
+      "document": "本接口用于校验Kafka服务集群是否可以正常访问",
+      "input": "CheckRechargeKafkaServerRequest",
+      "name": "Kafka服务集群连通性校验",
+      "output": "CheckRechargeKafkaServerResponse",
+      "status": "online"
+    },
     "CloseKafkaConsumer": {
       "document": "关闭Kafka协议消费",
       "input": "CloseKafkaConsumerRequest",
@@ -75,6 +82,13 @@
       "input": "CreateIndexRequest",
       "name": "创建索引",
       "output": "CreateIndexResponse",
+      "status": "online"
+    },
+    "CreateKafkaRecharge": {
+      "document": "本接口用于创建Kafka数据订阅任务",
+      "input": "CreateKafkaRechargeRequest",
+      "name": "创建Kafka数据订阅任务",
+      "output": "CreateKafkaRechargeResponse",
       "status": "online"
     },
     "CreateLogset": {
@@ -159,6 +173,13 @@
       "input": "DeleteIndexRequest",
       "name": "删除索引配置",
       "output": "DeleteIndexResponse",
+      "status": "online"
+    },
+    "DeleteKafkaRecharge": {
+      "document": "本接口用于删除Kafka数据订阅任务",
+      "input": "DeleteKafkaRechargeRequest",
+      "name": "删除Kafka数据订阅任务",
+      "output": "DeleteKafkaRechargeResponse",
       "status": "online"
     },
     "DeleteLogset": {
@@ -264,6 +285,13 @@
       "input": "DescribeIndexRequest",
       "name": "获取索引配置信息",
       "output": "DescribeIndexResponse",
+      "status": "online"
+    },
+    "DescribeKafkaRecharges": {
+      "document": "本接口用于获取Kafka数据订阅任务",
+      "input": "DescribeKafkaRechargesRequest",
+      "name": "获取Kafka数据订阅任务列表",
+      "output": "DescribeKafkaRechargesResponse",
       "status": "online"
     },
     "DescribeLogContext": {
@@ -399,6 +427,13 @@
       "output": "ModifyIndexResponse",
       "status": "online"
     },
+    "ModifyKafkaRecharge": {
+      "document": "本接口用于修改Kafka数据订阅任务",
+      "input": "ModifyKafkaRechargeRequest",
+      "name": "修改Kafka数据订阅任务",
+      "output": "ModifyKafkaRechargeResponse",
+      "status": "online"
+    },
     "ModifyLogset": {
       "document": "本接口用于修改日志集信息",
       "input": "ModifyLogsetRequest",
@@ -432,6 +467,13 @@
       "input": "OpenKafkaConsumerRequest",
       "name": "打开Kafka协议消费",
       "output": "OpenKafkaConsumerResponse",
+      "status": "online"
+    },
+    "PreviewKafkaRecharge": {
+      "document": "本接口用于预览Kafka数据订阅任务客户日志信息",
+      "input": "PreviewKafkaRechargeRequest",
+      "name": "Kafka数据订阅日志预览",
+      "output": "PreviewKafkaRechargeResponse",
       "status": "online"
     },
     "RetryShipperTask": {
@@ -1239,6 +1281,78 @@
       ],
       "usage": "both"
     },
+    "CheckRechargeKafkaServerRequest": {
+      "document": "CheckRechargeKafkaServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "example": "0",
+          "member": "uint64",
+          "name": "KafkaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ServerAddr是否为加密连接",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryptionAddr",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "example": "无",
+          "member": "KafkaProtocolInfo",
+          "name": "Protocol",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckRechargeKafkaServerResponse": {
+      "document": "CheckRechargeKafkaServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Kafka集群可访问状态，0：可正常访问 ...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Ckafka": {
       "document": "CKafka的描述-需要投递到的kafka信息",
       "members": [
@@ -1761,89 +1875,89 @@
       "document": "自建k8s-容器文件路径信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "namespace可以多个，用分隔号分割,例如A,B",
           "example": "kube-system",
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器名称",
           "example": "container1",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志文件夹",
           "example": "/var/log/tmep",
           "member": "string",
           "name": "LogPath",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志名称",
           "example": "*.log",
           "member": "string",
           "name": "FilePattern",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
           "name": "IncludeLabels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerWorkLoadInfo",
           "name": "WorkLoad",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
           "name": "ExcludeNamespace",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
           "name": "ExcludeLabels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1855,78 +1969,78 @@
       "document": "自建k8s-容器标准输出信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否所有容器",
           "example": "true / false",
           "member": "bool",
           "name": "AllContainers",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "container为空表所有的，不为空采集指定的容器\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
           "name": "IncludeLabels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerWorkLoadInfo",
           "name": "WorkLoads",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kube-system",
           "member": "string",
           "name": "ExcludeNamespace",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\"]",
           "member": "string",
           "name": "ExcludeLabels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3005,6 +3119,133 @@
       ],
       "type": "object"
     },
+    "CreateKafkaRechargeRequest": {
+      "document": "CreateKafkaRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入CLS目标topic ID",
+          "example": "无",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka导入配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "example": "0",
+          "member": "uint64",
+          "name": "KafkaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "example": "topic1,topic2",
+          "member": "string",
+          "name": "UserKafkaTopics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入数据位置，-2:最早（默认），-1：最晚",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址，KafkaType为1时必填",
+          "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ServerAddr是否为加密连接，KafkaType为1时必填",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryptionAddr",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "example": "无",
+          "member": "KafkaProtocolInfo",
+          "name": "Protocol",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户Kafka消费组名称",
+          "example": "cls-xxxxx",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导入规则",
+          "example": "无",
+          "member": "LogRechargeRuleInfo",
+          "name": "LogRechargeRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKafkaRechargeResponse": {
+      "document": "CreateKafkaRecharge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Kafka导入配置ID",
+          "example": "xxx-xxx-xxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLogsetRequest": {
       "document": "CreateLogset请求参数结构体",
       "members": [
@@ -3704,6 +3945,42 @@
     },
     "DeleteIndexResponse": {
       "document": "DeleteIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKafkaRechargeRequest": {
+      "document": "DeleteKafkaRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Kafka导入配置ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入CLS目标topic ID",
+          "example": "无",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKafkaRechargeResponse": {
+      "document": "DeleteKafkaRecharge返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4522,6 +4799,71 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaRechargesRequest": {
+      "document": "DescribeKafkaRecharges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题 ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入配置ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态   status 1: 运行中, 2: 暂停...",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaRechargesResponse": {
+      "document": "DescribeKafkaRecharges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "KafkaRechargeInfo 信息列表",
+          "example": "无",
+          "member": "KafkaRechargeInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka导入信息总条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5404,6 +5746,7 @@
           "example": "test",
           "member": "string",
           "name": "TimeKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5414,6 +5757,7 @@
           "example": "YYDDWW",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5424,6 +5768,7 @@
           "example": ",",
           "member": "string",
           "name": "Delimiter",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5434,6 +5779,7 @@
           "example": "\\w",
           "member": "string",
           "name": "LogRegex",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5444,16 +5790,18 @@
           "example": "\\w",
           "member": "string",
           "name": "BeginRegex",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Keys",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5464,6 +5812,7 @@
           "example": "无",
           "member": "KeyRegexInfo",
           "name": "FilterKeyRegex",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5474,6 +5823,7 @@
           "example": "true",
           "member": "bool",
           "name": "UnMatchUpLoadSwitch",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -5484,6 +5834,7 @@
           "example": "testlog",
           "member": "string",
           "name": "UnMatchLogKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5494,6 +5845,7 @@
           "example": "-1",
           "member": "int64",
           "name": "Backtracking",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5504,6 +5856,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsGBK",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5514,6 +5867,7 @@
           "example": "0",
           "member": "int64",
           "name": "JsonStandard",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5524,6 +5878,7 @@
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5534,6 +5889,7 @@
           "example": "127.0.0.1:9000",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5544,6 +5900,7 @@
           "example": "RFC3164",
           "member": "string",
           "name": "ParseProtocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5554,6 +5911,7 @@
           "example": "0",
           "member": "int64",
           "name": "MetadataType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5564,6 +5922,7 @@
           "example": "无",
           "member": "string",
           "name": "PathRegex",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5574,6 +5933,7 @@
           "example": "无",
           "member": "MetaTagInfo",
           "name": "MetaTags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5893,34 +6253,34 @@
       "document": "自建k8s-节点文件配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志文件夹",
           "example": "/xxx/xxx",
           "member": "string",
           "name": "LogPath",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志文件名",
           "example": "**.log",
           "member": "string",
           "name": "FilePattern",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "metadata信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"key1=value1\",\"key2=value2\"]",
           "member": "string",
           "name": "CustomLabels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5963,6 +6323,269 @@
         }
       ],
       "usage": "both"
+    },
+    "KafkaConsumerContent": {
+      "document": "kafka协议消费内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费格式 0:全文；1:json",
+          "example": "1",
+          "member": "int64",
+          "name": "Format",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否投递 TAG 信息\nFormat为0时，此字段不需要赋值",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableTag",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据信息列表, 可选值为：\\_\\_SOURCE\\_\\_、\\_\\_FILENAME\\_\\_\n、\\_\\_TIMESTAMP\\_\\_、\\_\\_HOSTNAME\\_\\_、\\_\\_PKGID\\_\\_\nFormat为0时，此字段不需要赋值",
+          "example": "[\"__HOSTNAME__\"]",
+          "member": "string",
+          "name": "MetaFields",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag数据处理方式：\n1:不平铺（默认值）\n2:平铺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TagTransaction",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费数据Json格式：\n1：不转义（默认格式）\n2：转义",
+          "example": "1",
+          "member": "int64",
+          "name": "JsonType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KafkaProtocolInfo": {
+      "document": "Kafka访问协议",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sasl_plaintext",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mechanism",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KafkaRechargeInfo": {
+      "document": "Kafka导入配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Kafka导入任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx任务导入",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "KafkaType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaInstance",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ServerAddr是否为加密连接\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryptionAddr",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "example": "无",
+          "member": "KafkaProtocolInfo",
+          "name": "Protocol",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic1,topic2\t",
+          "member": "string",
+          "name": "UserKafkaTopics",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户Kafka消费组名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxx\t",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态   status 1: 运行中, 2: 暂停 ...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 14:40:22",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 14:40:22",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志导入规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogRechargeRuleInfo",
+          "name": "LogRechargeRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "KeyRegexInfo": {
       "document": "需要过滤日志的key，及其对应的regex",
@@ -6271,6 +6894,152 @@
         }
       ],
       "usage": "out"
+    },
+    "LogRechargeRuleInfo": {
+      "document": "日志导入规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入类型，支持json_log：json格式日志，minimalist_log: 单行全文，fullregex_log: 单行完全正则",
+          "example": "json_log",
+          "member": "string",
+          "name": "RechargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析编码格式，0: UTF-8（默认值），1: GBK",
+          "example": "0",
+          "member": "uint64",
+          "name": "EncodingFormat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用默认时间，true：开启（默认值）， flase：关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultTimeSwitch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整条日志匹配规则，只有RechargeType为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogRegex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析失败日志是否上传，true表示上传，false表示不上传",
+          "example": "true",
+          "member": "bool",
+          "name": "UnMatchLogSwitch",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析失败日志的键名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LogParseFailure",
+          "member": "string",
+          "name": "UnMatchLogKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UnMatchLogTimeSrc",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认时间来源，0: 系统当前时间，1: Kafka消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DefaultTimeSrc",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间提取正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeRegex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间字段格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间字段时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志Key列表，RechargeType为full_regex_log时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "LogsetInfo": {
       "document": "日志集相关信息",
@@ -7311,6 +8080,132 @@
       ],
       "type": "object"
     },
+    "ModifyKafkaRechargeRequest": {
+      "document": "ModifyKafkaRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Kafka导入配置ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入CLS目标topic ID",
+          "example": "无",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka导入配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "example": "0",
+          "member": "uint64",
+          "name": "KafkaType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ServerAddr是否为加密连接",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryptionAddr",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "example": "无",
+          "member": "KafkaProtocolInfo",
+          "name": "Protocol",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "example": "topic1,topic2",
+          "member": "string",
+          "name": "UserKafkaTopics",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户Kafka消费组名称",
+          "example": "cls-xxxxx",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导入规则",
+          "example": "无",
+          "member": "LogRechargeRuleInfo",
+          "name": "LogRechargeRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "导入控制，1：暂停，2：继续",
+          "example": "无",
+          "member": "uint64",
+          "name": "StatusControl",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKafkaRechargeResponse": {
+      "document": "ModifyKafkaRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLogsetRequest": {
       "document": "ModifyLogset请求参数结构体",
       "members": [
@@ -7836,6 +8731,15 @@
           "name": "Compression",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kafka协议消费数据格式",
+          "example": "无",
+          "member": "KafkaConsumerContent",
+          "name": "ConsumerContent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7849,6 +8753,7 @@
           "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7982,6 +8887,134 @@
         }
       ],
       "usage": "out"
+    },
+    "PreviewKafkaRechargeRequest": {
+      "document": "PreviewKafkaRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预览类型，1:源数据预览，2:导出结果预览",
+          "example": "1",
+          "member": "uint64",
+          "name": "PreviewType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "example": "无",
+          "member": "uint64",
+          "name": "KafkaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "example": "topic1,topic2",
+          "member": "string",
+          "name": "UserKafkaTopics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导入数据位置，-2:最早（默认），-1：最晚",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ServerAddr是否为加密连接",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncryptionAddr",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "example": "无",
+          "member": "KafkaProtocolInfo",
+          "name": "Protocol",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户Kafka消费组",
+          "example": "cls-xxxxx",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导入规则",
+          "example": "无",
+          "member": "LogRechargeRuleInfo",
+          "name": "LogRechargeRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PreviewKafkaRechargeResponse": {
+      "document": "PreviewKafkaRecharge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志样例，PreviewType为2时返回",
+          "example": "无",
+          "member": "string",
+          "name": "LogSample",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志预览结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RetryShipperTaskRequest": {
       "document": "RetryShipperTask请求参数结构体",

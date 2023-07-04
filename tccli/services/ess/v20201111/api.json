@@ -630,26 +630,22 @@
       "document": "签署人个性化能力信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "是否可以拒签 false-可以拒签,默认 true-不可以拒签",
+          "document": "是否可以拒签 默认false-可以拒签 true-不可以拒签",
           "example": "true",
           "member": "bool",
           "name": "NoRefuse",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否可以转发 false-可以转发,默认 true-不可以转发",
+          "document": "是否可以转发 默认false-可以转发 true-不可以转发",
           "example": "true",
           "member": "bool",
           "name": "NoTransfer",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"

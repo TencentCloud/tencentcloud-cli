@@ -4892,7 +4892,6 @@
       "document": "描述防火墙规则信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议，取值：TCP，UDP，ICMP，ALL。",
           "example": "TCP",
@@ -4903,7 +4902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
           "example": "80",
@@ -4914,7 +4912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
           "example": "0.0.0.0/0",
@@ -4925,7 +4922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
           "example": "ACCEPT",
@@ -4936,7 +4932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙规则描述。",
           "example": "''",
@@ -4947,7 +4942,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "FirewallRuleInfo": {
       "document": "描述防火墙规则详细信息。",
@@ -6412,7 +6407,6 @@
       "document": "ModifyFirewallRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "lhins-12345678",
@@ -6422,7 +6416,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙规则列表。",
           "example": "无",
@@ -6432,7 +6425,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
           "example": "1",
