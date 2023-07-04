@@ -1,6 +1,6 @@
 **Example 1: 将实例postgres-6fego161名字修改为testModifyInstanceName**
 
-
+修改实例名称为testModifyInstanceName。
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 修改实例postgres-6ougo465名字，修改失败**
 
-
+修改实例名称失败。
 
 Input: 
 

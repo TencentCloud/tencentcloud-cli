@@ -665,6 +665,13 @@
       "output": "ModifyClusterStorageResponse",
       "status": "online"
     },
+    "ModifyClusterTag": {
+      "document": "修改集群标签",
+      "input": "ModifyClusterTagRequest",
+      "name": "修改集群标签",
+      "output": "ModifyClusterTagResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -13015,6 +13022,35 @@
       ],
       "type": "object"
     },
+    "ModifyClusterTagRequest": {
+      "document": "ModifyClusterTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群及标签集合",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterTagResponse": {
+      "document": "ModifyClusterTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupsRequest": {
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
@@ -16532,6 +16568,60 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceTag": {
+      "document": "集群绑定的标签信息，包含标签键TagKey和标签值TagValue",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新增的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "AddTags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "删除的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "ModifyTags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

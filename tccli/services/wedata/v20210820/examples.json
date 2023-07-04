@@ -171,8 +171,8 @@
     "CommitIntegrationTask": [
       {
         "document": "提交集成任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"CommitType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"CommitType\": 0,\n    \"TaskType\": 1,\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1x\",\n        \"Data\": true\n    }\n}",
         "title": "提交集成任务"
       }
     ],
@@ -1493,8 +1493,8 @@
     "ResumeIntegrationTask": [
       {
         "document": "继续集成任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"Event\": \"abc\",\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "继续集成任务"
       }
     ],
@@ -1533,8 +1533,8 @@
     "StartIntegrationTask": [
       {
         "document": "启动集成任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"Event\": \"abc\",\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "启动集成任务"
       }
     ],

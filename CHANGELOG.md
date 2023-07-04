@@ -1,3 +1,325 @@
+# Release 3.0.800.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 22 次发布
+
+发布时间：2023-07-05 01:07:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeServiceEnvironmentReleaseHistory](http://document.tencentcloudapi.woa.com/document/product/628/45197)
+
+	* <font color="#dd0000">**修改入参**：</font>EnvironmentName
+
+
+
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 14 次发布
+
+发布时间：2023-07-05 01:07:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VoicePrintDelete](http://document.tencentcloudapi.woa.com/document/product/1093/81020)
+* [VoicePrintEnroll](http://document.tencentcloudapi.woa.com/document/product/1093/81019)
+* [VoicePrintUpdate](http://document.tencentcloudapi.woa.com/document/product/1093/81018)
+* [VoicePrintVerify](http://document.tencentcloudapi.woa.com/document/product/1093/81017)
+
+新增数据结构：
+
+* [VoicePrintBaseData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintBaseData)
+* [VoicePrintVerifyData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintVerifyData)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 49 次发布
+
+发布时间：2023-07-05 01:20:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterTag](http://document.tencentcloudapi.woa.com/document/product/1003/81021)
+
+新增数据结构：
+
+* [ResourceTag](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ResourceTag)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 57 次发布
+
+发布时间：2023-07-05 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77011)
+
+	* 新增入参：SparkImage
+
+* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
+
+	* 新增入参：IsSessionStarted
+
+* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
+
+	* 新增入参：IsSessionStarted
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 25 次发布
+
+发布时间：2023-07-05 01:26:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeHiveQueries](http://document.tencentcloudapi.woa.com/document/product/589/81024)
+* [DescribeImpalaQueries](http://document.tencentcloudapi.woa.com/document/product/589/81023)
+* [DescribeYarnApplications](http://document.tencentcloudapi.woa.com/document/product/589/81022)
+
+新增数据结构：
+
+* [HiveQuery](http://document.tencentcloudapi.woa.com/document/product/589/33981#HiveQuery)
+* [ImpalaQuery](http://document.tencentcloudapi.woa.com/document/product/589/33981#ImpalaQuery)
+* [YarnApplication](http://document.tencentcloudapi.woa.com/document/product/589/33981#YarnApplication)
+
+修改数据结构：
+
+* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, SerialNo, OrderNo, WanIp, Flag, Spec, CpuNum, MemSize, MemDesc, RegionId, ZoneId, ApplyTime, FreeTime, DiskSize, NameTag, Services, StorageType, RootSize, ChargeType, CdbIp, CdbPort, HwDiskSize, HwDiskSizeDesc, HwMemSize, HwMemSizeDesc, ExpireTime, EmrResourceId, IsAutoRenew, DeviceClass, Mutable, MCMultiDisk, CdbNodeInfo, Ip, Destroyable, Tags, AutoFlag, HardwareResourceType, IsDynamicSpec, DynamicPodSpec, SupportModifyPayMode, RootStorageType, Zone, SubnetInfo, Clients, CurrentTime, IsFederation, DeviceName, ServiceClient, DisableApiTermination, TradeVersion
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 5 次发布
+
+发布时间：2023-07-05 01:27:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowSignReview](http://document.tencentcloudapi.woa.com/document/product/1668/79337)
+
+	* 新增入参：RecipientId, OperateType
+
+
+修改数据结构：
+
+* [FailedCreateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FailedCreateStaffData)
+
+	* 新增成员：WeworkOpenId
+
+* [Staff](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Staff)
+
+	* 新增成员：WeworkOpenId
+
+* [SuccessCreateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessCreateStaffData)
+
+	* 新增成员：WeworkOpenId
+
+	* <font color="#dd0000">**修改成员**：</font>Note
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 41 次发布
+
+发布时间：2023-07-05 01:34:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78039)
+
+	* 新增入参：AiFormatDiagnose
+
+* [ModifyLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78034)
+
+	* 新增入参：AiFormatDiagnose
+
+
+修改数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#DiagnoseResult)
+
+	* 新增成员：StreamFormatResults
+
+* [LiveStreamMonitorInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorInfo)
+
+	* 新增成员：AiFormatDiagnose
+
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 3 次发布
+
+发布时间：2023-07-05 01:49:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRawScanLogs](http://document.tencentcloudapi.woa.com/document/product/1685/81025)
+
+修改接口：
+
+* [ModifyTraceCodeUnlink](http://document.tencentcloudapi.woa.com/document/product/1685/79664)
+
+	* 新增入参：CodeType
+
+
+新增数据结构：
+
+* [RawScanLog](http://document.tencentcloudapi.woa.com/document/product/1685/79706#RawScanLog)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 96 次发布
+
+发布时间：2023-07-05 01:52:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：AntiDDoSPackageId, ClientToken
+
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：AntiDDoSPackageId
+
+	* <font color="#dd0000">**修改成员**：</font>AddressId, AddressName, AddressStatus, AddressIp, InstanceId, CreatedTime
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 41 次发布
+
+发布时间：2023-07-05 01:55:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainInfo)
+
+	* 新增成员：CdcClusters, ApiStatus, SgState, SgDetail
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 9 次发布
+
+发布时间：2023-07-05 01:55:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CommitIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77609)
+
+	* 新增入参：ExtConfig
+
+* [GenHiveTableDDLSql](http://document.tencentcloudapi.woa.com/document/product/1607/77565)
+
+	* 新增入参：UpsertKeys, TableBaseInfo
+
+* [ResumeIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77555)
+
+	* 新增入参：Event, ExtConfig
+
+* [StartIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77553)
+
+	* 新增入参：Event, ExtConfig
+
+
+新增数据结构：
+
+* [DlcDataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DlcDataGovernPolicy)
+* [DlcExpiredSnapshotsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DlcExpiredSnapshotsInfo)
+* [DlcMergeManifestsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DlcMergeManifestsInfo)
+* [DlcRemoveOrphanFilesInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DlcRemoveOrphanFilesInfo)
+* [DlcRewriteDataInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DlcRewriteDataInfo)
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableBaseInfo)
+
+修改数据结构：
+
+* [AlarmIndicatorInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmIndicatorInfo)
+
+	* 新增成员：Duration, DurationUnit, MaxTimes
+
+* [RecordField](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RecordField)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Value
+
+* [SourceFieldInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SourceFieldInfo)
+
+	* 新增成员：Comment
+
+
+
+
 # Release 3.0.799.1
 
 ## 账号风控平台(ciam) 版本：2022-03-31

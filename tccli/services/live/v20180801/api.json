@@ -3835,6 +3835,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启格式诊断。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiFormatDiagnose",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11231,6 +11241,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "流格式诊断信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamFormatResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -12445,6 +12466,17 @@
           "example": "0",
           "member": "uint64",
           "name": "AllowMonitorReport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启格式诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiFormatDiagnose",
           "required": false,
           "type": "int",
           "value_allowed_null": true,
@@ -13854,6 +13886,16 @@
           "example": "0",
           "member": "uint64",
           "name": "AllowMonitorReport",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启格式诊断。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiFormatDiagnose",
           "required": false,
           "type": "int",
           "visibility": 1

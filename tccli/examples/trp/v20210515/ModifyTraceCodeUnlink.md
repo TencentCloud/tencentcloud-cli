@@ -14,10 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "BatchId": "xx",
         "UnlinkCnt": 1,
-        "RequestId": "xx",
-        "CodeCnt": 1
+        "CodeCnt": 1,
+        "BatchId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

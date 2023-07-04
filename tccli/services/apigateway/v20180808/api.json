@@ -7489,44 +7489,44 @@
       "document": "DescribeServiceEnvironmentReleaseHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的服务唯一 ID。",
           "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称。",
           "example": "test",
           "member": "string",
           "name": "EnvironmentName",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7540,9 +7540,10 @@
           "example": "无",
           "member": "ServiceReleaseHistory",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

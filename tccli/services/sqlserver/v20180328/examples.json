@@ -66,7 +66,7 @@
     ],
     "CreateBasicDBInstances": [
       {
-        "document": "",
+        "document": "创建基础版实例",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBasicDBInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-huew581t\",\n    \"AutoRenewFlag\": \"0\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": \"1\",\n    \"TimeZone\": \"China Standard Time\",\n    \"DBVersion\": \"2008R2\",\n    \"Storage\": \"20\",\n    \"Period\": \"1\",\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"StartTime\": \"00:00\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-pudyecyk\",\n    \"Span\": \"6\",\n    \"Cpu\": \"1\",\n    \"Weekly\": [\n        \"1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"20200713383000001111250\",\n        \"RequestId\": \"d84adfca-3ff0-46d2-b400-b5527446df72\"\n    }\n}",
         "title": "创建基础版实例"
@@ -146,7 +146,7 @@
     ],
     "CreateReadOnlyDBInstances": [
       {
-        "document": "",
+        "document": "创建只读实例",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyDBInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupMaxDelayTime\": \"10\",\n    \"VpcId\": \"vpc-3xq2t5al\",\n    \"GoodsNum\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"InstanceId\": \"mssql-6upluvd5\",\n    \"Period\": \"1\",\n    \"Storage\": \"10\",\n    \"ReadOnlyGroupIsOfflineDelay\": \"1\",\n    \"ReadOnlyGroupMinInGroup\": \"1\",\n    \"ReadOnlyGroupName\": \"default_name\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"ReadOnlyGroupType\": \"2\",\n    \"InstanceChargeType\": \"POSTPAID\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-gdy95gfs\",\n    \"TimeZone\": \"China Standard Time\",\n    \"ReadOnlyGroupForcedUpgrade\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20200722117963\"\n        ],\n        \"RequestId\": \"0509b6b8-8906-479f-9489-10620ec6d4ce\"\n    }\n}",
         "title": "创建只读实例"
@@ -554,7 +554,7 @@
     ],
     "InquiryPriceCreateDBInstances": [
       {
-        "document": "",
+        "document": "查询申请SqlServer实例价格",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=InquiryPriceCreateDBInstances\n&Zone=ap-guangzhou-2\n&Memory=2\n&Storage=300\n&Period=1\n&GoodsNum=1\n&DBVersion=2008R2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"OriginalPrice\": 20988,\n        \"Price\": 20988\n    }\n}",
         "title": "查询申请SqlServer实例价格"

@@ -5274,10 +5274,9 @@
       "type": "object"
     },
     "DomainInfo": {
-      "document": "域名的详细信息",
+      "document": "domain列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "qcloud",
@@ -5289,7 +5288,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID",
           "example": "123",
@@ -5301,7 +5299,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "123",
@@ -5313,7 +5310,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cname地址",
           "example": "213",
@@ -5325,9 +5321,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例类型",
+          "document": "实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名",
           "example": "\"sparta_waf\"",
           "member": "string",
           "name": "Edition",
@@ -5337,7 +5332,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "213",
@@ -5349,7 +5343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名",
           "example": "213",
@@ -5361,7 +5354,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志包",
           "example": "1",
@@ -5373,9 +5365,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "clb模式",
+          "document": "clbwaf使用模式,0镜像模式 1清洗模式",
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
@@ -5385,9 +5376,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "waf开关",
+          "document": "waf开关,0关闭 1开启",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -5397,9 +5387,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "防御模式",
+          "document": "规则防御模式,0观察模式 1拦截模式",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -5409,9 +5398,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "AI防御模式",
+          "document": "AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式",
           "example": "1",
           "member": "uint64",
           "name": "Engine",
@@ -5421,7 +5409,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC列表",
           "example": "[\"1\",\"2\"]",
@@ -5433,7 +5420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源ip",
           "example": "[\"1\",\"2\"]",
@@ -5445,7 +5431,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务端口配置",
           "example": "11",
@@ -5457,7 +5442,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡器",
           "example": "11",
@@ -5469,7 +5453,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户id",
           "example": "1",
@@ -5481,9 +5464,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "clb状态",
+          "document": "clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误",
           "example": "-2",
           "member": "int64",
           "name": "State",
@@ -5493,7 +5475,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "13",
@@ -5505,9 +5486,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "0关闭 1开启",
+          "document": "Ipv6开关状态,0关闭 1开启",
           "example": "1",
           "member": "int64",
           "name": "Ipv6Status",
@@ -5517,9 +5497,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "0关闭 1开启",
+          "document": "BOT开关状态,0关闭 1开启",
           "example": "1",
           "member": "int64",
           "name": "BotStatus",
@@ -5529,7 +5508,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本信息",
           "example": "1",
@@ -5541,9 +5519,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启投递CLS功能",
+          "document": "是否开启投递CLS功能,0关闭 1开启",
           "example": "1",
           "member": "int64",
           "name": "PostCLSStatus",
@@ -5553,9 +5530,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否开启投递CKafka功能",
+          "document": "是否开启投递CKafka功能,0关闭 1开启",
           "example": "1",
           "member": "int64",
           "name": "PostCKafkaStatus",
@@ -5565,12 +5541,55 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "应用型负载均衡类型: clb或者apisix，默认clb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cdc实例域名接入的集群信息,非cdc实例忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"cluster-asdfas\"",
+          "member": "string",
+          "name": "CdcClusters",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "api安全开关状态,0关闭 1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApiStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用型负载均衡类型,clb或者apisix，默认clb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"clb\"",
           "member": "string",
           "name": "AlbType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SgState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "安全组状态的详细解释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“因为超出安全组数量，添加失败”",
+          "member": "string",
+          "name": "SgDetail",
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -7358,142 +7377,142 @@
       "usage": "both"
     },
     "LoadBalancerPackageNew": {
-      "document": "负载均衡算法",
+      "document": "负载均衡器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监听id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ListenerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监听名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "ListenerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "LoadBalancerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Vport",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6123",
           "member": "int64",
           "name": "NumericalVpcId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLB类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "open",
           "member": "string",
           "name": "LoadBalancerType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ModifyAccessPeriodRequest": {
       "document": "ModifyAccessPeriod请求参数结构体",
