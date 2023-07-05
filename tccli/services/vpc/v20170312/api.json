@@ -120,7 +120,7 @@
       "status": "online"
     },
     "AttachCcnInstances": {
-      "document": "本接口（AttachCcnInstances）用于将网络实例加载到云联网实例中，网络实例包括VPC和专线网关。<br />\n每个云联网能够关联的网络实例个数是有限的，详请参考产品文档。如果需要扩充请联系在线客服。",
+      "document": "本接口（AttachCcnInstances）用于将网络实例加载到云联网实例中，网络实例包括VPC和专线网关。<br />\n每个云联网能够关联的网络实例个数是有限的，详情请参考产品文档。如果需要扩充请联系在线客服。",
       "input": "AttachCcnInstancesRequest",
       "name": "云联网关联实例",
       "output": "AttachCcnInstancesResponse",
@@ -2449,7 +2449,7 @@
           "example": "eip-ip9ongec",
           "member": "string",
           "name": "AddressId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2459,7 +2459,7 @@
           "example": "未命名",
           "member": "string",
           "name": "AddressName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2469,7 +2469,7 @@
           "example": "UNBIND",
           "member": "string",
           "name": "AddressStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2479,7 +2479,7 @@
           "example": "100.10.1.1",
           "member": "string",
           "name": "AddressIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2489,7 +2489,7 @@
           "example": "ins-xxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2499,7 +2499,7 @@
           "example": "2021-05-19T08:37:53Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2509,7 +2509,7 @@
           "example": "null",
           "member": "string",
           "name": "NetworkInterfaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2519,7 +2519,7 @@
           "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2529,7 +2529,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsArrears",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2539,7 +2539,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsBlocked",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2549,7 +2549,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsEipDirectConnection",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2559,7 +2559,7 @@
           "example": "EIP",
           "member": "string",
           "name": "AddressType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2569,7 +2569,7 @@
           "example": "false",
           "member": "bool",
           "name": "CascadeRelease",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2579,7 +2579,7 @@
           "example": "无",
           "member": "AlgType",
           "name": "EipAlgType",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2589,7 +2589,7 @@
           "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2599,7 +2599,7 @@
           "example": "false",
           "member": "bool",
           "name": "LocalBgp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2609,7 +2609,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2619,7 +2619,7 @@
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2629,7 +2629,7 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2639,7 +2639,7 @@
           "example": "无",
           "member": "date",
           "name": "DeadlineDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2649,9 +2649,19 @@
           "example": "无",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.",
+          "example": "无",
+          "member": "string",
+          "name": "AntiDDoSPackageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3080,6 +3090,24 @@
           "name": "Egress",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高防包ID， 申请高防IP时，该字段必传。",
+          "example": "无",
+          "member": "string",
+          "name": "AntiDDoSPackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。",
+          "example": "123e4567-e89b-12d3-a456-426655440000",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3093,6 +3121,7 @@
           "example": "[\"eip-m44ku5d2\"]",
           "member": "string",
           "name": "AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3102,6 +3131,7 @@
           "example": "61531428",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3490,6 +3520,7 @@
           "example": "50121411",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3742,7 +3773,6 @@
       "document": "AttachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -3752,7 +3782,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联网络实例列表",
           "example": "无",
@@ -3762,7 +3791,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CCN所属UIN（根账号），默认当前账号所属UIN",
           "example": "无",
@@ -10778,7 +10806,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例实例ID。</li>",
+          "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例ID。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

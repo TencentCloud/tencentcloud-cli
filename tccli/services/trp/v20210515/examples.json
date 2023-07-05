@@ -248,6 +248,14 @@
         "title": "查询商品列表"
       }
     ],
+    "DescribeRawScanLogs": [
+      {
+        "document": "在同步日志的场景，通常只需要定时同步新增的日志，指定上一次请求时最后一行ID即可（初次请求时可以传 0）\n例如：AfterLogId = 100, 表示查 LogId > 100 的日志，在返回空数组时表示没有新的日志了",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRawScanLogs\n<公共请求参数>\n\n{\n    \"PageSize\": 100,\n    \"PageNumber\": 1,\n    \"AfterLogId\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"ScanLogs\": [\n            {\n                \"LogId\": 101,\n                \"Openid\": \"abc\",\n                \"CreateTime\": \"2022-01-18T08:27:11.000Z\",\n                \"Code\": \"abc\",\n                \"CorpId\": 100,\n                \"MerchantId\": \"abc\",\n                \"ProductId\": \"abc\",\n                \"BatchId\": \"abc\",\n                \"Province\": \"广东省\",\n                \"City\": \"深圳市\",\n                \"District\": \"福田区\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "从某个日志开始查询新增的扫码日志"
+      }
+    ],
     "DescribeScanLogs": [
       {
         "document": "查询扫描明细，查询参数 Code, Openid 至少需要一个",
@@ -364,7 +372,7 @@
       {
         "document": "解绑溯源码和批次的关系",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceCodeUnlink\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Codes\": [\n        \"https://anxin.m.qq.com/qr/3a9avhhvk4oyqb\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"UnlinkCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"CodeCnt\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UnlinkCnt\": 1,\n        \"CodeCnt\": 1,\n        \"BatchId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "解绑溯源码和批次的关系"
       }
     ],

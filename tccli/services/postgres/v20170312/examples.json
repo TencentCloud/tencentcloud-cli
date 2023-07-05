@@ -472,7 +472,7 @@
     ],
     "DisIsolateDBInstances": [
       {
-        "document": "",
+        "document": "实例的解隔离操作。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisIsolateDBInstances\n<公共请求参数>\n\n{\n    \"Period\": \"1\",\n    \"AutoVoucher\": \"false\",\n    \"DBInstanceIdSet\": [\n        \"postgres-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad1ca88b-5cc8-4c4c-ab10-a882123f8daa\"\n    }\n}",
         "title": "解隔离实例"
@@ -518,7 +518,7 @@
     ],
     "IsolateDBInstances": [
       {
-        "document": "",
+        "document": "隔离实例操作。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBInstances\n<公共请求参数>\n\n{\n    \"DBInstanceIdSet\": [\n        \"postgres-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "隔离实例"
@@ -580,13 +580,13 @@
     ],
     "ModifyDBInstanceName": [
       {
-        "document": "",
+        "document": "修改实例名称为testModifyInstanceName。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceName\n<公共请求参数>\n\n{\n    \"InstanceName\": \"testModifyInstanceName\",\n    \"DBInstanceId\": \"postgres-6fego161\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "将实例postgres-6fego161名字修改为testModifyInstanceName"
       },
       {
-        "document": "",
+        "document": "修改实例名称失败。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceName\n<公共请求参数>\n\n{\n    \"InstanceName\": \"testModifyInstanceName\",\n    \"DBInstanceId\": \"postgres-6ougo465\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61f510-aa33-454c-9ec2-dq2a368c39ab\"\n    }\n}",
         "title": "修改实例postgres-6ougo465名字，修改失败"
@@ -610,16 +610,16 @@
     ],
     "ModifyDBInstanceSecurityGroups": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-nqwpkjb\",\n    \"SecurityGroupIdSet\": [\n        \"sg-91jbmkp1\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f81495e4-bca8-4946-b5b0-0aedc512413d\"\n    }\n}",
-        "title": "修改只读组安全组"
-      },
-      {
-        "document": "",
+        "document": "修改安全组。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-i2q4utnp\",\n    \"SecurityGroupIdSet\": [\n        \"sg-91jbmkp1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fad142d-9597-408f-84b8-41a27a1486ce\"\n    }\n}",
         "title": "修改安全组"
+      },
+      {
+        "document": "修改只读实例组安全组。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-nqwpkjb\",\n    \"SecurityGroupIdSet\": [\n        \"sg-91jbmkp1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f81495e4-bca8-4946-b5b0-0aedc512413d\"\n    }\n}",
+        "title": "修改只读实例组安全组"
       }
     ],
     "ModifyDBInstanceSpec": [

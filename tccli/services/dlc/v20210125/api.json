@@ -190,9 +190,9 @@
       "status": "online"
     },
     "CreateSparkSessionBatchSQL": {
-      "document": "本接口（CreateSparkSessionBatchSQL）用于提交Spark SQL批任务。",
+      "document": "本接口（CreateSparkSessionBatchSQL）用于向Spark作业引擎提交Spark SQL批任务。",
       "input": "CreateSparkSessionBatchSQLRequest",
-      "name": "提交Spark SQL批任务",
+      "name": "创建并执行Spark SQL批任务",
       "output": "CreateSparkSessionBatchSQLResponse",
       "status": "online"
     },
@@ -2698,7 +2698,7 @@
         },
         {
           "disabled": false,
-          "document": "Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；",
+          "document": "Session相关配置，当前支持：\n1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；\n2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；\n3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；",
           "example": "[\"eni\":\"test_eni\"]",
           "member": "KVPair",
           "name": "Arguments",
@@ -2731,6 +2731,15 @@
           "name": "ExecutorMaxNumbers",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定spark版本名称，当前任务使用该spark镜像运行",
+          "example": "pyspark 3.2",
+          "member": "string",
+          "name": "SparkImage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2744,6 +2753,7 @@
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
           "member": "string",
           "name": "SessionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2753,6 +2763,7 @@
           "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
           "member": "string",
           "name": "SparkAppId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2762,6 +2773,7 @@
           "example": "not_started",
           "member": "string",
           "name": "State",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3261,6 +3273,15 @@
           "name": "IsInherit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用session脚本的sql运行任务：false：否，true：是",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSessionStarted",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3274,6 +3295,7 @@
           "example": "04529f7b-2e3a-70d7-72b4-a0d288ba300c",
           "member": "string",
           "name": "SparkAppId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3426,7 +3448,7 @@
         },
         {
           "disabled": false,
-          "document": "Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；",
+          "document": "Session相关配置，当前支持：1.dlc.eni：用户配置的eni网关信息，可以用过该字段设置；\n2.dlc.role.arn：用户配置的roleArn鉴权策略配置信息，可以用过该字段设置；\n3.dlc.sql.set.config：用户配置的集群配置信息，可以用过该字段设置；",
           "example": "[\"eni\":\"test_eni\"]",
           "member": "KVPair",
           "name": "Arguments",
@@ -3445,6 +3467,7 @@
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
           "member": "string",
           "name": "BatchId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9201,6 +9224,15 @@
           "name": "IsInherit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用session脚本的sql运行任务：false：否，true：是",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSessionStarted",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

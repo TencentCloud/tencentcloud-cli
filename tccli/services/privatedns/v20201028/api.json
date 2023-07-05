@@ -415,7 +415,6 @@
       "document": "CreatePrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "1",
@@ -425,7 +424,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
@@ -435,7 +433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "b",
@@ -445,7 +442,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "3.3.3.3",
@@ -455,7 +451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
@@ -465,7 +460,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "15",
@@ -475,7 +469,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
@@ -496,7 +489,6 @@
           "example": "1111",
           "member": "string",
           "name": "RecordId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

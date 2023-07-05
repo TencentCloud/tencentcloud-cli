@@ -484,8 +484,7 @@
           "member": "uint64",
           "name": "Vendor",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -494,8 +493,7 @@
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -504,28 +502,25 @@
           "member": "string",
           "name": "Bucket",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "第三方存储的access_key账号信息。\n若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建",
+          "document": "第三方存储的access_key账号信息。\n若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。",
           "example": "test-accesskey",
           "member": "string",
           "name": "AccessKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "第三方存储的secret_key账号信息。\n若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建",
+          "document": "第三方存储的secret_key账号信息。\n若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。",
           "example": "test-secretkey",
           "member": "string",
           "name": "SecretKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -534,8 +529,7 @@
           "member": "string",
           "name": "FileNamePrefix",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

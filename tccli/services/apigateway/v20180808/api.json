@@ -7215,7 +7215,6 @@
       "document": "DescribeServiceEnvironmentReleaseHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的服务唯一 ID。",
           "example": "service-ody35h5e",
@@ -7225,17 +7224,15 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称。",
           "example": "test",
           "member": "string",
           "name": "EnvironmentName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "xx",
@@ -7245,7 +7242,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "xx",
@@ -7266,7 +7262,7 @@
           "example": "无",
           "member": "ServiceReleaseHistory",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

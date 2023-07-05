@@ -1645,6 +1645,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警周期",
+          "example": "1",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警周期单位",
+          "example": "minute",
+          "member": "string",
+          "name": "DurationUnit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期内最多告警次数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3581,7 +3611,6 @@
       "document": "CommitIntegrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "123",
@@ -3591,7 +3620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123",
@@ -3601,7 +3629,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行",
           "example": "0",
@@ -3611,7 +3638,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实时任务 201   离线任务 202  默认实时任务",
           "example": "201",
@@ -3619,6 +3645,15 @@
           "name": "TaskType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "额外参数",
+          "example": "[{\"timestamp\": \"1686811933000\"}]",
+          "member": "RecordField",
+          "name": "ExtConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3632,7 +3667,6 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -14407,6 +14441,296 @@
       ],
       "usage": "out"
     },
+    "DlcDataGovernPolicy": {
+      "document": "数据治理配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据排布治理项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DlcRewriteDataInfo",
+          "name": "RewriteDataPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照过期治理项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DlcExpiredSnapshotsInfo",
+          "name": "ExpiredSnapshotsPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除孤立文件治理项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DlcRemoveOrphanFilesInfo",
+          "name": "RemoveOrphanFilesPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合并元数据Manifests治理项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DlcMergeManifestsInfo",
+          "name": "MergeManifestsPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否集成库规则：default（默认继承）、none（不继承）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "InheritDataBase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "治理规则类型，Customize: 自定义；Intelligence: 智能治理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Customize",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "治理引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "GovernEngine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcExpiredSnapshotsInfo": {
+      "document": "快照过期治理项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用快照过期治理项：enable、none\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "ExpiredSnapshotsEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于运行快照过期治理项的引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要保留的最近快照个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RetainLast",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期指定天前的快照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BeforeDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "清理过期快照的并行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxConcurrentDeletes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照过期治理运行周期，单位为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntervalMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcMergeManifestsInfo": {
+      "document": "合并元数据Manifests治理项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用合并元数据Manifests文件治理项：enable、none\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "MergeManifestsEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于运行合并元数据Manifests文件治理项的引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合并元数据Manifests文件治理运行周期，单位为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntervalMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcRemoveOrphanFilesInfo": {
+      "document": "移除孤立文件治理项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用移除孤立文件治理项：enable、none\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "RemoveOrphanFilesEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于运行移除孤立文件治理项的引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除指定天前的孤立文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BeforeDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除孤立文件的并行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxConcurrentDeletes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除孤立文件治理运行周期，单位为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntervalMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcRewriteDataInfo": {
+      "document": "数据排布治理项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用数据重排布治理项：enable（启动）、disable（不启用，默认）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disable",
+          "member": "string",
+          "name": "RewriteDataEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于运行数据重排布治理项的引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重排布任务执行的文件个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinInputFiles",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据重排布写后的数据文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TargetFileSizeBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据重排布治理运行周期，单位为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntervalMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DryRunDIOfflineTaskRequest": {
       "document": "DryRunDIOfflineTask请求参数结构体",
       "members": [
@@ -15256,6 +15580,24 @@
           "name": "TargetDatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "dlc upsert主键",
+          "example": "无",
+          "member": "string",
+          "name": "UpsertKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "dlc表治理信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -20956,29 +21298,29 @@
       "document": "通用记录字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "a",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段值",
           "example": "a",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RecordsSpeed": {
       "document": "实时任务同步速度 条/s",
@@ -21547,7 +21889,6 @@
       "document": "ResumeIntegrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "123",
@@ -21557,7 +21898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123",
@@ -21565,6 +21905,24 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)",
+          "example": "RESUME",
+          "member": "string",
+          "name": "Event",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外参数",
+          "example": "{\"timestamp\": \"1686811933000\"}",
+          "member": "RecordField",
+          "name": "ExtConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -21578,7 +21936,6 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25143,6 +25500,7 @@
           "example": "123",
           "member": "string",
           "name": "FieldName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25153,6 +25511,7 @@
           "example": "int",
           "member": "string",
           "name": "FieldType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25163,9 +25522,21 @@
           "example": "123",
           "member": "string",
           "name": "Alias",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -25258,7 +25629,6 @@
       "document": "StartIntegrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "123",
@@ -25268,7 +25638,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "123",
@@ -25276,6 +25645,24 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)",
+          "example": "START",
+          "member": "string",
+          "name": "Event",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外参数",
+          "example": "[{\"timestamp\": \"1686811933000\"}]",
+          "member": "RecordField",
+          "name": "ExtConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -25289,7 +25676,6 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25715,6 +26101,112 @@
         }
       ],
       "type": "object"
+    },
+    "TableBaseInfo": {
+      "document": "建dlc表所需信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bb",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表所属数据源名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cc",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据格式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iceberg",
+          "member": "string",
+          "name": "TableFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建表用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "string",
+          "name": "UserSubUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DlcDataGovernPolicy",
+          "name": "GovernPolicy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库数据治理是否关闭，关闭：true，开启：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "DbGovernPolicyIsDisable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TableConfig": {
       "document": "规则表变量替换",

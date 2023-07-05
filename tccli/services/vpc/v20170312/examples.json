@@ -180,7 +180,7 @@
     ],
     "AttachCcnInstances": [
       {
-        "document": "",
+        "document": "云联网关联多个网络实例",
         "input": "https://vpc.tencentcloudapi.com/?Action=AttachCcnInstances\n&CcnId=ccn-gree226l\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&Instances.1.InstanceType=DIRECTCONNECT\n&Instances.1.InstanceId=dcg-98qosdc3\n&Instances.1.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "云联网关联多个网络实例"

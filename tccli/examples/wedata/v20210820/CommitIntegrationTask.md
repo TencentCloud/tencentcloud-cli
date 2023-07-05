@@ -6,16 +6,19 @@ Input:
 
 ```
 tccli wedata CommitIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx \
-    --CommitType 0
+    --TaskId abc \
+    --ProjectId abc \
+    --CommitType 0 \
+    --TaskType 1 \
+    --ExtConfig.0.Name abc \
+    --ExtConfig.0.Value abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "1x",
         "Data": true
     }
 }

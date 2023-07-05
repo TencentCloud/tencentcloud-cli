@@ -2355,6 +2355,24 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "审核签署节点使用 非必填 如果填写则审核该签署节点。给个人审核时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：\n操作类型，默认：SignReview；SignReview:签署审核\n注：接口通过该字段区分操作类型\n该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程\n若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）",
+          "example": "无",
+          "member": "string",
+          "name": "OperateType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2539,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "待创建员工的信息，不超过20个。\nMobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。",
+          "document": "待创建员工的信息，不超过20个。\n所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。\n企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -2567,6 +2585,7 @@
           "example": "无",
           "member": "CreateStaffResult",
           "name": "CreateEmployeeResult",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4553,6 +4572,7 @@
           "example": "无",
           "member": "Staff",
           "name": "Employees",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4562,6 +4582,7 @@
           "example": "无",
           "member": "int64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4571,6 +4592,7 @@
           "example": "无",
           "member": "int64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4580,6 +4602,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5205,35 +5228,42 @@
       "document": "创建员工的失败数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "员工名",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "员工手机号",
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "传入的企微账号id",
+          "example": "无",
+          "member": "string",
+          "name": "WeworkOpenId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "失败原因",
           "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7413,10 +7443,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户在电子签平台的id",
+          "document": "用户在电子签平台的id\n注：创建和更新场景无需填写",
           "example": "无",
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7427,6 +7458,7 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7437,6 +7469,7 @@
           "example": "无",
           "member": "string",
           "name": "Mobile",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7447,6 +7480,7 @@
           "example": "无",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7457,16 +7491,18 @@
           "example": "无",
           "member": "string",
           "name": "OpenId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "员工角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工角色\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StaffRole",
           "name": "Roles",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7477,69 +7513,87 @@
           "example": "无",
           "member": "Department",
           "name": "Department",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "员工是否实名",
+          "document": "员工是否实名\n注：创建和更新场景无需填写",
           "example": "无",
           "member": "bool",
           "name": "Verified",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工创建时间戳，单位秒",
+          "document": "员工创建时间戳，单位秒\n注：创建和更新场景无需填写",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工实名时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工实名时间戳，单位秒\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "VerifiedOn",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "员工是否离职：0-未离职，1-离职\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工是否离职：0-未离职，1-离职\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "QuiteJob",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "员工离职交接人用户id",
+          "document": "员工离职交接人用户id\n注：创建和更新场景无需填写",
           "example": "无",
           "member": "string",
           "name": "ReceiveUserId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工离职交接人用户OpenId",
+          "document": "员工离职交接人用户OpenId\n注：创建和更新场景无需填写",
           "example": "无",
           "member": "string",
           "name": "ReceiveOpenId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业微信用户账号ID\n注：仅企微类型的企业创建员工接口支持该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WeworkOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7653,7 +7707,7 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7663,7 +7717,7 @@
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7673,7 +7727,7 @@
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7683,9 +7737,19 @@
           "example": "无",
           "member": "string",
           "name": "Note",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "传入的企微账号id",
+          "example": "无",
+          "member": "string",
+          "name": "WeworkOpenId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

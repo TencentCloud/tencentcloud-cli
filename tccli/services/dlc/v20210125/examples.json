@@ -218,10 +218,10 @@
     ],
     "CreateSparkSessionBatchSQL": [
       {
-        "document": "提交Spark SQL批任务",
+        "document": "本接口（CreateSparkSessionBatchSQL）用于向Spark作业引擎提交Spark SQL批任务",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkSessionBatchSQL\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"data_engine_1\",\n    \"ExecuteSQL\": \"select 1\",\n    \"DriverSize\": \"small\",\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"TimeoutInSecond\": 2,\n    \"SessionId\": \"\",\n    \"SessionName\": \"livy-session-123\",\n    \"Arguments\": [\n        {\n            \"Value\": \"eni\",\n            \"Key\": \"test_eni\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n    }\n}",
-        "title": "提交Spark SQL批任务"
+        "title": "创建并执行Spark SQL批任务"
       }
     ],
     "CreateStoreLocation": [

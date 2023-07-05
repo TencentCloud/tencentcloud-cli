@@ -446,9 +446,9 @@
     ],
     "DescribeServiceEnvironmentReleaseHistory": [
       {
-        "document": "",
+        "document": "用于查询服务环境的发布历史。",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeServiceEnvironmentReleaseHistory\n&ServiceId=service-ody35h5e\n&EnvironmentName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 5,\n            \"VersionList\": [\n                {\n                    \"VersionName\": \"202002140201231eee121d-058a-4c0c-a2b1-bc25325d42d5\",\n                    \"VersionDesc\": \"xxx\",\n                    \"ReleaseTime\": \"2020-02-13T18:01:23Z\"\n                },\n                {\n                    \"VersionName\": \"20200214020300d0eab0c5-e124-4705-bc61-81545361cc0d\",\n                    \"VersionDesc\": \"xxx\",\n                    \"ReleaseTime\": \"2020-02-13T18:03:00Z\"\n                },\n                {\n                    \"VersionName\": \"202002140204057f8dbac2-1b0e-4ce5-975e-f1d82618e008\",\n                    \"VersionDesc\": \"xxx\",\n                    \"ReleaseTime\": \"2020-02-13T18:04:05Z\"\n                },\n                {\n                    \"VersionName\": \"20200214020506aac44ade-6657-4c7f-b15a-59fa1e4252e7\",\n                    \"VersionDesc\": \"xxx\",\n                    \"ReleaseTime\": \"2020-02-13T18:05:06Z\"\n                },\n                {\n                    \"VersionName\": \"202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215\",\n                    \"VersionDesc\": \"xx\",\n                    \"ReleaseTime\": \"2020-02-16T11:26:12Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"837fb8ce-6bdd-4765-95fb-0a37e2a99abb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"VersionList\": [\n                {\n                    \"VersionName\": \"abc\",\n                    \"VersionDesc\": \"abc\",\n                    \"ReleaseTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeServiceEnvironmentReleaseHistory"
       }
     ],

@@ -139,6 +139,34 @@
       "name": "更新热词表",
       "output": "UpdateAsrVocabResponse",
       "status": "online"
+    },
+    "VoicePrintDelete": {
+      "document": "本接口用于以删除已经注册的说话人信息（删除之后，原有的说话人ID和说话人音频数据都会失效）",
+      "input": "VoicePrintDeleteRequest",
+      "name": "说话人删除",
+      "output": "VoicePrintDeleteResponse",
+      "status": "online"
+    },
+    "VoicePrintEnroll": {
+      "document": "说话人注册接口用于注册一个指定音频，生成一个唯一的说话人id，后续可通过说话人验证接口验证其它音频和已有的说话人ID匹配度，注册时可指定说话人昵称，方便标识说话人ID，  说话人昵称可重复配置。 \n（注: 一个appid最多可以注册1000个说话人ID，一个说话人ID仅支持一条音频注册，后续可通过更新接口进行更新）\n\n使用须知\n支持的输入格式：编码文件(PCM, WAV)、16 bit采样位数、单声道（mono）。\n\n支持的音频采样率：16000 Hz。",
+      "input": "VoicePrintEnrollRequest",
+      "name": "说话人注册",
+      "output": "VoicePrintEnrollResponse",
+      "status": "online"
+    },
+    "VoicePrintUpdate": {
+      "document": "本接口用于更新和覆盖已注册的音频数据和说话人昵称，更新后原有的音频数据将失效。",
+      "input": "VoicePrintUpdateRequest",
+      "name": "说话人更新",
+      "output": "VoicePrintUpdateResponse",
+      "status": "online"
+    },
+    "VoicePrintVerify": {
+      "document": "本接口用于校验传入音频与已注册音频的匹配程度，通过指定说话人ID（VoicePrintId）和一段音频进行音频和说话人的匹配度判断",
+      "input": "VoicePrintVerifyRequest",
+      "name": "说话人认证",
+      "output": "VoicePrintVerifyResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -285,7 +313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；",
+          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_yue：粤语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineType",
@@ -394,6 +422,7 @@
           "example": "无",
           "member": "Task",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -479,7 +508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY：中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_ca：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
+          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY：中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_yue：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -497,7 +526,7 @@
         },
         {
           "disabled": false,
-          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。",
+          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。4：【付费功能】将对ASR结果按照语义分段，并展示词级别粒度的详细识别结果（注意：如果开启后付费，将[自动计费](https://cloud.tencent.com/document/product/1093/35686)）",
           "example": "0",
           "member": "uint64",
           "name": "ResTextFormat",
@@ -2057,6 +2086,306 @@
         }
       ],
       "usage": "out"
+    },
+    "VoicePrintBaseData": {
+      "document": "说话人基础数据，包括说话人id和说话人昵称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpeakerNick",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintDeleteRequest": {
+      "document": "VoicePrintDelete请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id，说话人唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintDeleteResponse": {
+      "document": "VoicePrintDelete返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人基本信息",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintEnrollRequest": {
+      "document": "VoicePrintEnroll请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称  不超过32字节",
+          "example": "小明",
+          "member": "string",
+          "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintEnrollResponse": {
+      "document": "VoicePrintEnroll返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人基本数据",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintUpdateRequest": {
+      "document": "VoicePrintUpdate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率 目前仅支持16000 单位Hz",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "说话人id， 说话人唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称  不超过32字节",
+          "example": "小明",
+          "member": "string",
+          "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintUpdateResponse": {
+      "document": "VoicePrintUpdate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人基础数据",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintVerifyData": {
+      "document": "说话人验证数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配度 取值范围(0.0 - 100.0)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Score",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验证结果 0: 未通过 1: 通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Decision",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintVerifyRequest": {
+      "document": "VoicePrintVerify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "说话人id, 说话人唯一标识",
+          "example": "dasdagfdgddsdsada",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintVerifyResponse": {
+      "document": "VoicePrintVerify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人验证数据",
+          "example": "无",
+          "member": "VoicePrintVerifyData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

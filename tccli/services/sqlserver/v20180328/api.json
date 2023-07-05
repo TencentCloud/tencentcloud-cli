@@ -2004,7 +2004,6 @@
       "document": "CreateBasicDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
           "example": "ap-guangzhou-3",
@@ -2014,7 +2013,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的CPU核心数",
           "example": "2",
@@ -2024,7 +2022,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存大小，单位GB",
           "example": "2",
@@ -2034,7 +2031,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例磁盘大小，单位GB",
           "example": "20",
@@ -2044,7 +2040,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC子网ID，形如subnet-bdoe83fa",
           "example": "subnet-pudyecyk",
@@ -2054,7 +2049,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID，形如vpc-dsp338hz",
           "example": "vpc-huew581t",
@@ -2064,9 +2058,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "购买实例的宿主机类型, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘",
+          "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘,CLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "MachineType",
@@ -2074,7 +2067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
           "example": "PREPAID",
@@ -2084,7 +2076,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -2094,7 +2085,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次购买几个实例，默认值为1。取值不超过10",
           "example": "1",
@@ -2104,9 +2094,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard），2017（SQL Server 2017 Enterprise），201202（SQL Server 2012 Standard），201402（SQL Server 2014 Standard），2014SP2（SQL Server 2014 Enterprise），201702（SQL Server 2017 Standard）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -2114,7 +2103,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
           "example": "1",
@@ -2124,7 +2112,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
           "example": "sg-xxx",
@@ -2134,7 +2121,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
           "example": "0",
@@ -2144,7 +2130,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
           "example": "2",
@@ -2154,7 +2139,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
           "example": "xxx",
@@ -2164,7 +2148,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
           "example": "[\"1\\n\"]",
@@ -2174,7 +2157,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，每天可维护的开始时间",
           "example": "00:00",
@@ -2184,7 +2166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，持续时间，单位：小时",
           "example": "6",
@@ -2194,7 +2175,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建实例绑定的标签集合",
           "example": "无",
@@ -2204,7 +2184,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
           "example": "Chinese_PRC_CI_AS",
@@ -2214,7 +2193,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统时区，默认：China Standard Time",
           "example": "China Standard Time",
@@ -2235,7 +2213,7 @@
           "example": "20200713383000001111250",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2861,8 +2839,8 @@
         },
         {
           "disabled": false,
-          "document": "本次购买几个只读实例，默认值为1。",
-          "example": "1",
+          "document": "本次购买几个只读实例，默认值为2。",
+          "example": "2",
           "member": "int64",
           "name": "GoodsNum",
           "required": false,
@@ -2961,6 +2939,7 @@
           "example": "[\"20200722117963\"]",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3517,7 +3496,6 @@
       "document": "CreateReadOnlyDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6upluvd5",
@@ -3527,7 +3505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
           "example": "ap-guangzhou-2",
@@ -3537,7 +3514,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组类型选项，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货，所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面",
           "example": "2",
@@ -3547,7 +3523,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存大小，单位GB",
           "example": "2",
@@ -3557,7 +3532,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例磁盘大小，单位GB",
           "example": "10",
@@ -3567,7 +3541,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-默认不升级主实例，1-强制升级主实例完成ro部署；主实例为非集群版时需要填1，强制升级为集群版。填1 说明您已同意将主实例升级到集群版实例。",
           "example": "1",
@@ -3577,7 +3550,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReadOnlyGroupType=3时必填,已存在的只读组ID",
           "example": "mssqlrg-dj5i29c5n",
@@ -3587,7 +3559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReadOnlyGroupType=2时必填，新建的只读组名称",
           "example": "default_name",
@@ -3597,7 +3568,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReadOnlyGroupType=2时必填，新建的只读组是否开启延迟剔除功能，1-开启，0-关闭。当只读副本与主实例延迟大于阈值后，自动剔除。",
           "example": "1",
@@ -3607,7 +3577,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除的阈值。",
           "example": "10",
@@ -3617,7 +3586,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除后至少保留只读副本的个数。",
           "example": "1",
@@ -3627,7 +3595,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
           "example": "POSTPAID",
@@ -3637,17 +3604,15 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次购买几个只读实例，默认值为1。",
-          "example": "1",
+          "document": "本次购买几个只读实例，默认值为2。",
+          "example": "2",
           "member": "int64",
           "name": "GoodsNum",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "subnet-gdy95gfs",
@@ -3657,7 +3622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "vpc-3xq2t5al",
@@ -3667,7 +3631,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
           "example": "1",
@@ -3677,7 +3640,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
           "example": "sg-xxx",
@@ -3687,7 +3649,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
           "example": "1",
@@ -3697,7 +3658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
           "example": "xxx",
@@ -3707,7 +3667,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建实例绑定的标签集合",
           "example": "无",
@@ -3717,7 +3676,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
           "example": "Chinese_PRC_CI_AS",
@@ -3727,7 +3685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统时区，默认：China Standard Time",
           "example": "China Standard Time",
@@ -3748,7 +3705,7 @@
           "example": "[\"20200722117963\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8960,7 +8917,6 @@
       "document": "InquiryPriceCreateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-2",
@@ -8970,7 +8926,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位：GB",
           "example": "2",
@@ -8980,7 +8935,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例容量大小，单位：GB。",
           "example": "300",
@@ -8990,7 +8944,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费类型，取值支持 PREPAID，POSTPAID。",
           "example": "POSTPAID",
@@ -9000,7 +8953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长，单位：月。取值为1到48，默认为1",
           "example": "1",
@@ -9010,7 +8962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一次性购买的实例数量。取值1-100，默认取值为1",
           "example": "1",
@@ -9020,9 +8971,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本",
+          "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
           "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
@@ -9030,7 +8980,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预购买实例的CPU核心数",
           "example": "2",
@@ -9040,9 +8989,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本，SI-基础版，默认取值HA",
+          "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-单节点型,cvmHA-新版高可用,cvmRO-新版只读",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -9050,9 +8998,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘，默认取值PM",
+          "document": "购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘,\nCLOUD_HSSD-虚拟机加强型SSD云盘，CLOUD_TSSD-虚拟机极速型SSD云盘，CLOUD_BSSD-虚拟机通用型SSD云盘",
           "example": "PM",
           "member": "string",
           "name": "MachineType",
@@ -9071,7 +9018,7 @@
           "example": "20988",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9081,7 +9028,7 @@
           "example": "20988",
           "member": "int64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

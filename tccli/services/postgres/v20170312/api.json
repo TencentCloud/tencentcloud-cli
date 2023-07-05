@@ -421,7 +421,7 @@
       "status": "online"
     },
     "IsolateDBInstances": {
-      "document": "本接口（IsolateDBInstances）用于隔离实例",
+      "document": "本接口（IsolateDBInstances）用于隔离实例。",
       "input": "IsolateDBInstancesRequest",
       "name": "隔离实例",
       "output": "IsolateDBInstancesResponse",
@@ -6252,9 +6252,8 @@
       "document": "DisIsolateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。",
+          "document": "实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。",
           "example": "[\"postgres-xxxxxxx\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
@@ -6262,9 +6261,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "包年包月实例解隔离时购买时常 以月为单位",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36\n<li>后付费：只支持1",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -6272,9 +6270,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否使用代金券：true-使用,false-不使用，默认不使用",
+          "document": "是否使用代金券：\n<li>true：使用\n<li>false：不使用\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -6282,9 +6279,8 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "代金券id列表",
+          "document": "代金券id列表。",
           "example": "[\"a\"]",
           "member": "string",
           "name": "VoucherIds",
@@ -6950,7 +6946,6 @@
       "document": "IsolateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。",
           "example": "[\"postgres-xxxxxxxx\"]",
@@ -7323,7 +7318,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。",
+          "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月\n<li>POSTPAID_BY_HOUR：后付费，即按量计费\n默认值：PREPAID",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7332,7 +7327,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36\n<li>后付费：只支持1",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -7341,7 +7336,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标记：0-正常续费（默认）；1-自动续费。",
+          "document": "续费标记：\n<li>0：手动续费\n<li>1：自动续费\n默认值：0",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -7350,7 +7345,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "document": "是否自动使用代金券：\n<li>0：否\n<li>1：是\n默认值：0",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -7369,6 +7364,7 @@
           "example": "201806181256",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7385,7 +7381,6 @@
       "document": "ModifyDBInstanceDeployment请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "postgres-abcd1234",
@@ -7395,9 +7390,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例节点信息。",
+          "document": "实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。\n可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。",
           "example": "无",
           "member": "DBNode",
           "name": "DBNodeSet",
@@ -7405,9 +7399,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "切换时间。默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换",
+          "document": "指定实例配置完成变更后的切换时间。\n<li>0：立即切换 \n<li>1：指定时间切换\n<li>2：维护时间窗口内切换\n默认值：0 ",
           "example": "1",
           "member": "int64",
           "name": "SwitchTag",
@@ -7415,7 +7408,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:00:00",
@@ -7425,7 +7417,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:30:00",
@@ -7453,7 +7444,6 @@
       "document": "ModifyDBInstanceName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如postgres-6fego161",
           "example": "postgres-6fego161",
@@ -7463,9 +7453,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "新的数据库实例名字",
+          "document": "实例名称，仅支持长度小于60的中文/英文/数字/\"_\"/\"-\"，不指定实例名称则默认显示\"未命名\"。\n",
           "example": "testModifyInstanceName",
           "member": "string",
           "name": "InstanceName",
@@ -7585,9 +7574,8 @@
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "实例或只读组要绑定的安全组列表",
+          "document": "实例或只读组要绑定的安全组列表。\n安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。\n",
           "example": "[\"sg-91jbmkp1\"]",
           "member": "string",
           "name": "SecurityGroupIdSet",
@@ -7595,7 +7583,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId",
           "example": "postgres-apzvwncr",
@@ -7605,7 +7592,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId",
           "example": "pgrogrp-nqwpkjbu",
@@ -7661,7 +7647,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券,1是,0否，默认不使用。",
+          "document": "是否自动使用代金券：\n<li>0：否\n<li>1：是\n默认值：0",
           "example": "0",
           "member": "uint64",
           "name": "AutoVoucher",
@@ -7688,7 +7674,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。",
+          "document": "指定实例配置完成变更后的切换时间。\n<li>0：立即切换 \n<li>1：指定时间切换\n<li>2：维护时间窗口内切换\n默认值：0 ",
           "example": "1",
           "member": "uint64",
           "name": "SwitchTag",
@@ -7725,6 +7711,7 @@
           "example": "201806127634",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7734,6 +7721,7 @@
           "example": "123",
           "member": "string",
           "name": "BillId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10178,7 +10166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "postgres-aser1j2o",
           "member": "string",
           "name": "DBInstanceId",
@@ -10187,7 +10175,7 @@
         },
         {
           "disabled": false,
-          "document": "升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。",
+          "document": "升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。\n",
           "example": "v12.4_r1.5",
           "member": "string",
           "name": "TargetDBKernelVersion",
@@ -10196,7 +10184,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例升级内核版本号完成后的切换时间。可选值，\n0：立即切换（默认值）。\n1：指定时间切换。\n2：维护时间窗口内切换。",
+          "document": "指定实例升级内核版本号完成后的切换时间。可选值:\n<li>0：立即切换\n<li>1：指定时间切换\n<li>2：维护时间窗口内切换\n默认值：0 ",
           "example": "1",
           "member": "uint64",
           "name": "SwitchTag",
@@ -10223,7 +10211,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对本次升级实例内核版本号操作执行预检查。可选值，\ntrue：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。\nfalse：发送正常请求（默认值），通过检查后直接升级内核版本号。",
+          "document": "是否对本次升级实例内核版本号操作执行预检查。\n<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。\n<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "DryRun",

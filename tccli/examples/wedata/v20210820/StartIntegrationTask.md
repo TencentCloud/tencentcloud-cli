@@ -6,16 +6,19 @@ Input:
 
 ```
 tccli wedata StartIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx
+    --TaskId abc \
+    --ProjectId abc \
+    --Event abc \
+    --ExtConfig.0.Name abc \
+    --ExtConfig.0.Value abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Data": true
+        "Data": true,
+        "RequestId": "abc"
     }
 }
 ```

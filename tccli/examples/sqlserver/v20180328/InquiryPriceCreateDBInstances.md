@@ -1,6 +1,6 @@
 **Example 1: 查询申请SqlServer实例价格**
 
-
+查询申请SqlServer实例价格
 
 Input: 
 

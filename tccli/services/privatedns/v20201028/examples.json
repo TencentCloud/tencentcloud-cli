@@ -20,19 +20,19 @@
       {
         "document": "添加A记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"A\",\n    \"SubDomain\": \"b\",\n    \"RecordValue\": \"3.3.3.3\",\n    \"Weight\": 100,\n    \"TTL\": 600\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": 1111\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
         "title": "私有域-添加A记录"
       },
       {
         "document": "添加MX记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"MX\",\n    \"SubDomain\": \"b\",\n    \"RecordValue\": \"3.3.3.3\",\n    \"Weight\": 100,\n    \"MX\": 5\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": 1111\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
         "title": "私有域-添加MX记录"
       },
       {
         "document": "添加反解析记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"PTR\",\n    \"SubDomain\": \"1.1.1\",\n    \"RecordValue\": \"qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": 1111\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
         "title": "私有域-添加PTR记录"
       }
     ],

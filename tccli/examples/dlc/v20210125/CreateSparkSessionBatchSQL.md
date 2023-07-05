@@ -1,6 +1,6 @@
-**Example 1: 提交Spark SQL批任务**
+**Example 1: 创建并执行Spark SQL批任务**
 
-提交Spark SQL批任务
+本接口（CreateSparkSessionBatchSQL）用于向Spark作业引擎提交Spark SQL批任务
 
 Input: 
 

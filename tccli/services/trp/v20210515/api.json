@@ -217,6 +217,13 @@
       "output": "DescribeProductsResponse",
       "status": "online"
     },
+    "DescribeRawScanLogs": {
+      "document": "支持增量查询扫码日志，通常提供给数据同步使用，调用时需要指定从哪一行开始查询数据",
+      "input": "DescribeRawScanLogsRequest",
+      "name": "增量查询原始扫码日志",
+      "output": "DescribeRawScanLogsResponse",
+      "status": "online"
+    },
     "DescribeScanLogs": {
       "document": "查询扫码日志明细",
       "input": "DescribeScanLogsRequest",
@@ -3450,6 +3457,70 @@
       ],
       "type": "object"
     },
+    "DescribeRawScanLogsRequest": {
+      "document": "DescribeRawScanLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID, 默认为当前企业\n如果有渠道权限，可以传 0 会查渠道下所有的企业",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量，默认为 100，最大为 1000",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前分页，默认为 1",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "从哪个日志后查询\n即: LogId > $AfterLogId",
+          "example": "0",
+          "member": "uint64",
+          "name": "AfterLogId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRawScanLogsResponse": {
+      "document": "DescribeRawScanLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原始扫码日志",
+          "example": "无",
+          "member": "RawScanLog",
+          "name": "ScanLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScanLogsRequest": {
       "document": "DescribeScanLogs请求参数结构体",
       "members": [
@@ -4685,7 +4756,6 @@
       "document": "ModifyTraceCodeUnlink请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批次ID",
           "example": "aaa",
@@ -4695,7 +4765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "溯源码列表",
           "example": "[\"xxx\"]",
@@ -4705,7 +4774,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业ID",
           "example": "1000",
@@ -4726,7 +4794,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UnlinkCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4736,7 +4804,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CodeCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4746,7 +4814,7 @@
           "example": "xx",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5431,6 +5499,122 @@
         }
       ],
       "usage": "both"
+    },
+    "RawScanLog": {
+      "document": "原始扫码日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LogId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "微信小程序openid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Openid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫码时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "溯源码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州市",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区/县\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "天河区",
+          "member": "string",
+          "name": "District",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ReportBatchCallbackStatusRequest": {
       "document": "ReportBatchCallbackStatus请求参数结构体",
