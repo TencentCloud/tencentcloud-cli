@@ -9,7 +9,6 @@ tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
     --Agent.AppId abc \
     --Agent.ProxyOrganizationOpenId abc \
     --Agent.ProxyOperator.OpenId abc \
-    --Agent.ProxyAppId abc \
     --Filters.0.Key abc \
     --Filters.0.Values abc \
     --Offset 1 \

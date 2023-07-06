@@ -1,12 +1,12 @@
 **Example 1: 获取集群资源使用量**
 
-
+描述集群资源使用量
 
 Input: 
 
 ```
 tccli tke DescribeResourceUsage --cli-unfold-argument  \
-    --ClusterId xx
+    --ClusterId cls-9jqo5g3a
 ```
 
 Output: 
@@ -14,17 +14,21 @@ Output:
 {
     "Response": {
         "CRDUsage": {
+            "Name": "CRD",
+            "Usage": 0,
             "Details": [
                 {
                     "Name": "tkeserviceconfigs",
                     "Usage": 0
                 }
-            ],
-            "Name": "CRD",
-            "Usage": 0
+            ]
         },
+        "PodUsage": 3,
+        "RSUsage": 3,
         "ConfigMapUsage": 14,
         "OtherUsage": {
+            "Name": "Other",
+            "Usage": 51,
             "Details": [
                 {
                     "Name": "clusterrolebindings",
@@ -34,11 +38,8 @@ Output:
                     "Name": "endpoints",
                     "Usage": 4
                 }
-            ],
-            "Name": "Other",
-            "Usage": 51
+            ]
         },
-        "PodUsage": 3,
         "RequestId": "c7ad171e-3604-4662-b3b8-cd10b818a407"
     }
 }

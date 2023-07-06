@@ -1,3 +1,272 @@
+# Release 3.0.802.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 11 次发布
+
+发布时间：2023-07-07 01:05:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetBackUpValidate](http://document.tencentcloudapi.woa.com/document/product/1594/75170)
+
+	* 新增出参：SoftToken
+
+
+修改数据结构：
+
+* [PhoneData](http://document.tencentcloudapi.woa.com/document/product/1594/75172#PhoneData)
+
+	* 新增成员：Mail
+
+* [WeChatData](http://document.tencentcloudapi.woa.com/document/product/1594/75172#WeChatData)
+
+	* 新增成员：Nickname
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 11 次发布
+
+发布时间：2023-07-07 01:21:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1492/74796)
+
+	* <font color="#dd0000">**修改入参**：</font>Phone
+
+* [DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1492/74794)
+
+	* 新增入参：Email
+
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1492/74793)
+
+	* <font color="#dd0000">**修改入参**：</font>Phone, Email
+
+
+修改数据结构：
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1492/74806#User)
+
+	* <font color="#dd0000">**修改成员**：</font>Phone
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 20 次发布
+
+发布时间：2023-07-07 01:21:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRedisBigKeyAnalysisTask](http://document.tencentcloudapi.woa.com/document/product/1130/81033)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 58 次发布
+
+发布时间：2023-07-07 01:22:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUserDataEngineConfig](http://document.tencentcloudapi.woa.com/document/product/1342/81034)
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 15 次发布
+
+发布时间：2023-07-07 01:24:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/1108/51094)
+
+	* 新增入参：ISPType, SkipCheckIPv6Address, SkipAllocateBandwidth
+
+
+新增数据结构：
+
+* [ISPIPv6CidrBlock](http://document.tencentcloudapi.woa.com/document/product/1108/42574#ISPIPv6CidrBlock)
+
+修改数据结构：
+
+* [Subnet](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Subnet)
+
+	* 新增成员：ISPType
+
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1108/42574#VpcInfo)
+
+	* 新增成员：Ipv6ISP, Ipv6CidrBlockSet
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 64 次发布
+
+发布时间：2023-07-07 01:29:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OperateChannelTemplate](http://document.tencentcloudapi.woa.com/document/product/1595/75243)
+
+	* 新增入参：Available
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 25 次发布
+
+发布时间：2023-07-07 01:44:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateServiceAccount](http://document.tencentcloudapi.woa.com/document/product/1141/81038)
+* [DeleteServiceAccount](http://document.tencentcloudapi.woa.com/document/product/1141/81037)
+* [DescribeServiceAccounts](http://document.tencentcloudapi.woa.com/document/product/1141/81036)
+* [ModifyServiceAccount](http://document.tencentcloudapi.woa.com/document/product/1141/81035)
+
+新增数据结构：
+
+* [ServiceAccount](http://document.tencentcloudapi.woa.com/document/product/1141/41603#ServiceAccount)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 74 次发布
+
+发布时间：2023-07-07 01:48:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeResourceUsage](http://document.tencentcloudapi.woa.com/document/product/457/72005)
+
+	* 新增出参：RSUsage
+
+* [ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)
+
+	* 新增入参：SecurityGroupIds
+
+
+修改数据结构：
+
+* [ClusterLevelAttribute](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterLevelAttribute)
+
+	* 新增成员：RSCount
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 97 次发布
+
+发布时间：2023-07-07 01:51:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpc](http://document.tencentcloudapi.woa.com/document/product/215/15774)
+
+	* 新增入参：CdcId, EnableCdcPublish
+
+* [ModifyVpcAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15773)
+
+	* 新增入参：CdcId, EnableCdcPublish
+
+
+修改数据结构：
+
+* [Vpc](http://document.tencentcloudapi.woa.com/document/product/215/15824#Vpc)
+
+	* 新增成员：CdcId, EnableCdcPublish
+
+	* <font color="#dd0000">**修改成员**：</font>IsDefault, CreatedTime, Ipv6CidrBlockSet
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 10 次发布
+
+发布时间：2023-07-07 01:54:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBatchOperateTask](http://document.tencentcloudapi.woa.com/document/product/1607/81040)
+
+新增数据结构：
+
+* [DescribeBatchOperateTaskDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribeBatchOperateTaskDTO)
+* [DescribeBatchOperateTaskPage](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribeBatchOperateTaskPage)
+
+
+
 # Release 3.0.801.1
 
 ## 账号风控平台(ciam) 版本：2022-03-31

@@ -9,7 +9,6 @@ tccli essbasic ChannelCreateUserRoles --cli-unfold-argument  \
     --Agent.AppId abc \
     --Agent.ProxyOrganizationOpenId abc \
     --Agent.ProxyOperator.OpenId abc \
-    --Agent.ProxyAppId abc \
     --UserIds abc \
     --RoleIds abc
 ```

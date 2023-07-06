@@ -7,7 +7,6 @@ Input:
 ```
 tccli essbasic ChannelCreateMultiFlowSignQRCode --cli-unfold-argument  \
     --FlowName test \
-    --Agent.ProxyAppId test \
     --Agent.ProxyOperator.OpenId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.AppId test \

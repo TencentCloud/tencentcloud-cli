@@ -1243,54 +1243,54 @@
       "document": "GetBackUpValidate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端UA",
           "example": "chrome",
           "member": "string",
           "name": "ClientUA",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接口名",
           "example": "getInfo",
           "member": "string",
           "name": "Interface",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登陆的skey",
           "example": "LpZhb4CdVm5*HP9w1vji6xn3u4QIg3i*4czhRfifHI0",
           "member": "string",
           "name": "Skey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP",
           "example": "0.0.0.0",
           "member": "string",
           "name": "ClientIP",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号",
           "example": "1000023434",
           "member": "uint64",
           "name": "OwnerUin",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1304,9 +1304,10 @@
           "example": "无",
           "member": "FaceIdValidInfo",
           "name": "FaceId",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1314,9 +1315,10 @@
           "example": "无",
           "member": "PhoneValidInfo",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1324,9 +1326,10 @@
           "example": "无",
           "member": "WeChatValidInfo",
           "name": "Wechat",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1334,19 +1337,21 @@
           "example": "无",
           "member": "TokenValidInfo",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "软Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StokenValidInfo",
           "name": "Stoken",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1354,9 +1359,21 @@
           "example": "无",
           "member": "MailValidInfo",
           "name": "Mail",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "软Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StokenValidInfo",
+          "name": "SoftToken",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1815,24 +1832,37 @@
       "document": "备选电话详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CountryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2845,34 +2875,48 @@
       "document": "微信参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "微信临时code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Tmpcode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NickName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有openId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "HasOpenId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "昵称，为了兼容云api返回参数增加的字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

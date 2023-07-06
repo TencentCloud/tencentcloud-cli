@@ -504,6 +504,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeUserDataEngineConfig": {
+      "document": "查询用户自定义引擎参数",
+      "input": "DescribeUserDataEngineConfigRequest",
+      "name": "查询用户自定义引擎参数",
+      "output": "DescribeUserDataEngineConfigResponse",
+      "status": "online"
+    },
     "DescribeUsers": {
       "document": "获取用户列表信息",
       "input": "DescribeUsersRequest",
@@ -8531,6 +8538,23 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserDataEngineConfigRequest": {
+      "document": "DescribeUserDataEngineConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserDataEngineConfigResponse": {
+      "document": "DescribeUserDataEngineConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

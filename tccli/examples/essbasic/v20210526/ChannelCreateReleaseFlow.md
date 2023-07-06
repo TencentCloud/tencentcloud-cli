@@ -7,7 +7,6 @@ Input:
 
 ```
 tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf***********200fef3d \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId 65f***********aa382cc5ed0e \
@@ -46,7 +45,6 @@ Input:
 
 ```
 tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf***********200fef3d \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId 65f***********aa382cc5ed0e \

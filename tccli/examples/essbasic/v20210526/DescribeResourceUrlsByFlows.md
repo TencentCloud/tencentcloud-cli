@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic DescribeResourceUrlsByFlows --cli-unfold-argument  \
-    --Agent.ProxyAppId test \
     --Agent.ProxyOperator.OpenId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.AppId test \

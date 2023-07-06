@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic CreateFlowsByTemplates --cli-unfold-argument  \
-    --Agent.ProxyAppId c17b***********0200fef3d \
     --Agent.ProxyOrganizationOpenId d7c13a8b***********68c0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId 65fb0c59***********a382cc5ed0e \
@@ -63,7 +62,6 @@ Input:
 
 ```
 tccli essbasic CreateFlowsByTemplates --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf***********200fef3d \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId 65f***********aa382cc5ed0e \

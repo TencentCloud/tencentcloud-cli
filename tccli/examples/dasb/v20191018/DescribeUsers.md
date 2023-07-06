@@ -31,7 +31,8 @@ Output:
                             "Name": "研发部"
                         },
                         "Id": 1,
-                        "Name": "运维组"
+                        "Name": "运维组",
+                        "Count": 1
                     }
                 ],
                 "Department": {
@@ -86,7 +87,8 @@ Output:
                             "Name": "研发部"
                         },
                         "Id": 1,
-                        "Name": "运维组"
+                        "Name": "运维组",
+                        "Count": 1
                     }
                 ],
                 "Department": {

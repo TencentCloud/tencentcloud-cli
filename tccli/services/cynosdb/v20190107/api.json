@@ -731,7 +731,7 @@
     "ModifyResourcePackageClusters": {
       "document": "给资源包绑定集群",
       "input": "ModifyResourcePackageClustersRequest",
-      "name": "给资源包绑定集群",
+      "name": "修改集群与资源包之间的绑定关系",
       "output": "ModifyResourcePackageClustersResponse",
       "status": "online"
     },
@@ -13110,34 +13110,34 @@
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID",
           "example": "cynosdbmysql-ins-4senc2fm",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的安全组ID列表，一个或者多个安全组ID组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

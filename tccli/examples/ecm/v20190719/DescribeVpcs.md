@@ -1,6 +1,6 @@
 **Example 1: 查询VPC列表**
 
-
+查询VPC列表
 
 Input: 
 
@@ -19,7 +19,14 @@ Output:
         "VpcSet": [
             {
                 "EnableDhcp": true,
+                "Ipv6ISP": "CMCC",
                 "VpcId": "vpc-07kqm4uj",
+                "Ipv6CidrBlockSet": [
+                    {
+                        "IPv6CidrBlock": "240e:95a:3002:1e::/64",
+                        "ISPType": "CTCC"
+                    }
+                ],
                 "Description": "",
                 "DomainName": "",
                 "Ipv6CidrBlock": "",

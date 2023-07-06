@@ -1,6 +1,6 @@
 **Example 1: 获取备选校验方式**
 
-
+获取备选校验方式
 
 Input: 
 
@@ -34,6 +34,10 @@ Output:
             "Data": null
         },
         "Stoken": {
+            "CanAuth": 1,
+            "Data": null
+        },
+        "SoftToken": {
             "CanAuth": 1,
             "Data": null
         },
