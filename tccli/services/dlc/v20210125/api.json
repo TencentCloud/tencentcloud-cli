@@ -10344,24 +10344,24 @@
       "document": "ModifyWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id",
           "example": "1",
           "member": "int64",
           "name": "WorkGroupId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "工作组描述",
+          "document": "工作组描述，最大字符数限制50",
           "example": "for test",
           "member": "string",
           "name": "WorkGroupDescription",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

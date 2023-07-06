@@ -119,6 +119,13 @@
       "output": "GetEventBusResponse",
       "status": "online"
     },
+    "GetEventDetails": {
+      "document": "获取status page相关事件类型的事件详情。包含事件的产品中文名称，产品英文简称，告警事件类型（中文），告警事件类型（英文），有无恢复概念：1:有，0:无，-1:未填写，事件描述，处理方法与建议，接口投递source字段，接口投递type字段。",
+      "input": "GetEventDetailsRequest",
+      "name": "获取事件详情",
+      "output": "GetEventDetailsResponse",
+      "status": "online"
+    },
     "GetRule": {
       "document": "获取事件规则详情",
       "input": "GetRuleRequest",
@@ -2058,6 +2065,122 @@
       ],
       "usage": "both"
     },
+    "EventDetails": {
+      "document": "数据详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductNameCh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品英文简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductNameEn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "告警事件类型（中文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventTypeCh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "告警事件类型（英文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventTypeEn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "有无恢复概念：1:有，0:无，-1:未填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "HasRecovery",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "事件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "处理方法与建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestions",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "接口投递source字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "接口投递type字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
     "EventOps": {
       "document": "腾讯内部平台级事件结构，比如各云产品可用性的事件",
       "members": [
@@ -2504,6 +2627,45 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEventDetailsRequest": {
+      "document": "GetEventDetails请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetEventDetailsResponse": {
+      "document": "GetEventDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "事件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventDetails",
+          "name": "EventsDetectors",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

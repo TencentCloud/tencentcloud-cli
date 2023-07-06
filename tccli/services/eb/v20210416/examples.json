@@ -142,6 +142,14 @@
         "title": "获取事件集"
       }
     ],
+    "GetEventDetails": [
+      {
+        "document": "访问所有云产品事件的详情内容",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEventDetails\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"EventsDetectors\": [\n            {\n                \"Id\": 0,\n                \"ProductNameCh\": \"abc\",\n                \"ProductNameEn\": \"abc\",\n                \"EventTypeCh\": \"abc\",\n                \"EventTypeEn\": \"abc\",\n                \"HasRecovery\": 0,\n                \"EventDescription\": \"abc\",\n                \"Suggestions\": \"abc\",\n                \"EventSource\": \"abc\",\n                \"EventType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "事件详情接口访问示例"
+      }
+    ],
     "GetRule": [
       {
         "document": "获取规则详情",

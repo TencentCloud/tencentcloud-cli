@@ -756,6 +756,14 @@
         "title": "用于修改/开启集群密码复杂度"
       }
     ],
+    "ModifyClusterProject": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterProject\n&ClusterIdSet.0=cynosdbpg-1xcycbu8\n&ProjectId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"117811\",\n        \"AffectedClusterIdSet\": [\n            \"cynosdbpg-1xcycbu8\"\n        ]\n    }\n}",
+        "title": "修改集群项目ID"
+      }
+    ],
     "ModifyClusterSlaveZone": [
       {
         "document": "",

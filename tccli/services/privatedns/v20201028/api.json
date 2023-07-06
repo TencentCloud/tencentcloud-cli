@@ -1780,7 +1780,6 @@
       "document": "ModifyRecordsStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "zone-vcxs31di",
@@ -1791,7 +1790,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录ID列表",
           "example": "[1,2,3]",
@@ -1802,7 +1800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "enabled：生效，disabled：失效",
           "example": "enabled",
@@ -1824,7 +1821,7 @@
           "example": "zone-sdf1fds3",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1835,7 +1832,7 @@
           "example": "[1,2,3]",
           "member": "int64",
           "name": "RecordIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1846,7 +1843,7 @@
           "example": "enabled",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

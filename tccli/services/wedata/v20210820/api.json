@@ -4550,7 +4550,6 @@
       "document": "CreateHiveTableByDDL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源ID",
           "example": "53632",
@@ -4561,7 +4560,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库",
           "example": "用户re",
@@ -4572,7 +4570,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建hive表ddl",
           "example": "gefraesd",
@@ -4583,7 +4580,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表权限 ，默认为0:项目共享;1:仅个人与管理员",
           "example": "0",
@@ -4594,7 +4590,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1",
@@ -4605,7 +4600,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表类型(HIVE或GBASE)",
           "example": "HIVE",
@@ -4616,7 +4610,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "责任人",
           "example": "gsgf",
@@ -4638,7 +4631,7 @@
           "example": "fad",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

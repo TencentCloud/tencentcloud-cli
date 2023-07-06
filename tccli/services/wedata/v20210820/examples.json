@@ -226,9 +226,9 @@
     ],
     "CreateHiveTableByDDL": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTableByDDL\n<公共请求参数>\n\n{\n    \"Database\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"Incharge\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"Privilege\": 0,\n    \"Type\": \"xx\",\n    \"DDLSql\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTableByDDL\n<公共请求参数>\n\n{\n    \"DatasourceId\": \"abc\",\n    \"Database\": \"abc\",\n    \"DDLSql\": \"abc\",\n    \"Incharge\": \"abc\",\n    \"Privilege\": 0,\n    \"ProjectId\": \"abc\",\n    \"Type\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "CreateHiveTableByDDL"
       }
     ],

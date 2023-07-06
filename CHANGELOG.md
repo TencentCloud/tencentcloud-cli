@@ -1,3 +1,110 @@
+# Release 3.0.801.1
+
+## 账号风控平台(ciam) 版本：2022-03-31
+
+### 第 3 次发布
+
+发布时间：2023-07-06 01:13:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserGroup](http://document.tencentcloudapi.woa.com/document/product/1683/81001)
+
+	* 新增出参：UserGroupId
+
+* [CreateUserStore](http://document.tencentcloudapi.woa.com/document/product/1683/81006)
+
+	* 新增出参：UserStoreId
+
+
+
+
+## 账号风控平台(ciam) 版本：2021-04-20
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 50 次发布
+
+发布时间：2023-07-06 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterProject](http://document.tencentcloudapi.woa.com/document/product/1003/81026)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 8 次发布
+
+发布时间：2023-07-06 01:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetEventDetails](http://document.tencentcloudapi.woa.com/document/product/1359/81027)
+
+新增数据结构：
+
+* [EventDetails](http://document.tencentcloudapi.woa.com/document/product/1359/67704#EventDetails)
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 8 次发布
+
+发布时间：2023-07-06 01:38:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckAsyncBatchModifyResourcesTask](http://document.tencentcloudapi.woa.com/document/product/651/81028)
+* [ModifyResourcesTagAsync](http://document.tencentcloudapi.woa.com/document/product/651/81029)
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 24 次发布
+
+发布时间：2023-07-06 01:39:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1141/41572)
+
+	* 新增入参：DeletionProtection
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1141/60996)
+
+	* 新增入参：DeletionProtection
+
+	* <font color="#dd0000">**修改入参**：</font>RegistryType
+
+
+
+
 # Release 3.0.800.1
 
 ## API 网关(apigateway) 版本：2018-08-08

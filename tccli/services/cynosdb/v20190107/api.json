@@ -651,6 +651,13 @@
       "output": "ModifyClusterPasswordComplexityResponse",
       "status": "online"
     },
+    "ModifyClusterProject": {
+      "document": "本接口（ModifyClusterProject）用于修改集群项目ID",
+      "input": "ModifyClusterProjectRequest",
+      "name": "修改集群项目ID",
+      "output": "ModifyClusterProjectResponse",
+      "status": "online"
+    },
     "ModifyClusterSlaveZone": {
       "document": "修改从可用区",
       "input": "ModifyClusterSlaveZoneRequest",
@@ -12862,6 +12869,54 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterProjectRequest": {
+      "document": "ModifyClusterProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID数组",
+          "example": "[\"cynosdbpg-1xcycbu8\\r\\n\"]",
+          "member": "string",
+          "name": "ClusterIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterProjectResponse": {
+      "document": "ModifyClusterProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改成功的项目ID数组",
+          "example": "[\"cynosdbpg-1xcycbu8\"]",
+          "member": "string",
+          "name": "AffectedClusterIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

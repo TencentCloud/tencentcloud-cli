@@ -28,6 +28,13 @@
       "output": "AttachResourcesTagResponse",
       "status": "online"
     },
+    "CheckAsyncBatchModifyResourcesTask": {
+      "document": "查询异步修改资源标签任务执行状态",
+      "input": "CheckAsyncBatchModifyResourcesTaskRequest",
+      "name": "查询异步修改资源标签任务执行状态",
+      "output": "CheckAsyncBatchModifyResourcesTaskResponse",
+      "status": "online"
+    },
     "CreateTag": {
       "document": "本接口用于创建一对标签键和标签值",
       "input": "CreateTagRequest",
@@ -201,6 +208,13 @@
       "input": "ModifyResourceTagsRequest",
       "name": "批量修改资源关联的标签",
       "output": "ModifyResourceTagsResponse",
+      "status": "online"
+    },
+    "ModifyResourcesTagAsync": {
+      "document": "异步修改批量资源关联的标签",
+      "input": "ModifyResourcesTagAsyncRequest",
+      "name": "异步修改批量资源关联的标签",
+      "output": "ModifyResourcesTagAsyncResponse",
       "status": "online"
     },
     "ModifyResourcesTagValue": {
@@ -471,6 +485,78 @@
     "AttachResourcesTagResponse": {
       "document": "AttachResourcesTag返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAsyncBatchModifyResourcesTaskRequest": {
+      "document": "CheckAsyncBatchModifyResourcesTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步修改任务唯一标识符ID，取值大于0。",
+          "example": "12345",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAsyncBatchModifyResourcesTaskResponse": {
+      "document": "CheckAsyncBatchModifyResourcesTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态：\nNOT EXIST:任务不存在；\nREADY:待执行\nSUCCEED：执行成功\nRUNNING：执行中 \nFAILED：执行失败",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "执行失败时，失败的资源六段式和失败原因",
+          "example": "无",
+          "member": "FailedResource",
+          "name": "FailedResourceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "异步修改任务唯一标识符ID，取值大于0。",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "任务是否为DryRun模式，DryRun模式仅验证能否成功打标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2485,6 +2571,85 @@
     "ModifyResourceTagsResponse": {
       "document": "ModifyResourceTags返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcesTagAsyncRequest": {
+      "document": "ModifyResourcesTagAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改标签的资源六段式的列表，列表上限为5000个",
+          "example": "[\"qcs::cdb:ap-beijing:uin/10000057****:instanceId/****\"]",
+          "member": "string",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "修改类型:\nTag:绑定或修改标签\nUnTag:解绑标签",
+          "example": "Tag",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "修改类型为Tag时必传，为需要绑定的标签列表，标签数量不超过10。",
+          "example": "[{\"TagKey\":\"test\",\"TagValue\":\"test\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "修改类型为UnTag时必传，为需要解绑的标签键列表，标签数量不超过10。",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "TagKeys",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "任务是否为DryRun模式，DryRun仅验证能否成功打标签",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcesTagAsyncResponse": {
+      "document": "ModifyResourcesTagAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的异步任务ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

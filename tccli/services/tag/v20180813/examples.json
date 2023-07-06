@@ -32,6 +32,14 @@
         "title": "给广州地域多个云主机实例关联标签"
       }
     ],
+    "CheckAsyncBatchModifyResourcesTask": [
+      {
+        "document": "查询异步修改资源标签任务执行状态",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAsyncBatchModifyResourcesTask\n<公共请求参数>\n\n{\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatus\": \"abc\",\n        \"FailedResourceList\": [\n            {\n                \"Resource\": \"abc\",\n                \"Code\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"TaskId\": 1,\n        \"DryRun\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询异步修改资源标签任务执行状态"
+      }
+    ],
     "CreateTag": [
       {
         "document": "",
@@ -242,6 +250,14 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceTags\n<公共请求参数>\n\n{\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"testTagKey2\"\n        },\n        {\n            \"TagKey\": \"testTagKey1\"\n        }\n    ],\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "给资源解除绑定多个标签"
+      }
+    ],
+    "ModifyResourcesTagAsync": [
+      {
+        "document": "新建异步批量修改标签任务",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcesTagAsync\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"abc\"\n    ],\n    \"Type\": \"abc\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"TagKeys\": [\n        \"abc\"\n    ],\n    \"DryRun\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新建异步批量修改标签任务"
       }
     ],
     "ModifyResourcesTagValue": [

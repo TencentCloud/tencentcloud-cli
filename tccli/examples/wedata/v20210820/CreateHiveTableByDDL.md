@@ -1,26 +1,26 @@
 **Example 1: CreateHiveTableByDDL**
 
-
+创建表
 
 Input: 
 
 ```
 tccli wedata CreateHiveTableByDDL --cli-unfold-argument  \
-    --Database xx \
-    --ProjectId xx \
-    --Incharge xx \
-    --DatasourceId xx \
+    --DatasourceId abc \
+    --Database abc \
+    --DDLSql abc \
+    --Incharge abc \
     --Privilege 0 \
-    --Type xx \
-    --DDLSql xx
+    --ProjectId abc \
+    --Type abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "xx",
-        "RequestId": "xx"
+        "Data": "abc",
+        "RequestId": "abc"
     }
 }
 ```
