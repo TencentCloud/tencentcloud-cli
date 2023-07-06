@@ -666,7 +666,7 @@
     ],
     "ModifyWorkGroup": [
       {
-        "document": "",
+        "document": "修改工作组信息",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 112,\n    \"WorkGroupDescription\": \"my-test-2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fd5c288-cfa1-4c7b-9229-7780d0a3e96f\"\n    }\n}",
         "title": "修改工作组信息"

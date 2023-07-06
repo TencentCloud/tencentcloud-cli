@@ -1550,6 +1550,15 @@
           "name": "EnableCosMAZ",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启实例删除保护",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7102,7 +7111,6 @@
       "document": "ModifyInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "tcr-abc123",
@@ -7112,14 +7120,22 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例的规格",
+          "document": "实例的规格,\n基础版：basic\n标准版：standard\n高级版：premium",
           "example": "premium",
           "member": "string",
           "name": "RegistryType",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例删除保护，false为关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

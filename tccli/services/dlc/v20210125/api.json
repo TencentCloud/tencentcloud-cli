@@ -9291,7 +9291,6 @@
       "document": "ModifyWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id",
           "example": "1",
@@ -9301,9 +9300,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "工作组描述",
+          "document": "工作组描述，最大字符数限制50",
           "example": "for test",
           "member": "string",
           "name": "WorkGroupDescription",

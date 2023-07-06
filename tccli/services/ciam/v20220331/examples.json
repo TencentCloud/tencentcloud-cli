@@ -26,17 +26,17 @@
     ],
     "CreateUserGroup": [
       {
-        "document": "",
+        "document": "创建用户组",
         "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xxx\",\n    \"DisplayName\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"UserGroupId\": \"xxx\"\n    }\n}",
         "title": "创建用户组"
       }
     ],
     "CreateUserStore": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserStore\n<公共请求参数>\n\n{\n    \"UserPoolDesc\": \"xx\",\n    \"UserPoolName\": \"xx\",\n    \"UserPoolLogo\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建用户目录",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserStore\n<公共请求参数>\n\n{\n    \"UserPoolName\": \"abc\",\n    \"UserPoolDesc\": \"abc\",\n    \"UserPoolLogo\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"UserStoreId\": \"abc\"\n    }\n}",
         "title": "创建用户目录"
       }
     ],

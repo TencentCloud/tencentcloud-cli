@@ -328,7 +328,6 @@
       "document": "CreateUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组名称",
           "example": "xxx",
@@ -338,7 +337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户目录ID",
           "example": "xxx",
@@ -348,7 +346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组描述",
           "example": "xxx",
@@ -363,6 +360,16 @@
     "CreateUserGroupResponse": {
       "document": "CreateUserGroup返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -554,7 +561,6 @@
       "document": "CreateUserStore请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户池名字",
           "example": "xxx",
@@ -564,7 +570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户池描述",
           "example": "xxx",
@@ -574,7 +579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户池logo",
           "example": "xxx",
@@ -589,6 +593,16 @@
     "CreateUserStoreResponse": {
       "document": "CreateUserStore返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

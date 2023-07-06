@@ -1,6 +1,6 @@
 **Example 1: 创建用户组**
 
-
+创建用户组
 
 Input: 
 
@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "xxx",
+        "UserGroupId": "xxx"
     }
 }
 ```

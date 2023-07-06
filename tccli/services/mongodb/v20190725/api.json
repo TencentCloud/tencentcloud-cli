@@ -993,7 +993,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
+          "document": "Mongos CPU 核数。购买分片集群时，必须填写。\n",
           "example": "无",
           "member": "uint64",
           "name": "MongosCpu",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
+          "document": "Mongos 内存大小。购买分片集群时，必须填写。\n\n",
           "example": "无",
           "member": "uint64",
           "name": "MongosMemory",
@@ -1011,7 +1011,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 数量。\n- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。\n- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。",
+          "document": "Mongos 数量。购买分片集群时，必须填写。\n\n",
           "example": "无",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -1057,6 +1057,7 @@
           "example": "20190709160000003502416120946732",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1066,6 +1067,7 @@
           "example": "[\"cmgo-m26c6jsf\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1082,9 +1084,8 @@
       "document": "CreateDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数",
+          "document": "指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -1092,9 +1093,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例内存大小，单位：GB",
+          "document": "实例内存大小，单位：GB。",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -1102,9 +1102,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB",
+          "document": "实例硬盘大小，单位：GB。",
           "example": "250",
           "member": "uint64",
           "name": "Volume",
@@ -1112,9 +1111,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本",
+          "document": "指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。",
           "example": "MONGO_3_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -1122,9 +1120,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例数量, 最小值1，最大值为10",
+          "document": "实例数量, 最小值1，最大值为10。",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -1132,9 +1129,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例所属区域名称，格式如：ap-guangzhou-2。注：此参数填写的是主可用区，如果选择多可用区部署，Zone必须是AvailabilityZoneList中的一个",
+          "document": "可用区信息，输入格式如：ap-guangzhou-2。\n- 具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 该参数为主可用区，如果多可用区部署，Zone必须是AvailabilityZoneList中的一个。",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -1142,9 +1138,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]",
+          "document": "实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -1152,9 +1147,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型",
+          "document": "机器类型。\n- HIO：高IO型。\n- HIO10G：高IO万兆。",
           "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
@@ -1162,9 +1156,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点",
+          "document": "实例架构类型。\n- REPLSET：副本集。\n- SHARD：分片集群。",
           "example": "REPLSET",
           "member": "string",
           "name": "ClusterType",
@@ -1172,9 +1165,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0",
+          "document": "指副本集数量。\n- 创建副本集实例，该参数只能为1。\n- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -1182,9 +1174,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "项目ID，不设置为默认项目",
+          "document": "项目ID。若不设置该参数，则为默认项目。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -1192,9 +1183,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 查询私有网络列表",
+          "document": "私有网络ID。如果不设置该参数，则默认选择基础网络。",
           "example": "vpc-0akbol5v",
           "member": "string",
           "name": "VpcId",
@@ -1202,9 +1192,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 查询子网列表",
+          "document": "私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。",
           "example": "subnet-fyrtjbqw",
           "member": "string",
           "name": "SubnetId",
@@ -1212,9 +1201,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例密码，不设置该参数则默认密码规则为 实例ID+\"@\"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为\"cmgo-higv73ed@100000001\"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种",
+          "document": "实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。",
           "example": "pwd123456",
           "member": "string",
           "name": "Password",
@@ -1222,9 +1210,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例标签信息",
+          "document": "实例标签信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -1232,9 +1219,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为不自动续费",
+          "document": "自动续费标记。\n- 0：不自动续费。默认为不自动续费。\n- 1：自动续费。",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -1242,9 +1228,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否自动选择代金券，可选值为：1 - 是；0 - 否； 默认为0",
+          "document": "是否自动选择代金券。\n- 1：是。\n- 0：否。默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "AutoVoucher",
@@ -1252,9 +1237,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "1:正式实例,2:临时实例,3:只读实例,4:灾备实例,5:克隆实例",
+          "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。",
           "example": "1",
           "member": "int64",
           "name": "Clone",
@@ -1262,9 +1246,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "若是只读，灾备实例或克隆实例，Father必须填写，即主实例ID",
+          "document": "父实例 ID。当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。",
           "example": "无",
           "member": "string",
           "name": "Father",
@@ -1272,9 +1255,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "安全组",
+          "document": "安全组。",
           "example": "无",
           "member": "string",
           "name": "SecurityGroup",
@@ -1282,9 +1264,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "克隆实例回档时间。若是克隆实例，则必须填写，格式：2021-08-13 16:30:00。注：只能回档7天内的时间点",
+          "document": "克隆实例回档时间。\n- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。\n- 回档时间范围：仅能回档7天内时间点的数据。",
           "example": "无",
           "member": "string",
           "name": "RestoreTime",
@@ -1292,9 +1273,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例名称。注：名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符-",
+          "document": "实例名称。仅支持长度为60个字符的中文、英文、数字、下划线_、分隔符- 。",
           "example": "无",
           "member": "string",
           "name": "InstanceName",
@@ -1302,9 +1282,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "多可用区部署的节点列表，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：1、多可用区部署节点只能部署在3个不同可用区；2、为了保障跨可用区切换，不支持将集群的大多数节点部署在同一个可用区（如3节点集群不支持2个节点部署在同一个区）；3、不支持4.2及以上版本；4、不支持只读灾备实例；5、不能选择基础网络",
+          "document": "多可用区部署的节点列表。具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)获取。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。\n- 不支持4.2及以上版本。\n- 不支持只读灾备实例。\n- 不能选择基础网络。",
           "example": "无",
           "member": "string",
           "name": "AvailabilityZoneList",
@@ -1312,9 +1291,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "mongos cpu数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果",
+          "document": "Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "无",
           "member": "uint64",
           "name": "MongosCpu",
@@ -1322,9 +1300,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "mongos 内存大小，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果",
+          "document": "Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "无",
           "member": "uint64",
           "name": "MongosMemory",
@@ -1332,9 +1309,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "mongos 数量，购买MongoDB 4.2 WiredTiger存储引擎版本的分片集群时必须填写，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。注：为了保障高可用，最低需要购买3个mongos，上限为32个",
+          "document": "Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。",
           "example": "无",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -1342,9 +1318,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "只读节点数量，最大不超过7个",
+          "document": "只读节点数量，取值范围[0,5]。",
           "example": "无",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
@@ -1352,9 +1327,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "只读节点部署可用区",
+          "document": "指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
           "example": "无",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
@@ -1362,9 +1336,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "Hidden节点所在的可用区，跨可用区实例必传",
+          "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
           "example": "无",
           "member": "string",
           "name": "HiddenZone",
@@ -1383,7 +1356,7 @@
           "example": "7142863",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1393,7 +1366,7 @@
           "example": "[\"cmgo-po5f899l\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1532,31 +1505,34 @@
       "document": "数据库实例价格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "UnitPrice",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价",
+          "example": "无",
           "member": "float",
           "name": "OriginalPrice",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "折扣加",
+          "document": "折扣价",
+          "example": "无",
           "member": "float",
           "name": "DiscountPrice",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false

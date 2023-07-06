@@ -8,20 +8,26 @@
         "title": "将未绑定套餐的站点绑定到目标套餐"
       }
     ],
-    "CheckCertificate": [
+    "CheckCnameStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificate\n<公共请求参数>\n\n{\n    \"Certificate\": \"证书内容\",\n    \"PrivateKey\": \"证书密钥\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
-        "title": "证书校验"
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCnameStatus\n<公共请求参数>\n\n{\n    \"RecordNames\": [\n        \"example.qq.com\"\n    ],\n    \"ZoneId\": \"zone-20hyebgyfsko\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CnameStatus\": [\n            {\n                \"RecordName\": \"test.qq.com\",\n                \"Cname\": \"test.qq.com.acc.tyxcdn.com\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"d08bed0d-15bf-4d65-ab56-906aee0c845\"\n    }\n}",
+        "title": "查询域名 CNAME 状态"
       }
     ],
     "CreateAccelerationDomain": [
       {
-        "document": "",
+        "document": "创建加速域名",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"qq.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"qq.com\",\n        \"BackupOrigin\": \"\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "创建加速域名"
+      },
+      {
+        "document": "创建源站类型为S3兼容，鉴权版本为AWS signature v2的加速域名",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"qq.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"AWS_S3\",\n        \"Origin\": \"https://teo.cos.ap-beijing.myqcloud.com\",\n        \"PrivateParameters\": [\n            {\n                \"Name\": \"AccessKeyId\",\n                \"Value\": \"AKIDdDva7VjFk7LQJ0X5WnbKE7mQTest\"\n            },\n            {\n                \"Name\": \"SecretAccessKey\",\n                \"Value\": \"nMirpdWhhT6bxPsaFwYM1SzQrTest\"\n            },\n            {\n                \"Name\": \"SignatureVersion\",\n                \"Value\": \"v2\"\n            },\n            {\n                \"Name\": \"Region\",\n                \"Value\": \"ap-beijing\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建AWS signature v2鉴权类型的加速域名"
       }
     ],
     "CreateAliasDomain": [
@@ -42,18 +48,10 @@
     ],
     "CreateApplicationProxyRule": [
       {
-        "document": "",
+        "document": "创建应用代理规则",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"Proto\": \"TCP\",\n    \"Port\": [\n        \"99-110\"\n    ],\n    \"OriginType\": \"custom\",\n    \"OriginValue\": [\n        \"1.1.1.1\"\n    ],\n    \"OriginPort\": \"99-110\",\n    \"ForwardClientIp\": \"TOA\",\n    \"SessionPersist\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3df3e931-3159-4337-adc7-7604e01e0fa9\",\n        \"RuleId\": \"rule-a8f0d49a-33d7-11ed-9b89-52540005c111\"\n    }\n}",
         "title": "创建应用代理规则"
-      }
-    ],
-    "CreateCredential": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCredential\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\"\n    }\n}",
-        "title": "创建凭证"
       }
     ],
     "CreateOriginGroup": [
@@ -110,7 +108,7 @@
     ],
     "CreatePrefetchTask": [
       {
-        "document": "",
+        "document": "提交预热任务。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrefetchTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.qq.com/a.txt\"\n    ],\n    \"ZoneId\": \"zone-ajj243dwrew\",\n    \"EncodeUrl\": true\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "预热URL"
@@ -118,24 +116,40 @@
     ],
     "CreatePurgeTask": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Type\": \"purge_all\",\n    \"ZoneId\": \"zone-ajj243dwrew\",\n    \"EncodeUrl\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "清除abc站点下的所有资源"
+        "document": "此清除类型使用的是标记过期的清除方法，会将该站点下所有 HTTP 应答包中存在对应 Cache-Tag 响应头标签值（tags）的资源标记为过期。\n例如：需要清除站点 example.com 下所有 HTTP 应答包中包含 tag1、tag2 或 tag3 标签且发生过变更的资源，可以参照以下示例进行刷新。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"tag1\",\n        \"tag2\",\n        \"tag3\"\n    ],\n    \"Type\": \"purge_cache_tag\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwcs\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "Cache-Tag 刷新"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.qq.com/a.txt\"\n    ],\n    \"Type\": \"purge_url\",\n    \"ZoneId\": \"zone-ajj243dwrew\",\n    \"EncodeUrl\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "清除URL"
-      }
-    ],
-    "CreateReplayTask": [
+        "document": "此清除类型使用的是标记过期的清除方法，会将提交的 Hostname 下的所有资源标记为过期。\n例如：需要清除站点域名 www.example.com 下所有发生过变更的资源，可以参照以下示例进行刷新。<li>注意：不支持提交 *.test.com 格式的 Host，即域名中不能包含通配符，需要写明对应的子域名。</li>",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"www.example.com\"\n    ],\n    \"Type\": \"purge_host\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwcs\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "Hostname 刷新"
+      },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReplayTask\n<公共请求参数>\n\n{\n    \"Ids\": [\n        \"21370jopko3l1\"\n    ]\n}",
+        "document": "此清除类型使用的是直接删除的清除方法，会匹配清除提交的 URL 的节点缓存资源。\n例如：需要清除站点域名 www.example.com 下 /a.txt 资源，可以参照以下示例进行刷新。\n\n",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.example.com/a.txt\"\n    ],\n    \"Type\": \"purge_url\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "重放任务"
+        "title": "URL刷新"
+      },
+      {
+        "document": "此清除类型使用的是标记过期的清除方法，会将所提交站点下的缓存内容都标记为过期。\n例如：需要清除站点 example.com 下的所有发生过变更的资源，可以参考以下示例进行刷新。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Type\": \"purge_all\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwcs\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "刷新站点下全部缓存"
+      },
+      {
+        "document": "此清除类型默认使用的是标记过期的清除方法，可以根据 Method 调整清除方式。\n例如：需要清除站点域名 www.example.com 下 /test 目录下所有发生变更的资源，可以参考以下示例进行刷新。\n",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.example.com/test/\"\n    ],\n    \"Type\": \"purge_prefix\",\n    \"Method\": \"invalidate\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwcj\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "目录刷新 — 仅刷新目录下发生变更的资源"
+      },
+      {
+        "document": "此清除方式需要将 Method 的值调整为 delete， 使用直接删除的清除方法清除节点资源。\n例如：需要清除站点域名 www.example.com 下 /test 目录下所有资源，可以参考以下示例进行刷新。\n",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.example.com/test/\"\n    ],\n    \"Type\": \"purge_prefix\",\n    \"Method\": \"delete\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwck\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "目录刷新 — 直接删除对应目录下的资源"
       }
     ],
     "CreateRule": [
@@ -160,17 +174,9 @@
         "title": "创建安全 IP 组"
       }
     ],
-    "CreateSpeedTesting": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSpeedTesting\n<公共请求参数>\n\n{\n    \"Host\": \"www.example.com\",\n    \"ZoneId\": \"zone-adsfaces\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
-        "title": "创建站点拨测任务"
-      }
-    ],
     "CreateZone": [
       {
-        "document": "",
+        "document": "正常创建站点。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"JumpStart\": false,\n    \"Type\": \"full\",\n    \"ZoneName\": \"example.com\",\n    \"AllowDuplicates\": false,\n    \"AliasZoneName\": \"zone-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"RequestId\": \"2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
         "title": "创建站点"
@@ -248,14 +254,6 @@
         "title": "acceleration_domains"
       }
     ],
-    "DescribeAddableEntityList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddableEntityList\n<公共请求参数>\n\n{\n    \"EntityType\": \"domain\",\n    \"ZoneId\": \"zone-28v4ag8bprrm\",\n    \"Area\": \"mainland\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EntityList\": [\n            \"sub.example.com\"\n        ],\n        \"RequestId\": \"8fbf8770-6bc2-48e1-a544-bf06eb8481e6\"\n    }\n}",
-        "title": "查询剩余可添加的四层代理列表"
-      }
-    ],
     "DescribeAliasDomains": [
       {
         "document": "",
@@ -278,14 +276,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailablePlans\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9fa0c8b-3c73-9ec2-cb5c-faa4725e0e07\",\n        \"PlanInfo\": [\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta\",\n                \"Price\": 450000,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_with_bot\",\n                \"Price\": 1262500,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_cm\",\n                \"Price\": 380000,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_cm_with_bot\",\n                \"Price\": 1192500,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent\",\n                \"Price\": 10228400,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_with_bot\",\n                \"Price\": 11216400,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_cm\",\n                \"Price\": 8637300,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_cm_with_bot\",\n                \"Price\": 9625300,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            }\n        ]\n    }\n}",
         "title": "查询当前账户可用套餐信息列表"
-      }
-    ],
-    "DescribeClientRuleList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClientRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.baidu.com\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"RuleId\": 124552,\n    \"SourceClientIp\": \"1.2.3.4\",\n    \"RuleType\": \"acl\",\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"c0ce8b7c-a48f-4eed-a0eb-c24177efc430\",\n        \"Data\": [\n            {\n                \"RuleType\": \"acl\",\n                \"Description\": \"sql注入攻击\",\n                \"RuleId\": 124552,\n                \"BlockTime\": 1659595468,\n                \"IpStatus\": \"block\",\n                \"ClientIp\": \"1.2.3.4\",\n                \"Id\": \"1659595468-acl-1.2.3.4\"\n            }\n        ]\n    }\n}",
-        "title": "查询封禁客户端信息列表"
       }
     ],
     "DescribeContentQuota": [
@@ -328,38 +318,6 @@
         "title": "获取默认证书"
       }
     ],
-    "DescribeDnsData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-01T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-01T00:09:59+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"tencent.com\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-01T00:00:00+00:00\",\n                \"Value\": 101\n            },\n            {\n                \"Time\": \"2020-09-01T00:01:00+00:00\",\n                \"Value\": 102\n            },\n            {\n                \"Time\": \"2020-09-01T00:02:00+00:00\",\n                \"Value\": 103\n            },\n            {\n                \"Time\": \"2020-09-01T00:03:00+00:00\",\n                \"Value\": 104\n            },\n            {\n                \"Time\": \"2020-09-01T00:04:00+00:00\",\n                \"Value\": 105\n            },\n            {\n                \"Time\": \"2020-09-01T00:05:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:06:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:07:00+00:00\",\n                \"Value\": 107\n            },\n            {\n                \"Time\": \"2020-09-01T00:08:00+00:00\",\n                \"Value\": 108\n            },\n            {\n                \"Time\": \"2020-09-01T00:09:00+00:00\",\n                \"Value\": 109\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点的DNS请求数统计曲线"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-01T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-01T00:09:59+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"tencent.com\"\n            ]\n        },\n        {\n            \"Name\": \"host\",\n            \"Values\": [\n                \"test.tencent.com\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-01T00:00:00+00:00\",\n                \"Value\": 101\n            },\n            {\n                \"Time\": \"2020-09-01T00:01:00+00:00\",\n                \"Value\": 102\n            },\n            {\n                \"Time\": \"2020-09-01T00:02:00+00:00\",\n                \"Value\": 103\n            },\n            {\n                \"Time\": \"2020-09-01T00:03:00+00:00\",\n                \"Value\": 104\n            },\n            {\n                \"Time\": \"2020-09-01T00:04:00+00:00\",\n                \"Value\": 105\n            },\n            {\n                \"Time\": \"2020-09-01T00:05:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:06:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:07:00+00:00\",\n                \"Value\": 107\n            },\n            {\n                \"Time\": \"2020-09-01T00:08:00+00:00\",\n                \"Value\": 108\n            },\n            {\n                \"Time\": \"2020-09-01T00:09:00+00:00\",\n                \"Value\": 109\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点指定域名的DNS请求数统计曲线"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-01T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-01T00:09:59+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"tencent.com\"\n            ]\n        },\n        {\n            \"Name\": \"area\",\n            \"Values\": [\n                \"Asia\",\n                \"Africa\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-01T00:00:00+00:00\",\n                \"Value\": 101\n            },\n            {\n                \"Time\": \"2020-09-01T00:01:00+00:00\",\n                \"Value\": 102\n            },\n            {\n                \"Time\": \"2020-09-01T00:02:00+00:00\",\n                \"Value\": 103\n            },\n            {\n                \"Time\": \"2020-09-01T00:03:00+00:00\",\n                \"Value\": 104\n            },\n            {\n                \"Time\": \"2020-09-01T00:04:00+00:00\",\n                \"Value\": 105\n            },\n            {\n                \"Time\": \"2020-09-01T00:05:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:06:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:07:00+00:00\",\n                \"Value\": 107\n            },\n            {\n                \"Time\": \"2020-09-01T00:08:00+00:00\",\n                \"Value\": 108\n            },\n            {\n                \"Time\": \"2020-09-01T00:09:00+00:00\",\n                \"Value\": 109\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点来自亚洲和非洲的DNS请求数统计曲线"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-01T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-01T00:09:59+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"tencent.com\"\n            ]\n        },\n        {\n            \"Name\": \"code\",\n            \"Values\": [\n                \"NXDomain\",\n                \"NotImp\",\n                \"Refused\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-01T00:00:00+00:00\",\n                \"Value\": 101\n            },\n            {\n                \"Time\": \"2020-09-01T00:01:00+00:00\",\n                \"Value\": 102\n            },\n            {\n                \"Time\": \"2020-09-01T00:02:00+00:00\",\n                \"Value\": 103\n            },\n            {\n                \"Time\": \"2020-09-01T00:03:00+00:00\",\n                \"Value\": 104\n            },\n            {\n                \"Time\": \"2020-09-01T00:04:00+00:00\",\n                \"Value\": 105\n            },\n            {\n                \"Time\": \"2020-09-01T00:05:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:06:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:07:00+00:00\",\n                \"Value\": 107\n            },\n            {\n                \"Time\": \"2020-09-01T00:08:00+00:00\",\n                \"Value\": 108\n            },\n            {\n                \"Time\": \"2020-09-01T00:09:00+00:00\",\n                \"Value\": 109\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点解析失败的DNS请求数统计曲线"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-01T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-01T00:09:59+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"tencent.com\"\n            ]\n        },\n        {\n            \"Name\": \"type\",\n            \"Values\": [\n                \"A\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-01T00:00:00+00:00\",\n                \"Value\": 101\n            },\n            {\n                \"Time\": \"2020-09-01T00:01:00+00:00\",\n                \"Value\": 102\n            },\n            {\n                \"Time\": \"2020-09-01T00:02:00+00:00\",\n                \"Value\": 103\n            },\n            {\n                \"Time\": \"2020-09-01T00:03:00+00:00\",\n                \"Value\": 104\n            },\n            {\n                \"Time\": \"2020-09-01T00:04:00+00:00\",\n                \"Value\": 105\n            },\n            {\n                \"Time\": \"2020-09-01T00:05:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:06:00+00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2020-09-01T00:07:00+00:00\",\n                \"Value\": 107\n            },\n            {\n                \"Time\": \"2020-09-01T00:08:00+00:00\",\n                \"Value\": 108\n            },\n            {\n                \"Time\": \"2020-09-01T00:09:00+00:00\",\n                \"Value\": 109\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点所有解析A记录的DNS请求数统计曲线"
-      }
-    ],
     "DescribeHostsSetting": [
       {
         "document": "",
@@ -374,22 +332,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentifications\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Identifications\": [\n            {\n                \"ZoneName\": \"example.com\",\n                \"Status\": \"pending\",\n                \"Ascription\": {\n                    \"Subdomain\": \"edgeonereclaim\",\n                    \"RecordType\": \"TXT\",\n                    \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n                },\n                \"OriginalNameServers\": [\n                    \"ns1.example.com\",\n                    \"ns2.example.com\"\n                ],\n                \"FileAscription\": {\n                    \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\",\n                    \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8gs50b24-7df5-47f4-96ae-95825d53er3c\"\n    }\n}",
         "title": "查询站点的验证状态"
-      }
-    ],
-    "DescribeLogSets": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogSets\n<公共请求参数>\n\n{\n    \"LogSetRegion\": \"ap-guanghzou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LogSetList\": [\n            {\n                \"Deleted\": \"no\",\n                \"LogSetId\": \"ae803624-ee6a-4a14-a716-1dee1a8f6f7b\",\n                \"LogSetName\": \"test_log\",\n                \"LogSetRegion\": \"ap-guangzhou\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a3fdb9f1-c97e-4d7e-86ac-aa15f27b2239\"\n    }\n}",
-        "title": "获取日志集列表"
-      }
-    ],
-    "DescribeLogTopicTasks": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogTopicTasks\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40be710a-9706-4b22-865e-c9739111ef1a\",\n        \"TopicList\": [\n            {\n                \"Area\": \"mainland\",\n                \"CreateTime\": \"2022-08-31 10:41:11\",\n                \"Deleted\": \"no\",\n                \"Enabled\": true,\n                \"EntityType\": \"application\",\n                \"LogSetId\": \"33a900b2-9860-4da0-be91-bcce94c290ce\",\n                \"Period\": 10,\n                \"LogSetRegion\": \"ap-guangzhou\",\n                \"Target\": \"cls\",\n                \"TaskName\": \"test_task\",\n                \"TopicId\": \"0a396698-d589-42b6-a6a2-701777d3afe0\",\n                \"ZoneName\": \"hello.club\",\n                \"ZoneId\": \"zone-28569s6od5na\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "获取推送任务列表"
       }
     ],
     "DescribeOriginGroup": [
@@ -466,50 +408,6 @@
         "title": "DescribeRulesSetting"
       }
     ],
-    "DescribeSingleL7AnalysisData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSingleL7AnalysisData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"Interval\": \"day\",\n    \"Area\": \"mainland\",\n    \"MetricNames\": [\n        \"l7Flow_singleIpRequest\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f9b86cc-d62b-4a69-a640-52f6f3cb628e\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"251227260\",\n                \"TypeValue\": [\n                    {\n                        \"DetailData\": 65,\n                        \"MetricName\": \"l7Flow_singleIpRequest\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询七层流量分析单值数据"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSingleL7AnalysisData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"Interval\": \"day\",\n    \"Area\": \"mainland\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"MetricNames\": [\n        \"l7Flow_singleIpRequest\"\n    ],\n    \"Filters\": [\n        {\n            \"Key\": \"protocol\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"HTTP/1.0\",\n                \"HTTP/1.1\",\n                \"HTTP/2.0\",\n                \"HTTP/3\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7672fcf7-2e69-478d-85a4-6b980ce5882f\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"1310708577\",\n                \"TypeValue\": [\n                    {\n                        \"DetailData\": 77,\n                        \"MetricName\": \"l7Flow_singleIpRequest\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "根据HTTP协议查询流量分析单值数据"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSingleL7AnalysisData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"Interval\": \"day\",\n    \"Area\": \"mainland\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"MetricNames\": [\n        \"l7Flow_singleIpRequest\"\n    ],\n    \"Filters\": [\n        {\n            \"Key\": \"tagKey\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"test\"\n            ]\n        },\n        {\n            \"Key\": \"tagValue\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"a.com\",\n                \"b.com\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"962792de-3bfe-483d-99a7-3cfde0467495\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"1310708577\",\n                \"TypeValue\": [\n                    {\n                        \"DetailData\": 20,\n                        \"MetricName\": \"l7Flow_singleIpRequest\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "根据标签查询流量分析单值数据"
-      }
-    ],
-    "DescribeSpeedTestingDetails": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpeedTestingDetails\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-cdafdasdf\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SpeedTestingDetailData\": {\n            \"ZoneName\": \"tencent.com\",\n            \"DistrictStatistics\": [\n                {\n                    \"Alpha2\": \"AF\",\n                    \"LoadTime\": 30\n                }\n            ],\n            \"ZoneId\": \"zone-cdafdasdf\"\n        },\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
-        "title": "查询拨测分地区数据"
-      }
-    ],
-    "DescribeSpeedTestingMetricData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpeedTestingMetricData\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2805lqj66rf6\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9a45aa8-01ab-40c0-ac2d-e61178fd2c51\",\n        \"SpeedTestingMetricData\": {\n            \"OriginSpeedTestingInfo\": [\n                {\n                    \"SpeedTestingStatistics\": {\n                        \"DocumentFinishTime\": 0,\n                        \"FirstMeaningfulPaint\": 0,\n                        \"LoadTime\": 0,\n                        \"OverallDownloadSpeed\": 0.0,\n                        \"FileDownloadTime\": 0,\n                        \"FirstContentfulPaint\": 0,\n                        \"ResponseTime\": 0,\n                        \"RenderTime\": 0,\n                        \"TcpConnectionTime\": 0\n                    },\n                    \"SpeedTestingConfig\": {\n                        \"Url\": \"https://www.tencent.com/\",\n                        \"Connectivity\": \"Cable\",\n                        \"UA\": \"Chrome,PC\",\n                        \"TaskType\": 0\n                    },\n                    \"TestId\": \"test-id\",\n                    \"StatusCode\": 0\n                }\n            ],\n            \"SpeedTestingStatus\": {\n                \"Tls\": true,\n                \"Url\": \"https://www.tencent.com/\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Connectivity\": \"Cable\",\n                \"UA\": \"Chrome,PC\",\n                \"StatusCode\": 0,\n                \"TimedOut\": true,\n                \"Reachable\": true\n            },\n            \"OriginLoadTime\": 0,\n            \"ZoneId\": \"zone-2805lqj66rf6\",\n            \"ProxyLoadTime\": 0,\n            \"ProxySpeedTestingInfo\": [\n                {\n                    \"SpeedTestingStatistics\": {\n                        \"DocumentFinishTime\": 0,\n                        \"FirstMeaningfulPaint\": 0,\n                        \"LoadTime\": 0,\n                        \"OverallDownloadSpeed\": 0.0,\n                        \"FileDownloadTime\": 0,\n                        \"FirstContentfulPaint\": 0,\n                        \"ResponseTime\": 0,\n                        \"RenderTime\": 0,\n                        \"TcpConnectionTime\": 0\n                    },\n                    \"SpeedTestingConfig\": {\n                        \"Url\": \"https://www.tencent.com/\",\n                        \"Connectivity\": \"Cable\",\n                        \"UA\": \"Chrome,PC\",\n                        \"TaskType\": 0\n                    },\n                    \"TestId\": \"test-dadfcsas\",\n                    \"StatusCode\": 0\n                }\n            ],\n            \"OptimizeAction\": [\n                {\n                    \"Connectivity\": \"Cable\",\n                    \"Ratio\": 0,\n                    \"Name\": \"name\",\n                    \"Value\": 0\n                }\n            ],\n            \"ZoneName\": \"zone.com\"\n        }\n    }\n}",
-        "title": "查询站点拨测结果"
-      }
-    ],
-    "DescribeSpeedTestingQuota": [
-      {
-        "document": "查询站点配额",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpeedTestingQuota\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-fiandfa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9a45aa8-01ab-40c0-ac2d-e61178fd2c51\",\n        \"SpeedTestingQuota\": {\n            \"AvailableTestRuns\": 0,\n            \"TotalTestRuns\": 100\n        }\n    }\n}",
-        "title": "查询站点配额"
-      }
-    ],
     "DescribeTimingL4Data": [
       {
         "document": "",
@@ -570,26 +468,6 @@
         "title": "查询指定标签的时序流量数据"
       }
     ],
-    "DescribeTimingL7SourceData": [
-      {
-        "document": "查询源站值为119.28.108.213的各项回源指标数据",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7SourceData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-12-14T07:32:00+08:00\",\n    \"EndTime\": \"2022-12-21T00:00:00+08:00\",\n    \"ZoneIds\": [\n        \"zone-2cfc5kesov7g\"\n    ],\n    \"Filters\": [\n        {\n            \"Key\": \"origin\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"119.28.108.213\"\n            ]\n        }\n    ],\n    \"Interval\": \"hour\",\n    \"Area\": \"overseas\",\n    \"MetricNames\": [\n        \"l7Flow_outFlux_hy\",\n        \"l7Flow_inFlux_hy\",\n        \"l7Flow_request_hy\",\n        \"l7Flow_outBandwidth_hy\",\n        \"l7Flow_inBandwidth_hy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02c49505-c740-4ee8-8128-dbe3ce0bf34e\",\n        \"TimingDataRecords\": [\n            {\n                \"TypeKey\": \"251231751_cheney_test1\",\n                \"TypeValue\": [\n                    {\n                        \"Avg\": 2,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1672002000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672005600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672009200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672092000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672095600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672099200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672102800,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672106400,\n                                \"Value\": 306\n                            },\n                            {\n                                \"Timestamp\": 1672110000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672113600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672117200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672120800,\n                                \"Value\": 307\n                            },\n                            {\n                                \"Timestamp\": 1672124400,\n                                \"Value\": 239\n                            },\n                            {\n                                \"Timestamp\": 1672128000,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 25812,\n                        \"MetricName\": \"l7Flow_outFlux_hy\",\n                        \"Sum\": 26973\n                    },\n                    {\n                        \"Avg\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1671980400,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671984000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671987600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671991200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671994800,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671998400,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672002000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672005600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672009200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672012800,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672016400,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672128000,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 394,\n                        \"MetricName\": \"l7Flow_inBandwidth_hy\",\n                        \"Sum\": 418\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询指定源站的回源分析时序数据"
-      },
-      {
-        "document": "查询源站组名称为origin-2be4c888-82a1-11ed-b61e-525400931057的各项回源指标数据",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7SourceData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-12-21T00:00:00+08:00\",\n    \"EndTime\": \"2022-12-27T16:28:00+08:00\",\n    \"ZoneIds\": [\n        \"zone-2cfc5kesov7g\"\n    ],\n    \"Filters\": [\n        {\n            \"Key\": \"originGroup\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"origin-2be4c888-82a1-11ed-b61e-525400931057\"\n            ]\n        }\n    ],\n    \"Interval\": \"hour\",\n    \"Area\": \"overseas\",\n    \"MetricNames\": [\n        \"l7Flow_outFlux_hy\",\n        \"l7Flow_inFlux_hy\",\n        \"l7Flow_request_hy\",\n        \"l7Flow_outBandwidth_hy\",\n        \"l7Flow_inBandwidth_hy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cfc96e9b-99bd-4800-8335-d195346c0218\",\n        \"TimingDataRecords\": [\n            {\n                \"TypeKey\": \"251231751_cheney_test1\",\n                \"TypeValue\": [\n                    {\n                        \"Avg\": 2,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1672117200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672120800,\n                                \"Value\": 8\n                            },\n                            {\n                                \"Timestamp\": 1672124400,\n                                \"Value\": 6\n                            },\n                            {\n                                \"Timestamp\": 1672128000,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 346,\n                        \"MetricName\": \"l7Flow_outBandwidth_hy\",\n                        \"Sum\": 376\n                    },\n                    {\n                        \"Avg\": 179,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1671796800,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671800400,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671804000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672128000,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 27817,\n                        \"MetricName\": \"l7Flow_inFlux_hy\",\n                        \"Sum\": 28834\n                    },\n                    {\n                        \"Avg\": 167,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1672084800,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672088400,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672092000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1672128000,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 25812,\n                        \"MetricName\": \"l7Flow_outFlux_hy\",\n                        \"Sum\": 26973\n                    },\n                    {\n                        \"Avg\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1671552000,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671555600,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671559200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1671868800,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 394,\n                        \"MetricName\": \"l7Flow_inBandwidth_hy\",\n                        \"Sum\": 418\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询指定源站组的回源分析时序数据"
-      },
-      {
-        "document": "查询最近三十天的回源请求数据",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7SourceData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"Interval\": \"day\",\n    \"Area\": \"mainland\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"MetricNames\": [\n        \"l7Flow_request_hy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"141a7ccd-9713-43a2-91d5-1b47692d0609\",\n        \"TimingDataRecords\": [\n            {\n                \"TypeKey\": \"251227260\",\n                \"TypeValue\": [\n                    {\n                        \"Avg\": 803,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1659139200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1661731200,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 7921,\n                        \"MetricName\": \"l7Flow_request_hy\",\n                        \"Sum\": 24918\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询回源分析类时序数据"
-      }
-    ],
     "DescribeTopL7AnalysisData": [
       {
         "document": "查询七层数据分析类top流量数据",
@@ -634,68 +512,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7CacheData\n<公共请求参数>\n\n{\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": \"5\",\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"l7Cache_outFlux_cacheType\",\n    \"Filters\": [\n        {\n            \"Key\": \"tagKey\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"test1\"\n            ]\n        },\n        {\n            \"Key\": \"tagValue\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"a.com\",\n                \"b.com\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"64463c6f-3296-47fa-b168-2040f841eed1\",\n        \"Data\": [\n            {\n                \"DetailData\": [\n                    {\n                        \"Key\": \"hit\",\n                        \"Value\": 5810001\n                    },\n                    {\n                        \"Key\": \"miss\",\n                        \"Value\": 658\n                    }\n                ],\n                \"TypeKey\": \"251227260\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "根据指定标签的top流量数据"
-      }
-    ],
-    "DescribeWebManagedRulesData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesData\n<公共请求参数>\n\n{\n    \"MetricNames\": [\n        \"waf_interceptNum\"\n    ],\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 10,\n                        \"Metric\": \"xx\",\n                        \"Avg\": 10.0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1657411200,\n                                \"Value\": 10\n                            }\n                        ],\n                        \"Sum\": 10.0\n                    }\n                ],\n                \"Key\": \"www.baidu.com\"\n            }\n        ],\n        \"RequestId\": \"23dd59e1-0d8a-4fa2-a9f9-9f20195523c6\"\n    }\n}",
-        "title": "查询WAF攻击时序数据"
-      }
-    ],
-    "DescribeWebManagedRulesHitRuleDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesHitRuleDetail\n<公共请求参数>\n\n{\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"monitor\"\n            ],\n            \"Key\": \"action\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"Data\": [\n            {\n                \"Description\": \"针对出现在GET参数中的命令注入防护规则\",\n                \"RuleId\": 106247153,\n                \"ZoneId\": \"zone-2c2jrfftg9mh\",\n                \"RequestNum\": 10,\n                \"Action\": \"monitor\",\n                \"HitTime\": 1659690912,\n                \"BotLabel\": \"none\",\n                \"AlarmEnabled\": true,\n                \"RuleEnabled\": true,\n                \"RuleDeleted\": false\n            }\n        ]\n    }\n}",
-        "title": "查询Web攻击命中规则详情"
-      }
-    ],
-    "DescribeWebManagedRulesLog": [
-      {
-        "document": "查询Web攻击日志",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesLog\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"monitor\"\n            ],\n            \"Key\": \"action\"\n        }\n    ],\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"EventId\": \"18045868509676540160\",\n                \"HttpLog\": \"{\\\"PROTOCOL\\\":\\\"HTTP/1.1\\\"}\",\n                \"Domain\": \"www.baidu.com\",\n                \"SipCountryCode\": \"CN\",\n                \"AttackIp\": \"120.241.137.74\",\n                \"RequestUri\": \"/waf\",\n                \"RealClientIp\": \"43.154.226.106\",\n                \"RealClientIpCountryCode\": \"HK\",\n                \"RuleDetailList\": [\n                    {\n                        \"Description\": \"针对出现在GET参数中的命令注入防护规则\",\n                        \"RuleId\": 106247153,\n                        \"RiskLevel\": \"high risk\",\n                        \"RuleTypeName\": \"命令/代码注入攻击防护\",\n                        \"Action\": \"monitor\",\n                        \"RuleLevel\": \"严格\",\n                        \"AlarmEnabled\": false,\n                        \"RuleEnabled\": false,\n                        \"RuleDeleted\": false,\n                        \"RuleType\": \"waf\"\n                    }\n                ],\n                \"AttackTime\": 1660033867\n            }\n        ],\n        \"RequestId\": \"dd54b175-5594-4acc-a230-75d8ae19b5bf\"\n    }\n}",
-        "title": "查询Web攻击日志"
-      },
-      {
-        "document": "假设访问链接为：客户端（1.1.1.1）--代理设备（2.2.2.2）--EO 加速节点，则 ClientIp 为 2.2.2.2，RealClientIp 为 1.1.1.1。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesLog\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"43.154.226.106\"\n            ],\n            \"Key\": \"realClientIp\"\n        }\n    ],\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"EventId\": \"18045868509676540160\",\n                \"HttpLog\": \"{\\\"PROTOCOL\\\":\\\"HTTP/1.1\\\"}\",\n                \"Domain\": \"www.baidu.com\",\n                \"SipCountryCode\": \"CN\",\n                \"AttackIp\": \"120.241.137.74\",\n                \"RequestUri\": \"/waf\",\n                \"RealClientIp\": \"43.154.226.106\",\n                \"RealClientIpCountryCode\": \"HK\",\n                \"RuleDetailList\": [\n                    {\n                        \"Description\": \"针对出现在GET参数中的命令注入防护规则\",\n                        \"RuleId\": 106247153,\n                        \"RiskLevel\": \"high risk\",\n                        \"RuleTypeName\": \"命令/代码注入攻击防护\",\n                        \"Action\": \"monitor\",\n                        \"RuleLevel\": \"严格\",\n                        \"AlarmEnabled\": false,\n                        \"RuleEnabled\": false,\n                        \"RuleDeleted\": false,\n                        \"RuleType\": \"waf\"\n                    }\n                ],\n                \"AttackTime\": 1660033867\n            }\n        ],\n        \"RequestId\": \"dd54b175-5594-4acc-a230-75d8ae19b5bf\"\n    }\n}",
-        "title": "查询Web攻击日志真实客户端IP列表数据"
-      }
-    ],
-    "DescribeWebProtectionClientIpList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionClientIpList\n<公共请求参数>\n\n{\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"monitor\"\n            ],\n            \"Key\": \"action\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"Data\": [\n            {\n                \"ClientIp\": \"1.2.3.4\",\n                \"RequestMaxQps\": 10,\n                \"RequestNum\": 10\n            }\n        ]\n    }\n}",
-        "title": "查询CC防护客户端ip信息列表"
-      }
-    ],
-    "DescribeWebProtectionData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionData\n<公共请求参数>\n\n{\n    \"MetricNames\": [\n        \"ccRate_interceptNum\"\n    ],\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 10,\n                        \"Metric\": \"ccRate_interceptNum\",\n                        \"Avg\": 10.0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1659456000,\n                                \"Value\": 10\n                            }\n                        ],\n                        \"Sum\": 10.0\n                    }\n                ],\n                \"Key\": \"zone-21xfqlh4qjee\"\n            }\n        ],\n        \"RequestId\": \"4caecd0e-5465-4c90-a100-1abd7f028ab3\"\n    }\n}",
-        "title": "查询CC防护时序数据列表"
-      }
-    ],
-    "DescribeWebProtectionHitRuleDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionHitRuleDetail\n<公共请求参数>\n\n{\n    \"EntityType\": \"acl\",\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"monitor\"\n            ],\n            \"Key\": \"action\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"a55ce448-d5e6-4351-9a1f-8f0a5222fba1\",\n        \"Data\": [\n            {\n                \"Description\": \"cooper5_rate\",\n                \"RuleId\": 1234,\n                \"ZoneId\": \"zone-2c2jrfftg9mh\",\n                \"RequestNum\": 10,\n                \"Action\": \"monitor\",\n                \"HitTime\": 1660035802,\n                \"AlarmEnabled\": true,\n                \"RuleEnabled\": false,\n                \"RuleDeleted\": false\n            }\n        ]\n    }\n}",
-        "title": "查询cc防护命中规则详情"
-      }
-    ],
-    "DescribeWebProtectionTopData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionTopData\n<公共请求参数>\n\n{\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"drop\"\n            ],\n            \"Key\": \"action\"\n        }\n    ],\n    \"Interval\": \"min\",\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricName\": \"waf_requestNum_cip\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Count\": 123,\n                        \"Name\": \"udp\"\n                    }\n                ],\n                \"Key\": \"waf_requestNum_cip\"\n            }\n        ],\n        \"RequestId\": \"d6182c0c-08c5-448e-9cc8-abb00bbe5fe5\"\n    }\n}",
-        "title": "查询CC防护Top数据"
       }
     ],
     "DescribeZoneSetting": [
@@ -780,7 +596,7 @@
     ],
     "ModifyApplicationProxyRule": [
       {
-        "document": "",
+        "document": "修改应用代理规则",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"RuleId\": \"rule-5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n    \"Proto\": \"TCP\",\n    \"Port\": [\n        \"99-110\"\n    ],\n    \"OriginType\": \"custom\",\n    \"OriginValue\": [\n        \"1.1.1.1\"\n    ],\n    \"OriginPort\": \"99-110\",\n    \"ForwardClientIp\": \"TOA\",\n    \"SessionPersist\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改应用代理规则"
@@ -800,14 +616,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"Status\": \"online\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改应用代理的状态"
-      }
-    ],
-    "ModifyDefaultCertificate": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefaultCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-adsfacc\",\n    \"CertId\": \"EO-asdfac\",\n    \"Status\": \"deploy\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2346602a-0bbf-409b-922c-ae3071c27594\"\n    }\n}",
-        "title": "修改默认证书状态"
       }
     ],
     "ModifyHostsCertificate": [
@@ -832,14 +640,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRule\n<公共请求参数>\n\n{\n    \"Status\": \"disable\",\n    \"Rules\": [\n        {\n            \"Actions\": [\n                {\n                    \"NormalAction\": {\n                        \"Action\": \"RangeOriginPull\",\n                        \"Parameters\": [\n                            {\n                                \"Name\": \"Switch\",\n                                \"Values\": [\n                                    \"on\"\n                                ]\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"CodeAction\": {\n                        \"Action\": \"StatusCodeCache\",\n                        \"Parameters\": [\n                            {\n                                \"Name\": \"CacheTime\",\n                                \"StatusCode\": 200,\n                                \"Values\": [\n                                    \"20\"\n                                ]\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"RewriteAction\": {\n                        \"Action\": \"ResponseHeader\",\n                        \"Parameters\": [\n                            {\n                                \"Action\": \"set\",\n                                \"Name\": \"Foo\",\n                                \"Values\": [\n                                    \"Bar\"\n                                ]\n                            },\n                            {\n                                \"Action\": \"add\",\n                                \"Name\": \"Hello\",\n                                \"Values\": [\n                                    \"World\"\n                                ]\n                            },\n                            {\n                                \"Action\": \"del\",\n                                \"Name\": \"Foo2\",\n                                \"Values\": [\n                                    \"\"\n                                ]\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"Conditions\": [\n                {\n                    \"Conditions\": [\n                        {\n                            \"Operator\": \"equal\",\n                            \"Target\": \"host\",\n                            \"Values\": [\n                                \"www.shawndai.cn\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"RuleName\": \"new_rule02\",\n    \"ZoneId\": \"zone-26r78x31ny86\",\n    \"RuleId\": \"rule-djuqmq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"811d2583-310c-41f4-b5e7-abe4074047d4\",\n        \"RuleId\": \"rule-djuqmq\"\n    }\n}",
         "title": "ModifyRule"
-      }
-    ],
-    "ModifyRulePriority": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRulePriority\n<公共请求参数>\n\n{\n    \"RuleIds\": [\n        \"rule-jr7ammcu\",\n        \"rule-3bta0qmn\"\n    ],\n    \"ZoneId\": \"zone-26r78x31ny86\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ace05891-744c-40f8-94de-4e1c08d954c2\"\n    }\n}",
-        "title": "ModifyRulePriority"
       }
     ],
     "ModifySecurityIPGroup": [
@@ -882,17 +682,9 @@
         "title": "修改安全配置中的例外规则并加白Header指定key字段的场景"
       }
     ],
-    "ModifySecurityWafGroupPolicy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityWafGroupPolicy\n<公共请求参数>\n\n{\n    \"Entity\": \"a.eotest.com\",\n    \"ZoneId\": \"zone-a81jffj923\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b32010-ab25-42a4-b923-2e6c481dae23\"\n    }\n}",
-        "title": "修改托管规则"
-      }
-    ],
     "ModifyZone": [
       {
-        "document": "",
+        "document": "修改站点。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZone\n<公共请求参数>\n\n{\n    \"VanityNameServers\": {\n        \"Switch\": \"on\",\n        \"Servers\": [\n            \"ns1.example.com\",\n            \"ns2.example.com\"\n        ]\n    },\n    \"Type\": \"full\",\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"AliasZoneName\": \"zone-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ac50b24-7dc2-47f4-92ce-9fd25d53gt2f\"\n    }\n}",
         "title": "修改站点"
@@ -924,30 +716,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneStatus\n<公共请求参数>\n\n{\n    \"Paused\": true,\n    \"ZoneId\": \"zone-27q0p0bali16\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7sd20b24-7dc5-98f4-96ce-95825dcd34sa\"\n    }\n}",
         "title": "切换站点状态"
-      }
-    ],
-    "ReclaimAliasDomain": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReclaimAliasDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47802be3-893f-4ebe-9832-f8046d0d1611\"\n    }\n}",
-        "title": "取回别称域名"
-      }
-    ],
-    "ReclaimZone": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReclaimZone\n<公共请求参数>\n\n{\n    \"ZoneName\": \"example.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ds50b24-5dv3-4sf4-96ce-61825d53ff5d\"\n    }\n}",
-        "title": "找回站点"
-      }
-    ],
-    "UpdateOriginProtectionIPWhitelist": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOriginProtectionIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af0a2b4f-df6d-4d2a-ac39-1706cbf8a868\"\n    }\n}",
-        "title": "更新源站防护IP白名单"
       }
     ]
   },
