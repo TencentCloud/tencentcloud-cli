@@ -1,6 +1,6 @@
 **Example 1: 按个数自动分配IPv6地址**
 
-
+按个数自动分配IPv6地址
 
 Input: 
 
@@ -8,7 +8,9 @@ Input:
 tccli ecm AssignIpv6Addresses --cli-unfold-argument  \
     --EcmRegion ap-xian-ecm \
     --NetworkInterfaceId eni-1snva0vd \
-    --Ipv6AddressCount 1
+    --Ipv6AddressCount 1 \
+    --SkipCheckIPv6Address true \
+    --SkipAllocateBandwidth true
 ```
 
 Output: 

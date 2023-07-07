@@ -56,6 +56,13 @@
       "output": "CreateProxySessionKillTaskResponse",
       "status": "online"
     },
+    "CreateRedisBigKeyAnalysisTask": {
+      "document": "即时创建redis实例大key分析任务，限制正在运行的即时分析任务数量默认为5。",
+      "input": "CreateRedisBigKeyAnalysisTaskRequest",
+      "name": "创建redis实例即时大key分析任务",
+      "output": "CreateRedisBigKeyAnalysisTaskResponse",
+      "status": "online"
+    },
     "CreateSchedulerMailProfile": {
       "document": "该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。",
       "input": "CreateSchedulerMailProfileRequest",
@@ -1137,6 +1144,70 @@
           "member": "int64",
           "name": "AsyncRequestId",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRedisBigKeyAnalysisTaskRequest": {
+      "document": "CreateRedisBigKeyAnalysisTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分片节点序号列表。当列表为空时，选择所有分片节点。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Top Key前缀的分隔符列表。\n目前仅支持以下分割符：[\",\", \";\", \":\", \"_\", \"-\", \"+\", \"@\", \"=\", \"|\", \"#\", \".\"]，当列表为空时，默认选择所有分隔符。",
+          "example": "[ \"+\", \"@\", \"#\", \".\"]",
+          "member": "string",
+          "name": "KeyDelimiterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRedisBigKeyAnalysisTaskResponse": {
+      "document": "CreateRedisBigKeyAnalysisTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "8001",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

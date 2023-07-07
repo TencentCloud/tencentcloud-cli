@@ -1310,7 +1310,6 @@
       "document": "AssignIpv6Addresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ECM 地域",
           "example": "ap-xian-ecm",
@@ -1320,7 +1319,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。",
           "example": "eni-1snva0vd",
@@ -1330,7 +1328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。",
           "example": "无",
@@ -1340,7 +1337,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。",
           "example": "1",
@@ -1350,10 +1346,36 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ipv6运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动",
           "example": "CTCC",
+          "member": "string",
+          "name": "ISPType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipCheckIPv6Address",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipAllocateBandwidth",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "该字段没有使用（已过期）。",
+          "example": "无",
           "member": "string",
           "name": "Ipv6ISP",
           "required": false,
@@ -1371,7 +1393,7 @@
           "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5778,54 +5800,54 @@
       "document": "DescribeSubnets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。",
+          "example": "无",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - Subnet实例名称。\nsubnet-name - String - 子网名称。只支持单值的模糊查询。\ncidr-block - String - 子网网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nvpc-id - String - VPC实例ID，形如：vpc-f49l6u0z。\nvpc-cidr-block  - String - vpc网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nregion - String - ECM地域\nzone - String - 可用区。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - Subnet实例名称。\nsubnet-name - String - 子网名称。只支持单值的模糊查询。\ncidr-block - String - 子网网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nvpc-id - String - VPC实例ID，形如：vpc-f49l6u0z。\nvpc-cidr-block  - String - vpc网段，形如: 192.168.1.0 。只支持单值的模糊查询。\nregion - String - ECM地域\nzone - String - 可用区。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\nipv6-cidr-block- String - 是否必填：否 - 按照IPv6 CIDR进行过滤。\nisp-type - String - 是否必填：否 - 按照运营商类型( 如CMCC，CUCC， CTCC)进行过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
+          "example": "10",
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
+          "example": "10",
           "member": "string",
           "name": "Limit",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ECM 地域",
+          "example": "ap-hefei-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式：time时间倒序, default按照网络规划排序",
+          "example": "无",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -5840,16 +5862,20 @@
         {
           "disabled": false,
           "document": "符合条件的实例数量。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子网对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6059,54 +6085,54 @@
       "document": "DescribeVpcs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "example": "无",
           "member": "string",
           "name": "VpcIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - VPC实例名称，只支持单值的模糊查询。\nvpc-id - String - VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - vpc的cidr，只支持单值的模糊查询。\nregion - String - vpc的region。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。",
+          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - VPC实例名称，只支持单值的模糊查询。\nvpc-id - String - VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - vpc的cidr，只支持单值的模糊查询。\nregion - String - vpc的region。\ntag-key - String -是否必填：否- 按照标签键进行过滤。\ntag:tag-key - String - 是否必填：否 - 按照标签键值对进行过滤。\nipv6-cidr-block - String - 是否必填：否 - 按照IPv6 CIDR block进行过滤。\nisp-type - String - 是否必填：否 - 按照运营商（如CMCC, CUCC, CTCC）进行过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
+          "example": "10",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
+          "example": "ap-hefei-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式：time时间倒序, default按照网络规划排序",
+          "example": "无",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -6121,16 +6147,20 @@
         {
           "disabled": false,
           "document": "符合条件的对象数。",
+          "example": "5",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "私有网络对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VpcInfo",
           "name": "VpcSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7315,6 +7345,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ISPIPv6CidrBlock": {
+      "document": "多运营商IPv6 Cidr Block",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6 CIdr Block。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2402:4e00:1717:8200::/56\",",
+          "member": "string",
+          "name": "IPv6CidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "ISPType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14032,192 +14088,202 @@
       "document": "子网对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID，例如：subnet-bthucmmy。",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称。",
+          "example": "无",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的 IPv4 CIDR。",
+          "example": "无",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认子网。",
+          "example": "无",
           "member": "bool",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启广播。",
+          "example": "无",
           "member": "bool",
           "name": "EnableBroadcast",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-l2h8d7c2。",
+          "example": "无",
           "member": "string",
           "name": "RouteTableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用IP数。",
+          "example": "无",
           "member": "uint64",
           "name": "AvailableIpAddressCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的 IPv6 CIDR。",
+          "example": "无",
           "member": "string",
           "name": "Ipv6CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联ACLID",
+          "example": "无",
           "member": "string",
           "name": "NetworkAclId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为 SNAT 地址池子网。",
+          "example": "无",
           "member": "bool",
           "name": "IsRemoteVpcSnat",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所在区域",
+          "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "InstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的 IPv4 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VpcCidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的 IPv6 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VpcIpv6CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "ISPType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14716,187 +14782,207 @@
       "usage": "both"
     },
     "VpcInfo": {
-      "document": "私有网络(VPC)对象。",
+      "document": "私有网络(VPC) 对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名称。",
+          "example": "1",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID，例如：vpc-azd4dt1c。",
+          "example": "vpc-azd4dt1c",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的IPv4 CIDR。",
+          "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认VPC。",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启组播。",
+          "example": "false",
           "member": "bool",
           "name": "EnableMulticast",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
+          "example": "2021-01-20 15:25:11",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DNS列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "114.114.114.114",
           "member": "string",
           "name": "DnsServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DHCP域名选项值。",
+          "example": "1",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DHCP选项集ID。",
+          "example": "1",
           "member": "string",
           "name": "DhcpOptionsId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启DHCP。",
+          "example": "true",
           "member": "bool",
           "name": "EnableDhcp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的IPv6 CIDR。",
+          "example": "1030:0:0:0:C9B4:FF12:48AA:1A2B/60 ",
           "member": "string",
           "name": "Ipv6CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
+          "example": "ap-zhengzhou-ecm",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
+          "example": "1",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域中文名",
+          "example": "郑州一区",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包含子网数量",
+          "example": "1",
           "member": "uint64",
           "name": "SubnetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包含实例数量",
+          "example": "0",
           "member": "uint64",
           "name": "InstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ipv6运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CTCC",
+          "member": "string",
+          "name": "Ipv6ISP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多运营商IPv6 Cidr Block。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ISPIPv6CidrBlock",
+          "name": "Ipv6CidrBlockSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

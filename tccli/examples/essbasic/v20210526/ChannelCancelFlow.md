@@ -9,7 +9,6 @@ tccli essbasic ChannelCancelFlow --cli-unfold-argument  \
     --Operator.OpenId test \
     --FlowId test \
     --CancelMessage test \
-    --Agent.ProxyAppId test \
     --Agent.ProxyOperator.OpenId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.AppId test

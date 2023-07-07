@@ -286,7 +286,7 @@
     ],
     "CreateSuperPlayerConfig": [
       {
-        "document": "",
+        "document": "创建播放器配置",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSuperPlayerConfig\n<公共请求参数>\n\n{\n    \"AdaptiveDynamicStreamingDefinition\": \"10\",\n    \"Name\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-1d4b-5594145287e1\"\n    }\n}",
         "title": "创建播放器配置"
@@ -974,7 +974,7 @@
     ],
     "DescribeVodDomains": [
       {
-        "document": "",
+        "document": "查询所有域名的信息。",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeVodDomains\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"DomainSet\": [\n            {\n                \"Domain\": \"myexample.com\",\n                \"AccelerateAreaInfos\": [\n                    {\n                        \"Area\": \"Internation\",\n                        \"TencentEdgeDomain\": \"myexmample.com.dnsv1.com\"\n                    }\n                ],\n                \"RefererAuthPolicy\": {\n                    \"Status\": \"Disabled\",\n                    \"AuthType\": \"\",\n                    \"BlankRefererAllowed\": \"No\",\n                    \"Referers\": []\n                },\n                \"DeployStatus\": \"Deploying\",\n                \"HTTPSConfig\": {\n                    \"CertExpireTime\": \"2030-01-23T07:25:52Z\"\n                },\n                \"UrlSignatureAuthPolicy\": {\n                    \"Status\": \"Enabled\",\n                    \"EncryptedKey\": \"acmowmeomeo13432a\"\n                },\n                \"CreateTime\": \"2019-12-23T07:25:52Z\"\n            }\n        ],\n        \"RequestId\": \"aeomo-133w3-amomow-22\"\n    }\n}",
         "title": "查询所有域名"
@@ -1378,7 +1378,7 @@
     ],
     "ModifySuperPlayerConfig": [
       {
-        "document": "",
+        "document": "修改播放器配置",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySuperPlayerConfig\n<公共请求参数>\n\n{\n    \"AdaptiveDynamicStreamingDefinition\": \"20\",\n    \"Name\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-7d4b-5594145287e1\"\n    }\n}",
         "title": "修改播放器配置"
@@ -1682,7 +1682,7 @@
     ],
     "WeChatMiniProgramPublish": [
       {
-        "document": "对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 100030。",
+        "document": "对 fileId 为 5285485487985271487 的视频发起微信小程序发布任务，且发布视频所对应的转码模板 ID 为 100030。",
         "input": "https://vod.tencentcloudapi.com/?Action=WeChatMiniProgramPublish\n&FileId=5285485487985271487\n&SourceDefinition=100030\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-wechat-mini-program-publish-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起小程序视频发布任务"

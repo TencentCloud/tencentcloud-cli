@@ -7,7 +7,6 @@ Input:
 ```
 tccli essbasic CreateSignUrls --cli-unfold-argument  \
     --FlowIds test-flow-id \
-    --Agent.ProxyAppId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.ProxyOperator.OpenId test \
     --Agent.AppId test \

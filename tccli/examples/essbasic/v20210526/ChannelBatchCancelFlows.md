@@ -8,7 +8,6 @@ Input:
 ```
 tccli essbasic ChannelBatchCancelFlows --cli-unfold-argument  \
     --FlowIds testx \
-    --Agent.ProxyAppId testx \
     --Agent.ProxyOperator.OpenId testx \
     --Agent.AppId testx \
     --Agent.ProxyOrganizationOpenId testx \

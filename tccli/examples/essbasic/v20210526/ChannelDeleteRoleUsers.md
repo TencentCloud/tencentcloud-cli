@@ -10,8 +10,7 @@ tccli essbasic ChannelDeleteRoleUsers --cli-unfold-argument  \
     --UserIds abc \
     --Agent.AppId abc \
     --Agent.ProxyOrganizationOpenId abc \
-    --Agent.ProxyOperator.OpenId abc \
-    --Agent.ProxyAppId abc
+    --Agent.ProxyOperator.OpenId abc
 ```
 
 Output: 

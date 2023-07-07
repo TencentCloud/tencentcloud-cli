@@ -1,6 +1,6 @@
 **Example 1: 克隆安全组**
 
-
+克隆安全组
 
 Input: 
 
@@ -18,7 +18,8 @@ Output:
             "SecurityGroupId": "sg-12341234",
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
-            "ProjectId": "0"
+            "ProjectId": "0",
+            "CreatedTime": "2018-01-13 19:26:33"
         }
     }
 }
@@ -26,7 +27,7 @@ Output:
 
 **Example 2: 克隆安全组，指定名称和备注**
 
-
+克隆安全组，指定名称和备注
 
 Input: 
 
@@ -46,7 +47,8 @@ Output:
             "SecurityGroupId": "sg-12341256",
             "SecurityGroupName": "test",
             "SecurityGroupDesc": "test",
-            "ProjectId": "0"
+            "ProjectId": "0",
+            "CreatedTime": "2018-01-13 19:26:33"
         }
     }
 }
@@ -54,7 +56,7 @@ Output:
 
 **Example 3: 克隆安全组，指定项目ID**
 
-
+克隆安全组，指定项目ID
 
 Input: 
 
@@ -73,7 +75,8 @@ Output:
             "SecurityGroupId": "sg-12341278",
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
-            "ProjectId": "1001"
+            "ProjectId": "1001",
+            "CreatedTime": "2018-01-13 19:26:33"
         }
     }
 }

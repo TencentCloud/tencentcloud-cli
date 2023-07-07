@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic ChannelDescribeEmployees --cli-unfold-argument  \
-    --Agent.ProxyAppId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.ProxyOperator.OpenId test \
     --Agent.AppId test \

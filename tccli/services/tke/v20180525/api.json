@@ -3464,7 +3464,6 @@
       "document": "托管集群等级属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群等级",
           "example": "L500",
@@ -3475,7 +3474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "等级名称",
           "example": "500节点",
@@ -3486,7 +3484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数量",
           "example": "20",
@@ -3497,7 +3494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod数量",
           "example": "100",
@@ -3508,7 +3504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Configmap数量",
           "example": "200",
@@ -3519,7 +3514,16 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "ReplicaSets数量",
+          "example": "500",
+          "member": "uint64",
+          "name": "RSCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "CRD数量",
           "example": "500",
@@ -3530,7 +3534,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用",
           "example": "true",
@@ -3541,7 +3544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其他资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
@@ -12349,7 +12351,6 @@
       "document": "DescribeResourceUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxxxx",
@@ -12370,7 +12371,7 @@
           "example": "无",
           "member": "ResourceUsage",
           "name": "CRDUsage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12380,7 +12381,17 @@
           "example": "100",
           "member": "uint64",
           "name": "PodUsage",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ReplicaSet使用量",
+          "example": "100",
+          "member": "uint64",
+          "name": "RSUsage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12390,7 +12401,7 @@
           "example": "100",
           "member": "uint64",
           "name": "ConfigMapUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12400,7 +12411,7 @@
           "example": "无",
           "member": "ResourceUsage",
           "name": "OtherUsage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17615,7 +17626,6 @@
       "document": "ModifyClusterVirtualNodePool请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cls-abcd1234",
@@ -17625,7 +17635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点池ID",
           "example": "np-abcd1234",
@@ -17635,7 +17644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点池名称",
           "example": "virtual-node-prod",
@@ -17645,7 +17653,15 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "安全组ID列表",
+          "example": "[\"sg-0kxvmoz1\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
           "disabled": false,
           "document": "虚拟节点label",
           "example": "无",
@@ -17655,7 +17671,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟节点taint",
           "example": "无",
@@ -17665,7 +17680,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除保护开关",
           "example": "false",

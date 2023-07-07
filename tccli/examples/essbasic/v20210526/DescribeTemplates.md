@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic DescribeTemplates --cli-unfold-argument  \
-    --Agent.ProxyAppId d2b****b66f954d7cc \
     --Agent.ProxyOrganizationOpenId yDxAyUyK****cb7u0jQn0Zh7f7 \
     --Agent.ProxyOperator.OpenId 732aaef****541b89c49e0cc \
     --Agent.AppId ed68bc6***********0214e4e \
@@ -130,7 +129,6 @@ tccli essbasic DescribeTemplates --cli-unfold-argument  \
     --Agent.ProxyOperator.OpenId test1xxxxx_test1 \
     --Agent.AppId 7f3497fxxx35e0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_clarxxxnization1 \
-    --Agent.ProxyOrganizationId yDxHwUyKxxxBNLMLjthsmk \
     --TemplateId yDR0JUUgygxxxxjESIpKDSkE9
 ```
 
@@ -249,7 +247,6 @@ tccli essbasic DescribeTemplates --cli-unfold-argument  \
     --Agent.ProxyOperator.OpenId test1xxxa_test1 \
     --Agent.AppId 7f3497f015xxxxe0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_claraxxxanization1 \
-    --Agent.ProxyOrganizationId yDxHwUyKQxxx4zjEBNLMLjthsmk \
     --Limit 2
 ```
 

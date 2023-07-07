@@ -26,7 +26,7 @@ Output:
             "Main": false,
             "LocalCidrForCcn": [
                 {
-                    "Cidr": "xx",
+                    "Cidr": "10.1.0.0/24",
                     "PublishedToVbc": true
                 }
             ],

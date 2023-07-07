@@ -158,6 +158,20 @@
         "title": "创建实例公网访问白名单策略"
       }
     ],
+    "CreateServiceAccount": [
+      {
+        "document": "使用Duration创建ServiceAccount",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-45uu7ras\",\n    \"Name\": \"test\",\n    \"Description\": \"for test\",\n    \"Duration\": 10,\n    \"Permissions\": [\n        {\n            \"Resource\": \"test\",\n            \"Actions\": [\n                \"tcr:PullRepository\",\n                \"tcr:PushRepository\",\n                \"tcr:CreateRepository\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2023-03-28T15:48:31+08:00\",\n        \"ExpiresAt\": 1680853711137,\n        \"Name\": \"tcr$test\",\n        \"Password\": \"oNKUtqrB5Eb68JufkVanSwuhmC4Ergn7\",\n        \"RequestId\": \"20b67612-28a0-4c51-8efb-0fe14bc23a64\"\n    }\n}",
+        "title": "使用Duration创建ServiceAccount"
+      },
+      {
+        "document": "创建服务级账号",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"Duration\": 0,\n    \"ExpiresAt\": 0,\n    \"Disable\": true,\n    \"Permissions\": [\n        {\n            \"Resource\": \"abc\",\n            \"Actions\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"tcr$abc\",\n        \"Password\": \"abc\",\n        \"ExpiresAt\": 0,\n        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建服务级账号"
+      }
+    ],
     "CreateSignature": [
       {
         "document": "",
@@ -356,6 +370,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteSecurityPolicy\n&RegistryId=tcr-test123\n&PolicyIndex=1\n&PolicyVersion=1\n&CidrBlock=0.0.0.0/20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除实例公网访问白名单策略"
+      }
+    ],
+    "DeleteServiceAccount": [
+      {
+        "document": "删除服务级账号",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除服务级账号"
       }
     ],
     "DeleteSignaturePolicy": [
@@ -646,6 +668,14 @@
         "title": "查看实例安全策略"
       }
     ],
+    "DescribeServiceAccounts": [
+      {
+        "document": "查询自定义账号",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccounts\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"All\": true,\n    \"EmbedPermission\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceAccounts\": [\n            {\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"Disable\": true,\n                \"ExpiresAt\": 0,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Permissions\": [\n                    {\n                        \"Resource\": \"abc\",\n                        \"Actions\": [\n                            \"abc\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询自定义账号"
+      }
+    ],
     "DescribeTagRetentionExecution": [
       {
         "document": "",
@@ -838,6 +868,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifySecurityPolicy\n&RegistryId=tcr-test123\n&CidrBlock=192.168.0.0/24\n&Description=test\n&PolicyIndex=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新实例外网白名单"
+      }
+    ],
+    "ModifyServiceAccount": [
+      {
+        "document": "更新服务级账号",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"Duration\": 0,\n    \"ExpiresAt\": 0,\n    \"Disable\": true,\n    \"Permissions\": [\n        {\n            \"Resource\": \"abc\",\n            \"Actions\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新服务级账号"
       }
     ],
     "ModifyTagRetentionRule": [

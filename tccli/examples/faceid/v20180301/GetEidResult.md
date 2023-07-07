@@ -17,8 +17,8 @@ Output:
         "Text": {
             "ErrCode": 0,
             "ErrMsg": "成功",
-            "IdCard": "440111111111111111",
-            "Name": "爱新觉罗永琪",
+            "IdCard": "",
+            "Name": "",
             "OcrNation": null,
             "OcrAddress": null,
             "OcrBirth": null,
@@ -40,8 +40,8 @@ Output:
                 {
                     "ReqTime": "1577179388135",
                     "Seq": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
-                    "Idcard": "440111111111111111",
-                    "Name": "爱新觉罗永琪",
+                    "Idcard": "",
+                    "Name": "",
                     "CompareLibType": "xx",
                     "Sim": "76.52",
                     "IsNeedCharge": true,

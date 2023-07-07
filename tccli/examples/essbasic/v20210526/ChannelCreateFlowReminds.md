@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic ChannelCreateFlowReminds --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf***********200fef3d \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId id \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \

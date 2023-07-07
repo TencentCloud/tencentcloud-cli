@@ -378,6 +378,13 @@
       "output": "DescribeAlarmReceiverResponse",
       "status": "online"
     },
+    "DescribeBatchOperateTask": {
+      "document": "批量操作任务列表",
+      "input": "DescribeBatchOperateTaskRequest",
+      "name": "批量操作任务列表",
+      "output": "DescribeBatchOperateTaskResponse",
+      "status": "online"
+    },
     "DescribeClusterNamespaceList": {
       "document": "获取集群命名空间列表",
       "input": "DescribeClusterNamespaceListRequest",
@@ -7239,6 +7246,368 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOperateTaskDTO": {
+      "document": "批量操作任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskTypeId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskTypeDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FolderName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FolderId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InCharge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Submit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎：\npresto\\SparkJob\\SparkSql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创造时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeBatchOperateTaskPage": {
+      "document": "批量操作任务列表分页",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总页码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeBatchOperateTaskDTO",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeBatchOperateTaskRequest": {
+      "document": "DescribeBatchOperateTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "string",
+          "name": "Page",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页号",
+          "example": "无",
+          "member": "string",
+          "name": "Size",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态列表\n草稿：'NS'，'N','P','R'\n运行：''Y'\n停止：'F'\n冻结：'O'\n停止中：'T'",
+          "example": "无",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "责任人名列表",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流列表",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称搜索",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNameFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "TaskTypeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹列表",
+          "example": "无",
+          "member": "string",
+          "name": "FordIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务Id搜索",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIdFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "责任人搜索",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerNameFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：\nUpdateTime\nCreateTime",
+          "example": "无",
+          "member": "string",
+          "name": "SortItem",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "asc:升序\ndesc:降序",
+          "example": "无",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型列表：三种\nSparkJob\nSparkSql\npresto",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作人名",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "OwnerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOperateTaskResponse": {
+      "document": "DescribeBatchOperateTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeBatchOperateTaskPage",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -250,21 +250,21 @@
     ],
     "CloneSecurityGroup": [
       {
-        "document": "",
+        "document": "克隆安全组",
         "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341234\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341234\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
         "title": "克隆安全组"
       },
       {
-        "document": "",
+        "document": "克隆安全组，指定名称和备注",
         "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&GroupName=test\n&GroupDescription=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341256\",\n            \"SecurityGroupName\": \"test\",\n            \"SecurityGroupDesc\": \"test\",\n            \"ProjectId\": \"0\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341256\",\n            \"SecurityGroupName\": \"test\",\n            \"SecurityGroupDesc\": \"test\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
         "title": "克隆安全组，指定名称和备注"
       },
       {
-        "document": "",
+        "document": "克隆安全组，指定项目ID",
         "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&ProjectId=1001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341278\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"1001\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341278\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"1001\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
         "title": "克隆安全组，指定项目ID"
       }
     ],
@@ -480,7 +480,7 @@
       {
         "document": "创建路由表",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateRouteTable\n&RouteTableName=TestRouteTable\n&VpcId=vpc-2at5y1pn\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"RouteTable\": {\n            \"RouteTableId\": \"rtb-azd4dt1c\",\n            \"VpcId\": \"vpc-2at5y1pn\",\n            \"RouteTableName\": \"TestRouteTable\",\n            \"AssociationSet\": [],\n            \"RouteSet\": [],\n            \"Main\": false,\n            \"LocalCidrForCcn\": [\n                {\n                    \"Cidr\": \"xx\",\n                    \"PublishedToVbc\": true\n                }\n            ],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"RouteTable\": {\n            \"RouteTableId\": \"rtb-azd4dt1c\",\n            \"VpcId\": \"vpc-2at5y1pn\",\n            \"RouteTableName\": \"TestRouteTable\",\n            \"AssociationSet\": [],\n            \"RouteSet\": [],\n            \"Main\": false,\n            \"LocalCidrForCcn\": [\n                {\n                    \"Cidr\": \"10.1.0.0/24\",\n                    \"PublishedToVbc\": true\n                }\n            ],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
         "title": "创建路由表"
       }
     ],

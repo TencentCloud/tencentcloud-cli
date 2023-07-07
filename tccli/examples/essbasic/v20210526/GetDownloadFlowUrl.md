@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli essbasic GetDownloadFlowUrl --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf9c2xxxxx1f4d0200fef3d \
     --Agent.ProxyOrganizationOpenId d7c13a8xxxxe9e3968c0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc8500be9cxxxxxxx3aff766cac \
     --Agent.AppId 65fb0c5910xxxxaa382cc5ed0e \

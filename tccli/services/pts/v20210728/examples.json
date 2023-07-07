@@ -210,9 +210,9 @@
     ],
     "DescribeProjects": [
       {
-        "document": "",
+        "document": "查询项目列表",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"project-xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ProjectSet\": [\n            {\n                \"AppId\": 123,\n                \"Uin\": \"456\",\n                \"SubAccountUin\": \"789\",\n                \"CreatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"UpdatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"ProjectId\": \"project-ks8lr6m2\",\n                \"Name\": \"MyProject\",\n                \"Description\": \"Test project\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProjectSet\": [\n            {\n                \"AppId\": 123,\n                \"Uin\": \"456\",\n                \"SubAccountUin\": \"789\",\n                \"CreatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"UpdatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"ProjectId\": \"project-ks8lr6m2\",\n                \"Name\": \"MyProject\",\n                \"Description\": \"Test project\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"owner\",\n                        \"TagValue\": \"lyla\"\n                    }\n                ],\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"abc\",\n        \"Total\": 1\n    }\n}",
         "title": "查询项目列表"
       }
     ],

@@ -7,7 +7,6 @@ Input:
 ```
 tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowName name \
-    --Agent.ProxyAppId id \
     --Agent.ProxyOrganizationOpenId id \
     --Agent.ProxyOperator.OpenId id \
     --Agent.AppId id \

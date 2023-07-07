@@ -1720,7 +1720,6 @@
       "document": "CreateUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名, 3-20个字符, 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符",
           "example": "user001",
@@ -1730,7 +1729,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户姓名，最大长度20个字符，不能包含空白字符",
           "example": "张三",
@@ -1740,17 +1738,15 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆手机号直接填写，如果是其他国家、地区号码， 按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13312341234",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电子邮件",
           "example": "aa@a.com",
@@ -1760,7 +1756,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
@@ -1770,7 +1765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
@@ -1780,7 +1774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属用户组ID集合",
           "example": "[]",
@@ -1790,7 +1783,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证方式，0 - 本地， 1 - LDAP， 2 - OAuth 不传则默认为0",
           "example": "1",
@@ -1800,7 +1792,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -1810,7 +1801,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属部门ID，如：“1.2.3”",
           "example": "\"1.2.3\"",
@@ -1831,7 +1821,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2120,35 +2109,32 @@
       "document": "部门信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID",
           "example": "\"1.2.3\"",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门名称，1 - 256个字符",
           "example": "\"研发部\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门管理员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "Managers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3506,7 +3492,6 @@
       "document": "DescribeUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "如果IdSet不为空，则忽略其他参数",
           "example": "[1,2]",
@@ -3516,7 +3501,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询，IdSet、UserName、Phone为空时才生效，对用户名和姓名进行模糊查询",
           "example": "xx",
@@ -3526,7 +3510,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -3536,7 +3519,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，默认20, 最大500",
           "example": "10",
@@ -3546,7 +3528,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精确查询，IdSet为空时才生效",
           "example": "xx",
@@ -3556,7 +3537,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精确查询，IdSet、UserName为空时才生效。\n大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13112341234",
@@ -3566,7 +3546,15 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "邮箱，精确查询",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "查询具有指定资产ID访问权限的用户",
           "example": "无",
@@ -3576,7 +3564,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部",
           "example": "[0,1]",
@@ -3586,7 +3573,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID，用于过滤属于某个部门的用户",
           "example": "1.2.3",
@@ -3607,7 +3593,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3617,7 +3603,7 @@
           "example": "[]",
           "member": "User",
           "name": "UserSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4472,7 +4458,6 @@
       "document": "ModifyUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "1",
@@ -4482,7 +4467,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户姓名，最大长度20个字符，不能包含空格",
           "example": "xx",
@@ -4492,27 +4476,24 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13311111111",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电子邮件",
           "example": "xx@xx.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
@@ -4522,7 +4503,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
@@ -4532,7 +4512,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属用户组ID集合",
           "example": "[1,2]",
@@ -4542,7 +4521,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0",
           "example": "0",
@@ -4552,7 +4530,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -4562,7 +4539,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属部门的ID，如1.2.3",
           "example": "1.2.3",
@@ -6722,133 +6698,133 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符",
           "example": "user001",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户姓名， 最大20个字符，不能包含空白字符",
           "example": "张三",
           "member": "string",
           "name": "RealName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
-          "example": "138xxxx1111",
-          "member": "string",
-          "name": "Phone",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
+          "example": "138xxxx1111",
+          "member": "string",
+          "name": "Phone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": false,
           "document": "电子邮件",
           "example": "xxx@xx.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户失效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属用户组列表",
           "example": "[]",
           "member": "Group",
           "name": "GroupSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证方式，0 - 本地，1 - LDAP，2 - OAuth",
           "example": "0",
           "member": "uint64",
           "name": "AuthType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属部门（用于出参）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Department",
           "name": "Department",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属部门（用于入参）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.2.3",
           "member": "string",
           "name": "DepartmentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -133,6 +133,13 @@
       "output": "CreateSecurityPolicyResponse",
       "status": "online"
     },
+    "CreateServiceAccount": {
+      "document": "创建自定义账户",
+      "input": "CreateServiceAccountRequest",
+      "name": "创建服务级账号",
+      "output": "CreateServiceAccountResponse",
+      "status": "online"
+    },
     "CreateSignature": {
       "document": "为一个镜像版本创建签名",
       "input": "CreateSignatureRequest",
@@ -306,6 +313,13 @@
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除实例公网访问白名单策略",
       "output": "DeleteSecurityPolicyResponse",
+      "status": "online"
+    },
+    "DeleteServiceAccount": {
+      "document": "删除服务级账号",
+      "input": "DeleteServiceAccountRequest",
+      "name": "删除服务级账号",
+      "output": "DeleteServiceAccountResponse",
       "status": "online"
     },
     "DeleteSignaturePolicy": {
@@ -560,6 +574,13 @@
       "output": "DescribeSecurityPoliciesResponse",
       "status": "online"
     },
+    "DescribeServiceAccounts": {
+      "document": "查询服务级账号",
+      "input": "DescribeServiceAccountsRequest",
+      "name": "查询服务级账号",
+      "output": "DescribeServiceAccountsResponse",
+      "status": "online"
+    },
     "DescribeTagRetentionExecution": {
       "document": "查询版本保留执行记录",
       "input": "DescribeTagRetentionExecutionRequest",
@@ -712,6 +733,13 @@
       "input": "ModifySecurityPolicyRequest",
       "name": "更新实例公网访问白名单",
       "output": "ModifySecurityPolicyResponse",
+      "status": "online"
+    },
+    "ModifyServiceAccount": {
+      "document": "更新服务级账号",
+      "input": "ModifyServiceAccountRequest",
+      "name": "更新服务级账号",
+      "output": "ModifyServiceAccountResponse",
       "status": "online"
     },
     "ModifyTagRetentionRule": {
@@ -2155,6 +2183,123 @@
       ],
       "type": "object"
     },
+    "CreateServiceAccountRequest": {
+      "document": "CreateServiceAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号名",
+          "example": "robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号描述",
+          "example": "for namespace library",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间（时间戳，单位:毫秒）",
+          "example": "1676897989000",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用服务级账号",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceAccountResponse": {
+      "document": "CreateServiceAccount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务级账号名（会自动加上前缀tcr$）",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号密码，仅展示一次，请注意留存",
+          "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
+          "member": "string",
+          "name": "Password",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号失效时间（时间戳）",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号创建时间",
+          "example": "2023-02-20T17:30:00+8:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSignaturePolicyRequest": {
       "document": "CreateSignaturePolicy请求参数结构体",
       "members": [
@@ -3418,6 +3563,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceAccountRequest": {
+      "document": "DeleteServiceAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id\t",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号名",
+          "example": "robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceAccountResponse": {
+      "document": "DeleteServiceAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5570,6 +5751,96 @@
       ],
       "type": "object"
     },
+    "DescribeServiceAccountsRequest": {
+      "document": "DescribeServiceAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列出所有服务级账号",
+          "example": "无",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否填充策略",
+          "example": "false",
+          "member": "bool",
+          "name": "EmbedPermission",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100（超出最大值，调整到最大值）",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceAccountsResponse": {
+      "document": "DescribeServiceAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务级账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceAccount",
+          "name": "ServiceAccounts",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义账户数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTagRetentionExecutionRequest": {
       "document": "DescribeTagRetentionExecution请求参数结构体",
       "members": [
@@ -7506,6 +7777,87 @@
       ],
       "type": "object"
     },
+    "ModifyServiceAccountRequest": {
+      "document": "ModifyServiceAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号名",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间（时间戳，单位:毫秒）",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用服务级账号",
+          "example": "true",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceAccountResponse": {
+      "document": "ModifyServiceAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTagRetentionRuleRequest": {
       "document": "ModifyTagRetentionRule请求参数结构体",
       "members": [
@@ -9087,6 +9439,82 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceAccount": {
+      "document": "服务级账号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务级账号名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676897989",
+          "member": "int64",
+          "name": "ExpiresAt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-14T07:14:43+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-14T07:14:43+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {       \"Resource\": \"library\",       \"Actions\": [         \"tcr:PushRepository\",          \"tcr:PullRepository\"       ]     }   ]",
+          "member": "Permission",
+          "name": "Permissions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

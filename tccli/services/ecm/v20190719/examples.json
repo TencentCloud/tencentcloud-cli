@@ -10,8 +10,8 @@
     ],
     "AssignIpv6Addresses": [
       {
-        "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&EcmRegion=ap-xian-ecm\n&NetworkInterfaceId=eni-1snva0vd\n&Ipv6AddressCount=1\n&<公共请求参数>",
+        "document": "按个数自动分配IPv6地址",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&EcmRegion=ap-xian-ecm\n&NetworkInterfaceId=eni-1snva0vd\n&Ipv6AddressCount=1\n&SkipCheckIPv6Address=true\n&SkipAllocateBandwidth=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ipv6AddressSet\": [\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\n    }\n}",
         "title": "按个数自动分配IPv6地址"
       }
@@ -618,9 +618,9 @@
     ],
     "DescribeSubnets": [
       {
-        "document": "",
+        "document": "查询子网列表",
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeSubnets\n&Filters.0.Name=subnet-id\n&Filters.0.Values.0=subnet-ae71tjp6\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"NetworkAclId\": \"\",\n                \"RouteTableId\": \"rtb-cahjl2qq\",\n                \"VpcId\": \"vpc-hqhu0suj\",\n                \"EnableBroadcast\": false,\n                \"Zone\": \"ap-hangzhou-ecm-1\",\n                \"Ipv6CidrBlock\": \"\",\n                \"Region\": \"ap-hangzhou-ecm\",\n                \"SubnetName\": \"subnet_test\",\n                \"AvailableIpAddressCount\": 253,\n                \"IsRemoteVpcSnat\": false,\n                \"SubnetId\": \"subnet-ae71tjp6\",\n                \"InstanceCount\": 0,\n                \"VpcCidrBlock\": \"192.168.0.0/18\",\n                \"TagSet\": [\n                    {\n                        \"Value\": \"hangzhou\",\n                        \"Key\": \"city\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-08-14 11:38:33\",\n                \"ZoneName\": \"杭州一区\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"IsDefault\": false,\n                \"VpcIpv6CidrBlock\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6e863039-2a22-4a98-8577-93823b250674\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"NetworkAclId\": \"\",\n                \"ISPType\": \"CMCC\",\n                \"RouteTableId\": \"rtb-cahjl2qq\",\n                \"VpcId\": \"vpc-hqhu0suj\",\n                \"EnableBroadcast\": false,\n                \"Zone\": \"ap-hangzhou-ecm-1\",\n                \"Ipv6CidrBlock\": \"\",\n                \"Region\": \"ap-hangzhou-ecm\",\n                \"SubnetName\": \"subnet_test\",\n                \"AvailableIpAddressCount\": 253,\n                \"IsRemoteVpcSnat\": false,\n                \"SubnetId\": \"subnet-ae71tjp6\",\n                \"InstanceCount\": 0,\n                \"VpcCidrBlock\": \"192.168.0.0/18\",\n                \"TagSet\": [\n                    {\n                        \"Value\": \"hangzhou\",\n                        \"Key\": \"city\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-08-14 11:38:33\",\n                \"ZoneName\": \"杭州一区\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"IsDefault\": false,\n                \"VpcIpv6CidrBlock\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6e863039-2a22-4a98-8577-93823b250674\"\n    }\n}",
         "title": "查询子网列表"
       }
     ],
@@ -658,9 +658,9 @@
     ],
     "DescribeVpcs": [
       {
-        "document": "",
+        "document": "查询VPC列表",
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeVpcs\n&VpcIds.0=vpc-07kqm4uj\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"d15a17b7-703b-4757-ae1a-745af315abc4\",\n        \"VpcSet\": [\n            {\n                \"EnableDhcp\": true,\n                \"VpcId\": \"vpc-07kqm4uj\",\n                \"Description\": \"\",\n                \"DomainName\": \"\",\n                \"Ipv6CidrBlock\": \"\",\n                \"Region\": \"ap-hangzhou-ecm\",\n                \"DhcpOptionsId\": \"\",\n                \"InstanceCount\": 2,\n                \"DnsServerSet\": [],\n                \"EnableMulticast\": false,\n                \"VpcName\": \"Default-VPC\",\n                \"AssistantCidrSet\": [],\n                \"TagSet\": null,\n                \"SubnetCount\": 1,\n                \"CreatedTime\": \"2020-06-17 12:09:46\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"IsDefault\": true,\n                \"RegionName\": \"杭州一区\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"d15a17b7-703b-4757-ae1a-745af315abc4\",\n        \"VpcSet\": [\n            {\n                \"EnableDhcp\": true,\n                \"Ipv6ISP\": \"CMCC\",\n                \"VpcId\": \"vpc-07kqm4uj\",\n                \"Ipv6CidrBlockSet\": [\n                    {\n                        \"IPv6CidrBlock\": \"240e:95a:3002:1e::/64\",\n                        \"ISPType\": \"CTCC\"\n                    }\n                ],\n                \"Description\": \"\",\n                \"DomainName\": \"\",\n                \"Ipv6CidrBlock\": \"\",\n                \"Region\": \"ap-hangzhou-ecm\",\n                \"DhcpOptionsId\": \"\",\n                \"InstanceCount\": 2,\n                \"DnsServerSet\": [],\n                \"EnableMulticast\": false,\n                \"VpcName\": \"Default-VPC\",\n                \"AssistantCidrSet\": [],\n                \"TagSet\": null,\n                \"SubnetCount\": 1,\n                \"CreatedTime\": \"2020-06-17 12:09:46\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"IsDefault\": true,\n                \"RegionName\": \"杭州一区\"\n            }\n        ]\n    }\n}",
         "title": "查询VPC列表"
       }
     ],

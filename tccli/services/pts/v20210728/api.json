@@ -3254,7 +3254,6 @@
       "document": "DescribeProjects请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页offset",
           "example": "0",
@@ -3264,7 +3263,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页limit",
           "example": "10",
@@ -3274,7 +3272,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
@@ -3284,7 +3281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名",
           "example": "project-xx",
@@ -3294,7 +3290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按字段排序",
           "example": "id",
@@ -3304,7 +3299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序/降序",
           "example": "true",
@@ -3314,7 +3308,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "无",
@@ -3335,7 +3328,7 @@
           "example": "无",
           "member": "Project",
           "name": "ProjectSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3345,7 +3338,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

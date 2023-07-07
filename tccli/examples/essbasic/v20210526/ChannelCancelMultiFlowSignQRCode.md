@@ -7,7 +7,6 @@ Input:
 ```
 tccli essbasic ChannelCancelMultiFlowSignQRCode --cli-unfold-argument  \
     --QrCodeId test \
-    --Agent.ProxyAppId yDxxxxxxx \
     --Agent.ProxyOperator.OpenId 自定义 \
     --Agent.ProxyOrganizationOpenId 自定义 \
     --Agent.AppId yDxxxxxxx

@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli essbasic UploadFiles --cli-unfold-argument  \
-    --Agent.ProxyAppId abc \
-    --Agent.ProxyOperator.OpenId abc \
     --Agent.AppId abc \
+    --Agent.ProxyOrganizationOpenId abc \
     --BusinessType TEMPLATE \
     --FileInfos.0.FileBody iVBORw0KGgoAAAANSUhxxxxAElEQVR4Xu3dbah1W5eQ7HmoAAAAASUVORK5CYII= \
     --FileInfos.0.FileName a.pdf
