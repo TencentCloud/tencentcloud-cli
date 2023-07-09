@@ -1530,6 +1530,7 @@
           "example": "true",
           "member": "bool",
           "name": "AccountStatus",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1

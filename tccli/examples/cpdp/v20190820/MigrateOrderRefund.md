@@ -27,3 +27,31 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli cpdp MigrateOrderRefund --cli-unfold-argument  \
+    --MerchantId 1 \
+    --PayAmt 1 \
+    --PayChannel 1 \
+    --PayOrderId 1 \
+    --RefundOrderId 1 \
+    --RefundAmt 11 \
+    --ThirdChannelOrderId 1 \
+    --Profile 1 \
+    --RefundReason 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "c239925d-3202-48dc-9664-22a27e1fd79a"
+    }
+}
+```
+

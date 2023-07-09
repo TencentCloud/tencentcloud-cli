@@ -327,7 +327,6 @@
           "name": "AppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -338,7 +337,6 @@
           "name": "ProxyOrganizationOpenId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -349,18 +347,16 @@
           "name": "ProxyOperator",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
+          "document": "非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
           "example": "无",
           "member": "string",
           "name": "ProxyAppId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -371,7 +367,6 @@
           "name": "ProxyOrganizationId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         }
       ],
@@ -1857,7 +1852,7 @@
         },
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1867,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程配置信息",
+          "document": "合同流程配置信息，用于配置发起合同时定制化",
           "example": "无",
           "member": "CreateFlowOption",
           "name": "FlowOption",
@@ -1886,7 +1881,7 @@
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
           "example": "无",
           "member": "bool",
@@ -1927,6 +1922,7 @@
           "example": "无",
           "member": "string",
           "name": "PrepareFlowUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1937,6 +1933,7 @@
           "example": "无",
           "member": "string",
           "name": "PreviewFlowUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3757,7 +3754,6 @@
           "name": "CanEditFlow",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
           "visibility": 1
         }
       ],

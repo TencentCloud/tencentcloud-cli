@@ -579,8 +579,8 @@
     "DescribeUserDataEngineConfig": [
       {
         "document": "查询用户自定义引擎参数",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDataEngineConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDataEngineConfig\n<公共请求参数>\n\n{\n    \"Sorting\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"SortBy\": \"xx\",\n    \"Filters\": [\n        {\n            \"Name\": \"xx\",\n            \"Values\": [\n                \"xx\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineConfigInstanceInfos\": [\n            {}\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询用户自定义引擎参数"
       }
     ],

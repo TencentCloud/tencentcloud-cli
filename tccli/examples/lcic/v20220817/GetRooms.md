@@ -10,7 +10,8 @@ tccli lcic GetRooms --cli-unfold-argument  \
     --StartTime 1 \
     --EndTime 1 \
     --Page 1 \
-    --Limit 1
+    --Limit 1 \
+    --Status 0 1 2 3
 ```
 
 Output: 

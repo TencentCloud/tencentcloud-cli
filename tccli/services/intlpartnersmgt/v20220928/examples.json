@@ -82,10 +82,10 @@
     ],
     "QueryAccountVerificationStatus": [
       {
-        "document": "正常请求示例",
+        "document": "查询账户验证状态",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryAccountVerificationStatus\n<公共请求参数>\n\n{\n    \"ClientUin\": 800000667651\n}",
         "output": "{\n    \"Response\": {\n        \"AccountStatus\": true,\n        \"RequestId\": \"4c827def-d9b9-4c4c-aa70-18f210d8eb0b\"\n    }\n}",
-        "title": "正常请求示例"
+        "title": "查询账户验证状态"
       }
     ],
     "QueryCreditAllocationHistory": [

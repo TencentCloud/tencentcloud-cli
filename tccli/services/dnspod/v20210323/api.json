@@ -1483,6 +1483,26 @@
           "required": false,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true",
+          "example": "true",
+          "member": "bool",
+          "name": "TransferSubDomain",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名绑定的标签",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1496,6 +1516,7 @@
           "example": "无",
           "member": "DomainCreateInfo",
           "name": "DomainInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3166,6 +3187,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤",
+          "example": "无",
+          "member": "TagItemFilter",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3179,6 +3210,7 @@
           "example": "无",
           "member": "DomainCountInfo",
           "name": "DomainCountInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3189,6 +3221,7 @@
           "example": "无",
           "member": "DomainListItem",
           "name": "DomainList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -3281,6 +3314,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤",
+          "example": "无",
+          "member": "TagItemFilter",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3294,6 +3337,7 @@
           "example": "无",
           "member": "DomainCountInfo",
           "name": "DomainCountInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3304,6 +3348,7 @@
           "example": "无",
           "member": "DomainListItem",
           "name": "DomainList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5745,6 +5790,17 @@
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名关联的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagItem",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5992,6 +6048,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "域名关联的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagItem",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -9060,6 +9127,60 @@
         }
       ],
       "usage": "out"
+    },
+    "TagItem": {
+      "document": "标签项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "key1",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TagItemFilter": {
+      "document": "标签过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "test1",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "val1",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "UserInfo": {
       "document": "用户信息",

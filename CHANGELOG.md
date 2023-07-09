@@ -1,3 +1,280 @@
+# Release 3.0.803.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 23 次发布
+
+发布时间：2023-07-10 01:07:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* GenerateApiDocument
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 59 次发布
+
+发布时间：2023-07-10 01:22:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeUserDataEngineConfig](http://document.tencentcloudapi.woa.com/document/product/1342/81034)
+
+	* 新增入参：Sorting, Limit, Offset, SortBy, Filters
+
+	* 新增出参：DataEngineConfigInstanceInfos, TotalCount
+
+
+新增数据结构：
+
+* [DataEngineConfigInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineConfigInstanceInfo)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 26 次发布
+
+发布时间：2023-07-10 01:22:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDomain](http://document.tencentcloudapi.woa.com/document/product/1427/56184)
+
+	* 新增入参：TransferSubDomain, Tags
+
+* [DescribeDomainFilterList](http://document.tencentcloudapi.woa.com/document/product/1427/77893)
+
+	* 新增入参：Tags
+
+* [DescribeDomainList](http://document.tencentcloudapi.woa.com/document/product/1427/56172)
+
+	* 新增入参：Tags
+
+
+新增数据结构：
+
+* [TagItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#TagItem)
+* [TagItemFilter](http://document.tencentcloudapi.woa.com/document/product/1427/56185#TagItemFilter)
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainInfo)
+
+	* 新增成员：TagList
+
+* [DomainListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItem)
+
+	* 新增成员：TagList
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 65 次发布
+
+发布时间：2023-07-10 01:26:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 3 次发布
+
+发布时间：2023-07-10 01:31:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetRooms](http://document.tencentcloudapi.woa.com/document/product/1720/80642)
+
+	* 新增入参：Status
+
+
+修改数据结构：
+
+* [RoomItem](http://document.tencentcloudapi.woa.com/document/product/1720/80671#RoomItem)
+
+	* 新增成员：InteractionMode, VideoOrientation
+
+	* <font color="#dd0000">**修改成员**：</font>Name, RoomId, Status, StartTime, EndTime, RealStartTime, RealEndTime, Resolution, MaxRTCMember, ReplayUrl, RecordUrl, MaxMicNumber, EnableDirectControl
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 33 次发布
+
+发布时间：2023-07-10 01:32:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResetInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47571)
+
+	* 新增入参：LoginConfiguration
+
+
+修改数据结构：
+
+* [LoginConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#LoginConfiguration)
+
+	* 新增成员：KeyIds
+
+	* <font color="#dd0000">**修改成员**：</font>AutoGeneratePassword
+
+
+
+
+## 智聆口语评测(soe) 版本：2018-07-24
+
+### 第 3 次发布
+
+发布时间：2023-07-10 01:38:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Tone](http://document.tencentcloudapi.woa.com/document/product/884/19320#Tone)
+
+修改数据结构：
+
+* [WordRsp](http://document.tencentcloudapi.woa.com/document/product/884/19320#WordRsp)
+
+	* 新增成员：Tone
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 54 次发布
+
+发布时间：2023-07-10 01:43:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/81058)
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 4 次发布
+
+发布时间：2023-07-10 01:47:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRawScanLogs](http://document.tencentcloudapi.woa.com/document/product/1685/81025)
+
+	* 新增入参：StartTime, EndTime
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 26 次发布
+
+发布时间：2023-07-10 01:48:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81079)
+* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
+* [CreateCloudNativeAPIGatewayRouteRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81077)
+* [CreateCloudNativeAPIGatewayService](http://document.tencentcloudapi.woa.com/document/product/1364/81076)
+* [CreateCloudNativeAPIGatewayServiceRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81075)
+* [DeleteCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81074)
+* [DeleteCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81073)
+* [DeleteCloudNativeAPIGatewayRouteRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81072)
+* [DeleteCloudNativeAPIGatewayService](http://document.tencentcloudapi.woa.com/document/product/1364/81071)
+* [DeleteCloudNativeAPIGatewayServiceRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81070)
+* [DescribeCloudNativeAPIGatewayCanaryRules](http://document.tencentcloudapi.woa.com/document/product/1364/81069)
+* [DescribeCloudNativeAPIGatewayRouteRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81068)
+* [DescribeCloudNativeAPIGatewayRoutes](http://document.tencentcloudapi.woa.com/document/product/1364/81067)
+* [DescribeCloudNativeAPIGatewayServiceRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81066)
+* [DescribeCloudNativeAPIGatewayServices](http://document.tencentcloudapi.woa.com/document/product/1364/81065)
+* [DescribeOneCloudNativeAPIGatewayService](http://document.tencentcloudapi.woa.com/document/product/1364/81064)
+* [ModifyCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81063)
+* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
+* [ModifyCloudNativeAPIGatewayRouteRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81061)
+* [ModifyCloudNativeAPIGatewayService](http://document.tencentcloudapi.woa.com/document/product/1364/81060)
+* [ModifyCloudNativeAPIGatewayServiceRateLimit](http://document.tencentcloudapi.woa.com/document/product/1364/81059)
+
+新增数据结构：
+
+* [CloudAPIGatewayCanaryRuleList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudAPIGatewayCanaryRuleList)
+* [CloudNativeAPIGatewayBalancedService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayBalancedService)
+* [CloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayCanaryRule)
+* [CloudNativeAPIGatewayCanaryRuleCondition](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayCanaryRuleCondition)
+* [CloudNativeAPIGatewayRateLimitDetail](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayRateLimitDetail)
+* [ExternalRedis](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ExternalRedis)
+* [KVMapping](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KVMapping)
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+* [KongServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServiceDetail)
+* [KongServicePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServicePreview)
+* [KongServiceRouteList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServiceRouteList)
+* [KongServices](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServices)
+* [KongTarget](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongTarget)
+* [KongUpstreamInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamInfo)
+* [ListFilter](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListFilter)
+* [QpsThreshold](http://document.tencentcloudapi.woa.com/document/product/1364/54942#QpsThreshold)
+* [RateLimitResponse](http://document.tencentcloudapi.woa.com/document/product/1364/54942#RateLimitResponse)
+
+
+
 # Release 3.0.802.1
 
 ## 账号中心(account) 版本：2018-12-25

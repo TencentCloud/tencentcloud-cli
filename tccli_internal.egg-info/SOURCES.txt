@@ -792,6 +792,8 @@ tccli/services/tcex/__init__.py
 tccli/services/tcex/tcex_client.py
 tccli/services/tcex/v20200727/api.json
 tccli/services/tcex/v20200727/examples.json
+tccli/services/tchd/__init__.py
+tccli/services/tchd/tchd_client.py
 tccli/services/tci/__init__.py
 tccli/services/tci/tci_client.py
 tccli/services/tcm/__init__.py
