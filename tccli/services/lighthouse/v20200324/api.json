@@ -6113,19 +6113,17 @@
           "example": "NO",
           "member": "string",
           "name": "AutoGeneratePassword",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "实例登录密码。具体按照操作系统的复杂度要求。 \nWINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户名, 至少包含以下字符中的三种不同字符 \n<li>小写字母：[a-z]</li>\n<li>大写字母：[A-Z]</li>\n<li>数字： 0-9</li>\n<li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>",
+          "document": "实例登录密码。具体按照操作系统的复杂度要求。 \n`LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能包含空格, 不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li>\n`WINDOWS` 实例密码必须 12-30 位，不能包含空格, 不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/",
           "example": " HelloTgHd123_&*",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -7009,7 +7007,6 @@
       "document": "ResetInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-ruy9d2tw",
@@ -7019,7 +7016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-5e8807lo",

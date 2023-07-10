@@ -748,6 +748,12 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=MigrateOrderRefund\n&MerchantId=商户号\n&PayAmt=123\n&PayChannel=支付渠道\n&PayOrderId=1023232989\n&RefundAmt=10\n&RefundOrderId=9\n&ThirdChannelOrderId=123230902323899\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0e17cc6-8404-4403-bc46-944fc7b9f93f\",\n        \"IsSuccess\": true,\n        \"TradeSerialNo\": \"106776467648827392\",\n        \"TradeMsg\": \"请求成功\"\n    }\n}",
         "title": "存量订单退款请求"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MigrateOrderRefund\n<公共请求参数>\n\n{\n    \"MerchantId\": \"1\",\n    \"PayAmt\": 1,\n    \"PayChannel\": \"1\",\n    \"PayOrderId\": \"1\",\n    \"RefundOrderId\": \"1\",\n    \"RefundAmt\": 11,\n    \"ThirdChannelOrderId\": \"1\",\n    \"Profile\": \"1\",\n    \"RefundReason\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c239925d-3202-48dc-9664-22a27e1fd79a\"\n    }\n}",
+        "title": "1"
       }
     ],
     "MigrateOrderRefundQuery": [

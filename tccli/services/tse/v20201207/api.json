@@ -1,10 +1,80 @@
 {
   "actions": {
+    "CreateCloudNativeAPIGatewayCanaryRule": {
+      "document": "创建云原生网关的灰度规则",
+      "input": "CreateCloudNativeAPIGatewayCanaryRuleRequest",
+      "name": "创建云原生网关的灰度规则",
+      "output": "CreateCloudNativeAPIGatewayCanaryRuleResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayRoute": {
+      "document": "创建云原生网关路由",
+      "input": "CreateCloudNativeAPIGatewayRouteRequest",
+      "name": "创建云原生网关路由",
+      "output": "CreateCloudNativeAPIGatewayRouteResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayRouteRateLimit": {
+      "document": "创建云原生网关限流插件(路由)",
+      "input": "CreateCloudNativeAPIGatewayRouteRateLimitRequest",
+      "name": "创建云原生网关限流插件(路由)",
+      "output": "CreateCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayService": {
+      "document": "创建云原生网关服务",
+      "input": "CreateCloudNativeAPIGatewayServiceRequest",
+      "name": "创建云原生网关服务",
+      "output": "CreateCloudNativeAPIGatewayServiceResponse",
+      "status": "online"
+    },
+    "CreateCloudNativeAPIGatewayServiceRateLimit": {
+      "document": "创建云原生网关限流插件(服务)",
+      "input": "CreateCloudNativeAPIGatewayServiceRateLimitRequest",
+      "name": "创建云原生网关限流插件(服务)",
+      "output": "CreateCloudNativeAPIGatewayServiceRateLimitResponse",
+      "status": "online"
+    },
     "CreateEngine": {
       "document": "创建引擎实例",
       "input": "CreateEngineRequest",
       "name": "创建引擎实例",
       "output": "CreateEngineResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayCanaryRule": {
+      "document": "删除云原生网关的灰度规则",
+      "input": "DeleteCloudNativeAPIGatewayCanaryRuleRequest",
+      "name": "删除云原生网关的灰度规则",
+      "output": "DeleteCloudNativeAPIGatewayCanaryRuleResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayRoute": {
+      "document": "删除云原生网关路由",
+      "input": "DeleteCloudNativeAPIGatewayRouteRequest",
+      "name": "删除云原生网关路由",
+      "output": "DeleteCloudNativeAPIGatewayRouteResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayRouteRateLimit": {
+      "document": "删除云原生网关的限流插件(路由)",
+      "input": "DeleteCloudNativeAPIGatewayRouteRateLimitRequest",
+      "name": "删除云原生网关的限流插件(路由)",
+      "output": "DeleteCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayService": {
+      "document": "删除云原生网关服务",
+      "input": "DeleteCloudNativeAPIGatewayServiceRequest",
+      "name": "删除云原生网关服务",
+      "output": "DeleteCloudNativeAPIGatewayServiceResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayServiceRateLimit": {
+      "document": "删除云原生网关的限流插件(服务)",
+      "input": "DeleteCloudNativeAPIGatewayServiceRateLimitRequest",
+      "name": "删除云原生网关的限流插件(服务)",
+      "output": "DeleteCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
     "DeleteEngine": {
@@ -14,11 +84,46 @@
       "output": "DeleteEngineResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayCanaryRules": {
+      "document": "查询云原生网关灰度规则列表",
+      "input": "DescribeCloudNativeAPIGatewayCanaryRulesRequest",
+      "name": "查询云原生网关灰度规则列表",
+      "output": "DescribeCloudNativeAPIGatewayCanaryRulesResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayNodes": {
       "document": "获取云原生网关节点列表",
       "input": "DescribeCloudNativeAPIGatewayNodesRequest",
       "name": "获取云原生网关节点列表",
       "output": "DescribeCloudNativeAPIGatewayNodesResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayRouteRateLimit": {
+      "document": "查询云原生网关的限流插件(路由)",
+      "input": "DescribeCloudNativeAPIGatewayRouteRateLimitRequest",
+      "name": "查询云原生网关的限流插件(路由)",
+      "output": "DescribeCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayRoutes": {
+      "document": "查询云原生网关路由列表",
+      "input": "DescribeCloudNativeAPIGatewayRoutesRequest",
+      "name": "查询云原生网关路由列表",
+      "output": "DescribeCloudNativeAPIGatewayRoutesResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayServiceRateLimit": {
+      "document": "查询云原生网关的限流插件(服务)",
+      "input": "DescribeCloudNativeAPIGatewayServiceRateLimitRequest",
+      "name": "查询云原生网关的限流插件(服务)",
+      "output": "DescribeCloudNativeAPIGatewayServiceRateLimitResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayServices": {
+      "document": "查询云原生网关服务列表",
+      "input": "DescribeCloudNativeAPIGatewayServicesRequest",
+      "name": "查询云原生网关服务列表",
+      "output": "DescribeCloudNativeAPIGatewayServicesResponse",
       "status": "online"
     },
     "DescribeNacosReplicas": {
@@ -33,6 +138,13 @@
       "input": "DescribeNacosServerInterfacesRequest",
       "name": "查询nacos服务接口列表",
       "output": "DescribeNacosServerInterfacesResponse",
+      "status": "online"
+    },
+    "DescribeOneCloudNativeAPIGatewayService": {
+      "document": "获取云原生网关服务详情",
+      "input": "DescribeOneCloudNativeAPIGatewayServiceRequest",
+      "name": "获取云原生网关服务详情",
+      "output": "DescribeOneCloudNativeAPIGatewayServiceResponse",
       "status": "online"
     },
     "DescribeSREInstanceAccessAddress": {
@@ -61,6 +173,41 @@
       "input": "DescribeZookeeperServerInterfacesRequest",
       "name": "查询zookeeper服务接口列表",
       "output": "DescribeZookeeperServerInterfacesResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayCanaryRule": {
+      "document": "修改云原生网关的灰度规则",
+      "input": "ModifyCloudNativeAPIGatewayCanaryRuleRequest",
+      "name": "修改云原生网关的灰度规则",
+      "output": "ModifyCloudNativeAPIGatewayCanaryRuleResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayRoute": {
+      "document": "修改云原生网关路由",
+      "input": "ModifyCloudNativeAPIGatewayRouteRequest",
+      "name": "修改云原生网关路由",
+      "output": "ModifyCloudNativeAPIGatewayRouteResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayRouteRateLimit": {
+      "document": "修改云原生网关限流插件(路由)",
+      "input": "ModifyCloudNativeAPIGatewayRouteRateLimitRequest",
+      "name": "修改云原生网关限流插件(路由)",
+      "output": "ModifyCloudNativeAPIGatewayRouteRateLimitResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayService": {
+      "document": "修改云原生网关服务",
+      "input": "ModifyCloudNativeAPIGatewayServiceRequest",
+      "name": "修改云原生网关服务",
+      "output": "ModifyCloudNativeAPIGatewayServiceResponse",
+      "status": "online"
+    },
+    "ModifyCloudNativeAPIGatewayServiceRateLimit": {
+      "document": "修改云原生网关限流插件(服务)",
+      "input": "ModifyCloudNativeAPIGatewayServiceRateLimitRequest",
+      "name": "修改云原生网关限流插件(服务)",
+      "output": "ModifyCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
     "UpdateEngineInternetAccess": {
@@ -200,6 +347,224 @@
       ],
       "usage": "both"
     },
+    "CloudAPIGatewayCanaryRuleList": {
+      "document": "灰度规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "灰度规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRule",
+          "name": "CanaryRuleList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudNativeAPIGatewayBalancedService": {
+      "document": "含百分比流量配置的服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务 ID，作为入参时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ServiceID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名称，作为入参时，无意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service-xxx",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Upstream 名称，作为入参时，无意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "UpstreamName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "百分比，10 即 10%，范围0-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayCanaryRule": {
+      "document": "灰度规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数匹配条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRuleCondition",
+          "name": "ConditionList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的流量百分比配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayBalancedService",
+          "name": "BalancedServiceList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归属服务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归属服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayCanaryRuleCondition": {
+      "document": "灰度规则中的条件配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件类型，支持 path, method, query, header, cookie, body 和 system。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "header",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x-user-id",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作符，支持 \"le\", \"eq\", \"lt\", \"ne\", \"ge\", \"gt\", \"regex\", \"exists\", \"in\", \"not in\",  \"prefix\" ,\"exact\", \"regex\" 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "==",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ",",
+          "member": "string",
+          "name": "Delimiter",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全局配置 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "GlobalConfigId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全局配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "GlobalConfigName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CloudNativeAPIGatewayNode": {
       "document": "云原生API网关节点信息。",
       "members": [
@@ -275,6 +640,502 @@
         }
       ],
       "usage": "out"
+    },
+    "CloudNativeAPIGatewayRateLimitDetail": {
+      "document": "云原生网关Tse 限流插件配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件启用状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "qps阈值",
+          "example": "[{Unit:\"second\",Max:10}]",
+          "member": "QpsThreshold",
+          "name": "QpsThresholds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流依据\nip service consumer credential path header",
+          "example": "ip",
+          "member": "string",
+          "name": "LimitBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应策略\nurl请求转发\ntext 响应配置\ndefault 直接返回\n",
+          "example": "url",
+          "member": "string",
+          "name": "ResponseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏限流客户端响应头",
+          "example": "true",
+          "member": "bool",
+          "name": "HideClientHeaders",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启请求排队",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDelay",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要进行流量控制的请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/demo",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要进行流量控制的请求头Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Host",
+          "member": "string",
+          "name": "Header",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部redis配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalRedis",
+          "name": "ExternalRedis",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计数器策略 \nlocal 单机\nredis  默认redis\nexternal_redis 外部redis\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local",
+          "member": "string",
+          "name": "Policy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应配置，响应策略为text\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RateLimitResponse",
+          "name": "RateLimitResponse",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求转发地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/downgrade",
+          "member": "string",
+          "name": "RateLimitResponseUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排队时间",
+          "example": "0",
+          "member": "int64",
+          "name": "LineUpTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateCloudNativeAPIGatewayCanaryRuleRequest": {
+      "document": "CreateCloudNativeAPIGatewayCanaryRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务 ID",
+          "example": "service-xx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRule",
+          "name": "CanaryRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayCanaryRuleResponse": {
+      "document": "CreateCloudNativeAPIGatewayCanaryRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayRouteRateLimitRequest": {
+      "document": "CreateCloudNativeAPIGatewayRouteRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由id，或路由名称。\n不支持“未命名”",
+          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "LimitDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayRouteRateLimitResponse": {
+      "document": "CreateCloudNativeAPIGatewayRouteRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayRouteRequest": {
+      "document": "CreateCloudNativeAPIGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属服务的ID",
+          "example": "104dd157-5008-4d3c-9feb-4767667863ff",
+          "member": "string",
+          "name": "ServiceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的名字，实例级别唯一，可以不提供",
+          "example": "route-demo",
+          "member": "string",
+          "name": "RouteName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的方法，其中方法可选值：\n- GET\n- POST\n- DELETE\n- PUT\n- OPTIONS\n- PATCH\n- HEAD\n- ANY\n- TRACE\n- COPY\n- MOVE\n- PROPFIND\n- PROPPATCH\n- MKCOL\n- LOCK\n- UNLOCK",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的域名",
+          "example": "[\"www.demo.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的路径",
+          "example": "[\"/\"]",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的协议，可选\n- https\n- http",
+          "example": "[\"https\"]",
+          "member": "string",
+          "name": "Protocols",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发到后端时是否保留Host",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "https重定向状态码",
+          "example": "308",
+          "member": "int64",
+          "name": "HttpsRedirectStatusCode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转发到后端时是否StripPath",
+          "example": "true",
+          "member": "bool",
+          "name": "StripPath",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "是否开启强制HTTPS",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceHttps",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "四层匹配的目的端口",
+          "example": "7501",
+          "member": "uint64",
+          "name": "DestinationPorts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的Headers",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayRouteResponse": {
+      "document": "CreateCloudNativeAPIGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayServiceRateLimitRequest": {
+      "document": "CreateCloudNativeAPIGatewayServiceRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称，或服务ID",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "LimitDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayServiceRateLimitResponse": {
+      "document": "CreateCloudNativeAPIGatewayServiceRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayServiceRequest": {
+      "document": "CreateCloudNativeAPIGatewayService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求协议：\n- https\n- http\n- tcp\n- udp",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求路径",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，单位ms",
+          "example": "5000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重试次数",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务类型: \n- Kubernetes \n- Registry\n- IPList\n- HostIP\n- Scf\t",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务配置信息",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayServiceResponse": {
+      "document": "CreateCloudNativeAPIGatewayService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateEngineRequest": {
       "document": "CreateEngine请求参数结构体",
@@ -447,6 +1308,195 @@
       ],
       "type": "object"
     },
+    "DeleteCloudNativeAPIGatewayCanaryRuleRequest": {
+      "document": "DeleteCloudNativeAPIGatewayCanaryRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务 ID",
+          "example": "service-xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayCanaryRuleResponse": {
+      "document": "DeleteCloudNativeAPIGatewayCanaryRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayRouteRateLimitRequest": {
+      "document": "DeleteCloudNativeAPIGatewayRouteRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关Id",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由Id，或路由名称。\n不支持“未命名”",
+          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayRouteRateLimitResponse": {
+      "document": "DeleteCloudNativeAPIGatewayRouteRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayRouteRequest": {
+      "document": "DeleteCloudNativeAPIGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的ID或名字，不支持名称“未命名”",
+          "example": "451a9920-e67a-4519-af41-fccac0e72005",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayRouteResponse": {
+      "document": "DeleteCloudNativeAPIGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayServiceRateLimitRequest": {
+      "document": "DeleteCloudNativeAPIGatewayServiceRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关Id",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称，或服务ID",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayServiceRateLimitResponse": {
+      "document": "DeleteCloudNativeAPIGatewayServiceRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayServiceRequest": {
+      "document": "DeleteCloudNativeAPIGatewayService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名字，服务ID",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayServiceResponse": {
+      "document": "DeleteCloudNativeAPIGatewayService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEngineRequest": {
       "document": "DeleteEngine请求参数结构体",
       "members": [
@@ -466,6 +1516,69 @@
     "DeleteEngineResponse": {
       "document": "DeleteEngine返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCanaryRulesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayCanaryRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务 ID",
+          "example": "service-xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCanaryRulesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayCanaryRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "灰度规则列表",
+          "example": "无",
+          "member": "CloudAPIGatewayCanaryRuleList",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -570,6 +1683,243 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeCloudNativeAPIGatewayRouteRateLimitRequest": {
+      "document": "DescribeCloudNativeAPIGatewayRouteRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关Id",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由Id，或路由名称。\n不支持“未命名”",
+          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayRouteRateLimitResponse": {
+      "document": "DescribeCloudNativeAPIGatewayRouteRateLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云原生网关限流插件(路由)",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayRoutesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页单页查询限制数量[0,1000], 默认值0",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页单页偏移量，默认值0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务的名字，精确匹配",
+          "example": "test-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的名字，精确匹配",
+          "example": "test-route",
+          "member": "string",
+          "name": "RouteName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，多个过滤条件之间是与的关系，支持 name, path, host, method, service, protocol",
+          "example": "[]",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayRoutesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongServiceRouteList",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayServiceRateLimitRequest": {
+      "document": "DescribeCloudNativeAPIGatewayServiceRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关Id",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称，或服务ID。",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayServiceRateLimitResponse": {
+      "document": "DescribeCloudNativeAPIGatewayServiceRateLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云原生网关限流插件(服务)",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayServicesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表 offset",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，多个过滤条件之间是与的关系，支持 name,upstreamType",
+          "example": "[]",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayServicesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongServices",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeInstanceRegionInfo": {
       "document": "实例地域信息描述",
@@ -757,6 +2107,52 @@
           "name": "Content",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOneCloudNativeAPIGatewayServiceRequest": {
+      "document": "DescribeOneCloudNativeAPIGatewayService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名字，或服务ID",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOneCloudNativeAPIGatewayServiceResponse": {
+      "document": "DescribeOneCloudNativeAPIGatewayService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "KongServiceDetail",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1437,6 +2833,52 @@
       ],
       "usage": "both"
     },
+    "ExternalRedis": {
+      "document": "云原生网关限流插件外部redis配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "RedisHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "redis密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "password",
+          "member": "string",
+          "name": "RedisPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "redis端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "RedisPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时时间  ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RedisTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询过滤通用对象",
       "members": [
@@ -1491,6 +2933,32 @@
       ],
       "usage": "both"
     },
+    "KVMapping": {
+      "document": "键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KVPair": {
       "document": "键值对",
       "members": [
@@ -1518,6 +2986,1083 @@
         }
       ],
       "usage": "out"
+    },
+    "KongRoutePreview": {
+      "document": "云原生网关路由信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Methods",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocols",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PreserveHost",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "HttpsRedirectStatusCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "StripPath",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启了强制HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceHttps",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DestinationPorts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由的Headers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "Headers",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServiceDetail": {
+      "document": "云原生网关服务详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端延时，单位ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServicePreview": {
+      "document": "云原生网关服务预览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Editable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServiceRouteList": {
+      "document": "kong服务路由列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongRoutePreview",
+          "name": "RouteList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongServices": {
+      "document": "kong实例的服务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kong实例的服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongServicePreview",
+          "name": "ServiceList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongTarget": {
+      "document": "Kong Upstream中的Target",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Host",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "100",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康状态",
+          "example": "无",
+          "member": "string",
+          "name": "Health",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Target的来源",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "KongUpstreamInfo": {
+      "document": "服务的后端配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP或域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "ins-102555d0",
+          "member": "string",
+          "name": "SourceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名字空间",
+          "example": "Default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务（注册中心或Kubernetes中的服务）名字",
+          "example": "demo-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务后端类型是IPList时提供",
+          "example": "无",
+          "member": "KongTarget",
+          "name": "Targets",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务来源类型",
+          "example": "TKE",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数类型",
+          "example": "event",
+          "member": "string",
+          "name": "ScfType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数命名空间",
+          "example": "Default",
+          "member": "string",
+          "name": "ScfNamespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数名",
+          "example": "helloworld",
+          "member": "string",
+          "name": "ScfLambdaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SCF函数版本",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "ScfLambdaQualifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "冷启动时间，单位秒",
+          "example": "60",
+          "member": "int64",
+          "name": "SlowStart",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing",
+          "example": "round-robin",
+          "member": "string",
+          "name": "Algorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组ID",
+          "example": "无",
+          "member": "string",
+          "name": "AutoScalingGroupID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组端口",
+          "example": "无",
+          "member": "uint64",
+          "name": "AutoScalingCvmPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组使用的CVM TAT命令状态",
+          "example": "Normal",
+          "member": "string",
+          "name": "AutoScalingTatCmdStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM弹性伸缩组生命周期挂钩状态",
+          "example": "Normal",
+          "member": "string",
+          "name": "AutoScalingHookStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务来源的名字",
+          "example": "无",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "精确的服务来源类型，新建服务来源时候传入的类型",
+          "example": "无",
+          "member": "string",
+          "name": "RealSourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ListFilter": {
+      "document": "列表过滤条件，模糊匹配",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤值",
+          "example": "test",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyCloudNativeAPIGatewayCanaryRuleRequest": {
+      "document": "ModifyCloudNativeAPIGatewayCanaryRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关 ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务 ID",
+          "example": "service-xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级，同一个服务的灰度规则优先级是唯一的",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRule",
+          "name": "CanaryRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayCanaryRuleResponse": {
+      "document": "ModifyCloudNativeAPIGatewayCanaryRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayRouteRateLimitRequest": {
+      "document": "ModifyCloudNativeAPIGatewayRouteRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由id，或路由名称。\n不支持“未命名”",
+          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "LimitDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayRouteRateLimitResponse": {
+      "document": "ModifyCloudNativeAPIGatewayRouteRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayRouteRequest": {
+      "document": "ModifyCloudNativeAPIGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属服务的ID",
+          "example": "104dd157-5008-4d3c-9feb-4767667863ff",
+          "member": "string",
+          "name": "ServiceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的ID，实例级别唯一",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "RouteID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的名字，实例级别唯一，可以不提供",
+          "example": "route-demo",
+          "member": "string",
+          "name": "RouteName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由的方法，其中方法可选值：\n- GET\n- POST\n- DELETE\n- PUT\n- OPTIONS\n- PATCH\n- HEAD\n- ANY\n- TRACE\n- COPY\n- MOVE\n- PROPFIND\n- PROPPATCH\n- MKCOL\n- LOCK\n- UNLOCK",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的域名",
+          "example": "[\"www.demo.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的路径",
+          "example": "[\"/\"]",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的协议，可选\n- https\n- http",
+          "example": "[\"https\"]",
+          "member": "string",
+          "name": "Protocols",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发到后端时是否保留Host",
+          "example": "true",
+          "member": "bool",
+          "name": "PreserveHost",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "https重定向状态码",
+          "example": "308",
+          "member": "int64",
+          "name": "HttpsRedirectStatusCode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转发到后端时是否StripPath",
+          "example": "true",
+          "member": "bool",
+          "name": "StripPath",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "是否开启强制HTTPS",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceHttps",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "四层匹配的目的端口\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "DestinationPorts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由的Headers",
+          "example": "无",
+          "member": "KVMapping",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayRouteResponse": {
+      "document": "ModifyCloudNativeAPIGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayServiceRateLimitRequest": {
+      "document": "ModifyCloudNativeAPIGatewayServiceRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称，或服务ID",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayRateLimitDetail",
+          "name": "LimitDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayServiceRateLimitResponse": {
+      "document": "ModifyCloudNativeAPIGatewayServiceRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayServiceRequest": {
+      "document": "ModifyCloudNativeAPIGatewayService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "service-demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求协议： \n- https \n- http \n- tcp \n- udp",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求路径",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，单位ms",
+          "example": "5000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重试次数",
+          "example": "0",
+          "member": "int64",
+          "name": "Retries",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务类型: \n- Kubernetes \n- Registry\n- IPList\n- HostIP\n- Scf\t",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务配置",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayServiceResponse": {
+      "document": "ModifyCloudNativeAPIGatewayService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NacosReplica": {
       "document": "Nacos副本信息",
@@ -1628,6 +4173,68 @@
         }
       ],
       "usage": "out"
+    },
+    "QpsThreshold": {
+      "document": "云原生网关限流插件Qps阈值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
+          "example": "second、minute、hour、day、month、year",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值",
+          "example": "10",
+          "member": "int64",
+          "name": "Max",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitResponse": {
+      "document": "云原生网关限流插件自定义响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义响应体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
+          "member": "string",
+          "name": "Body",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "headrs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{key:\"\",value:\"\"},]",
+          "member": "KVMapping",
+          "name": "Headers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "http状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "int64",
+          "name": "HttpStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SREInstance": {
       "document": "微服务注册引擎实例",

@@ -80,6 +80,14 @@
         "title": "创建cos导入任务"
       }
     ],
+    "CreateDataTransform": [
+      {
+        "document": "数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。\n",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"数据加工任务\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"errorcode\",\n            \"DstTopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"LogContent\": \"XXXX\",\n            \"Time\": \"2017-08-08 12:12:12\"\n        }\n    ],\n    \"SrcTopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EtlContent\": \"xx-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建数据加工任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",
@@ -182,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
         "title": "删除投递配置"
+      }
+    ],
+    "DeleteDataTransform": [
+      {
+        "document": "删除数据加工任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除数据加工任务"
       }
     ],
     "DeleteExport": [
@@ -310,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Status\": 0,\n    \"Enable\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": 3,\n                \"TopicId\": \"5590efdf-cae5-4703-8d00-2a813xxxxx\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"Enable\": 1,\n                \"Name\": \"test\",\n                \"Progress\": 1,\n                \"Compress\": \"gzip\",\n                \"Bucket\": \"xxxxx-1254xxxx\",\n                \"UpdateTime\": \"2023-03-08 14:51:14\",\n                \"Id\": \"0333114e-2e93-42d8-8a2f-a55de8474\",\n                \"LogType\": \"minimalist_log\",\n                \"Prefix\": \"xxx/2023/03/07/16/202303071600_000_1030.gz\",\n                \"LogsetId\": \"03efb75a-0f89-41b0-8cc6-9049a51fexxxx\",\n                \"CreateTime\": \"2023-03-08 15:29:55\",\n                \"ExtractRuleInfo\": {\n                    \"LogRegex\": \"\",\n                    \"Keys\": [\n                        \"@time\"\n                    ],\n                    \"TimeKey\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Delimiter\": \",\",\n                    \"TimeFormat\": \"\",\n                    \"UnMatchLogKey\": \"fieldName\",\n                    \"Backtracking\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"xx-xx-xx-xx\"\n    }\n}",
         "title": "获取cos导入配置"
+      }
+    ],
+    "DescribeDataTransformInfo": [
+      {
+        "document": "获取数据加工任务基本信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTransformInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataTransformTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"2021-08-08 12:12:12\",\n                \"LastEnableTime\": \"xxxx\",\n                \"Name\": \"我的加工任务\",\n                \"LogsetId\": \"xxxx\",\n                \"SrcTopicName\": \"我的日志主题\",\n                \"SrcTopicId\": \"61b9XXXX-971a-48c7-984d-ca147cf242c1\",\n                \"DstResources\": [\n                    {\n                        \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n                        \"Alias\": \"别名\"\n                    }\n                ],\n                \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\",\n                \"EtlContent\": \"ields_set()\",\n                \"Type\": 0,\n                \"CreateTime\": \"2021-08-0712: 12: 12\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取数据加工任务基本信息"
       }
     ],
     "DescribeExports": [
@@ -478,6 +502,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"1\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
         "title": "修改cos导入任务"
+      }
+    ],
+    "ModifyDataTransform": [
+      {
+        "document": "数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。\n",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EnableFlag\": 0,\n    \"EtlContent\": \"fields_set()\",\n    \"Name\": \"我的数据加工\",\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改数据加工任务"
       }
     ],
     "ModifyIndex": [

@@ -603,7 +603,7 @@
       "status": "online"
     },
     "MigrateOrderRefund": {
-      "document": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。",
+      "document": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付账号。",
       "input": "MigrateOrderRefundRequest",
       "name": "智慧零售-系统迁移存量订单退款",
       "output": "MigrateOrderRefundResponse",
@@ -20652,81 +20652,81 @@
       "document": "MigrateOrderRefund请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商户代码",
+          "example": "cm1111",
           "member": "string",
           "name": "MerchantId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道",
+          "example": "wxpay",
           "member": "string",
           "name": "PayChannel",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正向支付商户订单号",
+          "example": "111",
           "member": "string",
           "name": "PayOrderId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退款订单号，最长64位，仅支持数字、 字母",
+          "example": "out202300001",
           "member": "string",
           "name": "RefundOrderId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退款金额，单位：分。备注：改字段必须大于0 和小于10000000000的整数。",
+          "example": "1",
           "member": "uint64",
           "name": "RefundAmt",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方支付机构支付交易号",
+          "example": "454654612213",
           "member": "string",
           "name": "ThirdChannelOrderId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原始支付金额，单位：分。备注：当该字段为空或者为0 时，系统会默认使用订单当 实付金额作为退款金额",
+          "example": "1",
           "member": "uint64",
           "name": "PayAmt",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入环境。沙箱环境填 sandbox。",
+          "example": "sandbox",
           "member": "string",
           "name": "Profile",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退款原因",
+          "example": "123",
           "member": "string",
           "name": "RefundReason",
           "required": false,
@@ -20741,24 +20741,30 @@
         {
           "disabled": false,
           "document": "请求成功状态",
+          "example": "true",
           "member": "bool",
           "name": "IsSuccess",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "退款流水号",
+          "example": "67873411212",
           "member": "string",
           "name": "TradeSerialNo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易备注",
+          "example": "123",
           "member": "string",
           "name": "TradeMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -3471,7 +3471,7 @@
         },
         {
           "disabled": false,
-          "document": "分页数量，默认为 100，最大为 1000",
+          "document": "分页数量，默认为 20，最大为 1000",
           "example": "100",
           "member": "uint64",
           "name": "PageSize",
@@ -3495,6 +3495,24 @@
           "name": "AfterLogId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 >= StartTime",
+          "example": "2021-12-06 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 < EndTime",
+          "example": "2021-12-07 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

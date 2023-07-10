@@ -498,11 +498,11 @@
       "status": "online"
     },
     "GenerateApiDocument": {
-      "document": "本接口（GenerateApiDocument）用于自动生成 API 文档和 SDK，一个服务的一个环境生成一份文档和 SDK。",
+      "document": "接口已废弃\n\n本接口（GenerateApiDocument）用于自动生成 API 文档和 SDK，一个服务的一个环境生成一份文档和 SDK。",
       "input": "GenerateApiDocumentRequest",
       "name": "生成文档和 SDK",
       "output": "GenerateApiDocumentResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ImportOpenApi": {
       "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 ",

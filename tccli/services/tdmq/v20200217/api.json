@@ -252,6 +252,13 @@
       "output": "DeleteRabbitMQUserResponse",
       "status": "online"
     },
+    "DeleteRabbitMQVipInstance": {
+      "document": "删除RabbitMQ专享版实例",
+      "input": "DeleteRabbitMQVipInstanceRequest",
+      "name": "删除RabbitMQ专享版实例",
+      "output": "DeleteRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
     "DeleteRabbitMQVirtualHost": {
       "document": "删除RabbitMQ的vhost",
       "input": "DeleteRabbitMQVirtualHostRequest",
@@ -5279,6 +5286,53 @@
     "DeleteRabbitMQUserResponse": {
       "document": "DeleteRabbitMQUser返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQVipInstanceRequest": {
+      "document": "DeleteRabbitMQVipInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "amqp-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQVipInstanceResponse": {
+      "document": "DeleteRabbitMQVipInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230110002025620411234",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-aegnagjg",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -1,5 +1,6 @@
 **Example 1: 修改数据加工任务**
 
+数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。
 
 
 Input: 

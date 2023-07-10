@@ -665,6 +665,42 @@
       ],
       "usage": "out"
     },
+    "Tone": {
+      "document": "中文声调检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测结果是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Valid",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文本标准声调，数值范围[-1,1,2,3,4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RefTone",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实际发音声调，数值范围[-1,1,2,3,4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HypothesisTone",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TransmitOralProcessRequest": {
       "document": "TransmitOralProcess请求参数结构体",
       "members": [
@@ -1215,102 +1251,103 @@
       "document": "单词评分细则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。",
           "example": "100",
           "member": "int64",
           "name": "MemBeginTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。",
           "example": "200",
           "member": "int64",
           "name": "MemEndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单词发音准确度，取值范围[-1, 100]，当取-1时指完全不匹配",
           "example": "99",
           "member": "float",
           "name": "PronAccuracy",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单词发音流利度，取值范围[0, 1]",
           "example": "0.8",
           "member": "float",
           "name": "PronFluency",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前词",
           "example": "word",
           "member": "string",
           "name": "Word",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。",
           "example": "0",
           "member": "int64",
           "name": "MatchTag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音节评估详情",
           "example": "phone",
           "member": "PhoneInfo",
           "name": "PhoneInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参考词，目前为保留字段。",
           "example": "word",
           "member": "string",
           "name": "ReferenceWord",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "KeywordTag",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "声调检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tone",
+          "member": "Tone",
+          "name": "Tone",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
