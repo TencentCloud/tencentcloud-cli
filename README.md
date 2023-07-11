@@ -130,6 +130,86 @@ set  http_proxy=https://myproxy.com:1111
 tccli cvm DescribeRegions --https-proxy https://192.168.1.1:1111
 ```
 
+# 凭证管理
+
+腾讯云命令行工具（TCCLI）目前支持以下几种方式进行凭证管理，获取凭证的优先级：实例角色 > 角色 > TKE OIDC > 临时密钥 > 永久密钥：
+
+1. 实例角色
+
+有关实例角色的相关概念请参阅：[腾讯云实例角色](https://cloud.tencent.com/document/product/213/47668)
+
+在您为实例绑定角色后，您可以在实例中访问相关元数据接口获取临时凭证，SDK 会自动刷新临时凭证。相关命令如下：
+
+使用方式：
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --use-cvm-role
+```
+
+2. 角色
+
+有关角色的相关概念请参阅：[腾讯云角色概述](https://cloud.tencent.com/document/product/598/19420)
+
+要使用此种方式，您必须在腾讯云访问管理控制台上创建了一个角色，具体创建过程请参阅：[腾讯云角色创建](https://cloud.tencent.com/document/product/598/19381)
+
+在您拥有角色后，可以通过如下方式获取临时凭证，相关命令如下：
+
+- 命令行输入
+
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx --role-arn xx --role-session-name
+```
+
+- 环境变量
+
+配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`, `TENCENTCLOUD_ROLE_ARN`, `TENCENTCLOUD_ROLE_SESSION_NAME`
+
+3. TKE OIDC
+
+- 环境变量
+  配置环境变量：`TKE_REGION`, `TKE_PROVIDER_ID`, `TKE_IDENTITY_TOKEN_FILE`, `TKE_ROLE_ARN`
+
+4. 临时密钥
+
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx --token xx
+```
+
+
+- 环境变量
+  配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`, `TENCENTCLOUD_TOKEN`
+
+
+- xxx.credential文件
+```json
+{
+  "secretId": "AKIDxxxxxxxxxxxxxxxxxxxxQsPk",
+  "secretKey": "QgoxxxxxxxxxxxxxxxxgvW4",
+  "token": "xxxxxxxxxxxxxxxxxx"
+}
+```
+
+
+5. 永久密钥
+
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx
+```
+
+
+- 环境变量
+  配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`
+
+
+- xxx.credential文件
+```json
+{
+  "secretId": "AKIDxxxxxxxxxxxxxxxxxxxxQsPk",
+  "secretKey": "QgoxxxxxxxxxxxxxxxxgvW4"
+}
+```
 
 # 使用TCCLI
 命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能再命令行工具上执行命令实现。
@@ -303,4 +383,3 @@ tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Instan
     "InstanceIdSet": null
 }
 ```
-
