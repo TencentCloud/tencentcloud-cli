@@ -964,6 +964,36 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文件系统快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "定期快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启默认扩容，仅Turbo类型文件存储支持",
+          "example": "False",
+          "member": "bool",
+          "name": "EnableAutoScaleUp",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -977,6 +1007,7 @@
           "example": "2017-02-24 11:28:12",
           "member": "string",
           "name": "CreationTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -987,6 +1018,7 @@
           "example": "QcloudCfs",
           "member": "string",
           "name": "CreationToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -997,6 +1029,7 @@
           "example": "cfs-abc",
           "member": "string",
           "name": "FileSystemId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1007,6 +1040,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "LifeCycleState",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1017,6 +1051,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "SizeByte",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1027,6 +1062,7 @@
           "example": "800001",
           "member": "uint64",
           "name": "ZoneId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1037,6 +1073,7 @@
           "example": "QcloudCfs",
           "member": "string",
           "name": "FsName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1047,6 +1084,7 @@
           "example": "False",
           "member": "bool",
           "name": "Encrypted",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -2133,7 +2171,6 @@
       "document": "DescribeCfsFileSystems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -2144,7 +2181,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络（VPC） ID",
           "example": "vpc-12345",
@@ -2155,7 +2191,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID",
           "example": "subnet-12345",
@@ -2177,7 +2212,7 @@
           "example": "无",
           "member": "FileSystemInfo",
           "name": "FileSystems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2188,7 +2223,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3981,7 +4016,7 @@
           "example": "xx",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3992,7 +4027,7 @@
           "example": "xx",
           "member": "string",
           "name": "SnapshotName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4003,7 +4038,7 @@
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4014,7 +4049,7 @@
           "example": "available ",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4025,7 +4060,7 @@
           "example": "beijing",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4036,7 +4071,7 @@
           "example": "cfs-xx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4047,7 +4082,7 @@
           "example": "11",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4058,7 +4093,7 @@
           "example": "12",
           "member": "uint64",
           "name": "AliveDay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4069,7 +4104,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4080,7 +4115,7 @@
           "example": "21211",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4091,7 +4126,7 @@
           "example": "xx",
           "member": "string",
           "name": "DeleteTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4102,7 +4137,7 @@
           "example": "xx",
           "member": "string",
           "name": "FsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4113,7 +4148,7 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4124,7 +4159,18 @@
           "example": "Turbo",
           "member": "string",
           "name": "SnapshotType",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-16 14:45:15",
+          "member": "string",
+          "name": "SnapshotTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4663,7 +4709,6 @@
       "document": "UpdateCfsPGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -4674,7 +4719,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
           "example": "test",
@@ -4685,9 +4729,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "权限组描述信息，1-255个字符",
+          "document": "权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空",
           "example": "test",
           "member": "string",
           "name": "DescInfo",
@@ -4707,7 +4750,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4718,7 +4761,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4729,7 +4772,7 @@
           "example": "test",
           "member": "string",
           "name": "DescInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

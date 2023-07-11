@@ -1,6 +1,6 @@
 **Example 1: 查询文件系统**
 
-
+查询文件系统
 
 Input: 
 
@@ -13,44 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
-        "TotalCount": 1,
         "FileSystems": [
             {
-                "Protocol": "NFS",
-                "Zone": "ap-guangzhou-3",
-                "CreationToken": "test_fs",
-                "StorageType": "SD",
-                "Encrypted": false,
-                "CreationTime": "2019-07-29 18:57:17",
-                "StorageResourcePkg": "",
-                "ZoneId": 100003,
-                "SizeByte": 0,
-                "FileSystemId": "cfs-12345",
-                "KmsKeyId": "",
-                "LifeCycleState": "mounting",
-                "Capacity": 1000,
+                "CreationTime": "abc",
+                "CreationToken": "abc",
+                "FileSystemId": "abc",
+                "LifeCycleState": "abc",
+                "SizeByte": 1,
+                "SizeLimit": 1,
+                "ZoneId": 1,
+                "Zone": "abc",
+                "Protocol": "abc",
+                "StorageType": "abc",
+                "StorageResourcePkg": "abc",
+                "BandwidthResourcePkg": "abc",
                 "PGroup": {
-                    "PGroupId": "pgroupbasic",
-                    "Name": "默认权限组"
+                    "PGroupId": "abc",
+                    "Name": "abc"
                 },
-                "SizeLimit": 0,
-                "BandwidthResourcePkg": "",
-                "FsName": "test_fs",
-                "AppId": 12700000,
-                "BandwidthLimit": 200,
-                "TieringDetail": {
-                    "TieringSizeInBytes": 0
-                },
-                "TieringState": "xx",
+                "FsName": "abc",
+                "Encrypted": true,
+                "KmsKeyId": "abc",
+                "AppId": 0,
+                "BandwidthLimit": 0,
+                "Capacity": 1,
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
-                ]
+                ],
+                "TieringState": "abc",
+                "TieringDetail": {
+                    "TieringSizeInBytes": 0
+                }
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

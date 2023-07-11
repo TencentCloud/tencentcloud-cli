@@ -6447,6 +6447,7 @@
           "example": "40",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6457,6 +6458,7 @@
           "example": "无",
           "member": "HttpsPackage",
           "name": "HttpsPackages",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6467,6 +6469,7 @@
           "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6477,6 +6480,7 @@
           "example": "40",
           "member": "int64",
           "name": "EnabledCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6487,6 +6491,7 @@
           "example": "20",
           "member": "int64",
           "name": "PaidCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8146,34 +8151,34 @@
       "document": "DescribeTrafficPackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询起始地址，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询记录个数，默认100，最大1000",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包排序方式，支持以下值：\nexpireTimeDesc：默认值，按过期时间倒序\nexpireTimeAsc：按过期时间正序\ncreateTimeDesc：按创建时间倒序\ncreateTimeAsc：按创建时间正序\nstatus：按状态排序，正常抵扣>未生效>已用尽>已过期\nchannel：按来源排序，主动购买>自动续订>CDN赠送",
           "example": "status",
           "member": "string",
           "name": "SortBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8187,9 +8192,10 @@
           "example": "40",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -8197,9 +8203,10 @@
           "example": "无",
           "member": "TrafficPackage",
           "name": "TrafficPackages",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -8207,9 +8214,10 @@
           "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -8217,9 +8225,10 @@
           "example": "40",
           "member": "int64",
           "name": "EnabledCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -8227,9 +8236,10 @@
           "example": "20",
           "member": "int64",
           "name": "PaidCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10782,7 +10792,7 @@
           "example": "123",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10793,7 +10803,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10804,7 +10814,7 @@
           "example": "10000",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10815,7 +10825,7 @@
           "example": "100",
           "member": "int64",
           "name": "SizeUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10826,7 +10836,7 @@
           "example": "enable",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10837,7 +10847,7 @@
           "example": "2021-09-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10848,7 +10858,7 @@
           "example": "2021-09-01 00:00:00",
           "member": "string",
           "name": "EnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10859,7 +10869,7 @@
           "example": "2021-09-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10870,7 +10880,7 @@
           "example": "CDN_GIFT",
           "member": "string",
           "name": "Channel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10881,7 +10891,7 @@
           "example": "1",
           "member": "int64",
           "name": "LifeTimeMonth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10892,7 +10902,7 @@
           "example": "false",
           "member": "bool",
           "name": "RefundAvailable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -10903,7 +10913,7 @@
           "example": "101",
           "member": "int64",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10914,7 +10924,7 @@
           "example": "2022-08-02 10:00:00",
           "member": "string",
           "name": "TrueEnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10925,7 +10935,7 @@
           "example": "2022-08-02 23:59:59",
           "member": "string",
           "name": "TrueExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10936,7 +10946,7 @@
           "example": "global",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10947,7 +10957,7 @@
           "example": "false",
           "member": "bool",
           "name": "ContractExtension",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -10958,7 +10968,7 @@
           "example": "false",
           "member": "bool",
           "name": "ExtensionAvailable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -10969,7 +10979,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ExtensionMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -10980,7 +10990,7 @@
           "example": "false",
           "member": "bool",
           "name": "AutoExtension",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -17818,241 +17828,221 @@
       "document": "CDN加速流量包。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量包 Id",
           "example": "123",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包类型",
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包大小（单位为 Byte）",
           "example": "1000000000",
           "member": "int64",
           "name": "Bytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已消耗流量（单位为 Byte）",
           "example": "100",
           "member": "int64",
           "name": "BytesUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包状态\nenabled：已启用\nexpired：已过期\ndisabled：未启用",
           "example": "enabled",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包发放时间",
           "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包生效时间",
           "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "EnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包过期时间",
           "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包是否续订",
           "example": "false",
           "member": "bool",
           "name": "ContractExtension",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包是否自动续订",
           "example": "false",
           "member": "bool",
           "name": "AutoExtension",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包来源",
           "example": "CDN_GIFT",
           "member": "string",
           "name": "Channel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包生效区域，mainland或overseas",
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包生命周期月数",
           "example": "1",
           "member": "int64",
           "name": "LifeTimeMonth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包是否支持续订",
           "example": "false",
           "member": "bool",
           "name": "ExtensionAvailable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包是否支持退费",
           "example": "false",
           "member": "bool",
           "name": "RefundAvailable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包生效区域\n0：中国大陆\n1：亚太一区\n2：亚太二区\n3：亚太三区\n4：中东\n5：北美\n6：欧洲\n7：南美\n8：非洲\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包类型id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "int64",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包当前续订模式，0 未续订、1到期续订、2用完续订、3到期或用完续订\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "ExtensionMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包实际生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-08-02 10:00:00",
           "member": "string",
           "name": "TrueEnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包实际过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-08-02 23:59:59",
           "member": "string",
           "name": "TrueExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1

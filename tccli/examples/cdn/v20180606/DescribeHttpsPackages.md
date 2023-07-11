@@ -14,32 +14,33 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "521e16c1a2c389fa34ff23aafa0db726",
         "HttpsPackages": [
             {
-                "Status": "enable",
-                "EnableTime": "2023-02-10 00:00:00",
-                "SizeUsed": 100,
-                "ExpireTime": "2023-03-10 00:00:00",
-                "Area": "global",
-                "TrueExpireTime": "2023-03-31 23:59:59",
-                "TrueEnableTime": "2023-02-01 00:00:00",
-                "Id": 1,
+                "Id": 5720,
+                "Type": "日常HTTPS请求包",
+                "ConfigId": 672,
+                "Size": 10000000,
+                "SizeUsed": 0,
+                "Status": "frozen",
+                "CreateTime": "2023-07-05 15:41:26",
+                "EnableTime": "2023-07-05 15:00:00",
+                "ExpireTime": "2024-07-05 15:00:00",
                 "LifeTimeMonth": 12,
-                "ExtensionAvailable": true,
-                "ExtensionMode": 1,
                 "RefundAvailable": false,
-                "ContractExtension": true,
-                "ConfigId": 661,
-                "Type": "HTTPS请求包",
-                "CreateTime": "2023-02-10 00:00:00",
                 "Channel": "ACTIVE_PURCHASE",
-                "Size": 10000
+                "TrueEnableTime": "2023-07-05 15:00:00",
+                "TrueExpireTime": "2024-07-05 15:59:59",
+                "Area": "global",
+                "ContractExtension": false,
+                "AutoExtension": false,
+                "ExtensionMode": 0,
+                "ExtensionAvailable": false
             }
         ],
-        "ExpiringCount": 0,
         "TotalCount": 1,
-        "EnabledCount": 1,
-        "RequestId": "eb308d9a-6c72-4f23-aed6-b06b5a481047",
+        "ExpiringCount": 0,
+        "EnabledCount": 0,
         "PaidCount": 1
     }
 }

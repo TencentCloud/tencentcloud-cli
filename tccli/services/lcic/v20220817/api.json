@@ -192,7 +192,7 @@
     "DescribeDocuments": {
       "document": "有新接口替换\n\n批量获取文档信息（已废弃，替代接口BatchDescribeDocument）",
       "input": "DescribeDocumentsRequest",
-      "name": "批量获取文档信息",
+      "name": "批量获取文档信息【已废弃】",
       "output": "DescribeDocumentsResponse",
       "status": "deprecated"
     },
@@ -2303,7 +2303,6 @@
       "document": "DescribeDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文档Id（唯一id）",
           "example": "abc",
@@ -2325,7 +2324,7 @@
           "example": "abc",
           "member": "string",
           "name": "DocumentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2336,7 +2335,7 @@
           "example": "abc",
           "member": "string",
           "name": "DocumentUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2347,7 +2346,7 @@
           "example": "abc",
           "member": "string",
           "name": "DocumentName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2358,7 +2357,7 @@
           "example": "abc",
           "member": "string",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2369,7 +2368,7 @@
           "example": "123",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2380,7 +2379,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Permission",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2391,7 +2390,7 @@
           "example": "xx",
           "member": "string",
           "name": "TranscodeResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2402,7 +2401,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TranscodeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2413,7 +2412,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TranscodeProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2424,7 +2423,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TranscodeState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2435,7 +2434,7 @@
           "example": "abc",
           "member": "string",
           "name": "TranscodeInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2446,7 +2445,7 @@
           "example": "abc",
           "member": "string",
           "name": "DocumentType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2457,7 +2456,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DocumentSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2468,7 +2467,18 @@
           "example": "1",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "课件页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Pages",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2665,6 +2675,7 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2675,6 +2686,7 @@
           "example": "无",
           "member": "DocumentInfo",
           "name": "Documents",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

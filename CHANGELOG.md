@@ -1,3 +1,161 @@
+# Release 3.0.805.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 52 次发布
+
+发布时间：2023-07-12 01:12:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HttpsPackage](http://document.tencentcloudapi.woa.com/document/product/228/30987#HttpsPackage)
+
+	* <font color="#dd0000">**修改成员**：</font>AutoExtension
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 15 次发布
+
+发布时间：2023-07-12 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCfsFileSystem](http://document.tencentcloudapi.woa.com/document/product/582/38174)
+
+	* 新增入参：SnapshotId, AutoSnapshotPolicyId, EnableAutoScaleUp
+
+
+修改数据结构：
+
+* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#SnapshotInfo)
+
+	* 新增成员：SnapshotTime
+
+	* <font color="#dd0000">**修改成员**：</font>SnapshotType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 67 次发布
+
+发布时间：2023-07-12 01:26:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：NotifyType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 4 次发布
+
+发布时间：2023-07-12 01:31:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDocument](http://document.tencentcloudapi.woa.com/document/product/1720/80611)
+
+	* 新增出参：Pages
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 76 次发布
+
+发布时间：2023-07-12 01:45:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterAsGroupOption](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterAsGroupOption)
+
+	* <font color="#dd0000">**修改成员**：</font>IsScaleDownEnabled, Expander, MaxEmptyBulkDelete, ScaleDownDelay, ScaleDownUnneededTime, ScaleDownUtilizationThreshold, SkipNodesWithLocalStorage, SkipNodesWithSystemPods, IgnoreDaemonSetsUtilization, OkTotalUnreadyCount, MaxTotalUnreadyPercentage, ScaleDownUnreadyTime, UnregisteredNodeRemovalTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 98 次发布
+
+发布时间：2023-07-12 01:49:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/15808)
+
+	* 新增入参：OrderField, OrderDirection
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 11 次发布
+
+发布时间：2023-07-12 01:57:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeColumnLineage](http://document.tencentcloudapi.woa.com/document/product/1607/81111)
+* [DescribeTableLineage](http://document.tencentcloudapi.woa.com/document/product/1607/81110)
+
+新增数据结构：
+
+* [ColumnAggregationLineage](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ColumnAggregationLineage)
+* [ColumnLineageInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ColumnLineageInfo)
+* [LineageParamRecord](http://document.tencentcloudapi.woa.com/document/product/1607/77747#LineageParamRecord)
+* [SimpleColumnInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SimpleColumnInfo)
+* [TableLineageInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableLineageInfo)
+
+
+
 # Release 3.0.804.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

@@ -4003,7 +4003,6 @@
           "name": "Host",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4014,7 +4013,6 @@
           "name": "Port",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4025,18 +4023,16 @@
           "name": "SourceID",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "名字空间",
+          "document": "命名空间",
           "example": "Default",
           "member": "string",
           "name": "Namespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4047,7 +4043,6 @@
           "name": "ServiceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4058,7 +4053,6 @@
           "name": "Targets",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4069,7 +4063,6 @@
           "name": "SourceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4080,7 +4073,6 @@
           "name": "ScfType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4091,7 +4083,6 @@
           "name": "ScfNamespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4102,7 +4093,6 @@
           "name": "ScfLambdaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4113,7 +4103,6 @@
           "name": "ScfLambdaQualifier",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4124,7 +4113,6 @@
           "name": "SlowStart",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4135,7 +4123,6 @@
           "name": "Algorithm",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4146,7 +4133,6 @@
           "name": "AutoScalingGroupID",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4157,7 +4143,6 @@
           "name": "AutoScalingCvmPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4168,7 +4153,6 @@
           "name": "AutoScalingTatCmdStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4179,7 +4163,6 @@
           "name": "AutoScalingHookStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4190,7 +4173,6 @@
           "name": "SourceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -4201,7 +4183,6 @@
           "name": "RealSourceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         }
       ],
